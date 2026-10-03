@@ -1,0 +1,553 @@
+[
+  {
+    "id": "ELM-ARC-001",
+    "capability": "elm-host",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL record the deployed compositor, plugin, shell, compiler and host versions and source hashes before a comparative native run.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the report identifies every participating artifact; failure injection and artifact hashes included.",
+    "legacyEvidence": "implementation/STATUS.md",
+    "task": "Create a frozen architecture baseline manifest.",
+    "scenarios": [
+      {
+        "name": "architecture-001",
+        "given": "a taskbar-v3 desktop",
+        "when": "a comparison is prepared",
+        "then": "the report identifies every participating artifact"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-002",
+    "capability": "elm-host",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL assign DOM presentation to Elm, Wayland surface lifetime to the native host, and application-window effects to native authority.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: only native authority mutates the application window; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Publish an ownership table and executable boundary probe.",
+    "scenarios": [
+      {
+        "name": "architecture-002",
+        "given": "an Elm shell view",
+        "when": "an application-window action is requested",
+        "then": "only native authority mutates the application window"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-003",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL expose one incoming event stream and one outgoing intent stream with versioned, discriminated envelopes.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: both conform to the recorded schema; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/IMPLEMENTATION.md",
+    "task": "Define the envelope schema and Elm decoders.",
+    "scenarios": [
+      {
+        "name": "architecture-003",
+        "given": "a connected host",
+        "when": "an intent and its outcome cross the bridge",
+        "then": "both conform to the recorded schema"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-004",
+    "capability": "elm-native-bridge",
+    "pattern": "unwanted",
+    "ears": "IF an envelope is malformed or has an unsupported protocol version, the Elm desktop SHALL reject it without a native effect and record the rejection reason.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: no compositor action occurs and a reason is recorded; failure injection and artifact hashes included.",
+    "legacyEvidence": "new coverage: bridge decoder and authority negative fixtures",
+    "task": "Implement validation at both trust boundaries.",
+    "scenarios": [
+      {
+        "name": "architecture-004",
+        "given": "an invalid envelope",
+        "when": "the host receives it",
+        "then": "no compositor action occurs and a reason is recorded"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-005",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL attach request identity, compositor lifetime, frontend epoch, operation generation, window incarnation, output generation and expected native revision to window-effect intents.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the serialized request contains the full authority tuple; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Implement identity-bearing effect messages.",
+    "scenarios": [
+      {
+        "name": "architecture-005",
+        "given": "a known window and output",
+        "when": "an effect is requested",
+        "then": "the serialized request contains the full authority tuple"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-006",
+    "capability": "elm-native-bridge",
+    "pattern": "unwanted",
+    "ears": "IF an intent identity or expected revision differs from current native authority, the Elm desktop SHALL refuse the intent before mutation.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the new window remains unchanged; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Add effect-boundary freshness guards.",
+    "scenarios": [
+      {
+        "name": "architecture-006",
+        "given": "a closed and recreated window",
+        "when": "its old intent arrives",
+        "then": "the new window remains unchanged"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-007",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL correlate each outcome with its request and represent Pending, Committed, Refused, Cancelled and Unknown as distinct states.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: its state is Unknown rather than Committed; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Implement receipt state transitions.",
+    "scenarios": [
+      {
+        "name": "architecture-007",
+        "given": "a request whose connection drops",
+        "when": "its final effect cannot be proven",
+        "then": "its state is Unknown rather than Committed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-008",
+    "capability": "elm-native-bridge",
+    "pattern": "event-driven",
+    "ears": "WHEN a dependent effect is requested, the Elm desktop SHALL dispatch it only after the prerequisite receipt satisfies its declared precondition.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: focus is withheld until the required receipt; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/README.md",
+    "task": "Implement an acknowledged dependency scheduler.",
+    "scenarios": [
+      {
+        "name": "architecture-008",
+        "given": "restore followed by focus",
+        "when": "restore is still pending",
+        "then": "focus is withheld until the required receipt"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-009",
+    "capability": "elm-native-bridge",
+    "pattern": "event-driven",
+    "ears": "WHEN a duplicate request is received within a frontend epoch, the Elm desktop SHALL return the existing request disposition without executing the effect again.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: only one mutation is recorded; failure injection and artifact hashes included.",
+    "legacyEvidence": "new coverage: authority idempotency ledger",
+    "task": "Implement bounded request deduplication with explicit expired-ID refusal.",
+    "scenarios": [
+      {
+        "name": "architecture-009",
+        "given": "a committed request",
+        "when": "the same request arrives twice",
+        "then": "only one mutation is recorded"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-010",
+    "capability": "elm-native-bridge",
+    "pattern": "event-driven",
+    "ears": "WHEN a snapshot is installed, the Elm desktop SHALL apply only ordered events after its native sequence watermark and request reconciliation on a sequence gap.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: 9 is discarded and the gap before 12 triggers reconciliation; failure injection and artifact hashes included.",
+    "legacyEvidence": "implementation/taskbar-v3/widget_v68/SnapshotStream.js",
+    "task": "Implement snapshot and delta sequencing.",
+    "scenarios": [
+      {
+        "name": "architecture-010",
+        "given": "a snapshot at sequence 10",
+        "when": "events 9 and 12 arrive",
+        "then": "9 is discarded and the gap before 12 triggers reconciliation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-011",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL capture modifier press, repeat, release and Escape in native order with chord generation and ordinal before frontend readiness.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the ready view receives the release in its original chord order; failure injection and artifact hashes included.",
+    "legacyEvidence": "implementation/STATUS.md",
+    "task": "Retain native chord acquisition and replay it to Elm.",
+    "scenarios": [
+      {
+        "name": "architecture-011",
+        "given": "the webview is starting",
+        "when": "Alt is released before readiness",
+        "then": "the ready view receives the release in its original chord order"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-012",
+    "capability": "elm-native-bridge",
+    "pattern": "event-driven",
+    "ears": "WHEN cancellation reaches native authority before an effect commits, the Elm desktop SHALL prevent that effect and retire its request-owned resources.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: restore is absent and owned helpers retire; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Implement cancellation checks at the final native effect boundary.",
+    "scenarios": [
+      {
+        "name": "architecture-012",
+        "given": "a prepared restore",
+        "when": "Escape cancels before commit",
+        "then": "restore is absent and owned helpers retire"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-013",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL retain each original acceptance deadline through retries, queueing, reconciliation and frontend restart.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the deadline remains unchanged; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Carry immutable absolute deadlines through request state.",
+    "scenarios": [
+      {
+        "name": "architecture-013",
+        "given": "a request nearing its original deadline",
+        "when": "the renderer restarts",
+        "then": "the deadline remains unchanged"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-014",
+    "capability": "elm-native-bridge",
+    "pattern": "unwanted",
+    "ears": "IF an effect outcome is Unknown, the Elm desktop SHALL reconcile native state before permitting a retry of that effect.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: native truth is read before another mutation; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/IMPLEMENTATION.md",
+    "task": "Implement uncertain-effect recovery.",
+    "scenarios": [
+      {
+        "name": "architecture-014",
+        "given": "an acknowledgement was lost",
+        "when": "the user retries",
+        "then": "native truth is read before another mutation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-015",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL enforce configured byte and item bounds on bridge queues, coalesce replaceable observations, and reject new effect work explicitly when admission fails.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: memory remains bounded and effect refusal is explicit; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Define queue bounds and test admission saturation.",
+    "scenarios": [
+      {
+        "name": "architecture-015",
+        "given": "queues at configured capacity",
+        "when": "new observations and effects arrive",
+        "then": "memory remains bounded and effect refusal is explicit"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-016",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL reserve bounded control capacity for cancellation, receipts and retirement independently of preview work.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: it uses reserved control capacity and is processed; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Implement separate control and preview admission.",
+    "scenarios": [
+      {
+        "name": "architecture-016",
+        "given": "the preview queue is saturated",
+        "when": "cancellation arrives",
+        "then": "it uses reserved control capacity and is processed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-017",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL use one canonical owner for cross-output snap, pin and switcher transactions and send read-only projections to display views.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: one authority serializes the transaction; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/README.md",
+    "task": "Implement canonical multi-output policy projections.",
+    "scenarios": [
+      {
+        "name": "architecture-017",
+        "given": "two display views",
+        "when": "both propose actions on one window",
+        "then": "one authority serializes the transaction"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-018",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL resolve modal-family focus, input blockers, stacking and hit testing from native authority rather than DOM state.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the native family policy determines focus and hit order; failure injection and artifact hashes included.",
+    "legacyEvidence": "implementation/maximized-stack-v2/native-stack-smoke-1791036734961323596.json",
+    "task": "Bind action validation to native family and hit-order observations.",
+    "scenarios": [
+      {
+        "name": "architecture-018",
+        "given": "a draft modal overlaps a maximized window",
+        "when": "a user clicks a visible native region",
+        "then": "the native family policy determines focus and hit order"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-019",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL transport preview identifiers and revisions through ports while native components retain pixel buffers and verify source-stop lifetime.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the valid retained frame remains available without JSON pixels; failure injection and artifact hashes included.",
+    "legacyEvidence": "implementation/STATUS.md",
+    "task": "Implement opaque preview handles and retirement proofs.",
+    "scenarios": [
+      {
+        "name": "architecture-019",
+        "given": "a retained minimized preview",
+        "when": "its source stops",
+        "then": "the valid retained frame remains available without JSON pixels"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-020",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL distinguish native effect receipts from native frame-presentation receipts and keep motion sampling and buffer retirement under native ownership.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: presentation is unproven until the native receipt; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Expose separate commit and presentation evidence.",
+    "scenarios": [
+      {
+        "name": "architecture-020",
+        "given": "a motion effect accepted by authority",
+        "when": "the DOM animation callback fires",
+        "then": "presentation is unproven until the native receipt"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-021",
+    "capability": "elm-host",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL compare GTK/WebKitGTK and a dedicated Qt/WebEngine host using the same Elm assets, compositor tuple, workload and measurement definitions.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: separate native results and resource measurements are retained; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Build isolated comparative host spikes.",
+    "scenarios": [
+      {
+        "name": "architecture-021",
+        "given": "two candidate hosts",
+        "when": "the same vertical slice is tested",
+        "then": "separate native results and resource measurements are retained"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-022",
+    "capability": "elm-host",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL create native layer and popup roles, input regions and keyboard-interactivity settings before exposing their Elm views.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: roles and input masks precede frontend readiness; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Implement host surface-role adapters.",
+    "scenarios": [
+      {
+        "name": "architecture-022",
+        "given": "a taskbar and popup",
+        "when": "their native surfaces are created",
+        "then": "roles and input masks precede frontend readiness"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-023",
+    "capability": "elm-host",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL pass native host tests for IME preedit, keyboard navigation, Orca and braille, clipboard, file drag-and-drop, fractional scale and negative output coordinates.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: each named route has native evidence or blocks release; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Create the native host compatibility campaign.",
+    "scenarios": [
+      {
+        "name": "architecture-023",
+        "given": "a selected host",
+        "when": "the compatibility campaign runs",
+        "then": "each named route has native evidence or blocks release"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-024",
+    "capability": "elm-host",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL load packaged shell assets from an allowlisted local origin and deny remote navigation, arbitrary native method invocation and unapproved resource URLs.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: navigation or capability access is denied; failure injection and artifact hashes included.",
+    "legacyEvidence": "new coverage: hostile document and resource-origin probes",
+    "task": "Implement webview origin and capability enforcement.",
+    "scenarios": [
+      {
+        "name": "architecture-024",
+        "given": "an untrusted navigation or message",
+        "when": "it targets the privileged bridge",
+        "then": "navigation or capability access is denied"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-025",
+    "capability": "elm-native-bridge",
+    "pattern": "unwanted",
+    "ears": "IF a compositor plugin does not match its recorded owning compositor ABI tuple, the Elm desktop SHALL refuse plugin loading.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the plugin is not loaded and the mismatch is reported; failure injection and artifact hashes included.",
+    "legacyEvidence": "implementation/maximized-stack-v2/PAIR_READY.json",
+    "task": "Add an ABI preflight gate to native host startup.",
+    "scenarios": [
+      {
+        "name": "architecture-025",
+        "given": "a mismatched plugin build",
+        "when": "the shell starts",
+        "then": "the plugin is not loaded and the mismatch is reported"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-026",
+    "capability": "elm-host",
+    "pattern": "event-driven",
+    "ears": "WHEN the frontend or renderer restarts, the Elm desktop SHALL invalidate its old epoch, revoke its owned resources and reconcile a fresh snapshot before admitting new effects.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: old work is refused and effects await snapshot reconciliation; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/README.md",
+    "task": "Implement epoch-based supervised shell recovery.",
+    "scenarios": [
+      {
+        "name": "architecture-026",
+        "given": "a renderer with pending work",
+        "when": "it crashes and restarts",
+        "then": "old work is refused and effects await snapshot reconciliation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-027",
+    "capability": "elm-host",
+    "pattern": "event-driven",
+    "ears": "WHEN Elm shell activation fails its release checks, the Elm desktop SHALL restore the recorded accepted shell configuration without restarting the compositor or closing application windows.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Preserved scenario report with native or bridge trace showing: the accepted shell returns and drafts remain connected; failure injection and artifact hashes included.",
+    "legacyEvidence": "implementation/taskbar-v3/deployment.json",
+    "task": "Build and exercise a shell-only rollback procedure.",
+    "scenarios": [
+      {
+        "name": "architecture-027",
+        "given": "the accepted shell configuration is saved",
+        "when": "a candidate activation fails",
+        "then": "the accepted shell returns and drafts remain connected"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-028",
+    "capability": "elm-native-bridge",
+    "pattern": "optional",
+    "ears": "WHERE native compositor replacement is selected, the Elm desktop SHALL require a separate feasibility record covering Wayland protocols, Xwayland, seats, outputs, rendering, IME, capture security and application compatibility before implementation admission.",
+    "phase": "P7",
+    "priority": "conditional",
+    "verification": "Preserved scenario report with native or bridge trace showing: a separate scope and feasibility gate controls admission; failure injection and artifact hashes included.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Produce the optional compositor feasibility decision.",
+    "scenarios": [
+      {
+        "name": "architecture-028",
+        "given": "shell parity accepted",
+        "when": "compositor replacement is proposed",
+        "then": "a separate scope and feasibility gate controls admission"
+      }
+    ]
+  },
+  {
+    "id": "ELM-ARC-029",
+    "capability": "elm-native-bridge",
+    "pattern": "optional",
+    "ears": "WHERE native compositor replacement is implemented, the Elm desktop SHALL pass its declared compatibility matrix in nested and hardware sessions with sacrificial applications before any main-session activation.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Preserved scenario report with native or bridge trace showing: nested and hardware evidence precedes main-session use; failure injection and artifact hashes included.",
+    "legacyEvidence": "new coverage: optional compositor native acceptance matrix",
+    "task": "Implement and validate the separately approved native compositor backend.",
+    "scenarios": [
+      {
+        "name": "architecture-029",
+        "given": "an optional native compositor candidate",
+        "when": "activation is considered",
+        "then": "nested and hardware evidence precedes main-session use"
+      }
+    ]
+  }
+]

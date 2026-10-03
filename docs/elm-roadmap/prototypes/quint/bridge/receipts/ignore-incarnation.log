@@ -1,0 +1,18 @@
+Running as unit: qa-harness-5f76936e4fca4f8a817977b065053c79.scope; invocation ID: 96f9d4f52a234a68b38aceeff62fa1e7
+
+  bridge
+    1) incarnationReuseTest failed after 1 test(s)
+
+  1 failed
+
+  1) incarnationReuseTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/ignore-incarnation.qnt:67:96
+        67:   run incarnationReuseTest = init.then(request(1)).then(replaceWindow).then(commit).then(all { assert(s.status == "Refused" and s.effects == 0), noop })
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=incarnationReuseTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ignore-incarnation.qnt
+error: Tests failed

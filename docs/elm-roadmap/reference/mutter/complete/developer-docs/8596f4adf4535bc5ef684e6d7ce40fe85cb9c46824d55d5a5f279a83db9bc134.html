@@ -1,0 +1,465 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Meta.Window.get_stable_sequence</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Meta-51"/>
+  
+
+  
+  <meta priority="og:title" content="Meta.Window.get_stable_sequence"/>
+  <meta priority="og:description" content="Reference for Meta.Window.get_stable_sequence"/>
+  <meta name="twitter:title" content="Meta.Window.get_stable_sequence"/>
+  <meta name="twitter:description" content="Reference for Meta.Window.get_stable_sequence"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Meta" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Meta</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Window.html">Window</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Window.activate.html">activate</a>
+  
+    <a class="method" href="method.Window.activate_with_workspace.html">activate_with_workspace</a>
+  
+    <a class="method" href="method.Window.add_external_constraint.html">add_external_constraint</a>
+  
+    <a class="method" href="method.Window.allows_move.html">allows_move</a>
+  
+    <a class="method" href="method.Window.allows_resize.html">allows_resize</a>
+  
+    <a class="method" href="method.Window.appears_focused.html">appears_focused</a>
+  
+    <a class="method" href="method.Window.begin_grab_op.html">begin_grab_op</a>
+  
+    <a class="method" href="method.Window.can_close.html">can_close</a>
+  
+    <a class="method" href="method.Window.can_maximize.html">can_maximize</a>
+  
+    <a class="method" href="method.Window.can_minimize.html">can_minimize</a>
+  
+    <a class="method" href="method.Window.change_workspace.html">change_workspace</a>
+  
+    <a class="method" href="method.Window.change_workspace_by_index.html">change_workspace_by_index</a>
+  
+    <a class="method" href="method.Window.check_alive.html">check_alive</a>
+  
+    <a class="method" href="method.Window.client_rect_to_frame_rect.html">client_rect_to_frame_rect</a>
+  
+    <a class="method" href="method.Window.delete.html">delete</a>
+  
+    <a class="method" href="method.Window.find_root_ancestor.html">find_root_ancestor</a>
+  
+    <a class="method" href="method.Window.focus.html">focus</a>
+  
+    <a class="method" href="method.Window.foreach_ancestor.html">foreach_ancestor</a>
+  
+    <a class="method" href="method.Window.foreach_transient.html">foreach_transient</a>
+  
+    <a class="method" href="method.Window.frame_rect_to_client_rect.html">frame_rect_to_client_rect</a>
+  
+    <a class="method" href="method.Window.get_buffer_rect.html">get_buffer_rect</a>
+  
+    <a class="method" href="method.Window.get_client_content_rect.html">get_client_content_rect</a>
+  
+    <a class="method" href="method.Window.get_client_type.html">get_client_type</a>
+  
+    <a class="method" href="method.Window.get_compositor_private.html">get_compositor_private</a>
+  
+    <a class="method" href="method.Window.get_description.html">get_description</a>
+  
+    <a class="method" href="method.Window.get_display.html">get_display</a>
+  
+    <a class="method" href="method.Window.get_frame_rect.html">get_frame_rect</a>
+  
+    <a class="method" href="method.Window.get_frame_type.html">get_frame_type</a>
+  
+    <a class="method" href="method.Window.get_gtk_app_menu_object_path.html">get_gtk_app_menu_object_path</a>
+  
+    <a class="method" href="method.Window.get_gtk_application_id.html">get_gtk_application_id</a>
+  
+    <a class="method" href="method.Window.get_gtk_application_object_path.html">get_gtk_application_object_path</a>
+  
+    <a class="method" href="method.Window.get_gtk_menubar_object_path.html">get_gtk_menubar_object_path</a>
+  
+    <a class="method" href="method.Window.get_gtk_unique_bus_name.html">get_gtk_unique_bus_name</a>
+  
+    <a class="method" href="method.Window.get_gtk_window_object_path.html">get_gtk_window_object_path</a>
+  
+    <a class="method" href="method.Window.get_icon_geometry.html">get_icon_geometry</a>
+  
+    <a class="method" href="method.Window.get_id.html">get_id</a>
+  
+    <a class="method" href="method.Window.get_layer.html">get_layer</a>
+  
+    <a class="method" href="method.Window.get_max_size.html">get_max_size</a>
+  
+    <a class="method" href="method.Window.get_maximize_flags.html">get_maximize_flags</a>
+  
+    <a class="method" href="method.Window.get_min_size.html">get_min_size</a>
+  
+    <a class="method" href="method.Window.get_monitor.html">get_monitor</a>
+  
+    <a class="method" href="method.Window.get_mutter_hints.html">get_mutter_hints</a>
+  
+    <a class="method" href="method.Window.get_pid.html">get_pid</a>
+  
+    <a class="method" href="method.Window.get_role.html">get_role</a>
+  
+    <a class="method" href="method.Window.get_sandboxed_app_id.html">get_sandboxed_app_id</a>
+  
+    <a class="method current" href="method.Window.get_stable_sequence.html">get_stable_sequence</a>
+  
+    <a class="method" href="method.Window.get_startup_id.html">get_startup_id</a>
+  
+    <a class="method" href="method.Window.get_tag.html">get_tag</a>
+  
+    <a class="method" href="method.Window.get_tile_match.html">get_tile_match</a>
+  
+    <a class="method" href="method.Window.get_title.html">get_title</a>
+  
+    <a class="method" href="method.Window.get_transient_for.html">get_transient_for</a>
+  
+    <a class="method" href="method.Window.get_user_time.html">get_user_time</a>
+  
+    <a class="method" href="method.Window.get_window_type.html">get_window_type</a>
+  
+    <a class="method" href="method.Window.get_wm_class.html">get_wm_class</a>
+  
+    <a class="method" href="method.Window.get_wm_class_instance.html">get_wm_class_instance</a>
+  
+    <a class="method" href="method.Window.get_work_area_all_monitors.html">get_work_area_all_monitors</a>
+  
+    <a class="method" href="method.Window.get_work_area_current_monitor.html">get_work_area_current_monitor</a>
+  
+    <a class="method" href="method.Window.get_work_area_for_monitor.html">get_work_area_for_monitor</a>
+  
+    <a class="method" href="method.Window.get_workspace.html">get_workspace</a>
+  
+    <a class="method" href="method.Window.has_attached_dialogs.html">has_attached_dialogs</a>
+  
+    <a class="method" href="method.Window.has_focus.html">has_focus</a>
+  
+    <a class="method" href="method.Window.has_pointer.html">has_pointer</a>
+  
+    <a class="method" href="method.Window.hide_from_window_list.html">hide_from_window_list</a>
+  
+    <a class="method" href="method.Window.inhibit_mapped.html">inhibit_mapped</a>
+  
+    <a class="method" href="method.Window.is_above.html">is_above</a>
+  
+    <a class="method" href="method.Window.is_always_on_all_workspaces.html">is_always_on_all_workspaces</a>
+  
+    <a class="method" href="method.Window.is_ancestor_of_transient.html">is_ancestor_of_transient</a>
+  
+    <a class="method" href="method.Window.is_attached_dialog.html">is_attached_dialog</a>
+  
+    <a class="method" href="method.Window.is_fullscreen.html">is_fullscreen</a>
+  
+    <a class="method" href="method.Window.is_hidden.html">is_hidden</a>
+  
+    <a class="method" href="method.Window.is_mapped_inhibited.html">is_mapped_inhibited</a>
+  
+    <a class="method" href="method.Window.is_maximized.html">is_maximized</a>
+  
+    <a class="method" href="method.Window.is_monitor_sized.html">is_monitor_sized</a>
+  
+    <a class="method" href="method.Window.is_on_all_workspaces.html">is_on_all_workspaces</a>
+  
+    <a class="method" href="method.Window.is_on_primary_monitor.html">is_on_primary_monitor</a>
+  
+    <a class="method" href="method.Window.is_override_redirect.html">is_override_redirect</a>
+  
+    <a class="method" href="method.Window.is_remote.html">is_remote</a>
+  
+    <a class="method" href="method.Window.is_screen_sized.html">is_screen_sized</a>
+  
+    <a class="method" href="method.Window.is_skip_taskbar.html">is_skip_taskbar</a>
+  
+    <a class="method" href="method.Window.kill.html">kill</a>
+  
+    <a class="method" href="method.Window.located_on_workspace.html">located_on_workspace</a>
+  
+    <a class="method" href="method.Window.lower.html">lower</a>
+  
+    <a class="method" href="method.Window.lower_with_transients.html">lower_with_transients</a>
+  
+    <a class="method" href="method.Window.make_above.html">make_above</a>
+  
+    <a class="method" href="method.Window.make_fullscreen.html">make_fullscreen</a>
+  
+    <a class="method" href="method.Window.maximize.html">maximize</a>
+  
+    <a class="method" href="method.Window.minimize.html">minimize</a>
+  
+    <a class="method" href="method.Window.move_frame.html">move_frame</a>
+  
+    <a class="method" href="method.Window.move_resize_frame.html">move_resize_frame</a>
+  
+    <a class="method" href="method.Window.move_to_monitor.html">move_to_monitor</a>
+  
+    <a class="method" href="method.Window.protocol_to_stage_rect.html">protocol_to_stage_rect</a>
+  
+    <a class="method" href="method.Window.raise.html">raise</a>
+  
+    <a class="method" href="method.Window.raise_and_make_recent_on_workspace.html">raise_and_make_recent_on_workspace</a>
+  
+    <a class="method" href="method.Window.remove_external_constraint.html">remove_external_constraint</a>
+  
+    <a class="method" href="method.Window.set_compositor_private.html">set_compositor_private</a>
+  
+    <a class="method" href="method.Window.set_demands_attention.html">set_demands_attention</a>
+  
+    <a class="method" href="method.Window.set_icon_geometry.html">set_icon_geometry</a>
+  
+    <a class="method" href="method.Window.set_maximize_flags.html">set_maximize_flags</a>
+  
+    <a class="method" href="method.Window.set_type.html">set_type</a>
+  
+    <a class="method" href="method.Window.set_unmaximize_flags.html">set_unmaximize_flags</a>
+  
+    <a class="method" href="method.Window.show_in_window_list.html">show_in_window_list</a>
+  
+    <a class="method" href="method.Window.showing_on_its_workspace.html">showing_on_its_workspace</a>
+  
+    <a class="method" href="method.Window.stage_to_protocol_rect.html">stage_to_protocol_rect</a>
+  
+    <a class="method" href="method.Window.stick.html">stick</a>
+  
+    <a class="method" href="method.Window.uninhibit_mapped.html">uninhibit_mapped</a>
+  
+    <a class="method" href="method.Window.unmake_above.html">unmake_above</a>
+  
+    <a class="method" href="method.Window.unmake_fullscreen.html">unmake_fullscreen</a>
+  
+    <a class="method" href="method.Window.unmaximize.html">unmaximize</a>
+  
+    <a class="method" href="method.Window.unminimize.html">unminimize</a>
+  
+    <a class="method" href="method.Window.unset_demands_attention.html">unset_demands_attention</a>
+  
+    <a class="method" href="method.Window.unstick.html">unstick</a>
+  
+    <a class="method" href="method.Window.x11_get_group.html">x11_get_group</a>
+  
+  </div>
+</div>
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Meta</a><span class="sep"></span><a href="class.Window.html">Window</a><span class="sep"></span>get_stable_sequence</h1>
+  </header>
+
+  <section>
+    <div class="docblock">
+      <p></p>
+    </div>
+
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/src/meta/window.h#L310">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="n">guint32</span>
+<span class="n">meta_window_get_stable_sequence</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">MetaWindow</span><span class="o">*</span><span class="w"> </span><span class="n">window</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/src/core/window.c#L6746">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>The stable sequence number is a monotonicially increasing
+unique integer assigned to each <code>MetaWindow</code> upon&nbsp;creation.</p>
+<p>This number can be useful for sorting windows in a stable&nbsp;fashion.</p>
+      </div>
+
+      <div class="docblock">
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    
+
+    
+    <div class="return-value toggle-wrapper">
+      <h4 id="return-value">
+        Return value
+        <a href="#return-value" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <div class="returns">
+          <div class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>guint32</code></p>
+            <p>Internal sequence number for this&nbsp;window.</p>
+          </div>
+          <div>
+            <table>
+            
+            
+            
+            
+            
+            
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

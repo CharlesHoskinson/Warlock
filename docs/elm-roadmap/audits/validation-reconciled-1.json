@@ -1,0 +1,33 @@
+{
+  "observedUTC": "2026-10-03T15:45:22.890115+00:00",
+  "scope": "Planning format, traceability and links; no implementation/native/GPU acceptance",
+  "requirements": 216,
+  "scenarios": 308,
+  "capabilities": 15,
+  "localLinksChecked": 270,
+  "registrySHA256": "caff7b206582e4966315af5bcaf6031441b73e0bb7bac7a6f642745a8d2c0050",
+  "errors": [
+    "ELM-REV-022 EARS pattern mismatch: IF preview copy volume, acquire-fence wait or cross-GPU transfer exceeds its frozen budget, THEN preview qualification SHALL reject that import route and preserve a qualified native route or an explicit unavailable state."
+  ],
+  "openspec": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@fission-ai/openspec@1.14.0",
+      "--",
+      "openspec",
+      "validate",
+      "elm-desktop-pivot",
+      "--type",
+      "change",
+      "--strict",
+      "--json",
+      "--no-interactive"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"elm-desktop-pivot\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 67\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"/home/hoskinson/omarchy-windows-parity\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  "passed": false
+}

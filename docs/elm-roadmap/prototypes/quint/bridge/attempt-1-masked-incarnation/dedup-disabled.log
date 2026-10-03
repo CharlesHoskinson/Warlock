@@ -1,0 +1,18 @@
+Running as unit: qa-harness-b551872e427a467aa7427a01c171bb37.scope; invocation ID: 4b9b72f2ddae406f8203f996e64c7a61
+
+  bridge
+    1) duplicateCommitTest failed after 1 test(s)
+
+  1 failed
+
+  1) duplicateCommitTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/dedup-disabled.qnt:73:92
+        73:   run duplicateCommitTest = init.then(request(1)).then(commit).then(request(1)).then(all { assert(s.status == "Refused" and s.effects == 1), noop })
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=duplicateCommitTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 dedup-disabled.qnt
+error: Tests failed

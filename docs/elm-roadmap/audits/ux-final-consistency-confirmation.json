@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "reviewerSpecialty": "Desktop consistency and usability evaluation",
+  "reviewedAtUtc": "2026-10-03T15:58:03.737307+00:00",
+  "verdict": "confirmed",
+  "meaning": "All five original consistency findings are resolved in the planning contracts; empirical usability and implementation acceptance remain pending.",
+  "requirementsSha256": "c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146",
+  "requirementCount": 242,
+  "scenarioCount": 417,
+  "interactionSha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4",
+  "originalReviewSha256": "3fa050c6222a4f38225c6f261498807dcca36e8686f4d7247393421607501668",
+  "originalRequirementsSha256": "04fee8c928a929915f676baae39730754786fca921c7673a3d8cbd5e395d20fe",
+  "dispositions": [
+    {
+      "findingId": "UX-CONS-001",
+      "status": "confirmed-resolved-in-plan",
+      "requirements": [
+        "ELM-UI-002",
+        "ELM-UI-003",
+        "ELM-UI-004"
+      ],
+      "rationale": "INTERACTION.md now fixes primary taskbar decision table, application-pin versus always-on-top, cross-workspace navigation without implicit transfer, committed MRU and modal-family switcher scope. Named positive/refusal, zero/one/group and candidate-lifetime scenarios cover the original counterexamples.",
+      "requirementRowsSha256": "43b58b1153f5db649d1089f457d6a29262f79ece3e9eaadbbdb9b5c250d53969"
+    },
+    {
+      "findingId": "UX-CONS-002",
+      "status": "confirmed-resolved-in-plan",
+      "requirements": [
+        "ELM-UI-007",
+        "ELM-UI-010",
+        "ELM-UI-015"
+      ],
+      "rationale": "Shared correlated action states and recovery are explicit. Pending thresholds must be numeric and frozen before qualification; Unknown requires reconciliation rather than replay; accessible status does not steal focus and repeated receipts do not duplicate announcements.",
+      "requirementRowsSha256": "3e600a710b01c5ec45882612f9675b441eca929d4800d118e18fe586c4c65d69"
+    },
+    {
+      "findingId": "UX-CONS-003",
+      "status": "confirmed-resolved-in-plan",
+      "requirements": [
+        "ELM-UI-019"
+      ],
+      "rationale": "Hot-unplug requires visible/reachable shell controls and recovery, displaced popup dismissal or rehosting, workspace preservation and no old-generation effects, including no-output then return.",
+      "requirementRowsSha256": "ecf87866bf0dcc3dc420735c37980e416ea0dfd622a02a246c1826398e433685"
+    },
+    {
+      "findingId": "UX-CONS-004",
+      "status": "confirmed-resolved-in-plan",
+      "requirements": [
+        "ELM-UI-020"
+      ],
+      "rationale": "First enablement requires optional accessible guidance, preserved preferences, explicit shortcut-conflict choice, rediscoverable help and offline recovery independent of the failed host.",
+      "requirementRowsSha256": "589729f6d18fdc2388aa406fbff355a76c00315ffbedb40175f5e13c3d1927c8"
+    },
+    {
+      "findingId": "UX-CONS-005",
+      "status": "confirmed-resolved-in-plan",
+      "requirements": [
+        "ELM-UI-021"
+      ],
+      "rationale": "A P0 frozen usability protocol now specifies participant profiles, task set, assistance and measurable outcome thresholds. Failed and unobserved required outcomes block acceptance; retesting preserves original failures and protocol changes.",
+      "requirementRowsSha256": "cb1dcbd52db5a8c96aa05beb398e18ed8071f4283ce334453d2ccaa1cb0db2c5"
+    }
+  ],
+  "remainingFindings": [],
+  "implementationAcceptance": "pending",
+  "limitations": [
+    "Planning-only confirmation; native GUI and participant sessions were not executed.",
+    "Numeric feedback and usability thresholds must be frozen in P0 and then observed; this confirmation does not supply measured thresholds.",
+    "Any later requirement registry generation has a new full hash; confirmation of unchanged UX rows can be checked using the recorded per-finding row hashes."
+  ]
+}

@@ -1,0 +1,18 @@
+Running as unit: qa-harness-f750d857ee694516a67f6b4642a98d03.scope; invocation ID: f5a32df5b43d425e96abce12db29e60c
+
+  bridge
+    1) nativeEpochChangedTest failed after 1 test(s)
+
+  1 failed
+
+  1) nativeEpochChangedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/ignore-epoch.qnt:69:97
+        69:   run nativeEpochChangedTest = init.then(request(1)).then(advanceEpoch).then(commit).then(all { assert(s.status == "Refused" and s.effects == 0), noop })
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=nativeEpochChangedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ignore-epoch.qnt
+error: Tests failed

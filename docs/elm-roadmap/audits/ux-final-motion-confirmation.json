@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "verdict": "confirmed",
+  "scope": "Motion, perceived performance and visual feedback requirements only; implementation/native acceptance remain pending.",
+  "reviewedRequirementsSha256": "c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146",
+  "requirementCount": 242,
+  "initialReviewRetained": "ux-final-motion.json",
+  "dispositions": [
+    {
+      "finding": "UX-MOTION-001",
+      "status": "confirmed-corrected",
+      "requirements": [
+        "ELM-UI-015",
+        "ELM-UI-016"
+      ],
+      "basis": "Bounded accessible pending/reconciling status and native success correlation; distinct visual/accessibility preview states; feedback threshold blocks qualification when missing."
+    },
+    {
+      "finding": "UX-MOTION-002",
+      "status": "confirmed-corrected",
+      "requirements": [
+        "ELM-UI-018"
+      ],
+      "basis": "Mid-flight settling preserves deadline/focus and one proxy retirement; overlay fixtures include switcher/Task View/snap; disabling does not replay completed motion."
+    },
+    {
+      "finding": "UX-MOTION-003",
+      "status": "confirmed-corrected",
+      "requirements": [
+        "ELM-UI-017"
+      ],
+      "basis": "Frozen quiescence stops recurring work while preserving authorized retention/control/cleanup; reopen validates generation; soak qualifies power/resources."
+    }
+  ],
+  "additionalDocumentHashes": {
+    "INTERACTION.md": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4"
+  },
+  "implementationTested": false,
+  "previousConfirmationRetained": "ux-final-motion-confirmation-237.json",
+  "latestScopeCheck": {
+    "unchangedMotionRows": [
+      "ELM-UI-015",
+      "ELM-UI-016",
+      "ELM-UI-017",
+      "ELM-UI-018"
+    ],
+    "reviewedAdditionalChanges": [
+      "ELM-TEA-001",
+      "ELM-TEA-002",
+      "ELM-TEA-003",
+      "ELM-TEA-004",
+      "ELM-TEA-005",
+      "ELM-UI-002",
+      "ELM-UI-010",
+      "ELM-UI-012"
+    ],
+    "result": "No regression in this motion/feedback review scope. TEA-004 demand-driven subscriptions preserve ordered control/revocation; partial navigation uses current eligible fallback, notification interruption is policy-conditioned, and invalidated IME composition commits zero times."
+  }
+}

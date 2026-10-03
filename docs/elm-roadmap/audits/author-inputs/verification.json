@@ -1,0 +1,534 @@
+[
+  {
+    "id": "ELM-QA-001",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The verification owner SHALL retain hash-bound original source inventories, proof packets, failures, scenario identities and deadlines unchanged and create reviewed derivatives for new evidence.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Compare archived SHA-256 manifests before and after; derivative manifest links every ancestor.",
+    "legacyEvidence": "provenance/snapshot.jsonl; docs/HANDOFF.md",
+    "task": "Freeze inherited evidence and derivative lineage.",
+    "scenarios": [
+      {
+        "name": "qa-001",
+        "given": "an archived failure",
+        "when": "a derivative is created",
+        "then": "the ancestor hash and failed verdict remain intact"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-002",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The verification owner SHALL map all original 38 restore-baseline, 34 fault/recovery and 52 drag/resize/reload cases to fresh Elm acceptance scenarios without removing cases or extending deadlines.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Identity-set comparison is exactly 38/34/52; each original time origin and assertion remains linked.",
+    "legacyEvidence": "docs/HANDOFF.md; docs/elm-roadmap/BASELINE.md",
+    "task": "Recover exact campaign manifests and record one-to-one mappings.",
+    "scenarios": [
+      {
+        "name": "qa-002",
+        "given": "the original inventories",
+        "when": "Elm scenarios are indexed",
+        "then": "every original identity and deadline has a mapped scenario"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-003",
+    "capability": "elm-verification",
+    "pattern": "event-driven",
+    "ears": "WHEN fault/recovery case 34 is executed, the protected runner SHALL enforce its original frozen deadline and time origin independently of campaign completion.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Timestamped case-34 observations and runner timeout show the original bound; a deliberately late completion fails.",
+    "legacyEvidence": "docs/HANDOFF.md; new case-34 deadline derivative",
+    "task": "Extract the original case-34 bound and add a late-completion negative fixture.",
+    "scenarios": [
+      {
+        "name": "qa-003",
+        "given": "the frozen case-34 contract",
+        "when": "completion arrives after its deadline",
+        "then": "the case fails despite later successful cleanup"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-004",
+    "capability": "elm-verification",
+    "pattern": "event-driven",
+    "ears": "WHEN a Quint campaign is reported, the formal verifier SHALL explicitly select every claimed scenario by exact name and retain selected names, execution results, seed and tool/model hashes.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Requested and executed name sets match; non-Test names are executed; invariant traces are reported separately.",
+    "legacyEvidence": "docs/HANDOFF.md: restore45/producer14 selector correction",
+    "task": "Generate exact-name selectors and reconcile per-scenario execution.",
+    "scenarios": [
+      {
+        "name": "qa-004",
+        "given": "a model containing non-Test scenario names",
+        "when": "the named campaign runs",
+        "then": "no skipped name is counted as executed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-005",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The verification ledger SHALL distinguish formal, CPU, replay, fuzz, native, hardware and accessibility evidence and block substitution between these acceptance levels.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Ledger validation rejects a native gate backed only by CPU or model results.",
+    "legacyEvidence": "docs/HANDOFF.md; new evidence-level schema",
+    "task": "Define typed evidence levels and enforce gate-specific verifier rules.",
+    "scenarios": [
+      {
+        "name": "qa-005",
+        "given": "a CPU-only passing report",
+        "when": "native acceptance is evaluated",
+        "then": "the native gate remains open"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-006",
+    "capability": "elm-verification",
+    "pattern": "event-driven",
+    "ears": "WHEN an Elm reducer changes, the policy verifier SHALL compare deterministic replay against frozen ordered native observations including identities, receipts and expected effects.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Replay diff includes desired/pending/acknowledged state and emitted intent sequence with minimized counterexamples.",
+    "legacyEvidence": "docs/research/elm-pivot/README.md; new replay corpus",
+    "task": "Build reducer replay oracle with frozen observation adapters.",
+    "scenarios": [
+      {
+        "name": "qa-006",
+        "given": "a retained native trace",
+        "when": "the updated reducer replays it",
+        "then": "state and intents satisfy the mapped oracle"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-007",
+    "capability": "elm-verification",
+    "pattern": "event-driven",
+    "ears": "WHEN foreign protocol input is malformed, stale, duplicated or out of order, the native authority SHALL reject unsafe effects and the verifier SHALL retain a reproducible fault trace.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Seeded property/fuzz runs exercise schema bounds, generations, revisions and epochs; native commit logs show rejection.",
+    "legacyEvidence": "docs/HANDOFF.md; new protocol fuzz corpus",
+    "task": "Fuzz decoders and native commit boundaries with shrinking and durable seeds.",
+    "scenarios": [
+      {
+        "name": "qa-007",
+        "given": "a superseded window incarnation",
+        "when": "a delayed mutation is delivered",
+        "then": "no replacement window receives the effect"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-008",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The formal verifier SHALL cover focus, modal families, pin/maximize, capture leases, cancellation, retirement and output generations with invariants and named transition scenarios.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Model-to-requirement coverage report plus exact named results and independent invariant traces.",
+    "legacyEvidence": "docs/HANDOFF.md: 503 named scenarios across 39 models",
+    "task": "Preserve inherited model coverage and add Elm protocol transition models.",
+    "scenarios": [
+      {
+        "name": "qa-008",
+        "given": "a cancelled capture generation",
+        "when": "a stale retirement arrives",
+        "then": "the active generation retains its live lease"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-009",
+    "capability": "elm-verification",
+    "pattern": "event-driven",
+    "ears": "WHEN a native QA campaign starts, the protected launcher SHALL verify a live parent Wayland socket, a private UID-owned nonsymlink 0700 runtime directory and a dedicated QA scope with inherited core limit 1.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Preflight receipts include socket connection, lstat/UID/mode and scope/core-limit checks; bad fixtures fail before launch.",
+    "legacyEvidence": "docs/crash-noise/HANDOFF-codex-window-qa.md; docs/HANDOFF.md",
+    "task": "Carry protected qa_run.py preflight into every reviewed runner.",
+    "scenarios": [
+      {
+        "name": "qa-009",
+        "given": "an invalid runtime directory",
+        "when": "the campaign is requested",
+        "then": "launch is refused before any client starts"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-010",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The QA owner SHALL serialize native GUI campaigns, disable Xwayland unless X11 is under test, prohibit DRM fallback and preserve all five crash-handoff protections.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Serialized launch ledger and environment/config receipts prove nesting, X11 scope and protected settings.",
+    "legacyEvidence": "docs/crash-noise/HANDOFF-codex-window-qa.md",
+    "task": "Review launch/teardown contracts and install a campaign exclusion guard.",
+    "scenarios": [
+      {
+        "name": "qa-010",
+        "given": "a live campaign owns the QA lease",
+        "when": "another campaign requests launch",
+        "then": "it cannot start concurrently"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-011",
+    "capability": "elm-verification",
+    "pattern": "event-driven",
+    "ears": "WHEN QA teardown begins, the runner SHALL stop owned clients and helpers, verify empty clients and unload modules before stopping nested compositor and private bus.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Ordered teardown receipts include normal exit status, helper ownership and module/client inventories.",
+    "legacyEvidence": "docs/HANDOFF.md; docs/crash-noise/HANDOFF-codex-window-qa.md",
+    "task": "Implement ordered closure receipts and negative abnormal-exit fixtures.",
+    "scenarios": [
+      {
+        "name": "qa-011",
+        "given": "owned helpers and loaded modules",
+        "when": "teardown begins",
+        "then": "client/helper closure precedes compositor termination"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-012",
+    "capability": "elm-verification",
+    "pattern": "unwanted",
+    "ears": "IF a process disappears without a recorded exit status, THEN the verifier SHALL mark process closure unproven rather than infer normal exit.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Killed helper fixture records abnormal status or unknown closure and fails the normal-exit gate.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Track wait status and retirement receipts for all process groups.",
+    "scenarios": [
+      {
+        "name": "qa-012",
+        "given": "a helper missing from process enumeration",
+        "when": "closure is assessed",
+        "then": "normal exit is not accepted without its status"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-013",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The QA runner SHALL preserve user drafts and the main compositor session during research and acceptance campaigns.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Before/after main-session identity and user-window inventory; no close/restart command targets user processes.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Add protected target ownership checks and session preservation assertions.",
+    "scenarios": [
+      {
+        "name": "qa-013",
+        "given": "a user draft remains open",
+        "when": "isolated QA completes",
+        "then": "its window and compositor lifetime are preserved"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-014",
+    "capability": "elm-verification",
+    "pattern": "event-driven",
+    "ears": "WHEN a gate verdict is recorded, the verifier SHALL bind it to source/tool hashes, command, environment, ABI pair, deadlines, observations, closure receipts and reviewer disposition.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Receipt-schema validator rejects missing tuple, time origin, exit evidence or verdict provenance.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md; new gate receipt schema",
+    "task": "Publish immutable per-run gate receipts with bounded claim scopes.",
+    "scenarios": [
+      {
+        "name": "qa-014",
+        "given": "a passing report lacking its ABI pair",
+        "when": "release qualification evaluates it",
+        "then": "the gate remains unaccepted"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-015",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The release verifier SHALL qualify all mandatory gates against one coherent frozen source/runtime/ABI tuple and retain every failed attempt and rerun.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Combined regression manifest references matching tuple hashes for all native gates and immutable rerun ancestry.",
+    "legacyEvidence": "docs/HANDOFF.md; new combined regression ledger",
+    "task": "Run coherent release regression after component qualification.",
+    "scenarios": [
+      {
+        "name": "qa-015",
+        "given": "individually passing reports from incompatible pairs",
+        "when": "the release ledger is built",
+        "then": "the mixed tuple cannot qualify"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-016",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The planning verifier SHALL map every requirement to an OpenSpec scenario, phase, actionable task, owner and concrete verifier and retain audit findings with final dispositions.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Registry/traceability/task scenario cross-check plus audit records including severity, correction and disposition.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md; new audit ledger",
+    "task": "Validate complete traceability and reconcile independent audits.",
+    "scenarios": [
+      {
+        "name": "qa-016",
+        "given": "a requirement without a task",
+        "when": "planning validation runs",
+        "then": "the missing link blocks plan acceptance"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-017",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The application verifier SHALL exercise representative native applications including maximized Brave, modal drafts and Files against visible order, hit order, focus, pin, minimize and restore assertions.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Application fixture matrix records versions, actions, native observations and failures; bounded stack proof remains separately scoped.",
+    "legacyEvidence": "docs/HANDOFF.md; new Elm application fixture matrix",
+    "task": "Define and execute real application compatibility scenarios.",
+    "scenarios": [
+      {
+        "name": "qa-017",
+        "given": "maximized Brave overlaps a draft",
+        "when": "another visible window is clicked",
+        "then": "painted order, hit target and focused identity agree"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-018",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The native verifier SHALL qualify actual changed, unchanged, cancelled and stale popup/input routes before the fixed two-process, three-slot, twelve-helper reliability campaign.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Route receipts precede unchanged fixed-campaign inventory; original helper/worker/receipt/cursor bounds remain enforced.",
+    "legacyEvidence": "window-integration-qa/pin-private-qs-native-v1/; docs/HANDOFF.md",
+    "task": "Finish real private-Quickshell source closure and carry routes to Elm host.",
+    "scenarios": [
+      {
+        "name": "qa-018",
+        "given": "a stale popup transaction",
+        "when": "its receipt arrives",
+        "then": "no stale focus effect occurs and the route is recorded"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-019",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The accessibility verifier SHALL qualify keyboard-only operation, focus announcements, audible and braille output, IME composition and reduced motion on the selected native host.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "AT/IME device and version matrix with observed announcements, braille output, composition/cancellation and motion traces.",
+    "legacyEvidence": "docs/HANDOFF.md; new selected-host accessibility coverage",
+    "task": "Create accessible-name/focus/IME fixtures and conduct actual assistive-technology sessions.",
+    "scenarios": [
+      {
+        "name": "qa-019",
+        "given": "an active IME composition and screen reader",
+        "when": "a popup opens and is cancelled",
+        "then": "composition and announced focus remain correct"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-020",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The hardware verifier SHALL qualify scale, rotation, hotplug, output transfer and high-refresh motion on actual supported displays using native presentation feedback.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Hardware/display metadata, presentation timestamps and output-generation fault receipts; simulated outputs are separately labeled.",
+    "legacyEvidence": "docs/HANDOFF.md; new physical-display coverage",
+    "task": "Run serial physical multi-display and cadence qualification.",
+    "scenarios": [
+      {
+        "name": "qa-020",
+        "given": "different output scales",
+        "when": "a preview transfers during motion",
+        "then": "pixels, hit coordinates and generations match the destination"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-021",
+    "capability": "elm-performance",
+    "pattern": "ubiquitous",
+    "ears": "The performance owner SHALL freeze measured current-shell workload baselines and numeric absolute and regression budgets before host selection or release evaluation.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Versioned budgets.json contains measured baseline, units, workload, hardware and approved thresholds; missing values block evaluation.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md: Performance qualification",
+    "task": "Measure current shell and obtain reviewed budget sheet before candidate comparison.",
+    "scenarios": [
+      {
+        "name": "qa-021",
+        "given": "a budget lacks a measured baseline",
+        "when": "host selection is evaluated",
+        "then": "selection is blocked"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-022",
+    "capability": "elm-performance",
+    "pattern": "ubiquitous",
+    "ears": "The performance verifier SHALL compare host candidates and the current shell using identical workloads and report p50, p95, p99, sample counts, cold/warm state and instrumentation overhead.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Raw samples and reproducible aggregation for startup, input-to-present, switcher, previews and capture-to-first-frame.",
+    "legacyEvidence": "docs/research/elm-pivot/README.md; new host benchmark packet",
+    "task": "Build paired workload measurement and distribution reporting.",
+    "scenarios": [
+      {
+        "name": "qa-022",
+        "given": "the same hardware and workload",
+        "when": "two hosts are measured",
+        "then": "comparable distribution data and overhead are retained"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-023",
+    "capability": "elm-performance",
+    "pattern": "ubiquitous",
+    "ears": "The performance verifier SHALL measure CPU, wakeups, resident/private memory, resource growth, uploads and missed frames across the complete host process group including renderer children and helpers.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Whole-tree samples and long-running soak receipts compare all metrics with frozen budgets and expose resource bounds.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md; new whole-tree performance coverage",
+    "task": "Instrument process-group accounting and bounded-resource soak.",
+    "scenarios": [
+      {
+        "name": "qa-023",
+        "given": "renderer children allocate preview buffers",
+        "when": "a soak completes",
+        "then": "their memory and resource growth are included"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-024",
+    "capability": "elm-performance",
+    "pattern": "optional",
+    "ears": "WHERE GPU acceleration or a WebGPU renderer is proposed, the graphics verifier SHALL record the actual adapter, driver, backend, device capabilities and accelerated execution on the selected host and display.",
+    "phase": "P1",
+    "priority": "conditional",
+    "verification": "Pinned-host runtime adapter/backend reports, real GPU render and readback plus native presentation on the actual display; API availability or hardware inventory alone cannot qualify.",
+    "legacyEvidence": "new selected-host GPU/WebGPU qualification",
+    "task": "Pin host/build/driver versions; probe nonsoftware adapter/backend and demonstrate rendering, readback and display presentation.",
+    "scenarios": [
+      {
+        "name": "qa-024",
+        "given": "a host exposes WebGPU",
+        "when": "a preview workload runs",
+        "then": "the actual hardware adapter and executed backend are evidenced"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-025",
+    "capability": "elm-performance",
+    "pattern": "complex",
+    "ears": "WHERE a GPU renderer is selected, IF device loss or allocation failure occurs, THEN the native host SHALL cancel invalid work, retire owned resources and reconcile state without presenting stale frames.",
+    "phase": "P4",
+    "priority": "conditional",
+    "verification": "Injected device-loss/allocation faults record lease cancellation, retirement, recovery, readback correctness and visible-frame identity on the actual display.",
+    "legacyEvidence": "new GPU device-loss fault corpus",
+    "task": "Add device-loss and allocation fault tests to native capture/motion qualification.",
+    "scenarios": [
+      {
+        "name": "qa-025",
+        "given": "live GPU frame leases",
+        "when": "the device is lost",
+        "then": "invalid frames retire and recovery uses reconciled native truth"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-026",
+    "capability": "elm-performance",
+    "pattern": "unwanted",
+    "ears": "IF a proposed GPU path uses a software adapter or CPU fallback, THEN the qualification report SHALL label that execution as software and exclude it from GPU acceptance.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Forced software backend fixture records backend change and rejects accelerated verdict despite API success.",
+    "legacyEvidence": "new GPU/software backend classification",
+    "task": "Separate accelerated and software results with backend-verdict checks.",
+    "scenarios": [
+      {
+        "name": "qa-026",
+        "given": "software fallback after initialization",
+        "when": "performance is reported",
+        "then": "the software run cannot claim GPU qualification"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-027",
+    "capability": "elm-verification",
+    "pattern": "optional",
+    "ears": "WHERE compositor replacement is proposed, the feasibility verifier SHALL require isolated native Wayland/Xwayland application, input, output, capture, IME and accessibility evidence before a recorded go decision.",
+    "phase": "P7",
+    "priority": "conditional",
+    "verification": "Go/no-go packet maps representative compatibility fixtures, failures, costs and scope owner approval.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md: P7; new compositor feasibility coverage",
+    "task": "Specify optional compositor matrix and evidence-driven go/no-go gate.",
+    "scenarios": [
+      {
+        "name": "qa-027",
+        "given": "an optional substrate prototype",
+        "when": "feasibility is reviewed",
+        "then": "unsupported mandatory protocols and failed app cases remain explicit"
+      }
+    ]
+  },
+  {
+    "id": "ELM-QA-028",
+    "capability": "elm-verification",
+    "pattern": "optional",
+    "ears": "WHERE compositor implementation is authorized, the release verifier SHALL require equivalent mandatory shell parity and complete new native compatibility gates before that compositor replaces Hyprland.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "New tuple has full protocol/application/seat/output/security/recovery ledger and original parity mappings.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md: P8; new replacement release coverage",
+    "task": "Extend release gates to the new compositor without inheriting Hyprland-only passes.",
+    "scenarios": [
+      {
+        "name": "qa-028",
+        "given": "a replacement compositor has model passes",
+        "when": "replacement release is evaluated",
+        "then": "native compatibility gates remain required"
+      }
+    ]
+  }
+]

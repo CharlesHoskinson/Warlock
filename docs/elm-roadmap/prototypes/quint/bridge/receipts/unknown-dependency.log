@@ -1,0 +1,18 @@
+Running as unit: qa-harness-a2cfbba7f76940119939d2b6de2051e3.scope; invocation ID: 7262488be9aa49678377a63ec0ac3480
+
+  bridge
+    1) unknownDependencyTest failed after 1 test(s)
+
+  1 failed
+
+  1) unknownDependencyTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/unknown-dependency.qnt:77:101
+        77:   run unknownDependencyTest = init.then(prerequisite("Unknown")).then(dispatchDependent).then(all { assert(s.dependentEffects == 0), noop })
+                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=unknownDependencyTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unknown-dependency.qnt
+error: Tests failed

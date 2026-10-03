@@ -1,0 +1,173 @@
+[
+  {
+    "id": "ELM-GNO-001",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL record a precedence and eligibility table covering ordinary, maximized, pinned, fullscreen, transient, popup, shell and inactive-workspace surfaces before native layering acceptance.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: their precedence and eligibility are explicitly recorded. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "docs/elm-roadmap/contributions/gnome-layering.md",
+    "task": "Freeze the Windows product scene-policy table.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-001",
+        "given": "a pinned maximized window and fullscreen peer",
+        "when": "the scene-policy table is reviewed",
+        "then": "their precedence and eligibility are explicitly recorded"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-002",
+    "capability": "elm-layering",
+    "pattern": "state-driven",
+    "ears": "WHILE an application window is minimized or belongs to an inactive workspace on an output, the Elm desktop SHALL exclude that source window from ordinary paint and hit candidates on that output regardless of convenience visibility or fullscreen-permission flags.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: neither list contains the source window. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "docs/elm-roadmap/contributions/gnome-layering.md: user-supplied Heroic counterexample",
+    "task": "Implement a shared native scene-eligibility predicate.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-002",
+        "given": "Heroic on inactive win-minimized with hidden=false, visible=true, acceptsInput=true and allowedOverFullscreen=true",
+        "when": "paint and hit candidates are enumerated",
+        "then": "neither list contains the source window"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-003",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL determine native scene eligibility before applying layer or fullscreen precedence.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: the permission does not restore the excluded window. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "docs/elm-roadmap/reference/mutter/src__core__window.c",
+    "task": "Order eligibility filtering before stack sorting.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-003",
+        "given": "an ineligible window permitted above fullscreen",
+        "when": "a fullscreen scene is solved",
+        "then": "the permission does not restore the excluded window"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-004",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL preserve eligible child-above-owner constraints across native layer changes without promoting unrelated ordinary members of the application group.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: the child remains above its owner without promoting the peer. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "docs/elm-roadmap/reference/mutter/src__core__stack.c",
+    "task": "Implement and replay transient constraint chains.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-004",
+        "given": "an owner, child dialog and unrelated group peer",
+        "when": "the owner becomes pinned",
+        "then": "the child remains above its owner without promoting the peer"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-005",
+    "capability": "elm-layering",
+    "pattern": "unwanted",
+    "ears": "IF native family constraints are cyclic or inconsistent, the Elm desktop SHALL refuse the affected scene transaction without publishing a partially solved paint or hit order.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: no partial scene is published and the refusal is recorded. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "new coverage: cyclic family scene transaction fixtures",
+    "task": "Add invalid-family transaction refusal.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-005",
+        "given": "a cyclic transient fixture",
+        "when": "the solver attempts a scene commit",
+        "then": "no partial scene is published and the refusal is recorded"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-006",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL derive ordinary native paint order and pointer hit order from the same committed scene revision, with explicit native input-region and modal-redirection exceptions.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: the visible top eligible surface receives input unless a recorded native exception applies. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "implementation/maximized-stack-v2/native-stack-smoke-1791036734961323596.json",
+    "task": "Add overlapping-window pixel and input receipt tests.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-006",
+        "given": "overlapping eligible opaque windows",
+        "when": "a visible overlap point is clicked",
+        "then": "the visible top eligible surface receives input unless a recorded native exception applies"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-007",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "WHEN a pinned window is maximized or restored, the Elm desktop SHALL preserve its pin policy and eligible transient-family precedence until an acknowledged unpin operation changes that policy.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: pin state persists and its dialog remains above it. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "docs/HANDOFF.md; docs/elm-roadmap/reference/mutter/src__core__window.c",
+    "task": "Validate pin-maximize-restore as a Windows policy difference.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-007",
+        "given": "a pinned owner with an eligible dialog",
+        "when": "the owner maximizes then restores",
+        "then": "pin state persists and its dialog remains above it"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-008",
+    "capability": "elm-layering",
+    "pattern": "state-driven",
+    "ears": "WHILE a minimized or inactive application retains an animation or preview resource, the Elm desktop SHALL expose that resource only as a noninteractive visual object and retire it through native lifetime authority.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: the source receives no input and native retirement is evidenced. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "docs/elm-roadmap/reference/mutter/src__compositor__meta-window-actor.c",
+    "task": "Separate transition visual ownership from application hit eligibility.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-008",
+        "given": "a minimized window with a retained frame",
+        "when": "the frame is displayed then retired",
+        "then": "the source receives no input and native retirement is evidenced"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GNO-009",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "WHEN workspace visibility changes between intent validation and native effect commit, the Elm desktop SHALL revalidate the target scene eligibility before committing focus or pointer-target effects.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Frozen scene/model trace plus native paint and input receipts proving: the stale target receives no effect and reconciliation is recorded. Retain scenario identity and source/ABI hashes.",
+    "legacyEvidence": "new coverage: workspace generation race native fixtures",
+    "task": "Add a workspace-change effect-boundary race campaign.",
+    "scenarios": [
+      {
+        "name": "gnome-layering-009",
+        "given": "an eligible target and prepared focus intent",
+        "when": "its special workspace closes before commit",
+        "then": "the stale target receives no effect and reconciliation is recorded"
+      }
+    ]
+  }
+]

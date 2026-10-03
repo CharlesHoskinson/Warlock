@@ -1,0 +1,697 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Meta.MonitorManager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Meta-51"/>
+  
+
+  
+  <meta property="og:title" content="Meta.MonitorManager"/>
+  <meta property="og:description" content="Reference for Meta.MonitorManager"/>
+  <meta name="twitter:title" content="Meta.MonitorManager"/>
+  <meta name="twitter:description" content="Reference for Meta.MonitorManager"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Meta" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Meta</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.MonitorManager.html#description">MonitorManager</a>
+  </div>
+</div>
+
+
+  
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.MonitorManager.can_switch_config.html">can_switch_config</a>
+  
+    <a class="method" href="method.MonitorManager.get_backend.html">get_backend</a>
+  
+    <a class="method" href="method.MonitorManager.get_display_configuration_timeout.html">get_display_configuration_timeout</a>
+  
+    <a class="method" href="method.MonitorManager.get_is_builtin_display_on.html">get_is_builtin_display_on</a>
+  
+    <a class="method" href="method.MonitorManager.get_logical_monitors.html">get_logical_monitors</a>
+  
+    <a class="method" href="method.MonitorManager.get_monitor_for_connector.html">get_monitor_for_connector</a>
+  
+    <a class="method" href="method.MonitorManager.get_monitors.html">get_monitors</a>
+  
+    <a class="method" href="method.MonitorManager.get_panel_orientation_managed.html">get_panel_orientation_managed</a>
+  
+    <a class="method" href="method.MonitorManager.get_switch_config.html">get_switch_config</a>
+  
+    <a class="method" href="method.MonitorManager.switch_config.html">switch_config</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.MonitorManager.backend.html">backend</a>
+  
+    <a class="property" href="property.MonitorManager.has-builtin-panel.html">has-builtin-panel</a>
+  
+    <a class="property" href="property.MonitorManager.night-light-supported.html">night-light-supported</a>
+  
+    <a class="property" href="property.MonitorManager.panel-orientation-managed.html">panel-orientation-managed</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.MonitorManager.confirm-display-change.html">confirm-display-change</a>
+  
+    <a class="signal" href="signal.MonitorManager.monitor-privacy-screen-changed.html">monitor-privacy-screen-changed</a>
+  
+    <a class="signal" href="signal.MonitorManager.monitors-changed.html">monitors-changed</a>
+  
+    <a class="signal" href="signal.MonitorManager.monitors-changed-internal.html">monitors-changed-internal</a>
+  
+    <a class="signal" href="signal.MonitorManager.monitors-changing.html">monitors-changing</a>
+  
+    <a class="signal" href="signal.MonitorManager.power-save-mode-changed.html">power-save-mode-changed</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Meta</a><span class="sep" role="presentation"></span>MonitorManager</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/src/backends/meta-monitor-manager.c#L27">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class Meta.MonitorManager : GObject.Object
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>A manager for multiple&nbsp;monitors</p>
+<p><code>MetaMonitorManager</code> is an abstract class which contains methods to handle
+multiple monitors (both <code>MetaMonitor</code> and <code>MetaLogicalMonitor</code>) and <span class="caps">GPU</span>&#8217;s
+(<code>MetaGpu</code>). Its functions include reading and/or changing the current
+configuration and available&nbsp;capabiliies.</p>
+<p>The <code>MetaMonitorManager</code> also provides the &#8220;org.gnome.Mutter.DisplayConfig&#8221;
+DBus service, so apps like <span class="caps">GNOME</span> Settings can use this&nbsp;functionality.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Meta.MonitorManager">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="146pt" height="116pt"
+ viewBox="0.00 0.00 146.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="MetaMonitorManager">
+<path fill="none" stroke="black" d="M126.25,-36C126.25,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 126.25,0 126.25,0 132.25,0 138.25,-6 138.25,-12 138.25,-12 138.25,-24 138.25,-24 138.25,-30 132.25,-36 126.25,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-11.82" font-family="Times,serif" font-size="14.00">MetaMonitorManager</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M88,-108C88,-108 50.25,-108 50.25,-108 44.25,-108 38.25,-102 38.25,-96 38.25,-96 38.25,-84 38.25,-84 38.25,-78 44.25,-72 50.25,-72 50.25,-72 88,-72 88,-72 94,-72 100,-78 100,-84 100,-84 100,-96 100,-96 100,-102 94,-108 88,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-83.83" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge1" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M69.12,-71.7C69.12,-60.85 69.12,-46.92 69.12,-36.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.can_switch_config.html">meta_monitor_manager_can_switch_config</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_backend.html">meta_monitor_manager_get_backend</a></h6>
+          <div class="docblock">
+            <p>Returns the backend who own this monitor manager&nbsp;instance.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_display_configuration_timeout.html">meta_monitor_manager_get_display_configuration_timeout</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_is_builtin_display_on.html">meta_monitor_manager_get_is_builtin_display_on</a></h6>
+          <div class="docblock">
+            <p>Returns whether the built-in display (i.e. a laptop panel) is turned&nbsp;on.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_logical_monitors.html">meta_monitor_manager_get_logical_monitors</a></h6>
+          <div class="docblock">
+            <p>Returns the list of <code>MetaLogicalMonitor</code>s. See also
+<code>meta_monitor_manager_get_num_logical_monitors()</code> if you only need the size of
+the&nbsp;list.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_monitor_for_connector.html">meta_monitor_manager_get_monitor_for_connector</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_monitors.html">meta_monitor_manager_get_monitors</a></h6>
+          <div class="docblock">
+            <p>Returns the list of <code>MetaMonitor</code>s. See also
+<code>meta_monitor_manager_get_logical_monitors()</code> for a list of
+<code>MetaLogicalMonitor</code>s.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_panel_orientation_managed.html">meta_monitor_manager_get_panel_orientation_managed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.get_switch_config.html">meta_monitor_manager_get_switch_config</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.MonitorManager.switch_config.html">meta_monitor_manager_switch_config</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.MonitorManager.backend.html">Meta.MonitorManager:backend</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.MonitorManager.has-builtin-panel.html">Meta.MonitorManager:has-builtin-panel</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.MonitorManager.night-light-supported.html">Meta.MonitorManager:night-light-supported</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.MonitorManager.panel-orientation-managed.html">Meta.MonitorManager:panel-orientation-managed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.MonitorManager.confirm-display-change.html">Meta.MonitorManager::confirm-display-change</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.MonitorManager.monitor-privacy-screen-changed.html">Meta.MonitorManager::monitor-privacy-screen-changed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.MonitorManager.monitors-changed.html">Meta.MonitorManager::monitors-changed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.MonitorManager.monitors-changed-internal.html">Meta.MonitorManager::monitors-changed-internal</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.MonitorManager.monitors-changing.html">Meta.MonitorManager::monitors-changing</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.MonitorManager.power-save-mode-changed.html">Meta.MonitorManager::power-save-mode-changed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct MetaMonitorManagerClass {
+  /* no available fields */
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

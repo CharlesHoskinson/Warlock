@@ -1,0 +1,96 @@
+{
+  "observedUTC": "2026-10-03T15:59:21.994579+00:00",
+  "scope": "Headless compiled Elm reducer only; no host, subscriptions, native effects or GPU qualification",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "--version"
+      ],
+      "exitCode": 0,
+      "stdout": "execution-0.stdout",
+      "stderr": "execution-0.stderr"
+    },
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--output=main.js"
+      ],
+      "exitCode": 0,
+      "stdout": "execution-1.stdout",
+      "stderr": "execution-1.stderr"
+    },
+    {
+      "command": [
+        "node",
+        "run.cjs"
+      ],
+      "exitCode": 0,
+      "stdout": "execution-2.stdout",
+      "stderr": "execution-2.stderr"
+    }
+  ],
+  "passed": true,
+  "files": [
+    {
+      "path": "src/Main.elm",
+      "sha256": "b95c1fbbeccbd0d4b577dfb725465259a60d7d14c3b7d9a2e8be82fb0d9314f3"
+    },
+    {
+      "path": "elm.json",
+      "sha256": "0124265f817da883c626dc7478c488ef45570a020eeabb85de450cc8135706ae"
+    },
+    {
+      "path": "run.cjs",
+      "sha256": "0386b92f3d1b47e927e0c8846fd801eaae6e38e9d608e832d9b9c4651b542263"
+    },
+    {
+      "path": "main.js",
+      "sha256": "c33b16a9d1bcd4fc579f4cf034463b1bc8e8ce1788085ffcc51a95f63bfe5c28"
+    },
+    {
+      "path": "results.json",
+      "sha256": "ae94982dd8813f0add597421dec713945d3fa277e2534d4187108ed118c6e917"
+    },
+    {
+      "path": "run_proof.py",
+      "sha256": "8aeb476cb3cdc8f1b5ce55eda1ad6b6f3a0c8e1f896b534301ce434341d9feec"
+    },
+    {
+      "path": "execution-0.stdout",
+      "sha256": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4"
+    },
+    {
+      "path": "execution-0.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-1.stdout",
+      "sha256": "306bee34875d7f26ffd09a7053cc2ff109355ebb37a714c1a167201722dd579a"
+    },
+    {
+      "path": "execution-1.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "execution-2.stdout",
+      "sha256": "ae94982dd8813f0add597421dec713945d3fa277e2534d4187108ed118c6e917"
+    },
+    {
+      "path": "execution-2.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "scope": "Headless pure reducer; not native host/effect acceptance",
+  "results": [
+    {
+      "name": "restore-before-focus",
+      "passed": true
+    },
+    {
+      "name": "matching-commit-releases-focus",
+      "passed": true
+    },
+    {
+      "name": "lossless-stale-identity-refused",
+      "passed": true
+    },
+    {
+      "name": "unknown-observes-without-replay",
+      "passed": true
+    },
+    {
+      "name": "refused-does-not-focus",
+      "passed": true
+    },
+    {
+      "name": "late-after-cancel-does-not-focus",
+      "passed": true
+    },
+    {
+      "name": "fresh-observation-releases-focus",
+      "passed": true
+    },
+    {
+      "name": "pure-replay",
+      "passed": true
+    }
+  ]
+}

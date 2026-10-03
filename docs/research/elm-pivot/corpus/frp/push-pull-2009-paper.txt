@@ -1,0 +1,872 @@
+                             Push-Pull Functional Reactive Programming
+
+                                                                                  Conal Elliott
+                                                                                    LambdaPix
+                                                                                  conal@conal.net
+
+
+
+
+Abstract                                                                                    more composable than their finite counterparts, because they can be
+Functional reactive programming (FRP) has simple and powerful                               scaled arbitrarily in time or space, before being clipped to a finite
+semantics, but has resisted efficient implementation. In particular,                        time/space window.
+most past implementations have used demand-driven sampling,                                     While FRP has simple, pure, and composable semantics, its ef-
+which accommodates FRP’s continuous time semantics and fits                                 ficient implementation has not been so simple. In particular, past
+well with the nature of functional programming. Consequently,                               implementations have used demand-driven (pull) sampling of reac-
+values are wastefully recomputed even when inputs don’t change,                             tive behaviors, in contrast to the data-driven (push) evaluation typ-
+and reaction latency can be as high as the sampling period.                                 ically used for reactive systems, such as GUIs. There are at least
+    This paper presents a way to implement FRP that combines                                two strong reasons for choosing pull over push for FRP:
+data- and demand-driven evaluation, in which values are recom-                               • Behaviors may change continuously, so the usual tactic of idling
+puted only when necessary, and reactions are nearly instantaneous.                             until the next input change (and then computing consequences)
+The implementation is rooted in a new simple formulation of FRP                                doesn’t apply.
+and its semantics and so is easy to understand and reason about.
+                                                                                             • Pull-based evaluation fits well with the common functional
+    On the road to a new implementation, we’ll meet some old
+friends (monoids, functors, applicative functors, monads, mor-                                 programming style of recursive traversal with parameters (time,
+phisms, and improving values) and make some new friends (func-                                 in this case). Push-based evaluation appears at first to be an
+tional future values, reactive normal form, and concurrent “unam-                              inherently imperative technique.
+biguous choice”).                                                                               Although some values change continuously, others change only
+                                                                                            at discrete moments (say in response to a button click or an object
+Categories and Subject Descriptors D.1.1 [Software]: Program-
+                                                                                            collision), while still others have periods of continuous change al-
+ming Techniques—Applicative (Functional) Programming
+                                                                                            ternating with constancy. In all but the purely continuous case, pull-
+General Terms Design, Theory                                                                based implementations waste considerable resources, recomputing
+                                                                                            values even when they don’t change. In those situations, push-based
+Keywords Functional reactive programming, semantics, concur-                                implementations can operate much more efficiently, focusing com-
+rency, data-driven, demand-driven                                                           putation on updating values that actually change.
+                                                                                                Another serious problem with the pull approach is that it im-
+1.     Introduction                                                                         poses significant latency. The delay between the occurrence of an
+                                                                                            event and the visible result of its reaction, can be as much as the
+Functional reactive programming (FRP) supports elegant program-
+                                                                                            polling period (and is on average half that period). In contrast, since
+ming of dynamic and reactive systems by providing first-class,
+                                                                                            push-based implementations are driven by event occurrences, reac-
+composable abstractions for behaviors (time-varying values) and
+                                                                                            tions are visible nearly instantaneously.
+events (streams of timed values) (Elliott 1996; Elliott and Hudak
+                                                                                                Is it possible to combine the benefits of push-based evaluation—
+1997; Nilsson et al. 2002).1 Behaviors can change continuously
+                                                                                            efficiency and minimal latency—with those of pull-based evaluation—
+(not just frequently), with discretization introduced automatically
+                                                                                            simplicity of functional implementation and applicability to tem-
+during rendering. The choice of continuous time makes programs
+                                                                                            poral continuity? This paper demonstrates that it is indeed possible
+simpler and more composable than the customary (for computer
+                                                                                            to get the best of both worlds, combining data- and demand-driven
+programming) choice of discrete time, just as is the case with
+                                                                                            evaluation in a simple and natural way, with values being recom-
+continuous space for modeled imagery. For instance, vector and
+                                                                                            puted only, and immediately, when their discrete or continuous
+3D graphics representations are inherently scalable (resolution-
+                                                                                            inputs change. The implementation is rooted in a new simple for-
+independent), as compared to bitmaps (which are spatially dis-
+                                                                                            mulation of FRP and its semantics and so is relatively easy to
+crete). Similarly, temporally or spatially infinite representations are
+                                                                                            understand and reason about.
+1 See http://haskell.org/haskellwiki/FRP for more references.                                   This paper describes the following contributions:
+                                                                                             • A new notion of reactive values, which is a purely discrete sim-
+                                                                                               plification of FRP’s reactive behaviors (no continuous change).
+                                                                                               Reactive values have simple and precise denotational semantics
+Permission to make digital or hard copies of all or part of this work for personal or          (given below) and an efficient, data-driven implementation.
+classroom use is granted without fee provided that copies are not made or distributed        • Decomposing the notion of reactive behaviors into independent
+for profit or commercial advantage and that copies bear this notice and the full citation
+on the first page. To copy otherwise, to republish, to post on servers or to redistribute      discrete and continuous components, namely reactive values
+to lists, requires prior specific permission and/or a fee.                                     and (non-reactive) time functions. Recomposing these two no-
+Haskell’09, September 3, 2009, Edinburgh, Scotland, UK.                                        tions and their implementations results in FRP’s reactive behav-
+Copyright c 2009 ACM 978-1-60558-508-6/09/09. . . $5.00                                        iors, but now with an implementation that combines push-based
+     and pull-based evaluation. Reactive values have a lazy, purely      2.1     Behaviors
+     data representation, and so are cached automatically. This com-     Perhaps the simplest behavior is time, corresponding to the identity
+     posite representation captures a new reactive normal form for       function.
+     FRP.
+ • Modernizing the FRP interface, by restructuring much of its                 time :: Behavior Time
+     functionality and semantic definitions around standard type               at time = id
+     classes, as monoids, functors, applicative functors, and monads.
+     This restructuring makes the interface more familiar, reduces       2.1.1     Functor
+     the new interfaces to learn, and provides new expressive power.     Functions can be “lifted” to apply to behaviors. Classic FRP
+     In most cases, the semantics are defined simply by choosing the     (CFRP) had a family of lifting combinators:
+     semantic functions to be type class morphisms (Elliott 2009).
+                                                                               lift n :: (a1 → ... → an → b)
+ • A notion of composable future values, which embody pure
+                                                                                      → (Behavior a1 → ... → Behavior an → Behavior b)
+     values that (in many cases) cannot yet be known, and is at
+     the heart of this new formulation of reactivity. Nearly all the     Lifting is pointwise and synchronous: the value of lift n f b1 ...bn at
+     functionality of future values is provided via standard type        time t is the result of applying f to the values of the bi at (exactly)
+     classes, with semantics defined as class morphisms.                 t.2
+ • Use of Warren Burton’s “improving values” as a richly struc-                at (lift n f b1 ... bn ) = λt → f (b1 ‘at‘ t) ... (bn ‘at‘ t)
+     tured (non-flat) type for time. Events, reactive values, reactive
+     behaviors, and future values can all be parameterized with re-        The Functor instance for behaviors captures unary lifting, with
+     spect to time, which can be any ordered type. Using improving       fmap replacing FRP’s lift 1 .
+     values (over an arbitrary ordered type) for time, the semantics           fmap :: (a → b) → Behavior a → Behavior b
+     of future values becomes a practical implementation.
+                                                                         The semantic domain, functions, also form a functor:
+ • A new technique for semantically determinate concurrency via
+     an “unambiguous choice” operator, and use of this technique to            instance Functor ((→) t) where
+     provide a new implementation of improving values.                           fmap f g = f ◦ g
+                                                                         The meaning of fmap on behaviors mimics fmap on the meaning
+                                                                         of behaviors, following the principle of denotational design using
+2.    Functional reactive programming                                    type class morphisms (Elliott 2009) and captured in the following
+                                                                         “semantic instance”:3
+FRP revolves around two composable abstractions: events and be-
+haviors (Elliott and Hudak 1997). Because FRP is a functional                  instancesem Functor Behavior where
+paradigm, events and behaviors describe things that exist, rather                at (fmap f b) = fmap f (at b)
+than actions that have happened or are to happen (i.e., what is, not                           = f ◦ at b
+what does). Semantically, a (reactive) behavior is just a function of
+time, while an event (sometimes called an “event source”) is a list      In other words, at is a natural transformation, or “functor mor-
+of time/value pairs (“occurrences”).                                     phism” (for consistency with related terminology), from Behavior
+                                                                         to B (Mac Lane 1998).
+     type Ba = T → a                                                        The semantic instances in this paper (“instancesem ...”)
+                                                                         specify the semantics, not implementation, of type class instances.
+     type Ea = [(T
+                 b , a)] -- for non-decreasing times
+                                                                         2.1.2     Applicative functor
+Historically in FRP, T = R. As we’ll see, however, the semantics
+of behaviors assumes only that T is totally ordered. The type T b of     Applicative functors (AFs) are a recently explored notion (McBride
+occurrence times is T extended with −∞ and ∞.                            and Paterson 2008). The AF interface has two methods, pure and
+    Orginally, FRP had a notion of events as a single value with         (<∗>), which correspond to the monadic operations return and
+time, which led to a somewhat awkward programming style with             ap. Applicative functors are more structured (less populated) than
+explicit temporal loops (tail recursions). The sequence-of-pairs for-    functors and less structured (more populated) than monads.
+mulation above, described in, e.g., (Elliott 1998a; Peterson et al.            infixl 4 <∗>
+1999) and assumed throughout this paper, hides discrete time it-               class Functor f ⇒ Applicative f where
+eration, just as behaviors hide continuous “iteration”, resulting in             pure :: a → f a
+simpler, more declarative specifications.                                        (<∗>) :: f (a → b) → f a → f b
+    The semantic domains Ba and Ea correspond to the behavior
+and event data types, via semantic functions:                            These two combinators suffice to define liftA2 , liftA3 , etc.
+                                                                               infixl 4 <$>
+     at :: Behavior a → Ba                                                     (<$>) :: Functor f ⇒ (a → b) → f a → f b
+     occs :: Event a  → Ea                                                     f <$> a = fmap f a
+   This section focuses on the semantic models underlying FRP,                 liftA2 :: Applicative f ⇒ (a → b → c)
+which are intended for ease of understanding and formal reasoning.                    →f a→f b→f c
+The insights gained are used in later sections to derive new correct           liftA2 f a b = f <$> a <∗> b
+and efficient representations.
+   FRP’s Behavior and Event types came with a collection of              2 Haskellism: The at function here is being used in both prefix form (on the
+
+combinators, many of which are instances of standard type classes.       left) and infix form (on the right).
+To dress FRP in modern attire, this paper uses standard classes and      3 Haskellism: Function application has higher (stronger) precedence than
+methods wherever possible in place of names from “Classic FRP”.          infix operators, so, e.g., f ◦ at b ≡ f ◦ (at b).
+      liftA3 :: Applicative f ⇒ (a → b → c → d )                            2.2.2     Functor
+             →f a→f b→f c→f d                                               Mapping a function over an event affects just the occurrence values,
+      liftA3 f a b c = liftA2 f a b <∗> c                                   leaving the times unchanged.
+       ...
+                                                                                  instancesem Functor Event where
+The left-associative (<$>) is just a synonym for fmap—a stylistic                   occs (fmap f e) = map (λ(t̂a , a) → (t̂a , f a)) (occs e)
+preference—while liftA2 , liftA3 , etc. are generalizations of the
+monadic combinators liftM2 , liftM3 , etc.
+    CFRP’s lift 0 corresponds to pure, while lift 2 , lift 3 , etc corre-   2.2.3     Monad
+spond to liftA2 , liftA3 , etc., so the Applicative instance replaces       Previous FRP definitions and implementations did not have a
+all of the lift n .4                                                        monad instance for events. Such an instance, however, is very
+    Functions, and hence B, form an applicative functor, where              useful for dynamically-generated events. For example, consider
+pure and (<∗>) correspond to the classic K and S combinators:               playing Asteroids and tracking collisions. Each collision can break
+                                                                            an asteroid into more of them (or none), each of which has to be
+      instance Applicative ((→) t) where
+                                                                            tracked for more collisions. Another example is a chat room hav-
+        pure    = const                                                     ing an enter event whose occurrences contain new events like speak
+        f <∗> g = λt → (f t) (g t)                                          (for the newly entered user).
+    The Applicative instance for functions leads to the semantics               A unit event has one occurrence, which is always available:
+of the Behavior instance of Applicative. As with Functor above,                   occs (return a) = [(−∞, a)]
+the semantic function distributes over the class methods, i.e., at is
+an applicative functor morphism:                                                  The join operation collapses an event-valued event ee:
+      instancesem Applicative Behavior where                                      joinE :: Event (Event a) → Event a
+        at (pure a) = pure a                                                Each occurrence of ee delivers a new event, all of which get merged
+                        = const a                                           together into a single event.
+        at (bf <∗> bx ) = at bf <∗> at bx                                         occs (joinE ee) =
+                        = λt → (bf ‘at‘ t) (bx ‘at‘ t)                              foldr merge [ ] ◦ map delayOccs ◦ occs ee
+So, given a function-valued behavior bf and an argument-valued                                  b , Event a) → Ea
+                                                                                  delayOccs :: (T
+behavior bx , to sample bf <∗> bx at time t, sample bf and bx at t
+and apply one result to the other.                                                delayOccs (t̂e , e) = [(t̂e ‘max ‘ t̂a , a) | (t̂a , a) ← occs e ]
+   This (<∗>) operator is the heart of FRP’s concurrency model,             Here, delayOccs ensures that inner events cannot occur before they
+which is semantically determinate, synchronous, and continuous.             are generated.
+                                                                                  This definition of occs hides a subtle problem. If ee has in-
+2.1.3     Monad
+                                                                            finitely many non-empty occurrences, then the foldr , if taken as
+Although Behavior is a semantic Monad as well, the implemen-                an implementation, would have to compare the first occurrences of
+tation developed in Section 5 does not implement Monad .                    infinitely many events to see which is the earliest. However, none
+                                                                            of the occurrences in delayOccs (t̂e , e) can occur before time
+2.2     Events
+                                                                            t̂e , and the delayOccs applications are given monotonically non-
+Like behaviors, much of the event functionality can be packaged             decreasing times. So, only a finite prefix of the events generated
+via standard type classes.                                                  from ee need be compared at a time.
+2.2.1     Monoid                                                            2.2.4     Applicative functor
+Classic FRP had a never-occurring event and an operator to merge            Any monad can be made into an applicative functor, by defining
+two events. Together, these combinators form a monoid, so ∅ and             pure = return and (<∗>) = ap. However, this Applicative
+(⊕) (Haskell’s mempty and mappend) replace the CFRP names                   instance is unlikely to be very useful for Event. Consider function-
+neverE and (.|.).                                                           and argument-valued events ef and ex . The event ef <∗> ex would
+   The event monoid differs from the list monoid in that (⊕) must           be equivalent to ef ‘ap‘ ex and hence to
+preserve temporal monotonicity.
+                                                                                     >= λf → ex >
+                                                                                  ef >          >= λx → return (f x )
+      instancesem Monoid (Event a) where
+        occs ∅          = []                                                or more simply
+        occs (e ⊕ e 0 ) = occs e ‘merge‘ occs e 0                                    >= λf → fmap f ex
+                                                                                  ef >
+Temporal merging ensures a time-ordered result and has a left-bias          The resulting event contains occurrences for every pair of occur-
+in the case of simultaneity:                                                rences of ef and ex , i.e., (t̂f ‘max ‘ t̂x , f x ) for each (t̂f , f ) ∈
+      merge :: Ea → Ea → Ea                                                 occs ef and (t̂x , x ) ∈ occs ex . If there are m occurrences of ef
+                                                                            and n occurrences of ex , then there will m × n occurrences of
+      []               ‘merge‘ vs = vs
+                                                                            ef <∗> ex . Since the maximum of two values is one value or the
+      us               ‘merge‘ [ ] = us
+                                                                            other, there are at most m + n distinct values of t̂f ‘max ‘ t̂x . Hence
+      ((t̂a , a) : ps) ‘merge‘ ((t̂b , b) : qs)                             the m × n occurrences must all occur in at most m + n tempo-
+          | t̂a ⩽ t̂b    = (t̂a , a) : (ps ‘merge‘ ((t̂b , b) : qs))        rally distinct clusters. Alternatively, one could give a relative time
+          | otherwise = (t̂b , b) : (((t̂a , a) : ps) ‘merge‘ qs)           semantics by using (+) in place of max .
+Note that occurrence lists may be infinitely long.                          2.3     Combining behaviors and events
+4 The formulation of the lift
+                           n in terms of operators corresponding to pure
+                                                                            FRP’s basic tool for introducing reactivity combines a behavior and
+and (<∗>) was noted in (Elliott 1998a, Section 2.1).                        and an event.
+     switcher :: Behavior a → Event (Behavior a)                           4.     Future values
+              → Behavior a                                                 A FRP event occurrence is a “future value”, or simply “future”,
+The behavior b0 ‘switcher ‘ e acts like b0 initially. Each occurrence      i.e., a value and an associated time. To simplify the semantics and
+of the behavior-valued event e provides a new phase of behavior            implementation of events, and to provide an abstraction that may
+to switch to. Because the phases themselves (such as b0 ) may be           have uses outside of FRP, let’s now focus on futures. Semantically,
+reactive, each transition may cause the switcher behavior to lose                type Fa = (T  b , a)
+interest in some events and start reacting to others.
+    The semantics of b0 ‘switcher ‘ e chooses and samples either b0              force :: Future a → Fa
+or the last behavior from e before a given sample time t:                     Like events and behaviors, much of the interface for future
+                                                                           values is packaged as instances of standard type classes. Moreover,
+     (b0 ‘switcher ‘ e) ‘at‘ t = last (b0 : before (occs e) t) ‘at‘ t      as with behaviors, the semantics of these instances are defined as
+     before :: Ea → T → [a ]                                               type class morphisms. The process of exploring these morphisms
+     before os t = [a | (t̂a , a) ← os, t̂a < t ]                          reveals requirements for the algebraic structure of T
+                                                                                                                               b.
+
+   As a simple and common specialization, stepper produces                 4.1     Functor
+piecewise-constant behaviors (step functions, semantically):               The semantic domain for futures, partially applied pairing, is a
+     stepper :: a → Event a → Behavior a                                   functor:
+     a0 ‘stepper ‘ e = pure a0 ‘switcher ‘ (pure <$> e)                          instance Functor ((, ) t)
+Hence                                                                              where fmap h (t, a) = (t, h a)
+                                                                           The semantic function, force, is a functor morphism:
+     at (a0 ‘stepper ‘ e) = λt → last (a0 : before (occs e) t)
+                                                                                 instancesem Functor Future where
+    There is a subtle point in the semantics of switcher . Consider                force (fmap h u) = fmap h (force u)
+b0 ‘stepper ‘ (e ⊕ e 0 ). If each of e and e 0 has one or more occur-                               = (t, h a) where (t, a) = force u
+rences at the same time, then the ones from e 0 will get reacted to
+last, and so will appear in the switcher behavior.                         Thus, mapping a function over a future gives a future with the same
+                                                                           time but a transformed value.
+
+3.    From semantics to implementation                                     4.2     Applicative functor
+
+Now we have a simple and precise semantics for FRP. Refining it            For applicative functors, the semantic instance (pairing) requires an
+into an efficient implementation requires addressing the following         additional constraint:
+obstacles.                                                                       instance Monoid t ⇒ Applicative ((, ) t) where
+                                                                                   pure a                 = (∅, a)
+ • Event merging compares the two occurrence times in order to
+                                                                                   (t, f ) <∗> (t 0 , x ) = (t ⊕ t 0 , f x )
+     choose the earlier one: t̂a ⩽ t̂b . If time is a flat domain (e.g.,
+     Double), this comparison could not take place until both t̂a and         When t is a future time, what meanings do we want for ∅
+     t̂b are known. Since occurrence times are not generally known         and (⊕)? Two future values can be combined only when both are
+     until they actually arrive, this comparison would hold up event       known, so (⊕) = max . Since ∅ is an identity for (⊕), it follows
+     reaction until the later of the two occurrences, at which time        that ∅ = minBound , and so T  b must have a least element.
+     the earlier one would be responded to. For timely response, the          The Applicative semantics for futures follow from these con-
+     comparison must complete when the earlier occurrence hap-             siderations choosing force to be an applicative functor morphism:
+     pens.5 Section 4 isolates this problem in an abstraction called             instancesem Applicative Future where
+     “future values”, clarifying exactly what properties are required
+                                                                                   force (pure a)        = pure a
+     for a type of future times. Section 9 presents a more sophisti-
+                                                                                                         = (∅, a)
+     cated representation of time that satisfies these properties and
+     solves the comparison problem. This representation adds an ex-                                      = (minBound , a)
+     pense of its own, which is removed in Sections 10 and 11.                     force (uf <∗> ux ) = force uf <∗> force ux
+ • For each sample time t, the semantics of switcher involves                                            = (t̂f , f ) <∗> (t̂x , x )
+     searching through an event for the last occurrence before t. This                                   = (t̂f ⊕ t̂x , f x )
+     search becomes costlier as t increases, wasting time as well                                        = (t̂f ‘max ‘ t̂x , f x )
+     as space. While the semantics allow random time sampling, in                    where
+     practice, behaviors are sampled with monotonically increasing                      (t̂f , f ) = force uf
+     times. Section 8 introduces and exploits monotonic time for                        (t̂x , x ) = force ux
+     efficient sampling.
+                                                                               Now, of course these definitions of (⊕) and ∅ do not hold
+ • The semantics of behaviors as functions leads to an obvious, but
+                                                                           for arbitrary t, even for ordered types, so the pairing instance of
+     inefficient, demand-driven evaluation strategy, as in past FRP        Applicative provides helpful clues about the algebraic structure of
+     implementations. Section 5 introduces a reactive normal form          future times.
+     for behaviors that reveals the reactive structure as a sequence           Alternatively, for a relative-time semantics, use the Sum monoid
+     of simple non-reactive phases. Wherever phases are constant (a        in place of the Max monoid.
+     common case), sampling happens only once per phase, driven
+     by occurrences of relevant events, as shown in Section 8.             4.3     Monad
+                                                                           Given the Monoid constraint on t, the type constructor ((, ) t) is
+5 Mike Sperber noted this issue and addressed it as well (Sperber 2001).   equivalent to the more familiar writer monad.
+      instance Monoid t ⇒ Monad ((, ) t) where                                 instance Monoid (Future a) where
+        return a       = (∅, a)                                                  ∅ = Fut (maxBound , ⊥)
+                  >= h = (t̂a ⊕ t̂b , b)
+        (t̂a , a) >                                                                -- problematic:
+            where (t̂b , b) = h a                                                ua @(Fut (t̂a , )) ⊕ ub @(Fut (t̂b , )) =
+                                                                                   if t̂a ⩽ t̂b then ua else ub
+Taking force to be a monad morphism (Wadler 1990),
+      instancesem Monad Future where                                         This definition of (⊕) has a subtle, but important, problem.
+                                                                         Consider computing the earliest of three futures, (ua ⊕ ub ) ⊕ uc ,
+        force (return a) = return a
+                                                                         and suppose that uc is earliest, so that t̂c < t̂a ‘min‘ t̂b . No matter
+                             = (minBound , a)
+                                                                         what the representation of FTime is, the definition of (⊕) above
+        force (u >>= k ) = force u >  >= force ◦ k                       cannot produce any information about the time of ua ⊕ ub until
+                           = (t̂a ‘max ‘ t̂b , b)                        t̂a ⩽ t̂b is determined. That test will usually be unanswerable until
+          where (t̂a , a) = force u                                      the earlier of those times arrives, i.e., until t̂a ‘min‘ t̂b , which (as
+                   (t̂b , b) = force (k a)                               we’ve supposed) is after t̂c .
+                                                                             To solve this problem, change the definition of (⊕) on futures
+      Similarly, join collapses a future future into a future.           to immediately yield a time as the (lazily evaluated) min of the two
+      joinF :: Future (Future a) → Future a                              future times. Because min yields an FTime instead of a boolean,
+      force (joinF uu) = join (fmap force (force uu))                    it can produce partial information about its answer from partial
+                           = (t̂u ‘max ‘ t̂a , a)                        information about its inputs.
+         where (t̂u , u) = force uu                                              -- working definition:
+                 (t̂a , a) = force u                                           Fut (t̂a , a) ⊕ Fut (t̂b , b) =
+So, the value of the join is the value of the of the inner future, and           Fut (t̂a ‘min‘ t̂b , if t̂a ⩽ t̂b then a else b)
+the time matches the later of the outer and inner futures. (Alterna-     This new definition requires two comparison-like operations in-
+tively, the sum of the future times, in relative-time semantics.)        stead of one. It can be further improved by adding a single oper-
+                                                                         ation on future times that efficiently combines min and (⩽).
+4.4     Monoid
+A useful (⊕) for futures simply chooses the earlier one. Then, as        4.6     Future times
+an identity for (⊕), ∅ must be the future that never arrives. (So T
+                                                                  b      Each of the three required properties of FTime (listed in Sec-
+must have an upper bound.)                                               tion 4.5) can be layered onto an existing type:
+      instancesem Monoid (Future a) where                                      type FTime = Max (AddBounds (Improving Time))
+        force ∅ = (maxBound , ⊥)
+                                                                            The Max wrapper adds the required monoid instance while
+        force (ua ⊕ ub ) = if t̂a ⩽ t̂b then ua else ub                  inheriting Ord and Bounded .
+          where
+             (t̂a , ) = force ua                                               newtype Max a = Max a deriving (Eq, Ord , Bounded )
+             (t̂b , ) = force ub                                               instance (Ord a, Bounded a) ⇒ Monoid (Max a) where
+                                                                                 ∅              = Max minBound
+(This definition does not correspond to the standard monoid in-                  Max a ⊕ Max b = Max (a ‘max ‘ b)
+stance on pairs, so force is not a monoid morphism.)
+   Note that this Monoid instance (for future values) uses maxBound         The AddBounds wrapper adds new least and greatest elements,
+and min, while the Monoid instance on future times uses minBound         preserving the existing ordering.
+and max .
+                                                                               data AddBounds a =
+4.5     Implementing futures                                                     MinBound | NoBound a | MaxBound deriving Eq
+The semantics of futures can also be used as an implementation,                instance Bounded (AddBounds a) where
+if the type of future times, FTime (with meaning T
+                                                 b ), satisfies the              minBound = MinBound
+properties encountered above:                                                    maxBound = MaxBound
+
+ • Ordered and bounded with lower and upper bounds of −∞ and             For an unfortunate technical reason, AddBounds does not derive
+      ∞ (i.e., before and after all sample times), respectively.         Ord . The semantics of Haskell’s deriving clause does not guar-
+                                                                         antee that min is defined in terms of min on the component types.
+ • A monoid, in which ∅ = −∞ and (⊕) = max .                             If min is instead defined via (⩽) (as currently in GHC), then par-
+ • To be useful, the representation must reveal partial information      tial information in the type parameter a cannot get passed through
+      about times (specifically lower bounds), so that time compar-      min. For this reason, AddBounds has an explicit Ord instance,
+      isons can complete even when one of the two times is not yet       given in part in Figure 1.
+      fully known.                                                           The final wrapper, Improving, is described in Section 9. It adds
+                                                                         partial information to times and has min and (⩽) that work with
+    Assuming these three properties for FTime, the implementa-           partially known values.
+tion of futures is easy, with most of the functionality derived (using
+a GHC language extension) from the pairing instances above.
+                                                                         5.     Reactive normal form
+      newtype Future a = Fut (FTime, a)
+                                                                         FRP’s behavior and event combinators are very flexible. For in-
+        deriving (Functor , Applicative, Monad )
+                                                                         stance, in b0 ‘switcher ‘ e, the phases (b0 , ...) themselves may be
+   A Monoid instance also follows directly from the semantics in         reactive, either as made by switcher , or by fmap or (<∗>) ap-
+Section 4.4:                                                             plied to reactive behaviors. This flexibility is no trouble at all for
+      instance Ord a ⇒ Ord (AddBounds a) where                          The meaning of a reactive value is given via translation into a
+                                                                        reactive behavior, using stepper :
+        MinBound ‘min‘                 = MinBound
+                      ‘min‘ MinBound = MinBound                               rat :: Reactive a → Ba
+        NoBound a ‘min‘ NoBound b = NoBound (a ‘min‘ b)                       rat (a0 ‘Stepper ‘ e) = at (a0 ‘stepper ‘ e)
+        u             ‘min‘ MaxBound = u                                                            = λt → last (a0 : before (occs e) t)
+        MaxBound ‘min‘ v               =v                               where before is as defined in Section 2.3.
+          -- similarly for (⩽) and max                                      With the exception of time, all behavior operations in Section 2
+                                                                        (as well as others not mentioned there) produce discretely-changing
+                                                                        behaviors when given discretely-changing behaviors. Therefore, all
+          Figure 1. Ord instance for the AddBounds type                 of these operations (excluding time) have direct counterparts for
+                                                                        reactive values. In addition, reactive values form a monad.
+                                                                              stepperR :: a → Event a → Reactive a
+the function-based semantics in Section 2, but how can we find our
+                                                                              switcherR :: Reactive a → Event (Reactive a)
+way to an efficient, data-driven implementation?
+    Observed over time, a reactive behavior consists of a sequence                      → Reactive a
+of non-reactive phases, punctuated by events. Suppose behaviors               instance Functor      Reactive
+can be viewed or represented in a form that reveals this phase struc-         instance Applicative Reactive
+ture explicitly. Then monotonic behavior sampling could be imple-             instance Monad        Reactive
+mented efficiently by stepping forward through this sequence, sam-
+                                                                           The semantic function, rat, is a morphism on Functor , Applicative,
+pling each phase until the next one begins. For constant phases (a
+                                                                        and Monad :
+common case), sampling would then be driven entirely by relevant
+event occurrences.                                                            instancesem Functor Reactive where
+    Definition: A behavior-valued expression is in reactive normal              rat (fmap f b) = fmap f (rat b)
+form (RNF) if it has the form b ‘switcher ‘ e, where the lead                                    = f ◦ rat b
+behavior b is non-reactive, i.e., has no embedded switcher (or                instancesem Applicative Reactive where
+combinators defined via switcher ), and the behaviors in e are also
+                                                                                rat (pure a) = pure a
+in RNF.
+                                                                                              = const a
+    For instance, b can be built up from pure, time, fmap, and
+(<∗>). To convert arbitrary behavior expressions into RNF, one                  rat (rf <∗> rx ) = rat rf <∗> rat rx
+can provide equational rewrite rules that move switcher s out of                                 = λt → (rf ‘rat‘ t) (rx ‘rat‘ t)
+switcher heads, out of fmap, (<∗>), etc, and prove the correctness            instancesem Monad Reactive where
+of these equations from the semantics in Section 2. For example,                rat (return a) = return a
+      fmap f (b ‘switcher ‘ e) ≡ fmap f b ‘switcher ‘ fmap f e                                   = const a
+                                                                                rat (r >>= k ) = rat r >>= rat ◦ k
+The rest of this paper follows a somewhat different path, inspired
+by this rewriting idea, defining an RNF-based representation.                                  = λt → (rat ◦ k ) (rat r t) t
+                                                                                               = λt → rat (k (rat r t)) t
+5.1    Decoupling discrete and continuous change                        The join operation may be a bit easier to follow than (>
+                                                                                                                               >=).
+FRP makes a fundamental, type-level distinction between events                rat (joinR rr ) = join (fmap rat (rat r ))
+and behaviors, i.e., between discrete and continuous. Well, not                               = join (rat ◦ rat rr )
+quite. Although (reactive) behaviors are defined over continuous                              = λt → rat (rat rr t) t
+time, they are not necessarily continuous. For instance, a behavior
+that counts key-presses changes only discretely. Let’s further tease    Sampling joinR rr at time t then amounts to sampling rr at t to
+apart the discrete and continuous aspects of behaviors into two         get a reactive value r , which is itself sampled at t.
+separate types. Call the purely discrete part a “reactive value” and
+the continuous part a “time function”. FRP’s notion of reactive         5.3     Time functions
+behavior decomposes neatly into these two simpler notions.              Between event occurrences, a reactive behavior follows a non-
+    Recall from Section 1 that continuous time is one of the reasons    reactive function of time. Such a time function is most directly and
+for choosing pull-based evaluation, despite the typical inefficiency    simply represented literally as a function. However, functions are
+relative to push-based. As we will see, reactive values can be eval-    opaque at run-time, preventing optimizations. Constant functions
+uated in push style, leaving pull for time functions. Recomposing       are particularly helpful to recognize, in order to perform dynamic
+reactive values and time functions yields an RNF representation         constant propagation, as in (Elliott 1998a; Nilsson 2005). A simple
+for reactive behaviors that reveals their phase structure. The two      data type suffices for recognizing constants.
+separate evaluation strategies combine to produce an efficient and
+                                                                              data Fun t a = K a | Fun (t → a)
+simple hybrid strategy.
+                                                                        The semantics is given by a function that applies a Fun to an
+5.2    Reactive values                                                  argument. All other functionality can be neatly packaged, again, in
+A reactive value is like a reactive behavior but is restricted to       instances of standard type classes, as shown in Figure 2. There is a
+changing discretely. Its meaning is a step function, which is fully     similar instance for Arrow as well. The semantic function, apply,
+defined by its initial value and discrete changes, with each change     is a morphism with respect to each of these classes.
+defined by a time and a value. Together, these changes correspond           Other optimizations could be enabled by in a similar way. For
+exactly to a FRP event, suggesting a simple representation:             instance, generalize the K constructor to polynomials (adding a
+                                                                        Num constraint for t). Such a representation could support pre-
+      data Reactive a = a ‘Stepper ‘ Event a                            cise and efficient differentiation and integration and prediction of
+      data Fun t a = K a | Fun (t → a)                                    The Functor and Applicative instances are provided automati-
+                                                                      cally from the instances for type composition (above), given the in-
+      apply :: Fun t a → (t → a) -- semantic function                 stances for Reactive and Fun (specified in Section 5 and to be de-
+      apply (K a) = const a                                           fined in Section 7). Straightforward but tedious calculations show
+      apply (Fun f ) = f                                              that time and the Functor and Applicative instances have the se-
+      instance Functor (Fun t) where                                  mantics specified in Section 2.
+                                                                          I doubt that there is a Monad instance. While the semantic do-
+        fmap f (K a) = K (f a)
+                                                                      main B is a monad, I think its join surpasses the meanings that can
+        fmap f (Fun g) = Fun (f ◦ g)                                  be represented as reactive time functions. For purely discrete ap-
+      instance Applicative (Fun t) where                              plications, however, reactive behaviors can be replaced by reactive
+        pure           =K                                             values, including the Monad functionality.
+        K f <∗> K x    = K (f x )
+        cf <∗> cx      = Fun (apply cf <∗> apply cx )                 6.      Another angle on events
+      instance Monad (Fun t) where                                    The model of events we’ve been working with so far is time-
+        return       = pure                                           ordered lists of future values, where a future value is a time/value
+        K a >  >= h  =ha                                              pair: [(t0 , a0 ), (t1 , a1 ), ...]. If such an occurrence list is nonempty,
+        Fun f >>= h           >= apply ◦ h)
+                     = Fun (f >                                       another view on it is as a time t0 , together with a reactive value
+                                                                      having initial value a0 and event with occurrences [(t1 , a1 ), ...]. If
+                                                                      the occurrence list is empty, then we could consider it to have initial
+               Figure 2. Constant-optimized functions                 time ∞ (maxBound ), and reactive value of ⊥. Since a future value
+                                                                      is a time and value, it follows that an event (empty or nonempty)
+                                                                      has the same content as a future reactive value. This insight leads
+some synthetic events based on root-finding (e.g., some object col-   to a new representation of functional events:
+lisions). The opacity of the function arguments used with fmap and            -- for non-decreasing times
+arr would, however, limit analysis.                                         newtype Event a = Ev (Future (Reactive a))
+5.4     Composing                                                     With this representation, the semantic function on events peels off
+                                                                      one time and value at a time.
+Reactive values capture the purely discrete aspect of reactive be-
+haviors, while time functions capture the purely continuous. Com-           occs :: Event a → Ea
+bining them yields a representation for reactive behaviors.                 occs (Ev (Fut (∞,                     ))) = [ ]
+      type Behavior = Reactive ◦ Fun Time                                   occs (Ev (Fut (t̂a , a ‘Stepper ‘ e 0 ))) = (t̂a , a) : occs e 0
+
+Type composition can be defined as follows:                               Why use this representation of events instead of directly mim-
+                                                                      icking the semantic model E? The future-reactive representation
+      newtype (h ◦ g) a = O (h (g a))                                 will be convenient in defined Applicative and Monad instances
+                                                                      below. It also avoids a subtle problem similar to the issue of com-
+   Functors compose into functors, and applicative functors into      paring future times using (⩽), discussed in Section 4.5. The defini-
+applicative functors (McBride and Paterson 2008).                     tion of merge in Section 2.2.1 determines that an event has no more
+      instance (Functor h, Functor g)                                 occurrences by testing the list for emptiness. Consider filtering out
+                ⇒ Functor (h ◦ g) where                               some occurrences of an event e. Because the emptiness test yields a
+        fmap f (O hga) = O (fmap (fmap f ) hga)                       boolean value, it cannot yield partial information, and will have to
+                                                                      block until the prefiltered occurrences are known and tested. These
+      instance (Applicative h, Applicative g)                         issues are also noted in Sperber (2001).
+                ⇒ Applicative (h ◦ g) where
+        pure a           = O (pure (pure a))
+        O hgf <∗> O hgx = O (liftA2 (<∗>) hgf hgx )                   7.      Implementing operations on reactive values
+                                                                              and events
+   The semantics of behaviors combines the semantics of its two
+components.                                                           The representations of reactive values and events are now tightly
+                                                                      interrelated:
+      at :: Behavior a → Ba
+      at (O rf ) = join (fmap apply (rat rf ))                              data    Reactive a = a ‘Stepper ‘ Event a
+                 = λt → apply (rat rf t) t                                  newtype Event    a = Ev (Future (Reactive a))
+
+More explicitly,                                                      These definitions, together with Section 5, make a convenient basis
+                                                                      for implementing FRP.
+      O (f ‘Stepper ‘ e) ‘at‘ t = last (f : before (occs e) t) t
+                                                                      7.1     Reactive values
+This last form is almost identical to the semantics of switcher in
+Section 2.3.                                                          7.1.1     Functor
+   This representation of behaviors encodes reactive normal form,     As usual, fmap f applies a function f to a reactive value pointwise,
+but how expressive is it? Are all of the Behavior combinators         which is equivalent to applying f to the initial value and to each
+covered, or do some stray outside of RNF?                             occurrence value.
+   The time combinator is non-reactive, i.e., purely a function of
+time:                                                                       instance Functor Reactive where
+                                                                              fmap f (a ‘Stepper ‘ e) = f a ‘Stepper ‘ fmap f e
+      time = O (pure (Fun id ))
+7.1.2   Applicative                                                                   join <$> urr
+The Functor definition was straightforward, because the Stepper                 Choose whichever comes first:
+structure is easily preserved. Applicative is more challenging.
+                                                                                      u = ((‘switcher ‘Ev urr ) <$> ur ) ⊕ (join <$> urr )
+    instance Applicative Reactive where ...
+                                                                                Then plug this join into a standard Monad instance:
+First the easy part. A pure value becomes reactive by using it as the
+                                                                                      instance Monad Reactive where
+initial value and ∅ as the (never-occuring) change event:
+                                                                                        return = pure
+    pure a = a ‘Stepper ‘ ∅                                                             r> >= h = joinR (fmap h r )
+Consider next applying a reactive function to a reactive argument:
+                                                                                7.1.4    Reactivity
+    rf @(f ‘Stepper ‘ Ev uf ) <∗> rx @(x ‘Stepper ‘ Ev ux ) =
+       f x ‘Stepper ‘ Ev u                                                      In Section 2.3, stepper (on behaviors) is defined via switcher . For
+                                                                                reactive values, stepperR corresponds to the Stepper constructor:
+         where u = ...
+                                                                                      stepperR :: a → Event a → Reactive a
+The initial value is f x , and the change event occurs each time
+either the function or the argument changes. If the function changes                  stepperR = Stepper
+first, then (at that future time) apply a new reactive function to an           The more general switching form can be expressed in terms of
+old reactive argument:                                                          stepperR and monadic join:
+    fmap (λrf 0 → rf 0 <∗> rx ) uf                                                    switcherR :: Reactive a → Event (Reactive a)
+                                                                                                 → Reactive a
+Similarly, if the argument changes first, apply an old reactive func-
+tion and a new reactive argument:                                                     r ‘switcherR ‘ er = joinR (r ‘stepperR ‘ er )
+
+    fmap (λrx0 → rf <∗> rx0 ) ux                                                7.2     Events
+                                                   6
+Combining these two futures as alternatives:                                    7.2.1    Functor
+    u = fmap (λrf 0 → rf 0 <∗> rx ) uf ⊕                                        The Event functor is also easily defined. Since an event is a future
+        fmap (λrx0 → rf <∗> rx0 ) ux                                            reactive value, combine fmap on Future with fmap on Reactive.
+More succinctly,                                                                      instance Functor Event where
+                                                                                        fmap f (Ev u) = Ev (fmap (fmap f ) u)
+    u = ((<∗>rx ) <$> uf ) ⊕ ((rf <∗>) <$> ux )
+    A wonderful thing about this (<∗>) definition for Reactive is               7.2.2    Monad
+that it automatically reuses the previous value of the function or              Assuming a suitable join for events, the Monad instance is simple:
+argument when the argument or function changes. This caching
+property is especially handy in nested applications of (<∗>), which                   instance Monad Event where
+can arise either explicitly or through liftA2 , liftA3 , etc. Consider                  return a = Ev (return (return a))
+u = liftA2 f r s or, equivalently, u ≡ (f <$>r )<∗>s, where r and                       r> >= h = joinE (fmap h r )
+s are reactive values, with initial values r0 and s0 , respectively. The
+                                                                                This definition of return makes a regular value into an event by
+initial value u0 of u is f r0 s0 . If r changes from r0 to r1 , then the
+                                                                                making a constant reactive value (return) and wrapping it up as an
+new value of f <$>r will be f r1 , which then gets applied to s0 , i.e.,
+                                                                                always-available future value (return).
+u1 ≡ f r1 s0 . If instead s changes from s0 to s1 , then u1 ≡ f r0 s1 .
+                                                                                    The join operation collapses an event-valued event ee into an
+In this latter case, the old value f r0 of f <$> r is passed on without
+                                                                                event. Each occurrence of ee delivers a new event, all of which get
+having to be recomputed. The savings is significant for functions
+                                                                                adjusted to insure temporal monotonicity and merged together into
+that do some work based on partial applications.
+                                                                                a single event. The event ee can have infinitely many occurrences,
+7.1.3   Monad                                                                   each of which (being an event) can also have an infinite number of
+                                                                                occurrences. Thus joinE has the tricky task of merging (a repre-
+The Monad instance is perhaps most easily understood via its join:              sentation of) a sorted infinite stream of sorted infinite streams into
+    joinR :: Reactive (Reactive a) → Reactive a                                 a single sorted infinite stream. Since an event is represented as a
+                                                                                Future, the join makes essential use of the Future monad7 :
+The definition of joinR is similar to (<∗>) above:
+                                                                                      joinE :: Event (Event a) → Event a
+    joinR ((a ‘Stepper ‘ Ev ur ) ‘Stepper ‘ Ev urr ) =                                joinE (Event u) = Event (u >   >= eFuture ◦ g)
+       a ‘Stepper ‘ Ev u                                                                 where
+    where u = ...                                                                          g (e ‘Stepper ‘ ee) = e ⊕ joinE ee
+Either the inner future (ur ) or the outer future (urr ) will arrive first.                eFuture (Ev u) = u
+If the inner arrives first, switch and continue waiting for the outer:
+                                                                                7.2.3    Monoid
+    (‘switcher ‘Ev urr ) <$> ur
+                                                                                The Monoid instance relies on operations on futures:
+The (<$>) here is over futures. If instead the outer future arrives
+first, abandon the inner and get new reactive values from the outer:                  instance Ord t ⇒ Monoid (Event a) where
+                                                                                        ∅           = Ev ∅
+6 Recall from Section 4.1 that fmap f    u arrives exactly when the future u            Ev u ⊕ Ev v = Ev (u ‘merge u ‘ v )
+arrives, so the (⊕)’s choice in this case depends only on the relative timing
+of uf and ux .                                                                  7 This definition is inspired by one from Jules Bean.
+The never-occuring event happens in the never-arriving future.                a GUI toolkit’s idle event instead of a thread, which has the benefit
+   To merge two future reactive values u and v , there are again two          of working with thread-unsafe libraries.
+possibilities. If u arrives first (or simultaneously), with value a0 and
+next future u 0 , then a0 will be the initial value and u 0 ‘merge u ‘ v      9.     Improving values
+will be the next future. If v arrives first, with value b0 and next
+future v 0 , then b0 will be the initial value and u ‘merge u ‘ v 0 will be   The effectiveness of future values, as defined in Section 4, depends
+the next future.                                                              on a type wrapper Improving, which adds partial information in
+                                                                              the form of lower bounds. This information allows a time compar-
+     merge u :: Future (Reactive a) → Future (Reactive a)                     ison t̂a ⩽ t̂b to suceed when the earlier of t̂a and t̂b arrives instead
+             → Future (Reactive a)                                            of the later. It also allows t̂a ‘min‘ t̂b to start producing lower bound
+     u ‘merge u ‘ v = (inFutR (‘merge‘v ) <$> u) ⊕                            information before either of t̂a and t̂b is known precisely.
+                      (inFutR (u‘merge‘) <$> v )                                  Fortunately, exactly this notion was invented, in a more gen-
+     where                                                                    eral setting, by Warren Burton. “Improving values” (Burton 1989,
+       inFutR f (r ‘Stepper ‘ Ev u 0 ) = r ‘Stepper ‘ Ev (f u 0 )             1991) provide a high-level abstraction for parallel functional pro-
+                                                                              gramming with determinate semantics.
+                                                                                  An improving value (IV) can be represented as a list of lower
+8.    Monotonic sampling                                                      bounds, ending in the exact value. An IV representing a simple
+The semantics of a behavior is a function of time. That function              value (the exactly function used in Section 4.6), is a singleton list
+can be applied to time values in any order. Recall in the seman-              (no lower bounds). See (Burton 1991, Figure 3) for details.
+tics of switcher (Section 2.3) that sampling at a time t involves                 Of course the real value of the abstraction comes from the
+searching through an event for the last occurrence before t. The              presence of lower bounds. Sometimes those bounds come from
+more occurrences take place before t, the costlier the search. Lazy           max , but for future times, the bounds will come to be known over
+evaluation can delay computing occurrences before they’re used,               time. One possible implementation of future times would involve
+but once computed, these occurrences would remain in the events,              Concurrent Haskell channels (Peyton Jones et al. 1996).
+wasting space to hold and time to search.                                          getChanContents :: Chan a → IO [a ]
+    In practice, behaviors are rendered forward in time, and so are
+sampled with monotonically increasing times. Making this usage                The idea is to make a channel, invoke getChanContents, and wrap
+pattern explicit allows for much more efficient sampling.                     the result as an IV. Later, lower bounds and (finally) an exact value
+    First, let’s consider reactive values and events. Assume we have          are written into the channel. When a thread attempts to look beyond
+a consumer for generated values:                                              the most recent lower bound, it blocks. For this reason, this simple
+                                                                              implementation of improving values must be supplied with a steady
+     type Sink a = a → IO ()                                                  stream of lower bounds, which in the setting of FRP correspond to
+For instance, a sink may render a number to a GUI widget or                   event non-occurrences.
+an image to a display window. The functions sinkR and sinkE                       Generating and manipulating numerous lower bounds is a sig-
+consume values as generated by events and reactive values:                    nificant performance drawback in the purely functional implemen-
+                                                                              tation of IVs. A more efficient implementation, developed next,
+     sinkR :: Sink a → Reactive a → IO b                                      thus benefits FRP and other uses of IVs.
+     sinkE :: Sink a → Event    a → IO b
+The implementation is an extremely simple back-and-forth, with                10.     Improving on improving values
+sinkR rendering initial values and sinkE waiting until the next
+event occurrence.                                                             In exploring how to improve over the functional implementation of
+                                                                              improving values, let’s look at how future times are used.
+     sinkR snk (a ‘Stepper ‘ e)      = snk a       >
+                                                   > sinkE snk e
+                                                                               • Sampling a reactive value requires comparing a sample time t
+     sinkE snk (Ev (Fut (t̂r , r ))) = waitFor t̂r >
+                                                   > sinkR snk r
+                                                                                   with a future time t̂r 0 .
+   Except in the case of a predictable event (such as a timer),                • Choosing the earlier of two future values ((⊕) from Section 4),
+waitFor t̂r blocks simply in evaluating the time t̂r of a future                   uses min and (⩽) on future times.
+event occurrence. Then when evaluation of t̂r unblocks, the real
+time is (very slightly past) t̂r , so the actual waitFor need not do             Imagine that we can efficiently compare an improving value
+any additional waiting.                                                       with an arbitrary known (exact) value:8
+   A behavior contains a reactive value whose values are time
+                                                                                   compare I :: Ord a ⇒ Improving a → a → Ordering
+functions, so it can be rendered using sinkR if we can come up
+with a appropriate sink for time functions.                                   How might we use compare I to compare two future times, e.g.,
+     sinkB :: Sink a → Behavior a → IO b                                      testing t̂a ⩽ t̂b ? We could either extract the exact time from t̂a and
+     sinkB snk (O rf ) = do snkF ← newTFunSink snk                            compare it with t̂b , or extract the exact time from t̂b and compare
+                            sinkR snkF rf                                     it with t̂a . These two methods produce the same information but
+                                                                              usually not at the same time, so let’s choose the one that can answer
+   The procedure newTFunSink makes a sink that consumes suc-                  most promptly. If indeed t̂a ⩽ t̂b , then the first method will likely
+cessive time functions. For each consumed constant function K a,              succeed more promptly and otherwise the second method. The
+the value a is rendered just once (with snk ). When a non-constant            dilemma in choosing is that we have to know the answer before
+function Fun f is consumed, a thread is started that repeatedly               we can choose the best method for extracting that answer.
+samples f at the current time and renders:                                        Like many dilemmas, this one results from either/or thinking.
+     forkIO (forever (f <$> getTime >
+                                    >= snk ))                                 A third alternative is to try both methods in parallel and just use
+
+In either case, the constructed sink begins by killing the current            8 The Haskell Ordering type contains LT , EQ, and GT to represent less-
+rendering thread, if any. Many variations are possible, such as using         than, equal-to, and greater-than.
+whichever result arrives first. Assume for now the existence of an            -- An improving value. Invariant:
+“unambiguous choice” operator, unamb, that will try two methods
+                                                                              -- compare I iv w compare (exact iv )
+to solve a problem and return whichever one succeeds first. The two
+methods are required to agree when they both succeed, for semantic          data Improving a =
+determinacy. Then                                                             Imp {exact :: a, compare I :: a → Ordering }
+                                                                            exactly :: Ord a ⇒ a → Improving a
+   t̂a ⩽ t̂b = ((t̂a ‘compare I ‘ exact t̂b ) 6≡ GT ) ‘unamb‘
+                                                                            exactly a = Imp a (compare a)
+               ((t̂b ‘compare I ‘ exact t̂a ) 6≡ LT )
+                                                                            instance Eq a ⇒ Eq (Improving a) where
+   Next consider t̂a ‘min‘ t̂b . The exact value can be extracted from        Imp a ≡ Imp b = a ≡ b
+the exact values of t̂a and t̂b , or from (⩽) on IVs:
+                                                                            instance Ord a ⇒ Ord (Improving a) where
+   exact (t̂a ‘min‘ t̂b ) = exact t̂a ‘min‘ exact t̂b                         s ⩽ t = snd (s ‘minLE ‘ t)
+                          = exact (if (t̂a ⩽ t̂b ) then t̂a else t̂b )        s ‘min‘ t = fst (s ‘minLE ‘ t)
+                                                                              s ‘max ‘ t = fst (s ‘maxLE ‘ t)
+     How can we compute (t̂a ‘min‘ t̂b )‘compare I ‘t for an arbitrary
+exact value t? The answer is t̂a ‘compare I ‘ t if t̂a ⩽ t̂b , and
+                                                                              -- Efficient combination of min and (⩽)
+t̂b ‘compare I ‘ t otherwise. However, this method, by itself, misses
+                                                                            minLE :: Ord a ⇒ Improving a → Improving a
+an important opportunity. Suppose both of these tests can yield
+answers before it’s possible to know whether t̂a ⩽ t̂b . If the                      → (Improving a, Bool )
+answers agree, then we can use that answer immediately, without             Imp u uComp ‘minLE ‘ Imp v vComp =
+waiting to learn whether t̂a ⩽ t̂b .                                          (Imp uMinV wComp, uLeqV )
+     With these considerations, a new representation for IVs suggests       where
+itself. Since the only two operations we need on IVs are exact                uMinV = if uLeqV then u else v
+and compare I , use those two operations as the IV representation.               -- u ⩽ v : Try u ‘compare‘ v and v ‘compare‘ u.
+Figure 3 shows the details, with unamb and asAgree defined in                 uLeqV = (uComp v 6≡ GT ) ‘unamb‘ (vComp u 6≡ LT )
+Section 11. Combining (⩽) and min into minLE allows for a                     minComp = if uLeqV then uComp else vComp
+simple optimization of future (⊕) from Section 4.5.                              -- (u ‘min‘ v ) ‘compare‘ t: Try comparing according to
+                                                                                 -- whether u ⩽ v , or use either answer if they agree.
+11.    Unambiguous choice                                                     wComp t = minComp t ‘unamb‘
+The representation of improving values in Section 10 relies on an                            (uComp t ‘asAgree‘ vComp t)
+“unambiguous choice” operator with determinate semantics and an
+underlying concurrent implementation.                                        -- Efficient combination of max and (⩾)
+                                                                            maxLE :: Ord a ⇒ Improving a → Improving a
+     -- precondition: compatible arguments
+                                                                                      → (Improving a, Bool )
+   unamb :: a → a → a
+                                                                             -- ... similarly ...
+In order to preserve simple, determinate semantics, unamb may
+only be applied to arguments that agree where defined.
+                                                                                       Figure 3. Improved improving values
+   compatible a b = (a ≡ ⊥ ∨ b ≡ ⊥ ∨ a ≡ b)
+unamb yields the more-defined of the two arguments.
+                                                                         consuming neglible resources and generating no error. One use of
+   ∀a b.compatible a b ⇒ unamb a b = a t b                               assuming is to define asAgree, which was used in Figure 3.
+Operationally, unamb forks two threads and evaluates one argu-
+ment in each. When one thread finishes its computed value is re-         12.    Additional functionality
+turned.
+    Figure 4 shows one way to implement unamb, in terms of an            All of the usual FRP functionality can be supported, including the
+ambiguous choice operator, amb. The latter, having indeterminate         following.
+(ambiguous) semantics, is in the IO type, using race to run two
+concurrent threads. For inter-thread communication, the race func-       Integration Numeric integration requires incremental sampling
+tion uses a Concurrent Haskell MVar (Peyton Jones et al. 1996) to        for efficiency, replacing the apply interface from Section 5.3 by
+hold the computed value. Each thread tries to execute an action and      applyK from Section 8. The residual time function returned by
+write the resulting value into the shared MVar. The takeMVar op-         applyK remembers the previous sample time and value, so the next
+eration blocks until one of the threads succeeds, after which both       sampling can do a (usually) small number of integration steps. (For
+threads are killed (one perhaps redundantly).9 This unamb imple-         accuracy, it is often desirable to take more integration steps than
+mentation fails to address an important efficiency concern. When         samples.) Integration of reactive behaviors can work simply by in-
+one thread succeeds, there is no need to continue running its com-       tegrating each non-reactive phase (a time function) and accumu-
+petitor. Moreover, the competitor may have spawned many other            lating the result,
+                                                                                      R c thanks
+                                                                                              R b the Rinterval-additivity property of definite
+                                                                                                         c
+threads (due to nested unamb), all of which are contributing to-         integration ( a f ≡ a f + b f ).
+ward work that is no longer relevant.
+                                                                         Accumulation Integration is continuous accumulation on behav-
+    The assuming function makes a conditional strategy for com-
+                                                                         iors. The combinators accumE and accumR discretely accumulate
+puting a value. If the assumption is false, the conditional strat-
+                                                                         the results of event occurrences.
+egy yields ⊥ via hang, which blocks a thread indefinitely, while
+                                                                            accumR :: a → Event (a → a) → Reactive a
+9 My thanks to Spencer Janssen for help with this implementation.           accumE :: a → Event (a → a) → Event a
+       -- Unambiguous choice on compatible arguments.                13.    Related work
+    unamb :: a → a → a                                               The most closely related FRP implementation is the one underlying
+    a ‘unamb‘ b = unsafePerformIO (a ‘amb‘ b)                        the Lula system for design and control of lighting, by Mike Sper-
+                                                                     ber (2001). Like the work described above, Lula-FRP eliminated
+       -- Ambiguous choice, no precondition.                         the overhead of creating and processing the large numbers of event
+    amb :: a → a → IO a                                              non-occurrences that have been present, in various guises, in al-
+    a ‘amb‘ b = evaluate a ‘race‘ evaluate b                         most all other FRP implementations. Mike noted that the pull-based
+       -- Race two actions in separate threads.                      event interface that motivates these non-occurrences also imposes a
+    race :: IO a → IO a → IO a                                       reaction latency bounded by the polling frequency, which detracts
+    race :: IO a → IO a → IO a                                       noticeably from the user experience. To eliminate non-occurrences
+                                                                     and the resulting overhead and latency, he examined and addressed
+    a ‘race‘ b =
+                                                                     subtle issues of events and thread blocking, corresponding to the
+       do v ← newEmptyMVar                                           those discussed in Section 4.5. Mike’s solution, like the one de-
+           ta ← forkIO (a >  >= putMVar v )                          scribed in Section 10 above, involved a multi-threaded implemen-
+           tb ← forkIO (b >  >= putMVar v )                          tation. However, it did not guarantee semantic determinism, in case
+           x ← takeMVar v                                            of simultaneous or nearly-simultaneous event occurrences. The im-
+           return x                                                  plementation of event operations was rather complex, especially for
+      -- Yield a value if a condition is true.                       event merging. The supporting abstractions used above (future val-
+                                                                     ues, improving values, and unambiguous choice) seem to be helpful
+    assuming :: Bool → a → a
+                                                                     in taming that complexity. Lula-FRP’s behaviors still used a pure
+    assuming c a = if c then a else bottom                           pull interface, so the latency solution was limited to direct use of
+       -- The value of agreeing values (or bottom)                   events rather than reactive behaviors. The reactive value abstrac-
+    asAgree :: Eq a ⇒ a → a → a                                      tion used above allows behavior reactions at much lower latency
+    a ‘asAgree‘ b = assuming (a ≡ b) a                               than the sampling period. Unlike most published FRP implemen-
+                                                                     tations, Lula-FRP was implemented in a strict language (Scheme).
+      -- Never yield an answer. Identity for unamb.
+                                                                     For that reason, it explicitly managed details of laziness left implicit
+    bottom :: a                                                      in Haskell-based implementations.
+    bottom = unsafePerformIO hangIO                                      “Event-Driven FRP” (E-FRP) (Wan et al. 2002) also has similar
+      -- Block forever, cheaply                                      goals. It focused on event-driven systems, i.e., ones in which lim-
+    hangIO :: IO a                                                   ited work is done in reaction to an event, while most FRP imple-
+    hangIO = do forever (threadDelay maxBound )                      mentations repeatedly re-evaluate the whole system, whether or not
+                   return ⊥                                          there are relevant changes. Like RT-FRP (Wan et al. 2001), expres-
+                                                                     siveness is restricted in order to make guarantees about resource-
+                                                                     bounded execution. The original FRP model of continuous time is
+    Figure 4. Reference (inefficient) unamb implementation           replaced by a discrete model. Another restriction compared with
+                                                                     the semantics of the original FRP (preserved in this paper) is that
+                                                                     events are not allowed to occur simultaneously.
+Each occurrence of the event argument yields a function to be            Peterson et al. (2000) explored opportunities for parallelism in
+applied to the accumulated value.                                    implementing a variation of FRP. While the underlying semantic
+                                                                     model was not spelled out, it seems that semantic determinacy was
+    a ‘accumR ‘ e = a ‘stepper ‘ (a ‘accumE ‘ e)                     not preserved, in contrast to the semantically determinate concur-
+    a ‘accumE ‘ Ev ur = Ev (h <$> ur )                               rency used in this paper (Section 11).
+       where                                                             Nilsson (2005) presented another approach to FRP optimiza-
+         h (f ‘Stepper ‘ e 0 ) = f a ‘accumR ‘ e 0                   tion. The key idea was to recognize and efficiently handle several
+                                                                     FRP combinator patterns. In some cases, the standard Haskell type
+Filtering It’s often useful to filter event occurrences, keeping     system was inadequate to capture and exploit these patterns, but
+some occurrences and dropping others. The Event monad instance       generalized algebraic data types (GADTs) were sufficient. These
+allows a new, simple and very general definition that includes       optimizations proved worthwhile, though they did introduce signif-
+event filtering as a special case. One general filtering tool con-   icant overhead in run-time (pattern matching) and code complexity.
+sumes Maybe values, dropping each Nothing and unwrapping             In contrast, the approach described in the present paper uses very
+each Just.10                                                         simple representations and unadventurous, Hindley-Milner types.
+    joinMaybes :: MonadPlus m ⇒ m (Maybe a) → m a                    Another considerable difference is that (Nilsson 2005) uses an
+                                                                     arrow-based formulation of FRP, as in Fruit (Courtney and Elliott
+    joinMaybes = (>>=maybe mzero return)
+                                                                     2001) and Yampa (Nilsson et al. 2002). The nature of the Arrow
+The MonadPlus instance for Event uses mzero = ∅ and                  interface is problematic for the goal of minimal re-evaluation. Input
+mplus = (⊕). The more common FRP event filter has the fol-           events and behaviors get combined into a single input, which then
+lowing simple generalization:                                        changes whenever any component changes. Moreover, because the
+                                                                     implementation style was demand-driven, event latency was still
+    filterMP :: MonadPlus m ⇒ (a → Bool ) → m a → m a
+                                                                     tied to sampling rate.
+    filterMP p m = joinMaybes (liftM f m)
+                                                                         FranTk is a GUI library containing FRP concepts but mixing in
+    where                                                            some imperative semantics (Sage 2000). Its implementation was
+       f a|pa          = Just a                                      based on an experimental data-driven FRP implementation (El-
+           | otherwise = Nothing                                     liott 1998b), which was itself inspired by Pidgets++ (Scholz and
+                                                                     Bokowski 1996). Pidgets++ used functional values interactively re-
+10 My thanks to Cale Gibbard for this succinct formulation.          computed in a data-driven manner via one-way constraints. None
+of these three systems supported continuous time, nor implemented        F. Warren Burton. Encapsulating nondeterminacy in an abstract
+a pure FRP semantics.                                                       data type with deterministic semantics. Journal of Functional
+    At first blush, one might think that an imperative implementa-          Programming, 1(1):3–20, January 1991.
+tion could accomplish what we set out to do in this paper. For in-       Antony Courtney and Conal Elliott. Genuinely functional user
+stance, there could be imperative call-backs associated with meth-         interfaces. In Haskell Workshop, September 2001.
+ods that side-effect some sort of dependency graph. As far as I
+know, no such implementation has achieved (nor probably could            Conal Elliott. A brief introduction to ActiveVRML. Technical
+achieve) FRP’s (determinate) merge semantics for ordered receipt           Report MSR-TR-96-05, Microsoft Research, 1996. URL http:
+of simultaneous occurrences (which happens easily with composi-            //conal.net/papers/ActiveVRML/.
+tional events) or even nearly-simultaneous occurrences. Imperative       Conal Elliott. Functional implementations of continuous modeled
+implementations are quite distant from semantics, hence hard to            animation. In Proceedings of PLILP/ALP, 1998a.
+verify or trust. In contrast, the functional implementation in this
+paper evolves from the semantics.                                        Conal Elliott. An imperative implementation of functional reactive
+    In some formulations of FRP, simultaneous occurrences are              animation. Unpublished draft, 1998b. URL http://conal.
+eliminated or merged (Nilsson et al. 2002; Wan and Hudak 2000;             net/papers/new-fran-draft.pdf.
+Wan et al. 2001), while this paper retains such occurrences as dis-      Conal Elliott. Denotational design with type class morphisms.
+tinct. In some cases, the elimination or merging was motivated by          Technical Report 2009-01, LambdaPix, March 2009. URL
+a desire to reduce behaviors and events to a single notion. This           http://conal.net/papers/type-class-morphisms.
+desire is particularly compelling in the arrow-based FRP formu-          Conal Elliott and Paul Hudak. Functional reactive animation. In
+lations, which replace behaviors (or “signals”) and events with a          International Conference on Functional Programming, 1997.
+higher level abstraction of “signal transformers”. Although simul-
+taneity is very unlikely for (distinct) purely physical events, it can   Saunders Mac Lane. Categories for the Working Mathematician.
+easily happen with FRP’s compositional events.                             Graduate Texts in Mathematics. Springer, September 1998.
+                                                                         Conor McBride and Ross Paterson. Applicative programming with
+14.    Future work                                                         effects. Journal of Functional Programming, 18(1):1–13, 2008.
+ • Much more testing, measurement, and tuning is needed in order         Henrik Nilsson. Dynamic optimization for functional reactive pro-
+   to pragmatically and quantitatively evaluate the implementation         gramming using generalized algebraic data types. In Interna-
+   techniques described in this paper, especially the new imple-           tional conference on Functional programming, pages 54–65.
+   mentation of improving values described in Section 10. How              ACM Press, 2005.
+   well do the techniques work in a complex application?
+                                                                         Henrik Nilsson, Antony Courtney, and John Peterson. Functional
+ • Can these ideas be transplanted to arrow-based formulations             reactive programming, continued. In Haskell Workshop, pages
+   of FRP? How can changes from separately-changing inputs be              51–64. ACM Press, October 2002.
+   kept from triggering unnecessary computation, when the arrow
+                                                                         John Peterson, Paul Hudak, and Conal Elliott. Lambda in motion:
+   formulations seem to require combining all inputs into a single
+                                                                           Controlling robots with Haskell. In Practical Aspects of Declar-
+   varying value?
+                                                                           ative Languages, 1999.
+ • Explore other uses of the unambiguous choice operator defined
+                                                                         John Peterson, Valery Trifonov, and Andrei Serjantov. Parallel
+   in Section 11, and study its performance, including the kinds
+                                                                           functional reactive programming. Lecture Notes in Computer
+   of parallel search algorithms for which improving values were
+                                                                           Science, 1753, 2000.
+   invented (Burton 1989, 1991).
+ • Experiment with relaxing the assumption of temporal mono-
+                                                                         Simon Peyton Jones, Andrew Gordon, and Sigbjorn Finne. Con-
+                                                                           current Haskell. In Symposium on Principles of Programming
+   tonicity exploited in Section 8. For instance, a zipper represen-
+                                                                           Languages, January 1996.
+   tation for bidirectional sampling could allow efficient access to
+   nearby past event occurrences as well as future ones. Such a          Meurig Sage. FranTk – a declarative GUI language for Haskell.
+   representation may be efficient in time though leaky in space.          In International Conference on Functional Programming, pages
+ • Type class morphisms are used to define the the semantics
+                                                                           106–118. ACM, ACM Press, September 2000.
+   of every key type in this paper except for events. Can this           Enno Scholz and Boris Bokowski. PIDGETS++ - a C++ framework
+   exception be eliminated?                                                unifying postscript pictures, GUI objects, and lazy one-way con-
+ • Since reactive values are purely data, they cache “for free”.
+                                                                           straints. In Conference on the Technology of Object-Oriented
+                                                                           Languages and Systems. Prentice-Hall, 1996.
+   In contrast, time functions (Section 5.3) have a partly function
+   representation. Is there an efficiently caching representation?       Michael Sperber. Computer-Assisted Lighting Design and Control.
+                                                                           PhD thesis, University of Tübingen, June 2001.
+15.    Acknowledgments                                                   Philip Wadler. Comprehending monads. In Conference on LISP
+I’m grateful to Mike Sperber for the conversation that inspired the        and Functional Programming, pages 61–78. ACM, 1990.
+work described in this paper, as well as his help understanding          Zhanyong Wan and Paul Hudak. Functional Reactive Programming
+Lula-FRP. My thanks also to the many reviewers and readers of              from first principles. In Conference on Programming Language
+previous drafts for their helpful comments.                                Design and Implementation, 2000.
+                                                                         Zhanyong Wan, Walid Taha, and Paul Hudak. Real-time FRP. In
+References                                                                 International Conference on Functional Programming, 2001.
+F. Warren Burton. Indeterminate behavior with determinate se-            Zhanyong Wan, Walid Taha, and Paul Hudak. Event-driven FRP.
+   mantics in parallel programs. In International conference on            In Practical Aspects of Declarative Languages, January 2002.
+   Functional programming languages and computer architecture,
+   pages 340–346. ACM, 1989.
+

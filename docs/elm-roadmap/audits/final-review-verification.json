@@ -1,0 +1,43 @@
+{
+  "observedUTC": "2026-10-03T16:01:51.588256+00:00",
+  "scope": "Five final requirements-review bindings and retained CPU proof evidence; no empirical/native implementation acceptance",
+  "registrySHA256": "c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146",
+  "reviews": [
+    {
+      "specialty": "window-behavior",
+      "path": "audits/ux-final-window-behavior-confirmation.json",
+      "sha256": "4a33a739e5a1e7b817822a38fff4f7f79db84fcd3b02ae9498d077d299616b8a",
+      "verdict": "confirmed"
+    },
+    {
+      "specialty": "accessibility",
+      "path": "audits/ux-final-accessibility-confirmation.json",
+      "sha256": "54f958e0f5ff889f05ec58cea6033a1c7a7998ffbf43a8686637f5c402d28e55",
+      "verdict": "confirmed"
+    },
+    {
+      "specialty": "navigation",
+      "path": "audits/ux-final-navigation-confirmation.json",
+      "sha256": "448268461338184e741f6644508733a1dbc447ec07721e77423ac9e9a35c8061",
+      "verdict": "confirmed"
+    },
+    {
+      "specialty": "motion",
+      "path": "audits/ux-final-motion-confirmation.json",
+      "sha256": "051844b895935dcb8a8f2c20591212bde9204c0963912f37314f295f8c827d8e",
+      "verdict": "confirmed"
+    },
+    {
+      "specialty": "consistency",
+      "path": "audits/ux-final-consistency-confirmation.json",
+      "sha256": "a290dce754458623e2f32bfc7085e762f313ddf4e241e7bec2d5e1702258076a",
+      "verdict": "confirmed"
+    }
+  ],
+  "bridgeNamedTests": 18,
+  "bridgeMutations": 9,
+  "sceneNamedTests": 11,
+  "sceneMutations": 3,
+  "elmChecks": 8,
+  "passed": true
+}

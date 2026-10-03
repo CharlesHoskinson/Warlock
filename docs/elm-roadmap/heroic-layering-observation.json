@@ -1,0 +1,61 @@
+{
+  "observedUTC": "2026-10-03T15:00:17.652489+00:00",
+  "readOnly": true,
+  "atomicSnapshot": false,
+  "clients": [
+    {
+      "address": "0x57a77c9cbed0",
+      "stableId": "18000018",
+      "pid": 437826,
+      "class": "heroic",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "workspace": {
+        "id": -98,
+        "name": "special:win-minimized"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "allowedOverFullscreen": true
+    },
+    {
+      "address": "0x57a77b98bc10",
+      "stableId": "18000005",
+      "pid": 3040,
+      "class": "foot",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 1,
+      "allowedOverFullscreen": true
+    }
+  ],
+  "activeWindow": "0x57a77b98bc10",
+  "outputs": [
+    {
+      "name": "eDP-2",
+      "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "specialWorkspace": {
+        "id": 0,
+        "name": ""
+      }
+    }
+  ],
+  "screenshot": {
+    "path": "/home/hoskinson/Pictures/screenshot-2026-10-03_08-54-27.png",
+    "sha256": "2322c72f55351ad998117fcee349fb69b762096ab6bd9054cf9cb6a995b3a79f",
+    "observation": "Heroic content visually fills the display; captured earlier than this state sample."
+  },
+  "scope": "Native observation and visual symptom. Metadata visible/acceptsInput flags alone do not establish output/workspace eligibility or actual input routing. Root cause and current-desktop correction are not accepted by this observation."
+}

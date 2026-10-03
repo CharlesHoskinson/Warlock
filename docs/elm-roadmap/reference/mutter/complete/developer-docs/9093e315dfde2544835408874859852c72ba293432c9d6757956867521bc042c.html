@@ -1,0 +1,919 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.PageTurnEffect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.PageTurnEffect"/>
+  <meta property="og:description" content="Reference for Clutter.PageTurnEffect"/>
+  <meta name="twitter:title" content="Clutter.PageTurnEffect"/>
+  <meta name="twitter:description" content="Reference for Clutter.PageTurnEffect"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.PageTurnEffect.html#description">PageTurnEffect</a>
+  </div>
+</div>
+
+
+  
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.PageTurnEffect.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.PageTurnEffect.get_angle.html">get_angle</a>
+  
+    <a class="method" href="method.PageTurnEffect.get_period.html">get_period</a>
+  
+    <a class="method" href="method.PageTurnEffect.get_radius.html">get_radius</a>
+  
+    <a class="method" href="method.PageTurnEffect.set_angle.html">set_angle</a>
+  
+    <a class="method" href="method.PageTurnEffect.set_period.html">set_period</a>
+  
+    <a class="method" href="method.PageTurnEffect.set_radius.html">set_radius</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.PageTurnEffect.angle.html">angle</a>
+  
+    <a class="property" href="property.PageTurnEffect.period.html">period</a>
+  
+    <a class="property" href="property.PageTurnEffect.radius.html">radius</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>PageTurnEffect</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-page-turn-effect.c#L28">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class Clutter.PageTurnEffect : Clutter.DeformEffect
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>A page turning&nbsp;effect</p>
+<p>A simple page turning&nbsp;effect.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.PageTurnEffect">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="146pt" height="476pt"
+ viewBox="0.00 0.00 146.00 476.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 472)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterPageTurnEffect">
+<path fill="none" stroke="black" d="M126.25,-36C126.25,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 126.25,0 126.25,0 132.25,0 138.25,-6 138.25,-12 138.25,-12 138.25,-24 138.25,-24 138.25,-30 132.25,-36 126.25,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterPageTurnEffect</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node link">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:href="class.DeformEffect.html" xlink:title="ClutterDeformEffect">
+<path fill="none" stroke="black" d="M122.12,-108C122.12,-108 16.12,-108 16.12,-108 10.13,-108 4.12,-102 4.12,-96 4.12,-96 4.12,-84 4.12,-84 4.12,-78 10.12,-72 16.12,-72 16.12,-72 122.12,-72 122.12,-72 128.12,-72 134.12,-78 134.12,-84 134.12,-84 134.12,-96 134.12,-96 134.12,-102 128.12,-108 122.12,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-83.83" font-family="Times,serif" font-size="14.00">ClutterDeformEffect</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge6" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M69.12,-71.7C69.12,-60.85 69.12,-46.92 69.12,-36.1"/>
+</g>
+<!-- ancestor_1 -->
+<g id="node3" class="node link">
+<title>ancestor_1</title>
+<g id="a_node3"><a xlink:href="class.OffscreenEffect.html" xlink:title="ClutterOffscreenEffect">
+<path fill="none" stroke="black" d="M126.25,-180C126.25,-180 12,-180 12,-180 6,-180 0,-174 0,-168 0,-168 0,-156 0,-156 0,-150 6,-144 12,-144 12,-144 126.25,-144 126.25,-144 132.25,-144 138.25,-150 138.25,-156 138.25,-156 138.25,-168 138.25,-168 138.25,-174 132.25,-180 126.25,-180"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-155.82" font-family="Times,serif" font-size="14.00">ClutterOffscreenEffect</text>
+</a>
+</g>
+</g>
+<!-- ancestor_1&#45;&#45;ancestor_0 -->
+<g id="edge5" class="edge">
+<title>ancestor_1&#45;&#45;ancestor_0</title>
+<path fill="none" stroke="black" d="M69.12,-143.7C69.12,-132.85 69.12,-118.92 69.12,-108.1"/>
+</g>
+<!-- ancestor_2 -->
+<g id="node4" class="node link">
+<title>ancestor_2</title>
+<g id="a_node4"><a xlink:href="class.Effect.html" xlink:title="ClutterEffect">
+<path fill="none" stroke="black" d="M100,-252C100,-252 38.25,-252 38.25,-252 32.25,-252 26.25,-246 26.25,-240 26.25,-240 26.25,-228 26.25,-228 26.25,-222 32.25,-216 38.25,-216 38.25,-216 100,-216 100,-216 106,-216 112,-222 112,-228 112,-228 112,-240 112,-240 112,-246 106,-252 100,-252"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-227.82" font-family="Times,serif" font-size="14.00">ClutterEffect</text>
+</a>
+</g>
+</g>
+<!-- ancestor_2&#45;&#45;ancestor_1 -->
+<g id="edge4" class="edge">
+<title>ancestor_2&#45;&#45;ancestor_1</title>
+<path fill="none" stroke="black" d="M69.12,-215.7C69.12,-204.85 69.12,-190.92 69.12,-180.1"/>
+</g>
+<!-- ancestor_3 -->
+<g id="node5" class="node link">
+<title>ancestor_3</title>
+<g id="a_node5"><a xlink:href="class.ActorMeta.html" xlink:title="ClutterActorMeta">
+<path fill="none" stroke="black" d="M113.5,-324C113.5,-324 24.75,-324 24.75,-324 18.75,-324 12.75,-318 12.75,-312 12.75,-312 12.75,-300 12.75,-300 12.75,-294 18.75,-288 24.75,-288 24.75,-288 113.5,-288 113.5,-288 119.5,-288 125.5,-294 125.5,-300 125.5,-300 125.5,-312 125.5,-312 125.5,-318 119.5,-324 113.5,-324"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-299.82" font-family="Times,serif" font-size="14.00">ClutterActorMeta</text>
+</a>
+</g>
+</g>
+<!-- ancestor_3&#45;&#45;ancestor_2 -->
+<g id="edge3" class="edge">
+<title>ancestor_3&#45;&#45;ancestor_2</title>
+<path fill="none" stroke="black" d="M69.12,-287.7C69.12,-276.85 69.12,-262.92 69.12,-252.1"/>
+</g>
+<!-- ancestor_4 -->
+<g id="node6" class="node">
+<title>ancestor_4</title>
+<g id="a_node6"><a xlink:title="GObject.InitiallyUnowned">
+<path fill="none" stroke="black" d="M117.62,-396C117.62,-396 20.62,-396 20.62,-396 14.62,-396 8.62,-390 8.62,-384 8.62,-384 8.62,-372 8.62,-372 8.62,-366 14.62,-360 20.62,-360 20.62,-360 117.62,-360 117.62,-360 123.62,-360 129.62,-366 129.62,-372 129.62,-372 129.62,-384 129.62,-384 129.62,-390 123.62,-396 117.62,-396"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-371.82" font-family="Times,serif" font-size="14.00">GInitiallyUnowned</text>
+</a>
+</g>
+</g>
+<!-- ancestor_4&#45;&#45;ancestor_3 -->
+<g id="edge2" class="edge">
+<title>ancestor_4&#45;&#45;ancestor_3</title>
+<path fill="none" stroke="black" d="M69.12,-359.7C69.12,-348.85 69.12,-334.92 69.12,-324.1"/>
+</g>
+<!-- ancestor_5 -->
+<g id="node7" class="node">
+<title>ancestor_5</title>
+<g id="a_node7"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M88,-468C88,-468 50.25,-468 50.25,-468 44.25,-468 38.25,-462 38.25,-456 38.25,-456 38.25,-444 38.25,-444 38.25,-438 44.25,-432 50.25,-432 50.25,-432 88,-432 88,-432 94,-432 100,-438 100,-444 100,-444 100,-456 100,-456 100,-462 94,-468 88,-468"/>
+<text xml:space="preserve" text-anchor="middle" x="69.12" y="-443.82" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_5&#45;&#45;ancestor_4 -->
+<g id="edge1" class="edge">
+<title>ancestor_5&#45;&#45;ancestor_4</title>
+<path fill="none" stroke="black" d="M69.12,-431.7C69.12,-420.85 69.12,-406.92 69.12,-396.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.DeformEffect.html" title="DeformEffect">ClutterDeformEffect</a></li>
+          
+        
+          
+          <li class="class"><a href="class.OffscreenEffect.html" title="OffscreenEffect">ClutterOffscreenEffect</a></li>
+          
+        
+          
+          <li class="class"><a href="class.Effect.html" title="Effect">ClutterEffect</a></li>
+          
+        
+          
+          <li class="class"><a href="class.ActorMeta.html" title="ActorMeta">ClutterActorMeta</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.InitiallyUnowned.html" data-namespace="GObject">GInitiallyUnowned</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.PageTurnEffect.new.html">clutter_page_turn_effect_new</a></h6>
+          <div class="docblock">
+            <p>Creates a new <code>ClutterPageTurnEffect</code> instance with the given&nbsp;parameters.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.PageTurnEffect.get_angle.html">clutter_page_turn_effect_get_angle</a></h6>
+          <div class="docblock">
+            <p>Retrieves the value set using <code>clutter_page_turn_effect_get_angle()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PageTurnEffect.get_period.html">clutter_page_turn_effect_get_period</a></h6>
+          <div class="docblock">
+            <p>Retrieves the value set using <code>clutter_page_turn_effect_get_period()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PageTurnEffect.get_radius.html">clutter_page_turn_effect_get_radius</a></h6>
+          <div class="docblock">
+            <p>Retrieves the value set using <code>clutter_page_turn_effect_set_radius()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PageTurnEffect.set_angle.html">clutter_page_turn_effect_set_angle</a></h6>
+          <div class="docblock">
+            <p>Sets the angle of the page curling, in&nbsp;degrees.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PageTurnEffect.set_period.html">clutter_page_turn_effect_set_period</a></h6>
+          <div class="docblock">
+            <p>Sets the period of the page curling, between 0.0 (no curling)
+and 1.0 (fully&nbsp;curled).</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PageTurnEffect.set_radius.html">clutter_page_turn_effect_set_radius</a></h6>
+          <div class="docblock">
+            <p>Sets the radius of the page&nbsp;curling.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.DeformEffect.html">ClutterDeformEffect</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="method.DeformEffect.get_back_pipeline.html">clutter_deform_effect_get_back_pipeline</a></h6><div class="docblock">
+              <p>Retrieves the back pipeline used by <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.DeformEffect.get_n_tiles.html">clutter_deform_effect_get_n_tiles</a></h6><div class="docblock">
+              <p>Retrieves the number of horizontal and vertical tiles used to sub-divide
+the actor&#8217;s geometry during the&nbsp;effect.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.DeformEffect.invalidate.html">clutter_deform_effect_invalidate</a></h6><div class="docblock">
+              <p>Invalidates the <code>effect</code><span class="quo">&#8216;</span>s vertices and, if it is associated
+to an actor, it will queue a&nbsp;redraw.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.DeformEffect.set_back_pipeline.html">clutter_deform_effect_set_back_pipeline</a></h6><div class="docblock">
+              <p>Sets the pipeline that should be used when drawing the back face
+of the actor during a&nbsp;deformation.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.DeformEffect.set_n_tiles.html">clutter_deform_effect_set_n_tiles</a></h6><div class="docblock">
+              <p>Sets the number of horizontal and vertical tiles to be used
+when applying the&nbsp;effect.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.OffscreenEffect.html">ClutterOffscreenEffect</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="method.OffscreenEffect.create_texture.html">clutter_offscreen_effect_create_texture</a></h6><div class="docblock">
+              <p>Calls the <code>Clutter.OffscreenEffectClass.create_texture</code> virtual function of the <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.get_pipeline.html">clutter_offscreen_effect_get_pipeline</a></h6><div class="docblock">
+              <p>Retrieves the pipeline used as a render target for the offscreen
+buffer created by <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.get_target_size.html">clutter_offscreen_effect_get_target_size</a></h6><div class="docblock">
+              <p>Retrieves the size of the offscreen buffer used by <code>effect</code> to
+paint the actor to which it has been&nbsp;applied.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.get_texture.html">clutter_offscreen_effect_get_texture</a></h6><div class="docblock">
+              <p>Retrieves the texture used as a render target for the offscreen
+buffer created by <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.paint_target.html">clutter_offscreen_effect_paint_target</a></h6><div class="docblock">
+              <p>Calls the <code>Clutter.OffscreenEffectClass.paint_target</code> virtual function of the <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Effect.html">ClutterEffect</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="method.Effect.queue_repaint.html">clutter_effect_queue_repaint</a></h6><div class="docblock">
+              <p>Queues a repaint of the effect. The effect can detect when the ‘paint’
+method is called as a result of this function because it will not
+have the <code>CLUTTER_EFFECT_PAINT_ACTOR_DIRTY</code> flag set. In that case the
+effect is free to assume that the actor has not changed its
+appearance since the last time it was painted so it doesn&#8217;t need to
+call <code>clutter_actor_continue_paint()</code> if it can draw a cached
+image. This is mostly intended for effects that are using a
+%CoglOffscreen to redirect the actor (such as
+%ClutterOffscreenEffect). In that case the effect can save a bit of
+rendering time by painting the cached texture without causing the
+entire actor to be&nbsp;painted.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="method.ActorMeta.get_actor.html">clutter_actor_meta_get_actor</a></h6><div class="docblock">
+              <p>Retrieves a pointer to the <code>ClutterActor</code> that owns <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_enabled.html">clutter_actor_meta_get_enabled</a></h6><div class="docblock">
+              <p>Retrieves whether <code>meta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_name.html">clutter_actor_meta_get_name</a></h6><div class="docblock">
+              <p>Retrieves the name set using <code>clutter_actor_meta_set_name()</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_enabled.html">clutter_actor_meta_set_enabled</a></h6><div class="docblock">
+              <p>Sets whether <code>meta</code> should be enabled or&nbsp;not.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_name.html">clutter_actor_meta_set_name</a></h6><div class="docblock">
+              <p>Sets the name of <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.PageTurnEffect.angle.html">Clutter.PageTurnEffect:angle</a></h6>
+          <div class="docblock">
+            <p>The angle of the page rotation, in degrees, between 0.0 and&nbsp;360.0.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.PageTurnEffect.period.html">Clutter.PageTurnEffect:period</a></h6>
+          <div class="docblock">
+            <p>The period of the page turn, between 0.0 (no curling) and
+1.0 (fully&nbsp;curled).</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.PageTurnEffect.radius.html">Clutter.PageTurnEffect:radius</a></h6>
+          <div class="docblock">
+            <p>The radius of the page curl, in&nbsp;pixels.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="class.DeformEffect.html">ClutterDeformEffect</a> (3)</h5><div class="docblock">
+          
+            <h6><a href="property.DeformEffect.back-pipeline.html">Clutter.DeformEffect:back-pipeline</a></h6><div class="docblock">
+              <p>A pipeline to be used when painting the back of the actor
+to which this effect has been&nbsp;applied.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.DeformEffect.x-tiles.html">Clutter.DeformEffect:x-tiles</a></h6><div class="docblock">
+              <p>The number of horizontal tiles. The bigger the number, the
+smaller the&nbsp;tiles.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.DeformEffect.y-tiles.html">Clutter.DeformEffect:y-tiles</a></h6><div class="docblock">
+              <p>The number of vertical tiles. The bigger the number, the
+smaller the&nbsp;tiles.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (3)</h5><div class="docblock">
+          
+            <h6><a href="property.ActorMeta.actor.html">Clutter.ActorMeta:actor</a></h6><div class="docblock">
+              <p>The <code>ClutterActor</code> attached to the <code>ClutterActorMeta</code> instance.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.enabled.html">Clutter.ActorMeta:enabled</a></h6><div class="docblock">
+              <p>Whether or not the <code>ClutterActorMeta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.name.html">Clutter.ActorMeta:name</a></h6><div class="docblock">
+              <p>The unique name to access the <code>ClutterActorMeta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterPageTurnEffectClass {
+  ClutterDeformEffectClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: ClutterDeformEffectClass</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

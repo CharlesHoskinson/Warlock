@@ -1,0 +1,41 @@
+{
+  "observedUTC": "2026-10-03T15:09:17.493569+00:00",
+  "scope": "Planning format, traceability and links; no implementation/native/GPU acceptance",
+  "requirements": 181,
+  "scenarios": 181,
+  "capabilities": 15,
+  "localLinksChecked": 230,
+  "registrySHA256": "ff3908dc4e3ca5f9660bd787b0de40473e171782c4d0670d72c6a0b676ed69b0",
+  "errors": [
+    "ELM-DEL-016 EARS pattern mismatch: WHEN a release is rolled back, recovery tooling SHALL restore the preceding compatible settings copy without silently interpreting a newer schema.",
+    "ELM-DEL-019 EARS pattern mismatch: WHEN an upgrade is interrupted, activation tooling SHALL recover to one complete validated release tuple and preserve user settings and application drafts.",
+    "ELM-DEL-021 EARS pattern mismatch: WHEN an owned session stops, supervision SHALL stop clients and helpers, verify normal exits and retired resources, unload owned modules, and THEN stop its private compositor and bus.",
+    "ELM-DEL-025 EARS pattern mismatch: WHEN the user acceptance session runs, the candidate SHALL preserve existing windows and drafts WHILE demonstrating the named taskbar, focus, minimize, restore, pin, snap and keyboard flows.",
+    "ELM-KDE-004 EARS pattern mismatch: IF a window belongs to an inactive special workspace, THEN native eligibility SHALL exclude its ordinary live painting, pointer targeting and direct focus despite permissive cached visibility or input flags.",
+    "ELM-LAY-003 EARS pattern mismatch: WHEN a minimized window is restored, the native authority SHALL make it eligible in one accepted scene transition WHILE preserving its normal workspace identity and rejecting old transition generations.",
+    "ELM-REN-013 EARS pattern mismatch: WHEN a capture transaction ends, its native supervisor SHALL verify closure of owned helpers, callbacks, buffers and surfaces before reporting retirement complete.",
+    "ELM-REN-021 EARS pattern mismatch: WHERE 240 Hz hardware is available, WHILE motion is active, the native renderer SHALL sample motion in its native presentation loop and record cadence against a same-machine baseline.",
+    "ELM-UX-015 EARS pattern mismatch: WHEN a user activates a modal family, the Elm desktop SHALL request the native eligible modal target WHILE preserving the application\u2019s draft content."
+  ],
+  "openspec": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@fission-ai/openspec@1.14.0",
+      "--",
+      "openspec",
+      "validate",
+      "elm-desktop-pivot",
+      "--type",
+      "change",
+      "--strict",
+      "--json",
+      "--no-interactive"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"elm-desktop-pivot\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 65\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"/home/hoskinson/omarchy-windows-parity\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  "passed": false
+}

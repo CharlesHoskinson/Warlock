@@ -1,0 +1,18 @@
+Running as unit: qa-harness-92eed7c0360d40e5a2a3852c87ba13a6.scope; invocation ID: 89843e3be2614e72bfae046d729de538
+
+  bridge
+    1) gapBarrierTest failed after 1 test(s)
+
+  1 failed
+
+  1) gapBarrierTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/ignore-gap.qnt:71:85
+        71:   run gapBarrierTest = init.then(request(1)).then(delta(2)).then(commit).then(all { assert(s.status == "Refused" and s.seq == 0), noop })
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=gapBarrierTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ignore-gap.qnt
+error: Tests failed

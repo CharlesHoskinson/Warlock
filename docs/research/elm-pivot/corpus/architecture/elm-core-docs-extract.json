@@ -1,0 +1,127 @@
+[
+  {
+    "name": "Platform",
+    "comment": "\n\n# Programs\n@docs Program, worker\n\n# Platform Internals\n\n## Tasks and Processes\n@docs Task, ProcessId\n\n## Effect Manager Helpers\n\nAn extremely tiny portion of library authors should ever write effect managers.\nFundamentally, Elm needs maybe 10 of them total. I get that people are smart,\ncurious, etc. but that is not a substitute for a legitimate reason to make an\neffect manager. Do you have an *organic need* this fills? Or are you just\ncurious? Public discussions of your explorations should be framed accordingly.\n\n@docs Router, sendToApp, sendToSelf\n",
+    "unions": [
+      {
+        "name": "ProcessId",
+        "comment": " Head over to the documentation for the [`Process`](Process) module for\ninformation on this. It is only defined here because it is a platform\nprimitive.\n",
+        "args": [],
+        "cases": []
+      },
+      {
+        "name": "Program",
+        "comment": " A `Program` describes an Elm program! How does it react to input? Does it\nshow anything on screen? Etc.\n",
+        "args": [
+          "flags",
+          "model",
+          "msg"
+        ],
+        "cases": []
+      },
+      {
+        "name": "Router",
+        "comment": " An effect manager has access to a \u201crouter\u201d that routes messages between\nthe main app and your individual effect manager.\n",
+        "args": [
+          "appMsg",
+          "selfMsg"
+        ],
+        "cases": []
+      },
+      {
+        "name": "Task",
+        "comment": " Head over to the documentation for the [`Task`](Task) module for more\ninformation on this. It is only defined here because it is a platform\nprimitive.\n",
+        "args": [
+          "err",
+          "ok"
+        ],
+        "cases": []
+      }
+    ],
+    "aliases": [],
+    "values": [
+      {
+        "name": "sendToApp",
+        "comment": " Send the router a message for the main loop of your app. This message will\nbe handled by the overall `update` function, just like events from `Html`.\n",
+        "type": "Platform.Router msg a -> msg -> Platform.Task x ()"
+      },
+      {
+        "name": "sendToSelf",
+        "comment": " Send the router a message for your effect manager. This message will\nbe routed to the `onSelfMsg` function, where you can update the state of your\neffect manager as necessary.\n\nAs an example, the effect manager for web sockets\n",
+        "type": "Platform.Router a msg -> msg -> Platform.Task x ()"
+      },
+      {
+        "name": "worker",
+        "comment": " Create a [headless][] program with no user interface.\n\nThis is great if you want to use Elm as the &ldquo;brain&rdquo; for something\nelse. For example, you could send messages out ports to modify the DOM, but do\nall the complex logic in Elm.\n\n[headless]: https://en.wikipedia.org/wiki/Headless_software\n\nInitializing a headless program from JavaScript looks like this:\n\n```javascript\nvar app = Elm.MyThing.init();\n```\n\nIf you _do_ want to control the user interface in Elm, the [`Browser`][browser]\nmodule has a few ways to create that kind of `Program` instead!\n\n[headless]: https://en.wikipedia.org/wiki/Headless_software\n[browser]: /packages/elm/browser/latest/Browser\n",
+        "type": "{ init : flags -> ( model, Platform.Cmd.Cmd msg ), update : msg -> model -> ( model, Platform.Cmd.Cmd msg ), subscriptions : model -> Platform.Sub.Sub msg } -> Platform.Program flags model msg"
+      }
+    ],
+    "binops": []
+  },
+  {
+    "name": "Platform.Cmd",
+    "comment": "\n\n> **Note:** Elm has **managed effects**, meaning that things like HTTP\n> requests or writing to disk are all treated as *data* in Elm. When this\n> data is given to the Elm runtime system, it can do some \u201cquery optimization\u201d\n> before actually performing the effect. Perhaps unexpectedly, this managed\n> effects idea is the heart of why Elm is so nice for testing, reuse,\n> reproducibility, etc.\n>\n> Elm has two kinds of managed effects: commands and subscriptions.\n\n# Commands\n@docs Cmd, none, batch\n\n# Fancy Stuff\n@docs map\n\n",
+    "unions": [
+      {
+        "name": "Cmd",
+        "comment": " A command is a way of telling Elm, \u201cHey, I want you to do this thing!\u201d\nSo if you want to send an HTTP request, you would need to command Elm to do it.\nOr if you wanted to ask for geolocation, you would need to command Elm to go\nget it.\n\nEvery `Cmd` specifies (1) which effects you need access to and (2) the type of\nmessages that will come back into your application.\n\n**Note:** Do not worry if this seems confusing at first! As with every Elm user\never, commands will make more sense as you work through [the Elm Architecture\nTutorial](https://guide.elm-lang.org/architecture/) and see how they\nfit into a real application!\n",
+        "args": [
+          "msg"
+        ],
+        "cases": []
+      }
+    ],
+    "aliases": [],
+    "values": [
+      {
+        "name": "batch",
+        "comment": " When you need the runtime system to perform a couple commands, you\ncan batch them together. Each is handed to the runtime at the same time,\nand since each can perform arbitrary operations in the world, there are\nno ordering guarantees about the results.\n\n**Note:** `Cmd.none` and `Cmd.batch [ Cmd.none, Cmd.none ]` and `Cmd.batch []`\nall do the same thing.\n",
+        "type": "List.List (Platform.Cmd.Cmd msg) -> Platform.Cmd.Cmd msg"
+      },
+      {
+        "name": "map",
+        "comment": " Transform the messages produced by a command.\nVery similar to [`Html.map`](/packages/elm/html/latest/Html#map).\n\nThis is very rarely useful in well-structured Elm code, so definitely read the\nsection on [structure][] in the guide before reaching for this!\n\n[structure]: https://guide.elm-lang.org/webapps/structure.html\n",
+        "type": "(a -> msg) -> Platform.Cmd.Cmd a -> Platform.Cmd.Cmd msg"
+      },
+      {
+        "name": "none",
+        "comment": " Tell the runtime that there are no commands.\n\n",
+        "type": "Platform.Cmd.Cmd msg"
+      }
+    ],
+    "binops": []
+  },
+  {
+    "name": "Platform.Sub",
+    "comment": "\n\n> **Note:** Elm has **managed effects**, meaning that things like HTTP\n> requests or writing to disk are all treated as *data* in Elm. When this\n> data is given to the Elm runtime system, it can do some \u201cquery optimization\u201d\n> before actually performing the effect. Perhaps unexpectedly, this managed\n> effects idea is the heart of why Elm is so nice for testing, reuse,\n> reproducibility, etc.\n>\n> Elm has two kinds of managed effects: commands and subscriptions.\n\n# Subscriptions\n@docs Sub, none, batch\n\n# Fancy Stuff\n@docs map\n",
+    "unions": [
+      {
+        "name": "Sub",
+        "comment": " A subscription is a way of telling Elm, \u201cHey, let me know if anything\ninteresting happens over there!\u201d So if you want to listen for messages on a web\nsocket, you would tell Elm to create a subscription. If you want to get clock\nticks, you would tell Elm to subscribe to that. The cool thing here is that\nthis means *Elm* manages all the details of subscriptions instead of *you*.\nSo if a web socket goes down, *you* do not need to manually reconnect with an\nexponential backoff strategy, *Elm* does this all for you behind the scenes!\n\nEvery `Sub` specifies (1) which effects you need access to and (2) the type of\nmessages that will come back into your application.\n\n**Note:** Do not worry if this seems confusing at first! As with every Elm user\never, subscriptions will make more sense as you work through [the Elm Architecture\nTutorial](https://guide.elm-lang.org/architecture/) and see how they fit\ninto a real application!\n",
+        "args": [
+          "msg"
+        ],
+        "cases": []
+      }
+    ],
+    "aliases": [],
+    "values": [
+      {
+        "name": "batch",
+        "comment": " When you need to subscribe to multiple things, you can create a `batch` of\nsubscriptions.\n\n**Note:** `Sub.none` and `Sub.batch [ Sub.none, Sub.none ]` and\n`Sub.batch []` all do the same thing.\n",
+        "type": "List.List (Platform.Sub.Sub msg) -> Platform.Sub.Sub msg"
+      },
+      {
+        "name": "map",
+        "comment": " Transform the messages produced by a subscription.\nVery similar to [`Html.map`](/packages/elm/html/latest/Html#map).\n\nThis is very rarely useful in well-structured Elm code, so definitely read the\nsection on [structure][] in the guide before reaching for this!\n\n[structure]: https://guide.elm-lang.org/webapps/structure.html\n",
+        "type": "(a -> msg) -> Platform.Sub.Sub a -> Platform.Sub.Sub msg"
+      },
+      {
+        "name": "none",
+        "comment": " Tell the runtime that there are no subscriptions.\n",
+        "type": "Platform.Sub.Sub msg"
+      }
+    ],
+    "binops": []
+  }
+]

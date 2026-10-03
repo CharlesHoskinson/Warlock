@@ -1,0 +1,141 @@
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the kwin package.
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Vincenzo Reale <smart2128vr@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: kwin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-05-20 02:37+0000\n"
+"PO-Revision-Date: 2025-05-20 14:20+0200\n"
+"Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.1\n"
+
+#: ui/main.qml:27
+#, kde-format
+msgctxt "@info"
+msgid "Changes will take effect the next time you log in."
+msgstr "Le modifiche avranno effetto al successivo accesso."
+
+#: ui/main.qml:31
+#, kde-format
+msgctxt "@action:button"
+msgid "Log Out Now"
+msgstr "Chiudi sessione subito"
+
+#: ui/main.qml:52
+#, kde-format
+msgid ""
+"Some legacy X11 apps require the ability to read keystrokes typed in other "
+"apps for certain features, such as handling global keyboard shortcuts. This "
+"is allowed by default. However other features may require the ability to "
+"read all keys, and this is disabled by default for security reasons. If you "
+"need to use such apps, you can choose your preferred balance of security and "
+"functionality here."
+msgstr ""
+"Alcune applicazioni X11 originali richiedono la possibilità di leggere i "
+"tasti digitati in altre applicazioni per determinate funzionalità, come la "
+"gestione delle scorciatoie da tastiera globali. Ciò è consentito in modo "
+"predefinito. Tuttavia, altre funzionalità potrebbero richiedere la capacità "
+"di leggere tutti i tasti e questa è disabilitata per impostazione "
+"predefinita per motivi di sicurezza. Se hai bisogno di utilizzare tali "
+"applicazioni, puoi scegliere qui il tuo bilanciamento preferito tra "
+"sicurezza e funzionalità."
+
+#: ui/main.qml:72
+#, kde-format
+msgid "Allow legacy X11 apps to read keystrokes typed in all apps:"
+msgstr ""
+"Consenti alle applicazioni X11 originali di leggere i tasti digitati in "
+"tutte le applicazioni:"
+
+#: ui/main.qml:73
+#, kde-format
+msgid "Never"
+msgstr "Mai"
+
+#: ui/main.qml:84
+#, kde-format
+msgid "Only Meta, Control, Alt and Shift keys"
+msgstr "Solo i tasti Meta, Control, Alt e Maiusc"
+
+#: ui/main.qml:95
+#, kde-format
+msgid ""
+"As above, plus any key typed while the Control, Alt, or Meta keys are pressed"
+msgstr ""
+"Come sopra, più qualsiasi tasto digitato mentre sono premuti i tasti "
+"Control, Alt, o Meta"
+
+#: ui/main.qml:107
+#, kde-format
+msgid "Always"
+msgstr "Sempre"
+
+#: ui/main.qml:122
+#, kde-format
+msgid "Additionally include mouse buttons"
+msgstr "Includi inoltre i pulsanti del mouse"
+
+#: ui/main.qml:138
+#, kde-format
+msgid ""
+"Note that using this setting will reduce system security to that of the X11 "
+"session by permitting malicious software to steal passwords and spy on the "
+"text that you type. Make sure you understand and accept this risk."
+msgstr ""
+"Tieni presente che l'utilizzo di questa impostazione ridurrà la sicurezza "
+"del sistema a quella della sessione X11 consentendo a software dannoso di "
+"rubare le password e spiare il testo digitato. Assicurati di comprendere e "
+"accettare questo rischio."
+
+#: ui/main.qml:155
+#, kde-format
+msgctxt "@title:group"
+msgid "Control of pointer and keyboard:"
+msgstr "Controllo del puntatore e della tastiera:"
+
+#: ui/main.qml:156
+#, kde-format
+msgctxt ""
+"@option:check Allow control of pointer and keyboard without asking for "
+"permission"
+msgid "Allow without asking for permission"
+msgstr "Consenti senza chiedere il permesso"
+
+#~ msgid "Only non-character keys"
+#~ msgstr "Solo i tasti che non rappresentano caratteri"
+
+#~ msgid "All keys, but only while Meta, Ctrl, Alt, or Shift keys are pressed"
+#~ msgstr ""
+#~ "Tutti i tasti, ma solo mentre sono premuti i tasti Meta, Ctrl, Alt o "
+#~ "Maiusc"
+
+#~ msgid ""
+#~ "This module lets configure which keyboard events are forwarded to X11 "
+#~ "apps regardless of their focus."
+#~ msgstr ""
+#~ "Questo modulo consente di configurare quali eventi della tastiera sono "
+#~ "inoltrati alle applicazioni X11 indipendentemente dal loro focus."
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Vincenzo Reale"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "smart2128vr@gmail.com"
+
+#~ msgid "Legacy X11 App Support"
+#~ msgstr "Supporto per le applicazioni X11 originali"
+
+#~ msgid "Allow legacy X11 apps to read keystrokes typed in other apps"
+#~ msgstr ""
+#~ "Consenti alle applicazioni X11 originali di leggere i tasti digitati in "
+#~ "altre applicazioni"

@@ -1,0 +1,534 @@
+[
+  {
+    "id": "ELM-DEL-001",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The release plan SHALL preserve baseline source hashes, scenario identities, failures and original deadlines in an immutable migration ledger.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Diff archived hashes and inspect all inherited case mappings.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Freeze the migration ledger and map each inherited case.",
+    "scenarios": [
+      {
+        "name": "delivery-001",
+        "given": "an archived failed baseline",
+        "when": "migration mapping is generated",
+        "then": "the original failure and deadline remain unchanged"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-002",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The release plan SHALL assign an owner, engineer-week range, dependencies and acceptance evidence to each mandatory phase and separately estimate optional compositor work.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Review phase ledger against staffed capacity and dependency graph.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md",
+    "task": "Maintain staffing, contingency and critical-path estimates.",
+    "scenarios": [
+      {
+        "name": "delivery-002",
+        "given": "a release plan",
+        "when": "estimates are reviewed",
+        "then": "P0\u2013P6 and P7\u2013P8 have separate costs and dependencies"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-003",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The release builder SHALL pin compiler, Elm packages, test runner, JavaScript adapter, native dependencies and build-tool versions with source and artifact hashes.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Rebuild with the manifest and reject one altered dependency hash.",
+    "legacyEvidence": "docs/research/elm-pivot/IMPLEMENTATION.md",
+    "task": "Create a complete dependency lock manifest.",
+    "scenarios": [
+      {
+        "name": "delivery-003",
+        "given": "a candidate build",
+        "when": "its manifest is inspected",
+        "then": "every build input resolves to a pinned hashed artifact"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-004",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When a release is rebuilt in two clean isolated environments, the builder SHALL produce identical distributable hashes or block release with the differing inputs recorded.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Compare SHA-256 manifests and retain differing build logs.",
+    "legacyEvidence": "new coverage: reproducible build campaign",
+    "task": "Create a clean offline reproducibility campaign.",
+    "scenarios": [
+      {
+        "name": "delivery-004",
+        "given": "a cached locked dependency set",
+        "when": "two clean builds run",
+        "then": "distributable hashes match or release is blocked"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-005",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The release package SHALL include an SBOM, upstream notices and a reviewed redistribution disposition for compiler, packages, host, native libraries and bundled assets.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Cross-check package files, SBOM components and license dispositions.",
+    "legacyEvidence": "docs/research/elm-pivot/IMPLEMENTATION.md",
+    "task": "Generate SBOM and license approval ledger.",
+    "scenarios": [
+      {
+        "name": "delivery-005",
+        "given": "a candidate package",
+        "when": "redistribution review runs",
+        "then": "all shipped components and applicable notices are accounted for"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-006",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When a host candidate is qualified, the host decision SHALL record compatible GTK and layer-shell major versions or Qt WebEngine initialization and transitive runtime dependencies.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Capture runtime loaded-library versions and native surface/IME/AT probes.",
+    "legacyEvidence": "docs/research/elm-pivot/README.md",
+    "task": "Qualify both host dependency graphs without assuming interchangeability.",
+    "scenarios": [
+      {
+        "name": "delivery-006",
+        "given": "GTK and Qt candidate hosts",
+        "when": "host comparison runs",
+        "then": "each candidate has an actual dependency and initialization report"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-007",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The release package SHALL identify Arch Linux with Omarchy as the supported initial target and label other distributions unsupported until their dependency and native acceptance matrices pass.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Inspect support matrix; retain separate distro build and native verdicts.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md",
+    "task": "Publish target matrix and optional Ubuntu qualification work.",
+    "scenarios": [
+      {
+        "name": "delivery-007",
+        "given": "an unqualified Ubuntu environment",
+        "when": "support status is displayed",
+        "then": "it is not advertised as qualified"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-008",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The installer SHALL place shell assets and configuration in reviewed user-owned versioned paths without modifying /usr/share/omarchy.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Compare filesystem manifests, owners and modes before and after rehearsal.",
+    "legacyEvidence": "AGENTS.md",
+    "task": "Design versioned installation and atomic activation paths.",
+    "scenarios": [
+      {
+        "name": "delivery-008",
+        "given": "a prepared user installation",
+        "when": "installation is rehearsed",
+        "then": "only reviewed user-owned paths change"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-009",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When a component migration is selected, the launcher SHALL activate only that qualified component and retain a selectable working predecessor for rollback.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Exercise taskbar-only selection, conflicting owners and restoration.",
+    "legacyEvidence": "docs/elm-roadmap/BASELINE.md",
+    "task": "Implement per-component feature selection and conflict prevention.",
+    "scenarios": [
+      {
+        "name": "delivery-009",
+        "given": "a qualified taskbar slice",
+        "when": "the feature selector changes",
+        "then": "one taskbar owner runs and the predecessor remains selectable"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-010",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The native service SHALL authenticate bridge peers by local user identity and approved session lifetime before accepting effect requests.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Retain peer-credential traces for allowed and cross-user/replayed sessions.",
+    "legacyEvidence": "new coverage: bridge peer authentication",
+    "task": "Implement peer credentials and session-bound bridge authorization.",
+    "scenarios": [
+      {
+        "name": "delivery-010",
+        "given": "an unrelated local peer",
+        "when": "it requests a window effect",
+        "then": "the request is refused without an effect"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-011",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The native service SHALL expose an allowlisted versioned operation schema and reject arbitrary command execution, filesystem paths and unrecognized methods from web content.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Fuzz bridge operations and confirm no spawned command or arbitrary file read.",
+    "legacyEvidence": "docs/research/elm-pivot/IMPLEMENTATION.md",
+    "task": "Define least-authority bridge method and argument validation.",
+    "scenarios": [
+      {
+        "name": "delivery-011",
+        "given": "a connected renderer",
+        "when": "it sends a shell command or unknown method",
+        "then": "native authority rejects it"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-012",
+    "capability": "elm-security",
+    "pattern": "event-driven",
+    "ears": "When a privileged operation requires authorization, the shell SHALL delegate to the established native authorization flow and keep credentials outside Elm and JavaScript.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Inspect IPC and renderer memory/log fixtures for password absence.",
+    "legacyEvidence": "AGENTS.md",
+    "task": "Preserve Files authorization and native credential boundaries.",
+    "scenarios": [
+      {
+        "name": "delivery-012",
+        "given": "a permission-denied Files operation",
+        "when": "the user selects authorization",
+        "then": "the existing native askpass route owns the credential"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-013",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The host SHALL load executable assets only from the hash-verified local release and deny remote scripts, remote navigation and runtime network fetches from shell content.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Run with network disabled plus attempted fetch/navigation probes.",
+    "legacyEvidence": "new coverage: offline host asset policy",
+    "task": "Package offline assets and deny network/navigation at host boundary.",
+    "scenarios": [
+      {
+        "name": "delivery-013",
+        "given": "an offline release",
+        "when": "shell content attempts a remote fetch",
+        "then": "the request is blocked and local shell remains usable"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-014",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The host SHALL enforce a restrictive Content Security Policy that allows only required local assets and denies remote origins, eval and unapproved inline scripts.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Retain CSP headers/policy and execution-negative probe reports.",
+    "legacyEvidence": "new coverage: CSP negative probes",
+    "task": "Implement and test CSP with packaged Elm and adapter assets.",
+    "scenarios": [
+      {
+        "name": "delivery-014",
+        "given": "the packaged host",
+        "when": "remote, eval or inline code is injected",
+        "then": "each unapproved execution is refused"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-015",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The settings store SHALL use a versioned validated schema with atomic writes and a preserved pre-migration copy before any schema upgrade.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Inject invalid fields, interrupted writes and migration failure.",
+    "legacyEvidence": "new coverage: settings migration matrix",
+    "task": "Implement schema validation and atomic migration backups.",
+    "scenarios": [
+      {
+        "name": "delivery-015",
+        "given": "old valid settings",
+        "when": "a schema upgrade runs",
+        "then": "valid new settings and recoverable original settings exist"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-016",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When a release is rolled back, recovery tooling SHALL restore the preceding compatible settings copy without silently interpreting a newer schema.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Compare pre-upgrade and restored settings hashes in rollback drill.",
+    "legacyEvidence": "new coverage: settings downgrade campaign",
+    "task": "Implement downgrade settings selection and restoration receipt.",
+    "scenarios": [
+      {
+        "name": "delivery-016",
+        "given": "settings from a newer release",
+        "when": "rollback runs",
+        "then": "the prior compatible copy is restored"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-017",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The shell SHALL keep credentials in the existing system credential service and exclude secrets, draft contents and captured pixels from ordinary diagnostic logs.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Inject identifiable synthetic secrets and scan collected logs.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Define redaction policy and keyring reference-only integration.",
+    "scenarios": [
+      {
+        "name": "delivery-017",
+        "given": "secret-bearing native integrations",
+        "when": "diagnostics are collected",
+        "then": "logs contain references and redacted metadata only"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-018",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When a host or authority restarts, the supervisor SHALL invalidate old epochs and reconcile a fresh native snapshot before enabling new mutating requests.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Kill renderer and authority separately; inspect epochs and effect receipts.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md",
+    "task": "Qualify restart and resynchronization recovery.",
+    "scenarios": [
+      {
+        "name": "delivery-018",
+        "given": "pending requests and retained frames",
+        "when": "a service restarts",
+        "then": "old requests are invalid and new effects wait for reconciliation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-019",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When an upgrade is interrupted, activation tooling SHALL recover to one complete validated release tuple and preserve user settings and application drafts.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Inject interruptions and compare tuple/settings/application inventories.",
+    "legacyEvidence": "new coverage: interrupted upgrade drill",
+    "task": "Implement atomic release selection and interruption drills.",
+    "scenarios": [
+      {
+        "name": "delivery-019",
+        "given": "an active old release",
+        "when": "activation is interrupted at each write boundary",
+        "then": "a complete old or new tuple is selected with drafts preserved"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-020",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The release SHALL provide an offline command-line recovery path that restores the preceding shell without a working Elm host or a main-compositor restart.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Disable Elm startup and network, execute recovery and record session identity.",
+    "legacyEvidence": "docs/elm-roadmap/ROADMAP.md",
+    "task": "Ship independently executable rollback tooling and instructions.",
+    "scenarios": [
+      {
+        "name": "delivery-020",
+        "given": "a broken Elm host without network",
+        "when": "offline recovery runs",
+        "then": "the previous shell returns without restarting the compositor"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-021",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When an owned session stops, supervision SHALL stop clients and helpers, verify normal exits and retired resources, unload owned modules, and then stop its private compositor and bus.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Use protected qa_run.py; inspect exit status, empty clients and lease counts.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Preserve ordered teardown and normal-exit receipts.",
+    "scenarios": [
+      {
+        "name": "delivery-021",
+        "given": "a private QA session",
+        "when": "teardown runs",
+        "then": "closure receipts prove order and normal termination"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-022",
+    "capability": "elm-delivery",
+    "pattern": "unwanted",
+    "ears": "If a compositor and plugin ABI pair differs from the frozen accepted tuple, then the launcher SHALL refuse plugin loading and retain the working shell.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Supply a deliberately mismatched pair and retain refusal receipt.",
+    "legacyEvidence": "AGENTS.md",
+    "task": "Add hash-bound native pair preflight.",
+    "scenarios": [
+      {
+        "name": "delivery-022",
+        "given": "a mismatched plugin/core pair",
+        "when": "activation is attempted",
+        "then": "the plugin is not loaded"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-023",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When production activation is prepared, the release owner SHALL require one coherent source/runtime/ABI tuple with all mandatory native, model, CPU and user acceptance gates satisfied.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Audit case identities, original deadlines and separate verdict columns.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Create final gate ledger and concrete activation review packet.",
+    "scenarios": [
+      {
+        "name": "delivery-023",
+        "given": "partial CPU-only acceptance",
+        "when": "activation review runs",
+        "then": "the release is blocked until missing native and user gates pass"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-024",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The maintenance plan SHALL assign dependency-security triage, host-engine update cadence, regression owners and rollback responsibility for every supported release.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Tabletop an urgent engine update and document owner and gate decision.",
+    "legacyEvidence": "new coverage: operational maintenance runbook",
+    "task": "Publish support and incident maintenance runbook.",
+    "scenarios": [
+      {
+        "name": "delivery-024",
+        "given": "a supported release",
+        "when": "a host security update is proposed",
+        "then": "an owner reviews urgency and required requalification"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-025",
+    "capability": "elm-delivery",
+    "pattern": "event-driven",
+    "ears": "When the user acceptance session runs, the candidate SHALL preserve existing windows and drafts while demonstrating the named taskbar, focus, minimize, restore, pin, snap and keyboard flows.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Retain flow observations and before/after application inventory.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Prepare representative user-flow acceptance script and receipts.",
+    "scenarios": [
+      {
+        "name": "delivery-025",
+        "given": "the user workspace with drafts",
+        "when": "acceptance flows execute",
+        "then": "named flows pass and window/draft inventory remains intact"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-026",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "The host qualification SHALL identify the actual GPU adapter, driver, backend and hardware-acceleration status on each pinned host/driver tuple before claiming accelerated rendering.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Capture engine diagnostics plus GPU submission/presentation evidence.",
+    "legacyEvidence": "new coverage: GPU host qualification matrix",
+    "task": "Qualify hardware acceleration for GTK/WebKit and Qt candidates.",
+    "scenarios": [
+      {
+        "name": "delivery-026",
+        "given": "a candidate on target hardware",
+        "when": "render qualification runs",
+        "then": "the report identifies adapter and actual acceleration status"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-027",
+    "capability": "elm-delivery",
+    "pattern": "unwanted",
+    "ears": "If hardware acceleration is unavailable or disabled, then the host SHALL report the active software fallback and qualify its performance independently without claiming GPU acceleration.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Compare enabled/disabled adapter reports and whole-process latency budgets.",
+    "legacyEvidence": "new coverage: disabled acceleration campaign",
+    "task": "Test disabled acceleration and honest fallback status.",
+    "scenarios": [
+      {
+        "name": "delivery-027",
+        "given": "hardware acceleration explicitly disabled",
+        "when": "the shell starts",
+        "then": "fallback status is visible and its budget verdict is separate"
+      }
+    ]
+  },
+  {
+    "id": "ELM-DEL-028",
+    "capability": "elm-delivery",
+    "pattern": "optional",
+    "ears": "Where WebGPU is enabled, the host SHALL require a qualified adapter and device, retain an accepted non-WebGPU rendering route, and invalidate GPU resources on device loss before recovery.",
+    "phase": "P4",
+    "priority": "conditional",
+    "verification": "Record adapter/device limits, loss injection, lease retirement and recovered frames.",
+    "legacyEvidence": "new coverage: WebGPU adapter and device-loss campaign",
+    "task": "Gate optional WebGPU by pinned-engine hardware probes and device-loss tests.",
+    "scenarios": [
+      {
+        "name": "delivery-028",
+        "given": "an enabled qualified WebGPU route",
+        "when": "device loss occurs",
+        "then": "stale resources retire and an accepted route restores presentation"
+      }
+    ]
+  }
+]

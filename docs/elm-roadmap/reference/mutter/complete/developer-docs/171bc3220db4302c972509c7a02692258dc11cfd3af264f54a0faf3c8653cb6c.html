@@ -1,0 +1,970 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.InputDevice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.InputDevice"/>
+  <meta property="og:description" content="Reference for Clutter.InputDevice"/>
+  <meta name="twitter:title" content="Clutter.InputDevice"/>
+  <meta name="twitter:description" content="Reference for Clutter.InputDevice"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.InputDevice.html#description">InputDevice</a>
+  </div>
+</div>
+
+
+  
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.InputDevice.get_bus_type.html">get_bus_type</a>
+  
+    <a class="method" href="method.InputDevice.get_capabilities.html">get_capabilities</a>
+  
+    <a class="method" href="method.InputDevice.get_device_name.html">get_device_name</a>
+  
+    <a class="method" href="method.InputDevice.get_device_node.html">get_device_node</a>
+  
+    <a class="method" href="method.InputDevice.get_device_type.html">get_device_type</a>
+  
+    <a class="method" href="method.InputDevice.get_dimensions.html">get_dimensions</a>
+  
+    <a class="method" href="method.InputDevice.get_group_n_modes.html">get_group_n_modes</a>
+  
+    <a class="method" href="method.InputDevice.get_mode_switch_button_group.html">get_mode_switch_button_group</a>
+  
+    <a class="method" href="method.InputDevice.get_n_buttons.html">get_n_buttons</a>
+  
+    <a class="method" href="method.InputDevice.get_n_dials.html">get_n_dials</a>
+  
+    <a class="method" href="method.InputDevice.get_n_mode_groups.html">get_n_mode_groups</a>
+  
+    <a class="method" href="method.InputDevice.get_n_rings.html">get_n_rings</a>
+  
+    <a class="method" href="method.InputDevice.get_n_strips.html">get_n_strips</a>
+  
+    <a class="method" href="method.InputDevice.get_pad_feature_group.html">get_pad_feature_group</a>
+  
+    <a class="method" href="method.InputDevice.get_product_id.html">get_product_id</a>
+  
+    <a class="method" href="method.InputDevice.get_seat.html">get_seat</a>
+  
+    <a class="method" href="method.InputDevice.get_vendor_id.html">get_vendor_id</a>
+  
+    <a class="method" href="method.InputDevice.is_grouped.html">is_grouped</a>
+  
+    <a class="method" href="method.InputDevice.is_mode_switch_button.html">is_mode_switch_button</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.InputDevice.bus-type.html">bus-type</a>
+  
+    <a class="property" href="property.InputDevice.capabilities.html">capabilities</a>
+  
+    <a class="property" href="property.InputDevice.device-node.html">device-node</a>
+  
+    <a class="property" href="property.InputDevice.device-type.html">device-type</a>
+  
+    <a class="property" href="property.InputDevice.n-buttons.html">n-buttons</a>
+  
+    <a class="property" href="property.InputDevice.n-dials.html">n-dials</a>
+  
+    <a class="property" href="property.InputDevice.n-mode-groups.html">n-mode-groups</a>
+  
+    <a class="property" href="property.InputDevice.n-rings.html">n-rings</a>
+  
+    <a class="property" href="property.InputDevice.n-strips.html">n-strips</a>
+  
+    <a class="property" href="property.InputDevice.name.html">name</a>
+  
+    <a class="property" href="property.InputDevice.product-id.html">product-id</a>
+  
+    <a class="property" href="property.InputDevice.seat.html">seat</a>
+  
+    <a class="property" href="property.InputDevice.vendor-id.html">vendor-id</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.InputDevice.get_dimensions.html">get_dimensions</a>
+  
+    <a class="method" href="vfunc.InputDevice.get_group_n_modes.html">get_group_n_modes</a>
+  
+    <a class="method" href="vfunc.InputDevice.get_pad_feature_group.html">get_pad_feature_group</a>
+  
+    <a class="method" href="vfunc.InputDevice.is_grouped.html">is_grouped</a>
+  
+    <a class="method" href="vfunc.InputDevice.is_mode_switch_button.html">is_mode_switch_button</a>
+  
+  </div>
+</div>
+
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>InputDevice</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-input-device.c#L24">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class Clutter.InputDevice : GObject.Object
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>An input device managed by&nbsp;Clutter</p>
+<p><code>ClutterInputDevice</code> represents an input device known to&nbsp;Clutter.</p>
+<p>The <code>ClutterInputDevice</code> class holds the state of the device, but
+its contents are usually defined by the Clutter backend in&nbsp;use.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.InputDevice">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="129pt" height="116pt"
+ viewBox="0.00 0.00 129.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterInputDevice">
+<path fill="none" stroke="black" d="M109,-36C109,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 109,0 109,0 115,0 121,-6 121,-12 121,-12 121,-24 121,-24 121,-30 115,-36 109,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterInputDevice</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M79.38,-108C79.38,-108 41.62,-108 41.62,-108 35.62,-108 29.62,-102 29.62,-96 29.62,-96 29.62,-84 29.62,-84 29.62,-78 35.62,-72 41.62,-72 41.62,-72 79.38,-72 79.38,-72 85.38,-72 91.38,-78 91.38,-84 91.38,-84 91.38,-96 91.38,-96 91.38,-102 85.38,-108 79.38,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-83.83" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge1" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M60.5,-71.7C60.5,-60.85 60.5,-46.92 60.5,-36.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_bus_type.html">clutter_input_device_get_bus_type</a></h6>
+          <div class="docblock">
+            <p>Gets the bus type of this device. The returned
+value is one of the BUS_* constants defined in&nbsp;linux/input.h.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_capabilities.html">clutter_input_device_get_capabilities</a></h6>
+          <div class="docblock">
+            <p>Retrieves the capabilities of <code>device</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_device_name.html">clutter_input_device_get_device_name</a></h6>
+          <div class="docblock">
+            <p>Retrieves the name of the <code>device</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_device_node.html">clutter_input_device_get_device_node</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_device_type.html">clutter_input_device_get_device_type</a></h6>
+          <div class="docblock">
+            <p>Retrieves the type of <code>device</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_dimensions.html">clutter_input_device_get_dimensions</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_group_n_modes.html">clutter_input_device_get_group_n_modes</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_mode_switch_button_group.html">clutter_input_device_get_mode_switch_button_group</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_n_buttons.html">clutter_input_device_get_n_buttons</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_n_dials.html">clutter_input_device_get_n_dials</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_n_mode_groups.html">clutter_input_device_get_n_mode_groups</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_n_rings.html">clutter_input_device_get_n_rings</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_n_strips.html">clutter_input_device_get_n_strips</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_pad_feature_group.html">clutter_input_device_get_pad_feature_group</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_product_id.html">clutter_input_device_get_product_id</a></h6>
+          <div class="docblock">
+            <p>Gets the product <span class="caps">ID</span> of this&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_seat.html">clutter_input_device_get_seat</a></h6>
+          <div class="docblock">
+            <p>Returns the seat the device belongs&nbsp;to.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.get_vendor_id.html">clutter_input_device_get_vendor_id</a></h6>
+          <div class="docblock">
+            <p>Gets the vendor <span class="caps">ID</span> of this&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.is_grouped.html">clutter_input_device_is_grouped</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.InputDevice.is_mode_switch_button.html">clutter_input_device_is_mode_switch_button</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.InputDevice.bus-type.html">Clutter.InputDevice:bus-type</a></h6>
+          <div class="docblock">
+            <p>Bus type of this&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.capabilities.html">Clutter.InputDevice:capabilities</a></h6>
+          <div class="docblock">
+            <p>The capabilities of the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.device-node.html">Clutter.InputDevice:device-node</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.device-type.html">Clutter.InputDevice:device-type</a></h6>
+          <div class="docblock">
+            <p>The type of the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.n-buttons.html">Clutter.InputDevice:n-buttons</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.n-dials.html">Clutter.InputDevice:n-dials</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.n-mode-groups.html">Clutter.InputDevice:n-mode-groups</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.n-rings.html">Clutter.InputDevice:n-rings</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.n-strips.html">Clutter.InputDevice:n-strips</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.name.html">Clutter.InputDevice:name</a></h6>
+          <div class="docblock">
+            <p>The name of the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.product-id.html">Clutter.InputDevice:product-id</a></h6>
+          <div class="docblock">
+            <p>Product <span class="caps">ID</span> of this&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.seat.html">Clutter.InputDevice:seat</a></h6>
+          <div class="docblock">
+            <p>The <code>ClutterSeat</code> instance which owns the&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.InputDevice.vendor-id.html">Clutter.InputDevice:vendor-id</a></h6>
+          <div class="docblock">
+            <p>Vendor <span class="caps">ID</span> of this&nbsp;device.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterInputDeviceClass {
+  GObjectClass parent_class;
+  gboolean (* is_mode_switch_button) (
+    ClutterInputDevice* device,
+    guint group,
+    guint button
+  );
+  gint (* get_group_n_modes) (
+    ClutterInputDevice* device,
+    gint group
+  );
+  gboolean (* is_grouped) (
+    ClutterInputDevice* device,
+    ClutterInputDevice* other_device
+  );
+  int (* get_pad_feature_group) (
+    ClutterInputDevice* device,
+    ClutterInputDevicePadFeature feature,
+    int n_feature
+  );
+  gboolean (* get_dimensions) (
+    ClutterInputDevice* device,
+    unsigned int* width,
+    unsigned int* height
+  );
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: GObjectClass</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>is_mode_switch_button: gboolean (* is_mode_switch_button) (
+    ClutterInputDevice* device,
+    guint group,
+    guint button
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>get_group_n_modes: gint (* get_group_n_modes) (
+    ClutterInputDevice* device,
+    gint group
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>is_grouped: gboolean (* is_grouped) (
+    ClutterInputDevice* device,
+    ClutterInputDevice* other_device
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>get_pad_feature_group: int (* get_pad_feature_group) (
+    ClutterInputDevice* device,
+    ClutterInputDevicePadFeature feature,
+    int n_feature
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>get_dimensions: gboolean (* get_dimensions) (
+    ClutterInputDevice* device,
+    unsigned int* width,
+    unsigned int* height
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-get_dimensions"><a href="vfunc.InputDevice.get_dimensions.html">Clutter.InputDeviceClass.get_dimensions</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_group_n_modes"><a href="vfunc.InputDevice.get_group_n_modes.html">Clutter.InputDeviceClass.get_group_n_modes</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_pad_feature_group"><a href="vfunc.InputDevice.get_pad_feature_group.html">Clutter.InputDeviceClass.get_pad_feature_group</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-is_grouped"><a href="vfunc.InputDevice.is_grouped.html">Clutter.InputDeviceClass.is_grouped</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-is_mode_switch_button"><a href="vfunc.InputDevice.is_mode_switch_button.html">Clutter.InputDeviceClass.is_mode_switch_button</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

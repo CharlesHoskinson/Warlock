@@ -1,0 +1,27 @@
+Push-pull functional reactive programming
+Push-pull functional reactive programming
+Haskell Symposium 2009
+Conal Elliott
+Abstract
+Functional reactive programming (FRP) has simple and powerful semantics, but has resisted efficient implementation. In particular, most past implementations have used demand-driven sampling, which accommodates FRP’s continuous time semantics and fits well with the nature of functional programming. Consequently, values are wastefully recomputed even when inputs don’t change, and reaction latency can be as high as the sampling period.
+This paper presents a way to implement FRP that combines data- and demand-driven evaluation, in which values are recomputed only when necessary, and reactions are nearly instantaneous. The implementation is rooted in a new simple formulation of FRP and its semantics and so is easy to understand and reason about.
+On the road to a new implementation, we’ll meet some old friends (monoids, functors, applicative functors, monads, morphisms, and improving values) and make some new friends (functional future values, reactive normal form, and concurrent “unambiguous choice”).
+Paper (292K PDF)
+See also:
+Video of ICFP talk
+Slides for ICFP talk
+Note:
+ This paper supercedes the technical report 
+Simply efficient functional reactivity
+.
+BibTex
+@InProceedings {Elliott2009-push-pull-frp,
+  author    = {Conal Elliott},
+  title     = {Push-pull functional reactive programming},
+  booktitle = {Haskell Symposium},
+  url       = {http://conal.net/papers/push-pull-frp},
+  year      = 2009
+}
+
+Errata
+I’ll list errors and corrections are listed here as they are reported.

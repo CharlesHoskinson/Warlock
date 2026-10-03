@@ -1,0 +1,1242 @@
+                                          Flapjax: A Programming Language
+                                                 for Ajax Applications
+
+           Leo A. Meyerovich                                                      Arjun Guha                                  Jacob Baskin
+   University of California, Berkeley                                          Brown University                                  Google
+     lmeyerov@eecs.berkeley.edu                                               arjun@cs.brown.edu                         jacob.baskin@gmail.com
+
+
+           Gregory H. Cooper                                                Michael Greenberg                               Aleks Bromfield
+                  Google                                                 University of Pennsylvania                             Microsoft
+            ghcooper@gmail.com                                            mgree@seas.upenn.edu                           albromfi@microsoft.com
+
+
+                                                                        Shriram Krishnamurthi
+                                                                                Brown University
+                                                                                sk@cs.brown.edu
+
+
+
+
+Abstract                                                                                    Keywords JavaScript, Web Programming, Functional Re-
+This paper presents Flapjax, a language designed for con-                                   active Programming
+temporary Web applications. These applications communi-
+cate with servers and have rich, interactive interfaces. Flap-                              1. Introduction
+jax provides two key features that simplify writing these ap-                               The advent of broadband has changed the structure of appli-
+plications. First, it provides event streams, a uniform abstrac-                            cation software. Increasingly, desktop applications are mi-
+tion for communication within a program as well as with ex-                                 grating to the Web. Programs that once made brief forays
+ternal Web services. Second, the language itself is reactive:                               to the network now “live” there. The network servers they
+it automatically tracks data dependencies and propagates up-                                communicate with not only provide data but also store data,
+dates along those dataflows. This allows developers to write                                enabling networked persistence. Some applications, known
+reactive interfaces in a declarative and compositional style.                               as mashups, combine data from multiple sources. Often, ap-
+    Flapjax is built on top of JavaScript. It runs on unmodified                            plications process not only static data but also continuous
+browsers and readily interoperates with existing JavaScript                                 streams of information, such as RSS news feeds.
+code. It is usable as either a programming language (that                                      This paper presents Flapjax, a programming language
+is compiled to JavaScript) or as a JavaScript library, and is                               built with such applications in mind. We make three key
+designed for both uses. This paper presents the language,                                   arguments, which this paper will substantiate:
+its design decisions, and illustrative examples drawn from
+several working Flapjax applications.                                                        • Event-driven reactivity is a natural programming model
+                                                                                               for Web applications.
+Categories and Subject Descriptors D.3.2 [Programming                                        • Consistency should be a linguistic primitive.
+Languages]: Language Classifications—Data-flow languages
+                                                                                             • Uniformity is possible when treating both external events
+General Terms             Languages, Design                                                    (those from remote machines) and internal ones (those
+                                                                                               from local devices such as the mouse). Uniformity en-
+                                                                                               ables better abstractions and also reduces the number of
+                                                                                               concepts needed for reasoning and validation.
+Permission to make digital or hard copies of all or part of this work for personal or          Rather than invent a language from fresh cloth, we chose
+classroom use is granted without fee provided that copies are not made or distributed
+for profit or commercial advantage and that copies bear this notice and the full citation   to engineer Flapjax atop HTML and JavaScript (despite their
+on the first page. To copy otherwise, to republish, to post on servers or to redistribute   warts). JavaScript offers three important benefits. First, it is
+to lists, requires prior specific permission and/or a fee.
+OOPSLA’09, October 25–29, 2009, Orlando, Florida, USA.                                      found in all modern browsers, and has hence become a lin-
+Copyright c   2009 ACM 978-1-60558-734-9/09/10. . . $10.00                                 gua franca. Second, it reifies the entire content of the cur-
+rent Web page into a single data structure called the Doc-        var timerID = null;
+ument Object Model (DOM), so that developers can nat-             var elapsedTime = 0;
+urally address and modify all aspects of the current page
+                                                                  function doEverySecond() {
+(including its visual style). Third, it provides a primitive,
+                                                                    elapsedTime += 1;
+XMLHttpRequest, that permits asynchronous communica-                document.getElementById("curTime")
+tion (in the style called Ajax [17]) without reloading the                  .innerHTML = elapsedTime; }
+current page. This enables background communication with          function startTimer() {
+servers so Web applications can provide much of the reac-           timerId = setInterval("doEverySecond()", 1000); }
+tivity of desktop applications. As a result of building atop      function resetElapsed() {
+JavaScript and HTML, Flapjax applications do not require            elapsedTime = 0; }
+plugins or other browser modifications; they can reuse ex-
+isting JavaScript libraries; and the language can build on the    <body onload="startTimer()">
+existing knowledge of Web developers.                             <input id="reset" type="button" value="Reset"
+                                                                          onclick="resetElapsed()"/>
+    A formal presentation would hide the many pragmatic
+                                                                  <div id="curTime"> </div>
+benefits and decisions in the design of Flapjax. We there-
+                                                                  </body>
+fore present it through a series of increasingly sophisticated
+examples, including uses and mashups of popular Web ser-
+                                                                             Figure 1. Elapsed Time in JavaScript
+vices. These demonstrate how event streams, and automatic
+reaction to their changes, encourage several important soft-
+ware design principles including model-view clarification         3. elapsedTime is set in the previous line.
+and policy-mechanism separation. We outline the implemen-
+tation technique and its pragmatic choices. Finally, we dis-      4. But this depends on the invocation of doEverySecond.
+cuss the use of the language in actual applications.              5. doEverySecond is passed inside a string parameter to
+                                                                     setInterval inside startTimer.
+Language or Library? We have repeatedly referred to
+Flapjax as a language, but with a little extra effort, Flapjax    6. startTimer is called by the onload handler. . . so it
+can be used as a JavaScript library. That means the developer        appears that’s where the value comes from.
+who does not want to add the Flapjax-to-JavaScript com-           7. Is that it? No, there’s also the initialization of the variable
+piler (section 3.3) to their toolchain can include the Flapjax       elapsedTime at the top.
+library and program purely in JavaScript itself; in fact, most    8. Oh wait: elapsedTime is also set within resetElapsed.
+Flapjax applications are actually written this way (section 4).
+This involves some overhead, as we discuss in section 3.3,        9. Does resetElapsed ever execute? Yes, it is invoked in
+but we leave this decision in the hands of developers rather         the onclick.
+than making it for them.                                          Just to understand this tiny program, the developer needs to
+                                                                  reason about timers, initialization, overlap, interference, and
+2. Flapjax by Example                                             the structure of callbacks. (We trust the reader spotted the
+We present Flapjax as a programming language through              semantic bug? See section 2.2 for the answer.)
+examples. They are necessarily short, but Flapjax is a living,       The culprit here is not JavaScript, but the use of call-
+breathing language! We invite the reader to view and run the      backs and their effect on program structure. Callbacks are
+demos on the language site,1 read the documentation of the        invoked by a generic event loop (e.g., in the JavaScript run-
+many primitives, and try out their own examples.                  time) which has no knowledge of the application’s logic,
+                                                                  so it would be meaningless for a callback to compute and
+2.1 The Structure of JavaScript Programs                          return a non-trivial value. The return type of a callback is
+Before we study Flapjax, let us consider a very simple            therefore the equivalent of void. That immediately means
+JavaScript program. It displays the time elapsed since start-     developers can no longer use types to guide their reasoning.
+ing or clicking on a button (figure 1, which elides some of       Furthermore, a void-typed function or method must have
+the HTML scaffolding). The point of this program is to fill in    side-effects to be useful, so even local reasoning about a
+a value for the curTime element on the HTML page. Con-            program’s data depends on global reasoning about the pro-
+sider the reasoning a developer must employ:                      gram’s control flow, destroying encapsulation and abstrac-
+                                                                  tion. Indeed, Myers has forcefully made similar critiques of
+1. The value is ostensibly displayed by the second line of        callbacks [25].
+   the function doEverySecond.                                       The problem of comprehension affects not only humans
+2. The value displayed is that of elapsedTime.                    but also tools. For example, static analysis and verification
+                                                                  engines must decipher a program’s intent from a highly
+1 www.flapjax-lang.org                                            fragmented description, and must reconstruct its dataflow
+from a rat’s nest of fragments of control. As previous work         var nowB = timerB(1000);
+on model checking Web applications has shown [23], a more           var startTm = nowB.valueNow();
+direct program structure is a great help in this regard.            var clickTmsB = $E("reset", "click").snapshotE(nowB)
+                                                                                    .startsWith(startTm);
+   The asynchronous nature of Ajax applications further
+                                                                    var elapsedB = nowB - clickTmsB;
+compounds these problems. Because the primary composi-
+                                                                    insertValueB(elapsedB, "curTime", "innerHTML");
+tion operator is a side-effect, interleavings and interactions
+become the developer’s responsibility. The network does not         <body onload="loader()">
+guarantee message ordering; deployment can further affect           <input id="reset" type="button" value="Reset"/>
+ordering (e.g., higher server loads, or users at a greater geo-     <div id="curTime"> </div>
+graphic distance from servers than developers). All the usual       </body>
+problems of concurrency manifest, without even the small
+comfort of locking.                                                               Figure 2. Elapsed Time in Flapjax
+   Despite this, callbacks appear necessary to receive noti-
+fication of events, and are charged with propagating them
+through the system to keep the data model up-to-date. In an         in this case one per click of the button named reset. The
+Ajax application, there are numerous sources of updates a           result is a stream of DOM event objects. The snapshotE
+program must process, such as:                                      method transforms this into a stream of the value—at the
+1. initial data from each host                                      time of clicking—of the timer. startsWith converts the
+                                                                    event stream into a behavior, initialized with startTm. Fi-
+2. user actions (e.g., button clicks, mouse movements)              nally, insertValueB inserts the value of its behavior into
+3. updates from a data stream                                       the DOM. (Appendix A recapitulates all Flapjax operations
+4. changes to data made in another concurrent session               used in this paper.)
+                                                                        Obviously, the Flapjax code may not appear any “easier”
+5. acknowledgments from servers (e.g., in response to a             to a first-time reader. What is salient is both what is and isn’t
+   store request)                                                   present. What is present is the composition of expressions,
+6. changes to the access-control policy                             even when they involve I/O. A button is no longer just an
+                                                                    imperative object; rather, $E("reset", "click") lets us
+As a result, Ajax applications are agglomerations of call-
+                                                                    treat it as a value that can be composed with and transformed
+backs with largely implicit control flows. Some operations
+                                                                    by surrounding expressions. What is absent is the callbacks:
+exacerbate this: for instance, XMLHttpRequest requires a
+                                                                    the developer simply expresses the dependencies between
+callback (onreadystatechange) that it invokes up to four
+                                                                    expressions, and leaves it to the language to schedule up-
+times, providing the status in a field (not as a parameter to
+                                                                    dates.2 Thus, nowB updates every second, and therefore so
+the callback).
+                                                                    does elapsedB (which depends on nowB) and so does the
+2.2 The Flapjax Alternative                                         value on the page (because elapsedB is inserted into it).
+                                                                        It is instructive to return to the pure JavaScript version.
+Flapjax endows JavaScript with a reactive semantics. In             The bug is that the time displayed on-screen—which we
+effect, if a developer defines y = f (x) and the value of           might think of as having to always represent the value of
+x changes, the value of y is recomputed automatically.              elapsedTime (i.e., a model-view relationship)—is unde-
+Concretely, Flapjax is JavaScript augmented with two new            fined between when the user clicks on the Reset button and
+kinds of data. A behavior is like a variable—it always has          when the timer next fires. This is because the program re-
+a value—except that changes to its value propagate auto-            sets elapsedTime but not does propagate it to the screen.
+matically; an event stream is a potentially infinite stream of      The error is subtle to detect during testing because it is a
+discrete events whose new events trigger additional compu-          function of when in this interval the user clicks on the but-
+tation [14, 28]. The propagation of updated behavior values         ton. Put differently, the developer has incurred the burden of
+and new events is the responsibility of the language.               synchronizing the on-screen value with the model of time,
+    Figure 2 uses the same timer example to illustrate these        and even in such a simple program, it is possible to slip up.
+concepts. The elapsed time (always has a value, but the value       In contrast, the Flapjax developer has left maintenance of
+keeps changing) is best represented as a behavior, while            consistency to the language.
+clicks on the reset button (may be clicked an arbitrary num-            In a sense, behaviors should not surprise JavaScript de-
+ber of times, but the developer cannot anticipate when it           velopers. When a program makes a change to the JavaScript
+will be clicked next) is best represented as an event stream.       DOM, the update is automatically propagated to the screen
+timerB(1000) creates a behavior that updates every second           without the need to notify the browser’s renderer. In other
+(i.e., 1000 milliseconds). The valueNow method extracts a
+snapshot of the behavior’s value at the time it is invoked (i.e.,   2 The callbacks for the timer and the button are set up and managed by
+
+it does not update automatically). $E defines an event stream,      timerB and $E. Callback management is discussed in section 3.5.
+words, the DOM already acts rather like a behavior! Flapjax                       In Flapjax, the event stream is an excellent representation
+thus asks why only the bottommost layer should provide this                    of policy. Thus, we would write,
+feature, and instead exposes to developers the same function-
+                                                                               function mkSaveBox(whenE) {
+ality previously reserved for a special case.
+                                                                                 var draftBox = // make a <textarea>
+                                                                                 // save every time there is an event on whenE
+2.3 From Buttons to the Network (and Back)
+                                                                                 return draftBox; }
+The example above shows that button clicks are event
+streams and clocks are behaviors. Flapjax makes it possi-                      where whenE represents the policy. Armed with this abstrac-
+ble for developers to treat all the other components of Ajax                   tion, the concrete policy is entirely up to the developer’s
+programs in these terms. The mouse’s location is a behavior.                   imagination; here are three simple examples:
+A text box can be treated either as a behavior (its current                    mkSaveBox(timerE(60000))
+content) or as an event stream (a stream of changes), de-                      mkSaveBox($E(btn, "click"))
+pending on which is more convenient. A server is simply a                      mkSaveBox(mergeE(timerE(60000),
+function that consumes an event stream of requests and pro-                                     $E(btn, "click")))
+duces an event stream of responses. This view is slowly also
+                                                                               Respectively, these save every minute, every time the user
+being adopted by industry.3
+                                                                               clicks a button, or when either of these occurs.
+   As an illustration, consider a component that appears
+                                                                                  Now we complete the definition of mkSaveBox. First, we
+in many Web applications: a text buffer with auto-saving.
+                                                                               create the <textarea>:
+(Many readers will recognize this from the mail composition
+buffer of Google Mail.) This is a component we reuse in                        var draftBox = TEXTAREA();
+several of our own applications (section 4). It is therefore                   TEXTAREA creates a new <textarea> and exposes it as
+instructive to consider its design and implementation. We                      a behavior. Flapjax defines similar constructors for all the
+will build the auto-save buffer incrementally to show how                      HTML elements.
+a developer might approach such a problem.                                        We now define a simple function that identifies the Web
+   At its simplest, the developer wants to create a text box                   service and marshals the text buffer’s contents:
+that saves every t seconds:
+                                                                               function makeRequest(v) {
+function mkSaveBox(t) {                                                          return {url: "/saveValue", fields: {value: v},
+  var draftBox = // make a <textarea>                                                    request: "post"};}
+  setInterval("...XMLHttpRequest...", t*1000);
+  return draftBox; }                                                              We use Flapjax’s $B function to obtain a behavior car-
+                                                                               rying the current value of draftBox. ($B may be applied
+In fact, however, the buffer should also save whenever the                     to any input element.) When a save event fires on whenE,
+user clicks the Save button. That means the function needs                     we snapshot the current value of draftBox and use
+two parameters:                                                                makeRequest to wrap the draft into a request:
+function mkSaveBox(t, btn) {                                                   var requestsE = whenE.snapshotE($B(draftBox))
+  var draftBox = // make a <textarea>                                                               .mapE(makeRequest);
+  // save every t seconds or when btn clicks
+                                                                               Given this event stream of requests we invoke the func-
+  return draftBox; }
+                                                                               tion getWebServiceObjectE, which consumes a stream of
+Now it isn’t quite as clear what to do: using setInterval,                     server requests and returns a stream of server responses:
+the save callback will run every t seconds, but is that what                   var savedE = getWebServiceObjectE(requestsE);
+we want? Should it auto-save every t seconds regardless of
+Save clicks, or only t seconds after the last Save? Irrespec-                  getWebServiceObjectE encapsulates both the call to
+tive, should it auto-save even if there are no changes? And                    XMLHttpRequest and its callback. When the callback is
+then, if some user needs it to auto-save after every keystroke,                invoked to indicate that the response is ready, Flapjax fires
+this abstraction is useless.                                                   an event carrying the response.
+   The problem is that the abstraction confuses mecha-                         Presentation The above provides a complete implementa-
+nism—setting up timers, dispatching messages, and so on—                       tion of the auto-save functionality, using event streams to
+with policy. Obtaining this separation is not straightforward                  represent the policy. We can go further: in our applications,
+in JavaScript and most libraries fail to demonstrate it.                       we have found it valuable for the abstraction to indicate
+3 In September 2006, Opera 9 added support for their new standard on
+                                                                               when the buffer is out-of-sync with the server (i.e., between
+                                                                               edits and responses). We use a Cascading Style Sheet (CSS)
+Server-Sent Events. Though we are critical of some details of their specifi-
+cation, this push from a commercial vendor indicates that these ideas have     annotation to alter the presentation by changing the editor’s
+the potential for broad support.                                               border:
+   var changedE = $B(draftBox).changes();                                          return $E(elt,"mousemove").mapE(
+   styleE = mergeE(changedE.constantE("unsaved"),                                    function(mm) {
+                   savedE.constantE("saved"));                                         return { drag: elt,
+   styleB = styleE.startsWith("saved");                                                         left: mm.clientX,
+   insertValueB(styleB, draftBox, "className");}                                                top: mm.clientY };});}
+changes creates an event stream that fires each time the                         The function above is permanently stuck dragging. We
+value of $B(draftBox) changes (i.e., on each keystroke).                         should start responding to mousemove events only after we
+constantE transforms the keyboard events (which indi-                            register a mousedown event:
+cate the buffer has changed) and the network responses
+                                                                                 return $E(elt,"mousedown").mapE(
+(which indicate that the server has saved) to the strings
+                                                                                   function(md) {
+"unsaved" and "saved" respectively. The merged event
+                                                                                     return $E(elt,"mousemove").mapE(
+stream, styleE, propagates events from both its arguments.
+                                                                                       function(mm) {
+We use startsWith (seen earlier in figure 2) to trans-
+                                                                                         return { drag: elt,
+form the discrete event stream into a continuous behavior,
+                                                                                                  left: mm.clientX,
+styleB. The value carried by styleB, is the value of the
+                                                                                                  top: mm.clientY }})});
+last event, which is the current state of the auto-save buffer.
+We need to specify an initial value for styleB to hold before                    Above, the mousemove event stream is created only after an
+the first event fires. Initially, the (empty) buffer is effectively              enclosing mousedown event fires. In fact, each mousedown
+“saved”. This behavior is inserted into the DOM as the CSS                       produces a new stream of mousemove events.
+className; CSS class entries for saved and unsaved will                             This code appears to have a runtime type error: it pro-
+correspondingly alter the box’s appearance.                                      duces an event stream of event streams. Such higher-order
+                                                                                 event streams are in fact perfectly legal and semantically
+2.4 Higher-Order Event Streams: Drag-and-Drop                                    sound. The problem is that dragE ultimately needs the co-
+So far, we have seen event streams of keystrokes and net-                        ordinates of the latest inner event stream (the latest drag se-
+work requests. Flapjax events may, however, represent arbi-                      quence). To flatten higher-order streams, Flapjax offers the
+trary actions. In particular, they can represent events much                     primitive:
+more complex than those exposed by the DOM. To illustrate                        switchE :: EventStream (EventStream a)
+this, we build a drag-and-drop event abstraction.                                        -> EventStream a
+   For simplicity, consider dragging and dropping a box:
+                                                                                 switchE fires events from the latest inner event stream.
+<div id="target"                                                                 With switchE, we can easily fix our type error:
+     style="position: absolute;
+            border: 1px solid black">                                            var moveEE = $E(elt,"mousedown")
+Drag this box                                                                      .mapE(function(md) { ... as before ...
+</div>                                                                           return moveEE.switchE();
+
+The DOM provides mouseup, mousedown and mousemove                                   We have not accounted for drop events, which should
+events for each element. A drag-and-drop operation begins                        “turn off” the stream of drag events. We thus map over the
+with a mousedown, followed by a sequence of mousemoves,                          stream of mouseup events and return a singleton drop event:
+and ends with mouseup.                                                           var moveEE = ... as before ...
+   We wish to define a function that, given an element,                          var dropEE = $E(elt,"mouseup")
+produces an event stream of drags and a drop:4                                     .mapE(function(mu) {
+                                                                                     return oneE({ drop: elt,
+dragE :: element -> EventStream (drag or drop)
+                                                                                                   left: mu.clientX,
+Both drag and drop events are a record of three fields. The                                        top: mu.clientY })});
+fields left and top are the mouse coordinates. The third                         We can combine these two event streams with mergeE,
+field, drag or drop, carries the element being manipulated.                      which fires events from either of its arguments:
+    We begin with mousemove, which naturally leads to the
+creation of drag events:                                                         return mergeE(moveEE,dropEE).switchE();
+function dragE(elt) {                                                            Because switchE fires events from the latest inner event
+                                                                                 stream, when the mouse button is pressed, moveEE produces
+4 Throughout this paper, we specify each function’s interface using a
+                                                                                 an event stream of drags. This becomes the latest inner event
+Haskell-like type annotation. Because JavaScript is a latently typed lan-
+                                                                                 stream, and switchE thus produces a stream of drags.
+guage, these should be regarded as comments, though they could be en-
+forced by a static type checker; in Flapjax, they are enforced using contracts      When the mouse button is released, dropEE produces a
+(section 5).                                                                     new event stream (oneE({ drop ... }). When this new
+event stream arrives, switchE stops forwarding drag events       function pickSex() {
+from the previous event stream. It fires the single drop event     var ui = SELECT(
+and waits for more (in this case, we know there is just one          OPTION({ value: "Female" }, "Female"),
+                                                                     OPTION({ value: "Male" }, "Male"));
+drop event).
+   When the mouse button is pressed again, moveEE pro-
+                                                                   return {
+duces a new stream of drags that supersede the earlier                dom: ui,
+stream from dropEE. This abstraction therefore lets us drag           pred: function(person) {
+the box repeatedly.                                                    return person.sex == $B(ui);
+                                                                 }};}
+Using Drag-and-Drop The dragE function merely reports
+the position where the target is dragged and dropped. It does    function pickScore() {
+not, as one might expect, actually move the target. This           var ui = INPUT({ type: "text", size: 5 });
+omission is intentional. We can easily move the target when
+it is dragged:                                                     return {
+                                                                      dom: ui,
+var posE = dragE("target");                                           pred: function(person) {
+insertValueE(posE.mapE(function(p)                                     return person.score == $B(ui);
+               {return p.left}),                                 }};}
+             "target","style","left");
+insertValueE(posE.mapE(function(p)                                           Figure 3. Filters for Single Criteria
+               {return p.top}),
+             "target","style","top");
+However, by separating the drag-and-drop event stream from       function pickFilter(filters) {
+                                                                   var options = mapKeys(function(k, _) {
+the action of moving the element, we’ve enabled a variety of
+                                                                         return OPTION({ value: k }, k);},
+alternate actions. For example, the following action ignores
+                                                                     filters);
+the drag events and immediately moves the target when it is        var sel = SELECT(options);
+dropped:                                                           var subFilter = filters[$B(sel)]();
+insertValueE(
+                                                                   return {
+  posE.filterE(function(p) {return p.drop;})
+                                                                     dom: SPAN(sel, " is ", subFilter.dom),
+      .mapE(function(p) { return p.left;}),
+                                                                     pred: subFilter.pred };};
+  "target","style","left");
+In the next example, the target moves continuously but lags                       Figure 4. Selecting Filters
+behind the mouse by 1 second:
+insertValueE(
+  posE.delayE(1000)                                                 Each function returns both the interface for the filter
+      .mapE(function(p) {return p.left;}),                       and the predicate that defines the filter. The interface ele-
+  "target","style","left");                                      ments are built using Flapjax’s constructors, such as SELECT
+                                                                 and INPUT, which construct behaviors (just like TEXTAREA
+Further possibilities include confining the drag area, abort-    in section 2.3). We can display these DOM behaviors with
+ing drag operations, etc. Our example has omitted a start-       insertDomB:
+drag event, which opens up a range of new uses. The reader
+might wish to also compare our approach to that of Ar-           var filterObj = pickScore();
+rowlets [22], which we discuss in section 6.                     insertDomB(filterObj.dom,"filterDiv");
+                                                                 We can use the predicate to filter an array of candidates:
+2.5 Compositional Interfaces: Building Filters
+                                                                 var filteredCandidates =
+We built drag-and-drop by combining event streams that
+                                                                   filter(filterObj.pred,candidates);
+were extracted from a single DOM element. Flapjax also
+allows behaviors to be built from multiple, independently-       Observe in pickScore that $B(ui) is a behavior dependent
+updating sources. We will illustrate this with an example        on the current score. The value of filteredCandidates
+taken from Resume, an application we discuss in section 4.       thus updates automatically as the user changes their desired
+   Resume presents reviewers with a list of a job candidates.    score. We can then map over the list of candidates, transform-
+A large list is unusable without support for filtering and       ing each candidate object to a string. The resulting strings
+sorting. Figure 3 defines two possible filters for selecting     can be inserted into the DOM. Flapjax tracks these data de-
+candidates: by sex and by score.                                 pendencies and automatically keeps them consistent.
+function modalFilter(subFilter) {                                  // flickrSearchRequest :: String -> Request
+  var button = A({ href: "" }, "Update");                          // Packages the search text into a Flickr API call.
+  var subPred = subFilter.pred;                                    function flickrSearchRequest(req) { ... }
+
+  return {                                                         // flickrSearchResponse :: Response -> Listof(Url)
+    dom: DIV(subFilter.dom, button),                               // Extracts URLs from a Flickr API response.
+    pred: $E(button, "click")                                      function flickrSearchResponse(resp) { ... }
+          .snapshotE(subPred)
+          .startsWith(subPred.valueNow()) };};                     // makeImg :: Url -> Element
+                                                                   function makeImg(url) {
+          Figure 5. Filters with an Update Button                    return IMG({ src: url }); }
+
+                                                                   var queryE = $B("search").changes().calmE(1000);
+                                                                   var requestE = queryE.mapE(flickrSearchRequest);
+    Real systems may have many available filters. If the user      var responseE = getForeignWebServiceObjectE(requestE)
+wants only one at any given time, displaying them all would         .mapE(flickrSearchResponse);
+clutter the screen. We might instead indicate the available        var imgs =
+filters in a drop-down box, and show only the controls for           DIV(map(makeImg, responseE.startsWith([])));
+the selected filter.
+    Figure 4 implements a filter selector. It chooses between      insertDomB(imgs, "thumbs");
+filters of the form in figure 3, where each filter is an object
+with dom and pred fields (of the appropriate type). The result                 Figure 6. Flickr Thumbnail Viewer
+of pickFilter is also an object of the same type.
+    The function is parameterized over a dictionary of avail-
+                                                                   subPred, but a snapshot of its value when Update was last
+able filters; for example:
+                                                                   clicked. As a result, we get a modal filtering interface.
+basicFilters = {                                                      By preserving the interface to a filter at each level, we
+  "Sex": pickSex,                                                  obtain a variety of substitutable components. For example,
+  "Score": pickScore };                                            filterObj may be any one of:
+var filterObj = pickFilter(basicFilters);
+                                                                   filterObj = pickScore();
+We build the drop-down box (sel) by mapping over the               filterObj = pickSex();
+names of the filters (options); we elide mapKeys—it                filterObj = pickFilter(
+maps a function over the key-value pairs of an object.               { "Sex": pickSex, "Score": pickScore });
+The pickFilter interface displays sel and the interface            filterObj =
+for the selected filter (subFilter.dom). The predicate for           modalFilter(pickFilter(
+pickFilter is that of the selected filter.                             { "Sex": pickSex, "Score": pickScore }));
+    When the user chooses a different filter, $B(sel) up-          Regardless of the definition of filterObj, the code to apply
+dates, and so does subFilter.dom. Since the DOM de-                and display filters does not need to change:
+pends on subFilter.dom, Flapjax automatically removes
+the interface of the old filter and replaces it with that of the   insertDomB(filterObj.dom, "filterDiv");
+new one. The developer does not need to engineer the DOM           var filteredCandidates =
+update. The filtering predicate (subFilter.pred) updates             filter(filterObj.pred, candidates);
+similarly, changing any displayed results that depend on it.       In Resume, we have even more general combinators such as
+    These filters update the list immediately when the user        the conjunction and disjunction of multiple filtering options.
+makes a selection in the filtering GUI. An alternate, modal        Though it is unrelated to the notion of filtering itself, this
+interface would not affect the list until an Update button is      idea of bundling interface with behavior is strongly reminis-
+clicked. We can reuse our existing filtering abstractions for      cent of Formlets [9], which we discuss in section 6.
+modal filters. To do so, we build the interface by composing
+filters, exactly as we did in figure 4. When we’re done, we        2.6 Pipes (and Tubes) for Web Services
+apply modalFilter (figure 5) to add an Update button:              As Unix showed many decades ago, pipelines are good com-
+                                                                   ponent connectors. The getForeignWebServiceObjectE
+var filterObj =
+                                                                   primitive extends this to the Web. Suppose, for instance, the
+  modalFilter(pickFilter(basicFilters));
+                                                                   developer wants to erect a pipeline from a text box to a Web
+As the user makes selections in the filtering interface,           service to the screen. Assuming the HTML document con-
+subPred continuously updates in modalFilter. How-                  tains an input box with id search and a presentation ele-
+ever, modalFilter’s predicate is not the current value of          ment with id thumbs, the program in figure 6 extracts each
+//    EventStream {data: a, loc: String }                        An application that uses getLatLng continuously needs to
+// -> EventStream {data: a, point: Point or false}               associate points returned in the callback with data about the
+function makeGoogleGeocoderE(requestE) {                         corresponding request; we can encapsulate in a closure:
+  var geocoder = new google.maps.ClientGeocoder();
+  var resultE = receiverE(); // primitive stream                 var callback = function(d) {
+                                                                   return function(p) { ... }};
+  var callback = function(d) {                                   getLatLng(data.location,callback(data));
+    return function(p) { resultE.sendEvent(
+      { data: d, point: p })}};                                     We will package this pattern into an event stream trans-
+                                                                 former from strings to points, along with an arbitrary datum
+  requestE.mapE(function(req) {                                  that is passed from each request to its associated result:
+    geocoder.getLatLng(req.loc,                                     EventStream { data: a, loc: String }
+      callback(req.data));});
+                                                                 -> EventStream { data: a, point: Point }
+  return resultE;};                                              We can easily map over a stream of requests:
+                                                                 function makeGoogleGeocoderE(requestE) {
+Figure 7. Geocoder Service as Event Stream Transformer
+                                                                   var callback = ...;
+                                                                   requestE.mapE(function(req) {
+query typed into the search box, sends the query to the photo        getLatLng(req.loc,callback(req.data)); });}
+sharing site flickr.com, obtains a list of thumbnails, and       However, the result is not available within the body of
+displays them in the DOM.                                        function(req) { ... }, so the event stream above does
+   In the definition of queryE, calmE builds a “muted”           not produce meaningful events. Since results arrive asyn-
+event stream for a given time period. By calming an event        chronously, they are conceptually a new event stream. The
+stream associated with a buffer’s keystrokes for a second,       operation receiverE creates a primitive event stream with
+the developer can keep the system from responding to every       no sources, so it does not fire any events:
+keystroke, waiting for a pause when the user is not typing.
+We use this method frequently to provide smoother user           var resultE = receiverE();
+interfaces.                                                      var callback = ...;
+                                                                 requestsE.mapE(...);
+2.7 Mashups: Composing Web Services                              return resultE;
+If Web services expose themselves as consumers and pro-          However, we can imperatively push an event to it using
+ducers of event streams, they naturally fit the Flapjax mold.    sendEvent. Since points are sent to the callback, the body
+However, many external Web services are not designed this        of our callback becomes:
+way. Some such as Twitter (www.twitter.com, which lets
+users broadcast short messages called tweets) return re-         resultE.sendEvent({ data: d, point: p });
+sponses containing JavaScript code that must be eval’d           The complete function is shown in figure 7. It exposes it-
+to obtain a local callback. Others, such as Google Maps          self as a pure Flapjax event transformer, completely hid-
+(maps.google.com), supply extensive (callback-based) li-         ing the internal callback. Using this pattern, we can erect
+braries. However, with just a little effort, these callback-     a similar reactive interface—which can then be treated
+based APIs can be turned into event stream transformers          compositionally—to any Web service with a callback-based
+that fit naturally into Flapjax applications. We first show      API [20].
+this adaptation, then use it to build a mashup of Twitter and
+                                                                 Twitter/Google Maps Mashup Now that we’ve seen how
+Google Maps.
+                                                                 callback-based Web services can be turned into event stream
+Google Geocoder The Google Geocoder is a part of the             transformers, we can combine Web services into a mashup.
+Google Maps API. It accepts the name of a location (e.g.,        Consider a simple mashup that takes Twitter’s most recent
+“Providence, RI”) and, if it successfully interprets the name,   public tweets and plots them on a Google Map. This mashup
+returns its latitude and longitude. The lookup occurs asyn-      operates in three steps: (1) Fetch the live feed of public
+chronously on Google’s servers, so it is unsurprising that the   tweets from Twitter. Tweets are accompanied by the location
+Geocoder function uses a callback:                               (e.g., “Providence, RI”) of their sender. (2) Using the Google
+getLatLng :: String * (Point -> void) -> void                    Maps Geocoder API, transform these locations into latitudes
+                                                                 and longitudes. (3) If the Geocoder recognizes the location,
+whose use tends to follow this template:                         plot the corresponding tweet on an embedded Google Map.
+var data = ...                                                   Since we have a live feed, repeat forever.
+var callback = function(p) { ... };                                 Figure 7 shows the code for the Geocoder event stream.
+getLatLng(data.location,callback);                               We can similarly build a public tweet event stream:
+var googleMap = new google.maps                                In the interest of space, we elide the definitions of these
+  .Map2(document.getElementById("map"));                       functions. However, they are similar in length and in spirit
+googleMap.setCenter(
+                                                               to the Geocoder function.
+  new google.maps.LatLng(0, 0), 2);
+                                                                   Figure 8 shows the code for our mashup (figure 9 and
+// Fetch the live feed of public tweets                        figure 10 show two instances of its execution). Aside from
+var tweetE = getTwitterPublicTweetsE();                        the initialization of the embedded map, the mashup is al-
+                                                               most directly a transcription of strategy outlined in prose
+// Transform locations into coordinates                        above. Furthermore, it employs reusable abstractions that
+var pointsE = makeGoogleGeocoderE(                             other mashups can also share.
+  tweetE.mapE(function(tweet) {
+    return { data: tweet.text,                                 2.8 From Web Services to Persistent Objects
+             location: tweet.user.location };}));              Web services are good abstractions for procedural and
+                                                               message-passing interfaces, such as for finding a list of
+// Elide points the Geocoder did not recognize
+makeMapOverlayE(googleMap,
+                                                               movies playing on a particular evening. They do not, how-
+  pointsE.filterE(function(x) {                                ever, directly model shared, mutable, persistent objects, such
+    return x.point != false; }));                              as a meeting in a group calendar. The Flapjax system pro-
+                                                               vides a custom persistent object store to save such objects,
+      Figure 8. Mashup of Twitter and Google Maps              and a client-side library to interface with it.5
+                                                                  The server maintains notions of identity for users and ap-
+                                                               plications (with standard authentication details). It presents
+                                                               each application with a filesystem-like tree, which develop-
+                                                               ers can also browse through a trusted Web interface. The
+                                                               operation writePersistentObject associates an event
+                                                               stream with a location—which is a path through the tree—
+                                                               while readPersistentObject reflects the values stored at
+                                                               that location into a stream. Thus, referring to the draft-saver
+                                                               from section 2.3:
+                                                               writePersistentObject(draftBox.changes(),
+                                                                                     ["draft"]);
+       Figure 9. Clicking on a Pin Displays Tweet              saves drafts at the top-level “file” "draft". In practice, an
+                                                               application will wrap writePersistentObject in an ab-
+                                                               straction. This can be used to erect another policy-mechanism
+                                                               separation: writePersistentObject is a mechanism, but
+                                                               various filters can be applied to the event stream it consumes
+                                                               to perform, e.g., rate limiting. readPersistentObject re-
+                                                               verses the direction of binding to reflect persistent objects
+                                                               in the application, with extra parameters for the initial value
+                                                               and polling rate.
+                                                               Access Control In keeping with the filesystem analogy,
+                                                               every persistent object is subject to an access-control policy.
+                                                               Naturally, this set of permissions can also change at any
+       Figure 10. After a While, More Pins Appear              time. User interface elements that depend on the permissions
+                                                               should also update their appearance or behavior.
+                                                                  The Flapjax primitive readPermissionsB produces a
+getTwitterPublicTweetsE ::                                     behavior representing the current permissions of a location
+  -> EventStream Tweet                                         in the persistent store. The application can use its value to
+                                                               drive the user interface. For instance, if permsB is bound to
+We are using Google Maps to plot points returned by the        the permission of a store location,
+Geocoder. It thus suffices to build an event steam consumer:
+                                                               INPUT({type: "text",
+makeMapOverlayE ::                                                    disabled: !(permsB.has("WRITE", true))});
+     GoogleMap * EventStream { data: String,
+                               point: Point }                  5 Flapjax applications do not have to use the object store. This is a proof-of-
+
+  -> void                                                      concept server.
+function EventStream(sources,update) {                             // EventStream a * EventStream a -> EventStream a
+  this.sources = sources;                                          function mergeE(src1,src2) {
+  this.sinks = [ ]; // filled in by sources                          var update = function(a) {
+  for (var i = 0; i < sources.length; i++) {                           return a; }
+    this.sources[i].sinks.push(this); }                              return new EventStream([src1,src2],update); }
+  this.update = update; }
+                                                                   // (a -> b) * EventStream a -> EventStream b
+         Figure 11. The Event Stream Constructor                   function mapE(f,src) {
+                                                                     var update = f;
+                                                                     return new EventStream([src],update); }
+declaratively ties the disabling of the input box with lack of
+write permission. Thus, the user interface will automatically      // (a -> Bool) * EventStream a -> EventStream a
+                                                                   function filterE(pred,src) {
+update in step with changing permissions.
+                                                                     var update = function(a) {
+                                                                       if (pred(a)) {
+3. Implementation                                                        return a; }
+The theory of Flapjax is rooted in signal processing: events           else {
+and behaviors are essentially signal-processing abstractions.            return StopValue; }};
+The theoretical underpinnings of Flapjax can be found in             return new EventStream([src],update); }
+Cooper’s dissertation [10]. Here, we focus on the implemen-
+tation strategy that enables the above programs to run.            // EventStream (EventStream a) -> EventStream a
+                                                                   function switchE(srcE) {
+3.1 The Evaluation Model                                             var outE = new EventStream([], function(a) {
+                                                                       return a; });
+The central idea behind Flapjax is push-driven dataflow eval-
+uation. Flapjax converts JavaScript programs into dataflow           var prevE = null;
+graphs. Dataflow graphs are mostly-acyclic directed graphs
+from sources (clocks, user inputs, the network, etc.) to sinks       var inE = new EventStream([srcE], function(aE) {
+(screen, network, etc.). When an event occurs at a source,             if (prevE) {
+Flapjax “pushes” its value through the graph. A graph node               outE.sources.remove(prevE);
+represents a computation; when it receives an event, a, it ap-           prevE.sinks.remove(outE); }
+plies a function f (representing the computation) to a and             prevE = aE;
+may further propagate f (a) to its children. This push-based,          outE.sources.push(aE);
+demand-driven evaluation strategy is a good match for sys-             aE.sinks.push(outE);
+                                                                       return StopValue; });
+tems with many kinds of external stimuli that do not obey a
+single central clocking strategy. We discuss other strategies        return outE; }
+in section 6.
+3.2 Dataflow Graph Construction                                    Figure 12. Implementation of Event Stream Combinators
+Though we have presented event streams and behaviors as
+distinct entities, the astute reader will have guessed that they
+                                                                   sources and sinks specify a node’s position in the graph.
+are almost duals of each other. Given a behavior, issuing
+                                                                   When a value (of type a) is pushed to a node, Flapjax applies
+an event whenever its value changes yields a corresponding
+                                                                   the node’s update function to the value. If update returns
+event stream. Given an event stream and an initial value,
+                                                                   the StopValue sentinel, the value does not propagate further
+continuously yielding the most recent value on the stream
+                                                                   from the node. Otherwise the result, b, is propagated further
+(and the initial value before the first event appears) gives a
+                                                                   by Flapjax’s evaluator, as described in section 3.4.
+corresponding behavior. In Flapjax, nodes in the dataflow
+                                                                      Consider mergeE, which builds a node that propagates all
+graphs are event streams while behaviors are derived objects.
+                                                                   values from both its sources without transforming them:
+We describe the construction of a dataflow graph of event
+streams below.                                                     merged = mergeE(src1,src2)
+   To developers, an event stream is an abstract data type
+                                                                   mergeE must build a new node by specifying the sources,
+that may only be manipulated with event stream combinators
+                                                                   sinks, and updater. The sources are the event streams src1
+(e.g., mapE, calmE, etc). Internally, an event stream node is
+                                                                   and src2. The update function propagates all values:
+implemented as an object with three fields:
+                                                                   function update(a) { return a; }
+sources :: listof(EventStream)
+sinks :: listof(EventStream)                                       Since Flapjax is push-driven, the node bound to merged
+update :: a -> (b or StopValue)                                    must know the sinks to which it pushes values. However,
+we can defer specifying the sinks until merged is used as         as the update function.
+a source. To consistently follow this pattern, mergeE must           Without the compiler, such transformations must be per-
+set the node bound to merged as a sink for src1 and src2.         formed manually. In practice, this appears to be less onerous
+We abstract this pattern into the EventStream constructor         than it sounds, as our experience suggests (section 4). With-
+(figure 11), which only requires sources and update as ar-        out the compiler, the development cycle involves just editing
+guments. mergeE and other event stream combinators (fig-          code and refreshing the page in the browser. The compiler
+ure 12) are therefore pure JavaScript functions, and so are the   introduces another step in the development cycle which may
+update functions. This ensures that individual expressions        sometimes be inconvenient.
+do not change their meaning relative to JavaScript, a prob-
+                                                                  JavaScript Interoperability The compiler enables Flapjax
+lem that might ensue if we wrote a specialized interpreter to
+                                                                  code to interoperate with raw JavaScript. Flapjax already
+implement the dataflow evaluation strategy.
+                                                                  shares JavaScript’s namespace, so either language can read-
+Derived Behaviors A behavior in Flapjax is an extension           ily use identifiers defined in the other. Consider Flapjax call-
+of event streams. A behavior node maintains its current           ing JavaScript functions. In the simplest case, if a JavaScript
+value, in addition to sources, sinks, and an update function.     function is applied to behaviors, the compiler can lift the
+The initial current value is an additional parameter of the       application. The JavaScript function is thus applied to the
+behavior constructor. The update function computes a new          values carried by the behaviors, rather than the behaviors
+value n; if n is different from the current value it sets n as    themselves (which it presumably would not comprehend).
+the current value and propagates to all sinks, otherwise it       Whenever a behavior changes, the function is reapplied.
+returns StopValue to prevent further propagation.                     For example, suppose filter is defined in JavaScript:
+
+3.3 The Compiler                                                  filter :: (a -> Bool) * listof(a) -> listof(a)
+We mentioned in section 1 that Flapjax can be viewed as a         and consider the following Flapjax code:
+language or, with a little extra work, a library. Now we can      var tock = filter(function(x) {
+explain precisely what this extra work is.                          return (x % 2) == timerB(1000) % 2;
+   The compiler consumes files containing HTML, JavaScript          }, [0,1]);
+and Flapjax. Flapjax code is identified by the
+                                                                  filter expects a predicate and a list. The result of tock,
+<script type="text/flapjax">                                      however, is not a boolean, but a behavior carrying a boolean.
+directive. The compiler transforms Flapjax code into JavaScript   The compiler thus wraps the predicate so that the current
+and produces standard Web pages containing just HTML and          value of its result is extracted on application. Furthermore,
+JavaScript. It includes the Flapjax library and elaborates        when the result is invalidated (as it is every second), filter
+Flapjax source code to call library functions as necessary.       is reapplied. As a result, tock is a behavior that alternates
+Flapjax source code has JavaScript’s syntax, but the com-         between [0] and [1].
+piler’s elaboration gives it a reactive semantics. Further-           In the other direction—JavaScript calling Flapjax code—
+more, the compiler allows Flapjax and JavaScript code to          the compiler performs no transformations. There is no need
+seamlessly interoperate. This strategy of transparent reac-       to do so, since the natural way to invoke Flapjax from
+tivity [11] has great advantage for beginning users and in        JavaScript is to treat it as a library with explicit calls to
+teaching contexts. We outline its main components below.          the event stream and behavior combinators.
+
+Implicit Lifting The principal task of the compiler is to         Inline Flapjax The compiler provides one more conve-
+automatically lift functions and operators to work over be-       nience that we have not yet discussed in this paper, called
+haviors. The compiler does so by transforming function ap-        inline Flapjax. It recognizes the special matching tokens {!
+plications to invocations of liftB. This allows us to write       and !} 6 in any HTML context and treats the text contained
+expressions such as                                               within as Flapjax code. This code is expected to evaluate to
+                                                                  a behavior. The compiler inserts the behavior into the docu-
+timerB(1000) + 1                                                  ment at that point without the need for additional code.
+where JavaScript’s + operator is applied to the timerB(1000)         For instance, given some function validCC that validates
+behavior. The compiler transforms the expression above to         a credit card number and these JavaScript declarations—
+code equivalent to:                                               function validColor(valid) {
+liftB(function(t) { return t + 1; },                                return valid ? "aqua" : "cyan"; }
+      timerB(1000))                                               var ccNumField = $B("ccNum");
+                                                                  var ccNumValid = validCC(ccNumField);
+The function liftB creates a node in the dataflow graph
+with timerB(1000) as the source and                               —this inline Flapjax term
+function(t) { return t+1 }                                        6 Pronounced “curly-bang”.
+<input id="name"                                                 3.5 Primitive Event Streams and Callbacks
+  style={! { borderColor:                                        Flapjax programs do not directly use callbacks, so the Flap-
+             validColor(ccNumValid)} !}                          jax library encapsulates callback management code. The
+  disabled={! !ccNumValid !}/>                                   simplest function that encapsulates a callback is $E, which
+creates an input element that is enabled or disabled depend-     encapsulates a DOM callback and exposes it as an event
+ing on the validity of the credit card number, and whose bor-    stream of DOM events. For example:
+der color is correspondingly aqua or cyan. In particular, the    var moveE = $E(document.body, "mousemove");
+JavaScript object { borderColor: ... } is automatically
+converted into a CSS style specification string.                   As we showed for the Geocoder (figure 7), we can use
+   While inline expressions can become unwieldy in gen-          sendEvent to encapsulate the callback-based DOM API:
+eral, we find them especially useful for writing program ex-
+                                                                 function $E(elt, evt) {
+pressions such as the validator above. In particular, when the
+                                                                   var stream = receiverE();
+validity of an element depends on several data, it is easier
+                                                                   var callback = function(e) {
+and clearer to express this as a localized functional depen-
+                                                                     stream.sendEvent(e); };
+dency rather than diffuse it into callbacks, which inverts the
+                                                                   elt.addEventListener(evt, callback);
+dependency structure.
+                                                                   return stream; }
+3.4 Propagation                                                      However, $E above never removes the callback. (It does
+The recursive propagation model (which is implemented            not call the DOM function removeEventListener.) If the
+with trampolining [31], to prevent stack overflow) requires      event stream moveE becomes unreachable from the rest of
+additional explanation, particularly to prevent some undesir-    the program, we may expect it to be garbage collected. How-
+able behavior. Consider the following expressions, where y       ever, addEventListener creates an internal reference from
+is some numeric behavior:                                        elt to callback. Therefore, as long as elt is reachable, the
+                                                                 event stream fires in perpetuity.
+var a = y + 0;                                                       This scenario occurs when we have higher-order event
+var b = y + a;                                                   streams, such as the drag-and-drop example (section 2.4),
+var c = b + 1;                                                   where a new stream of mousemove events is created for each
+var d = c % 2;                                                   mousedown event. switchE makes the previous mousemove
+We would expect b to always be twice y, c to be odd, d to        unreachable by the program, though the element being
+be 1, and so on. Unfortunately, nothing in our description       dragged keeps a reference to the mousemove callback. Since
+above guarantees this. The update from y may recompute b         the element is never removed from the DOM, the previous
+before it recomputes a, which might trigger the subsequent       mousemove callback is continually invoked. After a number
+recomputations, resulting in all the invariants above being      of drag operations, the browser becomes noticeably slower.
+invalidated. Of course, once the value of a updates, the             We solve this issue by adding an isDetached field to
+invariants are restored. This temporary disruption is called     all event streams. If isDetached is set, the callback in $E
+a glitch in signal-processing lingo. (There is another, subtle   removes itself, instead of propagating the event:
+problem above: some nodes may be computed more than
+                                                                 function $E(elt, evt) {
+once. Not only is this wasteful, this computation may be           var stream = receiverE();
+noticed in case the updater functions have side-effects.)
+                                                                   var callback = function(e) {
+   Fortunately, there is a simple solution: to use topological       if (stream.isDetached) {
+order. This prevents nodes from being evaluated before they
+                                                                       elt.removeEventListener(evt, callback); }
+should, and avoids repeated computation. To perform this,
+                                                                     else {
+the node data structure tracks its partial-order rank in the           stream.sendEvent(e); }};
+dataflow graph. The Flapjax evaluator calls nodes’ update
+                                                                   elt.addEventListener(evt, callback);
+functions (figure 12) in topological order. Instead of propa-
+                                                                   return stream; }
+gating values immediately, the evaluator inserts them into a
+priority queue in topological order.                             isDetached is initialized to false. In the definition of
+   The only obstacle to topological ordering is the presence     switchE (figure 12), we set prevE.isDetached = true
+of cycles in the graph. Cyclic dependencies without delays       when removing prevE from the dataflow graph.
+would, however, be ill-defined. Flapjax therefore expects           However, prevE may not itself be a $E expression, so
+that every cycle is broken by at least one delay (either the     the isDetached flag of its sources must be updated as well.
+primitive delayE or a higher-level procedure, such as inte-      For any event stream isDetached is set if all its sinks are
+gration, that employs delays). This restores the delay-free      detached. We compute this expression while propagating
+sub-graph to a partial order.                                    values (section 3.4).
+3.6 Library Design                                                     4. Evaluation
+The Flapjax library is unusual in that it serves both the              All the Flapjax code above is real. Developers can run
+compiler (as its runtime system) and developers using it               the Flapjax compiler on Flapjax code to generate pure
+directly. In both capacities it needs to be efficient; the latter is   JavaScript applications which can then be deployed. As a
+unusual as most languages’ runtime systems are not directly            result, all these programs execute on stock browsers.
+used by developers. Here we discuss some design decisions                 Flapjax has been public since October 2006, and has
+that have proven important over several years of use.                  been used by several third-parties (i.e., non-authors) to build
+                                                                       working applications:
+Functions versus Objects Flapjax encourages making
+Web applications more functional in style. This can, how-              Data Grid The Data Grid application7 was developed by a
+ever, lead to deeply nested function applications, which                 commercial consulting firm based in London. They were
+are syntactically alien to many JavaScript developers. We                able to successfully construct their application in the lan-
+have therefore found it convenient to make all the stan-                 guage, and reported that it resulted in “shorter code and
+dard functions available as methods in the Behavior and                  a faster development cycle”. They did identify places
+EventStream prototypes. This means that instead of                       where the implementation could be faster, an issue we
+                                                                         discuss in greater detail below. They found that one fringe
+var name = calmE(changes($B("name")), 300);                              benefit of using Flapjax was that it insulated developers
+developers can write                                                     “from most of the cross-browser issues”, which are con-
+                                                                         siderable in JavaScript, due to notoriously poor standard-
+var name = $B("name").changes().calmE(300);
+                                                                         ization of Web technologies.
+which is arguably more readable than standard functional               Interactive Wiki Another group used Flapjax to build a
+notation, since the left-to-right order of operations corre-              Wiki system that updates on-the-fly. Their evaluation
+sponds to the direction of dataflow. We do offer all these                largely concurred with that of the Data Grid develop-
+operations as standard functions also, so developers can use              ers. They added that behaviors, while a convenient and
+whichever style they favor.                                               intuitive abstraction, could cause a performance hit while
+Lifting Constants The compiler inserts behavior combi-                    initializing an application: the initial values are better
+nators automatically. To aid developers who do not use the                defined statically with HTML when possible. (We con-
+compiler, Flapjax’s behavior combinators lift constant argu-              jecture that this is at least partially due to the Flapjax im-
+ments to constant behaviors; this does not require compiler               plementation’s event-orientation, with behaviors treated
+support. For example, the type of timerB is                               as a derived type.) Thus, much of the computation in their
+                                                                          Wiki system is done in terms of events.
+timerB :: Behavior Int -> Behavior Int
+                                                                       Network Monitor Another developer has used Flapjax to
+so that the interval may itself vary over time. Library users            construct a network monitoring client. A network of
+may, however, simply write timerB(1000). The function                    workstations each expose status information as a Web
+will treat 1000 as a constant behavior.                                  service; the monitor obtains this information as event
+                                                                         streams and collates and combines them to present indi-
+Element Addressing The library includes many DOM ma-                     vidual and collective status information.
+nipulation functions that consume HTML elements. There
+are many ways for JavaScript functions to acquire DOM ele-                In addition there are several applications that we have
+ments; one of the more common techniques is to give them               built ourselves. One example is TestFest, which enables stu-
+a name (an id). All functions that consume elements also               dents to separately upload their homework programs and test
+accept strings that name elements.                                     cases; each student’s test is run against every other student’s
+                                                                       homework. This application has been used for two years at
+Reactive DOM Elements Developers may be concerned                      Brown and at another university.
+about the cost of Flapjax’s reactive element constructors.                More significantly, we have written and deployed Resume
+Perhaps hand-coding imperative DOM updates would be sig-               (resume.cs.brown.edu) and Continue 2.0 (continue2.
+nificantly faster?                                                     cs.brown.edu). Resume is a program for managing the ap-
+    Indeed, a naive implementation of a constructor would              plication and review process for academic jobs; Continue is
+rebuild the entire element on any update. For example,                 a conference paper manager. Though these sound similar,
+DIV(timerB(1000))                                                      the two workflows—and hence applications—are quite dif-
+                                                                       ferent. Both applications are in daily use. Resume has been
+might construct a new <div> every second. Our implemen-                used for job searches for three years in multiple academic
+tation updates changes in-place, so only one <div> is con-
+structed, but its text updates every second. This strategy sig-        7 http://www.untyped.com/untyping/2007/01/19/
+
+nificantly ameliorates such efficiency concerns.                       flapjax-in-action/
+departments, and has been solicited by others who noticed         tional Symposium on Low Power Electronics and Design
+it while submitting letters. Continue has been used by over       (2007) outlined a research project at Berkeley that exploits
+twenty-five workshops and conferences.                            Flapjax for parallelism [21].
+   Both applications use Flapjax as a library; they feature          Finally, as mentioned above, Flapjax is a working lan-
+fewer than 10 lifts per KLOC, suggesting that eschew-             guage. In particular, each of Resume and Continue 2.0 is
+ing the compiler to use the library directly is not a major       accompanied by a demo mode, which automatically creates
+impediment. With event-streams and reactivity, it was easy        an instance of a job search or conference, respectively, and
+to reproduce and cleanly encapsulate the kinds of features        lets the user experiment with the program, without need for
+users are accustomed to seeing in commercial applications.        an account. Readers are invited to try these applications for
+For instance, the auto-save buffer example of section 2.3 is      themselves to get a feel for how much perceived overhead
+inspired by that of Google Mail; in our applications, it is       dataflow evaluation might cause.8
+used to save reviews and comments. Searching also reacts to
+keystrokes without the need for a Search button, just as in ap-   5. Perspective
+plications like iTunes. We also use reactivity to (judiciously)   Our design choices in Flapjax raise a variety of interesting
+affect styling to notify users of unsaved data.                   issues. We discuss these below.
+Performance It is impossible to measure the “perfor-              Consistency as a Linguistic Primitive One of the central
+mance” of a language; we can only measure the perfor-             goals of Flapjax is to explore the idea of consistency as a
+mance of individual programs. The problem is exacerbated          linguistic primitive. The motivation for the dataflow eval-
+when programs are highly interactive, because performance         uation model is to enable propagation of updates, and the
+is equally a function of the nature of inputs used to drive       complexities of propagation (section 3.4) are to make this
+applications. It is, nevertheless, worth asking what impact       notion semantically sensible. Our propagation algorithm en-
+the Flapjax abstractions have on program performance. We          sures that the developer never sees a value that is inconsis-
+answer this question at several levels.                           tent with the text of the program. This means developers can
+    At the highest level, we argue that Flapjax simply auto-      reason algebraically about their programs (a task simplified
+mates much of the work that a JavaScript developer would          because programs tend to become much less imperative)—
+have done by hand: to propagate values through computa-           for instance, they can refactor their program using algebraic
+tions and keep them consistent. A developer can certainly         reasoning, while knowing that so long as they preserved the
+use the full force of human knowledge to short-circuit some       algebraic meaning, the program’s behavior will not change
+evaluation; however, these same attempts often produce in-        upon execution.
+consistent or erroneous Web applications in practice.                We view consistency as analogous to garbage collection:
+    The most significant cost in Flapjax is from scheduling       a sensible requirement that is so pervasive that languages
+in the dataflow graph. This breaks what might have been           should try to support and optimize it. As with garbage col-
+one large call-by-value evaluation into several small call-by-    lection, developers do sometimes need to manually inject be-
+value fragments interspersed by dataflow graph manipula-          havior. For instance, valueNow samples a behavior at a par-
+tion and traversal. We have used several (sound) heuristics       ticular instant; similarly, snapshotE samples a behavior at
+to eliminate constants and to compact chains of nodes into        the instant an event fires (section 2.2). We find that the num-
+single nodes, inspired by the lowering work of Burchett, et       ber of uses of these primitives is small: 14 and 19, respec-
+al. [4]. Because these have yielded reasonable performance        tively, in Continue, and 19 and 10, respectively, in Resume.
+we have not investigated this topic further, but there is con-    This is from about 4.3 KLOC of Continue and 2.3 KLOC of
+siderable opportunity for performance improvement. Qual-          Resume, including about 1 KLOC of shared code. This sug-
+itatively, we have used Flapjax to develop several anima-         gests that consistency is indeed the right default. It would be
+tions and games. Flapjax smoothly renders these programs.         interesting to study traditional JavaScript codebases to deter-
+In addition, Resume and Continue have full-featured GUIs          mine how much programming effort is expended in the other
+built entirely in Flapjax. These systems have been tested         direction: to obtain what Flapjax provides intrinsically.
+and used successfully with hundreds of records displayed on
+                                                                  Security We have not discussed security, which is a per-
+screen. Recent advances in the performance of commercial
+                                                                  vasive concern in Web applications, beyond access con-
+JavaScript evaluators have made the runtime cost of dataflow
+                                                                  trol (section 2.8). This is partly intentional: security means
+evaluation negligible.
+                                                                  so many different things in this context (avoiding cross-
+    While dataflow evaluation might slow down programs, it
+also has the potential to speed them up through parallel exe-     8 In demo mode, the application runs in one frame while the demo
+
+cution. One of the major obstacles to parallelism is the use of   program—running in the other frame—points to elements of the first and
+                                                                  suggests what the user might click on. The demo advances by the interac-
+unfettered, dependency-creating side-effects; these are pre-
+                                                                  tions of the user with the application under demonstration. In other words,
+cisely what good Flapjax programming style eliminates. In-        the demo framework is itself a reactive application. Naturally, it too is writ-
+deed, David Patterson’s plenary speech [29] at the Interna-       ten in Flapjax.
+site attacks, preventing server attacks, detecting malicious        Recognizing that these situations create relational, rather
+dataflows, and so on) that it is impossible for a language to    than functional (or directed) dependencies, we have exper-
+cover it all. Rather, we believe that by reducing the num-       imented with a limited form of principled relational sup-
+ber of callbacks, Flapjax enables better program analysis,       port in Flapjax. Specifically, we have implemented vari-
+which is a prerequisite to many security analysis techniques.    ants of both lenses [15] and constraint maintainers [24]
+Separately, we have already applied control flow analysis to     adapted to the JavaScript object system. Our experiments
+JavaScript and Flapjax for intrusion detection [18].             show that lenses transparently and consistently maintain the
+                                                                 model/view relationship in a way that requires less focus on
+Debugging and Contracts The state of debugging support
+                                                                 when the models change; using Flapjax along with lenses
+for JavaScript is still quite primitive, and is even more so
+                                                                 allows developers to use modular reasoning about the oc-
+for Flapjax. Unfortunately, debugging Flapjax can be some-
+                                                                 currence of these changes. Conceptually, developers view
+what challenging because debuggers expose the underlying
+                                                                 the various models—interface, client, and server—as dis-
+evaluation mechanism. This exposes the convoluted control
+                                                                 tinct, but conventional practice confounds this distinction
+flow of event-driven Web applications that Flapjax abstracts
+                                                                 with consistency maintenance and race prevention. Flapjax
+away.
+                                                                 with lenses reifies this conceptual distinction in code.
+   Halting on program errors in the innards of Flapjax’s
+implementation is not useful. To avoid this, we have created
+a higher-order contract system for Flapjax that accurately       6. Related Work
+tracks blame [19]. For example, the contract of switchE is:      A key feature that distinguishes Flapjax from other Web pro-
+EventStream (EventStream a) -> EventStream a                     gramming libraries is its adoption of functional reactive pro-
+                                                                 gramming (FRP) [14, 28]. In FRP, instead of using callbacks
+Consider, for example, this illegal use of switchE:
+                                                                 to respond imperatively to events, a program defines signals
+switchE(timerE(60000))                                           that vary implicitly as other values in their defining equations
+                                                                 change. While this essential idea originates from dataflow
+The run-time error, “expected event stream of event streams,
+                                                                 programming [6, 33], FRP applies the idea in a dynamic and
+received event stream of integers”, occurs in the innards of
+                                                                 higher-order setting. The specific approach taken in Flapjax
+switchE, a whole minute after the line executes. Stepping
+                                                                 is mainly informed by FrTime [10, 11], a call-by-value in-
+through this code achieves nothing. The contract system,
+                                                                 stantiation of the FRP model. Unlike FrTime, Flapjax is ex-
+however, identifies this call-site as the source of the error.
+                                                                 plicitly designed for use as a library (a design choice that
+   The contracts have an ancillary benefit: they precisely
+                                                                 has proven very valuable in hindsight); it models interac-
+document the Flapjax API, which has a straightforward type
+                                                                 tions with a Web page’s DOM, which requires the ability to
+structure. This is especially valuable in a language without a
+                                                                 define signals that can model richly structured mutable data
+formal static type system.
+                                                                 in a meaningful way; it uses events to interface with Web
+How Many DOMs? (or, Beyond Functions to Relations)               services; and it handles the inconsistencies and complexities
+Because the DOM is a predefined, readily available data          of JavaScript. FrTime and Flapjax differ from the other FRP
+structure that often reflects the shape of program data,         systems by employing a purely push-based, event-driven up-
+JavaScript developers routinely conflate the display model—      date strategy; the Haskell-based systems are pull-based (and
+the DOM—with the data model. Not only is this an inappro-        driven by polling). Frappé [12], a Java FRP library, uses a
+priate conflation that hinders later maintenance, it can also    hybrid push/pull evaluation strategy. Like Flapjax in library
+result in bugs: for instance, browsers can behave in unde-       mode, Frappé is closer to a library than a language, not sup-
+sirable ways if the same DOM node is inserted as a child of      porting the transparent reuse of host-language programs in a
+two different parents (which can happen when the actual da-      reactive context.
+tum is a DAG or graph, not a tree). Separating the true data         A number of other languages with dataflow-like fea-
+model from the display model is known in Web parlance as         tures have been developed in recent years. For example, Ya-
+a Dual-DOM approach [2].                                         hoo! Pipes (pipes.yahoo.com) is an interactive, graphical
+   Unfortunately, maintaining two models (or three, count-       domain-specific language for assembling pipelines that fil-
+ing the persistent store) greatly complicates the developer’s    ter and aggregate dynamic Web content. Nodes subscribe to
+job. Because changes on one side may trigger updates to          and produce feeds, which are updated automatically when-
+the other, the OpenAjax alliance observes [2], “It is usu-       ever their source changes. Beyond the Web, StreamIt [32] is
+ally necessary to establish bidirectional event listeners be-    a language for constructing networks of stream processors,
+tween the Ajax DOM and the Browser DOM in order to main-         targeted in particular for high-performance systems with
+tain synchronization” (and this ignores the third model). Not    relatively stable graph structures. The individual StreamIt
+only does this mean many more callbacks (with interference       processors operate imperatively on their input and output
+caused by updates), developers must take care to not cause       streams, but are assembled into a declarative graph. Au-
+cascading cyclic updates.                                        rora [5] and Borealis [7] offer similar capabilities to StreamIt
+but, instead of having developers write imperative process-          Arrowlets [22] allow developers to specify the control
+ing nodes, they support query evaluation for a declarative,      flow of JavaScript programs, across multiple event handlers,
+high-level SQL-like language over streaming data. They also      using the functional programming concept of arrows. Like
+provide built-in operators for computing various aggregates      Flapjax, Arrowlets abstracts away underlying callbacks.
+(e.g., average, maximum) over sliding time windows. All of       This makes it possible to reason algebraically about control
+these languages deal exclusively in discrete data, in contrast   flow across multiple callbacks. However, for an Arrowlet
+with FRP systems like Flapjax, which also provide distinct       to have a visible effect on the DOM, an arrow must cause a
+notions of continuous behaviors and support general purpose      side-effect.
+programming such as building GUIs, I/O operations, etc.              This is apparent in their central drag-and-drop example.
+   Systems such as Open Laszlo (www.openlaszlo.org),             Arrows specify a state machine, but the actual effects of
+Flex (www.adobe.com/products/flex), and JavaFX (www.             dragging are scattered throughout individual arrows, despite
+sun.com/software/javafx) have also applied dataflow              the fact that they are abstracted into a “proxy”. The proxy
+programming ideas to the Web. They permit user interface         methods are essentially callbacks—their return values are
+elements to be bound to expressions: whenever the value of       discarded. Arrows do allow the DOM mouse events to be
+the element changes, the whole expression is reevaluated and     composed into a new drag-and-drop event stream. However,
+the result assigned to the bound variable. This means, how-      the arrow-bassed drag-and-drop abstraction has the same
+ever, that behaviors are no longer first-class values. These     callback-based interface as the DOM. Interesting behavior
+systems have very limited or no support for higher-order         that uses the results from the various drag-and-drop call-
+reactivity—the ability to dynamically rebind a variable in       backs will require shared state.
+response to an event. Furthermore, these systems do not de-          jQuery (jquery.com) allows DOM transformations and
+scribe any guarantees comparable to our glitch-freedom.          event handlers to be sequenced and applied to destructively
+   Various languages and systems have been designed around       update collections of elements. Flapjax focuses the flow of
+the idea of constraint programming, which is a general-          values through the program, sourced from arbitrary, hetero-
+ization of dataflow evaluation. For example, ThingLab [3]        geneous data sources, including the DOM. Data-flow evalua-
+is an object-oriented constraint-programming language de-        tion is orthogonal to the specification of sequences of effects.
+signed for expressing and running simulations. Like Flapjax,         Web application frameworks such as Ruby on Rails
+it maintains dependencies between objects and automati-          (rubyonrails.org) and Django (djangoproject.com)
+cally propagates updates when values change. The language        enable easily creating CRUD (create-read-update-delete)
+supports bidirectional constraints and employs a sophisti-       interfaces. They focus on simplifying the object-relational
+cated constraint-solving engine, which allows it to express      mapping at the database level, and impose good practices
+programs that Flapjax cannot support directly. However, the      such as model-view-controller separation. They are, how-
+Flapjax language is richer in other ways, including support      ever, primarily designed for the server, whereas Flapjax con-
+for higher-order functions and reactivity, as well as exposing   nects to any Web service; they also do not offer linguistic
+separate notions of discrete events and continuous behaviors.    support comparable to Flapjax’s abstractions.
+   Kaleidoscope [16] allows for mixed imperative and con-            Formlets [9] address the problem of building Web forms
+straint programming with multidirectional constraints. It        and extracting their input compositionally. Our composi-
+maintains consistency using a constraint solver with sup-        tional filters example (section 2.5) is in the same spirit.
+port for a hierarchy of constraint strengths, as well as tem-    While Flapjax does not provide the syntactic sugar of form-
+poral control over constraints, like our events and behav-       lets, we arguably also do not miss it: in our filter example,
+iors. Kaleidoscope conflates intra-model constraints and         we simply use the language’s existing binding mechanism
+model/view constraints, while ours are orthogonal libraries      to name the sub-filter (subFilter) and use it in subsequent
+built on top of Flapjax. Our model/view constraint sys-          expressions. We are not constrained by the type-structure of
+tem, lenses [15], guarantees well-behavedness of composed        applicative functors and synchronous form submission; as a
+constraints—it is unclear what Kaleidoscope’s constraint         result we believe that our composed filter example is an in-
+solver guarantees of composed and user-defined constraints.      stance of their “impossible” formlet, one that renders before
+   Other related systems that support constraint program-        producing a result.
+ming include the Garnet [26] and Amulet [27] user-interface          Links [8] addresses the problem that Web programs in-
+toolkits. Although these employ a unidirectional constraint-     herently span several tiers—the browser, the application
+propagation algorithm, they do support cyclic constraint net-    server, and the persistent store—each of which must typi-
+works, without the need for explicit time delays as Flap-        cally be programmed in a different language. The key con-
+jax requires. Instead, they resolve cycles with a simple         tribution of Links is to allow the entire application to be
+depth-first “once-around” algorithm, which stops propagat-       written monolithically in one (typed functional) language,
+ing when it returns to a node that has already been updated.     and to translate fragments into lower-level code appropriate
+                                                                 for their respective execution platforms: JavaScript for the
+browser, SQL for the database, etc. The compiler can help           from the details of the communication protocol between the
+to ensure, among other things, that the tiers agree on the          client and server, and it implements general techniques for
+types and representations of the data they pass to each other,      making such communication more efficient and effective.
+saving the developer the burden of writing such logic by            A side benefit of using MapJAX is that applications may
+hand. Although Links is nominally “tierless”, it provides a         perform significantly better, in addition to enjoying consid-
+relatively server-centric programming model, with the user          erably simpler implementations. Unlike Flapjax, MapJAX
+interface and database acting as second-class citizens. Its         only addresses interactions between the client and server,
+user interface support focuses on forms, which lack the rich        not those between the user and client, which still require
+interactivity of modern applications.                               callbacks. However, it does provide a notion of concurrency
+    Hop [30] is similar in spirit to Links, but it places more      control, which we have not yet explored for Flapjax.
+emphasis on the server and user interface tiers, making an
+explicit distinction between them, and supporting interest-         7. Conclusion
+ing control flow both within and between the layers. Hop al-        We have presented the Flapjax programming language. Flap-
+lows both layers to be written in a (lexically) single program      jax is designed with the needs of Ajax developers in mind. It
+expressed in essentially the same dialect of Scheme. Its so-        provides a unified framework for programming with events,
+phisticated compiler can compile any fragment of Scheme             both within the program and when communicating with
+code into JavaScript for execution in the browser. The gen-         Web services. Flapjax is a dataflow-based reactive language
+erated code is efficient enough to perform smooth anima-            wherein values are automatically updated to be consistent,
+tions or play multimedia in a modern browser. In Hop, both          relieving developers of this burden. Through examples and
+tiers can call into each other, or send events to each other,       discussion, we have shown that the mechanisms of Flap-
+using asynchronous HTTP request and response messages.              jax collaborate to make programs more declarative, and to
+However, event-handling uses a conventional callback-based          achieve valuable separations of concerns.
+mechanism, which forces the reactive aspects of the program            Flapjax is currently only a client-side programming
+to be written in an imperative style. This is one significant       language. This is because of the relative uniformity of
+difference between Hop and Flapjax.                                 Web clients: estimates are that over 90% of browsers have
+    Flapjax differs from Links and Hop by taking an ex-             JavaScript enabled, making it the Web’s other lingua franca
+clusively client-centric view. All of the application-specific      besides HTML. In contrast, there is a much greater range of
+logic is driven from the user interface, which is written in (an    technologies in use on servers, making it harder to target one
+extension of) JavaScript and run in the browser. The Flapjax        platform. Nevertheless, it would be valuable to build support
+server is a general-purpose, non-programmable object store          for reactivity and events for server applications as well, and
+with innate notions of users, applications, and access control.     to make these consistent with Flapjax clients to enable the
+At its core, Flapjax is just a library, so no compilation is nec-   establishment of properties such as glitch-freedom across an
+essary, although some syntactic sugar for reactive program-         entire distributed system.
+ming is provided through a lightweight compiler. The client
+library provides an implementation of the server’s commu-
+                                                                    Acknowledgments
+nication protocol, which simply exchanges objects in JSON
+notation over HTTP. Its support for modern social Web appli-        We thank our users, most of all Sean Barker, Morgan
+cations is arguably superior to that of any non-commercial          McGuire, Noel Welsh, Artyom Shalkhakov, and therac25
+system of which we are aware, given the server’s explicit           [sic]. We are grateful to Pete Hopkins, David Reiss, and
+support for users and controlled data-sharing. It also sup-         Kimberley Burchett for feedback, Cormac Flanagan for con-
+ports mash-ups that coordinate data and services from sev-          structive provocation, Trevor Jim and Jack Templin for en-
+eral Web sites, a feature that Links does not seem to provide.      couragement, and Andrey Skylar, Eli Barzilay, and Jay Mc-
+    A key source of complexity in modern Web applications           Carthy for technical support. Thanks to the authors of Links,
+is the need to handle asynchronous communication between            Hop, and Arrowlets for useful conversations. This work was
+the user interface and application server. The standard Ajax        partially supported by the NSF. All authors were affiliated
+model provides a callback-based event model; this imposes           with Brown during their primary work on Flapjax.
+an imperative style on the developer, as well as demanding
+explicit continuation management and resulting in the phe-          References
+nomenon of stack-ripping [1]. MapJAX [13] addresses this             [1] Atul Adya, Jon Howell, Marvin Theimer, William J. Bolosky,
+problem as it pertains to the manipulation of shared, per-               and John R. Douceur. Cooperative task management without
+sistent data. It abstracts away the asynchronous HTTP com-               manual stack management. In Proceedings of the 2002 Usenix
+munication and callbacks typically needed for Ajax and in-               Annual Technical Conference, 2002.
+stead presents a familiar, high-level interface in terms of          [2] OpenAjax Alliance. Successful deployment of Ajax and
+shared memory and locking. MapJAX frees the developer                    OpenAjax. http://www.openajax.org/whitepapers/
+                                                                         SuccessfulDeploymentofAjaxandOpenAjax.php.
+ [3] Alan Hamilton Borning. The programming language as-                     www.adaptivepath.com/ideas/essays/archives/
+     pects of ThingLab, a constraint-oriented simulation labora-             000385.php.
+     tory. ACM Transactions on Programming Languages and Sys-           [18] Arjun Guha, Shriram Krishnamurthi, and Trevor Jim. Using
+     tems, 3(4):353–387, 1981.
+                                                                             static analysis for Ajax intrusion detection. In International
+ [4] Kimberley Burchett, Gregory H. Cooper, and Shriram Krish-               World Wide Web Conference, April 2009.
+     namurthi. Lowering: A static optimization technique for trans-
+                                                                        [19] Arjun Guha, Jacob Matthews, Robert Bruce Findler, and
+     parent functional reactivity. In ACM SIGPLAN Symposium on
+                                                                             Shriram Krishnamurthi. Relationally-parametric polymorphic
+     Partial Evaluation and Semantics-Based Program Manipula-
+                                                                             contracts. In Dynamic Languages Symposium, October 2007.
+     tion, pages 71–80, 2007.
+                                                                        [20] Daniel Ignatoff, Gregory H. Cooper, and Shriram Krishna-
+ [5] Don Carney, Uǧur Çetintemel, Mitch Cherniack, Christian
+                                                                             murthi. Crossing state lines: Adapting object-oriented frame-
+     Convey, Sangdon Lee, Greg Seidman, Michael Stonebraker,
+                                                                             works to functional reactive languages. In International Sym-
+     Nesime Tatbul, and Stan Zdonik. Monitoring streams — a
+                                                                             posium on Functional and Logic Programming, pages 259–
+     new class of data management applications. In International
+                                                                             276, 2006.
+     Conference on Very Large Databases, pages 215–226, 2002.
+ [6] Paul Caspi, D. Pilaud, N. Halbwachs, and J. A. Plaice. LUS-        [21] Christopher Grant Jones, Rose Liu, Leo Meyerovich, Krste
+     TRE: A declarative language for programming synchronous                 Asanovic’, and Rastislav Bodik.        Parallelizing the web
+     systems. In ACM SIGPLAN-SIGACT Symposium on Princi-                     browser. In Proceedings of the First USENIX Workshop on
+     ples of Programming Languages, pages 178–188, 1987.                     Hot Topics in Parallelism, April 2009.
+
+ [7] Mitch Cherniack, Hari Balakrishnan, Magdalena Balazinska,          [22] Yit Phang Khoo, Michael Hicks, Jeffrey S. Foster, and Vibha
+     Don Carney, Uǧur Çetintemel, Ying Xing, and Stan Zdonik.              Sazawal. Directing JavaScript with Arrows. In ACM SIG-
+     Scalable distributed stream processing. In First Biennial Con-          PLAN Dynamic Languages Symposium, 2009.
+     ference on Innovative Data Systems Research, 2003.                 [23] Daniel R. Licata and Shriram Krishnamurthi. Verifying inter-
+ [8] Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.             active Web programs. In IEEE International Symposium on
+     Links: Web programming without tiers. In Formal Methods                 Automated Software Engineering, pages 164–173, September
+     for Components and Objects, 2006.                                       2004.
+ [9] Ezra Cooper, Sam Lindley, Philip Wadler, and Jeremy Yallop.        [24] Lambert Meertens. Designing constraint maintainers for user
+     The essence of form abstraction. In Asian Symposium on                  interaction, 1998. ftp://ftp.kestrel.edu/pub/papers/
+     Programming Languages and Systems, 2008.                                meertens/dcm.ps.
+[10] Gregory H. Cooper. Integrating Dataflow Evaluation into a          [25] Brad A. Myers. Separating application code from toolkits:
+     Practical Higher-Order Call-by-Value Language. PhD thesis,              Eliminating the spaghetti of call-backs. In ACM Symposium
+     Brown University, 2008.                                                 on User Interface Software and Technology, pages 211–220,
+                                                                             November 1991.
+[11] Gregory H. Cooper and Shriram Krishnamurthi. Embedding
+     dynamic dataflow in a call-by-value language. In European          [26] Brad A. Myers, Dario A. Giuse, Roger B. Dannenberg,
+     Symposium on Programming, pages 294–308, March 2006.                    David S. Kosbie, Edward Pervin, Andrew Mickish, Brad Van-
+[12] Antony Courtney. Frappé: Functional reactive programming               der Zanden, and Philippe Marchal. Garnet: Comprehensive
+     in Java. In Practical Aspects of Declarative Languages.                 support for graphical, highly interactive user interfaces. IEEE
+     Springer-Verlag, March 2001.                                            Computer, 23(11):71–85, 1990.
+
+[13] Daniel Myers and Jennifer Carlisle and James Cowling and           [27] Brad A. Myers, Richard G. McDaniel, Robert C. Miller,
+     Barbara Liskov. MapJAX: Data Structure Abstractions for                 Alan S. Ferrency, Andrew Faulring, Bruce D. Kyle, Andrew
+     Asynchronous Web Applications. In Proceedings of the 2007               Mickish, Alex Klimovitski, and Patrick Doane. The Amulet
+     USENIX Annual Technical Conference, June 2007.                          environment: New models for effective user interface software
+                                                                             development. IEEE Transactions on Software Engineering,
+[14] Conal Elliott and Paul Hudak. Functional reactive animation.            23(6):347–365, 1997.
+     In ACM SIGPLAN International Conference on Functional
+     Programming, pages 263–277, 1997.                                  [28] Henrik Nilsson, Antony Courtney, and John Peterson. Func-
+                                                                             tional reactive programming, continued. In ACM SIGPLAN
+[15] J. Nathan Foster, Michael B. Greenwald, Jonathan T. Moore,
+                                                                             Workshop on Haskell, pages 51–64, 2002.
+     Benjamin C. Pierce, and Alan Schmitt. Combinators for
+     bidirectional tree transformations: A linguistic approach to the   [29] David A. Patterson. The parallel computing landscape: a
+     view update problem. ACM Transactions on Programming                    Berkeley view. In International Symposium on Low Power
+     Languages and Systems, 29(3), May 2007.                                 Electronics and Design, 2007.
+[16] Bjorn N. Freeman-Benson and Alan Borning. Integrating              [30] Manuel Serrano, Erick Gallesio, and Florian Loitsch. Hop: A
+     constraints with an object-oriented language. In European               language for programming the Web 2.0. In ACM SIGPLAN
+     Conference on Object-Oriented Programming, pages 268–                   Dynamic Languages Symposium, October 2006.
+     286. Springer-Verlag, 1992.                                        [31] David Tarditi, Peter Lee, and Anurag Acharya. No assembly
+[17] Jesse James Garrett. Ajax: A new approach to web applica-               required: compiling Standard ML to C. ACM Letters on
+     tions.                                                                  Programming Languages and Systems, 1(2):161–177, 1992.
+[32] William Thies, Michal Karczmarek, and Saman Amarasinghe.       A. Flapjax API
+     StreamIt: A language for streaming applications. In Interna-
+                                                                    In this appendix, we document the portion of the Flapjax API
+     tional Conference on Compiler Construction, pages 179–196,
+     2002.
+                                                                    covered by the paper. The Flapjax API defines many more
+                                                                    functions, and some of the functions listed here have richer
+[33] W. W. Wadge and E. A. Ashcroft. Lucid, the dataflow pro-
+                                                                    interfaces. We encourage the curious reader to explore the
+     gramming language. Academic Press U.K., 1985.
+                                                                    full Flapjax reference at www.flapjax-lang.org.
+
+                                                                    $B :: InputElement -> Behavior InputValue
+                                                                    $B(element)
+
+                                                                    Creates a behavior carrying the value of element. The ele-
+                                                                    ment must be a form control (e.g., a text box, a checkbox,
+                                                                    etc.)
+
+                                                                    $E :: Element * String -> EventStream DOMEvent
+                                                                    $E(element,eventName)
+
+                                                                    Creates an event stream of DOM events on element. eventName
+                                                                    may be any DOM event (e.g., “click”, “load”, etc.)
+
+                                                                    calmE :: Int * EventStream a -> EventStream a
+                                                                    calmE(t,evt)
+
+                                                                    Repeatedly “mutes” evt for t milliseconds. The result will
+                                                                    therefore never fire more than one event in a t millisecond
+                                                                    interval.
+
+                                                                    changes :: Behavior a -> EventStream a
+                                                                    changes(src)
+
+                                                                    Creates an event stream that fires an event carrying the value
+                                                                    of src whenever that value changes.
+
+                                                                    constantE :: EventStream a * b -> EventStream b
+                                                                    constantE(src,val)
+
+                                                                    Creates an event stream that fires a constant value, val,
+                                                                    whenever src fires an event.
+
+                                                                    delayE :: Int * EventStream a -> EventStream a
+                                                                    delayE(t,src)
+
+                                                                    Fires all events from src, but delays each of them by t
+                                                                    milliseconds.
+
+                                                                    DIV :: Behavior Element * ... -> Behavior <div>
+                                                                    div(child,...)
+
+                                                                    Creates a behavior carrying a <div> element. Similar con-
+                                                                    structors exist for other HTML tags (e.g., P, TABLE, etc.).
+
+                                                                    filterE :: (a -> Bool) * EventStream a
+                                                                            -> EventStream a
+                                                                    filterE(pred,src)
+
+                                                                    Fires only those events of src that satisfy pred.
+
+                                                                    getForeignWebServiceObjectE :: ...
+Same interface as getWebServiceObjectE. However, this                     oneE :: a -> EventStream a
+function can communicate with allowed remote servers via                  oneE(val)
+a Flash proxy.9
+                                                                          Creates an event stream that fires val just once. The event is
+getWebServiceObjectE :: EventStream request                               fired immediately after the current event has finished propa-
+                     -> EventStream response                              gating.
+request = { url :: String,
+                                                                          receiverE :: -> EventStream a
+            fields :: Object,
+                                                                          receiverE()
+            request :: "get" or "post",
+            response :: "json" or "xml" };                                Creates an event stream that does not fire any events itself.
+response = JSON or XML                                                    See sendEvent.
+getWebServiceObjectE(request)
+                                                                          startsWith :: EventStream a * a -> Behavior a
+Sends and receives messages from the server. Due to Web                   startsWith(src,init)
+browsers’ security policies, url must be on the domain
+                                                                          Returns a behavior that initially holds the value init. When
+serving the Flapjax application.
+                                                                          a new event fires on src, the behavior holds the value of the
+insertDomB :: Behavior Element * Element                                  event.
+           -> void
+                                                                          snapshotE :: EventStream a * Behavior b
+insertDomB(src,dest)
+                                                                                    -> EventStream b
+Inserts the element carried by src into the DOM, replacing                snapshotE(src,sample)
+the static element placeholder dest.                                      Fires an event carrying the current value of sample when-
+insertValueB :: Behavior a * Element * String                             ever an event fires on src.
+             -> void                                                      sendEvent :: a * EventStream a -> void
+insertValueB(val,elt,attr)                                                sendEvent(val,dest)
+Assigns the value val to the attr attribute of elt. Updates               Imperatively pushes val todest, where dest is created with
+as val changes.                                                           receiverE.
+insertValueE :: EventStream a * Element * String                          switchE :: EventStream (EventStream a)
+             -> void                                                              -> EventStream a
+insertValueE(val,elt,attr)                                                switchE(src)
+When an event fires on val, sets the attr attribute of elt                Given an event stream of event streams, fires events from the
+to the value of the event.                                                latest inner event stream. When a new event stream arrives,
+                                                                          switchE stops firing events from the previous stream and
+liftB :: (a * ... -> r) * Behavior a * ...                                starts firing events from the new stream.
+      -> Behavior r
+liftB(f,src ...)                                                          timerB :: Int
+                                                                                 -> Behavior Int
+Creates a behavior whose value is the result of f applied to              timerB(interval)
+the values of src .... f is applied in topological order (sec-
+tion 3.4) to preserve the algebraic semantics of the program.             Creates a behavior carrying the current time. The behavior
+                                                                          updates every interval milliseconds.
+mapE :: (a -> b) * EventStream a
+     -> EventStream b                                                     timerE :: Int -> EventStream Int
+mapE(f,src)                                                               timerE(interval)
+
+Applies f to all events of src.                                           Creates an event stream that fires an event carrying the cur-
+                                                                          rent time every interval milliseconds.
+mergeE :: EventStream a * EventStream a
+                                                                          valueNow :: Behavior a -> a
+       -> EventStream a
+                                                                          valueNow(src)
+mergeE(src1,src2)
+                                                                          Returns the value of src at the point in time when valueNow
+Fires events from both src1 and src2.
+                                                                          is applied.
+9 For more information on cross-domain security policies, see livedocs.
+
+adobe.com/flash/8/main/00001621.html.
+

@@ -1,0 +1,108 @@
+# Copyright (C) 2023 This file is copyright:
+# This file is distributed under the same license as the kwin package.
+#
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
+msgid ""
+msgstr ""
+"Project-Id-Version: kwin\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-05-20 02:37+0000\n"
+"PO-Revision-Date: 2025-05-20 19:43+0200\n"
+"Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
+"Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
+"Language: bg\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.07.70\n"
+
+#: ui/main.qml:27
+#, kde-format
+msgctxt "@info"
+msgid "Changes will take effect the next time you log in."
+msgstr "Промените ви ще влязат в сила при следващото влизане в системата."
+
+#: ui/main.qml:31
+#, kde-format
+msgctxt "@action:button"
+msgid "Log Out Now"
+msgstr "Излизане от сесия сега"
+
+#: ui/main.qml:52
+#, kde-format
+msgid ""
+"Some legacy X11 apps require the ability to read keystrokes typed in other "
+"apps for certain features, such as handling global keyboard shortcuts. This "
+"is allowed by default. However other features may require the ability to "
+"read all keys, and this is disabled by default for security reasons. If you "
+"need to use such apps, you can choose your preferred balance of security and "
+"functionality here."
+msgstr ""
+"Някои от по-старите приложения на X11 изискват възможност за четене на "
+"натискания на клавиши, въведени в други приложения за функции, които се "
+"активират с помощта на глобални клавишни комбинации. Това е деактивирано по "
+"подразбиране от съображения за сигурност. Ако трябва да използвате такива "
+"приложения, трябва да можете да изберете предпочитания от вас баланс между "
+"сигурност и функционалност."
+
+#: ui/main.qml:72
+#, kde-format
+msgid "Allow legacy X11 apps to read keystrokes typed in all apps:"
+msgstr ""
+"Позволяване на старите приложения на X11 да четат натискания на клавиши, "
+"въведени във всички приложения:"
+
+#: ui/main.qml:73
+#, kde-format
+msgid "Never"
+msgstr "Никога"
+
+#: ui/main.qml:84
+#, kde-format
+msgid "Only Meta, Control, Alt and Shift keys"
+msgstr "Само клавиши Meta, Control, Alt и Shift"
+
+#: ui/main.qml:95
+#, kde-format
+msgid ""
+"As above, plus any key typed while the Control, Alt, or Meta keys are pressed"
+msgstr ""
+"Както по-горе, плюс всеки клавиш, въведен, докато е натиснат клавиш "
+"модификатор - Ctr, Alt или Мета"
+
+#: ui/main.qml:107
+#, kde-format
+msgid "Always"
+msgstr "Винаги"
+
+#: ui/main.qml:122
+#, kde-format
+msgid "Additionally include mouse buttons"
+msgstr "Допълнително включване на бутоните на мишката"
+
+#: ui/main.qml:138
+#, kde-format
+msgid ""
+"Note that using this setting will reduce system security to that of the X11 "
+"session by permitting malicious software to steal passwords and spy on the "
+"text that you type. Make sure you understand and accept this risk."
+msgstr ""
+"Имайте предвид, че използването на тази настройка ще намали сигурността на "
+"системата до тази на X11 като позволява на злонамерен софтуер да краде "
+"пароли и да шпионира текста, който въвеждате. Уверете се, че разбирате и "
+"приемате този риск."
+
+#: ui/main.qml:155
+#, kde-format
+msgctxt "@title:group"
+msgid "Control of pointer and keyboard:"
+msgstr "Контрол на показалеца и клавиатурата:"
+
+#: ui/main.qml:156
+#, kde-format
+msgctxt ""
+"@option:check Allow control of pointer and keyboard without asking for "
+"permission"
+msgid "Allow without asking for permission"
+msgstr "Позволяване без искане на разрешение"

@@ -1,0 +1,102 @@
+{
+  "schema": "elm-ux-final-confirmation-v1",
+  "reviewerPerspective": "Accessibility and inclusive interaction",
+  "requirementsSha256": "c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146",
+  "reviewedRequirementCount": 242,
+  "reviewedScenarioCount": 417,
+  "interactionSha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4",
+  "verdict": "confirmed",
+  "scope": "Normative requirements and scenarios only, not implementation acceptance",
+  "originalFindings": [
+    {
+      "originalFinding": "UX-A11Y-001",
+      "status": "confirmed",
+      "correctedRequirements": [
+        "ELM-UI-009"
+      ],
+      "reason": "Normative all-surface semantics now includes names, roles, states, values, relationships and supported actions. Nine named AT surface fixtures require semantic-oracle comparison and fail missing/unnamed controls."
+    },
+    {
+      "originalFinding": "UX-A11Y-002",
+      "status": "confirmed",
+      "correctedRequirements": [
+        "ELM-UI-007",
+        "ELM-UI-010"
+      ],
+      "reason": "UI-007/UI-010 make accessible outcome feedback identity-correlated, deduplicated and non-focus-stealing. Notification expectations now explicitly depend on frozen policy; named DND, irrelevant expiration and opt-in urgency cases reconcile scenarios with INTERACTION.md."
+    },
+    {
+      "originalFinding": "UX-A11Y-003",
+      "status": "confirmed",
+      "correctedRequirements": [
+        "ELM-UI-011"
+      ],
+      "reason": "Native and accessibility focus restoration now covers identity-bound opener, surviving parent scope and declared MRU/desktop fallback; replacement incarnations are rejected and lock overrides restoration. Named opener closure, workspace, minimize, restart and address-reuse cases are present."
+    },
+    {
+      "originalFinding": "UX-A11Y-004",
+      "status": "confirmed",
+      "correctedRequirements": [
+        "ELM-UI-012"
+      ],
+      "reason": "UI-012 covers native IME key consumption, field/composition identity, candidate geometry and late invalidated callbacks. Valid explicit commit now writes exactly once; cancellation/invalidation writes zero. Named explicit-valid-commit and invalidated-zero-commit cases remove the prior contradictory generic outcome."
+    },
+    {
+      "originalFinding": "UX-A11Y-005",
+      "status": "confirmed",
+      "correctedRequirements": [
+        "ELM-UI-013"
+      ],
+      "reason": "P0 freezes measurable contrast, focus/target geometry and text-enlargement/reflow thresholds before host qualification; non-color cues and small-output/long-label fixtures are required. Numeric values remain a properly declared future qualification gate, not claimed measured success."
+    },
+    {
+      "originalFinding": "UX-A11Y-006",
+      "status": "confirmed",
+      "correctedRequirements": [
+        "ELM-UI-014",
+        "ELM-UI-018"
+      ],
+      "reason": "System preference versus explicit versioned override is declared; live changes settle at the next valid presentation opportunity while preserving target/focus/deadline/ownership. Minimize, restore, switcher and Task View fixtures exist; disabling reduced motion cannot replay completed motion."
+    }
+  ],
+  "remainingFindings": [],
+  "summary": "All six original accessibility findings confirmed closed at the requirements level. No remaining contradiction identified in the reviewed accessibility contracts. Numeric fixture targets, selected-host AT evidence and actual usability remain future implementation qualification gates.",
+  "reviewedRequirements": [
+    "ELM-UI-007",
+    "ELM-UI-009",
+    "ELM-UI-010",
+    "ELM-UI-011",
+    "ELM-UI-012",
+    "ELM-UI-013",
+    "ELM-UI-014",
+    "ELM-UI-018"
+  ],
+  "priorConfirmationPass": {
+    "requirementsSha256": "37dd78f10cf15a9e016bebbf0bca312a2391a5a9be498328247cac7eedb95a83",
+    "verdict": "changes-required",
+    "remainingFindings": [
+      {
+        "id": "UX-A11Y-002-R1",
+        "severity": "medium",
+        "requirements": [
+          "ELM-UI-010"
+        ],
+        "counterexample": "INTERACTION.md says announcements honor do-not-disturb and expiration/action refusal only announce when relevant to a focused or user-invoked notification. UI-010 notification-arrival and notification-expiration scenarios require one message regardless of these states. A correct suppressed announcement can fail the written fixture.",
+        "correction": "Make normative announcement publication subject to frozen policy. Split arrival into ordinary polite announcement, DND-suppressed arrival and explicitly opted-in urgency. Split expiration into relevant focused/user-invoked announcement and irrelevant expiration with no unsolicited speech. No focus moves in any case; identity-correlated inspectable status may remain distinct from unsolicited speech."
+      },
+      {
+        "id": "UX-A11Y-004-R1",
+        "severity": "medium",
+        "requirements": [
+          "ELM-UI-012"
+        ],
+        "counterexample": "Host restart, field recreation or focus loss invalidates composition and may legitimately yield zero committed text, but every UI-012 scenario currently says only the current generation commits once. The wording can be interpreted as requiring an unintended commit on an invalidation path.",
+        "correction": "Use explicit outcomes: valid selected commit writes exactly once; Escape cancellation, focus-loss cancellation, field retirement and restart write zero text and reject late callbacks; output/caret relocation preserves current composition until an explicit subsequent commit/cancel. Give consumed Enter/Escape/arrows separate named assertions."
+      }
+    ]
+  },
+  "resolvedClarifications": [
+    "UX-A11Y-002-R1",
+    "UX-A11Y-004-R1"
+  ]
+}

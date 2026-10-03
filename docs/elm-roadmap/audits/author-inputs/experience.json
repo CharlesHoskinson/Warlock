@@ -1,0 +1,667 @@
+[
+  {
+    "id": "ELM-UX-001",
+    "capability": "elm-shell-experience",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL maintain a scope inventory that assigns each shell surface a migration owner, acceptance scenario and rollback destination.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Review signed inventory against source paths; no unassigned surface.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Inventory taskbar, launcher, switcher, Task View, snap, menus, settings, notifications and Files integration.",
+    "scenarios": [
+      {
+        "name": "ux-001",
+        "given": "archived QML shell",
+        "when": "scope is frozen",
+        "then": "every inventoried surface has an owner, scenario and rollback route"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-002",
+    "capability": "elm-taskbar",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL place taskbar application icons at the left edge of each configured taskbar output.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: first icon begins at the configured left inset on each output.",
+    "legacyEvidence": "implementation/taskbar-v3/widget_v68/Windows.qml",
+    "task": "Implement left anchored taskbar layout with scale-aware reserved work area.",
+    "scenarios": [
+      {
+        "name": "ux-002",
+        "given": "two outputs at different scales",
+        "when": "taskbar opens",
+        "then": "first icon begins at the configured left inset on each output"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-003",
+    "capability": "elm-taskbar",
+    "pattern": "event-driven",
+    "ears": "WHEN the desktop catalog changes, the Elm desktop SHALL refresh application entries using desktop-file visibility and launch semantics.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: only eligible entries appear and launches preserve recorded arguments.",
+    "legacyEvidence": "implementation/taskbar-v3/taskbar_catalog.py",
+    "task": "Port catalog projection without replacing desktop-file parsing semantics.",
+    "scenarios": [
+      {
+        "name": "ux-003",
+        "given": "visible and hidden desktop entries",
+        "when": "catalog revision arrives",
+        "then": "only eligible entries appear and launches preserve recorded arguments"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-004",
+    "capability": "elm-taskbar",
+    "pattern": "event-driven",
+    "ears": "WHEN a user reorders or pins an application icon, the Elm desktop SHALL persist its desktop identity and relative order across shell restart.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: both identities retain the chosen relative order.",
+    "legacyEvidence": "implementation/taskbar-v3/widget_v68/Windows.qml",
+    "task": "Implement identity-based pin ordering with restart reconciliation.",
+    "scenarios": [
+      {
+        "name": "ux-004",
+        "given": "two pinned applications",
+        "when": "user reorders and restarts shell",
+        "then": "both identities retain the chosen relative order"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-005",
+    "capability": "elm-taskbar",
+    "pattern": "event-driven",
+    "ears": "WHEN a taskbar group is opened, the Elm desktop SHALL list each eligible window incarnation once and route selection to that incarnation.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: three entries appear and only selected incarnation receives activation.",
+    "legacyEvidence": "implementation/taskbar-v3/widget_v68/Windows.qml",
+    "task": "Implement window grouping and native validated selection.",
+    "scenarios": [
+      {
+        "name": "ux-005",
+        "given": "application has three windows",
+        "when": "group is opened and one member selected",
+        "then": "three entries appear and only selected incarnation receives activation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-006",
+    "capability": "elm-taskbar",
+    "pattern": "state-driven",
+    "ears": "WHILE a window is minimized, the Elm desktop SHALL retain its taskbar identity and label its retained preview as historical.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: entry remains present with historical preview label.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Represent minimized entries and retained preview freshness separately.",
+    "scenarios": [
+      {
+        "name": "ux-006",
+        "given": "window has a retained frame",
+        "when": "window minimizes",
+        "then": "entry remains present with historical preview label"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-007",
+    "capability": "elm-taskbar",
+    "pattern": "event-driven",
+    "ears": "WHEN a retained preview is unavailable, the Elm desktop SHALL display the application icon and window title without substituting another incarnation\u2019s pixels.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: fallback shows correct title and icon with no unrelated pixels.",
+    "legacyEvidence": "window-behavior-spec/whole_snapshot.qnt",
+    "task": "Add explicit unavailable-preview view and lifetime-key validation.",
+    "scenarios": [
+      {
+        "name": "ux-007",
+        "given": "preview lease has expired",
+        "when": "preview opens",
+        "then": "fallback shows correct title and icon with no unrelated pixels"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-008",
+    "capability": "elm-taskbar",
+    "pattern": "event-driven",
+    "ears": "WHEN an eligible taskbar window is selected, the Elm desktop SHALL request activation or restore through native authority without moving it to a scratchpad.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: native receipt confirms restore and workspace membership has not become scratchpad.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Port click-to-activate and restore intent path.",
+    "scenarios": [
+      {
+        "name": "ux-008",
+        "given": "minimized window belongs to workspace 2",
+        "when": "user selects its icon",
+        "then": "native receipt confirms restore and workspace membership has not become scratchpad"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-009",
+    "capability": "elm-taskbar",
+    "pattern": "state-driven",
+    "ears": "WHILE native observations mark a window active or attention-requesting, the Elm desktop SHALL expose distinct active and attention indicators.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: attention indicator differs from active indicator in pixels and accessible state.",
+    "legacyEvidence": "implementation/taskbar-v3/widget_v68/Windows.qml",
+    "task": "Derive highlights from native observations rather than optimistic clicks.",
+    "scenarios": [
+      {
+        "name": "ux-009",
+        "given": "inactive window requests attention",
+        "when": "attention observation arrives",
+        "then": "attention indicator differs from active indicator in pixels and accessible state"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-010",
+    "capability": "elm-taskbar",
+    "pattern": "event-driven",
+    "ears": "WHEN a user invokes an application jump list, the Elm desktop SHALL show only catalog-declared actions and supported recent-item actions for that application identity.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: two declared actions appear and unsupported actions are absent.",
+    "legacyEvidence": "window-behavior-spec/taskbar_menu.qnt; new recent-item provider coverage",
+    "task": "Define jump-list providers and dispatch identity-bound actions.",
+    "scenarios": [
+      {
+        "name": "ux-010",
+        "given": "catalog declares two actions",
+        "when": "jump list opens",
+        "then": "two declared actions appear and unsupported actions are absent"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-011",
+    "capability": "elm-switcher",
+    "pattern": "event-driven",
+    "ears": "WHEN native Alt-Tab chord events arrive, the Elm desktop SHALL advance selection in the frozen eligible-window order for that chord generation.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: selection advances then returns within the same frozen order.",
+    "legacyEvidence": "implementation/switcher-v1/SwitcherState.js",
+    "task": "Port chord reducer with forward and reverse ordinals.",
+    "scenarios": [
+      {
+        "name": "ux-011",
+        "given": "three eligible windows",
+        "when": "Alt-Tab then Shift-Alt-Tab occur",
+        "then": "selection advances then returns within the same frozen order"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-012",
+    "capability": "elm-switcher",
+    "pattern": "complex",
+    "ears": "WHEN Alt release precedes switcher readiness, the Elm desktop SHALL resolve the native chord once without leaving an open switcher or issuing a second activation.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: one resolution occurs and no switcher remains open.",
+    "legacyEvidence": "implementation/switcher-v1/README.md",
+    "task": "Preserve native pre-ready key journal and single commit guard.",
+    "scenarios": [
+      {
+        "name": "ux-012",
+        "given": "host is starting",
+        "when": "Alt press, Tab and release precede readiness",
+        "then": "one resolution occurs and no switcher remains open"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-013",
+    "capability": "elm-switcher",
+    "pattern": "event-driven",
+    "ears": "WHEN Escape cancels a switcher chord before native commit, the Elm desktop SHALL close the switcher and preserve the previously focused window.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: switcher closes and focus is unchanged.",
+    "legacyEvidence": "implementation/switcher-v1/SwitcherState.js",
+    "task": "Implement native cancellation boundary and focus-preservation replay.",
+    "scenarios": [
+      {
+        "name": "ux-013",
+        "given": "switcher selection differs from focused window",
+        "when": "Escape arrives before commit",
+        "then": "switcher closes and focus is unchanged"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-014",
+    "capability": "elm-switcher",
+    "pattern": "unwanted",
+    "ears": "IF the selected switcher window closes or its identity becomes stale, the Elm desktop SHALL reselect a surviving eligible member or dismiss an empty chord without activating a replacement incarnation.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: reused address is never activated as the closed window.",
+    "legacyEvidence": "implementation/switcher-v1/SwitcherState.js",
+    "task": "Handle close and incarnation reuse during chord.",
+    "scenarios": [
+      {
+        "name": "ux-014",
+        "given": "selected window closes and address is reused",
+        "when": "release attempts selection commit",
+        "then": "reused address is never activated as the closed window"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-015",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user activates a modal family, the Elm desktop SHALL request the native eligible modal target while preserving the application\u2019s draft content.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: native modal target or terminal activates and draft content remains intact.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Use native family relations and prohibit shell draft reconstruction.",
+    "scenarios": [
+      {
+        "name": "ux-015",
+        "given": "Brave draft dialog and unrelated terminal overlap",
+        "when": "user selects either application",
+        "then": "native modal target or terminal activates and draft content remains intact"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-016",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user toggles always-on-top on a maximized family, the Elm desktop SHALL display pin and maximize state only after correlated native observations.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: displayed pin/MAX state agrees with native state and visible hit target.",
+    "legacyEvidence": "implementation/maximized-stack-v2/native_stack_smoke.py",
+    "task": "Implement pin/MAX intent state with committed-state presentation.",
+    "scenarios": [
+      {
+        "name": "ux-016",
+        "given": "maximized application overlaps floating window",
+        "when": "pin then unpin completes",
+        "then": "displayed pin/MAX state agrees with native state and visible hit target"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-017",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN Task View opens, the Elm desktop SHALL show eligible windows grouped by workspace with a keyboard-selectable active-workspace marker.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: groups match native membership and active workspace is named.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md; new Task View coverage",
+    "task": "Build Task View from canonical workspace/window projection.",
+    "scenarios": [
+      {
+        "name": "ux-017",
+        "given": "two populated workspaces",
+        "when": "Task View opens",
+        "then": "groups match native membership and active workspace is named"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-018",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user transfers a window through Task View, the Elm desktop SHALL update workspace membership only after native transfer acceptance.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: accepted transfer updates membership; refusal retains workspace 1.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Implement transfer transaction and refused-state feedback.",
+    "scenarios": [
+      {
+        "name": "ux-018",
+        "given": "window is on workspace 1",
+        "when": "user requests workspace 2 transfer",
+        "then": "accepted transfer updates membership; refusal retains workspace 1"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-019",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user chooses a snap region, the Elm desktop SHALL submit geometry keyed to the selected output generation and show the accepted native placement.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: accepted placement matches half work area within native rounding tolerance.",
+    "legacyEvidence": "window-behavior-spec/snap.lua",
+    "task": "Implement snap chooser and native placement reconciliation.",
+    "scenarios": [
+      {
+        "name": "ux-019",
+        "given": "output has a defined work area",
+        "when": "user chooses left half",
+        "then": "accepted placement matches half work area within native rounding tolerance"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-020",
+    "capability": "elm-shell-experience",
+    "pattern": "unwanted",
+    "ears": "IF an output changes during snap selection, the Elm desktop SHALL invalidate the old preview and require geometry derived from the new output generation before commit.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: old generation geometry is never committed.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Invalidate snap transactions on scale, transform and hotplug changes.",
+    "scenarios": [
+      {
+        "name": "ux-020",
+        "given": "snap chooser is open",
+        "when": "output scale changes or output disappears",
+        "then": "old generation geometry is never committed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-021",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user drags or resizes an application window, the Elm desktop SHALL preserve native pointer ownership until release or explicit cancellation.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: exactly one gesture ends and no shell surface steals the drag.",
+    "legacyEvidence": "window-behavior-spec/native_drag.qnt; window-behavior-spec/caption_drag.qnt",
+    "task": "Integrate caption/edge gestures without webview-dependent hit decisions.",
+    "scenarios": [
+      {
+        "name": "ux-021",
+        "given": "drag crosses the taskbar and another output",
+        "when": "pointer releases",
+        "then": "exactly one gesture ends and no shell surface steals the drag"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-022",
+    "capability": "elm-shell-experience",
+    "pattern": "state-driven",
+    "ears": "WHILE reduced motion is enabled, the Elm desktop SHALL use the documented reduced-motion transition profile for minimize, restore and shell overlays.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: recorded transitions match approved reduced-motion profile.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Define reduced-motion profile and retain native motion receipts.",
+    "scenarios": [
+      {
+        "name": "ux-022",
+        "given": "reduced motion setting is enabled",
+        "when": "window minimizes and restores",
+        "then": "recorded transitions match approved reduced-motion profile"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-023",
+    "capability": "elm-accessibility",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL provide keyboard routes for launcher, taskbar groups, switcher, Task View, snap chooser, menus and settings without requiring pointer input.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Publish chord map and implement focus traversal for every migrated surface.",
+    "scenarios": [
+      {
+        "name": "ux-023",
+        "given": "pointer is unused",
+        "when": "keyboard-only acceptance script visits all migrated surfaces",
+        "then": "each surface can be opened, operated and dismissed without pointer events"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-024",
+    "capability": "elm-accessibility",
+    "pattern": "state-driven",
+    "ears": "WHILE a shell popup owns keyboard focus, the Elm desktop SHALL constrain traversal to its documented focus order and restore the previous eligible focus target on dismissal.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: focus follows menu order and returns to original eligible target.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Implement focus scopes and native focus return.",
+    "scenarios": [
+      {
+        "name": "ux-024",
+        "given": "taskbar menu has focus",
+        "when": "Tab traversal then Escape occurs",
+        "then": "focus follows menu order and returns to original eligible target"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-025",
+    "capability": "elm-accessibility",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL expose names, roles, states and focus changes for taskbar and switcher controls through the chosen host\u2019s native accessibility bridge.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: inspector and Orca observe matching name, role, selection and focus.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Gate host selection on real accessibility-tree export.",
+    "scenarios": [
+      {
+        "name": "ux-025",
+        "given": "Orca and accessibility inspector are attached",
+        "when": "taskbar and switcher are operated",
+        "then": "inspector and Orca observe matching name, role, selection and focus"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-026",
+    "capability": "elm-accessibility",
+    "pattern": "event-driven",
+    "ears": "WHEN a shell control gains focus or changes selection, the Elm desktop SHALL expose that state to configured speech and braille consumers without duplicate announcements from parallel shell hosts.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Preserve native accessibility trace, speech transcript and braille device or approved emulator output.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Execute audible and braille navigation campaign on deployed host.",
+    "scenarios": [
+      {
+        "name": "ux-026",
+        "given": "Orca speech and braille output are configured",
+        "when": "user changes switcher selection",
+        "then": "speech and braille identify the same selected window once per transition"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-027",
+    "capability": "elm-accessibility",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL preserve readable labels and visible focus indicators in normal, high-contrast and enlarged-text theme fixtures without clipping actionable controls.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: labels and focus remain visible and every action retains a hit target.",
+    "legacyEvidence": "window-behavior-spec/accessibility.qnt",
+    "task": "Add measured theme fixtures at supported text scales.",
+    "scenarios": [
+      {
+        "name": "ux-027",
+        "given": "supported theme and text-scale fixtures",
+        "when": "all shell surfaces render",
+        "then": "labels and focus remain visible and every action retains a hit target"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-028",
+    "capability": "elm-accessibility",
+    "pattern": "event-driven",
+    "ears": "WHEN an input method composes text in a shell field, the Elm desktop SHALL retain preedit and candidate interaction until explicit commit or cancellation.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: one committed query appears and preedit is not dispatched as a launch.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md; new IME native coverage",
+    "task": "Validate IME integration before choosing webview host.",
+    "scenarios": [
+      {
+        "name": "ux-028",
+        "given": "launcher search has focus with configured IME",
+        "when": "user composes, selects candidate and commits",
+        "then": "one committed query appears and preedit is not dispatched as a launch"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-029",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user searches and launches a catalog entry, the Elm desktop SHALL issue one identity-bound launch request and show failure feedback when native launch is refused.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: one request occurs and refused launch displays an error.",
+    "legacyEvidence": "implementation/taskbar-v3/taskbar_catalog.py; new launcher coverage",
+    "task": "Implement launcher search and correlated launch outcome.",
+    "scenarios": [
+      {
+        "name": "ux-029",
+        "given": "matching catalog entry is selected",
+        "when": "Enter is pressed",
+        "then": "one request occurs and refused launch displays an error"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-030",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user changes shell settings, the Elm desktop SHALL persist validated preferences and restore them after host restart without applying invalid values.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: valid preference survives and invalid scale is rejected.",
+    "legacyEvidence": "new settings-schema and restart coverage",
+    "task": "Create settings schema, validation and migration UI.",
+    "scenarios": [
+      {
+        "name": "ux-030",
+        "given": "valid theme setting and invalid scale are submitted",
+        "when": "host restarts",
+        "then": "valid preference survives and invalid scale is rejected"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-031",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a notification action is invoked, the Elm desktop SHALL dispatch the action to its current notification identity and remove expired action targets.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: expired action sends no request to another notification.",
+    "legacyEvidence": "new notification lifecycle coverage",
+    "task": "Build notification center with native notification lifecycle adapter.",
+    "scenarios": [
+      {
+        "name": "ux-031",
+        "given": "notification expires while center is open",
+        "when": "user attempts its former action",
+        "then": "expired action sends no request to another notification"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-032",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user opens a system menu, the Elm desktop SHALL present capability-supported controls and display native outcomes for requested system changes.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: network control indicates unavailable and remaining controls show observed state.",
+    "legacyEvidence": "new system-menu adapter coverage",
+    "task": "Integrate volume, network, power and session adapters with explicit availability.",
+    "scenarios": [
+      {
+        "name": "ux-032",
+        "given": "network adapter is unavailable",
+        "when": "system menu opens",
+        "then": "network control indicates unavailable and remaining controls show observed state"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-033",
+    "capability": "elm-shell-experience",
+    "pattern": "event-driven",
+    "ears": "WHEN a user opens Files from the Elm shell, the Elm desktop SHALL invoke the installed explorer with the requested path or collection and preserve its existing operation semantics.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Elm replay assertion and isolated native recording: existing explorer is reused at requested collection; no ops.sh semantics change.",
+    "legacyEvidence": "AGENTS.md; new Files integration coverage",
+    "task": "Integrate omarchy-files launch/reuse contract without rewriting file operations.",
+    "scenarios": [
+      {
+        "name": "ux-033",
+        "given": "existing Files window and collection identifier",
+        "when": "user opens that collection from shell",
+        "then": "existing explorer is reused at requested collection; no ops.sh semantics change"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-034",
+    "capability": "elm-shell-experience",
+    "pattern": "complex",
+    "ears": "WHERE a later Elm Files replacement is approved, the Elm desktop SHALL preserve Quint-specified copy, move, collision, trash and authorization semantics before replacing the installed operation adapter.",
+    "phase": "P5",
+    "priority": "conditional",
+    "verification": "Elm replay assertion and isolated native recording: collision suffix and authorization behavior match spec with no destructive deletion.",
+    "legacyEvidence": "AGENTS.md; new archived Files spec/adaptor mapping",
+    "task": "Scope separate Files migration; update spec before semantic implementation changes and run model-based tests.",
+    "scenarios": [
+      {
+        "name": "ux-034",
+        "given": "approved replacement uses captured fileops specification",
+        "when": "copy collision and permission denial scenarios run",
+        "then": "collision suffix and authorization behavior match spec with no destructive deletion"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UX-035",
+    "capability": "elm-shell-experience",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL release the defined shell scope only after original native campaigns and each migrated surface\u2019s acceptance scenarios pass against one frozen source and ABI tuple.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Review hash-bound native evidence and preserve failures; CPU/model success alone cannot satisfy this gate.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Create coherent release UX matrix and reversible rollout plan.",
+    "scenarios": [
+      {
+        "name": "ux-035",
+        "given": "candidate shell and native pair are frozen",
+        "when": "release review runs",
+        "then": "38/34 restore, remaining pin, 52 drag/resize and surface scenarios have explicit results"
+      }
+    ]
+  }
+]

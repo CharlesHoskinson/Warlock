@@ -1,0 +1,859 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.TextBuffer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.TextBuffer"/>
+  <meta property="og:description" content="Reference for Clutter.TextBuffer"/>
+  <meta name="twitter:title" content="Clutter.TextBuffer"/>
+  <meta name="twitter:description" content="Reference for Clutter.TextBuffer"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.TextBuffer.html#description">TextBuffer</a>
+  </div>
+</div>
+
+
+  
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.TextBuffer.new.html">new</a>
+  
+    <a class="ctor" href="ctor.TextBuffer.new_with_text.html">new_with_text</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.TextBuffer.delete_text.html">delete_text</a>
+  
+    <a class="method" href="method.TextBuffer.emit_deleted_text.html">emit_deleted_text</a>
+  
+    <a class="method" href="method.TextBuffer.emit_inserted_text.html">emit_inserted_text</a>
+  
+    <a class="method" href="method.TextBuffer.get_bytes.html">get_bytes</a>
+  
+    <a class="method" href="method.TextBuffer.get_length.html">get_length</a>
+  
+    <a class="method" href="method.TextBuffer.get_max_length.html">get_max_length</a>
+  
+    <a class="method" href="method.TextBuffer.get_text.html">get_text</a>
+  
+    <a class="method" href="method.TextBuffer.insert_text.html">insert_text</a>
+  
+    <a class="method" href="method.TextBuffer.set_max_length.html">set_max_length</a>
+  
+    <a class="method" href="method.TextBuffer.set_text.html">set_text</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.TextBuffer.length.html">length</a>
+  
+    <a class="property" href="property.TextBuffer.max-length.html">max-length</a>
+  
+    <a class="property" href="property.TextBuffer.text.html">text</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.TextBuffer.deleted-text.html">deleted-text</a>
+  
+    <a class="signal" href="signal.TextBuffer.inserted-text.html">inserted-text</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.TextBuffer.delete_text.html">delete_text</a>
+  
+    <a class="method" href="vfunc.TextBuffer.deleted_text.html">deleted_text</a>
+  
+    <a class="method" href="vfunc.TextBuffer.get_length.html">get_length</a>
+  
+    <a class="method" href="vfunc.TextBuffer.get_text.html">get_text</a>
+  
+    <a class="method" href="vfunc.TextBuffer.insert_text.html">insert_text</a>
+  
+    <a class="method" href="vfunc.TextBuffer.inserted_text.html">inserted_text</a>
+  
+  </div>
+</div>
+
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>TextBuffer</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/pango/clutter-text-buffer.c#L28">[src]</a>
+          
+        </h4>
+
+        <pre><code>class Clutter.TextBuffer : GObject.Object
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>Text buffer for <a href="class.Text.html"><code>ClutterText</code></a></p>
+<p>The <code>ClutterTextBuffer</code> class contains the actual text displayed in a
+<a href="class.Text.html"><code>ClutterText</code></a>&nbsp;widget.</p>
+<p>A single <code>ClutterTextBuffer</code> object can be shared by multiple <a href="class.Text.html"><code>ClutterText</code></a>
+widgets which will then share the same text content, but not the cursor
+position, visibility attributes, icon&nbsp;etc.</p>
+<p><code>ClutterTextBuffer</code> may be derived from. Such a derived class might allow
+text to be stored in an alternate location, such as non-pageable memory,
+useful in the case of important passwords. Or a derived class could
+integrate with an application&#8217;s concept of&nbsp;undo/redo.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.TextBuffer">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="120pt" height="116pt"
+ viewBox="0.00 0.00 120.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterTextBuffer">
+<path fill="none" stroke="black" d="M100,-36C100,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 100,0 100,0 106,0 112,-6 112,-12 112,-12 112,-24 112,-24 112,-30 106,-36 100,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="56" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterTextBuffer</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M74.88,-108C74.88,-108 37.13,-108 37.13,-108 31.13,-108 25.13,-102 25.13,-96 25.13,-96 25.13,-84 25.13,-84 25.13,-78 31.13,-72 37.13,-72 37.13,-72 74.88,-72 74.88,-72 80.88,-72 86.88,-78 86.88,-84 86.88,-84 86.88,-96 86.88,-96 86.88,-102 80.88,-108 74.88,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="56" y="-83.83" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge1" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M56,-71.7C56,-60.85 56,-46.92 56,-36.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.TextBuffer.new.html">clutter_text_buffer_new</a></h6>
+          <div class="docblock">
+            <p>Create a new ClutterTextBuffer&nbsp;object.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="ctor.TextBuffer.new_with_text.html">clutter_text_buffer_new_with_text</a></h6>
+          <div class="docblock">
+            <p>Create a new ClutterTextBuffer object with some&nbsp;text.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.delete_text.html">clutter_text_buffer_delete_text</a></h6>
+          <div class="docblock">
+            <p>Deletes a sequence of characters from the buffer. <code>n_chars</code> characters are
+deleted starting at <code>position</code>. If <code>n_chars</code> is negative, then all characters
+until the end of the text are&nbsp;deleted.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.emit_deleted_text.html">clutter_text_buffer_emit_deleted_text</a></h6>
+          <div class="docblock">
+            <p>Emits the <code>ClutterTextBuffer::deleted-text</code> signal on <code>buffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.emit_inserted_text.html">clutter_text_buffer_emit_inserted_text</a></h6>
+          <div class="docblock">
+            <p>Emits the <code>ClutterTextBuffer::inserted-text</code> signal on <code>buffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.get_bytes.html">clutter_text_buffer_get_bytes</a></h6>
+          <div class="docblock">
+            <p>Retrieves the length in bytes of the buffer.
+See <code>clutter_text_buffer_get_length()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.get_length.html">clutter_text_buffer_get_length</a></h6>
+          <div class="docblock">
+            <p>Retrieves the length in characters of the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.get_max_length.html">clutter_text_buffer_get_max_length</a></h6>
+          <div class="docblock">
+            <p>Retrieves the maximum allowed length of the text in
+<code>buffer</code>. See <code>clutter_text_buffer_set_max_length()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.get_text.html">clutter_text_buffer_get_text</a></h6>
+          <div class="docblock">
+            <p>Retrieves the contents of the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.insert_text.html">clutter_text_buffer_insert_text</a></h6>
+          <div class="docblock">
+            <p>Inserts <code>n_chars</code> characters of <code>chars</code> into the contents of the
+buffer, at position <code>position</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.set_max_length.html">clutter_text_buffer_set_max_length</a></h6>
+          <div class="docblock">
+            <p>Sets the maximum allowed length of the contents of the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.TextBuffer.set_text.html">clutter_text_buffer_set_text</a></h6>
+          <div class="docblock">
+            <p>Sets the text in the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.TextBuffer.length.html">Clutter.TextBuffer:length</a></h6>
+          <div class="docblock">
+            <p>The length (in characters) of the text in&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.TextBuffer.max-length.html">Clutter.TextBuffer:max-length</a></h6>
+          <div class="docblock">
+            <p>The maximum length (in characters) of the text in the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.TextBuffer.text.html">Clutter.TextBuffer:text</a></h6>
+          <div class="docblock">
+            <p>The contents of the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.TextBuffer.deleted-text.html">Clutter.TextBuffer::deleted-text</a></h6>
+          <div class="docblock">
+            <p>This signal is emitted after text is deleted from the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.TextBuffer.inserted-text.html">Clutter.TextBuffer::inserted-text</a></h6>
+          <div class="docblock">
+            <p>This signal is emitted after text is inserted into the&nbsp;buffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterTextBufferClass {
+  void (* inserted_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    const gchar* chars,
+    guint n_chars
+  );
+  void (* deleted_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    guint n_chars
+  );
+  const gchar* (* get_text) (
+    ClutterTextBuffer* buffer,
+    gsize* n_bytes
+  );
+  guint (* get_length) (
+    ClutterTextBuffer* buffer
+  );
+  guint (* insert_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    const gchar* chars,
+    guint n_chars
+  );
+  guint (* delete_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    guint n_chars
+  );
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>The <code>ClutterTextBufferClass</code> structure contains
+only private&nbsp;data.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>inserted_text: void (* inserted_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    const gchar* chars,
+    guint n_chars
+  )</code></dt>
+          <dd><p>Default handler for the <code>ClutterTextBuffer::inserted-text</code> signal.</p></dd>
+        
+          <dt><code>deleted_text: void (* deleted_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    guint n_chars
+  )</code></dt>
+          <dd><p>Default handler for the <code>ClutterTextBuffer::deleted-text</code> signal.</p></dd>
+        
+          <dt><code>get_text: const gchar* (* get_text) (
+    ClutterTextBuffer* buffer,
+    gsize* n_bytes
+  )</code></dt>
+          <dd><p>Virtual&nbsp;function.</p></dd>
+        
+          <dt><code>get_length: guint (* get_length) (
+    ClutterTextBuffer* buffer
+  )</code></dt>
+          <dd><p>Virtual&nbsp;function.</p></dd>
+        
+          <dt><code>insert_text: guint (* insert_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    const gchar* chars,
+    guint n_chars
+  )</code></dt>
+          <dd><p>Virtual&nbsp;function.</p></dd>
+        
+          <dt><code>delete_text: guint (* delete_text) (
+    ClutterTextBuffer* buffer,
+    guint position,
+    guint n_chars
+  )</code></dt>
+          <dd><p>Virtual&nbsp;function.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-delete_text"><a href="vfunc.TextBuffer.delete_text.html">Clutter.TextBufferClass.delete_text</a></h6>
+        <div class="docblock">
+          <p>Deletes a sequence of characters from the buffer. <code>n_chars</code> characters are
+deleted starting at <code>position</code>. If <code>n_chars</code> is negative, then all characters
+until the end of the text are&nbsp;deleted.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-deleted_text"><a href="vfunc.TextBuffer.deleted_text.html">Clutter.TextBufferClass.deleted_text</a></h6>
+        <div class="docblock">
+          <p>Default handler for the <code>ClutterTextBuffer::deleted-text</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_length"><a href="vfunc.TextBuffer.get_length.html">Clutter.TextBufferClass.get_length</a></h6>
+        <div class="docblock">
+          <p>Retrieves the length in characters of the&nbsp;buffer.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_text"><a href="vfunc.TextBuffer.get_text.html">Clutter.TextBufferClass.get_text</a></h6>
+        <div class="docblock">
+          <p>Virtual&nbsp;function.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-insert_text"><a href="vfunc.TextBuffer.insert_text.html">Clutter.TextBufferClass.insert_text</a></h6>
+        <div class="docblock">
+          <p>Inserts <code>n_chars</code> characters of <code>chars</code> into the contents of the
+buffer, at position <code>position</code>.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-inserted_text"><a href="vfunc.TextBuffer.inserted_text.html">Clutter.TextBufferClass.inserted_text</a></h6>
+        <div class="docblock">
+          <p>Default handler for the <code>ClutterTextBuffer::inserted-text</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

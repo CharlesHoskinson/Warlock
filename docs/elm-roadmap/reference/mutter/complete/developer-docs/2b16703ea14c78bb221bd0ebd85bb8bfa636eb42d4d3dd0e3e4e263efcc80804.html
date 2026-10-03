@@ -1,0 +1,555 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.Animatable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.Animatable"/>
+  <meta property="og:description" content="Reference for Clutter.Animatable"/>
+  <meta name="twitter:title" content="Clutter.Animatable"/>
+  <meta name="twitter:description" content="Reference for Clutter.Animatable"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="iface.Animatable.html#description">Animatable</a>
+  </div>
+</div>
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Animatable.find_property.html">find_property</a>
+  
+    <a class="method" href="method.Animatable.get_actor.html">get_actor</a>
+  
+    <a class="method" href="method.Animatable.get_initial_state.html">get_initial_state</a>
+  
+    <a class="method" href="method.Animatable.interpolate_value.html">interpolate_value</a>
+  
+    <a class="method" href="method.Animatable.set_final_state.html">set_final_state</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.Animatable.find_property.html">find_property</a>
+  
+    <a class="method" href="vfunc.Animatable.get_actor.html">get_actor</a>
+  
+    <a class="method" href="vfunc.Animatable.get_initial_state.html">get_initial_state</a>
+  
+    <a class="method" href="vfunc.Animatable.interpolate_value.html">interpolate_value</a>
+  
+    <a class="method" href="vfunc.Animatable.set_final_state.html">set_final_state</a>
+  
+  </div>
+</div>
+
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Interface</h3>
+    <h1><a href="index.html">Clutter</a><span class="sep"></span>Animatable</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-animatable.c#L25">[src]</a>
+          
+        </h4>
+
+        <pre><code>interface Clutter.Animatable : GObject.Object</code></pre>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>Interface for animatable&nbsp;classes</p>
+<p><code>ClutterAnimatable</code> is an interface that allows a <a href="javascript:void(0)" data-namespace="GObject" data-link="class.Object.html" class="external"><code>GObject</code></a> class
+to control how an actor will animate a&nbsp;property.</p>
+<p>Each <code>ClutterAnimatable</code> should implement the
+<a href="vfunc.Animatable.interpolate_value.html"><code>Clutter.AnimatableInterface.interpolate_value</code></a> virtual function of the
+interface to compute the animation state between two values of an interval
+depending on a progress factor, expressed as a floating point&nbsp;value.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    <div class="toggle-wrapper prerequisite">
+      <h4 id="prerequisite">
+        Prerequisite
+        <a href="#prerequisite" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <p>In order to implement Animatable, your type must inherit from<a data-namespace="GObject" data-link="class.Object.html" href="javascript:void(0)" class="external"><code>GObject</code></a>.</p>
+      </div>
+    </div>
+
+    
+    <div class="implementations toggle-wrapper default-hide">
+      <h4 id="implementations">Implementations<a href="#implementations" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li><a href="class.Actor.html">ClutterActor</a></li>
+        
+          <li><a href="class.Clone.html">ClutterClone</a></li>
+        
+          <li><a href="class.Stage.html">ClutterStage</a></li>
+        
+          <li><a href="class.Text.html">ClutterText</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="methods toggle-wrapper">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Animatable.find_property.html">clutter_animatable_find_property</a></h6>
+          <div class="docblock">
+            <p>Finds the <code>GParamSpec</code> for <code>property_name</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Animatable.get_actor.html">clutter_animatable_get_actor</a></h6>
+          <div class="docblock">
+            <p>Get animated&nbsp;actor.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Animatable.get_initial_state.html">clutter_animatable_get_initial_state</a></h6>
+          <div class="docblock">
+            <p>Retrieves the current state of <code>property_name</code> and sets <code>value</code> with&nbsp;it.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Animatable.interpolate_value.html">clutter_animatable_interpolate_value</a></h6>
+          <div class="docblock">
+            <p>Asks a <code>ClutterAnimatable</code> implementation to interpolate a
+a named property between the initial and final values of
+a <code>ClutterInterval</code>, using <code>progress</code> as the interpolation
+value, and store the result inside <code>value</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Animatable.set_final_state.html">clutter_animatable_set_final_state</a></h6>
+          <div class="docblock">
+            <p>Sets the current state of <code>property_name</code> to <code>value</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="interface toggle-wrapper default-hide">
+      <h4 style="display:flex;" id="interface-struct">
+        Interface structure
+        <a href="#interface-struct" class="anchor"></a>
+        
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterAnimatableInterface {
+  GParamSpec* (* find_property) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name
+  );
+  void (* get_initial_state) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name,
+    GValue* value
+  );
+  void (* set_final_state) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name,
+    const GValue* value
+  );
+  gboolean (* interpolate_value) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name,
+    ClutterInterval* interval,
+    gdouble progress,
+    GValue* value
+  );
+  ClutterActor* (* get_actor) (
+    ClutterAnimatable* animatable
+  );
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Interface members</h6>
+
+        <table>
+        
+        <tr>
+          <td style="vertical-align:top"><code>find_property</code></td>
+          <td style="vertical-align:top"><pre><code>GParamSpec* (* find_property) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top"><p>Virtual function for retrieving the <code>GParamSpec</code> of
+  an animatable&nbsp;property.</p></td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_initial_state</code></td>
+          <td style="vertical-align:top"><pre><code>void (* get_initial_state) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name,
+    GValue* value
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top"><p>Virtual function for retrieving the initial
+  state of an animatable&nbsp;property.</p></td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>set_final_state</code></td>
+          <td style="vertical-align:top"><pre><code>void (* set_final_state) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name,
+    const GValue* value
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top"><p>Virtual function for setting the state of an
+  animatable&nbsp;property.</p></td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>interpolate_value</code></td>
+          <td style="vertical-align:top"><pre><code>gboolean (* interpolate_value) (
+    ClutterAnimatable* animatable,
+    const gchar* property_name,
+    ClutterInterval* interval,
+    gdouble progress,
+    GValue* value
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top"><p>Virtual function for interpolating the progress
+  of a&nbsp;property.</p></td>
+        </tr>
+        
+        <tr>
+          <td style="vertical-align:top"><code>get_actor</code></td>
+          <td style="vertical-align:top"><pre><code>ClutterActor* (* get_actor) (
+    ClutterAnimatable* animatable
+  )</code></pre></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td><td style="vertical-align:top"><p>Virtual function for getting associated&nbsp;actor.</p></td>
+        </tr>
+        
+        </table>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6 id="vfunc-find_property"><a href="vfunc.Animatable.find_property.html">Clutter.Animatable.find_property</a></h6>
+          <div class="docblock">
+            <p>Finds the <code>GParamSpec</code> for <code>property_name</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6 id="vfunc-get_actor"><a href="vfunc.Animatable.get_actor.html">Clutter.Animatable.get_actor</a></h6>
+          <div class="docblock">
+            <p>Get animated&nbsp;actor.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6 id="vfunc-get_initial_state"><a href="vfunc.Animatable.get_initial_state.html">Clutter.Animatable.get_initial_state</a></h6>
+          <div class="docblock">
+            <p>Retrieves the current state of <code>property_name</code> and sets <code>value</code> with&nbsp;it.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6 id="vfunc-interpolate_value"><a href="vfunc.Animatable.interpolate_value.html">Clutter.Animatable.interpolate_value</a></h6>
+          <div class="docblock">
+            <p>Asks a <code>ClutterAnimatable</code> implementation to interpolate a
+a named property between the initial and final values of
+a <code>ClutterInterval</code>, using <code>progress</code> as the interpolation
+value, and store the result inside <code>value</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6 id="vfunc-set_final_state"><a href="vfunc.Animatable.set_final_state.html">Clutter.Animatable.set_final_state</a></h6>
+          <div class="docblock">
+            <p>Sets the current state of <code>property_name</code> to <code>value</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

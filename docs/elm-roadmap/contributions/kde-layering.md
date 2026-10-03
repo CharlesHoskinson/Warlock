@@ -1,0 +1,55 @@
+# KWin architecture and layering reference for the Elm roadmap
+
+The reference corpus contains complete tracked KWin source archives at two pinned revisions, plus the recursively reachable official KWin developer documentation under `develop.kde.org/docs/plasma/kwin/`. This is source collection and targeted architectural study, not a claim to have read every source line, collected every KDE website, or verified KWin behavior on this desktop.
+
+[Manifest](../reference/kwin/manifest.json) records requested/final URLs, HTTP status, acquisition time, byte counts and SHA-256. [Extracted source inventory](../reference/kwin/source-inventory.jsonl) hashes every extracted regular file. Scrapling fetched the raw codeload archives and developer pages. Extraction accepted directories and regular files with Python's data safety filter; nothing was built or executed. No desktop changes or native campaign ran.
+
+Historical stable tag **v6.4.5** resolves through its annotated tag to **4b168ff03fb8c56e48837c100a5f6ee2433764d9**. It is a historical baseline, not claimed as latest stable. Separately, upstream `master` at acquisition resolves to **ee272a4d33c4d7966ee342e051313f2cb5813ee0**. Its API response and exact archive are retained. Extracted regular-file counts are 3,124 historical and 3,250 upstream. Both complete source archives, all eight targeted historical source files and developer index/API pages returned HTTP 200; there were zero recorded download failures. API links beyond the scoped developer path are excluded. Dependencies, submodule contents, complete history, generated builds and external linked documentation are outside this collection. Preserve upstream licenses and SPDX notices.
+
+## Direct historical source evidence
+
+The following findings are grounded in the pinned historical files, not extrapolated from an unpinned current web page. Raw standalone copies make the reviewed functions easy to inspect.
+
+| Concern | Authoritative functions and observed design |
+| --- | --- |
+| Canonical order | [layers.cpp](../reference/kwin/src__layers.cpp): `updateStackingOrder()` computes a constrained list, assigns each window's stack index, then emits change. `constrainedStackingOrder()` sorts by computed layers while retaining relative unconstrained order, then applies above/below constraints with sibling-order preservation. Consumers should not use the unconstrained list as final truth. |
+| Layers | [window.cpp](../reference/kwin/src__window.cpp): `belongsToLayer()` applies window-type exceptions, keep-below, active-fullscreen and keep-above predicates. Popup, input-method, notification and lock categories have explicit treatment. The introductory comment in layers.cpp is stale about the layer count; use code and enum rather than reproducing that comment as a current specification. |
+| Fullscreen | `isActiveFullScreen()` uses most-recently activated window, output relation and main-window ancestry. Its purpose includes avoiding flicker. A fullscreen window is not unconditionally globally above everything. Maximization alone does not receive this active-fullscreen classification. |
+| Transients | `constrainedStackingOrder()` applies relation constraints after initial layer ordering. [workspace.cpp](../reference/kwin/src__workspace.cpp) `constrain()`/`unconstrain()` maintain the constraint graph. This establishes family-order machinery; it does not alone prove all modal focus behavior. |
+| Hit target | [input.cpp](../reference/kwin/src__input.cpp) `findToplevel()` walks the canonical stack from top down and rejects deleted, wrong activity/desktop, minimized, hidden, show-desktop-hidden and not-ready windows before hit testing; lock mode restricts eligible categories. |
+| Scene order | [workspacescene.cpp](../reference/kwin/src__scene__workspacescene.cpp) `createStackingOrder()` takes sorted scene children and filters visible window items. [windowitem.cpp](../reference/kwin/src__scene__windowitem.cpp) subscribes to stacking changes and sets Z from the window's committed stack index unless explicit effect elevation applies. |
+| Scene visibility | `WindowItem::computeVisibility()` checks readiness, lock, current desktop/activity, minimized and hidden state. Explicit force-visible counters can permit effect painting. `updateVisibility()` updates item visibility and suspension. `Window::isShown()` alone does not encode current desktop/activity eligibility. |
+
+Thus KWin has coherent ordinary ordering with deliberate visual exceptions. It does **not** simply equate scene-visible with input-eligible: effects may render minimized windows, and elevation can alter scene Z. The reference supports separating an animation representation from application input authority. A global boolean called visible or acceptsInput is insufficient to decide present workspace eligibility.
+
+## Broader upstream architecture map
+
+The pinned upstream archive supplies complete files for subsequent deep review. These are structural source observations, not passing runtime compatibility claims. Relative paths below are inside `reference/kwin/source/upstream-head/kwin-ee272a4d33c4d7966ee342e051313f2cb5813ee0/`.
+
+- `src/main.cpp` and `src/main_wayland.cpp` separate application/session startup and Wayland setup; QObject signals coordinate subsystem lifecycle. `src/wayland_server.cpp` wires native protocol objects, native windows and asynchronous Xwayland surface association. Elm should not own this event-loop plumbing.
+- `src/compositor.cpp`, `src/core/renderloop.cpp` and `src/core/output*.{h,cpp}` connect outputs, timers, rendering and presentation scheduling. Inspect completion and fence paths separately before any cadence claim. A browser redraw tick is not the compositor's presentation receipt.
+- `src/scene/` includes item trees, window/surface/decoration items, damage and renderers. `src/core/graphicsbuffer.cpp` implements native reference/drop handling with main-application-thread assertions. This is evidence of native lifetime and thread-affinity requirements, not permission to pass raw pointers into Elm.
+- `src/input.cpp`, `src/backends/libinput/`, `src/wayland/seat*` and input-method/text-input protocol files cover input routing and native client state. Global shortcut, grab, lock and IME correctness require native policy and compatibility evidence beyond HTML events.
+- `src/backends/drm/`, `wayland/`, `virtual/` and `x11/` distinguish hardware and nested/test backends. Native DRM/KMS, session/device management and per-output behavior need hardware tests; nested operation proves a narrower path.
+- `src/wayland/` contains protocol implementations and `DESIGN.md`; Xwayland lives in dedicated native integration code. Study version negotiation, protocol errors, surface association, buffer commits and resource teardown rather than assuming one generic IPC handler suffices.
+- Effects and scripting are bounded extension layers around native scene/window authority. Threading and realtime constraints must be reviewed per subsystem; this collection does not establish a single-thread-only compositor or a universal safe threading rule.
+
+For P7, review startup-to-shutdown and one actual buffer's acquire/commit/present/release path end to end before choosing a compositor framework. For P8, require protocol, IME, lock/capture security, output/seat and compatibility matrices described in the rendering contribution. Complete source availability is a research prerequisite, not replacement-compositor readiness.
+
+## Engineering inference for our window system
+
+These recommendations deliberately adapt the reference rather than copy its KDE user policy. Native authority should compute one canonical constrained order and one committed eligibility snapshot. Ordinary painting, pointer targeting and focus resolve from that revision. Layer predicates incorporate native type, family, workspace/output context, pin and true-fullscreen state. Elm proposes intents with expected revision; stale or uncertain outcomes require refusal/reconciliation.
+
+Explicit visual proxies are an exception with separate ownership: a minimized thumbnail, minimize animation or overview can be painted while its original window is excluded from ordinary pointer/focus eligibility. Input on a thumbnail goes through the preview's own intent and current native validation. Do not fix preview visibility by making the hidden live window input-eligible.
+
+The reported Heroic observation is a regression fixture, not a diagnostic conclusion: a window on inactive `special:win-minimized` has `visible=true`, `acceptsInput=true`, `allowedOverFullscreen=true` while the monitor reports `specialWorkspace.id=0`. Those permissive fields do not demonstrate active membership. Test current native workspace identity independently, then verify the hidden live window contributes no ordinary painted pixels, is not a pointer target and cannot be directly focused without an explicit restore transaction. Preserve preview availability separately. This reference does not validate use of scratchpad minimization; the project requires minimize without scratchpad transfer.
+
+Windows parity does not mean adopting KDE layer priorities verbatim. The Windows target needs explicit pin/fullscreen/menu rules, maximized floating overlap, draft/modal click behavior, workspace/minimize semantics and output transfer. KDE's activity model, keep-above category, notification exceptions and output-aware active-fullscreen rules are design references. The project's native pixel/click/focus matrix decides the intended behavior. A modal stacking relation also does not establish every toolkit's input blocking rule.
+
+## Acceptance and work
+
+The companion [nine requirements](kde-layering.json) add atomic canonical-order, eligibility, family, proxy and fullscreen gates. Use native traces that correlate committed stack and eligibility revisions with independently sampled pixels, hit targets and focus results. Include Heroic inactive-special flags, MAX/float overlap, pin/unpin, modal drafts, effect elevation, scale/transfer and stale intent races. CPU reducers and source references do not count as native acceptance.
+
+P2 adds canonical stack and eligibility policy plus generation-safe transient constraints (roughly 2–4 engineer-weeks overlapping rendering policy work). P4 adds explicit animation-proxy ownership (1–2 overlapping capturemotion work). P5 extends per-output fullscreen/pin policy (1–3 overlapping transfer/fullshell work). Estimates need revision after inspecting the actual native authority; do not add these overlapping estimates to the rendering contribution mechanically. P7/P8 use the source corpus for subsystem architecture, protocol scope and implementation review, with independent feasibility and production gates.
+
+Original baseline38/recovery34/dragresize52 deadlines, remaining pin/input cases and coherent source/ABI freezing remain required. This report adds design evidence and test requirements without claiming historical packets passed broader checks or that KWin was run on the user's machine.

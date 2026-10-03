@@ -1,0 +1,1362 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.Timeline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.Timeline"/>
+  <meta property="og:description" content="Reference for Clutter.Timeline"/>
+  <meta name="twitter:title" content="Clutter.Timeline"/>
+  <meta name="twitter:description" content="Reference for Clutter.Timeline"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Timeline.html#description">Timeline</a>
+  </div>
+</div>
+
+
+  
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.Timeline.new_for_actor.html">new_for_actor</a>
+  
+    <a class="ctor" href="ctor.Timeline.new_for_frame_clock.html">new_for_frame_clock</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Timeline.add_marker.html">add_marker</a>
+  
+    <a class="method" href="method.Timeline.add_marker_at_time.html">add_marker_at_time</a>
+  
+    <a class="method" href="method.Timeline.advance.html">advance</a>
+  
+    <a class="method" href="method.Timeline.advance_to_marker.html">advance_to_marker</a>
+  
+    <a class="method" href="method.Timeline.get_actor.html">get_actor</a>
+  
+    <a class="method" href="method.Timeline.get_auto_reverse.html">get_auto_reverse</a>
+  
+    <a class="method" href="method.Timeline.get_cubic_bezier_progress.html">get_cubic_bezier_progress</a>
+  
+    <a class="method" href="method.Timeline.get_current_repeat.html">get_current_repeat</a>
+  
+    <a class="method" href="method.Timeline.get_delay.html">get_delay</a>
+  
+    <a class="method" href="method.Timeline.get_delta.html">get_delta</a>
+  
+    <a class="method" href="method.Timeline.get_direction.html">get_direction</a>
+  
+    <a class="method" href="method.Timeline.get_duration.html">get_duration</a>
+  
+    <a class="method" href="method.Timeline.get_duration_hint.html">get_duration_hint</a>
+  
+    <a class="method" href="method.Timeline.get_elapsed_time.html">get_elapsed_time</a>
+  
+    <a class="method" href="method.Timeline.get_frame_clock.html">get_frame_clock</a>
+  
+    <a class="method" href="method.Timeline.get_progress.html">get_progress</a>
+  
+    <a class="method" href="method.Timeline.get_progress_mode.html">get_progress_mode</a>
+  
+    <a class="method" href="method.Timeline.get_repeat_count.html">get_repeat_count</a>
+  
+    <a class="method" href="method.Timeline.get_step_progress.html">get_step_progress</a>
+  
+    <a class="method" href="method.Timeline.has_marker.html">has_marker</a>
+  
+    <a class="method" href="method.Timeline.is_playing.html">is_playing</a>
+  
+    <a class="method" href="method.Timeline.list_markers.html">list_markers</a>
+  
+    <a class="method" href="method.Timeline.pause.html">pause</a>
+  
+    <a class="method" href="method.Timeline.remove_marker.html">remove_marker</a>
+  
+    <a class="method" href="method.Timeline.rewind.html">rewind</a>
+  
+    <a class="method" href="method.Timeline.set_actor.html">set_actor</a>
+  
+    <a class="method" href="method.Timeline.set_auto_reverse.html">set_auto_reverse</a>
+  
+    <a class="method" href="method.Timeline.set_cubic_bezier_progress.html">set_cubic_bezier_progress</a>
+  
+    <a class="method" href="method.Timeline.set_delay.html">set_delay</a>
+  
+    <a class="method" href="method.Timeline.set_direction.html">set_direction</a>
+  
+    <a class="method" href="method.Timeline.set_duration.html">set_duration</a>
+  
+    <a class="method" href="method.Timeline.set_frame_clock.html">set_frame_clock</a>
+  
+    <a class="method" href="method.Timeline.set_progress_func.html">set_progress_func</a>
+  
+    <a class="method" href="method.Timeline.set_progress_mode.html">set_progress_mode</a>
+  
+    <a class="method" href="method.Timeline.set_repeat_count.html">set_repeat_count</a>
+  
+    <a class="method" href="method.Timeline.set_step_progress.html">set_step_progress</a>
+  
+    <a class="method" href="method.Timeline.skip.html">skip</a>
+  
+    <a class="method" href="method.Timeline.start.html">start</a>
+  
+    <a class="method" href="method.Timeline.stop.html">stop</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.Timeline.actor.html">actor</a>
+  
+    <a class="property" href="property.Timeline.auto-reverse.html">auto-reverse</a>
+  
+    <a class="property" href="property.Timeline.delay.html">delay</a>
+  
+    <a class="property" href="property.Timeline.direction.html">direction</a>
+  
+    <a class="property" href="property.Timeline.duration.html">duration</a>
+  
+    <a class="property" href="property.Timeline.frame-clock.html">frame-clock</a>
+  
+    <a class="property" href="property.Timeline.progress-mode.html">progress-mode</a>
+  
+    <a class="property" href="property.Timeline.repeat-count.html">repeat-count</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.Timeline.completed.html">completed</a>
+  
+    <a class="signal" href="signal.Timeline.marker-reached.html">marker-reached</a>
+  
+    <a class="signal" href="signal.Timeline.new-frame.html">new-frame</a>
+  
+    <a class="signal" href="signal.Timeline.paused.html">paused</a>
+  
+    <a class="signal" href="signal.Timeline.started.html">started</a>
+  
+    <a class="signal" href="signal.Timeline.stopped.html">stopped</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.Timeline.completed.html">completed</a>
+  
+    <a class="method" href="vfunc.Timeline.marker_reached.html">marker_reached</a>
+  
+    <a class="method" href="vfunc.Timeline.new_frame.html">new_frame</a>
+  
+    <a class="method" href="vfunc.Timeline.paused.html">paused</a>
+  
+    <a class="method" href="vfunc.Timeline.started.html">started</a>
+  
+    <a class="method" href="vfunc.Timeline.stopped.html">stopped</a>
+  
+  </div>
+</div>
+
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>Timeline</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-timeline.c#L24">[src]</a>
+          
+        </h4>
+
+        <pre><code>class Clutter.Timeline : GObject.Object
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>A class for time-based&nbsp;events</p>
+<p><code>ClutterTimeline</code> is a base class for managing time-based event that cause
+Clutter to redraw a stage, such as&nbsp;animations.</p>
+<p>Each <code>ClutterTimeline</code> instance has a duration: once a timeline has been
+started, using <a href="method.Timeline.start.html"><code>clutter_timeline_start()</code></a>, it will emit a signal that can
+be used to update the state of the&nbsp;actors.</p>
+<p>It is important to note that <code>ClutterTimeline</code> is not a generic <span class="caps">API</span> for
+calling closures after an interval; each Timeline is tied into a frame
+clock used to drive the frame&nbsp;cycle.</p>
+<p>Users of <code>ClutterTimeline</code> should connect to the <a href="signal.Timeline.new-frame.html"><code>ClutterTimeline::new-frame</code></a>
+signal, which is emitted each time a timeline is advanced during the maste
+clock iteration. The <a href="signal.Timeline.new-frame.html"><code>ClutterTimeline::new-frame</code></a> signal provides the time
+elapsed since the beginning of the timeline, in milliseconds. A normalized
+progress value can be obtained by calling <a href="method.Timeline.get_progress.html"><code>clutter_timeline_get_progress()</code></a>.
+By using <a href="method.Timeline.get_delta.html"><code>clutter_timeline_get_delta()</code></a> it is possible to obtain the wallclock
+time elapsed since the last emission of the <a href="signal.Timeline.new-frame.html"><code>ClutterTimeline::new-frame</code></a>&nbsp;signal.</p>
+<p>Initial state can be set up by using the <a href="signal.Timeline.started.html"><code>ClutterTimeline::started</code></a> signal,
+while final state can be set up by using the <a href="signal.Timeline.stopped.html"><code>ClutterTimeline::stopped</code></a>
+signal. The <code>ClutterTimeline</code> guarantees the emission of at least a single
+<a href="signal.Timeline.new-frame.html"><code>ClutterTimeline::new-frame</code></a> signal, as well as the emission of the
+<a href="signal.Timeline.completed.html"><code>ClutterTimeline::completed</code></a> signal every time the <code>ClutterTimeline</code> reaches
+its <a href="property.Timeline.duration.html"><code>ClutterTimeline:duration</code></a>.</p>
+<p>It is possible to connect to specific points in the timeline progress by
+adding markers using <a href="method.Timeline.add_marker_at_time.html"><code>clutter_timeline_add_marker_at_time()</code></a> and connecting
+to the <a href="signal.Timeline.marker-reached.html"><code>ClutterTimeline::marker-reached</code></a>&nbsp;signal.</p>
+<p>Timelines can be made to loop once they reach the end of their duration, by
+using clutter_timeline_set_repeat_count(); a looping timeline will still
+emit the <a href="signal.Timeline.completed.html"><code>ClutterTimeline::completed</code></a> signal once it reaches the end of its
+duration at each repeat. If you want to be notified of the end of the last
+repeat, use the <a href="signal.Timeline.stopped.html"><code>ClutterTimeline::stopped</code></a>&nbsp;signal.</p>
+<p>Timelines have a <a href="property.Timeline.direction.html"><code>ClutterTimeline:direction</code></a>: the default direction is
+<code>CLUTTER_TIMELINE_FORWARD</code>, and goes from 0 to the duration; it is possible
+to change the direction to <code>CLUTTER_TIMELINE_BACKWARD</code>, and have the timeline
+go from the duration to 0. The direction can be automatically reversed
+when reaching completion by using the <a href="property.Timeline.auto-reverse.html"><code>ClutterTimeline:auto-reverse</code></a>&nbsp;property.</p>
+<p>Timelines are used in the Clutter animation framework by classes like
+<a href="class.Transition.html"><code>ClutterTransition</code></a>.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.Timeline">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="111pt" height="116pt"
+ viewBox="0.00 0.00 111.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterTimeline">
+<path fill="none" stroke="black" d="M91,-36C91,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 91,0 91,0 97,0 103,-6 103,-12 103,-12 103,-24 103,-24 103,-30 97,-36 91,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="51.5" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterTimeline</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M70.38,-108C70.38,-108 32.62,-108 32.62,-108 26.62,-108 20.62,-102 20.62,-96 20.62,-96 20.62,-84 20.62,-84 20.62,-78 26.62,-72 32.62,-72 32.62,-72 70.38,-72 70.38,-72 76.38,-72 82.38,-78 82.38,-84 82.38,-84 82.38,-96 82.38,-96 82.38,-102 76.38,-108 70.38,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="51.5" y="-83.83" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge1" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M51.5,-71.7C51.5,-60.85 51.5,-46.92 51.5,-36.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+    <div class="descendants toggle-wrapper default-hide">
+      <h4 id="descendants">Descendants <a href="#descendants" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li class="class"><a href="class.Transition.html" title="Transition">ClutterTransition</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.Timeline.new_for_actor.html">clutter_timeline_new_for_actor</a></h6>
+          <div class="docblock">
+            <p>Creates a new <code>ClutterTimeline</code> with a duration of <code>duration</code> milli&nbsp;seconds.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="ctor.Timeline.new_for_frame_clock.html">clutter_timeline_new_for_frame_clock</a></h6>
+          <div class="docblock">
+            <p>Creates a new <code>ClutterTimeline</code> with a duration of <code>duration_ms</code> milli&nbsp;seconds.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Timeline.add_marker.html">clutter_timeline_add_marker</a></h6>
+          <div class="docblock">
+            <p>Adds a named marker that will be hit when the timeline has reached
+the specified <code>progress</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.add_marker_at_time.html">clutter_timeline_add_marker_at_time</a></h6>
+          <div class="docblock">
+            <p>Adds a named marker that will be hit when the timeline has been
+running for <code>msecs</code> milliseconds.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.advance.html">clutter_timeline_advance</a></h6>
+          <div class="docblock">
+            <p>Advance timeline to the requested point. The point is given as a
+time in milliseconds since the timeline&nbsp;started.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.advance_to_marker.html">clutter_timeline_advance_to_marker</a></h6>
+          <div class="docblock">
+            <p>Advances <code>timeline</code> to the time of the given <code>marker_name</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_actor.html">clutter_timeline_get_actor</a></h6>
+          <div class="docblock">
+            <p>Get the actor the timeline is associated&nbsp;with.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_auto_reverse.html">clutter_timeline_get_auto_reverse</a></h6>
+          <div class="docblock">
+            <p>Retrieves the value set by <code>clutter_timeline_set_auto_reverse()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_cubic_bezier_progress.html">clutter_timeline_get_cubic_bezier_progress</a></h6>
+          <div class="docblock">
+            <p>Retrieves the control points for the cubic bezier progress&nbsp;mode.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_current_repeat.html">clutter_timeline_get_current_repeat</a></h6>
+          <div class="docblock">
+            <p>Retrieves the current repeat for a&nbsp;timeline.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_delay.html">clutter_timeline_get_delay</a></h6>
+          <div class="docblock">
+            <p>Retrieves the delay set using <code>clutter_timeline_set_delay()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_delta.html">clutter_timeline_get_delta</a></h6>
+          <div class="docblock">
+            <p>Retrieves the amount of time elapsed since the last
+<code>ClutterTimeline::new-frame</code> signal.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_direction.html">clutter_timeline_get_direction</a></h6>
+          <div class="docblock">
+            <p>Retrieves the direction of the timeline set with
+<code>clutter_timeline_set_direction()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_duration.html">clutter_timeline_get_duration</a></h6>
+          <div class="docblock">
+            <p>Retrieves the duration of a <code>ClutterTimeline</code> in milliseconds.
+See <code>clutter_timeline_set_duration()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_duration_hint.html">clutter_timeline_get_duration_hint</a></h6>
+          <div class="docblock">
+            <p>Retrieves the full duration of the <code>timeline</code>, taking into account the
+current value of the <code>ClutterTimeline:repeat-count</code> property.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_elapsed_time.html">clutter_timeline_get_elapsed_time</a></h6>
+          <div class="docblock">
+            <p>Request the current time position of the&nbsp;timeline.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_frame_clock.html">clutter_timeline_get_frame_clock</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_progress.html">clutter_timeline_get_progress</a></h6>
+          <div class="docblock">
+            <p>The position of the timeline in a normalized [-1, 2]&nbsp;interval.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_progress_mode.html">clutter_timeline_get_progress_mode</a></h6>
+          <div class="docblock">
+            <p>Retrieves the progress mode set using <code>clutter_timeline_set_progress_mode()</code>
+or <code>clutter_timeline_set_progress_func()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_repeat_count.html">clutter_timeline_get_repeat_count</a></h6>
+          <div class="docblock">
+            <p>Retrieves the number set using <code>clutter_timeline_set_repeat_count()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.get_step_progress.html">clutter_timeline_get_step_progress</a></h6>
+          <div class="docblock">
+            <p>Retrieves the parameters of the step progress mode used by <code>timeline</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.has_marker.html">clutter_timeline_has_marker</a></h6>
+          <div class="docblock">
+            <p>Checks whether <code>timeline</code> has a marker set with the given&nbsp;name.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.is_playing.html">clutter_timeline_is_playing</a></h6>
+          <div class="docblock">
+            <p>Queries state of a <code>ClutterTimeline</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.list_markers.html">clutter_timeline_list_markers</a></h6>
+          <div class="docblock">
+            <p>Retrieves the list of markers at time <code>msecs</code>. If <code>msecs</code> is a
+negative integer, all the markers attached to <code>timeline</code> will be&nbsp;returned.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.pause.html">clutter_timeline_pause</a></h6>
+          <div class="docblock">
+            <p>Pauses the <code>ClutterTimeline</code> on current&nbsp;frame.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.remove_marker.html">clutter_timeline_remove_marker</a></h6>
+          <div class="docblock">
+            <p>Removes <code>marker_name</code>, if found, from <code>timeline</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.rewind.html">clutter_timeline_rewind</a></h6>
+          <div class="docblock">
+            <p>Rewinds <code>ClutterTimeline</code> to the first frame if its direction is
+<code>CLUTTER_TIMELINE_FORWARD</code> and the last frame if it is
+<code>CLUTTER_TIMELINE_BACKWARD</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_actor.html">clutter_timeline_set_actor</a></h6>
+          <div class="docblock">
+            <p>Set the actor the timeline is associated&nbsp;with.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_auto_reverse.html">clutter_timeline_set_auto_reverse</a></h6>
+          <div class="docblock">
+            <p>Sets whether <code>timeline</code> should reverse the direction after the
+emission of the <code>ClutterTimeline::completed</code> signal.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_cubic_bezier_progress.html">clutter_timeline_set_cubic_bezier_progress</a></h6>
+          <div class="docblock">
+            <p>Sets the <code>ClutterTimeline:progress-mode</code> of <code>timeline</code>
+to <code>CLUTTER_CUBIC_BEZIER</code>, and sets the two control
+points for the cubic&nbsp;bezier.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_delay.html">clutter_timeline_set_delay</a></h6>
+          <div class="docblock">
+            <p>Sets the delay, in milliseconds, before <code>timeline</code> should&nbsp;start.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_direction.html">clutter_timeline_set_direction</a></h6>
+          <div class="docblock">
+            <p>Sets the direction of <code>timeline</code>, either <code>CLUTTER_TIMELINE_FORWARD</code> or
+<code>CLUTTER_TIMELINE_BACKWARD</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_duration.html">clutter_timeline_set_duration</a></h6>
+          <div class="docblock">
+            <p>Sets the duration of the timeline, in milliseconds. The speed
+of the timeline depends on the <code>ClutterTimeline:frame-clock</code> setting.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_frame_clock.html">clutter_timeline_set_frame_clock</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_progress_func.html">clutter_timeline_set_progress_func</a></h6>
+          <div class="docblock">
+            <p>Sets a custom progress function for <code>timeline</code>. The progress function will
+be called by <code>clutter_timeline_get_progress()</code> and will be used to compute
+the progress value based on the elapsed time and the total duration of the&nbsp;timeline.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_progress_mode.html">clutter_timeline_set_progress_mode</a></h6>
+          <div class="docblock">
+            <p>Sets the progress function using a value from the <code>ClutterAnimationMode</code>
+enumeration. The <code>mode</code> cannot be <code>CLUTTER_CUSTOM_MODE</code> or bigger than
+<code>CLUTTER_ANIMATION_LAST</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_repeat_count.html">clutter_timeline_set_repeat_count</a></h6>
+          <div class="docblock">
+            <p>Sets the number of times the <code>timeline</code> should&nbsp;repeat.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.set_step_progress.html">clutter_timeline_set_step_progress</a></h6>
+          <div class="docblock">
+            <p>Sets the <code>ClutterTimeline:progress-mode</code> of the <code>timeline</code> to <code>CLUTTER_STEPS</code>
+and provides the parameters of the step&nbsp;function.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.skip.html">clutter_timeline_skip</a></h6>
+          <div class="docblock">
+            <p>Advance timeline by the requested time in&nbsp;milliseconds.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.start.html">clutter_timeline_start</a></h6>
+          <div class="docblock">
+            <p>Starts the <code>ClutterTimeline</code> playing.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Timeline.stop.html">clutter_timeline_stop</a></h6>
+          <div class="docblock">
+            <p>Stops the <code>ClutterTimeline</code> and moves to frame&nbsp;0.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Timeline.actor.html">Clutter.Timeline:actor</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Timeline.auto-reverse.html">Clutter.Timeline:auto-reverse</a></h6>
+          <div class="docblock">
+            <p>If the direction of the timeline should be automatically reversed
+when reaching the&nbsp;end.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Timeline.delay.html">Clutter.Timeline:delay</a></h6>
+          <div class="docblock">
+            <p>A delay, in milliseconds, that should be observed by the
+timeline before actually&nbsp;starting.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Timeline.direction.html">Clutter.Timeline:direction</a></h6>
+          <div class="docblock">
+            <p>The direction of the timeline, either <code>CLUTTER_TIMELINE_FORWARD</code> or
+<code>CLUTTER_TIMELINE_BACKWARD</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Timeline.duration.html">Clutter.Timeline:duration</a></h6>
+          <div class="docblock">
+            <p>Duration of the timeline in milliseconds, depending on the
+<code>ClutterTimeline:frame-clock</code> value.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Timeline.frame-clock.html">Clutter.Timeline:frame-clock</a></h6>
+          <div class="docblock">
+            <p>The frame clock driving the&nbsp;timeline.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Timeline.progress-mode.html">Clutter.Timeline:progress-mode</a></h6>
+          <div class="docblock">
+            <p>Controls the way a <code>ClutterTimeline</code> computes the normalized&nbsp;progress.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Timeline.repeat-count.html">Clutter.Timeline:repeat-count</a></h6>
+          <div class="docblock">
+            <p>Defines how many times the timeline should&nbsp;repeat.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.Timeline.completed.html">Clutter.Timeline::completed</a></h6>
+          <div class="docblock">
+            <p>The signal is emitted when the timeline&#8217;s
+elapsed time reaches the value of the <code>ClutterTimeline:duration</code>
+property.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Timeline.marker-reached.html">Clutter.Timeline::marker-reached</a></h6>
+          <div class="docblock">
+            <p>The signal is emitted each time a timeline
+reaches a marker set with <code>clutter_timeline_add_marker_at_time()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Timeline.new-frame.html">Clutter.Timeline::new-frame</a></h6>
+          <div class="docblock">
+            <p>The signal is emitted for each timeline running
+timeline before a new frame is drawn to give animations a chance
+to update the&nbsp;scene.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Timeline.paused.html">Clutter.Timeline::paused</a></h6>
+          <div class="docblock">
+            <p>The signal is emitted when <code>clutter_timeline_pause()</code> is&nbsp;invoked.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Timeline.started.html">Clutter.Timeline::started</a></h6>
+          <div class="docblock">
+            <p>The signal is emitted when the timeline starts its run.
+This might be as soon as <code>clutter_timeline_start()</code> is invoked or
+after the delay set in the <code>ClutterTimeline:delay</code> property has&nbsp;expired.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Timeline.stopped.html">Clutter.Timeline::stopped</a></h6>
+          <div class="docblock">
+            <p>The signal is emitted when the timeline
+has been stopped, either because <code>clutter_timeline_stop()</code> has been
+called, or because it has been&nbsp;exhausted.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterTimelineClass {
+  void (* started) (
+    ClutterTimeline* timeline
+  );
+  void (* completed) (
+    ClutterTimeline* timeline
+  );
+  void (* paused) (
+    ClutterTimeline* timeline
+  );
+  void (* new_frame) (
+    ClutterTimeline* timeline,
+    gint msecs
+  );
+  void (* marker_reached) (
+    ClutterTimeline* timeline,
+    const gchar* marker_name,
+    gint msecs
+  );
+  void (* stopped) (
+    ClutterTimeline* timeline,
+    gboolean is_finished
+  );
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>The <code>ClutterTimelineClass</code> structure contains only private&nbsp;data.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>started: void (* started) (
+    ClutterTimeline* timeline
+  )</code></dt>
+          <dd><p>Class handler for the <code>ClutterTimeline::started</code> signal.</p></dd>
+        
+          <dt><code>completed: void (* completed) (
+    ClutterTimeline* timeline
+  )</code></dt>
+          <dd><p>Class handler for the <code>ClutterTimeline::completed</code> signal.</p></dd>
+        
+          <dt><code>paused: void (* paused) (
+    ClutterTimeline* timeline
+  )</code></dt>
+          <dd><p>Class handler for the <code>ClutterTimeline::paused</code> signal.</p></dd>
+        
+          <dt><code>new_frame: void (* new_frame) (
+    ClutterTimeline* timeline,
+    gint msecs
+  )</code></dt>
+          <dd><p>Class handler for the <code>ClutterTimeline::new-frame</code> signal.</p></dd>
+        
+          <dt><code>marker_reached: void (* marker_reached) (
+    ClutterTimeline* timeline,
+    const gchar* marker_name,
+    gint msecs
+  )</code></dt>
+          <dd><p>Class handler for the <code>ClutterTimeline::marker-reached</code> signal.</p></dd>
+        
+          <dt><code>stopped: void (* stopped) (
+    ClutterTimeline* timeline,
+    gboolean is_finished
+  )</code></dt>
+          <dd><p>Class handler for the <code>ClutterTimeline::stopped</code> signal.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-completed"><a href="vfunc.Timeline.completed.html">Clutter.TimelineClass.completed</a></h6>
+        <div class="docblock">
+          <p>Class handler for the <code>ClutterTimeline::completed</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-marker_reached"><a href="vfunc.Timeline.marker_reached.html">Clutter.TimelineClass.marker_reached</a></h6>
+        <div class="docblock">
+          <p>Class handler for the <code>ClutterTimeline::marker-reached</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-new_frame"><a href="vfunc.Timeline.new_frame.html">Clutter.TimelineClass.new_frame</a></h6>
+        <div class="docblock">
+          <p>Class handler for the <code>ClutterTimeline::new-frame</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-paused"><a href="vfunc.Timeline.paused.html">Clutter.TimelineClass.paused</a></h6>
+        <div class="docblock">
+          <p>Class handler for the <code>ClutterTimeline::paused</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-started"><a href="vfunc.Timeline.started.html">Clutter.TimelineClass.started</a></h6>
+        <div class="docblock">
+          <p>Class handler for the <code>ClutterTimeline::started</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-stopped"><a href="vfunc.Timeline.stopped.html">Clutter.TimelineClass.stopped</a></h6>
+        <div class="docblock">
+          <p>Class handler for the <code>ClutterTimeline::stopped</code> signal.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

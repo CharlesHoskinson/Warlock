@@ -1,0 +1,860 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Gtk Layer Shell: gtk-layer-shell Reference Manual</title><meta name="generator" content="DocBook XSL Stylesheets Vsnapshot"><link rel="home" href="index.html" title="gtk-layer-shell Reference Manual"><link rel="up" href="gtk-layer-shell.html" title="Part I. API Reference"><link rel="prev" href="gtk-layer-shell.html" title="Part I. API Reference"><link rel="next" href="api-index-full.html" title="API Index"><meta name="generator" content="GTK-Doc V1.34.0 (XML mode)"><link rel="stylesheet" href="style.css" type="text/css"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="5"><tr valign="middle"><td width="100%" align="left" class="shortcuts">
+<a href="#" class="shortcut">Top</a><span id="nav_description">  <span class="dim">|</span> 
+                  <a href="#gtk-layer-shell-Gtk-Layer-Shell.description" class="shortcut">Description</a></span>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gtk-layer-shell.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gtk-layer-shell.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="api-index-full.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table><div class="refentry">
+<a name="gtk-layer-shell-Gtk-Layer-Shell"></a><div class="titlepage"></div>
+<div class="refnamediv"><table width="100%"><tr><td valign="top">
+<h2><span class="refentrytitle"><a name="gtk-layer-shell-Gtk-Layer-Shell.top_of_page"></a>Gtk Layer Shell</span></h2>
+<p>Gtk Layer Shell — A library to write GTK Applications using Layer Shell</p>
+</td>
+<td class="gallery_image" valign="top" align="right"></td>
+</tr></table></div>
+<div class="refsect1">
+<a name="gtk-layer-shell-Gtk-Layer-Shell.functions"></a><h2>Functions</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="functions_proto_type"><col class="functions_proto_name"></colgroup><tbody><tr><td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-major-version" title="gtk_layer_get_major_version ()">gtk_layer_get_major_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-minor-version" title="gtk_layer_get_minor_version ()">gtk_layer_get_minor_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-micro-version" title="gtk_layer_get_micro_version ()">gtk_layer_get_micro_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-is-supported" title="gtk_layer_is_supported ()">gtk_layer_is_supported</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">guint</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-protocol-version" title="gtk_layer_get_protocol_version ()">gtk_layer_get_protocol_version</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-init-for-window" title="gtk_layer_init_for_window ()">gtk_layer_init_for_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-is-layer-window" title="gtk_layer_is_layer_window ()">gtk_layer_is_layer_window</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">struct <span class="returnvalue">zwlr_layer_surface_v1</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-zwlr-layer-surface-v1" title="gtk_layer_get_zwlr_layer_surface_v1 ()">gtk_layer_get_zwlr_layer_surface_v1</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-namespace" title="gtk_layer_set_namespace ()">gtk_layer_set_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">const <span class="returnvalue">char</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-namespace" title="gtk_layer_get_namespace ()">gtk_layer_get_namespace</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-layer" title="gtk_layer_set_layer ()">gtk_layer_set_layer</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellLayer" title="enum GtkLayerShellLayer"><span class="returnvalue">GtkLayerShellLayer</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-layer" title="gtk_layer_get_layer ()">gtk_layer_get_layer</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-monitor" title="gtk_layer_set_monitor ()">gtk_layer_set_monitor</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">GdkMonitor</span> *
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-monitor" title="gtk_layer_get_monitor ()">gtk_layer_get_monitor</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-anchor" title="gtk_layer_set_anchor ()">gtk_layer_set_anchor</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-anchor" title="gtk_layer_get_anchor ()">gtk_layer_get_anchor</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-margin" title="gtk_layer_set_margin ()">gtk_layer_set_margin</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-margin" title="gtk_layer_get_margin ()">gtk_layer_get_margin</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-exclusive-zone" title="gtk_layer_set_exclusive_zone ()">gtk_layer_set_exclusive_zone</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">int</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-exclusive-zone" title="gtk_layer_get_exclusive_zone ()">gtk_layer_get_exclusive_zone</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-auto-exclusive-zone-enable" title="gtk_layer_auto_exclusive_zone_enable ()">gtk_layer_auto_exclusive_zone_enable</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-auto-exclusive-zone-is-enabled" title="gtk_layer_auto_exclusive_zone_is_enabled ()">gtk_layer_auto_exclusive_zone_is_enabled</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-keyboard-mode" title="gtk_layer_set_keyboard_mode ()">gtk_layer_set_keyboard_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellKeyboardMode" title="enum GtkLayerShellKeyboardMode"><span class="returnvalue">GtkLayerShellKeyboardMode</span></a>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-keyboard-mode" title="gtk_layer_get_keyboard_mode ()">gtk_layer_get_keyboard_mode</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-keyboard-interactivity" title="gtk_layer_set_keyboard_interactivity ()">gtk_layer_set_keyboard_interactivity</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-keyboard-interactivity" title="gtk_layer_get_keyboard_interactivity ()">gtk_layer_get_keyboard_interactivity</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-try-force-commit" title="gtk_layer_try_force_commit ()">gtk_layer_try_force_commit</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">void</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-respect-close" title="gtk_layer_set_respect_close ()">gtk_layer_set_respect_close</a> <span class="c_punctuation">()</span>
+</td>
+</tr><tr><td class="function_type">
+<span class="returnvalue">gboolean</span>
+</td>
+<td class="function_name">
+<a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-respect-close" title="gtk_layer_get_respect_close ()">gtk_layer_get_respect_close</a> <span class="c_punctuation">()</span>
+</td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect1">
+<a name="gtk-layer-shell-Gtk-Layer-Shell.other"></a><h2>Types and Values</h2>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="other_proto_type"><col class="other_proto_name"></colgroup><tbody><tr><td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellLayer" title="enum GtkLayerShellLayer">GtkLayerShellLayer</a></td>
+</tr><tr><td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge">GtkLayerShellEdge</a></td>
+</tr><tr><td class="datatype_keyword">enum</td>
+<td class="function_name"><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellKeyboardMode" title="enum GtkLayerShellKeyboardMode">GtkLayerShellKeyboardMode</a></td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect1">
+<a name="gtk-layer-shell-Gtk-Layer-Shell.description"></a><h2>Description</h2>
+<p>There is also a <a class="ulink" href="https://github.com/wmww/gtk4-layer-shell/" target="_top">version of this library compatible with GTK4</a></p>
+<div class="refsect2">
+<a name="id-1.2.3.5.3"></a><h3>Forcing Window Size</h3>
+<p>If you wish to force your layer surface window to be a different size than it
+is by default:</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="n">gtk_widget_set_size_request</span><span class="w"> </span><span class="p">(</span><span class="n">GTK_WIDGET</span><span class="w"> </span><span class="p">(</span><span class="n">layer_gtk_window</span><span class="p">),</span><span class="w"> </span><span class="n">width</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">);</span>
+<span class="c1">// force the window to resize to the new request</span>
+<span class="n">gtk_window_resize</span><span class="w"> </span><span class="p">(</span><span class="n">layer_gtk_window</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span></pre></td>
+      </tr></tbody></table></div>
+
+<p>
+If width or height is -1, the default is used for that axis. If the window is
+anchored to opposite edges of the output (see <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-anchor" title="gtk_layer_set_anchor ()"><code class="function">gtk_layer_set_anchor()</code></a>), the 
+size request is ignored. If you later wish to use the default window size,
+simply repeat the two calls but with both width and height as -1.</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="gtk-layer-shell-Gtk-Layer-Shell.functions_details"></a><h2>Functions</h2>
+<div class="refsect2">
+<a name="gtk-layer-get-major-version"></a><h3>gtk_layer_get_major_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gtk_layer_get_major_version ();</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-major-version.returns"></a><h4>Returns</h4>
+<p> the major version number of the GTK Layer Shell library</p>
+</div>
+<p class="since">Since: 0.4</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-minor-version"></a><h3>gtk_layer_get_minor_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gtk_layer_get_minor_version ();</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-minor-version.returns"></a><h4>Returns</h4>
+<p> the minor version number of the GTK Layer Shell library</p>
+</div>
+<p class="since">Since: 0.4</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-micro-version"></a><h3>gtk_layer_get_micro_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gtk_layer_get_micro_version ();</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-micro-version.returns"></a><h4>Returns</h4>
+<p> the micro/patch version number of the GTK Layer Shell library</p>
+</div>
+<p class="since">Since: 0.4</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-is-supported"></a><h3>gtk_layer_is_supported ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gtk_layer_is_supported ();</pre>
+<p>May block for a Wayland roundtrip the first time it's called.</p>
+<div class="refsect3">
+<a name="gtk-layer-is-supported.returns"></a><h4>Returns</h4>
+<p> <code class="literal">TRUE</code> if the platform is Wayland and Wayland compositor supports the
+zwlr_layer_shell_v1 protocol.</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-protocol-version"></a><h3>gtk_layer_get_protocol_version ()</h3>
+<pre class="programlisting"><span class="returnvalue">guint</span>
+gtk_layer_get_protocol_version ();</pre>
+<p>May block for a Wayland roundtrip the first time it's called.</p>
+<div class="refsect3">
+<a name="gtk-layer-get-protocol-version.returns"></a><h4>Returns</h4>
+<p> version of the zwlr_layer_shell_v1 protocol supported by the
+compositor or 0 if the protocol is not supported.</p>
+</div>
+<p class="since">Since: 0.6</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-init-for-window"></a><h3>gtk_layer_init_for_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_init_for_window (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<p>Set the <em class="parameter"><code>window</code></em>
+ up to be a layer surface once it is mapped. this must be called before
+the <em class="parameter"><code>window</code></em>
+ is realized.</p>
+<div class="refsect3">
+<a name="gtk-layer-init-for-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A <span class="type">GtkWindow</span> to be turned into a layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-is-layer-window"></a><h3>gtk_layer_is_layer_window ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gtk_layer_is_layer_window (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-is-layer-window.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A <span class="type">GtkWindow</span> that may or may not have a layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-is-layer-window.returns"></a><h4>Returns</h4>
+<p> if <em class="parameter"><code>window</code></em>
+has been initialized as a layer surface.</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-zwlr-layer-surface-v1"></a><h3>gtk_layer_get_zwlr_layer_surface_v1 ()</h3>
+<pre class="programlisting">struct <span class="returnvalue">zwlr_layer_surface_v1</span> *
+gtk_layer_get_zwlr_layer_surface_v1 (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-zwlr-layer-surface-v1.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-zwlr-layer-surface-v1.returns"></a><h4>Returns</h4>
+<p> The underlying layer surface Wayland object</p>
+</div>
+<p class="since">Since: 0.4</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-namespace"></a><h3>gtk_layer_set_namespace ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_namespace (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                         <em class="parameter"><code><span class="type">char</span> const*name_space</code></em>);</pre>
+<p>Set the "namespace" of the surface.</p>
+<p>No one is quite sure what this is for, but it probably should be something generic
+("panel", "osk", etc). The <em class="parameter"><code>name_space</code></em>
+ string is copied, and caller maintains
+ownership of original. If the window is currently mapped, it will get remapped so
+the change can take effect.</p>
+<p>Default is "gtk-layer-shell" (which will be used if set to <code class="literal">NULL</code>)</p>
+<div class="refsect3">
+<a name="gtk-layer-set-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>name_space</p></td>
+<td class="parameter_description"><p>The namespace of this layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-namespace"></a><h3>gtk_layer_get_namespace ()</h3>
+<pre class="programlisting">const <span class="returnvalue">char</span> *
+gtk_layer_get_namespace (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<p>NOTE: this function does not return ownership of the string. Do not free the returned string.
+Future calls into the library may invalidate the returned string.</p>
+<div class="refsect3">
+<a name="gtk-layer-get-namespace.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-namespace.returns"></a><h4>Returns</h4>
+<p> a reference to the namespace property. If namespace is unset, returns the
+default namespace ("gtk-layer-shell"). Never returns <code class="literal">NULL</code>.</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-layer"></a><h3>gtk_layer_set_layer ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_layer (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                     <em class="parameter"><code><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellLayer" title="enum GtkLayerShellLayer"><span class="type">GtkLayerShellLayer</span></a> layer</code></em>);</pre>
+<p>Set the "layer" on which the surface appears (controls if it is over top of or below other surfaces). The layer may
+be changed on-the-fly in the current version of the layer shell protocol, but on compositors that only support an
+older version the <em class="parameter"><code>window</code></em>
+ is remapped so the change can take effect.</p>
+<p>Default is <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GTK-LAYER-SHELL-LAYER-TOP:CAPS"><code class="literal">GTK_LAYER_SHELL_LAYER_TOP</code></a></p>
+<div class="refsect3">
+<a name="gtk-layer-set-layer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>layer</p></td>
+<td class="parameter_description"><p>The layer on which this surface appears.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-layer"></a><h3>gtk_layer_get_layer ()</h3>
+<pre class="programlisting"><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellLayer" title="enum GtkLayerShellLayer"><span class="returnvalue">GtkLayerShellLayer</span></a>
+gtk_layer_get_layer (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-layer.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-layer.returns"></a><h4>Returns</h4>
+<p> the current layer.</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-monitor"></a><h3>gtk_layer_set_monitor ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_monitor (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                       <em class="parameter"><code><span class="type">GdkMonitor</span> *monitor</code></em>);</pre>
+<p>Set the output for the window to be placed on, or <code class="literal">NULL</code> to let the compositor choose.
+If the window is currently mapped, it will get remapped so the change can take effect.</p>
+<p>Default is <code class="literal">NULL</code></p>
+<div class="refsect3">
+<a name="gtk-layer-set-monitor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>monitor</p></td>
+<td class="parameter_description"><p>The output this layer surface will be placed on (<code class="literal">NULL</code> to let the compositor decide).</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-monitor"></a><h3>gtk_layer_get_monitor ()</h3>
+<pre class="programlisting"><span class="returnvalue">GdkMonitor</span> *
+gtk_layer_get_monitor (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<p>NOTE: To get which monitor the surface is actually on, use
+<code class="function">gdk_display_get_monitor_at_window()</code>.</p>
+<div class="refsect3">
+<a name="gtk-layer-get-monitor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-monitor.returns"></a><h4>Returns</h4>
+<p>the monitor this surface will/has requested to be on, can be <code class="literal">NULL</code>. </p>
+<p><span class="annotation">[<a href="http://foldoc.org/transfer%20none"><span class="acronym">transfer none</span></a>]</span></p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-anchor"></a><h3>gtk_layer_set_anchor ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_anchor (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                      <em class="parameter"><code><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a> edge</code></em>,
+                      <em class="parameter"><code><span class="type">gboolean</span> anchor_to_edge</code></em>);</pre>
+<p>Set whether <em class="parameter"><code>window</code></em>
+ should be anchored to <em class="parameter"><code>edge</code></em>
+.</p>
+<div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; "><li class="listitem"><p>If two perpendicular edges are anchored, the surface with be anchored to that corner</p></li>
+<li class="listitem"><p>If two opposite edges are anchored, the window will be stretched across the screen in that direction</p></li>
+</ul></div>
+<p>Default is <code class="literal">FALSE</code> for each <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a></p>
+<div class="refsect3">
+<a name="gtk-layer-set-anchor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>edge</p></td>
+<td class="parameter_description"><p>A <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a> this layer surface may be anchored to.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>anchor_to_edge</p></td>
+<td class="parameter_description"><p>Whether or not to anchor this layer surface to <em class="parameter"><code>edge</code></em>
+.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-anchor"></a><h3>gtk_layer_get_anchor ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gtk_layer_get_anchor (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                      <em class="parameter"><code><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a> edge</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-anchor.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-anchor.returns"></a><h4>Returns</h4>
+<p> if this surface is anchored to the given edge.</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-margin"></a><h3>gtk_layer_set_margin ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_margin (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                      <em class="parameter"><code><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a> edge</code></em>,
+                      <em class="parameter"><code><span class="type">int</span> margin_size</code></em>);</pre>
+<p>Set the margin for a specific <em class="parameter"><code>edge</code></em>
+ of a <em class="parameter"><code>window</code></em>
+. Effects both surface's distance from
+the edge and its exclusive zone size (if auto exclusive zone enabled).</p>
+<p>Default is 0 for each <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a></p>
+<div class="refsect3">
+<a name="gtk-layer-set-margin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>edge</p></td>
+<td class="parameter_description"><p>The <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a> for which to set the margin.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>margin_size</p></td>
+<td class="parameter_description"><p>The margin for <em class="parameter"><code>edge</code></em>
+to be set.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-margin"></a><h3>gtk_layer_get_margin ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gtk_layer_get_margin (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                      <em class="parameter"><code><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellEdge" title="enum GtkLayerShellEdge"><span class="type">GtkLayerShellEdge</span></a> edge</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-margin.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-margin.returns"></a><h4>Returns</h4>
+<p> the size of the margin for the given edge.</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-exclusive-zone"></a><h3>gtk_layer_set_exclusive_zone ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_exclusive_zone (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                              <em class="parameter"><code><span class="type">int</span> exclusive_zone</code></em>);</pre>
+<p>Has no effect unless the surface is anchored to an edge. Requests that the compositor
+does not place other surfaces within the given exclusive zone of the anchored edge.
+For example, a panel can request to not be covered by maximized windows. See
+wlr-layer-shell-unstable-v1.xml for details.</p>
+<p>Default is 0</p>
+<div class="refsect3">
+<a name="gtk-layer-set-exclusive-zone.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>exclusive_zone</p></td>
+<td class="parameter_description"><p>The size of the exclusive zone.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-exclusive-zone"></a><h3>gtk_layer_get_exclusive_zone ()</h3>
+<pre class="programlisting"><span class="returnvalue">int</span>
+gtk_layer_get_exclusive_zone (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-exclusive-zone.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-exclusive-zone.returns"></a><h4>Returns</h4>
+<p> the window's exclusive zone (which may have been set manually or automatically)</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-auto-exclusive-zone-enable"></a><h3>gtk_layer_auto_exclusive_zone_enable ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_auto_exclusive_zone_enable (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<p>When auto exclusive zone is enabled, exclusive zone is automatically set to the
+size of the <em class="parameter"><code>window</code></em>
+ + relevant margin. To disable auto exclusive zone, just set the
+exclusive zone to 0 or any other fixed value.</p>
+<p>NOTE: you can control the auto exclusive zone by changing the margin on the non-anchored
+edge. This behavior is specific to gtk-layer-shell and not part of the underlying protocol</p>
+<div class="refsect3">
+<a name="gtk-layer-auto-exclusive-zone-enable.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-auto-exclusive-zone-is-enabled"></a><h3>gtk_layer_auto_exclusive_zone_is_enabled ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gtk_layer_auto_exclusive_zone_is_enabled
+                               (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-auto-exclusive-zone-is-enabled.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-auto-exclusive-zone-is-enabled.returns"></a><h4>Returns</h4>
+<p> if the surface's exclusive zone is set to change based on the window's size</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-keyboard-mode"></a><h3>gtk_layer_set_keyboard_mode ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_keyboard_mode (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                             <em class="parameter"><code><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellKeyboardMode" title="enum GtkLayerShellKeyboardMode"><span class="type">GtkLayerShellKeyboardMode</span></a> mode</code></em>);</pre>
+<p>Sets if/when <em class="parameter"><code>window</code></em>
+ should receive keyboard events from the compositor, see
+GtkLayerShellKeyboardMode for details.</p>
+<p>Default is <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GTK-LAYER-SHELL-KEYBOARD-MODE-NONE:CAPS"><code class="literal">GTK_LAYER_SHELL_KEYBOARD_MODE_NONE</code></a></p>
+<div class="refsect3">
+<a name="gtk-layer-set-keyboard-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>mode</p></td>
+<td class="parameter_description"><p>The type of keyboard interactivity requested.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<p class="since">Since: 0.6</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-keyboard-mode"></a><h3>gtk_layer_get_keyboard_mode ()</h3>
+<pre class="programlisting"><a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#GtkLayerShellKeyboardMode" title="enum GtkLayerShellKeyboardMode"><span class="returnvalue">GtkLayerShellKeyboardMode</span></a>
+gtk_layer_get_keyboard_mode (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-keyboard-mode.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-keyboard-mode.returns"></a><h4>Returns</h4>
+<p> current keyboard interactivity mode for <em class="parameter"><code>window</code></em>
+.</p>
+</div>
+<p class="since">Since: 0.6</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-keyboard-interactivity"></a><h3>gtk_layer_set_keyboard_interactivity ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_keyboard_interactivity (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                                      <em class="parameter"><code><span class="type">gboolean</span> interactivity</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gtk_layer_set_keyboard_interactivity</code> has been deprecated since version 0.6 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-keyboard-mode" title="gtk_layer_set_keyboard_mode ()"><code class="function">gtk_layer_set_keyboard_mode()</code></a> instead.</p>
+</div>
+<p>Whether the <em class="parameter"><code>window</code></em>
+ should receive keyboard events from the compositor.</p>
+<p>Default is <code class="literal">FALSE</code></p>
+<div class="refsect3">
+<a name="gtk-layer-set-keyboard-interactivity.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>interactivity</p></td>
+<td class="parameter_description"><p>Whether the layer surface should receive keyboard events.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-keyboard-interactivity"></a><h3>gtk_layer_get_keyboard_interactivity ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gtk_layer_get_keyboard_interactivity (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="warning">
+<p><code class="literal">gtk_layer_get_keyboard_interactivity</code> has been deprecated since version 0.6 and should not be used in newly-written code.</p>
+<p>Use <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-get-keyboard-mode" title="gtk_layer_get_keyboard_mode ()"><code class="function">gtk_layer_get_keyboard_mode()</code></a> instead.</p>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-keyboard-interactivity.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-keyboard-interactivity.returns"></a><h4>Returns</h4>
+<p> if keyboard interactivity is enabled</p>
+</div>
+<p class="since">Since: 0.5</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-try-force-commit"></a><h3>gtk_layer_try_force_commit ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_try_force_commit (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<p>Commits a surface state if there's no pending commit scheduled by the GTK.
+You almost never need to call this; the only known case is when the surface is in a state
+where it does not receive frame callbacks and the regular deferred commit mechanism
+is unavailable.</p>
+<div class="refsect3">
+<a name="gtk-layer-try-force-commit.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<p class="since">Since: 0.9</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-set-respect-close"></a><h3>gtk_layer_set_respect_close ()</h3>
+<pre class="programlisting"><span class="returnvalue">void</span>
+gtk_layer_set_respect_close (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>,
+                             <em class="parameter"><code><span class="type">gboolean</span> respect_close</code></em>);</pre>
+<p>Compositors may send the <code class="literal">zwlr_layer_surface_v1.closed</code> event in some cases (such as
+when an output is destroyed). Prior to v0.10 this always triggered a GTK <code class="literal">delete-event</code>
+signal, which would destroy the window if not intercepted by application code. In v0.10+
+this behavior is disabled by default, and can be turned back on by calling this
+function with <code class="literal">TRUE</code>. To handle the <code class="literal">.closed</code> event without destroying your window
+turn respect_close on and connect a <code class="literal">delete-event</code> listener that returns <code class="literal">TRUE</code>.</p>
+<div class="refsect3">
+<a name="gtk-layer-set-respect-close.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr><tr><td class="parameter_name"><p>respect_close</p></td>
+<td class="parameter_description"><p>If to forward the .closed event to GTK.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<p class="since">Since: 0.10</p>
+</div>
+<hr><div class="refsect2">
+<a name="gtk-layer-get-respect-close"></a><h3>gtk_layer_get_respect_close ()</h3>
+<pre class="programlisting"><span class="returnvalue">gboolean</span>
+gtk_layer_get_respect_close (<em class="parameter"><code><span class="type">GtkWindow</span> *window</code></em>);</pre>
+<div class="refsect3">
+<a name="gtk-layer-get-respect-close.parameters"></a><h4>Parameters</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="150px" class="parameters_name"><col class="parameters_description"><col width="200px" class="parameters_annotations"></colgroup><tbody><tr><td class="parameter_name"><p>window</p></td>
+<td class="parameter_description"><p>A layer surface.</p></td>
+<td class="parameter_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+<div class="refsect3">
+<a name="gtk-layer-get-respect-close.returns"></a><h4>Returns</h4>
+<p> if the respect_close behavior is enabled, see <a class="link" href="gtk-layer-shell-Gtk-Layer-Shell.html#gtk-layer-set-respect-close" title="gtk_layer_set_respect_close ()"><code class="function">gtk_layer_set_respect_close()</code></a></p>
+</div>
+<p class="since">Since: 0.10</p>
+</div>
+</div>
+<div class="refsect1">
+<a name="gtk-layer-shell-Gtk-Layer-Shell.other_details"></a><h2>Types and Values</h2>
+<div class="refsect2">
+<a name="GtkLayerShellLayer"></a><h3>enum GtkLayerShellLayer</h3>
+<div class="refsect3">
+<a name="GtkLayerShellLayer.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="300px" class="enum_members_name"><col class="enum_members_description"><col width="200px" class="enum_members_annotations"></colgroup><tbody><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-LAYER-BACKGROUND:CAPS"></a>GTK_LAYER_SHELL_LAYER_BACKGROUND</p></td>
+<td class="enum_member_description">
+<p>The background layer.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-LAYER-BOTTOM:CAPS"></a>GTK_LAYER_SHELL_LAYER_BOTTOM</p></td>
+<td class="enum_member_description">
+<p>The bottom layer.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-LAYER-TOP:CAPS"></a>GTK_LAYER_SHELL_LAYER_TOP</p></td>
+<td class="enum_member_description">
+<p>The top layer.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-LAYER-OVERLAY:CAPS"></a>GTK_LAYER_SHELL_LAYER_OVERLAY</p></td>
+<td class="enum_member_description">
+<p>The overlay layer.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-LAYER-ENTRY-NUMBER:CAPS"></a>GTK_LAYER_SHELL_LAYER_ENTRY_NUMBER</p></td>
+<td class="enum_member_description">
+<p>Should not be used except to get the number of entries. (NOTE: may change in
+future releases as more entries are added)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="GtkLayerShellEdge"></a><h3>enum GtkLayerShellEdge</h3>
+<div class="refsect3">
+<a name="GtkLayerShellEdge.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="300px" class="enum_members_name"><col class="enum_members_description"><col width="200px" class="enum_members_annotations"></colgroup><tbody><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-EDGE-LEFT:CAPS"></a>GTK_LAYER_SHELL_EDGE_LEFT</p></td>
+<td class="enum_member_description">
+<p>The left edge of the screen.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-EDGE-RIGHT:CAPS"></a>GTK_LAYER_SHELL_EDGE_RIGHT</p></td>
+<td class="enum_member_description">
+<p>The right edge of the screen.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-EDGE-TOP:CAPS"></a>GTK_LAYER_SHELL_EDGE_TOP</p></td>
+<td class="enum_member_description">
+<p>The top edge of the screen.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-EDGE-BOTTOM:CAPS"></a>GTK_LAYER_SHELL_EDGE_BOTTOM</p></td>
+<td class="enum_member_description">
+<p>The bottom edge of the screen.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-EDGE-ENTRY-NUMBER:CAPS"></a>GTK_LAYER_SHELL_EDGE_ENTRY_NUMBER</p></td>
+<td class="enum_member_description">
+<p>Should not be used except to get the number of entries. (NOTE: may change in
+future releases as more entries are added)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+<hr><div class="refsect2">
+<a name="GtkLayerShellKeyboardMode"></a><h3>enum GtkLayerShellKeyboardMode</h3>
+<div class="refsect3">
+<a name="GtkLayerShellKeyboardMode.members"></a><h4>Members</h4>
+<div class="informaltable"><table class="informaltable" width="100%" border="0"><colgroup><col width="300px" class="enum_members_name"><col class="enum_members_description"><col width="200px" class="enum_members_annotations"></colgroup><tbody><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-KEYBOARD-MODE-NONE:CAPS"></a>GTK_LAYER_SHELL_KEYBOARD_MODE_NONE</p></td>
+<td class="enum_member_description">
+<p>This window should not receive keyboard events.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-KEYBOARD-MODE-EXCLUSIVE:CAPS"></a>GTK_LAYER_SHELL_KEYBOARD_MODE_EXCLUSIVE</p></td>
+<td class="enum_member_description">
+<p>This window should have exclusive focus if it is on the top or overlay layer.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-KEYBOARD-MODE-ON-DEMAND:CAPS"></a>GTK_LAYER_SHELL_KEYBOARD_MODE_ON_DEMAND</p></td>
+<td class="enum_member_description">
+<p>The user should be able to focus and unfocues this window in an implementation
+defined way. Not supported for protocol version &lt; 4.</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr><tr><td class="enum_member_name"><p><a name="GTK-LAYER-SHELL-KEYBOARD-MODE-ENTRY-NUMBER:CAPS"></a>GTK_LAYER_SHELL_KEYBOARD_MODE_ENTRY_NUMBER</p></td>
+<td class="enum_member_description">
+<p>Should not be used except to get the number of entries. (NOTE: may change in
+future releases as more entries are added)</p>
+</td>
+<td class="enum_member_annotations"> </td>
+</tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer">
+<hr>Generated by GTK-Doc V1.34.0</div>
+</body></html>

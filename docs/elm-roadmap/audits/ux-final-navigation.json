@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "reviewerRole": "UI/UX expert: navigation and information architecture",
+  "verdict": "changes-required",
+  "requirementsSha256": "04fee8c928a929915f676baae39730754786fca921c7673a3d8cbd5e395d20fe",
+  "implementationStatus": "pending; document review only",
+  "scope": [
+    "taskbar/grouping",
+    "launcher/search",
+    "switcher",
+    "Task View",
+    "discoverability",
+    "menus/jump lists",
+    "empty/error/loading/refusal states"
+  ],
+  "reviewedDocuments": [
+    "AGENTS.md",
+    "docs/HANDOFF.md",
+    "docs/elm-roadmap/requirements.json",
+    "docs/elm-roadmap/ROADMAP.md",
+    "openspec/changes/elm-desktop-pivot/specs/elm-taskbar/spec.md",
+    "openspec/changes/elm-desktop-pivot/specs/elm-switcher/spec.md",
+    "openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md"
+  ],
+  "findings": [
+    {
+      "id": "UX-NAV-001",
+      "severity": "high",
+      "requirementIds": [
+        "ELM-UX-004",
+        "ELM-UX-005",
+        "ELM-UX-008"
+      ],
+      "title": "Taskbar primary-action decision table is missing",
+      "example": "A pinned app with no windows, a group with one active window, and a group with three windows have no specified primary-click behavior. One implementation may launch a duplicate while another opens a picker or minimizes the active window.",
+      "contractCorrection": "Add a versioned taskbar interaction table covering zero/one/multiple eligible entries; active, inactive and minimized member; primary click, keyboard activation and explicit new-instance action. State whether active-window primary activation minimizes or stays active. Distinguish application pin from window always-on-top.",
+      "scenarioCorrection": "Named scenarios must cover launching a zero-window pinned app once, activating an inactive single member, restoring a minimized member, opening/selecting a multi-member group, and the selected active-click policy; verify native refusal keeps observed state.",
+      "status": "open; coordinator disposition required"
+    },
+    {
+      "id": "UX-NAV-002",
+      "severity": "high",
+      "requirementIds": [
+        "ELM-UX-003",
+        "ELM-UX-029"
+      ],
+      "title": "Launcher search state and stale-result behavior are undefined",
+      "example": "User types Brave then Files while a catalog refresh is outstanding. The old result selection may remain bound to Brave when Enter is pressed. Empty/loading/no-match/unavailable states also have no contract.",
+      "contractCorrection": "Require query-generation-bound results and selection; freeze deterministic matching/ranking and localized-label behavior in the product contract. Distinguish initial/loading/no-match/catalog-unavailable/refused-launch states. Preserve user query on refusal and provide a keyboard-reachable retry or refresh without automatic launch.",
+      "scenarioCorrection": "Exercise zero-match query, unavailable catalog, query change while refresh completes, selected catalog entry removed before Enter, and refused launch; no stale selection or blank/unreachable surface can trigger another app.",
+      "status": "open; coordinator disposition required"
+    },
+    {
+      "id": "UX-NAV-003",
+      "severity": "medium",
+      "requirementIds": [
+        "ELM-UX-011",
+        "ELM-UX-014",
+        "ELM-REV-016"
+      ],
+      "title": "Switcher scope, initial order and zero/one-window behavior are unassigned",
+      "example": "Frozen eligible-window order is required, but it could be alphabetical, MRU or native insertion order; scope could include all workspaces or only current workspace. Alt-Tab may select the already focused window on its first step.",
+      "contractCorrection": "Freeze eligibility scope, MRU or alternative ordering, initial selection, forward/reverse wrap, late arrivals and surviving-selection fallback before implementation. Include minimized members consistently with REV-016 and document cross-workspace activation policy.",
+      "scenarioCorrection": "Cover current window plus two others with known activation history, cross-workspace/minimized candidates, zero and one candidate, candidate closing mid-chord, a new arrival during chord and forward/reverse wrapping.",
+      "status": "open; coordinator disposition required"
+    },
+    {
+      "id": "UX-NAV-004",
+      "severity": "medium",
+      "requirementIds": [
+        "ELM-UX-017",
+        "ELM-UX-018",
+        "ELM-UX-023"
+      ],
+      "title": "Task View can enumerate windows without a complete navigation journey",
+      "example": "The requirements show workspace groups and transfers but do not require selecting a window from Task View to activate/restore it, switching workspace markers, or dismissing an empty overview. A populated workspace list can satisfy current scenarios without usable destination navigation.",
+      "contractCorrection": "Require keyboard/pointer selection of window and workspace, native-correlated activation/restore or switch outcome, predictable close/dismiss behavior, focus return and usable empty-workspace/no-window state. Explicitly inventory whether workspace create/delete/rename is in scope instead of implying full Task View parity.",
+      "scenarioCorrection": "Cover selecting a minimized member on another workspace, native refusal while overview stays usable, selecting an empty workspace, dismissal without mutation, and disappearance of selected member.",
+      "status": "open; coordinator disposition required"
+    },
+    {
+      "id": "UX-NAV-005",
+      "severity": "medium",
+      "requirementIds": [
+        "ELM-ARC-007",
+        "ELM-UX-008",
+        "ELM-UX-010",
+        "ELM-UX-019",
+        "ELM-UX-030"
+      ],
+      "title": "Operation states lack a user-visible recovery contract across surfaces",
+      "example": "ARC-007 distinguishes Pending/Committed/Refused/Cancelled/Unknown in the model, but only launch and transfer explicitly require refusal feedback. Pin, snap, taskbar restore, jump-list action and settings validation can leave a user guessing or clicking repeatedly.",
+      "contractCorrection": "Define a shared presentation contract for delayed pending, terminal refusal, cancellation and unknown/reconciling state. Keep native observed state authoritative; bound duplicate activation during pending and expose actionable, keyboard/AT-reachable recovery without replaying uncertain mutation. Define menu retention/dismissal after refused action.",
+      "scenarioCorrection": "For each action family, inject pending delay, refusal and transport loss; verify visible and accessible feedback, no false success or duplicate effect, recovery following native reconciliation and preserved focus/query/context.",
+      "status": "open; coordinator disposition required"
+    },
+    {
+      "id": "UX-NAV-006",
+      "severity": "medium",
+      "requirementIds": [
+        "ELM-UX-002",
+        "ELM-UX-005",
+        "ELM-UX-010",
+        "ELM-UX-023",
+        "ELM-UX-027"
+      ],
+      "title": "Dense taskbar and action discoverability are not specified",
+      "example": "Many pinned apps on a small or enlarged-text display may leave later icons unreachable. Jump-list invocation and access to window operations are referenced without a required discoverable affordance or input gesture.",
+      "contractCorrection": "Require all configured icons and group members remain keyboard and pointer reachable through a declared bounded overflow/scroll policy; retain selected-item visibility and order. Define menu/jump-list invocation by pointer and keyboard, label icon-only controls accessibly, and provide discoverable window minimize/restore/pin operations wherever supported.",
+      "scenarioCorrection": "Use a small-output/enlarged-text fixture with more icons and group members than fit; reach first/last items and menus without pointer-only gestures, verify offscreen selection is revealed and output resizing preserves identities/order.",
+      "status": "open; coordinator disposition required"
+    }
+  ],
+  "confirmedStrengths": [
+    "Native-authority effects and incarnation-bound selection",
+    "Historical preview labeling and correct title/icon fallback",
+    "Switcher cancellation and release-before-readiness",
+    "Native-correlated transfer, pin and snap state",
+    "Keyboard/AT coverage and preservation of existing drafts"
+  ],
+  "limits": [
+    "No native GUI, implementation or usability execution performed.",
+    "No assertion that implementation acceptance is complete.",
+    "Review does not require Windows visual duplication; explicit product decisions may select another consistent behavior."
+  ]
+}

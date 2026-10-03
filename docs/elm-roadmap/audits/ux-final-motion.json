@@ -1,0 +1,132 @@
+{
+  "schema": 1,
+  "reviewerRole": "UI/UX expert: motion, perceived performance and visual feedback",
+  "verdict": "changes-required",
+  "reviewedRequirementsSha256": "04fee8c928a929915f676baae39730754786fca921c7673a3d8cbd5e395d20fe",
+  "requirementCount": 216,
+  "scope": "Final requirement/specification review only; no implementation or live-desktop acceptance.",
+  "findings": [
+    {
+      "id": "UX-MOTION-001",
+      "severity": "medium",
+      "requirements": [
+        "ELM-ARC-007",
+        "ELM-ARC-014",
+        "ELM-UX-007",
+        "ELM-UX-029",
+        "ELM-UX-032"
+      ],
+      "title": "Distinct protocol states do not yet guarantee user-visible progress and uncertainty feedback",
+      "problem": "Pending, Unknown and refusal are correctly modeled, but no common contract requires timely feedback on a slow taskbar activation, restore, capture or system operation. An implementation could safely wait until the native deadline while looking unresponsive, or show an optimistic success before native confirmation. Preview fallback does not distinguish loading from unavailable.",
+      "correction": "WHEN a shell operation awaits a native outcome beyond the frozen feedback threshold, the Elm desktop SHALL expose accessible pending or reconciling feedback, preserve usable cancellation and independent controls, and show success only after correlated native confirmation.",
+      "additionalCorrection": "The preview view SHALL distinguish loading, retained historical, current-live and unavailable states through accessible labels without borrowing pixels from another incarnation.",
+      "scenarios": [
+        {
+          "name": "slow-native-feedback",
+          "given": "a taskbar restore is Pending and the frozen feedback threshold is reached before the original restore deadline",
+          "when": "the UI presents feedback",
+          "then": "pending state is visibly and accessibly communicated, independent controls remain usable, cancellation does not duplicate the request, and no success is claimed"
+        },
+        {
+          "name": "unknown-outcome-feedback",
+          "given": "a submitted operation becomes Unknown after transport interruption",
+          "when": "native reconciliation runs",
+          "then": "the UI communicates reconciliation rather than success or an actionable blind retry; terminal confirmation updates the same operation"
+        },
+        {
+          "name": "preview-state-feedback",
+          "given": "the same preview fixture transitions through loading, authorized historical frame, identity-matched live frame and unavailable",
+          "when": "each state is rendered",
+          "then": "visual and accessibility states identify the actual source condition, never exposing disallowed pixels"
+        }
+      ],
+      "verification": "Freeze the feedback threshold in P0; run delayed receipt, unknown outcome and preview-state native recordings plus accessibility output. Preserve original operation deadlines."
+    },
+    {
+      "id": "UX-MOTION-002",
+      "severity": "medium",
+      "requirements": [
+        "ELM-REN-011",
+        "ELM-UX-022",
+        "ELM-QA-019"
+      ],
+      "title": "Reduced-motion acceptance omits enabling the preference during motion and shell-overlay routes",
+      "problem": "The steady enabled route is specified, but current acceptance scenarios exercise only minimize/restore with the preference already enabled. There is no stated handoff when the preference changes during an active transition, and no concrete overlay scenario despite ELM-UX-022 including overlays.",
+      "correction": "WHEN reduced motion becomes enabled during an active window or shell-overlay transition, the renderer SHALL stop decorative motion at its next valid presentation opportunity and settle the existing transaction through the reduced-motion route without restarting its deadline, duplicating native effects or replaying motion when the setting is later disabled.",
+      "scenarios": [
+        {
+          "name": "enable-reduced-motion-midflight",
+          "given": "a restore transition has presented intermediate geometry and has an original transaction deadline",
+          "when": "reduced motion is enabled before the next presentation",
+          "then": "decorative interpolation stops at the next valid presentation opportunity; the same transaction reaches the matching final state and focus, retains its deadline and retires its proxy once"
+        },
+        {
+          "name": "reduced-motion-shell-overlays",
+          "given": "reduced motion is enabled",
+          "when": "switcher, Task View and snap overlays open, change selection and dismiss in separate named fixtures",
+          "then": "each follows the approved nondecorative profile with preserved focus/cancellation semantics"
+        },
+        {
+          "name": "disable-reduced-motion-no-replay",
+          "given": "a transition completed through the reduced-motion route",
+          "when": "the preference is disabled",
+          "then": "the completed motion is not replayed and subsequent transitions use the normal profile"
+        }
+      ],
+      "verification": "Record native presentation sequences and effect/retirement receipts for each fixture; compare final semantics with the ordinary route."
+    },
+    {
+      "id": "UX-MOTION-003",
+      "severity": "medium",
+      "requirements": [
+        "ELM-REN-012",
+        "ELM-QA-023",
+        "ELM-REV-020",
+        "ELM-REV-021",
+        "ELM-GPU-010"
+      ],
+      "title": "Efficiency budgets need an explicit demand-driven preview and decorative-work contract",
+      "problem": "Limits, soak metrics and power budgets are strong, but there is no behavior requirement to stop recurring capture, texture upload and decorative GPU submissions once consumers close. This allows needless background work to survive while remaining below a broad budget, especially on the discrete GPU. Retention of the last accepted frame is necessary; repeated production for a closed consumer is different work.",
+      "correction": "WHILE no visible preview consumer or required transition needs new content, the capture and rendering services SHALL suspend recurring preview acquisition, upload and decorative frame work while preserving authorized retained-frame ownership, control-event processing and bounded cleanup.",
+      "scenarios": [
+        {
+          "name": "dismiss-preview-quiesces-work",
+          "given": "a visible preview is producing updates and owns an accepted retained frame",
+          "when": "its final consumer closes and the declared quiescence interval elapses",
+          "then": "recurring preview acquisition/uploads and decorative submissions stop; the authorized retained lease remains usable and native control events still arrive"
+        },
+        {
+          "name": "preview-reopen-revalidates",
+          "given": "preview production is quiescent and the output or source generation changed",
+          "when": "a consumer reopens",
+          "then": "production resumes only after current authorization/identity/output validation and shows explicit pending or unavailable feedback until a valid frame exists"
+        },
+        {
+          "name": "hidden-consumer-resource-soak",
+          "given": "repeated preview open/dismiss cycles on qualified integrated and selectable discrete profiles",
+          "when": "the idle/soak workload completes",
+          "then": "whole-process wakeups, power and resource counts meet frozen budgets, and no recurring preview work or orphan helper accumulates"
+        }
+      ],
+      "verification": "Native producer/submission counters and whole-process power/wakeup traces, with a P0-frozen quiescence interval. Do not stop required minimized retained-frame storage, lock revocation, retirement or native compositor work."
+    }
+  ],
+  "confirmedAreas": [
+    "Native ownership of frame scheduling and input avoids webview roundtrip dependencies.",
+    "Reversal begins at last presented geometry, capture/live handoff avoids blank frames, cancellation and original deadlines are preserved.",
+    "Historical minimized previews, unavailable icon/title fallback, incarnation-bound leases and capture fidelity are explicit.",
+    "GPU paths and budgets distinguish hardware discovery from executed display qualification.",
+    "Lock, revocation, session replacement, device loss, suspend and output changes revoke or reconcile stale authority."
+  ],
+  "readFiles": [
+    "AGENTS.md",
+    "docs/HANDOFF.md",
+    "docs/elm-roadmap/requirements.json",
+    "docs/elm-roadmap/ROADMAP.md",
+    "docs/elm-roadmap/GPU.md",
+    "openspec/changes/elm-desktop-pivot/specs/elm-capture-motion/spec.md",
+    "openspec/changes/elm-desktop-pivot/specs/elm-performance/spec.md",
+    "openspec/changes/elm-desktop-pivot/specs/elm-shell-experience/spec.md"
+  ],
+  "implementationTested": false
+}

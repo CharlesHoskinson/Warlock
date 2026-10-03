@@ -1,0 +1,121 @@
+{
+  "project": "GNOME/mutter",
+  "release": "49.0",
+  "commit": "7697a7993e92dcef3b39b67051691a8b28f0b5ce",
+  "fetchedAt": "2026-10-03T14:54:46.725202+00:00",
+  "fetcher": "Scrapling Fetcher",
+  "sources": [
+    {
+      "file": "tag-ref.json",
+      "url": "https://api.github.com/repos/GNOME/mutter/git/ref/tags/49.0",
+      "finalUrl": "https://api.github.com/repos/GNOME/mutter/git/ref/tags/49.0",
+      "status": 200,
+      "bytes": 358,
+      "sha256": "a652006fcc83d8ff44b1be9adf9128c8348b33baa6db42c23bc3704153b7a6c8"
+    },
+    {
+      "file": "tag-object.json",
+      "url": "https://api.github.com/repos/GNOME/mutter/git/tags/61b7a24a817cd28de283d85b6d95717dd077a3cf",
+      "finalUrl": "https://api.github.com/repos/GNOME/mutter/git/tags/61b7a24a817cd28de283d85b6d95717dd077a3cf",
+      "status": 200,
+      "bytes": 5068,
+      "sha256": "9d12d30bf40472e064ada631e49ad541d114777e98076bc7f440dc50535f8030"
+    },
+    {
+      "file": "src__core__stack.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/stack.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/stack.c",
+      "status": 200,
+      "bytes": 24800,
+      "sha256": "54c58cca611af98f0e3912fcc9db9c28862e33eb0d0e3b01b18e0e1187b74c98"
+    },
+    {
+      "file": "src__core__stack.h",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/stack.h",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/stack.h",
+      "status": 200,
+      "bytes": 9014,
+      "sha256": "23df4149690c9e0ce1dc2827da7e58134b2bcf64644bf9b41fcb3bd3ad1da121"
+    },
+    {
+      "file": "src__core__window.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/window.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/window.c",
+      "status": 200,
+      "bytes": 269192,
+      "sha256": "b05aa85246e2fe9469918b1cb3689a9de018e7029b05307842d80f2218186b02"
+    },
+    {
+      "file": "src__compositor__meta-window-actor.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/meta-window-actor.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/meta-window-actor.c",
+      "status": 200,
+      "bytes": 57621,
+      "sha256": "16c306e2c81d415cf9b448b0248ca726c52d5b72d494328ebbe88da656d46c16"
+    },
+    {
+      "file": "src__compositor__meta-window-actor-wayland.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/meta-window-actor-wayland.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/meta-window-actor-wayland.c",
+      "status": 200,
+      "bytes": 24982,
+      "sha256": "52c48f8ca585c02cbea2306c2a4c11299d87fb4f6ca5507786cab6198960a116"
+    },
+    {
+      "file": "src__compositor__compositor.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/compositor.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/compositor.c",
+      "status": 200,
+      "bytes": 51277,
+      "sha256": "5431774ccd9bb678b73f094bcb7cd21841d4f6ceef89766928ac4ae5006d2f79"
+    },
+    {
+      "file": "src__core__window-private.h",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/window-private.h",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/core/window-private.h",
+      "status": 200,
+      "bytes": 31757,
+      "sha256": "95b16e8202bada95838dfa95f75ed4e2be836297169f849ede84a42ddbfbe818"
+    },
+    {
+      "file": "src__x11__window-x11.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/x11/window-x11.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/x11/window-x11.c",
+      "status": 200,
+      "bytes": 157253,
+      "sha256": "976382fa7a8e1e0dbdfb3b0407f429abe3fa44239e69ab510ba6d728a9566ace"
+    },
+    {
+      "file": "src__wayland__meta-window-wayland.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/wayland/meta-window-wayland.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/wayland/meta-window-wayland.c",
+      "status": 200,
+      "bytes": 56352,
+      "sha256": "54c78f32d950fc028e483f3fe4c73ddade455bd039cab3695a3d9fa7b78a3f7a"
+    },
+    {
+      "file": "src__compositor__meta-surface-actor.c",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/meta-surface-actor.c",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/compositor/meta-surface-actor.c",
+      "status": 200,
+      "bytes": 20874,
+      "sha256": "43397478d2210c5eb473959fff0a6251ec5e1ddcd0855d6863bfb733e1601fd0"
+    },
+    {
+      "file": "src__meta__common.h",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/meta/common.h",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/src/meta/common.h",
+      "status": 200,
+      "bytes": 4808,
+      "sha256": "1107273c37109afc51ab6218ed87e796469476fe62996d24db4ab18b051fdee6"
+    },
+    {
+      "file": "COPYING",
+      "url": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/COPYING",
+      "finalUrl": "https://raw.githubusercontent.com/GNOME/mutter/7697a7993e92dcef3b39b67051691a8b28f0b5ce/COPYING",
+      "status": 200,
+      "bytes": 18092,
+      "sha256": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643"
+    }
+  ]
+}

@@ -1,0 +1,703 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Meta.WorkspaceManager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Meta-51"/>
+  
+
+  
+  <meta property="og:title" content="Meta.WorkspaceManager"/>
+  <meta property="og:description" content="Reference for Meta.WorkspaceManager"/>
+  <meta name="twitter:title" content="Meta.WorkspaceManager"/>
+  <meta name="twitter:description" content="Reference for Meta.WorkspaceManager"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Meta" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Meta</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.WorkspaceManager.html#description">WorkspaceManager</a>
+  </div>
+</div>
+
+
+  
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.WorkspaceManager.append_new_workspace.html">append_new_workspace</a>
+  
+    <a class="method" href="method.WorkspaceManager.get_active_workspace.html">get_active_workspace</a>
+  
+    <a class="method" href="method.WorkspaceManager.get_active_workspace_index.html">get_active_workspace_index</a>
+  
+    <a class="method" href="method.WorkspaceManager.get_layout_columns.html">get_layout_columns</a>
+  
+    <a class="method" href="method.WorkspaceManager.get_layout_rows.html">get_layout_rows</a>
+  
+    <a class="method" href="method.WorkspaceManager.get_n_workspaces.html">get_n_workspaces</a>
+  
+    <a class="method" href="method.WorkspaceManager.get_workspace_by_index.html">get_workspace_by_index</a>
+  
+    <a class="method" href="method.WorkspaceManager.get_workspaces.html">get_workspaces</a>
+  
+    <a class="method" href="method.WorkspaceManager.override_workspace_layout.html">override_workspace_layout</a>
+  
+    <a class="method" href="method.WorkspaceManager.remove_workspace.html">remove_workspace</a>
+  
+    <a class="method" href="method.WorkspaceManager.reorder_workspace.html">reorder_workspace</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.WorkspaceManager.layout-columns.html">layout-columns</a>
+  
+    <a class="property" href="property.WorkspaceManager.layout-rows.html">layout-rows</a>
+  
+    <a class="property" href="property.WorkspaceManager.n-workspaces.html">n-workspaces</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.WorkspaceManager.active-workspace-changed.html">active-workspace-changed</a>
+  
+    <a class="signal" href="signal.WorkspaceManager.showing-desktop-changed.html">showing-desktop-changed</a>
+  
+    <a class="signal" href="signal.WorkspaceManager.workspace-added.html">workspace-added</a>
+  
+    <a class="signal" href="signal.WorkspaceManager.workspace-removed.html">workspace-removed</a>
+  
+    <a class="signal" href="signal.WorkspaceManager.workspace-switched.html">workspace-switched</a>
+  
+    <a class="signal" href="signal.WorkspaceManager.workspaces-reordered.html">workspaces-reordered</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Meta</a><span class="sep" role="presentation"></span>WorkspaceManager</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+        </h4>
+
+        <pre><code>final class Meta.WorkspaceManager : GObject.Object
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>No description available.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Meta.WorkspaceManager">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="161pt" height="116pt"
+ viewBox="0.00 0.00 161.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="MetaWorkspaceManager">
+<path fill="none" stroke="black" d="M141.25,-36C141.25,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 141.25,0 141.25,0 147.25,0 153.25,-6 153.25,-12 153.25,-12 153.25,-24 153.25,-24 153.25,-30 147.25,-36 141.25,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="76.62" y="-11.82" font-family="Times,serif" font-size="14.00">MetaWorkspaceManager</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M95.5,-108C95.5,-108 57.75,-108 57.75,-108 51.75,-108 45.75,-102 45.75,-96 45.75,-96 45.75,-84 45.75,-84 45.75,-78 51.75,-72 57.75,-72 57.75,-72 95.5,-72 95.5,-72 101.5,-72 107.5,-78 107.5,-84 107.5,-84 107.5,-96 107.5,-96 107.5,-102 101.5,-108 95.5,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="76.62" y="-83.83" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge1" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M76.62,-71.7C76.62,-60.85 76.62,-46.92 76.62,-36.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.append_new_workspace.html">meta_workspace_manager_append_new_workspace</a></h6>
+          <div class="docblock">
+            <p>Append a new workspace to the workspace manager and (optionally) switch to that&nbsp;display.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.get_active_workspace.html">meta_workspace_manager_get_active_workspace</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.get_active_workspace_index.html">meta_workspace_manager_get_active_workspace_index</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.get_layout_columns.html">meta_workspace_manager_get_layout_columns</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.get_layout_rows.html">meta_workspace_manager_get_layout_rows</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.get_n_workspaces.html">meta_workspace_manager_get_n_workspaces</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.get_workspace_by_index.html">meta_workspace_manager_get_workspace_by_index</a></h6>
+          <div class="docblock">
+            <p>Gets the workspace object for one of a workspace manager&#8217;s workspaces given the workspace
+index. It&#8217;s valid to call this function with an out-of-range index and it
+will robustly return <code>NULL</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.get_workspaces.html">meta_workspace_manager_get_workspaces</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.override_workspace_layout.html">meta_workspace_manager_override_workspace_layout</a></h6>
+          <div class="docblock">
+            <p>Explicitly set the layout of workspaces. Once this has been called, the contents of the
+_NET_DESKTOP_LAYOUT property on the root window are completely&nbsp;ignored.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.remove_workspace.html">meta_workspace_manager_remove_workspace</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.WorkspaceManager.reorder_workspace.html">meta_workspace_manager_reorder_workspace</a></h6>
+          <div class="docblock">
+            <p>Reorder a workspace to a new index. If the workspace is currently active
+the &#8220;active-workspace-changed&#8221; signal will be emitted.
+If the workspace&#8217;s index is the same as <code>new_index</code> or the workspace
+will not be found in the list, this function will&nbsp;return.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.WorkspaceManager.layout-columns.html">Meta.WorkspaceManager:layout-columns</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.WorkspaceManager.layout-rows.html">Meta.WorkspaceManager:layout-rows</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.WorkspaceManager.n-workspaces.html">Meta.WorkspaceManager:n-workspaces</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.WorkspaceManager.active-workspace-changed.html">Meta.WorkspaceManager::active-workspace-changed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.WorkspaceManager.showing-desktop-changed.html">Meta.WorkspaceManager::showing-desktop-changed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.WorkspaceManager.workspace-added.html">Meta.WorkspaceManager::workspace-added</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.WorkspaceManager.workspace-removed.html">Meta.WorkspaceManager::workspace-removed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.WorkspaceManager.workspace-switched.html">Meta.WorkspaceManager::workspace-switched</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.WorkspaceManager.workspaces-reordered.html">Meta.WorkspaceManager::workspaces-reordered</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct MetaWorkspaceManagerClass {
+  GObjectClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: GObjectClass</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

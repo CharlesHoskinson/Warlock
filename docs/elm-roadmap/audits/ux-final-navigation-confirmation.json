@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "reviewerRole": "UI/UX expert: navigation and information architecture",
+  "verdict": "confirmed",
+  "requirementsSha256": "c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146",
+  "interactionSha256": "2a947a3aa56d7b7b9e7d2f5c1ceb100ac7b8c345a73fd7616c0c4c567d0e01c4",
+  "status": "Document contract confirmed; implementation/native/usability acceptance pending",
+  "findings": [
+    {
+      "id": "UX-NAV-001",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-004",
+        "ELM-UI-001",
+        "ELM-UI-002"
+      ]
+    },
+    {
+      "id": "UX-NAV-002",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-005"
+      ]
+    },
+    {
+      "id": "UX-NAV-003",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-003"
+      ]
+    },
+    {
+      "id": "UX-NAV-004",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-006",
+        "ELM-UI-002",
+        "ELM-UI-011"
+      ]
+    },
+    {
+      "id": "UX-NAV-005",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-007",
+        "ELM-UI-010",
+        "ELM-UI-015"
+      ]
+    },
+    {
+      "id": "UX-NAV-006",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-008",
+        "ELM-UI-013"
+      ]
+    }
+  ],
+  "limits": [
+    "Original review is retained unchanged.",
+    "This confirms explicit decisions and scenario obligations, not executed user journeys.",
+    "P0 must freeze numeric budgets and usability fixture oracles before qualification."
+  ],
+  "previousConfirmation": "ux-final-navigation-confirmation-237.json",
+  "latestRecheck": {
+    "requirementsCount": 242,
+    "reviewedChanges": [
+      "ELM-UI-002 partial-navigation refusal",
+      "INTERACTION.md minimized-family representation and partial-navigation recovery",
+      "ELM-TEA-001 through ELM-TEA-005"
+    ],
+    "verdict": "confirmed",
+    "reason": "Post-navigation refusal explicitly maintains eligible destination focus or separately generation-validated compensation; uncertain mutations cannot replay. Minimized switcher families remain identity-bound until accepted restore resolves eligible modal target. Modern Elm reducer/effect separation preserves native authority."
+  }
+}

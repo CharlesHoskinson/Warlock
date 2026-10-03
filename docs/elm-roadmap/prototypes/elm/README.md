@@ -1,0 +1,7 @@
+# Typed Elm reducer proof of concept
+
+Pinned npm compiler `elm@0.19.2-0` compiles a `Platform.worker` with immutable Model, custom receipt/lifecycle types, opaque identity strings and a pure update returning typed effect descriptions. Eight named checks exercise restore-before-focus, matching receipts, distinct identities above JavaScript safe integer range, refusal, Unknown observation without replay, late receipt after frontend cancellation and deterministic reducer output.
+
+`proof-manifest.json` binds commands, source/generated JavaScript hashes, logs and results. Reproduce through protected QA with the absolute `run_proof.py` path. This tooling installs only into npm/Elm caches, not the desktop.
+
+The worker collects deterministic fixture results; its init emits only the test report port. It does not execute native effects or qualify production cancellation. `Cancel` demonstrates frontend suppression only, without the production correlated cancel receipt/linearization. Observation fixtures assume validated current epoch/sequence/dependency authority: those checks are modeled separately in the Quint bridge prototype. A production reducer must not treat an arbitrary eligibility boolean as proof. Subscriptions are `Sub.none` here; state-derived preview demand and native control delivery still need a host experiment. FocusReady is an effect proposal, not displayed-focus evidence. No GPU, DOM, native host, accessibility or Wayland behavior is claimed.

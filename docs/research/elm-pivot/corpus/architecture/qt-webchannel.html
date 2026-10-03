@@ -1,0 +1,278 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta content="This page explains how to use the JavaScript QWebChannel API in HTML clients." name="description"><title>Qt WebChannel JavaScript API | Qt WebChannel | Qt 6.12.0</title><link rel="stylesheet" type="text/css" href="/style/online2.css"><link rel="stylesheet" href="https://www.qt.io/hubfs/qt-design-system/qt-design-system-1.1.0.css"><link rel="stylesheet" type="text/css" href="/style/font-awesome.min.css"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/themes/default/style.min.css"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/themes/default-dark/style.min.css"><link href="images/htmltabs.css" rel="stylesheet" type="text/css"><link rel="shortcut icon" href="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon.ico.gzip"><link rel="icon" type="image/png" href="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-32x32.png"><link rel="icon" type="image/png" href="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-16x16.png"><script type="text/javascript" src="//d33sqmjvzgs8hq.cloudfront.net/wp-includes/js/jquery/jquery.js.gzip"></script><script type="text/javascript" src="//d33sqmjvzgs8hq.cloudfront.net/wp-includes/js/jquery/jquery-migrate.min.js.gzip"></script><script type="text/javascript" src="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/js/combo.js.gzip"></script><script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/jstree.min.js"></script><script type="text/javascript" src="/scripts/popper.min.js"></script><script type="text/javascript" src="/scripts/tippy.min.js"></script><script type="text/javascript" src="/scripts/qtds-extras.js"></script><script type="text/javascript"> wpThemeFolder = 'https://qt.io/wp-content/themes/oneqt'; </script><script type="text/javascript">
+ $(document).ready(function(){
+   $("input[type=radio]").on("click", function() {
+   var lbl = $(this).next().text();
+   $("input[type=radio]:not(checked)").filter(function() {
+     if ($(this).next().text() == lbl)
+         $(this).prop("checked", true);
+   });
+   });
+ });
+  </script><script type="text/javascript">
+    $(function () {
+      if (document.documentElement.getAttribute('data-theme') === 'dark')
+        $('input#th-toggle').prop('checked', true);
+      $('input#th-toggle').change(function() {
+        var theme = this.checked ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+        document.documentElement.setAttribute('data-theme', theme);
+        $('#sidebar-toctree').jstree(true).set_theme('default' + `${theme === 'dark' ? '-dark' : ''}`);
+      });
+    });
+  </script><script type="text/javascript" src="/scripts/init-tree.js"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5QQXBTC');</script><script type="text/javascript" src="/scripts/qt-design-system-1.1.0-doc.js"></script><script src="/scripts/prettify.js" type="text/javascript"></script></head><body class="qt-design-system" style="background:var(--content-bg-color)" onload="prettyPrint()">
+<div class="qds-page-header" id="qds-page-header">
+<header class="b-header" data-float="true"><div class="b-header__container">
+
+        <div class="b-header__secondary-level">
+            <div class="b-header__secondary-level__back">
+                <a class="c-link c-link--left" href="https://www.qt.io/">Back to Qt.io</a>
+            </div>
+            <div class="b-header__secondary-level__right">
+                <a href="https://www.qt.io/contact-us/" target="_blank">Contact Us</a>
+                <a href="https://blog.qt.io/" target="_blank">Blog</a>
+                <a href="https://www.qt.io/download/" target="_blank" class="c-button c-button--small">Download Qt</a>
+            </div>
+        </div>
+
+        <div class="b-header__primary-level">
+            <div class="b-header__primary-level__left">
+                <a class="b-header__logo" href="/">
+                    <img src="/style/qt-logo-documentation.png" srcset="/style/qt-logo-documentation.png 1x, /style/qt-logo-documentation-2x.png 2x" alt="Qt documentation"></a>
+            </div>
+            <div class="b-header__primary-level__navigation">
+            <ul class="c-navigation-header"><li id="qds-trans" role="menu" class="has-children" style="display: none; margin: 0 20px 5px 0;top:7px">
+                <div class="lang-icon theme-icon"><a></a></div>
+                    <ul id="qds-trans-ul"><li class="tr-lang active" data-lang="en"><a>English</a></li>
+                    </ul></li>
+                <li role="menu" style="margin: 0 5px 5px 0;top:7px">
+                  <div title="Toggle light/dark theme" class="theme-switch-wrapper">
+                    <label class="theme-switch" for="th-toggle">
+                        <input type="checkbox" id="th-toggle"><div class="theme-icon"></div>
+                    </label>
+                  </div>
+                </li>
+                <li role="menu">
+                    <a href="https://www.qt.io/academy" aria-haspopup="true" aria-expanded="false">Qt Academy</a>
+                </li>
+                <li role="menu">
+                    <a href="/archives" aria-haspopup="true" aria-expanded="false">Archives</a>
+                </li>
+                <li role="menu">
+                    <a href="https://doc-snapshots.qt.io/" aria-haspopup="true" aria-expanded="false">Snapshots</a>
+                </li>
+            </ul></div>
+            <div class="b-header__primary-level__hamburger">
+                <div class="c-hamburger"></div>
+            </div>
+        </div>
+    </div>
+</header></div>
+<div data-global-resource-path="qt-design-system/components/b-sidebar.html">
+    <div class="b-sidebar b-sidebar--full-width">
+        <aside class="b-sidebar__sidebar"><div id="qds-sbhandle"></div>
+            <div class="b-sidebar__sidebar__mobile-close"><div class="c-mobile-close"></div></div>
+            <div class="b-sidebar__sidebar__mobile-toggle" data-mobile-title="Topics"></div>
+                        <div class="b-sidebar__sidebar__content">
+                <div data-margin-bottom="sm">
+                                        <select id="qds-vdropdown" class="c-form-select c-form-select--dark js-versioncontrol" style="visibility:hidden"></select></div>
+                                <div id="qds-filter-container" data-margin-bottom="sm" style="display:none">
+                    <label for="qds-filter-sl">Filter topics</label>
+                    <select id="qds-filter-sl" class="c-form-select c-form-select--dark"></select><div id="qds-filter-note" style="display:none">Topic not in active filter<button type="button" id="qds-filter-clear">Clear</button></div>
+                </div>
+                                <div id="qds-ec-toggle" title="Expand/collapse all"></div>
+                <nav><div id="sidebar-toctree"></div>
+                    <ul class="c-sidebar-navigation"></ul></nav></div>
+        </aside><div class="b-sidebar__content">
+            <div class="b-sidebar__topbar" data-margin-bottom="sm">
+                <div class="b-topbar">
+                    <div class="b-topbar__search">
+                        <form id="site-search" role="search" style="width: 535px; max-width: 100%" autocomplete="off">
+                            <input accesskey="f" class="c-form-input-field c-form-input-field--search" placeholder="Search" id="search" name="search" onclick="(function(w,d,i){i.removeAttribute('on'+w.event.type);var j=d.createElement('script'),c=d.createElement('link');j.async=true;j.onload=function(){qtSearchInit(i,w.qtSearchNavigation)};j.src='//www.qt.io/hubfs/qt-design-system/qt-search-component-v2/qt-search-component-v2.js';c.rel='stylesheet';c.onload=function(){try{w.qtscs=1;qtSearchStyle(i)}catch(e){}};c.href='//www.qt.io/hubfs/qt-design-system/qt-search-component-v2/qt-search-component-v2.css';d.head.appendChild(c);d.head.appendChild(j)})(window,document,this)" required type="text"><button type="submit" style="display:none;">Search</button>
+                            <style>.js-qt-search-component{z-index:1000;}</style></form>
+                    </div>                    <div class="b-topbar__breadcrump" translate="no">
+                        <ul class="c-breadcrump"><li><a href="index.html">Qt 6.12</a></li>
+                            <li><a href="qtwebchannel-index.html">Qt WebChannel</a></li>
+                            <li><a>Qt WebChannel JavaScript API</a></li>
+                        </ul></div>
+                </div>
+            </div>
+            <div class="b-sidebar__content__wrapper">
+                <article class="b-sidebar__content__left"><div id="qds-toc-menu">On this page</div>
+                    <div class="context mainContent" style="margin: 0;padding: 0; background: 0;">
+                    
+
+<div class="context">
+<h1 class="title">Qt WebChannel JavaScript API</h1>
+
+<div class="descr" id="details">
+<h2 id="setting-up-the-javascript-api">Setting up the JavaScript API<a class="plink" href="#setting-up-the-javascript-api" title="Direct link to this headline"></a></h2>
+<p>To communicate with a <a href="qwebchannel.html" translate="no">QWebChannel</a> or <a href="qml-qtwebchannel-webchannel.html" translate="no">WebChannel</a>, a client must use and set up the JavaScript API provided by <code translate="no">qwebchannel.js</code>. For clients run inside <a href="../qtwebengine/qtwebengine-index.html">Qt WebEngine</a>, you can load the file via <code translate="no">qrc:///qtwebchannel/qwebchannel.js</code>, if the you load the page locally, or make <code translate="no">qwebchannel.js</code> accessible from a <code translate="no">QWebEngineUrlSchemeHandler</code> registered with <code translate="no">QWebEngineUrlScheme</code> as <code translate="no">QWebEngineUrlScheme::SecureScheme</code>. For external clients, you need to copy the file to your web server. Then instantiate a <a href="qwebchannel.html" translate="no">QWebChannel</a> object and pass it a transport object and a callback function, which will be invoked once the initialization of the channel finishes and the published objects become available. An optional third argument contains an array of converter wrapper functions or a single one.</p>
+<p>The transport object implements a minimal message passing interface. It should be an object with a <code translate="no">send()</code> function, which takes a stringified JSON message and transmits it to the server-side <a href="qwebchannelabstracttransport.html" translate="no">QWebChannelAbstractTransport</a> object. Furthermore, its <code translate="no">onmessage</code> property should be called when a message from the server was received. Alternatively, you can use a <a href="qtwebsockets-index.html">WebSocket</a> to implement the interface.</p>
+<p>Note that the JavaScript <a href="qwebchannel.html" translate="no">QWebChannel</a> object should be constructed once the transport object is fully operational. In case of a WebSocket, that means you should create the <a href="qwebchannel.html" translate="no">QWebChannel</a> in the socket's <code translate="no">onopen</code> handler. Take a look at the <a href="qtwebchannel-standalone-example.html">Qt WebChannel Standalone Example</a> to see how this is done.</p>
+<div class="admonition note">
+<p><b>Note: </b>Only a single <code translate="no">QWebChannel</code> object per transport can be created in the same page.</p>
+</div>
+<p>A converter wrapper function is either a string with the name of a built-in converter or a user supplied function that takes the object to process as an argument and returns the resultant type or undefined if the function does not apply. If undefined is returned the next converter is processed. If there are no converters that returns a value other than undefined, processing proceeds as normal. "Date" is the only currently built-in converter function. It takes a string with an ISO 8601 date and returns a new Date object if the syntax is right and the date is valid.</p>
+<h2 id="interacting-with-qobjects">Interacting with QObjects<a class="plink" href="#interacting-with-qobjects" title="Direct link to this headline"></a></h2>
+<p>Once the callback passed to the <a href="qwebchannel.html" translate="no">QWebChannel</a> object is invoked, the channel has finished initialization and all published objects are accessible to the HTML client via the <code translate="no">channel.objects</code> property. Thus, assuming an object was published with the identifier "foo", then we can interact with it as shown in the example below. Note that all communication between the HTML client and the QML/C++ server is asynchronous. Properties are cached on the HTML side. Furthermore keep in mind that only QML/C++ data types which can be converted to JSON will be (de-)serialized properly and thus accessible to HTML clients.</p>
+<div class="pre"><pre class="cpp prettyprint" translate="no"><code class="cpp"><span class="keyword">new</span> <span class="type"><a href="qwebchannel.html" translate="no">QWebChannel</a></span>(yourTransport<span class="operator">,</span> function(channel) {
+
+    <span class="comment">// Connect to a signal:</span>
+    channel<span class="operator">.</span>objects<span class="operator">.</span>foo<span class="operator">.</span>mySignal<span class="operator">.</span>connect(function() {
+        <span class="comment">// This callback will be invoked whenever the signal is emitted on the C++/QML side.</span>
+        console<span class="operator">.</span>log(arguments);
+    });
+
+    <span class="comment">// To make the object known globally, assign it to the window object, i.e.:</span>
+    window<span class="operator">.</span>foo <span class="operator">=</span> channel<span class="operator">.</span>objects<span class="operator">.</span>foo;
+
+    <span class="comment">// Invoke a method:</span>
+    foo<span class="operator">.</span>myMethod(arg1<span class="operator">,</span> arg2<span class="operator">,</span> function(returnValue) {
+        <span class="comment">// This callback will be invoked when myMethod has a return value. Keep in mind that</span>
+        <span class="comment">// the communication is asynchronous, hence the need for this callback.</span>
+        console<span class="operator">.</span>log(returnValue);
+    });
+
+    <span class="comment">// Read a property value, which is cached on the client side:</span>
+    console<span class="operator">.</span>log(foo<span class="operator">.</span>myProperty);
+
+    <span class="comment">// Writing a property will instantly update the client side cache.</span>
+    <span class="comment">// The remote end will be notified about the change asynchronously</span>
+    foo<span class="operator">.</span>myProperty <span class="operator">=</span> <span class="string">"Hello World!"</span>;
+
+    <span class="comment">// To get notified about remote property changes,</span>
+    <span class="comment">// simply connect to the corresponding notify signal:</span>
+    foo<span class="operator">.</span>myPropertyChanged<span class="operator">.</span>connect(function() {
+        console<span class="operator">.</span>log(foo<span class="operator">.</span>myProperty);
+    });
+
+    <span class="comment">// One can also access enums that are marked with Q_ENUM:</span>
+    console<span class="operator">.</span>log(foo<span class="operator">.</span>MyEnum<span class="operator">.</span>MyEnumerator);
+});</code></pre></div>
+<h3 id="overloaded-methods-and-signals">Overloaded methods and signals<a class="plink" href="#overloaded-methods-and-signals" title="Direct link to this headline"></a></h3>
+<p>When you publish a <code translate="no">QObject</code> that has overloaded methods, <a href="qwebchannel.html" translate="no">QWebChannel</a> will resolve method invocations to the best match. Note that due to JavaScript's type system, there is only a single 'number' type which maps best to a C++ 'double'. When overloads differ only in the type of a number-like parameter, <a href="qwebchannel.html" translate="no">QWebChannel</a> will always choose that overload which best matches the JavaScript 'number' type. When you connect to an overloaded signal, the <a href="qwebchannel.html" translate="no">QWebChannel</a> client will by default only connect to the first signal overload of that name. Additionally, overloads of methods and signals can explicitly be requested by their complete <code translate="no">QMetaMethod</code> signature. Assume we have the following <code translate="no">QObject</code> subclass on the C++ side:</p>
+<div class="pre"><pre class="cpp prettyprint" translate="no"><code class="cpp"><span class="keyword">class</span> Foo : <span class="keyword">public</span> <span class="type"><a href="qobject.html" translate="no">QObject</a></span>
+{
+    Q_OBJECT
+<span class="keyword">slots</span>:
+    <span class="type">void</span> foo(<span class="type">int</span> i);
+    <span class="type">void</span> foo(<span class="type">double</span> d);
+    <span class="type">void</span> foo(<span class="keyword">const</span> <span class="type"><a href="qstring.html" translate="no">QString</a></span> <span class="operator">&amp;</span>str);
+    <span class="type">void</span> foo(<span class="keyword">const</span> <span class="type"><a href="qstring.html" translate="no">QString</a></span> <span class="operator">&amp;</span>str<span class="operator">,</span> <span class="type">int</span> i);
+
+<span class="keyword">signals</span>:
+    <span class="type">void</span> bar(<span class="type">int</span> i);
+    <span class="type">void</span> bar(<span class="keyword">const</span> <span class="type"><a href="qstring.html" translate="no">QString</a></span> <span class="operator">&amp;</span>str);
+    <span class="type">void</span> bar(<span class="keyword">const</span> <span class="type"><a href="qstring.html" translate="no">QString</a></span> <span class="operator">&amp;</span>str<span class="operator">,</span> <span class="type">int</span> i);
+};</code></pre></div>
+<p>Then you can interact with this class on the JavaScript side like this:</p>
+<div class="pre"><pre class="cpp prettyprint" translate="no"><code class="cpp"><span class="comment">// methods</span>
+foo<span class="operator">.</span>foo(<span class="number">42</span>); <span class="comment">// will call the method named foo which best matches the JavaScript number parameter, i.e. foo(double d)</span>
+foo<span class="operator">.</span>foo(<span class="string">"asdf"</span>); <span class="comment">// will call foo(const QString &amp;str)</span>
+foo<span class="operator">.</span>foo(<span class="string">"asdf"</span><span class="operator">,</span> <span class="number">42</span>); <span class="comment">// will call foo(const QString &amp;str, int i)</span>
+foo<span class="operator">[</span><span class="string">"foo(int)"</span><span class="operator">]</span>(<span class="number">42</span>); <span class="comment">// explicitly call foo(int i), *not* foo(double d)</span>
+foo<span class="operator">[</span><span class="string">"foo(QString)"</span><span class="operator">]</span>(<span class="string">"asdf"</span>); <span class="comment">// explicitly call foo(const QString &amp;str)</span>
+foo<span class="operator">[</span><span class="string">"foo(QString,int)"</span><span class="operator">]</span>(<span class="string">"asdf"</span><span class="operator">,</span> <span class="number">42</span>); <span class="comment">// explicitly call foo(const QString &amp;str, int i)</span>
+
+<span class="comment">// signals</span>
+foo<span class="operator">.</span>bar<span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect to first signal named bar, i.e. bar(int i)</span>
+foo<span class="operator">[</span><span class="string">"bar(int)"</span><span class="operator">]</span><span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect explicitly to bar(int i)</span>
+foo<span class="operator">[</span><span class="string">"bar(QString)"</span><span class="operator">]</span><span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect explicitly to bar(const QString &amp;str)</span>
+foo<span class="operator">[</span><span class="string">"bar(QString,int)"</span><span class="operator">]</span><span class="operator">.</span>connect(<span class="operator">.</span><span class="operator">.</span><span class="operator">.</span>); <span class="comment">// connect explicitly to bar(const QString &amp;str, int i)</span></code></pre></div>
+</div>
+
+</div>
+<p class="copy-notice">
+<abbr title="Copyright">©</abbr> 2026 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.     Qt and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of The Qt Company Ltd. in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+
+                    </div>
+                </article><aside class="b-sidebar__content__right"><div class="h-wysiwyg-html" data-scheme>
+                                                <h6><strong>Contents</strong></h6>
+                        <nav><ul class="c-tableofcontents js-c-tableofcontents" data-tableofcontents-id="wrapperid" data-margin-top="sm"><li class="level1"><p><a href="#setting-up-the-javascript-api">Setting up the JavaScript API</a></p></li>
+<li class="level1"><p><a href="#interacting-with-qobjects">Interacting with QObjects</a></p></li>
+<li class="level2"><p><a href="#overloaded-methods-and-signals">Overloaded methods and signals</a></p></li>
+</ul></nav></div>
+                                    </aside></div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+<div class="l-footer">
+    <div class="l-footer__container">
+        <div class="l-footer__row l-footer__row--no-padding-bottom">
+            <div class="l-footer__column l-footer__company">
+                <div class="l-footer__logo">
+                    <a href="https://www.qt.io/?hsLang=en" class="c-logo-footer">
+                    <img src="/images/qtgroup.svg"></a>
+                </div>
+                <div class="c-social-media-links">
+                    <a href="https://twitter.com/qtproject" target="_blank" rel="noopener" class="fm_button fm_twitter"><span></span></a>
+                    <a href="https://www.facebook.com/qt/" target="_blank" rel="noopener" class="fm_button fm_facebook"><span></span></a>
+                    <a href="https://www.youtube.com/user/QtStudios" target="_blank" rel="noopener" class="fm_button fm_youtube"><span></span></a>
+                    <a href="https://www.linkedin.com/company/qtgroup/" target="_blank" rel="noopener" class="fm_button fm_linkedin"><span></span></a>
+                </div>
+                <div class="l-footer__contact">
+                        <a class="c-btn " href="https://www.qt.io/contact-us?hsLang=en">Contact Us</a>
+                </div>
+
+            </div>
+            <div class="l-footer__column l-footer__navigation">
+                <div class="c-footer-navigation">
+
+                        <span><div class="hs-menu-wrapper" role="navigation" aria-label="Navigation Menu">
+<ul role="menu"><li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Qt Group</a>
+   <ul role="menu" class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/group" role="menuitem">Our Story</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/brand" role="menuitem">Brand</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/newsroom" role="menuitem">News</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/careers" role="menuitem">Careers</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/investors" role="menuitem">Investors</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/product" role="menuitem">Qt Products</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/product/quality-assurance" role="menuitem">Software Quality Products</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Licensing</a>
+   <ul role="menu" class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/terms-conditions" role="menuitem">License Agreement</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/licensing/open-source-lgpl-obligations" role="menuitem">Open Source</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/pricing" role="menuitem">Plans and pricing</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/download" role="menuitem">Download</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/faq/overview" role="menuitem">FAQ</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Learn Qt</a>
+   <ul role="menu" class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/academy" role="menuitem">For Learners</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-educational-license" role="menuitem">For Students and Teachers</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://doc.qt.io/" role="menuitem" target="_blank" rel="noopener">Qt Documentation</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://forum.qt.io/" role="menuitem" target="_blank" rel="noopener">Qt Forum</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Support &amp; Services</a>
+   <ul role="menu" class="hs-menu-children-wrapper"><li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-professional-services" role="menuitem">Professional Services</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/customer-success" role="menuitem">Customer Success</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-support/" role="menuitem">Support Services</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/contact-us/partners" role="menuitem">Partners</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-world" role="menuitem" target="_blank" rel="noopener">Qt World</a></li>
+   </ul></li>
+ </ul></div></span>
+      </div>
+   </div>
+</div>
+        <div class="l-footer__row">
+            <div class="l-footer__column l-footer__legal">
+                <div class="c-footer-secondary-navigation">
+                    <span><div class="hs-menu-wrapper" role="navigation" aria-label="Navigation Menu">
+ <ul role="menu"><li class="hs-menu-item hs-menu-depth-1" role="none"><a href="javascript:;" role="menuitem">© 2026 The Qt Company</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="mailto:feedback@qt.io?Subject=Feedback%20about%20doc.qt.io%20site">Feedback</a></li>
+ </ul></div></span>
+                    <p class="c-footer-secondary-navigation__group-notice">Qt Group includes The Qt Company Oy and its global subsidiaries and affiliates.</p>
+                </div>
+            </div>
+            <div class="l-footer__column l-footer__some-links">
+            </div>
+        </div>
+    </div>
+</div>
+</div></body></html>

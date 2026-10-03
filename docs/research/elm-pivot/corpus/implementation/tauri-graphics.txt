@@ -1,0 +1,290 @@
+Linux Graphics Issues | Tauri
+Skip to content
+Tauri
+Guides
+References
+Blog
+Releases
+Search
+Ctrl
+K
+Cancel
+GitHub
+Discord
+Twitter
+Bluesky
+Mastodon
+RSS
+Select language
+English
+Français
+Español
+简体中文
+日本語
+German
+Menu
+Guides
+References
+Blog
+Quick Start
+What is Tauri?
+Prerequisites
+Create a Project
+Project Structure
+Frontend Configuration
+Overview
+Leptos
+Next.js
+Nuxt
+Qwik
+SvelteKit
+Trunk
+Vite
+Upgrade & Migrate
+Overview
+Upgrade from Tauri 1.0
+Upgrade from Tauri 2.0 Beta
+Core Concepts
+Overview
+Tauri Architecture
+Process Model
+App Size
+Inter-Process Communication
+Overview
+Brownfield Pattern
+Isolation Pattern
+Security
+Overview
+Permissions
+Command Scopes
+Capabilities
+Asset protocol scope
+Content Security Policy (CSP)
+HTTP Headers
+Tauri Ecosystem Security
+Application Lifecycle Threats
+Future Work
+Runtime Authority
+Develop
+Overview
+Configuration Files
+Calling Rust from the Frontend
+Calling the Frontend from Rust
+Embedding Additional Files
+Embedding External Binaries
+State Management
+Updating Dependencies
+App Icons
+Debug
+Overview
+CrabNebula DevTools
+New
+Linux Graphics Issues
+Debug in Neovim
+Debug in JetBrains IDEs
+Debug in VS Code
+Plugins
+Overview
+Mobile Plugin Development
+Tests
+Overview
+Mock Tauri APIs
+WebDriver
+Overview
+Manual setup
+Continuous Integration
+Example
+Selenium
+WebdriverIO
+Distribute
+Overview
+App Store
+AppImage
+AUR
+CrabNebula Cloud
+Debian
+DMG
+Flathub
+Google Play
+macOS Application Bundle
+Microsoft Store
+RPM
+Snapcraft
+Windows Installer
+Sign
+macOS
+Windows
+Linux
+iOS
+Android
+Pipelines
+CrabNebula Cloud
+GitHub
+Learn
+Overview
+Node.js as a sidecar
+Splashscreen
+System Tray
+Window Customization
+Multi-Window on Mobile
+File Associations on Mobile
+Security
+Using Plugin Permissions
+Capabilities for Different Windows and Platforms
+Writing Plugin Permissions
+Window Menu
+Plugins
+Overview
+Autostart
+Barcode Scanner
+Biometric
+Command Line Interface (CLI)
+Clipboard
+Deep Linking
+Dialog
+File System
+Geolocation
+Global Shortcut
+Haptics
+HTTP Client
+Localhost
+Logging
+NFC
+Notifications
+Opener
+OS Information
+Persisted Scope
+Positioner
+Process
+Shell
+Single Instance
+SQL
+Store
+Stronghold
+Updater
+Upload
+Websocket
+Window State
+About
+About Tauri
+The Tauri Book
+Tauri Governance
+Tauri Philosophy
+Trademark Guidelines
+GitHub
+Discord
+Twitter
+Bluesky
+Mastodon
+RSS
+Select language
+English
+Français
+Español
+简体中文
+日本語
+German
+On this page
+Overview
+Common symptoms
+Workarounds
+Silent failures: WebGL and canvas
+On this page
+Overview
+Common symptoms
+Workarounds
+Silent failures: WebGL and canvas
+Linux Graphics Issues
+On Linux, Tauri renders through WebKitGTK. On some setups, most often NVIDIA GPUs, WebKitGTK and the graphics driver disagree and you get anything from a blank window to subtle rendering problems. This page collects the known symptoms and workarounds. See 
+tauri-apps/tauri#9394
+ for the original reports.
+Common symptoms
+Section titled “Common symptoms”
+The window opens but stays blank or white.
+The window flickers, especially while resizing.
+The app dies on resize with no useful error output.
+Console shows 
+AcceleratedSurfaceDMABuf was unable to construct a complete framebuffer
+.
+Console shows 
+Gdk-Message: Error 71 (Protocol error) dispatching to Wayland display.
+Most of these come from the WebKitGTK DMABUF renderer requesting buffer formats the NVIDIA driver does not provide. See the 
+WebKitGTK bug tracker
+ and the 
+NVIDIA forums
+ for upstream discussion.
+Workarounds
+Section titled “Workarounds”
+Try these in order. The earlier ones keep hardware acceleration.
+Make sure kernel mode setting is on. NVIDIA drivers older than 545 often need 
+nvidia_drm.modeset=1
+ as a kernel parameter.
+Set 
+__NV_DISABLE_EXPLICIT_SYNC=1
+. This often fixes the Wayland 
+Error 71
+ crash without a performance cost.
+Set 
+WEBKIT_DISABLE_DMABUF_RENDERER=1
+. Fixes the DMABUF framebuffer error and the 
+Error 71
+ crash, at the cost of the faster rendering path.
+Set 
+WEBKIT_DISABLE_COMPOSITING_MODE=1
+. Last resort for the silent crash on resize. This disables accelerated compositing entirely.
+You can set these in your shell to test, or set them in 
+main()
+ before the webview is created so users do not have to:
+fn
+main
+() {
+// Workaround for WebKitGTK on NVIDIA, see tauri-apps/tauri#9394
+#[cfg(target_os 
+=
+"
+linux
+"
+)]
+std
+::
+env
+::
+set_var
+(
+"
+WEBKIT_DISABLE_DMABUF_RENDERER
+"
+, 
+"
+1
+"
+);
+tauri
+::
+Builder
+::
+default
+()
+// ...
+}
+Only ship an unconditional override like this if you have verified your app is affected. It disables a faster path for everyone, including users on working setups.
+Silent failures: WebGL and canvas
+Section titled “Silent failures: WebGL and canvas”
+Not every problem crashes or shows an error. WebGL and canvas content can silently land on a slow path while the rest of the app looks fine. Two things make this hard to detect from inside your frontend:
+WebGL2 context creation succeeds even when the result is backed by a software rasterizer or a slow presentation path. There is no error to catch.
+WebKitGTK masks the WebGL renderer string for fingerprinting protection. 
+WEBGL_debug_renderer_info
+ reports 
+Apple GPU
+ on every Linux machine, so you cannot check what is actually behind the context.
+In practice this shows up as high input latency or low frame rates in WebGL heavy views (terminal emulators, editors, maps, charts), while the same code is fast in a regular browser. If your app has a WebGL rendering path, give it a non WebGL fallback on Linux and consider exposing a setting so users can switch, instead of trusting the context to tell you.
+Edit page
+Last updated: 
+Jun 15, 2026
+Previous
+CrabNebula DevTools
+Next
+Debug in Neovim
+Support on Open Collective
+Sponsor on GitHub
+© 2026 Tauri Contributors. CC-BY / MIT

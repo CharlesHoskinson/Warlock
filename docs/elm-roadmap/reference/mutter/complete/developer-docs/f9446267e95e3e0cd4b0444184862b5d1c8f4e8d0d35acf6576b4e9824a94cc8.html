@@ -1,0 +1,312 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Meta.Compositor.set_background_blur_params</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Meta-51"/>
+  
+
+  
+  <meta priority="og:title" content="Meta.Compositor.set_background_blur_params"/>
+  <meta priority="og:description" content="Reference for Meta.Compositor.set_background_blur_params"/>
+  <meta name="twitter:title" content="Meta.Compositor.set_background_blur_params"/>
+  <meta name="twitter:description" content="Reference for Meta.Compositor.set_background_blur_params"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Meta" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Meta</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Compositor.html">Compositor</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Compositor.disable_unredirect.html">disable_unredirect</a>
+  
+    <a class="method" href="method.Compositor.enable_unredirect.html">enable_unredirect</a>
+  
+    <a class="method" href="method.Compositor.get_backend.html">get_backend</a>
+  
+    <a class="method" href="method.Compositor.get_background_blur_params.html">get_background_blur_params</a>
+  
+    <a class="method" href="method.Compositor.get_feedback_group.html">get_feedback_group</a>
+  
+    <a class="method" href="method.Compositor.get_input_panel_group.html">get_input_panel_group</a>
+  
+    <a class="method" href="method.Compositor.get_laters.html">get_laters</a>
+  
+    <a class="method" href="method.Compositor.get_stage.html">get_stage</a>
+  
+    <a class="method" href="method.Compositor.get_top_window_group.html">get_top_window_group</a>
+  
+    <a class="method" href="method.Compositor.get_window_actors.html">get_window_actors</a>
+  
+    <a class="method" href="method.Compositor.get_window_group.html">get_window_group</a>
+  
+    <a class="method current" href="method.Compositor.set_background_blur_params.html">set_background_blur_params</a>
+  
+  </div>
+</div>
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Meta</a><span class="sep"></span><a href="class.Compositor.html">Compositor</a><span class="sep"></span>set_background_blur_params</h1>
+  </header>
+
+  <section>
+    <div class="docblock">
+      <p></p>
+    </div>
+
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/src/meta/compositor.h#L100">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="n">meta_compositor_set_background_blur_params</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">MetaCompositor</span><span class="o">*</span><span class="w"> </span><span class="n">compositor</span><span class="p">,</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">blur_radius</span><span class="p">,</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">saturation</span><span class="p">,</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">noise</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/src/compositor/compositor.c#L1385">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Sets the parameters for compositor-rendered background blurs requested by
+clients through&nbsp;ext-background-effect-v1.</p>
+<p>The default parameters are a blur radius of 24.0, a saturation of 1.25, and
+a noise amount of&nbsp;0.015.</p>
+      </div>
+
+      <div class="docblock">
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <dl class="arguments">
+          
+
+          
+          <dt class="arg-name"><code>blur_radius</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>float</code></p>
+            <p>Blur radius in pixels for compositor-rendered background&nbsp;effects.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>saturation</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>float</code></p>
+            <p>Color boost applied after blurring; 1.0 leaves colors unchanged,
+  values above 1.0 increase color relative to&nbsp;luma.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>noise</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>float</code></p>
+            <p>Amount of surface-space grain to add after blurring; 0.0 disables&nbsp;it.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+
+          
+        </dl>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

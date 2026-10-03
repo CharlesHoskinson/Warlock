@@ -1,0 +1,354 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cogl.Framebuffer.set_depth_write_enabled</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Cogl-51"/>
+  
+
+  
+  <meta priority="og:title" content="Cogl.Framebuffer.set_depth_write_enabled"/>
+  <meta priority="og:description" content="Reference for Cogl.Framebuffer.set_depth_write_enabled"/>
+  <meta name="twitter:title" content="Cogl.Framebuffer.set_depth_write_enabled"/>
+  <meta name="twitter:description" content="Reference for Cogl.Framebuffer.set_depth_write_enabled"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Cogl" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Cogl</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Framebuffer.html">Framebuffer</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Framebuffer.allocate.html">allocate</a>
+  
+    <a class="method" href="method.Framebuffer.bind_renderbuffers.html">bind_renderbuffers</a>
+  
+    <a class="method" href="method.Framebuffer.blit.html">blit</a>
+  
+    <a class="method" href="method.Framebuffer.blit_region.html">blit_region</a>
+  
+    <a class="method" href="method.Framebuffer.clear.html">clear</a>
+  
+    <a class="method" href="method.Framebuffer.clear4f.html">clear4f</a>
+  
+    <a class="method" href="method.Framebuffer.discard_buffers.html">discard_buffers</a>
+  
+    <a class="method" href="method.Framebuffer.draw_multitextured_rectangle.html">draw_multitextured_rectangle</a>
+  
+    <a class="method" href="method.Framebuffer.draw_rectangle.html">draw_rectangle</a>
+  
+    <a class="method" href="method.Framebuffer.draw_rectangles.html">draw_rectangles</a>
+  
+    <a class="method" href="method.Framebuffer.draw_textured_rectangle.html">draw_textured_rectangle</a>
+  
+    <a class="method" href="method.Framebuffer.draw_textured_rectangles.html">draw_textured_rectangles</a>
+  
+    <a class="method" href="method.Framebuffer.finish.html">finish</a>
+  
+    <a class="method" href="method.Framebuffer.flush.html">flush</a>
+  
+    <a class="method" href="method.Framebuffer.frustum.html">frustum</a>
+  
+    <a class="method" href="method.Framebuffer.get_alpha_bits.html">get_alpha_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_blue_bits.html">get_blue_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_context.html">get_context</a>
+  
+    <a class="method" href="method.Framebuffer.get_depth_write_enabled.html">get_depth_write_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.get_dither_enabled.html">get_dither_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.get_green_bits.html">get_green_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_height.html">get_height</a>
+  
+    <a class="method" href="method.Framebuffer.get_internal_format.html">get_internal_format</a>
+  
+    <a class="method" href="method.Framebuffer.get_modelview_matrix.html">get_modelview_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.get_projection_matrix.html">get_projection_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.get_red_bits.html">get_red_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport4fv.html">get_viewport4fv</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_height.html">get_viewport_height</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_width.html">get_viewport_width</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_x.html">get_viewport_x</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_y.html">get_viewport_y</a>
+  
+    <a class="method" href="method.Framebuffer.get_width.html">get_width</a>
+  
+    <a class="method" href="method.Framebuffer.orthographic.html">orthographic</a>
+  
+    <a class="method" href="method.Framebuffer.peek_renderbuffers.html">peek_renderbuffers</a>
+  
+    <a class="method" href="method.Framebuffer.perspective.html">perspective</a>
+  
+    <a class="method" href="method.Framebuffer.pop_clip.html">pop_clip</a>
+  
+    <a class="method" href="method.Framebuffer.pop_matrix.html">pop_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.push_matrix.html">push_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.push_rectangle_clip.html">push_rectangle_clip</a>
+  
+    <a class="method" href="method.Framebuffer.push_region_clip.html">push_region_clip</a>
+  
+    <a class="method" href="method.Framebuffer.read_pixels.html">read_pixels</a>
+  
+    <a class="method" href="method.Framebuffer.read_pixels_into_bitmap.html">read_pixels_into_bitmap</a>
+  
+    <a class="method" href="method.Framebuffer.rotate.html">rotate</a>
+  
+    <a class="method" href="method.Framebuffer.scale.html">scale</a>
+  
+    <a class="method current" href="method.Framebuffer.set_depth_write_enabled.html">set_depth_write_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.set_dither_enabled.html">set_dither_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.set_modelview_matrix.html">set_modelview_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.set_projection_matrix.html">set_projection_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.set_viewport.html">set_viewport</a>
+  
+    <a class="method" href="method.Framebuffer.transform.html">transform</a>
+  
+    <a class="method" href="method.Framebuffer.translate.html">translate</a>
+  
+  </div>
+</div>
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Cogl</a><span class="sep"></span><a href="class.Framebuffer.html">Framebuffer</a><span class="sep"></span>set_depth_write_enabled</h1>
+  </header>
+
+  <section>
+    <div class="docblock">
+      <p></p>
+    </div>
+
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/cogl/cogl/cogl-framebuffer.h#L602">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="n">cogl_framebuffer_set_depth_write_enabled</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">CoglFramebuffer</span><span class="o">*</span><span class="w"> </span><span class="n">framebuffer</span><span class="p">,</span>
+<span class="w">  </span><span class="n">gboolean</span><span class="w"> </span><span class="n">depth_write_enabled</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/cogl/cogl/cogl-framebuffer.h#L589">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Enables or disables depth buffer writing when rendering to <code>framebuffer</code>.
+If depth writing is enabled for both the framebuffer and the rendering
+pipeline, and the framebuffer has an associated depth buffer, depth
+information will be written to this buffer during&nbsp;rendering.</p>
+<p>Depth buffer writing is enabled by&nbsp;default.</p>
+      </div>
+
+      <div class="docblock">
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <dl class="arguments">
+          
+
+          
+          <dt class="arg-name"><code>depth_write_enabled</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>gboolean</code></p>
+            <p><code>TRUE</code> to enable depth writing or <code>FALSE</code> to&nbsp;disable.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+
+          
+        </dl>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

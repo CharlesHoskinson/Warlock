@@ -1,0 +1,385 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: false,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(),
+      pinned: Set(),
+      proxy: false,
+      transparent: Set()
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: false,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(),
+      pinned: Set(),
+      proxy: false,
+      transparent: Set()
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: false,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(),
+      pinned: Set(),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(1),
+      lease: false,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(),
+      pinned: Set(),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(1),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(),
+      pinned: Set(),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(1),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(),
+      pinned: Set(),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(1),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(1),
+      pinned: Set(),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(1),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(1),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(1),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(),
+      minimized: Set(1),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1)
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1, 2)
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(1),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1, 2)
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(1),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1, 2)
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(1),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1, 2)
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(1),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: false,
+      transparent: Set(1, 2)
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      focus: 0,
+      fullscreen: Set(1),
+      gpuReady: true,
+      inactive: Set(),
+      lease: true,
+      liveReady: false,
+      locked: false,
+      maximized: Set(2),
+      minimized: Set(1, 2),
+      pinned: Set(1),
+      proxy: true,
+      transparent: Set(1, 2)
+    }
+}
+
+[violation] Found an issue (31ms at 290 traces/second).
+Use --verbosity=3 to show executions.
+error: Invariant violated

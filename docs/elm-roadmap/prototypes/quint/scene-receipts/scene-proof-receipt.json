@@ -1,0 +1,221 @@
+{
+  "schema": 1,
+  "scope": "CPU-only bounded Quint simulation and exact named scenarios; no exhaustive model checking, native rendering/input acceptance or desktop changes.",
+  "protectedLauncher": "/home/hoskinson/window-integration-qa/qa_run.py",
+  "seedByCampaign": {
+    "named": 610103,
+    "invariants": 610104,
+    "mutationNamed": 610105,
+    "mutationInvariants": 610106
+  },
+  "selectedNames": [
+    "minimizedFullscreenExcludedTest",
+    "inactivePinnedExcludedTest",
+    "maximizedStaysOrdinaryTest",
+    "pinnedAboveFullscreenPolicyTest",
+    "transparentPaintInputDivergenceTest",
+    "inertRestoreProxyTest",
+    "atomicLiveHandoffTest",
+    "prematureHandoffRefusedTest",
+    "lockRevokesPublicationTest",
+    "gpuLossRevokesLeaseTest",
+    "lockCancelsRestoreProxyTest"
+  ],
+  "expectedNamedCount": 11,
+  "boundedSamples": 1000,
+  "boundedMaxSteps": 40,
+  "inputSha256": {
+    "scene_model.qnt": "2be6b91af90a89173ab45b6dc26e9aca693facac3eac9e8e54ffc10757161281",
+    "scene_tests.qnt": "7411a39acc4a7aff50ee1a16d629e9fb3b6216d2388d052e5bb34c6cf4d94a38",
+    "run_scene_proofs.py": "0b377aa0a002a9e7fe4ffc06ec6a2411eddf78f1ea44bbcd721368c903794faf"
+  },
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "quint",
+        "--version"
+      ],
+      "exit": 0,
+      "expectedExit": 0,
+      "expectationMet": true,
+      "seconds": 0.177,
+      "outputSha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene_tests.qnt"
+      ],
+      "exit": 0,
+      "expectedExit": 0,
+      "expectationMet": true,
+      "seconds": 0.546,
+      "outputSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "named-tests",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene_tests.qnt",
+        "--main=scene_tests",
+        "--match=^(minimizedFullscreenExcludedTest|inactivePinnedExcludedTest|maximizedStaysOrdinaryTest|pinnedAboveFullscreenPolicyTest|transparentPaintInputDivergenceTest|inertRestoreProxyTest|atomicLiveHandoffTest|prematureHandoffRefusedTest|lockRevokesPublicationTest|gpuLossRevokesLeaseTest|lockCancelsRestoreProxyTest)$",
+        "--seed=610103",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/accepted_{test}_{seq}.itf.json"
+      ],
+      "exit": 0,
+      "expectedExit": 0,
+      "expectationMet": true,
+      "seconds": 0.605,
+      "outputSha256": "6e157a3885d183a384e1ec23adb7c44b596a4cda183b3c01a6d0a8784ae3a0e5"
+    },
+    {
+      "name": "bounded-invariants",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene_model.qnt",
+        "--main=scene",
+        "--invariants",
+        "noExcludedPaint",
+        "noExcludedInput",
+        "focusSafe",
+        "proxyInert",
+        "leaseValid",
+        "proxyValid",
+        "--seed=610104",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--backend=typescript"
+      ],
+      "exit": 0,
+      "expectedExit": 0,
+      "expectationMet": true,
+      "seconds": 1.566,
+      "outputSha256": "f385a6d9f925f3806fb57e193ac883265bc01afe72e8d1c1d18d42be79f86f3d"
+    },
+    {
+      "name": "minimized-eligible-named-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/minimized-eligible_tests.qnt",
+        "--main=scene_tests",
+        "--match=^minimizedFullscreenExcludedTest$",
+        "--seed=610105",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/minimized-eligible_{test}_{seq}.itf.json"
+      ],
+      "exit": 1,
+      "expectedExit": 1,
+      "expectationMet": true,
+      "seconds": 0.546,
+      "outputSha256": "5f340a6eed64d48e0b48552bafe2f05db7c0261b23d01422ced571cf0a9a4aef"
+    },
+    {
+      "name": "minimized-eligible-invariant-counterexample",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/minimized-eligible.qnt",
+        "--main=scene",
+        "--invariant=noExcludedPaint",
+        "--seed=610106",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/minimized-eligible_invariant_{seq}.itf.json"
+      ],
+      "exit": 1,
+      "expectedExit": 1,
+      "expectationMet": true,
+      "seconds": 0.45,
+      "outputSha256": "465ac74116deab650989e17df8783b71f8ddca9736988285cdcfa403569f9134"
+    },
+    {
+      "name": "proxy-interactive-named-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/proxy-interactive_tests.qnt",
+        "--main=scene_tests",
+        "--match=^inertRestoreProxyTest$",
+        "--seed=610105",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/proxy-interactive_{test}_{seq}.itf.json"
+      ],
+      "exit": 1,
+      "expectedExit": 1,
+      "expectationMet": true,
+      "seconds": 0.538,
+      "outputSha256": "e7aac5f6c04512833420ab28e3912ca3537cd53720c6b4e722b0166789807c32"
+    },
+    {
+      "name": "proxy-interactive-invariant-counterexample",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/proxy-interactive.qnt",
+        "--main=scene",
+        "--invariant=proxyInert",
+        "--seed=610106",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/proxy-interactive_invariant_{seq}.itf.json"
+      ],
+      "exit": 1,
+      "expectedExit": 1,
+      "expectationMet": true,
+      "seconds": 0.506,
+      "outputSha256": "dcf843ddaa4a8fe44d96133dbe60203de1b5a8855ffac2d259f57a9a540a70c7"
+    },
+    {
+      "name": "gpu-lease-survives-named-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/gpu-lease-survives_tests.qnt",
+        "--main=scene_tests",
+        "--match=^gpuLossRevokesLeaseTest$",
+        "--seed=610105",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/gpu-lease-survives_{test}_{seq}.itf.json"
+      ],
+      "exit": 1,
+      "expectedExit": 1,
+      "expectationMet": true,
+      "seconds": 0.566,
+      "outputSha256": "d35cddd9fafbf97fea4ae5cdcb38adc2e0df8232f58decf8022d576d1c201341"
+    },
+    {
+      "name": "gpu-lease-survives-invariant-counterexample",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/gpu-lease-survives.qnt",
+        "--main=scene",
+        "--invariant=leaseValid",
+        "--seed=610106",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/gpu-lease-survives_invariant_{seq}.itf.json"
+      ],
+      "exit": 1,
+      "expectedExit": 1,
+      "expectationMet": true,
+      "seconds": 0.486,
+      "outputSha256": "f0b43e70d0b10b1affcc5c1880219f945197628c39211709397b338c16455d0e"
+    }
+  ],
+  "allExpectationsMet": true
+}

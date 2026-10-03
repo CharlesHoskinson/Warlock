@@ -1,0 +1,1196 @@
+Running as unit: qa-harness-a5bd9d5896b64a1faedacdac98b3ecde.scope; invocation ID: 9fe45b8bd46e4e85b7c8fc51c03cb9c3
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 0,
+      commits: Set(),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Pending",
+      dependentEffects: 0,
+      effects: 0,
+      epoch: 1,
+      incarnation: 1,
+      reqDeadline: 0,
+      reqEpoch: 0,
+      reqId: 0,
+      reqIncarnation: 0,
+      reqRevision: 0,
+      revision: 1,
+      seq: 0,
+      status: "Idle",
+      unsafe: false,
+      used: Set()
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 0,
+      commits: Set(),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 0,
+      epoch: 1,
+      incarnation: 1,
+      reqDeadline: 0,
+      reqEpoch: 0,
+      reqId: 0,
+      reqIncarnation: 0,
+      reqRevision: 0,
+      revision: 1,
+      seq: 0,
+      status: "Idle",
+      unsafe: false,
+      used: Set()
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 0,
+      commits: Set(),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 0,
+      epoch: 1,
+      incarnation: 1,
+      reqDeadline: 0,
+      reqEpoch: 0,
+      reqId: 0,
+      reqIncarnation: 0,
+      reqRevision: 0,
+      revision: 1,
+      seq: 0,
+      status: "Idle",
+      unsafe: false,
+      used: Set()
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 0,
+      commits: Set(),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 0,
+      epoch: 1,
+      incarnation: 2,
+      reqDeadline: 0,
+      reqEpoch: 0,
+      reqId: 0,
+      reqIncarnation: 0,
+      reqRevision: 0,
+      revision: 1,
+      seq: 0,
+      status: "Idle",
+      unsafe: false,
+      used: Set()
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 0,
+      commits: Set(),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 0,
+      epoch: 1,
+      incarnation: 3,
+      reqDeadline: 0,
+      reqEpoch: 0,
+      reqId: 0,
+      reqIncarnation: 0,
+      reqRevision: 0,
+      revision: 1,
+      seq: 0,
+      status: "Idle",
+      unsafe: false,
+      used: Set()
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 0,
+      commits: Set(),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 0,
+      epoch: 1,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 1,
+      seq: 0,
+      status: "Pending",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 0,
+      commits: Set(1),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 1,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 1,
+      seq: 0,
+      status: "Committed",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 1,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 1,
+      seq: 0,
+      status: "Committed",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 1,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 1,
+      seq: 0,
+      status: "Committed",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 1,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 2,
+      seq: 0,
+      status: "Committed",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: true,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 2,
+      seq: 0,
+      status: "Committed",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: true,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 2,
+      seq: 0,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 1,
+      depIncarnation: 1,
+      depRevision: 1,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 2,
+      seq: 2,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 2,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 2,
+      seq: 2,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 2,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 2,
+      seq: 2,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 2,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 2,
+      seq: 2,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 2,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 3,
+      seq: 2,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 1,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 2,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 2,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 2,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Committed",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 3,
+      reqEpoch: 1,
+      reqId: 1,
+      reqIncarnation: 3,
+      reqRevision: 1,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1)
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Committed",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Pending",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Committed",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 2,
+      incarnation: 3,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Pending",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 2,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Committed",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 3,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Pending",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 3,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Pending",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 3,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 3,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 3,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 3,
+      depRevision: 3,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 2,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 3,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 4,
+      seq: 4,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 4,
+      seq: 6,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 5,
+      seq: 6,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 5,
+      seq: 6,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 5,
+      seq: 6,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 3,
+      dependency: "Refused",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 5,
+      seq: 6,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      badDependency: false,
+      barrier: false,
+      clock: 3,
+      commits: Set(1),
+      depEpoch: 3,
+      depIncarnation: 4,
+      depRevision: 5,
+      dependency: "Unknown",
+      dependentEffects: 0,
+      effects: 1,
+      epoch: 3,
+      incarnation: 4,
+      reqDeadline: 5,
+      reqEpoch: 2,
+      reqId: 2,
+      reqIncarnation: 3,
+      reqRevision: 3,
+      revision: 5,
+      seq: 6,
+      status: "Refused",
+      unsafe: false,
+      used: Set(1, 2)
+    }
+}
+
+[ok] No violation found (178ms at 11236 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

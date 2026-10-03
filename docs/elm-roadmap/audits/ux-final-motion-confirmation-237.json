@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "verdict": "confirmed",
+  "scope": "Motion, perceived performance and visual feedback requirements only; implementation/native acceptance remain pending.",
+  "reviewedRequirementsSha256": "37dd78f10cf15a9e016bebbf0bca312a2391a5a9be498328247cac7eedb95a83",
+  "requirementCount": 237,
+  "initialReviewRetained": "ux-final-motion.json",
+  "dispositions": [
+    {
+      "finding": "UX-MOTION-001",
+      "status": "confirmed-corrected",
+      "requirements": [
+        "ELM-UI-015",
+        "ELM-UI-016"
+      ],
+      "basis": "Bounded accessible pending/reconciling status and native success correlation; distinct visual/accessibility preview states; feedback threshold blocks qualification when missing."
+    },
+    {
+      "finding": "UX-MOTION-002",
+      "status": "confirmed-corrected",
+      "requirements": [
+        "ELM-UI-018"
+      ],
+      "basis": "Mid-flight settling preserves deadline/focus and one proxy retirement; overlay fixtures include switcher/Task View/snap; disabling does not replay completed motion."
+    },
+    {
+      "finding": "UX-MOTION-003",
+      "status": "confirmed-corrected",
+      "requirements": [
+        "ELM-UI-017"
+      ],
+      "basis": "Frozen quiescence stops recurring work while preserving authorized retention/control/cleanup; reopen validates generation; soak qualifies power/resources."
+    }
+  ],
+  "additionalDocumentHashes": {
+    "INTERACTION.md": "ba067a385770cffc797bed8ae2232ac07c9bbcb30cf77dc2d028d2f7d70ee554"
+  },
+  "implementationTested": false
+}

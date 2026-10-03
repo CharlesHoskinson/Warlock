@@ -1,0 +1,786 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.BindConstraint</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.BindConstraint"/>
+  <meta property="og:description" content="Reference for Clutter.BindConstraint"/>
+  <meta name="twitter:title" content="Clutter.BindConstraint"/>
+  <meta name="twitter:description" content="Reference for Clutter.BindConstraint"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.BindConstraint.html#description">BindConstraint</a>
+  </div>
+</div>
+
+
+  
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.BindConstraint.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.BindConstraint.get_coordinate.html">get_coordinate</a>
+  
+    <a class="method" href="method.BindConstraint.get_offset.html">get_offset</a>
+  
+    <a class="method" href="method.BindConstraint.get_source.html">get_source</a>
+  
+    <a class="method" href="method.BindConstraint.set_coordinate.html">set_coordinate</a>
+  
+    <a class="method" href="method.BindConstraint.set_offset.html">set_offset</a>
+  
+    <a class="method" href="method.BindConstraint.set_source.html">set_source</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.BindConstraint.coordinate.html">coordinate</a>
+  
+    <a class="property" href="property.BindConstraint.offset.html">offset</a>
+  
+    <a class="property" href="property.BindConstraint.source.html">source</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>BindConstraint</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-bind-constraint.c#L25">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class Clutter.BindConstraint : Clutter.Constraint
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>A constraint binding the position or size of an&nbsp;actor</p>
+<p><code>ClutterBindConstraint</code> is a <a href="class.Constraint.html"><code>ClutterConstraint</code></a> that binds the
+position or the size of the <a href="class.Actor.html"><code>ClutterActor</code></a> to which it is applied
+to the the position or the size of another <a href="class.Actor.html"><code>ClutterActor</code></a>, or&nbsp;&#8220;source&#8221;.</p>
+<p>An offset can be applied to the constraint, to avoid overlapping. The offset
+can also be animated. For instance, the following code will set up three
+actors to be bound to the same&nbsp;origin:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">// source</span>
+<span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clutter_actor_new</span><span class="w"> </span><span class="p">();</span>
+<span class="n">clutter_actor_set_background_color</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">red_color</span><span class="p">);</span>
+<span class="n">clutter_actor_set_position</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">x_pos</span><span class="p">,</span><span class="w"> </span><span class="n">y_pos</span><span class="p">);</span>
+<span class="n">clutter_actor_set_size</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+
+<span class="c1">// second rectangle</span>
+<span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clutter_actor_new</span><span class="w"> </span><span class="p">();</span>
+<span class="n">clutter_actor_set_background_color</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">green_color</span><span class="p">);</span>
+<span class="n">clutter_actor_set_size</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="n">clutter_actor_set_opacity</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">constraint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clutter_bind_constraint_new</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">CLUTTER_BIND_X</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">clutter_actor_add_constraint_with_name</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;green-x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">constraint</span><span class="p">);</span>
+<span class="n">constraint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clutter_bind_constraint_new</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">CLUTTER_BIND_Y</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">clutter_actor_add_constraint_with_name</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;green-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">constraint</span><span class="p">);</span>
+
+<span class="c1">// third rectangle</span>
+<span class="n">rect</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clutter_actor_new</span><span class="w"> </span><span class="p">();</span>
+<span class="n">clutter_actor_set_background_color</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="o">&amp;</span><span class="n">blue_color</span><span class="p">);</span>
+<span class="n">clutter_actor_set_size</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span>
+<span class="n">clutter_actor_set_opacity</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="n">constraint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clutter_bind_constraint_new</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">CLUTTER_BIND_X</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">clutter_actor_add_constraint_with_name</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;blue-x&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">constraint</span><span class="p">);</span>
+<span class="n">constraint</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">clutter_bind_constraint_new</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="w"> </span><span class="n">CLUTTER_BIND_Y</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0</span><span class="p">);</span>
+<span class="n">clutter_actor_add_constraint_with_name</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="s">&quot;blue-y&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">constraint</span><span class="p">);</span>
+</code></pre></div>
+
+<p>The following code animates the second and third rectangles to &#8220;expand&#8221;
+them horizontally from underneath the first&nbsp;rectangle:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">clutter_actor_animate</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">CLUTTER_EASE_OUT_CUBIC</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span>
+<span class="w">                       </span><span class="s">&quot;@constraints.green-x.offset&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">100.0</span><span class="p">,</span>
+<span class="w">                       </span><span class="s">&quot;opacity&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span>
+<span class="w">                       </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="n">clutter_actor_animate</span><span class="w"> </span><span class="p">(</span><span class="n">rect</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="w"> </span><span class="n">CLUTTER_EASE_OUT_CUBIC</span><span class="p">,</span><span class="w"> </span><span class="mi">250</span><span class="p">,</span>
+<span class="w">                       </span><span class="s">&quot;@constraints.blue-x.offset&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">200.0</span><span class="p">,</span>
+<span class="w">                       </span><span class="s">&quot;opacity&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">255</span><span class="p">,</span>
+<span class="w">                       </span><span class="nb">NULL</span><span class="p">);</span>
+</code></pre></div>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.BindConstraint">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="144pt" height="332pt"
+ viewBox="0.00 0.00 144.00 332.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 328)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterBindConstraint">
+<path fill="none" stroke="black" d="M124,-36C124,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 124,0 124,0 130,0 136,-6 136,-12 136,-12 136,-24 136,-24 136,-30 130,-36 124,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="68" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterBindConstraint</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node link">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:href="class.Constraint.html" xlink:title="ClutterConstraint">
+<path fill="none" stroke="black" d="M110.88,-108C110.88,-108 25.12,-108 25.12,-108 19.12,-108 13.13,-102 13.13,-96 13.13,-96 13.13,-84 13.13,-84 13.13,-78 19.13,-72 25.13,-72 25.13,-72 110.88,-72 110.88,-72 116.88,-72 122.88,-78 122.88,-84 122.88,-84 122.88,-96 122.88,-96 122.88,-102 116.88,-108 110.88,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="68" y="-83.83" font-family="Times,serif" font-size="14.00">ClutterConstraint</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge4" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M68,-71.7C68,-60.85 68,-46.92 68,-36.1"/>
+</g>
+<!-- ancestor_1 -->
+<g id="node3" class="node link">
+<title>ancestor_1</title>
+<g id="a_node3"><a xlink:href="class.ActorMeta.html" xlink:title="ClutterActorMeta">
+<path fill="none" stroke="black" d="M112.38,-180C112.38,-180 23.62,-180 23.62,-180 17.62,-180 11.62,-174 11.62,-168 11.62,-168 11.62,-156 11.62,-156 11.62,-150 17.62,-144 23.62,-144 23.62,-144 112.38,-144 112.38,-144 118.38,-144 124.38,-150 124.38,-156 124.38,-156 124.38,-168 124.38,-168 124.38,-174 118.38,-180 112.38,-180"/>
+<text xml:space="preserve" text-anchor="middle" x="68" y="-155.82" font-family="Times,serif" font-size="14.00">ClutterActorMeta</text>
+</a>
+</g>
+</g>
+<!-- ancestor_1&#45;&#45;ancestor_0 -->
+<g id="edge3" class="edge">
+<title>ancestor_1&#45;&#45;ancestor_0</title>
+<path fill="none" stroke="black" d="M68,-143.7C68,-132.85 68,-118.92 68,-108.1"/>
+</g>
+<!-- ancestor_2 -->
+<g id="node4" class="node">
+<title>ancestor_2</title>
+<g id="a_node4"><a xlink:title="GObject.InitiallyUnowned">
+<path fill="none" stroke="black" d="M116.5,-252C116.5,-252 19.5,-252 19.5,-252 13.5,-252 7.5,-246 7.5,-240 7.5,-240 7.5,-228 7.5,-228 7.5,-222 13.5,-216 19.5,-216 19.5,-216 116.5,-216 116.5,-216 122.5,-216 128.5,-222 128.5,-228 128.5,-228 128.5,-240 128.5,-240 128.5,-246 122.5,-252 116.5,-252"/>
+<text xml:space="preserve" text-anchor="middle" x="68" y="-227.82" font-family="Times,serif" font-size="14.00">GInitiallyUnowned</text>
+</a>
+</g>
+</g>
+<!-- ancestor_2&#45;&#45;ancestor_1 -->
+<g id="edge2" class="edge">
+<title>ancestor_2&#45;&#45;ancestor_1</title>
+<path fill="none" stroke="black" d="M68,-215.7C68,-204.85 68,-190.92 68,-180.1"/>
+</g>
+<!-- ancestor_3 -->
+<g id="node5" class="node">
+<title>ancestor_3</title>
+<g id="a_node5"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M86.88,-324C86.88,-324 49.12,-324 49.12,-324 43.12,-324 37.12,-318 37.12,-312 37.12,-312 37.12,-300 37.12,-300 37.12,-294 43.12,-288 49.12,-288 49.12,-288 86.88,-288 86.88,-288 92.88,-288 98.88,-294 98.88,-300 98.88,-300 98.88,-312 98.88,-312 98.88,-318 92.88,-324 86.88,-324"/>
+<text xml:space="preserve" text-anchor="middle" x="68" y="-299.82" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_3&#45;&#45;ancestor_2 -->
+<g id="edge1" class="edge">
+<title>ancestor_3&#45;&#45;ancestor_2</title>
+<path fill="none" stroke="black" d="M68,-287.7C68,-276.85 68,-262.92 68,-252.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.Constraint.html" title="Constraint">ClutterConstraint</a></li>
+          
+        
+          
+          <li class="class"><a href="class.ActorMeta.html" title="ActorMeta">ClutterActorMeta</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.InitiallyUnowned.html" data-namespace="GObject">GInitiallyUnowned</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.BindConstraint.new.html">clutter_bind_constraint_new</a></h6>
+          <div class="docblock">
+            <p>Creates a new constraint, binding a <code>ClutterActor</code><span class="quo">&#8216;</span>s position to
+the given <code>coordinate</code> of the position of <code>source</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.BindConstraint.get_coordinate.html">clutter_bind_constraint_get_coordinate</a></h6>
+          <div class="docblock">
+            <p>Retrieves the bound coordinate of the&nbsp;constraint.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BindConstraint.get_offset.html">clutter_bind_constraint_get_offset</a></h6>
+          <div class="docblock">
+            <p>Retrieves the offset set using <code>clutter_bind_constraint_set_offset()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BindConstraint.get_source.html">clutter_bind_constraint_get_source</a></h6>
+          <div class="docblock">
+            <p>Retrieves the <code>ClutterActor</code> set using <code>clutter_bind_constraint_set_source()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BindConstraint.set_coordinate.html">clutter_bind_constraint_set_coordinate</a></h6>
+          <div class="docblock">
+            <p>Sets the coordinate to bind in the&nbsp;constraint.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BindConstraint.set_offset.html">clutter_bind_constraint_set_offset</a></h6>
+          <div class="docblock">
+            <p>Sets the offset to be applied to the&nbsp;constraint.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BindConstraint.set_source.html">clutter_bind_constraint_set_source</a></h6>
+          <div class="docblock">
+            <p>Sets the source <code>ClutterActor</code> for the&nbsp;constraint.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Constraint.html">ClutterConstraint</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="method.Constraint.update_preferred_size.html">clutter_constraint_update_preferred_size</a></h6><div class="docblock">
+              <p>Asks the <code>constraint</code> to update the size request of a <code>ClutterActor</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="method.ActorMeta.get_actor.html">clutter_actor_meta_get_actor</a></h6><div class="docblock">
+              <p>Retrieves a pointer to the <code>ClutterActor</code> that owns <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_enabled.html">clutter_actor_meta_get_enabled</a></h6><div class="docblock">
+              <p>Retrieves whether <code>meta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_name.html">clutter_actor_meta_get_name</a></h6><div class="docblock">
+              <p>Retrieves the name set using <code>clutter_actor_meta_set_name()</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_enabled.html">clutter_actor_meta_set_enabled</a></h6><div class="docblock">
+              <p>Sets whether <code>meta</code> should be enabled or&nbsp;not.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_name.html">clutter_actor_meta_set_name</a></h6><div class="docblock">
+              <p>Sets the name of <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.BindConstraint.coordinate.html">Clutter.BindConstraint:coordinate</a></h6>
+          <div class="docblock">
+            <p>The coordinate to be&nbsp;bound.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.BindConstraint.offset.html">Clutter.BindConstraint:offset</a></h6>
+          <div class="docblock">
+            <p>The offset, in pixels, to be applied to the&nbsp;binding.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.BindConstraint.source.html">Clutter.BindConstraint:source</a></h6>
+          <div class="docblock">
+            <p>The <code>ClutterActor</code> used as the source for the&nbsp;binding.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (3)</h5><div class="docblock">
+          
+            <h6><a href="property.ActorMeta.actor.html">Clutter.ActorMeta:actor</a></h6><div class="docblock">
+              <p>The <code>ClutterActor</code> attached to the <code>ClutterActorMeta</code> instance.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.enabled.html">Clutter.ActorMeta:enabled</a></h6><div class="docblock">
+              <p>Whether or not the <code>ClutterActorMeta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.name.html">Clutter.ActorMeta:name</a></h6><div class="docblock">
+              <p>The unique name to access the <code>ClutterActorMeta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+      
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterBindConstraintClass {
+  ClutterConstraintClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: ClutterConstraintClass</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

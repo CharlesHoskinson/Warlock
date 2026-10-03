@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "reviewerRole": "UI/UX expert: navigation and information architecture",
+  "verdict": "confirmed",
+  "requirementsSha256": "37dd78f10cf15a9e016bebbf0bca312a2391a5a9be498328247cac7eedb95a83",
+  "interactionSha256": "ba067a385770cffc797bed8ae2232ac07c9bbcb30cf77dc2d028d2f7d70ee554",
+  "status": "Document contract confirmed; implementation/native/usability acceptance pending",
+  "findings": [
+    {
+      "id": "UX-NAV-001",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-004",
+        "ELM-UI-001",
+        "ELM-UI-002"
+      ]
+    },
+    {
+      "id": "UX-NAV-002",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-005"
+      ]
+    },
+    {
+      "id": "UX-NAV-003",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-003"
+      ]
+    },
+    {
+      "id": "UX-NAV-004",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-006",
+        "ELM-UI-002",
+        "ELM-UI-011"
+      ]
+    },
+    {
+      "id": "UX-NAV-005",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-007",
+        "ELM-UI-010",
+        "ELM-UI-015"
+      ]
+    },
+    {
+      "id": "UX-NAV-006",
+      "status": "resolved in planning contract",
+      "resolutionRequirements": [
+        "ELM-UI-008",
+        "ELM-UI-013"
+      ]
+    }
+  ],
+  "limits": [
+    "Original review is retained unchanged.",
+    "This confirms explicit decisions and scenario obligations, not executed user journeys.",
+    "P0 must freeze numeric budgets and usability fixture oracles before qualification."
+  ]
+}

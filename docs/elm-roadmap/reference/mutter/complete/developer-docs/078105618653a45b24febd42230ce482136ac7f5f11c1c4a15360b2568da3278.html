@@ -1,0 +1,1316 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cogl.Framebuffer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Cogl-51"/>
+  
+
+  
+  <meta property="og:title" content="Cogl.Framebuffer"/>
+  <meta property="og:description" content="Reference for Cogl.Framebuffer"/>
+  <meta name="twitter:title" content="Cogl.Framebuffer"/>
+  <meta name="twitter:description" content="Reference for Cogl.Framebuffer"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Cogl" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Cogl</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Framebuffer.html#description">Framebuffer</a>
+  </div>
+</div>
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Functions</h5>
+  <div class="links">
+  
+    <a class="func" href="type_func.Framebuffer.error_quark.html">error_quark</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Framebuffer.allocate.html">allocate</a>
+  
+    <a class="method" href="method.Framebuffer.bind_renderbuffers.html">bind_renderbuffers</a>
+  
+    <a class="method" href="method.Framebuffer.blit.html">blit</a>
+  
+    <a class="method" href="method.Framebuffer.blit_region.html">blit_region</a>
+  
+    <a class="method" href="method.Framebuffer.clear.html">clear</a>
+  
+    <a class="method" href="method.Framebuffer.clear4f.html">clear4f</a>
+  
+    <a class="method" href="method.Framebuffer.discard_buffers.html">discard_buffers</a>
+  
+    <a class="method" href="method.Framebuffer.draw_multitextured_rectangle.html">draw_multitextured_rectangle</a>
+  
+    <a class="method" href="method.Framebuffer.draw_rectangle.html">draw_rectangle</a>
+  
+    <a class="method" href="method.Framebuffer.draw_rectangles.html">draw_rectangles</a>
+  
+    <a class="method" href="method.Framebuffer.draw_textured_rectangle.html">draw_textured_rectangle</a>
+  
+    <a class="method" href="method.Framebuffer.draw_textured_rectangles.html">draw_textured_rectangles</a>
+  
+    <a class="method" href="method.Framebuffer.finish.html">finish</a>
+  
+    <a class="method" href="method.Framebuffer.flush.html">flush</a>
+  
+    <a class="method" href="method.Framebuffer.frustum.html">frustum</a>
+  
+    <a class="method" href="method.Framebuffer.get_alpha_bits.html">get_alpha_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_blue_bits.html">get_blue_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_context.html">get_context</a>
+  
+    <a class="method" href="method.Framebuffer.get_depth_write_enabled.html">get_depth_write_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.get_dither_enabled.html">get_dither_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.get_green_bits.html">get_green_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_height.html">get_height</a>
+  
+    <a class="method" href="method.Framebuffer.get_internal_format.html">get_internal_format</a>
+  
+    <a class="method" href="method.Framebuffer.get_modelview_matrix.html">get_modelview_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.get_projection_matrix.html">get_projection_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.get_red_bits.html">get_red_bits</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport4fv.html">get_viewport4fv</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_height.html">get_viewport_height</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_width.html">get_viewport_width</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_x.html">get_viewport_x</a>
+  
+    <a class="method" href="method.Framebuffer.get_viewport_y.html">get_viewport_y</a>
+  
+    <a class="method" href="method.Framebuffer.get_width.html">get_width</a>
+  
+    <a class="method" href="method.Framebuffer.orthographic.html">orthographic</a>
+  
+    <a class="method" href="method.Framebuffer.peek_renderbuffers.html">peek_renderbuffers</a>
+  
+    <a class="method" href="method.Framebuffer.perspective.html">perspective</a>
+  
+    <a class="method" href="method.Framebuffer.pop_clip.html">pop_clip</a>
+  
+    <a class="method" href="method.Framebuffer.pop_matrix.html">pop_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.push_matrix.html">push_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.push_rectangle_clip.html">push_rectangle_clip</a>
+  
+    <a class="method" href="method.Framebuffer.push_region_clip.html">push_region_clip</a>
+  
+    <a class="method" href="method.Framebuffer.read_pixels.html">read_pixels</a>
+  
+    <a class="method" href="method.Framebuffer.read_pixels_into_bitmap.html">read_pixels_into_bitmap</a>
+  
+    <a class="method" href="method.Framebuffer.rotate.html">rotate</a>
+  
+    <a class="method" href="method.Framebuffer.scale.html">scale</a>
+  
+    <a class="method" href="method.Framebuffer.set_depth_write_enabled.html">set_depth_write_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.set_dither_enabled.html">set_dither_enabled</a>
+  
+    <a class="method" href="method.Framebuffer.set_modelview_matrix.html">set_modelview_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.set_projection_matrix.html">set_projection_matrix</a>
+  
+    <a class="method" href="method.Framebuffer.set_viewport.html">set_viewport</a>
+  
+    <a class="method" href="method.Framebuffer.transform.html">transform</a>
+  
+    <a class="method" href="method.Framebuffer.translate.html">translate</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.Framebuffer.context.html">context</a>
+  
+    <a class="property" href="property.Framebuffer.driver-config.html">driver-config</a>
+  
+    <a class="property" href="property.Framebuffer.height.html">height</a>
+  
+    <a class="property" href="property.Framebuffer.width.html">width</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.Framebuffer.destroy.html">destroy</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.Framebuffer.allocate.html">allocate</a>
+  
+    <a class="method" href="vfunc.Framebuffer.get_bind_buffer.html">get_bind_buffer</a>
+  
+    <a class="method" href="vfunc.Framebuffer.is_y_flipped.html">is_y_flipped</a>
+  
+  </div>
+</div>
+
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Cogl</a><span class="sep" role="presentation"></span>Framebuffer</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+        </h4>
+
+        <pre><code>abstract class Cogl.Framebuffer : GObject.Object
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>No description available.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Cogl.Framebuffer">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="118pt" height="116pt"
+ viewBox="0.00 0.00 118.00 116.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 112)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="CoglFramebuffer">
+<path fill="none" stroke="black" d="M97.75,-36C97.75,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 97.75,0 97.75,0 103.75,0 109.75,-6 109.75,-12 109.75,-12 109.75,-24 109.75,-24 109.75,-30 103.75,-36 97.75,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="54.88" y="-11.82" font-family="Times,serif" font-size="14.00">CoglFramebuffer</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M73.75,-108C73.75,-108 36,-108 36,-108 30,-108 24,-102 24,-96 24,-96 24,-84 24,-84 24,-78 30,-72 36,-72 36,-72 73.75,-72 73.75,-72 79.75,-72 85.75,-78 85.75,-84 85.75,-84 85.75,-96 85.75,-96 85.75,-102 79.75,-108 73.75,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="54.88" y="-83.83" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge1" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M54.88,-71.7C54.88,-60.85 54.88,-46.92 54.88,-36.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+    <div class="descendants toggle-wrapper default-hide">
+      <h4 id="descendants">Descendants <a href="#descendants" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li class="class"><a href="class.Offscreen.html" title="Offscreen">CoglOffscreen</a></li>
+        
+          <li class="class"><a href="class.Onscreen.html" title="Onscreen">CoglOnscreen</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="type-functions">
+        Functions
+        <a href="#type-functions" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6><a href="type_func.Framebuffer.error_quark.html">cogl_framebuffer_error_quark</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.allocate.html">cogl_framebuffer_allocate</a></h6>
+          <div class="docblock">
+            <p>Explicitly allocates a configured <code>CoglFramebuffer</code> allowing developers to
+check and handle any errors that might arise from an unsupported
+configuration so that fallback configurations may be&nbsp;tried.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.bind_renderbuffers.html">cogl_framebuffer_bind_renderbuffers</a></h6>
+          <div class="docblock">
+            <p>Binds the depth/stencil <code>renderbuffers</code> to <code>framebuffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.blit.html">cogl_framebuffer_blit</a></h6>
+          <div class="docblock">
+            <p><code>return</code> <span class="caps">FALSE</span> for an immediately detected error, <span class="caps">TRUE</span>&nbsp;otherwise.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.blit_region.html">cogl_framebuffer_blit_region</a></h6>
+          <div class="docblock">
+            <p><code>return</code> <span class="caps">FALSE</span> for an immediately detected error, <span class="caps">TRUE</span>&nbsp;otherwise.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.clear.html">cogl_framebuffer_clear</a></h6>
+          <div class="docblock">
+            <p>Clears all the auxiliary buffers identified in the <code>buffers</code> mask, and if
+that includes the color buffer then the specified <code>color</code> is&nbsp;used.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.clear4f.html">cogl_framebuffer_clear4f</a></h6>
+          <div class="docblock">
+            <p>Clears all the auxiliary buffers identified in the <code>buffers</code> mask, and if
+that includes the color buffer then the specified <code>color</code> is&nbsp;used.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.discard_buffers.html">cogl_framebuffer_discard_buffers</a></h6>
+          <div class="docblock">
+            <p>Declares that the specified <code>buffers</code> no longer need to be referenced
+by any further rendering commands. This can be an important
+optimization to avoid subsequent frames of rendering depending on
+the results of a previous&nbsp;frame.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.draw_multitextured_rectangle.html">cogl_framebuffer_draw_multitextured_rectangle</a></h6>
+          <div class="docblock">
+            <p>Draws a textured rectangle to <code>framebuffer</code> with the given <code>pipeline</code>
+state with the top left corner positioned at (<code>x_1</code>, <code>y_1</code>) and the
+bottom right corner positioned at (<code>x_2</code>, <code>y_2</code>). As a pipeline may
+contain multiple texture layers this interface lets you supply
+texture coordinates for each layer of the&nbsp;pipeline.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.draw_rectangle.html">cogl_framebuffer_draw_rectangle</a></h6>
+          <div class="docblock">
+            <p>Draws a rectangle to <code>framebuffer</code> with the given <code>pipeline</code> state
+and with the top left corner positioned at (<code>x_1</code>, <code>y_1</code>) and the
+bottom right corner positioned at (<code>x_2</code>, <code>y_2</code>).</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.draw_rectangles.html">cogl_framebuffer_draw_rectangles</a></h6>
+          <div class="docblock">
+            <p>Draws a series of rectangles to <code>framebuffer</code> with the given
+<code>pipeline</code> state in the same way that
+<code>cogl_framebuffer_draw_rectangle()</code> does.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.draw_textured_rectangle.html">cogl_framebuffer_draw_textured_rectangle</a></h6>
+          <div class="docblock">
+            <p>Draws a textured rectangle to <code>framebuffer</code> using the given
+<code>pipeline</code> state with the top left corner positioned at (<code>x_1</code>, <code>y_1</code>)
+and the bottom right corner positioned at (<code>x_2</code>, <code>y_2</code>). The top
+left corner will have texture coordinates of (<code>s_1</code>, <code>t_1</code>) and the
+bottom right corner will have texture coordinates of (<code>s_2</code>, <code>t_2</code>).</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.draw_textured_rectangles.html">cogl_framebuffer_draw_textured_rectangles</a></h6>
+          <div class="docblock">
+            <p>Draws a series of rectangles to <code>framebuffer</code> with the given
+<code>pipeline</code> state in the same way that
+<code>cogl_framebuffer_draw_textured_rectangle()</code> does.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.finish.html">cogl_framebuffer_finish</a></h6>
+          <div class="docblock">
+            <p>This blocks the <span class="caps">CPU</span> until all pending rendering associated with the
+specified framebuffer has completed. It&#8217;s very rare that developers should
+ever need this level of synchronization with the <span class="caps">GPU</span> and should never be
+used unless you clearly understand why you need to explicitly force&nbsp;synchronization.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.flush.html">cogl_framebuffer_flush</a></h6>
+          <div class="docblock">
+            <p>Flushes <code>framebuffer</code> to ensure the current batch of commands is
+submitted to the <span class="caps">GPU</span>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.frustum.html">cogl_framebuffer_frustum</a></h6>
+          <div class="docblock">
+            <p>Replaces the current projection matrix with a perspective matrix
+for a given viewing frustum defined by 4 side clip planes that
+all cross through the origin and 2 near and far clip&nbsp;planes.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_alpha_bits.html">cogl_framebuffer_get_alpha_bits</a></h6>
+          <div class="docblock">
+            <p>Retrieves the number of alpha bits of <code>framebuffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_blue_bits.html">cogl_framebuffer_get_blue_bits</a></h6>
+          <div class="docblock">
+            <p>Retrieves the number of blue bits of <code>framebuffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_context.html">cogl_framebuffer_get_context</a></h6>
+          <div class="docblock">
+            <p>Can be used to query the <code>CoglContext</code> a given <code>framebuffer</code> was
+instantiated within. This is the <code>CoglContext</code> that was passed to
+<code>cogl_onscreen_new()</code> for&nbsp;example.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_depth_write_enabled.html">cogl_framebuffer_get_depth_write_enabled</a></h6>
+          <div class="docblock">
+            <p>Queries whether depth buffer writing is enabled for <code>framebuffer</code>. This
+can be controlled via&nbsp;cogl_framebuffer_set_depth_write_enabled().</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_dither_enabled.html">cogl_framebuffer_get_dither_enabled</a></h6>
+          <div class="docblock">
+            <p>Returns whether dithering has been requested for the given <code>framebuffer</code>.
+See <code>cogl_framebuffer_set_dither_enabled()</code> for more details about&nbsp;dithering.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_green_bits.html">cogl_framebuffer_get_green_bits</a></h6>
+          <div class="docblock">
+            <p>Retrieves the number of green bits of <code>framebuffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_height.html">cogl_framebuffer_get_height</a></h6>
+          <div class="docblock">
+            <p>Queries the current height of the given <code>framebuffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_internal_format.html">cogl_framebuffer_get_internal_format</a></h6>
+          <div class="docblock">
+            <p>Returns the pixel format used internally by the&nbsp;framebuffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_modelview_matrix.html">cogl_framebuffer_get_modelview_matrix</a></h6>
+          <div class="docblock">
+            <p>Stores the current model-view matrix in <code>matrix</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_projection_matrix.html">cogl_framebuffer_get_projection_matrix</a></h6>
+          <div class="docblock">
+            <p>Stores the current projection matrix in <code>matrix</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_red_bits.html">cogl_framebuffer_get_red_bits</a></h6>
+          <div class="docblock">
+            <p>Retrieves the number of red bits of <code>framebuffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_viewport4fv.html">cogl_framebuffer_get_viewport4fv</a></h6>
+          <div class="docblock">
+            <p>Queries the x, y, width and height components of the current viewport as set
+using <code>cogl_framebuffer_set_viewport()</code> or the default values which are 0, 0,
+framebuffer_width and framebuffer_height.  The values are written into the
+given <code>viewport</code> array.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_viewport_height.html">cogl_framebuffer_get_viewport_height</a></h6>
+          <div class="docblock">
+            <p>Queries the height of the viewport as set using <code>cogl_framebuffer_set_viewport()</code>
+or the default value which is the height of the&nbsp;framebuffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_viewport_width.html">cogl_framebuffer_get_viewport_width</a></h6>
+          <div class="docblock">
+            <p>Queries the width of the viewport as set using <code>cogl_framebuffer_set_viewport()</code>
+or the default value which is the width of the&nbsp;framebuffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_viewport_x.html">cogl_framebuffer_get_viewport_x</a></h6>
+          <div class="docblock">
+            <p>Queries the x coordinate of the viewport origin as set using <code>cogl_framebuffer_set_viewport()</code>
+or the default value which is&nbsp;0.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_viewport_y.html">cogl_framebuffer_get_viewport_y</a></h6>
+          <div class="docblock">
+            <p>Queries the y coordinate of the viewport origin as set using <code>cogl_framebuffer_set_viewport()</code>
+or the default value which is&nbsp;0.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.get_width.html">cogl_framebuffer_get_width</a></h6>
+          <div class="docblock">
+            <p>Queries the current width of the given <code>framebuffer</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.orthographic.html">cogl_framebuffer_orthographic</a></h6>
+          <div class="docblock">
+            <p>Replaces the current projection matrix with an orthographic projection&nbsp;matrix.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.peek_renderbuffers.html">cogl_framebuffer_peek_renderbuffers</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.perspective.html">cogl_framebuffer_perspective</a></h6>
+          <div class="docblock">
+            <p>Replaces the current projection matrix with a perspective matrix
+based on the provided&nbsp;values.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.pop_clip.html">cogl_framebuffer_pop_clip</a></h6>
+          <div class="docblock">
+            <p>Reverts the clipping region to the state before the last call to&nbsp;cogl_framebuffer_push_rectangle_clip().</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.pop_matrix.html">cogl_framebuffer_pop_matrix</a></h6>
+          <div class="docblock">
+            <p>Restores the model-view matrix on the top of the matrix&nbsp;stack.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.push_matrix.html">cogl_framebuffer_push_matrix</a></h6>
+          <div class="docblock">
+            <p>Copies the current model-view matrix onto the matrix stack. The matrix
+can later be restored with&nbsp;cogl_framebuffer_pop_matrix().</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.push_rectangle_clip.html">cogl_framebuffer_push_rectangle_clip</a></h6>
+          <div class="docblock">
+            <p>Specifies a modelview transformed rectangular clipping area for all
+subsequent drawing operations. Any drawing commands that extend
+outside the rectangle will be clipped so that only the portion
+inside the rectangle will be displayed. The rectangle dimensions
+are transformed by the current model-view&nbsp;matrix.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.push_region_clip.html">cogl_framebuffer_push_region_clip</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.read_pixels.html">cogl_framebuffer_read_pixels</a></h6>
+          <div class="docblock">
+            <p>This is a convenience wrapper around
+<code>cogl_framebuffer_read_pixels_into_bitmap()</code> which allocates a
+temporary <code>CoglBitmap</code> to read pixel data directly into the given
+buffer. The rowstride of the buffer is assumed to be the width of
+the region times the bytes per pixel of the format. The source for
+the data is always taken from the color buffer. If you want to use
+any other rowstride or source, please use the
+<code>cogl_framebuffer_read_pixels_into_bitmap()</code> function&nbsp;directly.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.read_pixels_into_bitmap.html">cogl_framebuffer_read_pixels_into_bitmap</a></h6>
+          <div class="docblock">
+            <p>This reads a rectangle of pixels from the given framebuffer where
+position (0, 0) is the top left. The pixel at (x, y) is the first
+read, and a rectangle of pixels with the same size as the bitmap is
+read right and downwards from that&nbsp;point.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.rotate.html">cogl_framebuffer_rotate</a></h6>
+          <div class="docblock">
+            <p>Multiplies the current model-view matrix by one that rotates the
+model around the axis-vector specified by <code>x</code>, <code>y</code> and <code>z</code>. The
+rotation follows the right-hand thumb rule so for example rotating
+by 10 degrees about the axis-vector (0, 0, 1) causes a small
+counter-clockwise&nbsp;rotation.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.scale.html">cogl_framebuffer_scale</a></h6>
+          <div class="docblock">
+            <p>Multiplies the current model-view matrix by one that scales the x,
+y and z axes by the given&nbsp;values.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.set_depth_write_enabled.html">cogl_framebuffer_set_depth_write_enabled</a></h6>
+          <div class="docblock">
+            <p>Enables or disables depth buffer writing when rendering to <code>framebuffer</code>.
+If depth writing is enabled for both the framebuffer and the rendering
+pipeline, and the framebuffer has an associated depth buffer, depth
+information will be written to this buffer during&nbsp;rendering.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.set_dither_enabled.html">cogl_framebuffer_set_dither_enabled</a></h6>
+          <div class="docblock">
+            <p>Enables or disabled dithering if supported by the&nbsp;hardware.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.set_modelview_matrix.html">cogl_framebuffer_set_modelview_matrix</a></h6>
+          <div class="docblock">
+            <p>Sets <code>matrix</code> as the new model-view&nbsp;matrix.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.set_projection_matrix.html">cogl_framebuffer_set_projection_matrix</a></h6>
+          <div class="docblock">
+            <p>Sets <code>matrix</code> as the new projection&nbsp;matrix.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.set_viewport.html">cogl_framebuffer_set_viewport</a></h6>
+          <div class="docblock">
+            <p>Defines a scale and offset for everything rendered relative to the
+top-left of the destination&nbsp;framebuffer.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.transform.html">cogl_framebuffer_transform</a></h6>
+          <div class="docblock">
+            <p>Multiplies the current model-view matrix by the given&nbsp;matrix.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Framebuffer.translate.html">cogl_framebuffer_translate</a></h6>
+          <div class="docblock">
+            <p>Multiplies the current model-view matrix by one that translates the
+model along all three axes according to the given&nbsp;values.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Framebuffer.context.html">Cogl.Framebuffer:context</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Framebuffer.driver-config.html">Cogl.Framebuffer:driver-config</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Framebuffer.height.html">Cogl.Framebuffer:height</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Framebuffer.width.html">Cogl.Framebuffer:width</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.Framebuffer.destroy.html">Cogl.Framebuffer::destroy</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct CoglFramebufferClass {
+  gboolean (* allocate) (
+    CoglFramebuffer* framebuffer,
+    GError** error
+  );
+  CoglFramebuffer* (* get_bind_buffer) (
+    CoglFramebuffer* framebuffer
+  );
+  gboolean (* is_y_flipped) (
+    CoglFramebuffer* framebuffer
+  );
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>allocate: gboolean (* allocate) (
+    CoglFramebuffer* framebuffer,
+    GError** error
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>get_bind_buffer: CoglFramebuffer* (* get_bind_buffer) (
+    CoglFramebuffer* framebuffer
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>is_y_flipped: gboolean (* is_y_flipped) (
+    CoglFramebuffer* framebuffer
+  )</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-allocate"><a href="vfunc.Framebuffer.allocate.html">Cogl.FramebufferClass.allocate</a></h6>
+        <div class="docblock">
+          <p>Explicitly allocates a configured <code>CoglFramebuffer</code> allowing developers to
+check and handle any errors that might arise from an unsupported
+configuration so that fallback configurations may be&nbsp;tried.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_bind_buffer"><a href="vfunc.Framebuffer.get_bind_buffer.html">Cogl.FramebufferClass.get_bind_buffer</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-is_y_flipped"><a href="vfunc.Framebuffer.is_y_flipped.html">Cogl.FramebufferClass.is_y_flipped</a></h6>
+        <div class="docblock">
+          No description available.
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+<li class="toc-list-item"><a href="#type-functions"><span class="link-text">Functions</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

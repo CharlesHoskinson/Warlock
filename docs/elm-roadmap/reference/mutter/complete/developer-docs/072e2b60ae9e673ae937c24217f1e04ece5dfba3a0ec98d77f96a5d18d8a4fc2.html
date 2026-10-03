@@ -1,0 +1,657 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.Actor.remove_all_transitions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta priority="og:title" content="Clutter.Actor.remove_all_transitions"/>
+  <meta priority="og:description" content="Reference for Clutter.Actor.remove_all_transitions"/>
+  <meta name="twitter:title" content="Clutter.Actor.remove_all_transitions"/>
+  <meta name="twitter:description" content="Reference for Clutter.Actor.remove_all_transitions"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Actor.html">Actor</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Actor.add_accessible_state.html">add_accessible_state</a>
+  
+    <a class="method" href="method.Actor.add_action.html">add_action</a>
+  
+    <a class="method" href="method.Actor.add_action_full.html">add_action_full</a>
+  
+    <a class="method" href="method.Actor.add_action_with_name.html">add_action_with_name</a>
+  
+    <a class="method" href="method.Actor.add_child.html">add_child</a>
+  
+    <a class="method" href="method.Actor.add_constraint.html">add_constraint</a>
+  
+    <a class="method" href="method.Actor.add_constraint_with_name.html">add_constraint_with_name</a>
+  
+    <a class="method" href="method.Actor.add_effect.html">add_effect</a>
+  
+    <a class="method" href="method.Actor.add_effect_with_name.html">add_effect_with_name</a>
+  
+    <a class="method" href="method.Actor.add_transition.html">add_transition</a>
+  
+    <a class="method" href="method.Actor.allocate.html">allocate</a>
+  
+    <a class="method" href="method.Actor.allocate_align_fill.html">allocate_align_fill</a>
+  
+    <a class="method" href="method.Actor.allocate_available_size.html">allocate_available_size</a>
+  
+    <a class="method" href="method.Actor.allocate_preferred_size.html">allocate_preferred_size</a>
+  
+    <a class="method" href="method.Actor.apply_relative_transform_to_point.html">apply_relative_transform_to_point</a>
+  
+    <a class="method" href="method.Actor.apply_transform_to_point.html">apply_transform_to_point</a>
+  
+    <a class="method" href="method.Actor.bind_model.html">bind_model</a>
+  
+    <a class="method" href="method.Actor.bind_model_with_properties.html">bind_model_with_properties</a>
+  
+    <a class="method" href="method.Actor.clear_actions.html">clear_actions</a>
+  
+    <a class="method" href="method.Actor.clear_constraints.html">clear_constraints</a>
+  
+    <a class="method" href="method.Actor.clear_effects.html">clear_effects</a>
+  
+    <a class="method" href="method.Actor.contains.html">contains</a>
+  
+    <a class="method" href="method.Actor.continue_paint.html">continue_paint</a>
+  
+    <a class="method" href="method.Actor.continue_pick.html">continue_pick</a>
+  
+    <a class="method" href="method.Actor.create_pango_context.html">create_pango_context</a>
+  
+    <a class="method" href="method.Actor.create_pango_layout.html">create_pango_layout</a>
+  
+    <a class="method" href="method.Actor.create_texture_paint_node.html">create_texture_paint_node</a>
+  
+    <a class="method" href="method.Actor.destroy.html">destroy</a>
+  
+    <a class="method" href="method.Actor.destroy_all_children.html">destroy_all_children</a>
+  
+    <a class="method" href="method.Actor.event.html">event</a>
+  
+    <a class="method" href="method.Actor.get_abs_allocation_vertices.html">get_abs_allocation_vertices</a>
+  
+    <a class="method" href="method.Actor.get_accessible.html">get_accessible</a>
+  
+    <a class="method" href="method.Actor.get_accessible_name.html">get_accessible_name</a>
+  
+    <a class="method" href="method.Actor.get_accessible_role.html">get_accessible_role</a>
+  
+    <a class="method" href="method.Actor.get_action.html">get_action</a>
+  
+    <a class="method" href="method.Actor.get_actions.html">get_actions</a>
+  
+    <a class="method" href="method.Actor.get_allocation_box.html">get_allocation_box</a>
+  
+    <a class="method" href="method.Actor.get_background_color.html">get_background_color</a>
+  
+    <a class="method" href="method.Actor.get_child_at_index.html">get_child_at_index</a>
+  
+    <a class="method" href="method.Actor.get_child_transform.html">get_child_transform</a>
+  
+    <a class="method" href="method.Actor.get_children.html">get_children</a>
+  
+    <a class="method" href="method.Actor.get_clip.html">get_clip</a>
+  
+    <a class="method" href="method.Actor.get_clip_to_allocation.html">get_clip_to_allocation</a>
+  
+    <a class="method" href="method.Actor.get_color_state.html">get_color_state</a>
+  
+    <a class="method" href="method.Actor.get_constraint.html">get_constraint</a>
+  
+    <a class="method" href="method.Actor.get_constraints.html">get_constraints</a>
+  
+    <a class="method" href="method.Actor.get_content.html">get_content</a>
+  
+    <a class="method" href="method.Actor.get_content_box.html">get_content_box</a>
+  
+    <a class="method" href="method.Actor.get_content_gravity.html">get_content_gravity</a>
+  
+    <a class="method" href="method.Actor.get_content_repeat.html">get_content_repeat</a>
+  
+    <a class="method" href="method.Actor.get_content_scaling_filters.html">get_content_scaling_filters</a>
+  
+    <a class="method" href="method.Actor.get_context.html">get_context</a>
+  
+    <a class="method" href="method.Actor.get_cursor_type.html">get_cursor_type</a>
+  
+    <a class="method" href="method.Actor.get_easing_delay.html">get_easing_delay</a>
+  
+    <a class="method" href="method.Actor.get_easing_duration.html">get_easing_duration</a>
+  
+    <a class="method" href="method.Actor.get_easing_mode.html">get_easing_mode</a>
+  
+    <a class="method" href="method.Actor.get_effect.html">get_effect</a>
+  
+    <a class="method" href="method.Actor.get_effects.html">get_effects</a>
+  
+    <a class="method" href="method.Actor.get_first_child.html">get_first_child</a>
+  
+    <a class="method" href="method.Actor.get_fixed_position.html">get_fixed_position</a>
+  
+    <a class="method" href="method.Actor.get_fixed_position_set.html">get_fixed_position_set</a>
+  
+    <a class="method" href="method.Actor.get_height.html">get_height</a>
+  
+    <a class="method" href="method.Actor.get_last_child.html">get_last_child</a>
+  
+    <a class="method" href="method.Actor.get_layout_manager.html">get_layout_manager</a>
+  
+    <a class="method" href="method.Actor.get_margin.html">get_margin</a>
+  
+    <a class="method" href="method.Actor.get_margin_bottom.html">get_margin_bottom</a>
+  
+    <a class="method" href="method.Actor.get_margin_left.html">get_margin_left</a>
+  
+    <a class="method" href="method.Actor.get_margin_right.html">get_margin_right</a>
+  
+    <a class="method" href="method.Actor.get_margin_top.html">get_margin_top</a>
+  
+    <a class="method" href="method.Actor.get_n_children.html">get_n_children</a>
+  
+    <a class="method" href="method.Actor.get_name.html">get_name</a>
+  
+    <a class="method" href="method.Actor.get_next_sibling.html">get_next_sibling</a>
+  
+    <a class="method" href="method.Actor.get_offscreen_redirect.html">get_offscreen_redirect</a>
+  
+    <a class="method" href="method.Actor.get_opacity.html">get_opacity</a>
+  
+    <a class="method" href="method.Actor.get_opacity_override.html">get_opacity_override</a>
+  
+    <a class="method" href="method.Actor.get_paint_box.html">get_paint_box</a>
+  
+    <a class="method" href="method.Actor.get_paint_opacity.html">get_paint_opacity</a>
+  
+    <a class="method" href="method.Actor.get_paint_visibility.html">get_paint_visibility</a>
+  
+    <a class="method" href="method.Actor.get_paint_volume.html">get_paint_volume</a>
+  
+    <a class="method" href="method.Actor.get_pango_context.html">get_pango_context</a>
+  
+    <a class="method" href="method.Actor.get_parent.html">get_parent</a>
+  
+    <a class="method" href="method.Actor.get_pivot_point.html">get_pivot_point</a>
+  
+    <a class="method" href="method.Actor.get_pivot_point_z.html">get_pivot_point_z</a>
+  
+    <a class="method" href="method.Actor.get_position.html">get_position</a>
+  
+    <a class="method" href="method.Actor.get_preferred_height.html">get_preferred_height</a>
+  
+    <a class="method" href="method.Actor.get_preferred_size.html">get_preferred_size</a>
+  
+    <a class="method" href="method.Actor.get_preferred_width.html">get_preferred_width</a>
+  
+    <a class="method" href="method.Actor.get_previous_sibling.html">get_previous_sibling</a>
+  
+    <a class="method" href="method.Actor.get_reactive.html">get_reactive</a>
+  
+    <a class="method" href="method.Actor.get_request_mode.html">get_request_mode</a>
+  
+    <a class="method" href="method.Actor.get_resource_scale.html">get_resource_scale</a>
+  
+    <a class="method" href="method.Actor.get_rotation_angle.html">get_rotation_angle</a>
+  
+    <a class="method" href="method.Actor.get_scale.html">get_scale</a>
+  
+    <a class="method" href="method.Actor.get_scale_z.html">get_scale_z</a>
+  
+    <a class="method" href="method.Actor.get_size.html">get_size</a>
+  
+    <a class="method" href="method.Actor.get_stage.html">get_stage</a>
+  
+    <a class="method" href="method.Actor.get_text_direction.html">get_text_direction</a>
+  
+    <a class="method" href="method.Actor.get_transform.html">get_transform</a>
+  
+    <a class="method" href="method.Actor.get_transformed_extents.html">get_transformed_extents</a>
+  
+    <a class="method" href="method.Actor.get_transformed_paint_volume.html">get_transformed_paint_volume</a>
+  
+    <a class="method" href="method.Actor.get_transformed_position.html">get_transformed_position</a>
+  
+    <a class="method" href="method.Actor.get_transformed_size.html">get_transformed_size</a>
+  
+    <a class="method" href="method.Actor.get_transition.html">get_transition</a>
+  
+    <a class="method" href="method.Actor.get_translation.html">get_translation</a>
+  
+    <a class="method" href="method.Actor.get_width.html">get_width</a>
+  
+    <a class="method" href="method.Actor.get_x.html">get_x</a>
+  
+    <a class="method" href="method.Actor.get_x_align.html">get_x_align</a>
+  
+    <a class="method" href="method.Actor.get_x_expand.html">get_x_expand</a>
+  
+    <a class="method" href="method.Actor.get_y.html">get_y</a>
+  
+    <a class="method" href="method.Actor.get_y_align.html">get_y_align</a>
+  
+    <a class="method" href="method.Actor.get_y_expand.html">get_y_expand</a>
+  
+    <a class="method" href="method.Actor.get_z_position.html">get_z_position</a>
+  
+    <a class="method" href="method.Actor.grab_key_focus.html">grab_key_focus</a>
+  
+    <a class="method" href="method.Actor.has_actions.html">has_actions</a>
+  
+    <a class="method" href="method.Actor.has_allocation.html">has_allocation</a>
+  
+    <a class="method" href="method.Actor.has_clip.html">has_clip</a>
+  
+    <a class="method" href="method.Actor.has_constraints.html">has_constraints</a>
+  
+    <a class="method" href="method.Actor.has_effects.html">has_effects</a>
+  
+    <a class="method" href="method.Actor.has_key_focus.html">has_key_focus</a>
+  
+    <a class="method" href="method.Actor.has_mapped_clones.html">has_mapped_clones</a>
+  
+    <a class="method" href="method.Actor.has_overlaps.html">has_overlaps</a>
+  
+    <a class="method" href="method.Actor.has_pointer.html">has_pointer</a>
+  
+    <a class="method" href="method.Actor.hide.html">hide</a>
+  
+    <a class="method" href="method.Actor.inhibit_culling.html">inhibit_culling</a>
+  
+    <a class="method" href="method.Actor.insert_child_above.html">insert_child_above</a>
+  
+    <a class="method" href="method.Actor.insert_child_at_index.html">insert_child_at_index</a>
+  
+    <a class="method" href="method.Actor.insert_child_below.html">insert_child_below</a>
+  
+    <a class="method" href="method.Actor.invalidate_paint_volume.html">invalidate_paint_volume</a>
+  
+    <a class="method" href="method.Actor.invalidate_transform.html">invalidate_transform</a>
+  
+    <a class="method" href="method.Actor.is_in_clone_paint.html">is_in_clone_paint</a>
+  
+    <a class="method" href="method.Actor.is_mapped.html">is_mapped</a>
+  
+    <a class="method" href="method.Actor.is_no_layout.html">is_no_layout</a>
+  
+    <a class="method" href="method.Actor.is_realized.html">is_realized</a>
+  
+    <a class="method" href="method.Actor.is_rotated.html">is_rotated</a>
+  
+    <a class="method" href="method.Actor.is_scaled.html">is_scaled</a>
+  
+    <a class="method" href="method.Actor.is_visible.html">is_visible</a>
+  
+    <a class="method" href="method.Actor.map.html">map</a>
+  
+    <a class="method" href="method.Actor.move_by.html">move_by</a>
+  
+    <a class="method" href="method.Actor.needs_expand.html">needs_expand</a>
+  
+    <a class="method" href="method.Actor.paint.html">paint</a>
+  
+    <a class="method" href="method.Actor.peek_stage_views.html">peek_stage_views</a>
+  
+    <a class="method" href="method.Actor.pick.html">pick</a>
+  
+    <a class="method" href="method.Actor.pick_box.html">pick_box</a>
+  
+    <a class="method" href="method.Actor.queue_redraw.html">queue_redraw</a>
+  
+    <a class="method" href="method.Actor.queue_redraw_with_clip.html">queue_redraw_with_clip</a>
+  
+    <a class="method" href="method.Actor.queue_relayout.html">queue_relayout</a>
+  
+    <a class="method" href="method.Actor.realize.html">realize</a>
+  
+    <a class="method" href="method.Actor.remove_accessible_state.html">remove_accessible_state</a>
+  
+    <a class="method" href="method.Actor.remove_action.html">remove_action</a>
+  
+    <a class="method" href="method.Actor.remove_action_by_name.html">remove_action_by_name</a>
+  
+    <a class="method" href="method.Actor.remove_all_children.html">remove_all_children</a>
+  
+    <a class="method current" href="method.Actor.remove_all_transitions.html">remove_all_transitions</a>
+  
+    <a class="method" href="method.Actor.remove_child.html">remove_child</a>
+  
+    <a class="method" href="method.Actor.remove_clip.html">remove_clip</a>
+  
+    <a class="method" href="method.Actor.remove_constraint.html">remove_constraint</a>
+  
+    <a class="method" href="method.Actor.remove_constraint_by_name.html">remove_constraint_by_name</a>
+  
+    <a class="method" href="method.Actor.remove_effect.html">remove_effect</a>
+  
+    <a class="method" href="method.Actor.remove_effect_by_name.html">remove_effect_by_name</a>
+  
+    <a class="method" href="method.Actor.remove_transition.html">remove_transition</a>
+  
+    <a class="method" href="method.Actor.replace_child.html">replace_child</a>
+  
+    <a class="method" href="method.Actor.restore_easing_state.html">restore_easing_state</a>
+  
+    <a class="method" href="method.Actor.save_easing_state.html">save_easing_state</a>
+  
+    <a class="method" href="method.Actor.set_accessible.html">set_accessible</a>
+  
+    <a class="method" href="method.Actor.set_accessible_name.html">set_accessible_name</a>
+  
+    <a class="method" href="method.Actor.set_accessible_role.html">set_accessible_role</a>
+  
+    <a class="method" href="method.Actor.set_allocation.html">set_allocation</a>
+  
+    <a class="method" href="method.Actor.set_background_color.html">set_background_color</a>
+  
+    <a class="method" href="method.Actor.set_child_above_sibling.html">set_child_above_sibling</a>
+  
+    <a class="method" href="method.Actor.set_child_at_index.html">set_child_at_index</a>
+  
+    <a class="method" href="method.Actor.set_child_below_sibling.html">set_child_below_sibling</a>
+  
+    <a class="method" href="method.Actor.set_child_transform.html">set_child_transform</a>
+  
+    <a class="method" href="method.Actor.set_clip.html">set_clip</a>
+  
+    <a class="method" href="method.Actor.set_clip_to_allocation.html">set_clip_to_allocation</a>
+  
+    <a class="method" href="method.Actor.set_color_state.html">set_color_state</a>
+  
+    <a class="method" href="method.Actor.set_content.html">set_content</a>
+  
+    <a class="method" href="method.Actor.set_content_gravity.html">set_content_gravity</a>
+  
+    <a class="method" href="method.Actor.set_content_repeat.html">set_content_repeat</a>
+  
+    <a class="method" href="method.Actor.set_content_scaling_filters.html">set_content_scaling_filters</a>
+  
+    <a class="method" href="method.Actor.set_cursor_type.html">set_cursor_type</a>
+  
+    <a class="method" href="method.Actor.set_easing_delay.html">set_easing_delay</a>
+  
+    <a class="method" href="method.Actor.set_easing_duration.html">set_easing_duration</a>
+  
+    <a class="method" href="method.Actor.set_easing_mode.html">set_easing_mode</a>
+  
+    <a class="method" href="method.Actor.set_fixed_position_set.html">set_fixed_position_set</a>
+  
+    <a class="method" href="method.Actor.set_height.html">set_height</a>
+  
+    <a class="method" href="method.Actor.set_layout_manager.html">set_layout_manager</a>
+  
+    <a class="method" href="method.Actor.set_margin.html">set_margin</a>
+  
+    <a class="method" href="method.Actor.set_margin_bottom.html">set_margin_bottom</a>
+  
+    <a class="method" href="method.Actor.set_margin_left.html">set_margin_left</a>
+  
+    <a class="method" href="method.Actor.set_margin_right.html">set_margin_right</a>
+  
+    <a class="method" href="method.Actor.set_margin_top.html">set_margin_top</a>
+  
+    <a class="method" href="method.Actor.set_name.html">set_name</a>
+  
+    <a class="method" href="method.Actor.set_no_layout.html">set_no_layout</a>
+  
+    <a class="method" href="method.Actor.set_offscreen_redirect.html">set_offscreen_redirect</a>
+  
+    <a class="method" href="method.Actor.set_opacity.html">set_opacity</a>
+  
+    <a class="method" href="method.Actor.set_opacity_override.html">set_opacity_override</a>
+  
+    <a class="method" href="method.Actor.set_pivot_point.html">set_pivot_point</a>
+  
+    <a class="method" href="method.Actor.set_pivot_point_z.html">set_pivot_point_z</a>
+  
+    <a class="method" href="method.Actor.set_position.html">set_position</a>
+  
+    <a class="method" href="method.Actor.set_reactive.html">set_reactive</a>
+  
+    <a class="method" href="method.Actor.set_request_mode.html">set_request_mode</a>
+  
+    <a class="method" href="method.Actor.set_rotation_angle.html">set_rotation_angle</a>
+  
+    <a class="method" href="method.Actor.set_scale.html">set_scale</a>
+  
+    <a class="method" href="method.Actor.set_scale_z.html">set_scale_z</a>
+  
+    <a class="method" href="method.Actor.set_size.html">set_size</a>
+  
+    <a class="method" href="method.Actor.set_text_direction.html">set_text_direction</a>
+  
+    <a class="method" href="method.Actor.set_transform.html">set_transform</a>
+  
+    <a class="method" href="method.Actor.set_translation.html">set_translation</a>
+  
+    <a class="method" href="method.Actor.set_width.html">set_width</a>
+  
+    <a class="method" href="method.Actor.set_x.html">set_x</a>
+  
+    <a class="method" href="method.Actor.set_x_align.html">set_x_align</a>
+  
+    <a class="method" href="method.Actor.set_x_expand.html">set_x_expand</a>
+  
+    <a class="method" href="method.Actor.set_y.html">set_y</a>
+  
+    <a class="method" href="method.Actor.set_y_align.html">set_y_align</a>
+  
+    <a class="method" href="method.Actor.set_y_expand.html">set_y_expand</a>
+  
+    <a class="method" href="method.Actor.set_z_position.html">set_z_position</a>
+  
+    <a class="method" href="method.Actor.should_pick.html">should_pick</a>
+  
+    <a class="method" href="method.Actor.show.html">show</a>
+  
+    <a class="method" href="method.Actor.transform_stage_point.html">transform_stage_point</a>
+  
+    <a class="method" href="method.Actor.uninhibit_culling.html">uninhibit_culling</a>
+  
+    <a class="method" href="method.Actor.unmap.html">unmap</a>
+  
+    <a class="method" href="method.Actor.unrealize.html">unrealize</a>
+  
+    <a class="method" href="method.Actor.unset_color_state.html">unset_color_state</a>
+  
+  </div>
+</div>
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Clutter</a><span class="sep"></span><a href="class.Actor.html">Actor</a><span class="sep"></span>remove_all_transitions</h1>
+  </header>
+
+  <section>
+    <div class="docblock">
+      <p></p>
+    </div>
+
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-actor.h#L838">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="n">clutter_actor_remove_all_transitions</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">ClutterActor</span><span class="o">*</span><span class="w"> </span><span class="n">self</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-actor.c#L17031">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Removes all transitions associated to <code>self</code>.</p>
+      </div>
+
+      <div class="docblock">
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,112 @@
+# Spanish translations for kcm_kwinxwayland.po package.
+# Copyright (C) 2022-2025 This file is copyright:
+# This file is distributed under the same license as the kwin package.
+# Automatically generated, 2022.
+#
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: kcm_kwinxwayland\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-05-20 02:37+0000\n"
+"PO-Revision-Date: 2025-05-21 01:09+0100\n"
+"Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
+"Language-Team: Spanish <kde-l10n-es@kde.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.04.1\n"
+
+#: ui/main.qml:27
+#, kde-format
+msgctxt "@info"
+msgid "Changes will take effect the next time you log in."
+msgstr "Los cambios tendrán efecto la próxima vez que inicie sesión."
+
+#: ui/main.qml:31
+#, kde-format
+msgctxt "@action:button"
+msgid "Log Out Now"
+msgstr "Cerrar sesión ahora"
+
+#: ui/main.qml:52
+#, kde-format
+msgid ""
+"Some legacy X11 apps require the ability to read keystrokes typed in other "
+"apps for certain features, such as handling global keyboard shortcuts. This "
+"is allowed by default. However other features may require the ability to "
+"read all keys, and this is disabled by default for security reasons. If you "
+"need to use such apps, you can choose your preferred balance of security and "
+"functionality here."
+msgstr ""
+"Algunas aplicaciones X11 heredadas necesitan la capacidad de leer las "
+"pulsaciones de teclas realizadas en otras aplicaciones para ciertas "
+"funciones, como el manejo de atajos de teclado globales. Esto está activado "
+"de forma predeterminada. No obstante, otras funciones pueden necesitar la "
+"capacidad de leer todas las teclas, aunque esto está desactivado de forma "
+"predeterminada por motivos de seguridad. Si necesita usar este tipo de "
+"aplicaciones, aquí puede escoger el equilibrio que prefiera entre seguridad "
+"y funcionalidad."
+
+#: ui/main.qml:72
+#, kde-format
+msgid "Allow legacy X11 apps to read keystrokes typed in all apps:"
+msgstr ""
+"Permitir que las aplicaciones X11 heredadas lean pulsaciones de teclas de "
+"todas las aplicaciones:"
+
+#: ui/main.qml:73
+#, kde-format
+msgid "Never"
+msgstr "Nunca"
+
+#: ui/main.qml:84
+#, kde-format
+msgid "Only Meta, Control, Alt and Shift keys"
+msgstr "Solo las teclas Meta, Control, Alt y Mayúsculas"
+
+#: ui/main.qml:95
+#, kde-format
+msgid ""
+"As above, plus any key typed while the Control, Alt, or Meta keys are pressed"
+msgstr ""
+"Como más arriba, además de cualquier tecla pulsada en combinación con las "
+"teclas Control, Alt o Meta"
+
+#: ui/main.qml:107
+#, kde-format
+msgid "Always"
+msgstr "Siempre"
+
+#: ui/main.qml:122
+#, kde-format
+msgid "Additionally include mouse buttons"
+msgstr "Incluir los botones del ratón de forma adicional"
+
+#: ui/main.qml:138
+#, kde-format
+msgid ""
+"Note that using this setting will reduce system security to that of the X11 "
+"session by permitting malicious software to steal passwords and spy on the "
+"text that you type. Make sure you understand and accept this risk."
+msgstr ""
+"Tenga en cuenta que el uso de esta configuración reducirá la seguridad del "
+"sistema a la de la sesión X11 al permitir que software malintencionado robe "
+"contraseñas y espíe el texto que escribe. Asegúrese de comprender y aceptar "
+"este riesgo."
+
+#: ui/main.qml:155
+#, kde-format
+msgctxt "@title:group"
+msgid "Control of pointer and keyboard:"
+msgstr "Control del puntero y del teclado:"
+
+#: ui/main.qml:156
+#, kde-format
+msgctxt ""
+"@option:check Allow control of pointer and keyboard without asking for "
+"permission"
+msgid "Allow without asking for permission"
+msgstr "Permitir sin solicitar permiso"

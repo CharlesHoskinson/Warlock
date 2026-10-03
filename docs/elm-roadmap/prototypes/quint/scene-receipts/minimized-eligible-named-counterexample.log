@@ -1,0 +1,17 @@
+
+  scene_tests
+    1) minimizedFullscreenExcludedTest failed after 1 test(s)
+
+  1 failed
+
+  1) minimizedFullscreenExcludedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/minimized-eligible_tests.qnt:3:106
+        3:   run minimizedFullscreenExcludedTest = init.then(fire(Fullscreen(2))).then(fire(Minimize(2))).then(all {assert(paintTop(s)==1 and inputTop(s)==1 and allProps),fire(Activate)})
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x94f39 --match=minimizedFullscreenExcludedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/scene-receipts/minimized-eligible_tests.qnt
+error: Tests failed

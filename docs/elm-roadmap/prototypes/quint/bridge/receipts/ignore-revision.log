@@ -1,0 +1,18 @@
+Running as unit: qa-harness-b5f924f82a374acb8e329f9db66d0a95.scope; invocation ID: e75c224d7ef84202b8d1890ae5c8fef8
+
+  bridge
+    1) revisionChangeTest failed after 1 test(s)
+
+  1 failed
+
+  1) revisionChangeTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/ignore-revision.qnt:68:97
+        68:   run revisionChangeTest = init.then(request(1)).then(mutateDependency).then(commit).then(all { assert(s.status == "Refused"), noop })
+                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=revisionChangeTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ignore-revision.qnt
+error: Tests failed

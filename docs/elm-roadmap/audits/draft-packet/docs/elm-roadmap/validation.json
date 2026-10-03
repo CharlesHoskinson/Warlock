@@ -1,0 +1,31 @@
+{
+  "observedUTC": "2026-10-03T15:11:36.132839+00:00",
+  "scope": "Planning format, traceability and links; no implementation/native/GPU acceptance",
+  "requirements": 181,
+  "scenarios": 181,
+  "capabilities": 15,
+  "localLinksChecked": 230,
+  "registrySHA256": "a839fb6067e87a6c578adab47ae7449472e08a04d71af3e48cdbfcdfa242ef8b",
+  "errors": [],
+  "openspec": {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=@fission-ai/openspec@1.14.0",
+      "--",
+      "openspec",
+      "validate",
+      "elm-desktop-pivot",
+      "--type",
+      "change",
+      "--strict",
+      "--json",
+      "--no-interactive"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"elm-desktop-pivot\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [],\n      \"durationMs\": 44\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"/home/hoskinson/omarchy-windows-parity\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  "passed": true
+}

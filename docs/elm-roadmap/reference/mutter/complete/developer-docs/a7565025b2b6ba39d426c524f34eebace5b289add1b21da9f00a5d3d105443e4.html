@@ -1,0 +1,950 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.FlowLayout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.FlowLayout"/>
+  <meta property="og:description" content="Reference for Clutter.FlowLayout"/>
+  <meta name="twitter:title" content="Clutter.FlowLayout"/>
+  <meta name="twitter:description" content="Reference for Clutter.FlowLayout"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.FlowLayout.html#description">FlowLayout</a>
+  </div>
+</div>
+
+
+  
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.FlowLayout.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.FlowLayout.get_column_spacing.html">get_column_spacing</a>
+  
+    <a class="method" href="method.FlowLayout.get_column_width.html">get_column_width</a>
+  
+    <a class="method" href="method.FlowLayout.get_homogeneous.html">get_homogeneous</a>
+  
+    <a class="method" href="method.FlowLayout.get_orientation.html">get_orientation</a>
+  
+    <a class="method" href="method.FlowLayout.get_row_height.html">get_row_height</a>
+  
+    <a class="method" href="method.FlowLayout.get_row_spacing.html">get_row_spacing</a>
+  
+    <a class="method" href="method.FlowLayout.get_snap_to_grid.html">get_snap_to_grid</a>
+  
+    <a class="method" href="method.FlowLayout.set_column_spacing.html">set_column_spacing</a>
+  
+    <a class="method" href="method.FlowLayout.set_column_width.html">set_column_width</a>
+  
+    <a class="method" href="method.FlowLayout.set_homogeneous.html">set_homogeneous</a>
+  
+    <a class="method" href="method.FlowLayout.set_orientation.html">set_orientation</a>
+  
+    <a class="method" href="method.FlowLayout.set_row_height.html">set_row_height</a>
+  
+    <a class="method" href="method.FlowLayout.set_row_spacing.html">set_row_spacing</a>
+  
+    <a class="method" href="method.FlowLayout.set_snap_to_grid.html">set_snap_to_grid</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.FlowLayout.column-spacing.html">column-spacing</a>
+  
+    <a class="property" href="property.FlowLayout.homogeneous.html">homogeneous</a>
+  
+    <a class="property" href="property.FlowLayout.max-column-width.html">max-column-width</a>
+  
+    <a class="property" href="property.FlowLayout.max-row-height.html">max-row-height</a>
+  
+    <a class="property" href="property.FlowLayout.min-column-width.html">min-column-width</a>
+  
+    <a class="property" href="property.FlowLayout.min-row-height.html">min-row-height</a>
+  
+    <a class="property" href="property.FlowLayout.orientation.html">orientation</a>
+  
+    <a class="property" href="property.FlowLayout.row-spacing.html">row-spacing</a>
+  
+    <a class="property" href="property.FlowLayout.snap-to-grid.html">snap-to-grid</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>FlowLayout</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-flow-layout.c#L25">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class Clutter.FlowLayout : Clutter.LayoutManager
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>A reflowing layout&nbsp;manager</p>
+<p><code>ClutterFlowLayout</code> is a layout manager which implements the following&nbsp;policy:</p>
+<ul>
+<li>the preferred natural size depends on the value
+  of the <code>ClutterFlowLayout:orientation</code> property; the layout will try
+  to maintain all its children on a single row or&nbsp;column;</li>
+<li>if either the width or the height allocated are
+  smaller than the preferred ones, the layout will wrap; in this case,
+  the preferred height or width, respectively, will take into account
+  the amount of columns and&nbsp;rows;</li>
+<li>each line (either column or row) in reflowing will
+  have the size of the biggest cell on that line; if the
+  <code>ClutterFlowLayout:homogeneous</code> property is set to <code>FALSE</code> the actor
+  will be allocated within that area, and if set to <code>TRUE</code> instead the
+  actor will be given exactly that&nbsp;area;</li>
+<li>the size of the columns or rows can be controlled
+  for both minimum and maximum; the spacing can also be controlled
+  in both columns and&nbsp;rows.</li>
+</ul>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.FlowLayout">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="149pt" height="260pt"
+ viewBox="0.00 0.00 149.00 260.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 256)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterFlowLayout">
+<path fill="none" stroke="black" d="M118.38,-36C118.38,-36 22.12,-36 22.12,-36 16.12,-36 10.12,-30 10.12,-24 10.12,-24 10.12,-12 10.12,-12 10.12,-6 16.12,0 22.12,0 22.12,0 118.38,0 118.38,0 124.38,0 130.38,-6 130.38,-12 130.38,-12 130.38,-24 130.38,-24 130.38,-30 124.38,-36 118.38,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="70.25" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterFlowLayout</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node link">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:href="class.LayoutManager.html" xlink:title="ClutterLayoutManager">
+<path fill="none" stroke="black" d="M128.5,-108C128.5,-108 12,-108 12,-108 6,-108 0,-102 0,-96 0,-96 0,-84 0,-84 0,-78 6,-72 12,-72 12,-72 128.5,-72 128.5,-72 134.5,-72 140.5,-78 140.5,-84 140.5,-84 140.5,-96 140.5,-96 140.5,-102 134.5,-108 128.5,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="70.25" y="-83.83" font-family="Times,serif" font-size="14.00">ClutterLayoutManager</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge3" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M70.25,-71.7C70.25,-60.85 70.25,-46.92 70.25,-36.1"/>
+</g>
+<!-- ancestor_1 -->
+<g id="node3" class="node">
+<title>ancestor_1</title>
+<g id="a_node3"><a xlink:title="GObject.InitiallyUnowned">
+<path fill="none" stroke="black" d="M118.75,-180C118.75,-180 21.75,-180 21.75,-180 15.75,-180 9.75,-174 9.75,-168 9.75,-168 9.75,-156 9.75,-156 9.75,-150 15.75,-144 21.75,-144 21.75,-144 118.75,-144 118.75,-144 124.75,-144 130.75,-150 130.75,-156 130.75,-156 130.75,-168 130.75,-168 130.75,-174 124.75,-180 118.75,-180"/>
+<text xml:space="preserve" text-anchor="middle" x="70.25" y="-155.82" font-family="Times,serif" font-size="14.00">GInitiallyUnowned</text>
+</a>
+</g>
+</g>
+<!-- ancestor_1&#45;&#45;ancestor_0 -->
+<g id="edge2" class="edge">
+<title>ancestor_1&#45;&#45;ancestor_0</title>
+<path fill="none" stroke="black" d="M70.25,-143.7C70.25,-132.85 70.25,-118.92 70.25,-108.1"/>
+</g>
+<!-- ancestor_2 -->
+<g id="node4" class="node">
+<title>ancestor_2</title>
+<g id="a_node4"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M89.12,-252C89.12,-252 51.38,-252 51.38,-252 45.38,-252 39.38,-246 39.38,-240 39.38,-240 39.38,-228 39.38,-228 39.38,-222 45.38,-216 51.38,-216 51.38,-216 89.12,-216 89.12,-216 95.12,-216 101.12,-222 101.12,-228 101.12,-228 101.12,-240 101.12,-240 101.12,-246 95.12,-252 89.12,-252"/>
+<text xml:space="preserve" text-anchor="middle" x="70.25" y="-227.82" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_2&#45;&#45;ancestor_1 -->
+<g id="edge1" class="edge">
+<title>ancestor_2&#45;&#45;ancestor_1</title>
+<path fill="none" stroke="black" d="M70.25,-215.7C70.25,-204.85 70.25,-190.92 70.25,-180.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.LayoutManager.html" title="LayoutManager">ClutterLayoutManager</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.InitiallyUnowned.html" data-namespace="GObject">GInitiallyUnowned</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.FlowLayout.new.html">clutter_flow_layout_new</a></h6>
+          <div class="docblock">
+            <p>Creates a new <code>ClutterFlowLayout</code> with the given <code>orientation</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.get_column_spacing.html">clutter_flow_layout_get_column_spacing</a></h6>
+          <div class="docblock">
+            <p>Retrieves the spacing between&nbsp;columns.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.get_column_width.html">clutter_flow_layout_get_column_width</a></h6>
+          <div class="docblock">
+            <p>Retrieves the minimum and maximum column&nbsp;widths.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.get_homogeneous.html">clutter_flow_layout_get_homogeneous</a></h6>
+          <div class="docblock">
+            <p>Retrieves whether the <code>layout</code> is&nbsp;homogeneous.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.get_orientation.html">clutter_flow_layout_get_orientation</a></h6>
+          <div class="docblock">
+            <p>Retrieves the orientation of the <code>layout</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.get_row_height.html">clutter_flow_layout_get_row_height</a></h6>
+          <div class="docblock">
+            <p>Retrieves the minimum and maximum row&nbsp;heights.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.get_row_spacing.html">clutter_flow_layout_get_row_spacing</a></h6>
+          <div class="docblock">
+            <p>Retrieves the spacing between&nbsp;rows.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.get_snap_to_grid.html">clutter_flow_layout_get_snap_to_grid</a></h6>
+          <div class="docblock">
+            <p>Retrieves the value of <code>ClutterFlowLayout:snap-to-grid</code> property.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.set_column_spacing.html">clutter_flow_layout_set_column_spacing</a></h6>
+          <div class="docblock">
+            <p>Sets the space between columns, in&nbsp;pixels.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.set_column_width.html">clutter_flow_layout_set_column_width</a></h6>
+          <div class="docblock">
+            <p>Sets the minimum and maximum widths that a column can&nbsp;have.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.set_homogeneous.html">clutter_flow_layout_set_homogeneous</a></h6>
+          <div class="docblock">
+            <p>Sets whether the <code>layout</code> should allocate the same space for
+each&nbsp;child.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.set_orientation.html">clutter_flow_layout_set_orientation</a></h6>
+          <div class="docblock">
+            <p>Sets the orientation of the flow&nbsp;layout.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.set_row_height.html">clutter_flow_layout_set_row_height</a></h6>
+          <div class="docblock">
+            <p>Sets the minimum and maximum heights that a row can&nbsp;have.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.set_row_spacing.html">clutter_flow_layout_set_row_spacing</a></h6>
+          <div class="docblock">
+            <p>Sets the spacing between rows, in&nbsp;pixels.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.FlowLayout.set_snap_to_grid.html">clutter_flow_layout_set_snap_to_grid</a></h6>
+          <div class="docblock">
+            <p>Whether the <code>layout</code> should place its children on a&nbsp;grid.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.LayoutManager.html">ClutterLayoutManager</a> (12)</h5><div class="docblock">
+          
+            <h6><a href="method.LayoutManager.allocate.html">clutter_layout_manager_allocate</a></h6><div class="docblock">
+              <p>Allocates the children of <code>container</code> given an&nbsp;area.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.child_get.html">clutter_layout_manager_child_get</a></h6><div class="docblock">
+              <p>Retrieves the values for a list of properties out of the
+<code>ClutterLayoutMeta</code> created by <code>manager</code> and attached to the
+child of a <code>container</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.child_get_property.html">clutter_layout_manager_child_get_property</a></h6><div class="docblock">
+              <p>Gets a property on the <code>ClutterLayoutMeta</code> created by <code>manager</code> and
+attached to a child of <code>container</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.child_set.html">clutter_layout_manager_child_set</a></h6><div class="docblock">
+              <p>Sets a list of properties and their values on the <code>ClutterLayoutMeta</code>
+associated by <code>manager</code> to a child of <code>container</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.child_set_property.html">clutter_layout_manager_child_set_property</a></h6><div class="docblock">
+              <p>Sets a property on the <code>ClutterLayoutMeta</code> created by <code>manager</code> and
+attached to a child of <code>container</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.find_child_property.html">clutter_layout_manager_find_child_property</a></h6><div class="docblock">
+              <p>Retrieves the <code>GParamSpec</code> for the layout property <code>name</code> inside
+the <code>ClutterLayoutMeta</code> sub-class used by <code>manager</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.get_child_meta.html">clutter_layout_manager_get_child_meta</a></h6><div class="docblock">
+              <p>Retrieves the <code>ClutterLayoutMeta</code> that the layout <code>manager</code> associated
+to the <code>actor</code> child of <code>container</code>, eventually by creating one if the
+<code>ClutterLayoutManager</code> supports layout&nbsp;properties.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.get_preferred_height.html">clutter_layout_manager_get_preferred_height</a></h6><div class="docblock">
+              <p>Computes the minimum and natural heights of the <code>container</code> according
+to <code>manager</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.get_preferred_width.html">clutter_layout_manager_get_preferred_width</a></h6><div class="docblock">
+              <p>Computes the minimum and natural widths of the <code>container</code> according
+to <code>manager</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.layout_changed.html">clutter_layout_manager_layout_changed</a></h6><div class="docblock">
+              <p>Emits the <code>ClutterLayoutManager::layout-changed</code> signal on <code>manager</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.list_child_properties.html">clutter_layout_manager_list_child_properties</a></h6><div class="docblock">
+              <p>Retrieves all the <code>GParamSpec</code>s for the layout properties
+stored inside the <code>ClutterLayoutMeta</code> sub-class used by <code>manager</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.LayoutManager.set_container.html">clutter_layout_manager_set_container</a></h6><div class="docblock">
+              <p>If the <code>ClutterLayoutManager</code> sub-class allows it, allow
+adding a weak reference of the <code>container</code> using <code>manager</code>
+from within the layout&nbsp;manager.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.column-spacing.html">Clutter.FlowLayout:column-spacing</a></h6>
+          <div class="docblock">
+            <p>The spacing between columns, in pixels; the value of this
+property is honoured by horizontal non-overflowing layouts
+and by vertical overflowing&nbsp;layouts.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.homogeneous.html">Clutter.FlowLayout:homogeneous</a></h6>
+          <div class="docblock">
+            <p>Whether each child inside the <code>ClutterFlowLayout</code> should receive
+the same&nbsp;allocation.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.max-column-width.html">Clutter.FlowLayout:max-column-width</a></h6>
+          <div class="docblock">
+            <p>Maximum width for each column in the layout, in pixels. If
+set to -1 the width will be the maximum child&nbsp;width.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.max-row-height.html">Clutter.FlowLayout:max-row-height</a></h6>
+          <div class="docblock">
+            <p>Maximum height for each row in the layout, in pixels. If
+set to -1 the width will be the maximum child&nbsp;height.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.min-column-width.html">Clutter.FlowLayout:min-column-width</a></h6>
+          <div class="docblock">
+            <p>Minimum width for each column in the layout, in&nbsp;pixels.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.min-row-height.html">Clutter.FlowLayout:min-row-height</a></h6>
+          <div class="docblock">
+            <p>Minimum height for each row in the layout, in&nbsp;pixels.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.orientation.html">Clutter.FlowLayout:orientation</a></h6>
+          <div class="docblock">
+            <p>The orientation of the <code>ClutterFlowLayout</code>. The children
+of the layout will be laid out following the&nbsp;orientation.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.row-spacing.html">Clutter.FlowLayout:row-spacing</a></h6>
+          <div class="docblock">
+            <p>The spacing between rows, in pixels; the value of this
+property is honoured by vertical non-overflowing layouts and
+by horizontal overflowing&nbsp;layouts.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.FlowLayout.snap-to-grid.html">Clutter.FlowLayout:snap-to-grid</a></h6>
+          <div class="docblock">
+            <p>Whether the <code>ClutterFlowLayout</code> should arrange its children
+on a&nbsp;grid.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          <h5 style="display:block;">Signals inherited from <a href="class.LayoutManager.html">ClutterLayoutManager</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="signal.LayoutManager.layout-changed.html">ClutterLayoutManager::layout-changed</a></h6><div class="docblock">
+              <p>The signal is emitted each time a layout manager
+has been changed. Every <code>ClutterActor</code> using the <code>manager</code> instance
+as a layout manager should connect a handler to the
+<code>ClutterLayoutManager::layout-changed</code>
+signal and queue a relayout on&nbsp;themselves:.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterFlowLayoutClass {
+  ClutterLayoutManagerClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: ClutterLayoutManagerClass</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

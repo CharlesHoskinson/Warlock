@@ -1,0 +1,372 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cogl.Pipeline.set_alpha_test_function</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Cogl-51"/>
+  
+
+  
+  <meta priority="og:title" content="Cogl.Pipeline.set_alpha_test_function"/>
+  <meta priority="og:description" content="Reference for Cogl.Pipeline.set_alpha_test_function"/>
+  <meta name="twitter:title" content="Cogl.Pipeline.set_alpha_test_function"/>
+  <meta name="twitter:description" content="Reference for Cogl.Pipeline.set_alpha_test_function"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Cogl" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Cogl</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a href="class.Pipeline.html">Pipeline</a>
+  </div>
+</div>
+<div class="section">
+  <h5>Methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Pipeline.add_capability.html">add_capability</a>
+  
+    <a class="method" href="method.Pipeline.add_layer_snippet.html">add_layer_snippet</a>
+  
+    <a class="method" href="method.Pipeline.add_snippet.html">add_snippet</a>
+  
+    <a class="method" href="method.Pipeline.copy.html">copy</a>
+  
+    <a class="method" href="method.Pipeline.foreach_layer.html">foreach_layer</a>
+  
+    <a class="method" href="method.Pipeline.get_alpha_test_function.html">get_alpha_test_function</a>
+  
+    <a class="method" href="method.Pipeline.get_alpha_test_reference.html">get_alpha_test_reference</a>
+  
+    <a class="method" href="method.Pipeline.get_color.html">get_color</a>
+  
+    <a class="method" href="method.Pipeline.get_context.html">get_context</a>
+  
+    <a class="method" href="method.Pipeline.get_cull_face_mode.html">get_cull_face_mode</a>
+  
+    <a class="method" href="method.Pipeline.get_depth_state.html">get_depth_state</a>
+  
+    <a class="method" href="method.Pipeline.get_front_face_winding.html">get_front_face_winding</a>
+  
+    <a class="method" href="method.Pipeline.get_layer_filters.html">get_layer_filters</a>
+  
+    <a class="method" href="method.Pipeline.get_layer_point_sprite_coords_enabled.html">get_layer_point_sprite_coords_enabled</a>
+  
+    <a class="method" href="method.Pipeline.get_layer_texture.html">get_layer_texture</a>
+  
+    <a class="method" href="method.Pipeline.get_layer_wrap_mode_s.html">get_layer_wrap_mode_s</a>
+  
+    <a class="method" href="method.Pipeline.get_layer_wrap_mode_t.html">get_layer_wrap_mode_t</a>
+  
+    <a class="method" href="method.Pipeline.get_n_layers.html">get_n_layers</a>
+  
+    <a class="method" href="method.Pipeline.get_name.html">get_name</a>
+  
+    <a class="method" href="method.Pipeline.get_per_vertex_point_size.html">get_per_vertex_point_size</a>
+  
+    <a class="method" href="method.Pipeline.get_point_size.html">get_point_size</a>
+  
+    <a class="method" href="method.Pipeline.get_uniform_location.html">get_uniform_location</a>
+  
+    <a class="method" href="method.Pipeline.has_capability.html">has_capability</a>
+  
+    <a class="method" href="method.Pipeline.remove_layer.html">remove_layer</a>
+  
+    <a class="method current" href="method.Pipeline.set_alpha_test_function.html">set_alpha_test_function</a>
+  
+    <a class="method" href="method.Pipeline.set_blend.html">set_blend</a>
+  
+    <a class="method" href="method.Pipeline.set_blend_constant.html">set_blend_constant</a>
+  
+    <a class="method" href="method.Pipeline.set_color.html">set_color</a>
+  
+    <a class="method" href="method.Pipeline.set_cull_face_mode.html">set_cull_face_mode</a>
+  
+    <a class="method" href="method.Pipeline.set_depth_state.html">set_depth_state</a>
+  
+    <a class="method" href="method.Pipeline.set_front_face_winding.html">set_front_face_winding</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_combine.html">set_layer_combine</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_combine_constant.html">set_layer_combine_constant</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_filters.html">set_layer_filters</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_matrix.html">set_layer_matrix</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_max_mipmap_level.html">set_layer_max_mipmap_level</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_null_texture.html">set_layer_null_texture</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_point_sprite_coords_enabled.html">set_layer_point_sprite_coords_enabled</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_texture.html">set_layer_texture</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_wrap_mode.html">set_layer_wrap_mode</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_wrap_mode_s.html">set_layer_wrap_mode_s</a>
+  
+    <a class="method" href="method.Pipeline.set_layer_wrap_mode_t.html">set_layer_wrap_mode_t</a>
+  
+    <a class="method" href="method.Pipeline.set_per_vertex_point_size.html">set_per_vertex_point_size</a>
+  
+    <a class="method" href="method.Pipeline.set_point_size.html">set_point_size</a>
+  
+    <a class="method" href="method.Pipeline.set_static_name.html">set_static_name</a>
+  
+    <a class="method" href="method.Pipeline.set_uniform_1f.html">set_uniform_1f</a>
+  
+    <a class="method" href="method.Pipeline.set_uniform_1i.html">set_uniform_1i</a>
+  
+    <a class="method" href="method.Pipeline.set_uniform_float.html">set_uniform_float</a>
+  
+    <a class="method" href="method.Pipeline.set_uniform_int.html">set_uniform_int</a>
+  
+    <a class="method" href="method.Pipeline.set_uniform_matrix.html">set_uniform_matrix</a>
+  
+  </div>
+</div>
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Method</h3>
+    <h1><a href="index.html">Cogl</a><span class="sep"></span><a href="class.Pipeline.html">Pipeline</a><span class="sep"></span>set_alpha_test_function</h1>
+  </header>
+
+  <section>
+    <div class="docblock">
+      <p></p>
+    </div>
+
+    <div class="declaration toggle-wrapper">
+      <h4 style="display:flex;" id="declaration">
+        Declaration
+        <a class="anchor" href="#declaration"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/cogl/cogl/cogl-pipeline-state.h#L123">[src]</a>
+        
+      </h4>
+
+      <div class="docblock c-decl">
+        <pre><code><div class="highlight"><pre><span></span><span class="kt">void</span>
+<span class="n">cogl_pipeline_set_alpha_test_function</span><span class="w"> </span><span class="p">(</span>
+<span class="w">  </span><span class="n">CoglPipeline</span><span class="o">*</span><span class="w"> </span><span class="n">pipeline</span><span class="p">,</span>
+<span class="w">  </span><span class="n">CoglPipelineAlphaFunc</span><span class="w"> </span><span class="n">alpha_func</span><span class="p">,</span>
+<span class="w">  </span><span class="kt">float</span><span class="w"> </span><span class="n">alpha_reference</span>
+<span class="p">)</span>
+</pre></div>
+</code></pre>
+      </div>
+    </div>
+
+    <div class="description toggle-wrapper">
+      <h4 style="display:flex;" id="description">
+        Description
+        <a class="anchor" href="#description"></a>
+        
+        <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/cogl/cogl/cogl-pipeline-state.h#L107">[src]</a>
+        
+      </h4>
+
+      <div class="docblock">
+        <p>Before a primitive is blended with the framebuffer, it goes through an
+alpha test stage which lets you discard fragments based on the current
+alpha value. This function lets you change the function used to evaluate
+the alpha channel, and thus determine which fragments are discarded
+and which continue on to the blending&nbsp;stage.</p>
+<p>The default is <code>COGL_PIPELINE_ALPHA_FUNC_ALWAYS</code>.</p>
+      </div>
+
+      <div class="docblock">
+        
+        
+        
+        
+        
+        
+        
+      </div>
+
+      
+    </div>
+
+    
+    <div class="parameters toggle-wrapper">
+      <h4 id="parameters">
+        Parameters
+        <a href="#parameters" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <dl class="arguments">
+          
+
+          
+          <dt class="arg-name"><code>alpha_func</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<a href="enum.PipelineAlphaFunc.html"><code>CoglPipelineAlphaFunc</code></a></p>
+            <p>A <code>CoglPipelineAlphaFunc</code> constant.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+          <dt class="arg-name"><code>alpha_reference</code></dt>
+          <dd class="arg-description">
+            <p><em>Type:</em>&nbsp;<code>float</code></p>
+            <p>A reference point that the chosen alpha function uses
+  to compare incoming fragments&nbsp;to.</p>
+            <table>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            </table>
+          </dd>
+          
+
+          
+        </dl>
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

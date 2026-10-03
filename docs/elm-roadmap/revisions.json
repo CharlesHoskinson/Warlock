@@ -1,0 +1,1237 @@
+{
+  "reason": "Independent frozen-draft audit corrections; original inputs retained",
+  "changes": {
+    "ELM-GNO-002": {
+      "ears": "WHILE an application window is minimized or absent from the current output effective workspace set including explicit sticky membership, the Elm desktop SHALL exclude its live surface from ordinary paint and hit candidates regardless of convenience visibility or fullscreen-permission flags.",
+      "scenarios": [
+        {
+          "name": "gnome-layering-002",
+          "given": "Heroic on inactive win-minimized with hidden=false, visible=true, acceptsInput=true and allowedOverFullscreen=true",
+          "when": "paint and hit candidates are enumerated",
+          "then": "neither list contains the source window"
+        },
+        {
+          "name": "sticky-workspace",
+          "given": "an eligible explicitly sticky window and its originating workspace",
+          "when": "the originating workspace becomes inactive",
+          "then": "the supported sticky membership keeps the live surface eligible on the current output"
+        },
+        {
+          "name": "pin-nonsticky",
+          "given": "a pinned nonsticky window on an inactive workspace",
+          "when": "candidate paint and hit sets are computed",
+          "then": "pin priority does not override inactive membership and the live surface is excluded"
+        },
+        {
+          "name": "minimized-sticky",
+          "given": "an explicitly sticky window",
+          "when": "the window is minimized",
+          "then": "the live surface is excluded on every output despite sticky membership"
+        }
+      ]
+    },
+    "ELM-REN-015": {
+      "ears": "The native window authority SHALL derive MAX overlap painting and hit traversal from one committed constrained scene, applying explicit input-region and transform rules and committing the documented modal recipient after a qualifying activation.",
+      "scenarios": [
+        {
+          "name": "ren-015",
+          "given": "MAX and floating windows overlap",
+          "when": "the visible top window is clicked",
+          "then": "that eligible top window receives focus"
+        },
+        {
+          "name": "max-input-region",
+          "given": "two overlapping MAX surfaces with the upper input region excluding the point",
+          "when": "the excluded point is clicked",
+          "then": "paint retains the upper pixels, native hit chooses the eligible lower input surface, and the scene revision agrees"
+        },
+        {
+          "name": "max-modal-focus",
+          "given": "the clicked eligible MAX owner has a mapped blocking modal",
+          "when": "the owner is activated",
+          "then": "native authority focuses the accepted modal recipient without corrupting constrained paint order"
+        },
+        {
+          "name": "max-focus-not-top",
+          "given": "the current focus remains on another window and no activation occurs",
+          "when": "a new eligible surface is merely painted",
+          "then": "painting alone does not force focus to equal the top painted surface"
+        }
+      ],
+      "verification": "Native committed-scene, overlap pixels, input region/transform and activation/modal receipts; explicit passthrough and no-activation exceptions are independently checked."
+    },
+    "ELM-ARC-023": {
+      "scenarios": [
+        {
+          "name": "host-ime",
+          "given": "the selected host and an active preedit string",
+          "when": "the ime compatibility route executes",
+          "then": "composition commits or cancels without duplicate/missing characters and restores the documented focus"
+        },
+        {
+          "name": "host-keyboard",
+          "given": "the selected host and a keyboard-only user",
+          "when": "the keyboard compatibility route executes",
+          "then": "taskbar, switcher, menus and settings are reachable and escapable with visible focus"
+        },
+        {
+          "name": "host-orca",
+          "given": "the selected host and Orca with supported speech output",
+          "when": "the orca compatibility route executes",
+          "then": "current control name/state and focus transitions are announced correctly"
+        },
+        {
+          "name": "host-braille",
+          "given": "the selected host and a supported braille device",
+          "when": "the braille compatibility route executes",
+          "then": "selected control name/state and focus changes appear on the braille display"
+        },
+        {
+          "name": "host-clipboard",
+          "given": "the selected host and two supported native applications and shell input",
+          "when": "the clipboard compatibility route executes",
+          "then": "copied content transfers to the intended selection without stale ownership"
+        },
+        {
+          "name": "host-file-dnd",
+          "given": "the selected host and a valid filesystem payload and native destination",
+          "when": "the file-dnd compatibility route executes",
+          "then": "the accepted payload reaches the intended destination once and cancelled drags cause no action"
+        },
+        {
+          "name": "host-scale",
+          "given": "the selected host and a supported fractional-scale output",
+          "when": "the scale compatibility route executes",
+          "then": "rendered and hit-tested control bounds correspond in the target scale"
+        },
+        {
+          "name": "host-negative-output",
+          "given": "the selected host and an output positioned at negative native coordinates",
+          "when": "the negative-output compatibility route executes",
+          "then": "popups and hit coordinates remain inside the correct output bounds"
+        }
+      ],
+      "verification": "All eight named host compatibility routes pass with native/AT evidence; a separate gate fixture verifies a missing/failed route blocks qualification."
+    },
+    "ELM-QA-019": {
+      "scenarios": [
+        {
+          "name": "qa-019-keyboard",
+          "given": "the selected host with no pointing device",
+          "when": "the required keyboard flow executes",
+          "then": "all required controls are reachable and Escape returns focus without trapping navigation"
+        },
+        {
+          "name": "qa-019-speech",
+          "given": "the selected host with supported screen reader and audio output",
+          "when": "the required speech flow executes",
+          "then": "control names/states and focus changes are audibly announced"
+        },
+        {
+          "name": "qa-019-braille",
+          "given": "the selected host with a supported braille display",
+          "when": "the required braille flow executes",
+          "then": "focus changes and control labels are observed on actual braille output"
+        },
+        {
+          "name": "qa-019-ime",
+          "given": "the selected host with a preedit composition active while a popup opens/cancels",
+          "when": "the required ime flow executes",
+          "then": "composition text/caret remain correct and commit/cancel produce no duplicate text"
+        },
+        {
+          "name": "qa-019-reduced-motion",
+          "given": "the selected host with reduced motion enabled",
+          "when": "the required reduced-motion flow executes",
+          "then": "the final minimize/restore state and focus match the normal route without optional motion or stale capture actor"
+        }
+      ],
+      "scenarioObligations": {
+        "keyboard": [
+          "qa-019-keyboard"
+        ],
+        "speech": [
+          "qa-019-speech"
+        ],
+        "braille": [
+          "qa-019-braille"
+        ],
+        "ime": [
+          "qa-019-ime"
+        ],
+        "reduced-motion": [
+          "qa-019-reduced-motion"
+        ]
+      }
+    },
+    "ELM-QA-020": {
+      "scenarios": [
+        {
+          "name": "qa-020-scale",
+          "given": "the supported physical configuration with two different fractional scales",
+          "when": "the scale workload executes",
+          "then": "pixels and hit geometry match the active scale"
+        },
+        {
+          "name": "qa-020-rotation",
+          "given": "the supported physical configuration with an output rotated through supported transforms",
+          "when": "the rotation workload executes",
+          "then": "rendered and input coordinates apply the same output transform"
+        },
+        {
+          "name": "qa-020-hotplug",
+          "given": "the supported physical configuration with a pending preview on an output",
+          "when": "the hotplug workload executes",
+          "then": "removal retires the old output generation and reconnect reconciles current native membership"
+        },
+        {
+          "name": "qa-020-transfer",
+          "given": "the supported physical configuration with a preview and motion crossing output boundaries",
+          "when": "the transfer workload executes",
+          "then": "frame, geometry and target eligibility match the destination generation"
+        },
+        {
+          "name": "qa-020-high-refresh",
+          "given": "the supported physical configuration with the real 240 Hz output and frozen cadence budget",
+          "when": "the high-refresh workload executes",
+          "then": "native presentation samples meet the frozen budget with recorded misses and no browser-frame inference"
+        }
+      ],
+      "scenarioObligations": {
+        "scale": [
+          "qa-020-scale"
+        ],
+        "rotation": [
+          "qa-020-rotation"
+        ],
+        "hotplug": [
+          "qa-020-hotplug"
+        ],
+        "transfer": [
+          "qa-020-transfer"
+        ],
+        "high-refresh": [
+          "qa-020-high-refresh"
+        ]
+      }
+    },
+    "ELM-DEL-024": {
+      "scenarios": [
+        {
+          "name": "delivery-024",
+          "given": "a supported release",
+          "when": "a host security update is proposed",
+          "then": "an owner reviews urgency and required requalification"
+        },
+        {
+          "name": "maintenance-fields",
+          "given": "a release proposed for support",
+          "when": "the maintenance runbook is reviewed",
+          "then": "security triage owner, numeric engine review interval, regression owner and rollback owner are all present with escalation contacts"
+        },
+        {
+          "name": "maintenance-overdue",
+          "given": "the frozen engine review interval elapses without an assigned review",
+          "when": "maintenance status is evaluated",
+          "then": "the overdue review is recorded and escalated to the declared accountable owner"
+        }
+      ],
+      "verification": "Runbook field/cadence validation and urgent/overdue-update tabletop; support admission fails if any required owner or numeric interval is missing.",
+      "scenarioObligations": {
+        "triage": [
+          "delivery-024"
+        ],
+        "cadence": [
+          "maintenance-fields",
+          "maintenance-overdue"
+        ],
+        "regression-owner": [
+          "maintenance-fields"
+        ],
+        "rollback-owner": [
+          "maintenance-fields"
+        ]
+      }
+    },
+    "ELM-UX-031": {
+      "scenarios": [
+        {
+          "name": "ux-031",
+          "given": "notification expires while center is open",
+          "when": "user attempts its former action",
+          "then": "expired action sends no request to another notification"
+        },
+        {
+          "name": "notification-valid",
+          "given": "a current live notification with action identity A",
+          "when": "A is invoked",
+          "then": "the current producer receives exactly that action once and another notification is unaffected"
+        },
+        {
+          "name": "notification-reused",
+          "given": "an expired notification id has been reused by a new native incarnation",
+          "when": "an old queued action arrives",
+          "then": "the old action is rejected and the new incarnation receives no unintended action"
+        }
+      ],
+      "verification": "Valid/expired/reused notification identity fixtures with exactly-once current dispatch and no stale producer action."
+    },
+    "ELM-ARC-006": {
+      "ears": "IF an intent incarnation, authority epoch or expected dependency revision differs from current native authority, THEN the native authority SHALL refuse that request without mutation; reconciliation SHALL produce a new snapshot and never silently convert it into a commit.",
+      "scenarios": [
+        {
+          "name": "architecture-006",
+          "given": "a closed and recreated window",
+          "when": "its old intent arrives",
+          "then": "the new window remains unchanged"
+        },
+        {
+          "name": "stale-reconcile",
+          "given": "a request refused on dependency revision mismatch",
+          "when": "reconciliation provides a current snapshot",
+          "then": "the refused request remains terminal and a distinct freshly validated request is required for any later effect"
+        }
+      ]
+    },
+    "ELM-KDE-009": {
+      "ears": "IF an intent references stale target, family, output or eligibility dependency revisions, THEN the native authority SHALL refuse it without mutation and reconcile observations; any later effect SHALL require a distinct newly validated request.",
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/Engineering inference from pinned KWin canonical order; bridge architecture"
+    },
+    "ELM-GNO-009": {
+      "ears": "WHEN workspace visibility changes before native effect admission, the native authority SHALL validate current dependency revisions and eligibility at the commit point and refuse any stale or ineligible request without mutation."
+    },
+    "ELM-ARC-008": {
+      "ears": "WHEN a dependent mutation is requested, the authority SHALL release it only after a correlated Committed prerequisite satisfies the same incarnation and generation; Pending, Refused, Cancelled and Unknown SHALL leave it withheld.",
+      "scenarios": [
+        {
+          "name": "architecture-008",
+          "given": "restore followed by focus",
+          "when": "restore is still pending",
+          "then": "focus is withheld until the required receipt"
+        },
+        {
+          "name": "prerequisite-Refused",
+          "given": "restore is Refused for the requested incarnation/generation",
+          "when": "dependent focus is evaluated",
+          "then": "focus remains withheld and no unrelated request receipt satisfies it"
+        },
+        {
+          "name": "prerequisite-Cancelled",
+          "given": "restore is Cancelled for the requested incarnation/generation",
+          "when": "dependent focus is evaluated",
+          "then": "focus remains withheld and no unrelated request receipt satisfies it"
+        },
+        {
+          "name": "prerequisite-Unknown",
+          "given": "restore is Unknown for the requested incarnation/generation",
+          "when": "dependent focus is evaluated",
+          "then": "focus remains withheld and no unrelated request receipt satisfies it"
+        }
+      ],
+      "verification": "Dependency fixtures cover Pending, Refused, Cancelled, Unknown, wrong incarnation/generation and a matching Committed prerequisite."
+    },
+    "ELM-ARC-012": {
+      "ears": "WHEN native effect admission executes, the authority SHALL validate cancellation, incarnation and dependency revisions in the same serialized critical section as its commit point; cancellation ordered before commit SHALL prevent mutation and retire that generation\u2019s resources.",
+      "scenarios": [
+        {
+          "name": "architecture-012",
+          "given": "a prepared restore",
+          "when": "Escape cancels before commit",
+          "then": "restore is absent and owned helpers retire"
+        },
+        {
+          "name": "cancel-before-commit",
+          "given": "prepared effect and cancellation compete at one native commit point",
+          "when": "cancellation is ordered first",
+          "then": "no mutation occurs and only the cancelled generation resources retire"
+        },
+        {
+          "name": "commit-before-cancel",
+          "given": "effect commits before native cancellation is ordered",
+          "when": "cancellation is processed afterward",
+          "then": "the committed receipt is preserved, late cancellation does not claim rollback, and remaining resources retire"
+        }
+      ],
+      "verification": "Controlled native interleavings at one defined linearization point; cancellation-before versus commit-before outcomes are distinct, acknowledged and resource-bounded."
+    },
+    "ELM-ARC-026": {
+      "ears": "WHEN the frontend, renderer or native authority restarts, the native authority SHALL invalidate old epochs and resources and install a fresh coherent snapshot before admitting effects.",
+      "scenarios": [
+        {
+          "name": "architecture-026",
+          "given": "a renderer with pending work",
+          "when": "it crashes and restarts",
+          "then": "old work is refused and effects await snapshot reconciliation"
+        },
+        {
+          "name": "authority-restart",
+          "given": "pending old-epoch work exists",
+          "when": "the authority restarts",
+          "then": "old work is rejected even when target geometry is unchanged and a fresh snapshot precedes new effect admission"
+        }
+      ],
+      "phase": "P2"
+    },
+    "ELM-KDE-002": {
+      "ears": "The native authority SHALL classify layer precedence from type, pin, fullscreen, family and output context only after committed eligibility filtering, without reintroducing any excluded surface.",
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/src__window.cpp: belongsToLayer and isActiveFullScreen"
+    },
+    "ELM-KDE-004": {
+      "scenarios": [
+        {
+          "name": "kde-live-source-exclusion",
+          "given": "Heroic live surface is minimized or on an inactive special workspace",
+          "when": "scene candidates and its distinct historical taskbar preview are evaluated",
+          "then": "the live source is absent from ordinary paint, hit and direct focus; the inert preview may be painted under its own identity"
+        }
+      ],
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/New Heroic fixture: visible=true, acceptsInput=true, allowedOverFullscreen=true, specialWorkspace.id=0"
+    },
+    "ELM-KDE-006": {
+      "ears": "WHILE a preview or animation actor represents an ineligible application, the native host SHALL exclude the actor from ordinary application hit and focus targeting; any interactive shell preview control SHALL use a separate identity and validated restore intent.",
+      "scenarios": [
+        {
+          "name": "proxy-inert",
+          "given": "force-visible animation pixels cover an eligible terminal",
+          "when": "the animation pixels are clicked",
+          "then": "the animation actor and minimized live source receive no application input; the underlying eligible surface or distinct shell control follows its declared region"
+        }
+      ],
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/src__scene__windowitem.cpp: force-visible counters and elevation; input.cpp: hidden/minimized exclusion"
+    },
+    "ELM-KDE-007": {
+      "scenarios": [
+        {
+          "name": "owner-modal-activation",
+          "given": "a current eligible modal child belongs to the clicked owner",
+          "when": "the owner is activated",
+          "then": "focus redirects to that child under the frozen modal rule; unrelated application activation is not redirected"
+        },
+        {
+          "name": "unrelated-activation",
+          "given": "a blocking draft belongs to a different application family",
+          "when": "an eligible unrelated window is clicked",
+          "then": "that unrelated native target activates and the draft stays open"
+        }
+      ],
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/src__window.cpp: modality helpers; new GTK/Qt/Xwayland acceptance"
+    },
+    "ELM-QA-017": {
+      "scenarios": [
+        {
+          "name": "qa-modal-exception",
+          "given": "Brave has a current eligible blocking modal and its owner is clicked",
+          "when": "native activation is processed",
+          "then": "painting and hit traversal use one revision and focus follows the predeclared modal recipient while the draft remains open"
+        },
+        {
+          "name": "qa-unrelated-window",
+          "given": "Brave and an unrelated eligible opaque window overlap without input exceptions",
+          "when": "the top unrelated window is clicked",
+          "then": "it receives the hit and focus on the same committed scene"
+        }
+      ]
+    },
+    "ELM-LAY-001": {
+      "scenarios": [
+        {
+          "name": "layer-001",
+          "given": "Heroic is minimized while a terminal is active",
+          "when": "an old raised/maximized surface is considered for scene publication",
+          "then": "Heroic receives neither live drawing nor application input; an independently owned inert preview may remain"
+        },
+        {
+          "name": "heroic-fullscreen-peer",
+          "given": "Heroic has hidden=false, visible=true, acceptsInput=true, allowedOverFullscreen=true on inactive special:win-minimized; active foot is fullscreen=1 on workspace1 and output specialWorkspace=0",
+          "when": "ordinary, fullscreen and effect passes solve scene and input",
+          "then": "Heroic live pixels and input are excluded in every pass and the eligible terminal is drawn/targeted; the original screenshot/state evidence stays labeled non-atomic"
+        }
+      ]
+    },
+    "ELM-LAY-002": {
+      "verification": "Native opaque overlap, input-transparent-region and modal-owner fixtures record one constrained scene revision, independent overlap pixels, input region/hit recipient and documented focus outcome; a Heroic-only run cannot qualify this requirement."
+    },
+    "ELM-LAY-003": {
+      "scenarios": [
+        {
+          "name": "layer-003",
+          "given": "a minimized window with retained preview and original workspace identity",
+          "when": "restore completes through a current generation",
+          "then": "one current live surface becomes eligible and no stale overlay remains"
+        },
+        {
+          "name": "restore-overlay-handoff",
+          "given": "minimized window has a live native incarnation, normal workspace identity and old inert overlay generation",
+          "when": "restore commits its accepted scene handoff",
+          "then": "exactly one current live application input surface becomes eligible; old overlay generation is retired and late callbacks cannot revive it"
+        }
+      ],
+      "verification": "Record original workspace identity, old/new scene and operation generations, live input candidate count, overlay retirement and stale-callback rejection through actual restore handoff."
+    },
+    "ELM-GPU-001": {
+      "ears": "The host selector SHALL require hardware-accelerated rendering by the shell webview\u2019s own nonsoftware backend before host selection and accelerated release admission, separately from native preview or WebGPU execution.",
+      "scenarios": [
+        {
+          "name": "gpu-001",
+          "given": "a candidate pinned host on the target machine",
+          "when": "host selection evaluates rendering",
+          "then": "software-only execution cannot pass the GPU gate"
+        },
+        {
+          "name": "software-webview-native-gpu",
+          "given": "webview uses software while a native Vulkan preview uses NVIDIA",
+          "when": "accelerated host admission runs",
+          "then": "the webview acceleration gate fails despite a GPU-accelerated preview"
+        }
+      ]
+    },
+    "ELM-GPU-004": {
+      "ears": "WHEN a WebGPU adapter or device is unavailable, the host SHALL record WebGPU as unqualified and continue evaluation of alternative hardware paths; host selection SHALL remain blocked until at least one complete webview hardware path qualifies.",
+      "scenarios": [
+        {
+          "name": "gpu-004",
+          "given": "an accepted native GPU path and a WebGPU probe",
+          "when": "requestAdapter returns null",
+          "then": "WebGPU is unqualified while the native GPU path remains usable"
+        },
+        {
+          "name": "first-webgpu-evaluation",
+          "given": "no path has qualified yet and WebGPU returns no device",
+          "when": "host comparison continues",
+          "then": "WebGPU is unqualified, alternative probes continue, and no accelerated host claim is made prematurely"
+        }
+      ]
+    },
+    "ELM-GPU-005": {
+      "ears": "WHEN WebGPU evaluation obtains a nonsoftware adapter and device, the host SHALL verify deterministic render and compute results against supported limits and features and independently observe the native displayed frame.",
+      "priority": "conditional"
+    },
+    "ELM-QA-024": {
+      "ears": "The graphics verifier SHALL record actual hardware adapter, driver, backend, capabilities and displayed acceleration for the selected shell webview; WebGPU availability and execution SHALL be reported separately.",
+      "priority": "must"
+    },
+    "ELM-GPU-007": {
+      "ears": "WHEN any GPU device used by shell composition or preview import is lost, the host SHALL invalidate its dependent objects and rendering generation and revalidate current lease identity, output and scene state before new presentation, without replaying stale window effects.",
+      "scenarios": [
+        {
+          "name": "gpu-007",
+          "given": "GPU resources and an old pending window intent",
+          "when": "device loss occurs",
+          "then": "old resources become unusable and the old intent is not automatically committed"
+        },
+        {
+          "name": "gpu-loss-stale-lease",
+          "given": "a retained historical frame belongs to an earlier application state",
+          "when": "the GPU device is lost and resources are rebuilt",
+          "then": "the old image is not labeled current live content; publication requires a revalidated lease or explicit unavailable state"
+        }
+      ]
+    },
+    "ELM-QA-025": {
+      "ears": "WHEN a selected host GPU path suffers device loss or allocation failure, the native host SHALL invalidate rendering generations, retire invalid owned resources and reconcile current leases without presenting stale frames.",
+      "priority": "must"
+    },
+    "ELM-UX-025": {
+      "scenarios": [
+        {
+          "name": "actual-surface-at",
+          "given": "the full taskbar and switcher exist on the selected host",
+          "when": "AT inspection and navigation run",
+          "then": "both actual surfaces expose matching name, role, selection and focus"
+        }
+      ],
+      "phase": "P3"
+    },
+    "ELM-UX-028": {
+      "scenarios": [
+        {
+          "name": "ime-spike-commit",
+          "given": "a minimal shell text field on the candidate native host has IME focus",
+          "when": "preedit and candidate selection commit",
+          "then": "one text string appears with correct caret and no application launch is caused"
+        },
+        {
+          "name": "ime-spike-cancel",
+          "given": "the minimal candidate-host field holds preedit",
+          "when": "composition is cancelled",
+          "then": "preedit clears without committed text or unintended effect"
+        }
+      ]
+    },
+    "ELM-UX-029": {
+      "scenarios": [
+        {
+          "name": "launcher-accepted",
+          "given": "a current catalog entry is selected",
+          "when": "Enter causes a native accepted launch",
+          "then": "one identity-bound launch request is accepted and success is shown without refusal feedback"
+        },
+        {
+          "name": "launcher-refused",
+          "given": "a current catalog entry is selected but native launch is denied",
+          "when": "Enter submits the request",
+          "then": "one request is refused and the UI shows that refusal without a duplicate launch"
+        }
+      ]
+    },
+    "ELM-UX-035": {
+      "scenarios": [
+        {
+          "name": "release-all-pass",
+          "given": "one frozen coherent candidate tuple has all required native campaigns and migrated-surface scenarios executed",
+          "when": "release review evaluates the complete gate ledger",
+          "then": "each mapped original38/34, pin/input, dragresize52, reliability and surface gate is pass on that tuple before admission"
+        },
+        {
+          "name": "release-failed-case",
+          "given": "one required original case or migrated surface has failed or lacks evidence",
+          "when": "release review runs",
+          "then": "release is blocked and the missing/failed case identity is recorded"
+        }
+      ]
+    },
+    "ELM-ARC-028": {
+      "scenarios": [
+        {
+          "name": "optional-feasibility-admission",
+          "given": "P1/P2 evidence and a separate scope decision exist",
+          "when": "native-compositor feasibility is admitted",
+          "then": "a separate protocol/security/output/application scope record is required without depending on completed P6 shell release"
+        }
+      ],
+      "verification": "Preserved scenario report with native or bridge trace showing: a separate scope and feasibility gate controls admission; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-UX-026": {
+      "phase": "P5"
+    },
+    "ELM-REN-021": {
+      "priority": "conditional"
+    },
+    "ELM-KDE-001": {
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/src__layers.cpp: Workspace::updateStackingOrder; input.cpp: findToplevel; windowitem.cpp: updateStackingOrder"
+    },
+    "ELM-KDE-003": {
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/src__layers.cpp: constrainedStackingOrder; workspace.cpp: constrain/unconstrain"
+    },
+    "ELM-KDE-005": {
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/src__input.cpp: findToplevel; windowitem.cpp: computeVisibility"
+    },
+    "ELM-KDE-008": {
+      "legacyEvidence": "docs/elm-roadmap/reference/kwin/src__window.cpp: isActiveFullScreen; belongsToLayer"
+    },
+    "ELM-ARC-001": {
+      "verification": "Preserved scenario report with native or bridge trace showing: the report identifies every participating artifact; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-002": {
+      "verification": "Preserved scenario report with native or bridge trace showing: only native authority mutates the application window; artifact hashes and matching scenario receipts included.",
+      "scenarios": [
+        {
+          "name": "architecture-002",
+          "given": "an Elm shell view",
+          "when": "an application-window action is requested",
+          "then": "only native authority mutates the application window"
+        },
+        {
+          "name": "ownership-presentation",
+          "given": "a pinned Elm/native host",
+          "when": "a view and its Wayland surface are created and retired",
+          "then": "Elm owns DOM state, native host owns surface lifetime and native authority alone owns application effects"
+        }
+      ]
+    },
+    "ELM-ARC-003": {
+      "verification": "Preserved scenario report with native or bridge trace showing: both conform to the recorded schema; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-005": {
+      "verification": "Preserved scenario report with native or bridge trace showing: the serialized request contains the full authority tuple; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-007": {
+      "verification": "Preserved scenario report with native or bridge trace showing: its state is Unknown rather than Committed; artifact hashes and matching scenario receipts included.",
+      "scenarios": [
+        {
+          "name": "architecture-007",
+          "given": "a request whose connection drops",
+          "when": "its final effect cannot be proven",
+          "then": "its state is Unknown rather than Committed"
+        },
+        {
+          "name": "receipt-pending",
+          "given": "a request with unique identity and a fixture for Pending",
+          "when": "the fixture transition occurs",
+          "then": "the correlated request has exactly state Pending and no other request changes"
+        },
+        {
+          "name": "receipt-committed",
+          "given": "a request with unique identity and a fixture for Committed",
+          "when": "the fixture transition occurs",
+          "then": "the correlated request has exactly state Committed and no other request changes"
+        },
+        {
+          "name": "receipt-refused",
+          "given": "a request with unique identity and a fixture for Refused",
+          "when": "the fixture transition occurs",
+          "then": "the correlated request has exactly state Refused and no other request changes"
+        },
+        {
+          "name": "receipt-cancelled",
+          "given": "a request with unique identity and a fixture for Cancelled",
+          "when": "the fixture transition occurs",
+          "then": "the correlated request has exactly state Cancelled and no other request changes"
+        }
+      ]
+    },
+    "ELM-ARC-010": {
+      "verification": "Preserved scenario report with native or bridge trace showing: 9 is discarded and the gap before 12 triggers reconciliation; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-011": {
+      "verification": "Preserved scenario report with native or bridge trace showing: the ready view receives the release in its original chord order; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-013": {
+      "verification": "Preserved scenario report with native or bridge trace showing: the deadline remains unchanged; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-015": {
+      "verification": "Preserved scenario report with native or bridge trace showing: memory remains bounded and effect refusal is explicit; artifact hashes and matching scenario receipts included.",
+      "scenarios": [
+        {
+          "name": "architecture-015",
+          "given": "queues at configured capacity",
+          "when": "new observations and effects arrive",
+          "then": "memory remains bounded and effect refusal is explicit"
+        },
+        {
+          "name": "queue-byte-limit",
+          "given": "a queue at its configured byte limit",
+          "when": "replaceable observations and new effect work arrive",
+          "then": "only replaceable observations coalesce; admission refuses new effects explicitly and both bounds remain respected"
+        },
+        {
+          "name": "queue-item-limit",
+          "given": "a queue at its configured item limit",
+          "when": "replaceable observations and new effect work arrive",
+          "then": "only replaceable observations coalesce; admission refuses new effects explicitly and both bounds remain respected"
+        }
+      ]
+    },
+    "ELM-ARC-016": {
+      "verification": "Preserved scenario report with native or bridge trace showing: it uses reserved control capacity and is processed; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-017": {
+      "verification": "Preserved scenario report with native or bridge trace showing: one authority serializes the transaction; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-018": {
+      "verification": "Preserved scenario report with native or bridge trace showing: the native family policy determines focus and hit order; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-019": {
+      "verification": "Preserved scenario report with native or bridge trace showing: the valid retained frame remains available without JSON pixels; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-020": {
+      "verification": "Preserved scenario report with native or bridge trace showing: presentation is unproven until the native receipt; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-021": {
+      "verification": "Preserved scenario report with native or bridge trace showing: separate native results and resource measurements are retained; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-022": {
+      "verification": "Preserved scenario report with native or bridge trace showing: roles and input masks precede frontend readiness; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-024": {
+      "verification": "Preserved scenario report with native or bridge trace showing: navigation or capability access is denied; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-027": {
+      "verification": "Preserved scenario report with native or bridge trace showing: the accepted shell returns and drafts remain connected; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-029": {
+      "verification": "Preserved scenario report with native or bridge trace showing: nested and hardware evidence precedes main-session use; artifact hashes and matching scenario receipts included."
+    },
+    "ELM-ARC-004": {
+      "scenarios": [
+        {
+          "name": "architecture-004",
+          "given": "an invalid envelope",
+          "when": "the host receives it",
+          "then": "no compositor action occurs and a reason is recorded"
+        },
+        {
+          "name": "decoder-native-to-elm",
+          "given": "an Elm decoder with a valid prior model",
+          "when": "malformed and unsupported-version native envelopes arrive",
+          "then": "decoder records refusal, preserves the prior model and emits no effect intent"
+        }
+      ]
+    },
+    "ELM-DEL-010": {
+      "scenarios": [
+        {
+          "name": "delivery-010",
+          "given": "an unrelated local peer",
+          "when": "it requests a window effect",
+          "then": "the request is refused without an effect"
+        },
+        {
+          "name": "peer-wrong-session",
+          "given": "an authenticated same-user peer from another or expired session",
+          "when": "it sends an effect request",
+          "then": "session authorization rejects the request without a native effect"
+        },
+        {
+          "name": "peer-approved-session",
+          "given": "an approved current-session same-user peer",
+          "when": "it sends an authorized current operation",
+          "then": "authentication admits it for subsequent native policy validation"
+        }
+      ]
+    },
+    "ELM-DEL-011": {
+      "scenarios": [
+        {
+          "name": "delivery-011",
+          "given": "a connected renderer",
+          "when": "it sends a shell command or unknown method",
+          "then": "native authority rejects it"
+        },
+        {
+          "name": "arbitrary-path-denied",
+          "given": "a connected renderer",
+          "when": "it submits an arbitrary filesystem path to an operation",
+          "then": "schema validation refuses it with no file read, write or command execution"
+        }
+      ]
+    },
+    "ELM-DEL-015": {
+      "scenarios": [
+        {
+          "name": "delivery-015",
+          "given": "old valid settings",
+          "when": "a schema upgrade runs",
+          "then": "valid new settings and recoverable original settings exist"
+        },
+        {
+          "name": "invalid-settings",
+          "given": "a valid versioned settings store",
+          "when": "invalid fields are submitted",
+          "then": "the active settings remain unchanged and validation refuses the write"
+        },
+        {
+          "name": "interrupted-settings",
+          "given": "a valid versioned settings store",
+          "when": "an atomic write is interrupted",
+          "then": "either complete old or complete new valid settings are recovered, never partial bytes"
+        },
+        {
+          "name": "migration-failure",
+          "given": "a valid versioned settings store",
+          "when": "a schema migration fails",
+          "then": "the preserved pre-migration copy remains recoverable and the failed upgrade is not activated"
+        }
+      ]
+    },
+    "ELM-QA-008": {
+      "scenarios": [
+        {
+          "name": "qa-008",
+          "given": "a cancelled capture generation",
+          "when": "a stale retirement arrives",
+          "then": "the active generation retains its live lease"
+        },
+        {
+          "name": "model-focus",
+          "given": "a named model transition fixture for focus",
+          "when": "the fixture and its configured invariant checker execute",
+          "then": "all focus invariants hold and exact transition and model hashes appear in the coverage ledger"
+        },
+        {
+          "name": "model-modal-family",
+          "given": "a named model transition fixture for modal-family",
+          "when": "the fixture and its configured invariant checker execute",
+          "then": "all modal-family invariants hold and exact transition and model hashes appear in the coverage ledger"
+        },
+        {
+          "name": "model-pin-maximize",
+          "given": "a named model transition fixture for pin-maximize",
+          "when": "the fixture and its configured invariant checker execute",
+          "then": "all pin-maximize invariants hold and exact transition and model hashes appear in the coverage ledger"
+        },
+        {
+          "name": "model-capture-lease",
+          "given": "a named model transition fixture for capture-lease",
+          "when": "the fixture and its configured invariant checker execute",
+          "then": "all capture-lease invariants hold and exact transition and model hashes appear in the coverage ledger"
+        },
+        {
+          "name": "model-cancellation",
+          "given": "a named model transition fixture for cancellation",
+          "when": "the fixture and its configured invariant checker execute",
+          "then": "all cancellation invariants hold and exact transition and model hashes appear in the coverage ledger"
+        },
+        {
+          "name": "model-retirement",
+          "given": "a named model transition fixture for retirement",
+          "when": "the fixture and its configured invariant checker execute",
+          "then": "all retirement invariants hold and exact transition and model hashes appear in the coverage ledger"
+        },
+        {
+          "name": "model-output-generation",
+          "given": "a named model transition fixture for output-generation",
+          "when": "the fixture and its configured invariant checker execute",
+          "then": "all output-generation invariants hold and exact transition and model hashes appear in the coverage ledger"
+        }
+      ]
+    },
+    "ELM-QA-010": {
+      "scenarios": [
+        {
+          "name": "qa-010",
+          "given": "a live campaign owns the QA lease",
+          "when": "another campaign requests launch",
+          "then": "it cannot start concurrently"
+        },
+        {
+          "name": "x11-scope",
+          "given": "a protected serial native campaign",
+          "when": "a campaign starts without an explicit X11 fixture",
+          "then": "Xwayland is disabled in the launch receipt"
+        },
+        {
+          "name": "no-drm-fallback",
+          "given": "a protected serial native campaign",
+          "when": "the nested backend fails",
+          "then": "the campaign fails without starting a DRM compositor"
+        },
+        {
+          "name": "crash-protections",
+          "given": "a protected serial native campaign",
+          "when": "a launch and teardown complete",
+          "then": "each of the five handoff protections has an independent configuration and outcome receipt"
+        }
+      ]
+    },
+    "ELM-UX-010": {
+      "scenarios": [
+        {
+          "name": "ux-010",
+          "given": "catalog declares two actions",
+          "when": "jump list opens",
+          "then": "two declared actions appear and unsupported actions are absent"
+        },
+        {
+          "name": "jump-list-recent-identity",
+          "given": "an application with supported recent-item provider and a foreign item",
+          "when": "its jump list opens and an item is selected",
+          "then": "only identity-bound supported recent actions appear and dispatch; foreign items never dispatch"
+        }
+      ]
+    },
+    "ELM-UX-015": {
+      "scenarios": [
+        {
+          "name": "ux-015",
+          "given": "Brave draft dialog and unrelated terminal overlap",
+          "when": "user selects either application",
+          "then": "native modal target or terminal activates and draft content remains intact"
+        },
+        {
+          "name": "modal-draft-retained",
+          "given": "a parent with unsaved text and its eligible modal",
+          "when": "the family is activated then focus switches to an unrelated terminal",
+          "then": "native modal targeting and terminal activation succeed separately and exact parent and modal draft bytes remain intact"
+        }
+      ]
+    },
+    "ELM-UX-018": {
+      "scenarios": [
+        {
+          "name": "ux-018",
+          "given": "window is on workspace 1",
+          "when": "user requests workspace 2 transfer",
+          "then": "accepted transfer updates membership; refusal retains workspace 1"
+        },
+        {
+          "name": "transfer-refused",
+          "given": "a window on workspace 1",
+          "when": "native authority refuses transfer to workspace 2",
+          "then": "membership remains workspace 1 and refusal feedback appears"
+        },
+        {
+          "name": "transfer-accepted",
+          "given": "a window on workspace 1",
+          "when": "native authority commits transfer to workspace 2",
+          "then": "membership changes only with the matching committed receipt"
+        }
+      ]
+    },
+    "ELM-UX-023": {
+      "scenarios": [
+        {
+          "name": "ux-023",
+          "given": "pointer is unused",
+          "when": "keyboard-only acceptance script visits all migrated surfaces",
+          "then": "each surface can be opened, operated and dismissed without pointer events"
+        },
+        {
+          "name": "keyboard-launcher",
+          "given": "the launcher surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-taskbar-groups",
+          "given": "the taskbar groups surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-switcher",
+          "given": "the switcher surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-task-view",
+          "given": "the Task View surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-snap-chooser",
+          "given": "the snap chooser surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-menus",
+          "given": "the menus surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-settings",
+          "given": "the settings surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-notifications",
+          "given": "the notifications surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        },
+        {
+          "name": "keyboard-jump-lists",
+          "given": "the jump lists surface and no pointer input",
+          "when": "the keyboard acceptance fixture opens, traverses, operates and dismisses it",
+          "then": "each operation completes with recorded keyboard focus and no pointer events"
+        }
+      ],
+      "ears": "The Elm desktop SHALL provide keyboard routes for launcher, taskbar groups, switcher, Task View, snap chooser, menus, settings, notifications and jump lists without requiring pointer input."
+    },
+    "ELM-REN-014": {
+      "scenarios": [
+        {
+          "name": "ren-014",
+          "given": "a decorated modal family",
+          "when": "a preview is produced",
+          "then": "its recorded bounds match actual covered pixels"
+        },
+        {
+          "name": "fidelity-client-content",
+          "given": "a capture fixture isolating client content",
+          "when": "the preview is produced and independently pixel-checked",
+          "then": "the fidelity label matches actual supported client content coverage; missing pixels prevent a composed-family claim"
+        },
+        {
+          "name": "fidelity-decorations",
+          "given": "a capture fixture isolating decorations",
+          "when": "the preview is produced and independently pixel-checked",
+          "then": "the fidelity label matches actual supported decorations coverage; missing pixels prevent a composed-family claim"
+        },
+        {
+          "name": "fidelity-modal-extents",
+          "given": "a capture fixture isolating modal extents",
+          "when": "the preview is produced and independently pixel-checked",
+          "then": "the fidelity label matches actual supported modal extents coverage; missing pixels prevent a composed-family claim"
+        },
+        {
+          "name": "fidelity-popup-extents",
+          "given": "a capture fixture isolating popup extents",
+          "when": "the preview is produced and independently pixel-checked",
+          "then": "the fidelity label matches actual supported popup extents coverage; missing pixels prevent a composed-family claim"
+        }
+      ]
+    },
+    "ELM-GNO-006": {
+      "scenarios": [
+        {
+          "name": "gnome-layering-006",
+          "given": "overlapping eligible opaque windows",
+          "when": "a visible overlap point is clicked",
+          "then": "the visible top eligible surface receives input unless a recorded native exception applies"
+        },
+        {
+          "name": "hit-normal-top",
+          "given": "overlapping opaque eligible windows with no exception declared before the test",
+          "when": "an overlap point is clicked",
+          "then": "the top surface receives input at the matching committed scene revision"
+        },
+        {
+          "name": "hit-region-hole",
+          "given": "a top surface with a native input-region hole declared before the test",
+          "when": "the hole is clicked",
+          "then": "native hit testing selects the eligible lower surface and records the pre-existing region exception"
+        },
+        {
+          "name": "hit-modal-redirect",
+          "given": "a blocked parent and modal redirection policy declared before the test",
+          "when": "the parent is activated",
+          "then": "native focus redirects to the eligible modal without forwarding the parent click coordinates as a modal click"
+        }
+      ]
+    },
+    "ELM-REV-022": {
+      "ears": "IF preview copy volume, acquire-fence wait or cross-GPU transfer exceeds its frozen budget, THEN the preview qualification SHALL reject that import route and preserve a qualified native route or an explicit unavailable state."
+    },
+    "ELM-UI-002": {
+      "ears": "WHEN a listed target outside the effective workspace set is activated, the native authority SHALL navigate to its preserved workspace on its owning output before visible activation without implicit transfer, and SHALL maintain an eligible visible fallback or separately validated compensation if a later restore is refused.",
+      "scenarios": [
+        {
+          "name": "activate-other-workspace",
+          "given": "a target on workspace 2 and activation from workspace 1",
+          "when": "taskbar restore commits",
+          "then": "workspace 2 becomes visible on its owning output and target pixels and focus are observed with membership unchanged"
+        },
+        {
+          "name": "activate-other-output",
+          "given": "a target on workspace 2 and activation from workspace 1",
+          "when": "a target on another output is selected",
+          "then": "that output presents its preserved workspace and target focus without moving the window"
+        },
+        {
+          "name": "activation-refused",
+          "given": "a target on workspace 2 and activation from workspace 1",
+          "when": "workspace navigation or restore is refused",
+          "then": "current visible focus remains, no hidden target gets focus and correlated refusal appears"
+        },
+        {
+          "name": "navigation-partial-refusal",
+          "given": "workspace navigation committed and prior focus is no longer visible",
+          "when": "the subsequent restore is refused",
+          "then": "eligible visible destination fallback or separately generation-validated compensation restores usable focus; no stale target or uncertain replay occurs"
+        }
+      ]
+    },
+    "ELM-UI-010": {
+      "scenarios": [
+        {
+          "name": "announce-launch refusal",
+          "given": "speech and braille active with stable input focus",
+          "when": "launch refusal occurs",
+          "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+        },
+        {
+          "name": "announce-transfer refusal",
+          "given": "speech and braille active with stable input focus",
+          "when": "transfer refusal occurs",
+          "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+        },
+        {
+          "name": "announce-settings validation failure",
+          "given": "speech and braille active with stable input focus",
+          "when": "settings validation failure occurs",
+          "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+        },
+        {
+          "name": "announce-adapter unavailable",
+          "given": "speech and braille active with stable input focus",
+          "when": "adapter unavailable occurs",
+          "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+        },
+        {
+          "name": "announce-notification arrival",
+          "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+          "when": "notification arrival occurs",
+          "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+        },
+        {
+          "name": "announce-notification expiration",
+          "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+          "when": "notification expiration occurs",
+          "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+        },
+        {
+          "name": "announce-expired action rejection",
+          "given": "speech and braille active with stable input focus and the frozen announcement policy permits this message",
+          "when": "expired action rejection occurs",
+          "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+        },
+        {
+          "name": "announcement-dnd",
+          "given": "do-not-disturb active with ordinary new notification",
+          "when": "notification arrives",
+          "then": "visual history updates without speech interruption or focus relocation"
+        },
+        {
+          "name": "announcement-expiration-irrelevant",
+          "given": "expired notification is neither focused nor user-invoked",
+          "when": "expiration is processed",
+          "then": "expiration does not announce or move focus"
+        },
+        {
+          "name": "announcement-urgency-opt-in",
+          "given": "user explicitly opted in to this urgency class",
+          "when": "matching urgent notification arrives",
+          "then": "announcement follows the opted-in interruption policy without focus theft"
+        }
+      ]
+    },
+    "ELM-UI-012": {
+      "scenarios": [
+        {
+          "name": "ime-Enter Escape arrows",
+          "given": "a composing field with active candidates",
+          "when": "Enter Escape arrows occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret"
+        },
+        {
+          "name": "ime-focus transfer",
+          "given": "a composing field with active candidates",
+          "when": "focus transfer occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret"
+        },
+        {
+          "name": "ime-field recreation",
+          "given": "a composing field with active candidates",
+          "when": "field recreation occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret"
+        },
+        {
+          "name": "ime-output scale transfer",
+          "given": "a composing field with active candidates",
+          "when": "output scale transfer occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret"
+        },
+        {
+          "name": "ime-late callback",
+          "given": "a composing field with active candidates",
+          "when": "late callback occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret"
+        },
+        {
+          "name": "ime-host restart",
+          "given": "a composing field with active candidates",
+          "when": "host restart occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret"
+        },
+        {
+          "name": "ime-explicit-valid-commit",
+          "given": "current field identity and composition generation",
+          "when": "native input method explicitly commits valid composition",
+          "then": "exactly one string commits to that field without unintended shell action"
+        },
+        {
+          "name": "ime-invalidated-zero-commit",
+          "given": "field or host generation invalidated by focus loss recreation or restart",
+          "when": "a late old-generation commit arrives",
+          "then": "zero text writes and zero shell effects occur"
+        }
+      ]
+    }
+  }
+}

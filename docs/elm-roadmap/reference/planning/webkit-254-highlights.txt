@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title> WebKitGTK 2.54 highlights - The WebKitGTK Project</title>
+    <link rel="stylesheet" type="text/css" media="all" href="/style.css">
+
+    <link rel="alternate" type="application/rss+xml" title="Subscribe to WebKitGTK news (RSS feed)" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Subscribe to WebKitGTK news (Atom feed)" href="/atom.xml" />
+
+</head>
+
+<body>
+    <div id="main_wrapper">
+        <div id="global_domain_bar">
+            <div class="maxwidth">
+                <div class="tab none">
+                    <a class="root" href="https://planet.webkitgtk.org/">planet.webkitgtk.org</a>
+                </div>
+                <div class="tab webkit">
+                    <a class="root" href="https://www.webkit.org/">webkit.org</a>
+                </div>
+                <div class="tab">
+                    <a class="root" href="https://www.gnome.org/">GNOME.org</a>
+                </div>
+            </div>
+        </div>
+
+        <div id="title_bar">
+            <div class="maxwidth">
+                <span id="site_title"><a href="/">WebKitGTK</a></span>
+            </div>
+        </div>
+
+        <div id="container" class="two_columns max_width">
+            <div class="content">
+                <div class="news">
+
+<h2>WebKitGTK 2.54 highlights</h2>
+
+<p>The WebKit team at Igalia is happy to announce a new release series of WebKitGTK. The main highlight of this release is a new web process compositor built on the <a href="https://skia.org">Skia</a> graphics library, replacing the TextureMapper-based one. Read on for the details, along with a summary of the other most noteworthy changes from the latest release cycle.</p>
+
+<h2 id="graphics-improvements">Graphics improvements</h2>
+
+<h3 id="a-new-skia-based-compositor">A new Skia-based compositor</h3>
+
+<p>This cycle brings the largest overhaul of the rendering architecture since the adoption of <a href="https://skia.org">Skia</a> for 2D rendering: the web process compositor now uses the Skia API instead of the venerable TextureMapper. Layers are composed into the final frame using Skia, which allows sharing a single rendering infrastructure across the whole graphics stack and enables several optimizations:</p>
+
+<ul>
+  <li>Tile contents are recorded into deferred display lists and replayed on the compositor thread, so painting worker threads no longer need to touch the GPU at all.</li>
+  <li>Batched painting groups the drawing of many layers into a single Skia call, which improves performance on pages with many layers that can be painted in the same operation.</li>
+  <li>Unnecessary clip operations are avoided whenever possible, keeping the batched paths effective.</li>
+</ul>
+
+<p>Beyond raw performance, expressing compositing as Skia draw calls made several features simpler and faster: filters and masks no longer require intermediate offscreen surfaces in most cases, and CSS blend modes, which TextureMapper never implemented, now work in composited layers. And since Skia can target both OpenGL and Vulkan, the compositor no longer stands in the way of Vulkan-based rendering in the future.</p>
+
+<p>The consolidation on Skia goes beyond compositing: <strong>the option to use <a href="https://www.cairographics.org">Cairo</a> for 2D rendering has been removed</strong>, making Skia the only 2D rendering implementation. Rendering tiles in the main thread is no longer supported either, so threaded rendering is now the only tile painting path.</p>
+
+<h3 id="damage-aware-compositing">Damage-aware compositing</h3>
+
+<p>Damage tracking has seen substantial work this cycle. The damage is the region of the view that changed since the previous frame and therefore requires repainting; <a href="https://blogs.igalia.com/plampe/introduction-to-damage-propagation-in-wpe-and-gtk-webkit-ports/">Paweł Lampe’s introduction to damage propagation</a> covers the concept in depth. Compositing itself now uses this information, and does so by default: each draw the compositor issues is restricted to the damaged rectangles, in a way that preserves the batched painting described above. A new <code class="language-plaintext highlighter-rouge">DamageRectangleThreshold</code> preference allows tuning the balance between damage precision and bookkeeping cost.
+<!-- FIXME: link Nikolas's damage post when it is published --></p>
+
+<h3 id="the-performance-impact">The performance impact</h3>
+
+<p>What drove the compositor rewrite was making it simpler and easier to maintain, as <a href="https://www.youtube.com/watch?v=qVc0I1Z1ZKU">Carlos García Campos explained at the Web Engines Hackfest 2026</a>; performance came later, since TextureMapper started out ahead after more than a decade of tuning. By now the optimization work has more than closed that gap. WebKitGTK shares the compositor and all of these optimizations with <a href="https://wpewebkit.org">WPE WebKit</a>, whose <a href="https://wpewebkit.org/blog/2026-09-16-wpewebkit-2.54.html">2.54 announcement</a> measures their cumulative effect on a Raspberry Pi 4: MotionMark scores improve by around 36%, by around 45% on the composition-focused variant of the benchmark, and all of that while keeping the GPU markedly less busy.
+Benchmarks understate one part of the work, though. MotionMark animates nearly the entire viewport, so there is hardly anything for damage tracking to save. Real-world content behaves differently: usually a small area of the page is changing while everything else stays still, and skipping all of that quiet area cuts the per-frame GPU work to a fraction.</p>
+
+<h3 id="other-rendering-improvements">Other rendering improvements</h3>
+
+<p>A GPU atlas is now used for batched raster image uploads, regardless of the compositor in use, and it is reused across frames when the image set does not change, avoiding needless texture allocation and pixel uploads.</p>
+
+<p>Asynchronous scrolling is smoother: several synchronization issues between the main, scrolling, and compositing threads that caused glitches while scrolling have been fixed, and the scrolling thread no longer blocks the compositor to flush its state, removing input-latency stalls on pages with many layers.</p>
+
+<p>More animations can now run on the compositing thread: CSS animations using the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function/steps"><code class="language-plaintext highlighter-rouge">steps()</code></a> and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function/linear"><code class="language-plaintext highlighter-rouge">linear()</code></a> timing functions no longer force main-thread animation.</p>
+
+<p>Finally, the rendering mode used when hardware acceleration is not available has been reworked and unified with WPE’s: it now always uses damage information to limit repaints, produces at most one frame per vertical blank, and uses multisample anti-aliasing when available.</p>
+
+<h2 id="api-changes">API changes</h2>
+
+<ul>
+  <li>A new API for page icons: <a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/method.FaviconDatabase.get_page_icons.html"><code class="language-plaintext highlighter-rouge">webkit_favicon_database_get_page_icons()</code></a> retrieves all the icons declared by a page as a list of <a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/class.Image.html"><code class="language-plaintext highlighter-rouge">WebKitImage</code></a> objects, and the <a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/property.WebView.page-icons.html"><code class="language-plaintext highlighter-rouge">WebKitWebView:page-icons</code></a> property exposes the icons of the currently loaded page. Each icon implements <a href="https://docs.gtk.org/gio/iface.LoadableIcon.html"><code class="language-plaintext highlighter-rouge">GLoadableIcon</code></a>, so applications can pick the size that best fits their needs. Consequently, the previous single-favicon API (<a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/method.WebView.get_favicon.html"><code class="language-plaintext highlighter-rouge">webkit_web_view_get_favicon()</code></a>, the <a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/property.WebView.favicon.html"><code class="language-plaintext highlighter-rouge">WebKitWebView:favicon</code></a> property, and the <code class="language-plaintext highlighter-rouge">WebKitFaviconDatabase</code> getters and <code class="language-plaintext highlighter-rouge">favicon-changed</code> signal) are deprecated. Both changes apply to the GTK4 API only.</li>
+  <li>A new <a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/property.WebView.magnification.html"><code class="language-plaintext highlighter-rouge">WebKitWebView:magnification</code></a> property to handle visual scaling of the page, independent of the zoom level; it is also updated when the user pinch-zooms on a touchscreen.</li>
+  <li><a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/property.WebsitePolicies.custom-user-agent.html"><code class="language-plaintext highlighter-rouge">WebKitWebsitePolicies:custom-user-agent</code></a> allows setting a custom User-Agent for a single navigation, by passing the policies to <a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/method.PolicyDecision.use_with_policies.html"><code class="language-plaintext highlighter-rouge">webkit_policy_decision_use_with_policies()</code></a>.</li>
+  <li><a href="https://webkitgtk.org/reference/webkitgtk/2.54.0/method.FeatureList.find.html"><code class="language-plaintext highlighter-rouge">webkit_feature_list_find()</code></a> is a convenience function to look up a feature by identifier in a feature list.</li>
+  <li>In the GTK3 API, the <code class="language-plaintext highlighter-rouge">WEBKIT_HARDWARE_ACCELERATION_POLICY_ON_DEMAND</code> hardware acceleration policy is deprecated: hardware acceleration is now always used, and the on-demand policy behaves like <code class="language-plaintext highlighter-rouge">WEBKIT_HARDWARE_ACCELERATION_POLICY_ALWAYS</code>.</li>
+</ul>
+
+<h2 id="multimedia-improvements">Multimedia improvements</h2>
+
+<p>Let’s start with a transition notice: the GStreamer-based WebRTC backend is being replaced with a LibWebRTC-based implementation, which is expected to be available in the next release cycle. As a consequence, WebRTC support, which in previous releases required building with experimental features enabled, is disabled in 2.54.</p>
+
+<p>The rest of the multimedia work moved forward at full speed:</p>
+
+<ul>
+  <li>Resource usage on pages containing many videos has been improved, by stopping the pipelines of muted, invisible video elements.</li>
+  <li>Media capability reporting is more accurate: non-AAC <code class="language-plaintext highlighter-rouge">mp4a</code> codecs (MP3, AC-3, E-AC-3) are correctly reported as supported when decoders are present, xHE-AAC support is auto-detected, and Dolby AC-4 is advertised for MSE on systems that support it.</li>
+  <li>Video decoding limits are now respected in <a href="https://developer.mozilla.org/en-US/docs/Web/API/MediaCapabilities">MediaCapabilities</a> queries, and can be overridden with the <code class="language-plaintext highlighter-rouge">WEBKIT_GST_VIDEO_DECODING_LIMIT</code> environment variable.</li>
+  <li>Experimental support for <a href="https://developer.mozilla.org/en-US/docs/Web/API/SourceBuffer/changeType"><code class="language-plaintext highlighter-rouge">SourceBuffer.changeType()</code></a> has been added to the MSE backend, along with a fix for playback stalling at ad transitions on Twitch.</li>
+</ul>
+
+<p>On top of this, the GStreamer backend has received a substantial amount of memory-safety and lifetime-correctness work that translates into a more stable multimedia experience.</p>
+
+<h2 id="webxr">WebXR</h2>
+
+<p>The <a href="https://www.khronos.org/openxr/">OpenXR</a>-based WebXR implementation continues to progress. The main highlight is support for the <a href="https://www.w3.org/TR/webxrlayers-1/">WebXR Layers API</a>: quad, cylinder, equirect, and cube layers are now implemented, in addition to the already supported projection layers. Layers can be backed by texture arrays, and <code class="language-plaintext highlighter-rouge">XRSession.maxRenderLayers</code> lets content query the compositor’s layer budget.</p>
+
+<p>The backend has also been decoupled from OpenGL ES through an abstract graphics binding, paving the way for a future Vulkan-based binding.</p>
+
+<p>WebXR support remains a build-time option, enabled with the <code class="language-plaintext highlighter-rouge">ENABLE_WEBXR=ON</code> CMake option; the Layers support additionally requires <code class="language-plaintext highlighter-rouge">ENABLE_WEBXR_LAYERS=ON</code>.</p>
+
+<h2 id="web-platform-support">Web Platform support</h2>
+
+<p>As usual, this list is not exhaustive as WebKit continuously progresses in its support for new standards. Some of the highlights for this release are:</p>
+
+<ul>
+  <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Temporal">Temporal API</a>, a modern replacement for <code class="language-plaintext highlighter-rouge">Date</code>, is now enabled.</li>
+  <li><a href="https://github.com/WebAssembly/js-promise-integration">WebAssembly JavaScript Promise Integration</a> (JSPI) is now enabled, along with the WebAssembly <a href="https://github.com/WebAssembly/multi-memory">Multi-Memory</a> and <a href="https://github.com/WebAssembly/relaxed-simd">Relaxed SIMD</a> proposals.</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Customizable_select">Customizable select elements</a> (<code class="language-plaintext highlighter-rouge">appearance: base-select</code>) are now supported.</li>
+  <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/CloseWatcher">CloseWatcher API</a> and the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog#closedby"><code class="language-plaintext highlighter-rouge">closedby</code></a> attribute for <code class="language-plaintext highlighter-rouge">&lt;dialog&gt;</code> are now enabled.</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_scroll_anchoring">CSS scroll anchoring</a> is now enabled.</li>
+  <li>The CSS <a href="https://drafts.csswg.org/css-mixins-1/">@function</a> rule and the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/if">if()</a> function are now available.</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/attr">Advanced attr()</a> substitution is now available.</li>
+  <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-color">scrollbar-color</a> CSS property is now supported.</li>
+  <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad_API">Gamepad API</a> now supports rumble through <a href="https://developer.mozilla.org/en-US/docs/Web/API/Gamepad/vibrationActuator"><code class="language-plaintext highlighter-rouge">vibrationActuator</code></a>, implemented with <a href="https://gnome.pages.gitlab.gnome.org/libmanette/">libmanette</a>.</li>
+  <li>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Origin-Agent-Cluster">Origin-Agent-Cluster</a> header is now supported.</li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Transferable_objects">Transferable streams</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/ReadableStream/from_static"><code class="language-plaintext highlighter-rouge">ReadableStream.from()</code></a> are now enabled.</li>
+  <li>IndexedDB <a href="https://w3c.github.io/IndexedDB/#dom-idbobjectstore-getallrecords">getAllRecords()</a> is now supported.</li>
+  <li>Time zone changes in the host system are now picked up at runtime by <code class="language-plaintext highlighter-rouge">Date</code> and <code class="language-plaintext highlighter-rouge">Intl</code>.</li>
+</ul>
+
+<p>Web content also integrates better with the desktop settings: the <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion"><code class="language-plaintext highlighter-rouge">prefers-reduced-motion</code></a> media query now follows the dedicated reduced-motion setting introduced in <a href="https://release.gnome.org/50/">GNOME 50</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast"><code class="language-plaintext highlighter-rouge">prefers-contrast</code></a> is implemented for the first time in the GTK4 port, and <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme"><code class="language-plaintext highlighter-rouge">prefers-color-scheme</code></a> now honors the dark style preference there as well.</p>
+
+<h2 id="whats-new-for-webkit-developers">What’s new for WebKit developers?</h2>
+
+<p>WebKit can now use <a href="https://github.com/microsoft/mimalloc">mimalloc</a> as its memory allocator, as an alternative to its own bmalloc. For now it is the default only on some architectures (32-bit ARM, MIPS, RISC-V, and builds supporting 64 KB memory pages); everywhere else bmalloc remains the default, and mimalloc can be enabled with the <code class="language-plaintext highlighter-rouge">USE_MIMALLOC</code> build option.</p>
+
+<p>Logging now falls back to the standard error output when journald is not reachable, which is common in minimal containers, and the new <code class="language-plaintext highlighter-rouge">WEBKIT_DEBUG_OUTPUT</code> environment variable allows choosing the log destination explicitly.</p>
+
+<p>Profile-guided optimization is now supported in regular CMake builds with Clang, through the <code class="language-plaintext highlighter-rouge">ENABLE_LLVM_PROFILE_GENERATION</code> and <code class="language-plaintext highlighter-rouge">USE_PGO_PROFILE</code> options.</p>
+
+<p>Finally, a note for packagers: building WebKitGTK now requires <a href="https://ninja-build.org">Ninja</a>, as the CMake Makefile generator is no longer supported.</p>
+
+<h2 id="other-notes">Other notes</h2>
+
+<p>WebDriver automation now works regardless of which GTK version of WebKitGTK an application uses: the interaction events (keyboard, mouse, and wheel) are handled even when the application runs a build of WebKitGTK different from the one providing the WebDriver binary.</p>
+
+<p>On the localization front, a new Kazakh translation has been added, and the Brazilian Portuguese, Georgian, Japanese, Serbian, Slovenian, and Swedish translations have been updated.</p>
+
+<h2 id="looking-forward-to-256">Looking forward to 2.56</h2>
+
+<p>The 2.56 release series will bring even more improvements, and we expect it to be released during the spring of 2027. Until then!</p>
+
+
+</div>
+
+            </div>
+
+            <div class="sidebar">
+                <div class="subtle_box">
+                    <div class="section">
+                        <div class="header news"><span>Latest News</span></div>
+                        <ul class="navigation_list">
+                            
+                            
+                            
+                                
+                                    <li><span class="subheader">&#8227; <a href="/2026/10/02/webkitgtk2.54.1-released.html">WebKitGTK 2.54.1 released!</a></span>
+                                        <p>02 OCTOBER 2026</p>
+                                    </li>
+                                    
+                                
+                                
+                            
+                                
+                                
+                            
+                                
+                                    <li><span class="subheader">&#8227; <a href="/2026/09/16/webkitgtk2.54.0-released.html">WebKitGTK 2.54.0 released!</a></span>
+                                        <p>16 SEPTEMBER 2026</p>
+                                    </li>
+                                    
+                                
+                                
+                                    
+                            <li><span class="subheader">(<a href="/news.html">more</a>)</span>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="header security"><span>Security Advisories</span></div>
+                        <ul class="navigation_list">
+                            
+                                <li><span class="subheader">&#8227; <a href="/security/WSA-2026-0006.html">WebKitGTK and WPE WebKit Security Advisory WSA-2026-0006</a></span>
+                                    <p>29 SEPTEMBER 2026</p>
+                                </li>
+                            
+                                <li><span class="subheader">&#8227; <a href="/security/WSA-2026-0005.html">WebKitGTK and WPE WebKit Security Advisory WSA-2026-0005</a></span>
+                                    <p>20 AUGUST 2026</p>
+                                </li>
+                            
+                            <li><span class="subheader">(<a href="/security.html">more</a>)</span>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="header download"><span>Releases</span></div>
+                        <ul>
+                            <li><span class="subheader">&#8227; Stable tarball</span>
+                                <p><a href="/releases/webkitgtk-2.54.1.tar.xz">WebKitGTK 2.54.1</a></p>
+                            </li>
+                            <li><span class="subheader">&#8227; Unstable tarball</span>
+                                <p><a href="/releases/webkitgtk-2.53.92.tar.xz">WebKitGTK 2.53.92</a></p>
+                            </li>
+                            <li><span class="subheader">&#8227; <a href="/releases/">All releases</a></span></li>
+                            <li><span class="subheader">&#8227; <a href="/verifying.html">Verifying releases</a></span></li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="header documentation"><span>Documentation</span></div>
+                        <ul>
+                            <li><span class="subheader">&#8227; Stable API Reference</span>
+                                <p><a href="https://webkitgtk.org/reference/webkitgtk/stable/">WebKit</a></p>
+                                <p><a href="https://webkitgtk.org/reference/webkitgtk-web-process-extension/stable/">WebKitWebProcessExtension</a></p>
+                                <p><a href="https://webkitgtk.org/reference/jsc-glib/stable/">JavaScriptCore</a></p>
+                            </li>
+                            <li><span class="subheader">&#8227; Unstable API Reference</span>
+                                <p><a href="https://webkitgtk.org/reference/webkitgtk/unstable/">WebKit</a></p>
+                                <p><a href="https://webkitgtk.org/reference/webkitgtk-web-process-extension/unstable/">WebKitWebProcessExtension</a></p>
+                                <p><a href="https://webkitgtk.org/reference/jsc-glib/unstable/">JavaScriptCore</a></p>
+                            </li>
+                            <li><span class="subheader">&#8227; Deprecated API Reference</span>
+                                <p><a href="https://webkitgtk.org/reference/webkit2gtk/stable/">WebKit2</a></p>
+                                <p><a href="https://webkitgtk.org/reference/webkit2gtk/1.10.1/">WebKit1</a></p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="header contact"><span>Contact</span></div>
+                        <ul>
+                            <li><span class="subheader">&#8227; Mailing lists</span>
+                                <p><a href="https://lists.webkit.org/mailman3/lists/webkit-gtk.lists.webkit.org/">webkit-gtk</a></p>
+                                <p><a href="https://lists.webkit.org/mailman3/lists/webkit-help.lists.webkit.org/">webkit-help</a></p>
+                                <p><a href="https://lists.webkit.org/mailman3/lists/webkit-dev.lists.webkit.org/">webkit-dev</a></p>
+                            </li>
+                            <li><span class="subheader">&#8227; <a href="https://matrix.to/#/%23webkitgtk:matrix.org">#webkitgtk:matrix.org</a></span></li>
+                            <li><span class="subheader">&#8227; <a rel="me" href="https://floss.social/@WebKitGTK">@WebKitGTK on Mastodon</a></span></li>
+                            <li><span class="subheader">&#8227; <a href="https://bsky.app/profile/webkitgtk.org">@WebKitGTK on Bluesky</a></span></li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <div class="header contribute"><span>Contribute</span></div>
+                        <ul>
+                            <li class="subheader">&#8227; <a href="https://bugs.webkit.org/enter_bug.cgi?assigned_to=webkit-unassigned%40lists.webkit.org&attachurl=&blocked=&bug_file_loc=http://&bug_severity=Normal&bug_status=NEW&comment=&component=WebKit%20Gtk&contenttypeentry=&contenttypemethod=autodetect&contenttypeselection=text/plain&data=&dependson=&description=&flag_type-1=X&flag_type-3=X&flag_type-4=X&form_name=enter_bug&keywords=GTK&maketemplate=Remember%20values%20as%20bookmarkable%20template&op_sys=Linux&priority=P3&product=WebKit&rep_platform=PC&short_desc=%5BGTK%5D%20">File a bug</a></li>
+                            <li class="subheader">&#8227; <a href="https://docs.webkit.org/#downloading-the-source-code">Get the code</a></li>
+                            <li class="subheader">&#8227; <a href="https://docs.webkit.org/Build%20%26%20Debug/BuildOptions.html#building-the-gtk-port">How to build</a></li>
+                            <li class="subheader">&#8227; <a href="https://docs.webkit.org/Getting%20Started/ContributingCode.html">How to submit code</a></li>
+                            <li class="subheader">&#8227; <a href="https://docs.webkit.org/Ports/WebKitGTK%20and%20WPE%20WebKit/TipsForMaintainers.html#stable-branches">Stable branch</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="maxwidth">
+            <span class="left">Copyright © 2009‒2026 The WebKitGTK Team</span>
+            <span class="right">Hosting kindly provided by <a href="https://www.igalia.com/">Igalia</a>.</span>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+</body>
+</html>

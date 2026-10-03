@@ -1,0 +1,1906 @@
+[
+  {
+    "id": "ELM-GPU-001",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL require measured hardware-accelerated rendering in the selected native host before host selection and accelerated release admission.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Pinned engine/driver diagnostics plus a deterministic displayed workload on a nonsoftware device.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify the actual host GPU path.",
+    "scenarios": [
+      {
+        "name": "gpu-001",
+        "given": "a candidate pinned host on the target machine",
+        "when": "host selection evaluates rendering",
+        "then": "software-only execution cannot pass the GPU gate"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-002",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The graphics qualification SHALL distinguish hardware discovery, native GPU rendering, accelerated webview composition and WebGPU adapter/device execution as separate evidence claims.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Evidence ledger with four separate verdicts linked to executed probes.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Create acceleration evidence categories.",
+    "scenarios": [
+      {
+        "name": "gpu-002",
+        "given": "Vulkan enumerates physical devices",
+        "when": "the inventory is recorded",
+        "then": "WebGPU and displayed-render verdicts remain unproven until their probes pass"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-003",
+    "capability": "elm-gpu",
+    "pattern": "event-driven",
+    "ears": "WHEN WebGPU is evaluated, the native host SHALL expose bundled assets through a qualified secure local origin without disabling renderer sandboxing.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Origin/security-state probe, effective sandbox flags and denied remote navigation.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify WebGPU origin and sandbox.",
+    "scenarios": [
+      {
+        "name": "gpu-003",
+        "given": "a local shell asset bundle",
+        "when": "the host loads its GPU probe",
+        "then": "the probe uses the approved secure origin and the renderer sandbox remains enabled"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-004",
+    "capability": "elm-gpu",
+    "pattern": "event-driven",
+    "ears": "WHEN a WebGPU adapter or device is unavailable, the host SHALL reject WebGPU qualification and preserve an accepted alternative hardware-rendering route.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Null-adapter, rejected-device and unsupported-feature fault reports.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Implement capability negotiation and API rejection.",
+    "scenarios": [
+      {
+        "name": "gpu-004",
+        "given": "an accepted native GPU path and a WebGPU probe",
+        "when": "requestAdapter returns null",
+        "then": "WebGPU is unqualified while the native GPU path remains usable"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-005",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The WebGPU qualification SHALL verify a deterministic render and compute result using supported adapter limits and features and independently observe the native displayed frame.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "WGSL validation/readback results plus output capture and backend classification.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Build isolated render and compute qualification probes.",
+    "scenarios": [
+      {
+        "name": "gpu-005",
+        "given": "a nonsoftware adapter and accepted device",
+        "when": "the deterministic workload completes",
+        "then": "known results match and the rendered native frame is independently observed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-006",
+    "capability": "elm-gpu",
+    "pattern": "state-driven",
+    "ears": "WHILE GPU effects are active, the renderer SHALL own GPU objects locally and keep per-frame pixel buffers outside Elm port messages.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "IPC payload and resource-allocation traces over motion/reversal workload.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Keep GPU ownership and frame scheduling in the renderer.",
+    "scenarios": [
+      {
+        "name": "gpu-006",
+        "given": "an Elm view with a GPU effect",
+        "when": "motion is sampled for successive frames",
+        "then": "ports carry bounded control metadata and GPU objects remain renderer-owned"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-007",
+    "capability": "elm-gpu",
+    "pattern": "event-driven",
+    "ears": "WHEN the GPU device is lost, the host SHALL invalidate dependent resources and the rendering generation before rebuilding them without replaying stale application-window effects.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Device-loss injection and generation/effect logs with no stale native mutation.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Implement bounded device-loss recovery.",
+    "scenarios": [
+      {
+        "name": "gpu-007",
+        "given": "GPU resources and an old pending window intent",
+        "when": "device loss occurs",
+        "then": "old resources become unusable and the old intent is not automatically committed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-008",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The preview qualification SHALL measure actual native-buffer import, synchronization and copy volume instead of inferring zero-copy support from WebGPU availability.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Native fence/import trace and copy bytes/counts on both GPU configurations.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify the preview interoperability path.",
+    "scenarios": [
+      {
+        "name": "gpu-008",
+        "given": "a native frame lease and a WebGPU-capable host",
+        "when": "a preview is rendered",
+        "then": "the report records actual copies and fences without claiming an untested DMA-BUF import"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-009",
+    "capability": "elm-gpu",
+    "pattern": "unwanted",
+    "ears": "IF every qualified GPU path becomes unavailable, THEN the host SHALL expose essential recovery controls in a disclosed degraded mode and block accelerated release admission.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "All-backend-failure fault plus offline recovery/qualification report.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify degraded recovery and release refusal.",
+    "scenarios": [
+      {
+        "name": "gpu-009",
+        "given": "all GPU backends unavailable",
+        "when": "recovery mode starts",
+        "then": "essential controls remain accessible and the report identifies software/degraded execution"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-010",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The GPU qualification SHALL compare integrated and discrete execution, where selectable, against frozen latency, memory, power and transfer budgets on the actual output configuration.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Hardware profile manifest and controlled sample distributions including cross-GPU transfers.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Compare available GPU profiles without assuming power hints choose an adapter.",
+    "scenarios": [
+      {
+        "name": "gpu-010",
+        "given": "Intel and NVIDIA devices in the inventory",
+        "when": "qualified selectable profiles are compared",
+        "then": "each profile identifies the actual device and measured workload verdict"
+      }
+    ]
+  },
+  {
+    "id": "ELM-LAY-001",
+    "capability": "elm-layering",
+    "pattern": "unwanted",
+    "ears": "IF a window is minimized or belongs to an inactive nonsticky workspace, THEN the native authority SHALL exclude its live surface from display and application input regardless of prior raise or fullscreen permissions.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native pixel/hit/focus fixture reproducing the recorded Heroic-versus-terminal symptom with visibility, stack and generation receipts.",
+    "legacyEvidence": "docs/elm-roadmap/heroic-layering-observation.json",
+    "task": "Create minimized/inactive-workspace eligibility regression.",
+    "scenarios": [
+      {
+        "name": "layer-001",
+        "given": "Heroic is minimized while a terminal is active",
+        "when": "an old raised/maximized surface is considered for scene publication",
+        "then": "Heroic receives neither live drawing nor application input; an independently owned inert preview may remain"
+      }
+    ]
+  },
+  {
+    "id": "ELM-LAY-002",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "WHEN a scene revision is committed, the native authority SHALL derive painting, hit testing and focus eligibility from the same accepted surface identities and ordered scene revision.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native pixel/hit/focus fixture reproducing the recorded Heroic-versus-terminal symptom with visibility, stack and generation receipts.",
+    "legacyEvidence": "docs/elm-roadmap/heroic-layering-observation.json",
+    "task": "Implement canonical scene-revision publication and hit/focus observation.",
+    "scenarios": [
+      {
+        "name": "layer-002",
+        "given": "overlapping application windows with an accepted stack revision",
+        "when": "painting and pointer routing execute",
+        "then": "the top eligible painted application receives the corresponding hit and focus, subject to explicit input regions and modal constraints"
+      }
+    ]
+  },
+  {
+    "id": "ELM-LAY-003",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "WHEN a minimized window is restored, the native authority SHALL make it eligible in one accepted scene transition while preserving its normal workspace identity and rejecting old transition generations.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Protected native pixel/hit/focus fixture reproducing the recorded Heroic-versus-terminal symptom with visibility, stack and generation receipts.",
+    "legacyEvidence": "docs/elm-roadmap/heroic-layering-observation.json",
+    "task": "Qualify atomic restore eligibility and stale overlay retirement.",
+    "scenarios": [
+      {
+        "name": "layer-003",
+        "given": "a minimized window with retained preview and original workspace identity",
+        "when": "restore completes through a current generation",
+        "then": "one current live surface becomes eligible and no stale overlay remains"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-001",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "WHEN stale global scene state delays a valid activation, the authority SHALL reconcile current dependencies and use a distinct freshly validated request to reach a terminal result by the original deadline without waiting for unrelated scene activity to stop.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Continuous unrelated-window-motion fixture plus target-invalidated control; valid activation commits after safe dependency revalidation and invalid target is refused.",
+    "legacyEvidence": "docs/elm-roadmap/audits/sol-architecture.json; docs/elm-roadmap/audits/sol-delivery.json",
+    "task": "Define dependency-scoped authority revisions and bounded activation progress.",
+    "scenarios": [
+      {
+        "name": "activation-progress",
+        "given": "stable eligible target A and continuously moving unrelated B",
+        "when": "A is activated from a stale global observation",
+        "then": "the old request remains refused; a distinct fresh request with safe current dependencies commits A within the original deadline"
+      },
+      {
+        "name": "activation-invalid-target",
+        "given": "target A is destroyed or its family/eligibility changes",
+        "when": "a stale activation is reconciled",
+        "then": "no effect targets a reused incarnation and a terminal refusal is recorded within the deadline"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-002",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "WHILE native session lock is active, the host SHALL suppress application previews and reject new application capture admission.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected lock fixture with independent output observation and rejected capture receipts.",
+    "legacyEvidence": "docs/elm-roadmap/audits/sol-architecture.json; docs/elm-roadmap/audits/sol-delivery.json",
+    "task": "Add native lock authority to preview/capture eligibility.",
+    "scenarios": [
+      {
+        "name": "retained-preview-lock",
+        "given": "a retained application preview is visible",
+        "when": "native session lock activates",
+        "then": "no application preview pixels are exposed on lock output and new capture requests are refused"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-003",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "WHEN native lock, capture permission revocation or session replacement invalidates a capture generation, the authority SHALL cancel pending captures and revoke retained-lease publication access before subsequent scene publication.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Queued-completion/lock, permission-revocation and session-replacement races with publication/generation/pixel receipts.",
+    "legacyEvidence": "docs/elm-roadmap/audits/sol-architecture.json; docs/elm-roadmap/audits/sol-delivery.json",
+    "task": "Make lock/revocation/session transitions invalidate capture and publication generations.",
+    "scenarios": [
+      {
+        "name": "queued-capture-lock",
+        "given": "a capture is pending before lock",
+        "when": "lock wins before completion publication",
+        "then": "late pixels receive no publishable lease"
+      },
+      {
+        "name": "capture-revoked",
+        "given": "a published preview has its source permission revoked",
+        "when": "a retained lease is next considered",
+        "then": "publication access is revoked and old callbacks cannot expose pixels"
+      },
+      {
+        "name": "capture-session-replaced",
+        "given": "a lease belongs to a previous native session",
+        "when": "a new session is established",
+        "then": "the old lease is destroyed/retired and cannot publish in the new session"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-004",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "WHEN a locked session unlocks, the capture authority SHALL reconcile current authorization and source identity into a fresh publication generation before exposing previews, and SHALL retire revoked or prior-session leases.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Unlock-before-late-callback, destroyed-source and revoked-lease fixtures; ownership ledger distinguishes private retention from presentation rights.",
+    "legacyEvidence": "docs/elm-roadmap/audits/sol-architecture.json; docs/elm-roadmap/audits/sol-delivery.json",
+    "task": "Specify retained-pixel privacy and unlock reconciliation.",
+    "scenarios": [
+      {
+        "name": "unlock-stale-lease",
+        "given": "lock revoked a preview publication generation",
+        "when": "unlock precedes an old completion callback",
+        "then": "the old generation cannot publish; a fresh authorized lease is needed"
+      },
+      {
+        "name": "private-lock-retention",
+        "given": "a same-session private frame buffer is retained during lock",
+        "when": "its contents are considered by a shell view",
+        "then": "private ownership alone grants no publication access"
+      },
+      {
+        "name": "revoked-pixel-destruction",
+        "given": "permission is revoked or native session is replaced",
+        "when": "buffer retirement completes",
+        "then": "revoked/prior-session pixel storage and callbacks are retired according to the ownership ledger"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-005",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The requirement registry SHALL assign each requirement an accountable owner role, independent verifier role, phase, task and named acceptance scenario before implementation admission.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Registry/task/traceability bijection and explicit nonempty role mapping with separate acceptance reviewer.",
+    "legacyEvidence": "docs/elm-roadmap/audits/sol-architecture.json; docs/elm-roadmap/audits/sol-delivery.json",
+    "task": "Assign accountable and verifier roles to every requirement.",
+    "scenarios": [
+      {
+        "name": "requirement-ownership",
+        "given": "all proposed requirement rows",
+        "when": "implementation admission is evaluated",
+        "then": "every row has explicit role and verifier mapping and missing mappings block admission"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-006",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The final audit record SHALL bind reviewed documents, author-input JSON, primary corpus inventories and retained source/body hash roots to a mechanically verified supporting-evidence manifest.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Document and supporting-evidence manifests with exact source hashes, crawl closure/failure counts and body/archive integrity verification.",
+    "legacyEvidence": "docs/elm-roadmap/audits/sol-architecture.json; docs/elm-roadmap/audits/sol-delivery.json",
+    "task": "Freeze supporting source/corpus lineage beside document audit evidence.",
+    "scenarios": [
+      {
+        "name": "audit-evidence-closure",
+        "given": "a claimed corpus and author generation input",
+        "when": "the final supporting manifest is verified",
+        "then": "all input/corpus references hash-match and excluded or failed acquisition scopes remain explicit"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-007",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The bridge SHALL encode authority identities, generations, revisions and absolute native deadlines as lossless schema-defined canonical strings and reject numeric JSON values for those fields.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Define lossless authority encoding and decoder rejection.",
+    "scenarios": [
+      {
+        "name": "revision-007",
+        "given": "two native incarnations above 2^53 differ by one",
+        "when": "both traverse Elm/JS ports",
+        "then": "their strings remain distinct and numeric representations are rejected"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-008",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "WHEN an event sequence gap occurs, the frontend SHALL withhold later deltas and new effect admission until a coherent reconciliation snapshot establishes a fresh contiguous watermark.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Implement gap barrier and coherent resynchronization.",
+    "scenarios": [
+      {
+        "name": "revision-008",
+        "given": "sequence11 destroys incarnationI and12 reuses its address",
+        "when": "11 is missing and12 arrives",
+        "then": "12 is withheld and no effect can target the reused address before fresh snapshot reconciliation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-009",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The bridge SHALL preserve native order for chord press, repeat, release, Escape, cancellation, effect receipts and retirement receipts; observation coalescing SHALL exclude those control events.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Define non-coalescible control event set.",
+    "scenarios": [
+      {
+        "name": "revision-009",
+        "given": "the preview observation stream is saturated",
+        "when": "Alt release and cancellation are admitted",
+        "then": "both control events retain order and neither is replaced by a later observation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-010",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "IF reserved control capacity cannot admit a cancellation or receipt, THEN the authority SHALL stop new effect admission, invalidate uncertain pending generations and supervise reconciliation without silently losing cancellation.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify full control-queue fail-closed behavior.",
+    "scenarios": [
+      {
+        "name": "revision-010",
+        "given": "preview and reserved control queues are full",
+        "when": "Escape cancellation arrives",
+        "then": "no new mutation is admitted and pending authority is invalidated/reconciled without a silent cancel drop"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-011",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "IF a request identity is expired, retired or outside its bounded deduplication window, THEN the authority SHALL refuse it without mutation and record an expired-identity outcome.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Test dedup eviction and identity expiration.",
+    "scenarios": [
+      {
+        "name": "revision-011",
+        "given": "a committed request is evicted from the retained result cache",
+        "when": "its identifier is submitted again",
+        "then": "the identifier is refused rather than treated as a new effect"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-012",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The authority SHALL measure effect and restore deadlines in one documented native monotonic clock domain, preserving their time origin through queueing and restart without wall-clock reinterpretation.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Specify clock domain and reboot/lifetime deadline invalidation.",
+    "scenarios": [
+      {
+        "name": "revision-012",
+        "given": "an operation has an original two-second native deadline",
+        "when": "wall time jumps and the renderer restarts",
+        "then": "remaining native time does not reset or jump with wall time"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-013",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "WHILE a window is maximized but unpinned and not true-fullscreen, the native authority SHALL retain it in the ordinary application band.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify ordinary MAX precedence.",
+    "scenarios": [
+      {
+        "name": "revision-013",
+        "given": "ordinary peer and unpinned MAX overlap",
+        "when": "the peer is raised",
+        "then": "the peer paints and hit-tests above MAX in the accepted native order"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-014",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The native host SHALL bound ordinary shell input regions to current interactive geometry and allow input-transparent regions to pass through to eligible underlying native surfaces.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify shell input-region passthrough.",
+    "scenarios": [
+      {
+        "name": "revision-014",
+        "given": "a full-output host contains a small taskbar",
+        "when": "the user clicks or begins a drag outside interactive shell bounds",
+        "then": "the underlying native application receives the intended input"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-015",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The native input and render paths SHALL consume committed native scene state without synchronously awaiting Elm or webview replies.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Test stalled-frontend native input/frame continuity.",
+    "scenarios": [
+      {
+        "name": "revision-015",
+        "given": "the Elm frontend is stalled",
+        "when": "native pointer input and frame composition occur",
+        "then": "input routing and native frames continue from the committed scene without waiting for ports"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-016",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The native authority SHALL distinguish live-scene eligibility from shell enumeration, allowing minimized window entries in taskbar, switcher and Task View without granting their live surfaces paint or input authority.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Define eligibility domains and minimized enumeration.",
+    "scenarios": [
+      {
+        "name": "revision-016",
+        "given": "Heroic is minimized on its normal workspace",
+        "when": "taskbar, switcher and Task View enumerate windows",
+        "then": "Heroic remains selectable but its live surface is absent from ordinary paint/hit until accepted restore"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-017",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "WHILE a transient owner is minimized or excluded from the active scene, the native authority SHALL exclude its dependent transient descendants in the same revision until current native family policy accepts an independent or reparented state.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify ancestor eligibility propagation.",
+    "scenarios": [
+      {
+        "name": "revision-017",
+        "given": "a modal draft descends from an owner",
+        "when": "the owner is minimized",
+        "then": "the family becomes live-scene-ineligible together without promoting unrelated same-application windows"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-018",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "WHILE native session lock is active, the host SHALL withdraw ordinary shell keyboard and pointer eligibility and prevent shell priority or pin/fullscreen flags from bypassing native lock-surface authority.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify native lock isolation.",
+    "scenarios": [
+      {
+        "name": "revision-018",
+        "given": "taskbar/pinned/application surfaces existed before lock",
+        "when": "lock input is delivered",
+        "then": "only native-authorized lock/input-method routes receive it and ordinary shell/application surfaces cannot intercept credentials"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-019",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "IF device loss invalidates the only accepted storage for a retained frame, THEN the broker SHALL atomically revoke and retire that lease and publish an explicit unavailable-preview state rather than reuse invalid objects or label historical pixels as current.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify device-loss retained-frame outcomes.",
+    "scenarios": [
+      {
+        "name": "revision-019",
+        "given": "a source-stop frame has only storage on the lost device",
+        "when": "device loss invalidates storage",
+        "then": "the lease is retired with unavailable outcome; valid independent copies may be revalidated under fresh publication authority"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-020",
+    "capability": "elm-performance",
+    "pattern": "ubiquitous",
+    "ears": "The performance owner SHALL freeze a workload budget matrix covering cold startup, idle, catalog refresh, switcher open/navigation, minimized preview, first capture frame, reversible motion, output transfer and whole-process-tree soak.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Publish complete measured workload matrix.",
+    "scenarios": [
+      {
+        "name": "revision-020",
+        "given": "required workloads are inventoried",
+        "when": "P0 budget freeze runs",
+        "then": "every listed workload has a measured baseline and missing rows block host selection"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-021",
+    "capability": "elm-performance",
+    "pattern": "ubiquitous",
+    "ears": "The budget matrix SHALL record units, sample counts, device/output metadata, latency distributions, CPU, wakeups, memory, frame misses, power and copy/transfer costs, with numeric absolute and regression thresholds for applicable metrics and explicit justified exclusions.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Define budget schema completeness and applicable metrics.",
+    "scenarios": [
+      {
+        "name": "revision-021",
+        "given": "all workload rows exist but memory/copy/power thresholds are missing",
+        "when": "host selection reviews the matrix",
+        "then": "incomplete applicable fields block admission; unsupported measurements need explicit scope justification"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-022",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "IF preview copy volume, acquire-fence wait or cross-GPU transfer exceeds its frozen budget, THEN preview qualification SHALL reject that import route and preserve a qualified native route or an explicit unavailable state.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Enforce preview-import budgets.",
+    "scenarios": [
+      {
+        "name": "revision-022",
+        "given": "DOM hardware qualifies but full-frame cross-GPU imports exceed budget",
+        "when": "preview qualification runs",
+        "then": "the expensive route is refused; merely recording copies cannot qualify it"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-023",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "WHEN a native buffer is imported, the renderer SHALL wait for accepted acquire synchronization before sampling it and prohibit sampling after lease revocation or rendering-generation invalidation.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify acquire fences and release access.",
+    "scenarios": [
+      {
+        "name": "revision-023",
+        "given": "an unsignaled native buffer is imported",
+        "when": "a frame is prepared then its lease is revoked",
+        "then": "it is not sampled before the fence and not sampled again after revocation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-024",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The broker SHALL issue opaque preview capabilities bound to authenticated frontend epoch, source incarnation and output generation, refusing unissued, wrong-session or revoked capabilities before foreign buffer access.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Enforce lease capability admission.",
+    "scenarios": [
+      {
+        "name": "revision-024",
+        "given": "a renderer guesses another live-window lease or reuses an old epoch key",
+        "when": "it requests import",
+        "then": "no foreign pixels are accessed and a bounded rejection is recorded"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-025",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "WHEN the active adapter, driver or engine differs from its qualified tuple, the host SHALL invalidate that acceleration verdict and require matching qualification before presenting the configuration as an accelerated release.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify adapter/driver changes and hybrid GPU profiles.",
+    "scenarios": [
+      {
+        "name": "revision-025",
+        "given": "NVIDIA profile is qualified but a later launch chooses Intel",
+        "when": "runtime tuple is compared",
+        "then": "only a matching qualified Intel tuple can receive an accelerated verdict"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-026",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "The native capture broker SHALL admit preview capture only for current authenticated-session surfaces allowed by preview policy and refuse lock-screen, policy-classified credential-entry and cross-session sources.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Define capture source authorization and protected-surface exclusions.",
+    "scenarios": [
+      {
+        "name": "revision-026",
+        "given": "an ordinary application and protected credential surface exist",
+        "when": "preview capture is requested",
+        "then": "only the authorized application can receive a lease; protected/cross-session sources are refused"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-027",
+    "capability": "elm-security",
+    "pattern": "ubiquitous",
+    "ears": "WHILE the frontend is unready, the native chord journal SHALL retain only declared chord control events and omit unrelated text and credential keystrokes.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify chord journal privacy.",
+    "scenarios": [
+      {
+        "name": "revision-027",
+        "given": "frontend startup overlaps password typing and an Alt chord",
+        "when": "the pending chord journal is inspected",
+        "then": "only declared Alt/repeat/release/Escape metadata is present; password/text keys are absent"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-028",
+    "capability": "elm-delivery",
+    "pattern": "ubiquitous",
+    "ears": "WHEN the machine resumes from suspend, the native host SHALL invalidate changed output and rendering generations, reconcile a fresh snapshot and refuse replay of pre-suspend mutating intents.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify suspend/resume recovery.",
+    "scenarios": [
+      {
+        "name": "revision-028",
+        "given": "a preview and mutating request are pending",
+        "when": "suspend/resume changes native output state",
+        "then": "old generations cannot publish or mutate and a coherent current snapshot precedes new work"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-029",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The QA runner SHALL preserve the protected scope/core limit, verified nested parent socket, explicit X11 selection, authorized runtime/device access and client-before-compositor teardown controls from the frozen crash handoff.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Qualify all five operational QA controls.",
+    "scenarios": [
+      {
+        "name": "revision-029",
+        "given": "a private campaign with every frozen control recorded",
+        "when": "each missing-control preflight stimulus is supplied",
+        "then": "each violation separately blocks launch or unsafe teardown under its named assertion"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-030",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The QA runner SHALL preserve the installed crash-watch override and the system grim and gnome-keyring builds during all planning, proof and acceptance work.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Record preservation hashes and forbidden mutations.",
+    "scenarios": [
+      {
+        "name": "revision-030",
+        "given": "protected system integrations are inventoried",
+        "when": "QA executes",
+        "then": "their source/config identities remain unchanged"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-031",
+    "capability": "elm-window-policy",
+    "pattern": "ubiquitous",
+    "ears": "The native focus policy SHALL distinguish genuine input blockers from allows_input=false and SHALL refuse no-focus only when an independently verified native blocking predicate applies.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Preserve the corrected original B11 premise and remaining named pin/input cases.",
+    "scenarios": [
+      {
+        "name": "revision-031",
+        "given": "allows_input=false has no separate native blocker",
+        "when": "focus eligibility is tested",
+        "then": "that flag alone does not establish no-focus; a real blocker independently prevents the effect"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-032",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The P0 native-layering workstream SHALL qualify existing-compositor eligibility and MAX corrections against frozen native cases independently of Elm webview host selection, without restarting the main session during isolated QA.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
+    "legacyEvidence": "docs/elm-roadmap/audits/grok-layering.md; docs/elm-roadmap/audits/grok-delivery.md",
+    "task": "Schedule independent native layering qualification.",
+    "scenarios": [
+      {
+        "name": "revision-032",
+        "given": "P0 layer policy and existing native sources are frozen",
+        "when": "WebKit/Qt comparison is delayed or fails",
+        "then": "native diagnosis/qualification can proceed in isolation while Elm projection work remains separately gated"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-033",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The native authority SHALL redirect blocked-parent activation to an eligible modal without synthesizing a modal click, and SHALL retire an inert transition proxy atomically before publishing the restored live surface as interactive.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Independent named fixture receipts with native scene/protocol traces, artifact hashes and explicit pass/fail verdicts.",
+    "legacyEvidence": "new coverage: independent audit correction",
+    "task": "Define modal redirection and proxy-to-live publication linearization.",
+    "scenarios": [
+      {
+        "name": "modal-no-click",
+        "given": "a blocked parent with an eligible modal",
+        "when": "parent activation is requested",
+        "then": "focus goes to the modal and no modal button receives a synthesized click"
+      },
+      {
+        "name": "proxy-retirement",
+        "given": "an inert restore proxy and a ready live surface",
+        "when": "restore handoff commits",
+        "then": "proxy retires and the live surface becomes interactive at one publication boundary with no duplicate active surface"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-034",
+    "capability": "elm-native-bridge",
+    "pattern": "ubiquitous",
+    "ears": "The protocol schema SHALL version capability negotiation, lossless identities, queue classes, byte and item bounds, admission refusals and control-event failure outcomes before bridge implementation admission.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Independent named fixture receipts with native scene/protocol traces, artifact hashes and explicit pass/fail verdicts.",
+    "legacyEvidence": "new coverage: independent audit correction",
+    "task": "Freeze a complete executable protocol schema and refusal table.",
+    "scenarios": [
+      {
+        "name": "protocol-schema-complete",
+        "given": "the proposed schema and required field checklist",
+        "when": "implementation admission runs",
+        "then": "every required field, queue class and refusal outcome has a decoder fixture; any omission blocks admission"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REV-035",
+    "capability": "elm-verification",
+    "pattern": "ubiquitous",
+    "ears": "The QA baseline SHALL freeze original restore baseline38, recovery34, drag/resize/reload52 and B12 through B24 scenario identities, oracles and original deadlines before claiming inherited native coverage.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Independent named fixture receipts with native scene/protocol traces, artifact hashes and explicit pass/fail verdicts.",
+    "legacyEvidence": "new coverage: independent audit correction",
+    "task": "Inventory and hash-pin inherited native campaign definitions and unexecuted cases.",
+    "scenarios": [
+      {
+        "name": "inherited-coverage-frozen",
+        "given": "original campaign scripts and partial reports",
+        "when": "the baseline coverage ledger is created",
+        "then": "each original case has its source hash, deadline, oracle and unexecuted or observed verdict; missing definitions block inherited coverage claims"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-001",
+    "capability": "elm-window-policy",
+    "phase": "P2",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN the focused family minimizes, the native authority SHALL focus the most recently committed eligible successor or the desktop no-application-focus state in the same scene revision, and SHALL preserve current focus when an unfocused family minimizes.",
+    "task": "Implement identity-bound minimize focus succession.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "focus-successor",
+        "given": "focused A, eligible B and C with B most recently active",
+        "when": "the selected family minimizes",
+        "then": "B receives focus and A receives no keyboard input"
+      },
+      {
+        "name": "focus-last",
+        "given": "one active family",
+        "when": "the selected family minimizes",
+        "then": "no minimized surface retains focus and the desktop focus state is observed"
+      },
+      {
+        "name": "focus-unfocused",
+        "given": "B focused and A unfocused",
+        "when": "the selected family minimizes",
+        "then": "B retains focus"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-002",
+    "capability": "elm-shell-experience",
+    "phase": "P2",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN a listed target outside the effective workspace set is activated, the native authority SHALL navigate to its preserved workspace on its owning output before visible activation, without implicit membership transfer, and SHALL preserve visible focus with feedback on refusal.",
+    "task": "Implement visible cross-workspace/output activation.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "activate-other-workspace",
+        "given": "a target on workspace 2 and activation from workspace 1",
+        "when": "taskbar restore commits",
+        "then": "workspace 2 becomes visible on its owning output and target pixels and focus are observed with membership unchanged"
+      },
+      {
+        "name": "activate-other-output",
+        "given": "a target on workspace 2 and activation from workspace 1",
+        "when": "a target on another output is selected",
+        "then": "that output presents its preserved workspace and target focus without moving the window"
+      },
+      {
+        "name": "activation-refused",
+        "given": "a target on workspace 2 and activation from workspace 1",
+        "when": "workspace navigation or restore is refused",
+        "then": "current visible focus remains, no hidden target gets focus and correlated refusal appears"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-003",
+    "capability": "elm-switcher",
+    "phase": "P0",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The product owner SHALL freeze the INTERACTION.md switcher scope, committed-MRU order, modal-family representation, initial forward/reverse selection, wraparound, zero/one-entry behavior and candidate-retirement fallback before P3 qualification.",
+    "task": "Freeze exact switcher sequence oracles.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "switcher-order",
+        "given": "known committed history A then B then C with C focused",
+        "when": "forward and reverse cycles traverse the frozen candidates",
+        "then": "first forward chooses B, forward sequence B A C wraps and reverse starts A; family entries are unique"
+      },
+      {
+        "name": "switcher-cancel",
+        "given": "known committed history A then B then C with C focused",
+        "when": "a chord is cancelled",
+        "then": "C focus and committed MRU remain unchanged"
+      },
+      {
+        "name": "switcher-membership",
+        "given": "known committed history A then B then C with C focused",
+        "when": "a modal family, minimized peer and other-workspace peer are enumerated",
+        "then": "all ordinary user-session workspace candidates are represented once per family and lock/protected exclusions hold"
+      },
+      {
+        "name": "switcher-zero-one",
+        "given": "known committed history A then B then C with C focused",
+        "when": "zero or one candidate is enumerated",
+        "then": "zero is a no-op; one keeps or activates the sole eligible family without accidental minimization"
+      },
+      {
+        "name": "switcher-retire-arrive",
+        "given": "known committed history A then B then C with C focused",
+        "when": "selected candidate dies and a new one arrives during chord",
+        "then": "dead identity retires, next surviving entry is selected, and the new arrival waits for the next chord"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-004",
+    "capability": "elm-taskbar",
+    "phase": "P3",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The taskbar SHALL follow the INTERACTION.md primary-action table for zero, single and multiple family entries, distinguish application pin from always-on-top, and expose explicit new-instance actions without launching duplicates on ordinary activation.",
+    "task": "Implement taskbar decision table with matching pointer/keyboard routes.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "taskbar-zero",
+        "given": "a pinned app with zero windows",
+        "when": "primary pointer or keyboard activation occurs",
+        "then": "one launch request is issued"
+      },
+      {
+        "name": "taskbar-inactive",
+        "given": "one inactive member",
+        "when": "primary pointer or keyboard activation occurs",
+        "then": "the member visibly activates"
+      },
+      {
+        "name": "taskbar-minimized",
+        "given": "one minimized member",
+        "when": "primary pointer or keyboard activation occurs",
+        "then": "the member restores and visibly activates"
+      },
+      {
+        "name": "taskbar-active",
+        "given": "one active eligible member",
+        "when": "primary pointer or keyboard activation occurs",
+        "then": "the family minimizes with declared focus succession"
+      },
+      {
+        "name": "taskbar-group",
+        "given": "multiple family entries",
+        "when": "primary pointer or keyboard activation occurs",
+        "then": "a group picker opens without new launch and selecting a member visibly activates it"
+      },
+      {
+        "name": "taskbar-refusal",
+        "given": "native authority refuses the requested action",
+        "when": "primary pointer or keyboard activation occurs",
+        "then": "observed state remains authoritative with feedback"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-005",
+    "capability": "elm-shell-experience",
+    "phase": "P5",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The launcher SHALL bind results and selection to the current query and catalog generation, apply the frozen matching/ranking policy, expose initial, loading, no-match and unavailable states, and preserve the query with reachable recovery on refusal.",
+    "task": "Implement query-generation-safe search states.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "search-no-match",
+        "given": "a query and catalog fixture",
+        "when": "no entries match",
+        "then": "no-match message and query remain reachable without launch"
+      },
+      {
+        "name": "search-unavailable",
+        "given": "a query and catalog fixture",
+        "when": "catalog provider fails",
+        "then": "unavailable state exposes keyboard retry without automatic launch"
+      },
+      {
+        "name": "search-race",
+        "given": "a query and catalog fixture",
+        "when": "query changes while old refresh completes",
+        "then": "only current-generation results and selection can dispatch"
+      },
+      {
+        "name": "search-removed",
+        "given": "a query and catalog fixture",
+        "when": "selected identity disappears before Enter",
+        "then": "no replacement entry launches and selection reconciles"
+      },
+      {
+        "name": "search-refused",
+        "given": "a query and catalog fixture",
+        "when": "launch is refused",
+        "then": "query and focus remain with accessible refusal and retry"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-006",
+    "capability": "elm-shell-experience",
+    "phase": "P5",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Task View SHALL provide keyboard and pointer selection of windows and workspaces, identity-correlated visible activation and transfer outcomes, usable empty states and dismissal with focus return, according to the frozen workspace-management scope.",
+    "task": "Implement complete overview journeys.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "overview-select",
+        "given": "an open overview",
+        "when": "a minimized cross-workspace entry is selected",
+        "then": "matching restore/navigation commits and the target becomes visible"
+      },
+      {
+        "name": "overview-refusal",
+        "given": "an open overview",
+        "when": "native activation is refused",
+        "then": "overview remains usable with feedback and retained selection context"
+      },
+      {
+        "name": "overview-empty",
+        "given": "an open overview",
+        "when": "an empty workspace is selected",
+        "then": "empty destination is navigable and dismissal remains available"
+      },
+      {
+        "name": "overview-cancel",
+        "given": "an open overview",
+        "when": "overview is dismissed without action",
+        "then": "no native mutation occurs and eligible opener focus returns"
+      },
+      {
+        "name": "overview-retire",
+        "given": "an open overview",
+        "when": "selected member disappears",
+        "then": "selection safely falls back without activating a replacement incarnation"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-007",
+    "capability": "elm-shell-experience",
+    "phase": "P3",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The shell SHALL expose correlated pending, committed, refused, cancelled and unknown/reconciling action states, suppress duplicate dispatch during pending work, and provide reachable recovery after native reconciliation without replaying uncertain mutations or discarding user context.",
+    "task": "Implement shared action-state and recovery presentation.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "restore-pending",
+        "given": "a restore action with retained user context",
+        "when": "its outcome becomes pending",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "restore-refused",
+        "given": "a restore action with retained user context",
+        "when": "its outcome becomes refused",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "restore-unknown",
+        "given": "a restore action with retained user context",
+        "when": "its outcome becomes unknown",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "pin-pending",
+        "given": "a pin action with retained user context",
+        "when": "its outcome becomes pending",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "pin-refused",
+        "given": "a pin action with retained user context",
+        "when": "its outcome becomes refused",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "pin-unknown",
+        "given": "a pin action with retained user context",
+        "when": "its outcome becomes unknown",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "snap-pending",
+        "given": "a snap action with retained user context",
+        "when": "its outcome becomes pending",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "snap-refused",
+        "given": "a snap action with retained user context",
+        "when": "its outcome becomes refused",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "snap-unknown",
+        "given": "a snap action with retained user context",
+        "when": "its outcome becomes unknown",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "jump-list-pending",
+        "given": "a jump-list action with retained user context",
+        "when": "its outcome becomes pending",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "jump-list-refused",
+        "given": "a jump-list action with retained user context",
+        "when": "its outcome becomes refused",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "jump-list-unknown",
+        "given": "a jump-list action with retained user context",
+        "when": "its outcome becomes unknown",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "settings-pending",
+        "given": "a settings action with retained user context",
+        "when": "its outcome becomes pending",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "settings-refused",
+        "given": "a settings action with retained user context",
+        "when": "its outcome becomes refused",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      },
+      {
+        "name": "settings-unknown",
+        "given": "a settings action with retained user context",
+        "when": "its outcome becomes unknown",
+        "then": "visible and accessible correlated feedback appears, focus/context persist, no false success or duplicate effect occurs, and recovery follows native truth"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-008",
+    "capability": "elm-taskbar",
+    "phase": "P3",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The shell SHALL keep every configured icon, group member and action reachable through bounded scrolling or overflow, reveal keyboard selection, preserve identity/order across resizing, and expose labeled menu and window-operation affordances through pointer and keyboard.",
+    "task": "Implement accessible dense-layout overflow and menu discovery.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "overflow-first-last",
+        "given": "small output, enlarged text and more icons than fit",
+        "when": "first and last entries and their menus are visited",
+        "then": "all entries are reachable, focus is revealed and labels identify operations"
+      },
+      {
+        "name": "overflow-resize",
+        "given": "small output, enlarged text and more icons than fit",
+        "when": "output size changes",
+        "then": "identity and configured order persist with reachable active selection"
+      },
+      {
+        "name": "menu-invocation",
+        "given": "small output, enlarged text and more icons than fit",
+        "when": "context menu or jump list is invoked",
+        "then": "secondary click and Menu/Shift-F10 expose labeled operations and Escape returns focus"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-009",
+    "capability": "elm-accessibility",
+    "phase": "P5",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm desktop SHALL expose names, roles, states, values, relationships and supported actions for every interactive control on every migrated surface through the native accessibility bridge, with decorative pixels inert and restore controls separately identified.",
+    "task": "Qualify full-surface native accessibility semantics.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "at-launcher",
+        "given": "the launcher surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-taskbar-groups",
+        "given": "the taskbar groups surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-switcher",
+        "given": "the switcher surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-Task-View",
+        "given": "the Task View surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-snap-chooser",
+        "given": "the snap chooser surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-menus",
+        "given": "the menus surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-settings",
+        "given": "the settings surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-notifications",
+        "given": "the notifications surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      },
+      {
+        "name": "at-jump-lists",
+        "given": "the jump lists surface",
+        "when": "native assistive technology enumerates and invokes each control",
+        "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-010",
+    "capability": "elm-accessibility",
+    "phase": "P3",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN an action needs user attention or a notification changes, the shell SHALL publish concise identity-correlated accessible status without moving focus, deduplicate repeated receipts and apply the frozen notification announcement/interruption policy.",
+    "task": "Implement non-focus-stealing accessible outcomes.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "announce-launch refusal",
+        "given": "speech and braille active with stable input focus",
+        "when": "launch refusal occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-transfer refusal",
+        "given": "speech and braille active with stable input focus",
+        "when": "transfer refusal occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-settings validation failure",
+        "given": "speech and braille active with stable input focus",
+        "when": "settings validation failure occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-adapter unavailable",
+        "given": "speech and braille active with stable input focus",
+        "when": "adapter unavailable occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-notification arrival",
+        "given": "speech and braille active with stable input focus",
+        "when": "notification arrival occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-notification expiration",
+        "given": "speech and braille active with stable input focus",
+        "when": "notification expiration occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      },
+      {
+        "name": "announce-expired action rejection",
+        "given": "speech and braille active with stable input focus",
+        "when": "expired action rejection occurs",
+        "then": "one correlated message appears with reachable detail/recovery and no focus relocation; repeated receipts do not reannounce"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-011",
+    "capability": "elm-accessibility",
+    "phase": "P3",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN a shell focus scope closes, the host SHALL restore its eligible identity-bound opener or the declared eligible fallback, restore surviving parent scopes for nested dismissal, reject replacement incarnations and let lock security supersede ordinary restoration.",
+    "task": "Implement scope-stack focus restoration and fallback.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "focus-scope-nested dismissal",
+        "given": "an open shell focus scope",
+        "when": "nested dismissal occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-opener closure",
+        "given": "an open shell focus scope",
+        "when": "opener closure occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-workspace change",
+        "given": "an open shell focus scope",
+        "when": "workspace change occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-opener minimize",
+        "given": "an open shell focus scope",
+        "when": "opener minimize occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-renderer restart",
+        "given": "an open shell focus scope",
+        "when": "renderer restart occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      },
+      {
+        "name": "focus-scope-address reuse",
+        "given": "an open shell focus scope",
+        "when": "address reuse occurs",
+        "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-012",
+    "capability": "elm-accessibility",
+    "phase": "P1",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHILE IME composition owns a field, the host SHALL respect input-method key consumption, bind callbacks to field identity and composition generation, track candidate geometry with caret/output transforms and reject late commits after focus loss, field retirement or host restart.",
+    "task": "Qualify IME arbitration and geometry first on minimal host, then actual fields.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "ime-Enter Escape arrows",
+        "given": "a composing field with active candidates",
+        "when": "Enter Escape arrows occurs",
+        "then": "no consumed key causes shell submit or dismissal, only the current generation commits once, cancelled generations cannot write another field and candidate geometry matches the active caret"
+      },
+      {
+        "name": "ime-focus transfer",
+        "given": "a composing field with active candidates",
+        "when": "focus transfer occurs",
+        "then": "no consumed key causes shell submit or dismissal, only the current generation commits once, cancelled generations cannot write another field and candidate geometry matches the active caret"
+      },
+      {
+        "name": "ime-field recreation",
+        "given": "a composing field with active candidates",
+        "when": "field recreation occurs",
+        "then": "no consumed key causes shell submit or dismissal, only the current generation commits once, cancelled generations cannot write another field and candidate geometry matches the active caret"
+      },
+      {
+        "name": "ime-output scale transfer",
+        "given": "a composing field with active candidates",
+        "when": "output scale transfer occurs",
+        "then": "no consumed key causes shell submit or dismissal, only the current generation commits once, cancelled generations cannot write another field and candidate geometry matches the active caret"
+      },
+      {
+        "name": "ime-late callback",
+        "given": "a composing field with active candidates",
+        "when": "late callback occurs",
+        "then": "no consumed key causes shell submit or dismissal, only the current generation commits once, cancelled generations cannot write another field and candidate geometry matches the active caret"
+      },
+      {
+        "name": "ime-host restart",
+        "given": "a composing field with active candidates",
+        "when": "host restart occurs",
+        "then": "no consumed key causes shell submit or dismissal, only the current generation commits once, cancelled generations cannot write another field and candidate geometry matches the active caret"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-013",
+    "capability": "elm-accessibility",
+    "phase": "P0",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The accessibility owner SHALL freeze measurable contrast, focus visibility, effective target geometry, text enlargement and reflow thresholds before host qualification, require non-color state cues and preserve reachable controls on small outputs and long labels.",
+    "task": "Freeze readability and reflow acceptance matrix.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "readability-high contrast",
+        "given": "frozen numeric accessibility targets",
+        "when": "high contrast fixture executes",
+        "then": "measured thresholds pass, state recognition has non-color cues and all focused controls remain visible and reachable"
+      },
+      {
+        "name": "readability-largest text scale",
+        "given": "frozen numeric accessibility targets",
+        "when": "largest text scale fixture executes",
+        "then": "measured thresholds pass, state recognition has non-color cues and all focused controls remain visible and reachable"
+      },
+      {
+        "name": "readability-small output",
+        "given": "frozen numeric accessibility targets",
+        "when": "small output fixture executes",
+        "then": "measured thresholds pass, state recognition has non-color cues and all focused controls remain visible and reachable"
+      },
+      {
+        "name": "readability-long localized labels",
+        "given": "frozen numeric accessibility targets",
+        "when": "long localized labels fixture executes",
+        "then": "measured thresholds pass, state recognition has non-color cues and all focused controls remain visible and reachable"
+      },
+      {
+        "name": "readability-color independent states",
+        "given": "frozen numeric accessibility targets",
+        "when": "color independent states fixture executes",
+        "then": "measured thresholds pass, state recognition has non-color cues and all focused controls remain visible and reachable"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-014",
+    "capability": "elm-capture-motion",
+    "phase": "P4",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN the effective reduced-motion preference changes, the renderer SHALL apply the declared source/override policy without restart and settle decorative transitions without changing acknowledged targets, focus, original deadlines or resource ownership.",
+    "task": "Implement live reduced-motion preference changes.",
+    "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "live-motion-minimize",
+        "given": "a live minimize transition",
+        "when": "effective reduced motion toggles on",
+        "then": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart"
+      },
+      {
+        "name": "live-motion-restore",
+        "given": "a live restore transition",
+        "when": "effective reduced motion toggles on",
+        "then": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart"
+      },
+      {
+        "name": "live-motion-switcher",
+        "given": "a live switcher transition",
+        "when": "effective reduced motion toggles on",
+        "then": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart"
+      },
+      {
+        "name": "live-motion-Task View",
+        "given": "a live Task View transition",
+        "when": "effective reduced motion toggles on",
+        "then": "optional motion promptly settles with identical target/focus, no duplicate effect or orphan resource and persisted preference after restart"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-015",
+    "capability": "elm-shell-experience",
+    "phase": "P3",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN an operation exceeds its frozen feedback threshold, the shell SHALL expose accessible pending or reconciling feedback, keep cancellation and independent controls usable and show success only after matching native confirmation.",
+    "task": "Freeze and qualify bounded operation feedback.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "slow-native",
+        "given": "a pending restore with original deadline",
+        "when": "feedback threshold is reached",
+        "then": "pending feedback appears, controls remain usable and no success is claimed"
+      },
+      {
+        "name": "unknown-native",
+        "given": "a submitted operation becomes Unknown",
+        "when": "reconciliation runs",
+        "then": "feedback describes uncertainty and no blind retry occurs"
+      },
+      {
+        "name": "feedback-threshold",
+        "given": "P0 feedback matrix",
+        "when": "host qualification begins",
+        "then": "a missing numeric threshold blocks qualification"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-016",
+    "capability": "elm-capture-motion",
+    "phase": "P4",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The preview view SHALL distinguish loading, authorized historical, current-live and unavailable source states visually and accessibly without borrowing pixels from another incarnation.",
+    "task": "Qualify explicit preview source states.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "preview-states",
+        "given": "one identity-bound preview fixture",
+        "when": "loading historical live and unavailable states render",
+        "then": "each state has matching visual and accessible labels and only authorized pixels"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-017",
+    "capability": "elm-capture-motion",
+    "phase": "P4",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHILE no visible consumer or required transition needs new content, the capture and rendering services SHALL suspend recurring preview acquisition, uploads and decorative work within the frozen quiescence interval while preserving authorized retained frames, control events and bounded cleanup.",
+    "task": "Implement demand-driven preview and GPU work.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "quiesce",
+        "given": "preview owns accepted retained frame",
+        "when": "last consumer closes and interval elapses",
+        "then": "recurring work stops, authorized storage remains and control processing continues"
+      },
+      {
+        "name": "reopen",
+        "given": "production is quiescent and generations changed",
+        "when": "consumer reopens",
+        "then": "authorization and identity revalidate before acquisition; pending/unavailable is explicit"
+      },
+      {
+        "name": "quiescence-soak",
+        "given": "repeated open-close cycles on qualified profiles",
+        "when": "whole-process idle/soak completes",
+        "then": "frozen power/wakeup/resource budgets pass with no recurring closed-consumer work"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-018",
+    "capability": "elm-capture-motion",
+    "phase": "P4",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN reduced motion becomes enabled during window or overlay motion, the renderer SHALL settle at the next valid presentation opportunity without restarting deadlines or duplicating effects, and SHALL avoid replaying completed motion when the preference is disabled.",
+    "task": "Qualify mid-flight and overlay motion preference changes.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "motion-enable",
+        "given": "a restore has intermediate geometry",
+        "when": "reduced motion enables",
+        "then": "next valid presentation settles same target/focus/deadline and retires proxy once"
+      },
+      {
+        "name": "motion-overlays",
+        "given": "reduced motion enabled",
+        "when": "switcher Task View and snap overlays open, navigate and dismiss in separate fixtures",
+        "then": "nondecorative profiles preserve focus/cancellation"
+      },
+      {
+        "name": "motion-disable",
+        "given": "a reduced-motion transition completed",
+        "when": "preference disables",
+        "then": "completed motion is not replayed; subsequent transitions use normal profile"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-019",
+    "capability": "elm-shell-experience",
+    "phase": "P5",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN an output disappears, the host SHALL recover shell controls and displaced popup focus on a declared surviving output, preserve workspace identity and reachable application recovery, and reject removed-generation effects until available outputs reconcile.",
+    "task": "Implement reachable hot-unplug recovery.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "output-remove",
+        "given": "focused popup and recovery control on external output",
+        "when": "output unplugs",
+        "then": "popup dismisses to eligible focus or rehosts and recovery stays keyboard reachable"
+      },
+      {
+        "name": "outputs-return",
+        "given": "all outputs disappear",
+        "when": "one returns",
+        "then": "controls reconcile on available output without old-generation effects"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-020",
+    "capability": "elm-shell-experience",
+    "phase": "P5",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "WHEN a migrated component is first enabled, the shell SHALL offer dismissible keyboard-accessible guidance, preserve approved preference mappings, require explicit shortcut-conflict decisions and expose offline recovery without mandatory onboarding.",
+    "task": "Implement discoverable guidance and preference-safe enablement.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "first-use",
+        "given": "customized shortcuts and qualified component",
+        "when": "component enables and guidance dismisses",
+        "then": "mapping or explicit conflict choice persists, help remains available and component works"
+      },
+      {
+        "name": "offline-recovery",
+        "given": "guidance dismissed and host later fails",
+        "when": "documented offline rollback runs",
+        "then": "predecessor and compatible preferences recover without the failed host"
+      }
+    ]
+  },
+  {
+    "id": "ELM-UI-021",
+    "capability": "elm-verification",
+    "phase": "P0",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The product verifier SHALL freeze representative usability tasks, participant profiles, assistance rules and measurable success thresholds before candidate evaluation, and SHALL block acceptance for failed or unobserved required outcomes.",
+    "task": "Freeze usability protocol and formative/release acceptance gates.",
+    "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
+    "legacyEvidence": "docs/elm-roadmap/INTERACTION.md; new coverage: final UI/UX review",
+    "scenarios": [
+      {
+        "name": "usability-protocol",
+        "given": "novice experienced keyboard and declared AT profiles",
+        "when": "restore switcher pin snap failure recovery and rollback discovery tasks run",
+        "then": "success assistance errors recovery and completion measures are recorded against frozen thresholds"
+      },
+      {
+        "name": "usability-failed",
+        "given": "candidate fails a frozen threshold",
+        "when": "report is reviewed",
+        "then": "failure remains recorded; changed thresholds require a new protocol and separately identified rerun"
+      }
+    ]
+  },
+  {
+    "id": "ELM-TEA-001",
+    "capability": "elm-host",
+    "phase": "P2",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm frontend SHALL represent lifecycle, receipt and operation state with custom types, keep native observations separate from desired UI state and derive projections from one authoritative snapshot without duplicated native authority.",
+    "task": "Design domain types and pure derived projections.",
+    "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+    "legacyEvidence": "docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus",
+    "scenarios": [
+      {
+        "name": "tea-typed-model",
+        "given": "a pinned Elm model and named domain fixture",
+        "when": "the typed-model boundary and replay campaign execute",
+        "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred"
+      }
+    ]
+  },
+  {
+    "id": "ELM-TEA-002",
+    "capability": "elm-host",
+    "phase": "P2",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm frontend SHALL implement state transitions as pure Model and Msg reducers with typed effect descriptions, and SHALL reproduce identical models and effects for identical sanitized message histories.",
+    "task": "Implement deterministic reducers and replay fixtures.",
+    "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+    "legacyEvidence": "docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus",
+    "scenarios": [
+      {
+        "name": "tea-pure-update",
+        "given": "a pinned Elm model and named domain fixture",
+        "when": "the pure-update boundary and replay campaign execute",
+        "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred"
+      }
+    ]
+  },
+  {
+    "id": "ELM-TEA-003",
+    "capability": "elm-host",
+    "phase": "P2",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm frontend SHALL sequence dependent native effects through matching committed receipts, reserve Cmd.batch for independent effects and validate observations at typed decoders before model mutation.",
+    "task": "Qualify effect interpreter and decoder boundaries.",
+    "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+    "legacyEvidence": "docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus",
+    "scenarios": [
+      {
+        "name": "tea-effects",
+        "given": "a pinned Elm model and named domain fixture",
+        "when": "the effects boundary and replay campaign execute",
+        "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred"
+      }
+    ]
+  },
+  {
+    "id": "ELM-TEA-004",
+    "capability": "elm-host",
+    "phase": "P3",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm frontend SHALL derive recurring subscriptions from visible consumers and active transactions while preserving ordered native control and revocation delivery independently of overlay visibility.",
+    "task": "Implement state-derived subscriptions and bounded demand.",
+    "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+    "legacyEvidence": "docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus",
+    "scenarios": [
+      {
+        "name": "tea-subscriptions",
+        "given": "a pinned Elm model and named domain fixture",
+        "when": "the subscriptions boundary and replay campaign execute",
+        "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred"
+      }
+    ]
+  },
+  {
+    "id": "ELM-TEA-005",
+    "capability": "elm-host",
+    "phase": "P1",
+    "pattern": "ubiquitous",
+    "priority": "must",
+    "ears": "The Elm host adapter SHALL keep JavaScript limited to validated transport and approved host integrations, keep GPU resources and per-frame work outside Elm messages and use current commands and subscriptions rather than historical Signal APIs.",
+    "task": "Freeze minimal interop surface and modern Elm practices.",
+    "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
+    "legacyEvidence": "docs/elm-roadmap/ELM-PRACTICES.md; official Elm corpus",
+    "scenarios": [
+      {
+        "name": "tea-narrow-interop",
+        "given": "a pinned Elm model and named domain fixture",
+        "when": "the narrow-interop boundary and replay campaign execute",
+        "then": "the declared contract holds, exact models and effect descriptions match the fixture and no native acceptance is inferred"
+      }
+    ]
+  }
+]

@@ -1,0 +1,572 @@
+[
+  {
+    "id": "ELM-REN-001",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The project SHALL preserve the original 38 restore-baseline, 34 fault/recovery and 52 drag/resize scenario identities and deadlines in a fresh acceptance ledger.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Ledger diff retains all IDs and original time origins.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Inventory original gates without converting historical CPU results into native passes.",
+    "scenarios": [
+      {
+        "name": "ren-001",
+        "given": "an archived campaign",
+        "when": "a new derivative is inventoried",
+        "then": "all original IDs, hashes and deadlines remain linked"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-002",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The native host SHALL own GPU buffers and expose opaque identity-bound frame leases to Elm without sending pixels in port JSON.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "IPC schema audit and native allocation trace show no pixel payload.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Specify buffer acquisition, lease references, fences and retirement.",
+    "scenarios": [
+      {
+        "name": "ren-002",
+        "given": "a captured native frame",
+        "when": "Elm requests a preview",
+        "then": "only bounded metadata and a lease key cross ports"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-003",
+    "capability": "elm-capture-motion",
+    "pattern": "event-driven",
+    "ears": "When a capture source stops, the native renderer SHALL retain the last independently owned accepted frame until its lease is retired.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Source-stop trace plus independently sampled output pixels and release log.",
+    "legacyEvidence": "implementation/retained-frame-v1/README.md",
+    "task": "Prove source-stop survival in the selected host rather than assume QML behavior transfers.",
+    "scenarios": [
+      {
+        "name": "ren-003",
+        "given": "an accepted retained frame",
+        "when": "the source context ends",
+        "then": "the same frame remains drawable without live source ownership"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-004",
+    "capability": "elm-capture-motion",
+    "pattern": "event-driven",
+    "ears": "When a window incarnation is replaced, the native host SHALL revoke its frame leases before accepting previews for the replacement.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Address-reuse fault test rejects old lease and releases its resources.",
+    "legacyEvidence": "implementation/retained-frame-v1/README.md",
+    "task": "Bind frame keys to compositor lifetime, window incarnation and acquisition revision.",
+    "scenarios": [
+      {
+        "name": "ren-004",
+        "given": "an old lease and reused window address",
+        "when": "the incarnation changes",
+        "then": "old pixels cannot appear as the replacement window"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-005",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The native renderer SHALL associate motion samples and presentation receipts with one documented monotonic clock domain or an explicitly measured clock mapping.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Trace schema and clock-correlation test identify each timestamp origin.",
+    "legacyEvidence": "implementation/capture-profile-v30/README.md",
+    "task": "Specify timestamp origins and distinguish queue, seed, upload and presentation.",
+    "scenarios": [
+      {
+        "name": "ren-005",
+        "given": "host and renderer clocks",
+        "when": "a motion receipt is recorded",
+        "then": "its clock origin and correlation are explicit"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-006",
+    "capability": "elm-capture-motion",
+    "pattern": "event-driven",
+    "ears": "When minimizing a window, the native authority SHALL preserve its normal workspace identity and restore geometry without moving it to a scratchpad.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Native minimize/restore observation records workspace, family and geometry.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Implement minimize policy with native visibility receipts and saved geometry.",
+    "scenarios": [
+      {
+        "name": "ren-006",
+        "given": "a normal workspace window",
+        "when": "minimize commits",
+        "then": "workspace identity and restore geometry remain available"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-007",
+    "capability": "elm-capture-motion",
+    "pattern": "event-driven",
+    "ears": "When restore motion begins, the native renderer SHALL use the accepted retained frame until an identity-matched live frame is ready for a continuous handoff.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Frame-by-frame native capture identifies retained/live handoff without blank frames.",
+    "legacyEvidence": "docs/HANDOFF.md; implementation/retained-frame-v1/README.md",
+    "task": "Define seed-to-live transition and refusal if a usable frame is absent.",
+    "scenarios": [
+      {
+        "name": "ren-007",
+        "given": "a minimized window with a retained lease",
+        "when": "restore starts",
+        "then": "retained pixels bridge to the matching live frame"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-008",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The restore pipeline SHALL retain the original two-second deadline and its original start event across capture, retries, uploads and presentation checks.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Delayed capture and retry injections fail at the original deadline.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Carry absolute deadline in each transaction and refuse deadline reset on retry.",
+    "scenarios": [
+      {
+        "name": "ren-008",
+        "given": "a restore with an original deadline",
+        "when": "a helper retries near expiry",
+        "then": "the remaining budget is not renewed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-009",
+    "capability": "elm-capture-motion",
+    "pattern": "unwanted",
+    "ears": "If cancellation invalidates a motion generation, then the native authority SHALL reject further effects and retire only resources owned by that generation.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Late helper/frame receipt fault proves no focus or restore after cancellation.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Add cancellation checks at each native effect boundary and renderer submission.",
+    "scenarios": [
+      {
+        "name": "ren-009",
+        "given": "a cancelled motion generation",
+        "when": "a delayed receipt arrives",
+        "then": "no new native effect occurs and unrelated leases survive"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-010",
+    "capability": "elm-capture-motion",
+    "pattern": "event-driven",
+    "ears": "When motion reverses between minimize and restore, the renderer SHALL start the new trajectory from the last presented geometry of the current transaction.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Native presentation sequence and geometry replay demonstrate continuity.",
+    "legacyEvidence": "docs/HANDOFF.md; new reversal coverage",
+    "task": "Model interruption, repeated commands and deterministic geometry interpolation.",
+    "scenarios": [
+      {
+        "name": "ren-010",
+        "given": "motion is halfway presented",
+        "when": "the user reverses it",
+        "then": "the new trajectory starts at the last presented geometry"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-011",
+    "capability": "elm-capture-motion",
+    "pattern": "state-driven",
+    "ears": "While reduced motion is enabled, the native host SHALL complete the same minimize and restore state transitions without decorative motion.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Native reduced-motion campaign compares final state and resources.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Share commit/cancel semantics between animated and reduced-motion routes.",
+    "scenarios": [
+      {
+        "name": "ren-011",
+        "given": "reduced motion is enabled",
+        "when": "restore commits",
+        "then": "the final state matches the animated route without decorative motion"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-012",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The capture service SHALL enforce declared limits on outstanding frames, native pixels and helper processes and publish refusals rather than silently reuse stale pixels.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Pressure test records bounded ownership counts and explicit refusal receipts.",
+    "legacyEvidence": "implementation/retained-frame-v1/README.md",
+    "task": "Measure allocations and implement admission limits with control-traffic priority.",
+    "scenarios": [
+      {
+        "name": "ren-012",
+        "given": "the declared capture limit is reached",
+        "when": "another frame is requested",
+        "then": "a refusal occurs without stale identity substitution"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-013",
+    "capability": "elm-capture-motion",
+    "pattern": "event-driven",
+    "ears": "When a capture transaction ends, its native supervisor SHALL verify closure of owned helpers, callbacks, buffers and surfaces before reporting retirement complete.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Fault/recovery packet records child exit status and zero owned resources.",
+    "legacyEvidence": "docs/HANDOFF.md",
+    "task": "Record ownership ledger and normal-exit evidence; disappearance alone is insufficient.",
+    "scenarios": [
+      {
+        "name": "ren-013",
+        "given": "a capture owns a helper and frame",
+        "when": "the transaction retires",
+        "then": "both exit and release evidence accompany completion"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-014",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The capture service SHALL label preview fidelity for client content, decorations and modal or popup extents according to independently verified native coverage.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Decorated and out-of-base-popup pixel fixtures expose supported bounds.",
+    "legacyEvidence": "implementation/retained-frame-v1/README.md",
+    "task": "Design composed-family capture; reject unsupported fidelity claims.",
+    "scenarios": [
+      {
+        "name": "ren-014",
+        "given": "a decorated modal family",
+        "when": "a preview is produced",
+        "then": "its recorded bounds match actual covered pixels"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-015",
+    "capability": "elm-window-policy",
+    "pattern": "ubiquitous",
+    "ears": "The native window authority SHALL make painted ordering, hit testing and committed focus agree for overlapping floating maximized windows.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Native overlap pixels and click/focus observations agree on one paired build.",
+    "legacyEvidence": "implementation/maximized-stack-v2/README.md",
+    "task": "Retain native stacking correction and extend painted/click truth tests.",
+    "scenarios": [
+      {
+        "name": "ren-015",
+        "given": "MAX and floating windows overlap",
+        "when": "the visible top window is clicked",
+        "then": "that eligible top window receives focus"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-016",
+    "capability": "elm-window-policy",
+    "pattern": "event-driven",
+    "ears": "When pin state changes, the native authority SHALL preserve documented MAX return geometry and evaluate painted and input order under the new pin state.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Full pin campaign reports individual outcomes including genuine blocker cases.",
+    "legacyEvidence": "docs/HANDOFF.md; implementation/maximized-stack-v2/README.md",
+    "task": "Complete MAX pin/unpin/return paths and B11\u2013B24 predicates.",
+    "scenarios": [
+      {
+        "name": "ren-016",
+        "given": "a maximized floating window",
+        "when": "pin then unpin is committed",
+        "then": "return geometry and painted/hit order match the policy"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-017",
+    "capability": "elm-window-policy",
+    "pattern": "state-driven",
+    "ears": "While true fullscreen is active, the native authority SHALL apply an explicit fullscreen and pinned-surface policy without treating fullscreen as floating MAX.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Fullscreen/pin/menu matrix independently records pixels, hit and focus.",
+    "legacyEvidence": "implementation/maximized-stack-v2/README.md",
+    "task": "Specify exclusive/render/menu exceptions and regression isolation.",
+    "scenarios": [
+      {
+        "name": "ren-017",
+        "given": "true fullscreen and a pinned window coexist",
+        "when": "a menu or focus action occurs",
+        "then": "the documented fullscreen policy governs each surface"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-018",
+    "capability": "elm-window-policy",
+    "pattern": "event-driven",
+    "ears": "When focusing a modal family, the native authority SHALL resolve eligible recipients from current native family and input state before committing focus.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Native family tests preserve drafts and distinguish input blockers from allows_input.",
+    "legacyEvidence": "docs/HANDOFF.md; docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Keep GTK, Qt and Xwayland modal semantics and real no-focus blocker coverage.",
+    "scenarios": [
+      {
+        "name": "ren-018",
+        "given": "a draft modal and overlapping unrelated window exist",
+        "when": "the user clicks the unrelated eligible window",
+        "then": "native policy focuses the intended eligible recipient without closing drafts"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-019",
+    "capability": "elm-capture-motion",
+    "pattern": "event-driven",
+    "ears": "When an output scale, transform or generation changes, the native renderer SHALL invalidate incompatible frame geometry and rebuild presentation against current output truth.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Mixed-scale native screenshots and receipts confirm geometry revision changes.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md; new output coverage",
+    "task": "Handle fractional scale, negative coordinates, rotation and hotplug.",
+    "scenarios": [
+      {
+        "name": "ren-019",
+        "given": "a preview spans mixed-scale outputs",
+        "when": "scale or rotation changes",
+        "then": "stale output geometry is rejected and current pixels align"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-020",
+    "capability": "elm-window-policy",
+    "pattern": "event-driven",
+    "ears": "When a window transfers between outputs, the canonical authority SHALL commit placement, snap membership and frame ownership using current output generations.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Transfer/hotplug race packet records one committed owner and correct geometry.",
+    "legacyEvidence": "docs/HANDOFF.md; new transfer coverage",
+    "task": "Serialize transfer and cancellation with output removal and snap policy.",
+    "scenarios": [
+      {
+        "name": "ren-020",
+        "given": "a transfer is pending",
+        "when": "the target output disappears",
+        "then": "the stale target is refused and ownership reconciles"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-021",
+    "capability": "elm-capture-motion",
+    "pattern": "complex",
+    "ears": "Where 240 Hz hardware is available, while motion is active, the native renderer SHALL sample motion in its native presentation loop and record cadence against a same-machine baseline.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "240 Hz hardware packet records frame gaps, latency quantiles and hardware configuration.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md; new hardware coverage",
+    "task": "Benchmark native motion without per-frame Elm JSON; set budgets from baseline.",
+    "scenarios": [
+      {
+        "name": "ren-021",
+        "given": "documented 240 Hz hardware and baseline exist",
+        "when": "motion workload runs",
+        "then": "native cadence measurements and comparative budgets are published"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-022",
+    "capability": "elm-capture-motion",
+    "pattern": "ubiquitous",
+    "ears": "The release gate SHALL distinguish renderer receipts from independent presentation evidence and report latency, memory, wakeups and resource growth against the chosen host baseline.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "Comparison packet separates unsupported GPU/presentation spans and measured metrics.",
+    "legacyEvidence": "implementation/capture-profile-v30/README.md",
+    "task": "Instrument both host candidates and document observer overhead and missing stages.",
+    "scenarios": [
+      {
+        "name": "ren-022",
+        "given": "profiling is enabled",
+        "when": "results are evaluated",
+        "then": "queue receipts are not counted as displayed-frame proof"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-023",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where a compositor replacement is selected, the project SHALL document a native Rust or C++ execution boundary and an Elm policy interface before implementation.",
+    "phase": "P7",
+    "priority": "conditional",
+    "verification": "Reviewed feasibility decision records staffing, excluded scope and native authority.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Choose native framework after protocol, license, backend and maintenance evaluation.",
+    "scenarios": [
+      {
+        "name": "ren-023",
+        "given": "replacement remains an optional product goal",
+        "when": "feasibility is reviewed",
+        "then": "the plan names native ownership rather than promising pure Elm"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-024",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where compositor replacement is selected, the native compositor SHALL implement a versioned Wayland and Xwayland compatibility matrix with explicit unsupported cases.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Nested client matrix covers Brave, GTK, Qt and X11 lifecycle and modality.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md; new compatibility coverage",
+    "task": "Implement xdg roles, configure/ack lifecycle and legacy X11 focus/window management.",
+    "scenarios": [
+      {
+        "name": "ren-024",
+        "given": "Wayland and X11 clients share the session",
+        "when": "configure or modal transitions occur",
+        "then": "supported semantics pass and unsupported cases are reported"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-025",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where compositor replacement is selected, the native compositor SHALL own DRM/KMS outputs, seat input and session transitions independently of Elm responsiveness.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Hardware campaign logs modes, input, suspend/resume and hotplug recovery.",
+    "legacyEvidence": "new native backend coverage",
+    "task": "Implement hotplug, modes, leases, suspend/resume and input-device lifecycle.",
+    "scenarios": [
+      {
+        "name": "ren-025",
+        "given": "the Elm host is stalled",
+        "when": "input or output hotplug occurs",
+        "then": "native seat and output handling remain responsive"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-026",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where compositor replacement is selected, the native compositor SHALL provide tested IME, preedit and text-input integration for its supported application matrix.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Native multilingual preedit/commit tests cover GTK, Qt, browser and Xwayland support.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md; new IME coverage",
+    "task": "Implement native text-input/input-method routes with focus and security isolation.",
+    "scenarios": [
+      {
+        "name": "ren-026",
+        "given": "a supported app has an active preedit",
+        "when": "focus changes then returns",
+        "then": "text and focus follow the documented IME lifecycle"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-027",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where compositor replacement is selected, the native compositor SHALL gate capture and remote-control access through documented portal and permission boundaries.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Consent, denial, revocation and cross-session capture tests record no unauthorized frames.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md; new portal coverage",
+    "task": "Integrate screencopy/PipeWire portal paths, revocation and session isolation.",
+    "scenarios": [
+      {
+        "name": "ren-027",
+        "given": "a capture session is authorized",
+        "when": "permission is revoked",
+        "then": "new capture and remote-input access stop"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-028",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where compositor replacement is selected, the native compositor SHALL validate client requests and isolate privileged protocols from untrusted shell content.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Malformed-client fuzzing and lock/input/capture isolation results identify residual risks.",
+    "legacyEvidence": "new compositor security coverage",
+    "task": "Threat-model IPC, protocol exposure, buffer parsing, lock surfaces and client isolation.",
+    "scenarios": [
+      {
+        "name": "ren-028",
+        "given": "an untrusted client sends malformed protocol traffic",
+        "when": "the server processes it",
+        "then": "privileged operations remain denied and other clients remain isolated"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-029",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where compositor replacement is selected, the native compositor SHALL retain frame scheduling, fences, hit testing and buffer retirement in native loops without awaiting Elm port replies.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Injected frontend stalls preserve native frame/input progress and bounded ownership.",
+    "legacyEvidence": "docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Implement asynchronous policy snapshots and bounded native policy fallback.",
+    "scenarios": [
+      {
+        "name": "ren-029",
+        "given": "Elm is paused or its webview crashes",
+        "when": "pointer and frame events arrive",
+        "then": "native loops continue under the documented fallback policy"
+      }
+    ]
+  },
+  {
+    "id": "ELM-REN-030",
+    "capability": "elm-native-compositor",
+    "pattern": "optional",
+    "ears": "Where compositor replacement is selected, the deployment plan SHALL provide tested session fallback and recovery instructions that disclose loss of application connections on compositor failure.",
+    "phase": "P8",
+    "priority": "conditional",
+    "verification": "Recovery drill logs shell-only restart separately from compositor crash and fallback login.",
+    "legacyEvidence": "docs/HANDOFF.md; docs/research/elm-pivot/ARCHITECTURE.md",
+    "task": "Stage nested then sacrificial hardware sessions; preserve user drafts before cutover.",
+    "scenarios": [
+      {
+        "name": "ren-030",
+        "given": "the optional compositor fails in a sacrificial session",
+        "when": "recovery executes",
+        "then": "a working fallback session starts with connection-loss limits documented"
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "modelRequested": "grok-4.7",
+  "inputSHA256": "9b7f47af2664ab40322cf40241d04f69348a0a6064b20b1cec34a37713436b6b",
+  "startedUTC": "2026-10-03T15:13:19.331717+00:00",
+  "finishedUTC": "2026-10-03T15:13:35.486085+00:00",
+  "exitCode": 1,
+  "command": [
+    "grok",
+    "--model",
+    "grok-4.7",
+    "--no-subagents",
+    "--disable-web-search",
+    "--permission-mode",
+    "plan",
+    "--tools",
+    "",
+    "--max-turns",
+    "1",
+    "--prompt-file",
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/audits/grok-delivery-prompt.md",
+    "--output-format",
+    "plain"
+  ],
+  "report": "docs/elm-roadmap/audits/grok-delivery.md",
+  "reportBytes": 152,
+  "reportSHA256": "93336f06d5d2d81b9f9a8054ecf72cc0d9c2a1f2beb4ab3b3b35f2c2dc4c10ba"
+}

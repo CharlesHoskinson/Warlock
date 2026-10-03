@@ -1,0 +1,820 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.BrightnessContrastEffect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.BrightnessContrastEffect"/>
+  <meta property="og:description" content="Reference for Clutter.BrightnessContrastEffect"/>
+  <meta name="twitter:title" content="Clutter.BrightnessContrastEffect"/>
+  <meta name="twitter:description" content="Reference for Clutter.BrightnessContrastEffect"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.BrightnessContrastEffect.html#description">BrightnessContrastEffect</a>
+  </div>
+</div>
+
+
+  
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.BrightnessContrastEffect.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.BrightnessContrastEffect.get_brightness.html">get_brightness</a>
+  
+    <a class="method" href="method.BrightnessContrastEffect.get_contrast.html">get_contrast</a>
+  
+    <a class="method" href="method.BrightnessContrastEffect.set_brightness.html">set_brightness</a>
+  
+    <a class="method" href="method.BrightnessContrastEffect.set_brightness_full.html">set_brightness_full</a>
+  
+    <a class="method" href="method.BrightnessContrastEffect.set_contrast.html">set_contrast</a>
+  
+    <a class="method" href="method.BrightnessContrastEffect.set_contrast_full.html">set_contrast_full</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.BrightnessContrastEffect.brightness.html">brightness</a>
+  
+    <a class="property" href="property.BrightnessContrastEffect.contrast.html">contrast</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>BrightnessContrastEffect</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-brightness-contrast-effect.c#L25">[src]</a>
+          
+        </h4>
+
+        <pre><code>class Clutter.BrightnessContrastEffect : Clutter.OffscreenEffect
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>Increase/decrease brightness and/or contrast of&nbsp;actor.</p>
+<p><code>ClutterBrightnessContrastEffect</code> is a sub-class of <code>ClutterEffect</code> that
+changes the overall brightness of a <code>ClutterActor</code>.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.BrightnessContrastEffect">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="198pt" height="404pt"
+ viewBox="0.00 0.00 198.00 404.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterBrightnessContrastEffect">
+<path fill="none" stroke="black" d="M178,-36C178,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 178,0 178,0 184,0 190,-6 190,-12 190,-12 190,-24 190,-24 190,-30 184,-36 178,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="95" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterBrightnessContrastEffect</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node link">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:href="class.OffscreenEffect.html" xlink:title="ClutterOffscreenEffect">
+<path fill="none" stroke="black" d="M152.12,-108C152.12,-108 37.88,-108 37.88,-108 31.88,-108 25.88,-102 25.88,-96 25.88,-96 25.88,-84 25.88,-84 25.88,-78 31.88,-72 37.88,-72 37.88,-72 152.12,-72 152.12,-72 158.12,-72 164.12,-78 164.12,-84 164.12,-84 164.12,-96 164.12,-96 164.12,-102 158.12,-108 152.12,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="95" y="-83.83" font-family="Times,serif" font-size="14.00">ClutterOffscreenEffect</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge5" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M95,-71.7C95,-60.85 95,-46.92 95,-36.1"/>
+</g>
+<!-- ancestor_1 -->
+<g id="node3" class="node link">
+<title>ancestor_1</title>
+<g id="a_node3"><a xlink:href="class.Effect.html" xlink:title="ClutterEffect">
+<path fill="none" stroke="black" d="M125.88,-180C125.88,-180 64.12,-180 64.12,-180 58.12,-180 52.12,-174 52.12,-168 52.12,-168 52.12,-156 52.12,-156 52.12,-150 58.12,-144 64.12,-144 64.12,-144 125.88,-144 125.88,-144 131.88,-144 137.88,-150 137.88,-156 137.88,-156 137.88,-168 137.88,-168 137.88,-174 131.88,-180 125.88,-180"/>
+<text xml:space="preserve" text-anchor="middle" x="95" y="-155.82" font-family="Times,serif" font-size="14.00">ClutterEffect</text>
+</a>
+</g>
+</g>
+<!-- ancestor_1&#45;&#45;ancestor_0 -->
+<g id="edge4" class="edge">
+<title>ancestor_1&#45;&#45;ancestor_0</title>
+<path fill="none" stroke="black" d="M95,-143.7C95,-132.85 95,-118.92 95,-108.1"/>
+</g>
+<!-- ancestor_2 -->
+<g id="node4" class="node link">
+<title>ancestor_2</title>
+<g id="a_node4"><a xlink:href="class.ActorMeta.html" xlink:title="ClutterActorMeta">
+<path fill="none" stroke="black" d="M139.38,-252C139.38,-252 50.62,-252 50.62,-252 44.62,-252 38.62,-246 38.62,-240 38.62,-240 38.62,-228 38.62,-228 38.62,-222 44.62,-216 50.62,-216 50.62,-216 139.38,-216 139.38,-216 145.38,-216 151.38,-222 151.38,-228 151.38,-228 151.38,-240 151.38,-240 151.38,-246 145.38,-252 139.38,-252"/>
+<text xml:space="preserve" text-anchor="middle" x="95" y="-227.82" font-family="Times,serif" font-size="14.00">ClutterActorMeta</text>
+</a>
+</g>
+</g>
+<!-- ancestor_2&#45;&#45;ancestor_1 -->
+<g id="edge3" class="edge">
+<title>ancestor_2&#45;&#45;ancestor_1</title>
+<path fill="none" stroke="black" d="M95,-215.7C95,-204.85 95,-190.92 95,-180.1"/>
+</g>
+<!-- ancestor_3 -->
+<g id="node5" class="node">
+<title>ancestor_3</title>
+<g id="a_node5"><a xlink:title="GObject.InitiallyUnowned">
+<path fill="none" stroke="black" d="M143.5,-324C143.5,-324 46.5,-324 46.5,-324 40.5,-324 34.5,-318 34.5,-312 34.5,-312 34.5,-300 34.5,-300 34.5,-294 40.5,-288 46.5,-288 46.5,-288 143.5,-288 143.5,-288 149.5,-288 155.5,-294 155.5,-300 155.5,-300 155.5,-312 155.5,-312 155.5,-318 149.5,-324 143.5,-324"/>
+<text xml:space="preserve" text-anchor="middle" x="95" y="-299.82" font-family="Times,serif" font-size="14.00">GInitiallyUnowned</text>
+</a>
+</g>
+</g>
+<!-- ancestor_3&#45;&#45;ancestor_2 -->
+<g id="edge2" class="edge">
+<title>ancestor_3&#45;&#45;ancestor_2</title>
+<path fill="none" stroke="black" d="M95,-287.7C95,-276.85 95,-262.92 95,-252.1"/>
+</g>
+<!-- ancestor_4 -->
+<g id="node6" class="node">
+<title>ancestor_4</title>
+<g id="a_node6"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M113.88,-396C113.88,-396 76.12,-396 76.12,-396 70.12,-396 64.12,-390 64.12,-384 64.12,-384 64.12,-372 64.12,-372 64.12,-366 70.12,-360 76.12,-360 76.12,-360 113.88,-360 113.88,-360 119.88,-360 125.88,-366 125.88,-372 125.88,-372 125.88,-384 125.88,-384 125.88,-390 119.88,-396 113.88,-396"/>
+<text xml:space="preserve" text-anchor="middle" x="95" y="-371.82" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_4&#45;&#45;ancestor_3 -->
+<g id="edge1" class="edge">
+<title>ancestor_4&#45;&#45;ancestor_3</title>
+<path fill="none" stroke="black" d="M95,-359.7C95,-348.85 95,-334.92 95,-324.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.OffscreenEffect.html" title="OffscreenEffect">ClutterOffscreenEffect</a></li>
+          
+        
+          
+          <li class="class"><a href="class.Effect.html" title="Effect">ClutterEffect</a></li>
+          
+        
+          
+          <li class="class"><a href="class.ActorMeta.html" title="ActorMeta">ClutterActorMeta</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.InitiallyUnowned.html" data-namespace="GObject">GInitiallyUnowned</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.BrightnessContrastEffect.new.html">clutter_brightness_contrast_effect_new</a></h6>
+          <div class="docblock">
+            <p>Creates a new <code>ClutterBrightnessContrastEffect</code> to be used with
+<code>clutter_actor_add_effect()</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.BrightnessContrastEffect.get_brightness.html">clutter_brightness_contrast_effect_get_brightness</a></h6>
+          <div class="docblock">
+            <p>Retrieves the change in brightness used by <code>effect</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BrightnessContrastEffect.get_contrast.html">clutter_brightness_contrast_effect_get_contrast</a></h6>
+          <div class="docblock">
+            <p>Retrieves the contrast value used by <code>effect</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BrightnessContrastEffect.set_brightness.html">clutter_brightness_contrast_effect_set_brightness</a></h6>
+          <div class="docblock">
+            <p>The range of <code>brightness</code> is [-1.0, 1.0], where 0.0 designates no change;
+a value below 0.0 indicates a decrease in brightness; and a value
+above 0.0 indicates an increase of&nbsp;brightness.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BrightnessContrastEffect.set_brightness_full.html">clutter_brightness_contrast_effect_set_brightness_full</a></h6>
+          <div class="docblock">
+            <p>The range for each component is [-1.0, 1.0] where 0.0 designates no change,
+values below 0.0 mean a decrease in brightness, and values above indicate
+an&nbsp;increase.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BrightnessContrastEffect.set_contrast.html">clutter_brightness_contrast_effect_set_contrast</a></h6>
+          <div class="docblock">
+            <p>The range for <code>contrast</code> is [-1.0, 1.0], where 0.0 designates no change;
+a value below 0.0 indicates a decrease in contrast; and a value above
+0.0 indicates an&nbsp;increase.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.BrightnessContrastEffect.set_contrast_full.html">clutter_brightness_contrast_effect_set_contrast_full</a></h6>
+          <div class="docblock">
+            <p>The range for each component is [-1.0, 1.0] where 0.0 designates no change,
+values below 0.0 mean a decrease in contrast, and values above indicate
+an&nbsp;increase.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.OffscreenEffect.html">ClutterOffscreenEffect</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="method.OffscreenEffect.create_texture.html">clutter_offscreen_effect_create_texture</a></h6><div class="docblock">
+              <p>Calls the <code>Clutter.OffscreenEffectClass.create_texture</code> virtual function of the <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.get_pipeline.html">clutter_offscreen_effect_get_pipeline</a></h6><div class="docblock">
+              <p>Retrieves the pipeline used as a render target for the offscreen
+buffer created by <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.get_target_size.html">clutter_offscreen_effect_get_target_size</a></h6><div class="docblock">
+              <p>Retrieves the size of the offscreen buffer used by <code>effect</code> to
+paint the actor to which it has been&nbsp;applied.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.get_texture.html">clutter_offscreen_effect_get_texture</a></h6><div class="docblock">
+              <p>Retrieves the texture used as a render target for the offscreen
+buffer created by <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.OffscreenEffect.paint_target.html">clutter_offscreen_effect_paint_target</a></h6><div class="docblock">
+              <p>Calls the <code>Clutter.OffscreenEffectClass.paint_target</code> virtual function of the <code>effect</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Effect.html">ClutterEffect</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="method.Effect.queue_repaint.html">clutter_effect_queue_repaint</a></h6><div class="docblock">
+              <p>Queues a repaint of the effect. The effect can detect when the ‘paint’
+method is called as a result of this function because it will not
+have the <code>CLUTTER_EFFECT_PAINT_ACTOR_DIRTY</code> flag set. In that case the
+effect is free to assume that the actor has not changed its
+appearance since the last time it was painted so it doesn&#8217;t need to
+call <code>clutter_actor_continue_paint()</code> if it can draw a cached
+image. This is mostly intended for effects that are using a
+%CoglOffscreen to redirect the actor (such as
+%ClutterOffscreenEffect). In that case the effect can save a bit of
+rendering time by painting the cached texture without causing the
+entire actor to be&nbsp;painted.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="method.ActorMeta.get_actor.html">clutter_actor_meta_get_actor</a></h6><div class="docblock">
+              <p>Retrieves a pointer to the <code>ClutterActor</code> that owns <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_enabled.html">clutter_actor_meta_get_enabled</a></h6><div class="docblock">
+              <p>Retrieves whether <code>meta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_name.html">clutter_actor_meta_get_name</a></h6><div class="docblock">
+              <p>Retrieves the name set using <code>clutter_actor_meta_set_name()</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_enabled.html">clutter_actor_meta_set_enabled</a></h6><div class="docblock">
+              <p>Sets whether <code>meta</code> should be enabled or&nbsp;not.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_name.html">clutter_actor_meta_set_name</a></h6><div class="docblock">
+              <p>Sets the name of <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.BrightnessContrastEffect.brightness.html">Clutter.BrightnessContrastEffect:brightness</a></h6>
+          <div class="docblock">
+            <p>The brightness change to apply to the&nbsp;effect.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.BrightnessContrastEffect.contrast.html">Clutter.BrightnessContrastEffect:contrast</a></h6>
+          <div class="docblock">
+            <p>The contrast change to apply to the&nbsp;effect.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (3)</h5><div class="docblock">
+          
+            <h6><a href="property.ActorMeta.actor.html">Clutter.ActorMeta:actor</a></h6><div class="docblock">
+              <p>The <code>ClutterActor</code> attached to the <code>ClutterActorMeta</code> instance.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.enabled.html">Clutter.ActorMeta:enabled</a></h6><div class="docblock">
+              <p>Whether or not the <code>ClutterActorMeta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.name.html">Clutter.ActorMeta:name</a></h6><div class="docblock">
+              <p>The unique name to access the <code>ClutterActorMeta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterBrightnessContrastEffectClass {
+  ClutterOffscreenEffectClass parent_class;
+  CoglPipeline* base_pipeline;
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: ClutterOffscreenEffectClass</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+          <dt><code>base_pipeline: CoglPipeline*</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

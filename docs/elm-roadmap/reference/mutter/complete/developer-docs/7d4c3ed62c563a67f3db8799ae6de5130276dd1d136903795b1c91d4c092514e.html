@@ -1,0 +1,2404 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Meta.Window</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Meta-51"/>
+  
+
+  
+  <meta property="og:title" content="Meta.Window"/>
+  <meta property="og:description" content="Reference for Meta.Window"/>
+  <meta name="twitter:title" content="Meta.Window"/>
+  <meta name="twitter:description" content="Reference for Meta.Window"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Meta" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Meta</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.Window.html#description">Window</a>
+  </div>
+</div>
+
+
+  
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.Window.activate.html">activate</a>
+  
+    <a class="method" href="method.Window.activate_with_workspace.html">activate_with_workspace</a>
+  
+    <a class="method" href="method.Window.add_external_constraint.html">add_external_constraint</a>
+  
+    <a class="method" href="method.Window.allows_move.html">allows_move</a>
+  
+    <a class="method" href="method.Window.allows_resize.html">allows_resize</a>
+  
+    <a class="method" href="method.Window.appears_focused.html">appears_focused</a>
+  
+    <a class="method" href="method.Window.begin_grab_op.html">begin_grab_op</a>
+  
+    <a class="method" href="method.Window.can_close.html">can_close</a>
+  
+    <a class="method" href="method.Window.can_maximize.html">can_maximize</a>
+  
+    <a class="method" href="method.Window.can_minimize.html">can_minimize</a>
+  
+    <a class="method" href="method.Window.change_workspace.html">change_workspace</a>
+  
+    <a class="method" href="method.Window.change_workspace_by_index.html">change_workspace_by_index</a>
+  
+    <a class="method" href="method.Window.check_alive.html">check_alive</a>
+  
+    <a class="method" href="method.Window.client_rect_to_frame_rect.html">client_rect_to_frame_rect</a>
+  
+    <a class="method" href="method.Window.delete.html">delete</a>
+  
+    <a class="method" href="method.Window.find_root_ancestor.html">find_root_ancestor</a>
+  
+    <a class="method" href="method.Window.focus.html">focus</a>
+  
+    <a class="method" href="method.Window.foreach_ancestor.html">foreach_ancestor</a>
+  
+    <a class="method" href="method.Window.foreach_transient.html">foreach_transient</a>
+  
+    <a class="method" href="method.Window.frame_rect_to_client_rect.html">frame_rect_to_client_rect</a>
+  
+    <a class="method" href="method.Window.get_buffer_rect.html">get_buffer_rect</a>
+  
+    <a class="method" href="method.Window.get_client_content_rect.html">get_client_content_rect</a>
+  
+    <a class="method" href="method.Window.get_client_type.html">get_client_type</a>
+  
+    <a class="method" href="method.Window.get_compositor_private.html">get_compositor_private</a>
+  
+    <a class="method" href="method.Window.get_description.html">get_description</a>
+  
+    <a class="method" href="method.Window.get_display.html">get_display</a>
+  
+    <a class="method" href="method.Window.get_frame_rect.html">get_frame_rect</a>
+  
+    <a class="method" href="method.Window.get_frame_type.html">get_frame_type</a>
+  
+    <a class="method" href="method.Window.get_gtk_app_menu_object_path.html">get_gtk_app_menu_object_path</a>
+  
+    <a class="method" href="method.Window.get_gtk_application_id.html">get_gtk_application_id</a>
+  
+    <a class="method" href="method.Window.get_gtk_application_object_path.html">get_gtk_application_object_path</a>
+  
+    <a class="method" href="method.Window.get_gtk_menubar_object_path.html">get_gtk_menubar_object_path</a>
+  
+    <a class="method" href="method.Window.get_gtk_unique_bus_name.html">get_gtk_unique_bus_name</a>
+  
+    <a class="method" href="method.Window.get_gtk_window_object_path.html">get_gtk_window_object_path</a>
+  
+    <a class="method" href="method.Window.get_icon_geometry.html">get_icon_geometry</a>
+  
+    <a class="method" href="method.Window.get_id.html">get_id</a>
+  
+    <a class="method" href="method.Window.get_layer.html">get_layer</a>
+  
+    <a class="method" href="method.Window.get_max_size.html">get_max_size</a>
+  
+    <a class="method" href="method.Window.get_maximize_flags.html">get_maximize_flags</a>
+  
+    <a class="method" href="method.Window.get_min_size.html">get_min_size</a>
+  
+    <a class="method" href="method.Window.get_monitor.html">get_monitor</a>
+  
+    <a class="method" href="method.Window.get_mutter_hints.html">get_mutter_hints</a>
+  
+    <a class="method" href="method.Window.get_pid.html">get_pid</a>
+  
+    <a class="method" href="method.Window.get_role.html">get_role</a>
+  
+    <a class="method" href="method.Window.get_sandboxed_app_id.html">get_sandboxed_app_id</a>
+  
+    <a class="method" href="method.Window.get_stable_sequence.html">get_stable_sequence</a>
+  
+    <a class="method" href="method.Window.get_startup_id.html">get_startup_id</a>
+  
+    <a class="method" href="method.Window.get_tag.html">get_tag</a>
+  
+    <a class="method" href="method.Window.get_tile_match.html">get_tile_match</a>
+  
+    <a class="method" href="method.Window.get_title.html">get_title</a>
+  
+    <a class="method" href="method.Window.get_transient_for.html">get_transient_for</a>
+  
+    <a class="method" href="method.Window.get_user_time.html">get_user_time</a>
+  
+    <a class="method" href="method.Window.get_window_type.html">get_window_type</a>
+  
+    <a class="method" href="method.Window.get_wm_class.html">get_wm_class</a>
+  
+    <a class="method" href="method.Window.get_wm_class_instance.html">get_wm_class_instance</a>
+  
+    <a class="method" href="method.Window.get_work_area_all_monitors.html">get_work_area_all_monitors</a>
+  
+    <a class="method" href="method.Window.get_work_area_current_monitor.html">get_work_area_current_monitor</a>
+  
+    <a class="method" href="method.Window.get_work_area_for_monitor.html">get_work_area_for_monitor</a>
+  
+    <a class="method" href="method.Window.get_workspace.html">get_workspace</a>
+  
+    <a class="method" href="method.Window.has_attached_dialogs.html">has_attached_dialogs</a>
+  
+    <a class="method" href="method.Window.has_focus.html">has_focus</a>
+  
+    <a class="method" href="method.Window.has_pointer.html">has_pointer</a>
+  
+    <a class="method" href="method.Window.hide_from_window_list.html">hide_from_window_list</a>
+  
+    <a class="method" href="method.Window.inhibit_mapped.html">inhibit_mapped</a>
+  
+    <a class="method" href="method.Window.is_above.html">is_above</a>
+  
+    <a class="method" href="method.Window.is_always_on_all_workspaces.html">is_always_on_all_workspaces</a>
+  
+    <a class="method" href="method.Window.is_ancestor_of_transient.html">is_ancestor_of_transient</a>
+  
+    <a class="method" href="method.Window.is_attached_dialog.html">is_attached_dialog</a>
+  
+    <a class="method" href="method.Window.is_fullscreen.html">is_fullscreen</a>
+  
+    <a class="method" href="method.Window.is_hidden.html">is_hidden</a>
+  
+    <a class="method" href="method.Window.is_mapped_inhibited.html">is_mapped_inhibited</a>
+  
+    <a class="method" href="method.Window.is_maximized.html">is_maximized</a>
+  
+    <a class="method" href="method.Window.is_monitor_sized.html">is_monitor_sized</a>
+  
+    <a class="method" href="method.Window.is_on_all_workspaces.html">is_on_all_workspaces</a>
+  
+    <a class="method" href="method.Window.is_on_primary_monitor.html">is_on_primary_monitor</a>
+  
+    <a class="method" href="method.Window.is_override_redirect.html">is_override_redirect</a>
+  
+    <a class="method" href="method.Window.is_remote.html">is_remote</a>
+  
+    <a class="method" href="method.Window.is_screen_sized.html">is_screen_sized</a>
+  
+    <a class="method" href="method.Window.is_skip_taskbar.html">is_skip_taskbar</a>
+  
+    <a class="method" href="method.Window.kill.html">kill</a>
+  
+    <a class="method" href="method.Window.located_on_workspace.html">located_on_workspace</a>
+  
+    <a class="method" href="method.Window.lower.html">lower</a>
+  
+    <a class="method" href="method.Window.lower_with_transients.html">lower_with_transients</a>
+  
+    <a class="method" href="method.Window.make_above.html">make_above</a>
+  
+    <a class="method" href="method.Window.make_fullscreen.html">make_fullscreen</a>
+  
+    <a class="method" href="method.Window.maximize.html">maximize</a>
+  
+    <a class="method" href="method.Window.minimize.html">minimize</a>
+  
+    <a class="method" href="method.Window.move_frame.html">move_frame</a>
+  
+    <a class="method" href="method.Window.move_resize_frame.html">move_resize_frame</a>
+  
+    <a class="method" href="method.Window.move_to_monitor.html">move_to_monitor</a>
+  
+    <a class="method" href="method.Window.protocol_to_stage_rect.html">protocol_to_stage_rect</a>
+  
+    <a class="method" href="method.Window.raise.html">raise</a>
+  
+    <a class="method" href="method.Window.raise_and_make_recent_on_workspace.html">raise_and_make_recent_on_workspace</a>
+  
+    <a class="method" href="method.Window.remove_external_constraint.html">remove_external_constraint</a>
+  
+    <a class="method" href="method.Window.set_compositor_private.html">set_compositor_private</a>
+  
+    <a class="method" href="method.Window.set_demands_attention.html">set_demands_attention</a>
+  
+    <a class="method" href="method.Window.set_icon_geometry.html">set_icon_geometry</a>
+  
+    <a class="method" href="method.Window.set_maximize_flags.html">set_maximize_flags</a>
+  
+    <a class="method" href="method.Window.set_type.html">set_type</a>
+  
+    <a class="method" href="method.Window.set_unmaximize_flags.html">set_unmaximize_flags</a>
+  
+    <a class="method" href="method.Window.show_in_window_list.html">show_in_window_list</a>
+  
+    <a class="method" href="method.Window.showing_on_its_workspace.html">showing_on_its_workspace</a>
+  
+    <a class="method" href="method.Window.stage_to_protocol_rect.html">stage_to_protocol_rect</a>
+  
+    <a class="method" href="method.Window.stick.html">stick</a>
+  
+    <a class="method" href="method.Window.uninhibit_mapped.html">uninhibit_mapped</a>
+  
+    <a class="method" href="method.Window.unmake_above.html">unmake_above</a>
+  
+    <a class="method" href="method.Window.unmake_fullscreen.html">unmake_fullscreen</a>
+  
+    <a class="method" href="method.Window.unmaximize.html">unmaximize</a>
+  
+    <a class="method" href="method.Window.unminimize.html">unminimize</a>
+  
+    <a class="method" href="method.Window.unset_demands_attention.html">unset_demands_attention</a>
+  
+    <a class="method" href="method.Window.unstick.html">unstick</a>
+  
+    <a class="method" href="method.Window.x11_get_group.html">x11_get_group</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.Window.a11y-dbus-name.html">a11y-dbus-name</a>
+  
+    <a class="property" href="property.Window.a11y-object-path.html">a11y-object-path</a>
+  
+    <a class="property" href="property.Window.above.html">above</a>
+  
+    <a class="property" href="property.Window.appears-focused.html">appears-focused</a>
+  
+    <a class="property" href="property.Window.decorated.html">decorated</a>
+  
+    <a class="property" href="property.Window.demands-attention.html">demands-attention</a>
+  
+    <a class="property" href="property.Window.display.html">display</a>
+  
+    <a class="property" href="property.Window.effect.html">effect</a>
+  
+    <a class="property" href="property.Window.fullscreen.html">fullscreen</a>
+  
+    <a class="property" href="property.Window.gtk-app-menu-object-path.html">gtk-app-menu-object-path</a>
+  
+    <a class="property" href="property.Window.gtk-application-id.html">gtk-application-id</a>
+  
+    <a class="property" href="property.Window.gtk-application-object-path.html">gtk-application-object-path</a>
+  
+    <a class="property" href="property.Window.gtk-menubar-object-path.html">gtk-menubar-object-path</a>
+  
+    <a class="property" href="property.Window.gtk-unique-bus-name.html">gtk-unique-bus-name</a>
+  
+    <a class="property" href="property.Window.gtk-window-object-path.html">gtk-window-object-path</a>
+  
+    <a class="property" href="property.Window.is-alive.html">is-alive</a>
+  
+    <a class="property" href="property.Window.main-monitor.html">main-monitor</a>
+  
+    <a class="property" href="property.Window.mapped.html">mapped</a>
+  
+    <a class="property" href="property.Window.maximized-horizontally.html">maximized-horizontally</a>
+  
+    <a class="property" href="property.Window.maximized-vertically.html">maximized-vertically</a>
+  
+    <a class="property" href="property.Window.minimized.html">minimized</a>
+  
+    <a class="property" href="property.Window.mutter-hints.html">mutter-hints</a>
+  
+    <a class="property" href="property.Window.on-all-workspaces.html">on-all-workspaces</a>
+  
+    <a class="property" href="property.Window.resizeable.html">resizeable</a>
+  
+    <a class="property" href="property.Window.skip-taskbar.html">skip-taskbar</a>
+  
+    <a class="property" href="property.Window.suspend-state.html">suspend-state</a>
+  
+    <a class="property" href="property.Window.tag.html">tag</a>
+  
+    <a class="property" href="property.Window.title.html">title</a>
+  
+    <a class="property" href="property.Window.urgent.html">urgent</a>
+  
+    <a class="property" href="property.Window.user-time.html">user-time</a>
+  
+    <a class="property" href="property.Window.window-type.html">window-type</a>
+  
+    <a class="property" href="property.Window.wm-class.html">wm-class</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.Window.configure.html">configure</a>
+  
+    <a class="signal" href="signal.Window.focus.html">focus</a>
+  
+    <a class="signal" href="signal.Window.highest-scale-monitor-changed.html">highest-scale-monitor-changed</a>
+  
+    <a class="signal" href="signal.Window.position-changed.html">position-changed</a>
+  
+    <a class="signal" href="signal.Window.raised.html">raised</a>
+  
+    <a class="signal" href="signal.Window.shown.html">shown</a>
+  
+    <a class="signal" href="signal.Window.size-changed.html">size-changed</a>
+  
+    <a class="signal" href="signal.Window.unmanaged.html">unmanaged</a>
+  
+    <a class="signal" href="signal.Window.unmanaging.html">unmanaging</a>
+  
+    <a class="signal" href="signal.Window.workspace-changed.html">workspace-changed</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Meta</a><span class="sep" role="presentation"></span>Window</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/src/core/window.c#L23">[src]</a>
+          
+        </h4>
+
+        <pre><code>abstract class Meta.Window : GObject.Object
+  implements Gio.Initable {
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>A display-agnostic abstraction for a&nbsp;window.</p>
+<p><code>MetaWindow</code> is the core abstraction in Mutter of a window. It has the
+properties you&#8217;d expect, such as a title, whether it&#8217;s fullscreen,
+has decorations,&nbsp;etc.</p>
+<p>Since a lot of different kinds of windows exist, each window also a
+<a href="enum.WindowType.html"><code>MetaWindowType</code></a> which denotes which kind of window we&#8217;re exactly dealing
+with. For example, one expects slightly different behaviour from a dialog
+than a &#8220;normal&#8221; window. The type of a window can be queried with
+<a href="method.Window.get_window_type.html"><code>meta_window_get_window_type()</code></a>.</p>
+<p>Common <span class="caps">API</span> for windows&nbsp;include:</p>
+<ul>
+<li>Minimizing: <a href="method.Window.minimize.html"><code>meta_window_minimize()</code></a> / <a href="method.Window.unminimize.html"><code>meta_window_unminimize()</code></a></li>
+<li>Maximizing: <a href="method.Window.maximize.html"><code>meta_window_maximize()</code></a> / <a href="method.Window.unmaximize.html"><code>meta_window_unmaximize()</code></a></li>
+<li>Fullscreen: <a href="method.Window.make_fullscreen.html"><code>meta_window_make_fullscreen()</code></a> / <a href="method.Window.unmake_fullscreen.html"><code>meta_window_unmake_fullscreen()</code></a>
+              / <a href="method.Window.is_fullscreen.html"><code>meta_window_is_fullscreen()</code></a></li>
+</ul>
+<p>Each <code>MetaWindow</code> is part of either one or all <a href="class.Workspace.html"><code>MetaWorkspace</code></a>s of the
+desktop. You can activate a window on a certain workspace using
+<a href="method.Window.activate_with_workspace.html"><code>meta_window_activate_with_workspace()</code></a>, and query on which workspace it is
+located using <a href="method.Window.located_on_workspace.html"><code>meta_window_located_on_workspace()</code></a>. The workspace it is part
+of can be obtained using <a href="method.Window.get_workspace.html"><code>meta_window_get_workspace()</code></a>.</p>
+<p>Each display protocol should make a subclass to be compatible with that
+protocols&#8217; specifics, for example <code>MetaWindowX11</code> and <code>MetaWindowWayland</code>.
+This is independent of the protocol that the client uses, which is modeled
+using the <a href="enum.WindowClientType.html"><code>MetaWindowClientType</code></a>&nbsp;enum.</p>
+<p>To integrate within the Clutter scene graph, which deals with the actual
+rendering, each <code>MetaWindow</code> will be part of a <a href="class.WindowActor.html"><code>MetaWindowActor</code></a>.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Meta.Window">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="99pt" height="188pt"
+ viewBox="0.00 0.00 99.00 188.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="MetaWindow">
+<path fill="none" stroke="black" d="M79,-108C79,-108 12,-108 12,-108 6,-108 0,-102 0,-96 0,-96 0,-84 0,-84 0,-78 6,-72 12,-72 12,-72 79,-72 79,-72 85,-72 91,-78 91,-84 91,-84 91,-96 91,-96 91,-102 85,-108 79,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="45.5" y="-83.83" font-family="Times,serif" font-size="14.00">MetaWindow</text>
+</a>
+</g>
+</g>
+<!-- implements_0 -->
+<g id="node3" class="node">
+<title>implements_0</title>
+<g id="a_node3"><a xlink:title="Gio.Initable">
+<polygon fill="none" stroke="black" points="83.88,-36 7.12,-36 7.12,0 83.88,0 83.88,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="45.5" y="-14.45" font-family="sans-serif" font-size="14.00">GInitable</text>
+</a>
+</g>
+</g>
+<!-- this&#45;&#45;implements_0 -->
+<g id="edge2" class="edge">
+<title>this&#45;&#45;implements_0</title>
+<path fill="none" stroke="black" stroke-dasharray="1,5" d="M45.5,-71.7C45.5,-60.85 45.5,-46.92 45.5,-36.1"/>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M64.38,-180C64.38,-180 26.62,-180 26.62,-180 20.62,-180 14.62,-174 14.62,-168 14.62,-168 14.62,-156 14.62,-156 14.62,-150 20.62,-144 26.62,-144 26.62,-144 64.38,-144 64.38,-144 70.38,-144 76.38,-150 76.38,-156 76.38,-156 76.38,-168 76.38,-168 76.38,-174 70.38,-180 64.38,-180"/>
+<text xml:space="preserve" text-anchor="middle" x="45.5" y="-155.82" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge1" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M45.5,-143.7C45.5,-132.85 45.5,-118.92 45.5,-108.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper implements">
+      <h4 id="implements">
+        Implements
+        <a href="#implements" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="interface"><a class="external" href="javascript:void(0)" data-link="iface.Initable.html" data-namespace="Gio">GInitable</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.Window.activate.html">meta_window_activate</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.activate_with_workspace.html">meta_window_activate_with_workspace</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.add_external_constraint.html">meta_window_add_external_constraint</a></h6>
+          <div class="docblock">
+            <p>Adds an external constraint to the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.allows_move.html">meta_window_allows_move</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.allows_resize.html">meta_window_allows_resize</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.appears_focused.html">meta_window_appears_focused</a></h6>
+          <div class="docblock">
+            <p>Determines if the window should be drawn with a focused&nbsp;appearance.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.begin_grab_op.html">meta_window_begin_grab_op</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.can_close.html">meta_window_can_close</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.can_maximize.html">meta_window_can_maximize</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.can_minimize.html">meta_window_can_minimize</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.change_workspace.html">meta_window_change_workspace</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.change_workspace_by_index.html">meta_window_change_workspace_by_index</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.check_alive.html">meta_window_check_alive</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.client_rect_to_frame_rect.html">meta_window_client_rect_to_frame_rect</a></h6>
+          <div class="docblock">
+            <p>Converts a desired bounds of the client window into the corresponding bounds
+of the window frame (excluding invisible borders and client side&nbsp;shadows.).</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.delete.html">meta_window_delete</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.find_root_ancestor.html">meta_window_find_root_ancestor</a></h6>
+          <div class="docblock">
+            <p>Follow the chain of parents of <code>window</code>, skipping transient windows,
+and return the &#8220;root&#8221; window which has no non-transient&nbsp;parent.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.focus.html">meta_window_focus</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.foreach_ancestor.html">meta_window_foreach_ancestor</a></h6>
+          <div class="docblock">
+            <p>If <code>window</code> is transient, call <code>func</code> with the window for which it&#8217;s transient,
+repeatedly until either we find a non-transient window, or <code>func</code> returns <code>FALSE</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.foreach_transient.html">meta_window_foreach_transient</a></h6>
+          <div class="docblock">
+            <p>Call <code>func</code> for every window which is either transient for <code>window</code>, or is
+a transient of a window which is in turn transient for <code>window</code>.
+The order of window enumeration is not&nbsp;defined.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.frame_rect_to_client_rect.html">meta_window_frame_rect_to_client_rect</a></h6>
+          <div class="docblock">
+            <p>Converts a desired frame bounds for a window into the bounds of the client&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_buffer_rect.html">meta_window_get_buffer_rect</a></h6>
+          <div class="docblock">
+            <p>Gets the rectangle that the pixmap or buffer of <code>window</code> occupies.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_client_content_rect.html">meta_window_get_client_content_rect</a></h6>
+          <div class="docblock">
+            <p>Gets the client rectangle that <span class="caps">ATSPI</span> window coordinates
+are relative&nbsp;to.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_client_type.html">meta_window_get_client_type</a></h6>
+          <div class="docblock">
+            <p>Returns the <code>MetaWindowClientType</code> of the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_compositor_private.html">meta_window_get_compositor_private</a></h6>
+          <div class="docblock">
+            <p>Gets the compositor&#8217;s wrapper object for <code>window</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_description.html">meta_window_get_description</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_display.html">meta_window_get_display</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_frame_rect.html">meta_window_get_frame_rect</a></h6>
+          <div class="docblock">
+            <p>Gets the rectangle that bounds <code>window</code> that is what the user thinks of
+as the edge of the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_frame_type.html">meta_window_get_frame_type</a></h6>
+          <div class="docblock">
+            <p>Gets the type of window decorations that should be used for this&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_gtk_app_menu_object_path.html">meta_window_get_gtk_app_menu_object_path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_gtk_application_id.html">meta_window_get_gtk_application_id</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_gtk_application_object_path.html">meta_window_get_gtk_application_object_path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_gtk_menubar_object_path.html">meta_window_get_gtk_menubar_object_path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_gtk_unique_bus_name.html">meta_window_get_gtk_unique_bus_name</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_gtk_window_object_path.html">meta_window_get_gtk_window_object_path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_icon_geometry.html">meta_window_get_icon_geometry</a></h6>
+          <div class="docblock">
+            <p>Gets the location of the icon corresponding to the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_id.html">meta_window_get_id</a></h6>
+          <div class="docblock">
+            <p>Returns the window id associated with&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_layer.html">meta_window_get_layer</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_max_size.html">meta_window_get_max_size</a></h6>
+          <div class="docblock">
+            <p>Gets the maximum size allowed for this window, if set by the client
+application, or to 0 if&nbsp;not.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_maximize_flags.html">meta_window_get_maximize_flags</a></h6>
+          <div class="docblock">
+            <p>Gets the current maximization state of the window, as combination
+of the <code>META_MAXIMIZE_HORIZONTAL</code> and <code>META_MAXIMIZE_VERTICAL</code> flags;.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_min_size.html">meta_window_get_min_size</a></h6>
+          <div class="docblock">
+            <p>Gets the minimum size allowed for this window, if set by the client
+application, or to 0 if&nbsp;not.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_monitor.html">meta_window_get_monitor</a></h6>
+          <div class="docblock">
+            <p>Gets index of the monitor that this window is&nbsp;on.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_mutter_hints.html">meta_window_get_mutter_hints</a></h6>
+          <div class="docblock">
+            <p>Gets the current value of the _MUTTER_HINTS&nbsp;property.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_pid.html">meta_window_get_pid</a></h6>
+          <div class="docblock">
+            <p>Returns the pid of the process that created this window, if available
+to the windowing&nbsp;system.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_role.html">meta_window_get_role</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_sandboxed_app_id.html">meta_window_get_sandboxed_app_id</a></h6>
+          <div class="docblock">
+            <p>Gets an unique id for a sandboxed app (currently flatpaks and snaps are&nbsp;supported).</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_stable_sequence.html">meta_window_get_stable_sequence</a></h6>
+          <div class="docblock">
+            <p>The stable sequence number is a monotonicially increasing
+unique integer assigned to each <code>MetaWindow</code> upon&nbsp;creation.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_startup_id.html">meta_window_get_startup_id</a></h6>
+          <div class="docblock">
+            <p>Gets the startup id of the given <code>MetaWindow</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_tag.html">meta_window_get_tag</a></h6>
+          <div class="docblock">
+            <p>Get a tag associated to the window.
+Under wayland the tag can be set using the toplevel tag protocol,
+and under x11 it falls back to using <code>NET_WM_WINDOW_TAG</code> atom.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_tile_match.html">meta_window_get_tile_match</a></h6>
+          <div class="docblock">
+            <p>Returns the matching tiled window on the same monitor as <code>window</code>. This is
+the topmost tiled window in a complementary tile mode that&nbsp;is:.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_title.html">meta_window_get_title</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_transient_for.html">meta_window_get_transient_for</a></h6>
+          <div class="docblock">
+            <p>Returns the <code>MetaWindow</code> for the window that is pointed to by the
+WM_TRANSIENT_FOR hint on this window (see XGetTransientForHint()
+or XSetTransientForHint()). Mutter keeps transient windows above their
+parents. A typical usage of this hint is for a dialog that wants to stay
+above its associated&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_user_time.html">meta_window_get_user_time</a></h6>
+          <div class="docblock">
+            <p>The user time represents a timestamp for the last time the user
+interacted with this&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_window_type.html">meta_window_get_window_type</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_wm_class.html">meta_window_get_wm_class</a></h6>
+          <div class="docblock">
+            <p>Return the current value of the name part of <code>WM_CLASS</code> X&nbsp;property.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_wm_class_instance.html">meta_window_get_wm_class_instance</a></h6>
+          <div class="docblock">
+            <p>Return the current value of the instance part of <code>WM_CLASS</code> X&nbsp;property.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_work_area_all_monitors.html">meta_window_get_work_area_all_monitors</a></h6>
+          <div class="docblock">
+            <p>Get the work area for all monitors for <code>window</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_work_area_current_monitor.html">meta_window_get_work_area_current_monitor</a></h6>
+          <div class="docblock">
+            <p>Get the work area for the monitor <code>window</code> is currently&nbsp;on.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_work_area_for_monitor.html">meta_window_get_work_area_for_monitor</a></h6>
+          <div class="docblock">
+            <p>Get the work area for <code>window</code>, given the monitor index
+<code>which_monitor</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.get_workspace.html">meta_window_get_workspace</a></h6>
+          <div class="docblock">
+            <p>Gets the <code>MetaWorkspace</code> that the window is currently displayed&nbsp;on.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.has_attached_dialogs.html">meta_window_has_attached_dialogs</a></h6>
+          <div class="docblock">
+            <p>Tests if <code>window</code> has any transients attached to&nbsp;it.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.has_focus.html">meta_window_has_focus</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.has_pointer.html">meta_window_has_pointer</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.hide_from_window_list.html">meta_window_hide_from_window_list</a></h6>
+          <div class="docblock">
+            <p>Hides this window from any window list, like taskbars,&nbsp;pagers&#8230;</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.inhibit_mapped.html">meta_window_inhibit_mapped</a></h6>
+          <div class="docblock">
+            <p>Inhibits the mapped state of the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_above.html">meta_window_is_above</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_always_on_all_workspaces.html">meta_window_is_always_on_all_workspaces</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_ancestor_of_transient.html">meta_window_is_ancestor_of_transient</a></h6>
+          <div class="docblock">
+            <p>The function determines whether <code>window</code> is an ancestor of <code>transient</code>; it does
+so by traversing the <code>transient</code><span class="quo">&#8216;</span>s ancestors until it either locates <code>window</code>
+or reaches an ancestor that is not&nbsp;transient.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_attached_dialog.html">meta_window_is_attached_dialog</a></h6>
+          <div class="docblock">
+            <p>Tests if <code>window</code> should be attached to its parent&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_fullscreen.html">meta_window_is_fullscreen</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_hidden.html">meta_window_is_hidden</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_mapped_inhibited.html">meta_window_is_mapped_inhibited</a></h6>
+          <div class="docblock">
+            <p>Returns whether the mapped state of the window is&nbsp;inhibited.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_maximized.html">meta_window_is_maximized</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_monitor_sized.html">meta_window_is_monitor_sized</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_on_all_workspaces.html">meta_window_is_on_all_workspaces</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_on_primary_monitor.html">meta_window_is_on_primary_monitor</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_override_redirect.html">meta_window_is_override_redirect</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_remote.html">meta_window_is_remote</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_screen_sized.html">meta_window_is_screen_sized</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.is_skip_taskbar.html">meta_window_is_skip_taskbar</a></h6>
+          <div class="docblock">
+            <p>Gets whether this window should be ignored by task&nbsp;lists.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.kill.html">meta_window_kill</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.located_on_workspace.html">meta_window_located_on_workspace</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.lower.html">meta_window_lower</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.lower_with_transients.html">meta_window_lower_with_transients</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.make_above.html">meta_window_make_above</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.make_fullscreen.html">meta_window_make_fullscreen</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.maximize.html">meta_window_maximize</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.minimize.html">meta_window_minimize</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.move_frame.html">meta_window_move_frame</a></h6>
+          <div class="docblock">
+            <p>Moves the window to the desired location on window&#8217;s assigned
+workspace, using the northwest edge of the frame as the reference,
+instead of the actual window&#8217;s origin, but only if a frame is&nbsp;present.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.move_resize_frame.html">meta_window_move_resize_frame</a></h6>
+          <div class="docblock">
+            <p>Resizes the window so that its outer bounds (including frame)
+fit within the given&nbsp;rect.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.move_to_monitor.html">meta_window_move_to_monitor</a></h6>
+          <div class="docblock">
+            <p>Moves the window to the monitor with index <code>monitor</code>, keeping
+the relative position of the window&#8217;s top left&nbsp;corner.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.protocol_to_stage_rect.html">meta_window_protocol_to_stage_rect</a></h6>
+          <div class="docblock">
+            <p>Transform the coordinates from protocol coordinates to coordinates expected
+by the stage and internal window management&nbsp;logic.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.raise.html">meta_window_raise</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.raise_and_make_recent_on_workspace.html">meta_window_raise_and_make_recent_on_workspace</a></h6>
+          <div class="docblock">
+            <p>Raises a window and marks it as the most recently used window on the
+workspace <code>target_workspace</code>. If the window exists on all workspaces, it will
+become the most recently used sticky window on all other workspaces. This
+ensures proper tracking among windows on all workspaces while not overriding
+<span class="caps">MRU</span> for other&nbsp;windows.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.remove_external_constraint.html">meta_window_remove_external_constraint</a></h6>
+          <div class="docblock">
+            <p>Removes a previously added external constraint from the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.set_compositor_private.html">meta_window_set_compositor_private</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.set_demands_attention.html">meta_window_set_demands_attention</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.set_icon_geometry.html">meta_window_set_icon_geometry</a></h6>
+          <div class="docblock">
+            <p>Sets or unsets the location of the icon corresponding to the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.set_maximize_flags.html">meta_window_set_maximize_flags</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.set_type.html">meta_window_set_type</a></h6>
+          <div class="docblock">
+            <p>Set the window&nbsp;type.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.set_unmaximize_flags.html">meta_window_set_unmaximize_flags</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.show_in_window_list.html">meta_window_show_in_window_list</a></h6>
+          <div class="docblock">
+            <p>Shows again this window in window lists, like taskbars,&nbsp;pagers&#8230;</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.showing_on_its_workspace.html">meta_window_showing_on_its_workspace</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.stage_to_protocol_rect.html">meta_window_stage_to_protocol_rect</a></h6>
+          <div class="docblock">
+            <p>Transform the coordinates from stage coordinates to protocol&nbsp;coordinates.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.stick.html">meta_window_stick</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.uninhibit_mapped.html">meta_window_uninhibit_mapped</a></h6>
+          <div class="docblock">
+            <p>Uninhibits the mapped state of the&nbsp;window.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.unmake_above.html">meta_window_unmake_above</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.unmake_fullscreen.html">meta_window_unmake_fullscreen</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.unmaximize.html">meta_window_unmaximize</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.unminimize.html">meta_window_unminimize</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.unset_demands_attention.html">meta_window_unset_demands_attention</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.unstick.html">meta_window_unstick</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.Window.x11_get_group.html">meta_window_x11_get_group</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="iface.Initable.html" data-namespace="Gio">GInitable</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="Gio" data-link="method.Initable.init.html">g_initable_init</a></h6>
+            <div class="docblock">
+              <p>Initializes the object implementing the&nbsp;interface.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.Window.a11y-dbus-name.html">Meta.Window:a11y-dbus-name</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.a11y-object-path.html">Meta.Window:a11y-object-path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.above.html">Meta.Window:above</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.appears-focused.html">Meta.Window:appears-focused</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.decorated.html">Meta.Window:decorated</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.demands-attention.html">Meta.Window:demands-attention</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.display.html">Meta.Window:display</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.effect.html">Meta.Window:effect</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.fullscreen.html">Meta.Window:fullscreen</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.gtk-app-menu-object-path.html">Meta.Window:gtk-app-menu-object-path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.gtk-application-id.html">Meta.Window:gtk-application-id</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.gtk-application-object-path.html">Meta.Window:gtk-application-object-path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.gtk-menubar-object-path.html">Meta.Window:gtk-menubar-object-path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.gtk-unique-bus-name.html">Meta.Window:gtk-unique-bus-name</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.gtk-window-object-path.html">Meta.Window:gtk-window-object-path</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.is-alive.html">Meta.Window:is-alive</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.main-monitor.html">Meta.Window:main-monitor</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.mapped.html">Meta.Window:mapped</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.maximized-horizontally.html">Meta.Window:maximized-horizontally</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.maximized-vertically.html">Meta.Window:maximized-vertically</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.minimized.html">Meta.Window:minimized</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.mutter-hints.html">Meta.Window:mutter-hints</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.on-all-workspaces.html">Meta.Window:on-all-workspaces</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.resizeable.html">Meta.Window:resizeable</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.skip-taskbar.html">Meta.Window:skip-taskbar</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.suspend-state.html">Meta.Window:suspend-state</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.tag.html">Meta.Window:tag</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.title.html">Meta.Window:title</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.urgent.html">Meta.Window:urgent</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.user-time.html">Meta.Window:user-time</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.window-type.html">Meta.Window:window-type</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.Window.wm-class.html">Meta.Window:wm-class</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+
+      
+        
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.Window.configure.html">Meta.Window::configure</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.focus.html">Meta.Window::focus</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.highest-scale-monitor-changed.html">Meta.Window::highest-scale-monitor-changed</a></h6>
+          <div class="docblock">
+            <p>This is emitted when the monitor with the highest scale
+intersecting the window&nbsp;changes.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.position-changed.html">Meta.Window::position-changed</a></h6>
+          <div class="docblock">
+            <p>This is emitted when the position of a window might
+have&nbsp;changed.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.raised.html">Meta.Window::raised</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.shown.html">Meta.Window::shown</a></h6>
+          <div class="docblock">
+            <p>This is emitted after a window has been&nbsp;shown.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.size-changed.html">Meta.Window::size-changed</a></h6>
+          <div class="docblock">
+            <p>This is emitted when the size of a window might
+have&nbsp;changed.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.unmanaged.html">Meta.Window::unmanaged</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.unmanaging.html">Meta.Window::unmanaging</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="signal.Window.workspace-changed.html">Meta.Window::workspace-changed</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+        
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct MetaWindowClass {
+  /* no available fields */
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#implements"><span class="link-text">Implements</span></a></li>
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

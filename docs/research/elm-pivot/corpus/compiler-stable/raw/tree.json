@@ -1,0 +1,2418 @@
+{
+  "sha": "4b5c983ebe17aafd23f3d5941e7159eeb677574f",
+  "url": "https://api.github.com/repos/elm/compiler/git/trees/4b5c983ebe17aafd23f3d5941e7159eeb677574f",
+  "tree": [
+    {
+      "path": ".github",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "1c5e1d62bc328d2aa27c284af8367c62c956ab25",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/1c5e1d62bc328d2aa27c284af8367c62c956ab25"
+    },
+    {
+      "path": ".github/CONTRIBUTING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8272795315415671c9ec4cb6380ce3bd585eb5bc",
+      "size": 1918,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8272795315415671c9ec4cb6380ce3bd585eb5bc"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ab67b3d891257ed0ae0ac14cd77983c4ebe52a8",
+      "size": 139,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8ab67b3d891257ed0ae0ac14cd77983c4ebe52a8"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "de5ff46b189824c1c016f4288e4772829cecf706",
+      "size": 140,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/de5ff46b189824c1c016f4288e4772829cecf706"
+    },
+    {
+      "path": ".github/workflows",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7649db7d99966fa8f9ec574dfef6d9718e4d93a5",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/7649db7d99966fa8f9ec574dfef6d9718e4d93a5"
+    },
+    {
+      "path": ".github/workflows/set-issue-expectations.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e3197cfb014e4d9a1ebe7a08b794b155ebcf5e9",
+      "size": 901,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3e3197cfb014e4d9a1ebe7a08b794b155ebcf5e9"
+    },
+    {
+      "path": ".github/workflows/set-pull-expectations.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1834348a4878ff3e01d66c44283dd71a3805b5dc",
+      "size": 1182,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1834348a4878ff3e01d66c44283dd71a3805b5dc"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd6eb38b639954199cf85e900ad769b6902da2e6",
+      "size": 100,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/fd6eb38b639954199cf85e900ad769b6902da2e6"
+    },
+    {
+      "path": ".travis.yml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cbb9029b2564b1a883b191a47d7f86aaf5a0b6b",
+      "size": 685,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/4cbb9029b2564b1a883b191a47d7f86aaf5a0b6b"
+    },
+    {
+      "path": "LICENSE",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5343b32e1eeb9d9b486a07d68a55c22e5799498f",
+      "size": 1467,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5343b32e1eeb9d9b486a07d68a55c22e5799498f"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54f01c74892d5f76e7f9c5f88cd982d2222dc033",
+      "size": 606,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/54f01c74892d5f76e7f9c5f88cd982d2222dc033"
+    },
+    {
+      "path": "builder",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "44b2269569868ce4085236b26e581f24fec54a9b",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/44b2269569868ce4085236b26e581f24fec54a9b"
+    },
+    {
+      "path": "builder/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "adb823a4217b73d57cb5f26307e7555c1eebfe6f",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/adb823a4217b73d57cb5f26307e7555c1eebfe6f"
+    },
+    {
+      "path": "builder/src/BackgroundWriter.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2bc7101c9ebcc2fb575443599e378d584183ffc1",
+      "size": 907,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2bc7101c9ebcc2fb575443599e378d584183ffc1"
+    },
+    {
+      "path": "builder/src/Build.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da7a64521a14025b41e4f08705ea2ea0c8946369",
+      "size": 41730,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/da7a64521a14025b41e4f08705ea2ea0c8946369"
+    },
+    {
+      "path": "builder/src/Deps",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a53c9599311fc1508dda8128d2470af07b97d75e",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/a53c9599311fc1508dda8128d2470af07b97d75e"
+    },
+    {
+      "path": "builder/src/Deps/Bump.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a41f814e7de9afc617ea25a23c427b9fa841e085",
+      "size": 984,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/a41f814e7de9afc617ea25a23c427b9fa841e085"
+    },
+    {
+      "path": "builder/src/Deps/Diff.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b2708927b17cc6bb435e76fa587fe4a68087a4f",
+      "size": 9846,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2b2708927b17cc6bb435e76fa587fe4a68087a4f"
+    },
+    {
+      "path": "builder/src/Deps/Registry.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "70db0da703f7d61ee7308b7611c58f8549b5cf37",
+      "size": 4687,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/70db0da703f7d61ee7308b7611c58f8549b5cf37"
+    },
+    {
+      "path": "builder/src/Deps/Solver.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5893c1c3d3894cee5408c24daf344f12b180ea13",
+      "size": 12852,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5893c1c3d3894cee5408c24daf344f12b180ea13"
+    },
+    {
+      "path": "builder/src/Deps/Website.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab6a90ecea85db60abd73b5bd233d2f39d53b9b5",
+      "size": 498,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ab6a90ecea85db60abd73b5bd233d2f39d53b9b5"
+    },
+    {
+      "path": "builder/src/Elm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2e0e39e28569831dc36231be5b547a1bc35b24d5",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/2e0e39e28569831dc36231be5b547a1bc35b24d5"
+    },
+    {
+      "path": "builder/src/Elm/Details.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b8ba04c7e23f52d4b60a4f2100264a5205c48d8",
+      "size": 27309,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2b8ba04c7e23f52d4b60a4f2100264a5205c48d8"
+    },
+    {
+      "path": "builder/src/Elm/Outline.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64ac45173c65ece0e6e7b0afeebcbe301f141a48",
+      "size": 10579,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/64ac45173c65ece0e6e7b0afeebcbe301f141a48"
+    },
+    {
+      "path": "builder/src/File.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "238da0839eb7e4631ceb1eec99f955fbdfe4f1f7",
+      "size": 5724,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/238da0839eb7e4631ceb1eec99f955fbdfe4f1f7"
+    },
+    {
+      "path": "builder/src/Generate.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b7f78ab59c1c9b6f2aef7b6660f29b3ba95d2c4",
+      "size": 6624,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/0b7f78ab59c1c9b6f2aef7b6660f29b3ba95d2c4"
+    },
+    {
+      "path": "builder/src/Http.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6105263fa8b39e928ada7ce3a8b5cb73ae3714e6",
+      "size": 5912,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/6105263fa8b39e928ada7ce3a8b5cb73ae3714e6"
+    },
+    {
+      "path": "builder/src/Reporting.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "acd7619551f9bc2a32706bbbddb55042ed4472b8",
+      "size": 10950,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/acd7619551f9bc2a32706bbbddb55042ed4472b8"
+    },
+    {
+      "path": "builder/src/Reporting",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5485196bb3de81a25e7342ae0821ebe7e8f5ded4",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/5485196bb3de81a25e7342ae0821ebe7e8f5ded4"
+    },
+    {
+      "path": "builder/src/Reporting/Exit.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8fa0683313bacbd1329ca18ca208b903ea12e5f0",
+      "size": 82196,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8fa0683313bacbd1329ca18ca208b903ea12e5f0"
+    },
+    {
+      "path": "builder/src/Reporting/Exit",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e4d743a85199e909e2cdc9e4da2b899265078011",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/e4d743a85199e909e2cdc9e4da2b899265078011"
+    },
+    {
+      "path": "builder/src/Reporting/Exit/Help.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e08698f26e762794bcf34e820c93bf8bc96fa75",
+      "size": 2684,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8e08698f26e762794bcf34e820c93bf8bc96fa75"
+    },
+    {
+      "path": "builder/src/Reporting/Task.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "678576b1aeeda1102ee78427fea0e7efea8738d8",
+      "size": 1782,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/678576b1aeeda1102ee78427fea0e7efea8738d8"
+    },
+    {
+      "path": "builder/src/Stuff.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "007de87e4f8d3b35224317243cc5a6372b7a7c6a",
+      "size": 3294,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/007de87e4f8d3b35224317243cc5a6372b7a7c6a"
+    },
+    {
+      "path": "cabal.config",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea8f1197acb754ecaec0e8dda2f0315764818df0",
+      "size": 41,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ea8f1197acb754ecaec0e8dda2f0315764818df0"
+    },
+    {
+      "path": "compiler",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ca24036464895ca24a3d5399e44d3ec4b075b96c",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/ca24036464895ca24a3d5399e44d3ec4b075b96c"
+    },
+    {
+      "path": "compiler/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5081819c4a99f72d47bb68ebf513542e81315b05",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/5081819c4a99f72d47bb68ebf513542e81315b05"
+    },
+    {
+      "path": "compiler/src/AST",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5accbacd19d2bdaf352189b4b2b359f4bcbd9336",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/5accbacd19d2bdaf352189b4b2b359f4bcbd9336"
+    },
+    {
+      "path": "compiler/src/AST/Canonical.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f720ce8ded0881a8a1b326a4a180cf9976dd6240",
+      "size": 8825,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f720ce8ded0881a8a1b326a4a180cf9976dd6240"
+    },
+    {
+      "path": "compiler/src/AST/Optimized.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07fb5b6798818df559efd49bc5c324cd1b254676",
+      "size": 11498,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/07fb5b6798818df559efd49bc5c324cd1b254676"
+    },
+    {
+      "path": "compiler/src/AST/Prim",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a5c7814fcc894b18e41866b76f4f04cfd81f6cbf",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/a5c7814fcc894b18e41866b76f4f04cfd81f6cbf"
+    },
+    {
+      "path": "compiler/src/AST/Prim/Variable.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "227438d49a8ba08799c73583ac5f33f29ff78a49",
+      "size": 3910,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/227438d49a8ba08799c73583ac5f33f29ff78a49"
+    },
+    {
+      "path": "compiler/src/AST/Source.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ca26ca1fab1bae948e9a5156683d0f93c13c80b",
+      "size": 3578,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3ca26ca1fab1bae948e9a5156683d0f93c13c80b"
+    },
+    {
+      "path": "compiler/src/AST/Utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "338edc6d17b74abb9a497818e85cc854638a5ed3",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/338edc6d17b74abb9a497818e85cc854638a5ed3"
+    },
+    {
+      "path": "compiler/src/AST/Utils/Binop.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "237a9e665ea578caf812d890d6bf58237d61e22b",
+      "size": 770,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/237a9e665ea578caf812d890d6bf58237d61e22b"
+    },
+    {
+      "path": "compiler/src/AST/Utils/Shader.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bd496727f4f1c06f07d9894c52957197275d367",
+      "size": 1357,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/0bd496727f4f1c06f07d9894c52957197275d367"
+    },
+    {
+      "path": "compiler/src/AST/Utils/Type.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "066533b01f89ccf501d754e78b9ecffa9654e0e0",
+      "size": 2286,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/066533b01f89ccf501d754e78b9ecffa9654e0e0"
+    },
+    {
+      "path": "compiler/src/Canonicalize",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ec794a8d4a88f98d2dbb34e1306ba59509dc32dd",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/ec794a8d4a88f98d2dbb34e1306ba59509dc32dd"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Effects.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "789a35d8c6a08854caddb93d15f3f99722e4a487",
+      "size": 6938,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/789a35d8c6a08854caddb93d15f3f99722e4a487"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Environment.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf3fbf01297d6a50254def7714a3f6134892e894",
+      "size": 6309,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/cf3fbf01297d6a50254def7714a3f6134892e894"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Environment",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0775da9f4e721d0952e50cb0300fd4759d532a3e",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/0775da9f4e721d0952e50cb0300fd4759d532a3e"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Environment/Dups.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d152fe25ba64603559bbf1f424e9e0105890991e",
+      "size": 2628,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d152fe25ba64603559bbf1f424e9e0105890991e"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Environment/Foreign.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d30f64a92cc2b43b4cb8dd9c826a149083d755a9",
+      "size": 8671,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d30f64a92cc2b43b4cb8dd9c826a149083d755a9"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Environment/Local.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d73e846c11f227323e28ed25daaa96607167fb4",
+      "size": 10771,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5d73e846c11f227323e28ed25daaa96607167fb4"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Expression.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff5443bcf83d9fe6c1fcefa8edfd07650078f96e",
+      "size": 21911,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ff5443bcf83d9fe6c1fcefa8edfd07650078f96e"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Module.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cb457eb687ab51b3f5cb80141528b2a78718b87",
+      "size": 8705,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5cb457eb687ab51b3f5cb80141528b2a78718b87"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Pattern.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "794222e1f53203d1d47e720b3dbfa001970bef37",
+      "size": 4819,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/794222e1f53203d1d47e720b3dbfa001970bef37"
+    },
+    {
+      "path": "compiler/src/Canonicalize/Type.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d2bf1a533d49639bb43c52d48f375b880df72408",
+      "size": 4205,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d2bf1a533d49639bb43c52d48f375b880df72408"
+    },
+    {
+      "path": "compiler/src/Compile.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c5b725a19a84b49e224f611afa0de3f1884dd58a",
+      "size": 2527,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/c5b725a19a84b49e224f611afa0de3f1884dd58a"
+    },
+    {
+      "path": "compiler/src/Data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d3f04572adeb17a6631acdad1dc4c3d3ac9b019c",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/d3f04572adeb17a6631acdad1dc4c3d3ac9b019c"
+    },
+    {
+      "path": "compiler/src/Data/Bag.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff9b74839590c92e7855477a319ad3480e9e19f4",
+      "size": 1227,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ff9b74839590c92e7855477a319ad3480e9e19f4"
+    },
+    {
+      "path": "compiler/src/Data/Index.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff4e625bb547cc1b54d1694760b5934e8d70db83",
+      "size": 2301,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ff4e625bb547cc1b54d1694760b5934e8d70db83"
+    },
+    {
+      "path": "compiler/src/Data/Map",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1b5725a7d23bb63f39fa8ae8fe9e1b7cfb4d6ac",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/c1b5725a7d23bb63f39fa8ae8fe9e1b7cfb4d6ac"
+    },
+    {
+      "path": "compiler/src/Data/Map/Utils.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e369101d27aae5c1af2b7e0d2bf9c9172a317d71",
+      "size": 790,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/e369101d27aae5c1af2b7e0d2bf9c9172a317d71"
+    },
+    {
+      "path": "compiler/src/Data/Name.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03d85516a1d912e141828dc4e62702e1c27c2c17",
+      "size": 11523,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/03d85516a1d912e141828dc4e62702e1c27c2c17"
+    },
+    {
+      "path": "compiler/src/Data/NonEmptyList.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0445787f3abda2f3c6c44fe3eb4f75b0f10a675",
+      "size": 1242,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/a0445787f3abda2f3c6c44fe3eb4f75b0f10a675"
+    },
+    {
+      "path": "compiler/src/Data/OneOrMore.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1fde7fdf189b9dfce73aa4d6d99eb0fc07f83881",
+      "size": 1396,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1fde7fdf189b9dfce73aa4d6d99eb0fc07f83881"
+    },
+    {
+      "path": "compiler/src/Data/Utf8.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c97f314e7c4d5537baba194e043de84ac29053c",
+      "size": 15089,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3c97f314e7c4d5537baba194e043de84ac29053c"
+    },
+    {
+      "path": "compiler/src/Elm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1321c3701e2df2a53e92e9b41bab3b712e4d4b9",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/c1321c3701e2df2a53e92e9b41bab3b712e4d4b9"
+    },
+    {
+      "path": "compiler/src/Elm/Compiler",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "57cc13b87b05c6cce33b87d719655c748855bab7",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/57cc13b87b05c6cce33b87d719655c748855bab7"
+    },
+    {
+      "path": "compiler/src/Elm/Compiler/Imports.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b44d20d7b20c1ca79c88a7b13b9213471761396b",
+      "size": 1534,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/b44d20d7b20c1ca79c88a7b13b9213471761396b"
+    },
+    {
+      "path": "compiler/src/Elm/Compiler/Type.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89db5a4c3b0913fc14889c3fcf7ef9314a085ffe",
+      "size": 4017,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/89db5a4c3b0913fc14889c3fcf7ef9314a085ffe"
+    },
+    {
+      "path": "compiler/src/Elm/Compiler/Type",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "012e198e64de10084ef83b8cc1be7e6dfc02030b",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/012e198e64de10084ef83b8cc1be7e6dfc02030b"
+    },
+    {
+      "path": "compiler/src/Elm/Compiler/Type/Extract.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2686e7395ccc7a9ca010cc95783ed79374862407",
+      "size": 6707,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2686e7395ccc7a9ca010cc95783ed79374862407"
+    },
+    {
+      "path": "compiler/src/Elm/Constraint.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "101a912c62945035405448a16703e965b4233873",
+      "size": 4908,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/101a912c62945035405448a16703e965b4233873"
+    },
+    {
+      "path": "compiler/src/Elm/Docs.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04b67acaa1200630ffbf15ac1bf9f23c9040e3c7",
+      "size": 15973,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/04b67acaa1200630ffbf15ac1bf9f23c9040e3c7"
+    },
+    {
+      "path": "compiler/src/Elm/Float.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e38d77544f6df30e35723679839e3650dc9c5dc0",
+      "size": 641,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/e38d77544f6df30e35723679839e3650dc9c5dc0"
+    },
+    {
+      "path": "compiler/src/Elm/Interface.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9b53015944d558d0d5aa5488cd1f98ff90cced83",
+      "size": 5990,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/9b53015944d558d0d5aa5488cd1f98ff90cced83"
+    },
+    {
+      "path": "compiler/src/Elm/Kernel.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d38e35d4a2eaee45f8fc4a421c0be85a5ea6c2b",
+      "size": 9197,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/6d38e35d4a2eaee45f8fc4a421c0be85a5ea6c2b"
+    },
+    {
+      "path": "compiler/src/Elm/Licenses.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad0c4f684a893340c450d71c13bddfaee7786e68",
+      "size": 6748,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ad0c4f684a893340c450d71c13bddfaee7786e68"
+    },
+    {
+      "path": "compiler/src/Elm/Magnitude.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1023f6fb00ece6ccf1ab9a0c552ef87a724dece0",
+      "size": 283,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1023f6fb00ece6ccf1ab9a0c552ef87a724dece0"
+    },
+    {
+      "path": "compiler/src/Elm/ModuleName.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c990f8afb325a2881fccbc63ccbe7a33cb20941",
+      "size": 5304,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/9c990f8afb325a2881fccbc63ccbe7a33cb20941"
+    },
+    {
+      "path": "compiler/src/Elm/Package.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b21c5ae42e0196a3f9699af74e58821a236bf9dc",
+      "size": 7713,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/b21c5ae42e0196a3f9699af74e58821a236bf9dc"
+    },
+    {
+      "path": "compiler/src/Elm/String.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "89f60a30308618282c783e0a3125be27d2864939",
+      "size": 3241,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/89f60a30308618282c783e0a3125be27d2864939"
+    },
+    {
+      "path": "compiler/src/Elm/Version.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86b81de77f4d7b7c83e3eb79f3527d85e0ff2209",
+      "size": 4038,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/86b81de77f4d7b7c83e3eb79f3527d85e0ff2209"
+    },
+    {
+      "path": "compiler/src/Generate",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "111f16787fca68bff3f2468a6f89a6cd8c3e1ca1",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/111f16787fca68bff3f2468a6f89a6cd8c3e1ca1"
+    },
+    {
+      "path": "compiler/src/Generate/Html.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fc4c10d7f2dfe8a05463e819c6751b6f5c78ecdf",
+      "size": 1026,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/fc4c10d7f2dfe8a05463e819c6751b6f5c78ecdf"
+    },
+    {
+      "path": "compiler/src/Generate/JavaScript.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0cd44a74d3c8e4af6de68b0a55e9d9b5b9529f9d",
+      "size": 16664,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/0cd44a74d3c8e4af6de68b0a55e9d9b5b9529f9d"
+    },
+    {
+      "path": "compiler/src/Generate/JavaScript",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5080739bd7df53d1675758d8ac39538f8a0eef83",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/5080739bd7df53d1675758d8ac39538f8a0eef83"
+    },
+    {
+      "path": "compiler/src/Generate/JavaScript/Builder.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "563e8fe19f1be2dc0307dd82a4eaafcbfd46663d",
+      "size": 11637,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/563e8fe19f1be2dc0307dd82a4eaafcbfd46663d"
+    },
+    {
+      "path": "compiler/src/Generate/JavaScript/Expression.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34e6971d34105e8572a017fb3e6e86748b7158f8",
+      "size": 28063,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/34e6971d34105e8572a017fb3e6e86748b7158f8"
+    },
+    {
+      "path": "compiler/src/Generate/JavaScript/Functions.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cef8b33c3f796db649f72012ea0d4ce4d844a141",
+      "size": 2831,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/cef8b33c3f796db649f72012ea0d4ce4d844a141"
+    },
+    {
+      "path": "compiler/src/Generate/JavaScript/Name.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d16b8f884db9d20bfecc46e5403751587fac7b09",
+      "size": 5719,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d16b8f884db9d20bfecc46e5403751587fac7b09"
+    },
+    {
+      "path": "compiler/src/Generate/Mode.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18b879e291a72ba101d9692d7e6e2467bc2b0f64",
+      "size": 1366,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/18b879e291a72ba101d9692d7e6e2467bc2b0f64"
+    },
+    {
+      "path": "compiler/src/Json",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a4b2a8b52df968c0ac50d2698a14110dd3351981",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/a4b2a8b52df968c0ac50d2698a14110dd3351981"
+    },
+    {
+      "path": "compiler/src/Json/Decode.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e48a950cb53b8cf5489226367c21ed88ae58bb09",
+      "size": 17918,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/e48a950cb53b8cf5489226367c21ed88ae58bb09"
+    },
+    {
+      "path": "compiler/src/Json/Encode.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0af8a5024548cba4810a09d78872c3fe24ab7b0c",
+      "size": 5343,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/0af8a5024548cba4810a09d78872c3fe24ab7b0c"
+    },
+    {
+      "path": "compiler/src/Json/String.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f089a9df9f95fe619d13db581f4782ff9d12fa00",
+      "size": 4402,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f089a9df9f95fe619d13db581f4782ff9d12fa00"
+    },
+    {
+      "path": "compiler/src/Nitpick",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "07864d41b41cd19d0c1c7f41d17bcfca45f0209e",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/07864d41b41cd19d0c1c7f41d17bcfca45f0209e"
+    },
+    {
+      "path": "compiler/src/Nitpick/Debug.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b15b7c0b9ecd96cd599d1cd0bd3446885c41505e",
+      "size": 2781,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/b15b7c0b9ecd96cd599d1cd0bd3446885c41505e"
+    },
+    {
+      "path": "compiler/src/Nitpick/PatternMatches.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "61aa85f226a1f16351f4ac8f2e3552aaad73152d",
+      "size": 14446,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/61aa85f226a1f16351f4ac8f2e3552aaad73152d"
+    },
+    {
+      "path": "compiler/src/Optimize",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "30eedc35969255eba86d13a03e0ac309e424493f",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/30eedc35969255eba86d13a03e0ac309e424493f"
+    },
+    {
+      "path": "compiler/src/Optimize/Case.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6a4c677360cde7cf72f67bb57ac1faf38667f37c",
+      "size": 4093,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/6a4c677360cde7cf72f67bb57ac1faf38667f37c"
+    },
+    {
+      "path": "compiler/src/Optimize/DecisionTree.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5cb9246b347ef320aecb578eb91416cddd04bc39",
+      "size": 14957,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5cb9246b347ef320aecb578eb91416cddd04bc39"
+    },
+    {
+      "path": "compiler/src/Optimize/Expression.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ef84110d618120f3abf2e15961148ef14ef794e",
+      "size": 14390,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8ef84110d618120f3abf2e15961148ef14ef794e"
+    },
+    {
+      "path": "compiler/src/Optimize/Module.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2f041b9692766985f561b76fd8e63afe0e38868e",
+      "size": 10858,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2f041b9692766985f561b76fd8e63afe0e38868e"
+    },
+    {
+      "path": "compiler/src/Optimize/Names.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "135177dd3236e8d238032470af16629e1237f318",
+      "size": 4084,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/135177dd3236e8d238032470af16629e1237f318"
+    },
+    {
+      "path": "compiler/src/Optimize/Port.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a0204bee1f689ab04f1d3a97406e2b0a029f5ef3",
+      "size": 8234,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/a0204bee1f689ab04f1d3a97406e2b0a029f5ef3"
+    },
+    {
+      "path": "compiler/src/Parse",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "aebd5a0fae463ee33960bd1a268d1e38b4ef8f28",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/aebd5a0fae463ee33960bd1a268d1e38b4ef8f28"
+    },
+    {
+      "path": "compiler/src/Parse/Declaration.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd2bab838ee121507593683c9f89d88d362ddc98",
+      "size": 9478,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/dd2bab838ee121507593683c9f89d88d362ddc98"
+    },
+    {
+      "path": "compiler/src/Parse/Expression.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "766f1c3e926df4f96ed4bad400ad5ad6f48540d2",
+      "size": 18732,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/766f1c3e926df4f96ed4bad400ad5ad6f48540d2"
+    },
+    {
+      "path": "compiler/src/Parse/Keyword.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "df3390bf46a6cc4d30d9743fbd2ff7e76d405810",
+      "size": 2101,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/df3390bf46a6cc4d30d9743fbd2ff7e76d405810"
+    },
+    {
+      "path": "compiler/src/Parse/Keyword_TH.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "548b7f1af8b833806436ae31210484fe46335e2c",
+      "size": 9067,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/548b7f1af8b833806436ae31210484fe46335e2c"
+    },
+    {
+      "path": "compiler/src/Parse/Module.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00d39f1b5adf3e1a03fd6029024f91bb68c35889",
+      "size": 15384,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/00d39f1b5adf3e1a03fd6029024f91bb68c35889"
+    },
+    {
+      "path": "compiler/src/Parse/Number.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91ffbf60af638ea48cd9b5f3f6d4a6077e74effa",
+      "size": 6646,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/91ffbf60af638ea48cd9b5f3f6d4a6077e74effa"
+    },
+    {
+      "path": "compiler/src/Parse/Pattern.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8365b9e999e13f5a377e6357938541999fd75c3e",
+      "size": 8664,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8365b9e999e13f5a377e6357938541999fd75c3e"
+    },
+    {
+      "path": "compiler/src/Parse/Primitives.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b6f20e9b3819ecba6ad0fcabf7e5c0ae4c1e37a1",
+      "size": 11724,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/b6f20e9b3819ecba6ad0fcabf7e5c0ae4c1e37a1"
+    },
+    {
+      "path": "compiler/src/Parse/Shader.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "940ac4dd896239ae217bb5ca14d936cffac9e7cd",
+      "size": 5360,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/940ac4dd896239ae217bb5ca14d936cffac9e7cd"
+    },
+    {
+      "path": "compiler/src/Parse/Space.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c183727d001837242d5e06a6675eea324110f78c",
+      "size": 7153,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/c183727d001837242d5e06a6675eea324110f78c"
+    },
+    {
+      "path": "compiler/src/Parse/String.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6ee888597e2732de3e3d1dfe3982bdd11cb14fb0",
+      "size": 14837,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/6ee888597e2732de3e3d1dfe3982bdd11cb14fb0"
+    },
+    {
+      "path": "compiler/src/Parse/Symbol.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1b883b1cbcacf59e8bd0867c97b8559444526aed",
+      "size": 2703,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1b883b1cbcacf59e8bd0867c97b8559444526aed"
+    },
+    {
+      "path": "compiler/src/Parse/Type.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c59a73f79db47c613508bf029300628677cd4def",
+      "size": 6596,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/c59a73f79db47c613508bf029300628677cd4def"
+    },
+    {
+      "path": "compiler/src/Parse/Variable.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68e3eab2d4d9132b017481bae89c9a475a413684",
+      "size": 6467,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/68e3eab2d4d9132b017481bae89c9a475a413684"
+    },
+    {
+      "path": "compiler/src/Reporting",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fe00df505dd7aeb86a42b27bee72d3f46b51ffc0",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/fe00df505dd7aeb86a42b27bee72d3f46b51ffc0"
+    },
+    {
+      "path": "compiler/src/Reporting/Annotation.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b2662605d4fcc60800f8a16fc74ff1e2b46096a",
+      "size": 2929,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2b2662605d4fcc60800f8a16fc74ff1e2b46096a"
+    },
+    {
+      "path": "compiler/src/Reporting/Doc.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccfb0d192a78e6fd4a4b2fb7e96ac2d556bb1142",
+      "size": 9025,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ccfb0d192a78e6fd4a4b2fb7e96ac2d556bb1142"
+    },
+    {
+      "path": "compiler/src/Reporting/Error.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "784d8c08ff1545dc4b6ee45929319d7dc9461038",
+      "size": 4764,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/784d8c08ff1545dc4b6ee45929319d7dc9461038"
+    },
+    {
+      "path": "compiler/src/Reporting/Error",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7b2e25134518f3c48a0c07ad9588c1fe3f88e803",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/7b2e25134518f3c48a0c07ad9588c1fe3f88e803"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Canonicalize.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b06532e5fdd69d010c502c3b57ce7eec8537cc6",
+      "size": 46584,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3b06532e5fdd69d010c502c3b57ce7eec8537cc6"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Docs.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e64d277b48c3e3b5bb36f735ca9c203a927250f",
+      "size": 7415,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/9e64d277b48c3e3b5bb36f735ca9c203a927250f"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Import.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "91a9a5b0b18d8956a2c945a12fa01c5019a2c174",
+      "size": 5988,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/91a9a5b0b18d8956a2c945a12fa01c5019a2c174"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Json.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "692c0b48ab42ce28dc068a420ef18890ed5b8fb2",
+      "size": 11675,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/692c0b48ab42ce28dc068a420ef18890ed5b8fb2"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Main.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e8816637a074c34884e5e3d0ed509a7bb57101c3",
+      "size": 3980,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/e8816637a074c34884e5e3d0ed509a7bb57101c3"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Pattern.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c34aea273f713ce739e438f7abb80d8860f564d0",
+      "size": 5932,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/c34aea273f713ce739e438f7abb80d8860f564d0"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Syntax.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69c480e32cce0b77a051179aa46d624dad117507",
+      "size": 204110,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/69c480e32cce0b77a051179aa46d624dad117507"
+    },
+    {
+      "path": "compiler/src/Reporting/Error/Type.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fb962ceb1ee9175a5a5a7ca1c5c1ad39f4609a2b",
+      "size": 53867,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/fb962ceb1ee9175a5a5a7ca1c5c1ad39f4609a2b"
+    },
+    {
+      "path": "compiler/src/Reporting/Render",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b28fdb49f53f81505fdf97a66fbd37bf4f9c04b4",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/b28fdb49f53f81505fdf97a66fbd37bf4f9c04b4"
+    },
+    {
+      "path": "compiler/src/Reporting/Render/Code.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1948c7215298d657ecde627e8e57287c77775803",
+      "size": 7819,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1948c7215298d657ecde627e8e57287c77775803"
+    },
+    {
+      "path": "compiler/src/Reporting/Render/Type.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "267bf0aecbdf7c756dd450fdade6ba5f5e6411d2",
+      "size": 5367,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/267bf0aecbdf7c756dd450fdade6ba5f5e6411d2"
+    },
+    {
+      "path": "compiler/src/Reporting/Render/Type",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "de9993d1312ca2376c2ebebdc6f1582e2a94cac7",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/de9993d1312ca2376c2ebebdc6f1582e2a94cac7"
+    },
+    {
+      "path": "compiler/src/Reporting/Render/Type/Localizer.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a236a76ffafc2c3839d6754ae48fe8bb5041a881",
+      "size": 2404,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/a236a76ffafc2c3839d6754ae48fe8bb5041a881"
+    },
+    {
+      "path": "compiler/src/Reporting/Report.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a166607f8412fe251d89c87e64010b5e11b517ba",
+      "size": 323,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/a166607f8412fe251d89c87e64010b5e11b517ba"
+    },
+    {
+      "path": "compiler/src/Reporting/Result.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8c336e909be045eb78ff8b8a113027e65373f9b4",
+      "size": 2363,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8c336e909be045eb78ff8b8a113027e65373f9b4"
+    },
+    {
+      "path": "compiler/src/Reporting/Suggest.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "830bd751a7f7e72d30ffe51600e025eb5dad3a30",
+      "size": 840,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/830bd751a7f7e72d30ffe51600e025eb5dad3a30"
+    },
+    {
+      "path": "compiler/src/Reporting/Warning.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0a1fc5e760631548f8c8e79f7ab66b71a114cba",
+      "size": 3161,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d0a1fc5e760631548f8c8e79f7ab66b71a114cba"
+    },
+    {
+      "path": "compiler/src/Type",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6f70eaca7bf2ccc225f9a8d0095b5ede101a420e",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/6f70eaca7bf2ccc225f9a8d0095b5ede101a420e"
+    },
+    {
+      "path": "compiler/src/Type/Constrain",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c8091cc9c8b404d28ba749a54d7457a099ec09f8",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/c8091cc9c8b404d28ba749a54d7457a099ec09f8"
+    },
+    {
+      "path": "compiler/src/Type/Constrain/Expression.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "88b4ba79b748789e7755502dbb8060f3ff14642c",
+      "size": 23734,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/88b4ba79b748789e7755502dbb8060f3ff14642c"
+    },
+    {
+      "path": "compiler/src/Type/Constrain/Module.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f64d4b895b5b7fb6fab17bcf026537d1f3874e6c",
+      "size": 5996,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f64d4b895b5b7fb6fab17bcf026537d1f3874e6c"
+    },
+    {
+      "path": "compiler/src/Type/Constrain/Pattern.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "403b71863940a57295ff1e04dfea98f9c297ad85",
+      "size": 7286,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/403b71863940a57295ff1e04dfea98f9c297ad85"
+    },
+    {
+      "path": "compiler/src/Type/Error.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c48c79efda4bda5e08f329dc2b24583e9f26e9d1",
+      "size": 15866,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/c48c79efda4bda5e08f329dc2b24583e9f26e9d1"
+    },
+    {
+      "path": "compiler/src/Type/Instantiate.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e83b0411e1af24a4efcb5938b135aa9607ec3eb",
+      "size": 1706,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5e83b0411e1af24a4efcb5938b135aa9607ec3eb"
+    },
+    {
+      "path": "compiler/src/Type/Occurs.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef24167f153dbcdb8f1659e73c3a7c247df79f28",
+      "size": 1941,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ef24167f153dbcdb8f1659e73c3a7c247df79f28"
+    },
+    {
+      "path": "compiler/src/Type/Solve.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f818585c00c83aabdb4465780f02f5b579b3a21",
+      "size": 21665,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1f818585c00c83aabdb4465780f02f5b579b3a21"
+    },
+    {
+      "path": "compiler/src/Type/Type.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "99df38e005ed437a63ac6c36fab1c33d0e020dbc",
+      "size": 17159,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/99df38e005ed437a63ac6c36fab1c33d0e020dbc"
+    },
+    {
+      "path": "compiler/src/Type/Unify.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2e45acfb351faf0abfde08665572f20d7ab40ed",
+      "size": 17354,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/e2e45acfb351faf0abfde08665572f20d7ab40ed"
+    },
+    {
+      "path": "compiler/src/Type/UnionFind.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31fbab160cf3935f4483ee4529622d1518553bbe",
+      "size": 3849,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/31fbab160cf3935f4483ee4529622d1518553bbe"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a9f9417efb151f773074afc601a4da56cf34dc30",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/a9f9417efb151f773074afc601a4da56cf34dc30"
+    },
+    {
+      "path": "docs/elm.json",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "99cfc98cb120784bbfb5b834fea10a12ae804c36",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/99cfc98cb120784bbfb5b834fea10a12ae804c36"
+    },
+    {
+      "path": "docs/elm.json/application.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26514e5d8a7c8d6b9296890750acc79f06537444",
+      "size": 2064,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/26514e5d8a7c8d6b9296890750acc79f06537444"
+    },
+    {
+      "path": "docs/elm.json/package.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6665694207d7c920d2af5af59d56feca641f918f",
+      "size": 3326,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/6665694207d7c920d2af5af59d56feca641f918f"
+    },
+    {
+      "path": "docs/upgrade-instructions",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b606a4b74626ec2f5de562933f7c484ae5182c33",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/b606a4b74626ec2f5de562933f7c484ae5182c33"
+    },
+    {
+      "path": "docs/upgrade-instructions/0.16.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f5d2678382d5fa5511c701295856ac1427dd274",
+      "size": 5519,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3f5d2678382d5fa5511c701295856ac1427dd274"
+    },
+    {
+      "path": "docs/upgrade-instructions/0.17.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1a3bd7ddab1a046801aeae9cc2c1ce913f471065",
+      "size": 8996,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1a3bd7ddab1a046801aeae9cc2c1ce913f471065"
+    },
+    {
+      "path": "docs/upgrade-instructions/0.18.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8370ad856179ac8c97908d2062d6aaa12e7776e6",
+      "size": 6706,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8370ad856179ac8c97908d2062d6aaa12e7776e6"
+    },
+    {
+      "path": "docs/upgrade-instructions/0.19.0.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c5d7d99b18e6deff31cd25d8d6e05d6c1f89742",
+      "size": 7508,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/4c5d7d99b18e6deff31cd25d8d6e05d6c1f89742"
+    },
+    {
+      "path": "docs/upgrade-instructions/0.19.1.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b0a0fe21e8490e64fd30eb649c19f94af7e857d2",
+      "size": 2443,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/b0a0fe21e8490e64fd30eb649c19f94af7e857d2"
+    },
+    {
+      "path": "docs/upgrade-instructions/earlier.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07e1e4eb29b848d50a83bf801ba9b94618798fae",
+      "size": 14994,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/07e1e4eb29b848d50a83bf801ba9b94618798fae"
+    },
+    {
+      "path": "elm.cabal",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "852e7040402ae3065aeef506d2e2c18d8ca402cd",
+      "size": 4727,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/852e7040402ae3065aeef506d2e2c18d8ca402cd"
+    },
+    {
+      "path": "hints",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f04de98e97958d8bdda5ae035781be3e158d0990",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/f04de98e97958d8bdda5ae035781be3e158d0990"
+    },
+    {
+      "path": "hints/bad-recursion.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "57e38543417e7a78dbd18473939b7aa91ee0ff7f",
+      "size": 6830,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/57e38543417e7a78dbd18473939b7aa91ee0ff7f"
+    },
+    {
+      "path": "hints/comparing-custom-types.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62dc13005fa0d7531321829da653794dd367805f",
+      "size": 3342,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/62dc13005fa0d7531321829da653794dd367805f"
+    },
+    {
+      "path": "hints/comparing-records.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "aa6bc3cb5d4c171abaf16796105fc8b80ced2114",
+      "size": 3335,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/aa6bc3cb5d4c171abaf16796105fc8b80ced2114"
+    },
+    {
+      "path": "hints/implicit-casts.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7af6d0d13fcf8fca8134ee9ffbdcfa8b2cbe3d43",
+      "size": 3190,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/7af6d0d13fcf8fca8134ee9ffbdcfa8b2cbe3d43"
+    },
+    {
+      "path": "hints/import-cycles.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20e1afdba6643da2945e700fa19b3080e87b9cb9",
+      "size": 7331,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/20e1afdba6643da2945e700fa19b3080e87b9cb9"
+    },
+    {
+      "path": "hints/imports.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "813937af9847ee04bc79a890139b798fc9642c68",
+      "size": 5486,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/813937af9847ee04bc79a890139b798fc9642c68"
+    },
+    {
+      "path": "hints/infinite-type.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c16584d95454a50a86cdbdd80e2ea041b2f0a8b3",
+      "size": 2241,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/c16584d95454a50a86cdbdd80e2ea041b2f0a8b3"
+    },
+    {
+      "path": "hints/init.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1ee7f3750bcf2b9c631e8d9c894d33921f9096c7",
+      "size": 3724,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1ee7f3750bcf2b9c631e8d9c894d33921f9096c7"
+    },
+    {
+      "path": "hints/missing-patterns.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae47999860ced8993a3fbedb3562e53ecd80f29f",
+      "size": 4033,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ae47999860ced8993a3fbedb3562e53ecd80f29f"
+    },
+    {
+      "path": "hints/optimize.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46cb08c3a7809b1c141df05c8b46d89a4f046947",
+      "size": 2825,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/46cb08c3a7809b1c141df05c8b46d89a4f046947"
+    },
+    {
+      "path": "hints/port-modules.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bf44a25673efaff31fa412349d039ba69ee752d3",
+      "size": 3049,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/bf44a25673efaff31fa412349d039ba69ee752d3"
+    },
+    {
+      "path": "hints/recursive-alias.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "06fff60f6182e6fd84c67a9d20f73b28587273d8",
+      "size": 4358,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/06fff60f6182e6fd84c67a9d20f73b28587273d8"
+    },
+    {
+      "path": "hints/repl.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "343b878446219d00193cd21d3045de97d3a53574",
+      "size": 1464,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/343b878446219d00193cd21d3045de97d3a53574"
+    },
+    {
+      "path": "hints/shadowing.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b5d7b5fd9e10c19bad4d5c65cba8abe158081792",
+      "size": 3393,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/b5d7b5fd9e10c19bad4d5c65cba8abe158081792"
+    },
+    {
+      "path": "hints/tuples.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fd349d0b495859a16c637fc565104915195737ec",
+      "size": 952,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/fd349d0b495859a16c637fc565104915195737ec"
+    },
+    {
+      "path": "hints/type-annotations.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf21642f12b9c95f37c9216acd5f775aaf43f4c5",
+      "size": 2710,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/cf21642f12b9c95f37c9216acd5f775aaf43f4c5"
+    },
+    {
+      "path": "installers",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c1949c6386c1fa3b17b655a0d5c7d02754d6a088",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/c1949c6386c1fa3b17b655a0d5c7d02754d6a088"
+    },
+    {
+      "path": "installers/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a769f15d9f1c671923faf23aab5bff3cb8b6f35",
+      "size": 1498,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5a769f15d9f1c671923faf23aab5bff3cb8b6f35"
+    },
+    {
+      "path": "installers/linux",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2a0b2e671667e16ce2eda74dc07b4074b4f56cd3",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/2a0b2e671667e16ce2eda74dc07b4074b4f56cd3"
+    },
+    {
+      "path": "installers/linux/Dockerfile",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3b6df3f61b53df74d1c10561e921719a488c3482",
+      "size": 1137,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3b6df3f61b53df74d1c10561e921719a488c3482"
+    },
+    {
+      "path": "installers/linux/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "085a3fbb3a70c2b54e459c1a925eda8da154a75c",
+      "size": 3581,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/085a3fbb3a70c2b54e459c1a925eda8da154a75c"
+    },
+    {
+      "path": "installers/mac",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a833fe7c4b46e7b08359110781287aa1f9602ed7",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/a833fe7c4b46e7b08359110781287aa1f9602ed7"
+    },
+    {
+      "path": "installers/mac/Distribution.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "757673c8f2ea5665cc72462a4a364d1ffc01a60c",
+      "size": 1284,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/757673c8f2ea5665cc72462a4a364d1ffc01a60c"
+    },
+    {
+      "path": "installers/mac/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95b987aad5a7bf15583a2d7dd3fb7675a661f9c8",
+      "size": 3634,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/95b987aad5a7bf15583a2d7dd3fb7675a661f9c8"
+    },
+    {
+      "path": "installers/mac/Resources",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f472c84f8a548c357de0d07105f180430965d6f2",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/f472c84f8a548c357de0d07105f180430965d6f2"
+    },
+    {
+      "path": "installers/mac/Resources/en.lproj",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e12742791cf889fbcf5b084225c1332212f90659",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/e12742791cf889fbcf5b084225c1332212f90659"
+    },
+    {
+      "path": "installers/mac/Resources/en.lproj/conclusion.rtf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "15b7b367832f07cca14b53fbe6ae415276b1d021",
+      "size": 657,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/15b7b367832f07cca14b53fbe6ae415276b1d021"
+    },
+    {
+      "path": "installers/mac/Resources/en.lproj/welcome.rtf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "17f77e0d1a71682a8a53c42e6221375779a6962b",
+      "size": 519,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/17f77e0d1a71682a8a53c42e6221375779a6962b"
+    },
+    {
+      "path": "installers/mac/helper-scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "0b3b4f07ce02d7d0cec4caf920e163d74f7c801c",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/0b3b4f07ce02d7d0cec4caf920e163d74f7c801c"
+    },
+    {
+      "path": "installers/mac/helper-scripts/elm-startup.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "5dcb69f74d4860ca49c21fcf1d7acf194d3791fe",
+      "size": 44,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5dcb69f74d4860ca49c21fcf1d7acf194d3791fe"
+    },
+    {
+      "path": "installers/mac/helper-scripts/uninstall.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "f36849242f41abe690de5d80e4fbaecb449f032d",
+      "size": 423,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f36849242f41abe690de5d80e4fbaecb449f032d"
+    },
+    {
+      "path": "installers/mac/make-installer.sh",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2626d1b68f090c41a910d8bf0ed5d9f59efab6e4",
+      "size": 1582,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2626d1b68f090c41a910d8bf0ed5d9f59efab6e4"
+    },
+    {
+      "path": "installers/mac/postinstall",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "4b073d0bf7b186273f21e2d7390d12d899793264",
+      "size": 60,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/4b073d0bf7b186273f21e2d7390d12d899793264"
+    },
+    {
+      "path": "installers/mac/preinstall",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "2c1886422190aebbd327db2bacaaed0a917a84d4",
+      "size": 324,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2c1886422190aebbd327db2bacaaed0a917a84d4"
+    },
+    {
+      "path": "installers/npm",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "b858fa963129f159ddbb0af5c0c9f860ce90596b",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/b858fa963129f159ddbb0af5c0c9f860ce90596b"
+    },
+    {
+      "path": "installers/npm/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "46deb5d3ad86309241d361b892cfe460391376ca",
+      "size": 48,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/46deb5d3ad86309241d361b892cfe460391376ca"
+    },
+    {
+      "path": "installers/npm/.npmignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d69d5759bc6d89d8a5f54d8446e95e6e40898439",
+      "size": 26,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d69d5759bc6d89d8a5f54d8446e95e6e40898439"
+    },
+    {
+      "path": "installers/npm/PUBLISHING.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "034fa17ed825a400d5c94f78fb852dccbaecfa33",
+      "size": 5139,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/034fa17ed825a400d5c94f78fb852dccbaecfa33"
+    },
+    {
+      "path": "installers/npm/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c9cdf0c6c91760093bc007164930175fa0b2c7b",
+      "size": 2048,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/6c9cdf0c6c91760093bc007164930175fa0b2c7b"
+    },
+    {
+      "path": "installers/npm/bin",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "25b571d567fa5795329c8a78eadd7faedfce08d2",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/25b571d567fa5795329c8a78eadd7faedfce08d2"
+    },
+    {
+      "path": "installers/npm/bin/elm",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "499ab2e56388c434daa4b0ee51813d06458c2291",
+      "size": 1038,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/499ab2e56388c434daa4b0ee51813d06458c2291"
+    },
+    {
+      "path": "installers/npm/binary.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66dcf2feba7603e24889d803017f2f54e33c23cf",
+      "size": 3619,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/66dcf2feba7603e24889d803017f2f54e33c23cf"
+    },
+    {
+      "path": "installers/npm/install.js",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2231b7384b48c4163729072b34741d3c6c15dfb0",
+      "size": 26,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2231b7384b48c4163729072b34741d3c6c15dfb0"
+    },
+    {
+      "path": "installers/npm/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "841cc477ffab79191da60917a91678f077b18d28",
+      "size": 1014,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/841cc477ffab79191da60917a91678f077b18d28"
+    },
+    {
+      "path": "installers/npm/packages",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e75999873073201cd03dfba963f4c89e052cc2ae",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/e75999873073201cd03dfba963f4c89e052cc2ae"
+    },
+    {
+      "path": "installers/npm/packages/darwin_arm64",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7bd96b161097f20d411ad7e7ec77b782f7df4537",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/7bd96b161097f20d411ad7e7ec77b782f7df4537"
+    },
+    {
+      "path": "installers/npm/packages/darwin_arm64/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0f106e4c4498489edbaf82588495f20833c4e22a",
+      "size": 411,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/0f106e4c4498489edbaf82588495f20833c4e22a"
+    },
+    {
+      "path": "installers/npm/packages/darwin_arm64/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d48236821a2f492557a3c33e4f6a66ca7669c99f",
+      "size": 254,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d48236821a2f492557a3c33e4f6a66ca7669c99f"
+    },
+    {
+      "path": "installers/npm/packages/darwin_x64",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fa02b4e1823a22598068237de44b48eced47f4f8",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/fa02b4e1823a22598068237de44b48eced47f4f8"
+    },
+    {
+      "path": "installers/npm/packages/darwin_x64/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "78fa2654a656d4d3640ce324cd6b7f3b12ec594f",
+      "size": 409,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/78fa2654a656d4d3640ce324cd6b7f3b12ec594f"
+    },
+    {
+      "path": "installers/npm/packages/darwin_x64/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "199dcd73c52d42d411ff8339c5b94235234091b8",
+      "size": 248,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/199dcd73c52d42d411ff8339c5b94235234091b8"
+    },
+    {
+      "path": "installers/npm/packages/linux_arm64",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fc21f3b7b503f2c10371e83fc2aec8d13091c843",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/fc21f3b7b503f2c10371e83fc2aec8d13091c843"
+    },
+    {
+      "path": "installers/npm/packages/linux_arm64/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f058467957706ab08dfa42eeca08d43c6dc3cf49",
+      "size": 411,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f058467957706ab08dfa42eeca08d43c6dc3cf49"
+    },
+    {
+      "path": "installers/npm/packages/linux_arm64/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5ed8629e779774a6b0a19164e64fb413b59d1a6b",
+      "size": 252,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5ed8629e779774a6b0a19164e64fb413b59d1a6b"
+    },
+    {
+      "path": "installers/npm/packages/linux_x64",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "15524834fdeb44b92b931f0cccc3e71519eeff05",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/15524834fdeb44b92b931f0cccc3e71519eeff05"
+    },
+    {
+      "path": "installers/npm/packages/linux_x64/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21e7e4ff04b8a9c5193f0649298b6b7a3362ac67",
+      "size": 409,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/21e7e4ff04b8a9c5193f0649298b6b7a3362ac67"
+    },
+    {
+      "path": "installers/npm/packages/linux_x64/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c31288c93f202e59aea40ef0008dcdbcc5524b0b",
+      "size": 246,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/c31288c93f202e59aea40ef0008dcdbcc5524b0b"
+    },
+    {
+      "path": "installers/npm/packages/win32_x64",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "498d95614ef9d6c0d64604fe7bc1e8f041dd8fb3",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/498d95614ef9d6c0d64604fe7bc1e8f041dd8fb3"
+    },
+    {
+      "path": "installers/npm/packages/win32_x64/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "52747caea8ec65947054c29d081d0b9804fc1ea2",
+      "size": 411,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/52747caea8ec65947054c29d081d0b9804fc1ea2"
+    },
+    {
+      "path": "installers/npm/packages/win32_x64/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ea5474f303ca851d8c6a1f00c52000ccd2f700f",
+      "size": 248,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8ea5474f303ca851d8c6a1f00c52000ccd2f700f"
+    },
+    {
+      "path": "installers/npm/troubleshooting.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f30690aa5218ee7769dbefe7c1523f0e085dfc5d",
+      "size": 3316,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f30690aa5218ee7769dbefe7c1523f0e085dfc5d"
+    },
+    {
+      "path": "installers/win",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c0650ac690b39f3fe31b31c2d65bc4f038ff9a88",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/c0650ac690b39f3fe31b31c2d65bc4f038ff9a88"
+    },
+    {
+      "path": "installers/win/CreateInternetShortcut.nsh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8006d1d1d1371b8bf14ddbedcd3e6ddb1059bbd5",
+      "size": 289,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8006d1d1d1371b8bf14ddbedcd3e6ddb1059bbd5"
+    },
+    {
+      "path": "installers/win/Nsisfile.nsi",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23b950d531e4b2d24e72f45dbe2633ba866b5ec8",
+      "size": 7542,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/23b950d531e4b2d24e72f45dbe2633ba866b5ec8"
+    },
+    {
+      "path": "installers/win/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d24827b1ba2d724f0bdc79ab5aa0889778f8d04f",
+      "size": 774,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d24827b1ba2d724f0bdc79ab5aa0889778f8d04f"
+    },
+    {
+      "path": "installers/win/inst.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2adc7f4c739b3b567621edff4450dc588a07fd8c",
+      "size": 143,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/2adc7f4c739b3b567621edff4450dc588a07fd8c"
+    },
+    {
+      "path": "installers/win/logo.ico",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19ad82ae71a04194f02b743479961a442074893a",
+      "size": 119290,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/19ad82ae71a04194f02b743479961a442074893a"
+    },
+    {
+      "path": "installers/win/make_installer.cmd",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f58024cd1f0241ec03170bae718809327d8cacf6",
+      "size": 354,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f58024cd1f0241ec03170bae718809327d8cacf6"
+    },
+    {
+      "path": "installers/win/removefrompath.vbs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "554c13358005bb6903ef81ec45b07acdc045f226",
+      "size": 675,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/554c13358005bb6903ef81ec45b07acdc045f226"
+    },
+    {
+      "path": "installers/win/uninst.dat",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fa70d3f0e7b2864d410187dca3dd425a93735860",
+      "size": 145,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/fa70d3f0e7b2864d410187dca3dd425a93735860"
+    },
+    {
+      "path": "installers/win/updatepath.vbs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a30d3362f20da20ac03b9dec58debac0d9761a5",
+      "size": 421,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/9a30d3362f20da20ac03b9dec58debac0d9761a5"
+    },
+    {
+      "path": "installers/win/welcome.bmp",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5e48790d3db2280175d2a08fe3da400f62c2a592",
+      "size": 154542,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5e48790d3db2280175d2a08fe3da400f62c2a592"
+    },
+    {
+      "path": "reactor",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c3213a3d562a42e2402527f13412569d9fd5b575",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/c3213a3d562a42e2402527f13412569d9fd5b575"
+    },
+    {
+      "path": "reactor/assets",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "71c553e2c186ce7070f77580da13767d6dad30c3",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/71c553e2c186ce7070f77580da13767d6dad30c3"
+    },
+    {
+      "path": "reactor/assets/favicon.ico",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "41edb810391a319c332ad191c04cab9b518e4673",
+      "size": 4286,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/41edb810391a319c332ad191c04cab9b518e4673"
+    },
+    {
+      "path": "reactor/assets/source-code-pro.ttf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "268a2e4322e03d1e37dbdaef2002164cd099bcf6",
+      "size": 27916,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/268a2e4322e03d1e37dbdaef2002164cd099bcf6"
+    },
+    {
+      "path": "reactor/assets/source-sans-pro.ttf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "950ff8bd4b3be8a80468d304851d7ea9e7bc436c",
+      "size": 35064,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/950ff8bd4b3be8a80468d304851d7ea9e7bc436c"
+    },
+    {
+      "path": "reactor/assets/styles.css",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e6c18ca17433e59192c6b1902ca53ddd4e650c25",
+      "size": 2227,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/e6c18ca17433e59192c6b1902ca53ddd4e650c25"
+    },
+    {
+      "path": "reactor/check.py",
+      "mode": "100755",
+      "type": "blob",
+      "sha": "9aced8b253c773cc9ecbdc7962240f570011a36d",
+      "size": 1163,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/9aced8b253c773cc9ecbdc7962240f570011a36d"
+    },
+    {
+      "path": "reactor/elm.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "97930ee71bc900e16964f4970656553b4ec96d14",
+      "size": 785,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/97930ee71bc900e16964f4970656553b4ec96d14"
+    },
+    {
+      "path": "reactor/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "93183da528ce4c4208bd77ede71443d664291c76",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/93183da528ce4c4208bd77ede71443d664291c76"
+    },
+    {
+      "path": "reactor/src/Deps.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "50310dfdad24726b6ddcd54b97c590b92ef88d76",
+      "size": 28293,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/50310dfdad24726b6ddcd54b97c590b92ef88d76"
+    },
+    {
+      "path": "reactor/src/Errors.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c8c63936d35c7ebb7affbede36834f8d582de56",
+      "size": 4705,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/9c8c63936d35c7ebb7affbede36834f8d582de56"
+    },
+    {
+      "path": "reactor/src/Index.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "288616e478a271ddb859bcaca8fefa84fb72a700",
+      "size": 6151,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/288616e478a271ddb859bcaca8fefa84fb72a700"
+    },
+    {
+      "path": "reactor/src/Index",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "88a3d168d36cb603f07dde29946f78cfb0448fb8",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/88a3d168d36cb603f07dde29946f78cfb0448fb8"
+    },
+    {
+      "path": "reactor/src/Index/Icon.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a40ed790bdfcdb417ed2327ae237a79e98a77e2",
+      "size": 3825,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/5a40ed790bdfcdb417ed2327ae237a79e98a77e2"
+    },
+    {
+      "path": "reactor/src/Index/Navigator.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d28673708b04a081d45a770c4365eef1bb3bef9f",
+      "size": 1306,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d28673708b04a081d45a770c4365eef1bb3bef9f"
+    },
+    {
+      "path": "reactor/src/Index/Skeleton.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a0f77444df6872d3c43c8e7dae84f9094ae34dd",
+      "size": 1142,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3a0f77444df6872d3c43c8e7dae84f9094ae34dd"
+    },
+    {
+      "path": "reactor/src/NotFound.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "58dbf1a6964d25e1306a5e45d86ee117e3dca76a",
+      "size": 567,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/58dbf1a6964d25e1306a5e45d86ee117e3dca76a"
+    },
+    {
+      "path": "reactor/src/mock.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "786944769d7afb8c6012f2da66ec9957bab15469",
+      "size": 1268,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/786944769d7afb8c6012f2da66ec9957bab15469"
+    },
+    {
+      "path": "roadmap.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d72847f0c07b6658efcef3eabecf6637bc29d8f4",
+      "size": 3590,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d72847f0c07b6658efcef3eabecf6637bc29d8f4"
+    },
+    {
+      "path": "src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "77e25b29ed0c4d5cbc01dc27c115686d3dbf48cd",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/77e25b29ed0c4d5cbc01dc27c115686d3dbf48cd"
+    },
+    {
+      "path": "src/utils",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "9b7b9a507fbdb3b60cca8f39d56979ae42ae3e67",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/9b7b9a507fbdb3b60cca8f39d56979ae42ae3e67"
+    },
+    {
+      "path": "src/utils/Bytes.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "febb0b099b9e41628940fbcc60374c09165e1ed7",
+      "size": 18819,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/febb0b099b9e41628940fbcc60374c09165e1ed7"
+    },
+    {
+      "path": "src/utils/Literals.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a040d37e4715f6e2403f26f8af7eeb75651b345",
+      "size": 11836,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/8a040d37e4715f6e2403f26f8af7eeb75651b345"
+    },
+    {
+      "path": "terminal",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8b5630018cd3bd5597c6fbad77148c3728f1cca8",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/8b5630018cd3bd5597c6fbad77148c3728f1cca8"
+    },
+    {
+      "path": "terminal/impl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c2af5c0263ffc5c46ebfd2c641af73512b6eca47",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/c2af5c0263ffc5c46ebfd2c641af73512b6eca47"
+    },
+    {
+      "path": "terminal/impl/Terminal.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82e825b4bf4df7e2c9f7a80c2ecd07e54939f518",
+      "size": 8487,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/82e825b4bf4df7e2c9f7a80c2ecd07e54939f518"
+    },
+    {
+      "path": "terminal/impl/Terminal",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e87693b4ff26959337bf558070e75e1582987152",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/e87693b4ff26959337bf558070e75e1582987152"
+    },
+    {
+      "path": "terminal/impl/Terminal/Chomp.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "692a7b0e98ae86f1753c9d2e75bf26cdd16b44aa",
+      "size": 12265,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/692a7b0e98ae86f1753c9d2e75bf26cdd16b44aa"
+    },
+    {
+      "path": "terminal/impl/Terminal/Error.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71c139da7e0b1a805077d8a3f61dcd1ebe846c47",
+      "size": 11737,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/71c139da7e0b1a805077d8a3f61dcd1ebe846c47"
+    },
+    {
+      "path": "terminal/impl/Terminal/Helpers.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4cc22cb6fe0f34c30e424e7a9b3f257235707e59",
+      "size": 3364,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/4cc22cb6fe0f34c30e424e7a9b3f257235707e59"
+    },
+    {
+      "path": "terminal/impl/Terminal/Internal.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3c847a029dac419b14eaa9e234dde675c4436ffa",
+      "size": 1663,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/3c847a029dac419b14eaa9e234dde675c4436ffa"
+    },
+    {
+      "path": "terminal/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d831ea4e84eb52646ba2fd860b0e978e3a34e908",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/d831ea4e84eb52646ba2fd860b0e978e3a34e908"
+    },
+    {
+      "path": "terminal/src/Bump.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76e73befedb3b7ac15816676b95928ba55022112",
+      "size": 4984,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/76e73befedb3b7ac15816676b95928ba55022112"
+    },
+    {
+      "path": "terminal/src/Develop.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3cec70a8988de28700b4a31565bbcaf1be02e9c",
+      "size": 6811,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d3cec70a8988de28700b4a31565bbcaf1be02e9c"
+    },
+    {
+      "path": "terminal/src/Develop",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c86cbd537f8d8cb40552c2d6864a4fc99ab8756",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/6c86cbd537f8d8cb40552c2d6864a4fc99ab8756"
+    },
+    {
+      "path": "terminal/src/Develop/Generate",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8f1815a75c2ad95dcd3ad55425e03662d31c4020",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/8f1815a75c2ad95dcd3ad55425e03662d31c4020"
+    },
+    {
+      "path": "terminal/src/Develop/Generate/Help.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f5e94ccea1aba911bd3dea02ac346eec52167dbf",
+      "size": 1514,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f5e94ccea1aba911bd3dea02ac346eec52167dbf"
+    },
+    {
+      "path": "terminal/src/Develop/Generate/Index.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54da701c92cfdc9e1d3bf032d36062bc5ce1e171",
+      "size": 4860,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/54da701c92cfdc9e1d3bf032d36062bc5ce1e171"
+    },
+    {
+      "path": "terminal/src/Develop/Socket.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1f308f6593b920929b1611e9e19f6eb3fc23d285",
+      "size": 1135,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/1f308f6593b920929b1611e9e19f6eb3fc23d285"
+    },
+    {
+      "path": "terminal/src/Develop/StaticFiles.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b241eb5e7ebc50d80fb200939630bb086ee7434a",
+      "size": 1797,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/b241eb5e7ebc50d80fb200939630bb086ee7434a"
+    },
+    {
+      "path": "terminal/src/Develop/StaticFiles_TH.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0b14188041a93e68f0326e13793a30a04e6560ed",
+      "size": 2408,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/0b14188041a93e68f0326e13793a30a04e6560ed"
+    },
+    {
+      "path": "terminal/src/Diff.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d50ff60b6ba54afdf01c5826338806713f167fd2",
+      "size": 9915,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d50ff60b6ba54afdf01c5826338806713f167fd2"
+    },
+    {
+      "path": "terminal/src/Init.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "21b5a78b6cff1166f1aeac1136bf2f3fb12ba8aa",
+      "size": 3134,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/21b5a78b6cff1166f1aeac1136bf2f3fb12ba8aa"
+    },
+    {
+      "path": "terminal/src/Install.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69964d6a2261515db3abad422cf881e7ae6a8bae",
+      "size": 12588,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/69964d6a2261515db3abad422cf881e7ae6a8bae"
+    },
+    {
+      "path": "terminal/src/Main.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "00739439a511f87313f6370634a08ea5bbb96ea2",
+      "size": 10281,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/00739439a511f87313f6370634a08ea5bbb96ea2"
+    },
+    {
+      "path": "terminal/src/Make.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "936f0501602bf7767443698ef12b6e79fef8dcdd",
+      "size": 8320,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/936f0501602bf7767443698ef12b6e79fef8dcdd"
+    },
+    {
+      "path": "terminal/src/Publish.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9224a0783fef7c66811ee5b7dfff17094f605b75",
+      "size": 15222,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/9224a0783fef7c66811ee5b7dfff17094f605b75"
+    },
+    {
+      "path": "terminal/src/Repl.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "54a5e92d6f64f158973e4adbaa203005a1bb60be",
+      "size": 17992,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/54a5e92d6f64f158973e4adbaa203005a1bb60be"
+    },
+    {
+      "path": "worker",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "227b1cd0f2c059bf154a6428b06bfb47dcb36b0c",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/227b1cd0f2c059bf154a6428b06bfb47dcb36b0c"
+    },
+    {
+      "path": "worker/elm.cabal",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "583b2c418ff1c447acee98ba933cca80c5a4bd8c",
+      "size": 4379,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/583b2c418ff1c447acee98ba933cca80c5a4bd8c"
+    },
+    {
+      "path": "worker/elm.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "01b5830a32b62198afbeadb1f41e443cf3e08c5a",
+      "size": 603,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/01b5830a32b62198afbeadb1f41e443cf3e08c5a"
+    },
+    {
+      "path": "worker/logrotate.conf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad6690394ed7725c4a572cb68fffad9f1c18ecbd",
+      "size": 384,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/ad6690394ed7725c4a572cb68fffad9f1c18ecbd"
+    },
+    {
+      "path": "worker/nginx.conf",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7971df256f41aa9259ead4f84766e72268679233",
+      "size": 567,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/7971df256f41aa9259ead4f84766e72268679233"
+    },
+    {
+      "path": "worker/outlines",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "340426736c62084bff3aaedfd916015d848d163b",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/340426736c62084bff3aaedfd916015d848d163b"
+    },
+    {
+      "path": "worker/outlines/compile",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ea4cd63041c4d21d50bec502a55bf71ba9245d05",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/ea4cd63041c4d21d50bec502a55bf71ba9245d05"
+    },
+    {
+      "path": "worker/outlines/compile/elm.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7b2f856fc83aa4eebd915f9c9651c8ca7ae08d73",
+      "size": 839,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/7b2f856fc83aa4eebd915f9c9651c8ca7ae08d73"
+    },
+    {
+      "path": "worker/outlines/repl",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f68f84586b364390cd7489344c2f95e61fd6fdbd",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/f68f84586b364390cd7489344c2f95e61fd6fdbd"
+    },
+    {
+      "path": "worker/outlines/repl/elm.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d977df30953478263a3e65a85cb7f7b84b5e49a2",
+      "size": 349,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/d977df30953478263a3e65a85cb7f7b84b5e49a2"
+    },
+    {
+      "path": "worker/src",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4fed7e01e1ad8686779d384b0d5e901fd80f9930",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/4fed7e01e1ad8686779d384b0d5e901fd80f9930"
+    },
+    {
+      "path": "worker/src/Artifacts.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f200a2dd138cd28df9325ce170482ae8a8a4a13f",
+      "size": 3975,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f200a2dd138cd28df9325ce170482ae8a8a4a13f"
+    },
+    {
+      "path": "worker/src/Cors.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04ed14f0e1b7712ee35aa99d1fbd0919e1b6fa4d",
+      "size": 1094,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/04ed14f0e1b7712ee35aa99d1fbd0919e1b6fa4d"
+    },
+    {
+      "path": "worker/src/Endpoint",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "945f44c13e655f044f66e153afe9f396c27e5bb2",
+      "url": "https://api.github.com/repos/elm/compiler/git/trees/945f44c13e655f044f66e153afe9f396c27e5bb2"
+    },
+    {
+      "path": "worker/src/Endpoint/Compile.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "daaa8c80be69908805fe2c170f08a5dcaa6558b2",
+      "size": 8720,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/daaa8c80be69908805fe2c170f08a5dcaa6558b2"
+    },
+    {
+      "path": "worker/src/Endpoint/Quotes.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "def9a3e87caa3018f99d222e3dc11667e4940e81",
+      "size": 18860,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/def9a3e87caa3018f99d222e3dc11667e4940e81"
+    },
+    {
+      "path": "worker/src/Endpoint/Repl.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dca8d67301c71bf3ecb8b2e495ae37352b40b3f7",
+      "size": 7653,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/dca8d67301c71bf3ecb8b2e495ae37352b40b3f7"
+    },
+    {
+      "path": "worker/src/Endpoint/Slack.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "408a820b32b7ed2d3a90978bfe8878f94e62eff5",
+      "size": 1626,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/408a820b32b7ed2d3a90978bfe8878f94e62eff5"
+    },
+    {
+      "path": "worker/src/Errors.elm",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e296bd0c3a4a92c6d0d6c7439d5752b7fff5179",
+      "size": 4874,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/7e296bd0c3a4a92c6d0d6c7439d5752b7fff5179"
+    },
+    {
+      "path": "worker/src/Main.hs",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8f84865246b24ed0dcee8dfe1f6f5dd57ab18e1",
+      "size": 2342,
+      "url": "https://api.github.com/repos/elm/compiler/git/blobs/f8f84865246b24ed0dcee8dfe1f6f5dd57ab18e1"
+    }
+  ],
+  "truncated": false
+}

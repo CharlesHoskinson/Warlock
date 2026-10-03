@@ -1,0 +1,905 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.LayoutManager</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.LayoutManager"/>
+  <meta property="og:description" content="Reference for Clutter.LayoutManager"/>
+  <meta name="twitter:title" content="Clutter.LayoutManager"/>
+  <meta name="twitter:description" content="Reference for Clutter.LayoutManager"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.LayoutManager.html#description">LayoutManager</a>
+  </div>
+</div>
+
+
+  
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.LayoutManager.allocate.html">allocate</a>
+  
+    <a class="method" href="method.LayoutManager.child_get.html">child_get</a>
+  
+    <a class="method" href="method.LayoutManager.child_get_property.html">child_get_property</a>
+  
+    <a class="method" href="method.LayoutManager.child_set.html">child_set</a>
+  
+    <a class="method" href="method.LayoutManager.child_set_property.html">child_set_property</a>
+  
+    <a class="method" href="method.LayoutManager.find_child_property.html">find_child_property</a>
+  
+    <a class="method" href="method.LayoutManager.get_child_meta.html">get_child_meta</a>
+  
+    <a class="method" href="method.LayoutManager.get_preferred_height.html">get_preferred_height</a>
+  
+    <a class="method" href="method.LayoutManager.get_preferred_width.html">get_preferred_width</a>
+  
+    <a class="method" href="method.LayoutManager.layout_changed.html">layout_changed</a>
+  
+    <a class="method" href="method.LayoutManager.list_child_properties.html">list_child_properties</a>
+  
+    <a class="method" href="method.LayoutManager.set_container.html">set_container</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.LayoutManager.layout-changed.html">layout-changed</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Virtual methods</h5>
+  <div class="links">
+  
+    <a class="method" href="vfunc.LayoutManager.allocate.html">allocate</a>
+  
+    <a class="method" href="vfunc.LayoutManager.create_child_meta.html">create_child_meta</a>
+  
+    <a class="method" href="vfunc.LayoutManager.get_child_meta_type.html">get_child_meta_type</a>
+  
+    <a class="method" href="vfunc.LayoutManager.get_preferred_height.html">get_preferred_height</a>
+  
+    <a class="method" href="vfunc.LayoutManager.get_preferred_width.html">get_preferred_width</a>
+  
+    <a class="method" href="vfunc.LayoutManager.layout_changed.html">layout_changed</a>
+  
+    <a class="method" href="vfunc.LayoutManager.set_container.html">set_container</a>
+  
+  </div>
+</div>
+
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>LayoutManager</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-layout-manager.c#L25">[src]</a>
+          
+        </h4>
+
+        <pre><code>abstract class Clutter.LayoutManager : GObject.InitiallyUnowned
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>Layout managers base&nbsp;class</p>
+<p><code>ClutterLayoutManager</code> is a base abstract class for layout managers. A
+layout manager implements the layouting policy for a composite or a
+container actor: it controls the preferred size of the actor to which
+it has been paired, and it controls the allocation of its&nbsp;children.</p>
+<p>Any composite or container <a href="class.Actor.html"><code>ClutterActor</code></a> subclass can delegate the
+layouting of its children to a <code>ClutterLayoutManager</code>.</p>
+<p>Clutter provides some simple <code>ClutterLayoutManager</code> sub-classes, like
+<a href="class.FlowLayout.html"><code>ClutterFlowLayout</code></a> and <a href="class.BinLayout.html"><code>ClutterBinLayout</code></a>.</p>
+<h2 id="implementing-a-clutterlayoutmanager">Implementing a ClutterLayoutManager<a class="md-anchor" href="#implementing-a-clutterlayoutmanager" title="Permanent link"></a></h2>
+<p>The implementation of a layout manager does not differ from  the
+implementation of the size requisition and allocation bits of
+<a href="class.Actor.html"><code>ClutterActor</code></a>, so you should read the relative documentation
+for subclassing <a href="class.Actor.html"><code>ClutterActor</code></a>.</p>
+<p>The layout manager implementation can hold a back pointer to the container
+<a href="class.Actor.html"><code>ClutterActor</code></a> by implementing the
+<a href="vfunc.LayoutManager.set_container.html"><code>Clutter.LayoutManagerClass.set_container</code></a> virtual function. The layout
+manager should not hold a real reference (i.e. call
+<a href="javascript:void(0)" data-namespace="GObject" data-link="method.Object.ref.html" class="external"><code>g_object_ref()</code></a>) on the container actor, to avoid reference&nbsp;cycles.</p>
+<p>If a layout manager has properties affecting the layout policies then it should
+emit the <a href="signal.LayoutManager.layout-changed.html"><code>ClutterLayoutManager::layout-changed</code></a> signal on itself by using the
+<a href="method.LayoutManager.layout_changed.html"><code>clutter_layout_manager_layout_changed()</code></a> function whenever one of these properties&nbsp;changes.</p>
+<h2 id="layout-properties">Layout Properties<a class="md-anchor" href="#layout-properties" title="Permanent link"></a></h2>
+<p>If a layout manager has layout properties, that is properties that
+should exist only as the result of the presence of a specific (layout
+manager, container actor, child actor) combination, and it wishes to store
+those properties inside a <a href="class.LayoutMeta.html"><code>ClutterLayoutMeta</code></a>, then it should override the
+<a href="vfunc.LayoutManager.get_child_meta_type.html"><code>Clutter.LayoutManagerClass.get_child_meta_type</code></a> virtual function to return
+the <code>GType</code> of the <a href="class.LayoutMeta.html"><code>ClutterLayoutMeta</code></a> sub-class used to store the layout
+properties; optionally, the <code>ClutterLayoutManager</code> sub-class might also
+override the <a href="vfunc.LayoutManager.create_child_meta.html"><code>Clutter.LayoutManagerClass.create_child_meta</code></a> virtual function
+to control how the <a href="class.LayoutMeta.html"><code>ClutterLayoutMeta</code></a> instance is created, otherwise the
+default implementation will be equivalent&nbsp;to:</p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="n">ClutterLayoutManagerClass</span><span class="w"> </span><span class="o">*</span><span class="n">klass</span><span class="p">;</span>
+<span class="w"> </span><span class="n">GType</span><span class="w"> </span><span class="n">meta_type</span><span class="p">;</span>
+
+<span class="w"> </span><span class="n">klass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">CLUTTER_LAYOUT_MANAGER_GET_CLASS</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="p">);</span>
+<span class="w"> </span><span class="n">meta_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">klass</span><span class="o">-&gt;</span><span class="n">get_child_meta_type</span><span class="w"> </span><span class="p">(</span><span class="n">manager</span><span class="p">);</span>
+
+<span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">g_object_new</span><span class="w"> </span><span class="p">(</span><span class="n">meta_type</span><span class="p">,</span>
+<span class="w">                      </span><span class="s">&quot;manager&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">manager</span><span class="p">,</span>
+<span class="w">                      </span><span class="s">&quot;container&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">container</span><span class="p">,</span>
+<span class="w">                      </span><span class="s">&quot;actor&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">actor</span><span class="p">,</span>
+<span class="w">                      </span><span class="nb">NULL</span><span class="p">);</span>
+</code></pre></div>
+
+<p>Where <code>manager</code> is the  <code>ClutterLayoutManager</code>, <code>container</code> is the
+<a href="class.Actor.html"><code>ClutterActor</code></a> using the <code>ClutterLayoutManager</code>, and <code>actor</code> is
+the <a href="class.Actor.html"><code>ClutterActor</code></a> child of the <a href="class.Actor.html"><code>ClutterActor</code></a>.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.LayoutManager">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="149pt" height="188pt"
+ viewBox="0.00 0.00 149.00 188.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 184)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterLayoutManager">
+<path fill="none" stroke="black" d="M128.5,-36C128.5,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 128.5,0 128.5,0 134.5,0 140.5,-6 140.5,-12 140.5,-12 140.5,-24 140.5,-24 140.5,-30 134.5,-36 128.5,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="70.25" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterLayoutManager</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:title="GObject.InitiallyUnowned">
+<path fill="none" stroke="black" d="M118.75,-108C118.75,-108 21.75,-108 21.75,-108 15.75,-108 9.75,-102 9.75,-96 9.75,-96 9.75,-84 9.75,-84 9.75,-78 15.75,-72 21.75,-72 21.75,-72 118.75,-72 118.75,-72 124.75,-72 130.75,-78 130.75,-84 130.75,-84 130.75,-96 130.75,-96 130.75,-102 124.75,-108 118.75,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="70.25" y="-83.83" font-family="Times,serif" font-size="14.00">GInitiallyUnowned</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge2" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M70.25,-71.7C70.25,-60.85 70.25,-46.92 70.25,-36.1"/>
+</g>
+<!-- ancestor_1 -->
+<g id="node3" class="node">
+<title>ancestor_1</title>
+<g id="a_node3"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M89.12,-180C89.12,-180 51.38,-180 51.38,-180 45.38,-180 39.38,-174 39.38,-168 39.38,-168 39.38,-156 39.38,-156 39.38,-150 45.38,-144 51.38,-144 51.38,-144 89.12,-144 89.12,-144 95.12,-144 101.12,-150 101.12,-156 101.12,-156 101.12,-168 101.12,-168 101.12,-174 95.12,-180 89.12,-180"/>
+<text xml:space="preserve" text-anchor="middle" x="70.25" y="-155.82" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_1&#45;&#45;ancestor_0 -->
+<g id="edge1" class="edge">
+<title>ancestor_1&#45;&#45;ancestor_0</title>
+<path fill="none" stroke="black" d="M70.25,-143.7C70.25,-132.85 70.25,-118.92 70.25,-108.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.InitiallyUnowned.html" data-namespace="GObject">GInitiallyUnowned</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+    <div class="descendants toggle-wrapper default-hide">
+      <h4 id="descendants">Descendants <a href="#descendants" class="anchor"></a></h4>
+      <div class="docblock">
+        <ul>
+          <li class="class"><a href="class.BinLayout.html" title="BinLayout">ClutterBinLayout</a></li>
+        
+          <li class="class"><a href="class.BoxLayout.html" title="BoxLayout">ClutterBoxLayout</a></li>
+        
+          <li class="class"><a href="class.FixedLayout.html" title="FixedLayout">ClutterFixedLayout</a></li>
+        
+          <li class="class"><a href="class.FlowLayout.html" title="FlowLayout">ClutterFlowLayout</a></li>
+        
+          <li class="class"><a href="class.GridLayout.html" title="GridLayout">ClutterGridLayout</a></li>
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.allocate.html">clutter_layout_manager_allocate</a></h6>
+          <div class="docblock">
+            <p>Allocates the children of <code>container</code> given an&nbsp;area.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.child_get.html">clutter_layout_manager_child_get</a></h6>
+          <div class="docblock">
+            <p>Retrieves the values for a list of properties out of the
+<code>ClutterLayoutMeta</code> created by <code>manager</code> and attached to the
+child of a <code>container</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.child_get_property.html">clutter_layout_manager_child_get_property</a></h6>
+          <div class="docblock">
+            <p>Gets a property on the <code>ClutterLayoutMeta</code> created by <code>manager</code> and
+attached to a child of <code>container</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.child_set.html">clutter_layout_manager_child_set</a></h6>
+          <div class="docblock">
+            <p>Sets a list of properties and their values on the <code>ClutterLayoutMeta</code>
+associated by <code>manager</code> to a child of <code>container</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.child_set_property.html">clutter_layout_manager_child_set_property</a></h6>
+          <div class="docblock">
+            <p>Sets a property on the <code>ClutterLayoutMeta</code> created by <code>manager</code> and
+attached to a child of <code>container</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.find_child_property.html">clutter_layout_manager_find_child_property</a></h6>
+          <div class="docblock">
+            <p>Retrieves the <code>GParamSpec</code> for the layout property <code>name</code> inside
+the <code>ClutterLayoutMeta</code> sub-class used by <code>manager</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.get_child_meta.html">clutter_layout_manager_get_child_meta</a></h6>
+          <div class="docblock">
+            <p>Retrieves the <code>ClutterLayoutMeta</code> that the layout <code>manager</code> associated
+to the <code>actor</code> child of <code>container</code>, eventually by creating one if the
+<code>ClutterLayoutManager</code> supports layout&nbsp;properties.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.get_preferred_height.html">clutter_layout_manager_get_preferred_height</a></h6>
+          <div class="docblock">
+            <p>Computes the minimum and natural heights of the <code>container</code> according
+to <code>manager</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.get_preferred_width.html">clutter_layout_manager_get_preferred_width</a></h6>
+          <div class="docblock">
+            <p>Computes the minimum and natural widths of the <code>container</code> according
+to <code>manager</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.layout_changed.html">clutter_layout_manager_layout_changed</a></h6>
+          <div class="docblock">
+            <p>Emits the <code>ClutterLayoutManager::layout-changed</code> signal on <code>manager</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.list_child_properties.html">clutter_layout_manager_list_child_properties</a></h6>
+          <div class="docblock">
+            <p>Retrieves all the <code>GParamSpec</code>s for the layout properties
+stored inside the <code>ClutterLayoutMeta</code> sub-class used by <code>manager</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.LayoutManager.set_container.html">clutter_layout_manager_set_container</a></h6>
+          <div class="docblock">
+            <p>If the <code>ClutterLayoutManager</code> sub-class allows it, allow
+adding a weak reference of the <code>container</code> using <code>manager</code>
+from within the layout&nbsp;manager.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.LayoutManager.layout-changed.html">Clutter.LayoutManager::layout-changed</a></h6>
+          <div class="docblock">
+            <p>The signal is emitted each time a layout manager
+has been changed. Every <code>ClutterActor</code> using the <code>manager</code> instance
+as a layout manager should connect a handler to the
+<code>ClutterLayoutManager::layout-changed</code>
+signal and queue a relayout on&nbsp;themselves:.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterLayoutManagerClass {
+  void (* get_preferred_width) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    gfloat for_height,
+    gfloat* min_width_p,
+    gfloat* nat_width_p
+  );
+  void (* get_preferred_height) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    gfloat for_width,
+    gfloat* min_height_p,
+    gfloat* nat_height_p
+  );
+  void (* allocate) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    const ClutterActorBox* allocation
+  );
+  void (* set_container) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container
+  );
+  GType (* get_child_meta_type) (
+    ClutterLayoutManager* manager
+  );
+  ClutterLayoutMeta* (* create_child_meta) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    ClutterActor* actor
+  );
+  void (* layout_changed) (
+    ClutterLayoutManager* manager
+  );
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>The <code>ClutterLayoutManagerClass</code> structure contains only private
+data and should be accessed using the provided <span class="caps">API</span>.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>get_preferred_width: void (* get_preferred_width) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    gfloat for_height,
+    gfloat* min_width_p,
+    gfloat* nat_width_p
+  )</code></dt>
+          <dd><p>Virtual function; override to provide a preferred
+  width for the layout manager. See also the <code>get_preferred_width()</code>
+  virtual function in <code>ClutterActor</code>.</p></dd>
+        
+          <dt><code>get_preferred_height: void (* get_preferred_height) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    gfloat for_width,
+    gfloat* min_height_p,
+    gfloat* nat_height_p
+  )</code></dt>
+          <dd><p>Virtual function; override to provide a preferred
+  height for the layout manager. See also the <code>get_preferred_height()</code>
+  virtual function in <code>ClutterActor</code>.</p></dd>
+        
+          <dt><code>allocate: void (* allocate) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    const ClutterActorBox* allocation
+  )</code></dt>
+          <dd><p>Virtual function; override to allocate the children of the
+  layout manager. See also the <code>allocate()</code> virtual function in
+  <code>ClutterActor</code>.</p></dd>
+        
+          <dt><code>set_container: void (* set_container) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container
+  )</code></dt>
+          <dd><p>Virtual function; override to set a back pointer
+  on the <a href="class.Actor.html"><code>ClutterActor</code></a> using the layout manager. The implementation
+  should not take a reference on the container, but just take a weak
+  reference, to avoid potential leaks due to reference&nbsp;cycles.</p></dd>
+        
+          <dt><code>get_child_meta_type: GType (* get_child_meta_type) (
+    ClutterLayoutManager* manager
+  )</code></dt>
+          <dd><p>Virtual function; override to return the <code>GType</code>
+  of the <code>ClutterLayoutMeta</code> sub-class used by the <code>ClutterLayoutManager</code>.</p></dd>
+        
+          <dt><code>create_child_meta: ClutterLayoutMeta* (* create_child_meta) (
+    ClutterLayoutManager* manager,
+    ClutterActor* container,
+    ClutterActor* actor
+  )</code></dt>
+          <dd><p>Virtual function; override to create a
+  <a href="class.LayoutMeta.html"><code>ClutterLayoutMeta</code></a> instance associated to a container
+  <a href="class.Actor.html"><code>ClutterActor</code></a> and a child <a href="class.Actor.html"><code>ClutterActor</code></a>, used to maintain
+  layout manager specific&nbsp;properties.</p></dd>
+        
+          <dt><code>layout_changed: void (* layout_changed) (
+    ClutterLayoutManager* manager
+  )</code></dt>
+          <dd><p>Class handler for the <code>ClutterLayoutManager::layout-changed</code>
+  signal.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="virtual-methods">
+        Virtual methods
+        <a href="#virtual-methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+      <div class="">
+        <h6 id="vfunc-allocate"><a href="vfunc.LayoutManager.allocate.html">Clutter.LayoutManagerClass.allocate</a></h6>
+        <div class="docblock">
+          <p>Allocates the children of <code>container</code> given an&nbsp;area.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-create_child_meta"><a href="vfunc.LayoutManager.create_child_meta.html">Clutter.LayoutManagerClass.create_child_meta</a></h6>
+        <div class="docblock">
+          <p>Virtual function; override to create a
+  <code>ClutterLayoutMeta</code> instance associated to a container
+  <code>ClutterActor</code> and a child <code>ClutterActor</code>, used to maintain
+  layout manager specific&nbsp;properties.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_child_meta_type"><a href="vfunc.LayoutManager.get_child_meta_type.html">Clutter.LayoutManagerClass.get_child_meta_type</a></h6>
+        <div class="docblock">
+          <p>Virtual function; override to return the <code>GType</code>
+  of the <code>ClutterLayoutMeta</code> sub-class used by the <code>ClutterLayoutManager</code>.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_preferred_height"><a href="vfunc.LayoutManager.get_preferred_height.html">Clutter.LayoutManagerClass.get_preferred_height</a></h6>
+        <div class="docblock">
+          <p>Computes the minimum and natural heights of the <code>container</code> according
+to <code>manager</code>.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-get_preferred_width"><a href="vfunc.LayoutManager.get_preferred_width.html">Clutter.LayoutManagerClass.get_preferred_width</a></h6>
+        <div class="docblock">
+          <p>Computes the minimum and natural widths of the <code>container</code> according
+to <code>manager</code>.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-layout_changed"><a href="vfunc.LayoutManager.layout_changed.html">Clutter.LayoutManagerClass.layout_changed</a></h6>
+        <div class="docblock">
+          <p>Emits the <code>ClutterLayoutManager::layout-changed</code> signal on <code>manager</code>.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      <div class="">
+        <h6 id="vfunc-set_container"><a href="vfunc.LayoutManager.set_container.html">Clutter.LayoutManagerClass.set_container</a></h6>
+        <div class="docblock">
+          <p>If the <code>ClutterLayoutManager</code> sub-class allows it, allow
+adding a weak reference of the <code>container</code> using <code>manager</code>
+from within the layout&nbsp;manager.</p>
+        </div>
+        <div class="docblock">
+          <p></p>
+        </div>
+      </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      <ul class="toc-list">
+      
+      
+        <li class="toc-list-item"><a href="#implementing-a-clutterlayoutmanager"><span class="link-text">Implementing a ClutterLayoutManager</span></a></li>
+      
+        <li class="toc-list-item"><a href="#layout-properties"><span class="link-text">Layout Properties</span></a></li>
+      
+      
+      </ul>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#virtual-methods"><span class="link-text">Virtual methods</span></a></li>
+
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

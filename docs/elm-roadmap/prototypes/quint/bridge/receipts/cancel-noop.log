@@ -1,0 +1,18 @@
+Running as unit: qa-harness-45d395b3cb3547beb3e14c9cfc6e5e4e.scope; invocation ID: 04533733228d45948e70a84ac7b60874
+
+  bridge
+    1) cancelBeforeCommitTest failed after 1 test(s)
+
+  1 failed
+
+  1) cancelBeforeCommitTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/cancel-noop.qnt:73:78
+        73:   run cancelBeforeCommitTest = init.then(request(1)).then(cancel).then(all { assert(s.status == "Cancelled" and s.effects == 0), noop })
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=cancelBeforeCommitTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 cancel-noop.qnt
+error: Tests failed

@@ -1,0 +1,173 @@
+[
+  {
+    "id": "ELM-KDE-001",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The native authority SHALL publish one committed constrained stack revision for ordinary scene ordering, hit testing and focus resolution.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Revision-correlated native pixel/hit/focus trace shows one canonical commit.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/layers.cpp: Workspace::updateStackingOrder; input.cpp: findToplevel; windowitem.cpp: updateStackingOrder",
+    "task": "Implement canonical stack transaction and consume committed revisions.",
+    "scenarios": [
+      {
+        "name": "kde-001",
+        "given": "an overlapping MAX and float",
+        "when": "a raise commits",
+        "then": "ordinary paint, hit and focus use the same stack revision"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-002",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The native authority SHALL derive layer eligibility from window type, pin state, fullscreen state, family constraints and current output context.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Policy matrix replay plus native overlap/fullscreen tests.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/window.cpp: belongsToLayer and isActiveFullScreen",
+    "task": "Define policy table; keep MAX distinct from active fullscreen.",
+    "scenarios": [
+      {
+        "name": "kde-002",
+        "given": "MAX, fullscreen and pin combinations",
+        "when": "layer policy is computed",
+        "then": "explicit policy rather than a blanket allowed-over flag selects order"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-003",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "When a transient family changes, the native authority SHALL recompute parent-child constraints and preserve documented sibling order before committing the stack.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Constraint replay and native modal pixel/hit observations.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/layers.cpp: constrainedStackingOrder; workspace.cpp: constrain/unconstrain",
+    "task": "Maintain constraints and test family removal, modal opening and stale generation.",
+    "scenarios": [
+      {
+        "name": "kde-003",
+        "given": "a parent with two transients",
+        "when": "one family relation changes",
+        "then": "constraints update without stale parent or arbitrary sibling inversion"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-004",
+    "capability": "elm-layering",
+    "pattern": "unwanted",
+    "ears": "If a window belongs to an inactive special workspace, then native eligibility SHALL exclude its ordinary live painting, pointer targeting and direct focus despite permissive cached visibility or input flags.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Native inactive-special pixel, click and explicit-focus probes reject the hidden window.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/New Heroic fixture: visible=true, acceptsInput=true, allowedOverFullscreen=true, specialWorkspace.id=0",
+    "task": "Add Heroic regression fixture with inactive win-minimized special workspace.",
+    "scenarios": [
+      {
+        "name": "kde-004",
+        "given": "Heroic resides on inactive special:win-minimized with permissive flags",
+        "when": "ordinary painting, clicking or direct focus is evaluated",
+        "then": "the hidden window cannot appear or receive focus"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-005",
+    "capability": "elm-layering",
+    "pattern": "ubiquitous",
+    "ears": "The native authority SHALL derive ordinary paint, hit and focus eligibility from the same committed workspace, minimize, hidden, lock and incarnation state.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "State-race fault tests record matching revision and exclusion rationale.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/input.cpp: findToplevel; windowitem.cpp: computeVisibility",
+    "task": "Factor canonical eligibility snapshot with explicit operation-specific policy.",
+    "scenarios": [
+      {
+        "name": "kde-005",
+        "given": "a workspace switch races a click",
+        "when": "eligibility is evaluated",
+        "then": "all routes consume one native revision"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-006",
+    "capability": "elm-layering",
+    "pattern": "complex",
+    "ears": "While an effect paints a hidden or minimized window representation, if that representation lacks explicit input authority, then the native host SHALL keep it outside ordinary hit and focus eligibility.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Native minimize/overview tests show visible animation proxies do not steal input.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/windowitem.cpp: force-visible counters and elevation; input.cpp: hidden/minimized exclusion",
+    "task": "Separate effect/preview visual ownership from live-window interaction authority.",
+    "scenarios": [
+      {
+        "name": "kde-006",
+        "given": "a minimized window is painted for motion",
+        "when": "the user clicks its animation pixels",
+        "then": "input follows explicit proxy policy rather than live-window visibility"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-007",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "When a modal focus request is accepted, the native authority SHALL resolve the current eligible modal family before selecting the committed focus recipient.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Native draft/modal tests record focus target and preserve unrelated drafts.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/window.cpp: modality helpers; new GTK/Qt/Xwayland acceptance",
+    "task": "Test current family and genuine blockers; do not infer modality from stacking alone.",
+    "scenarios": [
+      {
+        "name": "kde-007",
+        "given": "a modal family and unrelated eligible window overlap",
+        "when": "a click or focus request arrives",
+        "then": "the current native family policy selects the eligible recipient"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-008",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "When fullscreen activation or output membership changes, the native authority SHALL recompute fullscreen and pin layering from current output and family state.",
+    "phase": "P5",
+    "priority": "must",
+    "verification": "Multi-output native pixel/hit matrix records explicit Windows-policy differences.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/window.cpp: isActiveFullScreen; belongsToLayer",
+    "task": "Test active fullscreen transitions, other-output focus, pin exceptions and modal children.",
+    "scenarios": [
+      {
+        "name": "kde-008",
+        "given": "fullscreen spans one output and pin exists",
+        "when": "focus moves to another output",
+        "then": "documented per-output policy commits coherently"
+      }
+    ]
+  },
+  {
+    "id": "ELM-KDE-009",
+    "capability": "elm-layering",
+    "pattern": "unwanted",
+    "ears": "If an Elm intent references a stale stack or eligibility revision, then the native authority SHALL refuse or reconcile it before committing focus or layering effects.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Delayed-intent faults produce refusal/reconciliation without hidden-window focus.",
+    "legacyEvidence": "docs/elm-roadmap/reference/kwin/Engineering inference from pinned KWin canonical order; bridge architecture",
+    "task": "Add expected revision checks and unknown-outcome reconciliation.",
+    "scenarios": [
+      {
+        "name": "kde-009",
+        "given": "an intent captured old workspace truth",
+        "when": "a newer workspace revision commits",
+        "then": "the stale intent cannot override current eligibility"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1179 @@
+<!--
+SPDX-FileCopyrightText: Mutter Development Team
+
+SPDX-License-Identifier: GPL-2.0-or-later
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Clutter.PanGesture</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta charset="utf-8" />
+
+  
+  <meta property="og:type" content="website"/>
+
+  
+  <meta property="og:image:width" content="256"/>
+  <meta property="og:image:height" content="256"/>
+  <meta property="og:image:secure_url" content="logo.svg"/>
+  <meta property="og:image:alt" content="Clutter-51"/>
+  
+
+  
+  <meta property="og:title" content="Clutter.PanGesture"/>
+  <meta property="og:description" content="Reference for Clutter.PanGesture"/>
+  <meta name="twitter:title" content="Clutter.PanGesture"/>
+  <meta name="twitter:description" content="Reference for Clutter.PanGesture"/>
+
+
+  
+  <meta name="twitter:card" content="summary"/>
+
+  
+  
+  
+  <link rel="search" type="application/opensearchdescription+xml" title="Clutter" href="opensearch.xml">
+  
+  
+
+  <link rel="stylesheet" href="style.css" type="text/css" />
+
+  
+
+  
+  <noscript>
+    <style>
+      #search-form { cursor: not-allowed; }
+      #search-input { opacity: 0.5; pointer-events: none; }
+      #search-help { display: none; }
+    </style>
+  </noscript>
+  
+
+  
+  <script src="urlmap.js"></script>
+  
+  
+  <script src="fzy.js"></script>
+  <script src="search.js"></script>
+  
+  <script src="main.js"></script>
+
+  
+</head>
+
+<body>
+  <div id="body-wrapper" tabindex="-1">
+
+    <nav class="sidebar devhelp-hidden">
+      
+      <div class="section">
+        <a href="index.html"><img src="logo.svg" class="logo"/></a>
+      </div>
+      
+      
+      <div class="search section">
+        <form id="search-form" autocomplete="off">
+          <input id="search-input" type="text" name="do-not-autocomplete" placeholder="Click, or press 's' to search" autocomplete="off"/>
+          <button id="search-clear" type="button" class="hidden" aria-label="Clear search">✕</button>
+          <button id="search-help" type="button" aria-label="Search syntax help" aria-describedby="search-help-popover">?</button>
+          <div id="search-help-popover" role="tooltip">
+            
+            <p class="search-help-title">Filter results by type:</p>
+            <dl class="search-help-types">
+              <dt>alias:</dt><dd>alias</dd>
+              <dt>bitfield:</dt><dd>flags</dd>
+              <dt>callback:</dt><dd>callback</dd>
+              <dt>class:</dt><dd>class</dd>
+              <dt>constant:</dt><dd>constant</dd>
+              <dt>content:</dt><dd>content</dd>
+              <dt>ctor:</dt><dd>constructor</dd>
+              <dt>domain:</dt><dd>error domain</dd>
+              <dt>enum:</dt><dd>enum</dd>
+              <dt>function:</dt><dd>function</dd>
+              <dt>function_macro:</dt><dd>macro</dd>
+              <dt>interface:</dt><dd>interface</dd>
+              <dt>method:</dt><dd>method</dd>
+              <dt>property:</dt><dd>property</dd>
+              <dt>record:</dt><dd>struct</dd>
+              <dt>signal:</dt><dd>signal</dd>
+              <dt>type_func:</dt><dd>type function</dd>
+              <dt>union:</dt><dd>union</dd>
+              <dt>vfunc:</dt><dd>virtual function</dd>
+            </dl>
+          </div>
+        </form>
+      </div>
+      
+      <div class="section namespace">
+        <h3><a href="index.html">Clutter</a></h3>
+        <p>API Version: 51</p>
+        
+        <p>Library Version: 51</p>
+        
+      </div>
+      
+<div class="section">
+  <h5>Type</h5>
+  <div class="links">
+    <a class="current" href="class.PanGesture.html#description">PanGesture</a>
+  </div>
+</div>
+
+
+  
+<div class="section">
+  <h5>Constructors</h5>
+  <div class="links">
+  
+    <a class="ctor" href="ctor.PanGesture.new.html">new</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+<div class="section">
+  <h5>Instance methods</h5>
+  <div class="links">
+  
+    <a class="method" href="method.PanGesture.get_accumulated_delta.html">get_accumulated_delta</a>
+  
+    <a class="method" href="method.PanGesture.get_accumulated_delta_abs.html">get_accumulated_delta_abs</a>
+  
+    <a class="method" href="method.PanGesture.get_begin_centroid.html">get_begin_centroid</a>
+  
+    <a class="method" href="method.PanGesture.get_begin_centroid_abs.html">get_begin_centroid_abs</a>
+  
+    <a class="method" href="method.PanGesture.get_begin_threshold.html">get_begin_threshold</a>
+  
+    <a class="method" href="method.PanGesture.get_button.html">get_button</a>
+  
+    <a class="method" href="method.PanGesture.get_centroid.html">get_centroid</a>
+  
+    <a class="method" href="method.PanGesture.get_centroid_abs.html">get_centroid_abs</a>
+  
+    <a class="method" href="method.PanGesture.get_delta.html">get_delta</a>
+  
+    <a class="method" href="method.PanGesture.get_delta_abs.html">get_delta_abs</a>
+  
+    <a class="method" href="method.PanGesture.get_max_n_points.html">get_max_n_points</a>
+  
+    <a class="method" href="method.PanGesture.get_min_n_points.html">get_min_n_points</a>
+  
+    <a class="method" href="method.PanGesture.get_pan_axis.html">get_pan_axis</a>
+  
+    <a class="method" href="method.PanGesture.get_required_button.html">get_required_button</a>
+  
+    <a class="method" href="method.PanGesture.get_state.html">get_state</a>
+  
+    <a class="method" href="method.PanGesture.get_velocity.html">get_velocity</a>
+  
+    <a class="method" href="method.PanGesture.get_velocity_abs.html">get_velocity_abs</a>
+  
+    <a class="method" href="method.PanGesture.set_begin_threshold.html">set_begin_threshold</a>
+  
+    <a class="method" href="method.PanGesture.set_max_n_points.html">set_max_n_points</a>
+  
+    <a class="method" href="method.PanGesture.set_min_n_points.html">set_min_n_points</a>
+  
+    <a class="method" href="method.PanGesture.set_pan_axis.html">set_pan_axis</a>
+  
+    <a class="method" href="method.PanGesture.set_required_button.html">set_required_button</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Properties</h5>
+  <div class="links">
+  
+    <a class="property" href="property.PanGesture.begin-threshold.html">begin-threshold</a>
+  
+    <a class="property" href="property.PanGesture.max-n-points.html">max-n-points</a>
+  
+    <a class="property" href="property.PanGesture.min-n-points.html">min-n-points</a>
+  
+    <a class="property" href="property.PanGesture.pan-axis.html">pan-axis</a>
+  
+    <a class="property" href="property.PanGesture.required-button.html">required-button</a>
+  
+  </div>
+</div>
+
+
+
+  
+<div class="section">
+  <h5>Signals</h5>
+  <div class="links">
+  
+    <a class="signal" href="signal.PanGesture.pan-update.html">pan-update</a>
+  
+  </div>
+</div>
+
+
+
+  
+
+
+  
+
+
+
+      <div class="section generator">
+        <p>Generated by <a href="https://gitlab.gnome.org/GNOME/gi-docgen">gi-docgen</a> 2026.2</p>
+      </div>
+    </nav>
+
+    <button id="btn-to-top" class="hidden"><span class="up-arrow"></span></button>
+
+    
+<section id="main" class="content">
+  <header>
+    <h3>Class</h3>
+    <h1 aria-label="Name"><a href="index.html">Clutter</a><span class="sep" role="presentation"></span>PanGesture</h1>
+  </header>
+
+  <section>
+    <summary>
+      <div class="docblock">
+        <p></p>
+      </div>
+
+      <div class="toggle-wrapper">
+        <h4 id="description" style="display:flex;">
+          Description
+          <a href="#description" class="anchor"></a>
+          
+          <a class="srclink" title="go to source location" href="https://gitlab.gnome.org/GNOME/mutter/-/blob/main/clutter/clutter/clutter-pan-gesture.c#L18">[src]</a>
+          
+        </h4>
+
+        <pre><code>final class Clutter.PanGesture : Clutter.Gesture
+{
+  /* No available fields */
+}</pre></code>
+
+        <div class="docblock">
+          
+          
+          
+        </div>
+
+        <div class="docblock">
+          <p>A <code>ClutterGesture</code> subclass for recognizing pan&nbsp;gestures.</p>
+        </div>
+
+        
+      </div>
+    </summary>
+
+    
+    <div class="toggle-wrapper hierarchy">
+      <h4 id="hierarchy">
+        Hierarchy
+        <a href="#hierarchy" class="anchor"></a>
+      </h4>
+      <div class="docblock" alt="Hierarchy for Clutter.PanGesture">
+        <!-- Generated by graphviz version 15.1.1 (20260805.0921)
+ -->
+<!-- Title: hierarchy Pages: 1 -->
+<svg width="129pt" height="404pt"
+ viewBox="0.00 0.00 129.00 404.00">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 400)">
+<title>hierarchy</title>
+<!-- this -->
+<g id="node1" class="node">
+<title>this</title>
+<g id="a_node1"><a xlink:title="ClutterPanGesture">
+<path fill="none" stroke="black" d="M106.75,-36C106.75,-36 14.25,-36 14.25,-36 8.25,-36 2.25,-30 2.25,-24 2.25,-24 2.25,-12 2.25,-12 2.25,-6 8.25,0 14.25,0 14.25,0 106.75,0 106.75,0 112.75,0 118.75,-6 118.75,-12 118.75,-12 118.75,-24 118.75,-24 118.75,-30 112.75,-36 106.75,-36"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-11.82" font-family="Times,serif" font-size="14.00">ClutterPanGesture</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0 -->
+<g id="node2" class="node link">
+<title>ancestor_0</title>
+<g id="a_node2"><a xlink:href="class.Gesture.html" xlink:title="ClutterGesture">
+<path fill="none" stroke="black" d="M96.62,-108C96.62,-108 24.38,-108 24.38,-108 18.38,-108 12.38,-102 12.38,-96 12.38,-96 12.38,-84 12.38,-84 12.38,-78 18.38,-72 24.38,-72 24.38,-72 96.62,-72 96.62,-72 102.62,-72 108.62,-78 108.62,-84 108.62,-84 108.62,-96 108.62,-96 108.62,-102 102.62,-108 96.62,-108"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-83.83" font-family="Times,serif" font-size="14.00">ClutterGesture</text>
+</a>
+</g>
+</g>
+<!-- ancestor_0&#45;&#45;this -->
+<g id="edge5" class="edge">
+<title>ancestor_0&#45;&#45;this</title>
+<path fill="none" stroke="black" d="M60.5,-71.7C60.5,-60.85 60.5,-46.92 60.5,-36.1"/>
+</g>
+<!-- ancestor_1 -->
+<g id="node3" class="node link">
+<title>ancestor_1</title>
+<g id="a_node3"><a xlink:href="class.Action.html" xlink:title="ClutterAction">
+<path fill="none" stroke="black" d="M93.62,-180C93.62,-180 27.38,-180 27.38,-180 21.38,-180 15.38,-174 15.38,-168 15.38,-168 15.38,-156 15.38,-156 15.38,-150 21.38,-144 27.38,-144 27.38,-144 93.62,-144 93.62,-144 99.62,-144 105.62,-150 105.62,-156 105.62,-156 105.62,-168 105.62,-168 105.62,-174 99.62,-180 93.62,-180"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-155.82" font-family="Times,serif" font-size="14.00">ClutterAction</text>
+</a>
+</g>
+</g>
+<!-- ancestor_1&#45;&#45;ancestor_0 -->
+<g id="edge4" class="edge">
+<title>ancestor_1&#45;&#45;ancestor_0</title>
+<path fill="none" stroke="black" d="M60.5,-143.7C60.5,-132.85 60.5,-118.92 60.5,-108.1"/>
+</g>
+<!-- ancestor_2 -->
+<g id="node4" class="node link">
+<title>ancestor_2</title>
+<g id="a_node4"><a xlink:href="class.ActorMeta.html" xlink:title="ClutterActorMeta">
+<path fill="none" stroke="black" d="M104.88,-252C104.88,-252 16.12,-252 16.12,-252 10.12,-252 4.12,-246 4.12,-240 4.12,-240 4.12,-228 4.12,-228 4.12,-222 10.12,-216 16.12,-216 16.12,-216 104.88,-216 104.88,-216 110.88,-216 116.88,-222 116.88,-228 116.88,-228 116.88,-240 116.88,-240 116.88,-246 110.88,-252 104.88,-252"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-227.82" font-family="Times,serif" font-size="14.00">ClutterActorMeta</text>
+</a>
+</g>
+</g>
+<!-- ancestor_2&#45;&#45;ancestor_1 -->
+<g id="edge3" class="edge">
+<title>ancestor_2&#45;&#45;ancestor_1</title>
+<path fill="none" stroke="black" d="M60.5,-215.7C60.5,-204.85 60.5,-190.92 60.5,-180.1"/>
+</g>
+<!-- ancestor_3 -->
+<g id="node5" class="node">
+<title>ancestor_3</title>
+<g id="a_node5"><a xlink:title="GObject.InitiallyUnowned">
+<path fill="none" stroke="black" d="M109,-324C109,-324 12,-324 12,-324 6,-324 0,-318 0,-312 0,-312 0,-300 0,-300 0,-294 6,-288 12,-288 12,-288 109,-288 109,-288 115,-288 121,-294 121,-300 121,-300 121,-312 121,-312 121,-318 115,-324 109,-324"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-299.82" font-family="Times,serif" font-size="14.00">GInitiallyUnowned</text>
+</a>
+</g>
+</g>
+<!-- ancestor_3&#45;&#45;ancestor_2 -->
+<g id="edge2" class="edge">
+<title>ancestor_3&#45;&#45;ancestor_2</title>
+<path fill="none" stroke="black" d="M60.5,-287.7C60.5,-276.85 60.5,-262.92 60.5,-252.1"/>
+</g>
+<!-- ancestor_4 -->
+<g id="node6" class="node">
+<title>ancestor_4</title>
+<g id="a_node6"><a xlink:title="GObject.Object">
+<path fill="none" stroke="black" d="M79.38,-396C79.38,-396 41.62,-396 41.62,-396 35.62,-396 29.62,-390 29.62,-384 29.62,-384 29.62,-372 29.62,-372 29.62,-366 35.62,-360 41.62,-360 41.62,-360 79.38,-360 79.38,-360 85.38,-360 91.38,-366 91.38,-372 91.38,-372 91.38,-384 91.38,-384 91.38,-390 85.38,-396 79.38,-396"/>
+<text xml:space="preserve" text-anchor="middle" x="60.5" y="-371.82" font-family="Times,serif" font-size="14.00">GObject</text>
+</a>
+</g>
+</g>
+<!-- ancestor_4&#45;&#45;ancestor_3 -->
+<g id="edge1" class="edge">
+<title>ancestor_4&#45;&#45;ancestor_3</title>
+<path fill="none" stroke="black" d="M60.5,-359.7C60.5,-348.85 60.5,-334.92 60.5,-324.1"/>
+</g>
+</g>
+</svg>
+
+      </div>
+    </div>
+    
+
+    
+    <div class="toggle-wrapper ancestors">
+      <h4 id="ancestors">
+        Ancestors
+        <a href="#ancestors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <ul>
+        
+          
+          <li class="class"><a href="class.Gesture.html" title="Gesture">ClutterGesture</a></li>
+          
+        
+          
+          <li class="class"><a href="class.Action.html" title="Action">ClutterAction</a></li>
+          
+        
+          
+          <li class="class"><a href="class.ActorMeta.html" title="ActorMeta">ClutterActorMeta</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.InitiallyUnowned.html" data-namespace="GObject">GInitiallyUnowned</a></li>
+          
+        
+          
+          <li class="class"><a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a></li>
+          
+        
+        </ul>
+      </div>
+    </div>
+    
+
+    
+
+    
+
+    
+    <div class="toggle-wrapper constructors">
+      <h4 id="constructors">
+        Constructors
+        <a href="#constructors" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="ctor.PanGesture.new.html">clutter_pan_gesture_new</a></h6>
+          <div class="docblock">
+            <p>Creates a new <code>ClutterPanGesture</code> instance.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    
+
+    
+
+    
+    <div class="toggle-wrapper methods">
+      <h4 id="methods">
+        Instance methods
+        <a href="#methods" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_accumulated_delta.html">clutter_pan_gesture_get_accumulated_delta</a></h6>
+          <div class="docblock">
+            <p>Retrieves the accumulated delta from all events (ie. the total delta that the
+pan has been moved) as <code>accumulated_delta_out</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_accumulated_delta_abs.html">clutter_pan_gesture_get_accumulated_delta_abs</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_begin_centroid.html">clutter_pan_gesture_get_begin_centroid</a></h6>
+          <div class="docblock">
+            <p>Retrieves the begin centroid of <code>self</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_begin_centroid_abs.html">clutter_pan_gesture_get_begin_centroid_abs</a></h6>
+          <div class="docblock">
+            <p>Retrieves the begin centroid of <code>self</code> in absolute&nbsp;coordinates.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_begin_threshold.html">clutter_pan_gesture_get_begin_threshold</a></h6>
+          <div class="docblock">
+            <p>Gets the movement threshold in pixels that begins the pan&nbsp;gesture.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_button.html">clutter_pan_gesture_get_button</a></h6>
+          <div class="docblock">
+            <p>Retrieves the button that is currently&nbsp;pressed.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_centroid.html">clutter_pan_gesture_get_centroid</a></h6>
+          <div class="docblock">
+            <p>Retrieves the current centroid of the points active on <code>self</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_centroid_abs.html">clutter_pan_gesture_get_centroid_abs</a></h6>
+          <div class="docblock">
+            <p>Retrieves the current centroid of the points active on <code>self</code> in
+absolute&nbsp;coordinates.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_delta.html">clutter_pan_gesture_get_delta</a></h6>
+          <div class="docblock">
+            <p>Retrieves the delta between the current ::pan-update signal emission and the
+one before as <code>delta_out</code>.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_delta_abs.html">clutter_pan_gesture_get_delta_abs</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_max_n_points.html">clutter_pan_gesture_get_max_n_points</a></h6>
+          <div class="docblock">
+            <p>Gets the maximum number of points set by&nbsp;clutter_pan_gesture_set_max_n_points().</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_min_n_points.html">clutter_pan_gesture_get_min_n_points</a></h6>
+          <div class="docblock">
+            <p>Gets the minimum number of points set by&nbsp;clutter_pan_gesture_set_min_n_points().</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_pan_axis.html">clutter_pan_gesture_get_pan_axis</a></h6>
+          <div class="docblock">
+            <p>Retrieves the axis constraint set by&nbsp;clutter_pan_gesture_set_pan_axis().</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_required_button.html">clutter_pan_gesture_get_required_button</a></h6>
+          <div class="docblock">
+            <p>Gets the mouse button required for the pan gesture to&nbsp;recognize.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_state.html">clutter_pan_gesture_get_state</a></h6>
+          <div class="docblock">
+            <p>Retrieves the current modifier state of the pan&nbsp;gesture.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_velocity.html">clutter_pan_gesture_get_velocity</a></h6>
+          <div class="docblock">
+            <p>Retrieves the current velocity of the&nbsp;pan.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.get_velocity_abs.html">clutter_pan_gesture_get_velocity_abs</a></h6>
+          <div class="docblock">
+            No description available.
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.set_begin_threshold.html">clutter_pan_gesture_set_begin_threshold</a></h6>
+          <div class="docblock">
+            <p>Sets the movement threshold in pixels to begin the pan&nbsp;gesture.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.set_max_n_points.html">clutter_pan_gesture_set_max_n_points</a></h6>
+          <div class="docblock">
+            <p>Sets the maximum number of points to use for the pan. Set to 0 to allow
+an unlimited&nbsp;number.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.set_min_n_points.html">clutter_pan_gesture_set_min_n_points</a></h6>
+          <div class="docblock">
+            <p>Sets the minimum number of points for the gesture to&nbsp;start.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.set_pan_axis.html">clutter_pan_gesture_set_pan_axis</a></h6>
+          <div class="docblock">
+            <p>Restricts the pan gesture to a specific&nbsp;axis.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="method.PanGesture.set_required_button.html">clutter_pan_gesture_set_required_button</a></h6>
+          <div class="docblock">
+            <p>Sets the mouse button required for the pan gesture to recognize.
+Pass 0 to allow any button. Touch input is always handled as a press
+of the primary&nbsp;button.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Gesture.html">ClutterGesture</a> (14)</h5><div class="docblock">
+          
+            <h6><a href="method.Gesture.can_not_cancel.html">clutter_gesture_can_not_cancel</a></h6><div class="docblock">
+              <p>In case <code>self</code> and <code>other_gesture</code> are operating on the same points, calling
+this function will make sure that <code>self</code> does not cancel <code>other_gesture</code>
+when <code>self</code> moves to state <span class="caps">RECOGNIZING</span>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.cancel.html">clutter_gesture_cancel</a></h6><div class="docblock">
+              <p>Cancels the gesture by setting its state to <span class="caps">CANCELLED</span>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_n_points.html">clutter_gesture_get_n_points</a></h6><div class="docblock">
+              <p>Retrieves the number of active points the gesture currently&nbsp;has.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_point_begin_coords.html">clutter_gesture_get_point_begin_coords</a></h6><div class="docblock">
+              <p>Retrieves the begin coordinates of the point with index <code>point_index</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_point_begin_coords_abs.html">clutter_gesture_get_point_begin_coords_abs</a></h6><div class="docblock">
+              No description available.
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_point_coords.html">clutter_gesture_get_point_coords</a></h6><div class="docblock">
+              <p>Retrieves the latest coordinates of the point with index <code>point_index</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_point_coords_abs.html">clutter_gesture_get_point_coords_abs</a></h6><div class="docblock">
+              No description available.
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_point_event.html">clutter_gesture_get_point_event</a></h6><div class="docblock">
+              <p>Retrieves the the latest event of the point with index <code>point_index</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_point_previous_coords.html">clutter_gesture_get_point_previous_coords</a></h6><div class="docblock">
+              <p>Retrieves the previous coordinates of the point with index <code>point_index</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_point_previous_coords_abs.html">clutter_gesture_get_point_previous_coords_abs</a></h6><div class="docblock">
+              No description available.
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_points.html">clutter_gesture_get_points</a></h6><div class="docblock">
+              <p>Retrieves an array of the currently active points of the gesture, the array is
+ordered in the order the points were added in (newest to&nbsp;oldest).</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.get_state.html">clutter_gesture_get_state</a></h6><div class="docblock">
+              <p>Gets the current state of the&nbsp;gesture.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.reset_state_machine.html">clutter_gesture_reset_state_machine</a></h6><div class="docblock">
+              No description available.
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.Gesture.set_state.html">clutter_gesture_set_state</a></h6><div class="docblock">
+              <p>Sets the state of the gesture. This method is private to gesture&nbsp;implementations.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.Action.html">ClutterAction</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="method.Action.get_phase.html">clutter_action_get_phase</a></h6><div class="docblock">
+              No description available.
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods">
+          <h5 style="display:block;">Methods inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="method.ActorMeta.get_actor.html">clutter_actor_meta_get_actor</a></h6><div class="docblock">
+              <p>Retrieves a pointer to the <code>ClutterActor</code> that owns <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_enabled.html">clutter_actor_meta_get_enabled</a></h6><div class="docblock">
+              <p>Retrieves whether <code>meta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.get_name.html">clutter_actor_meta_get_name</a></h6><div class="docblock">
+              <p>Retrieves the name set using <code>clutter_actor_meta_set_name()</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_enabled.html">clutter_actor_meta_set_enabled</a></h6><div class="docblock">
+              <p>Sets whether <code>meta</code> should be enabled or&nbsp;not.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="method.ActorMeta.set_name.html">clutter_actor_meta_set_name</a></h6><div class="docblock">
+              <p>Sets the name of <code>meta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-methods"><h5 style="display:block;">Methods inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (43)</h5>
+          <div class="docblock">
+          
+            <div class="docblock">
+              <p>Please see&nbsp;<a class="external" href="javascript:void(0)" data-link="class.Object.html#methods" data-namespace="GObject">GObject</a>&nbsp;for a full list of methods.</em></p>
+            </div>
+          
+          </div>
+        </div>
+        
+      
+
+      
+    </div>
+    
+
+    
+    <div class="toggle-wrapper properties">
+      <h4 id="properties">
+        Properties
+        <a href="#properties" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="property.PanGesture.begin-threshold.html">Clutter.PanGesture:begin-threshold</a></h6>
+          <div class="docblock">
+            <p>The threshold in pixels that has to be panned for the gesture to&nbsp;start.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.PanGesture.max-n-points.html">Clutter.PanGesture:max-n-points</a></h6>
+          <div class="docblock">
+            <p>The maximum number of points to use for the pan. Set to 0 to allow
+an unlimited number. Defaults to&nbsp;0.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.PanGesture.min-n-points.html">Clutter.PanGesture:min-n-points</a></h6>
+          <div class="docblock">
+            <p>The minimum number of points for the gesture to start, defaults to&nbsp;1.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.PanGesture.pan-axis.html">Clutter.PanGesture:pan-axis</a></h6>
+          <div class="docblock">
+            <p>Constraints the pan gesture to the specified&nbsp;axis.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+        <div class="">
+          <h6><a href="property.PanGesture.required-button.html">Clutter.PanGesture:required-button</a></h6>
+          <div class="docblock">
+            <p>The mouse button required for the pan gesture to recognize.
+Pass 0 to allow any button. Touch input is always handled as a press
+of the primary&nbsp;button.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="class.Gesture.html">ClutterGesture</a> (1)</h5><div class="docblock">
+          
+            <h6><a href="property.Gesture.state.html">Clutter.Gesture:state</a></h6><div class="docblock">
+              <p>The current state of the&nbsp;gesture.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-properties">
+          <h5 style="display:block;">Properties inherited from <a href="class.ActorMeta.html">ClutterActorMeta</a> (3)</h5><div class="docblock">
+          
+            <h6><a href="property.ActorMeta.actor.html">Clutter.ActorMeta:actor</a></h6><div class="docblock">
+              <p>The <code>ClutterActor</code> attached to the <code>ClutterActorMeta</code> instance.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.enabled.html">Clutter.ActorMeta:enabled</a></h6><div class="docblock">
+              <p>Whether or not the <code>ClutterActorMeta</code> is&nbsp;enabled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="property.ActorMeta.name.html">Clutter.ActorMeta:name</a></h6><div class="docblock">
+              <p>The unique name to access the <code>ClutterActorMeta</code>.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="signals toggle-wrapper">
+      <h4 id="signals">
+        Signals
+        <a href="#signals" class="anchor"></a>
+      </h4>
+
+      
+      <div class="docblock">
+      
+        <div class="">
+          <h6><a href="signal.PanGesture.pan-update.html">Clutter.PanGesture::pan-update</a></h6>
+          <div class="docblock">
+            <p>The ::pan-update signal is emitted when one or multiple points
+of the pan have&nbsp;changed.</p>
+          </div>
+          <div class="docblock">
+            <p></p>
+          </div>
+        </div>
+      
+      </div>
+      
+
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals">
+          <h5 style="display:block;">Signals inherited from <a href="class.Gesture.html">ClutterGesture</a> (5)</h5><div class="docblock">
+          
+            <h6><a href="signal.Gesture.cancel.html">ClutterGesture::cancel</a></h6><div class="docblock">
+              <p>The ::cancel signal is emitted when a continuous gesture got&nbsp;cancelled.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="signal.Gesture.end.html">ClutterGesture::end</a></h6><div class="docblock">
+              <p>The ::end signal is emitted when a continuous gesture&nbsp;ends.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="signal.Gesture.may-recognize.html">ClutterGesture::may-recognize</a></h6><div class="docblock">
+              <p>The ::may-recognize signal is emitted if the gesture might become
+active and move to <span class="caps">RECOGNIZING</span>. Its purpose is to allow the
+implementation or a user of a gesture to prohibit the gesture
+from starting when&nbsp;needed.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="signal.Gesture.recognize.html">ClutterGesture::recognize</a></h6><div class="docblock">
+              <p>The ::recognize signal is emitted when the gesture&nbsp;recognizes.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+            <h6><a href="signal.Gesture.should-handle-sequence.html">ClutterGesture::should-handle-sequence</a></h6><div class="docblock">
+              <p>The ::should-handle-sequence signal is emitted when a sequence gets added
+to the gesture. Return <code>FALSE</code> to make the gesture ignore the sequence of&nbsp;events.</p>
+            </div>
+            <div class="docblock">
+              <p></p>
+            </div>
+            
+          </div>
+        </div>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+        <div class="toggle-wrapper default-hide ancestor-signals"><h5 style="display:block;">Signals inherited from <a class="external" href="javascript:void(0)" data-link="class.Object.html" data-namespace="GObject">GObject</a> (1)</h5>
+          <div class="docblock">
+          <h6><a class="external" href="javascript:void(0)" data-namespace="GObject" data-link="signal.Object.notify.html">GObject::notify</a></h6>
+            <div class="docblock">
+              <p>The notify signal is emitted on an object when one of its properties has
+its value set through g_object_set_property(), g_object_set(), et&nbsp;al.</p>
+            </div>
+          </div>
+        </div>
+        
+      
+
+      
+
+    </div>
+    
+
+    
+    <div class="class toggle-wrapper default-hide">
+      <h4 id="class-struct">
+        Class structure
+        <a href="#class-struct" class="anchor"></a>
+      </h4>
+
+      <div class="docblock">
+        <pre><code>struct ClutterPanGestureClass {
+  ClutterGestureClass parent_class;
+  
+}</code></pre>
+      </div>
+
+      <div class="docblock">
+        <p>No description available.</p>
+      </div>
+
+      
+      <div class="docblock">
+        <h6>Class members</h6>
+
+        <dl class="members">
+        
+          <dt><code>parent_class: ClutterGestureClass</code></dt>
+          <dd><p>No description available.</p></dd>
+        
+        </dd>
+      </div>
+      
+    </div>
+    
+
+    
+
+    
+
+  </section>
+</section>
+
+
+    
+<div id="toc" class="toc">
+  <nav aria-labelledby="toc-title">
+    <p id="toc-title">Content</p>
+    <ul class="toc-list">
+      <li class="toc-list-item"><a href="#description"><span class="link-text">Description</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#hierarchy"><span class="link-text">Hierarchy</span></a></li>
+      
+      
+      <li class="toc-list-item"><a href="#ancestors"><span class="link-text">Ancestors</span></a></li>
+      
+      
+      
+<li class="toc-list-item"><a href="#constructors"><span class="link-text">Constructors</span></a></li>
+
+
+      
+
+      
+<li class="toc-list-item"><a href="#methods"><span class="link-text">Methods</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#properties"><span class="link-text">Properties</span></a></li>
+
+
+      
+<li class="toc-list-item"><a href="#signals"><span class="link-text">Signals</span></a></li>
+
+
+      
+
+      
+
+    </ul>
+  </nav>
+</div>
+
+
+    <section id="search" class="content hidden"></section>
+
+    <footer>
+    
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,2746 @@
+WebEngineView QML Type | Qt WebEngine 6.140.0
+Back to Doc.qt.io
+Contact Us
+Blog
+Download Qt
+Archives
+6.140.0 ('6.140' branch)
+Qt WebEngine
+QML Types
+WebEngineView
+On this page
+WebEngineView QML Type
+A WebEngineView renders web content within a QML application.
+More...
+Import Statement:
+import QtWebEngine
+Since:
+QtWebEngine 1.0
+Inherits:
+Item
+List of all members, including inherited members
+Deprecated members
+Properties
+ErrorDomain
+: enumeration
+FindFlags
+: enumeration
+JavaScriptConsoleMessageLevel
+: enumeration
+LifecycleState
+: enumeration
+(since QtWebEngine 1.10)
+LoadStatus
+: enumeration
+PrintedPageOrientation
+: enumeration
+(since QtWebEngine 1.3)
+PrintedPageSizeId
+: enumeration
+(since QtWebEngine 1.3)
+RenderProcessTerminationStatus
+: enumeration
+(since QtWebEngine 1.2)
+WebAction
+: enumeration
+(since QtWebEngine 1.2)
+activeFocusOnPress
+: bool
+(since QtWebEngine 1.2)
+audioMuted
+: bool
+(since QtWebEngine 1.3)
+backgroundColor
+: color
+(since QtWebEngine 1.2)
+canGoBack
+: bool
+canGoForward
+: bool
+contentsSize
+: size
+(since QtWebEngine 1.3)
+devToolsId
+: WebEngineView
+(since QtWebEngine 6.6)
+devToolsView
+: WebEngineView
+(since QtWebEngine 1.7)
+history
+: WebEngineHistory
+(since QtWebEngine 1.1)
+icon
+: url
+inspectedView
+: WebEngineView
+(since QtWebEngine 1.7)
+isFullScreen
+: bool
+(since QtWebEngine 1.1)
+lifecycleState
+: LifecycleState
+(since QtWebEngine 1.10)
+loadProgress
+: int
+loading
+: bool
+mainFrame
+: webEngineFrame
+(since QtWebEngine 6.8)
+profile
+: WebEngineProfile
+(since QtWebEngine 1.1)
+recentlyAudible
+: bool
+(since QtWebEngine 1.3)
+recommendedState
+: LifecycleState
+(since QtWebEngine 1.10)
+renderProcessPid
+: qint64
+(since QtWebEngine 1.11)
+scrollPosition
+: point
+(since QtWebEngine 1.3)
+settings
+: WebEngineSettings
+(since QtWebEngine 1.1)
+title
+: string
+touchHandleDelegate
+: Component
+(since QtWebEngine 6.4)
+url
+: url
+userScripts
+: WebEngineScriptCollection
+(since QtWebEngine 1.1)
+webChannel
+: QQmlWebChannel
+(since QtWebEngine 1.1)
+webChannelWorld
+: int
+(since QtWebEngine 1.3)
+zoomFactor
+: real
+(since QtWebEngine 1.1)
+Signals
+activeFocusOnPressChanged
+(bool
+activeFocusOnPress
+)
+(since QtWebEngine 1.2)
+audioMutedChanged
+(bool
+muted
+)
+(since QtWebEngine 1.3)
+authenticationDialogRequested
+(AuthenticationDialogRequest
+request
+)
+(since QtWebEngine 1.4)
+backgroundColorChanged
+()
+(since QtWebEngine 1.2)
+certificateError
+(WebEngineCertificateError
+error
+)
+(since QtWebEngine 1.1)
+colorDialogRequested
+(ColorDialogRequest
+request
+)
+(since QtWebEngine 1.4)
+contextMenuRequested
+(ContextMenuRequest
+request
+)
+(since QtWebEngine 1.4)
+desktopMediaRequested
+(webEngineDesktopMediaRequest
+request
+)
+(since QtWebEngine 6.7)
+fileDialogRequested
+(FileDialogRequest
+request
+)
+(since QtWebEngine 1.4)
+findTextFinished
+(findTextResult
+result
+)
+(since QtWebEngine 1.10)
+fullScreenRequested
+(FullScreenRequest
+request
+)
+(since QtWebEngine 1.1)
+geometryChangeRequested
+(rect
+geometry
+, rect
+frameGeometry
+)
+(since QtWebEngine 1.7)
+javaScriptConsoleMessage
+(JavaScriptConsoleMessageLevel
+level
+, string
+message
+, int
+lineNumber
+, string
+sourceID
+)
+javaScriptDialogRequested
+(JavaScriptDialogRequest
+request
+)
+(since QtWebEngine 1.4)
+linkHovered
+(url
+hoveredUrl
+)
+loadingChanged
+(WebEngineLoadingInfo
+loadingInfo
+)
+navigationRequested
+(WebEngineNavigationRequest
+request
+)
+newWindowRequested
+(WebEngineNewWindowRequest
+request
+)
+(since QtWebEngine 2.0)
+pdfPrintingFinished
+(string
+filePath
+, bool
+success
+)
+(since QtWebEngine 1.5)
+permissionRequested
+(webEnginePermission
+permission
+)
+(since QtWebEngine 6.8)
+printRequested
+()
+(since QtWebEngine 1.8)
+printRequestedByFrame
+(webEngineFrame
+frame
+)
+(since QtWebEngine 6.8)
+recentlyAudibleChanged
+(bool
+recentlyAudible
+)
+(since QtWebEngine 1.3)
+registerProtocolHandlerRequested
+(registerProtocolHandlerRequest
+request
+)
+(since QtWebEngine 1.7)
+renderProcessPidChanged
+(qint64
+pid
+)
+(since QtWebEngine 1.11)
+renderProcessTerminated
+(RenderProcessTerminationStatus
+terminationStatus
+, int
+exitCode
+)
+(since QtWebEngine 1.2)
+selectClientCertificate
+(WebEngineClientCertificateSelection
+clientCertificateSelection
+)
+(since QtWebEngine 1.9)
+tooltipRequested
+(TooltipRequest
+request
+)
+(since QtWebEngine 1.10)
+touchSelectionMenuRequested
+(TouchSelectionMenuRequest
+request
+)
+(since QtWebEngine 6.3)
+wasRecentlyAudibleChanged
+(bool
+wasRecentlyAudible
+)
+(since QtWebEngine 1.3)
+webAuthUxRequested
+(WebEngineWebAuthUxRequest
+request
+)
+(since QtWebEngine 6.7)
+windowCloseRequested
+()
+(since QtWebEngine 1.2)
+zoomFactorChanged
+(qreal
+factor
+)
+(since QtWebEngine 6.8)
+Methods
+void
+acceptAsNewWindow
+(WebEngineNewWindowRequest
+request
+)
+(since QtWebEngine 2.0)
+WebEngineAction
+action
+(WebAction
+action
+)
+webEngineFrame
+findFrameByName
+(string
+name
+)
+(since QtWebEngine 6.8)
+void
+findText
+(string
+subString
+)
+(since QtWebEngine 1.1)
+void
+findText
+(string
+subString
+, FindFlags
+options
+)
+(since QtWebEngine 1.1)
+void
+findText
+(string
+subString
+, FindFlags
+options
+, variant
+resultCallback
+)
+(since QtWebEngine 1.1)
+void
+fullScreenCancelled
+()
+(since QtWebEngine 1.1)
+void
+goBack
+()
+void
+goBackOrForward
+(int
+offset
+)
+(since QtWebEngine 1.1)
+void
+goForward
+()
+void
+loadHtml
+(string
+html
+, url
+baseUrl
+)
+void
+printToPdf
+(const string
+filePath
+, PrintedPageSizeId
+pageSizeId
+, PrintedPageOrientation
+orientation
+)
+(since QtWebEngine 1.3)
+void
+printToPdf
+(variant
+resultCallback
+, PrintedPageSizeId
+pageSizeId
+, PrintedPageOrientation
+orientation
+)
+(since QtWebEngine 1.3)
+void
+reload
+()
+void
+reloadAndBypassCache
+()
+(since QtWebEngine 1.1)
+void
+replaceMisspelledWord
+(const string
+replacement
+)
+(since QtWebEngine 1.3)
+void
+runJavaScript
+(string
+script
+, variant
+callback
+)
+void
+runJavaScript
+(string
+script
+, int
+worldId
+, variant
+callback
+)
+void
+save
+(string
+filePath
+, WebEngineDownloadRequest.SavePageFormat
+format
+)
+(since QtWebEngine 6.6)
+void
+setActiveFocusOnPress
+(bool
+arg
+)
+(since QtWebEngine 1.2)
+void
+stop
+()
+void
+triggerWebAction
+(WebAction
+action
+)
+(since QtWebEngine 1.2)
+Detailed Description
+The WebEngineView type enables QML applications to render regions of dynamic web content. It may share the screen with other QML types, such as a TabView, or fill the screen, as specified within the QML application.
+Initializing Web Engine
+For the web engine view to be rendered, the web engine must be initialized by using
+QtWebEngineQuick::initialize
+in the application main source file, as illustrated by the following code snippet:
+int
+main(
+int
+argc
+,
+char
+*
+argv
+[
+]
+)
+{
+QCoreApplication
+::
+setAttribute(
+Qt
+::
+AA_ShareOpenGLContexts);
+QtWebEngineQuick
+::
+initialize();
+QGuiApplication
+app(argc
+,
+argv);
+QQmlApplicationEngine
+engine;
+    engine
+.
+load(
+QUrl
+(
+QStringLiteral
+(
+"qrc:/main.qml"
+)));
+return
+app
+.
+exec();
+}
+Loading Web Pages
+An application can load pages into the WebEngineView using either the
+url
+property, or the
+loadHtml
+method. The GET method is always used to load URLs.
+The history is represented by a
+WebEngineHistory
+data model that is held by the
+history
+property.
+The following sample QML application loads a web page using the
+url
+property:
+import QtQuick
+import QtQuick.Window
+import QtWebEngine
+Window
+{
+width
+:
+1024
+height
+:
+750
+visible
+:
+true
+WebEngineView
+{
+anchors.fill
+:
+parent
+url
+:
+"https://www.qt.io"
+}
+}
+The
+loading
+property holds whether an HTML page is currently loading. The
+loadingChanged
+() signal is emitted when loading the page begins, ends, or fails.
+The title of an HTML page can be accessed with the
+title
+property. Additionally, a web page may specify an icon, which can be accessed using the
+icon
+property. The
+zoomFactor
+property enables zooming the contents of the web page by a scale factor.
+If a certificate error is raised while loading a web page, the
+certificateError
+() signal is emitted. Certificate errors are handled by using the methods of the WebEngineCertificateError type.
+Interaction
+By default, links to different pages load within the same WebEngineView object, but web sites may request them to be opened as a new tab, window, or dialog. The
+newWindowRequested
+() signal is emitted when a request to load the page in a separate web engine view is issued. The NewViewDestination property describes how the new view should be opened. In addition, the
+WebEngineNewWindowRequest
+utility type can be used to load web pages in separate web engine views.
+The
+findText
+() method can be used to search for a string on a web page, using the options described by
+FindFlags
+.
+The
+setActiveFocusOnPress
+() method can be used to create a UI element that should not get focus on press. This can be useful in a hybrid UI.
+The
+focusOnNavigationEnabled
+setting can be used to make the view automatically receive focus when a navigation operation occurs (like loading or reloading a page, or navigating through history).
+The
+linkHovered
+() signal is emitted when a mouse pointer passes over a link and thus corresponds to the
+mouseover
+DOM event.
+Actions, such as selecting and editing content, can be performed on a web page by using the
+triggerWebAction
+() method. The available actions are described by the
+WebAction
+property.
+The
+backgroundColorChanged
+() signal is emitted when the web page background color changes.
+User Scripts
+During the loading of a page, so called
+user scripts
+can be injected in the JavaScript engine at different points. The script objects attached to the web engine view are held by the
+userScripts
+property and injected by using the WebEngineScript type. Scripts can also be run by using the
+runJavaScript
+() method in the same world as other scripts that are part of the loaded site.
+The
+webChannel
+property can be used to expose a WebChannel instance in the JavaScript context of the page it is rendering as
+qt.webChannelTransport
+.
+Fullscreen Mode
+A web page can request through the JavaScript API to be loaded in fullscreen mode. The
+fullScreenRequested
+() signal is emitted when the web page issues the request. The FullScreenRequest utility type can be used to toggle fullscreen requests. The
+fullScreenCancelled
+method can be used to notify the web engine when the windowing system forces the application to leave fullscreen mode.
+Profiles
+Web engine views can be isolated from each other by using the
+WebEngineProfile
+type. A profile contains settings, scripts, and the list of visited links shared by all views that belong to the profile. For example, a dedicated profile could be created for a
+private browsing
+mode. The current profile for the view is held by the
+profile
+property and the current settings are held by the
+settings
+property. The settings are specified by using the
+WebEngineSettings
+type.
+Platform Features
+Web pages can request access to platform features such as geolocation, or audio and video capture devices. The
+permissionRequested
+() signal is emitted when a web page requests to make use of a resource. The supported platform features are described by the WebEnginePermission::Feature property.
+Rendering to OpenGL Surface
+When using a
+QQuickRenderControl
+to render a Qt Quick user interface to an OpenGL surface, the WebEngineView type is not rendered correctly. The web engine view attempts to use a global OpenGL context created by
+QtWebEngineQuick::initialize
+, but there is no public API for accessing that context in order to share it with the
+QQuickRenderControl
+context.
+To have the web engine view rendered correctly, it is possible to manually create a new offscreen context that is shared with the
+QQuickRenderControl
+and to call the non-public function
+qt_gl_set_global_share_context()
+, rather than calling
+initialize()
+. If
+initialize()
+is called after setting a global context, it will do nothing.
+Property Documentation
+ErrorDomain
+:
+enumeration
+Describes various high-level error types:
+Constant
+Description
+WebEngineView.NoErrorDomain
+WebEngineView.InternalErrorDomain
+Content fails to be interpreted by Qt WebEngine.
+WebEngineView.ConnectionErrorDomain
+Error results from faulty network connection.
+WebEngineView.CertificateErrorDomain
+Error related to the SSL/TLS certificate.
+WebEngineView.HttpErrorDomain
+Error related to the HTTP connection.
+WebEngineView.FtpErrorDomain
+Error related to the FTP connection.
+WebEngineView.DnsErrorDomain
+Error related to the DNS connection.
+FindFlags
+:
+enumeration
+Describes the options available to the
+findText
+() function. The options can be OR-ed together from the following list:
+Constant
+Description
+WebEngineView.FindBackward
+Searches backwards instead of forwards.
+WebEngineView.FindFlags
+FindCaseSensitively By default
+findText
+() works case insensitive. Specifying this option changes the behavior to a case sensitive find operation.
+See also
+findText
+().
+JavaScriptConsoleMessageLevel
+:
+enumeration
+Indicates the severity of a JavaScript console message:
+Constant
+Description
+WebEngineView.InfoMessageLevel
+Message is purely informative and can safely be ignored.
+WebEngineView.WarningMessageLevel
+Message indicates there might be a problem that may need attention.
+WebEngineView.ErrorMessageLevel
+Message indicates there has been an error.
+LifecycleState
+:
+enumeration
+[since QtWebEngine 1.10]
+This enum describes the lifecycle state of the page:
+Constant
+Description
+WebEngineView.LifecycleState.Active
+Normal state.
+WebEngineView.LifecycleState.Frozen
+Low CPU usage state where most HTML task sources are suspended.
+WebEngineView.LifecycleState.Discarded
+Very low resource usage state where the entire browsing context is discarded.
+This property was introduced in QtWebEngine 1.10.
+See also
+lifecycleState
+,
+Page Lifecycle API
+, and
+WebEngine Lifecycle Example
+.
+LoadStatus
+:
+enumeration
+Reflects a page's load status:
+Constant
+Description
+WebEngineView.LoadStartedStatus
+Page is currently loading.
+WebEngineView.LoadStoppedStatus
+Loading the page was stopped by the
+stop
+() method or by the loader code or network stack in Chromium.
+WebEngineView.LoadSucceededStatus
+Page has successfully loaded, and is not currently loading.
+WebEngineView.LoadFailedStatus
+Page has failed to load, and is not currently loading.
+PrintedPageOrientation
+:
+enumeration
+[since QtWebEngine 1.3]
+Describes the orientation of a PDF document that gets created from the
+WebEngineView
+'s contents. The enumeration values are mapped from and must match
+QPageLayout::Orientation
+.
+Constant
+Description
+WebEngineView.Portrait
+The document will be created using portrait orientation.
+WebEngineView.Landscape
+The document will be created using landscape orientation.
+This property was introduced in QtWebEngine 1.3.
+See also
+WebEngineView::printToPdf
+().
+PrintedPageSizeId
+:
+enumeration
+[since QtWebEngine 1.3]
+This enum type lists the available page sizes as defined in the Postscript PPD standard.
+The enumeration values are mapped from and must match
+QPageSize::PageSizeId
+. They are also duplicated in
+QPagedPaintDevice
+and
+QPrinter
+.
+The defined sizes are:
+Constant
+Description
+WebEngineView.A0
+841 x 1189 mm
+WebEngineView.A1
+594 x 841 mm
+WebEngineView.A2
+420 x 594 mm
+WebEngineView.A3
+297 x 420 mm
+WebEngineView.A4
+210 x 297 mm, 8.26 x 11.69 inches
+WebEngineView.A5
+148 x 210 mm
+WebEngineView.A6
+105 x 148 mm
+WebEngineView.A7
+74 x 105 mm
+WebEngineView.A8
+52 x 74 mm
+WebEngineView.A9
+37 x 52 mm
+WebEngineView.B0
+1000 x 1414 mm
+WebEngineView.B1
+707 x 1000 mm
+WebEngineView.B2
+500 x 707 mm
+WebEngineView.B3
+353 x 500 mm
+WebEngineView.B4
+250 x 353 mm
+WebEngineView.B5
+176 x 250 mm, 6.93 x 9.84 inches
+WebEngineView.B6
+125 x 176 mm
+WebEngineView.B7
+88 x 125 mm
+WebEngineView.B8
+62 x 88 mm
+WebEngineView.B9
+44 x 62 mm
+WebEngineView.B10
+31 x 44 mm
+WebEngineView.C5E
+163 x 229 mm
+WebEngineView.Comm10E
+105 x 241 mm, U.S. Common 10 Envelope
+WebEngineView.DLE
+110 x 220 mm
+WebEngineView.Executive
+7.5 x 10 inches, 190.5 x 254 mm
+WebEngineView.Folio
+210 x 330 mm
+WebEngineView.Ledger
+431.8 x 279.4 mm
+WebEngineView.Legal
+8.5 x 14 inches, 215.9 x 355.6 mm
+WebEngineView.Letter
+8.5 x 11 inches, 215.9 x 279.4 mm
+WebEngineView.Tabloid
+279.4 x 431.8 mm
+WebEngineView.Custom
+Unknown, or a user defined size.
+WebEngineView.A10
+WebEngineView.A3Extra
+WebEngineView.A4Extra
+WebEngineView.A4Plus
+WebEngineView.A4Small
+WebEngineView.A5Extra
+WebEngineView.B5Extra
+WebEngineView.JisB0
+WebEngineView.JisB1
+WebEngineView.JisB2
+WebEngineView.JisB3
+WebEngineView.JisB4
+WebEngineView.JisB5
+WebEngineView.JisB6
+WebEngineView.JisB7
+WebEngineView.JisB8
+WebEngineView.JisB9
+WebEngineView.JisB10
+WebEngineView.AnsiA
+=
+Letter
+WebEngineView.AnsiB
+=
+Ledger
+WebEngineView.AnsiC
+WebEngineView.AnsiD
+WebEngineView.AnsiE
+WebEngineView.LegalExtra
+WebEngineView.LetterExtra
+WebEngineView.LetterPlus
+WebEngineView.LetterSmall
+WebEngineView.TabloidExtra
+WebEngineView.ArchA
+WebEngineView.ArchB
+WebEngineView.ArchC
+WebEngineView.ArchD
+WebEngineView.ArchE
+WebEngineView.Imperial7x9
+WebEngineView.Imperial8x10
+WebEngineView.Imperial9x11
+WebEngineView.Imperial9x12
+WebEngineView.Imperial10x11
+WebEngineView.Imperial10x13
+WebEngineView.Imperial10x14
+WebEngineView.Imperial12x11
+WebEngineView.Imperial15x11
+WebEngineView.ExecutiveStandard
+WebEngineView.Note
+WebEngineView.Quarto
+WebEngineView.Statement
+WebEngineView.SuperA
+WebEngineView.SuperB
+WebEngineView.Postcard
+WebEngineView.DoublePostcard
+WebEngineView.Prc16K
+WebEngineView.Prc32K
+WebEngineView.Prc32KBig
+WebEngineView.FanFoldUS
+WebEngineView.FanFoldGerman
+WebEngineView.FanFoldGermanLegal
+WebEngineView.EnvelopeB4
+WebEngineView.EnvelopeB5
+WebEngineView.EnvelopeB6
+WebEngineView.EnvelopeC0
+WebEngineView.EnvelopeC1
+WebEngineView.EnvelopeC2
+WebEngineView.EnvelopeC3
+WebEngineView.EnvelopeC4
+WebEngineView.EnvelopeC5
+=
+C5E
+WebEngineView.EnvelopeC6
+WebEngineView.EnvelopeC65
+WebEngineView.EnvelopeC7
+WebEngineView.EnvelopeDL
+=
+DLE
+WebEngineView.Envelope9
+WebEngineView.Envelope10
+=
+Comm10E
+WebEngineView.Envelope11
+WebEngineView.Envelope12
+WebEngineView.Envelope14
+WebEngineView.EnvelopeMonarch
+WebEngineView.EnvelopePersonal
+WebEngineView.EnvelopeChou3
+WebEngineView.EnvelopeChou4
+WebEngineView.EnvelopeInvite
+WebEngineView.EnvelopeItalian
+WebEngineView.EnvelopeKaku2
+WebEngineView.EnvelopeKaku3
+WebEngineView.EnvelopePrc1
+WebEngineView.EnvelopePrc2
+WebEngineView.EnvelopePrc3
+WebEngineView.EnvelopePrc4
+WebEngineView.EnvelopePrc5
+WebEngineView.EnvelopePrc6
+WebEngineView.EnvelopePrc7
+WebEngineView.EnvelopePrc8
+WebEngineView.EnvelopePrc9
+WebEngineView.EnvelopePrc10
+WebEngineView.EnvelopeYou4
+WebEngineView.LastPageSize
+=
+EnvelopeYou4
+This property was introduced in QtWebEngine 1.3.
+See also
+WebEngineView::printToPdf
+().
+RenderProcessTerminationStatus
+:
+enumeration
+[since QtWebEngine 1.2]
+Describes the status with which the render process terminated:
+Constant
+Description
+WebEngineView.NormalTerminationStatus
+The render process terminated normally.
+WebEngineView.AbnormalTerminationStatus
+The render process terminated with a non-zero exit status.
+WebEngineView.CrashedTerminationStatus
+The render process crashed, for example because of a segmentation fault.
+WebEngineView.KilledTerminationStatus
+The render process was killed, for example by
+SIGKILL
+or task manager kill.
+This property was introduced in QtWebEngine 1.2.
+WebAction
+:
+enumeration
+[since QtWebEngine 1.2]
+Describes the types of action that can be performed on a web page:
+Constant
+Description
+WebEngineView.NoWebAction
+No action is triggered.
+WebEngineView.Back
+Navigate back in the history of navigated links.
+WebEngineView.Forward
+Navigate forward in the history of navigated links.
+WebEngineView.Stop
+Stop loading the current page.
+WebEngineView.Reload
+Reload the current page.
+WebEngineView.ReloadAndBypassCache
+Reload the current page, but do not use any local cache.
+WebEngineView.Cut
+Cut the content currently selected into the clipboard.
+WebEngineView.Copy
+Copy the content currently selected into the clipboard.
+WebEngineView.Paste
+Paste content from the clipboard.
+WebEngineView.Undo
+Undo the last editing action.
+WebEngineView.Redo
+Redo the last editing action.
+WebEngineView.SelectAll
+Select all content. This action is only enabled when the page's content is focused. The focus can be forced by the JavaScript
+window.focus()
+call, or the
+focusOnNavigationEnabled
+setting should be enabled to get automatic focus.
+WebEngineView.PasteAndMatchStyle
+Paste content from the clipboard with current style.
+WebEngineView.OpenLinkInThisWindow (since Qt WebEngine 5.6)
+Open the current link in the current window.
+WebEngineView.OpenLinkInNewWindow (since Qt WebEngine 5.6)
+Open the current link in a new window. Requires a handler for the
+newWindowRequested
+() signal.
+WebEngineView.OpenLinkInNewTab (since Qt WebEngine 5.6)
+Open the current link in a new tab. Requires a handler for the
+newWindowRequested
+() signal.
+WebEngineView.CopyLinkToClipboard (since Qt WebEngine 5.6)
+Copy the current link to the clipboard.
+WebEngineView.CopyImageToClipboard (since Qt WebEngine 5.6)
+Copy the clicked image to the clipboard.
+WebEngineView.CopyImageUrlToClipboard (since Qt WebEngine 5.6)
+Copy the clicked image's URL to the clipboard.
+WebEngineView.CopyMediaUrlToClipboard (since Qt WebEngine 5.6)
+Copy the hovered audio or video's URL to the clipboard.
+WebEngineView.ToggleMediaControls (since Qt WebEngine 5.6)
+Toggle between showing and hiding the controls for the hovered audio or video element.
+WebEngineView.ToggleMediaLoop (since Qt WebEngine 5.6)
+Toggle whether the hovered audio or video should loop on completetion or not.
+WebEngineView.ToggleMediaPlayPause (since Qt WebEngine 5.6)
+Toggle the play/pause state of the hovered audio or video element.
+WebEngineView.ToggleMediaMute (since Qt WebEngine 5.6)
+Mute or unmute the hovered audio or video element.
+WebEngineView.DownloadLinkToDisk (since Qt WebEngine 5.6)
+Download the current link to the disk. To implement download actions, connect to the
+WebEngineProfile.downloadRequested
+signal.
+WebEngineView.DownloadImageToDisk (since Qt WebEngine 5.6)
+Download the highlighted image to the disk.
+WebEngineView.DownloadMediaToDisk (since Qt WebEngine 5.6)
+Download the hovered audio or video to the disk.
+WebEngineView.InspectElement (since Qt WebEngine 5.6)
+Trigger any attached Web Inspector to inspect the highlighed element.
+WebEngineView.ExitFullScreen (since Qt WebEngine 5.6)
+Exit the fullscreen mode.
+WebEngineView.SavePage (since Qt WebEngine 5.7)
+Save the current web page to disk.
+WebEngineView.ViewSource (since Qt WebEngine 5.8)
+Show the source of the current page in a new tab. Requires a handler for the
+newWindowRequested
+() signal.
+WebEngineView.ToggleBold (since Qt WebEngine 5.10)
+Toggles boldness for the selection or at the cursor position. Requires
+contenteditable="true"
+.
+WebEngineView.ToggleItalic (since Qt WebEngine 5.10)
+Toggles italics for the selection or at the cursor position. Requires
+contenteditable="true"
+.
+WebEngineView.ToggleUnderline (since Qt WebEngine 5.10)
+Toggles underlining of the selection or at the cursor position. Requires
+contenteditable="true"
+.
+WebEngineView.ToggleStrikethrough (since Qt WebEngine 5.10)
+Toggles striking through the selection or at the cursor position. Requires
+contenteditable="true"
+.
+WebEngineView.AlignLeft (since Qt WebEngine 5.10)
+Aligns the lines containing the selection or the cursor to the left. Requires
+contenteditable="true"
+.
+WebEngineView.AlignCenter (since Qt WebEngine 5.10)
+Aligns the lines containing the selection or the cursor at the center. Requires
+contenteditable="true"
+.
+WebEngineView.AlignRight (since Qt WebEngine 5.10)
+Aligns the lines containing the selection or the cursor to the right. Requires
+contenteditable="true"
+.
+WebEngineView.AlignJustified (since Qt WebEngine 5.10)
+Stretches the lines containing the selection or the cursor so that each line has equal width. Requires
+contenteditable="true"
+.
+WebEngineView.Indent (since Qt WebEngine 5.10)
+Indents the lines containing the selection or the cursor. Requires
+contenteditable="true"
+.
+WebEngineView.Outdent (since Qt WebEngine 5.10)
+Outdents the lines containing the selection or the cursor. Requires
+contenteditable="true"
+.
+WebEngineView.InsertOrderedList (since Qt WebEngine 5.10)
+Inserts an ordered list at the current cursor position, deleting the current selection. Requires
+contenteditable="true"
+.
+WebEngineView.InsertUnorderedList (since Qt WebEngine 5.10)
+Inserts an unordered list at the current cursor position, deleting the current selection. Requires
+contenteditable="true"
+.
+WebEngineView.ChangeTextDirectionLTR (since Qt WebEngine 6.6)
+Changes text direction to left-to-right in the focused input element.
+WebEngineView.ChangeTextDirectionRTL (since Qt WebEngine 6.6)
+Changes text direction to right-to-left in the focused input element.
+This property was introduced in QtWebEngine 1.2.
+activeFocusOnPress
+:
+bool
+[since QtWebEngine 1.2]
+Specifies whether the view should gain active focus when pressed. The default value is
+true
+.
+This property was introduced in QtWebEngine 1.2.
+audioMuted
+:
+bool
+[since QtWebEngine 1.3]
+The state of whether the current page audio is muted.
+This property was introduced in QtWebEngine 1.3.
+See also
+recentlyAudible
+.
+backgroundColor
+:
+color
+[since QtWebEngine 1.2]
+Changes the color of the
+WebEngineView
+'s background, behind the document's body. Can be set to
+"transparent"
+or to a translucent color to see through the document or to match the web content in a hybrid app to prevent the white flashes that may appear during loading.
+The default value is white.
+This property was introduced in QtWebEngine 1.2.
+canGoBack
+:
+bool
+[read-only]
+Returns
+true
+if there are prior session history entries,
+false
+otherwise.
+canGoForward
+:
+bool
+[read-only]
+Returns
+true
+if there are subsequent session history entries,
+false
+otherwise.
+contentsSize
+:
+size
+[read-only, since QtWebEngine 1.3]
+The size of the full page contents, measured in logical pixels. On devices with a scale factor other than 100%, this will not correspond to the on-screen size; instead, it will be the size before scaling is applied. In such cases, the size may contain fractional values.
+This property was introduced in QtWebEngine 1.3.
+devToolsId
+:
+WebEngineView
+[read-only, since QtWebEngine 6.6]
+The id of the developer tools host associated with this page.
+If remote debugging is enabled (see
+Qt WebEngine Developer Tools
+), the id can be used to build the URL to connect to the developer tool websocket:
+ws://localhost:<debugging-port>/devtools/page/<id>)
+. The websocket can be used to to interact with the page using the
+DevTools Protocol
+.
+This property was introduced in QtWebEngine 6.6.
+devToolsView
+:
+WebEngineView
+[since QtWebEngine 1.7]
+The view currently hosting the developer tools for this view. Setting it to a new view will navigate that view to an internal URL with the developer tools, and bind it to this view.
+This property was introduced in QtWebEngine 1.7.
+See also
+inspectedView
+.
+history
+:
+WebEngineHistory
+[read-only, since QtWebEngine 1.1]
+The navigation history of the current view.
+This property was introduced in QtWebEngine 1.1.
+See also
+WebEngineHistory
+.
+icon
+:
+url
+[read-only]
+An internal URL for accessing the currently displayed web site icon, also known as favicon or shortcut icon. This read-only URL corresponds to the image used within a mobile application to represent a bookmarked page on the device's home screen.
+The following snippet uses the
+icon
+property to build an
+Image
+component:
+Image
+{
+id
+:
+appIcon
+sourceSize
+:
+Qt
+.
+size
+(
+32
+,
+32
+)
+source
+:
+webView
+.
+icon
+!=
+""
+?
+webView
+.
+icon
+:
+"fallbackFavicon.png"
+;
+// ...
+}
+Specifying the
+Image::sourceSize
+property informs the Qt WebEngine's favicon provider about the requested size and resizes the icon to it. If
+Image::sourceSize
+property is not specified, the provider provides the icon with the largest available resolution.
+inspectedView
+:
+WebEngineView
+[since QtWebEngine 1.7]
+The view this view is currently inspecting, if any. Setting it will navigate to an internal URL with the developer tools of the view set.
+It is recommended to unset this property when developer tools are not visible; otherwise some debug information may appear in the inspected
+WebEngineView
+.
+This property was introduced in QtWebEngine 1.7.
+See also
+devToolsView
+.
+isFullScreen
+:
+bool
+[read-only, since QtWebEngine 1.1]
+Returns
+true
+if the web view is in fullscreen mode,
+false
+otherwise.
+This property was introduced in QtWebEngine 1.1.
+See also
+fullScreenRequested
+() and
+fullScreenCancelled
+().
+lifecycleState
+:
+LifecycleState
+[since QtWebEngine 1.10]
+The current lifecycle state of the page.
+The following restrictions are enforced by the setter:
+A visible page must remain in the
+Active
+state.
+If the page is being inspected by a
+devToolsView
+then both pages must remain in the
+Active
+states.
+A page in the
+Discarded
+state can only transition to the
+Active
+state. This will cause a reload of the page.
+These are the only hard limits on the lifecycle state, but see also
+recommendedState
+for the recommended soft limits.
+This property was introduced in QtWebEngine 1.10.
+See also
+recommendedState
+,
+Page Lifecycle API
+, and
+WebEngine Lifecycle Example
+.
+loadProgress
+:
+int
+[read-only]
+The amount of data from the page that has been loaded, expressed as an integer percentage in the range from
+0
+to
+100
+.
+loading
+:
+bool
+[read-only]
+Returns
+true
+if the HTML page is currently loading,
+false
+otherwise.
+mainFrame
+:
+webEngineFrame
+[read-only, since QtWebEngine 6.8]
+The main, top-level frame of the page. All other frames on this page are accessible as children of the main frame.
+This property was introduced in QtWebEngine 6.8.
+profile
+:
+WebEngineProfile
+[since QtWebEngine 1.1]
+The current profile used for the view.
+This property was introduced in QtWebEngine 1.1.
+See also
+WebEngineProfile
+.
+recentlyAudible
+:
+bool
+[read-only, since QtWebEngine 1.3]
+Returns the current page's audible state (audio was recently played, or not).
+This property was introduced in QtWebEngine 1.3.
+See also
+audioMuted
+and
+recentlyAudibleChanged
+.
+recommendedState
+:
+LifecycleState
+[read-only, since QtWebEngine 1.10]
+The recommended limit for the lifecycle state of the page.
+Setting the lifecycle state to a lower resource usage state than the recommended state may cause side-effects such as stopping background audio playback or loss of HTML form input. Setting the lifecycle state to a higher resource state is, however, completely safe.
+This property was introduced in QtWebEngine 1.10.
+See also
+lifecycleState
+,
+Page Lifecycle API
+, and
+WebEngine Lifecycle Example
+.
+renderProcessPid
+:
+qint64
+[read-only, since QtWebEngine 1.11]
+Returns the process ID (PID) of the render process assigned to the current page's main frame.
+If no render process is available yet,
+0
+is returned.
+This property was introduced in QtWebEngine 1.11.
+See also
+renderProcessPidChanged
+.
+scrollPosition
+:
+point
+[read-only, since QtWebEngine 1.3]
+Scroll position of the page contents.
+This property was introduced in QtWebEngine 1.3.
+settings
+:
+WebEngineSettings
+[read-only, since QtWebEngine 1.1]
+Settings used by this view.
+This property was introduced in QtWebEngine 1.1.
+See also
+WebEngineSettings
+.
+title
+:
+string
+[read-only]
+The title of the currently displayed HTML page. This is a read-only value that reflects the contents of the
+<title>
+tag.
+touchHandleDelegate
+:
+Component
+[since QtWebEngine 6.4]
+The
+touchHandleDelegate
+provides a template defining visual touch handles instantiated by the view whenever touch selection handling is required.
+The handle's position, opacity, and visibility are updated automatically. The delegate should be a QML Item or any QML type which inherits it.
+Note:
+If no QML Item is set, the default touch handles will be shown.
+The following code uses a custom touch handle delegate:
+WebEngineView
+{
+// ...
+touchHandleDelegate
+:
+Rectangle
+{
+color
+:
+"red"
+}
+// ...
+}
+The touch handles can be also switched dynamically:
+Component {
+    id: circleTouchHandle
+    Rectangle {
+        color:
+"blue"
+radius:
+50
+}
+}
+function showDefaultHandle(isDefault) {
+if
+(isDefault)
+        webEngineView
+.
+touchHandleDelegate
+=
+circleTouchHandle
+else
+webEngineView
+.
+touchHandleDelegate
+=
+null
+}
+Note:
+If no delegate is provided, Chromium's default touch handles will appear.
+This property was introduced in QtWebEngine 6.4.
+url
+:
+url
+The location of the currently displayed HTML page. This writable property offers the main interface to load a page into a web view. It functions the same as the
+window.location
+DOM property.
+See also
+loadHtml
+().
+userScripts
+:
+WebEngineScriptCollection
+[read-only, since QtWebEngine 1.1]
+The user scripts' collection associated with the view.
+This property was introduced in QtWebEngine 1.1.
+See also
+WebEngineScriptCollection
+.
+webChannel
+:
+QQmlWebChannel
+[since QtWebEngine 1.1]
+The web channel instance used by this view. This channel is automatically using the internal
+QtWebEngine
+transport mechanism over Chromium IPC, and exposed in the javascript context of the page it is rendering as
+qt.webChannelTransport
+. This transport object is used when instantiating the JavaScript counterpart of
+QWebChannel
+using the
+Qt WebChannel JavaScript API
+.
+Note:
+The view does not take ownership for an assigned webChannel object.
+This property was introduced in QtWebEngine 1.1.
+webChannelWorld
+:
+int
+[since QtWebEngine 1.3]
+JavaScript world that the web channel instance used by this view is installed in. The world must be a number between
+0
+and
+256
+.
+This property was introduced in QtWebEngine 1.3.
+zoomFactor
+:
+real
+[since QtWebEngine 1.1]
+Zoom factor for the view. Valid values are within the range from
+0.25
+to
+5.0
+. The default factor is
+1.0
+.
+This property was introduced in QtWebEngine 1.1.
+Signal Documentation
+[since QtWebEngine 1.2]
+activeFocusOnPressChanged
+(
+bool
+activeFocusOnPress
+)
+This signal is emitted when the value of
+activeFocusOnPress
+changes. It specifies whether the view should gain active focus when pressed.
+Note:
+The corresponding handler is
+onActiveFocusOnPressChanged
+.
+This signal was introduced in QtWebEngine 1.2.
+See also
+activeFocusOnPress
+and
+setActiveFocusOnPress
+().
+[since QtWebEngine 1.3]
+audioMutedChanged
+(
+bool
+muted
+)
+This signal is emitted when the value of
+muted
+changes. The value is specified using the
+audioMuted
+property.
+Note:
+Not to be confused with a specific HTML5 audio / video element being muted.
+Note:
+The corresponding handler is
+onAudioMutedChanged
+.
+This signal was introduced in QtWebEngine 1.3.
+See also
+audioMuted
+and
+recentlyAudibleChanged
+.
+[since QtWebEngine 1.4]
+authenticationDialogRequested
+(
+AuthenticationDialogRequest
+request
+)
+This signal is emitted when an authentication dialog is requested.
+The
+request
+can be handled by using the methods of the
+AuthenticationDialogRequest
+type.
+Note:
+Signal handlers need to call
+request.accepted = true
+to prevent a default dialog from showing up. Make sure to call either
+AuthenticationDialogRequest::dialogAccept
+() or
+AuthenticationDialogRequest::dialogReject
+() afterwards.
+Note:
+The corresponding handler is
+onAuthenticationDialogRequested
+.
+This signal was introduced in QtWebEngine 1.4.
+[since QtWebEngine 1.2]
+backgroundColorChanged
+()
+This signal is emitted when the web engine view background color changes.
+Note:
+The corresponding handler is
+onBackgroundColorChanged
+.
+This signal was introduced in QtWebEngine 1.2.
+[since QtWebEngine 1.1]
+certificateError
+(
+WebEngineCertificateError
+error
+)
+This signal is emitted when an invalid certificate error,
+error
+, is raised while loading a given request.
+The certificate error can be handled by using the methods of the WebEngineCertificateError type.
+Note:
+The corresponding handler is
+onCertificateError
+.
+This signal was introduced in QtWebEngine 1.1.
+[since QtWebEngine 1.4]
+colorDialogRequested
+(
+ColorDialogRequest
+request
+)
+This signal is emitted when a color picker dialog is requested.
+The
+request
+can be handled by using the methods of the
+ColorDialogRequest
+type.
+Note:
+Signal handlers need to call
+request.accepted = true
+to prevent a default dialog from showing up. Make sure to call either
+ColorDialogRequest::dialogAccept
+() or
+ColorDialogRequest::dialogReject
+() afterwards.
+Note:
+The corresponding handler is
+onColorDialogRequested
+.
+This signal was introduced in QtWebEngine 1.4.
+[since QtWebEngine 1.4]
+contextMenuRequested
+(
+ContextMenuRequest
+request
+)
+This signal is emitted when a context menu is requested.
+The
+request
+can be handled by using the properties of the
+ContextMenuRequest
+type.
+Note:
+Signal handlers need to call
+request.accepted = true
+to prevent a default context menu from showing up.
+Note:
+The corresponding handler is
+onContextMenuRequested
+.
+This signal was introduced in QtWebEngine 1.4.
+[since QtWebEngine 6.7]
+desktopMediaRequested
+(
+webEngineDesktopMediaRequest
+request
+)
+This signal is emitted when a web application requests access to the contents of a display.
+The
+request
+argument holds references to data models for windows and screens available for capturing. To accept the request, the signal handler can call either
+webEngineDesktopMediaRequest::selectScreen
+() or
+webEngineDesktopMediaRequest::selectWindow
+().
+Note:
+The corresponding handler is
+onDesktopMediaRequested
+.
+This signal was introduced in QtWebEngine 6.7.
+[since QtWebEngine 1.4]
+fileDialogRequested
+(
+FileDialogRequest
+request
+)
+This signal is emitted when a file picker dialog is requested.
+The
+request
+can be handled by using the methods of the
+FileDialogRequest
+type.
+Note:
+Signal handlers need to call
+request.accepted = true
+to prevent a default dialog from showing up. Make sure to call either
+FileDialogRequest::dialogAccept
+() or
+FileDialogRequest::dialogReject
+() afterwards.
+Note:
+The corresponding handler is
+onFileDialogRequested
+.
+This signal was introduced in QtWebEngine 1.4.
+[since QtWebEngine 1.10]
+findTextFinished
+(
+findTextResult
+result
+)
+This signal is emitted when a string search on a page is completed.
+result
+is the result of the string search.
+Note:
+The corresponding handler is
+onFindTextFinished
+.
+This signal was introduced in QtWebEngine 1.10.
+See also
+findText
+() and
+findTextResult
+.
+[since QtWebEngine 1.1]
+fullScreenRequested
+(
+FullScreenRequest
+request
+)
+This signal is emitted when the web page issues the
+request
+for fullscreen mode through the JavaScript API.
+Note:
+The corresponding handler is
+onFullScreenRequested
+.
+This signal was introduced in QtWebEngine 1.1.
+See also
+isFullScreen
+.
+[since QtWebEngine 1.7]
+geometryChangeRequested
+(
+rect
+geometry
+,
+rect
+frameGeometry
+)
+This signal is emitted whenever the document wants to change the position and size of the page to
+frameGeometry
+. This can happen for example through JavaScript.
+While
+frameGeometry
+includes,
+geometry
+excludes the size of frame margins.
+Note:
+Geometry related properties of QML Window expect a size excluding the window decoration. You have to use
+geometry
+to handle this signal correctly.
+onGeometryChangeRequested: {
+    window.x = geometry.x
+    window.y = geometry.y
+    window.width = geometry.width
+    window.height = geometry.height
+}
+Note:
+The corresponding handler is
+onGeometryChangeRequested
+.
+This signal was introduced in QtWebEngine 1.7.
+javaScriptConsoleMessage
+(
+JavaScriptConsoleMessageLevel
+level
+,
+string
+message
+,
+int
+lineNumber
+,
+string
+sourceID
+)
+This signal is emitted when a JavaScript program tries to print a
+message
+to the web console.
+For example, in case of evaluation errors the source URL may be provided in
+sourceID
+as well as the
+lineNumber
+.
+level
+indicates the severity of the event that triggered the message, that is, whether it was triggered by an error or a less severe event.
+If no handler is specified, the view will log the messages into a
+js
+logging category
+.
+Note:
+The corresponding handler is
+onJavaScriptConsoleMessage
+.
+See also
+Console Logging
+.
+[since QtWebEngine 1.4]
+javaScriptDialogRequested
+(
+JavaScriptDialogRequest
+request
+)
+This signal is emitted when a JavaScript dialog is requested.
+The
+request
+can be handled by using the methods of the
+JavaScriptDialogRequest
+type.
+Note:
+Signal handlers need to call
+request.accepted = true
+to prevent a default dialog from showing up. Make sure to call either
+JavaScriptDialogRequest::dialogAccept
+() or
+JavaScriptDialogRequest::dialogReject
+() afterwards.
+Note:
+The corresponding handler is
+onJavaScriptDialogRequested
+.
+This signal was introduced in QtWebEngine 1.4.
+linkHovered
+(
+url
+hoveredUrl
+)
+Within a mouse-driven interface, this signal is emitted when a mouse pointer passes over a link, corresponding to the
+mouseover
+DOM event. This event may also occur in touch interfaces for
+mouseover
+events that are not cancelled with
+preventDefault()
+.
+hoveredUrl
+provides the link's location.
+Note:
+The corresponding handler is
+onLinkHovered
+.
+loadingChanged
+(
+WebEngineLoadingInfo
+loadingInfo
+)
+This signal is emitted when a page load begins, ends, or fails.
+When handling the signal with
+onLoadingChanged
+, various read-only parameters are available on the WebEngineLoadingInfo specified by
+loadingInfo
+.
+Note:
+The corresponding handler is
+onLoadingChanged
+.
+See also
+loading
+,
+LoadStatus
+, and
+ErrorDomain
+.
+navigationRequested
+(
+WebEngineNavigationRequest
+request
+)
+This signal is emitted when the navigation request
+request
+is issued.
+Note:
+The corresponding handler is
+onNavigationRequested
+.
+[since QtWebEngine 2.0]
+newWindowRequested
+(
+WebEngineNewWindowRequest
+request
+)
+This signal is emitted when
+request
+is issued to load a page in a separate web engine view. This can either be because the current page requested it explicitly through a JavaScript call to
+window.open
+, or because the user clicked on a link while holding Shift, Cmd/Ctrl, or a built-in combination that triggers the page to open in a new window.
+The signal is handled by calling
+acceptAsNewWindow
+() on the destination view. If this signal is not handled, the requested load will fail.
+An example implementation:
+QtObject
+{
+id
+:
+windowParent
+// Create the initial browsing windows and open the startup page.
+Component.onCompleted
+: {
+        var firstWindow =
+windowComponent
+.
+createObject
+(
+windowParent
+);
+firstWindow
+.
+webView
+.
+loadHtml
+(
+'<input type="button" value="Click!" onclick="window.open(&quot;http://qt.io&quot;)">'
+);
+    }
+
+    property
+Component
+windowComponent
+:
+Window
+{
+// Destroy on close to release the Window's QML resources.
+// Because it was created with a parent, it won't be garbage-collected.
+onClosing
+:
+destroy
+()
+visible
+:
+true
+property
+WebEngineView
+webView
+:
+webView_
+WebEngineView
+{
+id
+:
+webView_
+anchors.fill
+:
+parent
+// Handle the signal. Dynamically create the window and
+// use its WebEngineView as the destination of our request.
+onNewWindowRequested
+:
+function
+(request) {
+                var newWindow =
+windowComponent
+.
+createObject
+(
+windowParent
+);
+newWindow
+.
+webView
+.
+acceptAsNewWindow
+(
+request
+);
+            }
+        }
+    }
+}
+Note:
+The corresponding handler is
+onNewWindowRequested
+.
+This signal was introduced in QtWebEngine 2.0.
+See also
+WebEngineNewWindowRequest
+and WebEngine Quick Nano Browser.
+[since QtWebEngine 1.5]
+pdfPrintingFinished
+(
+string
+filePath
+,
+bool
+success
+)
+This signal is emitted when printing the web page into a PDF file has finished.
+filePath
+will contain the path the file was requested to be created at, and
+success
+will be
+true
+if the file was successfully created and
+false
+otherwise.
+Note:
+The corresponding handler is
+onPdfPrintingFinished
+.
+This signal was introduced in QtWebEngine 1.5.
+See also
+printToPdf
+().
+[since QtWebEngine 6.8]
+permissionRequested
+(
+webEnginePermission
+permission
+)
+This signal is emitted when a web site fires a permission request (e.g. geolocation access, permission to send notifications). The
+permission
+object can queried for the requesting URL and the
+WebEnginePermission.PermissionType
+it's asking for, as well as to grant or deny permission.
+Note:
+The corresponding handler is
+onPermissionRequested
+.
+This signal was introduced in QtWebEngine 6.8.
+[since QtWebEngine 1.8]
+printRequested
+()
+This signal is emitted when the JavaScript
+window.print()
+method is called on the main frame, or the user pressed the print button of PDF viewer plugin. Typically, the signal handler can simply call
+printToPdf
+().
+Since
+QtWebEngine
+6.8, this signal is only emitted for the main frame, instead of being emitted for any frame that requests printing.
+Note:
+The corresponding handler is
+onPrintRequested
+.
+This signal was introduced in QtWebEngine 1.8.
+See also
+printToPdf
+.
+[since QtWebEngine 6.8]
+printRequestedByFrame
+(
+webEngineFrame
+frame
+)
+This signal is emitted when the JavaScript
+window.print()
+method is called on
+frame
+. If the frame is the main frame,
+printRequested
+is emitted instead.
+Note:
+The corresponding handler is
+onPrintRequestedByFrame
+.
+This signal was introduced in QtWebEngine 6.8.
+See also
+printRequested
+.
+[since QtWebEngine 1.3]
+recentlyAudibleChanged
+(
+bool
+recentlyAudible
+)
+This signal is emitted when the page's audible state, specified by
+recentlyAudible
+, is changed due to audio being played or stopped.
+Note:
+The signal is also emitted when the
+audioMuted
+property changes. Also, if the audio is paused, this signal is emitted with an approximate
+two-second delay
+, from the moment the audio is paused.
+If a web page contains two videos that are started in sequence, this signal gets emitted only once, for the first video to generate sound. After both videos are stopped, the signal is emitted upon the last sound generated. This means that the signal is emitted both when any sound is generated, and when everything falls completely silent, regardless of the number of audio streams.
+Spurious signal emissions might also happen. For example, when sound is stopped, this signal gets emitted first with a value of
+true
+, and then with a value of
+false
+. Further, when audio starts playing, the signal is emitted twice with a value of
+true
+.
+Note:
+The corresponding handler is
+onRecentlyAudibleChanged
+.
+This signal was introduced in QtWebEngine 1.3.
+See also
+recentlyAudible
+.
+[since QtWebEngine 1.7]
+registerProtocolHandlerRequested
+(
+registerProtocolHandlerRequest
+request
+)
+This signal is emitted when the web page tries to register a custom protocol by issuing a
+registerProtocolHandler
+request
+.
+Note:
+The corresponding handler is
+onRegisterProtocolHandlerRequested
+.
+This signal was introduced in QtWebEngine 1.7.
+See also
+registerProtocolHandlerRequest
+.
+[since QtWebEngine 1.11]
+renderProcessPidChanged
+(
+qint64
+pid
+)
+If no render process is available yet,
+0
+is returned. This signal is emitted when
+pid
+(process ID) of the page's underlying render process changed.
+Note:
+The corresponding handler is
+onRenderProcessPidChanged
+.
+This signal was introduced in QtWebEngine 1.11.
+See also
+renderProcessPid
+.
+[since QtWebEngine 1.2]
+renderProcessTerminated
+(
+RenderProcessTerminationStatus
+terminationStatus
+,
+int
+exitCode
+)
+This signal is emitted when the render process is terminated with a non-zero exit status.
+terminationStatus
+is the termination status of the process and
+exitCode
+is the status code with which the process terminated.
+Note:
+The corresponding handler is
+onRenderProcessTerminated
+.
+This signal was introduced in QtWebEngine 1.2.
+See also
+RenderProcessTerminationStatus
+.
+[since QtWebEngine 1.9]
+selectClientCertificate
+(
+WebEngineClientCertificateSelection
+clientCertificateSelection
+)
+This signal is emitted when a web site requests an SSL client certificate, and one or more were found in the system's client certificate store.
+Handling the signal is asynchronous, and loading will be waiting until a certificate is selected, or the last copy of
+clientCertificateSelection
+is destroyed.
+If the signal is not handled,
+clientCertificateSelection
+is automatically destroyed, and loading will continue without a client certificate.
+Note:
+The corresponding handler is
+onSelectClientCertificate
+.
+This signal was introduced in QtWebEngine 1.9.
+See also
+WebEngineClientCertificateSelection
+.
+[since QtWebEngine 1.10]
+tooltipRequested
+(
+TooltipRequest
+request
+)
+This signal is emitted when the web page sends a
+request
+to show a tooltip at a specified position.
+Note:
+Signal handlers need to call
+request.accepted = true
+to prevent a default tooltip from showing up.
+Note:
+The corresponding handler is
+onTooltipRequested
+.
+This signal was introduced in QtWebEngine 1.10.
+See also
+TooltipRequest
+.
+[since QtWebEngine 6.3]
+touchSelectionMenuRequested
+(
+TouchSelectionMenuRequest
+request
+)
+This signal is emitted when a touch selection menu is requested at a specified position.
+The
+request
+can be handled by using the methods of the
+TouchSelectionMenuRequest
+type.
+Note:
+Signal handlers need to call
+request.accepted = true
+to prevent a default touch selection menu from showing up.
+Note:
+The corresponding handler is
+onTouchSelectionMenuRequested
+.
+This signal was introduced in QtWebEngine 6.3.
+See also
+TouchSelectionMenuRequest
+.
+[since QtWebEngine 1.3]
+wasRecentlyAudibleChanged
+(
+bool
+wasRecentlyAudible
+)
+This signal is emitted when the page's audible state, specified by
+wasRecentlyAudible
+, is changed due to audio being played or stopped.
+Note:
+The signal is also emitted when calling the setAudioMuted method.
+Note:
+The corresponding handler is
+onWasRecentlyAudibleChanged
+.
+This signal was introduced in QtWebEngine 1.3.
+[since QtWebEngine 6.7]
+webAuthUxRequested
+(
+WebEngineWebAuthUxRequest
+request
+)
+This signal is emitted when a WebAuth authenticator requires user interaction during the authentication process. These requests are handled by displaying a dialog to the user.
+The
+request
+object contains the information and API required to complete the WebAuth UX request.
+Note:
+The corresponding handler is
+onWebAuthUxRequested
+.
+This signal was introduced in QtWebEngine 6.7.
+See also
+WebEngineWebAuthUxRequest
+.
+[since QtWebEngine 1.2]
+windowCloseRequested
+()
+This signal is emitted whenever the page requests the view's window to be closed, for example through the JavaScript
+window.close()
+call.
+Note:
+The corresponding handler is
+onWindowCloseRequested
+.
+This signal was introduced in QtWebEngine 1.2.
+[since QtWebEngine 6.8]
+zoomFactorChanged
+(
+qreal
+factor
+)
+This signal is emitted whenever the zoom
+factor
+for the page changes.
+Note:
+The corresponding handler is
+onZoomFactorChanged
+.
+This signal was introduced in QtWebEngine 6.8.
+See also
+zoomFactor
+.
+Method Documentation
+[since QtWebEngine 2.0]
+void
+acceptAsNewWindow
+(
+WebEngineNewWindowRequest
+request
+)
+Handle the
+newWindowRequested
+signal by opening the
+request
+in this view.
+This method was introduced in QtWebEngine 2.0.
+See also
+newWindowRequested
+.
+WebEngineAction
+action
+(
+WebAction
+action
+)
+Returns a
+WebEngineAction
+for the specified
+WebAction
+action
+.
+WebEngineView
+also takes care of implementing the action, so that upon triggering the corresponding action is performed on the view.
+var copyAction
+=
+webEngineView
+.
+action(WebEngineView
+.
+Copy);
+See also
+WebEngineAction
+.
+[since QtWebEngine 6.8]
+webEngineFrame
+findFrameByName
+(
+string
+name
+)
+Returns the frame with the given
+name
+. If there are multiple frames with the same name, which one is returned is arbitrary. If no frame was found, returns an
+invalid
+frame.
+This method was introduced in QtWebEngine 6.8.
+[since QtWebEngine 1.1]
+void
+findText
+(
+string
+subString
+)
+Finds the specified string,
+subString
+, in the page. The
+findTextFinished
+() signal is emitted when a string search is completed.
+To clear the search highlight, just pass an empty string.
+This method was introduced in QtWebEngine 1.1.
+See also
+findTextFinished
+().
+[since QtWebEngine 1.1]
+void
+findText
+(
+string
+subString
+,
+FindFlags
+options
+)
+Finds the specified string,
+subString
+, in the page, using the given
+options
+. The
+findTextFinished
+() signal is emitted when a string search is completed.
+To clear the search highlight, just pass an empty string.
+findText(
+"Qt"
+,
+WebEngineView
+.
+FindBackward
+|
+WebEngineView
+.
+FindCaseSensitively);
+This method was introduced in QtWebEngine 1.1.
+See also
+findTextFinished
+().
+[since QtWebEngine 1.1]
+void
+findText
+(
+string
+subString
+,
+FindFlags
+options
+,
+variant
+resultCallback
+)
+Finds the specified string,
+subString
+, in the page, using the given
+options
+. The
+findTextFinished
+() signal is emitted when a string search is completed.
+To clear the search highlight, just pass an empty string.
+The
+resultCallback
+must take an integer parameter. It will be called with the number of found occurrences of the
+subString
+.
+findText(
+"Qt"
+,
+WebEngineView
+.
+FindCaseSensitively
+,
+function(matchCount) {
+if
+(matchCount
+>
+0
+)
+        console
+.
+log(
+"'Qt' tokens found:"
+,
+matchCount);
+});
+This method was introduced in QtWebEngine 1.1.
+See also
+findTextFinished
+().
+[since QtWebEngine 1.1]
+void
+fullScreenCancelled
+()
+Immediately sets
+isFullScreen
+property to
+false
+. It can be used to notify the web engine when the windowing system forces the application to leave fullscreen mode.
+ApplicationWindow
+{
+onVisibilityChanged
+: {
+if
+(
+webEngineView
+.
+isFullScreen
+&&
+visibility
+!=
+Window
+.
+FullScreen
+)
+webEngineView
+.
+fullScreenCancelled
+()
+    }
+WebEngineView
+{
+id
+:
+webEngineView
+// ...
+}
+}
+This method was introduced in QtWebEngine 1.1.
+See also
+isFullScreen
+and
+fullScreenRequested
+().
+void
+goBack
+()
+Go backward within the view's session history, if possible. This function is equivalent to the
+window.history.back()
+DOM method.
+See also
+canGoBack
+.
+[since QtWebEngine 1.1]
+void
+goBackOrForward
+(
+int
+offset
+)
+If
+offset
+is positive, goes forward the specified number of offset pages in the current session history. If offset is negative, it goes back. If the offset is invalid, the page is not changed.
+This method was introduced in QtWebEngine 1.1.
+See also
+goBack
+() and
+goForward
+().
+void
+goForward
+()
+Go forward within the view's session history, if possible. This function is equivalent to the
+window.history.forward()
+DOM method.
+void
+loadHtml
+(
+string
+html
+,
+url
+baseUrl
+)
+Loads the specified
+html
+as the content of the web view.
+This method offers a lower-level alternative to the
+url
+property, which references HTML pages via URL.
+baseUrl
+is optional and used to resolve relative URLs in the document, such as referenced images or stylesheets. For example, if
+html
+is retrieved from
+http://www.example.com/documents/overview.html
+, which is the base URL, then an image referenced with the relative URL,
+diagram.png
+, should be at
+http://www.example.com/documents/diagram.png
+.
+When using this method, the web engine assumes that external resources, such as JavaScript programs or style sheets, are encoded in UTF-8, unless otherwise specified. For example, the encoding of an external script can be specified through the charset attribute of the HTML script tag. It is also possible for the encoding to be specified by the web server.
+Note:
+This method will not affect session or global history for the page.
+Warning:
+This function works only for HTML.
+Warning:
+The content will be percent encoded before being sent to the renderer. This may increase its size. The maximum size of the percent encoded content is 2 megabytes minus 30 bytes.
+See also
+url
+.
+[since QtWebEngine 1.3]
+void
+printToPdf
+(const
+string
+filePath
+,
+PrintedPageSizeId
+pageSizeId
+,
+PrintedPageOrientation
+orientation
+)
+Prints the
+WebEngineView
+'s current content to a PDF document and stores it under
+filePath
+. The document's size will be determined by the value of
+pageSizeId
+and its orientation will be determined using
+orientation
+.
+This method issues an asynchronous request for printing the web page into a PDF and returns immediately. To be informed about the result of the request, connect to the signal
+pdfPrintingFinished
+().
+If you leave out
+pageSizeId
+, it defaults to
+A4
+. If you leave out
+orientation
+, it defaults to
+Portrait
+.
+This method was introduced in QtWebEngine 1.3.
+See also
+pdfPrintingFinished
+().
+[since QtWebEngine 1.3]
+void
+printToPdf
+(
+variant
+resultCallback
+,
+PrintedPageSizeId
+pageSizeId
+,
+PrintedPageOrientation
+orientation
+)
+Prints the
+WebEngineView
+'s current content to a PDF document and returns it in a byte array. The document's size will be determined by the value of
+pageSizeId
+and its orientation will be determined using
+orientation
+.
+The
+resultCallback
+must take a string parameter. This string will contain the document's data upon successful printing and an empty string otherwise.
+If you leave out
+pageSizeId
+, it defaults to
+A4
+. If you leave out
+orientation
+, it defaults to
+Portrait
+.
+This method was introduced in QtWebEngine 1.3.
+void
+reload
+()
+Reloads the current page. This function is equivalent to the
+window.location.reload()
+DOM method.
+See also
+reloadAndBypassCache
+().
+[since QtWebEngine 1.1]
+void
+reloadAndBypassCache
+()
+Reloads the current page, ignoring any cached content.
+This method was introduced in QtWebEngine 1.1.
+See also
+reload
+().
+[since QtWebEngine 1.3]
+void
+replaceMisspelledWord
+(const
+string
+replacement
+)
+Replace the current misspelled word with
+replacement
+.
+This method was introduced in QtWebEngine 1.3.
+void
+runJavaScript
+(
+string
+script
+,
+variant
+callback
+)
+void
+runJavaScript
+(
+string
+script
+,
+int
+worldId
+,
+variant
+callback
+)
+Runs the specified
+script
+in the content of the web view.
+The
+callback
+parameter is optional. If a callback function is provided, it will be invoked after the script finishes running.
+runJavaScript(
+"document.title"
+,
+function(result) { console
+.
+log(result); });
+Only plain data can be returned from JavaScript as the result value. Supported data types include all of the JSON data types as well as, for example,
+Date
+and
+ArrayBuffer
+. Unsupported data types include, for example,
+Function
+and
+Promise
+.
+To avoid conflicts with other scripts executed on the page, the world in which the script is run can be specified by
+worldId
+. The world ID must be between
+0
+and
+256
+. If you leave out the
+world
+ID, the script is run in the
+MainWorld
+.
+Warning:
+Do not execute lengthy routines in the callback function, because it might block the rendering of the web content.
+For more information about injecting scripts, see
+Script Injection
+. For an alternative way to inject scripts, see
+WebEngineView::userScripts
+.
+[since QtWebEngine 6.6]
+void
+save
+(
+string
+filePath
+,
+WebEngineDownloadRequest
+.
+SavePageFormat
+format
+)
+Save the current web page to disk.
+The web page is saved to
+filePath
+in the specified
+format
+.
+This is a shortcut for the following actions:
+Trigger the Save web action.
+Accept the next download item and set the specified file path and save format.
+This function issues an asynchronous download request for the web page and returns immediately.
+This method was introduced in QtWebEngine 6.6.
+See also
+WebEngineDownloadRequest::savePageFormat
+.
+[since QtWebEngine 1.2]
+void
+setActiveFocusOnPress
+(
+bool
+arg
+)
+Sets active focus to a clicked web engine view if
+arg
+is
+true
+. By setting it to
+false
+, a web engine view can be used to create a UI element that should not get focus. This can be useful in a hybrid UI.
+This method was introduced in QtWebEngine 1.2.
+See also
+activeFocusOnPress
+,
+activeFocusOnPressChanged
+, and
+WebEngineSettings::focusOnNavigationEnabled
+.
+void
+stop
+()
+Stops loading the current page.
+[since QtWebEngine 1.2]
+void
+triggerWebAction
+(
+WebAction
+action
+)
+Triggers the web action
+action
+.
+This method was introduced in QtWebEngine 1.2.
+See also
+WebAction
+.
+©
+2026 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the
+GNU Free Documentation    License version 1.3
+as published by the Free Software Foundation.     Qt and respective logos are
+trademarks
+of The Qt Company Ltd. in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners.
+Contents
+Properties
+Signals
+Methods
+Detailed Description
+Initializing Web Engine
+Loading Web Pages
+Interaction
+User Scripts
+Fullscreen Mode
+Profiles
+Platform Features
+Rendering to OpenGL Surface
+Contact Us
+Qt Group
+Our Story
+Brand
+News
+Careers
+Investors
+Qt Products
+Software Quality Products
+Licensing
+License Agreement
+Open Source
+Plans and pricing
+Download
+FAQ
+Learn Qt
+For Learners
+For Students and Teachers
+Qt Documentation
+Qt Forum
+Support & Services
+Professional Services
+Customer Success
+Support Services
+Partners
+Qt World
+© 2026 The Qt Company
+Feedback
+Qt Group includes The Qt Company Oy and its global subsidiaries and affiliates.

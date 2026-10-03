@@ -1,0 +1,18 @@
+Running as unit: qa-harness-1aba07028110475cbc037060a6b74d2d.scope; invocation ID: 05e178eec5ad4fafbe04b5f4b835084e
+
+  bridge
+    1) staleDependencyTest failed after 1 test(s)
+
+  1 failed
+
+  1) staleDependencyTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/prototypes/quint/bridge/dependency-incarnation.qnt:79:121
+        79:   run staleDependencyTest = init.then(prerequisite("Committed")).then(replaceWindow).then(dispatchDependent).then(all { assert(s.dependentEffects == 0), noop })
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x135288b --match=staleDependencyTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 dependency-incarnation.qnt
+error: Tests failed

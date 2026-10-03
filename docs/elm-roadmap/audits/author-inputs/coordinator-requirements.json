@@ -1,0 +1,249 @@
+[
+  {
+    "id": "ELM-GPU-001",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The Elm desktop SHALL require measured hardware-accelerated rendering in the selected native host before host selection and accelerated release admission.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Pinned engine/driver diagnostics plus a deterministic displayed workload on a nonsoftware device.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify the actual host GPU path.",
+    "scenarios": [
+      {
+        "name": "gpu-001",
+        "given": "a candidate pinned host on the target machine",
+        "when": "host selection evaluates rendering",
+        "then": "software-only execution cannot pass the GPU gate"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-002",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The graphics qualification SHALL distinguish hardware discovery, native GPU rendering, accelerated webview composition and WebGPU adapter/device execution as separate evidence claims.",
+    "phase": "P0",
+    "priority": "must",
+    "verification": "Evidence ledger with four separate verdicts linked to executed probes.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Create acceleration evidence categories.",
+    "scenarios": [
+      {
+        "name": "gpu-002",
+        "given": "Vulkan enumerates physical devices",
+        "when": "the inventory is recorded",
+        "then": "WebGPU and displayed-render verdicts remain unproven until their probes pass"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-003",
+    "capability": "elm-gpu",
+    "pattern": "event-driven",
+    "ears": "WHEN WebGPU is evaluated, the native host SHALL expose bundled assets through a qualified secure local origin without disabling renderer sandboxing.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Origin/security-state probe, effective sandbox flags and denied remote navigation.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify WebGPU origin and sandbox.",
+    "scenarios": [
+      {
+        "name": "gpu-003",
+        "given": "a local shell asset bundle",
+        "when": "the host loads its GPU probe",
+        "then": "the probe uses the approved secure origin and the renderer sandbox remains enabled"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-004",
+    "capability": "elm-gpu",
+    "pattern": "event-driven",
+    "ears": "WHEN a WebGPU adapter or device is unavailable, the host SHALL reject WebGPU qualification and preserve an accepted alternative hardware-rendering route.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Null-adapter, rejected-device and unsupported-feature fault reports.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Implement capability negotiation and API rejection.",
+    "scenarios": [
+      {
+        "name": "gpu-004",
+        "given": "an accepted native GPU path and a WebGPU probe",
+        "when": "requestAdapter returns null",
+        "then": "WebGPU is unqualified while the native GPU path remains usable"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-005",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The WebGPU qualification SHALL verify a deterministic render and compute result using supported adapter limits and features and independently observe the native displayed frame.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "WGSL validation/readback results plus output capture and backend classification.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Build isolated render and compute qualification probes.",
+    "scenarios": [
+      {
+        "name": "gpu-005",
+        "given": "a nonsoftware adapter and accepted device",
+        "when": "the deterministic workload completes",
+        "then": "known results match and the rendered native frame is independently observed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-006",
+    "capability": "elm-gpu",
+    "pattern": "state-driven",
+    "ears": "WHILE GPU effects are active, the renderer SHALL own GPU objects locally and keep per-frame pixel buffers outside Elm port messages.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "IPC payload and resource-allocation traces over motion/reversal workload.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Keep GPU ownership and frame scheduling in the renderer.",
+    "scenarios": [
+      {
+        "name": "gpu-006",
+        "given": "an Elm view with a GPU effect",
+        "when": "motion is sampled for successive frames",
+        "then": "ports carry bounded control metadata and GPU objects remain renderer-owned"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-007",
+    "capability": "elm-gpu",
+    "pattern": "event-driven",
+    "ears": "WHEN the GPU device is lost, the host SHALL invalidate dependent resources and the rendering generation before rebuilding them without replaying stale application-window effects.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Device-loss injection and generation/effect logs with no stale native mutation.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Implement bounded device-loss recovery.",
+    "scenarios": [
+      {
+        "name": "gpu-007",
+        "given": "GPU resources and an old pending window intent",
+        "when": "device loss occurs",
+        "then": "old resources become unusable and the old intent is not automatically committed"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-008",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The preview qualification SHALL measure actual native-buffer import, synchronization and copy volume instead of inferring zero-copy support from WebGPU availability.",
+    "phase": "P4",
+    "priority": "must",
+    "verification": "Native fence/import trace and copy bytes/counts on both GPU configurations.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify the preview interoperability path.",
+    "scenarios": [
+      {
+        "name": "gpu-008",
+        "given": "a native frame lease and a WebGPU-capable host",
+        "when": "a preview is rendered",
+        "then": "the report records actual copies and fences without claiming an untested DMA-BUF import"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-009",
+    "capability": "elm-gpu",
+    "pattern": "unwanted",
+    "ears": "IF every qualified GPU path becomes unavailable, THEN the host SHALL expose essential recovery controls in a disclosed degraded mode and block accelerated release admission.",
+    "phase": "P6",
+    "priority": "must",
+    "verification": "All-backend-failure fault plus offline recovery/qualification report.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Qualify degraded recovery and release refusal.",
+    "scenarios": [
+      {
+        "name": "gpu-009",
+        "given": "all GPU backends unavailable",
+        "when": "recovery mode starts",
+        "then": "essential controls remain accessible and the report identifies software/degraded execution"
+      }
+    ]
+  },
+  {
+    "id": "ELM-GPU-010",
+    "capability": "elm-gpu",
+    "pattern": "ubiquitous",
+    "ears": "The GPU qualification SHALL compare integrated and discrete execution, where selectable, against frozen latency, memory, power and transfer budgets on the actual output configuration.",
+    "phase": "P1",
+    "priority": "must",
+    "verification": "Hardware profile manifest and controlled sample distributions including cross-GPU transfers.",
+    "legacyEvidence": "docs/elm-roadmap/GPU.md; docs/elm-roadmap/gpu-inventory.json",
+    "task": "Compare available GPU profiles without assuming power hints choose an adapter.",
+    "scenarios": [
+      {
+        "name": "gpu-010",
+        "given": "Intel and NVIDIA devices in the inventory",
+        "when": "qualified selectable profiles are compared",
+        "then": "each profile identifies the actual device and measured workload verdict"
+      }
+    ]
+  },
+  {
+    "id": "ELM-LAY-001",
+    "capability": "elm-layering",
+    "pattern": "unwanted",
+    "ears": "IF a window is minimized or belongs to an inactive nonsticky workspace, THEN the native authority SHALL exclude its live surface from display and application input regardless of prior raise or fullscreen permissions.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native pixel/hit/focus fixture reproducing the recorded Heroic-versus-terminal symptom with visibility, stack and generation receipts.",
+    "legacyEvidence": "docs/elm-roadmap/heroic-layering-observation.json",
+    "task": "Create minimized/inactive-workspace eligibility regression.",
+    "scenarios": [
+      {
+        "name": "layer-001",
+        "given": "Heroic is minimized while a terminal is active",
+        "when": "an old raised/maximized surface is considered for scene publication",
+        "then": "Heroic receives neither live drawing nor application input; an independently owned inert preview may remain"
+      }
+    ]
+  },
+  {
+    "id": "ELM-LAY-002",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "WHEN a scene revision is committed, the native authority SHALL derive painting, hit testing and focus eligibility from the same accepted surface identities and ordered scene revision.",
+    "phase": "P2",
+    "priority": "must",
+    "verification": "Protected native pixel/hit/focus fixture reproducing the recorded Heroic-versus-terminal symptom with visibility, stack and generation receipts.",
+    "legacyEvidence": "docs/elm-roadmap/heroic-layering-observation.json",
+    "task": "Implement canonical scene-revision publication and hit/focus observation.",
+    "scenarios": [
+      {
+        "name": "layer-002",
+        "given": "overlapping application windows with an accepted stack revision",
+        "when": "painting and pointer routing execute",
+        "then": "the top eligible painted application receives the corresponding hit and focus, subject to explicit input regions and modal constraints"
+      }
+    ]
+  },
+  {
+    "id": "ELM-LAY-003",
+    "capability": "elm-layering",
+    "pattern": "event-driven",
+    "ears": "WHEN a minimized window is restored, the native authority SHALL make it eligible in one accepted scene transition while preserving its normal workspace identity and rejecting old transition generations.",
+    "phase": "P3",
+    "priority": "must",
+    "verification": "Protected native pixel/hit/focus fixture reproducing the recorded Heroic-versus-terminal symptom with visibility, stack and generation receipts.",
+    "legacyEvidence": "docs/elm-roadmap/heroic-layering-observation.json",
+    "task": "Qualify atomic restore eligibility and stale overlay retirement.",
+    "scenarios": [
+      {
+        "name": "layer-003",
+        "given": "a minimized window with retained preview and original workspace identity",
+        "when": "restore completes through a current generation",
+        "then": "one current live surface becomes eligible and no stale overlay remains"
+      }
+    ]
+  }
+]
