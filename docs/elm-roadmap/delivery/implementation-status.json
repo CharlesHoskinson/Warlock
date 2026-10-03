@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-webview-v4",
+  "activeSlice": "implementation/elm-baseline-v5",
   "status": "Event-driven native projection rendered in Elm webview; isolated Intel/Mesa hardware graphics observed; complete scene/effects, host selection and production gates pending",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -88,6 +88,18 @@
       },
       "evidence": "implementation/elm-webview-v4/qa/slice-manifest.json",
       "scope": "Event-driven native-to-Elm DOM and isolated Intel/Mesa hardware graphics availability; all full implementation/release gates remain open"
+    },
+    "baselineV5": {
+      "restoreChecks": 38,
+      "faultClosedPeerChecks": 34,
+      "faultCompatibleChecks": 33,
+      "heldCases": 52,
+      "pinDefinitions": 24,
+      "preservedSourceFiles": 1070,
+      "ledgerSHA256": "78ae06239b4ff49c37cc267c61497703b7cc09df58fa7b7f2d90b19c4a2b89ac",
+      "protectedVerificationPassed": true,
+      "nativeAcceptance": false,
+      "evidence": "implementation/elm-baseline-v5/ledger.json"
     }
   },
   "next": "Recover S01 unchanged native campaign oracles and S02 product budgets; compare/qualify hosts including input/IME/AT; extend native projection into the complete canonical scene and guarded effects for actual layering/focus/minimize repair."
