@@ -1,0 +1,25 @@
+{
+  "scope": "Actual native predicate inconsistency, not displayed-pixel or input proof",
+  "productSceneEligibilitySatisfied": false,
+  "diagnosticCollectionPassed": true,
+  "sourceReport": "implementation/elm-scene-facts-v7/qa/native-1791053243616778513/report.json",
+  "sourceReportSHA256": "ec46433d4c97fefb56cfb4e69708888078425124232cf101a54fc809e287137f",
+  "sourceCheck": "inactive-native-workspace-facts-preserve-placement",
+  "observed": {
+    "incarnation": "1",
+    "owner": null,
+    "stackPosition": 0,
+    "workspace": "-98",
+    "monitor": "0",
+    "workspaceVisible": false,
+    "hidden": false,
+    "pinned": false,
+    "allowedOverFullscreen": true,
+    "renderOverFullscreen": true,
+    "acceptsInput": true,
+    "shouldRenderAny": false,
+    "shouldRenderOwnMonitor": true,
+    "minimized": null
+  },
+  "requiredNext": "Gate inactive special-workspace membership before pin/fullscreen/render precedence in all live rendering paths; verify displayed pixels, actual hit target and focus on one coherent tuple."
+}

@@ -1,0 +1,4 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-facts-v7/qa/fixture.py:17: PyGIDeprecationWarning: GLib.unix_signal_add is deprecated; use GLibUnix.signal_add instead
+  GLib.timeout_add(40,poll);GLib.unix_signal_add(GLib.PRIORITY_DEFAULT,signal.SIGTERM,quit_);loop.run()
+/home/hoskinson/omarchy-windows-parity/implementation/elm-scene-facts-v7/qa/fixture.py:13: DeprecationWarning: Gtk.Widget.hide is deprecated
+  if request['op']=='hide':window.hide()

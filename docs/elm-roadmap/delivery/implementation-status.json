@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-scene-v6",
-  "status": "Pure Elm atomic scene admission compiled and model/replay/mutation checked; native complete-scene integration, original campaigns and release gates remain open",
+  "activeSlice": "implementation/elm-scene-core-v8",
+  "status": "Built native renderer exclusion repair and passed 33 private predicate/observer checks; pixel/hit/modal/effect/Brave/Heroic and full scene/minimize acceptance remain open",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -112,7 +112,23 @@
       "compiledUnsafeMutantsDetected": 2,
       "nativeAcceptance": false,
       "evidence": "implementation/elm-scene-v6/qa/run-1791052752897124970/report.json"
+    },
+    "sceneFactsV7": {
+      "nativeDiagnosticCases": 32,
+      "productSceneEligibilitySatisfied": false,
+      "finding": "Inactive special workspace retained fullscreen flags while owning-monitor renderer predicate returned true",
+      "evidence": "implementation/elm-scene-facts-v7/diagnosis.json"
+    },
+    "sceneCoreV8": {
+      "nativeDiagnosticCases": 33,
+      "rendererDependenciesRechecked": 870,
+      "pluginDependenciesRechecked": 938,
+      "coreSHA256": "710396d5c6480a7ff8f424840d81811d3e10df269f920d7c745b6495470fde76",
+      "inactiveOwnMonitorPredicateRepaired": true,
+      "predicateAcceptanceOnly": true,
+      "productSceneAcceptance": false,
+      "evidence": "implementation/elm-scene-core-v8/qa/slice-manifest.json"
     }
   },
-  "next": "Finish S01 discovery and S02 budgets; implement authenticated complete native scene observations and compositor-owned exclusion/order/focus; bind admitted projections into the actual Elm view before original Brave/Heroic/native campaign acceptance."
+  "next": "Qualify repaired exclusions with actual pixels/hit/focus, modal families and original MAX regressions on the V8 tuple; implement first-class minimization and complete authenticated scene observations; finish original campaign ledger, S02 budgets and all later release gates."
 }
