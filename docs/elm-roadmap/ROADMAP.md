@@ -27,6 +27,10 @@ Windows parity means the explicit behavior inventory and inherited scenario iden
 
 The optional compositor track includes native Wayland/Xwayland compatibility, seat/input, rendering/buffer ownership, outputs/backends, portals/IME/accessibility and crash recovery. It begins only after its feasibility gate and a separate resource/scope decision. Mandatory shell delivery does not depend on completing it.
 
+## Sprint delivery
+
+[Sprint plan](SPRINTS.md) decomposes the mandatory phases into 16 proposed two-week delivery slots, with separate optional compositor slots. The [machine backlog](delivery/sprint-backlog.json) maps all 242 requirements and 417 acceptance scenarios exactly once, retaining owners and independent verifier roles. Staffing, estimates and capacity must be refined before commitment; dates and completed gates are not inferred from slot numbers. This is a delivery-planning derivative of the frozen reviewed requirements; the original audit and final-plan manifests remain unchanged.
+
 ## Workstreams and ownership
 
 | Workstream | Responsible role | Outputs |
