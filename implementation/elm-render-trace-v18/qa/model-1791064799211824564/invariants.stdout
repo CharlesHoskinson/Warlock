@@ -1,0 +1,539 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      active: true,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      active: true,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 2
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      active: true,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      active: true,
+      committed: false,
+      complete: false,
+      count: 1,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      active: false,
+      committed: true,
+      complete: true,
+      count: 1,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      active: false,
+      committed: true,
+      complete: true,
+      count: 1,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      active: false,
+      committed: false,
+      complete: false,
+      count: 0,
+      overflow: false,
+      serial: 3
+    }
+}
+
+[ok] No violation found (506ms at 1976 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

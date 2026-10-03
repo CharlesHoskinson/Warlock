@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-gui-recovery-v17",
-  "status": "Typed pure Elm GUI recovery implemented: correlated binding/request snapshots, pending Unknown and explicit fresh-broker reconnect without replay. Bounded model/compiled/native proof; full canonical scene, renderer/authority restart, UX, hardware/AT and release gates remain open.",
+  "activeSlice": "implementation/elm-render-trace-v18",
+  "status": "Actual native surface draw dispatch instrumentation built and qualified in bounded private fixtures. Repeated floating/MAX/pinned dispatches observed; complete canonical scene/presentation/input and release acceptance remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -233,6 +233,23 @@
         "authority restart",
         "canonical scene",
         "full UI/UX/AT/IME/GPU and release"
+      ]
+    },
+    "renderTraceV18": {
+      "ordinaryNativeChecks": 63,
+      "fullRedrawDiagnosticChecks": 78,
+      "elmDecoderChecks": 22,
+      "actualNativePacketsDecoded": 12,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-render-trace-v18/qa/slice-manifest.json",
+      "findings": [
+        "Repeated Peer/MAX/Peer dispatches when Peer is on top; pinned Peer has an additional pass.",
+        "Window vector order cannot represent all surface dispatches.",
+        "Draw-time identities, masks, dependency/presentation coherence and all input routes remain unqualified."
       ]
     }
   },

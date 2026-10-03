@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "qa/elm.cjs": "9bce03dcbece4e00f97a88be9cad01151d9b2d7f65ac03e0e6b88d7ccc97bc40",
+    "src/Binding.elm": "c1985aef94e7230e60edeadda491d40fa7cac4aabf340025b6f02038327595e5",
+    "src/RenderTrace.elm": "8fedd0733f23792c6ca18c9e4b6a84da8c7b58c07a69eb56bf8f454e17840d2c",
+    "src/Replay.elm": "957c6741782d249ee928643d94597a18d5d85764375b8092624789cca19d590d",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+  },
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-render-trace-v18/qa/elm-1791064746969487408/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-render-trace-v18/qa/elm-1791064746969487408/inputs/elm.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-render-trace-v18/qa/elm-1791064746969487408/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-render-trace-v18/qa/native-1791064570623986596/report.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-render-trace-v18/qa/elm-1791064746969487408/checks.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeReportSHA256": "aa1dad5be6e73e51b465a0ff0eb4a853569c9ed6cebd48a9f007423870a2b07d",
+  "checks": 22,
+  "nativeCaptures": 12,
+  "malformedCases": 8
+}

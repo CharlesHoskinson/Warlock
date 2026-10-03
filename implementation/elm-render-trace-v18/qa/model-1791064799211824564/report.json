@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "Abstract trace recorder with capacity2/serial ceiling3; native overflow/direct scanout and whole scene acceptance remain separate",
+  "sourceSHA256": "fe7e6deaa438a3da424c919f409df52e1524069cff7070b516420c63687aab7c",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "trace.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "trace.qnt",
+        "--backend=typescript",
+        "--match=^(incompleteBeforeFinishTest|committedCompleteTest|overflowRefusesUsableTest|failedCommitTest|invalidationTest|lateFinishIgnoredTest|exhaustionTest|closedDrawIgnoredTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "trace.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "trace.qnt": "fe7e6deaa438a3da424c919f409df52e1524069cff7070b516420c63687aab7c",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-incompleteBeforeFinishTest-0.itf.json": "6a0cf7f5a9708041e83d21703ac995f884c27655ae2ffc63c59873fa9c6f8c1c",
+    "named-committedCompleteTest-1.itf.json": "c4a1dbf9f1d939731030f5d257969715cbcdc7da41294e6f9113a1c23c622b02",
+    "named-overflowRefusesUsableTest-2.itf.json": "696a557941159ec32985d33bccf0e487ccb77cf459c7b8096117374e933a401d",
+    "named-failedCommitTest-3.itf.json": "fe095d2a521a9ed5572ac9038f18defbf45a8f9ac80124aeae1c5bcafdc86498",
+    "named-invalidationTest-4.itf.json": "d55bfd4838057cb3a0b60aaab64cb9320150a6df4f7aa59e92918d6514f20a4d",
+    "named-lateFinishIgnoredTest-5.itf.json": "938528d6543638163b70025900a11d76b3a2c5af8d72f76169dd0f0c129043ba",
+    "named-exhaustionTest-6.itf.json": "6500e1acdca16504f09be26ee8e37df729723d52e6451567ee6e3ec02d2a118d",
+    "named-closedDrawIgnoredTest-7.itf.json": "77067de4f7c30a7c6a56b21e8d5c3acb494c6dc9eeb9a263bb4cbd0699a18fd8",
+    "named.stdout": "d87e04a2257d45633318fba0943b6d2c356a1000b0b31fd46227a0fddf895d37",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "aa6f89015d171afaabf54620bf8b4f89dbfec3e65640a2128d3d41ca32079224",
+    "invariants.stdout": "5ae6ded5c3f8c0831b346ba334fbf33b57b9c462415923ac5c7e3d628535fa0d",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

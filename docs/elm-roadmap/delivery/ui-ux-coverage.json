@@ -6188,6 +6188,17 @@
       "nativeChecks": 21,
       "evidence": "implementation/elm-gui-recovery-v17/qa/slice-manifest.json",
       "acceptance": "Actual pending broker loss and explicit reconnect only; renderer/authority restart and full scenario acceptance remain unproven."
+    },
+    {
+      "slice": "implementation/elm-render-trace-v18",
+      "level": "native-render-component, compiled diagnostic decoder and abstract recorder model",
+      "ordinaryNativeChecks": 63,
+      "fullRedrawDiagnosticChecks": 78,
+      "elmDecoderChecks": 22,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "evidence": "implementation/elm-render-trace-v18/qa/slice-manifest.json",
+      "acceptance": "Opaque quiescent overlap dispatch/pixel/input agreement only. Draw-time identity, masks, canonical scene, presentation, complete UX and performance remain unproven."
     }
   ]
 }
