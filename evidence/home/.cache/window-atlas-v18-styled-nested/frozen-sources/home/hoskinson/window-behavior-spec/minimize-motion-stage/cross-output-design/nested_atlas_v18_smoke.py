@@ -1,0 +1,403 @@
+#!/usr/bin/env python3
+"""Explicit native GUI smoke in a fresh private nested compositor.
+
+Run only in the coordinated GUI slot. Loads/unloads only the candidate in that
+new compositor; no installed libraries/configs or main desktop windows mutated.
+"""
+import argparse,hashlib,json,os,signal,socket,subprocess,tempfile,time
+from normal_frame_control import settle_frames
+from pathlib import Path
+from nested_preservation import project_clients,project_outputs,backup_catalogs,settle_catalogs,reader_status,files_state
+HERE=Path(__file__).resolve().parent
+
+def wait(predicate,message,timeout=12):
+ end=time.monotonic()+timeout
+ while time.monotonic()<end:
+  result=predicate()
+  if result:return result
+  time.sleep(.05)
+ raise AssertionError(message)
+
+def a11y():
+ path=Path('/run/user')/str(os.getuid())/'at-spi/bus_0'
+ stat=path.stat() if path.exists() else None
+ connected=False
+ if stat:
+  with socket.socket(socket.AF_UNIX,socket.SOCK_STREAM) as sock:
+   sock.settimeout(.2)
+   try:sock.connect(str(path));connected=True
+   except OSError:pass
+ return {'identity':[stat.st_dev,stat.st_ino] if stat else None,'connects':connected}
+
+def main():
+ parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output',type=Path,required=True)
+ args=parser.parse_args();args.output.mkdir(parents=True,exist_ok=False);args.output.chmod(0o700)
+ library=HERE/'native-atlas-v18/hyprbars-v18-atlas-candidate.so'
+ assert hashlib.sha256(library.read_bytes()).hexdigest()=='908f134af0fc266d4b4e982c35b3cbd125659d1585584c23f31511b008282eba','candidate binary changed; review/pin before GUI smoke'
+ assert library.is_file(),'build candidate first'
+ source=(HERE/'native-atlas-v18/main.cpp').read_text()
+ assert 'HASH != CLIENT_HASH' in source and '__hyprland_api_get_client_hash()' in source,'compositor/header ABI gate must precede hook installation'
+ def outer(*a):return subprocess.check_output(['hyprctl',*a],text=True,timeout=4).strip()
+ original=json.loads(outer('clients','-j'));active=json.loads(outer('activewindow','-j'));pointer=json.loads(outer('cursorpos','-j'))
+ original_outputs=project_outputs(json.loads(outer('monitors','-j')));original_plugins=json.loads(outer('plugin','list','-j'));original_errors=outer('configerrors')
+ original_reader=reader_status();assert 'false' in original_reader,'main reader must be disabled at entry'
+ original_files=files_state(Path.home());assert not original_files['visible'],'original Files must be hidden at entry'
+ catalogs=backup_catalogs(args.output,Path.home())
+ assert not original_errors,'main config has errors before smoke'
+ report={'mainOriginal':original,'mainFocusBefore':active,'mainCursorBefore':pointer,'checks':{},'librarySHA256':hashlib.sha256(library.read_bytes()).hexdigest(),'mainA11yBefore':a11y()}
+ report.update(mainStateBefore=project_clients(original),mainOutputsBefore=original_outputs,mainPluginsBefore=original_plugins,mainConfigErrorsBefore=original_errors,mainFilesBefore=original_files,mainReaderBefore=original_reader,catalogBackup=str(args.output/'catalog-before.json'))
+ compositor=None;apps=[];loaded=False;ctl=None
+ with tempfile.TemporaryDirectory(prefix='ws-',dir='/tmp',ignore_cleanup_errors=True) as temp:
+  runtime=Path(temp);runtime.chmod(0o700)
+  config=runtime/'whole-snapshot-nested.lua';config.write_text((HERE/'nested-stable.lua').read_text()+'\nhl.permission({binary='+json.dumps(str(library))+',type="plugin",mode="allow"})\n')
+  env=dict(os.environ,XDG_RUNTIME_DIR=temp,XDG_CONFIG_HOME=str(runtime/'config'),AQ_BACKENDS='wayland',GIO_USE_VFS='local',GTK_USE_PORTAL='0')
+  display=env.get('WAYLAND_DISPLAY','wayland-1')
+  if not display.startswith('/'):env['WAYLAND_DISPLAY']=str(Path(os.environ['XDG_RUNTIME_DIR'])/display)
+  for name in ('DBUS_SESSION_BUS_ADDRESS','AT_SPI_BUS_ADDRESS','HYPRLAND_INSTANCE_SIGNATURE','DISPLAY','SESSION_MANAGER'):env.pop(name,None)
+  try:
+   with (args.output/'nested.log').open('w') as log:
+    compositor=subprocess.Popen(['dbus-run-session','--','Hyprland','--config',str(config)],env=env,start_new_session=True,stdout=log,stderr=subprocess.STDOUT)
+   def instance():
+    assert compositor.poll() is None,'nested compositor exited'
+    try:
+     found=json.loads(subprocess.check_output(['hyprctl','instances','-j'],env=env,text=True,stderr=subprocess.DEVNULL,timeout=2))
+     return next((i for i in found if str(config).encode() in Path(f'/proc/{i["pid"]}/cmdline').read_bytes()),None)
+    except (OSError,ValueError,subprocess.SubprocessError):return None
+   selected=wait(instance,'nested compositor startup timeout')
+   nested=dict(env,HYPRLAND_INSTANCE_SIGNATURE=selected['instance'],WAYLAND_DISPLAY=selected['wl_socket'])
+   for item in Path(f'/proc/{selected["pid"]}/environ').read_bytes().split(b'\0'):
+    if item.startswith(b'DBUS_SESSION_BUS_ADDRESS='):nested['DBUS_SESSION_BUS_ADDRESS']=item.split(b'=',1)[1].decode()
+   def ctl(*arguments):return subprocess.check_output(['hyprctl',*map(str,arguments)],env=nested,text=True,timeout=4).strip()
+   watchdog_option=json.loads(ctl('getoption','misc:disable_watchdog_warning','-j'))
+   assert watchdog_option.get('bool') is True and watchdog_option.get('set') is True,'private watchdog warning option not enabled: '+repr(watchdog_option)
+   report['nestedWatchdogWarningOption']=watchdog_option
+   report['nestedConfigSHA256']=hashlib.sha256(config.read_bytes()).hexdigest()
+   (args.output/'nested-config.lua').write_bytes(config.read_bytes())
+   assert ctl('plugin','load',library)=='ok';loaded=True
+   ctl('repl','hl.config({plugin={hyprbars={bar_height=28,bar_color=0xffffcc33,["col.text"]=0xff000000}}})')
+   def clients():return json.loads(ctl('clients','-j'))
+   def fixture(role):
+    process=subprocess.Popen(['python3',str(HERE/'snapshot_fixture.py'),role],env=nested,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL);apps.append(process)
+    return wait(lambda:next((w for w in clients() if w['pid']==process.pid),None),'fixture map timeout')
+   target=fixture('target');cover=fixture('cover')
+   def place(w,x,y,width,height):
+    ctl('dispatch',f'hl.dsp.window.resize({{x={width},y={height},window="address:{w["address"]}"}})')
+    ctl('dispatch',f'hl.dsp.window.move({{x={x},y={y},window="address:{w["address"]}"}})')
+   place(target,200,250,380,240);place(cover,700,450,260,180)
+   ctl('dispatch',f'hl.dsp.focus({{window="address:{cover["address"]}"}})');time.sleep(.3)
+   target=next(w for w in clients() if w['address']==target['address']);before=target['at']+target['size']
+   output=runtime/'hypr-window-motion/smoke';output.mkdir(parents=True,mode=0o700)
+   sequence=0
+   def capture(name,pid=None,stable=None):
+    nonlocal sequence
+    sequence+=1;epoch='0123456789ab-'+str(sequence)
+    path=output/(epoch+'.png')
+    expression='print(hl.plugin.hyprbars.window_atlas('+','.join((json.dumps(target['address']),json.dumps(stable or target['stableId']),str(pid or target['pid']),json.dumps(str(path)),json.dumps(epoch)))+'))'
+    metadata=json.loads(ctl('repl',expression))
+    if metadata.get('ok'):
+     destination=args.output/(name+'.png');destination.write_bytes(path.read_bytes());metadata['artifact']=str(destination)
+    return metadata
+   baseline=capture('baseline');assert baseline.get('whole') and baseline.get('ok'),baseline
+   place(cover,190,200,410,330);time.sleep(.2)
+   occluded=capture('occluded');assert occluded.get('whole') and occluded.get('ok'),occluded
+   subprocess.run(['grim','-o','WAYLAND-1',str(args.output/'monitor-occluded.png')],env=nested,check=True,timeout=4)
+   def rgba(path,*options):return subprocess.check_output(['magick',path,*options,'-depth','8','rgba:-'],timeout=4)
+   first=rgba(baseline['artifact']);second=rgba(occluded['artifact'])
+   report['checks']['occluderIndependent']=first==second
+   inset=baseline['insets'];scale=baseline['pixels'][0]/baseline['rect']['width'];left=round(inset['left']*scale);top=round(inset['top']*scale)
+   captionWidth=baseline['pixels'][0]-left-round(inset['right']*scale)-40
+   caption=rgba(baseline['artifact'],'-crop',f'{captionWidth}x20+{left+20}+{max(0,top-24)}','+repage')
+   gold=sum(1 for offset in range(0,len(caption),4) if caption[offset+3]>200 and caption[offset]>180 and caption[offset+1]>100 and caption[offset+2]<100)
+   report['checks']['serverCaptionPixels']=top>=28 and gold>100
+   report['captionGoldPixels']=gold;report['baseline']=baseline;report['occluded']=occluded
+   width,height=baseline['pixels'];center=left+round(target['size'][0]*scale/2)
+   redRows=[]
+   for row in range(height):
+    offset=(row*width+center)*4;r,g,b,a=first[offset:offset+4]
+    if r>180 and g<50 and b<50 and a>200:redRows.append(row)
+   report['clientRedRows']=[min(redRows),max(redRows)] if redRows else []
+   report['checks']['clientPixelsMatchInsets']=bool(redRows) and abs(min(redRows)-top)<=2 and abs(max(redRows)-(top+round(target['size'][1]*scale)-1))<=2
+   monitorPixel=rgba(str(args.output/'monitor-occluded.png'),'-crop',f'1x1+{target["at"][0]+target["size"][0]//2}+{target["at"][1]+target["size"][1]//2}','+repage')
+   report['checks']['monitorActuallyOccluded']=len(monitorPixel)==4 and monitorPixel[2]>180 and monitorPixel[0]<50 and monitorPixel[1]<60
+
+   legacy_path=output/'compatibility.png'
+   legacy=json.loads(ctl('repl','print(hl.plugin.hyprbars.window_snapshot('+','.join((json.dumps(target['address']),json.dumps(target['stableId']),str(target['pid']),json.dumps(str(legacy_path))))+'))'))
+   report['legacySnapshot']=legacy;report['checks']['legacySnapshotCompatible']=legacy.get('ok') and legacy.get('canonical') is False and legacy.get('captureEpoch')=='' and rgba(str(legacy_path))==first
+   bad_epoch_path=output/'not-the-request-token.png'
+   bad_epoch=json.loads(ctl('repl','print(hl.plugin.hyprbars.window_atlas('+','.join((json.dumps(target['address']),json.dumps(target['stableId']),str(target['pid']),json.dumps(str(bad_epoch_path)),json.dumps('0123456789ab-999')))+'))'))
+   report['checks']['epochFilenameMismatchRejected']=not bad_epoch.get('ok') and not bad_epoch_path.exists()
+   report['epochMismatchResult']=bad_epoch
+   stale=capture('stale-pid',target['pid']+1);stale_id=capture('stale-id',stable='ffffffffffffffff')
+   report['checks']['stalePIDRejected']=not stale.get('ok') and not stale.get('artifact')
+   report['checks']['staleIDRejected']=not stale_id.get('ok') and not stale_id.get('artifact')
+   actual=next(w for w in clients() if w['address']==target['address'])
+   report['checks']['exactGeometry']=actual['at']+actual['size']==before
+   report['edgeTrials']=[]
+   for label,x,y in [('left-edge',0,250),('right-edge',620,250),('top-edge',400,28)]:
+    place(target,x,y,380,240);time.sleep(.1)
+    edge_before=next(w for w in clients() if w['address']==target['address'])
+    edge=capture(label);assert edge.get('ok') and edge.get('whole'),edge
+    edge_after=next(w for w in clients() if w['address']==target['address'])
+    data=rgba(edge['artifact']);ew,eh=edge['pixels'];ei=edge['insets']
+    et=round(ei['top']);ex=round(ei['left'])+190
+    red=[]
+    for row in range(eh):
+     offset=(row*ew+ex)*4;r,g,b,a=data[offset:offset+4]
+     if r>180 and g<50 and b<50 and a>200:red.append(row)
+    caption=rgba(edge['artifact'],'-crop',f'{max(1,ew-40)}x{max(1,et-6)}+20+2','+repage')
+    gold=sum(1 for offset in range(0,len(caption),4) if caption[offset+3]>200 and caption[offset]>180 and caption[offset+1]>100 and caption[offset+2]<100)
+    agreement=all(abs(edge['rect'][name]+ei[side]-edge_before['at'][index])<.02 for name,side,index in [('x','left',0),('y','top',1)])
+    dimensions=abs(edge['rect']['width']-ei['left']-ei['right']-380)<.02 and abs(edge['rect']['height']-ei['top']-ei['bottom']-240)<.02
+    clipped=(ei['left']>=0 and ei['right']>=0 and edge.get('canonical')==True)
+    passed=edge_after['at']+edge_after['size']==edge_before['at']+edge_before['size'] and agreement and dimensions and clipped and gold>100 and bool(red) and abs(min(red)-et)<=2 and abs(max(red)-(et+239))<=2
+    report['edgeTrials'].append({'edge':label,'metadata':edge,'geometryBefore':edge_before['at']+edge_before['size'],'goldPixels':gold,'redRows':[min(red),max(red)] if red else [],'passed':passed})
+    report['checks'][label]=passed
+   place(target,-4,250,380,240);time.sleep(.1)
+   spanning=capture('client-spanning')
+   report['checks']['clientSpanningComplete']=bool(spanning.get('ok') and spanning.get('canonical') and spanning['rect']['x']<0)
+   report['spanningResult']=spanning
+   # Native scale/move cache control, with NO atlas call between observations.
+   report['noCaptureScaleControls']=[]
+   for control_scale in (1.5,1):
+    ctl('repl',f'hl.monitor({{output="WAYLAND-1",mode="960x720@60",position="0x0",scale={control_scale},transform=0}})')
+    time.sleep(.2);place(target,100,120,380,240);place(cover,600,400,200,120);time.sleep(.2)
+    control_output=next(m for m in json.loads(ctl('monitors','-j')) if m['name']=='WAYLAND-1')
+    assert control_output['scale']==control_scale and control_output['transform']==0 and control_output['width']==960 and control_output['height']==720,control_output
+    label=f'no-atlas-scale-{control_scale}'
+    no_capture_before=[];no_capture_after=[]
+    def observe_no_capture_before(index):
+     path=args.output/(label+f'-before-{index}.png');subprocess.run(['grim','-o','WAYLAND-1',str(path)],env=nested,check=True,timeout=4)
+     no_capture_before.append(str(path));return rgba(str(path))
+    before_stable=settle_frames(observe_no_capture_before,time.monotonic,time.sleep,timeout=5,consecutive=3)
+    control_identity={target['address'],cover['address']}
+    native_before=project_clients([w for w in clients() if w['address'] in control_identity]);focus_before=json.loads(ctl('activewindow','-j'))
+    place(cover,90,70,410,340);time.sleep(.1);place(cover,600,400,200,120);time.sleep(.1)
+    def observe_no_capture_after(index):
+     path=args.output/(label+f'-after-{index}.png');subprocess.run(['grim','-o','WAYLAND-1',str(path)],env=nested,check=True,timeout=4)
+     no_capture_after.append(str(path));return rgba(str(path))
+    after_stable=settle_frames(observe_no_capture_after,time.monotonic,time.sleep,timeout=5,consecutive=3)
+    native_after=project_clients([w for w in clients() if w['address'] in control_identity]);focus_after=json.loads(ctl('activewindow','-j'))
+    equal=before_stable and after_stable and rgba(no_capture_before[-1])==rgba(no_capture_after[-1])
+    passed=equal and native_before==native_after and focus_before.get('stableId')==focus_after.get('stableId') and focus_before.get('pid')==focus_after.get('pid')
+    report['noCaptureScaleControls'].append({'scale':control_scale,'actualOutput':control_output,'beforeFrames':no_capture_before,'afterFrames':no_capture_after,'beforeStable':before_stable,'afterStable':after_stable,'fullFrameEqual':equal,'nativeBefore':native_before,'nativeAfter':native_after,'focusBefore':focus_before,'focusAfter':focus_after,'passed':passed})
+   report['checks']['noAtlasScaleTransferResizeReturn']=all(t['passed'] for t in report['noCaptureScaleControls'])
+   # Each transform/scale is configured only in this isolated compositor.
+   # Full-frame before/after pixels prove normal rendering resumes correctly;
+   # uniformStatus itself is private and is not claimed byte-identical.
+   report['transformTrials']=[]
+   report['nestedOutputsInitial']=json.loads(ctl('monitors','-j'))
+   for transform in range(8):
+    for output_scale in (1,1.5):
+     ctl('repl',f'hl.monitor({{output="WAYLAND-1",mode="960x720@60",position="0x0",scale={output_scale},transform={transform}}})')
+     time.sleep(.2)
+     place(target,100,120,380,240);place(cover,600,400,200,120);time.sleep(.2)
+     actual_outputs=json.loads(ctl('monitors','-j'));actual_output=next(m for m in actual_outputs if m['name']=='WAYLAND-1')
+     assert actual_output.get('scale')==output_scale and actual_output.get('transform')==transform,'actual matrix scale/transform differs from request: '+repr(actual_output)
+     assert actual_output.get('width')==960 and actual_output.get('height')==720,'actual matrix pixel mode differs from960x720: '+repr(actual_output)
+     current=next(w for w in clients() if w['address']==target['address'])
+     before_window={key:current.get(key) for key in ('address','stableId','pid','at','size','pinned','workspace','monitor','fullscreen','fullscreenClient')}
+     label=f'transform-{transform}-scale-{output_scale}'
+     pre=args.output/(label+'-monitor-before.png');control=args.output/(label+'-monitor-no-capture-control.png');post=args.output/(label+'-monitor-after.png')
+     control_trials=[]
+     def observe_control(index):
+      path=args.output/(label+f'-settle-{index}.png')
+      subprocess.run(['grim','-o','WAYLAND-1',str(path)],env=nested,check=True,timeout=4)
+      control_trials.append(str(path));return rgba(str(path))
+     settled=settle_frames(observe_control,time.monotonic,time.sleep,timeout=5,consecutive=3)
+     # Fresh complete frames, with no capture between them, are the baseline.
+     pre.write_bytes(Path(control_trials[-2]).read_bytes());control.write_bytes(Path(control_trials[-1]).read_bytes())
+     stable_control=settled and rgba(str(pre))==rgba(str(control))
+     if not stable_control:raise AssertionError('normal compositor frames do not settle before atlas capture: '+label)
+     meta=capture(label)
+     time.sleep(.1);subprocess.run(['grim','-o','WAYLAND-1',str(post)],env=nested,check=True,timeout=4)
+     normal_equal=rgba(str(control))==rgba(str(post))
+     assert meta.get('ok') and meta.get('canonical'),meta
+     scale=meta['pixels'][0]/meta['rect']['width'];inset=meta['insets'];pixels=rgba(meta['artifact']);width,height=meta['pixels']
+     top=round(inset['top']*scale);cx=round((inset['left']+current['size'][0]/2)*scale)
+     red=[]
+     for row in range(height):
+      off=(row*width+cx)*4;r,g,b,a=pixels[off:off+4]
+      if r>180 and g<50 and b<50 and a>200:red.append(row)
+     caption=rgba(meta['artifact'],'-crop',f'{max(1,width-40)}x{max(1,top-6)}+20+2','+repage')
+     gold=sum(1 for off in range(0,len(caption),4) if caption[off+3]>200 and caption[off]>180 and caption[off+1]>100 and caption[off+2]<100)
+     place(cover,90,70,410,340);time.sleep(.1)
+     blocked=capture(label+'-occluded');assert blocked.get('ok') and blocked.get('canonical'),blocked
+     independent=rgba(blocked['artifact'])==pixels
+     place(cover,600,400,200,120);time.sleep(.1)
+     after_occluded_trials=[]
+     def observe_after_occluded(index):
+      path=args.output/(label+f'-after-occluded-settle-{index}.png')
+      subprocess.run(['grim','-o','WAYLAND-1',str(path)],env=nested,check=True,timeout=4)
+      after_occluded_trials.append(str(path));return rgba(str(path))
+     after_occluded_stable=settle_frames(observe_after_occluded,time.monotonic,time.sleep,timeout=5,consecutive=3)
+     after_occluded_equal=after_occluded_stable and rgba(after_occluded_trials[-1])==rgba(str(control))
+     after=next(w for w in clients() if w['address']==target['address'])
+     now={key:after.get(key) for key in before_window}
+     native_match=abs(meta['rect']['x']+inset['left']-current['at'][0])<.02 and abs(meta['rect']['y']+inset['top']-current['at'][1])<.02 and abs(meta['rect']['width']-inset['left']-inset['right']-current['size'][0])<.02 and abs(meta['rect']['height']-inset['top']-inset['bottom']-current['size'][1])<.02
+     passed=before_window==now and native_match and gold>100 and red and abs(min(red)-top)<=2 and abs(max(red)-(top+round(current['size'][1]*scale)-1))<=2 and independent and stable_control and normal_equal and after_occluded_equal
+     report['transformTrials'].append({'requestedTransform':transform,'requestedScale':output_scale,'requestedPixelMode':[960,720],'actualOutput':actual_output,'actualOutputs':actual_outputs,'capturePixelsPerLogicalUnit':scale,'metadata':meta,'before':before_window,'after':now,'goldPixels':gold,'redRows':[min(red),max(red)] if red else [],'occludedMetadata':blocked,'occluderIndependent':independent,'normalControlStable':stable_control,'normalFrameEqual':normal_equal,'afterOccludedExportEqual':after_occluded_equal,'afterOccludedControlStable':after_occluded_stable,'afterOccludedFrames':after_occluded_trials,'normalFrameControl':str(control),'normalControlTrials':control_trials,'passed':bool(passed)})
+     report['checks'][label]=bool(passed)
+   ctl('repl','hl.monitor({output="WAYLAND-1",mode="1000x760@60",position="0x0",scale=1,transform=0})')
+   ctl('output','create','headless','ATLAS-GAP')
+   ctl('repl','hl.monitor({output="ATLAS-GAP",mode="960x720@60",position="1100x0",scale=1.5})')
+   time.sleep(.2)
+   gap_output=next(o for o in json.loads(ctl('monitors','-j')) if o['name']=='ATLAS-GAP')
+   assert gap_output['width']==960 and gap_output['height']==720 and gap_output['scale']==1.5 and gap_output['transform']==0,gap_output
+   report['gapOutputExactMode']=gap_output
+   place(target,880,180,380,240);time.sleep(.2)
+   gap_before=next(w for w in clients() if w['address']==target['address']);gap=capture('full-gap-source');assert gap.get('ok') and gap.get('canonical'),gap
+   scale=gap['pixels'][0]/gap['rect']['width'];gx=round((1050-gap['rect']['x'])*scale);gy=round((gap_before['at'][1]+120-gap['rect']['y'])*scale)
+   data=rgba(gap['artifact']);gw,gh=gap['pixels'];gap_red=False
+   if 0<=gx<gw and 0<=gy<gh:
+    off=(gy*gw+gx)*4;r,g,b,a=data[off:off+4];gap_red=r>180 and g<50 and b<50 and a>200
+   gap_after=next(w for w in clients() if w['address']==target['address'])
+   report['gapTrial']={'actualOutputs':json.loads(ctl('monitors','-j')),'metadata':gap,'sourceBefore':gap_before,'sourceAfter':gap_after,'gapPixelRed':gap_red}
+   report['checks']['fullGapPixelsPresent']=gap_red and gap_before['at']+gap_before['size']==gap_after['at']+gap_after['size']
+   # Fullscreen should contain the real undecorated client, not synthesize a caption.
+   ctl('dispatch',f'hl.dsp.window.fullscreen({{mode="fullscreen",action="set",window="address:{target["address"]}"}})');time.sleep(.2)
+   fullscreen_before=next(w for w in clients() if w['address']==target['address'])
+   fullscreen=capture('fullscreen');assert fullscreen.get('ok') and fullscreen.get('canonical'),fullscreen
+   fullscreen_after=next(w for w in clients() if w['address']==target['address'])
+   fpixels=rgba(fullscreen['artifact']);fw,fh=fullscreen['pixels'];offset=((fh//2)*fw+fw//2)*4;fr,fg,fb,fa=fpixels[offset:offset+4]
+   fgold=sum(1 for off in range(0,len(fpixels),4) if fpixels[off+3]>200 and fpixels[off]>180 and fpixels[off+1]>100 and fpixels[off+2]<100)
+   report['fullscreenTrial']={'before':project_clients([fullscreen_before]),'after':project_clients([fullscreen_after]),'metadata':fullscreen,'goldPixels':fgold}
+   report['checks']['fullscreenNativePixelsAndState']=project_clients([fullscreen_before])==project_clients([fullscreen_after]) and bool(fullscreen_before.get('fullscreen')) and fr>180 and fg<50 and fb<50 and fa>200 and fgold==0
+   # Snapshot must preserve premultiplied edge alpha; no opaque monitor crop.
+   report['checks']['transparentRoundedCorners']=any(a<255 for a in first[3::4]) and any(0<a<255 for a in first[3::4])
+   # Fresh main-style effects and controls gates, after every unchanged v17 gate.
+   ctl('dispatch',f'hl.dsp.window.fullscreen({{mode="fullscreen",action="toggle",window="address:{target["address"]}"}})')
+   ctl('output','remove','ATLAS-GAP')
+   ctl('repl','hl.config({decoration={rounding=8,dim_inactive=true,dim_strength=0.15,blur={enabled=true},shadow={enabled=true,range=24,render_power=3,offset={0,6},color="rgba(000000cc)",color_inactive="rgba(00000040)"}},plugin={hyprbars={bar_height=24,bar_color=0xffffcc33,["col.text"]=0xff000000,bar_text_size=10,bar_padding=10,bar_button_padding=8,bar_precedence_over_border=true,bar_part_of_window=true,bar_blur=false}}})')
+   for icon,bg in [('✕','rgb(f38ba8)'),('□','rgb(a6e3a1)'),('_','rgb(f9e2af)'),('📌','rgb(89b4fa)')]:
+    ctl('repl','hl.plugin.hyprbars.add_button('+json.dumps({'bg_color':bg,'fg_color':'rgb(1e1e2e)','size':14,'icon':icon,'action':'true'},ensure_ascii=False).replace('"bg_color":','bg_color=').replace('"fg_color":','fg_color=').replace('"size":','size=').replace('"icon":','icon=').replace('"action":','action=')+')')
+   place(target,200,250,380,240);place(cover,700,450,200,120)
+   ctl('dispatch',f'hl.dsp.focus({{window="address:{cover["address"]}"}})');time.sleep(.2)
+   def stable_normal(label):
+    paths=[]
+    def observe(index):
+     path=args.output/(label+f'-{index}.png');subprocess.run(['grim','-o','WAYLAND-1',str(path)],env=nested,check=True,timeout=4)
+     paths.append(str(path));return rgba(str(path))
+    stable=settle_frames(observe,time.monotonic,time.sleep,timeout=5,consecutive=3)
+    assert stable,'normal styled frames did not settle: '+label
+    return {'frames':paths,'pixels':rgba(paths[-1]),'native':project_clients(clients()),'focus':json.loads(ctl('activewindow','-j'))}
+   styled_before=stable_normal('styled-control');styled=capture('styled-whole');assert styled.get('ok'),styled
+   styled_after=stable_normal('styled-after-export');styled_data=rgba(styled['artifact']);sw,sh=styled['pixels'];si=styled['insets']
+   shadow_pixels=0
+   for row in range(sh):
+    for col in range(sw):
+     off=(row*sw+col)*4;r,g,b,a=styled_data[off:off+4]
+     if (col<si['left']-3 or col>sw-si['right']+3 or row>sh-si['bottom']+3) and 0<a<220 and r<30 and g<30 and b<30:shadow_pixels+=1
+   styled_buttons=[]
+   # Main native button layout is right-to-left: close,maximize,minimize,pin.
+   # Require both background and rasterized glyph pixels within their real boxes.
+   for index,label,icon in [(1,'green-maximize','□'),(3,'blue-pin','📌')]:
+    bx=round(si['left']+380-10-14-index*22);by=round(si['top']-24+5)
+    button=rgba(styled['artifact'],'-crop',f'14x14+{bx}+{by}','+repage');background=0;glyph=0
+    for off in range(0,len(button),4):
+     r,g,b,a=button[off:off+4]
+     is_background=(g>170 and 130<r<215 and 110<b<200) if index==1 else (b>175 and 80<r<175 and 120<g<220)
+     if a>80 and is_background:background+=1
+     if a>80 and r<80 and g<100 and b<130:glyph+=1
+    styled_buttons.append({'label':label,'nativeIcon':icon,'pixelBox':[bx,by,14,14],'backgroundPixels':background,'glyphPixels':glyph,'passed':background>20 and glyph>2})
+   report['styledButtons']=styled_buttons
+   report['checks']['styledNativeGreenBlueButtonsAndGlyphs']=all(row['passed'] for row in styled_buttons)
+   report['styledTrial']={'metadata':styled,'shadowPixels':shadow_pixels,'beforeFrames':styled_before['frames'],'afterFrames':styled_after['frames'],'nativeBefore':styled_before['native'],'nativeAfter':styled_after['native'],'capabilityBoundary':'opaque client; core client background blur equivalence unproven'}
+   report['checks']['styledShadowAndCaptionCapture']=styled.get('whole') and shadow_pixels>20 and si['top']>=24
+   report['checks']['styledExportExactNormalRestoration']=styled_before['pixels']==styled_after['pixels'] and styled_before['native']==styled_after['native'] and styled_before['focus']==styled_after['focus']
+   ctl('repl','hl.config({plugin={hyprbars={bar_blur=true,bar_color=0x80ffcc33}}})')
+   blurred_before=stable_normal('blurred-caption-control');rejected=capture('blurred-caption-must-reject');blurred_after=stable_normal('blurred-caption-after-reject')
+   report['blurredCaptionTrial']={'result':rejected,'beforeFrames':blurred_before['frames'],'afterFrames':blurred_after['frames'],'lastCapturePathExists':(output/('0123456789ab-'+str(sequence)+'.png')).exists()}
+   report['checks']['blurredCaptionFailsWithoutArtifact']=not rejected.get('ok') and not rejected.get('artifact') and not report['blurredCaptionTrial']['lastCapturePathExists']
+   report['checks']['rejectedExportExactNormalRestoration']=blurred_before['pixels']==blurred_after['pixels'] and blurred_before['native']==blurred_after['native'] and blurred_before['focus']==blurred_after['focus']
+   ctl('repl','hl.config({plugin={hyprbars={bar_blur=false,bar_color=0xffffcc33}}})')
+   styled_restored=stable_normal('styled-after-blur-restore')
+   report['checks']['normalStyleRestoredAfterBlurGate']=styled_restored['pixels']==styled_before['pixels'] and styled_restored['native']==styled_before['native']
+   # Execute byte-pinned installed Lua controls only inside this compositor.
+   # Capture every shell action as data; no desktop/backend/menu process runs.
+   ctl('repl','qa_shell_commands={};hl.exec_cmd=function(command) table.insert(qa_shell_commands,command) end;o={bind=function() end};hypr_reduced_motion=true;dofile('+json.dumps(str(HERE/'native-atlas-v18/installed-snap.lua'))+');dofile('+json.dumps(str(HERE/'native-atlas-v18/installed-pin.lua'))+')')
+   report['controlsSourceHashes']={name:hashlib.sha256((HERE/'native-atlas-v18'/name).read_bytes()).hexdigest() for name in ('installed-snap.lua','installed-pin.lua')}
+   report['checks']['nativeDragAndModalBridgesAvailable']=ctl('repl','print(hl.plugin.hyprbars.drag_bridge(),hl.plugin.hyprbars.modal_focus_bridge())').split()==['true','true']
+   ctl('dispatch',f'hl.dsp.focus({{window="address:{target["address"]}"}})');time.sleep(.1)
+   controls_before=next(w for w in clients() if w['stableId']==target['stableId'] and w['pid']==target['pid'])
+   normal=controls_before['at']+controls_before['size']
+   snap_trials=[]
+   for zone in ('left','top_right','third_center','maximize'):
+    ctl('repl','hypr_snap_zone('+json.dumps(zone)+','+json.dumps(target['address'])+',false)');time.sleep(.1)
+    snapped=next(w for w in clients() if w['stableId']==target['stableId'] and w['pid']==target['pid'])
+    ctl('repl','hypr_snap_restore('+json.dumps(target['address'])+')');time.sleep(.1)
+    restored=next(w for w in clients() if w['stableId']==target['stableId'] and w['pid']==target['pid'])
+    snap_trials.append({'zone':zone,'snapped':snapped,'restored':restored,'passed':snapped['at']+snapped['size']!=normal and restored['at']+restored['size']==normal and restored['pinned']==controls_before['pinned'] and restored['fullscreen']==controls_before['fullscreen']})
+   report['snapControlTrials']=snap_trials;report['checks']['installedSnapAndRestoreRetainsExactNativeGeometry']=all(t['passed'] for t in snap_trials)
+   ctl('repl','hypr_pin_toggle('+json.dumps(target['address'])+')');time.sleep(.1)
+   pinned=next(w for w in clients() if w['stableId']==target['stableId'] and w['pid']==target['pid'])
+   ctl('repl','hypr_pin_toggle('+json.dumps(target['address'])+')');time.sleep(.1)
+   unpinned=next(w for w in clients() if w['stableId']==target['stableId'] and w['pid']==target['pid'])
+   report['checks']['installedPinToggleRetainsExactNativeGeometry']=pinned['pinned'] and not unpinned['pinned'] and pinned['at']+pinned['size']==normal==unpinned['at']+unpinned['size']
+   # Virtual pointer protocol connects to private display; no main seat/input is used.
+   ctl('repl','qa_drag_events={};hl.on("hyprbars.drag_start",function(w) table.insert(qa_drag_events,{kind="begin",address=w.address}) end);hl.on("hyprbars.drag_finish",function(w,released) table.insert(qa_drag_events,{kind=released and "release" or "cancel",address=w.address}) end)')
+   private_pointer=Path.home()/'.local/share/hypr-window-controls/qa/virtual-pointer'
+   pointer_script='move 390 238\nsleep 100\nbutton 272 1\nsleep 100\nmove 430 258\nsleep 100\nbutton 272 0\nsleep 200\n'
+   subprocess.run([str(private_pointer),'1000','760'],input=pointer_script,env=nested,text=True,check=True,timeout=6)
+   drag_events=[line.split() for line in ctl('repl','for _,e in ipairs(qa_drag_events) do print(e.kind,e.address) end').splitlines()]
+   dragged=next(w for w in clients() if w['stableId']==target['stableId'] and w['pid']==target['pid'])
+   report['dragTrial']={'events':drag_events,'before':normal,'after':dragged['at']+dragged['size']}
+   report['checks']['virtualPointerCaptionDragBridgeRetainsOwnerAndRelease']=drag_events==[['begin',target['address']],['release',target['address']]] and dragged['at']==[normal[0]+40,normal[1]+20] and dragged['size']==normal[2:]
+   place(target,*normal)
+   family_control=runtime/'modal-control';family_log=runtime/'modal-log.jsonl'
+   family_process=subprocess.Popen(['python3',str(HERE/'native-atlas-v18/modal_probe_gtk.py'),'family',str(family_control),str(family_log)],env=nested,stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL);apps.append(family_process)
+   owner=wait(lambda:next((w for w in clients() if w['pid']==family_process.pid and w['title']=='Modal QA owner'),None),'private modal owner')
+   family_control.write_text('open');child=wait(lambda:next((w for w in clients() if w['pid']==family_process.pid and w['title']=='Modal QA child'),None),'private modal child')
+   relation=json.loads(ctl('repl','print(hl.plugin.hyprbars.window_families())'))
+   edge=next((r for r in relation if r['stableId']==child['stableId'] and r['pid']==child['pid'] and r['address']==child['address']),None)
+   report['checks']['nativeModalFamilyExactEdges']=edge is not None and edge['parent']==owner['address'] and edge['parentStableId']==owner['stableId'] and edge['modal']
+   ctl('dispatch',f'hl.dsp.focus({{window="address:{owner["address"]}"}})');time.sleep(.1)
+   report['checks']['modalOwnerFocusRedirectRetained']=json.loads(ctl('activewindow','-j')).get('stableId')==child['stableId']
+   ctl('repl','hypr_pin_toggle('+json.dumps(owner['address'])+')');time.sleep(.1)
+   ctl('dispatch','hl.dsp.focus({workspace="2"})');time.sleep(.1)
+   owner_now=next(w for w in clients() if w['stableId']==owner['stableId'] and w['pid']==owner['pid']);child_now=next(w for w in clients() if w['stableId']==child['stableId'] and w['pid']==child['pid'])
+   report['familyTrial']={'edge':edge,'owner':owner_now,'child':child_now}
+   report['checks']['pinnedModalFamilyFollowsWithoutChangingPeerPin']=owner_now['pinned'] and not child_now['pinned'] and owner_now['workspace']==child_now['workspace'] and owner_now['workspace']['id']==2
+   ctl('dispatch','hl.dsp.focus({workspace="1"})')
+   report['capturedPrivateShellCommands']=ctl('repl','for _,c in ipairs(qa_shell_commands) do print(c) end').splitlines()
+   assert ctl('plugin','unload',library)=='ok';loaded=False
+   report['checks']['cleanUnload']=not any(p.get('name')=='hyprbars' for p in json.loads(ctl('plugin','list','-j')))
+  except Exception as error:report['error']=repr(error)
+  finally:
+   (args.output/'snapshot-intermediate.json').write_text(json.dumps(report,indent=2))
+   for app in apps:
+    app.terminate()
+    try:app.wait(timeout=4)
+    except subprocess.TimeoutExpired:app.kill();app.wait()
+   if loaded and ctl:
+    try:report['cleanupUnload']=ctl('plugin','unload',library)
+    except subprocess.SubprocessError as error:report['cleanupUnload']=str(error)
+   if compositor:
+    try:os.killpg(compositor.pid,signal.SIGTERM)
+    except ProcessLookupError:pass
+    try:compositor.wait(timeout=6)
+    except subprocess.TimeoutExpired:os.killpg(compositor.pid,signal.SIGKILL);compositor.wait()
+ report['catalogComparison']=settle_catalogs(catalogs,seconds=4)
+ current=json.loads(outer('clients','-j'))
+ if any(w.get('stableId')==active.get('stableId') and w.get('pid')==active.get('pid') for w in current):
+  outer('dispatch',f'hl.dsp.focus({{window="address:{active["address"]}"}})')
+ outer('dispatch',f'hl.dsp.cursor.move({{x={pointer["x"]},y={pointer["y"]}}})')
+ time.sleep(.1)
+ report['mainFocusAfter']=json.loads(outer('activewindow','-j'));report['mainCursorAfter']=json.loads(outer('cursorpos','-j'))
+ report['checks']['mainFocusRestored']=not active or (report['mainFocusAfter'].get('stableId')==active.get('stableId') and report['mainFocusAfter'].get('pid')==active.get('pid'))
+ report['checks']['mainCursorRestored']=report['mainCursorAfter']==pointer
+ after={w['address']:w for w in json.loads(outer('clients','-j'))}
+ report['checks']['mainGeometryPreserved']=all(w['address'] in after and after[w['address']].get('stableId')==w.get('stableId') and after[w['address']].get('pid')==w.get('pid') and after[w['address']]['at']+after[w['address']]['size']==w['at']+w['size'] for w in original)
+ report['mainA11yAfter']=a11y();report['checks']['mainA11yUnchanged']=report['mainA11yAfter']==report['mainA11yBefore']
+ report['mainStateAfter']=project_clients(list(after.values()));report['checks']['mainFullClientSetAndStatePreserved']=report['mainStateAfter']==report['mainStateBefore']
+ report['mainOutputsAfter']=project_outputs(json.loads(outer('monitors','-j')));report['checks']['mainOutputsPreserved']=report['mainOutputsAfter']==original_outputs
+ report['mainPluginsAfter']=json.loads(outer('plugin','list','-j'));report['checks']['mainPluginsPreserved']=report['mainPluginsAfter']==original_plugins
+ report['mainConfigErrorsAfter']=outer('configerrors');report['checks']['mainConfigErrorsUnchanged']=report['mainConfigErrorsAfter']==original_errors==''
+ report['mainFilesAfter']=files_state(Path.home());report['checks']['originalHiddenFilesPreserved']=report['mainFilesAfter']==original_files and not report['mainFilesAfter']['visible']
+ report['mainReaderAfter']=reader_status();report['checks']['mainReaderDisabledPreserved']=report['mainReaderAfter']==original_reader and 'false' in report['mainReaderAfter']
+ report['checks']['fourCatalogExactBytesPreserved']=all(row['exactBytes'] for row in report['catalogComparison'].values())
+ report['checks']['allFixtureProcessesExited']=all(app.poll() is not None for app in apps) and compositor.poll() is not None
+ report['result']='pass' if not report.get('error') and all(report['checks'].values()) else 'fail'
+ (args.output/'snapshot-smoke.json').write_text(json.dumps(report,indent=2));print(json.dumps(report,indent=2))
+ assert report['result']=='pass'
+
+if __name__=='__main__':main()

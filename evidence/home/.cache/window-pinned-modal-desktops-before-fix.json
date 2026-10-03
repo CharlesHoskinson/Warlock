@@ -1,0 +1,275 @@
+{
+  "checks": [
+    {
+      "name": "baseline pinned modal input before desktop switch",
+      "passed": false,
+      "geometry": {
+        "owner": {
+          "address": "0x5a02aef95470",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            120,
+            250
+          ],
+          "size": [
+            580,
+            380
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "org.omarchy.ModalFamilyQA",
+          "title": "Modal QA owner",
+          "initialClass": "org.omarchy.ModalFamilyQA",
+          "initialTitle": "Modal QA owner",
+          "pid": 2243708,
+          "xwayland": false,
+          "pinned": true,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*",
+            "terminal*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 4,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000358"
+        },
+        "child": {
+          "address": "0x5a02b03129a0",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            330,
+            360
+          ],
+          "size": [
+            320,
+            180
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "org.omarchy.ModalFamilyQA",
+          "title": "Modal QA child",
+          "initialClass": "org.omarchy.ModalFamilyQA",
+          "initialTitle": "Modal QA child",
+          "pid": 2243708,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*",
+            "terminal*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 5,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000359"
+        },
+        "nested": {
+          "address": "0x5a02b04a6970",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            400,
+            390
+          ],
+          "size": [
+            243,
+            140
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "org.omarchy.ModalFamilyQA",
+          "title": "Modal QA nested",
+          "initialClass": "org.omarchy.ModalFamilyQA",
+          "initialTitle": "Modal QA nested",
+          "pid": 2243708,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [
+            "default-opacity*",
+            "terminal*"
+          ],
+          "swallowing": "0x0",
+          "focusHistoryID": 6,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "1800035a"
+        }
+      },
+      "active": {
+        "address": "0x5a02afa13e90",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          26,
+          145
+        ],
+        "size": [
+          1002,
+          789
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "foot",
+        "title": "hosk: ~",
+        "initialClass": "foot",
+        "initialTitle": "foot",
+        "pid": 252010,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800006a"
+      },
+      "cursor": {
+        "x": 470,
+        "y": 450
+      },
+      "layers": {
+        "eDP-2": {
+          "levels": {
+            "0": [
+              {
+                "address": "0x5a02ae1c7670",
+                "x": 0,
+                "y": 0,
+                "w": 1600,
+                "h": 1000,
+                "alpha": 1,
+                "namespace": "owe-background",
+                "pid": 1701
+              }
+            ],
+            "1": [],
+            "2": [
+              {
+                "address": "0x5a02af4b5020",
+                "x": 0,
+                "y": 0,
+                "w": 1600,
+                "h": 26,
+                "alpha": 1,
+                "namespace": "omarchy-bar",
+                "pid": 24457
+              }
+            ],
+            "3": [
+              {
+                "address": "0x5a02b0ad5d60",
+                "x": 0,
+                "y": 0,
+                "w": 1600,
+                "h": 1000,
+                "alpha": 1,
+                "namespace": "omarchy-notifications",
+                "pid": 24457
+              },
+              {
+                "address": "0x5a02b0da4050",
+                "x": 520,
+                "y": 18,
+                "w": 560,
+                "h": 190,
+                "alpha": 1,
+                "namespace": "sudo-askpass",
+                "pid": 2227664
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "failures": [
+    "baseline pinned modal input before desktop switch"
+  ],
+  "platform": "Wayland",
+  "result": "fail",
+  "error": "AssertionError('baseline native modal input')",
+  "gtkEvents": [
+    {
+      "event": "modal",
+      "window": "child",
+      "parent": "owner",
+      "modal": true,
+      "transient": true
+    },
+    {
+      "event": "modal",
+      "window": "nested",
+      "parent": "child",
+      "modal": true,
+      "transient": true
+    }
+  ],
+  "stderr": "",
+  "originalWindowsPreserved": true
+}

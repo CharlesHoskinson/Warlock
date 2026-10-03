@@ -1,0 +1,409 @@
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:5:1: Warnings occurred while importing module "qs.Commons": [import]
+import qs.Commons
+^^^^^^
+---
+Warning: 5:1: Failed to import qs.Commons. Are your import paths set up properly? [import]
+---
+
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:6:1: Warnings occurred while importing module "qs.Ui": [import]
+import qs.Ui
+^^^^^^
+---
+Warning: 6:1: Failed to import qs.Ui. Are your import paths set up properly? [import]
+---
+
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:326:3: PopupCard was not found. Did you add all imports and dependencies? [import]
+  PopupCard {
+  ^^^^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:8:1: BarWidget was not found. Did you add all imports and dependencies? [import]
+BarWidget {
+^^^^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:162:5: Type QProcess::ExitStatus of parameter exitStatus in signal called exited was not found, but is required to compile onExited. Did you add all imports and dependencies? [signal-handler-parameters]
+    onExited: function(code) {
+    ^^^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:172:5: Type QProcess::ExitStatus of parameter exitStatus in signal called exited was not found, but is required to compile onExited. Did you add all imports and dependencies? [signal-handler-parameters]
+    onExited: { root.previewRevision++; root.refresh() }
+    ^^^^^^^^
+Info: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:2:1: Unused import [unused-imports]
+import QtQuick.Layouts
+^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:71:12: Unqualified access [unqualified]
+    return bar && bar.shell && bar.shell.appLibrary ? bar.shell.appLibrary.iconSource(group.icon) : Quickshell.iconPath(group.icon, true)
+           ^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:71:19: Unqualified access [unqualified]
+    return bar && bar.shell && bar.shell.appLibrary ? bar.shell.appLibrary.iconSource(group.icon) : Quickshell.iconPath(group.icon, true)
+                  ^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:71:32: Unqualified access [unqualified]
+    return bar && bar.shell && bar.shell.appLibrary ? bar.shell.appLibrary.iconSource(group.icon) : Quickshell.iconPath(group.icon, true)
+                               ^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:71:55: Unqualified access [unqualified]
+    return bar && bar.shell && bar.shell.appLibrary ? bar.shell.appLibrary.iconSource(group.icon) : Quickshell.iconPath(group.icon, true)
+                                                      ^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:127:9: Unqualified access [unqualified]
+    if (bar) bar.hideTooltip(stableAnchor)
+        ^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:127:14: Unqualified access [unqualified]
+    if (bar) bar.hideTooltip(stableAnchor)
+             ^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:153:19: Unqualified access [unqualified]
+  implicitHeight: barSize
+                  ^^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:199:100: Unqualified access [unqualified]
+          readonly property bool active: modelData.windows.some(function(w) { return w.address === root.focusedAddress && w.workspace.name !== "special:win-minimized" })
+                                                                                                   ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:201:18: Unqualified access [unqualified]
+          width: root.widthFor(modelData)
+                 ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:202:19: Unqualified access [unqualified]
+          height: root.barSize
+                  ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:206:16: Unqualified access [unqualified]
+            x: root.uncombined ? 8 : (parent.width-width)/2
+               ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:208:21: Unqualified access [unqualified]
+            source: root.iconSource(taskItem.modelData)
+                    ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:219:20: Unqualified access [unqualified]
+            color: root.bar ? root.bar.barForeground : Color.foreground
+                   ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:219:31: Unqualified access [unqualified]
+            color: root.bar ? root.bar.barForeground : Color.foreground
+                              ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:219:56: Unqualified access [unqualified]
+            color: root.bar ? root.bar.barForeground : Color.foreground
+                                                       ^^^^^
+Info: Did you mean "color"?
+            color: root.bar ? root.bar.barForeground : color.foreground
+                                                       ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:223:22: Unqualified access [unqualified]
+            visible: root.uncombined && taskItem.modelData.windows.length > 0
+                     ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:226:72: Unqualified access [unqualified]
+            elide: Text.ElideRight; textFormat: Text.PlainText; color: Color.foreground; font.pixelSize: 11
+                                                                       ^^^^^
+Info: Did you mean "color"?
+            elide: Text.ElideRight; textFormat: Text.PlainText; color: color.foreground; font.pixelSize: 11
+                                                                       ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:233:20: Unqualified access [unqualified]
+            color: Color.foreground
+                   ^^^^^
+Info: Did you mean "color"?
+            color: color.foreground
+                   ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:241:20: Unqualified access [unqualified]
+            color: Color.accent
+                   ^^^^^
+Info: Did you mean "color"?
+            color: color.accent
+                   ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:298:64: Unqualified access [unqualified]
+    width: 26; radius: 4; color: taskViewMouse.containsMouse ? Color.accent : "transparent"
+                                                               ^^^^^
+Info: Did you mean "color"?
+    width: 26; radius: 4; color: taskViewMouse.containsMouse ? color.accent : "transparent"
+                                                               ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:299:56: Unqualified access [unqualified]
+    Text { anchors.centerIn: parent; text: "▦"; color: Color.foreground; font.pixelSize: 16 }
+                                                       ^^^^^
+Info: Did you mean "color"?
+    Text { anchors.centerIn: parent; text: "▦"; color: color.foreground; font.pixelSize: 16 }
+                                                       ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:309:52: Unqualified access [unqualified]
+    width: 14; color: desktopMouse.containsMouse ? Color.accent : "transparent"
+                                                   ^^^^^
+Info: Did you mean "color"?
+    width: 14; color: desktopMouse.containsMouse ? color.accent : "transparent"
+                                                   ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:310:86: Unqualified access [unqualified]
+    Rectangle { width: 1; height: parent.height-12; anchors.centerIn: parent; color: Color.foreground; opacity: 0.4 }
+                                                                                     ^^^^^
+Info: Did you mean "color"?
+    Rectangle { width: 1; height: parent.height-12; anchors.centerIn: parent; color: color.foreground; opacity: 0.4 }
+                                                                                     ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:336:11: Unqualified access [unqualified]
+      if (containsMouse || taskHover.containsMouse) closeDelay.stop()
+          ^^^^^^^^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:330:42: Unqualified access [unqualified]
+    owner: QtObject { function close() { root.popupOpen = false; root.menuMode = false; root.keyboardMode = false } }
+                                         ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:330:66: Unqualified access [unqualified]
+    owner: QtObject { function close() { root.popupOpen = false; root.menuMode = false; root.keyboardMode = false } }
+                                                                 ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:330:89: Unqualified access [unqualified]
+    owner: QtObject { function close() { root.popupOpen = false; root.menuMode = false; root.keyboardMode = false } }
+                                                                                        ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:365:18: Unqualified access [unqualified]
+          color: Color.foreground; font.pixelSize: 12
+                 ^^^^^
+Info: Did you mean "color"?
+          color: color.foreground; font.pixelSize: 12
+                 ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:373:20: Unqualified access [unqualified]
+            width: popupColumn.width; height: 26; radius: 4
+                   ^^^^^^^^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:374:20: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.menuItems.length === index || menuMouse.containsMouse ? Color.accent : "transparent"
+                   ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:374:41: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.menuItems.length === index || menuMouse.containsMouse ? Color.accent : "transparent"
+                                        ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:374:68: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.menuItems.length === index || menuMouse.containsMouse ? Color.accent : "transparent"
+                                                                   ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:374:129: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.menuItems.length === index || menuMouse.containsMouse ? Color.accent : "transparent"
+                                                                                                                                ^^^^^
+Info: Did you mean "color"?
+            color: root.keyboardMode && root.selectedWindowIndex % root.menuItems.length === index || menuMouse.containsMouse ? color.accent : "transparent"
+                                                                                                                                ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:375:109: Unqualified access [unqualified]
+            Text { anchors.fill: parent; anchors.leftMargin: 5; verticalAlignment: Text.AlignVCenter; text: modelData.label; color: Color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                            ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+            Text { anchors.fill: parent; anchors.leftMargin: 5; verticalAlignment: Text.AlignVCenter; text: <id>.modelData.label; color: Color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                            ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:375:133: Unqualified access [unqualified]
+            Text { anchors.fill: parent; anchors.leftMargin: 5; verticalAlignment: Text.AlignVCenter; text: modelData.label; color: Color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                                                    ^^^^^
+Info: Did you mean "color"?
+            Text { anchors.fill: parent; anchors.leftMargin: 5; verticalAlignment: Text.AlignVCenter; text: modelData.label; color: color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                                                    ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:379:32: Unqualified access [unqualified]
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                               ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+              onClicked: { if (<id>.modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                               ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:379:48: Unqualified access [unqualified]
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                                               ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:379:60: Unqualified access [unqualified]
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                                                           ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+              onClicked: { if (modelData.snap) root.recall(<id>.modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                                                           ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:379:82: Unqualified access [unqualified]
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                                                                                 ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:379:101: Unqualified access [unqualified]
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                                                                                                    ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(<id>.modelData.command, modelData.key, modelData.extra) }
+                                                                                                    ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:379:120: Unqualified access [unqualified]
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                                                                                                                       ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, <id>.modelData.key, modelData.extra) }
+                                                                                                                       ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:379:135: Unqualified access [unqualified]
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, modelData.extra) }
+                                                                                                                                      ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+              onClicked: { if (modelData.snap) root.recall(modelData.snap); else root.taskbarAction(modelData.command, modelData.key, <id>.modelData.extra) }
+                                                                                                                                      ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:389:20: Unqualified access [unqualified]
+            width: popupColumn.width; height: 149; radius: 4
+                   ^^^^^^^^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:390:20: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.popupGroup.windows.length === index || windowMouse.containsMouse ? Color.accent : "transparent"
+                   ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:390:41: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.popupGroup.windows.length === index || windowMouse.containsMouse ? Color.accent : "transparent"
+                                        ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:390:68: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.popupGroup.windows.length === index || windowMouse.containsMouse ? Color.accent : "transparent"
+                                                                   ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:390:140: Unqualified access [unqualified]
+            color: root.keyboardMode && root.selectedWindowIndex % root.popupGroup.windows.length === index || windowMouse.containsMouse ? Color.accent : "transparent"
+                                                                                                                                           ^^^^^
+Info: Did you mean "color"?
+            color: root.keyboardMode && root.selectedWindowIndex % root.popupGroup.windows.length === index || windowMouse.containsMouse ? color.accent : "transparent"
+                                                                                                                                           ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:394:22: Unqualified access [unqualified]
+              text: (modelData.workspace.name === "special:win-minimized" ? "↓ " : "") + (modelData.title || "Window")
+                     ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+              text: (windowPreview.modelData.workspace.name === "special:win-minimized" ? "↓ " : "") + (modelData.title || "Window")
+                     ^^^^^^^^^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:394:91: Unqualified access [unqualified]
+              text: (modelData.workspace.name === "special:win-minimized" ? "↓ " : "") + (modelData.title || "Window")
+                                                                                          ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+              text: (modelData.workspace.name === "special:win-minimized" ? "↓ " : "") + (windowPreview.modelData.title || "Window")
+                                                                                          ^^^^^^^^^^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:395:22: Unqualified access [unqualified]
+              color: Color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText
+                     ^^^^^
+Info: Did you mean "color"?
+              color: color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText
+                     ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:400:74: Unqualified access [unqualified]
+              source: windowPreview.modelData.previewReady ? "file://" + root.previewDir + "/" + windowPreview.modelData.address + "-" + (root.previewRevision % 2) + ".png" : ""
+                                                                         ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:400:139: Unqualified access [unqualified]
+              source: windowPreview.modelData.previewReady ? "file://" + root.previewDir + "/" + windowPreview.modelData.address + "-" + (root.previewRevision % 2) + ".png" : ""
+                                                                                                                                          ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:402:144: Unqualified access [unqualified]
+              Text { anchors.centerIn: parent; visible: parent.status !== Image.Ready; text: "Preview appears after window is focused"; color: Color.foreground; font.pixelSize: 10 }
+                                                                                                                                               ^^^^^
+Info: Did you mean "color"?
+              Text { anchors.centerIn: parent; visible: parent.status !== Image.Ready; text: "Preview appears after window is focused"; color: color.foreground; font.pixelSize: 10 }
+                                                                                                                                               ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:407:26: Unqualified access [unqualified]
+              onClicked: root.windowAction("restore", windowPreview.modelData.address)
+                         ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:414:66: Unqualified access [unqualified]
+              Text { anchors.centerIn: parent; text: "×"; color: Color.foreground; font.pixelSize: 16 }
+                                                                 ^^^^^
+Info: Did you mean "color"?
+              Text { anchors.centerIn: parent; text: "×"; color: color.foreground; font.pixelSize: 16 }
+                                                                 ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:418:30: Unqualified access [unqualified]
+                onClicked: { root.runArgs(["hyprctl", "dispatch", 'hl.dsp.window.close({ window = "address:' + windowPreview.modelData.address + '" })']); root.popupOpen = false }
+                             ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:418:156: Unqualified access [unqualified]
+                onClicked: { root.runArgs(["hyprctl", "dispatch", 'hl.dsp.window.close({ window = "address:' + windowPreview.modelData.address + '" })']); root.popupOpen = false }
+                                                                                                                                                           ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:427:20: Unqualified access [unqualified]
+            width: popupColumn.width; height: 26; radius: 4
+                   ^^^^^^^^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:428:46: Unqualified access [unqualified]
+            color: snapMouse.containsMouse ? Color.accent : "transparent"
+                                             ^^^^^
+Info: Did you mean "color"?
+            color: snapMouse.containsMouse ? color.accent : "transparent"
+                                             ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:429:98: Unqualified access [unqualified]
+            Text { anchors.fill: parent; verticalAlignment: Text.AlignVCenter; text: "Recall " + modelData.name; color: Color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                 ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+            Text { anchors.fill: parent; verticalAlignment: Text.AlignVCenter; text: "Recall " + <id>.modelData.name; color: Color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                 ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:429:121: Unqualified access [unqualified]
+            Text { anchors.fill: parent; verticalAlignment: Text.AlignVCenter; text: "Recall " + modelData.name; color: Color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                                        ^^^^^
+Info: Did you mean "color"?
+            Text { anchors.fill: parent; verticalAlignment: Text.AlignVCenter; text: "Recall " + modelData.name; color: color.foreground; font.pixelSize: 11; elide: Text.ElideRight; textFormat: Text.PlainText }
+                                                                                                                        ^^^^^
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:430:93: Unqualified access [unqualified]
+            MouseArea { id: snapMouse; anchors.fill: parent; hoverEnabled: true; onClicked: root.recall(modelData.id) }
+                                                                                            ^^^^
+Info: Set "pragma ComponentBehavior: Bound" in order to use IDs from outer components in nested components.
+pragma ComponentBehavior: Bound
+import QtQuick
+Warning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:430:105: Unqualified access [unqualified]
+            MouseArea { id: snapMouse; anchors.fill: parent; hoverEnabled: true; onClicked: root.recall(modelData.id) }
+                                                                                                        ^^^^^^^^^
+Info: modelData is a member of a parent element.
+      You can qualify the access with its id to avoid this warning.
+
+            MouseArea { id: snapMouse; anchors.fill: parent; hoverEnabled: true; onClicked: root.recall(<id>.modelData.id) }
+                                                                                                        ^^^^^
+      You first have to give the element an idWarning: /home/hoskinson/.config/omarchy/plugins/hoskinson.windows/widget_v21/Windows.qml:437:18: Unqualified access [unqualified]
+          color: Color.foreground; font.pixelSize: 11
+                 ^^^^^
+Info: Did you mean "color"?
+          color: color.foreground; font.pixelSize: 11
+                 ^^^^^

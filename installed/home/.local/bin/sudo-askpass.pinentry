@@ -1,0 +1,9 @@
+#!/bin/bash
+# Graphical askpass for `sudo -A` (used by Claude Code). Prints the password to stdout.
+pe=$(command -v pinentry-gtk || command -v pinentry-gnome3 || command -v pinentry-qt) || exit 1
+desc="${1:-Password required}"
+desc="${desc//%/%25}"
+out=$(printf 'SETTITLE sudo\nSETDESC %s%%0A(requested by Claude Code)\nSETPROMPT Password:\nGETPIN\nBYE\n' "$desc" | "$pe" 2>/dev/null)
+line=$(grep -m1 '^D ' <<<"$out") || exit 1
+pin="${line#D }"
+printf '%b\n' "${pin//%/\\x}"

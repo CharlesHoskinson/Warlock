@@ -1,0 +1,205 @@
+{
+  "toolkit": "qt",
+  "pin": false,
+  "maximize": false,
+  "mainOriginal": [
+    {
+      "address": "0x5a02aee429f0",
+      "stableId": "18000005",
+      "pid": 4007,
+      "at": [
+        945,
+        284
+      ],
+      "size": [
+        386,
+        444
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02b0cc9280",
+      "stableId": "18000006",
+      "pid": 4311,
+      "at": [
+        417,
+        71
+      ],
+      "size": [
+        1022,
+        890
+      ],
+      "workspace": {
+        "id": -98,
+        "name": "special:win-minimized"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afd20bd0",
+      "stableId": "18000076",
+      "pid": 361074,
+      "at": [
+        817,
+        206
+      ],
+      "size": [
+        700,
+        500
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afa13e90",
+      "stableId": "1800006a",
+      "pid": 252010,
+      "at": [
+        26,
+        145
+      ],
+      "size": [
+        1002,
+        789
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "fixtureBefore": [
+    {
+      "address": "0x5a02afed4000",
+      "stableId": "180003c8",
+      "pid": 2790106,
+      "at": [
+        320,
+        350
+      ],
+      "size": [
+        620,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "passed": false,
+  "error": "CalledProcessError(1, ['python3', '/home/hoskinson/window-behavior-spec/minimize-motion-stage/native_motion_trial.py', '--output', '/home/hoskinson/.cache/window-minimize-native-v14-qt', '--window', '0x5a02afed4000', '--reduced-motion-trial'])",
+  "mainAfter": [
+    {
+      "address": "0x5a02aee429f0",
+      "stableId": "18000005",
+      "pid": 4007,
+      "at": [
+        945,
+        284
+      ],
+      "size": [
+        386,
+        444
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02b0cc9280",
+      "stableId": "18000006",
+      "pid": 4311,
+      "at": [
+        417,
+        71
+      ],
+      "size": [
+        1022,
+        890
+      ],
+      "workspace": {
+        "id": -98,
+        "name": "special:win-minimized"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afd20bd0",
+      "stableId": "18000076",
+      "pid": 361074,
+      "at": [
+        817,
+        206
+      ],
+      "size": [
+        700,
+        500
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afa13e90",
+      "stableId": "1800006a",
+      "pid": 252010,
+      "at": [
+        26,
+        145
+      ],
+      "size": [
+        1002,
+        789
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "mainPreserved": true,
+  "focusRestored": true,
+  "cursorRestored": true
+}

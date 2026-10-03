@@ -1,0 +1,138 @@
+{
+  "checks": [
+    {
+      "name": "first titlebar motion preserves original press offset",
+      "passed": true,
+      "expected": [
+        400,
+        362
+      ],
+      "actual": [
+        400,
+        362
+      ]
+    },
+    {
+      "name": "later caption motion retains the same press offset",
+      "passed": true,
+      "actual": [
+        450,
+        392
+      ]
+    },
+    {
+      "name": "released caption cannot follow a later pointer move",
+      "passed": true
+    },
+    {
+      "name": "first motion over another app keeps pressed caption owner",
+      "passed": true,
+      "expected": [
+        950,
+        562
+      ],
+      "actual": [
+        950,
+        562
+      ],
+      "peer": [
+        1020,
+        400
+      ]
+    },
+    {
+      "name": "focus change during pending press cannot redirect caption drag",
+      "passed": true,
+      "actual": [
+        950,
+        562
+      ]
+    },
+    {
+      "name": "first motion into empty space still moves pressed owner",
+      "passed": true,
+      "actual": [
+        750,
+        112
+      ]
+    },
+    {
+      "name": "first snapped-caption motion restores about original fractional press offset",
+      "passed": true,
+      "source": [
+        10,
+        34,
+        785,
+        956
+      ],
+      "expected": [
+        196,
+        96,
+        600,
+        350
+      ],
+      "actual": [
+        196,
+        96,
+        600,
+        350
+      ]
+    },
+    {
+      "name": "Escape returns snapped caption to exact original rectangle",
+      "passed": true,
+      "expected": [
+        10,
+        34,
+        785,
+        956
+      ],
+      "actual": [
+        10,
+        34,
+        785,
+        956
+      ]
+    },
+    {
+      "name": "caption press/release without motion keeps snapped geometry",
+      "passed": true
+    },
+    {
+      "name": "normal-caption Escape restores source and clears capture",
+      "passed": true,
+      "actual": [
+        260,
+        300,
+        600,
+        350
+      ]
+    },
+    {
+      "name": "reload invalidates an unstarted caption press",
+      "passed": true,
+      "actual": [
+        260,
+        300,
+        600,
+        350
+      ]
+    },
+    {
+      "name": "reload cancels active caption drag and clears later motion",
+      "passed": true,
+      "actual": [
+        260,
+        300,
+        600,
+        350
+      ]
+    },
+    {
+      "name": "closing caption owner cannot transfer its pending drag to peer",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "result": "pass"
+}

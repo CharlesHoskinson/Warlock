@@ -55,8 +55,8 @@ def plan():
             result.append((source, REPO / 'installed/system' / str(source).lstrip('/')))
     return result
 
-def main():
-    provenance = REPO / 'provenance'
+def main(entries=None, provenance_directory=None):
+    provenance = provenance_directory or REPO / 'provenance'
     provenance.mkdir(exist_ok=True)
     archive_dir = provenance / 'upstream-git'
     archive_dir.mkdir(exist_ok=True)
@@ -117,7 +117,7 @@ def main():
             assert signature(before) == signature(source.lstat()), f'Changed during capture: {source}'
             record(row)
 
-        for source, destination in plan():
+        for source, destination in (plan() if entries is None else entries):
             if not source.exists() and not source.is_symlink():
                 missing.append(str(source))
                 continue

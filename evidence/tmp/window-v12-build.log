@@ -1,0 +1,50 @@
+g++ -O2 -shared -fPIC -std=c++2b -Wno-c++11-narrowing  --no-gnu-unique `pkg-config --cflags pixman-1 libdrm hyprland libinput libudev wayland-server xkbcommon libeis-1.0` main.cpp barDeco.cpp BarPassElement.cpp dragBridge.cpp familyBridge.cpp  -o hyprbars-v12-candidate.so 
+main.cpp: In function ‘PLUGIN_DESCRIPTION_INFO pluginInit(void*)’:
+main.cpp:268:38: warning: ‘bool HyprlandAPI::addConfigKeyword(void*, const std::string&, Hyprlang::PCONFIGHANDLERFUNC, Hyprlang::SHandlerOptions)’ is deprecated [-Wdeprecated-declarations]
+  268 |         HyprlandAPI::addConfigKeyword(PHANDLE, "plugin:hyprbars:hyprbars-button", onNewButton, Hyprlang::SHandlerOptions{});
+      |         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from globals.hpp:3,
+                 from barDeco.hpp:15,
+                 from main.cpp:22:
+/usr/include/hyprland/src/plugins/PluginAPI.hpp:151:33: note: declared here
+  151 |     APICALL [[deprecated]] bool addConfigKeyword(HANDLE handle, const std::string& name, Hyprlang::PCONFIGHANDLERFUNC fn, Hyprlang::SHandlerOptions opts);
+      |                                 ^~~~~~~~~~~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-c++11-narrowing’ may have been intended to silence earlier diagnostics
+barDeco.cpp: In member function ‘virtual SDecorationPositioningInfo CHyprBar::getPositioningInfo()’:
+barDeco.cpp:102:53: warning: narrowing conversion of ‘((((CHyprBar*)this)->CHyprBar::m_hidden || (!(bool)ENABLED)) ? 0 : ((long int)HEIGHT))’ from ‘long int’ to ‘int’ [-Wnarrowing]
+  102 |     info.desiredExtents = {{0, m_hidden || !ENABLED ? 0 : HEIGHT}, {0, 0}};
+      |                                ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+barDeco.cpp: In member function ‘bool CHyprBar::doButtonPress(Config::INTEGER, Config::INTEGER, Config::INTEGER, Hyprutils::Math::Vector2D, bool)’:
+barDeco.cpp:396:70: warning: narrowing conversion of ‘barHeight’ from ‘Config::INTEGER’ {aka ‘long int’} to ‘int’ [-Wnarrowing]
+  396 |         const auto BARBUF     = Vector2D{(int)assignedBoxGlobal().w, barHeight};
+      |                                                                      ^~~~~~~~~
+barDeco.cpp: In member function ‘void CHyprBar::renderBarButtonsText(Hyprutils::Math::CBox*, float, float)’:
+barDeco.cpp:511:70: warning: narrowing conversion of ‘(long int)HEIGHT’ from ‘long int’ to ‘int’ [-Wnarrowing]
+  511 |         const auto BARBUF     = Vector2D{(int)assignedBoxGlobal().w, HEIGHT};
+      |                                                                      ^~~~~~
+barDeco.cpp: In member function ‘void CHyprBar::renderPass(PHLMONITOR, const float&)’:
+barDeco.cpp:605:24: warning: narrowing conversion of ‘(long int)HEIGHT’ from ‘long int’ to ‘int’ [-Wnarrowing]
+  605 |     m_seExtents = {{0, HEIGHT}, {}};
+      |                        ^~~~~~
+barDeco.cpp:641:80: warning: narrowing conversion of ‘(float)scaledRounding’ from ‘float’ to ‘int’ [-Wnarrowing]
+  641 |         g_pHyprOpenGL->renderRect(windowBox, CHyprColor(0, 0, 0, 0), {.round = scaledRounding, .roundingPower = m_pWindow->roundingPower()});
+      |                                                                                ^~~~~~~~~~~~~~
+barDeco.cpp:649:65: warning: narrowing conversion of ‘(float)scaledRounding’ from ‘float’ to ‘int’ [-Wnarrowing]
+  649 |         g_pHyprOpenGL->renderRect(titleBarBox, color, {.round = scaledRounding, .roundingPower = m_pWindow->roundingPower(), .blur = true, .blurA = a});
+      |                                                                 ^~~~~~~~~~~~~~
+barDeco.cpp:651:65: warning: narrowing conversion of ‘(float)scaledRounding’ from ‘float’ to ‘int’ [-Wnarrowing]
+  651 |         g_pHyprOpenGL->renderRect(titleBarBox, color, {.round = scaledRounding, .roundingPower = m_pWindow->roundingPower()});
+      |                                                                 ^~~~~~~~~~~~~~
+barDeco.cpp:668:51: warning: narrowing conversion of ‘(int)(double)BARBUF.Hyprutils::Math::Vector2D::x’ from ‘int’ to ‘double’ [-Wnarrowing]
+  668 |     CBox textBox = {titleBarBox.x, titleBarBox.y, (int)BARBUF.x, (int)BARBUF.y};
+      |                                                   ^~~~~~~~~~~~~
+barDeco.cpp:668:66: warning: narrowing conversion of ‘(int)(double)BARBUF.Hyprutils::Math::Vector2D::y’ from ‘int’ to ‘double’ [-Wnarrowing]
+  668 |     CBox textBox = {titleBarBox.x, titleBarBox.y, (int)BARBUF.x, (int)BARBUF.y};
+      |                                                                  ^~~~~~~~~~~~~
+barDeco.cpp: In member function ‘void CHyprBar::damageOnButtonHover()’:
+barDeco.cpp:791:70: warning: narrowing conversion of ‘(long int)HEIGHT’ from ‘long int’ to ‘int’ [-Wnarrowing]
+  791 |         const auto BARBUF     = Vector2D{(int)assignedBoxGlobal().w, HEIGHT};
+      |                                                                      ^~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-c++11-narrowing’ may have been intended to silence earlier diagnostics

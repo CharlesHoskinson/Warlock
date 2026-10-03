@@ -1,0 +1,27 @@
+{
+  "time": "2026-10-01T10:26:23.141542+00:00",
+  "result": "fail",
+  "reportSHA256": "1ab4c93b47a009ad5d21abd42eae814bce8857a5db101d051681d683892a1a09",
+  "inputsUnchanged": 83,
+  "preservationPassed": 12,
+  "producerObserved": [
+    {
+      "eglVendor": "Mesa Project",
+      "eglVersion": "1.5",
+      "event": "backendObserved",
+      "mappedMaterialMatches": false,
+      "nativeAuthority": false,
+      "renderer": "Mesa Intel(R) Graphics (ARL)",
+      "reviewed": false,
+      "version": "OpenGL ES 3.2 Mesa 26.2.2-arch1.1",
+      "observerReceivedNs": 72478051686505
+    },
+    {
+      "event": "fatal",
+      "nativeAuthority": false,
+      "reason": "unreviewed EGL commit backend; no route authority",
+      "observerReceivedNs": 72478054434209
+    }
+  ],
+  "limitation": "Refused before outputs/upload/readiness due mapped material guard. Actual Intel Mesa exact Arch version observed, but active map identity proof not accepted; no pixel/cadence/reversal proof."
+}

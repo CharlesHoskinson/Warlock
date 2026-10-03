@@ -1,0 +1,299 @@
+Nested monitor: [{
+    "id": 0,
+    "name": "WAYLAND-1",
+    "description": "",
+    "make": "",
+    "model": "",
+    "serial": "",
+    "width": 1600,
+    "height": 1000,
+    "physicalWidth": 0,
+    "physicalHeight": 0,
+    "refreshRate": 60.00000,
+    "x": 0,
+    "y": 0,
+    "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+    },
+    "specialWorkspace": {
+        "id": 0,
+        "name": ""
+    },
+    "reserved": [0, 0, 0, 0],
+    "scale": 1,
+    "transform": 0,
+    "focused": true,
+    "dpmsStatus": true,
+    "vrr": false,
+    "solitary": "0",
+    "solitaryBlockedBy": ["WINDOWED","CANDIDATE"],
+    "activelyTearing": false,
+    "tearingBlockedBy": ["NOT_TORN","USER","SUPPORT","CANDIDATE","HW_CURSOR"],
+    "directScanoutTo": "0",
+    "directScanoutBlockedBy": ["USER","CANDIDATE"],
+    "disabled": false,
+    "currentFormat": "XRGB8888",
+    "mirrorOf": "none",
+    "availableModes": [],
+    "colorManagementPreset": "srgb",
+    "sdrBrightness": 1,
+    "sdrSaturation": 1,
+    "sdrMinLuminance": 0.2,
+    "sdrMaxLuminance": 80,
+    "hardwareCursorsInUse": true
+}]
+{
+  "checks": [
+    {
+      "name": "baseline pinned modal input before desktop switch",
+      "passed": false,
+      "geometry": {
+        "owner": {
+          "address": "0x5ddf30ab0eb0",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            120,
+            250
+          ],
+          "size": [
+            580,
+            380
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "python3",
+          "title": "Modal QA owner",
+          "initialClass": "python3",
+          "initialTitle": "Modal QA owner",
+          "pid": 2300318,
+          "xwayland": true,
+          "pinned": true,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 2,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000015"
+        },
+        "child": {
+          "address": "0x5ddf308d76b0",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            330,
+            360
+          ],
+          "size": [
+            506,
+            180
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "python3",
+          "title": "Modal QA child",
+          "initialClass": "python3",
+          "initialTitle": "Modal QA child",
+          "pid": 2300318,
+          "xwayland": true,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 1,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000016"
+        },
+        "nested": {
+          "address": "0x5ddf30acf190",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            400,
+            390
+          ],
+          "size": [
+            534,
+            140
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "python3",
+          "title": "Modal QA nested",
+          "initialClass": "python3",
+          "initialTitle": "Modal QA nested",
+          "pid": 2300318,
+          "xwayland": true,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000017"
+        }
+      },
+      "active": {
+        "address": "0x5ddf30acf190",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          400,
+          390
+        ],
+        "size": [
+          534,
+          140
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "python3",
+        "title": "Modal QA nested",
+        "initialClass": "python3",
+        "initialTitle": "Modal QA nested",
+        "pid": 2300318,
+        "xwayland": true,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000017"
+      },
+      "cursor": {
+        "x": 470,
+        "y": 450
+      },
+      "layers": {
+        "WAYLAND-1": {
+          "levels": {
+            "0": [],
+            "1": [],
+            "2": [],
+            "3": []
+          }
+        }
+      }
+    }
+  ],
+  "failures": [
+    "baseline pinned modal input before desktop switch"
+  ],
+  "platform": "XWayland",
+  "result": "fail",
+  "error": "AssertionError('baseline native modal input')",
+  "gtkEvents": [
+    {
+      "event": "active",
+      "window": "owner",
+      "active": true
+    },
+    {
+      "event": "modal",
+      "window": "child",
+      "parent": "owner",
+      "modal": true,
+      "transient": true
+    },
+    {
+      "event": "active",
+      "window": "owner",
+      "active": false
+    },
+    {
+      "event": "active",
+      "window": "child",
+      "active": true
+    },
+    {
+      "event": "modal",
+      "window": "nested",
+      "parent": "child",
+      "modal": true,
+      "transient": true
+    },
+    {
+      "event": "active",
+      "window": "child",
+      "active": false
+    },
+    {
+      "event": "active",
+      "window": "nested",
+      "active": true
+    },
+    {
+      "event": "pointer-enter",
+      "window": "nested"
+    }
+  ],
+  "stderr": "",
+  "originalWindowsPreserved": true
+}
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/live_pinned_modal_desktops.py", line 123, in <module>
+    print(json.dumps(report,indent=2));assert report['result']=='pass',report['failures']
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['baseline pinned modal input before desktop switch']

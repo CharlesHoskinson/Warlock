@@ -16,6 +16,7 @@ Start with [the current handoff](docs/HANDOFF.md). It supplements the historical
 | `installed/home/` | Snapshot of the deployed scripts, Hyprland config, bar plugins, Files app and native modules |
 | `installed/system/` | Selected installed compositor/shell binaries and root-owned Files operations |
 | `src/` | Related compositor/plugin, Quickshell, Qt, accessibility and portal source trees |
+| `evidence/` | Earlier QA reports/builds from the cache, surviving temporary prototypes and the user's focus-bug screenshot |
 | `docs/crash-noise/` | Crash investigation and the five required QA launcher changes |
 | `provenance/` | Source-to-repository mapping, SHA-256 inventory, original file modes and upstream Git metadata archives |
 | `tools/` | Snapshot and integrity verification utilities |
@@ -44,6 +45,12 @@ records full modes, ownership and timestamps. File filters and newline conversio
 are disabled for the snapshot; `tools/verify_snapshot.py` verifies indexed or
 committed blobs against the inventory. See `provenance/verification.json` for the
 initial verification.
+
+The follow-up completeness audit is in `provenance/coverage-audit-v1/`.
+Additional launcher integration, desktop entries/settings, native helper builds,
+older cache evidence and temporary artifacts have separate immutable inventories
+under `provenance/supplement-v1/` and `provenance/supplement-v2/`. Their hashes are
+verified independently; the original snapshot inventory remains unchanged.
 
 ```bash
 cd /home/hoskinson/omarchy-windows-parity

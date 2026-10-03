@@ -1,0 +1,45 @@
+{
+  "result": "pass",
+  "auditedAtUTC": "2026-10-03T02:12:19.903798+00:00",
+  "baselineCommit": "361853f8dfa9",
+  "originalFilesRecheckedAgainstSources": 167261,
+  "originalSymlinksRecheckedAgainstSources": 68,
+  "originalSourceChangesOrMissingFiles": 0,
+  "newFilesInOriginallyMappedRoots": 0,
+  "descriptorsScanned": 468,
+  "externalHomeReferencesClassified": 9,
+  "externalHomeReferenceClassification": "Installed mise tool dependencies; their original identities remain in the source inventories.",
+  "additionalFilesVerified": 1676,
+  "additionalSymlinksVerified": 3,
+  "originalCapturedGitBlobsUnchanged": true,
+  "changedBaselineFiles": [
+    "README.md",
+    "docs/HANDOFF.md",
+    "tools/capture_snapshot.py",
+    "tools/verify_snapshot.py"
+  ],
+  "changedBaselineFilesClassification": "Repository documentation and capture/verification tools only. Original workspace/source/proof snapshots unchanged.",
+  "knownOmissionsClosed": [
+    "Older window/taskbar QA cache evidence and native helper builds",
+    "Brave launcher integration and bundled libraries",
+    "Brave/Files desktop launchers",
+    "Taskbar and virtual-desktop configuration and activation links",
+    "Sudo askpass helper sources",
+    "Actual Quickshell executable behind qs symlink and installed Qt Quick library",
+    "Surviving temporary prototypes, model experiments and diagnostics",
+    "User-provided focus-bug screenshot"
+  ],
+  "inputs": {
+    "provenance/snapshot.jsonl": "d5c2849035ed27c18e7b3f82dac8aba670b3b7f3c1241ad96dd5ec3d186f6786",
+    "provenance/verification.json": "69209f51f7eadc8f8c0d58cbd30a42267108723bf4999f24a8251840370d5e28",
+    "provenance/coverage-audit-v1/report.json": "e129e6509889cd787c381095615b25ed195d18aacf634b86222d65d7faa34009",
+    "provenance/coverage-audit-v1/details.json": "642a3651455b4c05545d355d5716b53a74b97747ef2a16baf27a83be16c2729a",
+    "provenance/supplement-v1/snapshot-summary.json": "b6e77ea040c1206b597821f79ce1d9422afdec34f57d9961aa408d1362daf6dc",
+    "provenance/supplement-v2/snapshot-summary.json": "156671efdae606116340144dd300a05bd3cb480f92787a989f199bce31bf10be",
+    "provenance/supplemental-inventory.jsonl": "b324a585411349dba1956eb42abd0d08b7ce15504d5ca64020e9004bd8fe9c48",
+    "provenance/supplemental-verification.json": "2b5b809294e87af8ed1cba3c58b2b02979dbd775f76b9359e9c4008c4a9e2c7e"
+  },
+  "sourceTreesModified": false,
+  "deploymentPerformed": false,
+  "published": false
+}

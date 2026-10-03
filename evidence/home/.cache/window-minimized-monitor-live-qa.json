@@ -1,0 +1,214 @@
+{
+  "checks": [
+    "minimized foreign window stays on its home monitor taskbar",
+    "inactive deleted workspace retains named home monitor",
+    "restore recreates deleted workspace on home monitor",
+    "moving minimized window to another desktop updates taskbar and restore monitor",
+    "output removal preserves minimized entry and restores on surviving monitor"
+  ],
+  "before": {
+    "a": {
+      "address": "0x5a02b019cf70",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        2050,
+        218
+      ],
+      "size": [
+        700,
+        500
+      ],
+      "workspace": {
+        "id": 2,
+        "name": "2"
+      },
+      "floating": true,
+      "monitor": 1,
+      "class": "window-parity-monitor-qa",
+      "title": "Minimized monitor owner QA",
+      "initialClass": "window-parity-monitor-qa",
+      "initialTitle": "Minimized monitor owner QA",
+      "pid": 1233190,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 1,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "18000257"
+    },
+    "b": {
+      "address": "0x5a02b04a55c0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        290,
+        123
+      ],
+      "size": [
+        700,
+        500
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "window-parity-monitor-qa",
+      "title": "Visible monitor owner QA",
+      "initialClass": "window-parity-monitor-qa",
+      "initialTitle": "Visible monitor owner QA",
+      "pid": 1233535,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "18000258"
+    }
+  },
+  "minimized": {
+    "address": "0x5a02b019cf70",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      450,
+      218
+    ],
+    "size": [
+      700,
+      500
+    ],
+    "workspace": {
+      "id": -98,
+      "name": "special:win-minimized"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "window-parity-monitor-qa",
+    "title": "Minimized monitor owner QA",
+    "initialClass": "window-parity-monitor-qa",
+    "initialTitle": "Minimized monitor owner QA",
+    "pid": 1233190,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [
+      "default-opacity*"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 1,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "18000257"
+  },
+  "result": "pass",
+  "afterMonitors": [
+    {
+      "id": 0,
+      "name": "eDP-2",
+      "description": "Samsung Display Corp. ATNA60HU01-0",
+      "make": "Samsung Display Corp.",
+      "model": "ATNA60HU01-0 ",
+      "serial": "",
+      "width": 2560,
+      "height": 1600,
+      "physicalWidth": 340,
+      "physicalHeight": 220,
+      "refreshRate": 240.0,
+      "x": 0,
+      "y": 0,
+      "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "specialWorkspace": {
+        "id": 0,
+        "name": ""
+      },
+      "reserved": [
+        0,
+        26,
+        0,
+        0
+      ],
+      "scale": 1.6,
+      "transform": 0,
+      "focused": true,
+      "dpmsStatus": true,
+      "vrr": false,
+      "solitary": "0",
+      "solitaryBlockedBy": [
+        "WINDOWED",
+        "CANDIDATE"
+      ],
+      "activelyTearing": false,
+      "tearingBlockedBy": [
+        "NOT_TORN",
+        "USER",
+        "CANDIDATE"
+      ],
+      "directScanoutTo": "0",
+      "directScanoutBlockedBy": [
+        "USER",
+        "SW",
+        "CANDIDATE"
+      ],
+      "disabled": false,
+      "currentFormat": "XRGB8888",
+      "mirrorOf": "none",
+      "availableModes": [
+        "2560x1600@240.00Hz",
+        "2560x1600@60.00Hz"
+      ],
+      "colorManagementPreset": "srgb",
+      "sdrBrightness": 1,
+      "sdrSaturation": 1,
+      "sdrMinLuminance": 0.2,
+      "sdrMaxLuminance": 80,
+      "hardwareCursorsInUse": false
+    }
+  ],
+  "configerrors": ""
+}

@@ -1,0 +1,44 @@
+{
+  "retainedPNG_SHA256": "53b57e13a5f02874f76f52f6d7836092346ccc5a4d5ad3c82ea5a5538f798d98",
+  "rows": [
+    {
+      "label": "green-maximize",
+      "nativeIcon": "\u25a1",
+      "pixelBox": [
+        362,
+        27,
+        14,
+        14
+      ],
+      "backgroundPixels": 138,
+      "glyphPixels": 0,
+      "passed": false,
+      "correctedOracle": {
+        "backgroundPixels": 138,
+        "interiorBackgroundPixels": 54,
+        "glyphPixels": 29,
+        "passed": true
+      }
+    },
+    {
+      "label": "blue-pin",
+      "nativeIcon": "\ud83d\udccc",
+      "pixelBox": [
+        318,
+        27,
+        14,
+        14
+      ],
+      "backgroundPixels": 108,
+      "glyphPixels": 0,
+      "passed": false,
+      "correctedOracle": {
+        "backgroundPixels": 108,
+        "interiorBackgroundPixels": 28,
+        "glyphPixels": 35,
+        "passed": true
+      }
+    }
+  ],
+  "scope": "offline retained real PNG replay; no new GUI pixels"
+}

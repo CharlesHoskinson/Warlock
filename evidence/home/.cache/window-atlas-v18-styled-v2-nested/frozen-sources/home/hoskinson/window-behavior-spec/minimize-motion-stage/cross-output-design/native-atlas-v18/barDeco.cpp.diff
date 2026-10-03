@@ -1,0 +1,16 @@
+--- v17/barDeco.cpp
++++ v18/barDeco.cpp
+@@ -1,4 +1,5 @@
+ #include "barDeco.hpp"
++#include <stdexcept>
+ #include "atlasAdapter.hpp"
+ #include "dragBridge.hpp"
+ 
+@@ -616,6 +617,7 @@
+     color.a *= a;
+     const bool BUTTONSRIGHT = ALIGNBUTTONS != "left";
+     const bool SHOULDBLUR   = ENABLEBLUR && *PENABLEBLURGLOBAL && color.a < 1.F;
++    if(exportPass && SHOULDBLUR)throw std::runtime_error("atlas blurred caption backdrop unsupported");
+ 
+     if (HEIGHT < 1) {
+         m_iLastHeight = HEIGHT;

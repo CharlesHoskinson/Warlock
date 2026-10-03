@@ -1,0 +1,483 @@
+{
+  "checks": [
+    "bound snapped transfer preserves destination half",
+    "real QML monitor filter shows destination owner and excludes other display",
+    "real QML all-display mode shows both owners",
+    "scale change keeps snap bounded",
+    "normal restore remains on destination monitor",
+    "bound transfer preserves maximized mode",
+    "headless unplug retains window on physical monitor"
+  ],
+  "monitors": [
+    {
+      "id": 0,
+      "name": "eDP-2",
+      "description": "Samsung Display Corp. ATNA60HU01-0",
+      "make": "Samsung Display Corp.",
+      "model": "ATNA60HU01-0 ",
+      "serial": "",
+      "width": 2560,
+      "height": 1600,
+      "physicalWidth": 340,
+      "physicalHeight": 220,
+      "refreshRate": 240.0,
+      "x": 0,
+      "y": 0,
+      "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "specialWorkspace": {
+        "id": 0,
+        "name": ""
+      },
+      "reserved": [
+        0,
+        26,
+        0,
+        0
+      ],
+      "scale": 1.6,
+      "transform": 0,
+      "focused": true,
+      "dpmsStatus": true,
+      "vrr": false,
+      "solitary": "0",
+      "solitaryBlockedBy": [
+        "WINDOWED",
+        "CANDIDATE"
+      ],
+      "activelyTearing": false,
+      "tearingBlockedBy": [
+        "NOT_TORN",
+        "USER",
+        "CANDIDATE"
+      ],
+      "directScanoutTo": "0",
+      "directScanoutBlockedBy": [
+        "USER",
+        "SW",
+        "CANDIDATE"
+      ],
+      "disabled": false,
+      "currentFormat": "XRGB8888",
+      "mirrorOf": "none",
+      "availableModes": [
+        "2560x1600@240.00Hz",
+        "2560x1600@60.00Hz"
+      ],
+      "colorManagementPreset": "srgb",
+      "sdrBrightness": 1,
+      "sdrSaturation": 1,
+      "sdrMinLuminance": 0.2,
+      "sdrMaxLuminance": 80,
+      "hardwareCursorsInUse": false
+    },
+    {
+      "id": 1,
+      "name": "WINDOW-PARITY-QA",
+      "description": "",
+      "make": "",
+      "model": "",
+      "serial": "",
+      "width": 1920,
+      "height": 1080,
+      "physicalWidth": 0,
+      "physicalHeight": 0,
+      "refreshRate": 60.0,
+      "x": 1600,
+      "y": 0,
+      "activeWorkspace": {
+        "id": 2,
+        "name": "2"
+      },
+      "specialWorkspace": {
+        "id": 0,
+        "name": ""
+      },
+      "reserved": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "scale": 1.5,
+      "transform": 0,
+      "focused": false,
+      "dpmsStatus": true,
+      "vrr": false,
+      "solitary": "0",
+      "solitaryBlockedBy": [
+        "WINDOWED",
+        "CANDIDATE"
+      ],
+      "activelyTearing": false,
+      "tearingBlockedBy": [
+        "NOT_TORN",
+        "USER",
+        "SUPPORT",
+        "CANDIDATE"
+      ],
+      "directScanoutTo": "0",
+      "directScanoutBlockedBy": [
+        "USER",
+        "SW",
+        "CANDIDATE"
+      ],
+      "disabled": false,
+      "currentFormat": "XRGB8888",
+      "mirrorOf": "none",
+      "availableModes": [
+        "1920x1080@60.00Hz"
+      ],
+      "colorManagementPreset": "srgb",
+      "sdrBrightness": 1,
+      "sdrSaturation": 1,
+      "sdrMinLuminance": 0.2,
+      "sdrMaxLuminance": 80,
+      "hardwareCursorsInUse": false
+    }
+  ],
+  "before": {
+    "address": "0x5a02b0291930",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      10,
+      60
+    ],
+    "size": [
+      784,
+      930
+    ],
+    "workspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "window-parity-monitor-qa",
+    "title": "Monitor transfer QA",
+    "initialClass": "window-parity-monitor-qa",
+    "initialTitle": "Monitor transfer QA",
+    "pid": 1095388,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [
+      "default-opacity*",
+      "win-snapped"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "1800024d"
+  },
+  "moved": {
+    "address": "0x5a02b0291930",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      1610,
+      60
+    ],
+    "size": [
+      625,
+      650
+    ],
+    "workspace": {
+      "id": 2,
+      "name": "2"
+    },
+    "floating": true,
+    "monitor": 1,
+    "class": "window-parity-monitor-qa",
+    "title": "Monitor transfer QA",
+    "initialClass": "window-parity-monitor-qa",
+    "initialTitle": "Monitor transfer QA",
+    "pid": 1095388,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [
+      "default-opacity*",
+      "win-snapped"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "1800024d"
+  },
+  "scaled": {
+    "address": "0x5a02b0291930",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      1610,
+      60
+    ],
+    "size": [
+      465,
+      470
+    ],
+    "workspace": {
+      "id": 2,
+      "name": "2"
+    },
+    "floating": true,
+    "monitor": 1,
+    "class": "window-parity-monitor-qa",
+    "title": "Monitor transfer QA",
+    "initialClass": "window-parity-monitor-qa",
+    "initialTitle": "Monitor transfer QA",
+    "pid": 1095388,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [
+      "default-opacity*",
+      "win-snapped"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "1800024d"
+  },
+  "restored": {
+    "address": "0x5a02b0291930",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      1850,
+      60
+    ],
+    "size": [
+      700,
+      470
+    ],
+    "workspace": {
+      "id": 2,
+      "name": "2"
+    },
+    "floating": true,
+    "monitor": 1,
+    "class": "window-parity-monitor-qa",
+    "title": "Monitor transfer QA",
+    "initialClass": "window-parity-monitor-qa",
+    "initialTitle": "Monitor transfer QA",
+    "pid": 1095388,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [
+      "default-opacity*"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "1800024d"
+  },
+  "maximizedRecovered": {
+    "address": "0x5a02b019cf70",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      2,
+      52
+    ],
+    "size": [
+      1596,
+      946
+    ],
+    "workspace": {
+      "id": 2,
+      "name": "2"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "window-parity-monitor-qa",
+    "title": "Monitor filter QA",
+    "initialClass": "window-parity-monitor-qa",
+    "initialTitle": "Monitor filter QA",
+    "pid": 1096624,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 1,
+    "fullscreenClient": 1,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [
+      "default-opacity*"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "1800024e"
+  },
+  "recovered": {
+    "address": "0x5a02b0291930",
+    "mapped": true,
+    "hidden": false,
+    "visible": false,
+    "acceptsInput": false,
+    "at": [
+      10,
+      60
+    ],
+    "size": [
+      785,
+      930
+    ],
+    "workspace": {
+      "id": 2,
+      "name": "2"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "window-parity-monitor-qa",
+    "title": "Monitor transfer QA",
+    "initialClass": "window-parity-monitor-qa",
+    "initialTitle": "Monitor transfer QA",
+    "pid": 1095388,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": false,
+    "grouped": [],
+    "tags": [
+      "default-opacity*",
+      "win-snapped"
+    ],
+    "swallowing": "0x0",
+    "focusHistoryID": 1,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "1800024d"
+  },
+  "result": "pass",
+  "afterMonitors": [
+    {
+      "id": 0,
+      "name": "eDP-2",
+      "description": "Samsung Display Corp. ATNA60HU01-0",
+      "make": "Samsung Display Corp.",
+      "model": "ATNA60HU01-0 ",
+      "serial": "",
+      "width": 2560,
+      "height": 1600,
+      "physicalWidth": 340,
+      "physicalHeight": 220,
+      "refreshRate": 240.0,
+      "x": 0,
+      "y": 0,
+      "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "specialWorkspace": {
+        "id": 0,
+        "name": ""
+      },
+      "reserved": [
+        0,
+        26,
+        0,
+        0
+      ],
+      "scale": 1.6,
+      "transform": 0,
+      "focused": true,
+      "dpmsStatus": true,
+      "vrr": false,
+      "solitary": "0",
+      "solitaryBlockedBy": [
+        "WINDOWED",
+        "CANDIDATE"
+      ],
+      "activelyTearing": false,
+      "tearingBlockedBy": [
+        "NOT_TORN",
+        "USER",
+        "CANDIDATE"
+      ],
+      "directScanoutTo": "0",
+      "directScanoutBlockedBy": [
+        "USER",
+        "SW",
+        "CANDIDATE"
+      ],
+      "disabled": false,
+      "currentFormat": "XRGB8888",
+      "mirrorOf": "none",
+      "availableModes": [
+        "2560x1600@240.00Hz",
+        "2560x1600@60.00Hz"
+      ],
+      "colorManagementPreset": "srgb",
+      "sdrBrightness": 1,
+      "sdrSaturation": 1,
+      "sdrMinLuminance": 0.2,
+      "sdrMaxLuminance": 80,
+      "hardwareCursorsInUse": false
+    }
+  ],
+  "configerrors": ""
+}

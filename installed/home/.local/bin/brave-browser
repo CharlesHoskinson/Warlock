@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Enable Chromium's Linux launcher integration for this Brave process only.
+set -euo pipefail
+library_dir=${BRAVE_LAUNCHER_LIB_DIR:-"$HOME/.local/lib/brave-launcher"}
+if [[ -r $library_dir/libunity.so.9 ]]; then
+  case ":${XDG_CURRENT_DESKTOP:-}:" in
+    *:Unity:*|*:KDE:*) ;;
+    *) export XDG_CURRENT_DESKTOP="${XDG_CURRENT_DESKTOP:+$XDG_CURRENT_DESKTOP:}Unity" ;;
+  esac
+  export CHROME_DESKTOP=brave-browser.desktop
+  export LD_LIBRARY_PATH="$library_dir${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+fi
+# The packaged launcher retains brave-flags.conf, Wayland and password settings.
+exec /usr/bin/brave "$@"

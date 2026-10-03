@@ -1,0 +1,415 @@
+Nested monitor: [{
+    "id": 0,
+    "name": "WAYLAND-1",
+    "description": "",
+    "make": "",
+    "model": "",
+    "serial": "",
+    "width": 1600,
+    "height": 1000,
+    "physicalWidth": 0,
+    "physicalHeight": 0,
+    "refreshRate": 60.00000,
+    "x": 0,
+    "y": 0,
+    "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+    },
+    "specialWorkspace": {
+        "id": 0,
+        "name": ""
+    },
+    "reserved": [0, 0, 0, 0],
+    "scale": 1,
+    "transform": 0,
+    "focused": true,
+    "dpmsStatus": true,
+    "vrr": false,
+    "solitary": "0",
+    "solitaryBlockedBy": ["WINDOWED","CANDIDATE"],
+    "activelyTearing": false,
+    "tearingBlockedBy": ["NOT_TORN","USER","SUPPORT","CANDIDATE","HW_CURSOR"],
+    "directScanoutTo": "0",
+    "directScanoutBlockedBy": ["USER","CANDIDATE"],
+    "disabled": false,
+    "currentFormat": "XRGB8888",
+    "mirrorOf": "none",
+    "availableModes": [],
+    "colorManagementPreset": "srgb",
+    "sdrBrightness": 1,
+    "sdrSaturation": 1,
+    "sdrMinLuminance": 0.2,
+    "sdrMaxLuminance": 80,
+    "hardwareCursorsInUse": true
+}]
+{
+  "checks": [
+    {
+      "name": "baseline pinned modal input before desktop switch",
+      "passed": true,
+      "geometry": {
+        "owner": {
+          "address": "0x5ddf308e6850",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            120,
+            250
+          ],
+          "size": [
+            580,
+            380
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "org.omarchy.ModalFamilyQA",
+          "title": "Modal QA owner",
+          "initialClass": "org.omarchy.ModalFamilyQA",
+          "initialTitle": "Modal QA owner",
+          "pid": 2258323,
+          "xwayland": false,
+          "pinned": true,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 2,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000002"
+        },
+        "child": {
+          "address": "0x5ddf30a486f0",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            330,
+            360
+          ],
+          "size": [
+            320,
+            180
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "org.omarchy.ModalFamilyQA",
+          "title": "Modal QA child",
+          "initialClass": "org.omarchy.ModalFamilyQA",
+          "initialTitle": "Modal QA child",
+          "pid": 2258323,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 1,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000003"
+        },
+        "nested": {
+          "address": "0x5ddf30ab2960",
+          "mapped": true,
+          "hidden": false,
+          "visible": true,
+          "acceptsInput": true,
+          "at": [
+            400,
+            390
+          ],
+          "size": [
+            243,
+            140
+          ],
+          "workspace": {
+            "id": 1,
+            "name": "1"
+          },
+          "floating": true,
+          "monitor": 0,
+          "class": "org.omarchy.ModalFamilyQA",
+          "title": "Modal QA nested",
+          "initialClass": "org.omarchy.ModalFamilyQA",
+          "initialTitle": "Modal QA nested",
+          "pid": 2258323,
+          "xwayland": false,
+          "pinned": false,
+          "pinFullscreened": false,
+          "fullscreen": 0,
+          "fullscreenClient": 0,
+          "fullscreenHandler": "default",
+          "allowedOverFullscreen": true,
+          "grouped": [],
+          "tags": [],
+          "swallowing": "0x0",
+          "focusHistoryID": 0,
+          "inhibitingIdle": false,
+          "xdgTag": "",
+          "xdgDescription": "",
+          "contentType": "none",
+          "tearingHint": false,
+          "stableId": "18000004"
+        }
+      },
+      "active": {
+        "address": "0x5ddf30ab2960",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          400,
+          390
+        ],
+        "size": [
+          243,
+          140
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA nested",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA nested",
+        "pid": 2258323,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000004"
+      },
+      "cursor": {
+        "x": 470,
+        "y": 450
+      },
+      "layers": {
+        "WAYLAND-1": {
+          "levels": {
+            "0": [],
+            "1": [],
+            "2": [],
+            "3": []
+          }
+        }
+      }
+    },
+    {
+      "name": "family shares active desktop after switch 0",
+      "passed": false,
+      "workspaces": {
+        "owner": "2",
+        "child": "1",
+        "nested": "1"
+      },
+      "desktop": "2"
+    },
+    {
+      "name": "deepest pinned modal receives click after switch 0",
+      "passed": false,
+      "active": "Modal QA owner"
+    },
+    {
+      "name": "owner remains disabled and routes to modal after switch 0",
+      "passed": false
+    },
+    {
+      "name": "family shares active desktop after switch 1",
+      "passed": false,
+      "workspaces": {
+        "owner": "3",
+        "child": "1",
+        "nested": "1"
+      },
+      "desktop": "3"
+    },
+    {
+      "name": "deepest pinned modal receives click after switch 1",
+      "passed": false,
+      "active": "Modal QA owner"
+    },
+    {
+      "name": "owner remains disabled and routes to modal after switch 1",
+      "passed": false
+    },
+    {
+      "name": "switching back retains modal input",
+      "passed": true
+    },
+    {
+      "name": "surviving modal receives input after cross-desktop child close",
+      "passed": true
+    }
+  ],
+  "failures": [
+    "family shares active desktop after switch 0",
+    "deepest pinned modal receives click after switch 0",
+    "owner remains disabled and routes to modal after switch 0",
+    "family shares active desktop after switch 1",
+    "deepest pinned modal receives click after switch 1",
+    "owner remains disabled and routes to modal after switch 1"
+  ],
+  "platform": "Wayland",
+  "result": "fail",
+  "gtkEvents": [
+    {
+      "event": "active",
+      "window": "owner",
+      "active": true
+    },
+    {
+      "event": "modal",
+      "window": "child",
+      "parent": "owner",
+      "modal": true,
+      "transient": true
+    },
+    {
+      "event": "active",
+      "window": "owner",
+      "active": false
+    },
+    {
+      "event": "active",
+      "window": "child",
+      "active": true
+    },
+    {
+      "event": "modal",
+      "window": "nested",
+      "parent": "child",
+      "modal": true,
+      "transient": true
+    },
+    {
+      "event": "active",
+      "window": "child",
+      "active": false
+    },
+    {
+      "event": "active",
+      "window": "nested",
+      "active": true
+    },
+    {
+      "event": "pointer-enter",
+      "window": "nested"
+    },
+    {
+      "event": "click",
+      "window": "nested"
+    },
+    {
+      "event": "active",
+      "window": "nested",
+      "active": false
+    },
+    {
+      "event": "active",
+      "window": "owner",
+      "active": true
+    },
+    {
+      "event": "pointer-leave",
+      "window": "nested"
+    },
+    {
+      "event": "pointer-enter",
+      "window": "owner"
+    },
+    {
+      "event": "pointer-leave",
+      "window": "owner"
+    },
+    {
+      "event": "pointer-enter",
+      "window": "nested"
+    },
+    {
+      "event": "active",
+      "window": "owner",
+      "active": false
+    },
+    {
+      "event": "active",
+      "window": "nested",
+      "active": true
+    },
+    {
+      "event": "click",
+      "window": "nested"
+    },
+    {
+      "event": "pointer-leave",
+      "window": "nested"
+    },
+    {
+      "event": "active",
+      "window": "nested",
+      "active": false
+    },
+    {
+      "event": "active",
+      "window": "child",
+      "active": true
+    },
+    {
+      "event": "pointer-enter",
+      "window": "child"
+    },
+    {
+      "event": "click",
+      "window": "child"
+    }
+  ],
+  "stderr": "",
+  "originalWindowsPreserved": true
+}
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/live_pinned_modal_desktops.py", line 92, in <module>
+    print(json.dumps(report,indent=2));assert report['result']=='pass',report['failures']
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['family shares active desktop after switch 0', 'deepest pinned modal receives click after switch 0', 'owner remains disabled and routes to modal after switch 0', 'family shares active desktop after switch 1', 'deepest pinned modal receives click after switch 1', 'owner remains disabled and routes to modal after switch 1']

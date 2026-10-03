@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "id": "hoskinson.windows",
+  "name": "Windows",
+  "version": "1.0.0",
+  "author": "hoskinson",
+  "description": "Running windows and restore buttons for minimized windows.",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "widget_v18/Windows.qml" },
+  "barWidget": {
+    "displayName": "Windows",
+    "description": "Switch, minimize, and restore running windows.",
+    "category": "Compositor",
+    "allowMultiple": false,
+    "defaultSection": "left"
+  }
+}

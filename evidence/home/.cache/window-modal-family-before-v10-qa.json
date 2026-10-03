@@ -1,0 +1,389 @@
+{
+  "checks": [
+    {
+      "name": "unrelated app remains clickable with modal open",
+      "passed": true,
+      "active": "Modal QA peer"
+    },
+    {
+      "name": "owner interaction redirects to modal",
+      "passed": false,
+      "active": "hosk: ~"
+    },
+    {
+      "name": "minimizing owner hides modal family",
+      "passed": true,
+      "workspaces": {
+        "owner": "special:win-minimized",
+        "child": "special:win-minimized"
+      }
+    },
+    {
+      "name": "restoring owner focuses modal",
+      "passed": true,
+      "active": "Modal QA child"
+    },
+    {
+      "name": "desktop move keeps modal with owner",
+      "passed": true,
+      "workspaces": {
+        "owner": "2",
+        "child": "2"
+      }
+    }
+  ],
+  "failures": [
+    "owner interaction redirects to modal"
+  ],
+  "beforeOwnerClick": {
+    "owner": {
+      "address": "0x5a02b05dacc0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        120,
+        250
+      ],
+      "size": [
+        580,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "org.omarchy.ModalFamilyQA",
+      "title": "Modal QA owner",
+      "initialClass": "org.omarchy.ModalFamilyQA",
+      "initialTitle": "Modal QA owner",
+      "pid": 1644834,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*",
+        "terminal*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 2,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800029d"
+    },
+    "child": {
+      "address": "0x5a02afa3d740",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        330,
+        360
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "org.omarchy.ModalFamilyQA",
+      "title": "Modal QA child",
+      "initialClass": "org.omarchy.ModalFamilyQA",
+      "initialTitle": "Modal QA child",
+      "pid": 1644834,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*",
+        "terminal*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800029f"
+    },
+    "peer": {
+      "address": "0x5a02af125ec0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        1020,
+        400
+      ],
+      "size": [
+        380,
+        300
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "org.omarchy.ModalPeerQA",
+      "title": "Modal QA peer",
+      "initialClass": "org.omarchy.ModalPeerQA",
+      "initialTitle": "Modal QA peer",
+      "pid": 1644835,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*",
+        "terminal*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 1,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800029e"
+    }
+  },
+  "afterOwnerClick": {
+    "cursor": {
+      "x": 180,
+      "y": 540
+    },
+    "active": {
+      "address": "0x5a02afa13e90",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        26,
+        145
+      ],
+      "size": [
+        1002,
+        789
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "foot",
+      "title": "hosk: ~",
+      "initialClass": "foot",
+      "initialTitle": "foot",
+      "pid": 252010,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*",
+        "terminal*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800006a"
+    },
+    "clientOrder": [
+      "0x5a02b0cc9280",
+      "0x5a02aee429f0",
+      "0x5a02afd20bd0",
+      "0x5a02af125ec0",
+      "0x5a02b05dacc0",
+      "0x5a02afa3d740",
+      "0x5a02afa13e90"
+    ]
+  },
+  "desktopAction": {
+    "active": "2",
+    "desktops": [
+      {
+        "id": "1",
+        "name": "Desktop 1",
+        "active": false,
+        "windows": [
+          {
+            "address": "0x5a02b0cc9280",
+            "class": "brave-browser",
+            "title": "claude code quint plugin - Google Search - Brave",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b0cc9280-0.png",
+            "minimized": true
+          },
+          {
+            "address": "0x5a02aee429f0",
+            "class": "foot",
+            "title": "hoskinson@hosk:~",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02aee429f0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02afd20bd0",
+            "class": "foot",
+            "title": "\u2826 Explain 6.1 access limitation | hoskinson",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02afd20bd0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02af125ec0",
+            "class": "org.omarchy.ModalPeerQA",
+            "title": "Modal QA peer",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02af125ec0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02afa13e90",
+            "class": "foot",
+            "title": "hosk: ~",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02afa13e90-0.png",
+            "minimized": false
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Desktop 2",
+        "active": true,
+        "windows": [
+          {
+            "address": "0x5a02b05dacc0",
+            "class": "org.omarchy.ModalFamilyQA",
+            "title": "Modal QA owner",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b05dacc0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02afa3d740",
+            "class": "org.omarchy.ModalFamilyQA",
+            "title": "Modal QA child",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02afa3d740-0.png",
+            "minimized": false
+          }
+        ]
+      }
+    ]
+  },
+  "gtkEvents": {
+    "family": [
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "modal",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      }
+    ],
+    "peer": [
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "peer"
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      }
+    ]
+  },
+  "result": "fail",
+  "gtkErrors": ""
+}

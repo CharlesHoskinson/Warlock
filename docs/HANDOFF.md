@@ -3,6 +3,16 @@
 This document records the state at the Git snapshot. Historical source and proof
 packets remain unchanged. The main desktop is not running the latest candidates.
 
+The follow-up completeness audit additionally preserved earlier native helper
+builds, QA evidence and configuration backups from `~/.cache`, Brave launcher
+integration/libraries, desktop launchers, taskbar/virtual-desktop settings and
+activation links, remaining temporary prototypes/diagnostics, and the user's
+original focus-bug screenshot. See `evidence/` and the supplemental provenance
+inventories. All original 167,261 captured source files were rechecked against
+the originals: no changed or missing files, and no new files inside the mapped
+roots. All 468 source-inventory descriptors were scanned for external home paths;
+the nine remaining references point to installed mise tool dependencies.
+
 ## Requested outcome
 
 Complete Windows 11 window-system parity on Omarchy: reliable click-to-focus even

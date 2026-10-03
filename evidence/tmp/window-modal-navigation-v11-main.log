@@ -1,0 +1,1214 @@
+{
+  "checks": [
+    {
+      "name": "Alt+Tab lists deepest modal and independent peer, excludes disabled ancestors",
+      "passed": true,
+      "menu": {
+        "opened": true,
+        "request": {
+          "mode": "switcher",
+          "address": "0x5a02af3e9d40",
+          "title": "Modal QA peer",
+          "screen": "eDP-2",
+          "monitorX": 0,
+          "monitorY": 0,
+          "x": 620,
+          "y": 325,
+          "pinned": false,
+          "maximized": false,
+          "extendedLayouts": true,
+          "reducedMotion": false,
+          "candidates": [
+            {
+              "address": "0x5a02af3e9d40",
+              "title": "Modal QA peer",
+              "class": "org.omarchy.ModalPeerQA",
+              "homeWorkspace": "974",
+              "pid": 1850308,
+              "stableId": "180002f5"
+            },
+            {
+              "address": "0x5a02b0acdda0",
+              "title": "Modal QA nested",
+              "class": "org.omarchy.ModalFamilyQA",
+              "homeWorkspace": "974",
+              "pid": 1850307,
+              "stableId": "180002f7"
+            }
+          ],
+          "reverse": false
+        },
+        "selected": 1
+      }
+    },
+    {
+      "name": "Alt release commits exact modal identity",
+      "passed": true
+    },
+    {
+      "name": "reverse Alt+Tab selects unrelated peer",
+      "passed": true
+    },
+    {
+      "name": "Escape cancels modal switch and later Alt release does not commit",
+      "passed": true,
+      "menu": {
+        "opened": false,
+        "request": {
+          "mode": "switcher",
+          "address": "0x5a02b0acdda0",
+          "title": "Modal QA nested",
+          "screen": "eDP-2",
+          "monitorX": 0,
+          "monitorY": 0,
+          "x": 620,
+          "y": 325,
+          "pinned": false,
+          "maximized": false,
+          "extendedLayouts": true,
+          "reducedMotion": false,
+          "candidates": [
+            {
+              "address": "0x5a02b0acdda0",
+              "title": "Modal QA nested",
+              "class": "org.omarchy.ModalFamilyQA",
+              "homeWorkspace": "974",
+              "pid": 1850307,
+              "stableId": "180002f7"
+            },
+            {
+              "address": "0x5a02af3e9d40",
+              "title": "Modal QA peer",
+              "class": "org.omarchy.ModalPeerQA",
+              "homeWorkspace": "974",
+              "pid": 1850308,
+              "stableId": "180002f5"
+            }
+          ],
+          "reverse": true
+        },
+        "selected": 1
+      },
+      "active": "Modal QA nested"
+    },
+    {
+      "name": "native dialog Shake preserves complete owner family",
+      "passed": true
+    },
+    {
+      "name": "second native Shake restores peer and retains modal focus",
+      "passed": true
+    },
+    {
+      "name": "Snap Assist excludes modal dialogs and disabled owner",
+      "passed": true,
+      "assist": {
+        "source": "0x5a02af3e9d40",
+        "zones": [
+          "right"
+        ],
+        "candidates": []
+      }
+    },
+    {
+      "name": "disabled owner cannot offer a Snap Assist operation",
+      "passed": true
+    },
+    {
+      "name": "Snap Assist restores owner eligibility after dialog close",
+      "passed": true
+    },
+    {
+      "name": "native Snap Assist selection forms complementary Snap Group",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "platform": "Wayland",
+  "shakeTraces": [
+    [
+      {
+        "cursor": {
+          "x": 645,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              440,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 405,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              200,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 645,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              440,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 405,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              200,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 645,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": -98,
+              "name": "special:win-minimized"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              440,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      }
+    ],
+    [
+      {
+        "cursor": {
+          "x": 645,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": -98,
+              "name": "special:win-minimized"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              440,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 405,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": -98,
+              "name": "special:win-minimized"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              200,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 645,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": -98,
+              "name": "special:win-minimized"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              440,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 405,
+          "y": 408
+        },
+        "windows": [
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": -98,
+              "name": "special:win-minimized"
+            }
+          },
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              200,
+              420
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      },
+      {
+        "cursor": {
+          "x": 1126,
+          "y": 632
+        },
+        "windows": [
+          {
+            "title": "Modal QA owner",
+            "at": [
+              120,
+              250
+            ],
+            "size": [
+              580,
+              380
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA child",
+            "at": [
+              330,
+              360
+            ],
+            "size": [
+              320,
+              180
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA nested",
+            "at": [
+              1005,
+              562
+            ],
+            "size": [
+              243,
+              140
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          },
+          {
+            "title": "Modal QA peer",
+            "at": [
+              1020,
+              400
+            ],
+            "size": [
+              380,
+              300
+            ],
+            "workspace": {
+              "id": 974,
+              "name": "974"
+            }
+          }
+        ],
+        "menu": {
+          "opened": false,
+          "request": {
+            "mode": "switcher",
+            "address": "0x5a02b0acdda0",
+            "title": "Modal QA nested",
+            "screen": "eDP-2",
+            "monitorX": 0,
+            "monitorY": 0,
+            "x": 620,
+            "y": 325,
+            "pinned": false,
+            "maximized": false,
+            "extendedLayouts": true,
+            "reducedMotion": false,
+            "candidates": [
+              {
+                "address": "0x5a02b0acdda0",
+                "title": "Modal QA nested",
+                "class": "org.omarchy.ModalFamilyQA",
+                "homeWorkspace": "974",
+                "pid": 1850307,
+                "stableId": "180002f7"
+              },
+              {
+                "address": "0x5a02af3e9d40",
+                "title": "Modal QA peer",
+                "class": "org.omarchy.ModalPeerQA",
+                "homeWorkspace": "974",
+                "pid": 1850308,
+                "stableId": "180002f5"
+              }
+            ],
+            "reverse": true
+          },
+          "selected": 1
+        }
+      }
+    ]
+  ],
+  "snapGroups": [
+    {
+      "id": "snap-7",
+      "addresses": [
+        "0x5a02af3e9d40",
+        "0x5a02b05dacc0"
+      ],
+      "name": "org.omarchy.ModalPeerQA + org.omarchy.ModalFamilyQA",
+      "members": [
+        {
+          "address": "0x5a02af3e9d40",
+          "pid": 1850308,
+          "class": "org.omarchy.ModalPeerQA",
+          "title": "Modal QA peer",
+          "zone": "left"
+        },
+        {
+          "address": "0x5a02b05dacc0",
+          "pid": 1850307,
+          "class": "org.omarchy.ModalFamilyQA",
+          "title": "Modal QA owner",
+          "zone": "right"
+        }
+      ],
+      "workspace": "974",
+      "monitor": 0
+    }
+  ],
+  "result": "pass",
+  "gtkErrors": ""
+}

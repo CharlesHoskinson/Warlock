@@ -1,0 +1,171 @@
+{
+  "checks": [
+    {
+      "name": "unrelated app remains clickable with modal open",
+      "passed": true,
+      "active": "Modal QA peer"
+    },
+    {
+      "name": "owner interaction redirects to modal",
+      "passed": false,
+      "active": "hosk: ~"
+    },
+    {
+      "name": "minimizing owner hides modal family",
+      "passed": false,
+      "workspaces": {
+        "owner": "special:win-minimized",
+        "child": "1"
+      }
+    },
+    {
+      "name": "restoring owner focuses modal",
+      "passed": false,
+      "active": "hosk: ~"
+    },
+    {
+      "name": "desktop move keeps modal with owner",
+      "passed": false,
+      "workspaces": {
+        "owner": "2",
+        "child": "1"
+      }
+    }
+  ],
+  "failures": [
+    "owner interaction redirects to modal",
+    "minimizing owner hides modal family",
+    "restoring owner focuses modal",
+    "desktop move keeps modal with owner"
+  ],
+  "desktopAction": {
+    "active": "2",
+    "desktops": [
+      {
+        "id": "1",
+        "name": "Desktop 1",
+        "active": false,
+        "windows": [
+          {
+            "address": "0x5a02b0cc9280",
+            "class": "brave-browser",
+            "title": "claude code quint plugin - Google Search - Brave",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b0cc9280-0.png",
+            "minimized": true
+          },
+          {
+            "address": "0x5a02aee429f0",
+            "class": "foot",
+            "title": "hoskinson@hosk:~",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02aee429f0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02afd20bd0",
+            "class": "foot",
+            "title": "\u283c Explain 6.1 access limitation | hoskinson",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02afd20bd0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02af3ac830",
+            "class": "org.omarchy.ModalFamilyQA",
+            "title": "Modal QA child",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02af3ac830-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02b026e7a0",
+            "class": "org.omarchy.ModalPeerQA",
+            "title": "Modal QA peer",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b026e7a0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02afa13e90",
+            "class": "foot",
+            "title": "hosk: ~",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02afa13e90-0.png",
+            "minimized": false
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Desktop 2",
+        "active": true,
+        "windows": [
+          {
+            "address": "0x5a02b0196180",
+            "class": "org.omarchy.ModalFamilyQA",
+            "title": "Modal QA owner",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b0196180-0.png",
+            "minimized": false
+          }
+        ]
+      }
+    ]
+  },
+  "gtkEvents": {
+    "family": [
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "modal",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      }
+    ],
+    "peer": [
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "peer"
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      }
+    ]
+  },
+  "result": "fail",
+  "gtkErrors": ""
+}
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/live_modal_family.py", line 75, in <module>
+    assert report['result']=='pass'
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

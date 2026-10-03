@@ -1,0 +1,118 @@
+{
+  "checks": [
+    {
+      "name": "app menu imported; hidden item excluded",
+      "state": {
+        "key": "brave-browser",
+        "windows": [
+          "0x5a02b0cc9280"
+        ],
+        "launcher": {
+          "count": 0,
+          "count-visible": false,
+          "progress": 0,
+          "progress-visible": false,
+          "urgent": false,
+          "updating": false,
+          "quicklist": "/com/canonical/unity/quicklist/qa",
+          "quicklistItems": [
+            {
+              "id": 41,
+              "label": "QA app action",
+              "enabled": true
+            }
+          ],
+          "sender": ":1.17941"
+        },
+        "urgent": false
+      }
+    },
+    {
+      "name": "opening Jump List requests AboutToShow and refreshes",
+      "state": {
+        "key": "brave-browser",
+        "windows": [
+          "0x5a02b0cc9280"
+        ],
+        "launcher": {
+          "count": 0,
+          "count-visible": false,
+          "progress": 0,
+          "progress-visible": false,
+          "urgent": false,
+          "updating": false,
+          "quicklist": "/com/canonical/unity/quicklist/qa",
+          "quicklistItems": [
+            {
+              "id": 41,
+              "label": "QA lazy app action",
+              "enabled": true
+            }
+          ],
+          "sender": ":1.17941"
+        },
+        "urgent": false
+      }
+    },
+    {
+      "name": "real DBus Event delivered",
+      "event": [
+        41,
+        "clicked",
+        "",
+        0
+      ]
+    },
+    {
+      "name": "LayoutUpdated refreshes menu",
+      "state": {
+        "key": "brave-browser",
+        "windows": [
+          "0x5a02b0cc9280"
+        ],
+        "launcher": {
+          "count": 0,
+          "count-visible": false,
+          "progress": 0,
+          "progress-visible": false,
+          "urgent": false,
+          "updating": false,
+          "quicklist": "/com/canonical/unity/quicklist/qa",
+          "quicklistItems": [
+            {
+              "id": 41,
+              "label": "QA disabled action",
+              "enabled": false
+            }
+          ],
+          "sender": ":1.17941"
+        },
+        "urgent": false
+      }
+    },
+    {
+      "name": "disabled app action rejected",
+      "exit": 2
+    },
+    {
+      "name": "disconnect clears menu",
+      "state": {
+        "key": "brave-browser",
+        "windows": [
+          "0x5a02b0cc9280"
+        ],
+        "launcher": {},
+        "urgent": false
+      }
+    }
+  ],
+  "events": [
+    [
+      41,
+      "clicked",
+      "",
+      0
+    ]
+  ],
+  "result": "pass"
+}

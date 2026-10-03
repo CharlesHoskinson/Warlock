@@ -1,0 +1,375 @@
+{
+  "checks": [
+    {
+      "path": "direct GTK file transfer baseline"
+    },
+    {
+      "path": "leave before dwell cancels activation",
+      "dragEntries": 1
+    },
+    {
+      "path": "minimized hover restore and destination drop",
+      "source": [
+        {
+          "event": "begin"
+        },
+        {
+          "event": "end",
+          "delete": false
+        },
+        {
+          "event": "begin"
+        },
+        {
+          "event": "cancel"
+        },
+        {
+          "event": "end",
+          "delete": false
+        },
+        {
+          "event": "begin"
+        },
+        {
+          "event": "end",
+          "delete": false
+        }
+      ],
+      "target": [
+        {
+          "event": "drop",
+          "value": "file:///tmp/taskbar-file-drag-7fphvvb_/sample.txt"
+        }
+      ],
+      "state": {
+        "fileDragActive": false,
+        "fileDragOnTaskbar": false,
+        "fileDragStamp": 42006122,
+        "filePreviewKey": "",
+        "dropSize": [
+          202,
+          26
+        ],
+        "dragEntries": 2,
+        "dragGroupKey": "",
+        "dragActivated": true,
+        "taskbarItems": [
+          {
+            "key": "brave-browser",
+            "x": 166.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02b0cc9280"
+            ]
+          },
+          {
+            "key": "foot",
+            "x": 207.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02aee429f0",
+              "0x5a02afd20bd0",
+              "0x5a02afa13e90"
+            ]
+          },
+          {
+            "key": "gcr-prompter",
+            "x": 248.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02b0ae3ea0"
+            ]
+          },
+          {
+            "key": "class:org.omarchy.dragtargetqa",
+            "x": 289.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02af2fed10"
+            ]
+          },
+          {
+            "key": "class:org.omarchy.dragsourceqa",
+            "x": 330.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02af059520"
+            ]
+          }
+        ],
+        "previewItems": [
+          {
+            "address": "0x5a02af2fed10",
+            "x": 0,
+            "y": 0,
+            "width": 288,
+            "height": 149
+          }
+        ],
+        "groups": 5,
+        "wheelEvents": 0,
+        "currentMonitor": 0,
+        "selectedWindowIndex": 0,
+        "popupScrollY": 0,
+        "popupViewportHeight": 167,
+        "popupContentHeight": 172,
+        "menuLabels": [
+          "Pin another application\u2026",
+          "Combine: Always",
+          "Combine: When taskbar is full",
+          "Combine: Never",
+          "Show windows on all displays",
+          "Show windows on this display",
+          "Taskbar: Current desktop",
+          "Taskbar: All desktops",
+          "Alt+Tab: Current desktop",
+          "Alt+Tab: All desktops"
+        ],
+        "currentDesktop": "1",
+        "indicators": [
+          {
+            "key": "brave-browser",
+            "windows": [
+              "0x5a02b0cc9280"
+            ],
+            "launcher": {},
+            "urgent": false
+          },
+          {
+            "key": "foot",
+            "windows": [
+              "0x5a02aee429f0",
+              "0x5a02afd20bd0",
+              "0x5a02afa13e90"
+            ],
+            "launcher": {},
+            "urgent": false
+          },
+          {
+            "key": "gcr-prompter",
+            "windows": [
+              "0x5a02b0ae3ea0"
+            ],
+            "launcher": {},
+            "urgent": false
+          },
+          {
+            "key": "class:org.omarchy.dragtargetqa",
+            "windows": [
+              "0x5a02af2fed10"
+            ],
+            "launcher": {},
+            "urgent": false
+          },
+          {
+            "key": "class:org.omarchy.dragsourceqa",
+            "windows": [
+              "0x5a02af059520"
+            ],
+            "launcher": {},
+            "urgent": false
+          }
+        ],
+        "popupOpen": false,
+        "popupIndex": 3,
+        "menuMode": false,
+        "keyboardMode": false,
+        "keyboardFocus": false,
+        "combineMode": "always",
+        "displayMode": "all",
+        "desktopScope": "all",
+        "switcherScope": "current"
+      }
+    },
+    {
+      "path": "group preview chooses exact minimized destination and preserves file drop",
+      "preview": {
+        "address": "0x5a02afe72400",
+        "x": 165,
+        "y": 225,
+        "width": 288,
+        "height": 149
+      },
+      "peer": [
+        {
+          "event": "drop",
+          "value": "file:///tmp/taskbar-file-drag-7fphvvb_/sample.txt"
+        }
+      ],
+      "otherStillMinimized": true
+    },
+    {
+      "path": "Escape cancels chooser and subsequent hover without restoring unselected peer"
+    }
+  ],
+  "groupHoverInput": {
+    "expected": [
+      308,
+      13
+    ],
+    "actual": {
+      "x": 308,
+      "y": 13
+    },
+    "state": {
+      "fileDragActive": true,
+      "fileDragOnTaskbar": true,
+      "fileDragStamp": 42007623,
+      "filePreviewKey": "",
+      "dropSize": [
+        202,
+        26
+      ],
+      "dragEntries": 3,
+      "dragGroupKey": "class:org.omarchy.dragtargetqa",
+      "dragActivated": false,
+      "taskbarItems": [
+        {
+          "key": "brave-browser",
+          "x": 166.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02b0cc9280"
+          ]
+        },
+        {
+          "key": "foot",
+          "x": 207.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02aee429f0",
+            "0x5a02afd20bd0",
+            "0x5a02afa13e90"
+          ]
+        },
+        {
+          "key": "gcr-prompter",
+          "x": 248.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02b0ae3ea0"
+          ]
+        },
+        {
+          "key": "class:org.omarchy.dragtargetqa",
+          "x": 289.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02af2fed10",
+            "0x5a02afe72400"
+          ]
+        },
+        {
+          "key": "class:org.omarchy.dragsourceqa",
+          "x": 330.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02af059520"
+          ]
+        }
+      ],
+      "previewItems": [
+        {
+          "address": "0x5a02af2fed10",
+          "x": 0,
+          "y": 0,
+          "width": 288,
+          "height": 149
+        },
+        {
+          "address": "0x5a02afe72400",
+          "x": 0,
+          "y": 0,
+          "width": 288,
+          "height": 149
+        }
+      ],
+      "groups": 5,
+      "wheelEvents": 0,
+      "currentMonitor": 0,
+      "selectedWindowIndex": 0,
+      "popupScrollY": 0,
+      "popupViewportHeight": 322,
+      "popupContentHeight": 172,
+      "menuLabels": [
+        "Restore all 2 windows",
+        "Pin another application\u2026",
+        "Combine: Always",
+        "Combine: When taskbar is full",
+        "Combine: Never",
+        "Show windows on all displays",
+        "Show windows on this display",
+        "Taskbar: Current desktop",
+        "Taskbar: All desktops",
+        "Alt+Tab: Current desktop",
+        "Alt+Tab: All desktops"
+      ],
+      "currentDesktop": "1",
+      "indicators": [
+        {
+          "key": "brave-browser",
+          "windows": [
+            "0x5a02b0cc9280"
+          ],
+          "launcher": {},
+          "urgent": false
+        },
+        {
+          "key": "foot",
+          "windows": [
+            "0x5a02aee429f0",
+            "0x5a02afd20bd0",
+            "0x5a02afa13e90"
+          ],
+          "launcher": {},
+          "urgent": false
+        },
+        {
+          "key": "gcr-prompter",
+          "windows": [
+            "0x5a02b0ae3ea0"
+          ],
+          "launcher": {},
+          "urgent": false
+        },
+        {
+          "key": "class:org.omarchy.dragtargetqa",
+          "windows": [
+            "0x5a02af2fed10",
+            "0x5a02afe72400"
+          ],
+          "launcher": {},
+          "urgent": false
+        },
+        {
+          "key": "class:org.omarchy.dragsourceqa",
+          "windows": [
+            "0x5a02af059520"
+          ],
+          "launcher": {},
+          "urgent": false
+        }
+      ],
+      "popupOpen": false,
+      "popupIndex": 3,
+      "menuMode": false,
+      "keyboardMode": false,
+      "keyboardFocus": false,
+      "combineMode": "always",
+      "displayMode": "all",
+      "desktopScope": "all",
+      "switcherScope": "current"
+    }
+  },
+  "result": "pass"
+}

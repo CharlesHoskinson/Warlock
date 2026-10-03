@@ -1,0 +1,530 @@
+{
+  "checks": [
+    {
+      "name": "unrelated app remains clickable with modal open",
+      "passed": true,
+      "active": "Modal QA peer"
+    },
+    {
+      "name": "owner interaction redirects to modal",
+      "passed": true,
+      "active": "Modal QA child"
+    },
+    {
+      "name": "disabled owner titlebar focuses modal without starting drag",
+      "passed": true
+    },
+    {
+      "name": "modal child receives its own click",
+      "passed": true
+    },
+    {
+      "name": "programmatic owner focus redirects to child",
+      "passed": true
+    },
+    {
+      "name": "activating owner raises family above unrelated peer",
+      "passed": true,
+      "order": [
+        "0x6156bae7a6c0",
+        "0x6156badf6cb0",
+        "0x6156bae71540"
+      ]
+    },
+    {
+      "name": "overlay above disabled owner receives its own click",
+      "passed": true,
+      "count": "1",
+      "active": "Modal QA child"
+    },
+    {
+      "name": "hovering disabled owner preserves unrelated keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "consumed owner release stays consumed after dialog closes",
+      "passed": true
+    },
+    {
+      "name": "owner becomes interactive after dialog closes",
+      "passed": true
+    },
+    {
+      "name": "minimizing owner hides modal family",
+      "passed": true,
+      "workspaces": {
+        "owner": "special:win-minimized",
+        "child": "special:win-minimized"
+      }
+    },
+    {
+      "name": "restoring owner focuses modal",
+      "passed": true,
+      "active": "Modal QA child"
+    },
+    {
+      "name": "desktop move keeps modal with owner",
+      "passed": true,
+      "workspaces": {
+        "owner": "9",
+        "child": "9"
+      }
+    }
+  ],
+  "failures": [],
+  "beforeOwnerClick": {
+    "owner": {
+      "address": "0x6156badf6cb0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        120,
+        250
+      ],
+      "size": [
+        580,
+        380
+      ],
+      "workspace": {
+        "id": 8,
+        "name": "8"
+      },
+      "floating": true,
+      "monitor": 1,
+      "class": "org.omarchy.ModalFamilyQA",
+      "title": "Modal QA owner",
+      "initialClass": "org.omarchy.ModalFamilyQA",
+      "initialTitle": "Modal QA owner",
+      "pid": 1692413,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 2,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800001b"
+    },
+    "child": {
+      "address": "0x6156bae71540",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        330,
+        360
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "workspace": {
+        "id": 8,
+        "name": "8"
+      },
+      "floating": true,
+      "monitor": 1,
+      "class": "org.omarchy.ModalFamilyQA",
+      "title": "Modal QA child",
+      "initialClass": "org.omarchy.ModalFamilyQA",
+      "initialTitle": "Modal QA child",
+      "pid": 1692413,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800001c"
+    },
+    "peer": {
+      "address": "0x6156bae7a6c0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        1020,
+        400
+      ],
+      "size": [
+        380,
+        300
+      ],
+      "workspace": {
+        "id": 8,
+        "name": "8"
+      },
+      "floating": true,
+      "monitor": 1,
+      "class": "org.omarchy.ModalPeerQA",
+      "title": "Modal QA peer",
+      "initialClass": "org.omarchy.ModalPeerQA",
+      "initialTitle": "Modal QA peer",
+      "pid": 1692414,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 1,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800001a"
+    }
+  },
+  "afterOwnerClick": {
+    "cursor": {
+      "x": 180,
+      "y": 540
+    },
+    "active": {
+      "address": "0x6156bae71540",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        330,
+        360
+      ],
+      "size": [
+        320,
+        180
+      ],
+      "workspace": {
+        "id": 8,
+        "name": "8"
+      },
+      "floating": true,
+      "monitor": 1,
+      "class": "org.omarchy.ModalFamilyQA",
+      "title": "Modal QA child",
+      "initialClass": "org.omarchy.ModalFamilyQA",
+      "initialTitle": "Modal QA child",
+      "pid": 1692413,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "1800001c"
+    },
+    "clientOrder": [
+      "0x6156bae7a6c0",
+      "0x6156badf6cb0",
+      "0x6156bae71540"
+    ]
+  },
+  "overlayLayers": {
+    "WAYLAND-1": {
+      "levels": {
+        "0": [],
+        "1": [],
+        "2": [],
+        "3": []
+      }
+    },
+    "DRAG-QA": {
+      "levels": {
+        "0": [],
+        "1": [],
+        "2": [],
+        "3": [
+          {
+            "address": "0x6156bac483c0",
+            "x": 120,
+            "y": 500,
+            "w": 200,
+            "h": 100,
+            "alpha": 1,
+            "namespace": "modal-overlay-qa",
+            "pid": 1692682
+          }
+        ]
+      }
+    }
+  },
+  "desktopAction": {
+    "active": "9",
+    "desktops": [
+      {
+        "id": "1",
+        "name": "Desktop 1",
+        "active": false,
+        "windows": []
+      },
+      {
+        "id": "8",
+        "name": "Desktop 8",
+        "active": false,
+        "windows": [
+          {
+            "address": "0x6156bae7a6c0",
+            "class": "org.omarchy.ModalPeerQA",
+            "title": "Modal QA peer",
+            "preview": "",
+            "minimized": false
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "name": "Desktop 9",
+        "active": true,
+        "windows": [
+          {
+            "address": "0x6156badf6cb0",
+            "class": "org.omarchy.ModalFamilyQA",
+            "title": "Modal QA owner",
+            "preview": "/run/user/1000/wqa/hypr-window-previews/0x6156badf6cb0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x6156bae90530",
+            "class": "org.omarchy.ModalFamilyQA",
+            "title": "Modal QA child",
+            "preview": "/run/user/1000/wqa/hypr-window-previews/0x6156bae90530-0.png",
+            "minimized": false
+          }
+        ]
+      }
+    ]
+  },
+  "gtkEvents": {
+    "family": [
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "modal",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "owner"
+      },
+      {
+        "event": "modal",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      }
+    ],
+    "peer": [
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "peer"
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      }
+    ]
+  },
+  "result": "pass",
+  "gtkErrors": ""
+}

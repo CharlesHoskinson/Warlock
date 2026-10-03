@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+operation=${1:-}
+[[ $operation == capture || $operation == capture-both ]] || exit 2
+address=${2:-}
+[[ $address =~ ^0x[[:xdigit:]]+$ ]] || exit 2
+slot=${3:-0}
+[[ $slot == 0 || $slot == 1 ]] || exit 2
+
+cache_dir="${XDG_RUNTIME_DIR:-$HOME/.cache}/hypr-window-previews"
+umask 077
+mkdir -p "$cache_dir"
+
+active=$(hyprctl activewindow -j)
+[[ $(jq -r '.address // empty' <<<"$active") == "$address" ]] || exit 0
+read -r x y width height < <(jq -r '[.at[0],.at[1],.size[0],.size[1]] | @tsv' <<<"$active")
+[[ $x =~ ^-?[0-9]+$ && $y =~ ^-?[0-9]+$ && $width =~ ^[0-9]+$ && $height =~ ^[0-9]+$ ]] || exit 3
+(( width > 0 && height > 0 )) || exit 3
+
+raw=$(mktemp "$cache_dir/.capture.XXXXXX.png")
+trap 'rm -f "$raw"' EXIT
+grim -g "$x,$y ${width}x${height}" "$raw" >/dev/null 2>&1 || exit 0
+output="$cache_dir/$address-$slot.png"
+magick "$raw" -thumbnail '300x180>' "$output" 2>/dev/null
+if [[ $operation == capture-both ]]; then
+  other=$((1 - slot))
+  cp -f "$output" "$cache_dir/$address-$other.png"
+fi

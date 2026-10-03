@@ -1,0 +1,1 @@
+g++ -I/usr/include/hyprland/protocols -I/usr/include/hyprland -I/usr/include/hyprland/src -I/usr/include/libdrm -I/usr/include/cairo -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/pixman-1 -I/usr/include/libei-1.0 -O2 -shared -fPIC -std=c++2b -Wall -Wextra -Wno-unused-parameter probe.cpp -o content-probe-v2.so

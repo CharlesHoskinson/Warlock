@@ -1,0 +1,16 @@
+{
+  "result": "fail",
+  "reportSHA256": "3c3acfd5c78af50b70824de126a714b664ed84972edf2dae01d61a7352b1fd25",
+  "error": "AssertionError(\"producer outputs: {'event': 'fatal', 'nativeAuthority': False, 'reason': 'unreviewed EGL commit backend; no route authority', 'observerReceivedNs': 71418817342684}\")",
+  "all74SourcesUnchanged": true,
+  "all12PreservationPass": true,
+  "producerEvents": [
+    {
+      "event": "fatal",
+      "nativeAuthority": false,
+      "reason": "unreviewed EGL commit backend; no route authority",
+      "observerReceivedNs": 71418817342684
+    }
+  ],
+  "guiReleased": true
+}

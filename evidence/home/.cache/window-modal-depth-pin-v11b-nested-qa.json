@@ -1,0 +1,529 @@
+{
+  "checks": [
+    {
+      "name": "pinned owner stays below its dialog after unrelated focus",
+      "passed": true
+    },
+    {
+      "name": "dialog above pinned owner remains clickable",
+      "passed": true,
+      "order": [
+        "Modal QA peer",
+        "Modal QA owner",
+        "Modal QA child"
+      ],
+      "pins": {
+        "owner": true,
+        "child": false
+      }
+    },
+    {
+      "name": "pinned family restore keeps dialog clickable",
+      "passed": true
+    },
+    {
+      "name": "dialog opened after pinning remains clickable",
+      "passed": true,
+      "owner": {
+        "address": "0x62e43596c040",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          120,
+          250
+        ],
+        "size": [
+          580,
+          380
+        ],
+        "workspace": {
+          "id": 3,
+          "name": "3"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA owner",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA owner",
+        "pid": 1794140,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800001a"
+      },
+      "child": {
+        "address": "0x62e435ab5830",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          330,
+          360
+        ],
+        "size": [
+          320,
+          180
+        ],
+        "workspace": {
+          "id": 3,
+          "name": "3"
+        },
+        "floating": true,
+        "monitor": 1,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA child",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA child",
+        "pid": 1794140,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "1800001c"
+      },
+      "active": "Modal QA child",
+      "before": 2,
+      "after": 3,
+      "nativeFamilies": [
+        {
+          "address": "0x62e435a93570",
+          "stableId": "18000019",
+          "pid": 1794141,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x62e43596c040",
+          "stableId": "1800001a",
+          "pid": 1794140,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x62e435ab5830",
+          "stableId": "1800001c",
+          "pid": 1794140,
+          "parent": "0x62e43596c040",
+          "parentStableId": "1800001a",
+          "modal": true
+        }
+      ]
+    },
+    {
+      "name": "owner click focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "intermediate dialog click focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "deepest dialog receives its own click",
+      "passed": true
+    },
+    {
+      "name": "minimizing intermediate dialog hides whole family",
+      "passed": true
+    },
+    {
+      "name": "nested family restore focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "nested family restore keeps deepest dialog clickable",
+      "passed": true
+    },
+    {
+      "name": "closing deepest dialog returns input to surviving modal",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "platform": "Wayland",
+  "reopenedRetryClicks": 2,
+  "result": "pass",
+  "events": {
+    "family": [
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "modal",
+        "window": "child",
+        "parent": "owner",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "modal",
+        "window": "child",
+        "parent": "owner",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "modal",
+        "window": "nested",
+        "parent": "child",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "pointer-leave",
+        "window": "nested"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "nested"
+      },
+      {
+        "event": "click",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "nested"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "nested"
+      },
+      {
+        "event": "click",
+        "window": "nested"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "click",
+        "window": "child"
+      }
+    ],
+    "peer": [
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "pointer-enter",
+        "window": "peer"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "peer"
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "peer"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "peer"
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      }
+    ]
+  },
+  "gtkErrors": ""
+}

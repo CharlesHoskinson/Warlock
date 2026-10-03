@@ -1,0 +1,51 @@
+{
+  "checks": [
+    {
+      "name": "taskbar current excludes foreign visible/minimized",
+      "addresses": [
+        "0x5a02b019cf70"
+      ]
+    },
+    {
+      "name": "taskbar all includes foreign visible/minimized",
+      "addresses": [
+        "0x5a02ae30e4c0",
+        "0x5a02aee429f0",
+        "0x5a02af34d290",
+        "0x5a02afa13e90",
+        "0x5a02afd20bd0",
+        "0x5a02b019cf70",
+        "0x5a02b0cc9280"
+      ]
+    },
+    {
+      "name": "Alt+Tab current scope",
+      "addresses": [
+        "0x5a02b019cf70"
+      ]
+    },
+    {
+      "name": "Alt+Tab all includes minimized foreign identity",
+      "addresses": [
+        "0x5a02ae30e4c0",
+        "0x5a02aee429f0",
+        "0x5a02af34d290",
+        "0x5a02afa13e90",
+        "0x5a02afd20bd0",
+        "0x5a02b019cf70",
+        "0x5a02b0cc9280"
+      ]
+    },
+    {
+      "name": "stale minimized identity excluded live"
+    },
+    {
+      "name": "all-desktop commit restores captured identity on foreign desktop"
+    },
+    {
+      "name": "stale captured PID cannot focus a different identity"
+    }
+  ],
+  "result": "pass",
+  "remainingQaWindows": []
+}

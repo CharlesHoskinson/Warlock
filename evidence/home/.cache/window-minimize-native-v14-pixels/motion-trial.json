@@ -1,0 +1,4641 @@
+{
+  "original": [
+    {
+      "address": "0x5a02b0a59f50",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        320,
+        350
+      ],
+      "size": [
+        620,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "motion-native-qa",
+      "title": "Motion native QA",
+      "initialClass": "motion-native-qa",
+      "initialTitle": "Motion native QA",
+      "pid": 2713550,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "180003b4"
+    }
+  ],
+  "target": {
+    "visible": true,
+    "home": true,
+    "screenName": "eDP-2",
+    "monitorX": 0,
+    "monitorY": 0,
+    "rect": {
+      "x": 258,
+      "y": 3,
+      "width": 19,
+      "height": 19
+    }
+  },
+  "trials": [
+    {
+      "command": "minimize",
+      "samples": [
+        {
+          "elapsed": 0.023914279001473915,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        },
+        {
+          "elapsed": 0.05223992700484814,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        },
+        {
+          "elapsed": 0.08129451300192159,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.1410862940028892,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.17148874900158262,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2033860520023154,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.23331116099870997,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2629967730026692,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2944288200014853,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.32736975500301924,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.0010077270739174808,
+              "rect": {
+                "x": 291.84085890047754,
+                "y": 303.44692156085284,
+                "width": 675.5876613139123,
+                "height": 460.1799556740508
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.35780020200036233,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.04019303105408952,
+              "rect": {
+                "x": 290.513456898577,
+                "y": 291.66194156617775,
+                "width": 649.833120667811,
+                "height": 442.87474607276926
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.3875268999981927,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.2363166642367692,
+              "rect": {
+                "x": 283.86976967750957,
+                "y": 232.67775977418702,
+                "width": 520.930864734815,
+                "height": 356.261647914631
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.41805983499943977,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.6290677941390874,
+              "rect": {
+                "x": 270.56532686025173,
+                "y": 114.55785923374586,
+                "width": 262.7951885642343,
+                "height": 182.81293286730352
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.44871118900482543,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.9131785974631871,
+              "rect": {
+                "x": 260.94107463332426,
+                "y": 29.11153641997305,
+                "width": 76.06336594242885,
+                "height": 57.34250129939119
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.47822857400024077,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.9919381834086601,
+              "rect": {
+                "x": 258.27309400196856,
+                "y": 5.4245913033558395,
+                "width": 24.298628873419943,
+                "height": 22.560299696815378
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5066285569992033,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5360543510032585,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5668275080024614,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-17",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.2499899230899,
+                "height": 460.62499313615274
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": []
+        }
+      ]
+    },
+    {
+      "command": "restore",
+      "samples": [
+        {
+          "elapsed": 0.027702447994670365,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        },
+        {
+          "elapsed": 0.057406596999499016,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        },
+        {
+          "elapsed": 0.08590805899439147,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.11373220099630998,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.14199297400045907,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.1720058249993599,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2021693119968404,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2332667769951513,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.26262045399926137,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2912764610009617,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": false,
+              "imageReady": false,
+              "routeProgress": 0,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.3214953259957838,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.3503555889983545,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.37861306899867486,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.40956376399844885,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.011814580422454181,
+              "rect": {
+                "x": 258.40021886042575,
+                "y": 6.553235008577614,
+                "width": 26.765132863603547,
+                "height": 24.217613997972855
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.4393905049946625,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.07835226432152544,
+              "rect": {
+                "x": 260.654182613116,
+                "y": 26.56444314005859,
+                "width": 70.49702493577388,
+                "height": 53.6023181931957
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.4696688029944198,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.2818689898906879,
+              "rect": {
+                "x": 267.5483108066209,
+                "y": 87.77209743382117,
+                "width": 204.25839076528618,
+                "height": 143.48039072576938
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.4987543099996401,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.6084438234568916,
+              "rect": {
+                "x": 278.61103187331184,
+                "y": 185.9894771507049,
+                "width": 418.89969683580836,
+                "height": 287.70399935788436
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5273929329996463,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.8772916906386127,
+              "rect": {
+                "x": 287.718252204799,
+                "y": 266.8454719887408,
+                "width": 595.5999548318388,
+                "height": 406.4339368566812
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5566351599991322,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.9738614284540149,
+              "rect": {
+                "x": 290.98955165328726,
+                "y": 295.8888201996265,
+                "width": 659.0704140378873,
+                "height": 449.08154665656826
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5877564869952039,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.999671241883784,
+              "rect": {
+                "x": 291.8638589709667,
+                "y": 303.65112147180844,
+                "width": 676.0339136545199,
+                "height": 460.4798053353354
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.6180750869971234,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.6484771779942093,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.6797614169990993,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.7106076389973168,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-18",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": []
+        }
+      ]
+    },
+    {
+      "command": "rapid-min-restore-min",
+      "samples": [
+        {
+          "elapsed": 0.02911296600359492,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.11378451669339555,
+              "rect": {
+                "x": 281.09531591299395,
+                "y": 208.04552171506785,
+                "width": 467.1003129150693,
+                "height": 320.09136652642985
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.056585424004879314,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.38402274384020985,
+              "rect": {
+                "x": 274.0527429211116,
+                "y": 145.51994039039252,
+                "width": 330.4587890113325,
+                "height": 228.27803372871827
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.08506643200234976,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.7636833357632308,
+              "rect": {
+                "x": 264.15855637693124,
+                "y": 57.677078680229556,
+                "width": 138.4896424021353,
+                "height": 99.2884949634755
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.11557484700460918,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.9598069689459104,
+              "rect": {
+                "x": 259.04745489915325,
+                "y": 12.299545287841056,
+                "width": 39.32294642962307,
+                "height": 32.65556670231206
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.145187515001453,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.999223793555912,
+              "rect": {
+                "x": 258.020228413267,
+                "y": 3.17959250124224,
+                "width": 19.39247604790745,
+                "height": 19.263715838144776
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.17479640600504354,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.20308792000287212,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2317449820038746,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": []
+        }
+      ]
+    },
+    {
+      "command": "rapid-cleanup",
+      "samples": [
+        {
+          "elapsed": 0.02363643100397894,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-21",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "minimize",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 284.0606098043129,
+                "y": 234.3720822728259,
+                "width": 524.6335861376954,
+                "height": 358.74961191494
+              },
+              "to": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              }
+            }
+          ],
+          "phases": []
+        },
+        {
+          "elapsed": 0.05827191600110382,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        },
+        {
+          "elapsed": 0.08755478500097524,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.11540024100395385,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.14527611400262685,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.17654493499867385,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.20744600999751128,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2392072479997296,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.2678271839977242,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.30054252300033113,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": false,
+              "imageReady": false,
+              "routeProgress": 0,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.32999470100185135,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "loading",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.35843928399845026,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0,
+              "rect": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.3875989020016277,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.0005680940248212377,
+              "rect": {
+                "x": 258.01924418262,
+                "y": 3.170854275393664,
+                "width": 19.373379792089125,
+                "height": 19.25088451981237
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.4167431200039573,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.029958083340182465,
+              "rect": {
+                "x": 259.0148299428527,
+                "y": 12.009893428962771,
+                "width": 38.68994997345001,
+                "height": 32.23023834948037
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.445552917997702,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.13322067888550995,
+              "rect": {
+                "x": 262.5128499178331,
+                "y": 43.066118571829996,
+                "width": 106.55928985504862,
+                "height": 77.83358139840695
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.47515912800008664,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.36980816963918794,
+              "rect": {
+                "x": 270.52725013812955,
+                "y": 114.21980534514981,
+                "width": 262.0564157688326,
+                "height": 182.3165303785996
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5033635990039329,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.6999513437988,
+              "rect": {
+                "x": 281.7108487269025,
+                "y": 213.51036347934996,
+                "width": 479.04301365841457,
+                "height": 328.116007400786
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5304790709997178,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.8966279280019726,
+              "rect": {
+                "x": 288.37326716138415,
+                "y": 272.6608452882511,
+                "width": 608.3086966440575,
+                "height": 414.97330254955403
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5567857720016036,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.9804983973041834,
+              "rect": {
+                "x": 291.2143789442207,
+                "y": 297.88488855127423,
+                "width": 663.4325617477804,
+                "height": 452.0125979794688
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.5838044400006765,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 0.9990978877291034,
+              "rect": {
+                "x": 291.84443660147053,
+                "y": 303.47868521238337,
+                "width": 675.6570766421337,
+                "height": 460.22659781071
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.6104000310006086,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.6373909350004396,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.6645854980015429,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.6941822840017267,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [
+            {
+              "token": "dea74f20e095-22",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "operation": "restore",
+              "screenName": "eDP-2",
+              "visible": true,
+              "imageReady": true,
+              "routeProgress": 1,
+              "rect": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              },
+              "from": {
+                "x": 258,
+                "y": 3,
+                "width": 19,
+                "height": 19
+              },
+              "to": {
+                "x": 291.87499565072363,
+                "y": 303.74999547377234,
+                "width": 676.24998992309,
+                "height": 460.6249931361528
+              }
+            }
+          ],
+          "phases": []
+        }
+      ]
+    },
+    {
+      "command": "reduce-during-minimize",
+      "samples": [
+        {
+          "elapsed": 0.025075294994167052,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-23",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.05308255499403458,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-23",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "running",
+              "operation": "minimize"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.07905773499805946,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        }
+      ]
+    },
+    {
+      "command": "restore-reduced",
+      "samples": [
+        {
+          "elapsed": 0.02227009699709015,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        },
+        {
+          "elapsed": 0.049374053996871226,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        },
+        {
+          "elapsed": 0.07601849099592073,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-24",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.1046521549942554,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": true,
+              "workspace": "special:win-minimized",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": [
+            {
+              "token": "dea74f20e095-24",
+              "identity": [
+                "0x5a02b0a59f50",
+                "180003b4",
+                2713550
+              ],
+              "phase": "preparing",
+              "operation": "restore"
+            }
+          ]
+        },
+        {
+          "elapsed": 0.13360944099986227,
+          "windows": [
+            {
+              "address": "0x5a02b0a59f50",
+              "stableId": "180003b4",
+              "pid": 2713550,
+              "rect": [
+                320,
+                350,
+                620,
+                380
+              ],
+              "minimized": false,
+              "workspace": "1",
+              "pinned": false
+            }
+          ],
+          "visuals": [],
+          "phases": []
+        }
+      ]
+    }
+  ],
+  "focusIsNotAnOracle": true,
+  "started": 1790830067.6548533,
+  "layersBefore": {
+    "eDP-2": {
+      "levels": {
+        "0": [
+          {
+            "address": "0x5a02ae1c7670",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000,
+            "alpha": 1,
+            "namespace": "owe-background",
+            "pid": 1701
+          }
+        ],
+        "1": [],
+        "2": [
+          {
+            "address": "0x5a02b02f9170",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 26,
+            "alpha": 1,
+            "namespace": "omarchy-bar",
+            "pid": 2359683
+          }
+        ],
+        "3": [
+          {
+            "address": "0x5a02af4f3b10",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000,
+            "alpha": 1,
+            "namespace": "omarchy-notifications",
+            "pid": 2359683
+          }
+        ]
+      }
+    }
+  },
+  "activeReversals": {
+    "samples": [
+      {
+        "observed": 52249.681263673,
+        "finished": 52249.705239588,
+        "visual": {
+          "token": "dea74f20e095-19",
+          "identity": [
+            "0x5a02b0a59f50",
+            "180003b4",
+            2713550
+          ],
+          "operation": "minimize",
+          "screenName": "eDP-2",
+          "visible": true,
+          "imageReady": true,
+          "routeProgress": 0.0002985857996792535,
+          "rect": {
+            "x": 291.86488105805813,
+            "y": 303.66019579587027,
+            "width": 676.0537444092595,
+            "height": 460.4931301844188
+          },
+          "from": {
+            "x": 291.87499565072363,
+            "y": 303.74999547377234,
+            "width": 676.2499899230899,
+            "height": 460.62499313615274
+          },
+          "to": {
+            "x": 258,
+            "y": 3,
+            "width": 19,
+            "height": 19
+          }
+        },
+        "phase": "running",
+        "imageDigest": "92fa5aaf8ffde8b2cda308890b64c0d96f233916b77c3f1a363c3aae4e4d6321"
+      },
+      {
+        "observed": 52249.947878451,
+        "finished": 52249.969854723,
+        "visual": {
+          "token": "dea74f20e095-20",
+          "identity": [
+            "0x5a02b0a59f50",
+            "180003b4",
+            2713550
+          ],
+          "operation": "restore",
+          "screenName": "eDP-2",
+          "visible": true,
+          "imageReady": true,
+          "routeProgress": 0.004544752198569902,
+          "rect": {
+            "x": 258.31127571640155,
+            "y": 5.763577337813258,
+            "width": 25.039438752336807,
+            "height": 23.05807095996927
+          },
+          "from": {
+            "x": 258.15804051039845,
+            "y": 4.403119967219823,
+            "width": 22.066336153599423,
+            "height": 21.060358620842237
+          },
+          "to": {
+            "x": 291.87499565072363,
+            "y": 303.74999547377234,
+            "width": 676.2499899230899,
+            "height": 460.62499313615274
+          }
+        },
+        "phase": "running",
+        "imageDigest": "92fa5aaf8ffde8b2cda308890b64c0d96f233916b77c3f1a363c3aae4e4d6321"
+      },
+      {
+        "observed": 52250.199870986,
+        "finished": 52250.220877126,
+        "visual": {
+          "token": "dea74f20e095-21",
+          "identity": [
+            "0x5a02b0a59f50",
+            "180003b4",
+            2713550
+          ],
+          "operation": "minimize",
+          "screenName": "eDP-2",
+          "visible": true,
+          "imageReady": true,
+          "routeProgress": 0.014223064586674444,
+          "rect": {
+            "x": 283.689948067898,
+            "y": 231.08126220310615,
+            "width": 517.4419269848671,
+            "height": 353.9173312413762
+          },
+          "from": {
+            "x": 284.0606098043129,
+            "y": 234.3720822728259,
+            "width": 524.6335861376954,
+            "height": 358.74961191494
+          },
+          "to": {
+            "x": 258,
+            "y": 3,
+            "width": 19,
+            "height": 19
+          }
+        },
+        "phase": "running",
+        "imageDigest": "92fa5aaf8ffde8b2cda308890b64c0d96f233916b77c3f1a363c3aae4e4d6321"
+      }
+    ],
+    "continuity": [
+      {
+        "sameIdentity": true,
+        "samePixels": true,
+        "previousProgress": 0.0002985857996792535,
+        "reversalProgress": 0.9953345968800119,
+        "maximumProgress": 1,
+        "observationGap": 0.2885910499971942
+      },
+      {
+        "sameIdentity": true,
+        "samePixels": true,
+        "previousProgress": 0.004544752198569902,
+        "reversalProgress": 0.768235719569327,
+        "maximumProgress": 1,
+        "observationGap": 0.2729986749982345
+      }
+    ]
+  },
+  "reduceInterrupted": {
+    "observed": 52251.45637734,
+    "finished": 52251.479408769,
+    "visual": {
+      "token": "dea74f20e095-23",
+      "identity": [
+        "0x5a02b0a59f50",
+        "180003b4",
+        2713550
+      ],
+      "operation": "minimize",
+      "screenName": "eDP-2",
+      "visible": true,
+      "imageReady": true,
+      "routeProgress": 0.0002985857996792535,
+      "rect": {
+        "x": 291.86488105805813,
+        "y": 303.66019579587027,
+        "width": 676.0537444092595,
+        "height": 460.4931301844188
+      },
+      "from": {
+        "x": 291.87499565072363,
+        "y": 303.74999547377234,
+        "width": 676.2499899230899,
+        "height": 460.62499313615274
+      },
+      "to": {
+        "x": 258,
+        "y": 3,
+        "width": 19,
+        "height": 19
+      }
+    },
+    "phase": "running",
+    "imageDigest": "7453a1bde68e84086f9c25c71214aea6e7c2e86bab221e4632e36d19b25f386b"
+  },
+  "captureTrials": [
+    {
+      "command": "minimize",
+      "instrumentedScreenshotReplay": true,
+      "screenshots": [
+        {
+          "path": "/home/hoskinson/.cache/window-minimize-native-v14-pixels/minimize-capture-0.png",
+          "captureLatency": 0.41393267500097863,
+          "exitCode": 0,
+          "sampledVisual": {
+            "token": "dea74f20e095-25",
+            "identity": [
+              "0x5a02b0a59f50",
+              "180003b4",
+              2713550
+            ],
+            "operation": "minimize",
+            "screenName": "eDP-2",
+            "visible": true,
+            "imageReady": true,
+            "routeProgress": 0.002388686397434028,
+            "rect": {
+              "x": 291.7940789093996,
+              "y": 303.0315980505558,
+              "width": 674.680025812447,
+              "height": 459.57008952228153
+            },
+            "from": {
+              "x": 291.87499565072363,
+              "y": 303.74999547377234,
+              "width": 676.2499899230899,
+              "height": 460.62499313615274
+            },
+            "to": {
+              "x": 258,
+              "y": 3,
+              "width": 19,
+              "height": 19
+            }
+          }
+        },
+        {
+          "path": "/home/hoskinson/.cache/window-minimize-native-v14-pixels/minimize-capture-1.png",
+          "captureLatency": 0.46000727800128516,
+          "exitCode": 0,
+          "sampledVisual": {
+            "token": "dea74f20e095-25",
+            "identity": [
+              "0x5a02b0a59f50",
+              "180003b4",
+              2713550
+            ],
+            "operation": "minimize",
+            "screenName": "eDP-2",
+            "visible": true,
+            "imageReady": true,
+            "routeProgress": 0.38402274384020985,
+            "rect": {
+              "x": 278.86622687335756,
+              "y": 188.2551570020036,
+              "width": 423.85104540387465,
+              "height": 291.03095152359356
+            },
+            "from": {
+              "x": 291.87499565072363,
+              "y": 303.74999547377234,
+              "width": 676.2499899230899,
+              "height": 460.62499313615274
+            },
+            "to": {
+              "x": 258,
+              "y": 3,
+              "width": 19,
+              "height": 19
+            }
+          }
+        },
+        {
+          "path": "/home/hoskinson/.cache/window-minimize-native-v14-pixels/minimize-capture-2.png",
+          "captureLatency": 0.4258775889975368,
+          "exitCode": 0,
+          "sampledVisual": {
+            "token": "dea74f20e095-25",
+            "identity": [
+              "0x5a02b0a59f50",
+              "180003b4",
+              2713550
+            ],
+            "operation": "minimize",
+            "screenName": "eDP-2",
+            "visible": true,
+            "imageReady": true,
+            "routeProgress": 0.8323394080769791,
+            "rect": {
+              "x": 263.6795018221901,
+              "y": 53.423922261978504,
+              "width": 129.19492235190478,
+              "height": 93.0431077572074
+            },
+            "from": {
+              "x": 291.87499565072363,
+              "y": 303.74999547377234,
+              "width": 676.2499899230899,
+              "height": 460.62499313615274
+            },
+            "to": {
+              "x": 258,
+              "y": 3,
+              "width": 19,
+              "height": 19
+            }
+          }
+        }
+      ],
+      "elapsed": 0.8452568420034368
+    },
+    {
+      "command": "restore",
+      "instrumentedScreenshotReplay": true,
+      "screenshots": [
+        {
+          "path": "/home/hoskinson/.cache/window-minimize-native-v14-pixels/restore-capture-0.png",
+          "captureLatency": 0.45059502799995244,
+          "exitCode": 0,
+          "sampledVisual": {
+            "token": "dea74f20e095-26",
+            "identity": [
+              "0x5a02b0a59f50",
+              "180003b4",
+              2713550
+            ],
+            "operation": "restore",
+            "screenName": "eDP-2",
+            "visible": true,
+            "imageReady": true,
+            "routeProgress": 0.00801808169639188,
+            "rect": {
+              "x": 258.27161248259245,
+              "y": 5.411438033898195,
+              "width": 24.269884114156074,
+              "height": 22.540985274134176
+            },
+            "from": {
+              "x": 258,
+              "y": 3,
+              "width": 19,
+              "height": 19
+            },
+            "to": {
+              "x": 291.87499565072363,
+              "y": 303.74999547377234,
+              "width": 676.24998992309,
+              "height": 460.6249931361528
+            }
+          }
+        },
+        {
+          "path": "/home/hoskinson/.cache/window-minimize-native-v14-pixels/restore-capture-2.png",
+          "captureLatency": 0.4600150139958714,
+          "exitCode": 0,
+          "sampledVisual": {
+            "token": "dea74f20e095-26",
+            "identity": [
+              "0x5a02b0a59f50",
+              "180003b4",
+              2713550
+            ],
+            "operation": "restore",
+            "screenName": "eDP-2",
+            "visible": true,
+            "imageReady": true,
+            "routeProgress": 0.7355611079148516,
+            "rect": {
+              "x": 282.91712933145703,
+              "y": 224.2199998760746,
+              "width": 502.4475307648531,
+              "height": 343.8421692341173
+            },
+            "from": {
+              "x": 258,
+              "y": 3,
+              "width": 19,
+              "height": 19
+            },
+            "to": {
+              "x": 291.87499565072363,
+              "y": 303.74999547377234,
+              "width": 676.24998992309,
+              "height": 460.6249931361528
+            }
+          }
+        }
+      ],
+      "elapsed": 0.9647714890015777
+    }
+  ],
+  "passed": true,
+  "finished": 1790830073.261139
+}

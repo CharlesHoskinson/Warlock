@@ -1,0 +1,32 @@
+{
+  "time": "2026-10-01T10:57:17.574717+00:00",
+  "result": "fail",
+  "reportSHA256": "664845468c07dcaf0e9cbe3e3dd1447dab9bb2ef32aa07d675fda7a78648aaf5",
+  "inputsUnchanged": 87,
+  "passedChecks": 23,
+  "checkCount": 24,
+  "mainPreservationPassed": 12,
+  "cleanupUnload": "ok",
+  "failedGate": "actualPresentationCadenceNoMetadataPause",
+  "cadenceSummary": {
+    "WAYLAND-1": {
+      "sampleCount": 265,
+      "maximumGapMs": 54.016283,
+      "p95GapMs": 8.359024,
+      "refreshHz": 60.0,
+      "maximumAllowedMs": 33.833333333333336,
+      "timestampsOrdered": true,
+      "passes": false
+    },
+    "EGL-SECOND": {
+      "sampleCount": 82,
+      "maximumGapMs": 61.296035,
+      "p95GapMs": 16.921206,
+      "refreshHz": 60.0,
+      "maximumAllowedMs": 33.833333333333336,
+      "timestampsOrdered": true,
+      "passes": false
+    }
+  },
+  "scope": "ActualIntelMesa mapped proof/idle/pixels/interiorretarget/identity/cancel/outputremoval accepted; active54ms/61ms feedback gaps failcadence. No production integration/complete raster/physical240 proof."
+}

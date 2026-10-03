@@ -1,0 +1,558 @@
+{
+  "checks": [
+    {
+      "name": "pinned owner stays below its dialog after unrelated focus",
+      "passed": true
+    },
+    {
+      "name": "dialog above pinned owner remains clickable",
+      "passed": true,
+      "order": [
+        "claude code quint plugin - Google Search - Brave",
+        "hoskinson@hosk:~",
+        "\u2839 Explain 6.1 access limitation | hoskinson",
+        "hosk: ~",
+        "Modal QA peer",
+        "Modal QA owner",
+        "Modal QA child"
+      ],
+      "pins": {
+        "owner": true,
+        "child": false
+      }
+    },
+    {
+      "name": "pinned family restore keeps dialog clickable",
+      "passed": true
+    },
+    {
+      "name": "dialog opened after pinning remains clickable",
+      "passed": true,
+      "owner": {
+        "address": "0x5a02b0acdda0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          120,
+          250
+        ],
+        "size": [
+          580,
+          380
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA owner",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA owner",
+        "pid": 1956193,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000315"
+      },
+      "child": {
+        "address": "0x5a02afe7f670",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          330,
+          360
+        ],
+        "size": [
+          320,
+          180
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA child",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA child",
+        "pid": 1956193,
+        "xwayland": false,
+        "pinned": true,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000317"
+      },
+      "active": "Modal QA child",
+      "before": 2,
+      "after": 3,
+      "nativeFamilies": [
+        {
+          "address": "0x5a02b0cc9280",
+          "stableId": "18000006",
+          "pid": 4311,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x5a02aee429f0",
+          "stableId": "18000005",
+          "pid": 4007,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x5a02afd20bd0",
+          "stableId": "18000076",
+          "pid": 361074,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x5a02afa13e90",
+          "stableId": "1800006a",
+          "pid": 252010,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x5a02b05dacc0",
+          "stableId": "18000314",
+          "pid": 1956194,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x5a02b0acdda0",
+          "stableId": "18000315",
+          "pid": 1956193,
+          "parent": "",
+          "parentStableId": "",
+          "modal": false
+        },
+        {
+          "address": "0x5a02afe7f670",
+          "stableId": "18000317",
+          "pid": 1956193,
+          "parent": "0x5a02b0acdda0",
+          "parentStableId": "18000315",
+          "modal": true
+        }
+      ]
+    },
+    {
+      "name": "owner click focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "intermediate dialog click focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "deepest dialog receives its own click",
+      "passed": true
+    },
+    {
+      "name": "minimizing intermediate dialog hides whole family",
+      "passed": true
+    },
+    {
+      "name": "nested family restore focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "nested family restore keeps deepest dialog clickable",
+      "passed": true
+    },
+    {
+      "name": "closing deepest dialog returns input to surviving modal",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "platform": "Wayland",
+  "result": "pass",
+  "events": {
+    "family": [
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "modal",
+        "window": "child",
+        "parent": "owner",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "modal",
+        "window": "child",
+        "parent": "owner",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "modal",
+        "window": "nested",
+        "parent": "child",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "pointer-leave",
+        "window": "nested"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "nested"
+      },
+      {
+        "event": "click",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "nested"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "owner"
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "owner"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "pointer-leave",
+        "window": "child"
+      },
+      {
+        "event": "pointer-enter",
+        "window": "nested"
+      },
+      {
+        "event": "click",
+        "window": "nested"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "child"
+      },
+      {
+        "event": "click",
+        "window": "child"
+      }
+    ],
+    "peer": [
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "pointer-enter",
+        "window": "peer"
+      },
+      {
+        "event": "pointer-leave",
+        "window": "peer"
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      }
+    ]
+  },
+  "gtkErrors": ""
+}

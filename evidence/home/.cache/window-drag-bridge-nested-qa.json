@@ -1,0 +1,113 @@
+{
+  "checks": [
+    {
+      "path": "logo",
+      "events": [
+        [
+          "begin",
+          "0x5f8ae497acf0"
+        ],
+        [
+          "release",
+          "0x5f8ae497acf0"
+        ]
+      ]
+    },
+    {
+      "path": "alt",
+      "events": [
+        [
+          "begin",
+          "0x5f8ae497acf0"
+        ],
+        [
+          "release",
+          "0x5f8ae497acf0"
+        ]
+      ]
+    },
+    {
+      "path": "titlebar",
+      "events": [
+        [
+          "begin",
+          "0x5f8ae497acf0"
+        ],
+        [
+          "release",
+          "0x5f8ae497acf0"
+        ]
+      ]
+    },
+    {
+      "path": "Escape cancellation",
+      "events": [
+        [
+          "begin",
+          "0x5f8ae497acf0"
+        ],
+        [
+          "cancel",
+          "0x5f8ae497acf0"
+        ]
+      ]
+    },
+    {
+      "path": "after Lua reload",
+      "events": [
+        [
+          "begin",
+          "0x5f8ae497acf0"
+        ],
+        [
+          "release",
+          "0x5f8ae497acf0"
+        ]
+      ]
+    },
+    {
+      "path": "modifier edge pause/release",
+      "rectangle": [
+        10,
+        34,
+        786,
+        956
+      ]
+    },
+    {
+      "path": "snapped unsnap anchor and Escape restore",
+      "anchored": [
+        176,
+        148,
+        600,
+        350
+      ],
+      "restored": [
+        10,
+        34,
+        785,
+        956
+      ]
+    },
+    {
+      "path": "resize does not trigger move snapping",
+      "rectangle": [
+        310,
+        330,
+        550,
+        320
+      ]
+    },
+    {
+      "path": "maximized modifier drag to snap and exact normal restore",
+      "rectangle": [
+        260,
+        300,
+        600,
+        350
+      ]
+    }
+  ],
+  "compositorPid": 1344319,
+  "result": "pass"
+}

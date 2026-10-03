@@ -1,0 +1,242 @@
+{
+  "checks": [
+    {
+      "name": "dialog above pinned owner remains clickable",
+      "passed": false,
+      "order": [
+        "claude code quint plugin - Google Search - Brave",
+        "hoskinson@hosk:~",
+        "\u280f Explain 6.1 access limitation | hoskinson",
+        "hosk: ~",
+        "Modal QA peer",
+        "Modal QA owner",
+        "Modal QA child"
+      ],
+      "pins": {
+        "owner": true,
+        "child": false
+      }
+    },
+    {
+      "name": "pinned family restore keeps dialog clickable",
+      "passed": false
+    },
+    {
+      "name": "owner click focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "intermediate dialog click focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "deepest dialog receives its own click",
+      "passed": true
+    },
+    {
+      "name": "minimizing intermediate dialog hides whole family",
+      "passed": true
+    },
+    {
+      "name": "nested family restore focuses deepest modal",
+      "passed": true
+    },
+    {
+      "name": "nested family restore keeps deepest dialog clickable",
+      "passed": true
+    },
+    {
+      "name": "closing deepest dialog returns input to surviving modal",
+      "passed": true
+    }
+  ],
+  "failures": [
+    "dialog above pinned owner remains clickable",
+    "pinned family restore keeps dialog clickable"
+  ],
+  "platform": "Wayland",
+  "result": "fail",
+  "events": {
+    "family": [
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "modal",
+        "window": "child",
+        "parent": "owner",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "modal",
+        "window": "nested",
+        "parent": "child",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "nested"
+      },
+      {
+        "event": "active",
+        "window": "nested",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "child"
+      }
+    ],
+    "peer": [
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      }
+    ]
+  },
+  "gtkErrors": ""
+}
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/live_modal_depth_pin.py", line 83, in <module>
+    print(json.dumps(report,indent=2));assert report['result']=='pass'
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

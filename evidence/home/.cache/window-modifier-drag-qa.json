@@ -1,0 +1,53 @@
+{
+  "checks": [
+    {
+      "path": "logo held edge/release/restore",
+      "rectangle": [
+        10,
+        60,
+        784,
+        930
+      ]
+    },
+    {
+      "path": "alt held edge/release/restore",
+      "rectangle": [
+        10,
+        60,
+        784,
+        930
+      ]
+    },
+    {
+      "path": "logo Escape cancel/unstuck"
+    },
+    {
+      "path": "titlebar Escape cancel/unstuck"
+    },
+    {
+      "path": "snapped anchor/cancel",
+      "anchored": [
+        176,
+        172,
+        600,
+        350
+      ],
+      "restored": [
+        10,
+        60,
+        784,
+        930
+      ]
+    },
+    {
+      "path": "Alt snap after config reload",
+      "rectangle": [
+        804,
+        60,
+        786,
+        930
+      ]
+    }
+  ],
+  "result": "pass"
+}

@@ -1,0 +1,459 @@
+#!/usr/bin/env python3
+"""sudo-askpass — an Omarchy-native SUDO_ASKPASS helper.
+
+A compact, top-center command-palette bar that slides down on the focused
+monitor, styled from the active Omarchy theme (colors.toml) with the same
+tokens Omarchy's own polkit prompt uses: 2px accent border, Hyprland
+rounding, the fontconfig `monospace` family (or $OMARCHY_MENU_FONT).
+
+Contract:  sudo-askpass [prompt]   -> password + "\n" on stdout, exit 0
+           Escape / close          -> nothing on stdout, exit 1
+           sudo-askpass --preview  -> shows for ~3s, prints nothing, exit 1
+"""
+
+import os
+import sys
+
+# gtk4-layer-shell must be loaded before libwayland-client. Re-exec once with
+# LD_PRELOAD (execve keeps our PID and parent, so /proc lookups stay valid).
+_LS = "/usr/lib/libgtk4-layer-shell.so"
+if os.path.exists(_LS) and _LS not in os.environ.get("LD_PRELOAD", "") and not os.environ.get("_ASKPASS_REEXEC"):
+    env = dict(os.environ, _ASKPASS_REEXEC="1")
+    env["LD_PRELOAD"] = ":".join(p for p in (_LS, os.environ.get("LD_PRELOAD", "")) if p)
+    try:
+        os.execve(sys.executable, [sys.executable, os.path.abspath(__file__), *sys.argv[1:]], env)
+    except OSError:
+        pass
+
+import json
+import re
+import shlex
+import subprocess
+import tomllib
+
+import gi
+
+gi.require_version("Gtk", "4.0")
+gi.require_version("Gdk", "4.0")
+from gi.repository import Gdk, GLib, Gtk  # noqa: E402
+
+try:
+    gi.require_version("Gtk4LayerShell", "1.0")
+    from gi.repository import Gtk4LayerShell as LayerShell  # noqa: E402
+except (ValueError, ImportError):
+    LayerShell = None
+
+NAMESPACE = "sudo-askpass"
+WIDTH = 560          # logical px
+TOP_GAP = 10         # distance below the top edge / bar once settled
+SLIDE = 18           # px travelled by the slide-down
+ANIM_MS = 220
+
+# ---------------------------------------------------------------- theme ---
+
+FALLBACK = {
+    "accent": "#7aa2f7",
+    "background": "#1a1b26",
+    "dark_background": "#13141c",
+    "lighter_background": "#24283b",
+    "foreground": "#a9b1d6",
+    "bright_foreground": "#c0caf5",
+    "dark_foreground": "#565f89",
+    "muted": "#414868",
+    "selection": "#292e42",
+    "red": "#f7768e",
+    "green": "#9ece6a",
+}
+
+
+def load_colors():
+    c = dict(FALLBACK)
+    path = os.path.expanduser("~/.local/state/omarchy/current/theme/colors.toml")
+    try:
+        with open(path, "rb") as f:
+            data = tomllib.load(f)
+        for k, v in data.items():
+            if isinstance(v, str) and re.fullmatch(r"#[0-9a-fA-F]{6}([0-9a-fA-F]{2})?", v.strip()):
+                c[k] = v.strip()[:7]
+    except (OSError, tomllib.TOMLDecodeError):
+        pass
+    return c
+
+
+def rgba(hex_color, alpha):
+    h = hex_color.lstrip("#")
+    r, g, b = (int(h[i:i + 2], 16) for i in (0, 2, 4))
+    return f"rgba({r},{g},{b},{alpha})"
+
+
+def ui_font():
+    override = os.environ.get("OMARCHY_MENU_FONT", "").strip()
+    if override:
+        return override
+    try:
+        out = subprocess.run(["fc-match", "-f", "%{family[0]}", "monospace"],
+                             capture_output=True, text=True, timeout=0.5).stdout.strip()
+        if out:
+            return out
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return "monospace"
+
+
+def hypr_rounding():
+    try:
+        out = subprocess.run(["hyprctl", "-j", "getoption", "decoration:rounding"],
+                             capture_output=True, text=True, timeout=0.5).stdout
+        return max(0, min(24, int(json.loads(out).get("int", 0))))
+    except (OSError, subprocess.SubprocessError, ValueError, AttributeError):
+        return 0
+
+
+# ------------------------------------------------------- process lookup ---
+
+def _stat(pid):
+    try:
+        with open(f"/proc/{pid}/stat") as f:
+            s = f.read()
+        comm = s[s.index("(") + 1:s.rindex(")")]
+        ppid = int(s[s.rindex(")") + 2:].split()[1])
+        return comm, ppid
+    except (OSError, ValueError, IndexError):
+        return None, 0
+
+
+def _cmdline(pid):
+    try:
+        with open(f"/proc/{pid}/cmdline", "rb") as f:
+            return [a.decode(errors="replace") for a in f.read().split(b"\0") if a]
+    except OSError:
+        return []
+
+
+# sudo options that consume the following argument
+_SUDO_ARG_OPTS = {"-u", "-g", "-h", "-p", "-C", "-D", "-R", "-T", "-U", "-r", "-t",
+                  "--user", "--group", "--host", "--prompt", "--close-from",
+                  "--chdir", "--chroot", "--command-timeout", "--other-user",
+                  "--role", "--type"}
+
+
+def strip_sudo(argv):
+    i = 1
+    while i < len(argv):
+        a = argv[i]
+        if a == "--":
+            i += 1
+            break
+        if not a.startswith("-") or re.fullmatch(r"\w+=.*", a):
+            break
+        if a in _SUDO_ARG_OPTS:
+            i += 2
+            continue
+        i += 1
+    rest = argv[i:]
+    return rest or [a for a in argv[1:] if a not in ("-A", "--askpass")]
+
+
+def find_request():
+    """Return (command string, requester label)."""
+    command, requester = "", ""
+    pid, sudo_pid = os.getppid(), None
+    for _ in range(12):
+        if pid <= 1:
+            break
+        comm, ppid = _stat(pid)
+        if comm is None:
+            break
+        if comm in ("sudo", "sudo-rs", "sudoedit"):
+            sudo_pid = pid
+            argv = _cmdline(pid)
+            command = shlex.join(strip_sudo(argv)) if argv else ""
+            break
+        pid = ppid
+    # Who launched sudo? Walk further up looking for a recognisable agent.
+    pid = _stat(sudo_pid)[1] if sudo_pid else os.getppid()
+    first = ""
+    for _ in range(24):
+        if pid <= 1:
+            break
+        comm, ppid = _stat(pid)
+        if comm is None:
+            break
+        argv = " ".join(_cmdline(pid)[:2]).lower()
+        if comm == "claude" or "claude-code" in argv or re.search(r"(^|/)claude(\s|$)", argv):
+            requester = "Claude Code"
+            break
+        if not first and comm not in ("bash", "sh", "zsh", "fish", "dash", "env", "timeout"):
+            first = comm
+        pid = ppid
+    return command, requester or first
+
+
+# -------------------------------------------------------------------- UI ---
+
+def build_css(c, font, radius):
+    fg, acc = c["foreground"], c["accent"]
+    return f"""
+window.askpass, window.askpass > * {{ background: transparent; box-shadow: none; }}
+.card {{
+  background-color: {c['background']};
+  border: 2px solid {acc};
+  border-radius: {radius}px;
+  padding: 16px 18px 12px 18px;
+  font-family: "{font}";
+  color: {fg};
+}}
+.glyph {{ color: {acc}; font-size: 15px; min-width: 18px; }}
+.title {{ color: {c['bright_foreground']}; font-size: 14px; font-weight: 700; }}
+.who {{ color: {c['dark_foreground']}; font-size: 11px; }}
+.who .name {{ color: {fg}; }}
+.cmd {{
+  font-family: "{font}";
+  font-size: 11.5px;
+  color: {fg};
+  padding: 6px 10px;
+  margin-top: 12px;
+  background-color: {rgba(fg, 0.04)};
+  border-left: 2px solid {rgba(acc, 0.55)};
+  border-radius: {min(radius, 4)}px;
+}}
+.cmd .prompt {{ color: {acc}; }}
+entry.pw, entry.pw:focus, entry.pw:focus-within {{
+  all: unset;
+  margin-top: 12px;
+  min-height: 40px;
+  padding: 0 12px;
+  font-family: "{font}";
+  font-size: 18px;
+  color: {c['bright_foreground']};
+  caret-color: {acc};
+  background-color: {rgba(fg, 0.04)};
+  border: 1px solid {rgba(fg, 0.25)};
+  border-radius: {radius}px;
+  outline: none;
+  box-shadow: none;
+}}
+entry.pw:focus-within {{ border-color: {rgba(acc, 0.7)}; background-color: {rgba(fg, 0.06)}; }}
+entry.pw > text {{ all: unset; caret-color: {acc}; }}
+entry.pw > text > placeholder {{ color: {rgba(fg, 0.36)}; font-size: 13px; }}
+entry.pw > text > selection {{ background-color: {rgba(acc, 0.45)}; color: {fg}; }}
+entry.pw image {{ color: {c['dark_foreground']}; }}
+.foot {{ margin-top: 10px; font-size: 10.5px; color: {c['dark_foreground']}; }}
+.key {{
+  color: {fg};
+  background-color: {rgba(fg, 0.07)};
+  border: 1px solid {rgba(fg, 0.14)};
+  border-radius: {min(radius, 3)}px;
+  padding: 0 5px;
+  margin-right: 5px;
+}}
+.sep {{ color: {c['muted']}; margin: 0 8px; }}
+"""
+
+
+def span(text, klass=None):
+    lbl = Gtk.Label(label=text, xalign=0)
+    if klass:
+        lbl.add_css_class(klass)
+    return lbl
+
+
+class AskPass(Gtk.Application):
+    def __init__(self, prompt, preview):
+        super().__init__(application_id=None)
+        self.prompt, self.preview = prompt, preview
+        self.result = 1
+        self.anim_start = None
+
+    # -- lifecycle -----------------------------------------------------
+    def do_activate(self):
+        try:
+            self.build()
+        except Exception:
+            import traceback
+            traceback.print_exc(file=sys.stderr)
+            self.result = 1
+            self.quit()
+
+    def build(self):
+        if self.preview:
+            GLib.timeout_add(3000, self.cancel)
+        c = load_colors()
+        font = ui_font()
+        radius = hypr_rounding()
+        css = Gtk.CssProvider()
+        css.load_from_string(build_css(c, font, radius))
+        Gtk.StyleContext.add_provider_for_display(
+            Gdk.Display.get_default(), css, Gtk.STYLE_PROVIDER_PRIORITY_USER + 1)
+
+        win = Gtk.ApplicationWindow(application=self, title="sudo-askpass")
+        win.add_css_class("askpass")
+        win.set_decorated(False)
+        win.set_resizable(False)
+        self.win = win
+
+        if LayerShell and LayerShell.is_supported():
+            LayerShell.init_for_window(win)
+            LayerShell.set_namespace(win, NAMESPACE)
+            LayerShell.set_layer(win, LayerShell.Layer.OVERLAY)
+            LayerShell.set_anchor(win, LayerShell.Edge.TOP, True)
+            LayerShell.set_margin(win, LayerShell.Edge.TOP, TOP_GAP - SLIDE)
+            LayerShell.set_exclusive_zone(win, 0)
+            LayerShell.set_keyboard_mode(win, LayerShell.KeyboardMode.EXCLUSIVE)
+        else:
+            win.set_default_size(WIDTH, -1)
+
+        command, requester = find_request()
+        # callers such as the Files explorer can describe the request themselves
+        command = os.environ.get("ASKPASS_COMMAND") or command
+        requester = os.environ.get("ASKPASS_REQUESTER") or requester
+        if self.preview and not command:
+            command = "pacman -Syu --noconfirm linux linux-headers"
+
+        # holder gives the card room to slide inside a fixed-size surface
+        self.holder = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        card = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        card.add_css_class("card")
+        card.set_size_request(WIDTH, -1)
+        self.card = card
+        self.holder.append(card)
+
+        # header: lock · title ........ requested by X
+        head = Gtk.Box(spacing=10)
+        head.append(span("", "glyph"))
+        title = span("Authentication required", "title")
+        title.set_hexpand(True)
+        head.append(title)
+        if requester:
+            who = Gtk.Box(spacing=0)
+            who.add_css_class("who")
+            who.set_valign(Gtk.Align.CENTER)
+            who.append(span("requested by "))
+            n = span(requester, "name")
+            who.append(n)
+            head.append(who)
+        card.append(head)
+
+        # command being run
+        if command:
+            row = Gtk.Box(spacing=0)
+            row.add_css_class("cmd")
+            row.append(span("" if os.environ.get("ASKPASS_COMMAND") else "sudo ", "prompt"))
+            cl = span(command)
+            cl.set_ellipsize(3)  # Pango.EllipsizeMode.END
+            cl.set_hexpand(True)
+            cl.set_max_width_chars(1)
+            cl.set_tooltip_text(command)
+            row.append(cl)
+            card.append(row)
+
+        # password
+        entry = Gtk.Entry()
+        entry.add_css_class("pw")
+        entry.set_visibility(False)
+        entry.set_invisible_char("•")
+        entry.set_placeholder_text("Enter password")
+        entry.set_input_purpose(Gtk.InputPurpose.PASSWORD)
+        entry.set_hexpand(True)
+        entry.connect("activate", self.on_submit)
+        self.entry = entry
+        card.append(entry)
+
+        # footer: sudo's own prompt (user) · key hints
+        foot = Gtk.Box(spacing=0)
+        foot.add_css_class("foot")
+        user = self.prompt_label()
+        left = span(user)
+        left.set_hexpand(True)
+        left.set_ellipsize(3)
+        foot.append(left)
+        foot.append(span("enter", "key"))
+        foot.append(span("authorize"))
+        foot.append(span("·", "sep"))
+        foot.append(span("esc", "key"))
+        foot.append(span("cancel"))
+        card.append(foot)
+
+        win.set_child(self.holder)
+
+        keys = Gtk.EventControllerKey()
+        keys.set_propagation_phase(Gtk.PropagationPhase.CAPTURE)
+        keys.connect("key-pressed", self.on_key)
+        win.add_controller(keys)
+        win.connect("close-request", self.on_close)
+
+        # open animation: fade + slide down, ease-out-cubic
+        self.set_offset(0.0)
+        win.present()
+        entry.grab_focus()
+        self.holder.add_tick_callback(self.tick)
+
+    def prompt_label(self):
+        p = (self.prompt or "").strip()
+        m = re.search(r"password for ([^:\s]+)", p)
+        if m:
+            return f"password for {m.group(1)}"
+        if p:
+            return p.rstrip(":").strip()
+        return f"password for {os.environ.get('USER', 'user')}"
+
+    # -- animation -----------------------------------------------------
+    def set_offset(self, t):
+        e = 1 - (1 - t) ** 3
+        top = round(SLIDE * e)
+        self.card.set_margin_top(top)
+        self.card.set_margin_bottom(SLIDE - top)
+        self.holder.set_opacity(min(1.0, 0.05 + e))
+
+    def tick(self, widget, clock):
+        now = clock.get_frame_time()
+        if self.anim_start is None:
+            self.anim_start = now
+        t = min(1.0, (now - self.anim_start) / (ANIM_MS * 1000))
+        self.set_offset(t)
+        if t >= 1.0:
+            return GLib.SOURCE_REMOVE
+        return GLib.SOURCE_CONTINUE
+
+    # -- actions ---------------------------------------------------------
+    def on_key(self, _ctrl, keyval, _code, _state):
+        if keyval == Gdk.KEY_Escape:
+            self.cancel()
+            return True
+        return False
+
+    def on_submit(self, entry):
+        if self.preview:
+            return
+        pw = entry.get_text()
+        try:
+            sys.stdout.write(pw + "\n")
+            sys.stdout.flush()
+            self.result = 0
+        except OSError:
+            self.result = 1
+        entry.set_text("")
+        self.quit()
+
+    def cancel(self, *_):
+        self.result = 1
+        self.quit()
+        return False
+
+    def on_close(self, *_):
+        self.cancel()
+        return False
+
+
+def main():
+    args = sys.argv[1:]
+    preview = "--preview" in args
+    args = [a for a in args if a != "--preview"]
+    prompt = " ".join(args)
+    app = AskPass(prompt, preview)
+    app.run([sys.argv[0]])
+    return app.result
+
+
+if __name__ == "__main__":
+    sys.exit(main())

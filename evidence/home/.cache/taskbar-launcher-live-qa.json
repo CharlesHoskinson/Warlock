@@ -1,0 +1,77 @@
+{
+  "checks": [
+    {
+      "name": "live count signal reaches QML",
+      "state": {
+        "key": "brave-browser",
+        "launcher": {
+          "count": 12,
+          "count-visible": true,
+          "progress": 0,
+          "progress-visible": false,
+          "urgent": false,
+          "updating": false,
+          "sender": ":1.15403"
+        },
+        "urgent": false
+      }
+    },
+    {
+      "name": "partial progress keeps count",
+      "state": {
+        "key": "brave-browser",
+        "launcher": {
+          "count": 12,
+          "count-visible": true,
+          "progress": 0.4,
+          "progress-visible": true,
+          "urgent": true,
+          "updating": false,
+          "sender": ":1.15403"
+        },
+        "urgent": false
+      }
+    },
+    {
+      "name": "visibility updates reach QML",
+      "state": {
+        "key": "brave-browser",
+        "launcher": {
+          "count": 12,
+          "count-visible": false,
+          "progress": 0.4,
+          "progress-visible": false,
+          "urgent": false,
+          "updating": false,
+          "sender": ":1.15403"
+        },
+        "urgent": false
+      }
+    },
+    {
+      "name": "disconnect clears indicators",
+      "state": {
+        "key": "brave-browser",
+        "launcher": {},
+        "urgent": false
+      }
+    },
+    {
+      "name": "compositor urgency changes QML independently",
+      "state": {
+        "key": "brave-browser",
+        "launcher": {},
+        "urgent": true
+      }
+    },
+    {
+      "name": "compositor urgency clears QML independently",
+      "state": {
+        "key": "brave-browser",
+        "launcher": {},
+        "urgent": false
+      }
+    }
+  ],
+  "result": "pass"
+}

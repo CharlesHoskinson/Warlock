@@ -1,0 +1,29 @@
+{
+  "checks": [
+    {
+      "path": "native Wayland parent/modal identities",
+      "metadata": {
+        "address": "0x5a02b030efd0",
+        "stableId": "18000292",
+        "pid": 1621320,
+        "parent": "0x5a02b0aa3920",
+        "parentStableId": "18000291",
+        "modal": true
+      }
+    },
+    {
+      "path": "owner minimize/restore keeps family and focuses modal"
+    },
+    {
+      "path": "child minimize/restore keeps family and focuses modal"
+    },
+    {
+      "path": "moving child moves whole family"
+    },
+    {
+      "path": "minimized desktop move preserves family restore ownership"
+    }
+  ],
+  "result": "pass",
+  "gtkErrors": ""
+}

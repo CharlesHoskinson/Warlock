@@ -1,0 +1,341 @@
+{
+  "checks": [
+    {
+      "path": "direct GTK file transfer baseline"
+    },
+    {
+      "path": "leave before dwell cancels activation",
+      "dragEntries": 17
+    },
+    {
+      "path": "minimized hover restore and destination drop",
+      "source": [
+        {
+          "event": "begin"
+        },
+        {
+          "event": "end",
+          "delete": false
+        },
+        {
+          "event": "begin"
+        },
+        {
+          "event": "cancel"
+        },
+        {
+          "event": "end",
+          "delete": false
+        },
+        {
+          "event": "begin"
+        },
+        {
+          "event": "end",
+          "delete": false
+        }
+      ],
+      "target": [
+        {
+          "event": "drop",
+          "value": "file:///tmp/taskbar-file-drag-t6t7om43/sample.txt"
+        }
+      ],
+      "state": {
+        "fileDragActive": false,
+        "fileDragOnTaskbar": false,
+        "fileDragStamp": 38964371,
+        "filePreviewKey": "",
+        "dropSize": [
+          161,
+          26
+        ],
+        "dragEntries": 18,
+        "dragGroupKey": "",
+        "dragActivated": true,
+        "taskbarItems": [
+          {
+            "key": "brave-browser",
+            "x": 166.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02b0cc9280"
+            ]
+          },
+          {
+            "key": "foot",
+            "x": 207.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02aee429f0",
+              "0x5a02afd20bd0",
+              "0x5a02afa13e90"
+            ]
+          },
+          {
+            "key": "class:org.omarchy.dragtargetqa",
+            "x": 248.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02af05c1e0"
+            ]
+          },
+          {
+            "key": "class:org.omarchy.dragsourceqa",
+            "x": 289.5,
+            "y": 0,
+            "width": 38,
+            "windows": [
+              "0x5a02b05dacc0"
+            ]
+          }
+        ],
+        "previewItems": [
+          {
+            "address": "0x5a02af05c1e0",
+            "x": 0,
+            "y": 0,
+            "width": 288,
+            "height": 149
+          }
+        ],
+        "groups": 4,
+        "wheelEvents": 0,
+        "currentMonitor": 0,
+        "selectedWindowIndex": 0,
+        "popupScrollY": 0,
+        "popupViewportHeight": 167,
+        "popupContentHeight": 172,
+        "menuLabels": [
+          "Pin another application\u2026",
+          "Combine: Always",
+          "Combine: When taskbar is full",
+          "Combine: Never",
+          "Show windows on all displays",
+          "Show windows on this display",
+          "Taskbar: Current desktop",
+          "Taskbar: All desktops",
+          "Alt+Tab: Current desktop",
+          "Alt+Tab: All desktops"
+        ],
+        "currentDesktop": "1",
+        "indicators": [
+          {
+            "key": "brave-browser",
+            "windows": [
+              "0x5a02b0cc9280"
+            ],
+            "launcher": {},
+            "urgent": false
+          },
+          {
+            "key": "foot",
+            "windows": [
+              "0x5a02aee429f0",
+              "0x5a02afd20bd0",
+              "0x5a02afa13e90"
+            ],
+            "launcher": {},
+            "urgent": false
+          },
+          {
+            "key": "class:org.omarchy.dragtargetqa",
+            "windows": [
+              "0x5a02af05c1e0"
+            ],
+            "launcher": {},
+            "urgent": false
+          },
+          {
+            "key": "class:org.omarchy.dragsourceqa",
+            "windows": [
+              "0x5a02b05dacc0"
+            ],
+            "launcher": {},
+            "urgent": false
+          }
+        ],
+        "popupOpen": false,
+        "popupIndex": 2,
+        "menuMode": false,
+        "keyboardMode": false,
+        "keyboardFocus": false,
+        "combineMode": "always",
+        "displayMode": "all",
+        "desktopScope": "all",
+        "switcherScope": "current"
+      }
+    },
+    {
+      "path": "group preview chooses exact minimized destination and preserves file drop",
+      "preview": {
+        "address": "0x5a02b0aa6400",
+        "x": 124,
+        "y": 225,
+        "width": 288,
+        "height": 149
+      },
+      "peer": [
+        {
+          "event": "drop",
+          "value": "file:///tmp/taskbar-file-drag-t6t7om43/sample.txt"
+        }
+      ],
+      "otherStillMinimized": true
+    },
+    {
+      "path": "Escape cancels chooser and subsequent hover without restoring unselected peer"
+    }
+  ],
+  "groupHoverInput": {
+    "expected": [
+      268,
+      13
+    ],
+    "actual": {
+      "x": 268,
+      "y": 13
+    },
+    "state": {
+      "fileDragActive": true,
+      "fileDragOnTaskbar": false,
+      "fileDragStamp": 38965671,
+      "filePreviewKey": "",
+      "dropSize": [
+        161,
+        26
+      ],
+      "dragEntries": 18,
+      "dragGroupKey": "",
+      "dragActivated": true,
+      "taskbarItems": [
+        {
+          "key": "brave-browser",
+          "x": 166.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02b0cc9280"
+          ]
+        },
+        {
+          "key": "foot",
+          "x": 207.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02aee429f0",
+            "0x5a02afd20bd0",
+            "0x5a02afa13e90"
+          ]
+        },
+        {
+          "key": "class:org.omarchy.dragtargetqa",
+          "x": 248.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02af05c1e0",
+            "0x5a02b0aa6400"
+          ]
+        },
+        {
+          "key": "class:org.omarchy.dragsourceqa",
+          "x": 289.5,
+          "y": 0,
+          "width": 38,
+          "windows": [
+            "0x5a02b05dacc0"
+          ]
+        }
+      ],
+      "previewItems": [
+        {
+          "address": "0x5a02af05c1e0",
+          "x": 0,
+          "y": 0,
+          "width": 288,
+          "height": 149
+        },
+        {
+          "address": "0x5a02b0aa6400",
+          "x": 0,
+          "y": 0,
+          "width": 288,
+          "height": 149
+        }
+      ],
+      "groups": 4,
+      "wheelEvents": 0,
+      "currentMonitor": 0,
+      "selectedWindowIndex": 0,
+      "popupScrollY": 0,
+      "popupViewportHeight": 322,
+      "popupContentHeight": 172,
+      "menuLabels": [
+        "Restore all 2 windows",
+        "Pin another application\u2026",
+        "Combine: Always",
+        "Combine: When taskbar is full",
+        "Combine: Never",
+        "Show windows on all displays",
+        "Show windows on this display",
+        "Taskbar: Current desktop",
+        "Taskbar: All desktops",
+        "Alt+Tab: Current desktop",
+        "Alt+Tab: All desktops"
+      ],
+      "currentDesktop": "1",
+      "indicators": [
+        {
+          "key": "brave-browser",
+          "windows": [
+            "0x5a02b0cc9280"
+          ],
+          "launcher": {},
+          "urgent": false
+        },
+        {
+          "key": "foot",
+          "windows": [
+            "0x5a02aee429f0",
+            "0x5a02afd20bd0",
+            "0x5a02afa13e90"
+          ],
+          "launcher": {},
+          "urgent": false
+        },
+        {
+          "key": "class:org.omarchy.dragtargetqa",
+          "windows": [
+            "0x5a02af05c1e0",
+            "0x5a02b0aa6400"
+          ],
+          "launcher": {},
+          "urgent": false
+        },
+        {
+          "key": "class:org.omarchy.dragsourceqa",
+          "windows": [
+            "0x5a02b05dacc0"
+          ],
+          "launcher": {},
+          "urgent": false
+        }
+      ],
+      "popupOpen": false,
+      "popupIndex": 2,
+      "menuMode": false,
+      "keyboardMode": false,
+      "keyboardFocus": false,
+      "combineMode": "always",
+      "displayMode": "all",
+      "desktopScope": "all",
+      "switcherScope": "current"
+    }
+  },
+  "result": "pass"
+}

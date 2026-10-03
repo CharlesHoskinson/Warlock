@@ -26,6 +26,8 @@ def main():
     parser.add_argument('--revision', default='HEAD')
     parser.add_argument('--index', action='store_true')
     parser.add_argument('--write-report', action='store_true')
+    parser.add_argument('--inventory', default='provenance/snapshot.jsonl')
+    parser.add_argument('--report', default='provenance/verification.json')
     args = parser.parse_args()
     command = ['git', 'ls-files', '-s', '-z'] if args.index else ['git', 'ls-tree', '-r', '-z', args.revision]
     raw = subprocess.check_output(command, cwd=REPO)
@@ -43,7 +45,7 @@ def main():
             assert pieces[1] == b'blob', 'Embedded Git repository in snapshot'
         entries[os.fsdecode(name)] = (mode, oid)
     counts = {'files': 0, 'symlinks': 0, 'upstreamGitArchives': 0, 'specialFilesRecordedOnly': 0}
-    with (REPO / 'provenance/snapshot.jsonl').open() as handle:
+    with (REPO / args.inventory).open() as handle:
         for line in handle:
             row = json.loads(line)
             kind = row['kind']
@@ -74,11 +76,11 @@ def main():
     assert subprocess.run(['git', 'fsck', '--no-dangling'], cwd=REPO, stdout=subprocess.DEVNULL).returncode == 0
     report = {'result': 'pass', 'verifiedAtUTC': datetime.datetime.now(datetime.timezone.utc).isoformat(),
               'target': 'index' if args.index else args.revision, 'counts': counts,
-              'trackedFiles': len(entries), 'inventorySHA256': hashes(REPO / 'provenance/snapshot.jsonl')[0],
+              'trackedFiles': len(entries), 'inventory': args.inventory, 'inventorySHA256': hashes(REPO / args.inventory)[0],
               'allCapturedFilesMatchInventoryAndGitBlobs': True, 'gitObjectIntegrity': True,
               'sourceTreesModified': False, 'deploymentPerformed': False}
     if args.write_report:
-        with (REPO / 'provenance/verification.json').open('x') as handle:
+        with (REPO / args.report).open('x') as handle:
             json.dump(report, handle, indent=2)
             handle.write('\n')
             handle.flush()

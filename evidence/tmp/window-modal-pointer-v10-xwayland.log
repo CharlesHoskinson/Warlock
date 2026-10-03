@@ -1,0 +1,621 @@
+{
+  "checks": [
+    {
+      "name": "unrelated app remains clickable with modal open",
+      "passed": true,
+      "active": "Modal QA peer"
+    },
+    {
+      "name": "owner interaction redirects to modal",
+      "passed": true,
+      "active": "Modal QA child"
+    },
+    {
+      "name": "disabled owner titlebar focuses modal without starting drag",
+      "passed": true
+    },
+    {
+      "name": "modal child receives its own click",
+      "passed": true
+    },
+    {
+      "name": "programmatic owner focus redirects to child",
+      "passed": true
+    },
+    {
+      "name": "activating owner raises family above unrelated peer",
+      "passed": true,
+      "order": [
+        "0x5a02b0cc9280",
+        "0x5a02aee429f0",
+        "0x5a02afd20bd0",
+        "0x5a02afa13e90",
+        "0x5a02aefa6170",
+        "0x5a02b05c6200",
+        "0x5a02b0314fc0"
+      ]
+    },
+    {
+      "name": "overlay above disabled owner receives its own click",
+      "passed": true,
+      "count": "1",
+      "active": "Modal QA child"
+    },
+    {
+      "name": "hovering disabled owner preserves unrelated keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "consumed owner release stays consumed after dialog closes",
+      "passed": true
+    },
+    {
+      "name": "owner becomes interactive after dialog closes",
+      "passed": true
+    },
+    {
+      "name": "minimizing owner hides modal family",
+      "passed": true,
+      "workspaces": {
+        "owner": "special:win-minimized",
+        "child": "special:win-minimized"
+      }
+    },
+    {
+      "name": "restoring owner focuses modal",
+      "passed": true,
+      "active": "Modal QA child"
+    },
+    {
+      "name": "desktop move keeps modal with owner",
+      "passed": true,
+      "workspaces": {
+        "owner": "2",
+        "child": "2"
+      }
+    }
+  ],
+  "failures": [],
+  "platform": "XWayland",
+  "nativeFamilies": [
+    {
+      "address": "0x5a02b05c6200",
+      "stableId": "180002a9",
+      "pid": 1703150,
+      "parent": "",
+      "parentStableId": "",
+      "modal": false
+    },
+    {
+      "address": "0x5a02b0314fc0",
+      "stableId": "180002aa",
+      "pid": 1703150,
+      "parent": "0x5a02b05c6200",
+      "parentStableId": "180002a9",
+      "modal": true
+    }
+  ],
+  "beforeOwnerClick": {
+    "owner": {
+      "address": "0x5a02b05c6200",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        120,
+        250
+      ],
+      "size": [
+        580,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "python3",
+      "title": "Modal QA owner",
+      "initialClass": "python3",
+      "initialTitle": "Modal QA owner",
+      "pid": 1703150,
+      "xwayland": true,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 2,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "180002a9"
+    },
+    "child": {
+      "address": "0x5a02b0314fc0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        330,
+        360
+      ],
+      "size": [
+        400,
+        225
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "python3",
+      "title": "Modal QA child",
+      "initialClass": "python3",
+      "initialTitle": "Modal QA child",
+      "pid": 1703150,
+      "xwayland": true,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "180002aa"
+    },
+    "peer": {
+      "address": "0x5a02aefa6170",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        1020,
+        400
+      ],
+      "size": [
+        380,
+        300
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "python3",
+      "title": "Modal QA peer",
+      "initialClass": "python3",
+      "initialTitle": "Modal QA peer",
+      "pid": 1703151,
+      "xwayland": true,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 1,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "180002a8"
+    }
+  },
+  "afterOwnerClick": {
+    "cursor": {
+      "x": 180,
+      "y": 540
+    },
+    "active": {
+      "address": "0x5a02b0314fc0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        330,
+        360
+      ],
+      "size": [
+        400,
+        225
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "python3",
+      "title": "Modal QA child",
+      "initialClass": "python3",
+      "initialTitle": "Modal QA child",
+      "pid": 1703150,
+      "xwayland": true,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "180002aa"
+    },
+    "clientOrder": [
+      "0x5a02b0cc9280",
+      "0x5a02aee429f0",
+      "0x5a02afd20bd0",
+      "0x5a02afa13e90",
+      "0x5a02aefa6170",
+      "0x5a02b05c6200",
+      "0x5a02b0314fc0"
+    ]
+  },
+  "overlayLayers": {
+    "eDP-2": {
+      "levels": {
+        "0": [
+          {
+            "address": "0x5a02ae1c7670",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000,
+            "alpha": 1,
+            "namespace": "owe-background",
+            "pid": 1701
+          }
+        ],
+        "1": [],
+        "2": [
+          {
+            "address": "0x5a02af4b5020",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 26,
+            "alpha": 1,
+            "namespace": "omarchy-bar",
+            "pid": 24457
+          }
+        ],
+        "3": [
+          {
+            "address": "0x5a02b02e5ef0",
+            "x": 0,
+            "y": 0,
+            "w": 1600,
+            "h": 1000,
+            "alpha": 1,
+            "namespace": "omarchy-notifications",
+            "pid": 24457
+          },
+          {
+            "address": "0x5a02af058cf0",
+            "x": 120,
+            "y": 500,
+            "w": 200,
+            "h": 100,
+            "alpha": 1,
+            "namespace": "modal-overlay-qa",
+            "pid": 1703432
+          }
+        ]
+      }
+    }
+  },
+  "desktopAction": {
+    "active": "2",
+    "desktops": [
+      {
+        "id": "1",
+        "name": "Desktop 1",
+        "active": false,
+        "windows": [
+          {
+            "address": "0x5a02b0cc9280",
+            "class": "brave-browser",
+            "title": "claude code quint plugin - Google Search - Brave",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b0cc9280-0.png",
+            "minimized": true
+          },
+          {
+            "address": "0x5a02aee429f0",
+            "class": "foot",
+            "title": "hoskinson@hosk:~",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02aee429f0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02afd20bd0",
+            "class": "foot",
+            "title": "\u2807 Explain 6.1 access limitation | hoskinson",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02afd20bd0-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02afa13e90",
+            "class": "foot",
+            "title": "hosk: ~",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02afa13e90-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02aefa6170",
+            "class": "python3",
+            "title": "Modal QA peer",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02aefa6170-0.png",
+            "minimized": false
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "name": "Desktop 2",
+        "active": true,
+        "windows": [
+          {
+            "address": "0x5a02b05c6200",
+            "class": "python3",
+            "title": "Modal QA owner",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b05c6200-0.png",
+            "minimized": false
+          },
+          {
+            "address": "0x5a02b0314fc0",
+            "class": "python3",
+            "title": "Modal QA child",
+            "preview": "/run/user/1000/hypr-window-previews/0x5a02b0314fc0-0.png",
+            "minimized": false
+          }
+        ]
+      }
+    ]
+  },
+  "gtkEvents": {
+    "family": [
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "modal",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "child"
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "owner"
+      },
+      {
+        "event": "modal",
+        "modal": true,
+        "transient": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "owner",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "child",
+        "active": true
+      }
+    ],
+    "peer": [
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "click",
+        "window": "peer"
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": true
+      },
+      {
+        "event": "active",
+        "window": "peer",
+        "active": false
+      }
+    ]
+  },
+  "result": "pass",
+  "gtkErrors": "Gtk-Message: 17:53:21.361: Failed to load module \"colorreload-gtk-module\"\n"
+}

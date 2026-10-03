@@ -1,0 +1,32 @@
+{
+  "checks": [
+    {
+      "name": "first titlebar motion preserves original press offset",
+      "passed": false,
+      "press": [
+        460,
+        288
+      ],
+      "motion": [
+        600,
+        350
+      ],
+      "original": [
+        260,
+        300
+      ],
+      "expected": [
+        400,
+        362
+      ],
+      "actual": [
+        260,
+        300
+      ]
+    }
+  ],
+  "failures": [
+    "first titlebar motion preserves original press offset"
+  ],
+  "result": "fail"
+}

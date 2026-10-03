@@ -1,0 +1,16 @@
+[Desktop Entry]
+Type=Application
+Name=Files
+Exec=omarchy-files
+Icon=system-file-manager
+StartupWMClass=org.quickshell
+Categories=System;FileManager;
+Actions=Home;Recent;
+
+[Desktop Action Home]
+Name=Home folder
+Exec=omarchy-files home
+
+[Desktop Action Recent]
+Name=Recent files
+Exec=omarchy-files coll:recent

@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "mode": 0,
+      "active": "0x5a02b019cf70",
+      "events": [
+        [],
+        [
+          {
+            "event": "wheel",
+            "x": 0.0,
+            "y": 1.0
+          }
+        ]
+      ]
+    },
+    {
+      "mode": 2,
+      "active": "0x5a02b019cf70",
+      "events": [
+        [
+          {
+            "event": "wheel",
+            "x": 0.0,
+            "y": 1.0
+          }
+        ],
+        []
+      ]
+    },
+    {
+      "clickFocus": "0x5a02af3aa0b0",
+      "keyboardPeer": "0x5a02b019cf70"
+    }
+  ],
+  "result": "pass"
+}

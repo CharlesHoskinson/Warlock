@@ -1,0 +1,641 @@
+{
+  "toolkit": "family",
+  "pin": true,
+  "maximize": false,
+  "mainOriginal": [
+    {
+      "address": "0x5a02aee429f0",
+      "stableId": "18000005",
+      "pid": 4007,
+      "at": [
+        945,
+        284
+      ],
+      "size": [
+        386,
+        444
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02b0cc9280",
+      "stableId": "18000006",
+      "pid": 4311,
+      "at": [
+        417,
+        71
+      ],
+      "size": [
+        1022,
+        890
+      ],
+      "workspace": {
+        "id": -98,
+        "name": "special:win-minimized"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afd20bd0",
+      "stableId": "18000076",
+      "pid": 361074,
+      "at": [
+        817,
+        206
+      ],
+      "size": [
+        700,
+        500
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afa13e90",
+      "stableId": "1800006a",
+      "pid": 252010,
+      "at": [
+        26,
+        145
+      ],
+      "size": [
+        1002,
+        789
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "fixtureSetupBeforePin": [
+    {
+      "address": "0x5a02b0290ca0",
+      "stableId": "180003e5",
+      "pid": 3127587,
+      "at": [
+        320,
+        350
+      ],
+      "size": [
+        360,
+        220
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02aef99790",
+      "stableId": "180003e4",
+      "pid": 3127587,
+      "at": [
+        375,
+        385
+      ],
+      "size": [
+        340,
+        200
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02af3e9d40",
+      "stableId": "180003e3",
+      "pid": 3127587,
+      "at": [
+        430,
+        420
+      ],
+      "size": [
+        620,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "capturedBackendFamily": {
+    "windows": [
+      {
+        "address": "0x5a02af3e9d40",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          430,
+          420
+        ],
+        "size": [
+          620,
+          380
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA owner",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA owner",
+        "pid": 3127587,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 2,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003e3",
+        "parent": "",
+        "parentStableId": "",
+        "modal": false
+      },
+      {
+        "address": "0x5a02b0290ca0",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          320,
+          350
+        ],
+        "size": [
+          360,
+          220
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA nested",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA nested",
+        "pid": 3127587,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003e5",
+        "parent": "0x5a02aef99790",
+        "parentStableId": "180003e4",
+        "modal": true
+      },
+      {
+        "address": "0x5a02aef99790",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          375,
+          385
+        ],
+        "size": [
+          340,
+          200
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "org.omarchy.ModalFamilyQA",
+        "title": "Modal QA child",
+        "initialClass": "org.omarchy.ModalFamilyQA",
+        "initialTitle": "Modal QA child",
+        "pid": 3127587,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [
+          "default-opacity*",
+          "terminal*"
+        ],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "180003e4",
+        "parent": "0x5a02af3e9d40",
+        "parentStableId": "180003e3",
+        "modal": true
+      }
+    ],
+    "focus": {
+      "address": "0x5a02b0290ca0",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        320,
+        350
+      ],
+      "size": [
+        360,
+        220
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "org.omarchy.ModalFamilyQA",
+      "title": "Modal QA nested",
+      "initialClass": "org.omarchy.ModalFamilyQA",
+      "initialTitle": "Modal QA nested",
+      "pid": 3127587,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [
+        "default-opacity*",
+        "terminal*"
+      ],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "180003e5",
+      "parent": "0x5a02aef99790",
+      "parentStableId": "180003e4",
+      "modal": true
+    }
+  },
+  "fixtureSetupAfterPin": [
+    {
+      "address": "0x5a02b0290ca0",
+      "stableId": "180003e5",
+      "pid": 3127587,
+      "at": [
+        320,
+        350
+      ],
+      "size": [
+        360,
+        220
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02aef99790",
+      "stableId": "180003e4",
+      "pid": 3127587,
+      "at": [
+        375,
+        385
+      ],
+      "size": [
+        340,
+        200
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02af3e9d40",
+      "stableId": "180003e3",
+      "pid": 3127587,
+      "at": [
+        430,
+        420
+      ],
+      "size": [
+        620,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": true,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "fixtureBefore": [
+    {
+      "address": "0x5a02b0290ca0",
+      "stableId": "180003e5",
+      "pid": 3127587,
+      "at": [
+        320,
+        350
+      ],
+      "size": [
+        360,
+        220
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02aef99790",
+      "stableId": "180003e4",
+      "pid": 3127587,
+      "at": [
+        375,
+        385
+      ],
+      "size": [
+        340,
+        200
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02af3e9d40",
+      "stableId": "180003e3",
+      "pid": 3127587,
+      "at": [
+        430,
+        420
+      ],
+      "size": [
+        620,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": true,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "fixtureAfter": [
+    {
+      "address": "0x5a02b0290ca0",
+      "stableId": "180003e5",
+      "pid": 3127587,
+      "at": [
+        320,
+        350
+      ],
+      "size": [
+        360,
+        220
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02aef99790",
+      "stableId": "180003e4",
+      "pid": 3127587,
+      "at": [
+        375,
+        385
+      ],
+      "size": [
+        340,
+        200
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02af3e9d40",
+      "stableId": "180003e3",
+      "pid": 3127587,
+      "at": [
+        430,
+        420
+      ],
+      "size": [
+        620,
+        380
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": true,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "passed": true,
+  "mainAfter": [
+    {
+      "address": "0x5a02aee429f0",
+      "stableId": "18000005",
+      "pid": 4007,
+      "at": [
+        945,
+        284
+      ],
+      "size": [
+        386,
+        444
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02b0cc9280",
+      "stableId": "18000006",
+      "pid": 4311,
+      "at": [
+        417,
+        71
+      ],
+      "size": [
+        1022,
+        890
+      ],
+      "workspace": {
+        "id": -98,
+        "name": "special:win-minimized"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afd20bd0",
+      "stableId": "18000076",
+      "pid": 361074,
+      "at": [
+        817,
+        206
+      ],
+      "size": [
+        700,
+        500
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    },
+    {
+      "address": "0x5a02afa13e90",
+      "stableId": "1800006a",
+      "pid": 252010,
+      "at": [
+        26,
+        145
+      ],
+      "size": [
+        1002,
+        789
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "pinned": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default"
+    }
+  ],
+  "mainPreserved": true,
+  "focusRestored": true,
+  "cursorRestored": true
+}

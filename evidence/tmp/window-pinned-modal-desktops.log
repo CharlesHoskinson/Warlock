@@ -1,0 +1,85 @@
+{
+  "checks": [
+    {
+      "name": "family shares active desktop after switch 0",
+      "passed": false,
+      "workspaces": {
+        "owner": "2",
+        "child": "1",
+        "nested": "1"
+      },
+      "desktop": "2"
+    },
+    {
+      "name": "deepest pinned modal receives click after switch 0",
+      "passed": false,
+      "active": "hosk: ~"
+    },
+    {
+      "name": "owner remains disabled and routes to modal after switch 0",
+      "passed": false
+    },
+    {
+      "name": "family shares active desktop after switch 1",
+      "passed": false,
+      "workspaces": {
+        "owner": "3",
+        "child": "1",
+        "nested": "1"
+      },
+      "desktop": "3"
+    },
+    {
+      "name": "deepest pinned modal receives click after switch 1",
+      "passed": false,
+      "active": "hosk: ~"
+    },
+    {
+      "name": "owner remains disabled and routes to modal after switch 1",
+      "passed": false
+    },
+    {
+      "name": "switching back retains modal input",
+      "passed": false
+    },
+    {
+      "name": "surviving modal receives input after cross-desktop child close",
+      "passed": false
+    }
+  ],
+  "failures": [
+    "family shares active desktop after switch 0",
+    "deepest pinned modal receives click after switch 0",
+    "owner remains disabled and routes to modal after switch 0",
+    "family shares active desktop after switch 1",
+    "deepest pinned modal receives click after switch 1",
+    "owner remains disabled and routes to modal after switch 1",
+    "switching back retains modal input",
+    "surviving modal receives input after cross-desktop child close"
+  ],
+  "platform": "Wayland",
+  "result": "fail",
+  "gtkEvents": [
+    {
+      "event": "modal",
+      "window": "child",
+      "parent": "owner",
+      "modal": true,
+      "transient": true
+    },
+    {
+      "event": "modal",
+      "window": "nested",
+      "parent": "child",
+      "modal": true,
+      "transient": true
+    }
+  ],
+  "stderr": "",
+  "originalWindowsPreserved": true
+}
+Traceback (most recent call last):
+  File "/home/hoskinson/window-integration-qa/live_pinned_modal_desktops.py", line 84, in <module>
+    print(json.dumps(report,indent=2));assert report['result']=='pass',report['failures']
+                                              ^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ['family shares active desktop after switch 0', 'deepest pinned modal receives click after switch 0', 'owner remains disabled and routes to modal after switch 0', 'family shares active desktop after switch 1', 'deepest pinned modal receives click after switch 1', 'owner remains disabled and routes to modal after switch 1', 'switching back retains modal input', 'surviving modal receives input after cross-desktop child close']
