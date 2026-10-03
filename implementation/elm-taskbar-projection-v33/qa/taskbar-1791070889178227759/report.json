@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Binding.elm": "c1985aef94e7230e60edeadda491d40fa7cac4aabf340025b6f02038327595e5",
+    "src/Effects.elm": "bac8ea4b5b65f8f37fb34035a54cfbc49de7f697d401f3f938efcc0954294a91",
+    "src/Main.elm": "eef96766ffd275ffcaa6efa9997600f81f4e26074e5ad03344092af5bf3ad44c",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Shell.elm": "621bf79b3e9a67be354cfb6bb05e7b2feeb574e56789c3b8e57b8f94e3387b09",
+    "src/ShellReplay.elm": "c7fb44d833ac19a5468bee2eec37c1e2fe9b05a1015b548bf56700d760ba82bb",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/taskbar.cjs": "e9cb2e2d504101b90f33c17eb5152b0e91c74b3c0fc217d3e2eae3413f59b1a2",
+    "qa/taskbar.py": "cd04105865ea2f2fd9e08444c418b558a52f184caa44e2adece48edbc9ffca14"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/TaskbarReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/taskbar-1791070889178227759/taskbar.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "checks",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/taskbar-1791070889178227759/inputs/qa/taskbar.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/taskbar-1791070889178227759/taskbar.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/taskbar-1791070889178227759/checks.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "checks": 87,
+  "checksSHA256": "bfa40c02a21d020e3f7c1f86836661e3c2b1b3b94ccba54d13d8c73b58eafd48",
+  "compiledSHA256": "607214b0562e2d9f5b193757137f804ae367f346365bdac42d141425ce6e7a1a"
+}

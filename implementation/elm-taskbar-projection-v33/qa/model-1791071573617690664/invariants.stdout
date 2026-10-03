@@ -1,0 +1,744 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 2,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: true,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 2,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Rejected",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: true,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 2,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      active: true,
+      available: false,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      active: true,
+      available: false,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: true,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 1 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 2 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 1 }
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: true,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: true,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: true,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 0,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: true,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      active: true,
+      available: false,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      active: true,
+      available: false,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 2,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      active: true,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      active: false,
+      available: true,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      active: true,
+      available: false,
+      count: 1,
+      decision: "Idle",
+      emitted: false,
+      minimized: false,
+      pending: false,
+      pinned: false,
+      scope: { binding: 1, output: 1, revision: 3 },
+      selection: false,
+      shown: { binding: 1, output: 1, revision: 3 }
+    }
+}
+
+[ok] No violation found (1895ms at 528 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

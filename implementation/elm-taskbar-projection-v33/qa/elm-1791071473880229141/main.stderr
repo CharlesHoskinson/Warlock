@@ -1,0 +1,12 @@
+-- NAME MISMATCH ------------------------------------------------- src/Shell.elm
+
+I just saw a type annotation for `stampDecoder`, but it is followed by a
+definition for `positive`:
+
+20| stampDecoder : D.Decoder Stamp
+21| positive = UInt64.decoder |> D.andThen (\value -> if value /= UInt64.zero then D.succeed value else D.fail "Zero displayed scope")
+    ^
+These names do not match! Is there a typo?
+
+    positive -> stampDecoder
+

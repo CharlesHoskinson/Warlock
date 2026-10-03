@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-gui-activation-journal-v32",
-  "status": "Typed activation is implemented through native journal/preflight and actual Elm controls with keyboard receipts. Stable displayed order and exact-journal broker recovery passed; complete canonical scene, integrated taskbar/switcher and full UI/UX/release remain open.",
+  "activeSlice": "implementation/elm-taskbar-projection-v33",
+  "status": "Typed taskbar family/action projection and displayed-scope callback guards implemented; compiled/model/endpoint checks passed. Exact plugin compiles; native grouping and integrated taskbar UI acceptance remain pending.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -337,9 +337,24 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-gui-activation-journal-v32/qa/slice-manifest.json"
+    },
+    "taskbarProjectionV33": {
+      "compiledRetainedChecks": 64,
+      "displayedScopeChecks": 14,
+      "familyDecisionChecks": 87,
+      "endpointJoinChecks": 26,
+      "quintNamedRuns": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativePluginCompiled": true,
+      "nativeCampaignRun": false,
+      "integratedTaskbarUI": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-projection-v33/qa/slice-manifest.json"
     }
   },
-  "next": "Implement coherent native scene dependencies and typed admission; integrate taskbar grouping/icons/focus state and switcher against the verified native action API. Complete previews/original deadlines, complete roles/buffer/clip/output/device/presentation, GPU/WebGPU, UI/UX/AT/IME and release gates.",
+  "next": "Run serialized native family/focus/application projection regression against the frozen V33 pair; integrate taskbar groups and labeled picker with scoped events. Complete catalog/icons/pins, popup/input lifecycle, switcher/previews, coherent scene, GPU/WebGPU, UI/UX/AT/IME and release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

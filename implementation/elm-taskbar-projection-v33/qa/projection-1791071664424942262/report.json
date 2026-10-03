@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "inputs": {
+    "adapter/daemon.py": "dc1577fb8b17b966215522db3a04fcd070592d3137bedc48ea73c5b51ab009c3",
+    "adapter/effect_endpoint.py": "10d68edabbd13e8db645aa44713b225d8d4daf01a444ebdc4bfe0e2b61bef973",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "qa/projection.py": "8b0564c052180476d43012048abd7eac92d3344bf1dd3e7913ad4e55b29f7682"
+  },
+  "scope": "Actual endpoint decoder and join under controlled responses; real native campaign pending",
+  "checks": 26,
+  "cases": [
+    "valid native metadata",
+    "native focus retained",
+    "owner and visibility retained",
+    "reject raced revision",
+    "reject raced outputGeneration",
+    "reject snapshot/facts mismatch application",
+    "reject snapshot/facts mismatch minimized",
+    "reject snapshot/facts mismatch incarnation",
+    "unavailable ('workspace', '-1')",
+    "unavailable ('workspace', None)",
+    "unavailable ('workspaceVisible', False)",
+    "unavailable ('hidden', True)",
+    "refuse malformed workspace '01'",
+    "refuse malformed workspace '-0'",
+    "refuse malformed workspace True",
+    "refuse malformed workspace '9223372036854775808'",
+    "refuse malformed monitor '01'",
+    "refuse malformed geometry [0, 0, nan, 4]",
+    "refuse malformed geometry [0, 0, inf, 4]",
+    "refuse malformed application 'bad\\napp'",
+    "refuse malformed application 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'",
+    "refuse malformed owner '8'",
+    "refuse capability bool/int alias effectProtocol",
+    "refuse capability bool/int alias taskbarProjectionProtocol",
+    "refuse capability bool/int alias observe",
+    "refuse capability bool/int alias canonicalScene"
+  ]
+}

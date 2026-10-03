@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'select' is redefined in module 'taskbar'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/model-1791071549049781033/taskbar.qnt:15:9
+  15:  action select=all{not(s.pending),s.shown==s.scope,s.count>0,s'={...s,decision:choose(s.minimized,s.available),emitted:Set("Activate","Restore").contains(choose(s.minimized,s.available)),selection:true}}
+              ^^^^^^
+
+error: parsing failed

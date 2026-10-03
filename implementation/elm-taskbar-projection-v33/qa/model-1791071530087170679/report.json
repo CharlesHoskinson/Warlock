@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "scope": "Abstract taskbar decisions and displayed-scope guards; native refinement and full UX remain separate",
+  "sourceSHA256": "c0593c651dc651f0c1cd15fec0c04a2554918dfc813cda8511cf2b0b3ff3caaa",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "taskbar.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\n Error [QNT000]: mismatched input \\'=\\' expecting \\':\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/model-1791071530087170679/taskbar.qnt:13:83\\n  13:  action configure(count:int,pinned:bool,active:bool,minimized:bool,available:bool)=s\\'={...s,count:count,pinned:pinned,active:active,minimized:minimized,available:available,decision:\"Idle\",emitted:false,selection:false}\\n                                                                                        ^\\n\\n\\n Error [QNT000]: extraneous input \\'action\\' expecting {<EOF>, \\'module\\', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/model-1791071530087170679/taskbar.qnt:14:2\\n  14:  action click=all{not(s.pending),s.shown==s.scope,s\\'={...s,decision:primary(s.count,s.pinned,s.active,s.minimized,s.available),emitted:Set(\"Activate\",\"Restore\",\"Minimize\").contains(primary(s.count,s.pinned,s.active,s.minimized,s.available)),selection:false}}\\n       ^^^^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "taskbar.qnt": "c0593c651dc651f0c1cd15fec0c04a2554918dfc813cda8511cf2b0b3ff3caaa",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "942f47846913e4c5751290edae92f710e41ae4747d1bf689d805793ed9a3afb3"
+  }
+}

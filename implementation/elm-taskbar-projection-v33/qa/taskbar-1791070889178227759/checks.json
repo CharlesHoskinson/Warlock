@@ -1,0 +1,355 @@
+{
+  "passed": true,
+  "checks": 87,
+  "cases": [
+    {
+      "name": "zero-pinned-launch",
+      "passed": true
+    },
+    {
+      "name": "zero-unpinned-unavailable",
+      "passed": true
+    },
+    {
+      "name": "single-inactive-activate",
+      "passed": true
+    },
+    {
+      "name": "single-active-minimize",
+      "passed": true
+    },
+    {
+      "name": "single-minimized-restore",
+      "passed": true
+    },
+    {
+      "name": "multiple-always-picker",
+      "passed": true
+    },
+    {
+      "name": "transient-does-not-add-family",
+      "passed": true
+    },
+    {
+      "name": "different-application-roots-separate",
+      "passed": true
+    },
+    {
+      "name": "empty-hints-separate-anonymous-roots",
+      "passed": true
+    },
+    {
+      "name": "unavailable-child-disables-family",
+      "passed": true
+    },
+    {
+      "name": "picker-restores-only-minimized-family",
+      "passed": true
+    },
+    {
+      "name": "missing-parent",
+      "passed": true
+    },
+    {
+      "name": "self-parent",
+      "passed": true
+    },
+    {
+      "name": "cycle",
+      "passed": true
+    },
+    {
+      "name": "duplicate",
+      "passed": true
+    },
+    {
+      "name": "unknown-focus",
+      "passed": true
+    },
+    {
+      "name": "minimized-focus",
+      "passed": true
+    },
+    {
+      "name": "mixed-family-minimize",
+      "passed": true
+    },
+    {
+      "name": "application-control-character",
+      "passed": true
+    },
+    {
+      "name": "oversized-application",
+      "passed": true
+    },
+    {
+      "name": "oversized-window-list",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-1",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-2",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-3",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-4",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-5",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-6",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-7",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-8",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-9",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-10",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-11",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-12",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-13",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-14",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-15",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-16",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-17",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-18",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-19",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-20",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-21",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-22",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-23",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-24",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-25",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-26",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-27",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-28",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-29",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-30",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-31",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-32",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-33",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-34",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-35",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-36",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-37",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-38",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-39",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-40",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-41",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-42",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-43",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-44",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-45",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-46",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-47",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-48",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-49",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-50",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-51",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-52",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-53",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-54",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-55",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-56",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-57",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-58",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-59",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-60",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-61",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-62",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-63",
+      "passed": true
+    },
+    {
+      "name": "stack-permutation-64",
+      "passed": true
+    },
+    {
+      "name": "lossless-family-identities",
+      "passed": true
+    },
+    {
+      "name": "capacity-boundary-256",
+      "passed": true
+    }
+  ],
+  "scope": "Compiled family/application action decisions; launch is a planned catalog effect, not native launch acceptance"
+}

@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/model-1791071530087170679/taskbar.qnt:13:83
+  13:  action configure(count:int,pinned:bool,active:bool,minimized:bool,available:bool)=s'={...s,count:count,pinned:pinned,active:active,minimized:minimized,available:available,decision:"Idle",emitted:false,selection:false}
+                                                                                        ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/model-1791071530087170679/taskbar.qnt:14:2
+  14:  action click=all{not(s.pending),s.shown==s.scope,s'={...s,decision:primary(s.count,s.pinned,s.active,s.minimized,s.available),emitted:Set("Activate","Restore","Minimize").contains(primary(s.count,s.pinned,s.active,s.minimized,s.available)),selection:false}}
+       ^^^^^^
+
+error: parsing failed

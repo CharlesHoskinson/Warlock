@@ -6299,6 +6299,24 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-gui-activation-journal-v32/qa/slice-manifest.json",
       "acceptance": "Actual pointer-driven activation/keyboard, stable displayed order and exact-journal broker recovery only. Full taskbar/switcher, renderer/authority restart, human UX, AT/IME/GPU and release remain open."
+    },
+    {
+      "slice": "implementation/elm-taskbar-projection-v33",
+      "level": "compiled family/decision, endpoint join and abstract model; native compile only",
+      "compiledRetainedChecks": 64,
+      "displayedScopeChecks": 14,
+      "familyDecisionChecks": 87,
+      "endpointJoinChecks": 26,
+      "quintNamedRuns": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativePluginCompiled": true,
+      "nativeCampaignRun": false,
+      "integratedTaskbarUI": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-projection-v33/qa/slice-manifest.json",
+      "acceptance": "Action-policy/family graph and displayed-scope replay only. Real native grouping, integrated picker/taskbar, catalog/icons/pins, AT/keyboard/IME, human UX and release acceptance pending."
     }
   ]
 }
