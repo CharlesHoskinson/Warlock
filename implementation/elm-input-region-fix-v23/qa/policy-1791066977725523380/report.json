@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "scope": "Unchanged abstract scene eligibility policy only; not input-coordinate refinement or exhaustive verification",
+  "inputs": {
+    "scene_model.qnt": "2be6b91af90a89173ab45b6dc26e9aca693facac3eac9e8e54ffc10757161281",
+    "scene_tests.qnt": "7411a39acc4a7aff50ee1a16d629e9fb3b6216d2388d052e5bb34c6cf4d94a38"
+  },
+  "selectedNames": [
+    "minimizedFullscreenExcludedTest",
+    "inactivePinnedExcludedTest",
+    "maximizedStaysOrdinaryTest",
+    "pinnedAboveFullscreenPolicyTest",
+    "transparentPaintInputDivergenceTest",
+    "inertRestoreProxyTest",
+    "atomicLiveHandoffTest",
+    "prematureHandoffRefusedTest",
+    "lockRevokesPublicationTest",
+    "gpuLossRevokesLeaseTest",
+    "lockCancelsRestoreProxyTest"
+  ],
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "scene_tests.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "scene_tests.qnt",
+        "--main=scene_tests",
+        "--match=^(minimizedFullscreenExcludedTest|inactivePinnedExcludedTest|maximizedStaysOrdinaryTest|pinnedAboveFullscreenPolicyTest|transparentPaintInputDivergenceTest|inertRestoreProxyTest|atomicLiveHandoffTest|prematureHandoffRefusedTest|lockRevokesPublicationTest|gpuLossRevokesLeaseTest|lockCancelsRestoreProxyTest)$",
+        "--backend=typescript",
+        "--seed=610103",
+        "--max-samples=1",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "scene_model.qnt",
+        "--main=scene",
+        "--invariants",
+        "noExcludedPaint",
+        "noExcludedInput",
+        "focusSafe",
+        "proxyInert",
+        "leaseValid",
+        "proxyValid",
+        "--seed=610104",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--backend=typescript"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 11,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "scene_model.qnt": "2be6b91af90a89173ab45b6dc26e9aca693facac3eac9e8e54ffc10757161281",
+    "scene_tests.qnt": "7411a39acc4a7aff50ee1a16d629e9fb3b6216d2388d052e5bb34c6cf4d94a38",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-minimizedFullscreenExcludedTest-0.itf.json": "38226fa1eb1a2a41f2d19da40582535f4a9e53016a8159f354cccbc0052e5643",
+    "named-inactivePinnedExcludedTest-1.itf.json": "42f43311b6f753915113c40863f9816fbf2a1ba003dc7ee8f32d30400a9bbcb4",
+    "named-maximizedStaysOrdinaryTest-2.itf.json": "8e0d0384cb210f30dac77fe735f0ff9699824c4751f87078bc86fa61411d804a",
+    "named-pinnedAboveFullscreenPolicyTest-3.itf.json": "9d8caaeea3dbf874f3ae5a3b71a13160503a7da2300d6218b050552449d94bbf",
+    "named-transparentPaintInputDivergenceTest-4.itf.json": "6e5a979893e7ebfb785fcf2455fe9236e38bcc035954c4854f035d69dc02d67b",
+    "named-inertRestoreProxyTest-5.itf.json": "a53b24236eb646e72168785ca704104016bdcdc4d572376b1a825bda1049ea1b",
+    "named-atomicLiveHandoffTest-6.itf.json": "ec5732b6dbd2edb2bd5d5c57e1bab53a6a436cd35699ef34cd17f9b8b7d57532",
+    "named-prematureHandoffRefusedTest-7.itf.json": "d77385954ec6aed7249c2a75c9ac1654b67a50a7fb3a168168e7a9f6489b4c17",
+    "named-lockRevokesPublicationTest-8.itf.json": "05a2ad0db5f3709d97b3d588ad5aab8a1af72588709b9b2bdbbac4f0d71b773b",
+    "named-gpuLossRevokesLeaseTest-9.itf.json": "fdd75c17209a33d6b00b775d5816236e0601d9eb18a0899e6de140bb13fd8dc5",
+    "named-lockCancelsRestoreProxyTest-10.itf.json": "75c6f20741f79c91da1f3c6c34268dc98d15ad922a2394320e4cfc9ff47c647d",
+    "named.stdout": "867ad9c7f051d0a3232879a08be963c2652d32d340caf7197c68cb6ceb631724",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "68dcf9d534526235b60b0142f6ba35161ef0874f0ec30d3d7352c3c8928dc817",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
