@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "scope": "Abstract wrong-seat receipt mutant only; no compiled native mutation equivalence claimed",
+  "command": [
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "test",
+    "unsafe.qnt",
+    "--match=^unknownSeatPostconditionTest$",
+    "--max-samples=1",
+    "--seed=280001"
+  ],
+  "exitCode": 1,
+  "originalSHA256": "714bef79863ba6ec5aa721b73991333c6cd3d1ed44aaf5555ec90b3bdb3167cc",
+  "unsafeSHA256": "615b62a12afd2b6b7a31bd2778aef30d08408ec4bdfc928f60b0bd11e55cd513"
+}

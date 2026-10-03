@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-output-transforms-v26",
-  "status": "Actual output move,125% scale and8 transforms preserve retained facts and route logical pointer/keyboard input correctly in bounded native owner/peer overlap. Scene dependencies, complete roles/buffer/clip/multi-output hardware/presentation and integrated UX/release remain open.",
+  "activeSlice": "implementation/elm-gui-activation-journal-v32",
+  "status": "Typed activation is implemented through native journal/preflight and actual Elm controls with keyboard receipts. Stable displayed order and exact-journal broker recovery passed; complete canonical scene, integrated taskbar/switcher and full UI/UX/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -313,9 +313,33 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-output-transforms-v26/qa/slice-manifest.json"
+    },
+    "windowActivationV28": {
+      "ordinaryNativeChecks": 80,
+      "diagnosticNativeChecks": 111,
+      "compiledChecks": 64,
+      "quintNamedRuns": 10,
+      "quintInvariantSamples": 1000,
+      "abstractUnsafeSeatVariantDetected": true,
+      "nativeActivationModalAndSeatPreflight": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-activation-protocol-v28/qa/slice-manifest.json"
+    },
+    "guiActivationV32": {
+      "nativeChecks": 27,
+      "compiledOriginalChecks": 47,
+      "inheritedActivationChecks": 17,
+      "actualPointerElmActivationKeyboardDelivery": true,
+      "stableDisplayedWindowOrder": true,
+      "exactJournalNoReplayAcrossReconnect": true,
+      "failedAttemptsPreserved": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-gui-activation-journal-v32/qa/slice-manifest.json"
     }
   },
-  "next": "Implement coherent native scene dependencies and typed Elm admission, then integrate taskbar and switcher. Continue complete roles, viewport/buffer/clip mapping, multi-output/device/hardware, presentation, original preview deadlines, UI/UX/AT/IME/GPU/release gates.",
+  "next": "Implement coherent native scene dependencies and typed admission; integrate taskbar grouping/icons/focus state and switcher against the verified native action API. Complete previews/original deadlines, complete roles/buffer/clip/output/device/presentation, GPU/WebGPU, UI/UX/AT/IME and release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

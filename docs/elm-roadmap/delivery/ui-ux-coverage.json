@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T22:49:54.448158+00:00",
+  "partialEvidenceObservedUTC": "2026-10-03T23:23:15.094448+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6269,6 +6269,36 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-output-transforms-v26/qa/slice-manifest.json",
       "acceptance": "All8 transforms at125% scale in isolated owner/peer overlap with normalized captures and logical virtual-pointer routing only. Raw scanout, physical device, multi-output/hotplug, complete scene/presentation, human UX, AT/IME, performance and release remain open."
+    },
+    {
+      "slice": "implementation/elm-activation-protocol-v28",
+      "level": "compiled transaction, abstract model and native action component",
+      "ordinaryNativeChecks": 80,
+      "diagnosticNativeChecks": 111,
+      "compiledChecks": 64,
+      "quintNamedRuns": 10,
+      "quintInvariantSamples": 1000,
+      "abstractUnsafeSeatVariantDetected": true,
+      "nativeActivationModalAndSeatPreflight": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-activation-protocol-v28/qa/slice-manifest.json",
+      "acceptance": "Activation focus/keyboard and modal/seat refusal only; canonical scene, full roles/devices, presentation and release remain open."
+    },
+    {
+      "slice": "implementation/elm-gui-activation-journal-v32",
+      "level": "native Elm GUI component and compiled replay",
+      "nativeChecks": 27,
+      "compiledOriginalChecks": 47,
+      "inheritedActivationChecks": 17,
+      "actualPointerElmActivationKeyboardDelivery": true,
+      "stableDisplayedWindowOrder": true,
+      "exactJournalNoReplayAcrossReconnect": true,
+      "failedAttemptsPreserved": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-gui-activation-journal-v32/qa/slice-manifest.json",
+      "acceptance": "Actual pointer-driven activation/keyboard, stable displayed order and exact-journal broker recovery only. Full taskbar/switcher, renderer/authority restart, human UX, AT/IME/GPU and release remain open."
     }
   ]
 }

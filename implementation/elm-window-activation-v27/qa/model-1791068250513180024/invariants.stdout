@@ -1,0 +1,1236 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      connected: true,
+      eligible: true,
+      focus: 2,
+      grab: false,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 0,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      connected: true,
+      eligible: true,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 0,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 2
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      connected: false,
+      eligible: true,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 0,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 2
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      connected: false,
+      eligible: true,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 3
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      connected: false,
+      eligible: true,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 4
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 5
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 6
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 6
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 7
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 8
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 0,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Idle"
+        },
+      request: 0,
+      revision: 9
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: true,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Pending"
+        },
+      request: 1,
+      revision: 9
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: true,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Pending"
+        },
+      request: 1,
+      revision: 10
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: true,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Pending"
+        },
+      request: 1,
+      revision: 11
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 11
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 11
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 11
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 12
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 13
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 13
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 14
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 14
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 15
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 15
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 15
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 15
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 16
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 1,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 17
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 18
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 19
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 20
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 20
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 21
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 21
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 22
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 23
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 24
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 24
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 25
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      connected: false,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 25
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      connected: true,
+      eligible: false,
+      focus: 2,
+      grab: true,
+      intentRevision: 9,
+      keyboard: 2,
+      minimized: false,
+      modal: 2,
+      mutations: 0,
+      pending: false,
+      receipt:
+        {
+          after: 0,
+          before: 0,
+          focus: 2,
+          keyboard: 2,
+          minAfter: false,
+          minBefore: false,
+          recipient: 2,
+          status: "Unknown"
+        },
+      request: 1,
+      revision: 25
+    }
+}
+
+[ok] No violation found (1457ms at 686 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

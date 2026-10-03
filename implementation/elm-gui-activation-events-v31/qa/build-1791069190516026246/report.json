@@ -1,0 +1,190 @@
+{
+  "passed": true,
+  "inputs": {
+    "src/Effects.elm": "bac8ea4b5b65f8f37fb34035a54cfbc49de7f697d401f3f938efcc0954294a91",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "d6c887ba584f6da4d0318c7e4c67765a4c7a1f2d1556d6c355a1b65902444e92",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Binding.elm": "c1985aef94e7230e60edeadda491d40fa7cac4aabf340025b6f02038327595e5",
+    "src/Shell.elm": "621bf79b3e9a67be354cfb6bb05e7b2feeb574e56789c3b8e57b8f94e3387b09",
+    "src/Main.elm": "eef96766ffd275ffcaa6efa9997600f81f4e26074e5ad03344092af5bf3ad44c",
+    "src/ShellReplay.elm": "c7fb44d833ac19a5468bee2eec37c1e2fe9b05a1015b548bf56700d760ba82bb",
+    "native/host.c": "e650abbf2a73066bdc4fff7be41393916b41104c182069ac272de244b6ce0498",
+    "adapter/daemon.py": "129fa3a47ae788e824f487ca2bc8bf59f68ee504d55449fcbbb9d5ae7b4bf3ee",
+    "adapter/effect_endpoint.py": "3d2c2c571e8ab66d982392cba58be0da1fbe9f9a9aa0acbb839035985b4c864a",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "assets/index.html": "caf8c62a444716f4752cbce7811e8e2874086fffa4f781a8006cee48274f08b8",
+    "assets/shell.css": "e7fe42db2b8be74f7e080a9b7c5bd37e0b3c221b17d283c590813e24d938a424",
+    "assets/adapter.js": "d6d4360e61cb7c1798f14297d6ef1d5a6ee857823c051ccae4ce97b939f1311a",
+    "qa/replay.cjs": "d429d05f3e60fc1a304d8ae97c0526c79962ab74a5493572949f0fa02567d819",
+    "qa/shell.cjs": "70ec5d7307047b4b371105cbcbcdc46d0cae29503571a215ab5d07cc043b1e94",
+    "qa/activation.cjs": "13b645b32adf454f45c8fcdf83f7bca4e30de16a1a0a04fde0728d48ded63158",
+    "qa/build.py": "7678810da6845f8a62e30efbb6260d6ec176f277f808b170215ebb44d8aac473",
+    "qa/native.py": "ac067906eb219205e3eb7e51c6ba0149319865c5eda0d2df1f1a9f62e4b45929",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "commands": [
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-checks",
+      "command": [
+        "node",
+        "qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/replay-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/ShellReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/shell.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-checks",
+      "command": [
+        "node",
+        "qa/shell.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/shell.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/shell-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "native/host.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/elm-host",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-activation-events-v31/qa/build-1791069190516026246/elm-host",
+        "--self-test"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "binarySHA256": "c7f9a93122cb7b0a5f633d06ed7c99ef9e85f1f69ed04c1154636e76ee7ae441"
+}

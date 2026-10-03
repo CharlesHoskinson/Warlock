@@ -1,0 +1,55 @@
+{
+  "passed": false,
+  "scope": "Abstract activation preflight/seat receipt semantics; native policy refinement and complete scene/GUI remain separate",
+  "sourceSHA256": "714bef79863ba6ec5aa721b73991333c6cd3d1ed44aaf5555ec90b3bdb3167cc",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "activation.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "activation.qnt",
+        "--backend=typescript",
+        "--match=^(visibleActivateTest|minimizedRefusalTest|modalRedirectTest|ambiguousRefusalTest|grabRefusalTest|ineligibleRefusalTest|staleContextTest|unknownSeatPostconditionTest|disconnectUnknownTest|noAutomaticReplayTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "error": "AssertionError()",
+  "artifacts": {
+    "activation.qnt": "714bef79863ba6ec5aa721b73991333c6cd3d1ed44aaf5555ec90b3bdb3167cc",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-visibleActivateTest-0.itf.json": "04eaac6667ae10968461f959776a792d08d4e5debb66377ade5e254d910645e3",
+    "named-minimizedRefusalTest-1.itf.json": "dab1225b7262041b779af829a46157d74e8d7d2ceef1f2a690b3a94cb11897be",
+    "named-modalRedirectTest-2.itf.json": "253fdd1a468a418f1452967992f09d6bcd829894df841c7d9b37b64b886a90dd",
+    "named-ambiguousRefusalTest-3.itf.json": "a4ff2b1b2ecd7bdd57a6d969e850e43b10e2d26f686d9577010f8a8b751a5e4d",
+    "named-grabRefusalTest-4.itf.json": "b41b2492929d60ae1d6f7dbee0cbfa183580ac686d191a3af8887bb5f1d072f9",
+    "named-ineligibleRefusalTest-5.itf.json": "c2a18e6ba2361a75890a0e201414d3abc469257ae345f856d401b6992dbe9be6",
+    "named-staleContextTest-6.itf.json": "f944a8a703d7afadbdfd8dcf4eb8c22f196340fa1739831bcae58e76c1eef25a",
+    "named-unknownSeatPostconditionTest-7.itf.json": "35e04f534f1157c83fa06c1f193c8275125bf79fde5fea604122aa0b35870c0c",
+    "named-disconnectUnknownTest-8.itf.json": "ef9cf559a152698676be0afb76a7ddee746bcd2a9e9afac828bfcde6506cc294",
+    "named-noAutomaticReplayTest-9.itf.json": "57f9adb90588845adbd45ec170bdec034933cfeb8ea3138a85debcfc6462c865",
+    "named.stdout": "ed8068cbf31230921737c71745b47f32d80220ceb744c3243a010c8aaf0475b6",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

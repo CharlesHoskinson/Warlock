@@ -1,0 +1,16 @@
+
+  activation
+    1) unknownSeatPostconditionTest failed after 1 test(s)
+
+  1 failed
+
+  1) unknownSeatPostconditionTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-activation-protocol-v28/qa/mutant-1791068451213000418/unsafe.qnt:36:75
+        36:  run unknownSeatPostconditionTest=init.then(begin).then(badSeat).then(all{assert(s.receipt.status=="Unknown" and s.keyboard!=s.focus),s'=s})
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x445c1 --match=unknownSeatPostconditionTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unsafe.qnt
