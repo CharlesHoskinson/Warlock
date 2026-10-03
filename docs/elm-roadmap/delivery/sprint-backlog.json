@@ -36,7 +36,7 @@
       "title": "Product policy and measured budgets",
       "goal": "Freeze what correct and usable behavior means before judging candidate implementations.",
       "deliverables": "Versioned scene/switcher policy, workload budgets, readability matrix and participant usability protocol; isolated layering diagnosis.",
-      "exitGate": "Numeric applicable budgets and usability criteria are frozen; Heroic/Brave regression fixtures and native diagnosis evidence are retained.",
+      "exitGate": "Numeric applicable budgets and usability criteria are frozen; Generic replacement-desktop regression fixtures and native diagnosis evidence are retained.",
       "dependsOn": [
         "S01"
       ],
@@ -4904,5 +4904,11 @@
         "ELM-UX-035 release-failed-case"
       ]
     }
-  ]
+  ],
+  "scopeAmendment": {
+    "observedUTC": "2026-10-03T19:39:43.687555+00:00",
+    "instruction": "Brave/Heroic are no longer special repair targets; qualify the replacement GUI comprehensively.",
+    "strategy": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
+    "historicalEvidence": "Preserved; generic native behavioral oracles remain required."
+  }
 }

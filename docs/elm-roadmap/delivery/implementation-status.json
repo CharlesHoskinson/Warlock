@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-scene-core-v8",
-  "status": "Built native renderer exclusion repair and passed 33 private predicate/observer checks; pixel/hit/modal/effect/Brave/Heroic and full scene/minimize acceptance remain open",
+  "activeSlice": "implementation/elm-modal-focus-v10",
+  "status": "Replacement desktop implementation active: native scene/modal candidate built; 33 private observer checks and 19 actual pixel/pointer/keyboard checks passed; full UI/UX and release acceptance pending",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -128,7 +128,27 @@
       "predicateAcceptanceOnly": true,
       "productSceneAcceptance": false,
       "evidence": "implementation/elm-scene-core-v8/qa/slice-manifest.json"
+    },
+    "modalFocusV10": {
+      "nativeDiagnosticCases": 33,
+      "nativePixelPointerKeyboardCases": 19,
+      "coreSHA256": "75548c72f43554a0c351f3a43b4d928238571282b975b7c3c11802a2779cd546",
+      "actualModalKeyboardDelivery": true,
+      "actualIndependentPeerKeyboardDelivery": true,
+      "quiescentSingleOutputOnly": true,
+      "productSceneAcceptance": false,
+      "evidence": "implementation/elm-native-scene-v9/qa/native-1791056292999426300/report.json",
+      "coreEvidence": "implementation/elm-modal-focus-v10/qa/slice-manifest.json"
     }
   },
-  "next": "Qualify repaired exclusions with actual pixels/hit/focus, modal families and original MAX regressions on the V8 tuple; implement first-class minimization and complete authenticated scene observations; finish original campaign ledger, S02 budgets and all later release gates."
+  "next": "Qualify modal held-release/device/exclusive routes and actual algorithm models; implement first-class minimized state and complete canonical scene observations; qualify host AT/IME, measured budgets and remaining whole-desktop journeys.",
+  "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
+  "uiUxStrategy": {
+    "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
+    "coverage": "docs/elm-roadmap/delivery/ui-ux-coverage.json",
+    "requirementsMapped": 242,
+    "scenariosMapped": 417,
+    "executionAcceptance": false,
+    "humanParticipantEvidence": false
+  }
 }

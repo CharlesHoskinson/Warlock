@@ -1,0 +1,874 @@
+{
+  "passed": true,
+  "scope": "Actual native projection snapshots accepted by compiled nullable-state Elm reducer",
+  "transitions": 37,
+  "steps": [
+    {
+      "phase": "Awaiting",
+      "projection": null,
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "0",
+      "lastRequest": "1",
+      "pending": "1",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "minimumWatermark": "0"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "1",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "1",
+      "lastRequest": "1",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "1",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "1",
+      "lastRequest": "2",
+      "pending": "2",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "2",
+          "minimumWatermark": "1"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "2",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "2",
+      "lastRequest": "2",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "2",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "2",
+      "lastRequest": "3",
+      "pending": "3",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "3",
+          "minimumWatermark": "2"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "5",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "5",
+      "lastRequest": "3",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "5",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "5",
+      "lastRequest": "4",
+      "pending": "4",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "4",
+          "minimumWatermark": "5"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "6",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "6",
+      "lastRequest": "4",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "6",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "6",
+      "lastRequest": "5",
+      "pending": "5",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "5",
+          "minimumWatermark": "6"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "7",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "7",
+      "lastRequest": "5",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "7",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "7",
+      "lastRequest": "6",
+      "pending": "6",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "6",
+          "minimumWatermark": "7"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "8",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "8",
+      "lastRequest": "6",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "8",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "8",
+      "lastRequest": "7",
+      "pending": "7",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "7",
+          "minimumWatermark": "8"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "9",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "9",
+      "lastRequest": "7",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "9",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "9",
+      "lastRequest": "8",
+      "pending": "8",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "8",
+          "minimumWatermark": "9"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "10",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "10",
+      "lastRequest": "8",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "10",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "10",
+      "lastRequest": "9",
+      "pending": "9",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "9",
+          "minimumWatermark": "10"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "11",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "11",
+      "lastRequest": "9",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "11",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "11",
+      "lastRequest": "10",
+      "pending": "10",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "10",
+          "minimumWatermark": "11"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "12",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "12",
+      "lastRequest": "10",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "12",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "12",
+      "lastRequest": "11",
+      "pending": "11",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "11",
+          "minimumWatermark": "12"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "13",
+        "revision": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "13",
+      "lastRequest": "11",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "13",
+        "revision": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "13",
+      "lastRequest": "12",
+      "pending": "12",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "12",
+          "minimumWatermark": "13"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "14",
+        "revision": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "14",
+      "lastRequest": "12",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "14",
+        "revision": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "14",
+      "lastRequest": "13",
+      "pending": "13",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "13",
+          "minimumWatermark": "14"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "15",
+        "revision": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "15",
+      "lastRequest": "13",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "15",
+        "revision": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "15",
+      "lastRequest": "14",
+      "pending": "14",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "14",
+          "minimumWatermark": "15"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "16",
+        "revision": "3",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "16",
+      "lastRequest": "14",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "16",
+        "revision": "3",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "16",
+      "lastRequest": "15",
+      "pending": "15",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "15",
+          "minimumWatermark": "16"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "17",
+        "revision": "3",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "17",
+      "lastRequest": "15",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "17",
+        "revision": "3",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "17",
+      "lastRequest": "16",
+      "pending": "16",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "16",
+          "minimumWatermark": "17"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "18",
+        "revision": "4",
+        "windows": [
+          {
+            "incarnation": "2",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "18",
+      "lastRequest": "16",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": {
+        "sequence": "18",
+        "revision": "4",
+        "windows": [
+          {
+            "incarnation": "2",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": null
+          }
+        ]
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "18",
+      "lastRequest": "17",
+      "pending": "17",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "4225042961067668002",
+            "session": "15262091455339384515",
+            "frontend": "1"
+          },
+          "requestId": "17",
+          "minimumWatermark": "18"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "19",
+        "revision": "5",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "19",
+      "lastRequest": "17",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Detached",
+      "projection": {
+        "sequence": "19",
+        "revision": "5",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "4225042961067668002",
+        "session": "15262091455339384515",
+        "frontend": "1"
+      },
+      "floor": "19",
+      "lastRequest": "17",
+      "pending": null,
+      "effects": []
+    },
+    {
+      "phase": "Awaiting",
+      "projection": null,
+      "binding": {
+        "lifetime": "7174104804574201629",
+        "session": "1065436953494292391",
+        "frontend": "1"
+      },
+      "floor": "0",
+      "lastRequest": "1",
+      "pending": "1",
+      "effects": [
+        {
+          "kind": "read-only-snapshot",
+          "binding": {
+            "lifetime": "7174104804574201629",
+            "session": "1065436953494292391",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "minimumWatermark": "0"
+        }
+      ]
+    },
+    {
+      "phase": "Coherent",
+      "projection": {
+        "sequence": "1",
+        "revision": "1",
+        "windows": []
+      },
+      "binding": {
+        "lifetime": "7174104804574201629",
+        "session": "1065436953494292391",
+        "frontend": "1"
+      },
+      "floor": "1",
+      "lastRequest": "1",
+      "pending": null,
+      "effects": []
+    }
+  ]
+}

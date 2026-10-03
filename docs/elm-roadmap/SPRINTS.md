@@ -2,6 +2,8 @@
 
 Baseline: `a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b` (242 requirements, 417 scenarios). The [backlog](delivery/sprint-backlog.json) preserves each requirement, owner and acceptance scenario. S01–S16 are work packages; each is implemented through small runnable slices.
 
+The replacement desktop follows the [comprehensive UI/UX test strategy](UI-UX-TEST-STRATEGY.md), mapped to every existing scenario in [the coverage ledger](delivery/ui-ux-coverage.json). Brave/Heroic-specific repair targets are superseded by generic behavioral fixtures; historical evidence remains preserved.
+
 ## Build loop
 
 Pick the next unblocked slice, implement it, compile it, run the relevant Quint/replay checks, exercise native behavior where required, and show the result. Fix failures immediately. Move on when the evidence passes. There are no calendar durations, staffing forecasts, story points or meeting cadence attached to these cycles.
@@ -84,7 +86,7 @@ Freeze what correct and usable behavior means before judging candidate implement
 
 Deliverables: Versioned scene/switcher policy, workload budgets, readability matrix and participant usability protocol; isolated layering diagnosis.
 
-Exit gate: Numeric applicable budgets and usability criteria are frozen; Heroic/Brave regression fixtures and native diagnosis evidence are retained.
+Exit gate: Numeric applicable budgets and usability criteria are frozen; Generic replacement-desktop regression fixtures and native diagnosis evidence are retained.
 
 Demo: show the stated behavior or experiment outcome with matching acceptance receipts; disclose failures and unexecuted scenarios.
 
