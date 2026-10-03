@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T22:28:46.934073+00:00",
+  "partialEvidenceObservedUTC": "2026-10-03T22:38:46.353661+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6238,6 +6238,21 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-trace-validation-v21/qa/slice-manifest.json",
       "acceptance": "121 strict diagnostic checks; historical native packets replayed, no additional native or complete UX acceptance."
+    },
+    {
+      "slice": "implementation/elm-input-hit-v23",
+      "level": "native-render/input-component and frozen compiled diagnostic replay",
+      "ordinaryNativeChecks": 63,
+      "ownerInputHoleDiagnosticChecks": 94,
+      "maxInputHoleDiagnosticChecks": 97,
+      "typedActualPacketChecks": 44,
+      "actualPointerKeyboardInputHolePassThrough": true,
+      "originalFailuresPreserved": true,
+      "newQuintRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json",
+      "acceptance": "Unit-scale untransformed quiescent owner/MAX input-hole delivery only. Complete roles, output/device mapping, scene/presentation, human UX, AT/IME, performance and release remain open."
     }
   ]
 }

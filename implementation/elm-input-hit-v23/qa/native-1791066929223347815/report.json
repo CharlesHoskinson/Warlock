@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Single-output private real pixel/pointer/MAX/modal regression; full release gates remain open",
+  "mainDesktopActions": false,
+  "coreStage": "elm-input-hit-v23",
+  "fixtureStage": "elm-input-region-v22",
+  "output": "/home/hoskinson/window-integration-qa/elm-native-scene-1791066929223393216",
+  "checks": [],
+  "captures": {},
+  "pointerRuns": [],
+  "positionReceipts": [],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-input-hit-v23/qa/max_hole_native.py": "abf7fd9da6eba841079ca4ccd2ec29bace6f3ebadddac6ef5ce4188002341642",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-input-hit-v23/max_fixture.py": "f1571e3ab677cb609f6d0263cb9fe9b7bb1ea2a962fd75f0ba2aac2fa801826d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-input-hit-v23/pointer_fifo.py": "12541b0fcd478587d5d5933a5891a575c38bb9055df7657e30f03c0c32b2a5ca",
+    "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer": "b092c3369d88b4d61fce80607614a5ec02258e0b774f0b10504a23385cb24434",
+    "/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard": "7bb54790faf1c47ab3a4184d84fa07fc1ab34c44d762ef457696f147777e95c0",
+    "/home/hoskinson/window-integration-qa/orca-reader/physical-commands/evdev-keyboard.c": "890adb36b617a4175577eeb51ff67acfee36424f33b816a1d775fd4d9dca99a4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-input-hit-v23/candidate_host.py": "b4395f755086159a2c23545ff21679809d2e87a5afd46a203835a3101e8be57e"
+  },
+  "configurationVariant": "Continuous full redraw diagnostic; no production performance claim",
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-input-hit-v23/qa/max_hole_native.py\", line 66, in <module>\n    fixture_manifest=json.loads((ROOT/'qa/source-manifest.json').read_text())\n                                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 787, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/hoskinson/omarchy-windows-parity/implementation/elm-input-hit-v23/qa/source-manifest.json'\n",
+  "privateHost": null,
+  "cleanupPassed": false,
+  "artifacts": {
+    "max_fixture.py": "f1571e3ab677cb609f6d0263cb9fe9b7bb1ea2a962fd75f0ba2aac2fa801826d",
+    "max_hole_native.py": "abf7fd9da6eba841079ca4ccd2ec29bace6f3ebadddac6ef5ce4188002341642",
+    "pointer_fifo.py": "12541b0fcd478587d5d5933a5891a575c38bb9055df7657e30f03c0c32b2a5ca"
+  }
+}

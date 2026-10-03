@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-trace-validation-v21",
-  "status": "Draw-time surface/output facts and retained geometry captured; strict bounded Elm diagnostic decoding verified. Actual input-mask/output changes, scene admission, presentation, complete UI/UX and release remain open.",
+  "activeSlice": "implementation/elm-input-hit-v23",
+  "status": "Fixed native rectangle-only selection accepting client input holes. Actual hole/solid/restored pointer and keyboard delivery above lower owner and MAX passed; full scene, output mapping, presentation, comprehensive UI/UX and release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -29,7 +29,8 @@
     "ELM-UI-001",
     "ELM-GNO-002",
     "ELM-GNO-004",
-    "ELM-DEL-018"
+    "ELM-DEL-018",
+    "ELM-GNO-006"
   ],
   "completedRequirementIds": [],
   "observedResults": {
@@ -287,9 +288,21 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-trace-validation-v21/qa/slice-manifest.json"
+    },
+    "inputMaskV23": {
+      "ordinaryNativeChecks": 63,
+      "ownerInputHoleDiagnosticChecks": 94,
+      "maxInputHoleDiagnosticChecks": 97,
+      "typedActualPacketChecks": 44,
+      "actualPointerKeyboardInputHolePassThrough": true,
+      "originalFailuresPreserved": true,
+      "newQuintRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json"
     }
   },
-  "next": "Qualify actual input-region holes and output configuration changes with native pixel/pointer/keyboard receipts; then establish coherent scene admission and build integrated taskbar/navigation/previews. Complete all UI/UX, accessibility/IME, GPU and release gates.",
+  "next": "Qualify actual output configuration changes and scaled/transformed surface/input mapping, then establish coherent scene admission and build integrated taskbar/navigation/previews. Complete all UI/UX, accessibility/IME, GPU and release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
@@ -315,6 +328,11 @@
       "id": "NMIN-003",
       "status": "resolved in V14 scoped native oracles",
       "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
+    },
+    {
+      "id": "INPUT-HOLE-001",
+      "status": "Resolved for unit-scale untransformed owner/MAX native fixtures in V23; complete role/output/device acceptance remains open",
+      "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json"
     }
   ]
 }
