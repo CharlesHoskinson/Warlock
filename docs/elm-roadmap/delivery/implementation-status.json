@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-render-trace-v18",
-  "status": "Actual native surface draw dispatch instrumentation built and qualified in bounded private fixtures. Repeated floating/MAX/pinned dispatches observed; complete canonical scene/presentation/input and release acceptance remain open.",
+  "activeSlice": "implementation/elm-draw-identity-v19",
+  "status": "Native draws now capture authority lifetime and mapped incarnation at dispatch; actual retained frames remain retired through hide/show instead of being relabeled. Bounded native/model/Elm evidence; full scene/presentation/input and release gates remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -251,6 +251,20 @@
         "Window vector order cannot represent all surface dispatches.",
         "Draw-time identities, masks, dependency/presentation coherence and all input routes remain unqualified."
       ]
+    },
+    "drawIdentityV19": {
+      "ordinaryNativeChecks": 63,
+      "fullRedrawIdentityChecks": 81,
+      "elmDecoderChecks": 26,
+      "actualNativePacketsDecoded": 16,
+      "quintNamedRuns": 6,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "abstractUnsafeVariantDetected": true,
+      "actualRetainedFrameUnmapRemap": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-draw-identity-v19/qa/slice-manifest.json"
     }
   },
   "next": "Strengthen native outcome proof with actual seat-surface postconditions and grab refusal, qualify parent retirement/remap, then bind typed Elm intent/outcome controls in a real isolated GUI host. Complete canonical scene/presentation, previews/original deadlines, output/layout/GPU/AT/IME and full release gates.",

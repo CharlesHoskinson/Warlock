@@ -6199,6 +6199,17 @@
       "quintInvariantSamples": 1000,
       "evidence": "implementation/elm-render-trace-v18/qa/slice-manifest.json",
       "acceptance": "Opaque quiescent overlap dispatch/pixel/input agreement only. Draw-time identity, masks, canonical scene, presentation, complete UX and performance remain unproven."
+    },
+    {
+      "slice": "implementation/elm-draw-identity-v19",
+      "level": "native-render-lifecycle component, typed decoder and abstract identity model",
+      "ordinaryNativeChecks": 63,
+      "fullRedrawIdentityChecks": 81,
+      "elmDecoderChecks": 26,
+      "quintNamedRuns": 6,
+      "quintInvariantSamples": 1000,
+      "evidence": "implementation/elm-draw-identity-v19/qa/slice-manifest.json",
+      "acceptance": "Captured window/lifetime tokens survive actual retained-frame unmap/remap; surface masks, output/geometry coherence, presentation and full UX/release remain unproven."
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "scope": "Abstract model unsafe variant only; no compiled native mutation equivalence claimed",
+  "command": [
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "test",
+    "unsafe.qnt",
+    "--match=^authorityIdReuseRetiresHeldTest$",
+    "--max-samples=1",
+    "--seed=190001"
+  ],
+  "exitCode": 1,
+  "originalSHA256": "31ed8f44a149a52a5c93370d1d0e47cc4e5bb13e2f4348ceb24f8d239aa5787c",
+  "unsafeSHA256": "869ef3c388c86b9191989a34043f1b491ac3c64515596e6ce00eb4a47e539b3f"
+}

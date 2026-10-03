@@ -1,0 +1,16 @@
+
+  identity
+    1) authorityIdReuseRetiresHeldTest failed after 1 test(s)
+
+  1 failed
+
+  1) authorityIdReuseRetiresHeldTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/mutant-1791065616132479807/unsafe.qnt:17:103
+        17:  run authorityIdReuseRetiresHeldTest=init.then(mapWindow).then(draw).then(hold).then(reload).then(all{assert(not(currentHeld) and s.heldId==s.current and s.heldAuthority!=s.authority),s'=s})
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x2e631 --match=authorityIdReuseRetiresHeldTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unsafe.qnt

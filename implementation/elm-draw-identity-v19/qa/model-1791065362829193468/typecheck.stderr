@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'map' is redefined in module 'identity'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/model-1791065362829193468/identity.qnt:5:9
+  5:  action map=s'=if(s.live) s else {...s,live:true,next:s.next+1,current:s.next+1}
+             ^^^
+
+error: parsing failed

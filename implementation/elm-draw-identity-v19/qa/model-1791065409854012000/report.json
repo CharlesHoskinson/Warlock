@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "scope": "Abstract draw identity capture and retirement; native authority reload/identity exhaustion and full scene gates remain separate",
+  "sourceSHA256": "71ddcaf7003f1f39df5bd7a1742f4ed7590ae0604ccf074f80f3d47ea317bb23",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "identity.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "identity.qnt",
+        "--backend=typescript",
+        "--match=^(captureCurrentTest|unmapRetiresHeldTest|remapNeverRelabelsTest|freshRemapCaptureTest|authorityIdReuseRetiresHeldTest|unboundCaptureTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "identity.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 6,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "identity.qnt": "71ddcaf7003f1f39df5bd7a1742f4ed7590ae0604ccf074f80f3d47ea317bb23",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-captureCurrentTest-0.itf.json": "da26712677d95d51000b265a7e2adc7bc0b81502437905dc29ed350fd5d9656d",
+    "named-unmapRetiresHeldTest-1.itf.json": "083ad8499549e2e9037b221993e8187692e8c662adc8bc66f4b7cd138ab8fb98",
+    "named-remapNeverRelabelsTest-2.itf.json": "8463711cb15583e887bed36837793c625c051ba53b3c73908ed1ba3cf968a8d5",
+    "named-freshRemapCaptureTest-3.itf.json": "504a96109f6acba8170387b3a3e1c11d3c10c8559cdc67412f7badb1c551d309",
+    "named-authorityIdReuseRetiresHeldTest-4.itf.json": "03484a7af5f7a4f06ae2ebde60396984c5376b7039f76d118ae6b3904b2b14ae",
+    "named-unboundCaptureTest-5.itf.json": "a4aceed2605709509325b2dc6c7d7c0c0def772f382ff09a717446fcd6ed96a7",
+    "named.stdout": "f03d82da6946925ecdba9862c151ba2540aed12c180eab97c07e42b2130b994e",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "5c1cfafd070b2048458f4ddd6e411c97a9f50a30dd42aa60777debd3714c6793",
+    "invariants.stdout": "8adc4ddb2f17d6a9572089fd67483c34a012d9dbbfc080ba298086d6c9ef13f9",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

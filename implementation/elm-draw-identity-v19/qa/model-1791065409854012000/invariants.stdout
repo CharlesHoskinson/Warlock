@@ -1,0 +1,621 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      authority: 1,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      authority: 1,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      authority: 1,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      authority: 1,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      authority: 1,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      authority: 1,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      authority: 1,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      authority: 2,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      authority: 2,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      authority: 2,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      authority: 2,
+      current: 2,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      authority: 2,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      authority: 2,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 2
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      authority: 2,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 2
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      authority: 3,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      authority: 3,
+      current: 2,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 2
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 2
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 2
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      authority: 3,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 2
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      authority: 4,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      authority: 4,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      authority: 4,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      authority: 4,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      authority: 5,
+      current: 1,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      authority: 5,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      authority: 5,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      authority: 5,
+      current: 2,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 2
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      authority: 5,
+      current: 2,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 2
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      authority: 5,
+      current: 2,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 2
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      authority: 5,
+      current: 0,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 2
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      authority: 5,
+      current: 3,
+      drawAuthority: 0,
+      drawId: 0,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 3
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      authority: 5,
+      current: 3,
+      drawAuthority: 5,
+      drawId: 3,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 3
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      authority: 6,
+      current: 1,
+      drawAuthority: 5,
+      drawId: 3,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      authority: 6,
+      current: 1,
+      drawAuthority: 6,
+      drawId: 1,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      authority: 6,
+      current: 1,
+      drawAuthority: 6,
+      drawId: 1,
+      heldAuthority: 0,
+      heldId: 0,
+      live: true,
+      next: 1
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      authority: 6,
+      current: 0,
+      drawAuthority: 6,
+      drawId: 1,
+      heldAuthority: 0,
+      heldId: 0,
+      live: false,
+      next: 1
+    }
+}
+
+[ok] No violation found (803ms at 1245 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

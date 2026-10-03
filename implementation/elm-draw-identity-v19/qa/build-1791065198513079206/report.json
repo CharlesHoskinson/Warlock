@@ -1,0 +1,88 @@
+{
+  "passed": false,
+  "scope": "Exact core/plugin compile only; no native effects acceptance",
+  "inputs": {
+    "native/authority.cpp": "bf48e2ca66ad9b7665b9cf95bf031d2248670fb7781f1e89f71d360c02ec44a3",
+    "candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+    "candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "candidate/SceneTrace.hpp": "d1b6772304b4adbc6bfd27cabf4e07b10414e8682889fade1565bca92fbc1bcc",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "candidate_host.py": "b4395f755086159a2c23545ff21679809d2e87a5afd46a203835a3101e8be57e",
+    "native-build-report.json": "dff5f84be127ecc583d3768060053d0e7dbb8ac47832ccf3006348137340667c",
+    "qa/build.py": "310dbc1e25b6f1c9777795eb1b1365bcf706a4126c06b0818a0920a47695fbd2",
+    "qa/elm.py": "c4c061176a68924a14dec7af952ddc31173b4595af6dec5afff12f04a79f71be",
+    "qa/freeze_pair.py": "51d172bba2750b28f39ecb9d7a329827509172fcb0cc50b51169c5e94f98d7cc",
+    "qa/lifecycle_native.py": "a3c834b066545d693fa8d24b085c44e5d4d74ce14ec8f32e6172191f010f8d2f",
+    "qa/model.py": "35f5e3225072247b46c0028f8caac39497203ca341c8aac102286cf40af59d1a"
+  },
+  "commands": [
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "json-glib-1.0",
+        "pixman-1",
+        "libdrm",
+        "libinput",
+        "wayland-server",
+        "libeis-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "libs",
+      "command": [
+        "pkg-config",
+        "--libs",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "g++",
+        "-std=c++23",
+        "-O2",
+        "-fPIC",
+        "-shared",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/include",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/protocols",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/inputs/candidate",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/libdrm",
+        "-I/usr/include/libei-1.0",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/authority.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/inputs/native/authority.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/elm-window-effect-authority.so",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/inputs/native/authority.cpp: In function \u2018std::string {anonymous}::observe(eHyprCtlOutputFormat, std::string)\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/inputs/native/authority.cpp:411:107: error: invalid operands of types \u2018const char [73]\u2019 and \u2018const char*\u2019 to binary \u2018operator+\u2019\\n  411 |                 reply=\"{\\\\\"protocolVersion\\\\\":3,\\\\\"kind\\\\\":\\\\\"render-trace\\\\\",\\\\\"traceProtocol\\\\\":2,\\\\\"retained\\\\\":\"+(held?\"true\":\"false\")+\",\\\\\"binding\\\\\":\"+binding(found->second)+\",\\\\\"requestId\\\\\":\"+quote(std::to_string(*requestId))+\",\\\\\"outputGeneration\\\\\":\"+quote(std::to_string(outputGeneration))+\",\\\\\"frames\\\\\":\"+renderTrace(held?retained:Render::SceneTrace::snapshots())+\"}\";\\n      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~\\n      |                       |                                                                                         |\\n      |                       const char [73]                                                                           const char*\\n')"
+}

@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "qa/elm.cjs": "5b534e371fd0fd932ccea4cd0c426f94e0cd378496e6afb00eee24ed8927f587",
+    "src/Binding.elm": "6271948157819ed5040ca74c4b894d6899cf29020bbd4a20c82bd12b61695cf1",
+    "src/RenderTrace.elm": "56f15d740d139f34a5c7af0b396980af3eb3732268a96058626279c09e3ce45a",
+    "src/Replay.elm": "957c6741782d249ee928643d94597a18d5d85764375b8092624789cca19d590d",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+  },
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/elm-1791065520441234905/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/elm-1791065520441234905/inputs/elm.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/elm-1791065520441234905/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/native-1791065454722959468/report.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/elm-1791065520441234905/checks.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeReportSHA256": "19ecc56f086ea7837c7624c91d3f0e6f8443c4f9f7f549944c143ca47cb85abd",
+  "checks": 26,
+  "nativeCaptures": 16,
+  "malformedCases": 8
+}

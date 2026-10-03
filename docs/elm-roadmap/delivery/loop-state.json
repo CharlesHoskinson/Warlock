@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-03T22:03:07.931221+00:00",
+  "observedUTC": "2026-10-03T22:15:11.263064+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-render-trace-v18",
+  "currentSlice": "implementation/elm-draw-identity-v19",
   "nextWork": [
-    "Bind draw-time surface/window identities and coherent scene dependencies before scene admission; cover masks, damage accumulation, transformed/offscreen roles and presentation separately.",
-    "Evaluate repeated floating/MAX/pinned passes with preserved opaque/transparent/blur/modal fixtures; qualify actual native paint and hit ordering without treating vector order as canonical.",
-    "Build replacement taskbar/navigation/previews on admitted scene, and complete original capture deadlines, renderer/authority recovery, output/device/client geometry and UI/UX/AT/IME/GPU/release gates."
+    "Capture draw-time surface identity, geometry, buffer/input masks and output generations; establish coherent scene dependencies and separate presentation receipts before scene admission.",
+    "Evaluate repeated floating/MAX/pinned passes with opaque/transparent/blur/modal fixtures and verify native paint/hit agreement across complete roles.",
+    "Build replacement taskbar/navigation/previews on admitted scene; complete original capture deadlines, authority/renderer recovery, outputs/devices/client geometry and UI/UX/AT/IME/GPU/release gates."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: built exact owning native draw-dispatch trace after pass/surface filtering with commit/overflow/direct-scanout status; original63 and diagnostic78 native checks pass; 22 Elm checks decode actual packets, 8 actual Quint named cases/1000 samples; found repeated floating/MAX/pinned draws that change canonical-scene design",
+  "lastWorkClassification": "progress: captured draw-time lifetime/incarnation tokens in bounded weak registry; retained native frame unmap/remap preserves retired identity and fresh frame receives new identity; original63 and diagnostic81 native checks, 26 Elm checks, 6 named Quint cases/1000 samples and unsafe lifetime-omission model detected; compiler/keyword failures and initial pair inventory preserved",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

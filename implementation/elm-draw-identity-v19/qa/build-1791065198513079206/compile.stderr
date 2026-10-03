@@ -1,0 +1,6 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/inputs/native/authority.cpp: In function ‘std::string {anonymous}::observe(eHyprCtlOutputFormat, std::string)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/build-1791065198513079206/inputs/native/authority.cpp:411:107: error: invalid operands of types ‘const char [73]’ and ‘const char*’ to binary ‘operator+’
+  411 |                 reply="{\"protocolVersion\":3,\"kind\":\"render-trace\",\"traceProtocol\":2,\"retained\":"+(held?"true":"false")+",\"binding\":"+binding(found->second)+",\"requestId\":"+quote(std::to_string(*requestId))+",\"outputGeneration\":"+quote(std::to_string(outputGeneration))+",\"frames\":"+renderTrace(held?retained:Render::SceneTrace::snapshots())+"}";
+      |                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~
+      |                       |                                                                                         |
+      |                       const char [73]                                                                           const char*

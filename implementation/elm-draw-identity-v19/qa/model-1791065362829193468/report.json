@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "scope": "Abstract draw identity capture and retirement; native authority reload/identity exhaustion and full scene gates remain separate",
+  "sourceSHA256": "f31ea21b0bed9e076e612757affe52094100b646047e6485fdfb3b3d939fe60f",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "identity.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'map' is redefined in module 'identity'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/qa/model-1791065362829193468/identity.qnt:5:9\\n  5:  action map=s'=if(s.live) s else {...s,live:true,next:s.next+1,current:s.next+1}\\n             ^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "identity.qnt": "f31ea21b0bed9e076e612757affe52094100b646047e6485fdfb3b3d939fe60f",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "84455862258e5ecb74c756472420994cb4f7f63a131ef1ec5f120d81e475e8f4"
+  }
+}
