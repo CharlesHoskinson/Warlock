@@ -1,0 +1,81 @@
+{
+  "passed": false,
+  "scope": "Native plugin and actual nullable-state Elm build; no native loading claim",
+  "inputs": {
+    "native/authority.cpp": "88fb57a2d281839dcf11e80f92da5166529575eccc18f01b2bedb1a20a1cde1e",
+    "adapter/endpoint.py": "0241e3eb5ead216276963073f52cb24c6c569b991d3e826f885147d08e934ba0",
+    "frontend/src/CounterChecks.elm": "c89bcec200fe70996e2f9c639b0cc9e793d6d7c92082c1ed967ebe20162db1b9",
+    "frontend/src/Observation.elm": "4e9cf8b7f3554ad36e2e914e62c392b07e564fba43d9a17e05345687c1c1239c",
+    "frontend/src/Observer.elm": "03d04b9cb4bab5747d34905217ce58b31d042455c677062585ffb54613a7b29c",
+    "frontend/src/Replay.elm": "6039e1adc28e8ef7a1cc194b41927efd2fa27f63f9b4ca4a09a613af0a014e43",
+    "frontend/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/build.py": "dcb2d122b6faac4d083bc41faad3c2286b4a88d241d5ca81286c8e51a6979fc8",
+    "qa/replay.cjs": "1fdf8e4942b263ae2a17d5b2e1281c4e94871388a3c61a5cbfd1415053789558",
+    "frontend/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "error": "RuntimeError('In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../Texture.hpp:4,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../Framebuffer.hpp:5,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/Transformer.hpp:5,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/Window.hpp:15,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/Compositor.hpp:11,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/inputs/native/authority.cpp:2:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::rawICC\u2019 [-Werror=missing-field-initializers]\\n  395 |     });\\n      |     ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringPrimaries\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringLuminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:395:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::icc\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::rawICC\u2019 [-Werror=missing-field-initializers]\\n  403 |     });\\n      |     ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringPrimaries\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringLuminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:403:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::icc\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::rawICC\u2019 [-Werror=missing-field-initializers]\\n  411 |     });\\n      |     ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringPrimaries\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringLuminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:411:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::icc\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::rawICC\u2019 [-Werror=missing-field-initializers]\\n  420 |     });\\n      |     ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringPrimaries\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringLuminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:420:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::icc\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::rawICC\u2019 [-Werror=missing-field-initializers]\\n  429 |     });\\n      |     ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringPrimaries\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringLuminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:429:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::icc\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::rawICC\u2019 [-Werror=missing-field-initializers]\\n  437 |     });\\n      |     ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringPrimaries\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringLuminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:437:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::icc\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::rawICC\u2019 [-Werror=missing-field-initializers]\\n  448 |     });\\n      |     ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringPrimaries\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::luminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::masteringLuminances\u2019 [-Werror=missing-field-initializers]\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include/hyprland/src/desktop/view/../../render/transformer/../../helpers/cm/ColorManagement.hpp:448:5: error: missing initializer for member \u2018NColorManagement::SImageDescription::icc\u2019 [-Werror=missing-field-initializers]\\ncc1plus: all warnings being treated as errors\\n')",
+  "commands": [
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "json-glib-1.0",
+        "pixman-1",
+        "libdrm",
+        "libinput",
+        "wayland-server",
+        "libeis-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "libs",
+      "command": [
+        "pkg-config",
+        "--libs",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "g++",
+        "-std=c++23",
+        "-O2",
+        "-fPIC",
+        "-shared",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/include",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/protocols",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/libdrm",
+        "-I/usr/include/libei-1.0",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/authority.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/inputs/native/authority.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-authority-v3/qa/build-1791048314712501379/elm-observation-authority.so",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 1
+    }
+  ]
+}
