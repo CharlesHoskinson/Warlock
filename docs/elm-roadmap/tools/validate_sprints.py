@@ -9,7 +9,7 @@ assert p['requirementsSHA256']==sha(root/'requirements.json')
 assert len(p['backlog'])==len(byid)==len({x['id'] for x in p['backlog']})
 seen=[]
 for s in p['sprints']:
- assert s['goal'] and s['deliverables'] and s['exitGate'] and s['durationWeeks']==2
+ assert s['goal'] and s['deliverables'] and s['exitGate'] and s['completion']=='exit-gate-driven'
  assert all(d in slots for d in s['dependsOn'])
  seen.extend(s['items'])
 assert len(seen)==len(set(seen)) and set(seen)==set(byid)
@@ -24,6 +24,7 @@ def visit(i,stack):
  assert i not in stack,'cyclic prerequisite: '+i
  for d in slots[i]['dependsOn']:visit(d,stack+[i])
 for i in slots:visit(i,[])
-assert p['capacity']['plannedMaximumEngineerWeeks']+p['capacity']['reservedEngineerWeeks']==p['capacity']['grossEngineerWeeks']
-result=dict(observedUTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),scope='Sprint plan traceability, dependency and capacity arithmetic; not story estimates or implementation acceptance',requirements=len(byid),acceptanceScenarios=sum(len(x['acceptanceScenarioIds']) for x in p['backlog']),mandatorySlots=16,conditionalSlots=7,passed=True,files=[dict(path=str(f.relative_to(root)),sha256=sha(f)) for f in [root/'requirements.json',root/'SPRINTS.md',root/'ROADMAP.md',root/'delivery/sprint-backlog.json',Path(__file__),root/'tools/build_sprints.py']])
+assert p['executionMode']=='AI-assisted outcome-driven build cycles'
+assert not any(k in p for k in ['capacity','cadenceWeeks','staffingAssumption'])
+result=dict(observedUTC=datetime.datetime.now(datetime.timezone.utc).isoformat(),scope='Sprint plan traceability, dependency and outcome-driven execution; not story estimates or implementation acceptance',requirements=len(byid),acceptanceScenarios=sum(len(x['acceptanceScenarioIds']) for x in p['backlog']),mandatorySlots=16,conditionalSlots=7,passed=True,files=[dict(path=str(f.relative_to(root)),sha256=sha(f)) for f in [root/'requirements.json',root/'SPRINTS.md',root/'ROADMAP.md',root/'delivery/sprint-backlog.json',Path(__file__),root/'tools/build_sprints.py']])
 (root/'delivery/validation.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

@@ -1,15 +1,9 @@
 {
-  "schema": 1,
+  "schema": 2,
   "requirementsSHA256": "c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146",
   "baselineCommit": "d99d677",
-  "cadenceWeeks": 2,
-  "staffingAssumption": "Three experienced implementers covering Elm/product, native/graphics and QA/integration; role names are not assigned people.",
-  "capacity": {
-    "grossEngineerWeeks": 6,
-    "plannedMaximumEngineerWeeks": 4.5,
-    "reservedEngineerWeeks": 1.5,
-    "note": "Assumes three full-time implementers; independent review availability and serial native QA further constrain capacity. Unestimated backlog is not a sprint commitment."
-  },
+  "executionMode": "AI-assisted outcome-driven build cycles",
+  "advanceWhen": "Required checks and exit gate pass; otherwise fix or record the blocker.",
   "sprints": [
     {
       "id": "S01",
@@ -19,9 +13,9 @@
       "deliverables": "Frozen source/ABI and case ledger, owners and original-deadline fixtures; project backlog and QA operating contract.",
       "exitGate": "Every inherited case has its original identity/oracle/deadline or a blocking missing-evidence entry; no historical CPU pass is relabeled native.",
       "dependsOn": [],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-001",
         "ELM-DEL-001",
@@ -46,9 +40,9 @@
       "dependsOn": [
         "S01"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-GNO-001",
         "ELM-GPU-002",
@@ -71,9 +65,9 @@
       "dependsOn": [
         "S02"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-002",
         "ELM-ARC-003",
@@ -113,9 +107,9 @@
       "dependsOn": [
         "S03"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-DEL-026",
         "ELM-DEL-027",
@@ -143,9 +137,9 @@
       "dependsOn": [
         "S04"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-006",
         "ELM-ARC-007",
@@ -189,9 +183,9 @@
       "dependsOn": [
         "S05"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-GNO-002",
         "ELM-GNO-003",
@@ -233,9 +227,9 @@
       "dependsOn": [
         "S06"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-DEL-009",
         "ELM-UI-004",
@@ -261,9 +255,9 @@
       "dependsOn": [
         "S07"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-017",
         "ELM-ARC-018",
@@ -291,9 +285,9 @@
       "dependsOn": [
         "S08"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-019",
         "ELM-REN-003",
@@ -316,9 +310,9 @@
       "dependsOn": [
         "S09"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-020",
         "ELM-GNO-008",
@@ -347,9 +341,9 @@
       "dependsOn": [
         "S10"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-DEL-028",
         "ELM-GPU-006",
@@ -375,9 +369,9 @@
       "dependsOn": [
         "S11"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-UI-005",
         "ELM-UI-020",
@@ -400,9 +394,9 @@
       "dependsOn": [
         "S12"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-KDE-008",
         "ELM-QA-020",
@@ -426,9 +420,9 @@
       "dependsOn": [
         "S13"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-023",
         "ELM-QA-017",
@@ -450,9 +444,9 @@
       "dependsOn": [
         "S14"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-027",
         "ELM-DEL-003",
@@ -479,9 +473,9 @@
       "dependsOn": [
         "S15"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "mandatory-shell",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-DEL-023",
         "ELM-DEL-024",
@@ -505,9 +499,9 @@
       "dependsOn": [
         "S06"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "conditional-compositor",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-028",
         "ELM-QA-027",
@@ -524,9 +518,9 @@
       "dependsOn": [
         "C00"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "conditional-compositor",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-ARC-029",
         "ELM-REN-024"
@@ -542,9 +536,9 @@
       "dependsOn": [
         "C01"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "conditional-compositor",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-REN-025"
       ]
@@ -559,9 +553,9 @@
       "dependsOn": [
         "C02"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "conditional-compositor",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-REN-026",
         "ELM-REN-027"
@@ -577,9 +571,9 @@
       "dependsOn": [
         "C03"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "conditional-compositor",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-REN-028",
         "ELM-REN-029"
@@ -595,9 +589,9 @@
       "dependsOn": [
         "C04"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "conditional-compositor",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-QA-028"
       ]
@@ -612,9 +606,9 @@
       "dependsOn": [
         "C05"
       ],
-      "durationWeeks": 2,
+      "completion": "exit-gate-driven",
       "track": "conditional-compositor",
-      "status": "proposed; not scheduled",
+      "status": "queued",
       "items": [
         "ELM-REN-030"
       ]
@@ -631,7 +625,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the report identifies every participating artifact; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -648,7 +642,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: only native authority mutates the application window; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -666,7 +660,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: both conform to the recorded schema; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -683,7 +677,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: no compositor action occurs and a reason is recorded; failure injection and artifact hashes included.",
       "acceptanceScenarioIds": [
@@ -701,7 +695,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the serialized request contains the full authority tuple; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -718,7 +712,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the new window remains unchanged; failure injection and artifact hashes included.",
       "acceptanceScenarioIds": [
@@ -736,7 +730,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: its state is Unknown rather than Committed; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -757,7 +751,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Dependency fixtures cover Pending, Refused, Cancelled, Unknown, wrong incarnation/generation and a matching Committed prerequisite.",
       "acceptanceScenarioIds": [
@@ -777,7 +771,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: only one mutation is recorded; failure injection and artifact hashes included.",
       "acceptanceScenarioIds": [
@@ -794,7 +788,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: 9 is discarded and the gap before 12 triggers reconciliation; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -811,7 +805,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the ready view receives the release in its original chord order; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -828,7 +822,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Controlled native interleavings at one defined linearization point; cancellation-before versus commit-before outcomes are distinct, acknowledged and resource-bounded.",
       "acceptanceScenarioIds": [
@@ -847,7 +841,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the deadline remains unchanged; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -864,7 +858,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: native truth is read before another mutation; failure injection and artifact hashes included.",
       "acceptanceScenarioIds": [
@@ -881,7 +875,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: memory remains bounded and effect refusal is explicit; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -900,7 +894,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: it uses reserved control capacity and is processed; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -917,7 +911,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: one authority serializes the transaction; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -934,7 +928,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the native family policy determines focus and hit order; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -951,7 +945,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the valid retained frame remains available without JSON pixels; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -968,7 +962,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: presentation is unproven until the native receipt; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -985,7 +979,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: separate native results and resource measurements are retained; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -1002,7 +996,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: roles and input masks precede frontend readiness; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -1019,7 +1013,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "All eight named host compatibility routes pass with native/AT evidence; a separate gate fixture verifies a missing/failed route blocks qualification.",
       "acceptanceScenarioIds": [
@@ -1043,7 +1037,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: navigation or capability access is denied; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -1060,7 +1054,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the plugin is not loaded and the mismatch is reported; failure injection and artifact hashes included.",
       "acceptanceScenarioIds": [
@@ -1077,7 +1071,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: old work is refused and effects await snapshot reconciliation; failure injection and artifact hashes included.",
       "acceptanceScenarioIds": [
@@ -1095,7 +1089,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: the accepted shell returns and drafts remain connected; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -1112,7 +1106,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: a separate scope and feasibility gate controls admission; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -1129,7 +1123,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserved scenario report with native or bridge trace showing: nested and hardware evidence precedes main-session use; artifact hashes and matching scenario receipts included.",
       "acceptanceScenarioIds": [
@@ -1146,7 +1140,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Diff archived hashes and inspect all inherited case mappings.",
       "acceptanceScenarioIds": [
@@ -1163,7 +1157,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Review phase ledger against staffed capacity and dependency graph.",
       "acceptanceScenarioIds": [
@@ -1180,7 +1174,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Rebuild with the manifest and reject one altered dependency hash.",
       "acceptanceScenarioIds": [
@@ -1197,7 +1191,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Compare SHA-256 manifests and retain differing build logs.",
       "acceptanceScenarioIds": [
@@ -1214,7 +1208,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Cross-check package files, SBOM components and license dispositions.",
       "acceptanceScenarioIds": [
@@ -1231,7 +1225,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Capture runtime loaded-library versions and native surface/IME/AT probes.",
       "acceptanceScenarioIds": [
@@ -1248,7 +1242,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Inspect support matrix; retain separate distro build and native verdicts.",
       "acceptanceScenarioIds": [
@@ -1265,7 +1259,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Compare filesystem manifests, owners and modes before and after rehearsal.",
       "acceptanceScenarioIds": [
@@ -1282,7 +1276,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Exercise taskbar-only selection, conflicting owners and restoration.",
       "acceptanceScenarioIds": [
@@ -1299,7 +1293,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Retain peer-credential traces for allowed and cross-user/replayed sessions.",
       "acceptanceScenarioIds": [
@@ -1318,7 +1312,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Fuzz bridge operations and confirm no spawned command or arbitrary file read.",
       "acceptanceScenarioIds": [
@@ -1336,7 +1330,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Inspect IPC and renderer memory/log fixtures for password absence.",
       "acceptanceScenarioIds": [
@@ -1353,7 +1347,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Run with network disabled plus attempted fetch/navigation probes.",
       "acceptanceScenarioIds": [
@@ -1370,7 +1364,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Retain CSP headers/policy and execution-negative probe reports.",
       "acceptanceScenarioIds": [
@@ -1387,7 +1381,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Inject invalid fields, interrupted writes and migration failure.",
       "acceptanceScenarioIds": [
@@ -1407,7 +1401,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Compare pre-upgrade and restored settings hashes in rollback drill.",
       "acceptanceScenarioIds": [
@@ -1424,7 +1418,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Inject identifiable synthetic secrets and scan collected logs.",
       "acceptanceScenarioIds": [
@@ -1441,7 +1435,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Kill renderer and authority separately; inspect epochs and effect receipts.",
       "acceptanceScenarioIds": [
@@ -1458,7 +1452,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Inject interruptions and compare tuple/settings/application inventories.",
       "acceptanceScenarioIds": [
@@ -1475,7 +1469,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Disable Elm startup and network, execute recovery and record session identity.",
       "acceptanceScenarioIds": [
@@ -1492,7 +1486,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Use protected qa_run.py; inspect exit status, empty clients and lease counts.",
       "acceptanceScenarioIds": [
@@ -1509,7 +1503,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Supply a deliberately mismatched pair and retain refusal receipt.",
       "acceptanceScenarioIds": [
@@ -1526,7 +1520,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Audit case identities, original deadlines and separate verdict columns.",
       "acceptanceScenarioIds": [
@@ -1543,7 +1537,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Runbook field/cadence validation and urgent/overdue-update tabletop; support admission fails if any required owner or numeric interval is missing.",
       "acceptanceScenarioIds": [
@@ -1562,7 +1556,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Retain flow observations and before/after application inventory.",
       "acceptanceScenarioIds": [
@@ -1579,7 +1573,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Capture engine diagnostics plus GPU submission/presentation evidence.",
       "acceptanceScenarioIds": [
@@ -1596,7 +1590,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Compare enabled/disabled adapter reports and whole-process latency budgets.",
       "acceptanceScenarioIds": [
@@ -1613,7 +1607,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Record adapter/device limits, loss injection, lease retirement and recovered frames.",
       "acceptanceScenarioIds": [
@@ -1630,7 +1624,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: their precedence and eligibility are explicitly recorded. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1647,7 +1641,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: neither list contains the source window. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1667,7 +1661,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: the permission does not restore the excluded window. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1684,7 +1678,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: the child remains above its owner without promoting the peer. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1701,7 +1695,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: no partial scene is published and the refusal is recorded. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1718,7 +1712,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: the visible top eligible surface receives input unless a recorded native exception applies. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1738,7 +1732,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: pin state persists and its dialog remains above it. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1755,7 +1749,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: the source receives no input and native retirement is evidenced. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1772,7 +1766,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen scene/model trace plus native paint and input receipts proving: the stale target receives no effect and reconciliation is recorded. Retain scenario identity and source/ABI hashes.",
       "acceptanceScenarioIds": [
@@ -1789,7 +1783,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Pinned engine/driver diagnostics plus a deterministic displayed workload on a nonsoftware device.",
       "acceptanceScenarioIds": [
@@ -1807,7 +1801,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Evidence ledger with four separate verdicts linked to executed probes.",
       "acceptanceScenarioIds": [
@@ -1824,7 +1818,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Origin/security-state probe, effective sandbox flags and denied remote navigation.",
       "acceptanceScenarioIds": [
@@ -1841,7 +1835,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Null-adapter, rejected-device and unsupported-feature fault reports.",
       "acceptanceScenarioIds": [
@@ -1859,7 +1853,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "WGSL validation/readback results plus output capture and backend classification.",
       "acceptanceScenarioIds": [
@@ -1876,7 +1870,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "IPC payload and resource-allocation traces over motion/reversal workload.",
       "acceptanceScenarioIds": [
@@ -1893,7 +1887,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Device-loss injection and generation/effect logs with no stale native mutation.",
       "acceptanceScenarioIds": [
@@ -1911,7 +1905,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native fence/import trace and copy bytes/counts on both GPU configurations.",
       "acceptanceScenarioIds": [
@@ -1928,7 +1922,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "All-backend-failure fault plus offline recovery/qualification report.",
       "acceptanceScenarioIds": [
@@ -1945,7 +1939,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Hardware profile manifest and controlled sample distributions including cross-GPU transfers.",
       "acceptanceScenarioIds": [
@@ -1962,7 +1956,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Revision-correlated native pixel/hit/focus trace shows one canonical commit.",
       "acceptanceScenarioIds": [
@@ -1979,7 +1973,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Policy matrix replay plus native overlap/fullscreen tests.",
       "acceptanceScenarioIds": [
@@ -1996,7 +1990,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Constraint replay and native modal pixel/hit observations.",
       "acceptanceScenarioIds": [
@@ -2013,7 +2007,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native inactive-special pixel, click and explicit-focus probes reject the hidden window.",
       "acceptanceScenarioIds": [
@@ -2030,7 +2024,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "State-race fault tests record matching revision and exclusion rationale.",
       "acceptanceScenarioIds": [
@@ -2047,7 +2041,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native minimize/overview tests show visible animation proxies do not steal input.",
       "acceptanceScenarioIds": [
@@ -2064,7 +2058,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native draft/modal tests record focus target and preserve unrelated drafts.",
       "acceptanceScenarioIds": [
@@ -2082,7 +2076,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Multi-output native pixel/hit matrix records explicit Windows-policy differences.",
       "acceptanceScenarioIds": [
@@ -2099,7 +2093,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Delayed-intent faults produce refusal/reconciliation without hidden-window focus.",
       "acceptanceScenarioIds": [
@@ -2116,7 +2110,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native pixel/hit/focus fixture reproducing the recorded Heroic-versus-terminal symptom with visibility, stack and generation receipts.",
       "acceptanceScenarioIds": [
@@ -2134,7 +2128,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native opaque overlap, input-transparent-region and modal-owner fixtures record one constrained scene revision, independent overlap pixels, input region/hit recipient and documented focus outcome; a Heroic-only run cannot qualify this requirement.",
       "acceptanceScenarioIds": [
@@ -2151,7 +2145,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Record original workspace identity, old/new scene and operation generations, live input candidate count, overlay retirement and stale-callback rejection through actual restore handoff.",
       "acceptanceScenarioIds": [
@@ -2169,7 +2163,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Compare archived SHA-256 manifests before and after; derivative manifest links every ancestor.",
       "acceptanceScenarioIds": [
@@ -2186,7 +2180,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Identity-set comparison is exactly 38/34/52; each original time origin and assertion remains linked.",
       "acceptanceScenarioIds": [
@@ -2203,7 +2197,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Timestamped case-34 observations and runner timeout show the original bound; a deliberately late completion fails.",
       "acceptanceScenarioIds": [
@@ -2220,7 +2214,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Requested and executed name sets match; non-Test names are executed; invariant traces are reported separately.",
       "acceptanceScenarioIds": [
@@ -2237,7 +2231,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Ledger validation rejects a native gate backed only by CPU or model results.",
       "acceptanceScenarioIds": [
@@ -2254,7 +2248,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Replay diff includes desired/pending/acknowledged state and emitted intent sequence with minimized counterexamples.",
       "acceptanceScenarioIds": [
@@ -2271,7 +2265,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Seeded property/fuzz runs exercise schema bounds, generations, revisions and epochs; native commit logs show rejection.",
       "acceptanceScenarioIds": [
@@ -2288,7 +2282,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Model-to-requirement coverage report plus exact named results and independent invariant traces.",
       "acceptanceScenarioIds": [
@@ -2312,7 +2306,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preflight receipts include socket connection, lstat/UID/mode and scope/core-limit checks; bad fixtures fail before launch.",
       "acceptanceScenarioIds": [
@@ -2329,7 +2323,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Serialized launch ledger and environment/config receipts prove nesting, X11 scope and protected settings.",
       "acceptanceScenarioIds": [
@@ -2349,7 +2343,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Ordered teardown receipts include normal exit status, helper ownership and module/client inventories.",
       "acceptanceScenarioIds": [
@@ -2366,7 +2360,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Killed helper fixture records abnormal status or unknown closure and fails the normal-exit gate.",
       "acceptanceScenarioIds": [
@@ -2383,7 +2377,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Before/after main-session identity and user-window inventory; no close/restart command targets user processes.",
       "acceptanceScenarioIds": [
@@ -2400,7 +2394,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Receipt-schema validator rejects missing tuple, time origin, exit evidence or verdict provenance.",
       "acceptanceScenarioIds": [
@@ -2417,7 +2411,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Combined regression manifest references matching tuple hashes for all native gates and immutable rerun ancestry.",
       "acceptanceScenarioIds": [
@@ -2434,7 +2428,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Registry/traceability/task scenario cross-check plus audit records including severity, correction and disposition.",
       "acceptanceScenarioIds": [
@@ -2451,7 +2445,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Application fixture matrix records versions, actions, native observations and failures; bounded stack proof remains separately scoped.",
       "acceptanceScenarioIds": [
@@ -2469,7 +2463,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Route receipts precede unchanged fixed-campaign inventory; original helper/worker/receipt/cursor bounds remain enforced.",
       "acceptanceScenarioIds": [
@@ -2486,7 +2480,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "AT/IME device and version matrix with observed announcements, braille output, composition/cancellation and motion traces.",
       "acceptanceScenarioIds": [
@@ -2507,7 +2501,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Hardware/display metadata, presentation timestamps and output-generation fault receipts; simulated outputs are separately labeled.",
       "acceptanceScenarioIds": [
@@ -2528,7 +2522,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Versioned budgets.json contains measured baseline, units, workload, hardware and approved thresholds; missing values block evaluation.",
       "acceptanceScenarioIds": [
@@ -2545,7 +2539,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Raw samples and reproducible aggregation for startup, input-to-present, switcher, previews and capture-to-first-frame.",
       "acceptanceScenarioIds": [
@@ -2562,7 +2556,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Whole-tree samples and long-running soak receipts compare all metrics with frozen budgets and expose resource bounds.",
       "acceptanceScenarioIds": [
@@ -2579,7 +2573,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Pinned-host runtime adapter/backend reports, real GPU render and readback plus native presentation on the actual display; API availability or hardware inventory alone cannot qualify.",
       "acceptanceScenarioIds": [
@@ -2596,7 +2590,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Injected device-loss/allocation faults record lease cancellation, retirement, recovery, readback correctness and visible-frame identity on the actual display.",
       "acceptanceScenarioIds": [
@@ -2613,7 +2607,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Forced software backend fixture records backend change and rejects accelerated verdict despite API success.",
       "acceptanceScenarioIds": [
@@ -2630,7 +2624,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Go/no-go packet maps representative compatibility fixtures, failures, costs and scope owner approval.",
       "acceptanceScenarioIds": [
@@ -2647,7 +2641,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "New tuple has full protocol/application/seat/output/security/recovery ledger and original parity mappings.",
       "acceptanceScenarioIds": [
@@ -2664,7 +2658,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Ledger diff retains all IDs and original time origins.",
       "acceptanceScenarioIds": [
@@ -2681,7 +2675,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "IPC schema audit and native allocation trace show no pixel payload.",
       "acceptanceScenarioIds": [
@@ -2698,7 +2692,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Source-stop trace plus independently sampled output pixels and release log.",
       "acceptanceScenarioIds": [
@@ -2715,7 +2709,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Address-reuse fault test rejects old lease and releases its resources.",
       "acceptanceScenarioIds": [
@@ -2732,7 +2726,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Trace schema and clock-correlation test identify each timestamp origin.",
       "acceptanceScenarioIds": [
@@ -2749,7 +2743,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native minimize/restore observation records workspace, family and geometry.",
       "acceptanceScenarioIds": [
@@ -2766,7 +2760,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frame-by-frame native capture identifies retained/live handoff without blank frames.",
       "acceptanceScenarioIds": [
@@ -2783,7 +2777,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Delayed capture and retry injections fail at the original deadline.",
       "acceptanceScenarioIds": [
@@ -2800,7 +2794,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Late helper/frame receipt fault proves no focus or restore after cancellation.",
       "acceptanceScenarioIds": [
@@ -2817,7 +2811,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native presentation sequence and geometry replay demonstrate continuity.",
       "acceptanceScenarioIds": [
@@ -2834,7 +2828,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native reduced-motion campaign compares final state and resources.",
       "acceptanceScenarioIds": [
@@ -2851,7 +2845,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Pressure test records bounded ownership counts and explicit refusal receipts.",
       "acceptanceScenarioIds": [
@@ -2868,7 +2862,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Fault/recovery packet records child exit status and zero owned resources.",
       "acceptanceScenarioIds": [
@@ -2885,7 +2879,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Decorated and out-of-base-popup pixel fixtures expose supported bounds.",
       "acceptanceScenarioIds": [
@@ -2906,7 +2900,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native committed-scene, overlap pixels, input region/transform and activation/modal receipts; explicit passthrough and no-activation exceptions are independently checked.",
       "acceptanceScenarioIds": [
@@ -2926,7 +2920,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Full pin campaign reports individual outcomes including genuine blocker cases.",
       "acceptanceScenarioIds": [
@@ -2943,7 +2937,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Fullscreen/pin/menu matrix independently records pixels, hit and focus.",
       "acceptanceScenarioIds": [
@@ -2960,7 +2954,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native family tests preserve drafts and distinguish input blockers from allows_input.",
       "acceptanceScenarioIds": [
@@ -2977,7 +2971,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Mixed-scale native screenshots and receipts confirm geometry revision changes.",
       "acceptanceScenarioIds": [
@@ -2994,7 +2988,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Transfer/hotplug race packet records one committed owner and correct geometry.",
       "acceptanceScenarioIds": [
@@ -3011,7 +3005,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "240 Hz hardware packet records frame gaps, latency quantiles and hardware configuration.",
       "acceptanceScenarioIds": [
@@ -3028,7 +3022,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Comparison packet separates unsupported GPU/presentation spans and measured metrics.",
       "acceptanceScenarioIds": [
@@ -3045,7 +3039,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Reviewed feasibility decision records staffing, excluded scope and native authority.",
       "acceptanceScenarioIds": [
@@ -3062,7 +3056,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Nested client matrix covers Brave, GTK, Qt and X11 lifecycle and modality.",
       "acceptanceScenarioIds": [
@@ -3079,7 +3073,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Hardware campaign logs modes, input, suspend/resume and hotplug recovery.",
       "acceptanceScenarioIds": [
@@ -3096,7 +3090,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Native multilingual preedit/commit tests cover GTK, Qt, browser and Xwayland support.",
       "acceptanceScenarioIds": [
@@ -3113,7 +3107,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Consent, denial, revocation and cross-session capture tests record no unauthorized frames.",
       "acceptanceScenarioIds": [
@@ -3130,7 +3124,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Malformed-client fuzzing and lock/input/capture isolation results identify residual risks.",
       "acceptanceScenarioIds": [
@@ -3147,7 +3141,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Injected frontend stalls preserve native frame/input progress and bounded ownership.",
       "acceptanceScenarioIds": [
@@ -3164,7 +3158,7 @@
       "ownerRole": "Native compositor lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Recovery drill logs shell-only restart separately from compositor crash and fallback login.",
       "acceptanceScenarioIds": [
@@ -3181,7 +3175,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Continuous unrelated-window-motion fixture plus target-invalidated control; valid activation commits after safe dependency revalidation and invalid target is refused.",
       "acceptanceScenarioIds": [
@@ -3199,7 +3193,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected lock fixture with independent output observation and rejected capture receipts.",
       "acceptanceScenarioIds": [
@@ -3216,7 +3210,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Queued-completion/lock, permission-revocation and session-replacement races with publication/generation/pixel receipts.",
       "acceptanceScenarioIds": [
@@ -3235,7 +3229,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Unlock-before-late-callback, destroyed-source and revoked-lease fixtures; ownership ledger distinguishes private retention from presentation rights.",
       "acceptanceScenarioIds": [
@@ -3254,7 +3248,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Registry/task/traceability bijection and explicit nonempty role mapping with separate acceptance reviewer.",
       "acceptanceScenarioIds": [
@@ -3271,7 +3265,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Document and supporting-evidence manifests with exact source hashes, crawl closure/failure counts and body/archive integrity verification.",
       "acceptanceScenarioIds": [
@@ -3288,7 +3282,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3305,7 +3299,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3322,7 +3316,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3339,7 +3333,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3356,7 +3350,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3373,7 +3367,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3390,7 +3384,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3407,7 +3401,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3424,7 +3418,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3441,7 +3435,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3458,7 +3452,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3475,7 +3469,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3492,7 +3486,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3509,7 +3503,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3526,7 +3520,7 @@
       "ownerRole": "Performance qualification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3543,7 +3537,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3560,7 +3554,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3577,7 +3571,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3594,7 +3588,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3611,7 +3605,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3628,7 +3622,7 @@
       "ownerRole": "Native security lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3645,7 +3639,7 @@
       "ownerRole": "Release integration lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3662,7 +3656,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3679,7 +3673,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3696,7 +3690,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3713,7 +3707,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Protected native or protocol fixture with explicit positive/negative receipts, source tuple and frozen deadline.",
       "acceptanceScenarioIds": [
@@ -3730,7 +3724,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Independent named fixture receipts with native scene/protocol traces, artifact hashes and explicit pass/fail verdicts.",
       "acceptanceScenarioIds": [
@@ -3748,7 +3742,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Independent named fixture receipts with native scene/protocol traces, artifact hashes and explicit pass/fail verdicts.",
       "acceptanceScenarioIds": [
@@ -3765,7 +3759,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Independent named fixture receipts with native scene/protocol traces, artifact hashes and explicit pass/fail verdicts.",
       "acceptanceScenarioIds": [
@@ -3782,7 +3776,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
       "acceptanceScenarioIds": [
@@ -3799,7 +3793,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
       "acceptanceScenarioIds": [
@@ -3816,7 +3810,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
       "acceptanceScenarioIds": [
@@ -3833,7 +3827,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
       "acceptanceScenarioIds": [
@@ -3850,7 +3844,7 @@
       "ownerRole": "Native host lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Typed compiler checks, deterministic replay and independent boundary fixtures with source hashes; native behavior qualified separately.",
       "acceptanceScenarioIds": [
@@ -3867,7 +3861,7 @@
       "ownerRole": "Native authority lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -3886,7 +3880,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -3906,7 +3900,7 @@
       "ownerRole": "Elm policy lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -3927,7 +3921,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -3949,7 +3943,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -3970,7 +3964,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -3991,7 +3985,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4022,7 +4016,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4041,7 +4035,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4066,7 +4060,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4092,7 +4086,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4114,7 +4108,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4138,7 +4132,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4159,7 +4153,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
       "acceptanceScenarioIds": [
@@ -4179,7 +4173,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
       "acceptanceScenarioIds": [
@@ -4198,7 +4192,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
       "acceptanceScenarioIds": [
@@ -4215,7 +4209,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
       "acceptanceScenarioIds": [
@@ -4234,7 +4228,7 @@
       "ownerRole": "Graphics lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
       "acceptanceScenarioIds": [
@@ -4253,7 +4247,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
       "acceptanceScenarioIds": [
@@ -4271,7 +4265,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
       "acceptanceScenarioIds": [
@@ -4289,7 +4283,7 @@
       "ownerRole": "Verification lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Frozen threshold/policy plus independently observed named fixtures, native counters or user/AT records as applicable; hashes and failure outcomes retained.",
       "acceptanceScenarioIds": [
@@ -4307,7 +4301,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Review signed inventory against source paths; no unassigned surface.",
       "acceptanceScenarioIds": [
@@ -4324,7 +4318,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: first icon begins at the configured left inset on each output.",
       "acceptanceScenarioIds": [
@@ -4341,7 +4335,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: only eligible entries appear and launches preserve recorded arguments.",
       "acceptanceScenarioIds": [
@@ -4358,7 +4352,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: both identities retain the chosen relative order.",
       "acceptanceScenarioIds": [
@@ -4375,7 +4369,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: three entries appear and only selected incarnation receives activation.",
       "acceptanceScenarioIds": [
@@ -4392,7 +4386,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: entry remains present with historical preview label.",
       "acceptanceScenarioIds": [
@@ -4409,7 +4403,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: fallback shows correct title and icon with no unrelated pixels.",
       "acceptanceScenarioIds": [
@@ -4426,7 +4420,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: native receipt confirms restore and workspace membership has not become scratchpad.",
       "acceptanceScenarioIds": [
@@ -4443,7 +4437,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: attention indicator differs from active indicator in pixels and accessible state.",
       "acceptanceScenarioIds": [
@@ -4460,7 +4454,7 @@
       "ownerRole": "Elm presentation lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: two declared actions appear and unsupported actions are absent.",
       "acceptanceScenarioIds": [
@@ -4478,7 +4472,7 @@
       "ownerRole": "Elm policy lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: selection advances then returns within the same frozen order.",
       "acceptanceScenarioIds": [
@@ -4495,7 +4489,7 @@
       "ownerRole": "Elm policy lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: one resolution occurs and no switcher remains open.",
       "acceptanceScenarioIds": [
@@ -4512,7 +4506,7 @@
       "ownerRole": "Elm policy lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: switcher closes and focus is unchanged.",
       "acceptanceScenarioIds": [
@@ -4529,7 +4523,7 @@
       "ownerRole": "Elm policy lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: reused address is never activated as the closed window.",
       "acceptanceScenarioIds": [
@@ -4546,7 +4540,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: native modal target or terminal activates and draft content remains intact.",
       "acceptanceScenarioIds": [
@@ -4564,7 +4558,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: displayed pin/MAX state agrees with native state and visible hit target.",
       "acceptanceScenarioIds": [
@@ -4581,7 +4575,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: groups match native membership and active workspace is named.",
       "acceptanceScenarioIds": [
@@ -4598,7 +4592,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: accepted transfer updates membership; refusal retains workspace 1.",
       "acceptanceScenarioIds": [
@@ -4617,7 +4611,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: accepted placement matches half work area within native rounding tolerance.",
       "acceptanceScenarioIds": [
@@ -4634,7 +4628,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: old generation geometry is never committed.",
       "acceptanceScenarioIds": [
@@ -4651,7 +4645,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: exactly one gesture ends and no shell surface steals the drag.",
       "acceptanceScenarioIds": [
@@ -4668,7 +4662,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: recorded transitions match approved reduced-motion profile.",
       "acceptanceScenarioIds": [
@@ -4685,7 +4679,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: each surface can be opened, operated and dismissed without pointer events.",
       "acceptanceScenarioIds": [
@@ -4711,7 +4705,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: focus follows menu order and returns to original eligible target.",
       "acceptanceScenarioIds": [
@@ -4728,7 +4722,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: inspector and Orca observe matching name, role, selection and focus.",
       "acceptanceScenarioIds": [
@@ -4745,7 +4739,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Preserve native accessibility trace, speech transcript and braille device or approved emulator output.",
       "acceptanceScenarioIds": [
@@ -4762,7 +4756,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: labels and focus remain visible and every action retains a hit target.",
       "acceptanceScenarioIds": [
@@ -4779,7 +4773,7 @@
       "ownerRole": "Accessibility lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: one committed query appears and preedit is not dispatched as a launch.",
       "acceptanceScenarioIds": [
@@ -4797,7 +4791,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: one request occurs and refused launch displays an error.",
       "acceptanceScenarioIds": [
@@ -4815,7 +4809,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: valid preference survives and invalid scale is rejected.",
       "acceptanceScenarioIds": [
@@ -4832,7 +4826,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Valid/expired/reused notification identity fixtures with exactly-once current dispatch and no stale producer action.",
       "acceptanceScenarioIds": [
@@ -4851,7 +4845,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: network control indicates unavailable and remaining controls show observed state.",
       "acceptanceScenarioIds": [
@@ -4868,7 +4862,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: existing explorer is reused at requested collection; no ops.sh semantics change.",
       "acceptanceScenarioIds": [
@@ -4885,7 +4879,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "conditional",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Elm replay assertion and isolated native recording: collision suffix and authorization behavior match spec with no destructive deletion.",
       "acceptanceScenarioIds": [
@@ -4902,7 +4896,7 @@
       "ownerRole": "Desktop experience lead",
       "verifierRole": "Independent acceptance reviewer",
       "priority": "must",
-      "estimate": "unestimated; refine before sprint commitment",
+      "execution": "implement the next smallest demonstrable slice",
       "status": "backlog",
       "verification": "Review hash-bound native evidence and preserve failures; CPU/model success alone cannot satisfy this gate.",
       "acceptanceScenarioIds": [

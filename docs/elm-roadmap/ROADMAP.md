@@ -29,7 +29,7 @@ The optional compositor track includes native Wayland/Xwayland compatibility, se
 
 ## Sprint delivery
 
-[Sprint plan](SPRINTS.md) decomposes the mandatory phases into 16 proposed two-week delivery slots, with separate optional compositor slots. The [machine backlog](delivery/sprint-backlog.json) maps all 242 requirements and 417 acceptance scenarios exactly once, retaining owners and independent verifier roles. Staffing, estimates and capacity must be refined before commitment; dates and completed gates are not inferred from slot numbers. This is a delivery-planning derivative of the frozen reviewed requirements; the original audit and final-plan manifests remain unchanged.
+[Sprint plan](SPRINTS.md) decomposes the mandatory phases into 16 outcome-driven work packages, with separate optional compositor slots. The [machine backlog](delivery/sprint-backlog.json) maps all 242 requirements and 417 acceptance scenarios exactly once, retaining owners and independent verifier roles. Implement small runnable slices, check them, review results and advance when acceptance gates pass. Cycle numbers carry no duration or staffing forecast. This is a delivery-planning derivative of the frozen reviewed requirements; the original audit and final-plan manifests remain unchanged.
 
 ## Workstreams and ownership
 
@@ -42,23 +42,24 @@ The optional compositor track includes native Wayland/Xwayland compatibility, se
 | Verification | Independent QA/formal lead | Quint models, property tests, protected native campaigns, evidence closure |
 | Release/integration | Omarchy integration lead | Dependency/ABI manifests, supervised services, feature selection, rollback |
 
-These are staffing roles, not claims that six people are assigned. With one developer, work follows the dependency order. With three experienced engineers, policy/view work can run alongside host integration after the protocol contract stabilizes; native GUI campaigns remain serialized by the protected QA owner.
+These roles identify responsibilities for implementation and review. Independent coding, model and host experiments can progress in parallel against stable interfaces; native GUI campaigns remain serialized.
 
 ## Phases, gates and dependencies
 
-| Phase | Objective and concrete deliverables | Dependencies | Exit evidence | Rough effort |
-| --- | --- | --- | --- | --- |
-| P0 | Freeze baseline, inventory, protocol proposal, workloads and compatibility matrix; establish budgets; run an independent existing-compositor layering diagnosis/qualification track | Research and preserved archive | Reviewed manifests, original case map, measured baseline and frozen budget sheet | 2–4 engineer-weeks |
-| P1 | Isolated GTK/WebKit and comparative Qt host spikes; Elm HTML layer surface, bridge, focus/IME/popup routing and host crash recovery | P0 | Native host surface-role proof; measured startup/idle/input latency; selected host decision | 4–8 engineer-weeks |
-| P2 | Elm policy model, versioned event/intent/receipt contract, recorded-observation replay, stale/cancel/restart faults | P0 contract; P1 transport before native effects | Named/fuzz/Quint evidence; replay equivalence; native effect-boundary rejection | 4–8 engineer-weeks |
-| P3 | Full Elm taskbar and switcher vertical slice; desktop metadata, groups, actions, global Alt chord routing, feature-selectable integration | P1 + P2 | Taskbar/switcher native routes including release-before-open and unchanged/cancelled/stale paths | 4–8 engineer-weeks |
-| P4 | Minimized previews, retained frames, family capture, minimize/restore motion, reversal and capture retirement | P2; P3 UI consumer | Original restore baseline38/fault34 plus source-stop/family/output proofs at original deadlines | 6–12 engineer-weeks |
-| P5 | Complete shell experience: Task View, snap/workspaces, launcher/menus, settings/themes, accessibility/IME/multi-output and native window-policy parity | P3; previews/motion depend on P4 | Explicit UX matrix, original pin/input/popup/drag cases, AT and hardware evidence | 6–12 engineer-weeks |
-| P6 | Coherent regression tuple, performance qualification, packaging/license review, reversible activation and rollback drills | P4 + P5 and all mandatory requirements accepted | One frozen source/runtime/ABI pair with full gate ledger; release and rollback receipts | 4–8 engineer-weeks |
-| P7 | Optional compositor feasibility: candidate substrate, protocol/application inventory, scope/funding decision and isolated baseline | P1–P2 evidence; separate scope decision, independent of shell release | Native proof of representative Wayland/Xwayland applications; explicit go/no-go | 4–8 engineer-weeks |
-| P8 | Optional native compositor implementation with Elm policy; full compatibility, capture, outputs, seat and release qualification | P7 go decision; separately staffed plan | Equivalent mandatory parity and full new compositor compatibility gates | 40–100+ engineer-weeks |
+| Phase | Objective and concrete deliverables | Dependencies | Exit evidence |
+| --- | --- | --- | --- |
+| P0 | Freeze baseline, inventory, protocol proposal, workloads and compatibility matrix; establish budgets; run an independent existing-compositor layering diagnosis/qualification track | Research and preserved archive | Reviewed manifests, original case map, measured baseline and frozen budget sheet |
+| P1 | Isolated GTK/WebKit and comparative Qt host spikes; Elm HTML layer surface, bridge, focus/IME/popup routing and host crash recovery | P0 | Native host surface-role proof; measured startup/idle/input latency; selected host decision |
+| P2 | Elm policy model, versioned event/intent/receipt contract, recorded-observation replay, stale/cancel/restart faults | P0 contract; P1 transport before native effects | Named/fuzz/Quint evidence; replay equivalence; native effect-boundary rejection |
+| P3 | Full Elm taskbar and switcher vertical slice; desktop metadata, groups, actions, global Alt chord routing, feature-selectable integration | P1 + P2 | Taskbar/switcher native routes including release-before-open and unchanged/cancelled/stale paths |
+| P4 | Minimized previews, retained frames, family capture, minimize/restore motion, reversal and capture retirement | P2; P3 UI consumer | Original restore baseline38/fault34 plus source-stop/family/output proofs at original deadlines |
+| P5 | Complete shell experience: Task View, snap/workspaces, launcher/menus, settings/themes, accessibility/IME/multi-output and native window-policy parity | P3; previews/motion depend on P4 | Explicit UX matrix, original pin/input/popup/drag cases, AT and hardware evidence |
+| P6 | Coherent regression tuple, performance qualification, packaging/license review, reversible activation and rollback drills | P4 + P5 and all mandatory requirements accepted | One frozen source/runtime/ABI pair with full gate ledger; release and rollback receipts |
+| P7 | Optional compositor feasibility: candidate substrate, protocol/application inventory, scope/funding decision and isolated baseline | P1–P2 evidence; separate scope decision, independent of shell release | Native proof of representative Wayland/Xwayland applications; explicit go/no-go |
+| P8 | Optional native compositor implementation with Elm policy; full compatibility, capture, outputs, seat and release qualification | P7 go decision; separately staffed plan | Equivalent mandatory parity and full new compositor compatibility gates |
 
-The integrated estimates use conservative phase envelopes after reconciling author contributions and audit scope: shared bridge/policy work is counted once; P0 adds independent native layering qualification; P1/P2/P3 reserve integration/security/AT work; P4/P6 use graphics/qualification ranges; optional P7/P8 use the native-compositor ranges. ROADMAP.md is the authoritative effort ledger. Individual contribution estimates are superseded inputs, not alternative delivery commitments. Effort estimates are planning ranges, not measurements or dates. The mandatory phases sum to roughly 30–60 engineer-weeks before contingency; integration and hardware/accessibility findings can extend that range. These estimates assume experienced Elm and native Wayland engineers, access to target hardware and reuse of validated native authority/capture code. Three engineers do not divide the calendar duration by three because host, protocol, capture and serial acceptance form the critical path. Reserve 25–40% contingency after P0 resolves dependency inventory. Re-estimate at P1 host choice and P4 capture proof; stop rather than conceal a failed feasibility gate.
+Delivery uses AI-assisted build cycles. Previous human staffing and engineer-week estimates are superseded; historical audit packets remain unchanged. Progress is measured by runnable behavior, resolved counterexamples and accepted native evidence. Revisit implementation choices when host or capture experiments fail. Original runtime acceptance deadlines remain binding.
+
 
 ```mermaid
 flowchart LR

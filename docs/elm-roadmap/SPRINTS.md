@@ -1,16 +1,16 @@
-# Sprint delivery plan
+# Build cycles
 
-Planning baseline: `c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146` (242 requirements, 417 scenarios), architecture commit `d99d677`. Every requirement has one primary delivery slot and its unchanged OpenSpec acceptance scenario IDs in [sprint-backlog.json](delivery/sprint-backlog.json). All items remain backlog; prior model experiments do not complete implementation stories.
+Baseline: `c7c80d43043f20169140a2ce968d4a75c2140a9f92c7e753283d7ce36b844146` (242 requirements, 417 scenarios). The [backlog](delivery/sprint-backlog.json) preserves each requirement, owner and acceptance scenario. S01–S16 are work packages; each is implemented through small runnable slices.
 
-## Cadence and capacity
+## Build loop
 
-Use two-week sprints with planning, a midpoint risk review, a working-demo/review and a retrospective. Dates start only after staffing and Sprint 1 readiness are settled. The planning assumption is three experienced implementers covering Elm/product, native/graphics and QA/integration, with independent verification available. Six gross engineer-weeks per sprint permits at most 4.5 planned engineer-weeks; reserve 1.5 for investigation, integration and defects. These are capacity limits, not estimates of the unrefined stories. One developer requires a fresh forecast; do not divide work by agent count.
+Pick the next unblocked slice, implement it, compile it, run the relevant Quint/replay checks, exercise native behavior where required, and show the result. Fix failures immediately. Move on when the evidence passes. There are no calendar durations, staffing forecasts, story points or meeting cadence attached to these cycles.
 
-Sixteen mandatory delivery slots describe a nominal 32-week sequence under those assumptions, not a completion promise. The authoritative roadmap range remains 30–60 engineer-weeks before 25–40% contingency. Capacity reserves and roadmap contingency are overlapping allowances, not two separately multiplied promises. Record estimates and staffing in planning, then forecast from actual completed work. A slot can require additional sprints; carryover never relaxes its gate. P1 host and P4 capture decisions trigger explicit re-estimation.
+Use AI to write code, explore alternatives, produce fixtures and review changes. Parallelize independent work only after interfaces are clear; native GUI campaigns remain serialized. Keep one coherent source/ABI tuple and preserve original acceptance deadlines.
 
-## Sprint sequence
+## Work packages
 
-| Slot | Goal | Prerequisite | Requirement items |
+| Cycle | Outcome | Prerequisite | Requirements |
 | --- | --- | --- | --- |
 | S01 | Baseline and inherited acceptance | Baseline reviewed | 11 |
 | S02 | Product policy and measured budgets | S01 | 9 |
@@ -36,29 +36,25 @@ Sixteen mandatory delivery slots describe a nominal 32-week sequence under those
 | C05 | Optional compositor compatibility qualification | C04 | 1 |
 | C06 | Optional compositor hardware and cutover | C05 | 1 |
 
-## Planning and acceptance rules
+## Execution rules
 
-Before commitment, split large requirement stories into implementation, experiment and acceptance subtasks; estimate them with the responsible engineer, list dependencies and fit the selected work within capacity. The complete slot backlog is a scope queue, not a demand to finish every listed item in two weeks. Story count is not effort. The requirement owner remains accountable even when multiple roles implement subtasks.
+Start coding as soon as a slice has a clear oracle, its dependencies and a runnable fixture. Split broad requirements into small experiments and implementations as needed. Each review shows working behavior and exact check results. Update the backlog with accepted, partial, failed or blocked outcomes.
 
-Definition of ready: stable requirement/scenario oracle, named owner and independent verifier, estimate and dependencies, available hardware/fixtures, and a concrete demo. Experiments have a timebox and an evidence-based decision; a failed feasibility result is useful evidence but does not mark the requirement done. Sprint 1 can begin without downstream numeric budgets; Sprint 2 must freeze those before candidate qualification.
+Done means reviewed code, relevant compiler/replay/fuzz/Quint checks, mapped native acceptance where required, source/ABI receipts and safe recovery. Model checks do not substitute for actual rendering, input or GPU evidence. Conditional cases require an explicit applicability decision.
 
-Definition of done: reviewed implementation, applicable compiler/replay/fuzz/Quint checks, all mapped acceptance scenarios at the required evidence level, source/runtime/ABI hashes, retained failures and exit/retirement receipts, documentation and rollback/config migration where applicable. Mark done only when independently accepted; blocked, failed, partial and deferred are distinct states. Conditional cases need an applicability decision and evidence, never an assumed pass.
+Develop typed Elm reducers and Quint models with each feature. Replay counterexamples as messages; retain failures. Accessibility, privacy and resource bounds belong in each slice. S14 adds complete-system checks.
 
-Formal models and pure Elm reducers are developed with each feature. Preserve counterexamples and replay them as typed message fixtures. UI/UX, accessibility, privacy and bounded resource behavior are part of each slice; S14 adds complete-system qualification rather than postponing them until the end. Native GUI runs remain serial through protected QA, while CPU work can run independently.
+Host selection includes a minimal accessibility probe; complete taskbar/switcher semantics close in S08. IME starts in the minimal host and reruns in actual fields. S08 proves proxy handoff with a deterministic fixture; S09–S11 prove actual capture and restore.
 
-Host selection includes a minimal accessibility-tree probe in S04; complete taskbar/switcher semantics close in S08 and all surfaces in S14. IME begins on the minimal field in S04 and reruns on actual launcher/settings fields in S12/S14. S08 validates proxy handoff using an isolated deterministic fixture; S09–S11 qualify actual retained family captures. Packaging foundations may be implemented early, but release requirements close only after their S15/S16 evidence.
+## Dependencies
 
-No sprint needs a main-desktop restart to count as a demo. Demonstrate isolated/nested candidates with representative apps and preserved drafts. Production activation occurs only after the final acceptance packet and the session authorization contract are satisfied.
+Listed prerequisites constrain acceptance, not every line of coding. Pure Elm prototypes and native layering diagnosis can progress independently while host experiments run. Keep shared interfaces stable and serialize native campaigns. Hardware checks remain measured gates.
 
-## Dependency and scope management
+Record decisions and blockers as they arise. A failed experiment guides the next implementation; it does not complete an acceptance requirement. New requirements get EARS/OpenSpec scenarios and backlog mappings.
 
-Default execution follows the listed prerequisites; no host-dependent effect work commits before host qualification. Product/CPU prototyping and native layering diagnosis may run earlier against frozen contracts, without claiming later delivery gates. Replan parallel lanes only when staffing, interface readiness and serial QA capacity justify it. Do not unlock a successor merely because its predecessor reached a date.
+C00 explores compositor feasibility independently of the mandatory shell. C01–C06 are optional work packages, subdivided as experiments reveal the actual implementation. Passing a prototype does not complete a compositor. A no-go leaves the shell on Hyprland.
 
-Maintain a dependency/decision log with host choice, native preview route, hardware/AT availability and inherited case recovery. At each review publish planned versus accepted scope, remaining gates, defects, decisions and next-sprint capacity. After two sprints forecast using observed throughput and cycle time; keep estimates for large integration and native campaigns explicit. New requirements get EARS/OpenSpec scenarios and backlog mapping before being accepted into a sprint.
-
-C00 is optional feasibility after S06 and may run alongside later shell work only with separate capacity. C01–C06 are initial two-week discovery/implementation slots for separately authorized compositor work, not a six-sprint replacement estimate. P8 remains 40–100+ engineer-weeks and must be expanded into additional slices after C00. If implementation or compatibility does not fit a slot, add follow-on sprints with preserved acceptance mappings; do not declare a compositor delivered from a prototype. No-go leaves mandatory shell release on Hyprland.
-
-## Per-sprint backlog and review gates
+## Cycle backlog and exit gates
 
 ### S01 — Baseline and inherited acceptance
 
@@ -555,6 +551,6 @@ Demo: show the stated behavior or experiment outcome with matching acceptance re
 
 - [ ] **ELM-REN-030** — Stage nested then sacrificial hardware sessions; preserve user drafts before cutover. Owner: Native compositor lead; verifier: Independent acceptance reviewer. Acceptance: 1 unchanged scenario(s) in the machine backlog.
 
-## First planning meeting
+## Start here
 
-Start with S01: verify the existing archive and original campaign definitions; name the accountable implementers/verifier; refine and estimate its baseline/ledger stories; select the capacity-fitting subset; publish the sprint goal and review demo. Keep all unrecovered legacy cases visibly blocked. S02 preparation may collect measurements, but candidate host selection waits for frozen budgets and policy.
+S01: verify source/ABI lineage and recover the original native case definitions. Build runnable fixtures as cases are recovered; keep missing evidence blocked. In parallel, prepare the minimal Elm host and canonical-scene experiments against existing contracts. Freeze measured budgets before host qualification.
