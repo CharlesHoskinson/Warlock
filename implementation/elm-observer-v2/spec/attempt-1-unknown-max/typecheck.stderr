@@ -1,0 +1,51 @@
+Running as unit: qa-harness-efa629b3a1294873bfa051ae33169bf3.scope; invocation ID: 6245a07408604d96b5572b0310cdfc24
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt:8:62
+  8:   pure def block(t, n) = if (t.phase == "Gap") { ...t, floor:t.floor.max(n), effects:0 }
+                                                                  ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt:9:30
+  9:     else issue({ ...t, floor:t.floor.max(n) }, "Gap")
+                                  ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt:44:43
+  44:     attach(1), attach(2), delta(s.floor+1,s.rev.max(0)+1,0,s.epoch),
+                                                ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt:45:21
+  45:     delta(s.floor+2,s.rev.max(0)+2,1,s.epoch), delta(0,0,0,1),
+                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt:46:22
+  46:     snapshot(s.floor,s.rev.max(0)+1,s.pending,0,s.epoch),
+                           ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt:47:14
+  47:     snapshot(s.floor.max(1)-1,0,s.pending,1,s.epoch),
+                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt:48:24
+  48:     snapshot(s.floor+1,s.rev.max(0)+1,s.request,1,2),
+                             ^^^^^^^^^^^^
+
+error: parsing failed

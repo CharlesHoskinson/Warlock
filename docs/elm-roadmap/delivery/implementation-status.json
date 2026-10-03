@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-shell-v1",
-  "status": "fixture-only host slice implemented; production gates pending",
+  "activeSlice": "implementation/elm-observer-v2",
+  "status": "Fixture native host and reliable pure Elm observation policy implemented; authenticated native integration and production gates pending",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -10,7 +10,9 @@
     "ELM-ARC-022",
     "ELM-TEA-001",
     "ELM-TEA-002",
-    "ELM-TEA-005"
+    "ELM-TEA-005",
+    "ELM-ARC-010",
+    "ELM-REV-008"
   ],
   "completedRequirementIds": [],
   "observedResults": {
@@ -21,7 +23,18 @@
       "layer"
     ],
     "architectureQuintNamedTests": 29,
-    "architectureSampledTraces": 3000
+    "architectureSampledTraces": 3000,
+    "observerV2": {
+      "elmReplayCases": 252,
+      "losslessCounterChecks": 110,
+      "quintNamedTests": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "quintToElmReplayTraces": 13,
+      "quintToElmReplayTransitions": 81,
+      "compiledUnsafeMutantsDetected": 6,
+      "evidence": "implementation/elm-observer-v2/qa/slice-manifest.json"
+    }
   },
-  "next": "Authenticated coherent read-only observations, actual GPU/budget probes and native input/IME/AT qualification before effect admission."
+  "next": "Bind the pure observer to authenticated coherent compositor observations; recover unchanged native campaign oracles and qualify actual GPU/budget/input/IME/AT behavior before native effect admission."
 }

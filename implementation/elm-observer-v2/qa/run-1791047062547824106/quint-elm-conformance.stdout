@@ -1,0 +1,73 @@
+{
+  "scope": "Quint ITF traces replayed through actual compiled Observer.update at every state transition",
+  "passed": false,
+  "traceCount": 13,
+  "stepCount": 13,
+  "results": [
+    {
+      "name": "named-conflictingContentTest-10.itf.json",
+      "passed": false,
+      "error": "named-conflictingContentTest-10.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-contiguousTest-0.itf.json",
+      "passed": false,
+      "error": "named-contiguousTest-0.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-disconnectedTest-9.itf.json",
+      "passed": false,
+      "error": "named-disconnectedTest-9.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-duplicateTest-7.itf.json",
+      "passed": false,
+      "error": "named-duplicateTest-7.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-gapTest-1.itf.json",
+      "passed": false,
+      "error": "named-gapTest-1.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-lateDeltaTest-2.itf.json",
+      "passed": false,
+      "error": "named-lateDeltaTest-2.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-malformedTest-11.itf.json",
+      "passed": false,
+      "error": "named-malformedTest-11.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-oldResponseTest-3.itf.json",
+      "passed": false,
+      "error": "named-oldResponseTest-3.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-rebindTest-8.itf.json",
+      "passed": false,
+      "error": "named-rebindTest-8.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-recoveryTest-4.itf.json",
+      "passed": false,
+      "error": "named-recoveryTest-4.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-revisionTest-6.itf.json",
+      "passed": false,
+      "error": "named-revisionTest-6.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "named-wrongEpochTest-5.itf.json",
+      "passed": false,
+      "error": "named-wrongEpochTest-5.itf.json step 0 effects\n\n1 !== '1'\n"
+    },
+    {
+      "name": "sample-0.itf.json",
+      "passed": false,
+      "error": "sample-0.itf.json step 0 effects\n\n0 !== '0'\n"
+    }
+  ]
+}

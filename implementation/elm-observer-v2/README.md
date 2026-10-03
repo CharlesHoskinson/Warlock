@@ -1,0 +1,25 @@
+# Reliable Elm observation projection
+
+This is the next implementation slice after `elm-shell-v1`. It implements the pure observation policy needed before a shell can safely offer native window actions. It is not yet connected to a compositor. The original fixture host and its native receipts remain unchanged.
+
+`UInt64` keeps authority values as canonical decimal strings, compares them numerically without conversion to JavaScript numbers, carries increments across decimal boundaries, and refuses overflow. `Observation` uses distinct opaque lifetime, session, frontend-epoch, incarnation, sequence and revision types. Its strict experimental version-2 decoder refuses unknown fields/variants, JSON numeric identities, zero identities, duplicates, excessive projection items, oversized labels and control characters. The provisional window projection limit is 256; this is an experiment boundary, not a frozen production queue budget.
+
+`Observer.update` accepts host-supplied attachment, decoded observations, refresh and disconnection. A snapshot must match the attached binding and outstanding read-only request. Deltas apply only after a coherent snapshot and only at the next sequence. A gap retains the last coherent view, holds later deltas, and raises a minimum recovery watermark. An obsolete snapshot consumes its matching request and requests a newer snapshot; a replayed response cannot clear the barrier. Scene content cannot change under the same revision. A disconnection stops admission, and reconnection requires a fresh host-authenticated binding. Rebinding discards the old projection. Within one native lifetime/session, the frontend epoch must increase; duplicate and older attachments cannot reset the watermark. The authenticated host must prevent lifetime/session token reuse. Recovery only emits read-only snapshot requests; no focus, activation, minimize or mutation effect exists.
+
+The host must authenticate the connection and supply attachment out of band. A binding field in JSON does not authenticate its sender. This slice does not implement peer credentials, socket ownership, atomic native scene acquisition, receipts, reserved control queues or actual effect admission. Snapshot/delta messages replace this limited observation projection; they cannot carry or supersede chord releases, cancellations, retirement outcomes or receipts. Those need separately implemented control channels and journals before native integration.
+
+The applied CPU checks include the unchanged `architecture-010` and `revision-008` fixture identities. They exercise sequence 10 followed by 9/12, and a missing retirement followed by a new incarnation. These are frontend protocol evidence, not full native acceptance of either requirement. Additional checks cover stale/wrong-session snapshots, monotonic revisions, request correlation, lossless counters, restarts and generated omitted-event transcripts.
+
+Run through the protected launcher:
+
+```bash
+PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/qa/run.py
+PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/qa/mutate.py
+PYTHONDONTWRITEBYTECODE=1 /usr/bin/python3 -B /home/hoskinson/window-integration-qa/qa_run.py -- /usr/bin/python3 -B /home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/qa/freeze.py
+```
+
+Every run creates a new evidence directory with its actual source inputs, commands, logs and hashes. `spec/observer.qnt` independently models the projection policy with finite content tokens and unbounded integer abstractions. The runner selects 12 actual named tests, samples 1,000 invariant traces of up to 40 steps, and replays exported ITF transitions through the actual compiled Elm reducer. Quint exports one example simulation trace; conformance does not claim replay of all 1,000 sampled traces. Mutation checks compile six unsafe Elm derivatives and require actual applied test failures.
+
+Earlier attempts are retained, including the first recovery behavior and a failed ITF comparison that incorrectly compared a JavaScript numeric count with the model's integer string. The adapter now compares count representations explicitly, preserving authority integers as strings. The first mutation pass exposed a phase-only assertion that missed a held-projection change; the strengthened assertion checks the projection and watermark as well. The first Quint source used an unavailable `max` function; its source and actual failed typecheck remain archived. Sampled invariants and applied CPU evidence are not exhaustive proofs, native authentication, GPU qualification or live layering acceptance.
+
+Next: connect this policy to an authenticated, coherent compositor projection; preserve native lifecycle/ABI pairing and qualify actual GPU/IME/accessibility behavior. All original native regression gates remain open.

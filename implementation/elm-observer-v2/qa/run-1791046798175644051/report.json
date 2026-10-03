@@ -1,0 +1,81 @@
+{
+  "observedUTC": "2026-10-03T16:59:58.176424+00:00",
+  "scope": "CPU-only typed observer; no native authentication, coherent snapshot or GPU claim",
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Observation.elm": "b9fce05ab6f50273e8d252b1f1da492bbd0e0021698d3592f864c4d6f7b3d2aa",
+    "src/Observer.elm": "fe1e34b5fa65f6be232498b09304bbb2237de08ed83c598f0225211c12e07085",
+    "src/Replay.elm": "7c0e0497bd0ae32bb7f1f3404404f6064957badac2541fd785816f526948480a",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/check.cjs": "4d6290ee7b3c50a6c4cb925bd94e8807a0413dd0a198b9c9908199891643c447",
+    "qa/run.py": "10c11f10d360ba7f8d60c4aee83f47b29f17ebeb8d2d70662b7c4a1544760eed"
+  },
+  "commands": [
+    {
+      "name": "syntax",
+      "command": [
+        "node",
+        "--check",
+        "qa/check.cjs"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-version",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/qa/run-1791046798175644051/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay",
+      "command": [
+        "node",
+        "qa/check.cjs"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "artifacts": {
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stdout": "58544328992f08af118ba0a0449de36dd623333177048f2e5f747f8e81c899ae",
+    "elm-report.json": "8218951e830dff149700040ca2daa2c94c5d2d3a77b84cf580f8b3c415b08531",
+    "elm-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "elm-version.stdout": "9fc9c42fbefeb8bfb6b8af04b16b43cac75033d4a2f9383ec2ac1b33bf9034a4",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/qa/check.cjs": "4d6290ee7b3c50a6c4cb925bd94e8807a0413dd0a198b9c9908199891643c447",
+    "inputs/qa/run.py": "10c11f10d360ba7f8d60c4aee83f47b29f17ebeb8d2d70662b7c4a1544760eed",
+    "inputs/src/Observation.elm": "b9fce05ab6f50273e8d252b1f1da492bbd0e0021698d3592f864c4d6f7b3d2aa",
+    "inputs/src/Observer.elm": "fe1e34b5fa65f6be232498b09304bbb2237de08ed83c598f0225211c12e07085",
+    "inputs/src/Replay.elm": "7c0e0497bd0ae32bb7f1f3404404f6064957badac2541fd785816f526948480a",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "replay.js": "7d416e08ef5245b7e9288311fb45d89198170c73146f8628f656c2197d5a21fd",
+    "replay.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "replay.stdout": "8218951e830dff149700040ca2daa2c94c5d2d3a77b84cf580f8b3c415b08531",
+    "syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transcripts.json": "a6a4ad9a23ed938944137731c33e94732e3739841bb840cf55cae67ad2e2e592"
+  }
+}

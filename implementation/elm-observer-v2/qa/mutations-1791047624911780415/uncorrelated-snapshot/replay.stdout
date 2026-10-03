@@ -1,0 +1,1022 @@
+{
+  "scope": "Compiled Elm observer: CPU replay and deterministic adversarial transcripts, no native acceptance",
+  "passed": false,
+  "seed": 610303,
+  "testCount": 252,
+  "counterSuccessorChecks": 10,
+  "counterComparisonChecks": 100,
+  "results": [
+    {
+      "name": "initial-snapshot-is-correlated",
+      "passed": true
+    },
+    {
+      "name": "contiguous-delta",
+      "passed": true
+    },
+    {
+      "name": "gap-retains-last-coherent-projection",
+      "passed": true
+    },
+    {
+      "name": "gap-deduplicates-recovery",
+      "passed": true
+    },
+    {
+      "name": "late-contiguous-delta-cannot-clear-gap",
+      "passed": true
+    },
+    {
+      "name": "snapshot-below-observed-gap-cannot-clear",
+      "passed": true
+    },
+    {
+      "name": "snapshot-at-gap-restores",
+      "passed": true
+    },
+    {
+      "name": "replayed-old-snapshot-cannot-clear",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n'Coherent' !== 'Gap'\n"
+    },
+    {
+      "name": "snapshot-wrong-request-is-ignored",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Coherent'\n- 'Awaiting'\n"
+    },
+    {
+      "name": "refresh-supersedes-request",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'Coherent'\n- 'Awaiting'\n"
+    },
+    {
+      "name": "duplicate-delta-idempotent",
+      "passed": true
+    },
+    {
+      "name": "older-delta-idempotent",
+      "passed": true
+    },
+    {
+      "name": "revision-regression-barrier",
+      "passed": true
+    },
+    {
+      "name": "equal-sequence-conflicting-snapshot-refused",
+      "passed": true
+    },
+    {
+      "name": "old-revision-snapshot-refused",
+      "passed": true
+    },
+    {
+      "name": "wrong-lifetime-delta-ignored",
+      "passed": true
+    },
+    {
+      "name": "wrong-lifetime-snapshot-ignored",
+      "passed": true
+    },
+    {
+      "name": "wrong-session-delta-ignored",
+      "passed": true
+    },
+    {
+      "name": "wrong-session-snapshot-ignored",
+      "passed": true
+    },
+    {
+      "name": "wrong-frontend-delta-ignored",
+      "passed": true
+    },
+    {
+      "name": "wrong-frontend-snapshot-ignored",
+      "passed": true
+    },
+    {
+      "name": "restart-invalidates-old-projection",
+      "passed": true
+    },
+    {
+      "name": "older-frontend-attachment-is-refused",
+      "passed": true
+    },
+    {
+      "name": "duplicate-attach-does-not-reset-watermark",
+      "passed": true
+    },
+    {
+      "name": "disconnect-withholds-events",
+      "passed": true
+    },
+    {
+      "name": "same-binding-cannot-reconnect",
+      "passed": true
+    },
+    {
+      "name": "delta-before-snapshot-raises-floor",
+      "passed": true
+    },
+    {
+      "name": "max-sequence-does-not-wrap",
+      "passed": true
+    },
+    {
+      "name": "lossless-neighboring-sequences",
+      "passed": true
+    },
+    {
+      "name": "decimal-carry",
+      "passed": true
+    },
+    {
+      "name": "obsolete-response-consumed-once",
+      "passed": false,
+      "error": "Expected values to be strictly equal:\n\n'Coherent' !== 'Gap'\n"
+    },
+    {
+      "name": "changed-pixels-require-new-revision",
+      "passed": true
+    },
+    {
+      "name": "changed-snapshot-requires-new-revision",
+      "passed": true
+    },
+    {
+      "name": "architecture-010",
+      "passed": true
+    },
+    {
+      "name": "revision-008",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-version",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-kind",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-unknown-field",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-numeric-sequence",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-leading-zero",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-negative",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-unicode-digit",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-overflow",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-numeric-incarnation",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-zero-incarnation",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-duplicate-incarnation",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-too-many-windows",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-oversized-label",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-control-label",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-unknown-binding-field",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-zero-session",
+      "passed": true
+    },
+    {
+      "name": "decoder-refuses-missing-field",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-0",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-1",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-2",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-3",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-4",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-5",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-6",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-7",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-8",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-9",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-10",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-11",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-12",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-13",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-14",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-15",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-16",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-17",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-18",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-19",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-20",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-21",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-22",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-23",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-24",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-25",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-26",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-27",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-28",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-29",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-30",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-31",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-32",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-33",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-34",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-35",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-36",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-37",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-38",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-39",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-40",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-41",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-42",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-43",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-44",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-45",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-46",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-47",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-48",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-49",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-50",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-51",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-52",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-53",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-54",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-55",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-56",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-57",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-58",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-59",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-60",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-61",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-62",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-63",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-64",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-65",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-66",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-67",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-68",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-69",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-70",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-71",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-72",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-73",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-74",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-75",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-76",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-77",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-78",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-79",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-80",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-81",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-82",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-83",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-84",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-85",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-86",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-87",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-88",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-89",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-90",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-91",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-92",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-93",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-94",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-95",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-96",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-97",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-98",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-99",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-100",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-101",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-102",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-103",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-104",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-105",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-106",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-107",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-108",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-109",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-110",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-111",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-112",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-113",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-114",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-115",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-116",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-117",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-118",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-119",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-120",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-121",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-122",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-123",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-124",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-125",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-126",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-127",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-128",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-129",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-130",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-131",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-132",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-133",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-134",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-135",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-136",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-137",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-138",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-139",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-140",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-141",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-142",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-143",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-144",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-145",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-146",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-147",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-148",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-149",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-150",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-151",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-152",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-153",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-154",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-155",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-156",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-157",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-158",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-159",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-160",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-161",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-162",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-163",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-164",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-165",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-166",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-167",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-168",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-169",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-170",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-171",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-172",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-173",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-174",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-175",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-176",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-177",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-178",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-179",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-180",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-181",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-182",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-183",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-184",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-185",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-186",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-187",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-188",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-189",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-190",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-191",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-192",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-193",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-194",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-195",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-196",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-197",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-198",
+      "passed": true
+    },
+    {
+      "name": "fuzz-gap-resync-199",
+      "passed": true
+    }
+  ]
+}

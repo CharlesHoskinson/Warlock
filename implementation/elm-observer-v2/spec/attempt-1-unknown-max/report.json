@@ -1,0 +1,14 @@
+{
+  "scope": "Retained failed model source: unsupported max identifier",
+  "command": [
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "typecheck",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-observer-v2/spec/attempt-1-unknown-max/observer.qnt"
+  ],
+  "exitCode": 1,
+  "expectedFailureObserved": true
+}
