@@ -1,0 +1,53 @@
+{
+  "featureAccepted": false,
+  "blockingFailures": [
+    {
+      "id": "NMIN-001",
+      "severity": "P1",
+      "status": "open",
+      "trigger": "Map a new modal child after its existing native family minimizes.",
+      "expected": "Child inherits minimized live eligibility; eligible peer retains focus.",
+      "observed": {
+        "owner": "4",
+        "child": {
+          "incarnation": "5",
+          "owner": "4",
+          "stackPosition": 3,
+          "workspace": "1",
+          "monitor": "0",
+          "geometry": [
+            80.0,
+            80.0,
+            320.0,
+            240.0
+          ],
+          "fullscreenMode": 0,
+          "workspaceVisible": true,
+          "hidden": false,
+          "pinned": false,
+          "allowedOverFullscreen": true,
+          "renderOverFullscreen": true,
+          "acceptsInput": true,
+          "shouldRenderAny": true,
+          "shouldRenderOwnMonitor": true,
+          "minimized": false
+        },
+        "focused": "5"
+      },
+      "evidence": "qa/native-1791059374174458273/report.json",
+      "nextDerivative": "Inherited minimized ancestry before map-time focus/render and persistent child state; unchanged reproduction must pass."
+    }
+  ],
+  "sourceReviewConcerns": [
+    {
+      "id": "NMIN-002",
+      "status": "native reproduction required",
+      "description": "Restore only checks that some application focus exists, rather than proving focus equals the unique eligible intended family recipient; preflight ambiguous sibling modals before mutation."
+    },
+    {
+      "id": "NMIN-003",
+      "status": "qualification required",
+      "description": "Retry journal compares full raw payload bytes; canonical semantic tuple deduplication across equivalent JSON encodings is not yet implemented."
+    }
+  ]
+}

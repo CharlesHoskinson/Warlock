@@ -1,0 +1,18 @@
+
+ Error [QNT000]: Couldn't unify set and list
+Trying to unify Set[_t48] and List[int]
+Trying to unify (Set[_t48], (_t48) => bool) => Set[_t48] and (List[int], (int) => bool) => _t49
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/qa/model-1791059183041432132/minimize.qnt:23:86
+  23:   action focus(id: int): bool = s' = if(eligible(s.minimized,id)) {...s,focus:id,mru:s.mru.filter(x=>x!=id).append(id),revision:s.revision+1} else s
+                                                                                           ^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT200]: pure def operators may not interact with state variables, but operator `current` reads variables 's'. Use def instead.
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/qa/model-1791059183041432132/minimize.qnt:10:12
+  10:   pure def current(request: int, generation: int, target: int, minimize: bool): Intent = {request:request,generation:generation,target:target,minimize:minimize,expected:s.revision,output:s.output,epoch:s.epoch}
+                 ^^^^^^^
+
+error: typechecking failed

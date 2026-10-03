@@ -1,0 +1,4 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/birth_fixture.py:9: PyGIWarning: Gdk was imported without specifying a version first. Use gi.require_version('Gdk', '4.0') before import to ensure that the right version gets loaded.
+  from gi.repository import Gdk, GLib, Gtk
+/home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/birth_fixture.py:89: PyGIDeprecationWarning: GLib.unix_signal_add is deprecated; use GLibUnix.signal_add instead
+  GLib.unix_signal_add(GLib.PRIORITY_DEFAULT, signal.SIGTERM, quit_)

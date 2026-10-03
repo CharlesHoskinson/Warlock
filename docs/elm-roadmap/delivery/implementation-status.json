@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-window-effects-v12",
-  "status": "Replacement desktop work active: 23 private native scene/modal/lifetime checks passed; compiled Elm minimize/restore transaction prototype passed 201 checks, nine Quint scenarios and action-journal replay; native minimized state and full UI/UX acceptance remain open",
+  "activeSlice": "implementation/elm-native-minimize-v13",
+  "status": "Native first-class minimized state/effect authority implemented; 54 bounded native checks and nine policy model scenarios passed. New-child inheritance probe failed; complete feature acceptance remains blocked by NMIN-001.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -23,7 +23,12 @@
     "ELM-LAY-001",
     "ELM-ARC-005",
     "ELM-ARC-006",
-    "ELM-ARC-007"
+    "ELM-ARC-007",
+    "ELM-REN-006",
+    "ELM-REV-016",
+    "ELM-UI-001",
+    "ELM-GNO-002",
+    "ELM-GNO-004"
   ],
   "completedRequirementIds": [],
   "observedResults": {
@@ -163,9 +168,24 @@
       "nativeMinimizedStateImplemented": false,
       "evidence": "implementation/elm-window-effects-v12/qa/slice-manifest.json",
       "scope": "Pure compiled intent/receipt transactions only; native authority remains read-only"
+    },
+    "nativeMinimizeV13": {
+      "nativeMinimizedStateImplemented": true,
+      "experimentalNativeEffectsImplemented": true,
+      "liveDesktopDeployed": false,
+      "positiveNativeCases": 54,
+      "failedLateChildLifecycleCase": true,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "canonicalSceneCapability": false,
+      "coreSHA256": "2be14de3fd1cddd12e40919bf7a97d95d2799df2b9df48a632b2b654d015c51e",
+      "featureAccepted": false,
+      "evidence": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+      "failure": "implementation/elm-native-minimize-v13/known-failures.json"
     }
   },
-  "next": "Implement native first-class minimized state and authenticated effect boundary, with atomic family eligibility/focus and preserved normal workspace/geometry; integrate the typed Elm transaction; retain modal device/exclusive/security cases and all full UI/UX release gates.",
+  "next": "Fresh V14 derivative: enforce minimized ancestry before new-child focus/render and retain inherited state; preflight unique restore recipient, strengthen postcondition and semantic retry deduplication. Rerun the original 54 checks plus the unchanged new-child failure, then integrate typed Elm effects and complete native canonical scene/preview/layout/output/release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
@@ -174,5 +194,14 @@
     "scenariosMapped": 417,
     "executionAcceptance": false,
     "humanParticipantEvidence": false
-  }
+  },
+  "blockingCandidateDefects": [
+    {
+      "id": "NMIN-001",
+      "scope": "Complete minimized-family lifecycle acceptance",
+      "severity": "P1",
+      "evidence": "implementation/elm-native-minimize-v13/qa/native-1791059374174458273/report.json",
+      "workAvailable": true
+    }
+  ]
 }

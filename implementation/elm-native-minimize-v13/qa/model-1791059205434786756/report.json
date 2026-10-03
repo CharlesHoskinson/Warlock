@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "observedUTC": "2026-10-03T20:26:45.434975+00:00",
+  "scope": "Abstract fixed family native-minimize policy only; no native/model refinement, pixels, AT, timing or whole product acceptance",
+  "inputs": {
+    "spec/minimize.qnt": "03db4312ac9c08e106a45e08f7fa4dc60345240fa47d5ac2f98eb931ac469af6",
+    "qa/model.py": "e5e1641d241d60805e11388d231ae1e8d4eb1591973f6da9471fb651556f2a93"
+  },
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "minimize.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "minimize.qnt",
+        "--match",
+        "Test$",
+        "--seed",
+        "131301",
+        "--max-samples",
+        "1",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/qa/model-1791059205434786756/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "minimize.qnt",
+        "--invariants",
+        "safety",
+        "--seed",
+        "131302",
+        "--max-samples",
+        "1000",
+        "--max-steps",
+        "40",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/qa/model-1791059205434786756/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 9,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "c627d10f1b1a5f65c2f5a5267182ed2a17e20add974698be779f22d7bfa84e84",
+    "minimize.qnt": "03db4312ac9c08e106a45e08f7fa4dc60345240fa47d5ac2f98eb931ac469af6",
+    "model.py": "e5e1641d241d60805e11388d231ae1e8d4eb1591973f6da9471fb651556f2a93",
+    "named-focusSuccessorTest-0.itf.json": "47ab44fa6dac27d8a06cc61ed49b79bb33d27a4a24988fdb36cd47f1fe387fb1",
+    "named-lastFocusTest-1.itf.json": "c6db317817b5cef451c8ea4d0bbeddd4f8cb4afab6c323440574aa0116e584b4",
+    "named-minimizedFocusRefusedTest-8.itf.json": "c93ffe62e35dfe722bbf495604af2bb5ea3c79071b80505cc1751a1369c96b94",
+    "named-modalRestoreTest-3.itf.json": "38f99504f5e21535f57d743093c108b24a52f02599eddddf3f2c8a662f570f2d",
+    "named-retryTest-7.itf.json": "e5889accb25a5431b09ef1194a9b568014d4c6fb53f112686d3a0bcf698dc2a2",
+    "named-staleEpochTest-6.itf.json": "8edea6dfab3b6072162a666e0329abbfb24d401a5c8bdbf3408193c2aaa0a919",
+    "named-staleOutputTest-5.itf.json": "46929b1c0d4ff215d32b512e5b585f3a75f676428f9c0cc8e382123ffe13c5e7",
+    "named-staleRevisionTest-4.itf.json": "a76fadfdf046a8153c918edcecb18a6561d9937f26d28e053b03f77f8532af31",
+    "named-unfocusedTest-2.itf.json": "ccf0b01f3a450d60720c3e3585a167ae236b80985d65184d8e9274aad054396a",
+    "sample-0.itf.json": "cbf72ed2f09f716a079e16f8ac739393768da7efdf7c52c2c407796e73f00990",
+    "tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests.stdout": "49750202fb32acae8f32ee326cd23af0762f4329f03e688dd4a086fc69ff2df9",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+  }
+}

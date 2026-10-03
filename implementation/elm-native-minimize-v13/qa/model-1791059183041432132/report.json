@@ -1,0 +1,37 @@
+{
+  "passed": false,
+  "observedUTC": "2026-10-03T20:26:23.046272+00:00",
+  "scope": "Abstract fixed family native-minimize policy only; no native/model refinement, pixels, AT, timing or whole product acceptance",
+  "inputs": {
+    "spec/minimize.qnt": "2ff03b260a40211b08fb3fc6406a017996310988c966cbc6af3930147b737797",
+    "qa/model.py": "e5e1641d241d60805e11388d231ae1e8d4eb1591973f6da9471fb651556f2a93"
+  },
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "minimize.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "\n Error [QNT000]: Couldn't unify set and list\nTrying to unify Set[_t48] and List[int]\nTrying to unify (Set[_t48], (_t48) => bool) => Set[_t48] and (List[int], (int) => bool) => _t49\n\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/qa/model-1791059183041432132/minimize.qnt:23:86\n  23:   action focus(id: int): bool = s' = if(eligible(s.minimized,id)) {...s,focus:id,mru:s.mru.filter(x=>x!=id).append(id),revision:s.revision+1} else s\n                                                                                           ^^^^^^^^^^^^^^^^^^^^^^\n\n\n Error [QNT200]: pure def operators may not interact with state variables, but operator `current` reads variables 's'. Use def instead.\n\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-minimize-v13/qa/model-1791059183041432132/minimize.qnt:10:12\n  10:   pure def current(request: int, generation: int, target: int, minimize: bool): Intent = {request:request,generation:generation,target:target,minimize:minimize,expected:s.revision,output:s.output,epoch:s.epoch}\n                 ^^^^^^^\n\nerror: typechecking failed\n",
+  "artifacts": {
+    "minimize.qnt": "2ff03b260a40211b08fb3fc6406a017996310988c966cbc6af3930147b737797",
+    "model.py": "e5e1641d241d60805e11388d231ae1e8d4eb1591973f6da9471fb651556f2a93",
+    "typecheck.stderr": "bd0409ae289cc5eca0523e24e9a767466e2baf8f708f9e96e6332adc9b6be6c5",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+  }
+}

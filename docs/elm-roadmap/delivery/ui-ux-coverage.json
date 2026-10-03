@@ -124,6 +124,12 @@
           "evidenceClass": "compiled pure Elm and Quint action-journal replay",
           "acceptance": false,
           "scope": "Experimental typed first-class intents and correlated receipts; actual authenticated native effect adapter not implemented."
+        },
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
         }
       ]
     },
@@ -159,6 +165,12 @@
           "evidenceClass": "compiled pure Elm and Quint action-journal replay",
           "acceptance": false,
           "scope": "Experimental typed first-class intents and correlated receipts; actual authenticated native effect adapter not implemented."
+        },
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
         }
       ]
     },
@@ -218,6 +230,12 @@
           "evidenceClass": "compiled pure Elm and Quint action-journal replay",
           "acceptance": false,
           "scope": "Experimental typed first-class intents and correlated receipts; actual authenticated native effect adapter not implemented."
+        },
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
         }
       ]
     },
@@ -1415,7 +1433,21 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        }
+      ],
+      "relatedCandidateFailure": {
+        "id": "NMIN-001",
+        "severity": "P1",
+        "path": "implementation/elm-native-minimize-v13/qa/native-1791059374174458273/report.json",
+        "status": "open"
+      }
     },
     {
       "requirementId": "ELM-GNO-003",
@@ -1453,7 +1485,21 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        }
+      ],
+      "relatedCandidateFailure": {
+        "id": "NMIN-001",
+        "severity": "P1",
+        "path": "implementation/elm-native-minimize-v13/qa/native-1791059374174458273/report.json",
+        "status": "open"
+      }
     },
     {
       "requirementId": "ELM-GNO-005",
@@ -2844,7 +2890,15 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        }
+      ]
     },
     {
       "requirementId": "ELM-REN-007",
@@ -3700,7 +3754,15 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        }
+      ]
     },
     {
       "requirementId": "ELM-REV-017",
@@ -4199,7 +4261,15 @@
           "receipts": []
         }
       ],
-      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
+      "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping.",
+      "partialEvidence": [
+        {
+          "path": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
+          "evidenceClass": "private native behavior plus separate abstract policy model",
+          "acceptance": false,
+          "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        }
+      ]
     },
     {
       "requirementId": "ELM-UI-002",
@@ -6039,5 +6109,5 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T19:56:20.446629+00:00"
+  "partialEvidenceObservedUTC": "2026-10-03T20:37:25.657303+00:00"
 }
