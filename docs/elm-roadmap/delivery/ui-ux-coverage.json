@@ -130,6 +130,12 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ]
     },
@@ -171,6 +177,12 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ]
     },
@@ -236,6 +248,12 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ]
     },
@@ -1440,13 +1458,20 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ],
       "relatedCandidateFailure": {
         "id": "NMIN-001",
         "severity": "P1",
         "path": "implementation/elm-native-minimize-v13/qa/native-1791059374174458273/report.json",
-        "status": "open"
+        "status": "resolved in V14 bounded reproduction",
+        "resolutionEvidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
       }
     },
     {
@@ -1492,13 +1517,20 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ],
       "relatedCandidateFailure": {
         "id": "NMIN-001",
         "severity": "P1",
         "path": "implementation/elm-native-minimize-v13/qa/native-1791059374174458273/report.json",
-        "status": "open"
+        "status": "resolved in V14 bounded reproduction",
+        "resolutionEvidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
       }
     },
     {
@@ -2897,6 +2929,12 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ]
     },
@@ -3761,6 +3799,12 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ]
     },
@@ -4268,6 +4312,12 @@
           "evidenceClass": "private native behavior plus separate abstract policy model",
           "acceptance": false,
           "scope": "54 bounded static-family native checks pass; new-child inheritance fails; canonical scene and complete lifecycle acceptance remain open."
+        },
+        {
+          "path": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+          "evidenceClass": "private native pixels/input/lifecycle and separate abstract model",
+          "acceptance": false,
+          "scope": "60 cases pass including repaired new-child inheritance, ambiguous restore refusal/no mutation and semantic retry; complete scene/seat/host/accessibility/release gates remain open."
         }
       ]
     },
@@ -6109,5 +6159,5 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T20:37:25.657303+00:00"
+  "partialEvidenceObservedUTC": "2026-10-03T21:06:19.087744+00:00"
 }

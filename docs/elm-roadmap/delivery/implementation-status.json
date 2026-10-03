@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-native-minimize-v13",
-  "status": "Native first-class minimized state/effect authority implemented; 54 bounded native checks and nine policy model scenarios passed. New-child inheritance probe failed; complete feature acceptance remains blocked by NMIN-001.",
+  "activeSlice": "implementation/elm-minimize-lifecycle-v14",
+  "status": "Minimized-parent child inheritance repaired; 60 private native cases and 13 named lifecycle model cases/1000 invariant runs passed. Bounded V13 findings resolved; complete scene, seat/host/UI and release acceptance remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -183,9 +183,23 @@
       "featureAccepted": false,
       "evidence": "implementation/elm-native-minimize-v13/qa/slice-manifest.json",
       "failure": "implementation/elm-native-minimize-v13/known-failures.json"
+    },
+    "minimizeLifecycleV14": {
+      "nativeCases": 60,
+      "originalNative54IdentitiesPreserved": true,
+      "newChildPixelPointerKeyboardExclusion": true,
+      "ambiguousRestoreRefusedWithoutSceneMutation": true,
+      "semanticIntentRetryDeduplicated": true,
+      "quintNamedScenarios": 13,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "canonicalSceneCapability": false,
+      "completeFeatureAccepted": false,
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json",
+      "coreSHA256": "51f997640d0f354bcab21446403030a6bfe23ccecadbf17162a156fd5678023b"
     }
   },
-  "next": "Fresh V14 derivative: enforce minimized ancestry before new-child focus/render and retain inherited state; preflight unique restore recipient, strengthen postcondition and semantic retry deduplication. Rerun the original 54 checks plus the unchanged new-child failure, then integrate typed Elm effects and complete native canonical scene/preview/layout/output/release gates.",
+  "next": "Strengthen native outcome proof with actual seat-surface postconditions and grab refusal, qualify parent retirement/remap, then bind typed Elm intent/outcome controls in a real isolated GUI host. Complete canonical scene/presentation, previews/original deadlines, output/layout/GPU/AT/IME and full release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
@@ -195,13 +209,22 @@
     "executionAcceptance": false,
     "humanParticipantEvidence": false
   },
-  "blockingCandidateDefects": [
+  "blockingCandidateDefects": [],
+  "resolvedBoundedFindings": [
     {
       "id": "NMIN-001",
-      "scope": "Complete minimized-family lifecycle acceptance",
-      "severity": "P1",
-      "evidence": "implementation/elm-native-minimize-v13/qa/native-1791059374174458273/report.json",
-      "workAvailable": true
+      "status": "resolved in V14 scoped native oracles",
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
+    },
+    {
+      "id": "NMIN-002",
+      "status": "resolved in V14 scoped native oracles",
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
+    },
+    {
+      "id": "NMIN-003",
+      "status": "resolved in V14 scoped native oracles",
+      "evidence": "implementation/elm-minimize-lifecycle-v14/qa/slice-manifest.json"
     }
   ]
 }

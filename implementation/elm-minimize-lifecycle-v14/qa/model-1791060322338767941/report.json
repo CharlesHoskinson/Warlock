@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "observedUTC": "2026-10-03T20:45:22.351040+00:00",
+  "scope": "Abstract family birth/retirement/ambiguous restore native-minimize policy only; no native/model refinement, pixels, AT, timing or whole product acceptance",
+  "inputs": {
+    "spec/lifecycle.qnt": "b48d66a1ff538fb86dab9103fffd5d958f20f46b7be0c20b8740502777cd357e",
+    "qa/lifecycle_model.py": "0b166506bbb77f8c223bf4bb4d1452b181c99a29066705f46bc707944de18174"
+  },
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "lifecycle.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "tests",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "lifecycle.qnt",
+        "--match",
+        "Test$",
+        "--seed",
+        "131301",
+        "--max-samples",
+        "1",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-minimize-lifecycle-v14/qa/model-1791060322338767941/named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "lifecycle.qnt",
+        "--invariants",
+        "safety",
+        "--seed",
+        "131302",
+        "--max-samples",
+        "1000",
+        "--max-steps",
+        "40",
+        "--out-itf",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-minimize-lifecycle-v14/qa/model-1791060322338767941/sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 13,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "d21fd8f55b4ddbee86d34fc304b62b29550102852f30386d1dd3f129d1bd78c8",
+    "lifecycle.qnt": "b48d66a1ff538fb86dab9103fffd5d958f20f46b7be0c20b8740502777cd357e",
+    "model.py": "0b166506bbb77f8c223bf4bb4d1452b181c99a29066705f46bc707944de18174",
+    "named-ambiguousRestoreRefusedTest-10.itf.json": "91f5281e92d4fe97c997e4b708f8947111348a2cac8fbaa9fe789471348f6085",
+    "named-childBirthExcludedTest-9.itf.json": "af3ce8a3afb47e8ca570677f399dc436cd9838a97457d609731d7e5f124f32b8",
+    "named-childDirectFocusExcludedTest-12.itf.json": "bc06eed946a95865e6ea7b04fcfc997fa53054bad910139c4d2a3f5f449a6afd",
+    "named-childRetireRestoreRecoveryTest-11.itf.json": "8ab01464f3c6b9471ced3e0d4d1dfa2b8d40154428fbd7c2a2f9023af0d473c4",
+    "named-focusSuccessorTest-0.itf.json": "52ead34a7ad13284a1d499b0ebdea937805481dde94ecfc24ad1c45df32baa77",
+    "named-lastFocusTest-1.itf.json": "2d37bd976a34a4aaf4938879b9b01bd4eea8679a6d348998452cea0703ea4c9a",
+    "named-minimizedFocusRefusedTest-8.itf.json": "be635b04caef0898bd9a35225f8d6e551f5d6922a906d3d613ac8f7722b42163",
+    "named-modalRestoreTest-3.itf.json": "352c447be2473b9e98c11e83434a3a9dc64414b14c13d5477d0b0ec724c46e64",
+    "named-retryTest-7.itf.json": "300abb1bbe507d6e7752caad158059599455c1a65657fe880f56b5dbbe2cf0bd",
+    "named-staleEpochTest-6.itf.json": "92a2761d0611680bd2aaa3bbf825083d357b6315f31cd433bda005a25d1e48d5",
+    "named-staleOutputTest-5.itf.json": "957bd63b9b4590f4889b0064d47ae59352ae7d3e3aa495cf64e88ff03edc748a",
+    "named-staleRevisionTest-4.itf.json": "bf159da68e4078560496e6f67a08b331c50ee9b7a1d05010edaa5cd8c8b5f615",
+    "named-unfocusedTest-2.itf.json": "632be7fd0cf065aab35a638027b9fac997ee9cf38f5fcf41a8481b5fe2e1bff9",
+    "sample-0.itf.json": "70527c869861d115449d6c45c093fefd20f583c2cc639fa390c16699b4c7cc2b",
+    "tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tests.stdout": "377651889f095138b3b16c9928a51d3bdd6fcb5a3a0f5c765e8445738e5d7a25",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+  }
+}

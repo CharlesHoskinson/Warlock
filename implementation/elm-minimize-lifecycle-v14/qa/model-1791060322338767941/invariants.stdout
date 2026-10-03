@@ -1,0 +1,1113 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 0,
+          expected: 0,
+          generation: 0,
+          minimize: false,
+          output: 0,
+          request: 0,
+          target: 0
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [3, 2],
+      output: 1,
+      revision: 1,
+      status: "Idle",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 1,
+          generation: 1,
+          minimize: true,
+          output: 2,
+          request: 1,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [3, 2],
+      output: 1,
+      revision: 1,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 1,
+          generation: 2,
+          minimize: true,
+          output: 1,
+          request: 2,
+          target: 2
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2),
+      mru: [2, 3],
+      output: 1,
+      revision: 2,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 2,
+          generation: 3,
+          minimize: false,
+          output: 1,
+          request: 3,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [3, 2],
+      output: 1,
+      revision: 3,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 3,
+          generation: 4,
+          minimize: false,
+          output: 1,
+          request: 4,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [3, 2],
+      output: 1,
+      revision: 3,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 3,
+          generation: 5,
+          minimize: true,
+          output: 2,
+          request: 5,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [3, 2],
+      output: 1,
+      revision: 3,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 3,
+          generation: 5,
+          minimize: true,
+          output: 2,
+          request: 5,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [2, 3],
+      output: 1,
+      revision: 4,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 3,
+          generation: 5,
+          minimize: true,
+          output: 2,
+          request: 5,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [2, 3],
+      output: 2,
+      revision: 5,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 4,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 3,
+          generation: 5,
+          minimize: true,
+          output: 2,
+          request: 5,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(),
+      mru: [2, 3, 4],
+      output: 2,
+      revision: 6,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 4,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 6,
+          generation: 6,
+          minimize: false,
+          output: 2,
+          request: 6,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(),
+      mru: [2, 3, 4],
+      output: 2,
+      revision: 6,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 6,
+          generation: 7,
+          minimize: true,
+          output: 2,
+          request: 7,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 7,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 6,
+          generation: 7,
+          minimize: true,
+          output: 2,
+          request: 7,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 7,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 8,
+          minimize: true,
+          output: 3,
+          request: 8,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 7,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 9,
+          minimize: true,
+          output: 3,
+          request: 9,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 7,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 7,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 7,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 8,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 9,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 9,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 4, 3],
+      output: 2,
+      revision: 9,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2),
+      mru: [2, 3],
+      output: 2,
+      revision: 10,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 7,
+          generation: 10,
+          minimize: true,
+          output: 2,
+          request: 10,
+          target: 2
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2),
+      mru: [2, 3],
+      output: 2,
+      revision: 10,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 11,
+          generation: 11,
+          minimize: true,
+          output: 2,
+          request: 11,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2),
+      mru: [2, 3],
+      output: 2,
+      revision: 10,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 10,
+          generation: 12,
+          minimize: true,
+          output: 2,
+          request: 12,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2),
+      mru: [2, 3],
+      output: 2,
+      revision: 10,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 11,
+          generation: 13,
+          minimize: true,
+          output: 2,
+          request: 13,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2),
+      mru: [2, 3],
+      output: 2,
+      revision: 10,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 10,
+          generation: 14,
+          minimize: false,
+          output: 2,
+          request: 14,
+          target: 2
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(),
+      mru: [3, 2],
+      output: 2,
+      revision: 11,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 11,
+          generation: 15,
+          minimize: true,
+          output: 2,
+          request: 15,
+          target: 3
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(3),
+      mru: [3, 2],
+      output: 2,
+      revision: 12,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 11,
+          generation: 15,
+          minimize: true,
+          output: 2,
+          request: 15,
+          target: 3
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(3),
+      mru: [3, 2],
+      output: 2,
+      revision: 12,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 11,
+          generation: 15,
+          minimize: true,
+          output: 2,
+          request: 15,
+          target: 3
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(3),
+      mru: [3, 2],
+      output: 3,
+      revision: 13,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 2,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 11,
+          generation: 15,
+          minimize: true,
+          output: 2,
+          request: 15,
+          target: 3
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(3),
+      mru: [3, 2],
+      output: 4,
+      revision: 14,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 0,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 14,
+          generation: 16,
+          minimize: true,
+          output: 4,
+          request: 16,
+          target: 2
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2, 3),
+      mru: [3, 2],
+      output: 4,
+      revision: 15,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 0,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 14,
+          generation: 16,
+          minimize: true,
+          output: 4,
+          request: 16,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 3, 4),
+      mru: [3, 2],
+      output: 4,
+      revision: 16,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 0,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 16,
+          generation: 17,
+          minimize: true,
+          output: 4,
+          request: 17,
+          target: 3
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 3, 4),
+      mru: [3, 2],
+      output: 4,
+      revision: 16,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 0,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 16,
+          generation: 17,
+          minimize: true,
+          output: 4,
+          request: 17,
+          target: 3
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 3, 4),
+      mru: [3, 2],
+      output: 4,
+      revision: 16,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 0,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 16,
+          generation: 18,
+          minimize: true,
+          output: 4,
+          request: 18,
+          target: 2
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 3, 4),
+      mru: [3, 2],
+      output: 4,
+      revision: 16,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 0,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 16,
+          generation: 19,
+          minimize: false,
+          output: 4,
+          request: 19,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 3, 4),
+      mru: [3, 2],
+      output: 4,
+      revision: 16,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 0,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 16,
+          generation: 19,
+          minimize: false,
+          output: 4,
+          request: 19,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 3, 4),
+      mru: [3, 2],
+      output: 4,
+      revision: 16,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 16,
+          generation: 20,
+          minimize: false,
+          output: 4,
+          request: 20,
+          target: 3
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 3],
+      output: 4,
+      revision: 17,
+      status: "Committed",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 17,
+          generation: 21,
+          minimize: false,
+          output: 4,
+          request: 21,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 3],
+      output: 4,
+      revision: 17,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 17,
+          generation: 21,
+          minimize: false,
+          output: 4,
+          request: 21,
+          target: 1
+        },
+      mapped: Set(1, 2, 3, 4),
+      minimized: Set(1, 2, 4),
+      mru: [2, 3],
+      output: 4,
+      revision: 17,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      epoch: 1,
+      focus: 3,
+      geometry: [80, 80, 320, 240],
+      last:
+        {
+          epoch: 1,
+          expected: 17,
+          generation: 21,
+          minimize: false,
+          output: 4,
+          request: 21,
+          target: 1
+        },
+      mapped: Set(1, 2, 3),
+      minimized: Set(1, 2),
+      mru: [2, 3],
+      output: 4,
+      revision: 18,
+      status: "Refused",
+      workspace: [1, 1, 1]
+    }
+}
+
+[ok] No violation found (264ms at 3788 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
