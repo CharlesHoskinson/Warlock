@@ -1,0 +1,16 @@
+
+  facts
+    1) resizePreservesHeldTest failed after 1 test(s)
+
+  1 failed
+
+  1) resizePreservesHeldTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/qa/mutant-1791066420899066961/unsafe.qnt:15:91
+        15:  run resizePreservesHeldTest=init.then(draw).then(hold).then(resize).then(query).then(all{assert(s.stored.geometry==1 and s.live.geometry==2),s'=s})
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x30d41 --match=resizePreservesHeldTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unsafe.qnt

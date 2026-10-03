@@ -1,0 +1,70 @@
+{
+  "passed": true,
+  "scope": "Abstract capture/history immutability; native output changes, buffer/clip mapping and complete scene gates remain separate",
+  "sourceSHA256": "3544fc1f26f48b43eb8a4abb4d9d7abf24f7d5ee918a1386586c8a492987fe86",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "facts.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "facts.qnt",
+        "--backend=typescript",
+        "--match=^(captureTest|resizePreservesHeldTest|outputPreservesHeldTest|freshResizeTest|freshOutputTest|noDrawQueryTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "facts.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 6,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "facts.qnt": "3544fc1f26f48b43eb8a4abb4d9d7abf24f7d5ee918a1386586c8a492987fe86",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-captureTest-0.itf.json": "de91962b55fcd5236fc9dcd06aca85adb9ce0f0e4a726dc330232840200abab1",
+    "named-resizePreservesHeldTest-1.itf.json": "835000316abd56c77632620830396bfb6bc675377765dce0f3e8da98640f6016",
+    "named-outputPreservesHeldTest-2.itf.json": "60ac2604f627d519cb120fc4da7ee49ca5ec6c11a6c6581327f7d81af4cc0d62",
+    "named-freshResizeTest-3.itf.json": "80058075c8f0962bbf070d97b00c9697dce3e8d1f1729bd5d577d7a9e93303a6",
+    "named-freshOutputTest-4.itf.json": "0d51d03bc70e252f3434fdadab90771cb565ba5f52fa9a5a82d7954fc2ec0e7e",
+    "named-noDrawQueryTest-5.itf.json": "bbd4e46e7016f4b9d9f7134a290698f56a54ab5927f0b1b8a2946fdb44379e60",
+    "named.stdout": "13b1d86e43d4cbf8153071b0cc7c51d23973cce6784459b6163b7203ac8c9b1f",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "68dd49af9619e77b9c3bae528eaa3c4510973687ba38e263163510e28a4bfc2b",
+    "invariants.stdout": "d4baaba883b185a28f92482546fb08967ab35c1dc0db4499b427a49f9c1c2132",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

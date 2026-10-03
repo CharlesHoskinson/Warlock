@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-draw-identity-v19",
-  "status": "Native draws now capture authority lifetime and mapped incarnation at dispatch; actual retained frames remain retired through hide/show instead of being relabeled. Bounded native/model/Elm evidence; full scene/presentation/input and release gates remain open.",
+  "activeSlice": "implementation/elm-trace-validation-v21",
+  "status": "Draw-time surface/output facts and retained geometry captured; strict bounded Elm diagnostic decoding verified. Actual input-mask/output changes, scene admission, presentation, complete UI/UX and release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -265,9 +265,31 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-draw-identity-v19/qa/slice-manifest.json"
+    },
+    "surfaceFactsV20": {
+      "ordinaryNativeChecks": 63,
+      "fullRedrawDiagnosticChecks": 84,
+      "elmDecoderChecks": 28,
+      "actualNativePacketsDecoded": 18,
+      "quintNamedRuns": 6,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "abstractUnsafeVariantDetected": true,
+      "retainedGeometryImmutableAfterResize": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-facts-v20/qa/slice-manifest.json"
+    },
+    "traceValidationV21": {
+      "elmDecoderChecks": 121,
+      "historicalNativePacketsDecoded": 18,
+      "newNativeCampaign": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-trace-validation-v21/qa/slice-manifest.json"
     }
   },
-  "next": "Strengthen native outcome proof with actual seat-surface postconditions and grab refusal, qualify parent retirement/remap, then bind typed Elm intent/outcome controls in a real isolated GUI host. Complete canonical scene/presentation, previews/original deadlines, output/layout/GPU/AT/IME and full release gates.",
+  "next": "Qualify actual input-region holes and output configuration changes with native pixel/pointer/keyboard receipts; then establish coherent scene admission and build integrated taskbar/navigation/previews. Complete all UI/UX, accessibility/IME, GPU and release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

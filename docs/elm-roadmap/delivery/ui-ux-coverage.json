@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T21:06:19.087744+00:00",
+  "partialEvidenceObservedUTC": "2026-10-03T22:28:46.934073+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6210,6 +6210,34 @@
       "quintInvariantSamples": 1000,
       "evidence": "implementation/elm-draw-identity-v19/qa/slice-manifest.json",
       "acceptance": "Captured window/lifetime tokens survive actual retained-frame unmap/remap; surface masks, output/geometry coherence, presentation and full UX/release remain unproven."
+    },
+    {
+      "slice": "implementation/elm-surface-facts-v20",
+      "level": "native-render-component, compiled diagnostic decoder and abstract history model",
+      "ordinaryNativeChecks": 63,
+      "fullRedrawDiagnosticChecks": 84,
+      "elmDecoderChecks": 28,
+      "actualNativePacketsDecoded": 18,
+      "quintNamedRuns": 6,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "abstractUnsafeVariantDetected": true,
+      "retainedGeometryImmutableAfterResize": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-facts-v20/qa/slice-manifest.json",
+      "acceptance": "Captured surface/output facts and retained geometry after actual resize only; mask routing, output-change behavior, coherent scene and presentation remain unqualified."
+    },
+    {
+      "slice": "implementation/elm-trace-validation-v21",
+      "level": "compiled diagnostic decoder",
+      "elmDecoderChecks": 121,
+      "historicalNativePacketsDecoded": 18,
+      "newNativeCampaign": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-trace-validation-v21/qa/slice-manifest.json",
+      "acceptance": "121 strict diagnostic checks; historical native packets replayed, no additional native or complete UX acceptance."
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "scope": "Abstract retained geometry query mutation only; no native mutation equivalence claimed",
+  "command": [
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "test",
+    "unsafe.qnt",
+    "--match=^resizePreservesHeldTest$",
+    "--max-samples=1",
+    "--seed=200001"
+  ],
+  "exitCode": 1,
+  "originalSHA256": "3544fc1f26f48b43eb8a4abb4d9d7abf24f7d5ee918a1386586c8a492987fe86",
+  "unsafeSHA256": "fdf545e9b8cec3e0ababe83c98f6cc77679884783122f5548b72dcfb5f8e7180"
+}

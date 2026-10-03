@@ -1,0 +1,708 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 1, output: 1 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 1, output: 1 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 1, output: 1 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 1, output: 2 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 1, output: 3 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 2, output: 3 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 3, output: 3 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 3, output: 3 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 3, output: 3 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 3, output: 4 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 4, output: 4 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      draw: 0,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }],
+      live: { geometry: 4, output: 5 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      draw: 1,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }, { geometry: 4, output: 5 }],
+      live: { geometry: 4, output: 5 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      draw: 1,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }, { geometry: 4, output: 5 }],
+      live: { geometry: 4, output: 6 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      draw: 1,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }, { geometry: 4, output: 5 }],
+      live: { geometry: 4, output: 6 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      draw: 1,
+      held: 0,
+      history: [{ geometry: 0, output: 0 }, { geometry: 4, output: 5 }],
+      live: { geometry: 4, output: 7 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      draw: 2,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 }
+        ],
+      live: { geometry: 4, output: 7 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      draw: 2,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 }
+        ],
+      live: { geometry: 4, output: 8 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      draw: 3,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 }
+        ],
+      live: { geometry: 4, output: 8 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      draw: 4,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 }
+        ],
+      live: { geometry: 4, output: 8 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      draw: 4,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 }
+        ],
+      live: { geometry: 5, output: 8 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      draw: 4,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 }
+        ],
+      live: { geometry: 5, output: 9 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      draw: 5,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 5, output: 9 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      draw: 5,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 5, output: 10 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      draw: 5,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 5, output: 10 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      draw: 5,
+      held: 0,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 6, output: 10 },
+      stored: { geometry: 0, output: 0 }
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      draw: 5,
+      held: 5,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 6, output: 10 },
+      stored: { geometry: 5, output: 9 }
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      draw: 5,
+      held: 5,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 6, output: 10 },
+      stored: { geometry: 5, output: 9 }
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      draw: 5,
+      held: 5,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 6, output: 10 },
+      stored: { geometry: 5, output: 9 }
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      draw: 5,
+      held: 5,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 }
+        ],
+      live: { geometry: 6, output: 11 },
+      stored: { geometry: 5, output: 9 }
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      draw: 6,
+      held: 5,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 }
+        ],
+      live: { geometry: 6, output: 11 },
+      stored: { geometry: 5, output: 9 }
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      draw: 6,
+      held: 5,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 }
+        ],
+      live: { geometry: 7, output: 11 },
+      stored: { geometry: 5, output: 9 }
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      draw: 6,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 }
+        ],
+      live: { geometry: 7, output: 11 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      draw: 6,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 }
+        ],
+      live: { geometry: 8, output: 11 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      draw: 6,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 }
+        ],
+      live: { geometry: 8, output: 12 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      draw: 6,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 }
+        ],
+      live: { geometry: 9, output: 12 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      draw: 7,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 },
+          { geometry: 9, output: 12 }
+        ],
+      live: { geometry: 9, output: 12 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      draw: 7,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 },
+          { geometry: 9, output: 12 }
+        ],
+      live: { geometry: 9, output: 12 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      draw: 8,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 },
+          { geometry: 9, output: 12 },
+          { geometry: 9, output: 12 }
+        ],
+      live: { geometry: 9, output: 12 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      draw: 9,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 },
+          { geometry: 9, output: 12 },
+          { geometry: 9, output: 12 },
+          { geometry: 9, output: 12 }
+        ],
+      live: { geometry: 9, output: 12 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      draw: 9,
+      held: 6,
+      history:
+        [
+          { geometry: 0, output: 0 },
+          { geometry: 4, output: 5 },
+          { geometry: 4, output: 7 },
+          { geometry: 4, output: 8 },
+          { geometry: 4, output: 8 },
+          { geometry: 5, output: 9 },
+          { geometry: 6, output: 11 },
+          { geometry: 9, output: 12 },
+          { geometry: 9, output: 12 },
+          { geometry: 9, output: 12 }
+        ],
+      live: { geometry: 9, output: 13 },
+      stored: { geometry: 6, output: 11 }
+    }
+}
+
+[ok] No violation found (592ms at 1689 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

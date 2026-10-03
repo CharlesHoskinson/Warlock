@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "scope": "CPU typed diagnostic validation only; historical native evidence replayed, no new native run",
+  "mainDesktopActions": false,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "qa/elm.cjs": "df0bb2a494199ab6bab2a44f3592e93a9d245a3f8855c5191715c5c4416425e7",
+    "qa/elm.py": "405180195e3f25eafef24ab22173b308a38429e3408714cae86d9b917c3bbb5f",
+    "src/Binding.elm": "6271948157819ed5040ca74c4b894d6899cf29020bbd4a20c82bd12b61695cf1",
+    "src/RenderTrace.elm": "8b350973de174ad7b6a5b1359b67417c905bc5a326a562e13f70c61d72a799a1",
+    "src/Replay.elm": "957c6741782d249ee928643d94597a18d5d85764375b8092624789cca19d590d",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+  },
+  "nativeReportSource": "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/qa/native-1791066071820282438/report.json",
+  "nativeReportSHA256": "61fd6ebd9632a4dfe5ed9fd8d9314370927ccbc631eb04d0eed66dd6f97cf597",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-trace-validation-v21/qa/elm-1791066419735708642/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-trace-validation-v21/qa/elm-1791066419735708642/inputs/elm.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-trace-validation-v21/qa/elm-1791066419735708642/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-trace-validation-v21/qa/elm-1791066419735708642/inputs/native-report.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-trace-validation-v21/qa/elm-1791066419735708642/checks.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "checks": 121,
+  "nativeCaptures": 18,
+  "checksSHA256": "fa8704820d0d040c50f06eac9b8c4313be5ca2a7270a3e30456d84bd6802ec3b",
+  "replaySHA256": "d3ee03ad6ac0c196c20522a5bf7223bacbf6d4f5acbe4fcea4910cb908dcf836"
+}

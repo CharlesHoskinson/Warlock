@@ -1,0 +1,614 @@
+{
+  "passed": true,
+  "scope": "Typed diagnostic decoding only; no current scene admission, correlation or presentation acceptance",
+  "checks": 101,
+  "nativeCaptures": 18,
+  "cases": [
+    {
+      "name": "native-peer-raised",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-max-raised",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-max-lowered",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-pinned-peer",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-unpinned-peer",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-first-class-minimized",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-first-class-restored",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-inactive-max",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-parent-click-point",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-new-child-minimized-pixels",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-minimized-modal-point",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-restored-modal-point",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-identity-0",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-identity-1",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-identity-2",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-identity-3",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-identity-4",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "native-identity-5",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "protocolVersion-wrong",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "protocolVersion-string",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "traceProtocol-wrong",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "traceProtocol-string",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "wrong-kind",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "extra-envelope-field",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "missing-envelope-field",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "extra-frame-field",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "missing-frame-field",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "extra-draw-field",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "missing-draw-field",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "duplicate-monitor",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "too-many-monitors",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "too-many-draws",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "too-many-input-rectangles",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-boundary-64",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "draw-boundary-1024",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "empty-input-is-valid",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-negative",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-above-one",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-nan",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-positive-infinity",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-negative-infinity",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-string",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-null",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-boundary-0",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "alpha-boundary-1",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "box-short",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "box-long",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "box-zero-width",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "box-negative-height",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "box-nan-x",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "box-infinite-width",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "box-string-y",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-short",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-long",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-zero-width",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-negative-height",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-nan-x",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-infinite-width",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "input-string-y",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-short",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-long",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-zero-width",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-negative-height",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-zero-scale",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-negative-scale",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-nan-position",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "output-infinite-scale",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "transform-invalid--1",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "transform-invalid-8",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "transform-invalid-0.5",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "transform-invalid-0",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "transform-boundary-0",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "transform-boundary-7",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "frame-invalid-0",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "frame-invalid-01",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "frame-invalid--1",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "frame-invalid-18446744073709551616",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "frame-invalid-9007199254740992",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "frame-uint64-max",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "configurationGeneration-invalid-0",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "configurationGeneration-invalid-01",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "configurationGeneration-invalid--1",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "configurationGeneration-invalid-18446744073709551616",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "configurationGeneration-invalid-9007199254740992",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "configurationGeneration-uint64-max",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "surface-zero",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "surface-uint64-overflow",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "null-authority-with-incarnation",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "null-incarnation-with-authority",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "retired-windowless",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "bound-and-unbound",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "windowless-valid",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "unbound-window-valid-unusable",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": true
+    },
+    {
+      "name": "retained-valid-unusable",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": true
+    },
+    {
+      "name": "incomplete-valid-unusable",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": true
+    },
+    {
+      "name": "overflow-valid-unusable",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": true
+    },
+    {
+      "name": "overflow-and-complete-refused",
+      "passed": true,
+      "expectedDecode": false,
+      "unusableDispatchExpected": false
+    },
+    {
+      "name": "uncommitted-valid-unusable",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": true
+    },
+    {
+      "name": "retired-valid-unusable",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": true
+    },
+    {
+      "name": "foreign-lifetime-valid-unusable",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": true
+    },
+    {
+      "name": "configuration-generation-is-independent",
+      "passed": true,
+      "expectedDecode": true,
+      "unusableDispatchExpected": false
+    }
+  ]
+}

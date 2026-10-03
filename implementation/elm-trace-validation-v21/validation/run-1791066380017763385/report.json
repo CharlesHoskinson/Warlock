@@ -1,0 +1,282 @@
+{
+  "passed": true,
+  "scope": "CPU adapter validation against saved native observations; no new native campaign",
+  "nativeReportSHA256": "61fd6ebd9632a4dfe5ed9fd8d9314370927ccbc631eb04d0eed66dd6f97cf597",
+  "inputs": {
+    "validation/adapter.py": "a2d691b5c4cad39f6f33fd7542976209029a646bf3ca9f6f2629f5d9e4bfba6d",
+    "adapter/effect_endpoint.py": "43d348bcd48aeeff12ccb272a1aa6064f4a43272c21e119e51ab033a5ae06e10",
+    "adapter/endpoint.py": "c5218750fe604aa9c92a298514a341dc1e37d080f9afc8a558e43ce026bfdf09"
+  },
+  "checks": [
+    {
+      "name": "native-minimizeFacts",
+      "passed": true
+    },
+    {
+      "name": "native-inactiveFacts",
+      "passed": true
+    },
+    {
+      "name": "native-familyFacts",
+      "passed": true
+    },
+    {
+      "name": "native-familyMinimizeFacts",
+      "passed": true
+    },
+    {
+      "name": "native-lateBirthFacts",
+      "passed": true
+    },
+    {
+      "name": "native-familyRestoreFacts",
+      "passed": true
+    },
+    {
+      "name": "geometry-nan",
+      "passed": true
+    },
+    {
+      "name": "geometry-infinity",
+      "passed": true
+    },
+    {
+      "name": "geometry-negative-infinity",
+      "passed": true
+    },
+    {
+      "name": "geometry-boolean",
+      "passed": true
+    },
+    {
+      "name": "geometry-huge-int",
+      "passed": true
+    },
+    {
+      "name": "geometry-zero-width",
+      "passed": true
+    },
+    {
+      "name": "geometry-negative-width",
+      "passed": true
+    },
+    {
+      "name": "geometry-zero-height",
+      "passed": true
+    },
+    {
+      "name": "geometry-short",
+      "passed": true
+    },
+    {
+      "name": "geometry-string",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-True",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-0",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-'00'",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-'-0'",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-' 1'",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-'1.0'",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-'1e2'",
+      "passed": true
+    },
+    {
+      "name": "workspace-invalid-'10000000000000000000'",
+      "passed": true
+    },
+    {
+      "name": "workspace-valid-None",
+      "passed": true
+    },
+    {
+      "name": "workspace-valid-'0'",
+      "passed": true
+    },
+    {
+      "name": "workspace-valid-'-1'",
+      "passed": true
+    },
+    {
+      "name": "workspace-valid-'9999999999999999999'",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-True",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-0",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-'00'",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-'-0'",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-' 1'",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-'1.0'",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-'1e2'",
+      "passed": true
+    },
+    {
+      "name": "monitor-invalid-'10000000000000000000'",
+      "passed": true
+    },
+    {
+      "name": "monitor-valid-None",
+      "passed": true
+    },
+    {
+      "name": "monitor-valid-'0'",
+      "passed": true
+    },
+    {
+      "name": "monitor-valid-'-1'",
+      "passed": true
+    },
+    {
+      "name": "monitor-valid-'9999999999999999999'",
+      "passed": true
+    },
+    {
+      "name": "stack-invalid--1",
+      "passed": true
+    },
+    {
+      "name": "stack-invalid-True",
+      "passed": true
+    },
+    {
+      "name": "stack-invalid-2147483648",
+      "passed": true
+    },
+    {
+      "name": "stack-invalid-1.5",
+      "passed": true
+    },
+    {
+      "name": "stack-invalid-'0'",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-invalid--1",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-invalid-3",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-invalid-True",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-invalid-1.5",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-invalid-'0'",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-valid-0",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-valid-1",
+      "passed": true
+    },
+    {
+      "name": "fullscreen-valid-2",
+      "passed": true
+    },
+    {
+      "name": "duplicate-incarnation",
+      "passed": true
+    },
+    {
+      "name": "unknown-focus",
+      "passed": true
+    },
+    {
+      "name": "unknown-owner",
+      "passed": true
+    },
+    {
+      "name": "boolean-state",
+      "passed": true
+    },
+    {
+      "name": "obsolete-binding",
+      "passed": true
+    },
+    {
+      "name": "wrong-request",
+      "passed": true
+    },
+    {
+      "name": "below-watermark",
+      "passed": true
+    },
+    {
+      "name": "json-overflow",
+      "passed": true
+    },
+    {
+      "name": "json-negative-overflow",
+      "passed": true
+    },
+    {
+      "name": "json-nested-overflow",
+      "passed": true
+    },
+    {
+      "name": "json-nan",
+      "passed": true
+    },
+    {
+      "name": "json-infinity",
+      "passed": true
+    },
+    {
+      "name": "json-duplicate",
+      "passed": true
+    },
+    {
+      "name": "json-finite-large-number",
+      "passed": true
+    }
+  ],
+  "checkCount": 67,
+  "nativePackets": 6
+}
