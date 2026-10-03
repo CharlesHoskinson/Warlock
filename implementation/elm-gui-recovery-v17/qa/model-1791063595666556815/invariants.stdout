@@ -1,0 +1,759 @@
+An example execution:
+
+[State 0]
+{
+  e: { binding: 0, kind: "init", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 0,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Detached",
+      reconnecting: true,
+      request: 0,
+      status: "Idle"
+    }
+}
+
+[State 1]
+{
+  e: { binding: 2, kind: "attach", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 2]
+{
+  e: { binding: 1, kind: "snapshot", minimized: 1, request: 1, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 3]
+{
+  e: { binding: 2, kind: "attach", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 4]
+{
+  e: { binding: 2, kind: "attach", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 5]
+{
+  e:
+    {
+      binding: 2,
+      kind: "receipt",
+      minimized: 0,
+      request: -1,
+      status: "Committed"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 6]
+{
+  e: { binding: 1, kind: "snapshot", minimized: 1, request: 1, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 7]
+{
+  e: { binding: 2, kind: "attach", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 8]
+{
+  e:
+    {
+      binding: 2,
+      kind: "receipt",
+      minimized: 0,
+      request: 0,
+      status: "Unknown"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 1,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 1,
+      status: "Idle"
+    }
+}
+
+[State 9]
+{
+  e: { binding: 0, kind: "refresh", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 2,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 2,
+      status: "Idle"
+    }
+}
+
+[State 10]
+{
+  e: { binding: 0, kind: "reconnect", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 2,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 2,
+      status: "Idle"
+    }
+}
+
+[State 11]
+{
+  e: { binding: 0, kind: "begin", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 2,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 2,
+      status: "Idle"
+    }
+}
+
+[State 12]
+{
+  e: { binding: 0, kind: "refresh", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 3,
+      intentBinding: 0,
+      observed: -1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 3,
+      status: "Idle"
+    }
+}
+
+[State 13]
+{
+  e: { binding: 2, kind: "snapshot", minimized: 1, request: 3, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Ready",
+      reconnecting: false,
+      request: 3,
+      status: "Idle"
+    }
+}
+
+[State 14]
+{
+  e:
+    {
+      binding: 2,
+      kind: "receipt",
+      minimized: 0,
+      request: -1,
+      status: "Committed"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Ready",
+      reconnecting: false,
+      request: 3,
+      status: "Idle"
+    }
+}
+
+[State 15]
+{
+  e: { binding: 1, kind: "snapshot", minimized: 1, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Ready",
+      reconnecting: false,
+      request: 3,
+      status: "Idle"
+    }
+}
+
+[State 16]
+{
+  e: { binding: 2, kind: "snapshot", minimized: 1, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Ready",
+      reconnecting: false,
+      request: 3,
+      status: "Idle"
+    }
+}
+
+[State 17]
+{
+  e: { binding: 0, kind: "reconnect", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Ready",
+      reconnecting: false,
+      request: 3,
+      status: "Idle"
+    }
+}
+
+[State 18]
+{
+  e: { binding: 0, kind: "refresh", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 4,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 4,
+      status: "Idle"
+    }
+}
+
+[State 19]
+{
+  e: { binding: 1, kind: "snapshot", minimized: 1, request: 4, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 4,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 4,
+      status: "Idle"
+    }
+}
+
+[State 20]
+{
+  e: { binding: 2, kind: "attach", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 4,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 4,
+      status: "Idle"
+    }
+}
+
+[State 21]
+{
+  e:
+    {
+      binding: 2,
+      kind: "receipt",
+      minimized: 0,
+      request: 0,
+      status: "Committed"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 4,
+      intentBinding: 0,
+      observed: 1,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 4,
+      status: "Idle"
+    }
+}
+
+[State 22]
+{
+  e: { binding: 2, kind: "snapshot", minimized: 0, request: 4, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Ready",
+      reconnecting: false,
+      request: 4,
+      status: "Idle"
+    }
+}
+
+[State 23]
+{
+  e: { binding: 0, kind: "refresh", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 5,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 24]
+{
+  e: { binding: 1, kind: "snapshot", minimized: 1, request: 5, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 5,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Reconciling",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 25]
+{
+  e: { binding: 0, kind: "disconnect", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 26]
+{
+  e:
+    {
+      binding: 2,
+      kind: "receipt",
+      minimized: 0,
+      request: -1,
+      status: "Committed"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 27]
+{
+  e: { binding: 0, kind: "disconnect", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 28]
+{
+  e: { binding: 1, kind: "attach", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 29]
+{
+  e: { binding: 0, kind: "begin", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 30]
+{
+  e: { binding: 0, kind: "refresh", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 31]
+{
+  e: { binding: 2, kind: "snapshot", minimized: 1, request: -1, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 32]
+{
+  e: { binding: 0, kind: "begin", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 33]
+{
+  e: { binding: 0, kind: "begin", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 34]
+{
+  e: { binding: 0, kind: "refresh", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 35]
+{
+  e: { binding: 0, kind: "begin", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 36]
+{
+  e: { binding: 2, kind: "snapshot", minimized: 1, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 37]
+{
+  e:
+    {
+      binding: 2,
+      kind: "receipt",
+      minimized: 0,
+      request: 0,
+      status: "Unknown"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 38]
+{
+  e: { binding: 1, kind: "attach", minimized: 0, request: 0, status: "" },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 39]
+{
+  e:
+    {
+      binding: 2,
+      kind: "receipt",
+      minimized: 0,
+      request: 0,
+      status: "Committed"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[State 40]
+{
+  e:
+    {
+      binding: 1,
+      kind: "receipt",
+      minimized: 0,
+      request: 0,
+      status: "Committed"
+    },
+  s:
+    {
+      binding: 2,
+      counter: 0,
+      expected: 0,
+      intentBinding: 0,
+      observed: 0,
+      phase: "Detached",
+      reconnecting: false,
+      request: 5,
+      status: "Idle"
+    }
+}
+
+[ok] No violation found (1013ms at 987 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

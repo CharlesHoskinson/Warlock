@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-gui-effects-v16",
-  "status": "Native seat outcome guards and real Elm minimize/restore controls implemented in private hosts. Bounded campaigns and typed replay validation; full scene, UX, hardware/AT and release gates remain open.",
+  "activeSlice": "implementation/elm-gui-recovery-v17",
+  "status": "Typed pure Elm GUI recovery implemented: correlated binding/request snapshots, pending Unknown and explicit fresh-broker reconnect without replay. Bounded model/compiled/native proof; full canonical scene, renderer/authority restart, UX, hardware/AT and release gates remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -28,7 +28,8 @@
     "ELM-REV-016",
     "ELM-UI-001",
     "ELM-GNO-002",
-    "ELM-GNO-004"
+    "ELM-GNO-004",
+    "ELM-DEL-018"
   ],
   "completedRequirementIds": [],
   "observedResults": {
@@ -213,6 +214,26 @@
       "evidence": "implementation/elm-gui-effects-v16/qa/slice-manifest.json",
       "wholeFeatureAccepted": false,
       "preservedFailure": "First packet mislabeled passed despite cleanup exception; explicitly rejected in README and excluded from accepted manifest."
+    },
+    "guiRecoveryV17": {
+      "effectReplayChecks": 20,
+      "shellReplayChecks": 27,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "actualITFReplayTraces": 9,
+      "actualITFReplayTransitions": 75,
+      "nativeChecks": 21,
+      "actualBrokerPendingInterruptionAndReconnect": true,
+      "staleNativeBindingRefused": true,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-gui-recovery-v17/qa/slice-manifest.json",
+      "unproven": [
+        "renderer restart",
+        "authority restart",
+        "canonical scene",
+        "full UI/UX/AT/IME/GPU and release"
+      ]
     }
   },
   "next": "Strengthen native outcome proof with actual seat-surface postconditions and grab refusal, qualify parent retirement/remap, then bind typed Elm intent/outcome controls in a real isolated GUI host. Complete canonical scene/presentation, previews/original deadlines, output/layout/GPU/AT/IME and full release gates.",

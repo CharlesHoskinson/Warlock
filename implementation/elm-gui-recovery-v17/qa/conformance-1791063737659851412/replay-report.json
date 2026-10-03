@@ -1,0 +1,3119 @@
+{
+  "passed": true,
+  "traces": 9,
+  "transitions": 75,
+  "receipts": [
+    {
+      "file": "named-awaitSnapshotTest-0.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        }
+      ]
+    },
+    {
+      "file": "named-coherentAdmissionTest-1.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Pending"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "window-effect",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "7",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "1",
+                  "output": "3",
+                  "revision": "5"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "named-oldBindingReceiptTest-5.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "kind": "host-disconnected"
+        },
+        {
+          "kind": "user-reconnect"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "7",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Pending"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "window-effect",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "7",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "1",
+                  "output": "3",
+                  "revision": "5"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "1",
+            "available": false,
+            "reconnecting": true,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": [
+            {
+              "kind": "host-reconnect"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "10",
+                "frontend": "1"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": []
+        }
+      ]
+    },
+    {
+      "file": "named-pendingUnknownTest-2.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "kind": "host-disconnected"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Pending"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "window-effect",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "7",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "1",
+                  "output": "3",
+                  "revision": "5"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": []
+        }
+      ]
+    },
+    {
+      "file": "named-receiptNotSceneTest-6.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "7",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Pending"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "window-effect",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "7",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "1",
+                  "output": "3",
+                  "revision": "5"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Committed"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "2"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file": "named-reconnectNoReplayTest-3.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "kind": "host-disconnected"
+        },
+        {
+          "kind": "user-reconnect"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "requestId": "2",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "6"
+          },
+          "scene": {
+            "revision": "6",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Pending"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "window-effect",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "7",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "1",
+                  "output": "3",
+                  "revision": "5"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "1",
+            "available": false,
+            "reconnecting": true,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": [
+            {
+              "kind": "host-reconnect"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "10",
+                "frontend": "1"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "2",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": []
+        }
+      ]
+    },
+    {
+      "file": "named-staleProjectionTest-4.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "kind": "user-refresh"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        }
+      ]
+    },
+    {
+      "file": "named-terminalCannotOverwriteTest-7.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "7",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Unknown"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "7",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "5"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Pending"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "window-effect",
+              "effectProtocol": 1,
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "intent": {
+                "request": "1",
+                "generation": "1",
+                "incarnation": "7",
+                "operation": "minimize",
+                "context": {
+                  "lifetime": "9007199254740993",
+                  "epoch": "1",
+                  "output": "3",
+                  "revision": "5"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "9",
+                "frontend": "1"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "1",
+              "generation": "1",
+              "transaction": {
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "7",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "9007199254740993",
+                    "epoch": "1",
+                    "output": "3",
+                    "revision": "5"
+                  }
+                },
+                "status": "Unknown"
+              }
+            }
+          },
+          "commands": []
+        }
+      ]
+    },
+    {
+      "file": "sample-0.itf.json",
+      "messages": [
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "5"
+          },
+          "scene": {
+            "revision": "5",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "6"
+          },
+          "scene": {
+            "revision": "6",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "4"
+            }
+          },
+          "status": "Unknown"
+        },
+        {
+          "kind": "user-refresh"
+        },
+        {
+          "kind": "user-reconnect"
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "kind": "user-refresh"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "requestId": "3",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "7"
+          },
+          "scene": {
+            "revision": "7",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "7"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "0",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "8"
+          },
+          "scene": {
+            "revision": "8",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "requestId": "0",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "9"
+          },
+          "scene": {
+            "revision": "9",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-reconnect"
+        },
+        {
+          "kind": "user-refresh"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "4",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "10"
+          },
+          "scene": {
+            "revision": "10",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "7"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "requestId": "4",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "11"
+          },
+          "scene": {
+            "revision": "11",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": false
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-refresh"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "requestId": "5",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "12"
+          },
+          "scene": {
+            "revision": "12",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "kind": "host-disconnected"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "11"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "kind": "host-disconnected"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "kind": "user-refresh"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "requestId": "-1",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "13"
+          },
+          "scene": {
+            "revision": "13",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "kind": "user-refresh"
+        },
+        {
+          "kind": "user-action",
+          "operation": "minimize",
+          "incarnation": "7"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "action-projection",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "requestId": "0",
+          "context": {
+            "lifetime": "9007199254740993",
+            "epoch": "1",
+            "output": "3",
+            "revision": "14"
+          },
+          "scene": {
+            "revision": "14",
+            "windows": [
+              {
+                "incarnation": "7",
+                "label": "Window",
+                "minimized": true
+              }
+            ]
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "11"
+            }
+          },
+          "status": "Unknown"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "attached",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          }
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "10",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "11"
+            }
+          },
+          "status": "Committed"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "effect-outcome",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "99",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "1",
+              "output": "3",
+              "revision": "11"
+            }
+          },
+          "status": "Committed"
+        }
+      ],
+      "rows": [
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "10",
+                "frontend": "1"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "1",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "10",
+                "frontend": "1"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "2",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "3",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": null,
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "10",
+                "frontend": "1"
+              },
+              "requestId": "3"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "3",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "3",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "3",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "3",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "3",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "4",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "10",
+                "frontend": "1"
+              },
+              "requestId": "4"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "4",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "4",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "4",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": true
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Ready",
+            "request": "4",
+            "available": true,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "9007199254740993",
+                "session": "10",
+                "frontend": "1"
+              },
+              "requestId": "5"
+            }
+          ]
+        },
+        {
+          "model": {
+            "phase": "Reconciling",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": true,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        },
+        {
+          "model": {
+            "phase": "Detached",
+            "request": "5",
+            "available": false,
+            "reconnecting": false,
+            "effects": {
+              "windows": [
+                {
+                  "incarnation": "7",
+                  "minimized": false
+                }
+              ],
+              "connected": false,
+              "request": "0",
+              "generation": "0",
+              "transaction": null
+            }
+          },
+          "commands": []
+        }
+      ]
+    }
+  ]
+}

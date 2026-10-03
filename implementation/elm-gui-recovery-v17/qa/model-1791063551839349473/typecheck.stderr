@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-gui-recovery-v17/qa/model-1791063551839349473/recovery.qnt:8:29
+  8:  action attach(binding:int) = all {
+                                 ^
+
+
+ Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-gui-recovery-v17/qa/model-1791063551839349473/recovery.qnt:9:230
+  9:   s'=if(s.phase=="Detached" and s.reconnecting and binding!=s.binding) {...s,binding:binding,request:s.request+1,expected:s.request+1,phase:"Reconciling",reconnecting:false,status:if(s.status=="Pending") "Unknown" else s.status} else s,
+                                                                                                                                                                                                                                          ^^^^
+
+error: parsing failed

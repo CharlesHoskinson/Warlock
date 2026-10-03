@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "scope": "Abstract broker recovery/projection policy; native restart and full architecture gates remain separate",
+  "sourceSHA256": "b9d8a3afe58e47cba803ede4f98cda34fff24b84a0bd908c972e71ccdbc37354",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=@informalsystems/quint@0.32.0",
+        "--",
+        "quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\n Error [QNT000]: mismatched input \\'=\\' expecting \\':\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-gui-recovery-v17/qa/model-1791063551839349473/recovery.qnt:8:29\\n  8:  action attach(binding:int) = all {\\n                                 ^\\n\\n\\n Error [QNT000]: extraneous input \\'else\\' expecting {<EOF>, \\'module\\', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-gui-recovery-v17/qa/model-1791063551839349473/recovery.qnt:9:230\\n  9:   s\\'=if(s.phase==\"Detached\" and s.reconnecting and binding!=s.binding) {...s,binding:binding,request:s.request+1,expected:s.request+1,phase:\"Reconciling\",reconnecting:false,status:if(s.status==\"Pending\") \"Unknown\" else s.status} else s,\\n                                                                                                                                                                                                                                          ^^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "recovery.qnt": "b9d8a3afe58e47cba803ede4f98cda34fff24b84a0bd908c972e71ccdbc37354",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "9214ecab316a9d1fa823d7346183045ee6312548eb0d64df70d729c81c3e3fe8"
+  }
+}

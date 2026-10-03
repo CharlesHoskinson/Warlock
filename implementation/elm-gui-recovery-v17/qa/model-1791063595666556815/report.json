@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "Abstract broker recovery/projection policy; native restart and full architecture gates remain separate",
+  "sourceSHA256": "258312c2774ba36f6858000b889364a5f88e7a8d3fe89cc924b04c8ca0f0b7d1",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(awaitSnapshotTest|coherentAdmissionTest|pendingUnknownTest|reconnectNoReplayTest|staleProjectionTest|oldBindingReceiptTest|receiptNotSceneTest|terminalCannotOverwriteTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "258312c2774ba36f6858000b889364a5f88e7a8d3fe89cc924b04c8ca0f0b7d1",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-awaitSnapshotTest-0.itf.json": "cbac83a71c6ce1102a7cfea1802586a6a51782e0b9b77cf1dbc910a5c026cb5e",
+    "named-coherentAdmissionTest-1.itf.json": "8c61b8d4830128ad0bc77c372c2d7870940020e1cfdc5b748e02a66ce6bcbcbd",
+    "named-pendingUnknownTest-2.itf.json": "0ea818a5bc42d22228918d9e5ff37801c44ba572feafe392fa7800b6fecc5e9d",
+    "named-reconnectNoReplayTest-3.itf.json": "7143fce04c9c1f2ade1ec7285436825e5709902ad52a3e9a13002c70269b270a",
+    "named-staleProjectionTest-4.itf.json": "799fc67320fc2270d0c0ce30de551d0948d3b8d1aae54af56817d5fe792db62f",
+    "named-oldBindingReceiptTest-5.itf.json": "f22642d784899f6abb948bf25474798077e7154807ef49a994ca3c83e6e9732b",
+    "named-receiptNotSceneTest-6.itf.json": "3acc3ae3bcf10f452db5c96f40a61c039aead9d9c37d379bb4466dd8a54232a8",
+    "named-terminalCannotOverwriteTest-7.itf.json": "c2614286f5a0012c515e81c9d54eb5e7758fe65cc431b1fb8ef7fb73124c0146",
+    "named.stdout": "0be69c99034f3f8c1028ce9e242ddb1c1bef12a8cbcc4cdde04be56989d22de8",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "988f2a45ad2930eeb0eb1667c2974b06d672d5f76bb9839b51b35aa08489ed15",
+    "invariants.stdout": "193e63347bc6da384c00ed7b8f2aff8d8087c270420c384d9b17a5c57307d558",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

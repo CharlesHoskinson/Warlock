@@ -6175,6 +6175,19 @@
       "nativeChecks": 9,
       "evidence": "implementation/elm-gui-effects-v16/qa/slice-manifest.json",
       "acceptance": "Real pointer/Elm/native effect/observed DOM path only; human UX, AT/IME, output/device and release campaigns remain planned."
+    },
+    {
+      "slice": "implementation/elm-gui-recovery-v17",
+      "level": "compiled-replay, model-conformance and native-GUI-component",
+      "effectReplayChecks": 20,
+      "shellReplayChecks": 27,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "ITFTraces": 9,
+      "ITFTransitions": 75,
+      "nativeChecks": 21,
+      "evidence": "implementation/elm-gui-recovery-v17/qa/slice-manifest.json",
+      "acceptance": "Actual pending broker loss and explicit reconnect only; renderer/authority restart and full scenario acceptance remain unproven."
     }
   ]
 }
