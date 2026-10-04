@@ -1,0 +1,5 @@
+# Independent actual GTK journal boundary characterization
+
+Before test implementation: import an immutable snapshot of actual V238 journal.py, never change V238. Use actual producer233 records and compiled owning GDK header enum evidence, then alter one field/interval at a time. Record accepted unsafe witnesses as findings, not passing native semantics. Verify positive canonical PID/start/instance/map/surface/profile, consecutive event ordering starting1, duplicate-key/nonfinite JSON refusal, actual event kind/time/raw GDK versus Linux evdev domains, and an entire unfiltered pointer/keyboard negative interval. Recreated roles and changed mappings must not inherit acceptance from a prior instance/resource. Bounded complete-newline parsing can retain a partial tail; decoder failures must be classified distinctly from acceptance.
+
+Protected CPU only; synthetic journals are decoder-boundary evidence, not real GTK/native input. No source/model/GUI edits. Keep exact predecessor snapshot/report even if owner later fixes it. A later review of corrected held source must be a distinct packet, never reinterpret accepted unsafe records as safe behavior.

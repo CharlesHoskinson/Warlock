@@ -1,0 +1,14 @@
+{
+  "diagnosisConfirmed": true,
+  "nativeAcceptance": false,
+  "sourceSHA256": "05038f58c1e1996b9843dce4cac800f2e4e71257d3c7c41aa73da495735308fc",
+  "scriptSHA256": "ea739dcf1ad8b30e0b7ced03f5546e20123242bade3dbea3dc871b503724ff53",
+  "scope": "Actual private_socket with environment and owned-socket stat stubs; no display connection",
+  "actualRows": [
+    "0 1 /run/user/1000/wqa/isolated",
+    "1 1 /run/user/1000/wqa/..",
+    "2 1 /run/user/1000",
+    "3 1 /arbitrary/runtime",
+    "4 1 /arbitrary/owned-socket"
+  ]
+}

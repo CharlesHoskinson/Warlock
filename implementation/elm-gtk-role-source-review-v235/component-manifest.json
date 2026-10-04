@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "sourceReviewPassed": false,
+  "nativeAcceptance": false,
+  "blocker": "Canonical runtime isolation; fresh244 required",
+  "ownerManifestSHA256": "58d33306a1234548059ff9ec36975f1c8c0cbd8d1fe5c676f735ed379739bc1d",
+  "ownerSourceSHA256": "b2e5cc6d75aa6c1a0b8d78e5ccb6110882739024e828a08f964e8e628d78acf3",
+  "runtimeDiagnosisManifestSHA256": "d98d405e3f7493b04bf8d942f77d092a2c01186d1268af7d27300388e0dd7c6f",
+  "files": {
+    "REQUIREMENTS.md": {
+      "sha256": "4088b66e0a3af33606db57166c656c1ffe9b76e2b7ba5c1de04813a1735f03f0",
+      "size": 1339,
+      "mode": 420
+    },
+    "REVIEW.md": {
+      "sha256": "d03dc4eee188dade22a454d3a69eadaadbf86a9b865b8bcc60d582d8b107a911",
+      "size": 1508,
+      "mode": 420
+    },
+    "qa/witness.py": {
+      "sha256": "94d18f3e6034866fa8de48485d457a54c8e998d83aa752ef48f458d6fc1f9774",
+      "size": 3162,
+      "mode": 420
+    },
+    "qa/witness-1791139041676539374/actual-function.c": {
+      "sha256": "45d4eb31ab756fa76db8380ec898e1459f3b9c83c65843fd2f3717a16e03158a",
+      "size": 794,
+      "mode": 420
+    },
+    "qa/witness-1791139041676539374/test.c": {
+      "sha256": "d2526040a30f3f9dcdbe8630adc02d449ff54fd82b7fa98faeda1e69fd2cc97a",
+      "size": 1142,
+      "mode": 420
+    },
+    "qa/witness-1791139041676539374/compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791139041676539374/compile.stderr": {
+      "sha256": "37ff9937123240c848ae6b21caa5bfb2e1b31ec13855f31e7b627f4e314d66ca",
+      "size": 1809,
+      "mode": 420
+    }
+  }
+}

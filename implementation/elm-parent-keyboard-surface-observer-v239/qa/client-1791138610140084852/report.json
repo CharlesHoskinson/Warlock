@@ -1,0 +1,267 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual source preservation and compiled client correlation with explicit request/dispatch stubs; no socket or GUI",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/test.py": "a2478321cd68df4c3f5d91192c0ad5df62a0873c98caa93a60d8f610f5a7ea25",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-test.c": "1ef79e35e01996d8c504d01a096115732f4f0cca7294daee6f68e2a360e9df06",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input-client.c": "05038f58c1e1996b9843dce4cac800f2e4e71257d3c7c41aa73da495735308fc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input-module.c": "ae6c05a98befc85078a6e58d7c1d2456a6b1335a1a9f7f5fc68fb7899a858abd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original151/parent-input-client.c": "7702e81d1def00cd5f0d1efe145ef56dcd341d30e4fc0da37ceaaf1ed6c2bf63",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original151/parent-input-module.c": "4348ac16f8d5a0be603233abd79c2aa53d227e2b3acae7cbbd49550c5ca937cb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original151/parent-input.xml": "8982cc1f1db9af5923b3c5f4122149ed2eaa705d554e507eb400938d7f99fb2b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original225/parent-input-client.c": "fbc26ba3529e6a2994df7025be734f1dbc03b14afd06ad664a1821b72d66a88c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original225/parent-input-module.c": "f0bd1982a702769eb0d61eea41b0660b88d3852cd140cdecf7832ab22954162b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original225/parent-input.xml": "7f28f00de0002b84b27bc021f4b19bbe2fe8444300a94eec01688b8864d5edbe"
+  },
+  "checks": [
+    {
+      "name": "legacy-byteexact:clock_now",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:focused_pid",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:held_key_mask",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:release_keys",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:release_all",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:resource_destroyed",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:destroy_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:valid_point",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:motion_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:button_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:pointer_capability_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:pointer_burst_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:same_start",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_held_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:key_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_held_key_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:keyboard_capability_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:keyboard_focus_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:bind_probe",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:seat_destroyed",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:done",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:private_socket",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_capability",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_keyboard_capability",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_keyboard_focus",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_burst",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_held_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_key_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_key",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:number",
+      "passed": true
+    },
+    {
+      "name": "legacy-XML-v7-exact",
+      "passed": true
+    },
+    {
+      "name": "observer-XML-v1-exact",
+      "passed": true
+    },
+    {
+      "name": "actual225header-exact",
+      "passed": true
+    },
+    {
+      "name": "actual-callbacks-positive",
+      "passed": true
+    },
+    {
+      "name": "unsafe-rejected:wrong-allocation",
+      "passed": false
+    }
+  ],
+  "commands": [
+    {
+      "name": "scanner-client-header",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "client-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/inputs/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/generated/parent-input-client.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scanner-private-code",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/inputs/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/generated/parent-input-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-client-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/inputs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/inputs/client-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/generated/parent-input-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/actual-client"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-client",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/actual-client"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "wrong-allocation-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/inputs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/inputs/client-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/generated/parent-input-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138610140084852/wrong-allocation"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "actualCallbackChecks": 26,
+  "error": "AssertionError('unsafe-rejected:wrong-allocation')",
+  "artifacts": {
+    "scanner-client-header.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-client-header.stderr": "42428985b9751c9d15dfae289a6ce2a17f6cd5fec022fd7a650b3189bc14cfe8",
+    "scanner-private-code.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-private-code.stderr": "42428985b9751c9d15dfae289a6ce2a17f6cd5fec022fd7a650b3189bc14cfe8",
+    "actual-client": "dae96d6db042d1923bb287d8262f0ef640cf2ab59ceb6eeef65a17f380de5780",
+    "actual-client-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-client-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-client.stdout": "5328cf5e53bb30ee3a6b7b6cb4395df375484cd1748b274e1fa3fe3ffa08fcf2",
+    "actual-client.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-allocation": "1c65fbbe62abc83972a7afc713554a96aa1da1c4b68d77035461b1e6a4593985",
+    "wrong-allocation-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-allocation-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-allocation.stdout": "5328cf5e53bb30ee3a6b7b6cb4395df375484cd1748b274e1fa3fe3ffa08fcf2",
+    "wrong-allocation.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "generated/parent-input-client.h": "cd683cceca1c7026d8195dae8a52db4d79353eda4acf234d5a64a0938a892b81",
+    "generated/parent-input-protocol.c": "83f2e28bc26341d69cc61a6534460db63837f554e6e3ca2f28244d331b724305",
+    "inputs/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "inputs/parent-input-module.c": "ae6c05a98befc85078a6e58d7c1d2456a6b1335a1a9f7f5fc68fb7899a858abd",
+    "inputs/parent-input-client.c": "63d9580925d134cee37fd2cfc7ca59d7edc72dc2b9bd2afdb3944ff22b1d1fcd",
+    "inputs/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "inputs/client-test.c": "1ef79e35e01996d8c504d01a096115732f4f0cca7294daee6f68e2a360e9df06"
+  }
+}

@@ -1,0 +1,13 @@
+# Public popup diagnostics
+
+P01. Retain235 role/held queries and exact private UID runtime/owning470 ABI/thread gates. Add independent elm_popup_state read-only query; no private-member access or native policy mutation.
+P02. Enumerate public OtherViewState mapped popup views only, withactual wl_surface resource/client PID/UID and T1 root resource/client identity. Observe native global coordinates/size and current seat-grab membership for popup/root, keyboard/pointer grab flags and pointer/keyboard focus resource. Immediate xdg parent and input serial still require independently captured actual Wayland wire; T1 root is not immediate parent or grab owner.
+P03. Bound public view census512, result256popups/65536bytes and finite coordinates/sizes. Refuse instead of truncation. Addresses describe this sample only; runner binds process lifetimes/client resource generations and actual protocol parent serials.
+P04. Compile actualsource with exact470owning694headers/strongsymbol closure/dependencytools/libs, then independentreview and freeze before anyGUI. Compilation and query metadata neverqualify presentation, recipient, GTK semantics or atomicity.
+P05. Support unchanged234 GTK06 popup/grab oracle and fullGTK01..08 alongside233 journal and native pixels/input. Missing immediateparent or owner proof remains explicit until actual wire+native correlations exist; don't silently narrow popup test.
+
+P06. Preserve237 failure/source. Before reading popup coordinates, require a real wl_surface resource and an exact unique mapped top-level ownership-tree join via public popupHead traversal. Hold that root strongly; derive root resource from verified CWindow, not unguarded getT1Owner. Refuse missing/ambiguous root or rawresource identity. Window-owned GTKpopups only; layer/unowned popups remain explicitly refused, not accepted. Preserve oldheld/rolequeries and alloriginalpopupbounds.
+
+P07. The public ownership traversal has a query-wide 1024-callback budget. Exceeding it throws a local marker caught within the query and returns refusal before any coordinate read; it cannot silently omit a root. This also bounds repeated ownership searches. Native popup tree construction remains the compositor's responsibility; no malformed-tree acceptance is inferred from a source guard.
+
+P08. Reject '.'/'..' runtime leaves and require successful canonical(path).native()==path.native() before lstat/session acceptance. Do not access parent/main runtime through traversal or symlink/alias spellings. Retain all240 role/popup/held query bytes and bounded ownership semantics. Original runtime socket/peer/PID/start/ABI/ordered cleanup guards stillapply at native runner.

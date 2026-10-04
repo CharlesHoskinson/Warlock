@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual guard functions with real canonical paths, private temp directories and unconnected local socket; GTK protected_scope mocked true, no GUI/display connection",
+  "checks": [
+    {
+      "guard": "gtk",
+      "case": "canonical",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "guard": "gtk",
+      "case": "dot",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "gtk",
+      "case": "dotdot",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "gtk",
+      "case": "leaf-dot",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "gtk",
+      "case": "symlink",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "gtk",
+      "case": "main",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "observer",
+      "case": "canonical",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "guard": "observer",
+      "case": "dot",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "observer",
+      "case": "dotdot",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "observer",
+      "case": "leaf-dot",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "observer",
+      "case": "symlink",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "observer",
+      "case": "main",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "gtk",
+      "case": "wrong-mode",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "guard": "observer",
+      "case": "wrong-mode",
+      "accepted": false,
+      "expected": false
+    }
+  ],
+  "sources": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/native/gtk-role-client.c": "78d1ed4100ede590aec1bb96e52ac0684d0aba32602cc565925c70a75393b6df",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-toolkit-popup-canonical-observer-v246/native/observer.cpp": "9c1927914f47144e942561e5103be00c252a2a5a3d8a0bec74913b1f7610b805"
+  },
+  "scriptSHA256": "bf509e1031d62250992ad3f05b0434e219d8e438eb897c95d86b78a036966cc7"
+}

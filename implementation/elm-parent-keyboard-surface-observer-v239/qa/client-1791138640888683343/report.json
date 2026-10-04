@@ -1,0 +1,324 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual source preservation and compiled client correlation with explicit request/dispatch stubs; no socket or GUI",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/test.py": "7dc406b2a23d8afb86fc8eb61e7e7bab34530da689f0f5f9ad1b7d7207fb86d0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-test.c": "1ef79e35e01996d8c504d01a096115732f4f0cca7294daee6f68e2a360e9df06",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input-client.c": "05038f58c1e1996b9843dce4cac800f2e4e71257d3c7c41aa73da495735308fc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input-module.c": "ae6c05a98befc85078a6e58d7c1d2456a6b1335a1a9f7f5fc68fb7899a858abd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original151/parent-input-client.c": "7702e81d1def00cd5f0d1efe145ef56dcd341d30e4fc0da37ceaaf1ed6c2bf63",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original151/parent-input-module.c": "4348ac16f8d5a0be603233abd79c2aa53d227e2b3acae7cbbd49550c5ca937cb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original151/parent-input.xml": "8982cc1f1db9af5923b3c5f4122149ed2eaa705d554e507eb400938d7f99fb2b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original225/parent-input-client.c": "fbc26ba3529e6a2994df7025be734f1dbc03b14afd06ad664a1821b72d66a88c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original225/parent-input-module.c": "f0bd1982a702769eb0d61eea41b0660b88d3852cd140cdecf7832ab22954162b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/original225/parent-input.xml": "7f28f00de0002b84b27bc021f4b19bbe2fe8444300a94eec01688b8864d5edbe"
+  },
+  "checks": [
+    {
+      "name": "legacy-byteexact:clock_now",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:focused_pid",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:held_key_mask",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:release_keys",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:release_all",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:resource_destroyed",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:destroy_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:valid_point",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:motion_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:button_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:pointer_capability_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:pointer_burst_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:same_start",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_held_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:key_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_held_key_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:keyboard_capability_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:keyboard_focus_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:bind_probe",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:seat_destroyed",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:done",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:private_socket",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_capability",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_keyboard_capability",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_keyboard_focus",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_burst",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_held_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_key_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_key",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:number",
+      "passed": true
+    },
+    {
+      "name": "legacy-XML-v7-exact",
+      "passed": true
+    },
+    {
+      "name": "observer-XML-v1-exact",
+      "passed": true
+    },
+    {
+      "name": "actual225header-exact",
+      "passed": true
+    },
+    {
+      "name": "actual-callbacks-positive",
+      "passed": true
+    },
+    {
+      "name": "unsafe-rejected:wrong-allocation",
+      "passed": true
+    },
+    {
+      "name": "unsafe-rejected:missing-sequence-bound",
+      "passed": true
+    },
+    {
+      "name": "unsafe-rejected:wrong-receipt-key",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "scanner-client-header",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "client-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated/parent-input-client.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scanner-private-code",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated/parent-input-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-client-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs/client-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated/parent-input-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/actual-client"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-client",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/actual-client"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "wrong-allocation-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs/client-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated/parent-input-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/wrong-allocation"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "missing-sequence-bound-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs/client-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated/parent-input-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/missing-sequence-bound"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "wrong-receipt-key-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/inputs/client-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/generated/parent-input-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/qa/client-1791138640888683343/wrong-receipt-key"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "actualCallbackChecks": 26,
+  "artifacts": {
+    "scanner-client-header.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-client-header.stderr": "581b1ef38e99732968670d16d007f3fab192b77e31be9bbc3588cce4658805f0",
+    "scanner-private-code.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-private-code.stderr": "581b1ef38e99732968670d16d007f3fab192b77e31be9bbc3588cce4658805f0",
+    "actual-client": "9a0ba93b74df3add59b8bf01cc4fa5701ae59102cff31ed3309322fc289f71cb",
+    "actual-client-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-client-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-client.stdout": "5328cf5e53bb30ee3a6b7b6cb4395df375484cd1748b274e1fa3fe3ffa08fcf2",
+    "actual-client.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-allocation": "0347366bcea6cc8c1f24b431481e545e532bc9abbf843670a7a178ed77733f99",
+    "wrong-allocation-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-allocation-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-allocation.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-allocation.stderr": "b9bd1ad4ad807cbf8be9a1ca4732315028847de2267f75fe3f8ff5db2b4845f7",
+    "missing-sequence-bound": "6cb69da3edbd170c46e89711c0c58c1cedeea74f7958bd9445951c863b61b7fe",
+    "missing-sequence-bound-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-sequence-bound-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-sequence-bound.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-sequence-bound.stderr": "60df06b14bb44f24155041c3b0bd8b58890e2f8111df6f7c4ddddf1c95ce992e",
+    "wrong-receipt-key": "455a2e35a501a29ba47d82d56d875fcc91734d64ecce01627e00641ba82bcfbd",
+    "wrong-receipt-key-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-receipt-key-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-receipt-key.stdout": "a1e43828bd5c8c8f96bcfa5b69f38c592a346c718cc6e1a35131cdc7a7825be6",
+    "wrong-receipt-key.stderr": "9652b74d3f84144a4204af80a0524e92dfe3733a2e24940a38a9299312b67b5a",
+    "generated/parent-input-client.h": "cd683cceca1c7026d8195dae8a52db4d79353eda4acf234d5a64a0938a892b81",
+    "generated/parent-input-protocol.c": "83f2e28bc26341d69cc61a6534460db63837f554e6e3ca2f28244d331b724305",
+    "inputs/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "inputs/parent-input-module.c": "ae6c05a98befc85078a6e58d7c1d2456a6b1335a1a9f7f5fc68fb7899a858abd",
+    "inputs/parent-input-client.c": "05038f58c1e1996b9843dce4cac800f2e4e71257d3c7c41aa73da495735308fc",
+    "inputs/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "inputs/client-test.c": "1ef79e35e01996d8c504d01a096115732f4f0cca7294daee6f68e2a360e9df06"
+  }
+}

@@ -1,0 +1,416 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "scope": "GTK4 compiled fixture/CPU command and mocked callback qualification only",
+  "sourceSHA256": "78d1ed4100ede590aec1bb96e52ac0684d0aba32602cc565925c70a75393b6df",
+  "build": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/qa/build-1791139220766213638/gtk-role-client",
+    "sha256": "16721a337094ab697d7e21463473ba9a4d85ea9f9156dfbf0b8c673131ce64fb"
+  },
+  "files": {
+    "REQUIREMENTS.md": {
+      "sha256": "2c8c5426f5f6d149bd0e4ee31e1e929c84b46824001b30a8b4d9804ee42f85ad",
+      "size": 4394,
+      "mode": "0o644"
+    },
+    "SPEC.md": {
+      "sha256": "b111f629090dc85b22213e056c5ccd69aa52cf39757f879b6edd725b16ddfc81",
+      "size": 2970,
+      "mode": "0o644"
+    },
+    "client-build-report.json": {
+      "sha256": "8e56437adf23370c1cbf4a34527f98df4db2d04ca61c140dce2825598e5bc656",
+      "size": 148607,
+      "mode": "0o644"
+    },
+    "native/commands.h": {
+      "sha256": "704868315aef54422661c43a3f03fa49c9035da04e5f65c25f5c4fcb9bd74179",
+      "size": 1609,
+      "mode": "0o644"
+    },
+    "native/gtk-role-client.c": {
+      "sha256": "78d1ed4100ede590aec1bb96e52ac0684d0aba32602cc565925c70a75393b6df",
+      "size": 18743,
+      "mode": "0o644"
+    },
+    "origin.json": {
+      "sha256": "0072cf1e52876b5bafcde1e8a67155a1c725028a926c11db3f17387e0ab0c382",
+      "size": 1021,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/compile.stderr": {
+      "sha256": "ac78b86f11658850da261cc22f4a27bffce6126eaa8a42fd289b7f948474e60f",
+      "size": 789,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/inputs/REQUIREMENTS.md": {
+      "sha256": "2c8c5426f5f6d149bd0e4ee31e1e929c84b46824001b30a8b4d9804ee42f85ad",
+      "size": 4394,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/inputs/SPEC.md": {
+      "sha256": "b111f629090dc85b22213e056c5ccd69aa52cf39757f879b6edd725b16ddfc81",
+      "size": 2970,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/inputs/native/commands.h": {
+      "sha256": "704868315aef54422661c43a3f03fa49c9035da04e5f65c25f5c4fcb9bd74179",
+      "size": 1609,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/inputs/native/gtk-role-client.c": {
+      "sha256": "a522b87fd0e3e39fd3397ae1c682b1b4eb60b89558e5f803fdbbd05154bb08ff",
+      "size": 18697,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/inputs/qa/build.py": {
+      "sha256": "bc259cd934fa10cc87a001e898c8f9dfc0945455006092d595b00f930eb6a08f",
+      "size": 3105,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/pkg-config.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/pkg-config.stdout": {
+      "sha256": "3dae8bc09848d531337787126de868c45084b46f513ab276c670903fee0746f8",
+      "size": 674,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/report.json": {
+      "sha256": "62bdeb9a567abc1211a739a221f37247e380bd21d0e1a10522c29ca7d4acd470",
+      "size": 330,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/versions.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139182509308678/versions.stdout": {
+      "sha256": "a61d0e84b3620610efd29543c9ffc9af1924611e4b541c3ddbd6ea651164bb70",
+      "size": 21,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/cc1.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/cc1.stdout": {
+      "sha256": "c400491dd6f36bdc89c46da99a7c98dbd19a3eb313a62e89576505b07846aec8",
+      "size": 40,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/dependencies.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/dependencies.stdout": {
+      "sha256": "59e3e0904af561ee8c1904d88e8730ebbf62ae6b071e3057288dbca7de8543e7",
+      "size": 41397,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/describe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/describe.stdout": {
+      "sha256": "ab351a8c107214be019474156f6fea6b5a78c9b3b5c7ddd8f3e21652f53a0435",
+      "size": 89,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/gtk-role-client": {
+      "sha256": "16721a337094ab697d7e21463473ba9a4d85ea9f9156dfbf0b8c673131ce64fb",
+      "size": 49312,
+      "mode": "0o755"
+    },
+    "qa/build-1791139220766213638/inputs/REQUIREMENTS.md": {
+      "sha256": "2c8c5426f5f6d149bd0e4ee31e1e929c84b46824001b30a8b4d9804ee42f85ad",
+      "size": 4394,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/inputs/SPEC.md": {
+      "sha256": "b111f629090dc85b22213e056c5ccd69aa52cf39757f879b6edd725b16ddfc81",
+      "size": 2970,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/inputs/native/commands.h": {
+      "sha256": "704868315aef54422661c43a3f03fa49c9035da04e5f65c25f5c4fcb9bd74179",
+      "size": 1609,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/inputs/native/gtk-role-client.c": {
+      "sha256": "78d1ed4100ede590aec1bb96e52ac0684d0aba32602cc565925c70a75393b6df",
+      "size": 18743,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/inputs/qa/build.py": {
+      "sha256": "bc259cd934fa10cc87a001e898c8f9dfc0945455006092d595b00f930eb6a08f",
+      "size": 3105,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/ldd.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/ldd.stdout": {
+      "sha256": "ed970a65456332b62e817d9492ece591be6f24dc7baac465e3b2c8c25360be1f",
+      "size": 7565,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/pkg-config.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/pkg-config.stdout": {
+      "sha256": "3dae8bc09848d531337787126de868c45084b46f513ab276c670903fee0746f8",
+      "size": 674,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/report.json": {
+      "sha256": "8e56437adf23370c1cbf4a34527f98df4db2d04ca61c140dce2825598e5bc656",
+      "size": 148607,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/versions.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/build-1791139220766213638/versions.stdout": {
+      "sha256": "a61d0e84b3620610efd29543c9ffc9af1924611e4b541c3ddbd6ea651164bb70",
+      "size": 21,
+      "mode": "0o644"
+    },
+    "qa/build.py": {
+      "sha256": "bc259cd934fa10cc87a001e898c8f9dfc0945455006092d595b00f930eb6a08f",
+      "size": 3105,
+      "mode": "0o644"
+    },
+    "qa/callback-test.py": {
+      "sha256": "2663c90a72475bf31808c39e45bbe76de61efbc78b6345f77c828ccfd1a3ad2b",
+      "size": 5921,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/callback-test.py": {
+      "sha256": "2663c90a72475bf31808c39e45bbe76de61efbc78b6345f77c828ccfd1a3ad2b",
+      "size": 5921,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/gtk-role-client.c": {
+      "sha256": "78d1ed4100ede590aec1bb96e52ac0684d0aba32602cc565925c70a75393b6df",
+      "size": 18743,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/missing-controller-disconnect/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/missing-controller-disconnect/test": {
+      "sha256": "3ad1d81a7e702cd8e42e1d9e82a08838b941656f4f0b90b93f5a6cbcba7dbe3e",
+      "size": 16320,
+      "mode": "0o755"
+    },
+    "qa/callbacks-1791139441126437762/missing-controller-disconnect/test.c": {
+      "sha256": "5269bfddd78849ebd27dcce1750a2a39c647fb54aefa7182327bb8e5b94f0ae1",
+      "size": 4841,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/report.json": {
+      "sha256": "ef92d382927cd946acb5ee344ee27c0ea9b4929192d53d377baa57f2e7353920",
+      "size": 1003,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/stale-controller/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/stale-controller/test": {
+      "sha256": "b7558724ed171ed3fb762efec2585c1655774390198427fa43ab3d3e09bd2c16",
+      "size": 16024,
+      "mode": "0o755"
+    },
+    "qa/callbacks-1791139441126437762/stale-controller/test.c": {
+      "sha256": "473f48ccb3f49eeced9b614f6fafa479c152b1a21b73e15d75f8b669df2ce729",
+      "size": 4865,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/stale-surface/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/stale-surface/test": {
+      "sha256": "19ddca45644a223d66d377143835d6b7ac9753cafdc152aa0dc4b97643254919",
+      "size": 16264,
+      "mode": "0o755"
+    },
+    "qa/callbacks-1791139441126437762/stale-surface/test.c": {
+      "sha256": "cdc28caa243f725420e87f4d812737357e1502b99c22d0aa0f838ddb9c067ae6",
+      "size": 4883,
+      "mode": "0o644"
+    },
+    "qa/callbacks-1791139441126437762/test": {
+      "sha256": "bbce34e45cfd0d20198fab3a5d97d7c0ea10c797e5262e925ea2f40bb655b8e2",
+      "size": 16320,
+      "mode": "0o755"
+    },
+    "qa/callbacks-1791139441126437762/test.c": {
+      "sha256": "2ef2ac07101c87952de65f63068f7d5a765bd090fe312a31b10d46653780cd2d",
+      "size": 4899,
+      "mode": "0o644"
+    },
+    "qa/freeze-1791139553429413301/report.json": {
+      "sha256": "681a805a9c82360b71bf3150a10f0bd84d8a17efe3c9d93cb8098d528bef8317",
+      "size": 648,
+      "mode": "0o644"
+    },
+    "qa/freeze.py": {
+      "sha256": "80029ced9107d4f12877b6252f6ebdb0de85dc35c7296cb25f891c66fcd709c6",
+      "size": 2640,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/commands.h": {
+      "sha256": "704868315aef54422661c43a3f03fa49c9035da04e5f65c25f5c4fcb9bd74179",
+      "size": 1609,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/inputs/client-build-report.json": {
+      "sha256": "8e56437adf23370c1cbf4a34527f98df4db2d04ca61c140dce2825598e5bc656",
+      "size": 148607,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/inputs/native/commands.h": {
+      "sha256": "704868315aef54422661c43a3f03fa49c9035da04e5f65c25f5c4fcb9bd74179",
+      "size": 1609,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/inputs/native/gtk-role-client.c": {
+      "sha256": "78d1ed4100ede590aec1bb96e52ac0684d0aba32602cc565925c70a75393b6df",
+      "size": 18743,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/inputs/qa/test.py": {
+      "sha256": "65c18e7ce42c0ebcc87e67c5a22facf4487c3e5ceee0e028c3fcc243b53d3a1f",
+      "size": 4047,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/leading-zero/commands.h": {
+      "sha256": "ea80b8ed4c2e901e64a543bdc114728289db6e798e0d248567c7a4acfaa7f2b8",
+      "size": 1589,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/leading-zero/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/leading-zero/parser-test.c": {
+      "sha256": "3e452e2ec1358c0390b7fbe9adec4ae2ee1c19757d32060039f0473da2829e68",
+      "size": 2701,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/leading-zero/test": {
+      "sha256": "e503b68768b59650607c2e9ed074518298d02b0e8c14b2aa804006fe40478264",
+      "size": 16384,
+      "mode": "0o755"
+    },
+    "qa/test-1791139441121588090/overflow-int64/commands.h": {
+      "sha256": "1a04ffc7376da6ff20a787ccc4ac77527ab28b4e9c65d28c51d619357df2fc8a",
+      "size": 1589,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/overflow-int64/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/overflow-int64/parser-test.c": {
+      "sha256": "3e452e2ec1358c0390b7fbe9adec4ae2ee1c19757d32060039f0473da2829e68",
+      "size": 2701,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/overflow-int64/test": {
+      "sha256": "601256e744b3e228bb58aae74915749849d826d0f89dd73462ccf1a806b3d571",
+      "size": 16384,
+      "mode": "0o755"
+    },
+    "qa/test-1791139441121588090/parser-test.c": {
+      "sha256": "3e452e2ec1358c0390b7fbe9adec4ae2ee1c19757d32060039f0473da2829e68",
+      "size": 2701,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/report.json": {
+      "sha256": "ca0f26a193c4142db0d8728982961c07985db635950d51998c4556eddbe78ac6",
+      "size": 3803,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/test": {
+      "sha256": "6145316be3a6a4debe6942fce6fdffb44bed9fc8be86a329df63c737d6ee8736",
+      "size": 16384,
+      "mode": "0o755"
+    },
+    "qa/test-1791139441121588090/unknown-operation/commands.h": {
+      "sha256": "16db98d5b04a183176b2655f32163feeb7252be21ac98492c2e6871c507e97da",
+      "size": 1593,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/unknown-operation/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/unknown-operation/parser-test.c": {
+      "sha256": "3e452e2ec1358c0390b7fbe9adec4ae2ee1c19757d32060039f0473da2829e68",
+      "size": 2701,
+      "mode": "0o644"
+    },
+    "qa/test-1791139441121588090/unknown-operation/test": {
+      "sha256": "271b27fa1d5936666bdaca2991b75badeed4bcab6917f72950286470ff077edd",
+      "size": 16384,
+      "mode": "0o755"
+    },
+    "qa/test.py": {
+      "sha256": "65c18e7ce42c0ebcc87e67c5a22facf4487c3e5ceee0e028c3fcc243b53d3a1f",
+      "size": 4047,
+      "mode": "0o644"
+    }
+  },
+  "verificationReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/qa/freeze-1791139553429413301/report.json",
+  "verificationReportSHA256": "681a805a9c82360b71bf3150a10f0bd84d8a17efe3c9d93cb8098d528bef8317"
+}

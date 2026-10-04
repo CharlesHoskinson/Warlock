@@ -1,0 +1,36 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "corrected actual decoder/Actor.close executed with synthetic journal/mock owned process; no GUI or native delivery",
+  "sourceInputs": {
+    "inputs/actor.py": "6c67a2dc4befb3cb38ebd08339f19f570d38e4324518870332e344c75460dcef",
+    "inputs/journal.py": "725ab73c0762d9b93d553654869a7a42aaa7046e51247b37dd1f61c9004fc72c"
+  },
+  "cases": [
+    {
+      "name": "valid-owned-pointer",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-corrected-review-v243/qa/mutations-1791139141475098437/missing-map-binding/qa/characterization-1791139141687150453/valid-owned-pointer.json"
+    },
+    {
+      "name": "stale-map-generation",
+      "classification": "accepted",
+      "expectedCharacterization": "typed-refused",
+      "matched": false,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-corrected-review-v243/qa/mutations-1791139141475098437/missing-map-binding/qa/characterization-1791139141687150453/stale-map-generation.json"
+    }
+  ],
+  "actualGdkEnums": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "gdkHeader": {
+    "path": "/usr/include/gtk-4.0/gdk/gdkevents.h",
+    "sha256": "8c0108ba93241bd6a8eb46fd868d86b3603ae78e03e9d55ca3785b4d07bc93a0"
+  },
+  "error": "AssertionError({'name': 'stale-map-generation', 'classification': 'accepted', 'expectedCharacterization': 'typed-refused', 'matched': False, 'witness': '/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-corrected-review-v243/qa/mutations-1791139141475098437/missing-map-binding/qa/characterization-1791139141687150453/stale-map-generation.json'})"
+}
