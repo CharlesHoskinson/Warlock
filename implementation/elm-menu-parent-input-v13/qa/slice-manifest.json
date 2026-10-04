@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "Private parent Weston pointer into the real V8 Elm menu: original interaction plus shrink, scale-2, restore, native receipts, popup bounds and retirement; no cursor pixel, rotation, multioutput or release acceptance.",
+  "parentInputManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/slice-manifest.json",
+  "parentInputManifestSHA256": "480d1bfaa50611a6348af2d9b9c9ed8c0676b8c8c333fe9215f5c14c69044ce0",
+  "menuManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/qa/implementation-manifest.json",
+  "menuManifestSHA256": "41d9ade9ce1c8d3bae9080eabc6f90621da57455cc0338d400601ca6111037a1",
+  "source": {
+    "candidate_host.py": "b3c51fd485585404a9c70e682f7e523aff4459edf8c5f00ed0de626461f1357f",
+    "qa/native.py": "2b6b8d3376885e5e1d2933fb4d291fe4193b127f77840341e181381bee6014d7"
+  },
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-parent-input-v13/qa/native-1791094596464443419/report.json",
+  "nativeReportSHA256": "fd64f863d73c19d8d1a7e6aa7387d6061fc3a9858a1fec709ef5ce67e40d5a61",
+  "nativeChecks": 68,
+  "parentPointerActions": 19,
+  "normalCleanup": true,
+  "priorRuns": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-parent-input-v13/qa/native-1791094521945212366/report.json": {
+      "sha256": "dedf2fdca5793f9cc511693c73a18531791222dfb957429819e4d308fd6d2bff",
+      "passed": false
+    }
+  },
+  "nativeArtifacts": {
+    "native.py": "2b6b8d3376885e5e1d2933fb4d291fe4193b127f77840341e181381bee6014d7",
+    "native-evidence/privateBus.log": "d00fc055d1d1a0ce1a5035d86d38926cbf9adfd1a7c7301d54ad8aa26de1d6f7",
+    "native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-evidence/weston-renderer.log": "4f8c0f38605a5c8b2218d454f3e3f79b9de196891696775a3c32694a27a1301e",
+    "native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-evidence/hyprland.log": "af637b675b682eea8950d3614548dc0f48dc969ebbb4044082a0bba4c257a978",
+    "native-evidence/authority-config.json": "1171275a91ff0b66c2e7280a84710f8b4ef67face13a903c726b2d852744219a",
+    "native-evidence/fixture.log": "1b91e7deec101f49ae97e202d1434f585885ec17a4dbb1b87a3099af0082feca",
+    "native-evidence/elm-webview.log": "65672d43b39ddbd393bc65faea838858d7b65122c3adbe5d98dc061f88e49d2f",
+    "native-evidence/elm-context-menu-restored.png": "d3f03690952318dc7d09808116bd201da2e806712b8a96af333123526ecbb859",
+    "native-evidence/host-evidence.json": "1ecba98e67e59164a832c3335babfa9199ad8e52a61b683b23e6c01e81d079c5",
+    "native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791094597_1476504643/hyprland.log": "a96b8c41fd8d4a3e1cb465ae98495a65a0690efa6cda1d1f6344062387eb43e7",
+    "native-evidence/runtime-archive/.flatpak/webkit-124016-20/bwrapinfo.json": "311feb9863a3af5fe3744c507b96837055832089ca52c83504850d61a738eb9f",
+    "native-evidence/runtime-archive/.flatpak/webkit-124016-24/bwrapinfo.json": "986d67bd014ec506bb466795bc8d05f2bc4d15f6c15e151d99f0cba5584e0c6a",
+    "native-evidence/runtime-archive/.flatpak/webkit-124016-4/bwrapinfo.json": "e85ce07a3ea113e30cdeca55f62888746f000ad01fb67bb2d4ff3ee307ec4749",
+    "native-evidence/runtime-archive/.flatpak/webkit-124016-5/bwrapinfo.json": "c42ad92782422c5f608996f816ef24bf44a9251541b12e89ad6554c18bb3f5ad"
+  }
+}

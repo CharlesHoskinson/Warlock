@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "7a790b1355154b29a5d0e860dab29da9",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:17:42.324729+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-menu-parent-input-v13",
+  "nextWork": [
+    "Qualify cursor pixels and hotspot mapping on nonidentity parent viewport, then input fencing during staged and ACKed parent resize; coordinate with the concurrent V12 parent-input derivative."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-menu-parent-input-v13/qa/slice-manifest.json",
+      "sha256": "7fa541cc725a872e1aa2bab6ed7f9f212f8b3af50fd8b1438c0d28afafad8329",
+      "size": 3706
+    },
+    {
+      "path": "docs/elm-roadmap/delivery/MENU-PARENT-INPUT-V13-ACCEPTANCE.md",
+      "sha256": "2cf03ef88eaf722135e092453a361c600642c7c694b79b0b707f2df8cdbaaa9f",
+      "size": 1358
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
