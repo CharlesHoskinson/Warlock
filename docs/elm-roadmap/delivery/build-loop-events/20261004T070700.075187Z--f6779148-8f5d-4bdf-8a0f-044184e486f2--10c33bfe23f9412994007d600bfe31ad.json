@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "10c33bfe23f9412994007d600bfe31ad",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T07:07:00.075187+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-nested-input-focus-v28",
+  "nextWork": [
+    "Add nonvirtual focused/committed input query to private AQ; preserve headers except reviewed method declaration and all old exports. Owning core will preserve AQ output-normalized pointer identity and replay through normal input manager on logical-layout change, rejecting stale focus/device/generation, then exact core/plugin and native original+stationary clicks."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-nested-input-focus-v28/candidate/src/backend/Wayland.cpp",
+      "sha256": "09b38da65aa4f28a55b8dba3f962c373bd1413bb54cf9888cfbbf7b464eb437d",
+      "size": 48340
+    },
+    {
+      "path": "implementation/elm-parent-stationary-click-v26/qa/slice-manifest.json",
+      "sha256": "8a6203529cdd4ce0f520a7122e6eeaf7e213b46c10f1dc80024178080565cc6a",
+      "size": 7949
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

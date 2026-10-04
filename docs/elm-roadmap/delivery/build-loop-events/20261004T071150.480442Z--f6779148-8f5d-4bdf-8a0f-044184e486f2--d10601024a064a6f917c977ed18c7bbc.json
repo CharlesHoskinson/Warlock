@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "d10601024a064a6f917c977ed18c7bbc",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T07:11:50.480442+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-core-parent-position-v29",
+  "nextWork": [
+    "Build owning core output-relative AQ warp route and last-normalized-position replay through normal input hit testing on logical-layout change. Weak device/output and AQ focus/current mapping guard; relative/programmatic/other-device movement clears anchor. CPU projection/cursor properties and mutation tests; preserve all prior archive payloads except PointerManager and link new reviewed AQ accessor."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-core-parent-position-v29/candidate/src/pointer/PointerManager.cpp",
+      "sha256": "95d6e109f6025a88050e0e7fb1b358e151fbb597e6d58a46610e2cf56fde2ea8",
+      "size": 49853
+    },
+    {
+      "path": "implementation/elm-nested-input-focus-v28/component-manifest.json",
+      "sha256": "f5ed4b7fdf72f529ac693955d01a64e4e44911e4ee6539771d880d4b830c927d",
+      "size": 104356
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

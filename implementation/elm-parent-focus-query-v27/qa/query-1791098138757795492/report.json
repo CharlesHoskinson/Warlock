@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual extracted opaque/focus query with real lifecycle helper; typed mock ownership only",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-query-v27/template.cpp": "d61b76c66f06cf080c90d252686523138fab6c410a115b5c16f098538fda4db6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-query-v27/qa/test.py": "4ef64ff4dec071cda8965e74d799e27942672cfa461378d17716b67bbc18aea2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/Wayland.cpp": "1f9d8ddf2912d5c884946a4f00a47350a6590a08ab10c8ba790beff00f2370f9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/NestedLifecycle.hpp": "3585891e7450e46a7ca139ca9c20fa672c6c4ee85e05020f3c127997b202b42b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/NestedPresentation.hpp": "b7417aeb5e4dbab50957aeaa24f6682ef66551e91b82ab168dbe9870f6a6c1c7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/include/aquamarine/input/ParentInput.hpp": "ba600a08538d31db155371a765cd6d4ea96547913091bbfb3454d53133e2fab9"
+  },
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/include",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-query-v27/qa/query-1791098138757795492/query.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-query-v27/qa/query-1791098138757795492/query"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-query-v27/qa/query-1791098138757795492/query"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "checks": 25
+}

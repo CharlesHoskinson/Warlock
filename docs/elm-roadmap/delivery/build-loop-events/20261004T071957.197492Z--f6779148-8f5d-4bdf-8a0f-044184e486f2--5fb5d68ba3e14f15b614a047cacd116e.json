@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "5fb5d68ba3e14f15b614a047cacd116e",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T07:19:57.197492+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-parent-stationary-click-v33",
+  "nextWork": [
+    "Rerun unchanged V26 stationary click and cursor oracle on exact V32 core/plugin with V30 AQ. V31 core routing preserves normalized output point and replays real hit testing after logical layout change; CPU61232 parent/54462 cursor plus25 actual extracted focus/status checks pass. Native input recipients remain unqualified until run."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-stationary-click-v33/qa/native.py",
+      "sha256": "a02a72f1a5fddfc419585b86f8782b0cfbb950f3d19d05fe4daa2c6dd3bb6ebc",
+      "size": 17336
+    },
+    {
+      "path": "implementation/elm-parent-position-pair-v32/qa/build-pair-manifest.json",
+      "sha256": "661a6b6487cbda7b261d2b3ba0ab80d9b72688eab9827b4e062dd3cb126d0b50",
+      "size": 111410
+    },
+    {
+      "path": "implementation/elm-nested-input-status-v30/component-manifest.json",
+      "sha256": "bc6183edf3ca5c4efbda284fb68bef9c427b7aa80b2ae039c0a15164aec54ac6",
+      "size": 104731
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

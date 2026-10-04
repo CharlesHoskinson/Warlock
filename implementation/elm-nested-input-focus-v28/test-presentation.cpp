@@ -1,0 +1,73 @@
+#include "NestedPresentation.hpp"
+#include <cstdio>
+#include <limits>
+using namespace Aquamarine::NestedPolicy;
+#define CHECK(name,condition) do { if (!(condition)) {std::fprintf(stderr,"FAIL %s\n",name); return 1;} std::puts(name); ++checks;} while(0)
+int main() {
+ unsigned checks=0;
+ Presentation p;
+ CHECK("no input before parent ACK",!p.inputAllowed());
+ CHECK("no preflight before ACK",!p.preflight(800,600,true,800,600,false,true,true));
+ p.stage(800,600,true,false);
+ CHECK("stage does not acknowledge",p.acked.generation==0 && !p.inputAllowed());
+ CHECK("first ACK accepted",p.acknowledge());
+ auto a=p.acked.generation;
+ CHECK("ACK publishes exact parent logical dimensions",p.acked.width==800 && p.acked.height==600 && p.acked.fullscreen);
+ CHECK("ACK alone does not admit input",!p.inputAllowed());
+ CHECK("oversized child accepted with viewport",p.preflight(960,640,true,960,640,false,true,true));
+ CHECK("viewport missing rejected",!p.preflight(960,640,true,960,640,false,true,false));
+ CHECK("stale buffer rejected",!p.preflight(800,600,true,960,640,false,true,true));
+ CHECK("invalid format rejected",!p.preflight(800,600,true,800,600,false,false,true));
+ CHECK("explicit null buffer rejected",!p.preflight(800,600,false,0,0,true,true,true));
+ CHECK("mode-only valid pending state accepted",p.preflight(800,600,false,0,0,false,true,true));
+ CHECK("invalid mode rejected",!p.preflight(0,600,true,800,600,false,true,true));
+ CHECK("current commit queued",p.queueCommit(a,960,640));
+ CHECK("queued mapping admits input",p.inputAllowed());
+ CHECK("scaled mapping is distinct from identity",!p.identityMapping() && p.committed.width==800 && p.pixelWidth==960);
+ p.stage(640,480);
+ CHECK("staged geometry fences old committed input",!p.inputAllowed());
+ CHECK("staged unACKed configure fences old queued callback",!p.current(a) && !p.queueCommit(a,800,600));
+ CHECK("ACKed dimensions remain immutable while staging",p.acked.width==800 && p.acked.height==600);
+ CHECK("second ACK accepted",p.acknowledge());
+ auto b=p.acked.generation;
+ CHECK("old generation cannot queue after new ACK",b!=a && !p.queueCommit(a,800,600));
+ CHECK("new ACK alone cannot restore input",!p.inputAllowed());
+ CHECK("new exact commit queues",p.queueCommit(b,640,480));
+ CHECK("identity mapping restores input",p.inputAllowed() && p.identityMapping());
+ p.stage(0,600);
+ CHECK("zero axis reuses last ACKed dimension",p.pending.width==640 && p.pending.height==600);
+ p.stage(800,0);
+ CHECK("zero axis ignores earlier unACKed pending size",p.pending.width==800 && p.pending.height==480);
+ CHECK("third ACK accepted",p.acknowledge());
+ auto c=p.acked.generation;
+ CHECK("invalid commit dimensions rejected",!p.queueCommit(c,0,600));
+ CHECK("current commit replaces previous mapping",p.queueCommit(c,800,480) && p.inputAllowed());
+ p.stage(800,480);p.acknowledge();
+ CHECK("same-size ACK still requires new commit",!p.inputAllowed() && !p.queueCommit(c,800,480));
+ p.destroy();
+ CHECK("destroy is terminal",!p.acknowledge() && !p.inputAllowed() && !p.queueCommit(p.acked.generation,800,480));
+ Presentation limit;
+ limit.acked.generation=std::numeric_limits<uint64_t>::max()-1;
+ limit.stage(800,600);limit.acknowledge();
+ CHECK("last generation can commit",limit.queueCommit(limit.acked.generation,800,600));
+ CHECK("counter exhaustion rejected",!limit.acknowledge());
+ limit.stage(640,480);
+ CHECK("counter exhaustion cannot recover",!limit.inputAllowed() && !limit.acknowledge() && !limit.queueCommit(limit.acked.generation,640,480));
+ Presentation bad;bad.stage(800,600);bad.acknowledge();bad.queueCommit(bad.acked.generation,800,600);bad.stage(-1,600);
+ CHECK("negative configure fences input",!bad.inputAllowed());
+ CHECK("negative configure is terminal",!bad.acknowledge() && !bad.queueCommit(bad.acked.generation,800,600));
+ bad.stage(800,600);CHECK("malformed configure cannot recover silently",!bad.acknowledge());
+ BalancedButtons buttons;
+ CHECK("fenced press denied",!buttons.admit(272,true,false));
+ CHECK("unmatched release denied",!buttons.admit(272,false,true));
+ CHECK("ready press admitted",buttons.admit(272,true,true));
+ CHECK("duplicate press denied",!buttons.admit(272,true,true));
+ CHECK("paired release survives fence",buttons.admit(272,false,false));
+ CHECK("reused release denied",!buttons.admit(272,false,true));
+ bool all=true;for(unsigned i=1;i<=32;i++)all=all && buttons.admit(i,true,true);
+ CHECK("32 held buttons admitted",all);
+ CHECK("overflow cannot evict held buttons",!buttons.admit(33,true,true));
+ CHECK("one release frees one slot",buttons.admit(16,false,false) && buttons.admit(33,true,true) && !buttons.admit(34,true,true));
+ CHECK("invalid button denied",!buttons.admit(0,true,true));
+ std::printf("checks: %u\n",checks);
+}

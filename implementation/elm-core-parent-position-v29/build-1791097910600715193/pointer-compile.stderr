@@ -1,0 +1,98 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/./Buffer.hpp:5,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/SurfaceState.hpp:7,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/SurfaceStateQueue.hpp:4,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:17,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/candidate/src/pointer/PointerManager.cpp:14:
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/././WLBuffer.hpp:14:44: error: ‘CWlBuffer’ was not declared in this scope; did you mean ‘CCWlBuffer’?
+   14 |     static SP<CWLBufferResource> create(WP<CWlBuffer> resource);
+      |                                            ^~~~~~~~~
+      |                                            CCWlBuffer
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/././WLBuffer.hpp:14:53: error: template argument 1 is invalid
+   14 |     static SP<CWLBufferResource> create(WP<CWlBuffer> resource);
+      |                                                     ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/././WLBuffer.hpp:26:26: error: ‘CWlBuffer’ was not declared in this scope; did you mean ‘CCWlBuffer’?
+   26 |     CWLBufferResource(WP<CWlBuffer> resource_);
+      |                          ^~~~~~~~~
+      |                          CCWlBuffer
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/././WLBuffer.hpp:26:35: error: template argument 1 is invalid
+   26 |     CWLBufferResource(WP<CWlBuffer> resource_);
+      |                                   ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/././WLBuffer.hpp:28:8: error: ‘CWlBuffer’ was not declared in this scope; did you mean ‘CCWlBuffer’?
+   28 |     SP<CWlBuffer> m_resource;
+      |        ^~~~~~~~~
+      |        CCWlBuffer
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/../types/././WLBuffer.hpp:28:17: error: template argument 1 is invalid
+   28 |     SP<CWlBuffer> m_resource;
+      |                 ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:40:28: error: ‘CWlCallback’ was not declared in this scope; did you mean ‘CCWlCallback’?
+   40 |     CWLCallbackResource(SP<CWlCallback>&& resource_);
+      |                            ^~~~~~~~~~~
+      |                            CCWlCallback
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:40:39: error: template argument 1 is invalid
+   40 |     CWLCallbackResource(SP<CWlCallback>&& resource_);
+      |                                       ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:54:8: error: ‘CWlCallback’ was not declared in this scope; did you mean ‘CCWlCallback’?
+   54 |     SP<CWlCallback> m_resource;
+      |        ^~~~~~~~~~~
+      |        CCWlCallback
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:54:19: error: template argument 1 is invalid
+   54 |     SP<CWlCallback> m_resource;
+      |                   ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:59:26: error: ‘CWlRegion’ was not declared in this scope; did you mean ‘CCWlRegion’?
+   59 |     CWLRegionResource(SP<CWlRegion> resource_);
+      |                          ^~~~~~~~~
+      |                          CCWlRegion
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:59:35: error: template argument 1 is invalid
+   59 |     CWLRegionResource(SP<CWlRegion> resource_);
+      |                                   ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:68:8: error: ‘CWlRegion’ was not declared in this scope; did you mean ‘CCWlRegion’?
+   68 |     SP<CWlRegion> m_resource;
+      |        ^~~~~~~~~
+      |        CCWlRegion
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:68:17: error: template argument 1 is invalid
+   68 |     SP<CWlRegion> m_resource;
+      |                 ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:158:30: error: ‘CWlCompositor’ was not declared in this scope; did you mean ‘CCWlCompositor’?
+  158 |     CWLCompositorResource(SP<CWlCompositor> resource_);
+      |                              ^~~~~~~~~~~~~
+      |                              CCWlCompositor
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:158:43: error: template argument 1 is invalid
+  158 |     CWLCompositorResource(SP<CWlCompositor> resource_);
+      |                                           ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:163:8: error: ‘CWlCompositor’ was not declared in this scope; did you mean ‘CCWlCompositor’?
+  163 |     SP<CWlCompositor> m_resource;
+      |        ^~~~~~~~~~~~~
+      |        CCWlCompositor
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:163:21: error: template argument 1 is invalid
+  163 |     SP<CWlCompositor> m_resource;
+      |                     ^
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/candidate/src/pointer/PointerManager.cpp:15:
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:47:25: error: ‘CWlTouch’ was not declared in this scope; did you mean ‘CCWlTouch’?
+   47 |     CWLTouchResource(SP<CWlTouch> resource_, SP<CWLSeatResource> owner_);
+      |                         ^~~~~~~~
+      |                         CCWlTouch
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:47:33: error: template argument 1 is invalid
+   47 |     CWLTouchResource(SP<CWlTouch> resource_, SP<CWLSeatResource> owner_);
+      |                                 ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:61:8: error: ‘CWlTouch’ was not declared in this scope; did you mean ‘CCWlTouch’?
+   61 |     SP<CWlTouch>           m_resource;
+      |        ^~~~~~~~
+      |        CCWlTouch
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:61:16: error: template argument 1 is invalid
+   61 |     SP<CWlTouch>           m_resource;
+      |                ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:117:28: error: ‘CWlKeyboard’ was not declared in this scope; did you mean ‘CCWlKeyboard’?
+  117 |     CWLKeyboardResource(SP<CWlKeyboard> resource_, SP<CWLSeatResource> owner_);
+      |                            ^~~~~~~~~~~
+      |                            CCWlKeyboard
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:117:39: error: template argument 1 is invalid
+  117 |     CWLKeyboardResource(SP<CWlKeyboard> resource_, SP<CWLSeatResource> owner_);
+      |                                       ^
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:130:8: error: ‘CWlKeyboard’ was not declared in this scope; did you mean ‘CCWlKeyboard’?
+  130 |     SP<CWlKeyboard>        m_resource;
+      |        ^~~~~~~~~~~
+      |        CCWlKeyboard
+/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:130:19: error: template argument 1 is invalid
+  130 |     SP<CWlKeyboard>        m_resource;
+      |                   ^
+cc1plus: note: unrecognized command-line option ‘-Wno-gnu-zero-variadic-macro-arguments’ may have been intended to silence earlier diagnostics

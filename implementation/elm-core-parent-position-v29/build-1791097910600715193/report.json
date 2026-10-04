@@ -1,0 +1,242 @@
+{
+  "passed": false,
+  "installed": false,
+  "nativeAcceptance": false,
+  "scope": "Scaled/rotated cursor buffer sizing CPU and owning parent output/normalized-position replay incremental build; native and exact plugin pairing remain open",
+  "commands": [
+    {
+      "name": "test-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/qa/cursor-extent.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/cursor-extent"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cursor-extent-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/cursor-extent"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "mutation-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/mutant",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/qa/cursor-extent.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/cursor-extent-unsafe"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "raw-size-mutation",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/cursor-extent-unsafe"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "parent-position-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/qa/parent-position.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/parent-position"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "parent-position-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/parent-position"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "parent-mutation-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/mutant",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/qa/parent-position.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/parent-position-unsafe"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "parent-remap-mutation",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/parent-position-unsafe"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "archive-members",
+      "command": [
+        "/usr/bin/ar",
+        "t",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-cursor-extent-v22/build-1791096768428792872/libhyprland_lib.a"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "old-pointer-object",
+      "command": [
+        "/usr/bin/ar",
+        "p",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-cursor-extent-v22/build-1791096768428792872/libhyprland_lib.a",
+        "PointerManager.cpp.o"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "pointer-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/candidate",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-focus-v28/build-1791097620191798235/inputs/candidate/include",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-focus-v28/build-1791097620191798235/inputs/candidate/protocols",
+        "-DDATAROOTDIR=\"/usr/local/share\"",
+        "-DGLSLANG_IS_SHARED_LIBRARY=1",
+        "-DHAS_EXECINFO",
+        "-DHYPRLAND_VERSION=\"0.56.2\"",
+        "-DUSES_SYSTEMD",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/.",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/protocols",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86/libudis86",
+        "-isystem",
+        "/usr/include/uuid",
+        "-isystem",
+        "/usr/include/pango-1.0",
+        "-isystem",
+        "/usr/include/cairo",
+        "-isystem",
+        "/usr/include/fribidi",
+        "-isystem",
+        "/usr/include/harfbuzz",
+        "-isystem",
+        "/usr/include/freetype2",
+        "-isystem",
+        "/usr/include/libpng16",
+        "-isystem",
+        "/usr/include/pixman-1",
+        "-isystem",
+        "/usr/include/libdrm",
+        "-isystem",
+        "/usr/include/libei-1.0",
+        "-isystem",
+        "/usr/include/glib-2.0",
+        "-isystem",
+        "/usr/lib/glib-2.0/include",
+        "-isystem",
+        "/usr/include/libmount",
+        "-isystem",
+        "/usr/include/blkid",
+        "-isystem",
+        "/usr/include/sysprof-6",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include",
+        "-O2",
+        "-DNDEBUG",
+        "-std=gnu++26",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wno-keyword-macro",
+        "-Wno-unused-result",
+        "-Wno-unused-parameter",
+        "-Wno-unused-value",
+        "-Wno-missing-field-initializers",
+        "-Wno-gnu-zero-variadic-macro-arguments",
+        "-Wno-narrowing",
+        "-Wno-pointer-arith",
+        "-Wno-clobbered",
+        "-frtti",
+        "-fmacro-prefix-map=/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/=",
+        "-fno-lto",
+        "-Wno-missing-braces",
+        "-pthread",
+        "-DNOMINMAX",
+        "-Winvalid-pch",
+        "-include",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/CMakeFiles/hyprland_lib.dir/cmake_pch.hxx",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/PointerManager.cpp.o",
+        "-c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/candidate/src/pointer/PointerManager.cpp",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/PointerManager.cpp.d"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "inputs": {
+    "build.py": "db79c03944a73ff3508a1b82eacfd44c5cae6389319dc89a0e1f3bb1e6b35e3a",
+    "qa/cursor-extent.cpp": "4f617510b2e514c0d9d03bf70b6286ac777b74f05afb10793780f56a5547f556",
+    "qa/parent-position.cpp": "cbb5e61e3e9862e96fc42fee357a21ac0a7797a684e37f7afe8c7ac2b3c673d4",
+    "candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "candidate/SceneTrace.hpp": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+    "candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+    "candidate/src/pointer/CursorBufferExtent.hpp": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+    "candidate/src/pointer/ParentNormalizedPosition.hpp": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112",
+    "candidate/src/pointer/PointerManager.cpp": "95d6e109f6025a88050e0e7fb1b358e151fbb597e6d58a46610e2cf56fde2ea8"
+  },
+  "priorReportSHA256": "2b196d003104245ade693742e2be44e640c7c6d88dad37b4668eb930e0cba916",
+  "ancestorCore": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-cursor-extent-v22/build-1791096768428792872/Hyprland",
+    "sha256": "479a6b7be250595d42a01a013f0616a4a710298ee9cb552f77e484b61c33c5fb"
+  },
+  "ancestorArchive": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-cursor-extent-v22/build-1791096768428792872/libhyprland_lib.a",
+    "sha256": "c8d5ba63e6a44f4bf378f468920846449aa0da48f552f8c2ab7222107e72fe66"
+  },
+  "originalPointerSHA256": "83c69d93f09088f1e2383a9c85a54cf3f55718d9506a1121058afef77911223a",
+  "owningVersionHeaderSHA256": "0cb4913dc18c35bc0fb5e33f8786453c0781216bb4ead20b2afd82ba84981946",
+  "checks": 54462,
+  "parentPositionChecks": 61232,
+  "unsafeParentRemapMutationRejected": true,
+  "aqManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-focus-v28/component-manifest.json",
+  "aqManifestSHA256": "f5ed4b7fdf72f529ac693955d01a64e4e44911e4ee6539771d880d4b830c927d",
+  "aqLibrary": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-focus-v28/build-1791097620191798235/cmake/libaquamarine.so.0.15.0",
+  "aqLibrarySHA256": "5ce41d942c9e670d1ee171bd387007f594118eb78ee1a87484957ede68ec7333",
+  "oldPointerObjectSHA256": "1e27544220cf5b3a87b0a8cc0daea26672e2e7129e564be6a7c020ed100e0268",
+  "unchangedOwningPointerObjectSHA256": "06083838ea857e189818fde10d2f58edf487a3c6735aa25f0126a9b7a55878f2",
+  "originalCompileEntry": {
+    "directory": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build",
+    "command": "/usr/bin/c++ -DDATAROOTDIR=\\\"/usr/local/share\\\" -DGLSLANG_IS_SHARED_LIBRARY=1 -DHAS_EXECINFO -DHYPRLAND_VERSION=\\\"0.56.2\\\" -DUSES_SYSTEMD -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86 -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/. -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/protocols -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86/libudis86 -isystem /usr/include/uuid -isystem /usr/include/pango-1.0 -isystem /usr/include/cairo -isystem /usr/include/fribidi -isystem /usr/include/harfbuzz -isystem /usr/include/freetype2 -isystem /usr/include/libpng16 -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -isystem /usr/include/libei-1.0 -isystem /usr/include/glib-2.0 -isystem /usr/lib/glib-2.0/include -isystem /usr/include/libmount -isystem /usr/include/blkid -isystem /usr/include/sysprof-6 -isystem /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include -O2 -DNDEBUG -std=gnu++26 -O3 -Wall -Wextra -Wpedantic -Wno-keyword-macro -Wno-unused-result -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wno-gnu-zero-variadic-macro-arguments -Wno-narrowing -Wno-pointer-arith -Wno-clobbered -frtti -fmacro-prefix-map=/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/= -fno-lto -Wno-missing-braces -pthread -DNOMINMAX -Winvalid-pch -include /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/CMakeFiles/hyprland_lib.dir/cmake_pch.hxx -o CMakeFiles/hyprland_lib.dir/src/pointer/PointerManager.cpp.o -c /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/PointerManager.cpp",
+    "file": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/PointerManager.cpp",
+    "output": "CMakeFiles/hyprland_lib.dir/src/pointer/PointerManager.cpp.o"
+  },
+  "error": "AssertionError('src/pointer/../protocols/core/Compositor.hpp:158:30: error: \u2018CWlCompositor\u2019 was not declared in this scope; did you mean \u2018CCWlCompositor\u2019?\\n  158 |     CWLCompositorResource(SP<CWlCompositor> resource_);\\n      |                              ^~~~~~~~~~~~~\\n      |                              CCWlCompositor\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:158:43: error: template argument 1 is invalid\\n  158 |     CWLCompositorResource(SP<CWlCompositor> resource_);\\n      |                                           ^\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:163:8: error: \u2018CWlCompositor\u2019 was not declared in this scope; did you mean \u2018CCWlCompositor\u2019?\\n  163 |     SP<CWlCompositor> m_resource;\\n      |        ^~~~~~~~~~~~~\\n      |        CCWlCompositor\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Compositor.hpp:163:21: error: template argument 1 is invalid\\n  163 |     SP<CWlCompositor> m_resource;\\n      |                     ^\\nIn file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v29/build-1791097910600715193/inputs/candidate/src/pointer/PointerManager.cpp:15:\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:47:25: error: \u2018CWlTouch\u2019 was not declared in this scope; did you mean \u2018CCWlTouch\u2019?\\n   47 |     CWLTouchResource(SP<CWlTouch> resource_, SP<CWLSeatResource> owner_);\\n      |                         ^~~~~~~~\\n      |                         CCWlTouch\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:47:33: error: template argument 1 is invalid\\n   47 |     CWLTouchResource(SP<CWlTouch> resource_, SP<CWLSeatResource> owner_);\\n      |                                 ^\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:61:8: error: \u2018CWlTouch\u2019 was not declared in this scope; did you mean \u2018CCWlTouch\u2019?\\n   61 |     SP<CWlTouch>           m_resource;\\n      |        ^~~~~~~~\\n      |        CCWlTouch\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:61:16: error: template argument 1 is invalid\\n   61 |     SP<CWlTouch>           m_resource;\\n      |                ^\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:117:28: error: \u2018CWlKeyboard\u2019 was not declared in this scope; did you mean \u2018CCWlKeyboard\u2019?\\n  117 |     CWLKeyboardResource(SP<CWlKeyboard> resource_, SP<CWLSeatResource> owner_);\\n      |                            ^~~~~~~~~~~\\n      |                            CCWlKeyboard\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:117:39: error: template argument 1 is invalid\\n  117 |     CWLKeyboardResource(SP<CWlKeyboard> resource_, SP<CWLSeatResource> owner_);\\n      |                                       ^\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:130:8: error: \u2018CWlKeyboard\u2019 was not declared in this scope; did you mean \u2018CCWlKeyboard\u2019?\\n  130 |     SP<CWlKeyboard>        m_resource;\\n      |        ^~~~~~~~~~~\\n      |        CCWlKeyboard\\n/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/pointer/../protocols/core/Seat.hpp:130:19: error: template argument 1 is invalid\\n  130 |     SP<CWlKeyboard>        m_resource;\\n      |                   ^\\ncc1plus: note: unrecognized command-line option \u2018-Wno-gnu-zero-variadic-macro-arguments\u2019 may have been intended to silence earlier diagnostics\\n')"
+}

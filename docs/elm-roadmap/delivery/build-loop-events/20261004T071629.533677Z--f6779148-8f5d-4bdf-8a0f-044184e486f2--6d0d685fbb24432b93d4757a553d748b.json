@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "eventId": "6d0d685fbb24432b93d4757a553d748b",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T07:16:29.533677+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-core-parent-position-v31",
+  "nextWork": [
+    "Build owning parent position route with opaque V30 status interface, avoiding V29 client/server generated-header collision. Actual extracted focus/status query passes CPU cases; exact normalized point/output replay goes through normal InputManager hit testing, guarded by ready/focus/device, with original cursor extents retained."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-core-parent-position-v31/candidate/src/pointer/PointerManager.cpp",
+      "sha256": "95893a03dec7b1c25958dd44db9aec01d3b806c31fe7e19b50e43f9f404778ca",
+      "size": 49777
+    },
+    {
+      "path": "implementation/elm-nested-input-status-v30/component-manifest.json",
+      "sha256": "bc6183edf3ca5c4efbda284fb68bef9c427b7aa80b2ae039c0a15164aec54ac6",
+      "size": 104731
+    },
+    {
+      "path": "implementation/elm-parent-focus-query-v27/qa/query-1791098138757795492/report.json",
+      "sha256": "6f237f30fa43ec59124c0a72fb32ebcb2f8fc773e982345794016b70ff78ab22",
+      "size": 2200
+    },
+    {
+      "path": "implementation/elm-core-parent-position-v29/build-1791097910600715193/report.json",
+      "sha256": "1007bb305ea25c7ffb501ff8848f0724c8f6fe636ff14584584709266e634f33",
+      "size": 17223
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
