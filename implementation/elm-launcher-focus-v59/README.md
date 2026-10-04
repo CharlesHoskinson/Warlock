@@ -1,0 +1,11 @@
+# Scoped launcher focus V59
+
+Desktop now assigns each launcher view a monotonic, lossless presentation token tied to the native binding. Open/Refresh/Close callbacks capture that opaque token. Open, correlated catalog publication, close and binding retirement advance presentation; old close/refresh callbacks cannot alter a replacement view. Closing clears its outstanding catalog request so a late reply cannot invalidate the restored opener. Counter exhaustion retires presentation rather than reusing identity.
+
+Focus is an explicit Elm effect carrying a DOM ID containing binding and presentation generation. Controls and desktop-entry IDs have separate namespaces, so an application called close cannot collide with Close. Opening focuses the enabled Close control while loading; accepted catalog publication focuses the first application or Close when unavailable/Pending/Unknown. Explicit dismissal restores the current opener. Escape ignores composing keys. Submission/receipts emit no DOM focus effect. Scoped IDs prevent delayed focus tasks from targeting a replacement node.
+
+Accepted: optimized host/Main; original compiled effect20/shell27; Desktop24 envelope/view/focus tests; abstract Quint8 selected cases and1000 samples/40 steps. Launch33 and transport17 are inherited by exact qualifying inputs, not newly run. Quint is an abstract retirement/focus-intent model, not Browser DOM scheduling or implementation-refinement proof.
+
+V60 native sessions retain original91 and launcher17 identities/order and pass26 keyboard/launcher checks: first choice focus, Escape/opener restore, Enter reopen, Shift-Tab Refresh, refresh/current choice, Enter/GIO actual owned GTK application/arguments/filename/child exit0, normal host/backend/private cleanup. The actual noncomposing Escape route is qualified; source composing guard is not native IME acceptance.
+
+Default800x420/single controlled app only. Full launcher focus traversal/long lists/reflow, native AT/IME, Unknown UX/reconciliation, production bar/popup/workarea/activation tokens, search/ranking/localization, icons/pins/catalog matching, real installed apps, hardware/GPU/WebGPU/C00 and release remain open. No installed desktop changes or complete requirements accepted.

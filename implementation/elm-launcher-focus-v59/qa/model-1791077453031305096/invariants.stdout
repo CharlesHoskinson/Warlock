@@ -1,0 +1,744 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cause: "Idle",
+      effectGeneration: 0,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 1,
+      old: 0,
+      open: false,
+      pending: false,
+      request: 0,
+      target: "None"
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 0,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 1,
+      old: 0,
+      open: false,
+      pending: false,
+      request: 0,
+      target: "None"
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cause: "Native",
+      effectGeneration: 0,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 1,
+      old: 0,
+      open: false,
+      pending: false,
+      request: 0,
+      target: "None"
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 0,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 1,
+      old: 0,
+      open: false,
+      pending: false,
+      request: 0,
+      target: "None"
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 0,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 1,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 0,
+      target: "None"
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 2,
+      expected: 1,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 2,
+      old: 0,
+      open: true,
+      pending: true,
+      request: 1,
+      target: "Close"
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 2,
+      expected: 1,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 2,
+      old: 0,
+      open: true,
+      pending: true,
+      request: 1,
+      target: "None"
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cause: "Delivery",
+      effectGeneration: 2,
+      expected: 1,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 2,
+      old: 0,
+      open: true,
+      pending: true,
+      request: 1,
+      target: "None"
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 3,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 3,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 1,
+      target: "Opener"
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 3,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 3,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 1,
+      target: "None"
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 3,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 3,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 1,
+      target: "None"
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 4,
+      expected: 2,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 4,
+      old: 0,
+      open: true,
+      pending: true,
+      request: 2,
+      target: "Close"
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 4,
+      expected: 2,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 4,
+      old: 0,
+      open: true,
+      pending: true,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 2,
+      target: "Opener"
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cause: "Delivery",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: true,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cause: "Native",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: false,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 5,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 5,
+      old: 0,
+      open: false,
+      pending: false,
+      request: 2,
+      target: "None"
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 6,
+      expected: 3,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 6,
+      old: 0,
+      open: true,
+      pending: false,
+      request: 3,
+      target: "Close"
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 6,
+      expected: 3,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 6,
+      old: 0,
+      open: true,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cause: "Native",
+      effectGeneration: 6,
+      expected: 3,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 6,
+      old: 0,
+      open: true,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cause: "Delivery",
+      effectGeneration: 6,
+      expected: 3,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 6,
+      old: 0,
+      open: true,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      cause: "Delivery",
+      effectGeneration: 6,
+      expected: 3,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 6,
+      old: 0,
+      open: true,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      cause: "User",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 0,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "Opener"
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      cause: "Idle",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      cause: "Delivery",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      cause: "Native",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      cause: "Delivery",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      cause: "Stale",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      cause: "Native",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      cause: "Delivery",
+      effectGeneration: 7,
+      expected: 0,
+      focus: "None",
+      focusGeneration: 0,
+      generation: 7,
+      old: 7,
+      open: false,
+      pending: false,
+      request: 3,
+      target: "None"
+    }
+}
+
+[ok] No violation found (1240ms at 806 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

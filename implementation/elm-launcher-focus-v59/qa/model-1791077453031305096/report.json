@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Abstract launcher view/focus retirement; Browser DOM scheduling, AT/IME and native refinement separate",
+  "sourceSHA256": "0a362ac56d47fa50e40ddc63c9d8a80afbc3309906c7f2d44c4ae71435696357",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "view.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "view.qnt",
+        "--backend=typescript",
+        "--match=^(openingTest|firstEntryTest|closeTest|staleCloseTest|staleRefreshTest|closedReplyTest|receiptTest|pendingRefreshTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "view.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "view.qnt": "0a362ac56d47fa50e40ddc63c9d8a80afbc3309906c7f2d44c4ae71435696357",
+    "model.py": "68bd1b005402f8a246e5447fef9d2b5207e51d819afdee48a0b8f18b24efc002",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-openingTest-0.itf.json": "c00e65b9fe6eaa6b840ce937aa9b1ab1d871a5a87093da67f102dd3c069ebc08",
+    "named-firstEntryTest-1.itf.json": "482c376c31b7c8df8704a26151cfaa26dc39c3b6c02853f2262c05a6242c9e2b",
+    "named-closeTest-2.itf.json": "f73f1b361fc40cf151c5b518c020d57a9876aeabc0b956c3143533335b8ccb8e",
+    "named-staleCloseTest-3.itf.json": "1b80795ecd11ce76f38df6a12e38f3eb567112f712c6900677420fb6f238e2bb",
+    "named-staleRefreshTest-4.itf.json": "93e24f51cd8d31800c05bbd1f1dd0bbba78659042da6424aa07fbcb3b4e5a4a5",
+    "named-closedReplyTest-5.itf.json": "c9718e4c48ecaf5564dcb4096dbd1a308c95ca5add4fade76e39658e793b6f3b",
+    "named-receiptTest-6.itf.json": "1004e081446e9288e9d1ca6bbf5b37fb422b3d920d70bb09bdcae4c130d5d798",
+    "named-pendingRefreshTest-7.itf.json": "3a3e3f19fa674bf1b8f5a73158ea76729e6b97809d87d343ae102d58fe86317c",
+    "named.stdout": "8d84925eed2514df464056ca96bf0a75d644e7a1e941ac50d30bedd43f6329d0",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "a2cdc795ac0a5e2dbfe6a2ba4a9f0001e8f8538e98aba53ae095e27c423ecb2d",
+    "invariants.stdout": "3c786e13d9990f742ad22f4d4ca85e78919df326812ce2956f76d0993be204d3",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

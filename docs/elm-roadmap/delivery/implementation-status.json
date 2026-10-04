@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-launch-native-v58",
-  "status": "Authenticated launcher GUI route passes original window/picker91 plus owned application17 including real GIO argv, native window mapping and actual child exit0. Desktop16/transport17 pass, optimized host built, launch33 inherited by exact bytes. Full production taskbar/launcher, keyboard/AT/IME/search/pins/icons/hardware/release open.",
+  "activeSlice": "implementation/elm-launcher-keyboard-v60",
+  "status": "Scoped launcher focus passes Desktop24 and Quint8/1000; fresh current tuple passes original native91, pointer launcher17 and keyboard launcher26 with normal cleanup. Production per-output bar/transient/workarea roles, complete launcher/AT/IME/reflow/hardware/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -540,6 +540,34 @@
       "productionSurfaceRolesAccepted": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-launch-native-v58/qa/slice-manifest.json"
+    },
+    "launcherFocusV59": {
+      "compiledDesktopChecks": 24,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "opaqueViewCallbacks": true,
+      "scopedNamespacedDOMFocus": true,
+      "lateClosedCatalogReplyRetired": true,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launcher-focus-v59/qa/slice-manifest.json"
+    },
+    "launcherKeyboardV60": {
+      "retainedOriginalNativeChecks": 91,
+      "retainedPointerLauncherChecks": 17,
+      "keyboardLauncherChecks": 26,
+      "priorAssertionIdentitiesAndOrderPreserved": true,
+      "actualEscapeOpenerEnterRefreshFocus": true,
+      "actualEnterGIOGTKLaunch": true,
+      "actualLaunchedChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "nativeComposingIMEAccepted": false,
+      "productionSurfaceRolesAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launcher-keyboard-v60/qa/slice-manifest.json"
     }
   },
   "next": "Qualify text enlargement and small-output picker/keyboard focus metrics; continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews. Complete scene/hardware/GPU/WebGPU/AT/IME/human UX and release gates.",

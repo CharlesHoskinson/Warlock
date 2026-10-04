@@ -6544,6 +6544,35 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-launch-native-v58/qa/slice-manifest.json",
       "acceptance": "Controlled single-app catalog/default800x420 route and all original91 identities/order only. No production launcher/search/pins/icons, full keyboard/reflow/AT/IME or release acceptance."
+    },
+    {
+      "slice": "implementation/elm-launcher-focus-v59",
+      "level": "compiled scoped launcher view/focus retirement plus abstract model",
+      "compiledDesktopChecks": 24,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launcher-focus-v59/qa/slice-manifest.json",
+      "acceptance": "Scoped callback/DOM ID/focus-effect source and compiled model only; Browser scheduling/native/AT/IME acceptance separate."
+    },
+    {
+      "slice": "implementation/elm-launcher-keyboard-v60",
+      "level": "actual native keyboard launcher plus retained window/pointer campaigns",
+      "retainedOriginalNativeChecks": 91,
+      "retainedPointerLauncherChecks": 17,
+      "keyboardLauncherChecks": 26,
+      "actualEscapeOpenerEnterReverseTabRefresh": true,
+      "actualEnterGIOGTKLaunch": true,
+      "actualChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "fullLauncherKeyboardReflowAccepted": false,
+      "nativeATIMEAccepted": false,
+      "productionSurfaceRolesAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launcher-keyboard-v60/qa/slice-manifest.json",
+      "acceptance": "Default800x420 controlled app, protocol keyboard/helper and prior exact91/17 assertions only. No full traversal/reflow/native composing/AT/IME, production surfaces or release acceptance."
     }
   ]
 }

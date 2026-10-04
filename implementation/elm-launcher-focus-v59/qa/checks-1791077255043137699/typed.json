@@ -1,0 +1,1866 @@
+{
+  "passed": true,
+  "checks": 24,
+  "scope": "Compiled Desktop envelope/state integration; native GUI separate",
+  "cases": [
+    {
+      "name": "no catalog request before attachment",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog request carries authenticated binding",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catalog reply binds current request",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects old request",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects old binding",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects unknown outer field",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects wrong version",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "refresh replaces outstanding request",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "null catalog retires selection",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "desktop launch uses bound ID intent",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "correlated bound outcome settles",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Submitted",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "outcome rejects old binding",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "outcome rejects extra field",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "outcome rejects unknown version",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "disconnect retires catalog and preserves Unknown",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Unknown",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Unknown",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "close preserves in-flight receipt correlation",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener"
+          ],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": false,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Submitted",
+          "count": 1,
+          "expected": null,
+          "open": false,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "opening focuses current close while loading",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catalog focuses scoped first application",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "closing restores current scoped opener",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "old close cannot dismiss reopened view",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "old refresh cannot replace current catalog",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "closed pending request cannot change focus generation",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "application named close cannot collide with close control",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "refresh while pending focuses enabled close",
+      "rows": [
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close"
+          ],
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:fixture"
+          ],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "focus": [],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:close"
+          ],
+          "status": "Pending",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "focus": [
+            "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:close"
+          ],
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    }
+  ]
+}
