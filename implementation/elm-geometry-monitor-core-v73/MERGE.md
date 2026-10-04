@@ -1,0 +1,3 @@
+Fresh V72 pointer/monitor owning archive plus V40 geometry source and complete XDG header closure. Window.cpp equals exact V40 except accepted V72 ParentPointerFocus include/visible-buffer hook. Preserve desired MAX set/unset, zero-default XDG limits and minimized input guard. Pointer/monitor archive members retained; every actual XDG consumer rebuilt. Native tuple/plugin and full release are unqualified until rebuilt and tested.
+
+V72 actual compilation, archive, link, relink and exports succeeded, but publication failed on obsolete source-origin keys. V73 preserves that failure and rebuilds the unchanged program with the corrected final audit. Native qualification remains required.

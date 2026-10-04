@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual defaults/commit/layout/Window limits; hints>5 and existing rule/offset policy, no broad protocol conformance or GUI",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/candidate/src/protocols/XDGShell.hpp": "40b7dce364c1034304130b3441645138173b9fc335e0a9942c116228055809c8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/candidate/src/protocols/XDGShell.cpp": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/candidate/src/desktop/view/Window.cpp": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/qa/limits-test.py": "b1666a9d76cd6167d596a3a6f587de8087a9381a9dc83034eb615f7870f55e7a"
+  },
+  "checks": [
+    {
+      "name": "actual",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "checks 71\n",
+      "stderr": ""
+    },
+    {
+      "name": "previous-finite-defaults",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL never-set protocol defaults unspecified\n"
+    },
+    {
+      "name": "unsafe-discard-explicit-limits",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL independent unspecified axes and explicit limits preserved\n"
+    }
+  ],
+  "artifacts": {
+    "XDGShell.hpp": "40b7dce364c1034304130b3441645138173b9fc335e0a9942c116228055809c8",
+    "XDGShell.cpp": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b",
+    "Window.cpp": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+    "limits-test.py": "b1666a9d76cd6167d596a3a6f587de8087a9381a9dc83034eb615f7870f55e7a",
+    "actual.cpp": "0f967ffab0852e6b64913df1f8d954be857b2f7138121a7766fed14fb9d3245b",
+    "actual": "26819a16df3cf8c644d3c516aaa73d2085ce43c2ebc44c1a090197afbad22368",
+    "actual-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-run.log": "9586b7363820c8bec24e3cf687396b0b6a0c099613d44f4203f707c90750cd1d",
+    "previous-finite-defaults.cpp": "887eb1ad45a14d9b6409426162e0a74f850446883ae2c3747dea965c95ee5e6b",
+    "previous-finite-defaults": "a8b288dae021cff23453b6b98410e5519118a20eacf1c5e839aad9ef868d4ddd",
+    "previous-finite-defaults-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "previous-finite-defaults-run.log": "8abe4bc9a68556ba8d51f3e641b63ca3cc12adca82d6396ea83eb785d3b6070f",
+    "unsafe-discard-explicit-limits.cpp": "25073a17c9125681d409bc5a4f7e0a0293e59b3485cb6e0d937d23d84fef2e64",
+    "unsafe-discard-explicit-limits": "cf718db48aaae3a36f691bfdf076b4bf4e28f14364b71634afe94803f99eaec7",
+    "unsafe-discard-explicit-limits-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-discard-explicit-limits-run.log": "717d0b37baf24fffc6ee53a5bb8d13f0c7cdc64fc9d979bb9edf3452e8ef6ede"
+  }
+}
