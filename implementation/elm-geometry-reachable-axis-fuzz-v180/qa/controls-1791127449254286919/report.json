@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "name": "omitRawLower",
+      "compiled": true,
+      "rejected": true,
+      "exitCode": 1
+    },
+    {
+      "name": "omitLayoutUpper",
+      "compiled": true,
+      "rejected": true,
+      "exitCode": 1
+    },
+    {
+      "name": "stallLowerSearch",
+      "compiled": true,
+      "rejected": true,
+      "exitCode": "timeout5s"
+    },
+    {
+      "name": "ceilReservation",
+      "compiled": true,
+      "rejected": true,
+      "exitCode": 1
+    }
+  ],
+  "nativeAcceptance": false,
+  "scope": "Compiled unsafe-control detection only",
+  "artifacts": {
+    "omitRawLower/dependencies.d": "178fc15d54e692aa6304f35779135b7a332515e4924f39568ff12be0019d9958",
+    "omitRawLower/cases": "cd77a64bb25b1edba8e3ca0e20c63dc7c3653b2380a23ee7b40ea80657b28794",
+    "omitRawLower/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "omitRawLower/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "omitRawLower/run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "omitRawLower/run.stderr": "1da38027e31acb4537ea20cecbfe267e6b444365f8f941cbe8ba12417af02258",
+    "omitLayoutUpper/dependencies.d": "8361a8d5b5c952641c2e984090c6f87fa2a18c36619d874c3d2ec6631a826838",
+    "omitLayoutUpper/cases": "3ce3ecfcd56e00b0b9ea819e6b88b44799d7e0e477184c7f71fd316835c5f0fb",
+    "omitLayoutUpper/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "omitLayoutUpper/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "omitLayoutUpper/run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "omitLayoutUpper/run.stderr": "49bf3da1dcebef8247f10d5e7138d4268736ba2d8ee039462b7a9b519903aade",
+    "stallLowerSearch/dependencies.d": "36904c50de28000556f297c71c321f6b8f1a7fd669b20763548278fca3d6ca22",
+    "stallLowerSearch/cases": "f716fffeebfc33016b41be09843cc6f079794a76757b9f175b340fcd13703a57",
+    "stallLowerSearch/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stallLowerSearch/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stallLowerSearch/run.stderr": "fadd959431ce3bc64c085c7a193f43ac3dd142d36fb0ffc7da47b9f171ca40b6",
+    "ceilReservation/dependencies.d": "03f2274b1339acc78fc2c75e52ba449265171f164d0958c591a763c7e395db7b",
+    "ceilReservation/cases": "40679bc497f25393010704b8e97b24841fbf8f88bf02105c4b59feaf6d4cd0b4",
+    "ceilReservation/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ceilReservation/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ceilReservation/run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ceilReservation/run.stderr": "44bc95b60a38d900c957ffeb9125496d67e837db22a48accc743416f57629b88",
+    "ceilReservation/candidate/ReachableAxis.hpp": "d78a3361612e122dd98fde083a63bc4301fa1849a3b30e16d3af5cc6e2ce8568",
+    "ceilReservation/qa/cases.cpp": "4535bad89d302ad55893ca3adff15ff5f8a860fc92f726912c76965cc1d6514e",
+    "stallLowerSearch/candidate/ReachableAxis.hpp": "3481d9bef6bd5b485b192413d20c43f6b07ac8c34082cef87e1f4f1829a6780e",
+    "stallLowerSearch/qa/cases.cpp": "4535bad89d302ad55893ca3adff15ff5f8a860fc92f726912c76965cc1d6514e",
+    "omitLayoutUpper/candidate/ReachableAxis.hpp": "dde1a0157470b6a716b76b315bb72e9faa00da041450dba89d10c15d2886b167",
+    "omitLayoutUpper/qa/cases.cpp": "4535bad89d302ad55893ca3adff15ff5f8a860fc92f726912c76965cc1d6514e",
+    "omitRawLower/candidate/ReachableAxis.hpp": "fedddc7c49a08d58067d3f4fb98d2797f2a9870fc7bf4efe0645068695eff6e8",
+    "omitRawLower/qa/cases.cpp": "4535bad89d302ad55893ca3adff15ff5f8a860fc92f726912c76965cc1d6514e"
+  }
+}

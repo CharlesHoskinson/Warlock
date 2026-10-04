@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "scope": "Source/capture/hash/line integrity and prior paired math evidence; no new conversion/native/policy tests",
+  "sources": 20,
+  "pairedMathDependencies": {
+    "/usr/include/hyprutils/math/Region.hpp": {
+      "sha256": "02a7c7c337dbfdeb279a490aca4b1c643816b869ea34efe35b4b98bc5740cde9",
+      "size": 3005
+    },
+    "/usr/include/hyprutils/math/Vector2D.hpp": {
+      "sha256": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+      "size": 8301
+    },
+    "/usr/include/hyprutils/math/Misc.hpp": {
+      "sha256": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f",
+      "size": 433
+    },
+    "/usr/include/hyprutils/math/Box.hpp": {
+      "sha256": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+      "size": 6238
+    },
+    "/usr/include/hyprutils/math/Mat3x3.hpp": {
+      "sha256": "4ed6e897f6bdbaad13e34fd211fd07105068e4c0e15deb9827c4bd8d3d092c8e",
+      "size": 1545
+    },
+    "/usr/include/hyprutils/math/Edges.hpp": {
+      "sha256": "52f819529b786693925e2760f665698a6aa4e3f1dc10230231a726ea1a2d253a",
+      "size": 2788
+    },
+    "/usr/lib/libhyprutils.so.0.14.2": {
+      "sha256": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811",
+      "size": 493712
+    }
+  },
+  "priorCharacterization": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/report.json",
+  "priorCharacterizationSHA256": "7a0e0ebfc2aeadcc94f9cc0443fa0e1e37bf0c5fae0969be0a1f38e1cbbc0c4b",
+  "nativeAcceptance": false,
+  "policyAcceptance": false,
+  "modelAcceptance": false
+}
