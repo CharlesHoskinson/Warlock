@@ -1,0 +1,332 @@
+{
+  "schema": 1,
+  "passed": true,
+  "frozenUTCUnixNs": 1791100171858487225,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-c7be38c024da4f7eac4501c0af9290dc.scope",
+    "coreLimit": 1
+  },
+  "nativeScope": "Original 68 legacy menu assertions on exact V28/V34/V14 private tuple only",
+  "legacyMenuNativeAccepted": true,
+  "fullRoadmapAccepted": false,
+  "geometryMenuAccepted": false,
+  "newMaximizeCapabilities": false,
+  "deploymentAccepted": false,
+  "quintGeometryModelLogicApproved": false,
+  "nativeQualification": {
+    "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-pair-v36/qa/native-1791099601538725381/report.json",
+    "nativeReportSHA256": "057a9f7049438013fa3f5acb91ef4c90c154133e08abac3c50921fa5a3e03076",
+    "nativeChecks": 68,
+    "normalCleanup": true,
+    "originalAssertionsAndDeadlinesUnchanged": true,
+    "sourceCheckReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-pair-v36/qa/source-check-1791099411995988294/report.json",
+    "sourceCheckReportSHA256": "397381802b85cd1198d78a35f9b3458e240cce6c317ffb5f907678f8f74308bf",
+    "parentInputManifestSHA256": "5c39d644a9254043f7262ffa2b509e761abe4a6198662ad49872a54b44d3274b",
+    "parentInputNativeChecks": 105,
+    "parentInputInventoryEntries": 134,
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/Hyprland",
+      "sha256": "be47f319ca67ec9294d2d6940909fc9b8c31841ff11cdfbd5b235593f27486c2",
+      "versionHeaderSHA256": "0cb4913dc18c35bc0fb5e33f8786453c0781216bb4ead20b2afd82ba84981946",
+      "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/report.json",
+      "buildReportSHA256": "f1771cb815282d34582898dae219fa3f36c6b3ea80a395e0a7f241515320658a",
+      "componentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/component-manifest.json",
+      "componentManifestSHA256": "50af79afeb6caf5b3fed06452b6f939ee43fff653b1c5c89699df4f2417aac2c",
+      "inventoryBase": "/home/hoskinson/omarchy-windows-parity"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-authority-pair-v34/qa/build-1791098894593705078/elm-window-effect-authority.so",
+      "sha256": "f1bba468e10cf91ae276e0ca3f890cbdb9282819bd75dfb2871056cff7494f1e"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-viewport-v8/build-1791091844697498690/cmake/libaquamarine.so.0.15.0",
+      "sha256": "48fba8868cd21b523a75c8347299c40c48cb2f5a6e2fce78342bd87b68d983c3"
+    },
+    "parentModule": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/build-1791095007292735039/parent-input.so",
+      "sha256": "8e34ab3aba01257e5bdb755f26a50e83b8062464953ed7d70c4c68980491b3d8"
+    }
+  },
+  "acceptanceDocument": "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/delivery/GEOMETRY-LEGACY-MENU-V36-ACCEPTANCE.md",
+  "acceptanceDocumentSHA256": "e7d9a73de927c7a4fb0ca4503f6550fed12c150c7be9fb3f1806de5516548cf7",
+  "scope": "Preserved V13 menu cases/deadlines with qualified owning core and fixed parent probe",
+  "upstreamSHA256": "622b58504d0a5800ad992ab7f427ddcc3e856cf199367d15f03d7307e615deed",
+  "files": [
+    {
+      "path": "candidate_host.py",
+      "size": 7762,
+      "mode": 420,
+      "sha256": "2ddca57c5905d213c095b8658ef13bf6c17d791d9ee117190acc160a1bba225c"
+    },
+    {
+      "path": "qa/freeze.py",
+      "size": 6796,
+      "mode": 420,
+      "sha256": "ff44e3fc853ad4a7266e03474a9bdf8236013b04c24de4bb73f63cc4158ed73c"
+    },
+    {
+      "path": "qa/inherited/candidate_host.py",
+      "size": 3720,
+      "mode": 420,
+      "sha256": "b3c51fd485585404a9c70e682f7e523aff4459edf8c5f00ed0de626461f1357f"
+    },
+    {
+      "path": "qa/inherited/native.py",
+      "size": 27127,
+      "mode": 420,
+      "sha256": "2b6b8d3376885e5e1d2933fb4d291fe4193b127f77840341e181381bee6014d7"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/authority-config.json",
+      "size": 244,
+      "mode": 384,
+      "sha256": "c7d7885a9b5c8d4a203c7110861e2d0c57d003eccbb5cce4466170b281ce6e0b"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/dmabuf-probe.stderr",
+      "size": 0,
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/dmabuf-probe.stdout",
+      "size": 174,
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/elm-context-menu-restored.png",
+      "size": 16636,
+      "mode": 420,
+      "sha256": "1fc1b0ad5e9e296343690cc16d8c310aed25393b042b08eecedb91aabf8f2bca"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/elm-webview.log",
+      "size": 453068,
+      "mode": 384,
+      "sha256": "89f2fe2effa81149abf5447e9c549b1efccd344d2bd15614ec179bf06af7648a"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/fixture.log",
+      "size": 554,
+      "mode": 384,
+      "sha256": "1b91e7deec101f49ae97e202d1434f585885ec17a4dbb1b87a3099af0082feca"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/host-evidence.json",
+      "size": 216128,
+      "mode": 384,
+      "sha256": "f3b1006c8ea165af8ea11e8e590f1771f39fd392b33527d8f04db2733b04328d"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/hyprland.log",
+      "size": 2615,
+      "mode": 384,
+      "sha256": "aa4472bc9782dfcd6381b581055fd8e938ed961c517691ceeb08bc2107dbab59"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/privateBus.log",
+      "size": 6454,
+      "mode": 384,
+      "sha256": "8fc2cae1ae85308d47e8f582d657ef1f3a502cbc5622594dcbdcda405a3613ff"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/runtime-archive/.flatpak/webkit-474210-20/bwrapinfo.json",
+      "size": 160,
+      "mode": 384,
+      "sha256": "a3e0c203369bcb19114549284d54a2b41dc028eba6cc218733dcb8de30c755bb"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/runtime-archive/.flatpak/webkit-474210-24/bwrapinfo.json",
+      "size": 160,
+      "mode": 384,
+      "sha256": "a745470323dc02265c6f58eae12c6089a08d77ee5272b73e323811eab88bc0eb"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/runtime-archive/.flatpak/webkit-474210-4/bwrapinfo.json",
+      "size": 193,
+      "mode": 384,
+      "sha256": "6e7d25e8d4ee829c550340c97e24032ec4465b129ea64ba79ae09a8f64e668f6"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/runtime-archive/.flatpak/webkit-474210-5/bwrapinfo.json",
+      "size": 193,
+      "mode": 384,
+      "sha256": "7b17257248f6cb8c8b8919d14f79afe726f976f248cbd32746af31124f39bb00"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791099603_683858383/hyprland.log",
+      "size": 27224,
+      "mode": 384,
+      "sha256": "c1cf880684ffb42499cb582ff8f98385b5fdba1ef4caa4bfbc6eccf3eba0d78d"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/runtime-archive/hyprland.lua",
+      "size": 241,
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/weston-renderer.log",
+      "size": 8805,
+      "mode": 384,
+      "sha256": "3e32f4e8ac9db08a1fc091a3d1a5e7e685451812b4e124735c699525f1df47ab"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native-evidence/weston.log",
+      "size": 0,
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/native-1791099601538725381/native.py",
+      "size": 27135,
+      "mode": 420,
+      "sha256": "534e9b5ac0af0c5a3f373adefc48f32a76bc233020105bbd767e3400007b7cd5"
+    },
+    {
+      "path": "qa/native-1791099601538725381/report.json",
+      "size": 453857,
+      "mode": 420,
+      "sha256": "057a9f7049438013fa3f5acb91ef4c90c154133e08abac3c50921fa5a3e03076"
+    },
+    {
+      "path": "qa/native.py",
+      "size": 27135,
+      "mode": 420,
+      "sha256": "534e9b5ac0af0c5a3f373adefc48f32a76bc233020105bbd767e3400007b7cd5"
+    },
+    {
+      "path": "qa/source-check-1791099298421085671/inputs/candidate_host.py",
+      "size": 7660,
+      "mode": 256,
+      "sha256": "ca828521fb58d4ce3170945c6c097b3101977565a820fb87c3087444acf86466"
+    },
+    {
+      "path": "qa/source-check-1791099298421085671/inputs/qa/native.py",
+      "size": 27135,
+      "mode": 256,
+      "sha256": "534e9b5ac0af0c5a3f373adefc48f32a76bc233020105bbd767e3400007b7cd5"
+    },
+    {
+      "path": "qa/source-check-1791099298421085671/inputs/qa/source-check.py",
+      "size": 3274,
+      "mode": 256,
+      "sha256": "05a4e6990e68043d7e7f683a80ce86aaaa04180e352be42ab194bdc59ce0e3a2"
+    },
+    {
+      "path": "qa/source-check-1791099298421085671/inputs/upstream.json",
+      "size": 1331,
+      "mode": 256,
+      "sha256": "622b58504d0a5800ad992ab7f427ddcc3e856cf199367d15f03d7307e615deed"
+    },
+    {
+      "path": "qa/source-check-1791099298421085671/report.json",
+      "size": 347,
+      "mode": 420,
+      "sha256": "e54daa40224d139d9a675a09594d7361553f211fc6299d4fba329f4dfb810a60"
+    },
+    {
+      "path": "qa/source-check-1791099323372969777/inputs/candidate_host.py",
+      "size": 7660,
+      "mode": 256,
+      "sha256": "ca828521fb58d4ce3170945c6c097b3101977565a820fb87c3087444acf86466"
+    },
+    {
+      "path": "qa/source-check-1791099323372969777/inputs/qa/native.py",
+      "size": 27135,
+      "mode": 256,
+      "sha256": "534e9b5ac0af0c5a3f373adefc48f32a76bc233020105bbd767e3400007b7cd5"
+    },
+    {
+      "path": "qa/source-check-1791099323372969777/inputs/qa/source-check.py",
+      "size": 3334,
+      "mode": 256,
+      "sha256": "977572535e4e65696adf0ad0a8ab336d520219bc44ed8c0420e953fb8b4f5afd"
+    },
+    {
+      "path": "qa/source-check-1791099323372969777/inputs/upstream.json",
+      "size": 1331,
+      "mode": 256,
+      "sha256": "622b58504d0a5800ad992ab7f427ddcc3e856cf199367d15f03d7307e615deed"
+    },
+    {
+      "path": "qa/source-check-1791099323372969777/report.json",
+      "size": 1518,
+      "mode": 420,
+      "sha256": "7b5562f83a670d1216c25be0e18d2e4ab95c967293b1fd0aee3849ec7d837168"
+    },
+    {
+      "path": "qa/source-check-1791099347040682236/inputs/candidate_host.py",
+      "size": 7752,
+      "mode": 256,
+      "sha256": "c45063a0631a457a29cb00e57da98abdba620c205168a047f9f5076afa348f61"
+    },
+    {
+      "path": "qa/source-check-1791099347040682236/inputs/qa/native.py",
+      "size": 27135,
+      "mode": 256,
+      "sha256": "534e9b5ac0af0c5a3f373adefc48f32a76bc233020105bbd767e3400007b7cd5"
+    },
+    {
+      "path": "qa/source-check-1791099347040682236/inputs/qa/source-check.py",
+      "size": 3334,
+      "mode": 256,
+      "sha256": "977572535e4e65696adf0ad0a8ab336d520219bc44ed8c0420e953fb8b4f5afd"
+    },
+    {
+      "path": "qa/source-check-1791099347040682236/inputs/upstream.json",
+      "size": 1331,
+      "mode": 256,
+      "sha256": "622b58504d0a5800ad992ab7f427ddcc3e856cf199367d15f03d7307e615deed"
+    },
+    {
+      "path": "qa/source-check-1791099347040682236/report.json",
+      "size": 2666,
+      "mode": 420,
+      "sha256": "f027c37bc15f1c4b9432d6b924490c0b29c82ba45191594a5f60d0bdcff2d90c"
+    },
+    {
+      "path": "qa/source-check-1791099411995988294/inputs/candidate_host.py",
+      "size": 7762,
+      "mode": 256,
+      "sha256": "2ddca57c5905d213c095b8658ef13bf6c17d791d9ee117190acc160a1bba225c"
+    },
+    {
+      "path": "qa/source-check-1791099411995988294/inputs/qa/native.py",
+      "size": 27135,
+      "mode": 256,
+      "sha256": "534e9b5ac0af0c5a3f373adefc48f32a76bc233020105bbd767e3400007b7cd5"
+    },
+    {
+      "path": "qa/source-check-1791099411995988294/inputs/qa/source-check.py",
+      "size": 3334,
+      "mode": 256,
+      "sha256": "977572535e4e65696adf0ad0a8ab336d520219bc44ed8c0420e953fb8b4f5afd"
+    },
+    {
+      "path": "qa/source-check-1791099411995988294/inputs/upstream.json",
+      "size": 1331,
+      "mode": 256,
+      "sha256": "622b58504d0a5800ad992ab7f427ddcc3e856cf199367d15f03d7307e615deed"
+    },
+    {
+      "path": "qa/source-check-1791099411995988294/report.json",
+      "size": 2666,
+      "mode": 420,
+      "sha256": "397381802b85cd1198d78a35f9b3458e240cce6c317ffb5f907678f8f74308bf"
+    },
+    {
+      "path": "qa/source-check.py",
+      "size": 3334,
+      "mode": 420,
+      "sha256": "977572535e4e65696adf0ad0a8ab336d520219bc44ed8c0420e953fb8b4f5afd"
+    },
+    {
+      "path": "upstream.json",
+      "size": 1331,
+      "mode": 420,
+      "sha256": "622b58504d0a5800ad992ab7f427ddcc3e856cf199367d15f03d7307e615deed"
+    }
+  ]
+}

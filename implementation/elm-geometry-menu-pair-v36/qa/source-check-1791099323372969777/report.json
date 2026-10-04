@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "scope": "CPU source/tuple checks only; original 68 native assertions unrun",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-3ffcb8f7e4924114aee9a2bf12538cf9.scope",
+    "coreLimit": 1
+  },
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-pair-v36/qa/source-check.py\", line 42, in main\n    module,client,input_packet=host.input_tuple()\n                               ~~~~~~~~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-pair-v36/candidate_host.py\", line 53, in input_tuple\n    if digest(path) != value:\n       ~~~~~~^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-pair-v36/candidate_host.py\", line 18, in digest\n    return hashlib.sha256(Path(path).read_bytes()).hexdigest()\n                          ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'build.py'\n"
+}

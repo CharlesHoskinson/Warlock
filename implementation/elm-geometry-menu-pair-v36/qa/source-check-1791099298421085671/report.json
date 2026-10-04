@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "scope": "CPU source/tuple checks only; original 68 native assertions unrun",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2e890c75c7d44c41b8605876929026ac.scope",
+    "coreLimit": 1
+  },
+  "error": "FileNotFoundError(2, 'No such file or directory')"
+}

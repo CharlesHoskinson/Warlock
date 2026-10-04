@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8",
+  "parentPairManifestSHA256": "7ae1d5245a1cb3290f50204e8e81f1e058bff2a9667b3741475cdc784ae7d3cc",
+  "inheritedFiles": {
+    "adapter/daemon.py": "b84e4957e1a3299ce7bd8a732f36c0e784dae3fbd5da6c5bade2d3df6778ac8e",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "candidate/SceneTrace.hpp": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+    "candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+    "native/authority.cpp": "8ec742bf5178b100c2731ca9a7c4d6678d7b869c066e60c9ce13322621004f20",
+    "qa/build.py": "fe066affda8e2918ca9686e14600771c2b25ed27592aed7224a0e79b692c83aa",
+    "qa/freeze_pair.py": "41f362533a64bfacff7cdb173d36db641b998b93e99a39db050c93f450d65ab8",
+    "qa/inherited/build.py": "310dbc1e25b6f1c9777795eb1b1365bcf706a4126c06b0818a0920a47695fbd2",
+    "qa/inherited/freeze_pair.py": "0073be15a1f154e29fbfe2b45d32ac0429165fd4c1daffb735256cf96bccc5b2",
+    "qa/inherited/model.py": "d8f1a5d1dd728258799f1fbaa2cfbf98032b0cfb233970fb9b381298114cfe9a",
+    "spec/surfaces.qnt": "6909e59c559dbea06666cf1d6e9175f934c8a7bd7daa2092689a4d04654710ea"
+  },
+  "coreComponent": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28",
+  "coreComponentManifestSHA256": "50af79afeb6caf5b3fed06452b6f939ee43fff653b1c5c89699df4f2417aac2c",
+  "coreDescriptorSHA256": "9fb10c0ced81925bab5d44680c9ab6bae9accb6a60a9dc80656d5260da48ab78",
+  "inventoryBase": "/home/hoskinson/omarchy-windows-parity",
+  "scope": "Unchanged legacy authority compile tuple against exact qualified V28 core; no Max capabilities or GUI acceptance",
+  "inheritedPaths": {
+    "adapter/daemon.py": "adapter/daemon.py",
+    "adapter/effect_endpoint.py": "adapter/effect_endpoint.py",
+    "adapter/endpoint.py": "adapter/endpoint.py",
+    "adapter/taskbar_projection.py": "adapter/taskbar_projection.py",
+    "candidate/SceneModal.hpp": "candidate/SceneModal.hpp",
+    "candidate/SceneTrace.hpp": "candidate/SceneTrace.hpp",
+    "candidate/WindowPolicy.hpp": "candidate/WindowPolicy.hpp",
+    "native/authority.cpp": "native/authority.cpp",
+    "qa/build.py": "qa/inherited-v8/build.py",
+    "qa/freeze_pair.py": "qa/inherited-v8/freeze_pair.py",
+    "qa/inherited/build.py": "qa/inherited/build.py",
+    "qa/inherited/freeze_pair.py": "qa/inherited/freeze_pair.py",
+    "qa/inherited/model.py": "qa/inherited/model.py",
+    "spec/surfaces.qnt": "spec/surfaces.qnt"
+  }
+}

@@ -1,0 +1,1 @@
+This fresh pair rebuilds the frozen V8 legacy authority without changing its native or adapter semantics. The selected V28 core and its qualification remain separately evidenced. This pair has CPU compile/link closure only until protected native menu qualification. It adds no Maximize capability.
