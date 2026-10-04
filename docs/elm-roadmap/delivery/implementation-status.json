@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-output-padding-qa-v119",
-  "status": "Native ownership component passes114: asymmetric bars reserve own output, contained secondary popup, selected-output removal retires only owner host. Final global Elm controller across output views remains open.",
+  "activeSlice": "implementation/elm-output-production-qa-v140",
+  "status": "Native127 passes: live output resize with fresh popup lease, scale2/transform1, scoped native keyboard focus, reservation, Escape/reopen and owner removal; final global Elm controller and full release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -805,11 +805,46 @@
       "cleanupPassed": true,
       "scope": "Native object ownership and per-output host component in two private fixture processes; final shared-controller multi-output architecture and hardware UX remain open",
       "failedLineage": "V111 Quint set type error; V113 oversized popup; V115 bounded size still outside compositor padded rectangle; V117 wrapper-only change ineffective. V118 admitted geometry honors actual owning compositor padding; V119 full114 passes."
+    },
+    "outputReflowV140": {
+      "evidence": "implementation/elm-output-production-qa-v140/qa/slice-manifest.json",
+      "nativeChecks": 127,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 70,
+      "compiledPresenterChecks": 12,
+      "nativeHostTestGroups": 8,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "liveResizeLogical": [
+        480,
+        320
+      ],
+      "scaleTwoBufferPixels": [
+        960,
+        640
+      ],
+      "rotatedLogical": [
+        320,
+        480
+      ],
+      "rotatedPopupConfigure": [
+        4,
+        48,
+        312,
+        420
+      ],
+      "eachBarReservationTop": 48,
+      "freshLeaseAfterPhysicalRetirement": true,
+      "nativeKeyboardFocusRequired": true,
+      "cleanupPassed": true,
+      "scope": "Private component acceptance; final shared Elm controller, physical displays, AT/IME, hardware budgets and release remain open",
+      "failedLineage": "V120 mapped geometry stale; V122 in-place GTK reposition ineffective; V124 reused retired lease; V130 native focus race. V133/V135/V137 rotation blocked after parent fullscreen geometry violation; V138 read-only rule diagnostic and V139 larger parent establish transform1. V140 unchanged production plugin passes127 without geometry protocol error."
     }
   },
   "next": [
-    "Qualify scale/transform and live output geometry changes with open popup; general workarea and connector/output identity policy.",
-    "Integrate native ownership into one primary Elm controller with presentation views on all outputs, preserving menu/choice/recovery protocols.",
+    "Integrate V125/V132 fresh reflow leases and native keyboard focus with reviewed menu-output lane; retain current menu, choice, recovery and owner-scope policies.",
+    "Implement final single authoritative Elm controller across all output presentation views; qualify connector/replug, fractional scale, all transforms and arbitrary workarea.",
     "Continue full scene, fullscreen/lock, actual AT/IME/human UX, hardware/performance/WebGPU, C00 and coherent release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
@@ -876,6 +911,11 @@
       "status": "Required xdg_popup/grab/default geometry observed V65/V66 popup-window route; GTK3 GtkPopover no-go retained. Final Elm integration/stale epochs/outputs/IME and production role acceptance remain open.",
       "failedEvidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json",
       "evidence": "implementation/elm-native-popup-lifetime-qa-v66/qa/slice-manifest.json"
+    },
+    {
+      "id": "OUTPUT-REFLOW-LEASE-001",
+      "status": "V125/V132 fresh lease after physical retirement and native keyboard readiness qualify on V140 production tuple; broader output/hardware/fullscene gates remain open.",
+      "evidence": "implementation/elm-output-production-qa-v140/qa/slice-manifest.json"
     }
   ]
 }

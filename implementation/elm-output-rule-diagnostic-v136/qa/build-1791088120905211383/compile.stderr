@@ -1,0 +1,14 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-output-rule-diagnostic-v136/qa/build-1791088120905211383/inputs/native/authority.cpp: In function ‘std::string {anonymous}::observe(eHyprCtlOutputFormat, std::string)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-output-rule-diagnostic-v136/qa/build-1791088120905211383/inputs/native/authority.cpp:437:21: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  437 |                     if(!first)rows+=",";first=false;
+      |                     ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-output-rule-diagnostic-v136/qa/build-1791088120905211383/inputs/native/authority.cpp:437:41: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  437 |                     if(!first)rows+=",";first=false;
+      |                                         ^~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-output-rule-diagnostic-v136/qa/build-1791088120905211383/inputs/native/authority.cpp:444:25: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  444 |                         if(!firstRule)rows+=",";firstRule=false;
+      |                         ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-output-rule-diagnostic-v136/qa/build-1791088120905211383/inputs/native/authority.cpp:444:49: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  444 |                         if(!firstRule)rows+=",";firstRule=false;
+      |                                                 ^~~~~~~~~
+cc1plus: all warnings being treated as errors

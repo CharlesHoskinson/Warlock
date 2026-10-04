@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "a3f49caac14444c18ca3b1aefacb36ef",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T04:32:27.452044+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-output-keyboard-ready-v132",
+  "nextWork": [
+    "V125/V132 adds fresh logical lease after output geometry retirement and native keyboard-focus readiness. V127 70+12 compiled checks; V134 8 named Quint/1000 traces pass. V133/V135 preserve successful original window/resize/scale observations but full native campaign fails rotation; diagnostic V138/V137 will distinguish declared/effective/active monitor transform before integration with menu-output V5. No full acceptance claimed; use these newer geometry/keyboard deltas for later merge."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-output-keyboard-ready-v132/qa/build-1791087557995567736/report.json",
+      "sha256": "16ad4df283512ed72df15b72eff0d7df6eb106243db4e2dd24dd76fa7a27eccb",
+      "size": 11877
+    },
+    {
+      "path": "implementation/elm-output-keyboard-ready-qa-v133/qa/native-1791087601376085909/report.json",
+      "sha256": "95dc856fe5886d999b11b78fc66ba2cc3094b9c5015641b3904b8b3235440a26",
+      "size": 396879
+    },
+    {
+      "path": "implementation/elm-output-keyboard-model-v134/qa/model-1791087647014315495/report.json",
+      "sha256": "8ae61a1ccdc71430220f001507723ca8bdefe769a75a9b84b87b5788f71a453e",
+      "size": 3585
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "scope": "Physical wrapper retirement requires fresh logical lease plus current native configuration and presentation. Abstract architecture model; no automatic C refinement.",
+  "sourceSHA256": "e135e608be0bd3636ed2545a6d0405f0bfdbab755cae146250c33161cf03736f",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "reflow.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "reflow.qnt",
+        "--backend=typescript",
+        "--match=^(resizeBlocksTest|freshLeaseTest|sameRetiredLeaseTest|lateReflowTest|staleRenderTest|staleConfigureTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "reflow.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 6,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "reflow.qnt": "e135e608be0bd3636ed2545a6d0405f0bfdbab755cae146250c33161cf03736f",
+    "model.py": "b66de6eec095cf896cf6511d6ee23585ab8ee6eb4bd6df8efaacc5f1a7238ab9",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-resizeBlocksTest-0.itf.json": "67bdc0b5a35ca0e3c0125608ae4bd16b8c32c1d89c9c9b06c151eb6975ec498a",
+    "named-freshLeaseTest-1.itf.json": "da929a5edc73aefe73a8e283a75629f28f1bea8c692f8b0120fbcfa0d5c900a1",
+    "named-sameRetiredLeaseTest-2.itf.json": "f8c6ad703a36fb1e25d9ffade390f3c9ca21df36c6ddcaad01597dff06e27494",
+    "named-lateReflowTest-3.itf.json": "6b9f9aee13250d0b9a523db00cd3864e629401d8ae51ded4a1bdfb707f60b7d6",
+    "named-staleRenderTest-4.itf.json": "454cf84eb9c93b9b1371bd7acc90a2828e41b75f12aca86035caf30d87bf480f",
+    "named-staleConfigureTest-5.itf.json": "5091e88becead89899bc9ca039f35b9253a1d70e0bbd5a0841cd4b4116f3c9dd",
+    "named.stdout": "e3d8596bd038d1049f0fbe1d006801511b13ca51edce7ac8ec7738eb0340aa6e",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "5b6dc9f55fe46c383cbd1cf7b787194fa8a5acdb1d3278ad65ae22742c9bfaea",
+    "invariants.stdout": "00b3abda2e52263c1a0885b3db2dddd29284feb1c271272e57eacddea4eee9af",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

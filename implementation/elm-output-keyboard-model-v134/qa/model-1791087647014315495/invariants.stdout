@@ -1,0 +1,662 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      closed: 0,
+      configured: 1,
+      keyboard: 1,
+      lease: 1,
+      pub: 1,
+      renderedLease: 1,
+      renderedPub: 1,
+      waiting: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      closed: 0,
+      configured: 1,
+      keyboard: 1,
+      lease: 1,
+      pub: 1,
+      renderedLease: 1,
+      renderedPub: 1,
+      waiting: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      closed: 0,
+      configured: 1,
+      keyboard: 1,
+      lease: 1,
+      pub: 1,
+      renderedLease: 1,
+      renderedPub: 1,
+      waiting: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      closed: 1,
+      configured: 0,
+      keyboard: 0,
+      lease: 1,
+      pub: 1,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      closed: 1,
+      configured: 0,
+      keyboard: 0,
+      lease: 1,
+      pub: 1,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      closed: 1,
+      configured: 0,
+      keyboard: 0,
+      lease: 1,
+      pub: 1,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      closed: 1,
+      configured: 0,
+      keyboard: 0,
+      lease: 2,
+      pub: 2,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      closed: 1,
+      configured: 0,
+      keyboard: 0,
+      lease: 2,
+      pub: 2,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      closed: 2,
+      configured: 0,
+      keyboard: 0,
+      lease: 2,
+      pub: 2,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      closed: 2,
+      configured: 0,
+      keyboard: 0,
+      lease: 2,
+      pub: 2,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      closed: 2,
+      configured: 0,
+      keyboard: 0,
+      lease: 2,
+      pub: 2,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      closed: 2,
+      configured: 0,
+      keyboard: 0,
+      lease: 2,
+      pub: 2,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      closed: 2,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 3,
+      pub: 3,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 0,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 4,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 4,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 4,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 4,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 4,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      accepted: false,
+      closed: 3,
+      configured: 4,
+      keyboard: 0,
+      lease: 4,
+      pub: 4,
+      renderedLease: 0,
+      renderedPub: 0,
+      waiting: false
+    }
+}
+
+[ok] No violation found (852ms at 1174 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

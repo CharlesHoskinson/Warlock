@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Physical wrapper retirement requires fresh logical lease plus current native configuration, presentation and keyboard focus. Abstract architecture model; no automatic C refinement.",
+  "sourceSHA256": "812cb5a220951fa1ea66be5b61c54fba48b13bdd6cd7d35afb86c5cda1ebb3fe",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "reflow.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "reflow.qnt",
+        "--backend=typescript",
+        "--match=^(resizeBlocksTest|freshLeaseTest|sameRetiredLeaseTest|lateReflowTest|staleRenderTest|staleConfigureTest|missingKeyboardTest|staleKeyboardTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "reflow.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "reflow.qnt": "812cb5a220951fa1ea66be5b61c54fba48b13bdd6cd7d35afb86c5cda1ebb3fe",
+    "model.py": "18f6c36f13b7523ffde7ec58060e3f5f31f27f11124f46ff4da60adbc7b6caba",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-resizeBlocksTest-0.itf.json": "fff04163c38cd42ebd634c3355865ea5308f4e385588857666433b707213c6d6",
+    "named-freshLeaseTest-1.itf.json": "9cc7c476569939c3193e2e90baa35dc2057cda0ee7b58499a754a9a7596603a0",
+    "named-sameRetiredLeaseTest-2.itf.json": "43b3a28bbc000e274299648c3c6f91ebb9259e79caa6d29d6ab60445fe182457",
+    "named-lateReflowTest-3.itf.json": "be11e36fd3c1f3ea7292beddc5360ac28e69c4a5abd7d53e893af703eb9ef46b",
+    "named-staleRenderTest-4.itf.json": "4cc4ef3f66016ff6e5d6c2f7bebd568730159dfcb167218484c2e993d338b092",
+    "named-staleConfigureTest-5.itf.json": "46d971e8367077782789623aa0b7d233fe829261cf51492f1c2b018ef4f1b75d",
+    "named-missingKeyboardTest-6.itf.json": "b9bb77301b178a144bee69b46cbacdcf3caae4446f4fde705366708b8d127618",
+    "named-staleKeyboardTest-7.itf.json": "4297f1d2f307c4bc0bf1816f6f9c01569c370869dd0771f46dec02e295667ff7",
+    "named.stdout": "e6fe0ba6d2674bd6676deb697909094aa42b2d9e98ec948dc44b80a1ffbdb54a",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "1c5bc880b26b17ed7b86b18580274600cee1151ca562042f0dc2f3f894a7c1b0",
+    "invariants.stdout": "b210f247935041d7abab4b2680a0e4e695793542c18facddaaf59ba603c3a7f7",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

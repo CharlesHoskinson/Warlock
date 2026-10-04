@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T03:57:37.701480+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T04:38:09.112663+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6818,6 +6818,41 @@
       "cleanupPassed": true,
       "scope": "Native object ownership and per-output host component in two private fixture processes; final shared-controller multi-output architecture and hardware UX remain open",
       "failedLineage": "V111 Quint set type error; V113 oversized popup; V115 bounded size still outside compositor padded rectangle; V117 wrapper-only change ineffective. V118 admitted geometry honors actual owning compositor padding; V119 full114 passes."
+    },
+    {
+      "evidence": "implementation/elm-output-production-qa-v140/qa/slice-manifest.json",
+      "nativeChecks": 127,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 70,
+      "compiledPresenterChecks": 12,
+      "nativeHostTestGroups": 8,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "liveResizeLogical": [
+        480,
+        320
+      ],
+      "scaleTwoBufferPixels": [
+        960,
+        640
+      ],
+      "rotatedLogical": [
+        320,
+        480
+      ],
+      "rotatedPopupConfigure": [
+        4,
+        48,
+        312,
+        420
+      ],
+      "eachBarReservationTop": 48,
+      "freshLeaseAfterPhysicalRetirement": true,
+      "nativeKeyboardFocusRequired": true,
+      "cleanupPassed": true,
+      "scope": "Private component acceptance; final shared Elm controller, physical displays, AT/IME, hardware budgets and release remain open",
+      "failedLineage": "V120 mapped geometry stale; V122 in-place GTK reposition ineffective; V124 reused retired lease; V130 native focus race. V133/V135/V137 rotation blocked after parent fullscreen geometry violation; V138 read-only rule diagnostic and V139 larger parent establish transform1. V140 unchanged production plugin passes127 without geometry protocol error."
     }
   ]
 }
