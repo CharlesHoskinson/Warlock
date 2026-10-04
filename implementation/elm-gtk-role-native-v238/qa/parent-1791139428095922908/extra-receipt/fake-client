@@ -1,0 +1,8 @@
+#!/usr/bin/python3
+import json,sys
+print('{"ready":true,"scope":"parent-notify-only"}',flush=True)
+sequence=0
+for command in sys.stdin:
+ if command.strip()=='quit':break
+ sequence+=1
+ print(json.dumps(dict(sequence=sequence,accepted=True,scope="parent-notify-only")),flush=True);print(json.dumps(dict(sequence=sequence,accepted=True,scope="parent-notify-only")),flush=True)

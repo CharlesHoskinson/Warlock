@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fakeWireRealSubprocessOnly": true,
+  "checks": [
+    {
+      "name": "normal",
+      "passed": true,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791138863293976466/normal/evidence/record.json"
+    },
+    {
+      "name": "bool-sequence",
+      "passed": true,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791138863293976466/bool-sequence/evidence/record.json"
+    },
+    {
+      "name": "float-sequence",
+      "passed": true,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791138863293976466/float-sequence/evidence/record.json"
+    },
+    {
+      "name": "numeric-accepted",
+      "passed": true,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791138863293976466/numeric-accepted/evidence/record.json"
+    },
+    {
+      "name": "duplicate-json",
+      "passed": true,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791138863293976466/duplicate-json/evidence/record.json"
+    },
+    {
+      "name": "partial-json",
+      "passed": true,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791138863293976466/partial-json/evidence/record.json"
+    },
+    {
+      "name": "extra-receipt",
+      "passed": true,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791138863293976466/extra-receipt/evidence/record.json"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-test.py": "ff7947e998c905d866dbff5389e00e7fca10216f2b6859175ee7fc62676cb4d8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent.py": "f9bcf25de7cbf078c667052f3a0bcf3d99f2b6de485fce1eaa975e45ebec11ad",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/actor.py": "6c67a2dc4befb3cb38ebd08339f19f570d38e4324518870332e344c75460dcef",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/journal.py": "9f3f0e6c7cb4b657f618b0c364b37183300ce60ec7a423e2394e05c651b98732"
+  }
+}

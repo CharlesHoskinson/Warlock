@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "diagnosticBootstrap": false,
+  "mainDesktopActions": false,
+  "physicalHardwareAccepted": false,
+  "checks": [],
+  "remainingScenarios": [
+    "GTK01",
+    "GTK02",
+    "GTK03",
+    "GTK04",
+    "GTK05",
+    "GTK06",
+    "GTK07",
+    "GTK08"
+  ],
+  "error": "Refused('Full GTK01-08 driver remains incomplete; only explicit root-reviewed diagnostic-bootstrap may launch')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native.py\", line 23, in run\n    if not diagnostic:raise Refused('Full GTK01-08 driver remains incomplete; only explicit root-reviewed diagnostic-bootstrap may launch')\n                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\njournal.Refused: Full GTK01-08 driver remains incomplete; only explicit root-reviewed diagnostic-bootstrap may launch\n",
+  "artifacts": {
+    "native.py": "dc5f1ad0ed060b6ba8b449243bbcb20e9055bbb8fe2971061b3e8189d361cfd0"
+  }
+}

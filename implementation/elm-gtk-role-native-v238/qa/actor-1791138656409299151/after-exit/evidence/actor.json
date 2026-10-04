@@ -1,0 +1,48 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/actor-1791138656409299151/after-exit/fake-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "inspect",
+      "role": null,
+      "payload": "1 inspect\n",
+      "startedMonotonic": 102922.513198074,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 2,
+      "operation": "quit",
+      "role": null,
+      "payload": "2 quit\n",
+      "startedMonotonic": 102922.534056232,
+      "written": true
+    }
+  ],
+  "process": {
+    "pid": 2987819,
+    "start": "10676026",
+    "name": "gtk-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/actor-1791138656409299151/after-exit/fake-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/actor-1791138656409299151/after-exit/evidence/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "10676026",
+  "stdoutBytes": 941,
+  "stdoutCapturedBytes": 941,
+  "stdoutPrefixSHA256": "8e8abc7fd1cbc40f117fa641add61de7ce11455fa92fd1703eecc229058eee52",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "closeError": "Refused('complete terminal journal with final unique normalexit required')",
+  "exitCode": 0
+}
