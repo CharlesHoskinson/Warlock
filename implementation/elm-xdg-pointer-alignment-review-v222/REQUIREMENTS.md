@@ -1,0 +1,3 @@
+# Independent held219 pointer campaign review
+
+Read only held219, preserve source and earlier acceptance/failure packets. No GUI or candidate edits. Verify owning manifest/source/report hashes under protected CPU. Record concrete P03/P04 parent ownership/view-evidence gaps, P03/P10 helper failure/cleanup gaps and strict receipt type issue. Demonstrate actual parser acceptance with synthetic subprocess results while avoiding any socket/process launch. Distinguish sound child-cursor/delivery/interval/deadline source checks from missing parent proof. Current450/451/AQ155 acceptance does not transfer to old435/core89/plugin409/AQ155 baseline.

@@ -1,0 +1,121 @@
+{
+  "diagnosisConfirmed": true,
+  "scope": "Actual219 parser with mocked peer/subprocess and synthetic raw JSON; no socket/process/GUI/recipient acceptance",
+  "nativeAcceptance": false,
+  "sourceSHA256": "2035404bb28fff01a341968fc4bed6042a9aee5c18f7bd3501479def7543836c",
+  "scriptSHA256": "ee0433d730199ceec83de49769a2806cb7e28ed0f233a882041b0e24e8f6eae1",
+  "records": [
+    {
+      "case": "valid control",
+      "actualParserAccepted": true,
+      "rawStdout": "{\"ready\":true,\"scope\":\"parent-notify-only\"}\n{\"sequence\":1,\"accepted\":true,\"scope\":\"parent-notify-only\"}\n",
+      "parsedReceipts": [
+        {
+          "ready": true,
+          "scope": "parent-notify-only"
+        },
+        {
+          "sequence": 1,
+          "accepted": true,
+          "scope": "parent-notify-only"
+        }
+      ]
+    },
+    {
+      "case": "ready integer masquerades bool",
+      "actualParserAccepted": true,
+      "rawStdout": "{\"ready\":1,\"scope\":\"parent-notify-only\"}\n{\"sequence\":1,\"accepted\":true,\"scope\":\"parent-notify-only\"}\n",
+      "parsedReceipts": [
+        {
+          "ready": 1,
+          "scope": "parent-notify-only"
+        },
+        {
+          "sequence": 1,
+          "accepted": true,
+          "scope": "parent-notify-only"
+        }
+      ]
+    },
+    {
+      "case": "accepted integer masquerades bool",
+      "actualParserAccepted": true,
+      "rawStdout": "{\"ready\":true,\"scope\":\"parent-notify-only\"}\n{\"sequence\":1,\"accepted\":1,\"scope\":\"parent-notify-only\"}\n",
+      "parsedReceipts": [
+        {
+          "ready": true,
+          "scope": "parent-notify-only"
+        },
+        {
+          "sequence": 1,
+          "accepted": 1,
+          "scope": "parent-notify-only"
+        }
+      ]
+    },
+    {
+      "case": "sequence float masquerades int",
+      "actualParserAccepted": true,
+      "rawStdout": "{\"ready\":true,\"scope\":\"parent-notify-only\"}\n{\"sequence\":1.0,\"accepted\":true,\"scope\":\"parent-notify-only\"}\n",
+      "parsedReceipts": [
+        {
+          "ready": true,
+          "scope": "parent-notify-only"
+        },
+        {
+          "sequence": 1.0,
+          "accepted": true,
+          "scope": "parent-notify-only"
+        }
+      ]
+    },
+    {
+      "case": "sequence bool masquerades int",
+      "actualParserAccepted": true,
+      "rawStdout": "{\"ready\":true,\"scope\":\"parent-notify-only\"}\n{\"sequence\":true,\"accepted\":true,\"scope\":\"parent-notify-only\"}\n",
+      "parsedReceipts": [
+        {
+          "ready": true,
+          "scope": "parent-notify-only"
+        },
+        {
+          "sequence": true,
+          "accepted": true,
+          "scope": "parent-notify-only"
+        }
+      ]
+    },
+    {
+      "case": "duplicate ready key accepted",
+      "actualParserAccepted": true,
+      "rawStdout": "{\"ready\":false,\"ready\":true,\"scope\":\"parent-notify-only\"}\n{\"sequence\":1,\"accepted\":true,\"scope\":\"parent-notify-only\"}\n",
+      "parsedReceipts": [
+        {
+          "ready": true,
+          "scope": "parent-notify-only"
+        },
+        {
+          "sequence": 1,
+          "accepted": true,
+          "scope": "parent-notify-only"
+        }
+      ]
+    },
+    {
+      "case": "duplicate sequence key accepted",
+      "actualParserAccepted": true,
+      "rawStdout": "{\"ready\":true,\"scope\":\"parent-notify-only\"}\n{\"sequence\":8,\"sequence\":1,\"accepted\":true,\"scope\":\"parent-notify-only\"}\n",
+      "parsedReceipts": [
+        {
+          "ready": true,
+          "scope": "parent-notify-only"
+        },
+        {
+          "sequence": 1,
+          "accepted": true,
+          "scope": "parent-notify-only"
+        }
+      ]
+    }
+  ]
+}
