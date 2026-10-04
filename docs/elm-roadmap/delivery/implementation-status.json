@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-launcher-keyboard-v60",
-  "status": "Scoped launcher focus passes Desktop24 and Quint8/1000; fresh current tuple passes original native91, pointer launcher17 and keyboard launcher26 with normal cleanup. Production per-output bar/transient/workarea roles, complete launcher/AT/IME/reflow/hardware/release open.",
+  "activeSlice": "implementation/elm-native-popover-qa-v62",
+  "status": "V61/V62 native host-role experiment rejects GTK3 GtkPopover for required xdg_popup contract: actual workarea48 observed, but pointer-open trace uses wl_subsurface with negativeY. V60 remains last qualified GUI tuple. Alternative native popup container, final Elm taskbar/transient/role/input/AT/IME/hardware/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -568,6 +568,26 @@
       "productionSurfaceRolesAccepted": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-launcher-keyboard-v60/qa/slice-manifest.json"
+    },
+    "nativePopoverV61V62": {
+      "buildPassed": true,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "nativeWorkarea48Observed": true,
+      "nativeRunsAccepted": 0,
+      "nativeFailuresPreserved": 2,
+      "actualRole": "wl_subsurface",
+      "observedRelativePosition": [
+        35,
+        -449
+      ],
+      "requiredXDgPopupRoleObserved": false,
+      "candidateDisposition": "no-go for GTK3 GtkPopover container only",
+      "c00DispositionChanged": false,
+      "mainDesktopActions": false,
+      "cleanupPassed": true,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json"
     }
   },
   "next": "Qualify text enlargement and small-output picker/keyboard focus metrics; continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews. Complete scene/hardware/GPU/WebGPU/AT/IME/human UX and release gates.",
@@ -629,6 +649,11 @@
       "id": "PICKER-REVEAL-001",
       "status": "Oversized captions and fractional clip failures preserved V48/V50/V52; V53 definite parent height and bounded captions pass V54 exact bounds",
       "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
+    },
+    {
+      "id": "NATIVE-POPUP-ROLE-001",
+      "status": "Open: V62 GtkPopover uses wl_subsurface with negativeY; route rejected. Test actual xdg_popup container before production surface qualification.",
+      "failedEvidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json"
     }
   ]
 }

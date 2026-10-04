@@ -6573,6 +6573,26 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-launcher-keyboard-v60/qa/slice-manifest.json",
       "acceptance": "Default800x420 controlled app, protocol keyboard/helper and prior exact91/17 assertions only. No full traversal/reflow/native composing/AT/IME, production surfaces or release acceptance."
+    },
+    {
+      "slice": "implementation/elm-native-popover-qa-v62",
+      "level": "failed native role experiment; observed workarea component only",
+      "passed": false,
+      "nativeWorkarea48Observed": true,
+      "failedNativeRuns": 2,
+      "requiredXDgPopupRoleObserved": false,
+      "actualRole": "wl_subsurface",
+      "observedRelativePosition": [
+        35,
+        -449
+      ],
+      "candidateDisposition": "reject GTK3 GtkPopover route for required native popup container",
+      "popupDismissKeyboardAccepted": false,
+      "productionSurfaceRolesAccepted": false,
+      "wholeFeatureAccepted": false,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-native-popover-qa-v62/qa/slice-manifest.json",
+      "acceptance": "No popup/visible-render/input/grab acceptance. Coherent DOM is insufficient; actual role failure preserved. Workarea48 only observed; alternate role route/C00/release separate."
     }
   ]
 }

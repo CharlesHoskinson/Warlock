@@ -1,0 +1,67 @@
+{
+  "passed": false,
+  "inventoryVerified": true,
+  "disposition": "no-go for GTK3 GtkPopover as specified xdg_popup container; continue alternative native popup route",
+  "observedUTC": "2026-10-04T01:45:03.239782+00:00",
+  "wholeFeatureAccepted": false,
+  "completedRequirementIds": [],
+  "reports": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popover-v61/qa/build-1791077926265031753/report.json": {
+      "passed": true,
+      "sha256": "2d3760288129e425258eecd485ab258e79f24f49ef106e431ba528b952a69b02",
+      "scope": "Build/effect20/shell27 only"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popover-qa-v62/qa/native-1791078048943465555/report.json": {
+      "passed": false,
+      "sha256": "4a39e8aa776205cfa6971eb317de02f753bb8a25d141c1d6de3da249fe746d03",
+      "checksReached": 3,
+      "error": "RuntimeError('Unchanged observation deadline')",
+      "cleanupPassed": true
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-popover-qa-v62/qa/native-1791078158233385707/report.json": {
+      "passed": false,
+      "sha256": "c6786ede31786eb728877053823e6411428e21b7c8234bcc43810b7d340f8858",
+      "checksReached": 6,
+      "error": "AssertionError('actualLayerParentOwnsXDgPopupProtocolRole')",
+      "cleanupPassed": true
+    }
+  },
+  "files": {
+    "README.md": "5fed22bc6e07ac4ebdf6dc3b0efd747247e640ee37b7f78c5c8faeab6b8f8e31",
+    "fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "qa/freeze.py": "a810ef9f5398997f0cf64be262c1451d8ba41c735648993b915358ba06b76a54",
+    "qa/native-1791078048943465555/inputs/native.py": "d91f2e964ff4dd3c335ca0e74dad4ead86c9520e04fd539dfb334e862ba29844",
+    "qa/native-1791078048943465555/native-evidence/authority-config.json": "c30cfe2942fda948c36815d435a810b73e2d2ac89a13bb6c9d88048cc438321c",
+    "qa/native-1791078048943465555/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078048943465555/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791078048943465555/native-evidence/elm-webview.log": "4cb4cab31fda40de1e0c95ce2ef0ae7bd70026e5d4520b3115de3f3f0a77b736",
+    "qa/native-1791078048943465555/native-evidence/fixture.log": "a8901423fef2cd055567d9d5936b83cb58a6b14e81dbbb0c44e06d10af55fcf7",
+    "qa/native-1791078048943465555/native-evidence/host-evidence.json": "0e6bbca4570f8161ccb07780aca399a6974b8b0a324bcd7b2e3ae664b87c8844",
+    "qa/native-1791078048943465555/native-evidence/hyprland.log": "e6b1bf06f8a315a83ebb4e52ddf5f3746da83b90299c5c68bbc9edf6735daba4",
+    "qa/native-1791078048943465555/native-evidence/privateBus.log": "5065865e98c03e149c0cb2a493fac658739de1ed96f157295a90ddab8a86b6e2",
+    "qa/native-1791078048943465555/native-evidence/runtime-archive/.flatpak/webkit-3107559-13/bwrapinfo.json": "32d465b7ac5d0f92da335b9e8f941b356597bd72c6ab01ea368ec5dcd5c29ef4",
+    "qa/native-1791078048943465555/native-evidence/runtime-archive/.flatpak/webkit-3107559-4/bwrapinfo.json": "f9feb1481fb9673ce6f6102f6556f4985aa47d3a7de34cf7210f8764eff6a31d",
+    "qa/native-1791078048943465555/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791078049_1268819185/hyprland.log": "ee91d6bc88bba8ae2e84ba00298beb981152cf6e48473c7f07c1e7ea8a631dfd",
+    "qa/native-1791078048943465555/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791078048943465555/native-evidence/weston-renderer.log": "bb15f660d9a538c29924a23361bf51057df8076b544d45244fbbf07c891980c2",
+    "qa/native-1791078048943465555/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078048943465555/report.json": "4a39e8aa776205cfa6971eb317de02f753bb8a25d141c1d6de3da249fe746d03",
+    "qa/native-1791078158233385707/inputs/native.py": "5b929420e036b7967a16b28360adeb5140b2cc6b5c85298a2ff584c53701d8d7",
+    "qa/native-1791078158233385707/native-evidence/authority-config.json": "3757b5ed000506ab9c343239380c0866e43df863e2e104dd6a993bb3169ee04f",
+    "qa/native-1791078158233385707/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078158233385707/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791078158233385707/native-evidence/elm-webview.log": "5d82adaab886c485abd37c908aa5d84f4bb7377a3061a027293bda3bcb75eea6",
+    "qa/native-1791078158233385707/native-evidence/fixture.log": "a8901423fef2cd055567d9d5936b83cb58a6b14e81dbbb0c44e06d10af55fcf7",
+    "qa/native-1791078158233385707/native-evidence/host-evidence.json": "962735c91db922d7a2d6973fcc93d4c0413f2d02e974aaff4d8e83a37fda7fe3",
+    "qa/native-1791078158233385707/native-evidence/hyprland.log": "c882c0db03dae1628eedbe99ff32285ae4166297b89aaf16df2b01f9ee010b06",
+    "qa/native-1791078158233385707/native-evidence/privateBus.log": "468cbf119c156d0bb6dad24eb5104c47cb202e144c569ac22c945eb83a6617ef",
+    "qa/native-1791078158233385707/native-evidence/runtime-archive/.flatpak/webkit-3113966-13/bwrapinfo.json": "3701db3e6bd54748f80eef0d4ca75ff9ce958f3d19704e6993769daf5a9970b3",
+    "qa/native-1791078158233385707/native-evidence/runtime-archive/.flatpak/webkit-3113966-4/bwrapinfo.json": "a44bcc464367655f4f8811f85e3d4ac346cfb08b6eff4a2b843745045a48a4b7",
+    "qa/native-1791078158233385707/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791078159_51679217/hyprland.log": "97345f476410d8e7d80827f4d7ddcbcce599368d48ef198a307bb139437fcb08",
+    "qa/native-1791078158233385707/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791078158233385707/native-evidence/weston-renderer.log": "f09b35e6397ea3fb0aaeac4ac6b094b7118e42fb01821e350d5854ca2df18135",
+    "qa/native-1791078158233385707/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791078158233385707/report.json": "c6786ede31786eb728877053823e6411428e21b7c8234bcc43810b7d340f8858",
+    "qa/native.py": "5b929420e036b7967a16b28360adeb5140b2cc6b5c85298a2ff584c53701d8d7"
+  }
+}

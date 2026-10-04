@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T01:34:58.061510+00:00",
+  "observedUTC": "2026-10-04T01:45:47.402171+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-launcher-keyboard-v60",
+  "currentSlice": "implementation/elm-native-popover-qa-v62",
   "nextWork": [
-    "Implement production per-output taskbar and separately scoped transient native surfaces/input/workarea roles from ARCHITECTURE.md; qualify keyboard/focus/popup lifetime against current effect and catalog contracts.",
-    "Implement launcher search/ranking/localization and qualified catalog/window matching, pins/icons; long lists/reflow, activation tokens, terminal/actions/URI/DBus and real application readiness.",
-    "Continue enlarged text/small-output picker, native AT/IME/human UX, Unknown reconciliation, scene/roles, original deadlines, outputs/devices/hardware/GPU/WebGPU, C00 and release gates."
+    "Test native GTK popup-window/menu container with actual xdg_popup/layer-parent/seat-grab role, correct position/clip, dismissal and native keyboard/input; keep single logical Elm controller and replace temporary native opener with Elm bar.",
+    "Implement production per-output taskbar/transient/workarea, launcher search/ranking/localization, qualified catalog/window matching/pins/icons, activation tokens, terminal/actions/URI/DBus and real application readiness.",
+    "Continue reflow/native AT/IME/human UX, Unknown reconciliation, canonical scene/roles, original deadlines, outputs/devices/hardware/GPU/WebGPU, separate C00 feasibility and release gates."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: V59 scopes launcher view callbacks/DOM focus, closes pending catalog reply route, composes Escape guard and separates control/entry IDs. Desktop24 and Quint8/1000 pass. Fresh coherent build plus V60 original91/pointer17 and actual keyboard26 pass serially with normal private cleanup; earlier QA-model build inventory mismatch retained and resolved by fresh build/runs.",
+  "lastWorkClassification": "progress: V61 builds actual48px bar/native GTK3 popover with existing Elm WebKit model. V62 native observation proves reserved[0,48,0,0], retains initial missed buffer readiness, and after readiness exposes actual wl_subsurface with negativeY rather than required xdg_popup. Route rejected; original native failures/source/protocol/cleanup preserved. This is toolkit-container no-go, not C00/compositor-track no-go.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }
