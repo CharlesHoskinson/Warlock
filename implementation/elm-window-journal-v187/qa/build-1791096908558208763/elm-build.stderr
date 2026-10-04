@@ -1,0 +1,12 @@
+-- TYPE MISMATCH ------------------------------------------------- src/Shell.elm
+
+This is not a record, so it has no fields to access!
+
+95|                             if model.binding /= Just binding || model.phase /= Reconciling || D.decodeValue (D.at ["context","lifetime"] UInt64.decoder) intent /= Ok binding.lifetime then (model,[]) else
+                                                                                                                                                                          ^^^^^^^
+This `binding` value is a:
+
+    Binding
+
+But I need a record with a lifetime field!
+

@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Durable intent/Unknown/no automatic replay contract; abstract model, not automated filesystem/C/Elm refinement or native fault acceptance.",
+  "sourceSHA256": "8cda40164cebaf7b2ce2d4631500e02bb933a8033ca3bd6b72c155cecd95a1dc",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\n Error [QNT101]: Built-in name \\'fail\\' is redefined in module \\'recovery\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-recovery-model-v191/qa/model-1791097051830207811/recovery.qnt:7:9\\n  7:  action fail=s\\'={...s,phase:\"Stopped\"}\\n             ^^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "recovery.qnt": "8cda40164cebaf7b2ce2d4631500e02bb933a8033ca3bd6b72c155cecd95a1dc",
+    "model.py": "f6727d3bacad91dda83171d6ad7a2eb4ea644240683d7695b4726e688bdb0aa0",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "7181ca6826e47e047acaaca5c38576f421e3dad0953a6175917948cd40fdf391"
+  }
+}

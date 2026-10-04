@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "scope": "Durable intent/Unknown/no automatic replay contract; abstract model, not automated filesystem/C/Elm refinement or native fault acceptance.",
+  "sourceSHA256": "c553f5172631e3cf0d911253576c1fe35c41ae92c27a0c7b88fcefac71cc6afc",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(unknownSurvivesRestartTest|committedDoesNotBecomeUnknownTest|noSubmissionBeforeSnapshotTest|oldReceiptCannotResolveUnknownTest|explicitFreshActionTest|duplicateSubmissionBlockedTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 6,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "c553f5172631e3cf0d911253576c1fe35c41ae92c27a0c7b88fcefac71cc6afc",
+    "model.py": "f6727d3bacad91dda83171d6ad7a2eb4ea644240683d7695b4726e688bdb0aa0",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unknownSurvivesRestartTest-0.itf.json": "9a73e3707299b57e358f9b298fd77ea9398f1c65c2ff79cc446a3e1d32ef1f4e",
+    "named-committedDoesNotBecomeUnknownTest-1.itf.json": "d26b1019bec8484286b713f1a0f83fa627bab1175af9b4febf792ce5eac06a2c",
+    "named-noSubmissionBeforeSnapshotTest-2.itf.json": "40b51f6bb28a5cca27f786078af06cb1da57e7d1f4c61a4344ca7005806f2011",
+    "named-oldReceiptCannotResolveUnknownTest-3.itf.json": "102e45193c95b9db6f3f9a99f6818ef4a10a33a511954e65440f2b265a0fabef",
+    "named-explicitFreshActionTest-4.itf.json": "dcbe9e9ffc0cd3227bf775ba6265b8896a03fc623530364809aefd9d156b6b66",
+    "named-duplicateSubmissionBlockedTest-5.itf.json": "e572cefcc976d20e072c4e8d48c15479f9bdeda0188698093af6656a35a76038",
+    "named.stdout": "fe1cd5e72b28260d61499555a95ceff511411652c62672184f451e9d18d05f74",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "ae2c5795b095c2fc2de74ea5da912886a008e849ec33f8f6a78b2ae07d3270f5",
+    "invariants.stdout": "128144bb67fdc44f86749431cd3c887d8b7d83c7a74c2d1e5b9d727ec89b1901",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

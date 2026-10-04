@@ -7050,6 +7050,29 @@
         "Wrapper startup/death races, pending Unknown/former authenticated scope, atomic reservations, recovery hotplug/AT/IME remain open",
         "Full137/original91 and recovery Quint6/1000 retained, not rerun by40/42 selected campaigns"
       ]
+    },
+    {
+      "passed": true,
+      "scope": "Bounded durable window-intent journal and native settled-receipt restart; actual interrupted-effect/replacement Unknown display still open",
+      "nativeChecks": 42,
+      "actualFilesystemSubprocessChecks": 19,
+      "compiledRecoveryChecks": 30,
+      "compiledRetainedReducerChecksRerun": 20,
+      "compiledRetainedShellChecksRerun": 27,
+      "namedQuintScenarios": 6,
+      "quintInvariantSamples": 1000,
+      "sealedRuntimeFiles": 19,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "nativeInterruptedEffectAcceptance": false,
+      "formerAuthenticatedSenderReplayAcceptance": false,
+      "evidence": "implementation/elm-journal-native-v193/qa/slice-manifest.json",
+      "limitations": [
+        "Actual submitted effect interruption/replacement Unknown UI and former authenticated sender reuse need native fault qualification",
+        "Frontend-to-broker journal admission gap remains open",
+        "Quint is abstract policy evidence, not automatic filesystem/C/Elm refinement"
+      ]
     }
   ]
 }

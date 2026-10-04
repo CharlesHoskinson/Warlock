@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-cohort-native-v186",
-  "status": "Owned shell scope passes7 real CPU and40 cooperative/42 forced native checks; suspended host/renderer shutdown removes3 residual helpers, preserves external apps/compositor; no full requirement or release closure.",
+  "activeSlice": "implementation/elm-journal-native-v193",
+  "status": "Durable single window-intent journal candidate:19 real filesystem/subprocess,30 compiled recovery, inherited20+27 rerun, native42 and Quint6/1000 pass. Actual interrupted native effect/replacement Unknown UI remains open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1156,10 +1156,33 @@
         "Wrapper startup/death races, pending Unknown/former authenticated scope, atomic reservations, recovery hotplug/AT/IME remain open",
         "Full137/original91 and recovery Quint6/1000 retained, not rerun by40/42 selected campaigns"
       ]
+    },
+    "windowJournalV193": {
+      "passed": true,
+      "scope": "Bounded durable window-intent journal and native settled-receipt restart; actual interrupted-effect/replacement Unknown display still open",
+      "nativeChecks": 42,
+      "actualFilesystemSubprocessChecks": 19,
+      "compiledRecoveryChecks": 30,
+      "compiledRetainedReducerChecksRerun": 20,
+      "compiledRetainedShellChecksRerun": 27,
+      "namedQuintScenarios": 6,
+      "quintInvariantSamples": 1000,
+      "sealedRuntimeFiles": 19,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "nativeInterruptedEffectAcceptance": false,
+      "formerAuthenticatedSenderReplayAcceptance": false,
+      "evidence": "implementation/elm-journal-native-v193/qa/slice-manifest.json",
+      "limitations": [
+        "Actual submitted effect interruption/replacement Unknown UI and former authenticated sender reuse need native fault qualification",
+        "Frontend-to-broker journal admission gap remains open",
+        "Quint is abstract policy evidence, not automatic filesystem/C/Elm refinement"
+      ]
     }
   },
   "next": [
-    "Strengthen former authenticated connection and pending Unknown across supervised restart; qualify wrapper startup/death ownership and application launch scope separation.",
+    "Qualify actual native effect interruption and replacement Unknown UI without automatic replay; test former authenticated sender binding invalidation and close frontend-to-broker durable admission gap.",
     "Measure and freeze workload/resource/input-presentation budgets on the shared host; qualify GPU context loss/recovery and keep WebGPU unavailability explicit.",
     "Integrate reviewed menu/new native buffer/viewport tuple with shared scope/controller host; preserve old accepted source/ABI evidence and rerun original campaigns.",
     "Continue actual AT/IME, physical output/device and human UX, full scene/window operations, zero-output recovery, C00 and release."
