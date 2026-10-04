@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "scope": "Frozen actual image landmarks and owning-source coordinate-path diagnosis; no new native run or causal patch acceptance",
+  "checks": [
+    {
+      "name": "actualFailureAndNormalCleanup",
+      "passed": true
+    },
+    {
+      "name": "selectedOriginAndNativeBox",
+      "passed": true
+    },
+    {
+      "name": "originalPredictionFailsFirstThreeCorners",
+      "passed": true
+    },
+    {
+      "name": "observedTopLeftRedExtent",
+      "passed": true,
+      "extent": [
+        15,
+        23,
+        22,
+        30
+      ]
+    },
+    {
+      "name": "naiveSurfaceAnchorMatchesRedCenter",
+      "passed": true,
+      "pixel": [
+        19,
+        27
+      ]
+    },
+    {
+      "name": "geometryRelativeAnchorBackground",
+      "passed": true,
+      "pixel": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "measuredTranslationEqualsGeometryOrigin",
+      "passed": true
+    },
+    {
+      "name": "owningSourceGeometryUVBlockDisabled",
+      "passed": true
+    },
+    {
+      "name": "owningRootTexBoxUsesUnshiftedRenderPosition",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-render-diagnosis-v463/qa/diagnose.py": "f7169a666bdbf56fe8f8f9c8ff02ec5c76be5e0280d8aa856e455d3e28c6d6fa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nonzero-origin-presentation-failure-v462/qa/slice-manifest.json": "ea3657b7a15b5f7083a9cc0e4f67a989e404193a8f23f1112c251dc4f14f9290",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-presented-landmarks-v461/qa/native-1791132996553890921/report.json": "6485fa3d490c8bcad1e6dabc4593813bd1d48f5fe85ea274205e5477890a7d89",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-presented-landmarks-v461/qa/native-1791132996553890921/native-evidence/origin-scale1-pixels-12/capture.rgb": "b4f19fdf620c2b206662a5935fb6bff7bf7ba0367b4a49dc7b49b8f3342bcbd7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render/ElementRenderer.cpp": "32f79c359a5ae6a265f7b2feee5c190d643371dd984d2bdda6a4ef203ccec828",
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render/Renderer.cpp": "e07c4f2a5b2f41fe8c2a2cfd231d06de0a022a382e169669c828af1adc7e7337",
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render/pass/SurfacePassElement.cpp": "ea559690633f8f2e0da7709cb3c00f12b54bc20fbe631437633744676eff24f8"
+  },
+  "redExtent": [
+    15,
+    23,
+    22,
+    30
+  ],
+  "geometryOrigin": [
+    16,
+    24
+  ],
+  "nativeOrigin": [
+    -1,
+    -1
+  ],
+  "conclusion": "Captured red extent begins at native origin plus geometry origin. Owning root texture placement and disabled geometry UV block are candidate cause, not independently proven loaded callback causality. Preserve original oracle; evaluate geometry-aware full-surface placement and UV with shadows/subsurfaces/hit regions.",
+  "nativeAcceptance": false,
+  "replacementOracleAccepted": false,
+  "fullReleaseAccepted": false
+}

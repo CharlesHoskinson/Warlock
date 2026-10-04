@@ -1,0 +1,16 @@
+
+  coordinates
+    1) shadowsRemainOutsideGeometryTest failed after 1 test(s)
+
+  1 failed
+
+  1) shadowsRemainOutsideGeometryTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-coordinate-contract-v464/qa/model-1791133562380195337/cropped-shadow.qnt:24:57
+        24:  run shadowsRemainOutsideGeometryTest = init.then(all { assert(screen(0) == -17 and screen(16) == -1), s' = s })
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x1368d --match=shadowsRemainOutsideGeometryTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 cropped-shadow.qnt
