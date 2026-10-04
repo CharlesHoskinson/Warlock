@@ -1,0 +1,7 @@
+Current422/core89/plugin409/AQ105 recovery acceptance
+
+Fresh427 binds the unchanged391 ReceiptHold/supervise/write_release and relay pump/close_stdin to the optimized422 captured schema5 adapter, verified against held425 source inventory. Exact five-second receipt hold, three-second EOF and protocol2 Max/Restore selectors ordinal1/2 remain unchanged. Protected CPU profile9, selector52, hold45, relay edges7 and deadline7 pass. AST review and owning394 ancestor hashes are retained.
+
+Actual428 native50 passes the original392 real pointer/context/keyboard/minimize/restore/pixels, broker/relay normal EOF and ordered teardown. Actual429 native57 passes the original393 EOF -> Detached -> physical Reconnect -> fresh actor/binding, without replay. Exact six-second origins, selectors, all original assertions and normal cleanup remain. Only source/build/fixture pointers and stronger409 owning compiler dependency preflight changed. This is bounded recovery acceptance, not original geometry08/09/10 or full UI/UX release acceptance. No installed/live desktop changes.
+
+Next adapt the original joint geometry100 runner to this exact422/runtime420/427 coherent tuple, preserving saved-Max/reconnect, real held committed receipts, target retirement, actual client ACK and serial RGB oracles and all original deadlines. GPU/WebGPU, native layering/focus/modal/output, AT/IME, human and physical hardware, performance, full S01-S16 and release/rollback gates remain open.
