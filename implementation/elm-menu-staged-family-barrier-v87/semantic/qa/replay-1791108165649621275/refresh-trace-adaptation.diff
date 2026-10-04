@@ -1,0 +1,25 @@
+--- original/refresh
++++ staged/refresh
+@@ -8,6 +8,7 @@
+ const timer=setTimeout(()=>{throw Error('Notification replay deadline')},20000);
+ function replay(events){return new Promise(resolve=>{const cb=rows=>{app.ports.outgoing.unsubscribe(cb);resolve(rows)};app.ports.outgoing.subscribe(cb);app.ports.incoming.send(events)})}
+ async function check(name,events,verify){let rows;try{rows=await replay(events);verify(rows,rows.at(-1));cases.push({name,passed:true,rows})}catch(error){cases.push({name,passed:false,error:String(error),rows});console.error(name,error.stack)}}
++const stage=require('./stage.cjs')(replay);
+ const context=frame=>({kind:'action',action:{surfaceProtocol:2,kind:'surface-context',surface:'bar',publication:frame.publication,lease:frame.lease,id:'bar:group:application:org.a',trigger:'pointer',x:40,y:20}});
+ const action=(frame,id)=>({kind:'action',action:{surfaceProtocol:2,kind:'surface-action',surface:'popup',publication:frame.publication,lease:frame.lease,id}});
+ const projection=(request='4',revision='2',minimized=false)=>{const p=copy(base.projection);p.requestId=request;p.context.revision=p.scene.revision=revision;p.scene.windows.filter(w=>['10','11'].includes(w.incarnation)).forEach(w=>w.minimized=minimized);return p};
+@@ -36,11 +37,11 @@
+  const complete=[...drained,native(projection('6','3')),native(facts('7','102','3'))];
+  await check('drained batch becomes ready without an infinite notification loop',complete,(_,last)=>{assert.equal(last.requests.length,0);assert.equal(last.shell.request,'7');assert.equal(last.shell.notificationQueued,false);assert.equal(last.shell.available,true);assert.equal(last.geometry.windows[0].mode,'maximized')});
+  await check('matching request with obsolete geometry revision is refused',[...drained,native(projection('6','3')),native(facts('7','100','3','ordinary'))],(_,last)=>{assert.equal(last.geometry.revision,'102');assert.equal(last.shell.available,false);assert.equal(last.requests.length,0)});
+- const dispatch=[...opened,action(menu.frame,'menu:1:2')];
++ const dispatch=await stage([...opened,action(menu.frame,'menu:1:2')]);
+  const pending=[...dispatch,...Array(20).fill(notification)];
+- await check('notifications during Pending defer without observation or effect allocation',pending,(_,last)=>{assert.equal(last.requests.length,0);assert.equal(last.shell.request,'3');assert.equal(last.shell.effects.request,'1');assert.equal(last.registry,1);assert.equal(last.unresolved[0].status,'Pending');assert.equal(last.shell.notificationQueued,true)});
++ await check('notifications during Pending defer without observation or effect allocation',pending,(_,last)=>{assert.equal(last.requests.length,0);assert.equal(last.shell.request,'5');assert.equal(last.shell.effects.request,'1');assert.equal(last.registry,1);assert.equal(last.unresolved[0].status,'Pending');assert.equal(last.shell.notificationQueued,true)});
+  const receipt=[...pending,native(outcome())];
+- await check('receipt drains queued notification with fresh observations not replayed effect',receipt,(_,last)=>{assert.deepEqual(last.requests.map(x=>[x.kind,x.requestId]),[['projection-request','4'],['geometry-facts-request','5']]);assert.equal(last.shell.notificationQueued,false);assert.equal(last.shell.effects.request,'1');assert.equal(last.registry,0);assert.equal(last.geometry.windows[0].mode,'ordinary')});
++ await check('receipt drains queued notification with fresh observations not replayed effect',receipt,(_,last)=>{assert.deepEqual(last.requests.map(x=>[x.kind,x.requestId]),[['projection-request','6'],['geometry-facts-request','7']]);assert.equal(last.shell.notificationQueued,false);assert.equal(last.shell.effects.request,'1');assert.equal(last.registry,0);assert.equal(last.geometry.windows[0].mode,'ordinary')});
+  await check('Unknown receipt also refreshes while retaining native barrier',[...pending,native(outcome('Unknown'))],(_,last)=>{assert.equal(last.requests.length,2);assert.equal(last.registry,1);assert.equal(last.unresolved[0].status,'Unknown');assert.equal(last.shell.effects.request,'1');assert.equal(last.shell.notificationQueued,false)});
+  const unsupportedAttach=copy(geo.attach);unsupportedAttach.capabilities.effects=false;unsupportedAttach.capabilities.operations=[];const unsupportedFacts=copy(geo.facts);unsupportedFacts.facts.windows.forEach(w=>w.capabilities={maximize:false,restoreGeometry:false});
+  const unsupported=[...baseline.slice(0,3),native({protocolVersion:3,kind:'host-geometry-negotiate'}),native(unsupportedAttach),native(unsupportedFacts),notification];

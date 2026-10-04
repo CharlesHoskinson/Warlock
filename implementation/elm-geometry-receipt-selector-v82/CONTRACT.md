@@ -1,0 +1,17 @@
+# Distinct receipt selector fixture
+
+V82 is a QA-only derivative of held V78. Its actual backend remains the pinned V74 captured V64 broker. No production, native, endpoint deadline, host or ancestor source changed.
+
+`ReceiptHold(..., selector_ordinal=1)` accepts only integer1 or2; booleans, other numbers and strings refuse. The CLI adds `--selector-ordinal 1|2`. Existing exact four-field private entrypoint configurations retain default1. A new exact fifth field `selectorOrdinal` may be integer1 or2:
+
+```
+{"authorityConfig":"ABS_ORIGINAL_CONFIG","controlDirectory":"ABS_PRIVATE_CONTROL","incarnation":"DECIMAL","effectOperation":"restore-geometry","selectorOrdinal":2}
+```
+
+Only distinct validated Committed effectProtocol2 receipts for the selected operation and incarnation count. The exact key includes original full binding, protocol and every intent/context field. Outer outcome revision, reason and output metadata do not create a different key. At ordinal2 the first key forwards unchanged; repeats of that first key also forward unchanged and never advance the count. The second distinct key is held. A duplicate of the selected held key refuses so it cannot bypass delayed delivery. Subsequent unrelated keys pass unchanged with no added tracking. At most two keys are retained. The exact original selected receipt releases once through the unchanged private inode/process/full-key gate.
+
+Valid Unknown and Refused outcomes uniformly pass unchanged without counting for both ordinals. No contradictory synthetic outcome is generated. Target, operation or protocol mismatches also pass without counting. Malformed selected candidates fail before changing selector state. Post-close observations, native hints and unrelated frames remain live. The selected capture alone starts the unchanged maximum5-second watchdog; the wrapper does not extend the original absolute3-second native transport or absolute6-second whole-scenario deadlines. No SIGSTOP, native request replay, deferred facts or observed state is added.
+
+The full campaign first uses RestoreGeometry in06, before the intended delayed delivery in09. If the same actor survives, ordinal2 forwards06 and holds09. A physical reconnect creates a new broker actor, so an in-memory ordinal count intentionally resets. For the reviewed full campaign, actorA may use ordinal2 to forward06, then EOF/exit normally with no selected-held receipt. Only after verifying its retirement and no pending effect may the root runner publish a fresh private config for actorB with ordinal1 before physical reconnect08. Archive both exact configs and the actual06 receipt. Do not hot-retarget a live holder or claim a counter persisted across processes. Fresh actorB then holds the first matching09 receipt. The wrapper has no mutable-live selector API or persisted spent-key fiction.
+
+Preserved byte-exact V78 original45 source now produces a diagnostic failure at its incompatible `Unknown receipt refuses before delivery` oracle (15 checks reached). That failed report is retained; original45 is not claimed as passed on V82. Its other cases remain inherited V78 evidence, not a fresh aggregate pass. Unchanged staged30 cases pass, and new selector52 cases cover distinct keys, duplicate metadata, reconnect bindings, uniform status policy, bounded state, malformed counters/types/configuration, watchdog and independent actor configuration. Full native09 and geometry/menu/release acceptance remain false.

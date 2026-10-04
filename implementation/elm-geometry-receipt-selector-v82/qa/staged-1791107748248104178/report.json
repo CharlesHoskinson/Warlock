@@ -1,0 +1,400 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "captured wrapper resolves same exact V74/V64 backend",
+      "passed": true
+    },
+    {
+      "name": "foreign cached endpoint refuses before native transport",
+      "passed": true
+    },
+    {
+      "name": "postclose observations and notifications pass before selected operation receipt",
+      "passed": true
+    },
+    {
+      "name": "other geometry operation passes unchanged",
+      "passed": true
+    },
+    {
+      "name": "explicit RestoreGeometry Committed is held without delivery",
+      "passed": true
+    },
+    {
+      "name": "facts are not deferred during delivery hold",
+      "passed": true
+    },
+    {
+      "name": "restore geometry exact original receipt released once",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'restore'",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'minimize'",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation True",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation None",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'RestoreGeometry'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'xxxxxxxxxx'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason '\\ud800'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'bad\\n'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'bad\\x85'",
+      "passed": true
+    },
+    {
+      "name": "strict private host-compatible wrapper configuration",
+      "passed": true
+    },
+    {
+      "name": "entrypoint preserves config and explicit operation argv",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid extra",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid operation",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid counter",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid missingpath",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid pathType",
+      "passed": true
+    },
+    {
+      "name": "public wrapperconfig refused",
+      "passed": true
+    },
+    {
+      "name": "symlink wrapperconfig refused",
+      "passed": true
+    },
+    {
+      "name": "actual selector continues observation and refresh while real-shaped receipt held",
+      "passed": true
+    },
+    {
+      "name": "actual wrapper run CLI supervises exact held backend main normally",
+      "passed": true
+    },
+    {
+      "name": "native effect submitted exactly once after both postclose observations",
+      "passed": true
+    },
+    {
+      "name": "actual released receipt byte fields unchanged and delivered exactly once",
+      "passed": true
+    },
+    {
+      "name": "actual supervisor watchdog terminated normally",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "qa/staged-test.py": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+    "upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1"
+  },
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-4e8c5dbfb79e4488a8d24b8a8dd2401a.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "scope": "Actual held broker selector/strict endpoint decoders and wrapper CLI with synthetic native transport, never real execution or facts/pixels acceptance",
+  "actualMainTransportCalls": [
+    {
+      "protocolVersion": 3,
+      "kind": "hello"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "geometry-attach",
+      "geometryProtocol": 1,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "1"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "scene-facts-request",
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "2",
+      "minimumWatermark": "0"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "snapshot-request",
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "2",
+      "minimumWatermark": "0"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "scene-facts-request",
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "2",
+      "minimumWatermark": "0"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "geometry-facts-request",
+      "geometryProtocol": 1,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "3",
+      "minimumWatermark": "0"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "window-effect",
+      "effectProtocol": 2,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "intent": {
+        "request": "14",
+        "generation": "15",
+        "incarnation": "16",
+        "operation": "restore-geometry",
+        "context": {
+          "lifetime": "11",
+          "epoch": "13",
+          "output": "17",
+          "revision": "18"
+        }
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "geometry-facts-request",
+      "geometryProtocol": 1,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "4",
+      "minimumWatermark": "0"
+    }
+  ],
+  "actualMainForwardedFrames": [
+    {
+      "protocolVersion": 3,
+      "kind": "attached",
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "compositor": {
+        "pid": 99,
+        "instance": "CPU_FIXTURE",
+        "coreHash": "synthetic"
+      },
+      "capabilities": {
+        "observe": true,
+        "effects": true,
+        "minimizedState": true,
+        "effectProtocol": 1,
+        "operations": [
+          "minimize",
+          "restore",
+          "activate"
+        ],
+        "canonicalScene": false,
+        "taskbarProjectionProtocol": 1,
+        "effectInvalidationProtocol": 1
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "host-geometry-negotiate"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "geometry-attached",
+      "geometryProtocol": 1,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "1",
+      "capabilities": {
+        "observe": true,
+        "effects": true,
+        "effectProtocol": 2,
+        "operations": [
+          "maximize",
+          "restore-geometry"
+        ],
+        "placementCapacity": 256,
+        "canonicalScene": false
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "action-projection",
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "2",
+      "context": {
+        "lifetime": "11",
+        "epoch": "13",
+        "output": "17",
+        "revision": "18"
+      },
+      "scene": {
+        "revision": "18",
+        "focused": null,
+        "windows": []
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "geometry-facts",
+      "geometryProtocol": 1,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "3",
+      "sequence": "20",
+      "revision": "18",
+      "outputGeneration": "17",
+      "facts": {
+        "focused": null,
+        "inputBlocked": false,
+        "windows": []
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "host-refresh"
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "geometry-facts",
+      "geometryProtocol": 1,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "requestId": "4",
+      "sequence": "20",
+      "revision": "18",
+      "outputGeneration": "17",
+      "facts": {
+        "focused": null,
+        "inputBlocked": false,
+        "windows": []
+      }
+    },
+    {
+      "protocolVersion": 3,
+      "kind": "effect-outcome",
+      "effectProtocol": 2,
+      "binding": {
+        "lifetime": "11",
+        "session": "12",
+        "frontend": "13"
+      },
+      "intent": {
+        "request": "14",
+        "generation": "15",
+        "incarnation": "16",
+        "operation": "restore-geometry",
+        "context": {
+          "lifetime": "11",
+          "epoch": "13",
+          "output": "17",
+          "revision": "18"
+        }
+      },
+      "status": "Committed",
+      "reason": "applied",
+      "revision": "19",
+      "outputGeneration": "17"
+    }
+  ],
+  "artifacts": {
+    "authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "wrapper.json": "611354008f99014b02b8f20a5776656264704c5d2a389291089118b384e095ef",
+    "inputs/upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+    "control1/gate.json": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+    "control1/held.json": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+    "control2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control3/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control12/gate.json": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+    "control12/held.json": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+    "inputs/qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "inputs/qa/staged-test.py": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b"
+  }
+}

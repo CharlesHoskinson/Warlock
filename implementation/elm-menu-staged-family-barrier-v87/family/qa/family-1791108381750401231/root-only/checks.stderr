@@ -1,0 +1,28 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+child-target native Unknown blocks canonical root before any preparation AssertionError [ERR_ASSERTION]: no observations before family barrier
+
+2 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:32:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:12:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:41:2
+same child family legacy Minimize cannot bypass native Unknown AssertionError [ERR_ASSERTION]: no observations before family barrier
+
+2 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:32:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:12:81)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:42:2
+same lifetime child Unknown survives session and frontend replacement AssertionError [ERR_ASSERTION]: no observations before family barrier
+
+2 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:32:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:12:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108381750401231/root-only/inputs/qa/family.cjs:60:2

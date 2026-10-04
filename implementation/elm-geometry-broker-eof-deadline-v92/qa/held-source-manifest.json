@@ -1,0 +1,217 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "scope": "Strict actual relay pipe/control subprocess CPU qualification, baseline19+transport7+late-publication7; real broker lifecycle and GUI remain unqualified",
+  "files": {
+    "qa/deadline-1791108711310887482/failure.json": {
+      "sha256": "fd10d9f9bd522bafb54057c2a31122b8122b71eb98157d815003911b75cdf839",
+      "size": 277
+    },
+    "qa/deadline-1791108711310887482/inputs/qa/deadline.py": {
+      "sha256": "a2c8f20b3698852f5c58915c65c8193989210650cbe8eeead8a27c639ff815ea",
+      "size": 3684
+    },
+    "qa/deadline-1791108711310887482/inputs/qa/relay.py": {
+      "sha256": "aed901a60772f7898ece6ffb833e5384290616835374babd9910948cb822e48d",
+      "size": 9154
+    },
+    "qa/deadline-1791108738113730686/candidate/actor.json": {
+      "sha256": "42300e214c73e46f4a40fc7d70c139761c6cd7c9a8750c0bac60c5364d9b700d",
+      "size": 94
+    },
+    "qa/deadline-1791108738113730686/candidate/gate.json": {
+      "sha256": "c6137dd3f3ff3bf6e80900d24f42e292fceebb1ec478204b5e2758ae3c88e158",
+      "size": 113
+    },
+    "qa/deadline-1791108738113730686/inputs/qa/deadline.py": {
+      "sha256": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+      "size": 3680
+    },
+    "qa/deadline-1791108738113730686/inputs/qa/relay.py": {
+      "sha256": "aed901a60772f7898ece6ffb833e5384290616835374babd9910948cb822e48d",
+      "size": 9154
+    },
+    "qa/deadline-1791108738113730686/inputs/qa/unsafe-success-first.py": {
+      "sha256": "52b120fa4f01f29805ebe299247179ec31f18a90e0faf3371d21ed77a61c7ef3",
+      "size": 8951
+    },
+    "qa/deadline-1791108738113730686/report.json": {
+      "sha256": "d5d53d02a47822deeef29cb61d199b157f2896fd95ab72f8e2ed4bfc38a89810",
+      "size": 2686
+    },
+    "qa/deadline-1791108738113730686/unsafe-ancestor/actor.json": {
+      "sha256": "1bfb0a86357b8bcf6902bda570bfe4e93cd0fa8e2b804aa0c4cb330b72db1fef",
+      "size": 94
+    },
+    "qa/deadline-1791108738113730686/unsafe-ancestor/exit.json": {
+      "sha256": "2683f7811c8ea7858af5b63e26a5fc3a64bf80123faeb6b0a2299188aa4a7639",
+      "size": 131
+    },
+    "qa/deadline-1791108738113730686/unsafe-ancestor/gate.json": {
+      "sha256": "adba1d365530c98232b5b89287bd95dc178ae96af7bf84490631189290cdeca5",
+      "size": 113
+    },
+    "qa/deadline.py": {
+      "sha256": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+      "size": 3680
+    },
+    "qa/edges-1791108548316685503/backlog/actor.json": {
+      "sha256": "472afd0e49ee59c9c09cfaad040ab65cebeb352ee9bbfdfe1a8f0f20b006ad85",
+      "size": 94
+    },
+    "qa/edges-1791108548316685503/backlog/exit.json": {
+      "sha256": "9642ee9a10f9a21d141388215bbb6b527bbed7fa5d110b4fec727dce645a1a7b",
+      "size": 131
+    },
+    "qa/edges-1791108548316685503/backlog/gate.json": {
+      "sha256": "26b389f3573f5b9e3a6619dcbf4ccbb2722a213e263af08ac3ac33df5ae9c12c",
+      "size": 113
+    },
+    "qa/edges-1791108548316685503/blocked/actor.json": {
+      "sha256": "8f90473d229de1217c15f3d4592fd9f7af8dfbf384accbe9defb8f2c300cca70",
+      "size": 94
+    },
+    "qa/edges-1791108548316685503/blocked/gate.json": {
+      "sha256": "7b9e441ee228515d94095e08d5497c3187a87168b8de9de0a86a8ad8b8f985b6",
+      "size": 113
+    },
+    "qa/edges-1791108548316685503/inputs/qa/edges.py": {
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448
+    },
+    "qa/edges-1791108548316685503/inputs/qa/relay.py": {
+      "sha256": "aed901a60772f7898ece6ffb833e5384290616835374babd9910948cb822e48d",
+      "size": 9154
+    },
+    "qa/edges-1791108548316685503/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    "qa/edges-1791108548316685503/report.json": {
+      "sha256": "d66efce08c4d614ddcb6d04fb67e88ca47b1ee02f29db9284d2fc6abc60ddc5b",
+      "size": 1549
+    },
+    "qa/edges.py": {
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448
+    },
+    "qa/freeze.py": {
+      "sha256": "8bce242f22118503f3b5a20128c6210dba973bb814610dd89328a3e51593a107",
+      "size": 2083
+    },
+    "qa/relay.py": {
+      "sha256": "aed901a60772f7898ece6ffb833e5384290616835374babd9910948cb822e48d",
+      "size": 9154
+    },
+    "qa/test-1791108738345832488/control-1/actor.json": {
+      "sha256": "cf139973f3aab82ef360acd5210c05c4a3f4662cdc3c671216815496c915dd2f",
+      "size": 94
+    },
+    "qa/test-1791108738345832488/control-1/exit.json": {
+      "sha256": "44c21be8aff76c4f4f339716cc2704536d20153a209c760f85a5ad113f2ab0dc",
+      "size": 131
+    },
+    "qa/test-1791108738345832488/control-1/gate.json": {
+      "sha256": "ab439e7cf5ab5fee8cbd2f5dc95dbb86b0ce1967aa9855d34e2c69a06f59dc54",
+      "size": 113
+    },
+    "qa/test-1791108738345832488/control-2/actor.json": {
+      "sha256": "80a52a5b0e12f8dcb8da95f2b038465dc3344dec9ca1a9c24ba4ae470ad8e43e",
+      "size": 94
+    },
+    "qa/test-1791108738345832488/control-2/exit.json": {
+      "sha256": "d50ace2eec9ce42a5049ed47e2cf1c1b70ca87a5d8e46175b37652012b0f4f16",
+      "size": 131
+    },
+    "qa/test-1791108738345832488/control-2/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    "qa/test-1791108738345832488/control-3/actor.json": {
+      "sha256": "62bb8d289d6ff21356a368ff5e9accae4031a1e7b52f7b9490ec9a9988958342",
+      "size": 94
+    },
+    "qa/test-1791108738345832488/control-3/gate.json": {
+      "sha256": "91d09e157e994135a50faa0b5b8d3ac49af4fb1146d925b8024bf942e0a7de1b",
+      "size": 107
+    },
+    "qa/test-1791108738345832488/control-4/actor.json": {
+      "sha256": "334a288876d55731b014961a43411ea75a40ad57075304800815edcfe59a7922",
+      "size": 94
+    },
+    "qa/test-1791108738345832488/control-4/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    "qa/test-1791108738345832488/control-5/actor.json": {
+      "sha256": "23f32a04137a63994ce2ca726c62fd32f0224e4a813ebeb6cdc25108ea6651ac",
+      "size": 94
+    },
+    "qa/test-1791108738345832488/control-5/gate.json": {
+      "sha256": "3e47fe5b2f779677266274a0eee47f72062645d44d9097325b89d10e1acc47fa",
+      "size": 113
+    },
+    "qa/test-1791108738345832488/hardlink.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    "qa/test-1791108738345832488/inputs/qa/relay.py": {
+      "sha256": "aed901a60772f7898ece6ffb833e5384290616835374babd9910948cb822e48d",
+      "size": 9154
+    },
+    "qa/test-1791108738345832488/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    "qa/test-1791108738345832488/report.json": {
+      "sha256": "40d431ee8b7eaf6acc2179da4f37181ba6a5117e85b601c5ed159cdca1ee87a0",
+      "size": 3292
+    },
+    "qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    }
+  },
+  "symlinks": {
+    "qa/test-1791108738345832488/dir-link": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-eof-deadline-v92/qa/test-1791108738345832488/control-5",
+    "qa/test-1791108738345832488/link.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-eof-deadline-v92/qa/test-1791108738345832488/control-5/actor.json"
+  },
+  "reports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-eof-deadline-v92/qa/test-1791108738345832488/report.json",
+      "sha256": "40d431ee8b7eaf6acc2179da4f37181ba6a5117e85b601c5ed159cdca1ee87a0",
+      "checks": 19
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-eof-deadline-v92/qa/edges-1791108548316685503/report.json",
+      "sha256": "d66efce08c4d614ddcb6d04fb67e88ca47b1ee02f29db9284d2fc6abc60ddc5b",
+      "checks": 7
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-eof-deadline-v92/qa/deadline-1791108738113730686/report.json",
+      "sha256": "d5d53d02a47822deeef29cb61d199b157f2896fd95ab72f8e2ed4bfc38a89810",
+      "checks": 7
+    }
+  ],
+  "api": {
+    "entrypoint": "qa/relay.py PRIVATE_CONFIG",
+    "configFields": [
+      "authorityConfig",
+      "controlDirectory"
+    ],
+    "control": "close_stdin(privateDirectory)",
+    "actors": "actor_status(privateDirectory)",
+    "completion": "exit_status(privateDirectory)",
+    "completionFields": [
+      "relay",
+      "child",
+      "childExit",
+      "stdinClosed"
+    ],
+    "EOFDeadlineSeconds": 3,
+    "queueBytesPerDirection": 8192,
+    "broker": "Exact captured V74/V64 adapter; no arbitrary command profile"
+  }
+}

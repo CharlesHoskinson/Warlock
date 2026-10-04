@@ -1,0 +1,20 @@
+--- held-v69/MenuBridge.elm
++++ v87/MenuBridge.elm
+@@ -167,7 +167,16 @@
+                         (Menu.windowId (NativeBinding.authorityIdentity native) (UInt64.string family))
+                         state.menu
+                 _ -> (Menu.snapshot state.menu).outstanding > 0
+-    in blocked
++        nativeBlocked =
++            case ( shell.binding, shell.effects.observed, root ) of
++                ( Just _, Just observed, Just family ) ->
++                    ActionProjection.windows observed.scene
++                        |> List.filter (\window -> ActionProjection.rootOf window.incarnation observed.scene == Just family)
++                        |> List.any (\window -> Effects.blocked observed.context.lifetime window.incarnation shell.effects)
++                _ ->
++                    -- Without admitted ownership, no family may be inferred.
++                    List.any (\transaction -> List.member transaction.status [Effects.Pending, Effects.Unknown]) shell.effects.unresolved
++    in blocked || nativeBlocked
+ 
+ 
+ guardedAct : Shell.Stamp -> Effects.Operation -> Counter -> Shell.Model -> Model -> ( Shell.Model, List Shell.Effect, Maybe String )

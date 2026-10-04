@@ -1,0 +1,12 @@
+-- TYPE MISMATCH -------------------------------------------- src/MenuBridge.elm
+
+This is not a record, so it has no fields to access!
+
+175|                         |> List.any (\window -> Effects.blocked native.lifetime window.incarnation shell.effects)
+                                                                     ^^^^^^
+This `native` value is a:
+
+    NativeBinding.Binding
+
+But I need a record with a lifetime field!
+

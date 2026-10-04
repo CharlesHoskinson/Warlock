@@ -1,0 +1,7 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+TypeError: Cannot read properties of undefined (reading 'kind')
+    at unknown (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108339873342653/actual/inputs/qa/family.cjs:23:23)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-staged-family-barrier-v87/family/qa/family-1791108339873342653/actual/inputs/qa/family.cjs:48:13
