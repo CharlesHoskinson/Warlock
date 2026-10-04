@@ -1,0 +1,3219 @@
+{
+  "passed": true,
+  "scope": "Actual compiled Controller ordering with exact actual producer fields and normalized initial request IDs; C preflight must establish rejected batch. Hypothetical control responses are CPU-only.",
+  "allExplicitAssertionsCompleted": true,
+  "opened": {
+    "correlation": {
+      "legacy": null,
+      "geometry": null,
+      "attach": null,
+      "deferNotifications": false
+    },
+    "preparedToken": null,
+    "prepared": null,
+    "geometry": {
+      "revision": "15",
+      "output": "1",
+      "windows": [
+        {
+          "incarnation": "1",
+          "mode": "maximized",
+          "minimized": false
+        }
+      ]
+    },
+    "unresolved": [],
+    "providerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerExhausted": false,
+    "focus": [],
+    "order": [
+      "publish"
+    ],
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "7",
+      "lease": "1",
+      "mode": "menu",
+      "status": "Window actions",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:elm-maximize-probe",
+          "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+          "detail": "1",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:menu-close",
+          "domId": "menu:1:close",
+          "label": "Close",
+          "ariaLabel": "Close window actions",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "menu:1:0",
+          "domId": "menu:1:0",
+          "label": "Restore",
+          "ariaLabel": "Restore",
+          "detail": "Selected",
+          "enabled": true
+        },
+        {
+          "id": "menu:1:1",
+          "domId": "menu:1:1",
+          "label": "Minimize",
+          "ariaLabel": "Minimize",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "menu:1:2",
+          "domId": "menu:1:2",
+          "label": "Maximize",
+          "ariaLabel": "Maximize",
+          "detail": "",
+          "enabled": false
+        }
+      ]
+    },
+    "rendererAdmitted": true,
+    "requests": [],
+    "shell": {
+      "phase": "Ready",
+      "notificationQueued": false,
+      "request": "3",
+      "available": true,
+      "reconnecting": false,
+      "effects": {
+        "windows": [
+          {
+            "incarnation": "1",
+            "minimized": false
+          }
+        ],
+        "connected": true,
+        "request": "0",
+        "generation": "0",
+        "transaction": null
+      }
+    },
+    "outstanding": 0,
+    "registry": 0,
+    "menu": {
+      "id": 1,
+      "selected": 0,
+      "status": "ready"
+    }
+  },
+  "pending": {
+    "correlation": {
+      "legacy": "4",
+      "geometry": "5",
+      "attach": null,
+      "deferNotifications": false
+    },
+    "preparedToken": null,
+    "prepared": null,
+    "geometry": {
+      "revision": "15",
+      "output": "1",
+      "windows": [
+        {
+          "incarnation": "1",
+          "mode": "maximized",
+          "minimized": false
+        }
+      ]
+    },
+    "unresolved": [],
+    "providerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerExhausted": false,
+    "focus": [],
+    "order": [
+      "publish",
+      "local",
+      "local"
+    ],
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "8",
+      "lease": "1",
+      "mode": "menu",
+      "status": "Window actions",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:elm-maximize-probe",
+          "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+          "detail": "1",
+          "enabled": false
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:menu-close",
+          "domId": "menu:1:close",
+          "label": "Close",
+          "ariaLabel": "Close window actions",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "menu:1:0",
+          "domId": "menu:1:0",
+          "label": "Restore",
+          "ariaLabel": "Restore",
+          "detail": "Selected",
+          "enabled": false
+        },
+        {
+          "id": "menu:1:1",
+          "domId": "menu:1:1",
+          "label": "Minimize",
+          "ariaLabel": "Minimize",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "menu:1:2",
+          "domId": "menu:1:2",
+          "label": "Maximize",
+          "ariaLabel": "Maximize",
+          "detail": "",
+          "enabled": false
+        }
+      ]
+    },
+    "rendererAdmitted": true,
+    "requests": [
+      {
+        "protocolVersion": 3,
+        "kind": "projection-request",
+        "binding": {
+          "lifetime": "12037388133217397494",
+          "session": "11368147789958501132",
+          "frontend": "1"
+        },
+        "requestId": "4"
+      },
+      {
+        "protocolVersion": 3,
+        "kind": "geometry-facts-request",
+        "geometryProtocol": 1,
+        "binding": {
+          "lifetime": "12037388133217397494",
+          "session": "11368147789958501132",
+          "frontend": "1"
+        },
+        "requestId": "5",
+        "minimumWatermark": "25"
+      }
+    ],
+    "shell": {
+      "phase": "Reconciling",
+      "notificationQueued": false,
+      "request": "5",
+      "available": false,
+      "reconnecting": false,
+      "effects": {
+        "windows": [
+          {
+            "incarnation": "1",
+            "minimized": false
+          }
+        ],
+        "connected": true,
+        "request": "0",
+        "generation": "0",
+        "transaction": null
+      }
+    },
+    "outstanding": 0,
+    "registry": 0,
+    "menu": {
+      "id": 1,
+      "selected": 0,
+      "status": "ready"
+    }
+  },
+  "closed": {
+    "correlation": {
+      "legacy": "4",
+      "geometry": "5",
+      "attach": null,
+      "deferNotifications": false
+    },
+    "preparedToken": null,
+    "prepared": null,
+    "geometry": {
+      "revision": "15",
+      "output": "1",
+      "windows": [
+        {
+          "incarnation": "1",
+          "mode": "maximized",
+          "minimized": false
+        }
+      ]
+    },
+    "unresolved": [],
+    "providerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerExhausted": false,
+    "focus": [],
+    "order": [
+      "publish"
+    ],
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "9",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:elm-maximize-probe",
+          "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+          "detail": "1",
+          "enabled": false
+        }
+      ],
+      "popup": []
+    },
+    "rendererAdmitted": true,
+    "requests": [],
+    "shell": {
+      "phase": "Reconciling",
+      "notificationQueued": true,
+      "request": "5",
+      "available": false,
+      "reconnecting": false,
+      "effects": {
+        "windows": [
+          {
+            "incarnation": "1",
+            "minimized": false
+          }
+        ],
+        "connected": true,
+        "request": "0",
+        "generation": "0",
+        "transaction": null
+      }
+    },
+    "outstanding": 0,
+    "registry": 0,
+    "menu": null
+  },
+  "stranded": {
+    "correlation": {
+      "legacy": "4",
+      "geometry": "5",
+      "attach": null,
+      "deferNotifications": false
+    },
+    "preparedToken": null,
+    "prepared": null,
+    "geometry": {
+      "revision": "15",
+      "output": "1",
+      "windows": [
+        {
+          "incarnation": "1",
+          "mode": "maximized",
+          "minimized": false
+        }
+      ]
+    },
+    "unresolved": [],
+    "providerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerExhausted": false,
+    "focus": [],
+    "order": [],
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "9",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:elm-maximize-probe",
+          "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+          "detail": "1",
+          "enabled": false
+        }
+      ],
+      "popup": []
+    },
+    "rendererAdmitted": true,
+    "requests": [],
+    "shell": {
+      "phase": "Reconciling",
+      "notificationQueued": true,
+      "request": "5",
+      "available": false,
+      "reconnecting": false,
+      "effects": {
+        "windows": [
+          {
+            "incarnation": "1",
+            "minimized": false
+          }
+        ],
+        "connected": true,
+        "request": "0",
+        "generation": "0",
+        "transaction": null
+      }
+    },
+    "outstanding": 0,
+    "registry": 0,
+    "menu": null
+  },
+  "hypotheticalControl": {
+    "correlation": {
+      "legacy": null,
+      "geometry": null,
+      "attach": null,
+      "deferNotifications": false
+    },
+    "preparedToken": null,
+    "prepared": null,
+    "geometry": {
+      "revision": "16",
+      "output": "1",
+      "windows": []
+    },
+    "unresolved": [],
+    "providerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerScope": {
+      "outputId": "1",
+      "providerId": "1"
+    },
+    "ownerExhausted": false,
+    "focus": [],
+    "order": [
+      "publish"
+    ],
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "13",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "rendererAdmitted": true,
+    "requests": [],
+    "shell": {
+      "phase": "Ready",
+      "notificationQueued": false,
+      "request": "7",
+      "available": true,
+      "reconnecting": false,
+      "effects": {
+        "windows": [],
+        "connected": true,
+        "request": "0",
+        "generation": "0",
+        "transaction": null
+      }
+    },
+    "outstanding": 0,
+    "registry": 0,
+    "menu": null
+  },
+  "rows": [
+    {
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": null,
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "1",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Connecting…",
+        "bar": [
+          {
+            "id": "bar:reconnect",
+            "domId": "reconnect",
+            "label": "Reconnect",
+            "ariaLabel": "Reconnect to the window system",
+            "detail": "",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Detached",
+        "notificationQueued": false,
+        "request": "0",
+        "available": false,
+        "reconnecting": true,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "1",
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": null,
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "2",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Updating window information…",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "1"
+        }
+      ],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": false,
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": null,
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "3",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": true
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": "2",
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": null,
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "4",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [
+        {
+          "protocolVersion": 3,
+          "kind": "geometry-attach",
+          "geometryProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "2"
+        }
+      ],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "2",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": null,
+        "geometry": "3",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": null,
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "5",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [
+        {
+          "protocolVersion": 3,
+          "kind": "geometry-facts-request",
+          "geometryProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "3",
+          "minimumWatermark": "0"
+        }
+      ],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "3",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "6",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": true
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "3",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "7",
+        "lease": "1",
+        "mode": "menu",
+        "status": "Window actions",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": true
+          }
+        ],
+        "popup": [
+          {
+            "id": "control:menu-close",
+            "domId": "menu:1:close",
+            "label": "Close",
+            "ariaLabel": "Close window actions",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "menu:1:0",
+            "domId": "menu:1:0",
+            "label": "Restore",
+            "ariaLabel": "Restore",
+            "detail": "Selected",
+            "enabled": true
+          },
+          {
+            "id": "menu:1:1",
+            "domId": "menu:1:1",
+            "label": "Minimize",
+            "ariaLabel": "Minimize",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "menu:1:2",
+            "domId": "menu:1:2",
+            "label": "Maximize",
+            "ariaLabel": "Maximize",
+            "detail": "",
+            "enabled": false
+          }
+        ]
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "3",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": {
+        "id": 1,
+        "selected": 0,
+        "status": "ready"
+      }
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "8",
+        "lease": "1",
+        "mode": "menu",
+        "status": "Window actions",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": [
+          {
+            "id": "control:menu-close",
+            "domId": "menu:1:close",
+            "label": "Close",
+            "ariaLabel": "Close window actions",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "menu:1:0",
+            "domId": "menu:1:0",
+            "label": "Restore",
+            "ariaLabel": "Restore",
+            "detail": "Selected",
+            "enabled": false
+          },
+          {
+            "id": "menu:1:1",
+            "domId": "menu:1:1",
+            "label": "Minimize",
+            "ariaLabel": "Minimize",
+            "detail": "",
+            "enabled": false
+          },
+          {
+            "id": "menu:1:2",
+            "domId": "menu:1:2",
+            "label": "Maximize",
+            "ariaLabel": "Maximize",
+            "detail": "",
+            "enabled": false
+          }
+        ]
+      },
+      "rendererAdmitted": true,
+      "requests": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "4"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "geometry-facts-request",
+          "geometryProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "5",
+          "minimumWatermark": "25"
+        }
+      ],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": false,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": {
+        "id": 1,
+        "selected": 0,
+        "status": "ready"
+      }
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    {
+      "correlation": {
+        "legacy": "4",
+        "geometry": "5",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "9",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": true,
+        "request": "5",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        }
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    }
+  ],
+  "nativeGate": {
+    "publication": "7",
+    "lease": "1",
+    "closed": "1"
+  },
+  "rejectedCommit": {
+    "surfaceProtocol": 2,
+    "kind": "surface-commit",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "8",
+      "lease": "1",
+      "mode": "menu",
+      "status": "Window actions",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:elm-maximize-probe",
+          "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+          "detail": "1",
+          "enabled": false
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:menu-close",
+          "domId": "menu:1:close",
+          "label": "Close",
+          "ariaLabel": "Close window actions",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "menu:1:0",
+          "domId": "menu:1:0",
+          "label": "Restore",
+          "ariaLabel": "Restore",
+          "detail": "Selected",
+          "enabled": false
+        },
+        {
+          "id": "menu:1:1",
+          "domId": "menu:1:1",
+          "label": "Minimize",
+          "ariaLabel": "Minimize",
+          "detail": "",
+          "enabled": false
+        },
+        {
+          "id": "menu:1:2",
+          "domId": "menu:1:2",
+          "label": "Maximize",
+          "ariaLabel": "Maximize",
+          "detail": "",
+          "enabled": false
+        }
+      ]
+    },
+    "requests": [
+      {
+        "protocolVersion": 3,
+        "kind": "projection-request",
+        "binding": {
+          "lifetime": "12037388133217397494",
+          "session": "11368147789958501132",
+          "frontend": "1"
+        },
+        "requestId": "4"
+      },
+      {
+        "protocolVersion": 3,
+        "kind": "geometry-facts-request",
+        "geometryProtocol": 1,
+        "binding": {
+          "lifetime": "12037388133217397494",
+          "session": "11368147789958501132",
+          "frontend": "1"
+        },
+        "requestId": "5",
+        "minimumWatermark": "25"
+      }
+    ],
+    "focus": []
+  },
+  "closedCommit": {
+    "surfaceProtocol": 2,
+    "kind": "surface-commit",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "9",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:elm-maximize-probe",
+          "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+          "detail": "1",
+          "enabled": false
+        }
+      ],
+      "popup": []
+    },
+    "requests": [],
+    "focus": []
+  },
+  "laterCommit": {
+    "surfaceProtocol": 2,
+    "kind": "surface-commit",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "9",
+      "lease": "1",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:elm-maximize-probe",
+          "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+          "detail": "1",
+          "enabled": false
+        }
+      ],
+      "popup": []
+    },
+    "requests": [],
+    "focus": []
+  }
+}

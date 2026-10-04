@@ -1,0 +1,963 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual preflight passed",
+      "passed": true
+    },
+    {
+      "name": "tested source candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "tested source upstream.json",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/observer_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "tested source README.md",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/README.md",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/observer_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor parentHost",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor parentRunner",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor copiedClientHelper",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor originalCoreHost",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor clientHelperParent",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor preservedReconnectFailure",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor parentSourceHold",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor observerTransportOrigin",
+      "passed": true
+    },
+    {
+      "name": "selected own host pinned",
+      "passed": true
+    },
+    {
+      "name": "scenario scope preserved",
+      "passed": true
+    },
+    {
+      "name": "reviewed relay pinned",
+      "passed": true
+    },
+    {
+      "name": "relay source held",
+      "passed": true
+    },
+    {
+      "name": "relay closure CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "relay closure parent.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/candidate/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/candidate/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/inputs/qa/unsafe-success-first.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/unsafe-ancestor/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/unsafe-ancestor/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791109060302741537/unsafe-ancestor/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/backlog/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/backlog/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/backlog/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/blocked/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/blocked/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/inputs/qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791109060301660591/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/authority.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/inputs/qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/public.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/parent.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/held-source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-1/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/authority.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control1/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control12/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control13/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control14/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control15/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control16/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control17/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control18/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control19/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control20/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control21/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control22/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control23/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control23/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control24/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control3/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/parent.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/wrapper.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/authority.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control1/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control12/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control12/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay inline symlink qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/wrapper-link",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/wrapper.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt-copy/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "relay inline symlink qa/profile-1791109029811155623/receipt-link.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/receipt.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109029811155623/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/authority.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/inputs/qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/public.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/CONTRACT.md",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/parent.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/held-source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-1/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/authority.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control1/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control12/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control13/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control14/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control15/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control16/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control17/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control18/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control19/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control20/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control21/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control22/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control23/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control23/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control24/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control3/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/parent.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/wrapper.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/authority.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control1/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control12/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control12/held.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay inline symlink qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/wrapper-link",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/wrapper.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt-copy/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "relay inline symlink qa/profile-1791109052193226122/receipt-link.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/receipt.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-1791109052193226122/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-1/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-1/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-2/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-2/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-3/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-4/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-5/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/control-5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay inline symlink qa/test-1791109060303661045/dir-link",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/hardlink.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay inline symlink qa/test-1791109060303661045/link.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791109060303661045/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test.py",
+      "passed": true
+    }
+  ],
+  "scope": "QA reconnect source preservation and owning tuple preflight; no GUI"
+}

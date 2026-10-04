@@ -1,0 +1,109 @@
+{
+  "passed": false,
+  "scope": "QA EOF reconnect runner AST preservation and actual source/owning tuple preflight only; no GUI or reconnect acceptance",
+  "inputs": {
+    "candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "upstream.json": "5b28d7ecef3ced6ecf4eeaf70923c3a9f008238b24dfd3bd5949e187405ab7d8",
+    "qa/native.py": "8cd308815e89c5b4bc49470be9f3251f5acf36065bf4cf60b81bbc31790adb20",
+    "qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "README.md": "40910b1b02605b4b41777b73c96f86de555df974e81a6a2c99975c08bfd4b80b",
+    "qa/freeze.py": "25b78d1e79e951fecd9a90e04e7b6f3f4b46f7bbc92c1018ebf4ee29c5373957",
+    "qa/preflight.py": "fa7ebe7bbace584f4653edc46c3ce09d371f23d1565b7e06b88e26d431bf527e"
+  },
+  "checks": [
+    {
+      "name": "original transition helper exact check",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact wait",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact frames",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact projection",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact incoming",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact effects",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact geometry",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact geometry_row",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact coherent",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact row",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact parent_pointer",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact open_menu",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact action",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact settle_menu",
+      "passed": true
+    },
+    {
+      "name": "original client ACK/pixel helper byte exact",
+      "passed": true
+    },
+    {
+      "name": "saved MAX lifetime/capability/no effect replay assertion unchanged",
+      "passed": true
+    },
+    {
+      "name": "all operation sequence calls unchanged",
+      "passed": true
+    },
+    {
+      "name": "all original operation/state/deadline assertion expressions retained",
+      "passed": true
+    },
+    {
+      "name": "closed receipt actor command/config checks present",
+      "passed": true
+    },
+    {
+      "name": "full09 required without partial acceptance shortcut",
+      "passed": true
+    },
+    {
+      "name": "no SIGSTOP added",
+      "passed": true
+    }
+  ],
+  "error": "AssertionError('qa/staged-1791107748248104178/wrapper-link')",
+  "artifacts": {
+    "inputs/candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "inputs/upstream.json": "5b28d7ecef3ced6ecf4eeaf70923c3a9f008238b24dfd3bd5949e187405ab7d8",
+    "inputs/README.md": "40910b1b02605b4b41777b73c96f86de555df974e81a6a2c99975c08bfd4b80b",
+    "inputs/qa/native.py": "8cd308815e89c5b4bc49470be9f3251f5acf36065bf4cf60b81bbc31790adb20",
+    "inputs/qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "inputs/qa/freeze.py": "25b78d1e79e951fecd9a90e04e7b6f3f4b46f7bbc92c1018ebf4ee29c5373957",
+    "inputs/qa/preflight.py": "fa7ebe7bbace584f4653edc46c3ce09d371f23d1565b7e06b88e26d431bf527e"
+  }
+}

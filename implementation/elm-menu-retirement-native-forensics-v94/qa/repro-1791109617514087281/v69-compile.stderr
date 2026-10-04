@@ -1,0 +1,16 @@
+-- SHADOWING ----------------------------------------- src/MenuSurfaceReplay.elm
+
+The name `value` is first defined here:
+
+31|         value name = D.decodeValue (D.field name D.value) raw |> Result.withDefault E.null
+            ^^^^^
+But then it is defined AGAIN over here:
+
+81|         counter value = value |> Maybe.map (UInt64.string >> E.string) |> Maybe.withDefault E.null
+                    ^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

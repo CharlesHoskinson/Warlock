@@ -1,0 +1,192 @@
+{
+  "passed": true,
+  "scope": "QA EOF reconnect runner AST preservation and actual source/owning tuple preflight only; no GUI or reconnect acceptance",
+  "inputs": {
+    "candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "upstream.json": "e1202353c38211dd9543674f820fc438617eae852bc19582c443e1706da141c3",
+    "qa/native.py": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+    "qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "qa/observer_endpoint.py": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+    "README.md": "bb26d427484994c7bc61b47666f80e7f5162c2d9605a1fcad8065e1a2fc44f8f",
+    "qa/freeze.py": "5646d97e98628891ca539da12744fe4f5622733ecab859e4e248ca408c5243b5",
+    "qa/preflight.py": "6cf65ba881cafa26cb5b2af88587556706376819d990c7fa13eef1dee5ba217b"
+  },
+  "checks": [
+    {
+      "name": "original transition helper exact check",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact wait",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact frames",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact projection",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact incoming",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact effects",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact geometry",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact geometry_row",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact coherent",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact row",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact parent_pointer",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact open_menu",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact action",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact settle_menu",
+      "passed": true
+    },
+    {
+      "name": "original client ACK/pixel helper byte exact",
+      "passed": true
+    },
+    {
+      "name": "saved MAX lifetime/capability/no effect replay assertion unchanged",
+      "passed": true
+    },
+    {
+      "name": "all operation sequence calls unchanged",
+      "passed": true
+    },
+    {
+      "name": "all original operation/state/deadline assertion expressions retained",
+      "passed": true
+    },
+    {
+      "name": "closed receipt actor command/config checks present",
+      "passed": true
+    },
+    {
+      "name": "full09 required without partial acceptance shortcut",
+      "passed": true
+    },
+    {
+      "name": "independent peer and native empty cleanup gates present",
+      "passed": true
+    },
+    {
+      "name": "no SIGSTOP added",
+      "passed": true
+    },
+    {
+      "name": "only observer deadline initializer changes",
+      "passed": true
+    },
+    {
+      "name": "complete transport AST exact except deadline initializer",
+      "passed": true
+    },
+    {
+      "name": "actual expired parent budget refuses before transport connect",
+      "passed": true
+    },
+    {
+      "name": "bootstrap keeps original three-second ceiling",
+      "passed": true
+    },
+    {
+      "name": "actual staged CPU build and fresh pair selected",
+      "passed": true
+    },
+    {
+      "name": "relay strict APIs present",
+      "passed": true
+    },
+    {
+      "name": "source held candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "source held upstream.json",
+      "passed": true
+    },
+    {
+      "name": "source held qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "source held qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "source held qa/observer_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "source held README.md",
+      "passed": true
+    },
+    {
+      "name": "source held qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "source held qa/preflight.py",
+      "passed": true
+    }
+  ],
+  "observerTransportOrigin": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/adapter/endpoint.py",
+    "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+  },
+  "selectedTuple": {
+    "pair": {
+      "core": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/Hyprland",
+        "sha256": "f1430c86174efa5682c40545daa3c7d823e29943ef07f8c992da59a0641617ad"
+      },
+      "plugin": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-owning-pair-v75/qa/build-1791106521814701312/elm-window-geometry-authority.so",
+        "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+      }
+    },
+    "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/report.json",
+    "buildReportSHA256": "9eaac6baee18fc2897614dfb96d60f2380d5cb0661fae0103d2492d6bb3890d3",
+    "relayManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-eof-relay-v90/qa/held-source-manifest.json",
+    "relayManifestSHA256": "da2eb214435b3676fa75adf2e8ef673a947708f06234e76e1ea1501640685be8",
+    "receiptManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-selector-v82/qa/held-source-manifest.json",
+    "receiptManifestSHA256": "c211ad4cf9d1be0a94474869e464332ba0f0394d8892dc747aae20ff56df9b52"
+  },
+  "artifacts": {
+    "inputs/candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "inputs/upstream.json": "e1202353c38211dd9543674f820fc438617eae852bc19582c443e1706da141c3",
+    "inputs/README.md": "bb26d427484994c7bc61b47666f80e7f5162c2d9605a1fcad8065e1a2fc44f8f",
+    "inputs/qa/native.py": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+    "inputs/qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "inputs/qa/observer_endpoint.py": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+    "inputs/qa/freeze.py": "5646d97e98628891ca539da12744fe4f5622733ecab859e4e248ca408c5243b5",
+    "inputs/qa/preflight.py": "6cf65ba881cafa26cb5b2af88587556706376819d990c7fa13eef1dee5ba217b"
+  }
+}
