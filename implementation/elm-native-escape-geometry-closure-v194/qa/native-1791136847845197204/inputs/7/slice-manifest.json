@@ -1,0 +1,961 @@
+{
+  "passed": true,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "scope": "Bounded current422 native recovery50/57 and receipt/EOF CPU closure; original geometry08/09/10 and full release open",
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-shared-accepted-v425/qa/slice-manifest.json",
+  "parentManifestSHA256": "12f99d5cf3557bafb8e0bfa6a8f86c58df80db9d0b647b963a7492b15a60fb46",
+  "files": [
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/README.md",
+      "sha256": "69db02b7cf0d6420bcf1d12c484e23fe067217c99d6bcab60950ff3aad9f1739",
+      "size": 390
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/algorithm-review.json",
+      "sha256": "62ad0ae54e0317d46df5efb878fd481e32d41f2dc1befbaa4138dea1f8458571",
+      "size": 297
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/origin.json",
+      "sha256": "043c0efb121b9d983bf341122ef3d278821e96e4c4c863630d53c66107380a50",
+      "size": 343
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/profile-1791128811547419467/authority.json",
+      "sha256": "3c9770703ba32fce09985aef4800836803abe0a11c744426f2616c99393b67f2",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/profile-1791128811547419467/receipt.json",
+      "sha256": "842d54e3133426c10962d101c47eb875e8daf893fa90e310f5efdabae551e081",
+      "size": 390
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/profile-1791128811547419467/report.json",
+      "sha256": "26dad989038cc8fbfd6f771dbd5e441a4626cf74cbaa13cc8242697691296654",
+      "size": 1717
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/profile-test.py",
+      "sha256": "53c40c8dbe22d7091960bead6c6ad28a373b2f893f433a4af9f074e766f5f0c4",
+      "size": 3267
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/parent.json",
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/broker-entrypoint.py",
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/held-source-manifest.json",
+      "sha256": "56de038a1fccdd3eee8a471d0f19f523072c73336d01c9d13ff005193fb7b4b8",
+      "size": 461
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-1/gate.json",
+      "sha256": "87be18f1593645a34c70be18b1dc5305597bb93b703e45b1d05d0b0ed76f9ecc",
+      "size": 299
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-1/held.json",
+      "sha256": "42071abace9d49e96b58b4f715c4e07ed1a4eea75780571673682c257ab09ee9",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-10/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-11/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-13/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-14/gate.json",
+      "sha256": "9df71473bb8c548ec9ce2187df874fa14a36a24c121ddeb9c46e1231c50c602e",
+      "size": 299
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-14/held.json",
+      "sha256": "527af7296af660f99dc32dcfd69db7684a07fab420de221da9c40fd15c3b986a",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-15/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-15/held.json",
+      "sha256": "e25f03ff84662c485d0ff8b60ba186e161c5f78b38e4ad289ed02b96c254607f",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-16/gate.json",
+      "sha256": "3f2e597f0bf1bbab40e111b9890fc96ddfaefab8edc49d0d30974e666e23d2d8",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-16/held.json",
+      "sha256": "dabd775a43b23857c00283ca19538e6d773438dd53e99ba10ef08aa3b830d240",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-17/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-17/held.json",
+      "sha256": "21c664c422b8d71ab60101ea683d6aa4b33d03626193b1cdbb1364f59c068267",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-18/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-18/held.json",
+      "sha256": "70bb96e8d56d82ee4ce0c419a03c037174ebd7e0e997cb858bb8d42921de827b",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-2/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-3/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-4/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-5/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-6/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-7/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-8/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-8/held.json",
+      "sha256": "42071abace9d49e96b58b4f715c4e07ed1a4eea75780571673682c257ab09ee9",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-9/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/control-9/held.json",
+      "sha256": "42071abace9d49e96b58b4f715c4e07ed1a4eea75780571673682c257ab09ee9",
+      "size": 644
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/eof.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/eof.stdout",
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/inputs/qa/test.py",
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/inputs/qa/wrapper.py",
+      "sha256": "d39c5732175d3ae6d59686b03a3220ee11eff633da0ca447d09373372dfcb36e",
+      "size": 13744
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/locked.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/locked.stdout",
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/malformed.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/malformed.stdout",
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/release.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/release.stdout",
+      "sha256": "942e5fe5145f693d4e90112a5ec370797def23a691a7a9f1d0a8c36af275f5c4",
+      "size": 453
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/report.json",
+      "sha256": "1889112d1943e5c2250b7966456d9ceb4fbb891c1d81a5a5e4415cc8dc1f2281",
+      "size": 10253
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/timeout.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/timeout.stdout",
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/authority.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control1/gate.json",
+      "sha256": "a31686ae21773f7c38f8f208058640ee7b15b17dc7f6e7d77bdca596d1201fa1",
+      "size": 307
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control1/held.json",
+      "sha256": "71923805546936e113756b37496fdc609de137266d0dd21f10db87d91e7a90cc",
+      "size": 667
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control10/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control11/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control12/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control13/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control14/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control15/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control16/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control17/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control18/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control19/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control2/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control20/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control21/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control22/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control23/gate.json",
+      "sha256": "ed82a7f1e7c7f1f3c8b3694ad0f286631bf05c91512b69fc12c137415de2eab1",
+      "size": 307
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control23/held.json",
+      "sha256": "63cc739a30a56e9ee52b99b6b0f554b84d39607173d15a81f694c83b6f5a862d",
+      "size": 667
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control24/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control3/gate.json",
+      "sha256": "ade348f78ca72f65b83db1c8479532c7a32f9bbbb45290de1fa517e6a2404806",
+      "size": 307
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control3/held.json",
+      "sha256": "b9a94ac470ff45b0c347b1b65e622ca5fa2bc56899fa051e602c204eeec862c4",
+      "size": 667
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control4/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control5/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control6/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control7/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control8/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/control9/gate.json",
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/inputs/parent.json",
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/inputs/qa/broker-entrypoint.py",
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/inputs/qa/selector-test.py",
+      "sha256": "b7cdb63c6bc59fc150801bf2e1ce06b365abfbc4bf6f1f47966c2b71136a66b2",
+      "size": 9403
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/inputs/qa/test.py",
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/inputs/qa/wrapper.py",
+      "sha256": "d39c5732175d3ae6d59686b03a3220ee11eff633da0ca447d09373372dfcb36e",
+      "size": 13744
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/inputs/upstream.json",
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/report.json",
+      "sha256": "3223a00181233554a59be60441ffb40decae324e90f8b3a33778ae6b3c78c629",
+      "size": 9690
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/wrapper.json",
+      "sha256": "9c6fbf91657469b186e9f623d3fdbe3e23bb0706c3c94497f21cabecba21ef6d",
+      "size": 427
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-test.py",
+      "sha256": "b7cdb63c6bc59fc150801bf2e1ce06b365abfbc4bf6f1f47966c2b71136a66b2",
+      "size": 9403
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/test.py",
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/wrapper.py",
+      "sha256": "d39c5732175d3ae6d59686b03a3220ee11eff633da0ca447d09373372dfcb36e",
+      "size": 13744
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/upstream.json",
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/candidate/actor.json",
+      "sha256": "dbf07a7e5297fbe8b7670054c0f57ddbb73fd390450f8aae3b75cd62dde1b0aa",
+      "size": 94
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/candidate/gate.json",
+      "sha256": "0ddbf8909b53bcc986dc429f6e15cff47bb773d808b80a5c3f8d14d98e2679cc",
+      "size": 113
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/inputs/qa/deadline.py",
+      "sha256": "257145edeb49ea07080609032d93c0ade1b8b6ebb6e5034b62dddf28301713e9",
+      "size": 3742
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/inputs/qa/relay.py",
+      "sha256": "547e5cc74ad47cbe0ada19a46d87b7f866317f536c7c342d582b1c4d8e71235b",
+      "size": 11071
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/inputs/qa/unsafe-success-first.py",
+      "sha256": "52b120fa4f01f29805ebe299247179ec31f18a90e0faf3371d21ed77a61c7ef3",
+      "size": 8951
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/report.json",
+      "sha256": "76157a0ad13c24ac7588fa688ace93d81a77bb471dad0f17cf5a2d530fd9d2b2",
+      "size": 2708
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/unsafe-ancestor/actor.json",
+      "sha256": "3b1e6c7e6490bce6f6cc275bbf6e12e9b672a8c6708c96fc45627a4f85af5a57",
+      "size": 94
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/unsafe-ancestor/exit.json",
+      "sha256": "83149751ba30fc735542097fe36359465a45e0694de55c3917c4ae595b0b7ae5",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/unsafe-ancestor/gate.json",
+      "sha256": "c3a66b28249ecfd7da1ede5cca77a85a97b163fd8dbafea7f6de9ce389bdef24",
+      "size": 113
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline.py",
+      "sha256": "257145edeb49ea07080609032d93c0ade1b8b6ebb6e5034b62dddf28301713e9",
+      "size": 3742
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/backlog/actor.json",
+      "sha256": "4192265f60f4158edaba39e5cfd91134d8774f5f8a9c07b0c7cdbec31ba0eb6c",
+      "size": 94
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/backlog/exit.json",
+      "sha256": "9b292cebceb0766d1bab47a9772c1282522ff0a4370a44eaa96f8717fce36f4f",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/backlog/gate.json",
+      "sha256": "d4f209976a1517b067e6c27f391cd68f210b54d37492ffda152d1528358219c1",
+      "size": 113
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/blocked/actor.json",
+      "sha256": "28b5ccb4c74015fe5991ef1d3b30e9d0e593cfc134cc85094446f4cf214ea74b",
+      "size": 94
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/blocked/gate.json",
+      "sha256": "6885230f706559b2b0376690f1f8008768b88c38fe05d6ec3c5eb1515af8fe84",
+      "size": 113
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/inputs/qa/edges.py",
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/inputs/qa/relay.py",
+      "sha256": "547e5cc74ad47cbe0ada19a46d87b7f866317f536c7c342d582b1c4d8e71235b",
+      "size": 11071
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/inputs/qa/test.py",
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/report.json",
+      "sha256": "0d098dda4cb22dd3105bf1bfd49110557f466f3a20fe8eadd565271f0af2e013",
+      "size": 1549
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges.py",
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/relay.py",
+      "sha256": "547e5cc74ad47cbe0ada19a46d87b7f866317f536c7c342d582b1c4d8e71235b",
+      "size": 11071
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/test.py",
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/README.md",
+      "sha256": "8476b912ce6eeb81ec5e715104623066cfe785a992373230e96674fce5428022",
+      "size": 273
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/fixture.py",
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/grab_guard.py",
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/inspection.py",
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/authority-config.json",
+      "sha256": "a113f8689ef7b16581c3eb09e14e13e18d410ba307141ad09501f96ac62c1b45",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/elm-webview.log",
+      "sha256": "04692483cc60e25fa746193e5e3572b59ca3c2e1ac861258df93e54e6f3f6ab8",
+      "size": 356708
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/fixture.log",
+      "sha256": "94c9d4259791ba574855d86793e4ad61620134fb48a04056ab530062c460ee52",
+      "size": 584
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/host-evidence.json",
+      "sha256": "2fb67c1457914a32ec1ac7bff79c2b7a9830fce319e8ff5c58ac2605d02709bf",
+      "size": 213909
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/hyprland.log",
+      "sha256": "423ba47da99ad6572d40c8aa73928a5dae5a357451a1e45928ea38d41d11eedd",
+      "size": 386423
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/initialNativeFixturePixelsAreRed-0.png",
+      "sha256": "acc6a944ca1d764ea923244a4d3e57bdc551f6cac2464b06e36ea35402f45665",
+      "size": 20873
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/minimizedNativeFixturePixelsDisappear-0.png",
+      "sha256": "9ae47045c517ab7f6708d1cfee4168bcb34f867c636e693db8058f5797f34b06",
+      "size": 46133
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/privateBus.log",
+      "sha256": "711f1a6832ee31c2a8e7ac0d3a6110f028407df0aead0e6098ac34ec2bc980fd",
+      "size": 5570
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/relay-actor-1/actor.json",
+      "sha256": "a90eec8a1c30f60bcf47c8ddb2be3701bb0cfdbcfb9e2eeed31b4391eac48f6b",
+      "size": 94
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/relay-actor-1/exit.json",
+      "sha256": "14b6937ad9cb5df45f0ac901f22c8b772e6e59414fbd6a82de7a0147b44d6744",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/relay-actor-1/gate.json",
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/relay-config.json",
+      "sha256": "5a9dd07371037149a56efdbcd309b08b55b8dece4b5bba81c90368e1a9d39e0a",
+      "size": 365
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/restoredNativeFixturePixelsReturn-0.png",
+      "sha256": "cedd70fead821fb13d0efadc2a32ae844c968dbd51dc74d303632485a4a1d3d0",
+      "size": 20785
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/runtime-archive/.flatpak/webkit-2289524-16/bwrapinfo.json",
+      "sha256": "535005310c58b413dbc0dacebab5c5e94260208e47a654bfac5284a34c8e1b3d",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/runtime-archive/.flatpak/webkit-2289524-4/bwrapinfo.json",
+      "sha256": "ff8c1b553d29eff07857d661cd0b4c6173de21a1bd612ffa86f8e03886578382",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791128883_461447997/2053768237917163133/ledger-v5.json",
+      "sha256": "206919f432ebbf9306f035fa7f69d296f19d28c047cd947a9a3be2c8afd0f82f",
+      "size": 957
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791128883_461447997/2053768237917163133/migration-plan.json",
+      "sha256": "1cf4b5a429b2f91985ecba4c063f4de7a4d9884468ec283c4fdd60c99b80f57c",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791128883_461447997/2053768237917163133/migration.json",
+      "sha256": "91d02bab06aaed60c18041ac18235444a8c06290127ccaa2f13e80409b1858b7",
+      "size": 227
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791128883_461447997/hyprland.log",
+      "sha256": "7434d1080d96e18d4f5f7b5dc7420f4c673277f8202a0ae56fcb2562dab2b863",
+      "size": 25622
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/weston-renderer.log",
+      "sha256": "4b975b9609bafb43313de178b2b2c5c02739fe1ae252f8094714ca631eb6f504",
+      "size": 3767
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/report.json",
+      "sha256": "00e514b239e09b4df1990d9ffa5a2f8dae61d3c156bfc55164b5cc4351e51584",
+      "size": 245843
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native.py",
+      "sha256": "70c5a9b35822a1d3bccd6672be98492ec9ecc3fca018806ed3e9abad318f89da",
+      "size": 18520
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/preflight.json",
+      "sha256": "23748d22bf7a254b3e8e2938cff9c5284d326482f8c8769f21d88d2ecb8c5ac6",
+      "size": 32360
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/preflight.py",
+      "sha256": "8d1c50a80f0e4acdcfe44ab8708ed6eb58526c23f5e5c006de205f595ed7d7c9",
+      "size": 3557
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/sampling.py",
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/README.md",
+      "sha256": "e91012153efa7e8887ba73b531613c3856650db0682769b69c536f30f565eb8a",
+      "size": 266
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/fixture.py",
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/grab_guard.py",
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/inspection.py",
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/authority-config.json",
+      "sha256": "dbd66db06ed1ad42571ce97fa39d06dad1494af806e16de50557841d5167238f",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/elm-webview.log",
+      "sha256": "d71703964b9450ee3e227a0e29292d375bd4040e695696177c6a20ed1f407c8e",
+      "size": 377724
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/fixture.log",
+      "sha256": "4ebd9f72394778277393d63187fda71cdc07323132d044d16dc1d3134390a51d",
+      "size": 592
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/host-evidence.json",
+      "sha256": "92f524f82671f8dbf371fbb1e62338dd0be00a8f156ae5bae4193e476d2c92de",
+      "size": 214019
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/hyprland.log",
+      "sha256": "af96a5a123373fffbc064080f65f1d90d44d2c6ccd3cd659fef11e77f177b401",
+      "size": 427578
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/initialNativeFixturePixelsAreRed-0.png",
+      "sha256": "260c0afbe3905e49512907d528cb3b7941158c879e45f93dc74a8f196c7561c7",
+      "size": 81327
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/minimizedNativeFixturePixelsDisappear-0.png",
+      "sha256": "aab5e96ee7d52fdc522a25e0616818e1c133b40f7eb878836da64cbd935d875a",
+      "size": 374883
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/privateBus.log",
+      "sha256": "2dc3ecca93c3cce4c547b2404e61464a0048054a7fe6ea9cae861540aaa2a7a1",
+      "size": 5570
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-actor-1/actor.json",
+      "sha256": "4f8796816ec56f51c7011714f485d2d0f17767ceecb844ac69d9e6c5838790c8",
+      "size": 94
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-actor-1/exit.json",
+      "sha256": "6318caf50d1dbd7cc5722095a84e0d37e9f05eca4218ae314130679e7f012fde",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-actor-1/gate.json",
+      "sha256": "b8da6cb79052792232b3075bf3962ad86dc9ad89fd1b89a0cf855e043bc6878e",
+      "size": 113
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-actor-2/actor.json",
+      "sha256": "44382ca7e7474b97f181491f330bfbb4d334de00bb2c574736c50721922f5340",
+      "size": 94
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-actor-2/exit.json",
+      "sha256": "757ca4cc7eb2274566f89f5954e119e39bdbc3140a2cc1e64858828eef449379",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-actor-2/gate.json",
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-config-actor-1.json",
+      "sha256": "bbdf1a692db2fa9f74d0d7fcc4fde978edbe2c0272842f91762a993d307960e3",
+      "size": 366
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/relay-config.json",
+      "sha256": "cbb60ef26e36c19e4f10c6c8e45f2957257c88a078aa5a5349facd00837b4ca0",
+      "size": 366
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/restoredNativeFixturePixelsReturn-0.png",
+      "sha256": "970dea5ae50150b26b5e818028091da6e0dce62ae3ec3a5547a384835c5c3cd0",
+      "size": 81291
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/runtime-archive/.flatpak/webkit-2294465-16/bwrapinfo.json",
+      "sha256": "47ec71817d20335f547d281230bd7929f5f0129975f0ed3486b9ea2308fe3a01",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/runtime-archive/.flatpak/webkit-2294465-4/bwrapinfo.json",
+      "sha256": "06eb31fe64fcff31bb6570180ace9e140679496cac9c79c42721f0c37b3e9d35",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791128946_1608251220/911624294305960144/ledger-v5.json",
+      "sha256": "48ff4568495d46433ff812ee19eb55127cd16d030550fefc7d1535df8c4fa319",
+      "size": 641
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791128946_1608251220/911624294305960144/migration-plan.json",
+      "sha256": "b8a74fb190b34bf197c3b6984ae4d86e1864342b6f5d30eb1e8a67fe7c53e446",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791128946_1608251220/911624294305960144/migration.json",
+      "sha256": "9b7bcb3b7910af6d87dceb72186fa8d58ee9d70cdcaca9a54c33063d3f95d9ad",
+      "size": 227
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791128946_1608251220/hyprland.log",
+      "sha256": "ba1f8fac7dca4d0c5a01e993cdda703a13a3bdf2e7b2cd37ca523d83b0dbdc66",
+      "size": 25623
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/weston-renderer.log",
+      "sha256": "a8b74205d8d9e92bf9c86b81b77b5837ffd6be58e8710a303411aef577191e54",
+      "size": 3767
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/report.json",
+      "sha256": "5a2adfbff4c1de41b13a09ecc0644bba7da7190a9ea9cdc92384f2a084426a38",
+      "size": 251171
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native.py",
+      "sha256": "4ffb59e121161244d6849db74ef73c0f64b192064b2af05ae160cd32b65f7970",
+      "size": 22223
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/preflight.json",
+      "sha256": "66327628275a474c2efca98353f24f95853348c37da3282d746c59c1ecde372c",
+      "size": 32384
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/preflight.py",
+      "sha256": "8d1c50a80f0e4acdcfe44ab8708ed6eb58526c23f5e5c006de205f595ed7d7c9",
+      "size": 3557
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/sampling.py",
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-geometry-current-recovery-accepted-v430/HANDOFF.md",
+      "sha256": "a798088a818e87b266b028c463e919340df96058853761600ea23b25200342c3",
+      "size": 1469
+    },
+    {
+      "path": "implementation/elm-geometry-current-recovery-accepted-v430/qa/freeze.py",
+      "sha256": "7e9e01c3c395ff0c5fa8afc6a318f415e81eb3a4965affba435f81e7d0d355a9",
+      "size": 3015
+    }
+  ],
+  "reports": [
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/profile-1791128811547419467/report.json",
+      "sha256": "26dad989038cc8fbfd6f771dbd5e441a4626cf74cbaa13cc8242697691296654",
+      "checks": 9
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/hold-1791128811558163720/report.json",
+      "sha256": "1889112d1943e5c2250b7966456d9ceb4fbb891c1d81a5a5e4415cc8dc1f2281",
+      "checks": 45
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/receipt/qa/selector-1791128811595758887/report.json",
+      "sha256": "3223a00181233554a59be60441ffb40decae324e90f8b3a33778ae6b3c78c629",
+      "checks": 52
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/deadline-1791128811550330793/report.json",
+      "sha256": "76157a0ad13c24ac7588fa688ace93d81a77bb471dad0f17cf5a2d530fd9d2b2",
+      "checks": 7
+    },
+    {
+      "path": "implementation/elm-geometry-current-receipt-fixture-v427/relay/qa/edges-1791128811550416747/report.json",
+      "sha256": "0d098dda4cb22dd3105bf1bfd49110557f466f3a20fe8eadd565271f0af2e013",
+      "checks": 7
+    },
+    {
+      "path": "implementation/elm-geometry-current-relay-native-v428/qa/native-1791128882518409736/report.json",
+      "sha256": "00e514b239e09b4df1990d9ffa5a2f8dae61d3c156bfc55164b5cc4351e51584",
+      "checks": 50
+    },
+    {
+      "path": "implementation/elm-geometry-current-reconnect-native-v429/qa/native-1791128945635741777/report.json",
+      "sha256": "5a2adfbff4c1de41b13a09ecc0644bba7da7190a9ea9cdc92384f2a084426a38",
+      "checks": 57
+    }
+  ],
+  "nativeAcceptance": true,
+  "fullGeometryCampaignAccepted": false,
+  "fullReleaseAccepted": false,
+  "completedRequirementIds": []
+}

@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "sourceSHA256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+  "controls": [
+    {
+      "name": "baseline",
+      "buildExitCode": 0,
+      "testExitCode": 0,
+      "accepted": true,
+      "binarySHA256": "af5869e47cb92ef8918d85748d946d7f949351c273a3d2af2224d04fefa46ab3"
+    },
+    {
+      "name": "requires-current-dom",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "82b91a0849b809597488c5d7cafaf99e191811ea05ad4a6aa08859c8d317413e"
+    },
+    {
+      "name": "reuses-consumed-press",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "3b16815c82a55089c1b0545df06a06cd025cea889ac86ac508e328eccbbaedee"
+    },
+    {
+      "name": "admits-early-release-as-new-press",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "d1830db4059f35c28be25be08d606530b893f3dd2f509fc86c5fde13c23161fe"
+    },
+    {
+      "name": "admits-wrong-key",
+      "buildExitCode": 0,
+      "testExitCode": 0,
+      "accepted": false,
+      "binarySHA256": "ad7f99751d7243b96f9814bf7db28739da7fc8971374b51b2f346726c5cf770b"
+    }
+  ],
+  "error": "AssertionError(('admits-wrong-key', 'shared-context-checks: 168\\n', ''))"
+}

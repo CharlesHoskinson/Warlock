@@ -1,0 +1,3 @@
+# Current captured broker source binding
+
+193 real reconnect passed its native binding/actor/EOF behavior but correctly refused the final captured-command assertion: legacy receipt fixture427 selects daemon422, while GUI190 is the current captured build.197 rebinds only immutable source/build manifests, preserving exact adapter inventory, private path/process/socket/control checks, original deadlines, one-shot receipts and no effect replay. Every adapter source byte must match actual frozen190 build and422 ancestor.198 retains original command-path assertion, targeting actual captured190 daemon. No acceptance weakening; GUI/hardware/release separate.
