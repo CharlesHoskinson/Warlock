@@ -1,0 +1,7 @@
+# Combined operation and observation disposition prototype
+
+V127 combines captured V121 observation-ID and topology supersession guards with V122 dedicated Pending-only local operation refusal. Operation settlement occurs before the current menu lease/read guard. Local terminal transitions preserve unrelated native Unknown operations and route only the original full issued key; they do not synthesize a native receipt or replay a command.
+
+Protected actual compiled worker/C preflight tests pass all 62 operation cases. Independent stale-menu replay passes its two candidate cases and demonstrates both unsafe V104 ancestor controls. Actual optimized Main, Bar and Popup compile. First preparation extraction failure is preserved. Reports and captured inputs record exact bytes.
+
+This prototype deliberately retains the predecessor V121 deferred attach failure. Its owner reproduced the failure and is qualifying a central refresh correction separately; the next derivative must incorporate that qualified fix. These CPU results do not establish native output retirement, EOF/recovery, physical input, current shared-context compatibility or release acceptance. Primary lane V342 has separate native39 shared-menu evidence on core89/plugin90/AQ105; acceptance does not transfer to V127. Merge final held fixes with schema5 EOF/deadline and source333 native terminal proof, then rerun original deadlines, effects, receipts and pixels on one owning tuple. Full S01–S16 and deployment/rollback/user-flow gates remain open.
