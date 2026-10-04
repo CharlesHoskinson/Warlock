@@ -1,0 +1,32 @@
+{
+  "passed": true,
+  "scope": "Actual pure size-bound policy; no wire/native integration or mutation acceptance",
+  "inputs": {
+    "candidate/SizeBounds.hpp": "e6744f519eab2be7c285b68a47b50f85ffe8c39067960b18b3a8c814e0f65839",
+    "qa/policy-test.cpp": "4f705633fa09c72cbe452003b32c466b8d7bfac95d9760eb65d74a16abeabe2c",
+    "qa/test.py": "b42c9d32fed0b2557e1ef4e0f5a673350f7f5b271e9d7971b08ca3e85124704f",
+    "spec/REQUIREMENTS.md": "5694cac22838341f2441d962a5a860a8b0036bfa87d4e2d012aa6b751489dd04"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "exitCode": 0
+    },
+    {
+      "name": "checks",
+      "exitCode": 0
+    }
+  ],
+  "checks": 796,
+  "artifacts": {
+    "policy-test": "b5e5bbb90f7652ef70cfb779f59e63b7d5020593d831870fc16c5e3f1ab39a1e",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks.stdout": "86f4484a0bf2eb5513d547b9fbf10969a5929af7598c24f57fb4c84f437c16f5",
+    "checks.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/candidate/SizeBounds.hpp": "e6744f519eab2be7c285b68a47b50f85ffe8c39067960b18b3a8c814e0f65839",
+    "inputs/qa/policy-test.cpp": "4f705633fa09c72cbe452003b32c466b8d7bfac95d9760eb65d74a16abeabe2c",
+    "inputs/qa/test.py": "b42c9d32fed0b2557e1ef4e0f5a673350f7f5b271e9d7971b08ca3e85124704f",
+    "inputs/spec/REQUIREMENTS.md": "5694cac22838341f2441d962a5a860a8b0036bfa87d4e2d012aa6b751489dd04"
+  }
+}

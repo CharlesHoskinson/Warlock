@@ -1,0 +1,16 @@
+
+  recovery
+    1) minimumAboveWorkareaTest failed after 1 test(s)
+
+  1 failed
+
+  1) minimumAboveWorkareaTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-model-v396/qa/model-1791123407592233107/unsafe.qnt:23:75
+        23:  run minimumAboveWorkareaTest=init.then(highMinimum).then(apply).then(all{assert(s.mutations==0),s'=s})
+                                                                                      ^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x29828 --match=minimumAboveWorkareaTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unsafe.qnt
