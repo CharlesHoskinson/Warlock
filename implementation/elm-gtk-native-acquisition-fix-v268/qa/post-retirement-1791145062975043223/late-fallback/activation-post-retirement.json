@@ -1,0 +1,46 @@
+{
+  "passed": false,
+  "busIdentity": {
+    "pid": 3428609,
+    "start": "11316702",
+    "pgid": 3428609,
+    "ppid": 3428512,
+    "uid": 1000
+  },
+  "records": [
+    {
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-1791145062975043223/late-fallback/activation-journals/org.elm.LateActivation/3428615-1791145063380982746.jsonl",
+      "sha256": "1c1f44c2f1743c5175c43603daae97230f52b6640f2d3e217be4ad5e13ec3ef3",
+      "wrapper": {
+        "pid": 3428615,
+        "start": "11316705",
+        "pgid": 3428615,
+        "ppid": 3428614,
+        "uid": 1000
+      },
+      "terminal": {
+        "sequence": 7,
+        "kind": "terminal",
+        "monotonic": 109329.960062803,
+        "childExitCode": -9,
+        "cancelled": true,
+        "fallback": true,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3428620,
+              "start": "11316709",
+              "pgid": 3428615,
+              "ppid": 3428615,
+              "uid": 1000
+            },
+            "exitCode": -9
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      }
+    }
+  ],
+  "error": "Refused('no fallback/nonzero/unproven final cleanup')"
+}

@@ -1,0 +1,9 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 110921.697632261, "identity": {"pid": 3541430, "start": "11475942", "pgid": 3541430, "ppid": 3541429, "uid": 1000}, "argv": ["/usr/lib/gvfsd"], "descriptor": "/run/user/1000/wqa/2fea/activations/org.gtk.vfs.Daemon.json", "descriptorSHA256": "517a8fff7f3dd64cd051d7b788211f4fc9d42bcb91fc2e19e92b5871de015cac"}
+{"sequence": 2, "kind": "owned-child", "monotonic": 110921.698072741, "identity": {"pid": 3541445, "start": "11475947", "pgid": 3541430, "ppid": 3541430, "uid": 1000}}
+{"sequence": 3, "kind": "owned-child", "monotonic": 110921.757029773, "identity": {"pid": 3541451, "start": "11475948", "pgid": 3541430, "ppid": 3541430, "uid": 1000}}
+{"sequence": 4, "kind": "shutdown-request", "monotonic": 110923.890029617}
+{"sequence": 5, "kind": "signal", "monotonic": 110923.890129716, "identity": {"pid": 3541445, "start": "11475947", "pgid": 3541430, "ppid": 3541430, "uid": 1000}, "signal": 15}
+{"sequence": 6, "kind": "signal", "monotonic": 110923.890194437, "identity": {"pid": 3541451, "start": "11475948", "pgid": 3541430, "ppid": 3541430, "uid": 1000}, "signal": 15}
+{"sequence": 7, "kind": "child-exit", "monotonic": 110923.922211804, "identity": {"pid": 3541445, "start": "11475947", "pgid": 3541430, "ppid": 3541430, "uid": 1000}, "waitStatus": 15, "exitCode": -15}
+{"sequence": 8, "kind": "child-exit", "monotonic": 110923.922309022, "identity": {"pid": 3541451, "start": "11475948", "pgid": 3541430, "ppid": 3541430, "uid": 1000}, "waitStatus": 3840, "exitCode": 15}
+{"sequence": 9, "kind": "terminal", "monotonic": 110923.94238818, "childExitCode": -15, "cancelled": true, "fallback": false, "allWaitStatuses": [{"identity": {"pid": 3541445, "start": "11475947", "pgid": 3541430, "ppid": 3541430, "uid": 1000}, "exitCode": -15}, {"identity": {"pid": 3541451, "start": "11475948", "pgid": 3541430, "ppid": 3541430, "uid": 1000}, "exitCode": 15}], "liveDescendants": [], "error": null}

@@ -1,0 +1,3857 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullGTKAccepted": false,
+  "qualifiedCleanupPassed": false,
+  "checks": [
+    {
+      "name": "held268",
+      "passed": true
+    },
+    {
+      "name": "held:COORDINATES.md",
+      "passed": true
+    },
+    {
+      "name": "held:HANDOFF.md",
+      "passed": true
+    },
+    {
+      "name": "held:HANDOFF263.md",
+      "passed": true
+    },
+    {
+      "name": "held:HANDOFF268.md",
+      "passed": true
+    },
+    {
+      "name": "held:PRIVATE-BUS.md",
+      "passed": true
+    },
+    {
+      "name": "held:REQUIREMENTS.md",
+      "passed": true
+    },
+    {
+      "name": "held:REQUIREMENTS263.md",
+      "passed": true
+    },
+    {
+      "name": "held:REQUIREMENTS268.md",
+      "passed": true
+    },
+    {
+      "name": "held:ancestor-component-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "held:ancestor263-component-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "held:origin.json",
+      "passed": true
+    },
+    {
+      "name": "held:origin263.json",
+      "passed": true
+    },
+    {
+      "name": "held:origin268.json",
+      "passed": true
+    },
+    {
+      "name": "held:pins.json",
+      "passed": true
+    },
+    {
+      "name": "held:planning-lineage.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142767839829598/inputs/activation-supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142767839829598/inputs/activation-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142767839829598/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142767839829598/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142767839829598/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142767839829598/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/kill.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/kill.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/kill.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/nonzero.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/nonzero.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/nonzero.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/term.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/term.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791142793993161834/term.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/kill.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/kill.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/kill.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/latefork.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/latefork.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/latefork.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/nonzero.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/nonzero.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/nonzero.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/setsid.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/setsid.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/setsid.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/term.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/term.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143239084156107/term.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/kill.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/kill.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/kill.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/latefork.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/latefork.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/latefork.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/nonzero.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/nonzero.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/nonzero.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/setsid.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/setsid.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/setsid.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/term.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/term.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791143334870142606/term.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/kill.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/kill.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/kill.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/latefork.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/latefork.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/latefork.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/nonzero.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/nonzero.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/nonzero.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/setsid.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/setsid.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/setsid.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/term.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/term.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791144029754725509/term.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/kill.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/kill.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/kill.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/latefork.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/latefork.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/latefork.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/nonzero.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/nonzero.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/nonzero.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/setsid.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/setsid.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/setsid.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/term.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/term.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791145141560625926/term.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/kill.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/kill.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/kill.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/latefork.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/latefork.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/latefork.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/live-orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/live-orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/live-orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/nonzero.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/nonzero.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/nonzero.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/setsid.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/setsid.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/setsid.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/term.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/term.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146156426225148/term.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/kill.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/kill.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/kill.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/latefork.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/latefork.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/latefork.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/live-orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/live-orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/live-orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/nonzero.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/nonzero.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/nonzero.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/normal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/normal.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/normal.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/orphan.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/orphan.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/orphan.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/setsid.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/setsid.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/setsid.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/term.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/term.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-1791146368501734902/term.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-overlay-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/activation_import.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/actor-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/actor.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bounded.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791143778379153379/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791143778379153379/silent-peer.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791143778379153379/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791143778379153379/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791144029846447331/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791144029846447331/silent-peer.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791144029846447331/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791144029846447331/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791145141699087871/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791145141699087871/silent-peer.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791145141699087871/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791145141699087871/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791146368602592757/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791146368602592757/silent-peer.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791146368602592757/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-1791146368602592757/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-deadline-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791143914363766714/inputs/bus-journal-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791143914363766714/inputs/private_bus.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791143914363766714/journal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791143914363766714/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791143947474053374/journal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791143947474053374/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791144029852126353/journal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791144029852126353/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791145141696416378/journal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791145141696416378/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791146368623564836/journal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-1791146368623564836/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/bus-journal-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/cleanup-regression-1791145929175370349/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/cleanup-regression-1791146368524082762/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/cleanup-regression-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/cleanup.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/conversion-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/freeze-current.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/freeze-final.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/geometry.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/journal-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/journal.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/inputs.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.a11y.Bus/3455957-1791145441124779207.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.impl.portal.PermissionStore/3455911-1791145440969959888.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.gtk/3455929-1791145441056278454.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.hyprland/3455999-1791145441279467562.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.portal.Desktop/3455904-1791145440928898277.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.portal.Documents/3455918-1791145441011786322.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.systemd1/3455966-1791145441179006500.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.systemd1/3455993-1791145441267804307.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-journals/org.gtk.vfs.Daemon/3455968-1791145441179629684.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441515345814/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441515345814/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441515345814/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441545097554/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441545097554/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441545097554/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441574640995/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441574640995/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441574640995/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441604858842/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441604858842/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441604858842/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441634352820/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441634352820/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441634352820/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441663626078/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441663626078/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441663626078/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441692603177/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441692603177/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441692603177/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441721861930/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441721861930/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441721861930/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441751897213/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441751897213/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441751897213/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441926408316/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441926408316/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441926408316/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441942266662/record.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441942266662/stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441942266662/stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/dmabuf-probe.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/dmabuf-probe.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/gtk-role-client/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/gtk-role-client/journal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/gtk-role-client/wayland.log",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/host-evidence.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/hyprland.log",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/privateBus.log",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/ca.desrt.dconf.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.a11y.Bus.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.fcitx.Fcitx5.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.fedoraproject.Config.Printing.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.FileManager1.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.LocalSearch3.Control.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.LocalSearch3.Writeback.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.LocalSearch3.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.Tracker3.Miner.Files.Control.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.Tracker3.Miner.Files.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.Tracker3.Writeback.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.PermissionStore.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.Secret.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.desktop.gtk.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.desktop.hyprland.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.import1.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.machine1.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.portable1.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.portal.Desktop.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.portal.Documents.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.portal.Tracker.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.secrets.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.freedesktop.systemd1.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gnome.DiskUtility.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gnome.Nautilus.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gnome.NautilusPreviewer.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gnome.evince.Daemon.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gnome.keyring.PrivatePrompter.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gnome.keyring.SystemPrompter.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gnome.keyring.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gtk.GLib.PACRunner.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gtk.vfs.Daemon.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gtk.vfs.MTPVolumeMonitor.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gtk.vfs.Metadata.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/activations/org.gtk.vfs.UDisks2VolumeMonitor.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791145437_1917005377/hyprland.log",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/runtime-archive/hyprland.lua",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/weston-renderer.log",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native-evidence/weston.log",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/native.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native-1791145436509122699/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/observer.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791143374378337204/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791143374378337204/generated-session.conf",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791143374378337204/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791144029861429610/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791144029861429610/generated-session.conf",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791144029861429610/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791145141741375970/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791145141741375970/generated-session.conf",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791145141741375970/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791146368624940145/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791146368624940145/generated-session.conf",
+      "passed": true
+    },
+    {
+      "name": "held:qa/overlay-1791146368624940145/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/owned_bus_host.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/parent-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/parent.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/pixels.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/refused/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/refused/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/stale/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/stale/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/valid/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/valid/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/valid/2.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/valid/2.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/valid/3.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146331219934419/valid/3.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/refused/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/refused/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/stale/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/stale/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/valid/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/valid/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/valid/2.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/valid/2.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/valid/3.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-1791146368512330077/valid/3.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/placement.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/activation-journals/org.elm.LateActivation/3428615-1791145063380982746.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-fallback/service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/activation-journals/org.elm.LateActivation/3428572-1791145063041731293.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/late-normal/service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145062975043223/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/activation-journals/org.elm.LateActivation/3434662-1791145142253649081.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-fallback/service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/activation-journals/org.elm.LateActivation/3434505-1791145141841345135.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/late-normal/service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791145141736345573/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/activation-journals/org.elm.LateActivation/3519936-1791146369119211164.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-fallback/service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/activation-journals/org.elm.LateActivation/3519840-1791146368730147363.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/late-normal/service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-1791146368644465658/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/post-retirement-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/gdk-enums",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/gdk-enums.c",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/gdk-enums.d",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/pins.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791143573224923691/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/gdk-enums",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/gdk-enums.c",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/gdk-enums.d",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/pins.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791144029771709415/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/gdk-enums",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/gdk-enums.c",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/gdk-enums.d",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/pins.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791145141570941557/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/gdk-enums",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/gdk-enums.c",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/gdk-enums.d",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/pins.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight-1791146368533345400/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/activation-journals/org.elm.CPUActivation/3287554-1791142956727177203.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/inputs/activation-supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/inputs/activation-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/inputs/private-bus-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/inputs/private_bus.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791142956686246291/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/activation-journals/org.elm.CPUActivation/3300496-1791143130240306558.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/inputs/activation-supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/inputs/private-bus-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/inputs/private_bus.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143130177639349/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/activation-journals/org.elm.CPUActivation/3304413-1791143187774112977.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/inputs/private-bus-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/inputs/private_bus.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143187719862900/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143207598507572/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143207598507572/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143207598507572/activation-journals/org.elm.CPUActivation/3305894-1791143207648901707.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143207598507572/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143207598507572/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143207598507572/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143207598507572/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/activation-journals/org.elm.CPUActivation/3318888-1791143417222593845.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143417182666305/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/activation-journals/org.elm.CPUActivation/3346095-1791143869304644756.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143869257644857/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/activation-journals/org.elm.CPUActivation/3353470-1791143996311806926.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791143996270464813/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/activation-journals/org.elm.CPUActivation/3355382-1791144029910473223.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144029855731919/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/activation-journals/org.elm.CPUActivation/3366133-1791144211883398823.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791144211835016883/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/activation-journals/org.elm.CPUActivation/3434520-1791145141874916189.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791145141774833380/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/activation-journals/org.elm.CPUActivation/3519849-1791146368752430720.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/actual-service.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/bus.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/bus.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-1791146368683119987/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private-bus-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/private_bus.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/protocol.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/0.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/0.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/0.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/1.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/2.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/2.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/2.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/3.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/3.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/3.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/4.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/4.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/4.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/5.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/5.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/5.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/6.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/6.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/6.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/7.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/7.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/7.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791145907128486339/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/0.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/0.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/0.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/1.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/1.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/1.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/2.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/2.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/2.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/3.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/3.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/3.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/4.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/4.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/4.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/5.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/5.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/5.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/6.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/6.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/6.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/7.jsonl",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/7.stderr",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/7.stdout",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-1791146368520422717/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/rapid-reap-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/reap-body-1791146249649945147/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/reap-body-1791146368492202849/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/reap-body-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/scene.py",
+      "passed": true
+    },
+    {
+      "name": "held:qa/wire-1791142010565263351/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/wire-1791144029774457523/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/wire-1791145141573481423/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/wire-1791146368500545569/report.json",
+      "passed": true
+    },
+    {
+      "name": "held:qa/wire-test.py",
+      "passed": true
+    },
+    {
+      "name": "held:runtime/aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "held:runtime/candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "held:runtime/native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "held:runtime/parent-probe-build.json",
+      "passed": true
+    },
+    {
+      "name": "held:runtime/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "fullNativeStillFailed",
+      "passed": true
+    },
+    {
+      "name": "all27RecordedChecksPass",
+      "passed": true
+    },
+    {
+      "name": "actual:A:actualGtkMarkerRGB",
+      "passed": true
+    },
+    {
+      "name": "actual:C:actualGtkMarkerRGB",
+      "passed": true
+    },
+    {
+      "name": "actual:A:unchangedNativeAndProtocolAcrossCapture",
+      "passed": true
+    },
+    {
+      "name": "actual:C:unchangedNativeAndProtocolAcrossCapture",
+      "passed": true
+    },
+    {
+      "name": "actual:normalGtkExitAndActualEmptyNativeCensus",
+      "passed": true
+    },
+    {
+      "name": "actual:ownedToolkitObserverUnload",
+      "passed": true
+    },
+    {
+      "name": "actual:authorityPluginUnload",
+      "passed": true
+    },
+    {
+      "name": "artifact:native.py",
+      "passed": true
+    },
+    {
+      "name": "artifact:inputs.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-inventory.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/privateBus.log",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/weston.log",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/weston-renderer.log",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/dmabuf-probe.stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/dmabuf-probe.stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/hyprland.log",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-authenticated.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-cleanup.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/host-evidence.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-post-retirement.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/gtk-role-client/actor.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/gtk-role-client/journal.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/gtk-role-client/wayland.log",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/grim.stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/grim.stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/capture.png",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/extent.stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/extent.stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/decode.stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/decode.stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/A-marker-capture/capture.rgb",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/grim.stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/grim.stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/capture.png",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/extent.stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/extent.stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/decode.stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/decode.stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/C-marker-capture/capture.rgb",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/hyprland.lua",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/ca.desrt.dconf.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.a11y.Bus.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.fcitx.Fcitx5.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.fedoraproject.Config.Printing.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.FileManager1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.LocalSearch3.Control.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.LocalSearch3.Writeback.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.LocalSearch3.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.Tracker3.Miner.Files.Control.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.Tracker3.Miner.Files.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.Tracker3.Writeback.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.PermissionStore.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.Secret.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.desktop.gtk.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.impl.portal.desktop.hyprland.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.import1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.machine1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.portable1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.portal.Desktop.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.portal.Documents.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.portal.Tracker.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.secrets.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.freedesktop.systemd1.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gnome.DiskUtility.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gnome.Nautilus.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gnome.NautilusPreviewer.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gnome.evince.Daemon.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gnome.keyring.PrivatePrompter.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gnome.keyring.SystemPrompter.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gnome.keyring.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gtk.GLib.PACRunner.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gtk.vfs.Daemon.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gtk.vfs.MTPVolumeMonitor.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gtk.vfs.Metadata.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/activations/org.gtk.vfs.UDisks2VolumeMonitor.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791146652_1902436801/hyprland.log",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656117323216/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656117323216/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656117323216/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656146989352/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656146989352/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656146989352/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656176609467/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656176609467/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656176609467/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656206171510/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656206171510/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656206171510/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656236393029/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656236393029/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656236393029/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656266639780/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656266639780/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656266639780/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656296662928/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656296662928/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656296662928/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656326531408/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656326531408/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656326531408/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656356874600/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656356874600/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656356874600/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656584052411/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656584052411/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656584052411/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656602405577/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656602405577/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656602405577/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656611451447/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656611451447/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656611451447/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656620096709/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656620096709/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656620096709/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656628754987/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656628754987/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656628754987/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656637296712/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656637296712/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656637296712/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656645741026/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656645741026/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656645741026/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656654075839/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656654075839/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656654075839/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656662377703/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656662377703/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656662377703/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656670646370/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656670646370/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656670646370/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656678951110/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656678951110/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656678951110/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656687521095/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656687521095/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656687521095/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656695813174/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656695813174/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656695813174/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656704995430/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656704995430/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656704995430/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656713492743/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656713492743/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656713492743/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656721666226/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656721666226/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656721666226/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656730103075/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656730103075/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656730103075/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656738405865/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656738405865/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656738405865/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656746653759/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656746653759/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656746653759/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656760012965/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656760012965/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656760012965/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656783463158/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656783463158/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656783463158/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656809762028/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656809762028/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656809762028/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656831089560/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656831089560/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656831089560/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656839728720/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656839728720/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656839728720/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656849692392/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656849692392/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656849692392/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656870708215/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656870708215/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146656870708215/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657225916460/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657225916460/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657225916460/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657248238665/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657248238665/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657248238665/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657258851906/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657258851906/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657258851906/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657281259193/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657281259193/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657281259193/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657294961528/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657294961528/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657294961528/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657317783070/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657317783070/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657317783070/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657326655187/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657326655187/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657326655187/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657337202175/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657337202175/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657337202175/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657360225453/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657360225453/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657360225453/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657781288769/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657781288769/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657781288769/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657805117118/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657805117118/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657805117118/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657824145466/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657824145466/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657824145466/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657846845062/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657846845062/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657846845062/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657875084387/stdout",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657875084387/stderr",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/bounded-ipc/1791146657875084387/record.json",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.a11y.Bus/3541390-1791146655700795120.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.freedesktop.impl.portal.PermissionStore/3541354-1791146655543880194.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.gtk/3541373-1791146655632299241.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.hyprland/3541462-1791146655868646619.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.freedesktop.portal.Desktop/3541347-1791146655505769459.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.freedesktop.portal.Documents/3541361-1791146655585149482.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.freedesktop.systemd1/3541425-1791146655757795024.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.freedesktop.systemd1/3541460-1791146655865947882.jsonl",
+      "passed": true
+    },
+    {
+      "name": "artifact:native-evidence/activation-journals/org.gtk.vfs.Daemon/3541430-1791146655761173714.jsonl",
+      "passed": true
+    },
+    {
+      "name": "nativeCleanupTruthfullyFalse",
+      "passed": true
+    },
+    {
+      "name": "resourceRetirementSeparate",
+      "passed": true
+    },
+    {
+      "name": "actualGTKNormalExit",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.a11y.Bus",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.freedesktop.impl.portal.PermissionStore",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.freedesktop.impl.portal.desktop.gtk",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.freedesktop.impl.portal.desktop.hyprland",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.freedesktop.portal.Desktop",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.freedesktop.portal.Documents",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.freedesktop.systemd1",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.freedesktop.systemd1",
+      "passed": true
+    },
+    {
+      "name": "completeJournal:org.gtk.vfs.Daemon",
+      "passed": true
+    },
+    {
+      "name": "actualDocumentsForeignUIDRefusal",
+      "passed": true
+    },
+    {
+      "name": "actualSystemdUnavailableExitOne",
+      "passed": true
+    },
+    {
+      "name": "normalExit15SeparateFromSignal15",
+      "passed": true
+    }
+  ],
+  "sourceNativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/report.json",
+  "recordedNativeChecks": 27,
+  "actualGTKExitCode": 0,
+  "journals": [
+    {
+      "service": "org.a11y.Bus",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.a11y.Bus/3541390-1791146655700795120.jsonl",
+      "sha256": "b89c04b09d754447d7aae2342426a99bcc7b93abd04adef8d874ba1bed7dc4a9",
+      "terminal": {
+        "sequence": 12,
+        "kind": "terminal",
+        "monotonic": 110923.944231525,
+        "childExitCode": 0,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541400,
+              "start": "11475941",
+              "pgid": 3541390,
+              "ppid": 3541390,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3541405,
+              "start": "11475941",
+              "pgid": 3541390,
+              "ppid": 3541400,
+              "uid": 1000
+            },
+            "exitCode": -15
+          },
+          {
+            "identity": {
+              "pid": 3541406,
+              "start": "11475941",
+              "pgid": 3541390,
+              "ppid": 3541405,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": [
+        {
+          "sequence": 6,
+          "kind": "signal",
+          "monotonic": 110923.877022455,
+          "identity": {
+            "pid": 3541400,
+            "start": "11475941",
+            "pgid": 3541390,
+            "ppid": 3541390,
+            "uid": 1000
+          },
+          "signal": 15
+        },
+        {
+          "sequence": 7,
+          "kind": "signal",
+          "monotonic": 110923.877101068,
+          "identity": {
+            "pid": 3541405,
+            "start": "11475941",
+            "pgid": 3541390,
+            "ppid": 3541400,
+            "uid": 1000
+          },
+          "signal": 15
+        },
+        {
+          "sequence": 8,
+          "kind": "signal",
+          "monotonic": 110923.877166714,
+          "identity": {
+            "pid": 3541406,
+            "start": "11475941",
+            "pgid": 3541390,
+            "ppid": 3541405,
+            "uid": 1000
+          },
+          "signal": 15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.impl.portal.PermissionStore",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.impl.portal.PermissionStore/3541354-1791146655543880194.jsonl",
+      "sha256": "55d7d6e84c614cd9ce73abc76f01ee97e3f166214927df178446065e59f59953",
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 110923.933144304,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541355,
+              "start": "11475925",
+              "pgid": 3541354,
+              "ppid": 3541354,
+              "uid": 1000
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": [
+        {
+          "sequence": 4,
+          "kind": "signal",
+          "monotonic": 110923.885453262,
+          "identity": {
+            "pid": 3541355,
+            "start": "11475925",
+            "pgid": 3541354,
+            "ppid": 3541354,
+            "uid": 1000
+          },
+          "signal": 15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.impl.portal.desktop.gtk",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.gtk/3541373-1791146655632299241.jsonl",
+      "sha256": "de1665ac5054fe07934182454ebebea3b7403abe6fc99e129a54e5ed432d485c",
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 110923.978017923,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541383,
+              "start": "11475934",
+              "pgid": 3541373,
+              "ppid": 3541373,
+              "uid": 1000
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": [
+        {
+          "sequence": 4,
+          "kind": "signal",
+          "monotonic": 110923.91411403,
+          "identity": {
+            "pid": 3541383,
+            "start": "11475934",
+            "pgid": 3541373,
+            "ppid": 3541373,
+            "uid": 1000
+          },
+          "signal": 15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.impl.portal.desktop.hyprland",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.hyprland/3541462-1791146655868646619.jsonl",
+      "sha256": "1ed484d075010195efccbc149695150763b4cd84c23c543970dd739fe87ce489",
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 110923.978021431,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541464,
+              "start": "11475957",
+              "pgid": 3541462,
+              "ppid": 3541462,
+              "uid": 1000
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": [
+        {
+          "sequence": 4,
+          "kind": "signal",
+          "monotonic": 110923.914456399,
+          "identity": {
+            "pid": 3541464,
+            "start": "11475957",
+            "pgid": 3541462,
+            "ppid": 3541462,
+            "uid": 1000
+          },
+          "signal": 15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.portal.Desktop",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.portal.Desktop/3541347-1791146655505769459.jsonl",
+      "sha256": "fb5f7acaec70b5180bdfccc504b56a9e9c9bf253e5cb20098233a29cf3c6ed11",
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 110923.939577078,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541348,
+              "start": "11475921",
+              "pgid": 3541347,
+              "ppid": 3541347,
+              "uid": 1000
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": [
+        {
+          "sequence": 4,
+          "kind": "signal",
+          "monotonic": 110923.87088864,
+          "identity": {
+            "pid": 3541348,
+            "start": "11475921",
+            "pgid": 3541347,
+            "ppid": 3541347,
+            "uid": 1000
+          },
+          "signal": 15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.portal.Documents",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.portal.Documents/3541361-1791146655585149482.jsonl",
+      "sha256": "bfed6022715de1aaad8a2e3d2b2d40de99f01e8000db0809fb8a995b48064d4c",
+      "terminal": {
+        "sequence": 7,
+        "kind": "terminal",
+        "monotonic": 110923.97803925,
+        "childExitCode": 0,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541362,
+              "start": "11475929",
+              "pgid": 3541361,
+              "ppid": 3541361,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": "RuntimeError('foreign UID')"
+      },
+      "signals": [
+        {
+          "sequence": 4,
+          "kind": "signal",
+          "monotonic": 110923.914454776,
+          "identity": {
+            "pid": 3541362,
+            "start": "11475929",
+            "pgid": 3541361,
+            "ppid": 3541361,
+            "uid": 1000
+          },
+          "signal": 15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.systemd1",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.systemd1/3541425-1791146655757795024.jsonl",
+      "sha256": "5902ece1349260b9e214161c540f688e1d64a55116d98236b114182b11cbf1f4",
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 110921.738833144,
+        "childExitCode": 1,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541444,
+              "start": "11475946",
+              "pgid": 3541425,
+              "ppid": 3541425,
+              "uid": 1000
+            },
+            "exitCode": 1
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": []
+    },
+    {
+      "service": "org.freedesktop.systemd1",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.systemd1/3541460-1791146655865947882.jsonl",
+      "sha256": "fffc717c04e5a83d5028cc14176789a57053fb4168b1d5dc488fddc268772a21",
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 110921.861468284,
+        "childExitCode": 1,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541463,
+              "start": "11475957",
+              "pgid": 3541460,
+              "ppid": 3541460,
+              "uid": 1000
+            },
+            "exitCode": 1
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": []
+    },
+    {
+      "service": "org.gtk.vfs.Daemon",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.gtk.vfs.Daemon/3541430-1791146655761173714.jsonl",
+      "sha256": "380a8ca41ff78b1306fd9725d0900f1298d185bad256476782fd6f0097b05a46",
+      "terminal": {
+        "sequence": 9,
+        "kind": "terminal",
+        "monotonic": 110923.94238818,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3541445,
+              "start": "11475947",
+              "pgid": 3541430,
+              "ppid": 3541430,
+              "uid": 1000
+            },
+            "exitCode": -15
+          },
+          {
+            "identity": {
+              "pid": 3541451,
+              "start": "11475948",
+              "pgid": 3541430,
+              "ppid": 3541430,
+              "uid": 1000
+            },
+            "exitCode": 15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "signals": [
+        {
+          "sequence": 5,
+          "kind": "signal",
+          "monotonic": 110923.890129716,
+          "identity": {
+            "pid": 3541445,
+            "start": "11475947",
+            "pgid": 3541430,
+            "ppid": 3541430,
+            "uid": 1000
+          },
+          "signal": 15
+        },
+        {
+          "sequence": 6,
+          "kind": "signal",
+          "monotonic": 110923.890194437,
+          "identity": {
+            "pid": 3541451,
+            "start": "11475948",
+            "pgid": 3541430,
+            "ppid": 3541430,
+            "uid": 1000
+          },
+          "signal": 15
+        }
+      ]
+    }
+  ],
+  "artifactCount": 227
+}

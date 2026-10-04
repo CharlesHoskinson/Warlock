@@ -1,0 +1,162 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualCPUProcessesOnly": true,
+  "checks": [
+    {
+      "name": "normal",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3355355,
+            "start": "11213351",
+            "pgid": 3355354,
+            "ppid": 3355354,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791144029754725509/normal.jsonl"
+    },
+    {
+      "name": "nonzero",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3355401,
+            "start": "11213371",
+            "pgid": 3355384,
+            "ppid": 3355384,
+            "uid": 1000
+          },
+          "exitCode": 7
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791144029754725509/nonzero.jsonl"
+    },
+    {
+      "name": "term",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3355407,
+            "start": "11213392",
+            "pgid": 3355403,
+            "ppid": 3355403,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791144029754725509/term.jsonl"
+    },
+    {
+      "name": "kill",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3355413,
+            "start": "11213406",
+            "pgid": 3355412,
+            "ppid": 3355412,
+            "uid": 1000
+          },
+          "exitCode": -9
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791144029754725509/kill.jsonl"
+    },
+    {
+      "name": "orphan",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3355416,
+            "start": "11213471",
+            "pgid": 3355415,
+            "ppid": 3355415,
+            "uid": 1000
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3355417,
+            "start": "11213472",
+            "pgid": 3355415,
+            "ppid": 3355416,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791144029754725509/orphan.jsonl"
+    },
+    {
+      "name": "setsid",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3355471,
+            "start": "11213503",
+            "pgid": 3355470,
+            "ppid": 3355470,
+            "uid": 1000
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3355472,
+            "start": "11213504",
+            "pgid": 3355472,
+            "ppid": 3355471,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791144029754725509/setsid.jsonl"
+    },
+    {
+      "name": "latefork",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3355481,
+            "start": "11213534",
+            "pgid": 3355480,
+            "ppid": 3355480,
+            "uid": 1000
+          },
+          "exitCode": -9
+        },
+        {
+          "identity": {
+            "pid": 3355482,
+            "start": "11213541",
+            "pgid": 3355482,
+            "ppid": 3355481,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791144029754725509/latefork.jsonl"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-test.py": "65c0fb35dccb52328571bc579a7e17c1e14283fcd5292bd2acc8d6fe7b486eec",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-supervisor.py": "c9817f2cd6469fde567dd19decf1356d70ffec34dc60f9feeac1ff022865ed7d",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  }
+}

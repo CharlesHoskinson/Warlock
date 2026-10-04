@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-supervisor.py", line 75, in <module>
+    if __name__=='__main__':sys.exit(main())
+                                     ~~~~^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-supervisor.py", line 56, in main
+    discover()
+    ~~~~~~~~^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-supervisor.py", line 40, in discover
+    row=identity(int(p.name))
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-supervisor.py", line 9, in identity
+    if st.st_uid!=os.getuid():raise RuntimeError('foreign process UID')
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: foreign process UID

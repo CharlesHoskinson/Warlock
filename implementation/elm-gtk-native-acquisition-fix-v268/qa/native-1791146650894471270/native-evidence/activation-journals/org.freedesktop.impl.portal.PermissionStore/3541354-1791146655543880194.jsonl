@@ -1,0 +1,6 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 110921.480128086, "identity": {"pid": 3541354, "start": "11475922", "pgid": 3541354, "ppid": 3541353, "uid": 1000}, "argv": ["/usr/lib/xdg-permission-store"], "descriptor": "/run/user/1000/wqa/2fea/activations/org.freedesktop.impl.portal.PermissionStore.json", "descriptorSHA256": "7ac3f0d1fbb4b616b52824eab69bfa869f3d3ae309648c3338cbcddee2ec21eb"}
+{"sequence": 2, "kind": "owned-child", "monotonic": 110921.480553095, "identity": {"pid": 3541355, "start": "11475925", "pgid": 3541354, "ppid": 3541354, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 110923.885359756}
+{"sequence": 4, "kind": "signal", "monotonic": 110923.885453262, "identity": {"pid": 3541355, "start": "11475925", "pgid": 3541354, "ppid": 3541354, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "child-exit", "monotonic": 110923.914702226, "identity": {"pid": 3541355, "start": "11475925", "pgid": 3541354, "ppid": 3541354, "uid": 1000}, "waitStatus": 15, "exitCode": -15}
+{"sequence": 6, "kind": "terminal", "monotonic": 110923.933144304, "childExitCode": -15, "cancelled": true, "fallback": false, "allWaitStatuses": [{"identity": {"pid": 3541355, "start": "11475925", "pgid": 3541354, "ppid": 3541354, "uid": 1000}, "exitCode": -15}], "liveDescendants": [], "error": null}

@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "busIdentity": {
+    "pid": 3434489,
+    "start": "11324544",
+    "pgid": 3434489,
+    "ppid": 3434405,
+    "uid": 1000
+  },
+  "records": [
+    {
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-1791145141736345573/late-normal/activation-journals/org.elm.LateActivation/3434505-1791145141841345135.jsonl",
+      "sha256": "79668b2b0e7ff7c313a2161d453740ea4a2cf2c85778349430a5ef3fe7be06b0",
+      "wrapper": {
+        "pid": 3434505,
+        "start": "11324548",
+        "pgid": 3434505,
+        "ppid": 3434504,
+        "uid": 1000
+      },
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 109408.083494989,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3434526,
+              "start": "11324555",
+              "pgid": 3434505,
+              "ppid": 3434505,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "exitClasses": {
+        "3434526:11324555": "normal"
+      }
+    }
+  ]
+}

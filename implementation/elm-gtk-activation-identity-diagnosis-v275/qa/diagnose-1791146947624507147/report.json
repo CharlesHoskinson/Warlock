@@ -1,0 +1,203 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualNativePassed": false,
+  "recordedPassedChecks": 27,
+  "actualNondumpableControl": {
+    "credentials": {
+      "pid": 3561409,
+      "ruid": 1000,
+      "euid": 1000,
+      "procOwner": 1000,
+      "statusUIDs": [
+        1000,
+        1000,
+        1000,
+        1000
+      ]
+    },
+    "identityRefusal": null,
+    "expectedMismatchReproduced": false
+  },
+  "actualOwnedFusermountVersionControl": {
+    "pid": 3561431,
+    "waitidUID": 1000,
+    "waitidCode": 1,
+    "waitidStatus": 0,
+    "procOwner": 0,
+    "statusUIDs": [
+      "1000",
+      "0",
+      "0",
+      "0"
+    ],
+    "identityRefusal": "foreign UID",
+    "exitCode": 0,
+    "stdout": "fusermount3 version: 3.18.2\n",
+    "stderr": ""
+  },
+  "childExit": 0,
+  "journals": [
+    {
+      "service": "org.a11y.Bus",
+      "argv": [
+        "/usr/lib/at-spi-bus-launcher"
+      ],
+      "primary": 0,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541400,
+          "exitCode": 0
+        },
+        {
+          "pid": 3541405,
+          "exitCode": -15
+        },
+        {
+          "pid": 3541406,
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.impl.portal.PermissionStore",
+      "argv": [
+        "/usr/lib/xdg-permission-store"
+      ],
+      "primary": -15,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541355,
+          "exitCode": -15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.impl.portal.desktop.gtk",
+      "argv": [
+        "/usr/lib/xdg-desktop-portal-gtk"
+      ],
+      "primary": -15,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541383,
+          "exitCode": -15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.impl.portal.desktop.hyprland",
+      "argv": [
+        "/usr/lib/xdg-desktop-portal-hyprland"
+      ],
+      "primary": -15,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541464,
+          "exitCode": -15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.portal.Desktop",
+      "argv": [
+        "/usr/lib/xdg-desktop-portal"
+      ],
+      "primary": -15,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541348,
+          "exitCode": -15
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.portal.Documents",
+      "argv": [
+        "/usr/lib/xdg-document-portal"
+      ],
+      "primary": 0,
+      "error": "RuntimeError('foreign UID')",
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541362,
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.systemd1",
+      "argv": [
+        "/bin/false"
+      ],
+      "primary": 1,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541444,
+          "exitCode": 1
+        }
+      ]
+    },
+    {
+      "service": "org.freedesktop.systemd1",
+      "argv": [
+        "/bin/false"
+      ],
+      "primary": 1,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541463,
+          "exitCode": 1
+        }
+      ]
+    },
+    {
+      "service": "org.gtk.vfs.Daemon",
+      "argv": [
+        "/usr/lib/gvfsd"
+      ],
+      "primary": -15,
+      "error": null,
+      "fallback": false,
+      "statuses": [
+        {
+          "pid": 3541445,
+          "exitCode": -15
+        },
+        {
+          "pid": 3541451,
+          "exitCode": 15
+        }
+      ]
+    }
+  ],
+  "exactForeignChildIdentityKnown": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/report.json": "4a0deb7f37e280fa23f1f94f49a0cef6e714f14fa6f49ca0762fd5856b7a85cd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-supervisor.py": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.a11y.Bus/3541390-1791146655700795120.jsonl": "b89c04b09d754447d7aae2342426a99bcc7b93abd04adef8d874ba1bed7dc4a9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.impl.portal.PermissionStore/3541354-1791146655543880194.jsonl": "55d7d6e84c614cd9ce73abc76f01ee97e3f166214927df178446065e59f59953",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.gtk/3541373-1791146655632299241.jsonl": "de1665ac5054fe07934182454ebebea3b7403abe6fc99e129a54e5ed432d485c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.hyprland/3541462-1791146655868646619.jsonl": "1ed484d075010195efccbc149695150763b4cd84c23c543970dd739fe87ce489",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.portal.Desktop/3541347-1791146655505769459.jsonl": "fb5f7acaec70b5180bdfccc504b56a9e9c9bf253e5cb20098233a29cf3c6ed11",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.portal.Documents/3541361-1791146655585149482.jsonl": "bfed6022715de1aaad8a2e3d2b2d40de99f01e8000db0809fb8a995b48064d4c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.systemd1/3541425-1791146655757795024.jsonl": "5902ece1349260b9e214161c540f688e1d64a55116d98236b114182b11cbf1f4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.freedesktop.systemd1/3541460-1791146655865947882.jsonl": "fffc717c04e5a83d5028cc14176789a57053fb4168b1d5dc488fddc268772a21",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/native-1791146650894471270/native-evidence/activation-journals/org.gtk.vfs.Daemon/3541430-1791146655761173714.jsonl": "380a8ca41ff78b1306fd9725d0900f1298d185bad256476782fd6f0097b05a46"
+  }
+}

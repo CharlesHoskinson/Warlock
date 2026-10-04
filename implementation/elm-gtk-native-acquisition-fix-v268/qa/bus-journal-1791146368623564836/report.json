@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "valid",
+      "passed": true,
+      "accepted": true
+    },
+    {
+      "name": "boolseq",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "boolpid",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "extra",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "badstatus",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "numericcancel",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "nonfiniteerror",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "boolchildexit",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "duplicateseq",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "partialterminal",
+      "passed": true,
+      "accepted": false
+    },
+    {
+      "name": "laterrecord",
+      "passed": true,
+      "accepted": false
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/bus-journal-test.py": "c9e9bed2ec58b13b2ac19fdadd36bd3c9ed2cf842c4c8f96850a8338c1604a83",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/private_bus.py": "121e001cf0b0951a49769d6c70e82bd444dee0181383966c1d0e9d9157dbd67b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791143869257644857/activation-journals/org.elm.CPUActivation/3346095-1791143869304644756.jsonl": "f1139f6d686e6879e1f58dcb8d890cbf3e8b9322a5621043a356b20b3d67f673",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-supervisor.py": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba"
+  }
+}

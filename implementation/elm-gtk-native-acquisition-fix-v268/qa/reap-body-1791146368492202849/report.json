@@ -1,0 +1,141 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualProductionBodyKernelDoubles": true,
+  "checks": [
+    {
+      "name": "correct",
+      "passed": true,
+      "consumed": [
+        [
+          200,
+          1
+        ]
+      ],
+      "events": [
+        {
+          "kind": "child-exit",
+          "identity": {
+            "pid": 200,
+            "start": "123",
+            "pgid": 100,
+            "ppid": 100,
+            "uid": 1000
+          },
+          "waitStatus": 0,
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "new-adopted",
+      "passed": true,
+      "consumed": [
+        [
+          200,
+          1
+        ]
+      ],
+      "events": [
+        {
+          "kind": "owned-child",
+          "identity": {
+            "pid": 200,
+            "start": "123",
+            "pgid": 100,
+            "ppid": 100,
+            "uid": 1000
+          }
+        },
+        {
+          "kind": "kernel-child-acquired",
+          "identity": {
+            "pid": 200,
+            "start": "123",
+            "pgid": 100,
+            "ppid": 100,
+            "uid": 1000
+          },
+          "waitidCode": 1,
+          "waitidStatus": 0
+        },
+        {
+          "kind": "child-exit",
+          "identity": {
+            "pid": 200,
+            "start": "123",
+            "pgid": 100,
+            "ppid": 100,
+            "uid": 1000
+          },
+          "waitStatus": 0,
+          "exitCode": 0
+        }
+      ]
+    },
+    {
+      "name": "wrong-pid",
+      "passed": true,
+      "consumed": [],
+      "events": []
+    },
+    {
+      "name": "wrong-start",
+      "passed": true,
+      "consumed": [],
+      "events": []
+    },
+    {
+      "name": "wrong-uid",
+      "passed": true,
+      "consumed": [],
+      "events": []
+    },
+    {
+      "name": "wrong-parent",
+      "passed": true,
+      "consumed": [],
+      "events": []
+    },
+    {
+      "name": "wrong-waitpid",
+      "passed": true,
+      "consumed": [
+        [
+          200,
+          1
+        ]
+      ],
+      "events": []
+    },
+    {
+      "name": "wrong-status",
+      "passed": true,
+      "consumed": [
+        [
+          200,
+          1
+        ]
+      ],
+      "events": [
+        {
+          "kind": "child-exit",
+          "identity": {
+            "pid": 200,
+            "start": "123",
+            "pgid": 100,
+            "ppid": 100,
+            "uid": 1000
+          },
+          "waitStatus": 0,
+          "exitCode": 0
+        }
+      ]
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/reap-body-test.py": "30c6ac218a69059bbe78d1db3f282b7385d6aab08307556c353f97f841c82b9e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-supervisor.py": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba"
+  },
+  "productionBodyAST": "FunctionDef(name='reap', args=arguments(), body=[While(test=Constant(value=True), body=[Try(body=[Assign(targets=[Name(id='pending', ctx=Store())], value=Call(func=Attribute(value=Name(id='os', ctx=Load()), attr='waitid', ctx=Load()), args=[Attribute(value=Name(id='os', ctx=Load()), attr='P_ALL', ctx=Load()), Constant(value=0), BinOp(left=BinOp(left=Attribute(value=Name(id='os', ctx=Load()), attr='WEXITED', ctx=Load()), op=BitOr(), right=Attribute(value=Name(id='os', ctx=Load()), attr='WNOHANG', ctx=Load())), op=BitOr(), right=Attribute(value=Name(id='os', ctx=Load()), attr='WNOWAIT', ctx=Load()))]))], handlers=[ExceptHandler(type=Name(id='ChildProcessError', ctx=Load()), body=[Return()])]), If(test=Compare(left=Name(id='pending', ctx=Load()), ops=[Is()], comparators=[Constant(value=None)]), body=[Return()]), Assign(targets=[Name(id='row', ctx=Store())], value=Call(func=Name(id='identity', ctx=Load()), args=[Attribute(value=Name(id='pending', ctx=Load()), attr='si_pid', ctx=Load())])), If(test=Compare(left=Subscript(value=Name(id='row', ctx=Load()), slice=Constant(value='pid'), ctx=Load()), ops=[NotEq()], comparators=[Attribute(value=Name(id='pending', ctx=Load()), attr='si_pid', ctx=Load())]), body=[Raise(exc=Call(func=Name(id='RuntimeError', ctx=Load()), args=[Constant(value='pending exact PID identity')]))]), If(test=Compare(left=Attribute(value=Name(id='pending', ctx=Load()), attr='si_uid', ctx=Load()), ops=[NotEq()], comparators=[Subscript(value=Name(id='row', ctx=Load()), slice=Constant(value='uid'), ctx=Load())]), body=[Raise(exc=Call(func=Name(id='RuntimeError', ctx=Load()), args=[Constant(value='pending waitid UID correlation')]))]), If(test=Compare(left=Subscript(value=Name(id='row', ctx=Load()), slice=Constant(value='ppid'), ctx=Load()), ops=[NotEq()], comparators=[Subscript(value=Name(id='own', ctx=Load()), slice=Constant(value='pid'), ctx=Load())]), body=[Raise(exc=Call(func=Name(id='RuntimeError', ctx=Load()), args=[Constant(value='pending exit is not direct owned kernel child')]))]), Assign(targets=[Name(id='k', ctx=Store())], value=Call(func=Name(id='key', ctx=Load()), args=[Name(id='row', ctx=Load())])), Assign(targets=[Name(id='prior', ctx=Store())], value=ListComp(elt=Name(id='old', ctx=Load()), generators=[comprehension(target=Name(id='old', ctx=Store()), iter=Name(id='known', ctx=Load()), ifs=[BoolOp(op=And(), values=[Compare(left=Subscript(value=Name(id='old', ctx=Load()), slice=Constant(value=0), ctx=Load()), ops=[Eq()], comparators=[Attribute(value=Name(id='pending', ctx=Load()), attr='si_pid', ctx=Load())]), Compare(left=Name(id='old', ctx=Load()), ops=[NotIn()], comparators=[Name(id='statuses', ctx=Load())])])], is_async=0)])), If(test=BoolOp(op=And(), values=[Name(id='prior', ctx=Load()), Compare(left=Name(id='prior', ctx=Load()), ops=[NotEq()], comparators=[List(elts=[Name(id='k', ctx=Load())], ctx=Load())])]), body=[Raise(exc=Call(func=Name(id='RuntimeError', ctx=Load()), args=[Constant(value='pending child PID/start changed')]))]), If(test=Compare(left=Name(id='k', ctx=Load()), ops=[NotIn()], comparators=[Name(id='known', ctx=Load())]), body=[Assign(targets=[Subscript(value=Name(id='known', ctx=Load()), slice=Name(id='k', ctx=Load()), ctx=Store())], value=Name(id='row', ctx=Load())), Expr(value=Call(func=Name(id='emit', ctx=Load()), args=[Constant(value='owned-child')], keywords=[keyword(arg='identity', value=Name(id='row', ctx=Load()))])), Expr(value=Call(func=Name(id='emit', ctx=Load()), args=[Constant(value='kernel-child-acquired')], keywords=[keyword(arg='identity', value=Name(id='row', ctx=Load())), keyword(arg='waitidCode', value=Attribute(value=Name(id='pending', ctx=Load()), attr='si_code', ctx=Load())), keyword(arg='waitidStatus', value=Attribute(value=Name(id='pending', ctx=Load()), attr='si_status', ctx=Load()))]))]), If(test=Compare(left=Name(id='k', ctx=Load()), ops=[In()], comparators=[Name(id='statuses', ctx=Load())]), body=[Raise(exc=Call(func=Name(id='RuntimeError', ctx=Load()), args=[Constant(value='duplicate exact pending child exit')]))]), Assign(targets=[Tuple(elts=[Name(id='pid', ctx=Store()), Name(id='status', ctx=Store())], ctx=Store())], value=Call(func=Attribute(value=Name(id='os', ctx=Load()), attr='waitpid', ctx=Load()), args=[Attribute(value=Name(id='pending', ctx=Load()), attr='si_pid', ctx=Load()), Attribute(value=Name(id='os', ctx=Load()), attr='WNOHANG', ctx=Load())])), If(test=Compare(left=Name(id='pid', ctx=Load()), ops=[NotEq()], comparators=[Attribute(value=Name(id='pending', ctx=Load()), attr='si_pid', ctx=Load())]), body=[Raise(exc=Call(func=Name(id='RuntimeError', ctx=Load()), args=[Constant(value='exact pending waitpid correlation')]))]), Assign(targets=[Name(id='code', ctx=Store())], value=Call(func=Attribute(value=Name(id='os', ctx=Load()), attr='waitstatus_to_exitcode', ctx=Load()), args=[Name(id='status', ctx=Load())])), Assign(targets=[Name(id='expected', ctx=Store())], value=IfExp(test=Compare(left=Attribute(value=Name(id='pending', ctx=Load()), attr='si_code', ctx=Load()), ops=[Eq()], comparators=[Attribute(value=Name(id='os', ctx=Load()), attr='CLD_EXITED', ctx=Load())]), body=Attribute(value=Name(id='pending', ctx=Load()), attr='si_status', ctx=Load()), orelse=IfExp(test=Compare(left=Attribute(value=Name(id='pending', ctx=Load()), attr='si_code', ctx=Load()), ops=[In()], comparators=[Tuple(elts=[Attribute(value=Name(id='os', ctx=Load()), attr='CLD_KILLED', ctx=Load()), Attribute(value=Name(id='os', ctx=Load()), attr='CLD_DUMPED', ctx=Load())], ctx=Load())]), body=UnaryOp(op=USub(), operand=Attribute(value=Name(id='pending', ctx=Load()), attr='si_status', ctx=Load())), orelse=Constant(value=None)))), Assign(targets=[Subscript(value=Name(id='statuses', ctx=Load()), slice=Name(id='k', ctx=Load()), ctx=Store())], value=Name(id='code', ctx=Load())), Expr(value=Call(func=Name(id='emit', ctx=Load()), args=[Constant(value='child-exit')], keywords=[keyword(arg='identity', value=Subscript(value=Name(id='known', ctx=Load()), slice=Name(id='k', ctx=Load()), ctx=Load())), keyword(arg='waitStatus', value=Name(id='status', ctx=Load())), keyword(arg='exitCode', value=Name(id='code', ctx=Load()))])), If(test=BoolOp(op=And(), values=[Compare(left=Name(id='child', ctx=Load()), ops=[IsNot()], comparators=[Constant(value=None)]), Compare(left=Name(id='pid', ctx=Load()), ops=[Eq()], comparators=[Attribute(value=Name(id='child', ctx=Load()), attr='pid', ctx=Load())])]), body=[Assign(targets=[Attribute(value=Name(id='child', ctx=Load()), attr='returncode', ctx=Store())], value=Name(id='code', ctx=Load()))]), If(test=Compare(left=Name(id='code', ctx=Load()), ops=[NotEq()], comparators=[Name(id='expected', ctx=Load())]), body=[Raise(exc=Call(func=Name(id='RuntimeError', ctx=Load()), args=[Constant(value='waitid versus waitpid actual status correlation')]))])])])"
+}

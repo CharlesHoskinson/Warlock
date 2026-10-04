@@ -1,0 +1,6 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 109706.906175368, "identity": {"pid": 3455911, "start": "11354464", "pgid": 3455911, "ppid": 3455910, "uid": 1000}, "argv": ["/usr/lib/xdg-permission-store"], "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.impl.portal.PermissionStore.json", "descriptorSHA256": "7ac3f0d1fbb4b616b52824eab69bfa869f3d3ae309648c3338cbcddee2ec21eb"}
+{"sequence": 2, "kind": "owned-child", "monotonic": 109706.906592903, "identity": {"pid": 3455912, "start": "11354467", "pgid": 3455911, "ppid": 3455911, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 109707.931815208}
+{"sequence": 4, "kind": "signal", "monotonic": 109707.93191438, "identity": {"pid": 3455912, "start": "11354467", "pgid": 3455911, "ppid": 3455911, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "child-exit", "monotonic": 109707.964834691, "identity": {"pid": 3455912, "start": "11354467", "pgid": 3455911, "ppid": 3455911, "uid": 1000}, "waitStatus": 15, "exitCode": -15}
+{"sequence": 6, "kind": "terminal", "monotonic": 109707.964893173, "childExitCode": -15, "cancelled": true, "fallback": false, "allWaitStatuses": [{"identity": {"pid": 3455912, "start": "11354467", "pgid": 3455911, "ppid": 3455911, "uid": 1000}, "exitCode": -15}], "liveDescendants": [], "error": null}
