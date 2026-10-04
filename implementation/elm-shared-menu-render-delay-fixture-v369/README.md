@@ -1,0 +1,1 @@
+Controlled QA fixture deriving diagnostic366: delay menu-only presentation acknowledgement600ms under existing elmHostQA, rechecking exact current publication/lease when timer fires. Actual menu rendering/input stay enabled. No production admission changes. This fixture tests Escape during an acknowledged-pending render transition; no release acceptance.

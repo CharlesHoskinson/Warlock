@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "scope": "Abstract ordered native press/release versus asynchronous WebKit message, exact once terminal dispatch, no synthetic release, repeat/deadline/retirement refusal. Valid scope summarizes engine/view/generation/publication/lease/epoch; Implicit keyboard-click suppression is modeled explicitly; no automatic refinement or native timing proof.",
+  "sourceSHA256": "9b2d611c18935d1b2c0ee412b8c3d201a7e0c089c080f3de183b7a0941b07afd",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(pressNeverClosesTest|releaseOnceTest|secondEscapeTest|forgedReleaseTest|retirementKeepsHeldTest|scopeChangeRefusesTest|deadlineNeverRenewedTest|repeatNeverClosesTest|replayPreservesOriginalTest|earlyReleaseTest|earlyReleaseOnceTest|expiredEarlyReleaseTest|changedEarlyReleaseTest|webWithoutNativePressTest|implicitClickCannotBypassTest|pendingRenderEscapeTest|pendingRenderEnterRefusedTest|acknowledgedEnterTest|pendingRenderGrabLostTest|pendingRenderExpiredTest|pendingRenderScopeChangedTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "unsafeBrowserFallback": {
+    "command": [
+      "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+      "test",
+      "unsafe.qnt",
+      "--backend=typescript",
+      "--match=^implicitClickCannotBypassTest$",
+      "--max-samples=1",
+      "--seed=170024"
+    ],
+    "exitCode": 1,
+    "detected": true
+  },
+  "unsafeRenderReadiness": {
+    "exitCode": 1,
+    "detected": true
+  },
+  "namedScenarios": 21,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "9b2d611c18935d1b2c0ee412b8c3d201a7e0c089c080f3de183b7a0941b07afd",
+    "model.py": "a5000f04066cdb19cc3cc56af37a67eb46bfcc118418b1cc9960ae08febf2a0f",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-pressNeverClosesTest-0.itf.json": "f1150bd2226ab1e6f880a6078d02e07493eb331a8785b6356df256cdc036c65c",
+    "named-releaseOnceTest-1.itf.json": "a84eb43d7ddae7f5eadb3bd98cf02265d27628985946ecaa9059591dc5c108bd",
+    "named-secondEscapeTest-2.itf.json": "38c4ee9487c4415856a09006f16a400bd45be4f01efcd9126dac4a2a87fca074",
+    "named-forgedReleaseTest-3.itf.json": "f326ead0e1be9afaa4b9e5ac8eaeba85a12d631fe788ee3645fabd47cfe66716",
+    "named-retirementKeepsHeldTest-4.itf.json": "cfc0baf0a61003448877dafe1f2942898fd0f9b1a2a1dc89f1657da00368c4cf",
+    "named-scopeChangeRefusesTest-5.itf.json": "be5911180cd5e3339c2c1ac755e1a00a9eb576bd916fdea83f1e58fc02f0ada5",
+    "named-deadlineNeverRenewedTest-6.itf.json": "2919905dc0c6ce514852703df21b82428a4a2efef05eec2ae54b47d17bcde97c",
+    "named-repeatNeverClosesTest-7.itf.json": "4a10f15968b88ce4dc27bdd3b4dc08ffdcde5482ff99e9f87e6dc779d943cc67",
+    "named-replayPreservesOriginalTest-8.itf.json": "193de628cffd19bf6b928aeaa7faa711ff9708f928df4e269685bf061d034e67",
+    "named-earlyReleaseTest-9.itf.json": "e5e3ce498042da6fa1ead43454475f26c50b4d3c5a576d30264c25b59a24167d",
+    "named-earlyReleaseOnceTest-10.itf.json": "ede0d4ec6380bd6fb10db73fd97bb3bd9819d0bab168866d16940c80f64bf96b",
+    "named-expiredEarlyReleaseTest-11.itf.json": "258e54e6a1f3ac0de9ed997f33359cb9b0a10cc8b0492a30b17cbfb31a4a5b4e",
+    "named-changedEarlyReleaseTest-12.itf.json": "901e6b4de61df839080bcd169810ce7c1227ec32a663368d00115825acb4f8e3",
+    "named-webWithoutNativePressTest-13.itf.json": "f3b517909b43af1abda54ee64724c4d08a31fe9759370558ff3f3adaf73a4dcf",
+    "named-implicitClickCannotBypassTest-14.itf.json": "9017b557f9075e4176b14f5a52daa075e8a2868eb84fc602cb3dc8aefb639018",
+    "named-pendingRenderEscapeTest-15.itf.json": "5654645b3b7dc9d44158f8068c7eadc63dae9e520c0b93204895455b99e60736",
+    "named-pendingRenderEnterRefusedTest-16.itf.json": "a32ff114b3bb16ad698dbeedf9212a7205056950d160ff84d8fb1dad727a6eda",
+    "named-acknowledgedEnterTest-17.itf.json": "a60538c909210925e44be37518c6ea74cc8f28cf945a491db13d58009f5535e0",
+    "named-pendingRenderGrabLostTest-18.itf.json": "a8ea87bbd1d03a184e2bc9a218b7b917a05353ffc6d3d0384b2b4cfe8a0299b7",
+    "named-pendingRenderExpiredTest-19.itf.json": "1f11ca8bf9c90ed3e5ed3e96ed24b5f0a90ac33781084e49f6b3dba4cc563b4f",
+    "named-pendingRenderScopeChangedTest-20.itf.json": "f810ddcdb4590530d6fc2d13e2ab5618bf55b9982adef03f5e1042358baf1607",
+    "named.stdout": "e3c9188f97a417d97d3d18313bfa06404834425680826250cc84cd0d54f7e1de",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "da7e4071f42abe0bc9ee43530a66dfb926471906bd096f4b43ee7beb3613855c",
+    "invariants.stdout": "a3445122316ec0a1633589878289d6467b8effead6ed8f954e53ef07fdd4d211",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe.qnt": "930e0708f52473d4088eee4ec72325a9518fe5bfe22b5e820ef2a8cc354ee7d0",
+    "unsafe.stdout": "d4f7d6e28f185b35d32d5a8205b6b8b35505c1b1eca5e886b7b251d6763f2d21",
+    "unsafe.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "unsafe-render.qnt": "aa7971257d452dac895ff1efc4a556cbbdc1dcfe402ba07cf2ca0156f53a4ce0",
+    "unsafe-render.stdout": "5ca7e8cd8d680b5aa050875d776f5c1319e77003bba1cc0bbda0bbc429f520c2",
+    "unsafe-render.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

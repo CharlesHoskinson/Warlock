@@ -1,0 +1,1 @@
+Fresh controlled600ms ACK delay native derivative of374. One extra oracle: actual Return before ACK is refused and leaves menu/effect journal inert; actual fresh Escape then cancels before ACK. All original49 checks retained;50 total.

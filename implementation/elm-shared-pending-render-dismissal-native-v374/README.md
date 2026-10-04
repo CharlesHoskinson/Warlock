@@ -1,0 +1,1 @@
+Controlled menu-only600ms ACK delay campaign. First Escape must use original physical release before its exact publication/lease ACK. Subsequent Enter/actions wait exact native render ACK to retain strict mutation readiness; all inherited6s/receipts/pixels preserved.49 checks expected.

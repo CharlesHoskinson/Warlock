@@ -1,0 +1,1 @@
+Abstract terminal Escape/Enter policy adds explicit renderer readiness and native grab.21 explicitly selected cases plus invariant samples; unsafe browser click and unsafe Enter readiness controls must fail. Validity abstracts exact engine/view-generation/publication/lease/epoch and expiry abstracts original500ms. No automatic production refinement.
