@@ -1,0 +1,484 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Validated paired-observation readiness, choice/focus identity and original timer abstraction; actual Elm/native refinement separate",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "readiness.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "readiness.qnt",
+        "--backend=typescript",
+        "--match=^(projectionFirstTest|geometryFirstTest|projectionOnlyTest|geometryOnlyTest|invalidGeometryTest|invalidProjectionTest|wrongRequestTest|wrongBindingTest|wrongOutputTest|changedBindingTest|retiredRootTest|replacementRootTest|changedApplicationTest|expiredChoiceTest|oldTimerTest|disconnectedChoiceTest|supersededPairTest|freshSupersedingPairTest|duplicateCompletionTest|focusGeometryLastTest|focusProjectionLastTest|focusPopupNoStealTest)$",
+        "--max-samples=1",
+        "--seed=79001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "readiness.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-geometry-trigger-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-geometry-trigger.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-geometry-trigger-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-geometry-trigger.qnt",
+        "--backend=typescript",
+        "--match=^projectionFirstTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-projection-trigger-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-projection-trigger.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-projection-trigger-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-projection-trigger.qnt",
+        "--backend=typescript",
+        "--match=^geometryFirstTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "invalid-admitted-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "invalid-admitted.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invalid-admitted-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "invalid-admitted.qnt",
+        "--backend=typescript",
+        "--match=^invalidGeometryTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "foreign-binding-admitted-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "foreign-binding-admitted.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "foreign-binding-admitted-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "foreign-binding-admitted.qnt",
+        "--backend=typescript",
+        "--match=^wrongBindingTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "wrong-request-admitted-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "wrong-request-admitted.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "wrong-request-admitted-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "wrong-request-admitted.qnt",
+        "--backend=typescript",
+        "--match=^wrongRequestTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-geometry-readiness-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-geometry-readiness.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-geometry-readiness-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-geometry-readiness.qnt",
+        "--backend=typescript",
+        "--match=^projectionOnlyTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-projection-readiness-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-projection-readiness.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-projection-readiness-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-projection-readiness.qnt",
+        "--backend=typescript",
+        "--match=^geometryOnlyTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "retired-root-admitted-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "retired-root-admitted.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "retired-root-admitted-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "retired-root-admitted.qnt",
+        "--backend=typescript",
+        "--match=^retiredRootTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "foreign-output-admitted-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "foreign-output-admitted.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "foreign-output-admitted-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "foreign-output-admitted.qnt",
+        "--backend=typescript",
+        "--match=^wrongOutputTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "changed-app-admitted-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "changed-app-admitted.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "changed-app-admitted-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "changed-app-admitted.qnt",
+        "--backend=typescript",
+        "--match=^changedApplicationTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "deadline-ignored-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "deadline-ignored.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "deadline-ignored-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "deadline-ignored.qnt",
+        "--backend=typescript",
+        "--match=^expiredChoiceTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "choice-retained-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "choice-retained.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "choice-retained-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "choice-retained.qnt",
+        "--backend=typescript",
+        "--match=^duplicateCompletionTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "popup-focus-steal-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "popup-focus-steal.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "popup-focus-steal-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "popup-focus-steal.qnt",
+        "--backend=typescript",
+        "--match=^focusPopupNoStealTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "projectionFirstTest",
+    "geometryFirstTest",
+    "projectionOnlyTest",
+    "geometryOnlyTest",
+    "invalidGeometryTest",
+    "invalidProjectionTest",
+    "wrongRequestTest",
+    "wrongBindingTest",
+    "wrongOutputTest",
+    "changedBindingTest",
+    "retiredRootTest",
+    "replacementRootTest",
+    "changedApplicationTest",
+    "expiredChoiceTest",
+    "oldTimerTest",
+    "disconnectedChoiceTest",
+    "supersededPairTest",
+    "freshSupersedingPairTest",
+    "duplicateCompletionTest",
+    "focusGeometryLastTest",
+    "focusProjectionLastTest",
+    "focusPopupNoStealTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 13,
+  "sourceSHA256": "a125a411ee63460bf442176489b97179b8fc27670b9ff245238869fdf8fa26f6",
+  "artifacts": {
+    "readiness.qnt": "a125a411ee63460bf442176489b97179b8fc27670b9ff245238869fdf8fa26f6",
+    "model.py": "221f51a044d66b39abcb1fd3864a89db4c7f41a941450e994e9eb05dccea7108",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-projectionFirstTest-0.itf.json": "704709f96b144346ff4bb9e60f8bd69fa9f9805fc88cac496c5132226d419f4e",
+    "named-geometryFirstTest-1.itf.json": "5c93bc022207edaaa78bd551ea978ee2d1c503efde88aad424ccb35ba68d99bb",
+    "named-projectionOnlyTest-2.itf.json": "73d596362ac63dd17d451243c73387debdd817e0ff558259c619804255294eab",
+    "named-geometryOnlyTest-3.itf.json": "0cea7e01ea39147775d6ff7212578ef0b3280b3b7fbd9b9583c46efd8181519b",
+    "named-invalidGeometryTest-4.itf.json": "db0e3a8b97b1e18522ffed5f51061c34ae1113be0b8fd420cee04739ff5ead65",
+    "named-invalidProjectionTest-5.itf.json": "f187558bfb892d314ab4d865f52807975bd4d367a6d13f5bb4b721056c5a9fab",
+    "named-wrongRequestTest-6.itf.json": "749ddbc587a5a9651ebc334d9458bda57e8310e814373ca56df2ca04db51a99d",
+    "named-wrongBindingTest-7.itf.json": "28210cde17b7b4728530660c65257478ac3f02bc6fa0278da8d2d54390974305",
+    "named-wrongOutputTest-8.itf.json": "d803b77fcdcbd806f012caef2e4bdb4dd10a8b5b39166c2a066095b09b6a9788",
+    "named-changedBindingTest-9.itf.json": "b6ee7518c2c58e78aa6409b1538e781c355acf92ca49664a4b0bc1850bf7fef3",
+    "named-retiredRootTest-10.itf.json": "fc50db178042b1586f9b35266624005e6fa6f43e3cda57459292ff48e0a7f34e",
+    "named-replacementRootTest-11.itf.json": "3199d72bb9006c697da8229162812d51fcba579f069c7858f9daf8c907640df9",
+    "named-changedApplicationTest-12.itf.json": "36754df2264a85f1b67b83b4d871ac2b62bb0e4c22c9fe100ab218f599cd0b84",
+    "named-expiredChoiceTest-13.itf.json": "a7d4bfa9d6673d1c2003a7b9c128abe6e2ad26b71f1d8542cf2b70ef192c7d98",
+    "named-oldTimerTest-14.itf.json": "5247716285091c58b1d2a7abf6ef9d2be8b56a100064fc17cddca81f6bc22f07",
+    "named-disconnectedChoiceTest-15.itf.json": "d17a1ac00acfbd0e804319dddba4bde0628aa50c24342d212c9acdcadb7d775c",
+    "named-supersededPairTest-16.itf.json": "662f19f5b4a37d4f83ea01d1ba2b4f87fe33e3f9cf682df284dd94d706c27880",
+    "named-freshSupersedingPairTest-17.itf.json": "6f891022703e4c71bab496c1c4509007dcfba572b11f12724065d3cf78aa0946",
+    "named-duplicateCompletionTest-18.itf.json": "d10741645a5c6092809f24d18d7e3840ebf484e1d215110e369907b97ca20699",
+    "named-focusGeometryLastTest-19.itf.json": "aabe6d616d39ac5963ee2bae1a1c3955cb84896de11d6b21a8297ad124ea11a2",
+    "named-focusProjectionLastTest-20.itf.json": "b769b34fba64fda55ed7538cf7ac6ccbc509b7e13cb08caa0fa1c54ea0d7b5e8",
+    "named-focusPopupNoStealTest-21.itf.json": "74d191e3c9e4b6b81ecd71ed32d8757ba6943e54ccd3d337ebfe3d0aca79ea62",
+    "named.stdout": "3a9bf1a3f96fc8417282879be855005ad9679e0981497970df34eb9e261c93cc",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "041ead5dcd5121aa24ef385ef449351c7b81f76e3a524cb75252760697154424",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-geometry-trigger.qnt": "0ed77b74fa2c7ab7abe0e564ad604856c98458c395fb77193c27fb1514d64c95",
+    "missing-geometry-trigger-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-geometry-trigger-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-geometry-trigger-rejected.stdout": "e88eacfae7999cba887195bfb82d423c6fbd45eea31d4bf7cb3db0e467bbf62c",
+    "missing-geometry-trigger-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "missing-projection-trigger.qnt": "955c63db2e7e70cd2d768657fa44bdefbbac5a78aac11815402b1341435d182f",
+    "missing-projection-trigger-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-projection-trigger-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-projection-trigger-rejected.stdout": "176f1a380c7e27c6bd34a4aa8b12ae49230673d5f7551555ed7f249f23b6a7d4",
+    "missing-projection-trigger-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "invalid-admitted.qnt": "9574837eeda838b66e8cc4973ba7b0383d338d983c9a1806859015c1d7d97115",
+    "invalid-admitted-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid-admitted-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invalid-admitted-rejected.stdout": "448df30976347d9a548d46256840ad98e81b1f796f5c28cce48cec7b337d1413",
+    "invalid-admitted-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "foreign-binding-admitted.qnt": "19f92b1d943eb07e4e5d8787b4090d864c9357ae1ef4adf7e7596f1620776f0c",
+    "foreign-binding-admitted-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-binding-admitted-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-binding-admitted-rejected.stdout": "b771a3b67f1982dbab6f135955437cf5d70e8682211756378234a94995f230ff",
+    "foreign-binding-admitted-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "wrong-request-admitted.qnt": "c4cdd59392815acdc82f4ac60e147fdd01499be1549b44c69bec030edcfc0cb5",
+    "wrong-request-admitted-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-request-admitted-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-request-admitted-rejected.stdout": "18fad04dab3ce056b5dcaa3581fced701eb281ae3f0440c2ba06a1dc5471222b",
+    "wrong-request-admitted-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "missing-geometry-readiness.qnt": "b41fec05c4d958bf1ed6f5eb6136e41a24fa97a578b2d327c827c70109235ed8",
+    "missing-geometry-readiness-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-geometry-readiness-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-geometry-readiness-rejected.stdout": "8d19919d744d92ee6a089a8377c355250085ca8622a176a8fc6e6dc46799b3e7",
+    "missing-geometry-readiness-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "missing-projection-readiness.qnt": "61c506478a17d78100fc4486257c702f85a373add821d207ed4edae139ddfbed",
+    "missing-projection-readiness-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-projection-readiness-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-projection-readiness-rejected.stdout": "279cc259714fcbc7210f3f2b6d24d2b9e1209585a4da361cf66c759cc3a7f6e7",
+    "missing-projection-readiness-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "retired-root-admitted.qnt": "00ac47caff094e49d91345392dabf45b8ee6cad138aa5c95415b15983d57e7e2",
+    "retired-root-admitted-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retired-root-admitted-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retired-root-admitted-rejected.stdout": "a00994aabc6c53afa705961be5c388018dc5236362b3435e81c071f34f2edb16",
+    "retired-root-admitted-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "foreign-output-admitted.qnt": "5244426224da4ae0d5ea2adefb80fd0da9247c4e3fcab9466f093826adb6709b",
+    "foreign-output-admitted-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-output-admitted-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-output-admitted-rejected.stdout": "53315bf92457735bdb788f0e218caa40a0839d8153511a1d5fc43e79e68d8114",
+    "foreign-output-admitted-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "changed-app-admitted.qnt": "5445649ea80ce7e0c5f91dc0614155827d38cc98aabac49a1377b153d097133b",
+    "changed-app-admitted-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-app-admitted-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "changed-app-admitted-rejected.stdout": "493fc43e814b3949cd9d7d7d7e3cd292af87bd97108faa73db727daf5f0f6a47",
+    "changed-app-admitted-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "deadline-ignored.qnt": "0580c692814a013d1944e4c65e04f47e08a1cdd6b501ec976d79d041e8699292",
+    "deadline-ignored-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "deadline-ignored-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "deadline-ignored-rejected.stdout": "40f213c300892f4667073d1ac003c3a4e15f54e12e0526a8fab6bdf44be18e1c",
+    "deadline-ignored-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "choice-retained.qnt": "5bb755bc722718bd3a9c9a27c8c7d7f4c4d5921efac1a216fda164159edfe492",
+    "choice-retained-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "choice-retained-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "choice-retained-rejected.stdout": "7e566c2d4dd0eca708b4543d8ed679b0699c25cd3a24350a9ea50fed15863a71",
+    "choice-retained-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "popup-focus-steal.qnt": "cab27fbb0c35fd2da056251ebd97e0944bf0b195998caf4a1ee28b81092649c9",
+    "popup-focus-steal-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "popup-focus-steal-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "popup-focus-steal-rejected.stdout": "b8c66479f4ea5dcceb5ebd23c3145d739e6810b1a26adee8f29ec5a7cff99edf",
+    "popup-focus-steal-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

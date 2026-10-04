@@ -1,0 +1,1237 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 0,
+      lastEmission: 0,
+      live: true,
+      mode: 0,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 0,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 0,
+      token: 0,
+      violations: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 3,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 2,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 1,
+      token: 1,
+      violations: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 3,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: true,
+      pending: true,
+      popup: false,
+      pr: 2,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 1,
+      token: 1,
+      violations: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 5,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 4,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 1,
+      token: 1,
+      violations: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 6,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 6,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: true,
+      pending: true,
+      popup: false,
+      pr: 6,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: true,
+      pending: false,
+      popup: false,
+      pr: 6,
+      root: 2,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: true,
+      pending: false,
+      popup: false,
+      pr: 6,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: true,
+      pending: false,
+      popup: false,
+      pr: 6,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: true,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: true,
+      pending: false,
+      popup: false,
+      pr: 6,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: true,
+      effects: 0,
+      focus: 0,
+      gReady: true,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: true,
+      pending: false,
+      popup: false,
+      pr: 6,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 7,
+      lastEmission: 0,
+      live: true,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 6,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 2,
+      serial: 2,
+      token: 2,
+      violations: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      app: 1,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: true,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 3,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 9,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 1,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 8,
+      root: 4,
+      savedApp: 1,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 3,
+      serial: 3,
+      token: 3,
+      violations: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 4,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 4,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 4,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 4,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      app: 2,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 5,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      app: 3,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 5,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      app: 3,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 1,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 5,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      app: 3,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 2,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 5,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      app: 3,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 11,
+      lastEmission: 0,
+      live: false,
+      mode: 1,
+      output: 2,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 10,
+      root: 5,
+      savedApp: 2,
+      savedBinding: 1,
+      savedOutput: 1,
+      savedRoot: 4,
+      serial: 4,
+      token: 4,
+      violations: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      app: 3,
+      binding: 1,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 13,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 2,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 12,
+      root: 5,
+      savedApp: 3,
+      savedBinding: 1,
+      savedOutput: 2,
+      savedRoot: 5,
+      serial: 5,
+      token: 5,
+      violations: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      app: 3,
+      binding: 2,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 13,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 2,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 12,
+      root: 5,
+      savedApp: 3,
+      savedBinding: 1,
+      savedOutput: 2,
+      savedRoot: 5,
+      serial: 5,
+      token: 5,
+      violations: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      app: 3,
+      binding: 2,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 13,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 2,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 12,
+      root: 5,
+      savedApp: 3,
+      savedBinding: 1,
+      savedOutput: 2,
+      savedRoot: 5,
+      serial: 5,
+      token: 5,
+      violations: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      app: 3,
+      binding: 2,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 13,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 2,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 12,
+      root: 5,
+      savedApp: 3,
+      savedBinding: 1,
+      savedOutput: 2,
+      savedRoot: 5,
+      serial: 5,
+      token: 5,
+      violations: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      app: 3,
+      binding: 3,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 13,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 2,
+      pReady: false,
+      pending: true,
+      popup: false,
+      pr: 12,
+      root: 5,
+      savedApp: 3,
+      savedBinding: 1,
+      savedOutput: 2,
+      savedRoot: 5,
+      serial: 5,
+      token: 5,
+      violations: 0
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      app: 3,
+      binding: 3,
+      connected: false,
+      effects: 0,
+      focus: 0,
+      gReady: false,
+      gr: 13,
+      lastEmission: 0,
+      live: false,
+      mode: 2,
+      output: 2,
+      pReady: false,
+      pending: false,
+      popup: false,
+      pr: 12,
+      root: 5,
+      savedApp: 3,
+      savedBinding: 1,
+      savedOutput: 2,
+      savedRoot: 5,
+      serial: 5,
+      token: 5,
+      violations: 0
+    }
+}
+
+[ok] No violation found (2815ms at 355 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1349a --backend=typescript to reproduce.

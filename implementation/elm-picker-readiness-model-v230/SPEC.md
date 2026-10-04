@@ -1,0 +1,3 @@
+# Paired observation completion model
+
+Contract226 after actual controller replay228. Model validated observation admission, one pending choice or return-focus slot, paired requests, either response order, supersession, native identity/output/application retirement, unchanged timer and popup exclusion. `valid` abstracts the existing typed Shell/GeometryProjection decoder and monotonic snapshot admission; the model is not a new event decoder or desktop policy authority. Exact controller refinement/native qualification remain required. Retain all failures. No public model result implies GTK/GPU/full release acceptance.

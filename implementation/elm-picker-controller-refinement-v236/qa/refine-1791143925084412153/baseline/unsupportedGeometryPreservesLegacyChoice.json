@@ -1,0 +1,157 @@
+[
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "attached",
+      "binding": {
+        "lifetime": "13845450713375998584",
+        "session": "13424823225724998287",
+        "frontend": "1"
+      },
+      "compositor": {
+        "pid": 3191069,
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1791141535_40896843",
+        "coreHash": "efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6"
+      },
+      "capabilities": {
+        "observe": true,
+        "effects": true,
+        "minimizedState": true,
+        "effectProtocol": 1,
+        "operations": [
+          "minimize",
+          "restore",
+          "activate"
+        ],
+        "canonicalScene": false,
+        "taskbarProjectionProtocol": 1,
+        "effectInvalidationProtocol": 1
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-recovery-watermarks",
+      "binding": {
+        "lifetime": "13845450713375998584",
+        "session": "13424823225724998287",
+        "frontend": "1"
+      },
+      "request": "0",
+      "generation": "0"
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-geometry-negotiate"
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "action-projection",
+      "binding": {
+        "lifetime": "13845450713375998584",
+        "session": "13424823225724998287",
+        "frontend": "1"
+      },
+      "requestId": "1",
+      "context": {
+        "lifetime": "13845450713375998584",
+        "epoch": "1",
+        "output": "1",
+        "revision": "1"
+      },
+      "scene": {
+        "revision": "1",
+        "focused": "2",
+        "windows": [
+          {
+            "incarnation": "2",
+            "application": "GTK Application",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": false,
+            "owner": null,
+            "available": true
+          },
+          {
+            "incarnation": "1",
+            "application": "GTK Application",
+            "label": "ELM-ACTIVATION-PEER",
+            "minimized": false,
+            "owner": null,
+            "available": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "geometry-unavailable",
+      "binding": {
+        "lifetime": "13845450713375998584",
+        "session": "13424823225724998287",
+        "frontend": "1"
+      },
+      "requestId": "2",
+      "reason": "unsupported"
+    }
+  },
+  {
+    "kind": "primary"
+  },
+  {
+    "kind": "choose",
+    "root": "2"
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "action-projection",
+      "binding": {
+        "lifetime": "13845450713375998584",
+        "session": "13424823225724998287",
+        "frontend": "1"
+      },
+      "requestId": "3",
+      "context": {
+        "lifetime": "13845450713375998584",
+        "epoch": "1",
+        "output": "1",
+        "revision": "2"
+      },
+      "scene": {
+        "revision": "2",
+        "focused": "1",
+        "windows": [
+          {
+            "incarnation": "2",
+            "application": "GTK Application",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": false,
+            "owner": null,
+            "available": true
+          },
+          {
+            "incarnation": "1",
+            "application": "GTK Application",
+            "label": "ELM-ACTIVATION-PEER",
+            "minimized": false,
+            "owner": null,
+            "available": true
+          }
+        ]
+      }
+    }
+  }
+]

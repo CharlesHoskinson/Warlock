@@ -1,0 +1,1 @@
+Fresh255 fixes248 stale receipt inventory hash and requires BOTH actual production command_for profiles to resolve255 held receipt and captured231 adapter before freezing.240 native command failures and248 incomplete prospective closure preserved; no source/oracle/deadline weakening.

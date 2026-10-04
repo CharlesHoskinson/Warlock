@@ -1,0 +1,433 @@
+{
+  "passed": true,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "backendRoot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-picker-ready-gui-v231/qa/build-1791142801917720234/inputs/adapter",
+  "componentSHA256": "078c5f6f090a94f023b0c75b0ed643244860bcf9eceb5388f72884bad79370ff",
+  "reports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-picker-ready-broker-fixture-v240/receipt/qa/hold-1791144476679492815/report.json",
+      "sha256": "4e56c1b478000384df16dbf7c2ff8f770ba05247c7ca3a39994a4acd7ecf966b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-picker-ready-broker-fixture-v240/relay/qa/test-1791144476677860759/report.json",
+      "sha256": "43eb2858552e6837ab25fbd528f608fe3873240529a4673dbdc80e4d9c9a3e17"
+    }
+  ],
+  "files": [
+    {
+      "path": "SPEC.md",
+      "mode": 420,
+      "sha256": "259925915ad1dba1f8288c440144b649d6fda9cc05f2b322ba85eeae79403401",
+      "size": 195
+    },
+    {
+      "path": "qa/closure.py",
+      "mode": 420,
+      "sha256": "3a68bce2103aab6502260b845c29803e93b1ebd04832991a63391d61800d79b7",
+      "size": 2382
+    },
+    {
+      "path": "receipt/qa/broker-entrypoint.py",
+      "mode": 420,
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    {
+      "path": "receipt/qa/held-source-manifest.json",
+      "mode": 420,
+      "sha256": "dd1edd57bff4fd2102ce59cf12294bafb6f7b54e334341a93514134a9d1d3063",
+      "size": 515
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-1/gate.json",
+      "mode": 384,
+      "sha256": "1b48b4408d603d7bb8eb9b5b411f7a54469e61bd355ab67925187687ed7dbde9",
+      "size": 300
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-1/held.json",
+      "mode": 384,
+      "sha256": "73929370b5bed326ac83e37c940e93219da4a14645dc0cb20c7135a29397f8c4",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-10/gate.json",
+      "mode": 420,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-11/gate.json",
+      "mode": 420,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-12/gate.json",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-picker-ready-broker-fixture-v240/receipt/qa/hold-1791144476679492815/control-12/other"
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-13/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-14/gate.json",
+      "mode": 384,
+      "sha256": "517cda1fe60f74dc3b151ba987f6932130b8638445325a7900d9e63a3f3cc8e1",
+      "size": 300
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-14/held.json",
+      "mode": 384,
+      "sha256": "c33bbe6a076fb52439a60b25117240df8a641dfd699419d44f33a88cd25c44ce",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-15/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-15/held.json",
+      "mode": 384,
+      "sha256": "e566f039286a11699c46baf46999e3b73d7e0c30da9dedbe4f279a511c6544fd",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-16/gate.json",
+      "mode": 384,
+      "sha256": "3f2e597f0bf1bbab40e111b9890fc96ddfaefab8edc49d0d30974e666e23d2d8",
+      "size": 20
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-16/held.json",
+      "mode": 384,
+      "sha256": "abb31d56edc2842df4f8d36d1022e985a43bb4b231ed1ed573338ed4e935a7ca",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-17/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-17/held.json",
+      "mode": 384,
+      "sha256": "4866cca5f32adc02a9ca7a85c2006e1e2692c80510988f2464c10688dbe5669c",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-18/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-18/held.json",
+      "mode": 384,
+      "sha256": "5cc1cd501a33ba4c67dc9535dab50e2f04da25d7867b96fb61e4bae32bb0c79a",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-2/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-3/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-4/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-5/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-6/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-7/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-8/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-8/held.json",
+      "mode": 384,
+      "sha256": "73929370b5bed326ac83e37c940e93219da4a14645dc0cb20c7135a29397f8c4",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-9/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/control-9/held.json",
+      "mode": 384,
+      "sha256": "73929370b5bed326ac83e37c940e93219da4a14645dc0cb20c7135a29397f8c4",
+      "size": 645
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/eof.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/eof.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/inputs/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "16561816cdb9cca3679ce1ae7ab6a276444f6f918a51d8e8085c0bc4adbab808",
+      "size": 13778
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/locked.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/locked.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/malformed.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/malformed.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/release.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/release.stdout",
+      "mode": 420,
+      "sha256": "942e5fe5145f693d4e90112a5ec370797def23a691a7a9f1d0a8c36af275f5c4",
+      "size": 453
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/report.json",
+      "mode": 420,
+      "sha256": "4e56c1b478000384df16dbf7c2ff8f770ba05247c7ca3a39994a4acd7ecf966b",
+      "size": 10244
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/timeout.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "receipt/qa/hold-1791144476679492815/timeout.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "receipt/qa/selector-test.py",
+      "mode": 420,
+      "sha256": "b7cdb63c6bc59fc150801bf2e1ce06b365abfbc4bf6f1f47966c2b71136a66b2",
+      "size": 9403
+    },
+    {
+      "path": "receipt/qa/test.py",
+      "mode": 420,
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "receipt/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "16561816cdb9cca3679ce1ae7ab6a276444f6f918a51d8e8085c0bc4adbab808",
+      "size": 13778
+    },
+    {
+      "path": "relay/qa/deadline.py",
+      "mode": 420,
+      "sha256": "257145edeb49ea07080609032d93c0ade1b8b6ebb6e5034b62dddf28301713e9",
+      "size": 3742
+    },
+    {
+      "path": "relay/qa/edges.py",
+      "mode": 420,
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448
+    },
+    {
+      "path": "relay/qa/held-source-manifest.json",
+      "mode": 420,
+      "sha256": "8288d9849db3ae94c60136b5f8f07b257b170234e4e2138027839a327454af16",
+      "size": 351
+    },
+    {
+      "path": "relay/qa/relay.py",
+      "mode": 420,
+      "sha256": "959314a07672f5c3fe7bdabda3965edb57a0da35d6d14276d64df9c49c1cdc11",
+      "size": 11073
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-1/actor.json",
+      "mode": 384,
+      "sha256": "3e2d36b476c8861e4d51f5a8ae3f4912b0762bb57056802d2eb11e1c06dfa1d9",
+      "size": 96
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-1/exit.json",
+      "mode": 384,
+      "sha256": "c17ef8884bb6bae04279deab0cbf3cb371c313efc0dc60a43a220950da7caec4",
+      "size": 133
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-1/gate.json",
+      "mode": 384,
+      "sha256": "7f496bab9d21a738480cc2b4d78fe5aeb417313693a7ac4a08d7b63d4a9de97f",
+      "size": 115
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-2/actor.json",
+      "mode": 384,
+      "sha256": "f7ea1268b95220b60007f9fbcacab694aa8317dfa9549f004a604d6df71f32e3",
+      "size": 96
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-2/exit.json",
+      "mode": 384,
+      "sha256": "aae7eecf8a5eb67dc18a1fd8bb43675b100183d029e4ef389503c9c6bddaf23c",
+      "size": 133
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-2/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-3/actor.json",
+      "mode": 384,
+      "sha256": "ba509d15379800b0355e76e0da99afb9ed6cbab7b527cdb2538fea7078d86db0",
+      "size": 96
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-3/gate.json",
+      "mode": 384,
+      "sha256": "684e40d998a84e6ff3849bdb7c2f6e3dccf8324bfea8baba0b30eb4e9bad6f1e",
+      "size": 108
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-4/actor.json",
+      "mode": 384,
+      "sha256": "681ffd599e42d88bf3c961a44abc1b1c546f7bba00183d3ef33fea155a4e91d2",
+      "size": 96
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-4/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-5/actor.json",
+      "mode": 384,
+      "sha256": "cddf51e0b24374a56093c096c98db45656f2837dce42d1c5f3d019ae288632bc",
+      "size": 96
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/control-5/gate.json",
+      "mode": 384,
+      "sha256": "d9f8d3a1c63c22d2e9450ee70fa85976397a48e53f39608746ff653241fa5385",
+      "size": 115
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/dir-link",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-picker-ready-broker-fixture-v240/relay/qa/test-1791144476677860759/control-5"
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/hardlink.json",
+      "mode": 384,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/inputs/qa/relay.py",
+      "mode": 420,
+      "sha256": "959314a07672f5c3fe7bdabda3965edb57a0da35d6d14276d64df9c49c1cdc11",
+      "size": 11073
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/link.json",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-picker-ready-broker-fixture-v240/relay/qa/test-1791144476677860759/control-5/actor.json"
+    },
+    {
+      "path": "relay/qa/test-1791144476677860759/report.json",
+      "mode": 420,
+      "sha256": "43eb2858552e6837ab25fbd528f608fe3873240529a4673dbdc80e4d9c9a3e17",
+      "size": 3292
+    },
+    {
+      "path": "relay/qa/test.py",
+      "mode": 420,
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    }
+  ],
+  "scope": "Source/build binding corrected only; unchanged receipt and relay CPU checks, actual captured231 adapter bytes equal current231 source, native reconnect separate"
+}

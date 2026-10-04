@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Validated paired-observation readiness, choice/focus identity and original timer abstraction; actual Elm/native refinement separate",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "readiness.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT008]: Reserved keyword 'match' cannot be used as an identifier.\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-picker-readiness-model-v229/qa/model-1791142424275141306/readiness.qnt:14:14\\n  14:    val match = valid and s.connected and binding == s.binding and request == (if (kind == 1) s.pr else s.gr) and not (if (kind == 1) s.pReady else s.gReady)\\n                   ^\\n\\n\\n Error [QNT008]: Reserved keyword 'match' cannot be used as an identifier.\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-picker-readiness-model-v229/qa/model-1791142424275141306/readiness.qnt:15:31\\n  15:    val p = s.pReady or (match and kind == 1)\\n                                    ^^^\\n\\n\\n Error [QNT008]: Reserved keyword 'match' cannot be used as an identifier.\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-picker-readiness-model-v229/qa/model-1791142424275141306/readiness.qnt:16:31\\n  16:    val g = s.gReady or (match and kind == 2)\\n                                    ^^^\\n\\n\\n Error [QNT008]: Reserved keyword 'and' cannot be used as an identifier.\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-picker-readiness-model-v229/qa/model-1791142424275141306/readiness.qnt:18:138\\n  18:    val safe = s.binding == s.savedBinding and s.output == s.savedOutput and s.root == s.savedRoot and s.app == s.savedApp and s.live and (s.mode != 2 or not s.popup)\\n                                                                                                                                               ^\\n\\n\\n Error [QNT000]: missing '}' at '('\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-picker-readiness-model-v229/qa/model-1791142424275141306/readiness.qnt:18:138\\n  18:    val safe = s.binding == s.savedBinding and s.output == s.savedOutput and s.root == s.savedRoot and s.app == s.savedApp and s.live and (s.mode != 2 or not s.popup)\\n                                                                                                                                               ^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "readiness.qnt": "ed285e6eed9d8044a6d59734c8d92209ff23c0c4508d86aad829cc5cc1fd906d",
+    "model.py": "c80710fcde5ca30f7d3d6d8bdbddc9409da4a30413e3956a417e38a7c1d2a700",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "f940d84784b5690951e1abc51978139ac8b64fc4f46087cb48d4cb62cbe60861"
+  }
+}

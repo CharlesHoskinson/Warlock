@@ -1,0 +1,42 @@
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.gtk.vfs.Daemon' requested by ':1.0' (uid=1000 pid=3395309 comm="/home/hoskinson/omarchy-windows-parity/implementat")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Successfully activated service 'org.gtk.vfs.Daemon'
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.a11y.Bus' requested by ':1.0' (uid=1000 pid=3395309 comm="/home/hoskinson/omarchy-windows-parity/implementat")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Successfully activated service 'org.a11y.Bus'
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=3395354 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.portal.Desktop' requested by ':1.5' (uid=1000 pid=3395360 comm="/usr/bin/xdg-dbus-proxy --args=25")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.impl.portal.PermissionStore' requested by ':1.6' (uid=1000 pid=3395382 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Successfully activated service 'org.freedesktop.impl.portal.PermissionStore'
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.portal.Documents' requested by ':1.6' (uid=1000 pid=3395382 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Successfully activated service 'org.freedesktop.portal.Documents'
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.impl.portal.desktop.gtk' requested by ':1.6' (uid=1000 pid=3395382 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=3395354 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Successfully activated service 'org.freedesktop.impl.portal.desktop.gtk'
+
+** (xdg-desktop-portal-gtk:3395404): WARNING **: 14:10:53.780: AT-SPI: Could not obtain desktop path or name
+
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=3395354 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+
+** (xdg-desktop-portal-gtk:3395404): WARNING **: 14:10:53.782: atk-bridge: GetRegisteredEvents returned message with unknown signature
+
+** (xdg-desktop-portal-gtk:3395404): WARNING **: 14:10:53.782: atk-bridge: get_device_events_reply: unknown signature
+
+(/usr/lib/xdg-desktop-portal:3395382): xdg-desktop-portal-WARNING **: 14:10:53.788: Failed to load RealtimeKit property: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable
+
+(/usr/lib/xdg-desktop-portal:3395382): xdg-desktop-portal-WARNING **: 14:10:53.788: Failed to load RealtimeKit property: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable
+
+(/usr/lib/xdg-desktop-portal:3395382): xdg-desktop-portal-WARNING **: 14:10:53.789: Failed to load RealtimeKit property: GDBus.Error:org.freedesktop.DBus.Error.ServiceUnknown: The name is not activatable
+
+(/usr/lib/xdg-desktop-portal:3395382): xdg-desktop-portal-WARNING **: 14:10:53.794: Failed to connect to PipeWire: Couldn't connect to PipeWire
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.impl.portal.desktop.hyprland' requested by ':1.6' (uid=1000 pid=3395382 comm="/usr/lib/xdg-desktop-portal")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Successfully activated service 'org.freedesktop.impl.portal.desktop.hyprland'
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Successfully activated service 'org.freedesktop.portal.Desktop'
+
+(/usr/lib/xdg-desktop-portal:3395382): xdg-desktop-portal-WARNING **: 14:10:53.874: Realtime error: Could not get pidns for pid 2: PIDFD_GET_PID_NAMESPACE ioctl failed: Inappropriate ioctl for device
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=3395354 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activating service name='org.freedesktop.systemd1' requested by ':1.4' (uid=1000 pid=3395354 comm="/usr/bin/dbus-broker-launch --config-file=/usr/sha")
+dbus-daemon[3394995]: [session uid=1000 pid=3394995 pidfd=4] Activated service 'org.freedesktop.systemd1' failed: Process org.freedesktop.systemd1 exited with status 1
+Failed to launch bus: Bus exited with code 0

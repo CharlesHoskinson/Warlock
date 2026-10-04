@@ -1,0 +1,16 @@
+
+  readiness
+    1) projectionFirstTest failed after 1 test(s)
+
+  1 failed
+
+  1) projectionFirstTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-picker-readiness-model-v230/qa/model-1791142467510385073/missing-geometry-trigger.qnt:36:128
+        36:  run projectionFirstTest = init.then(begin(1)).then(reply(1,s.pr,s.binding,true)).then(reply(2,s.gr,s.binding,true)).then(all {assert(s.effects == 1 and not(s.pending)),s'=s})
+                                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=projectionFirstTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 missing-geometry-trigger.qnt

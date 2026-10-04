@@ -1,0 +1,1 @@
+Correct248 actual receipt-profile relay to same248 held receipt entrypoint;240 preserved failure used historical528 despite current231 host. Rerun unchanged CPU controls and every affected native campaign with captured231 receipt commands. No oracle/deadline changes.
