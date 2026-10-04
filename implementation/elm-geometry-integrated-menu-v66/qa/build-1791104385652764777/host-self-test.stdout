@@ -1,0 +1,19 @@
+TAP version 14
+# random seed: R02Sf72fb0f913b330c831945b2e22cf267c
+1..9
+# Start of host tests
+ok 1 /host/assets
+ok 2 /host/request-schema
+ok 3 /host/qa-report-control-bounds
+ok 4 /host/surface-atomic-preflight
+# surface-refused: popup-origin-or-stale
+# surface-refused: commit-preflight
+# surface-refused: popup-origin-or-stale
+ok 5 /host/surface-manager-isolation
+# surface-presentation-applied: publication=11 lease=3
+# surface-focus-applied: publication=11 lease=3
+ok 6 /host/surface-acknowledgements
+ok 7 /host/monitor-index-boundaries
+ok 8 /host/popup-logical-dimensions
+ok 9 /host/context-proof-cancellation
+# End of host tests

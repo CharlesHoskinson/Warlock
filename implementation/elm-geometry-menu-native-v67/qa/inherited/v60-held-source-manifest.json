@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "allContractScenariosPassed": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6a4f3d1b1a894ce9b408332081c48b17.scope",
+    "coreLimit": 1
+  },
+  "files": {
+    "candidate_host.py": {
+      "sha256": "9adcaa483e9b02a92257f8df898efab35b7a0faae3161f64b8a275c9aa38a787",
+      "size": 7771
+    },
+    "upstream.json": {
+      "sha256": "45fed5e41e882a041c34f941fe39ead464283d5689f09fc33bcf5a231e7d2b07",
+      "size": 881
+    },
+    "qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/native.py": {
+      "sha256": "f714139e0f08326e130619967b92019aea25fe941139e274c46ee6d1ed7f558a",
+      "size": 25404
+    },
+    "qa/source-check.py": {
+      "sha256": "7574712eeb09942d5d35e76e06d2bafa27b30aa75f980cd08a96428e9b495797",
+      "size": 3216
+    },
+    "qa/source-check-1791104126733766124/report.json": {
+      "sha256": "9f097b872db20aa90752a2f6d0ff79625f6743f05cc37951717177bde6fe7ac4",
+      "size": 3509
+    },
+    "qa/source-check-1791104199640046782/report.json": {
+      "sha256": "48b92d04d7c8eb0c2022e72587ae87fbd4772e35a7511b15ff20ee4003ffd9ac",
+      "size": 3509
+    },
+    "qa/source-check-1791104199640046782/inputs/candidate_host.py": {
+      "sha256": "9adcaa483e9b02a92257f8df898efab35b7a0faae3161f64b8a275c9aa38a787",
+      "size": 7771
+    },
+    "qa/source-check-1791104199640046782/inputs/upstream.json": {
+      "sha256": "45fed5e41e882a041c34f941fe39ead464283d5689f09fc33bcf5a231e7d2b07",
+      "size": 881
+    },
+    "qa/source-check-1791104199640046782/inputs/qa/native.py": {
+      "sha256": "f714139e0f08326e130619967b92019aea25fe941139e274c46ee6d1ed7f558a",
+      "size": 25404
+    },
+    "qa/source-check-1791104199640046782/inputs/qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/source-check-1791104199640046782/inputs/qa/source-check.py": {
+      "sha256": "7574712eeb09942d5d35e76e06d2bafa27b30aa75f980cd08a96428e9b495797",
+      "size": 3216
+    },
+    "qa/source-check-1791104126733766124/inputs/candidate_host.py": {
+      "sha256": "9adcaa483e9b02a92257f8df898efab35b7a0faae3161f64b8a275c9aa38a787",
+      "size": 7771
+    },
+    "qa/source-check-1791104126733766124/inputs/upstream.json": {
+      "sha256": "45fed5e41e882a041c34f941fe39ead464283d5689f09fc33bcf5a231e7d2b07",
+      "size": 881
+    },
+    "qa/source-check-1791104126733766124/inputs/qa/native.py": {
+      "sha256": "3462d4650640df3022ea5d6ea5ff7429f63b54b5cbf7f5ab78d7c6f65d5547ba",
+      "size": 24877
+    },
+    "qa/source-check-1791104126733766124/inputs/qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/source-check-1791104126733766124/inputs/qa/source-check.py": {
+      "sha256": "7574712eeb09942d5d35e76e06d2bafa27b30aa75f980cd08a96428e9b495797",
+      "size": 3216
+    }
+  },
+  "sourceCheckReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-v60/qa/source-check-1791104199640046782/report.json",
+  "sourceCheckReportSHA256": "48b92d04d7c8eb0c2022e72587ae87fbd4772e35a7511b15ff20ee4003ffd9ac",
+  "contract09NotificationObligationOpen": true
+}

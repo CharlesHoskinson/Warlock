@@ -1,0 +1,172 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "allContractScenariosPassed": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-314a1752c58446b3824245f6a4d4aed2.scope",
+    "coreLimit": 1
+  },
+  "files": {
+    "candidate_host.py": {
+      "sha256": "9adcaa483e9b02a92257f8df898efab35b7a0faae3161f64b8a275c9aa38a787",
+      "size": 7771
+    },
+    "upstream.json": {
+      "sha256": "6f0bd0dabd153eb6fa6eee1a2f05f97f320fbee1fa0fd39789460fae28055eec",
+      "size": 1575
+    },
+    "qa/native.py": {
+      "sha256": "b16318e60d4d02884bcbbe9cdb348ee42e374afdc5c094b7224898727d23bf47",
+      "size": 26578
+    },
+    "qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/source-check.py": {
+      "sha256": "513f0c10046baf542346d432ec4cb66da95c7b83e08f2fe00de6341437c81af4",
+      "size": 6403
+    },
+    "qa/inherited/v60-native.py": {
+      "sha256": "f714139e0f08326e130619967b92019aea25fe941139e274c46ee6d1ed7f558a",
+      "size": 25404
+    },
+    "qa/inherited/v60-held-source-manifest.json": {
+      "sha256": "42ac0c1bb5373619b6aa95f212bba7a3ece55482c9b5a952f5310bde6d2a5f5c",
+      "size": 3450
+    },
+    "qa/source-check-1791104497451535407/report.json": {
+      "sha256": "9b524214209d5088199f7278418334430361c3512ec49bcab8da343f4008812c",
+      "size": 3605
+    },
+    "qa/source-check-1791104497451535407/inputs/candidate_host.py": {
+      "sha256": "9adcaa483e9b02a92257f8df898efab35b7a0faae3161f64b8a275c9aa38a787",
+      "size": 7771
+    },
+    "qa/source-check-1791104497451535407/inputs/upstream.json": {
+      "sha256": "6f0bd0dabd153eb6fa6eee1a2f05f97f320fbee1fa0fd39789460fae28055eec",
+      "size": 1575
+    },
+    "qa/source-check-1791104497451535407/inputs/qa/native.py": {
+      "sha256": "b16318e60d4d02884bcbbe9cdb348ee42e374afdc5c094b7224898727d23bf47",
+      "size": 26578
+    },
+    "qa/source-check-1791104497451535407/inputs/qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/source-check-1791104497451535407/inputs/qa/source-check.py": {
+      "sha256": "513f0c10046baf542346d432ec4cb66da95c7b83e08f2fe00de6341437c81af4",
+      "size": 6403
+    },
+    "qa/inherited/v60-native-failure/report.json": {
+      "sha256": "db74c23f13af7e0959eb82f26443d4d3c62a0d967fb6ab50fb5a091133e78fb3",
+      "size": 364272
+    },
+    "qa/inherited/v60-native-failure/native-evidence/privateBus.log": {
+      "sha256": "bac78d385f2d89d54efcf7b15ac71a8a936f8267f71ca899ae0d7b5350844f08",
+      "size": 6275
+    },
+    "qa/inherited/v60-native-failure/native-evidence/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/inherited/v60-native-failure/native-evidence/weston-renderer.log": {
+      "sha256": "d235e6108eeafea6e3e8a3822b7ef5dfebe4cbd7c1318eccd72fefe6892d16ad",
+      "size": 4029
+    },
+    "qa/inherited/v60-native-failure/native-evidence/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    "qa/inherited/v60-native-failure/native-evidence/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/inherited/v60-native-failure/native-evidence/hyprland.log": {
+      "sha256": "35fdf257ae91d27f629b7b9ff7b657346da44ae758a3677c3f21e65e17f97d24",
+      "size": 2616
+    },
+    "qa/inherited/v60-native-failure/native-evidence/authority-config.json": {
+      "sha256": "a546f29794b4442d5bd877c11438608d21d65945af620c61a995b30a0b10e8d6",
+      "size": 245
+    },
+    "qa/inherited/v60-native-failure/native-evidence/xdg-max-client.log": {
+      "sha256": "68861608150a1576b822cdbf665efc85d154c4300995e8dfd27f3f9d68be981f",
+      "size": 18152
+    },
+    "qa/inherited/v60-native-failure/native-evidence/elm-webview.log": {
+      "sha256": "5c18adc104e798f893f168d214d0dbdcded0709bd6b414cbb58634701c90181b",
+      "size": 64864
+    },
+    "qa/inherited/v60-native-failure/native-evidence/host-evidence.json": {
+      "sha256": "68602fffdefc2cfb7542f314888f00de9a9e6d70d840f6c95776465b94172308",
+      "size": 214915
+    },
+    "qa/inherited/v60-native-failure/native-evidence/runtime-archive/hyprland.lua": {
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    "qa/inherited/v60-native-failure/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791104273_1191554943/hyprland.log": {
+      "sha256": "1677b57348880800330d027f38be2bd9b8356127112177ed1679b76d05c4d1e3",
+      "size": 24339
+    },
+    "qa/inherited/v60-native-failure/native-evidence/runtime-archive/.flatpak/webkit-776290-20/bwrapinfo.json": {
+      "sha256": "cee4a206a94e828a91579cba2f7c3ec4ec2fb45892a79c37e2bea992b69ecaae",
+      "size": 160
+    },
+    "qa/inherited/v60-native-failure/native-evidence/runtime-archive/.flatpak/webkit-776290-24/bwrapinfo.json": {
+      "sha256": "fbb185520794b674e6ec2dc1ddc654de64914892750e44aba029714eac05a563",
+      "size": 160
+    },
+    "qa/inherited/v60-native-failure/native-evidence/runtime-archive/.flatpak/webkit-776290-4/bwrapinfo.json": {
+      "sha256": "4b6139a389f61647e0a5b7c98a1f48a98b48177db5794d1e8d6d8880e5d62793",
+      "size": 193
+    },
+    "qa/inherited/v60-native-failure/native-evidence/runtime-archive/.flatpak/webkit-776290-5/bwrapinfo.json": {
+      "sha256": "3010ebe6acd8112ea816c20d9b0138f64a5b7d34b18a0fb0ecf9663d702c37c7",
+      "size": 193
+    },
+    "qa/inherited/v60-native-failure/inputs/0/native.py": {
+      "sha256": "f714139e0f08326e130619967b92019aea25fe941139e274c46ee6d1ed7f558a",
+      "size": 25404
+    },
+    "qa/inherited/v60-native-failure/inputs/1/candidate_host.py": {
+      "sha256": "9adcaa483e9b02a92257f8df898efab35b7a0faae3161f64b8a275c9aa38a787",
+      "size": 7771
+    },
+    "qa/inherited/v60-native-failure/inputs/2/upstream.json": {
+      "sha256": "45fed5e41e882a041c34f941fe39ead464283d5689f09fc33bcf5a231e7d2b07",
+      "size": 881
+    },
+    "qa/inherited/v60-native-failure/inputs/3/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/inherited/v60-native-failure/inputs/4/evdev-keyboard": {
+      "sha256": "7bb54790faf1c47ab3a4184d84fa07fc1ab34c44d762ef457696f147777e95c0",
+      "size": 23240
+    },
+    "qa/inherited/v60-native-failure/inputs/5/parent-input-client": {
+      "sha256": "307d623700077c6311c75d2d40f7c32def203f9c2fef05769e64b69d05c2e61e",
+      "size": 17912
+    },
+    "qa/inherited/v60-native-failure/inputs/6/report.json": {
+      "sha256": "b0320e54bcd2f3b58dbb5702e07ae2d58b821473fd8cb1b3c5d90fd382da73b4",
+      "size": 4641936
+    },
+    "qa/inherited/v60-native-failure/inputs/7/client-build-report.json": {
+      "sha256": "a6fa464f3390d64e8e18b3275d1cbb2d5cc2b5bed55df635fc27166f347911cc",
+      "size": 596
+    },
+    "qa/inherited/v60-native-failure/inputs/8/inspection.py": {
+      "sha256": "190909b78137d0eb8b921a0a003ed33abe850acc80403fda2d4dc7d036c86ab2",
+      "size": 3048
+    }
+  },
+  "sourceCheckReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-v67/qa/source-check-1791104497451535407/report.json",
+  "sourceCheckReportSHA256": "9b524214209d5088199f7278418334430361c3512ec49bcab8da343f4008812c",
+  "contract09NotificationObligationOpen": true
+}
