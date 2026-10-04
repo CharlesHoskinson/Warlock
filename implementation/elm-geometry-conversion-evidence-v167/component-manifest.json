@@ -1,0 +1,556 @@
+{
+  "scope": "Bounded owning-code CPU characterization only; no policy/model/native/release acceptance",
+  "conversionCases": 23,
+  "boundHintCases": 13,
+  "nativeAcceptance": false,
+  "modelAcceptance": false,
+  "files": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-evidence-v167/HANDOFF.md",
+      "size": 2316,
+      "sha256": "a538b4f729f7081ec0dd9cd62f2aacc1c3df86c553112b95dcf22ad20f8adecb"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-evidence-v167/qa/freeze.py",
+      "size": 3127,
+      "sha256": "881217134efc232904c5e37d4665b7e496115b645c40014594961d2a32161433"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/HANDOFF.md",
+      "size": 3431,
+      "sha256": "945bba79e652490a0338af37fa28b57d87b1f64162cbb231996e79edf7cfa693"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/component-manifest.json",
+      "size": 79916,
+      "sha256": "2a24176b9c4e3b1e07b8c424d69bd14be0beb8e09800d01aecbf267f638f5341"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/actual",
+      "size": 22800,
+      "sha256": "4d38eab95c3680e2edbe882e6348b5b3c5acea0f9bf02c2f20dd65c7aa23e754"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/actual.compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/actual.cpp",
+      "size": 6309,
+      "sha256": "8c39f776c8eb9b349716b02405b2978c8a9f40b689a6969448f723ba8fc65d80"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/actual.d",
+      "size": 11715,
+      "sha256": "4115b1f232fb760f9e163e65fe978dfbd32ab787a639d0c0e0d7b419088e5936"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/actual.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/actual.stdout",
+      "size": 1299,
+      "sha256": "1be8a03e395696397a46267007fbf875a525491e2116ae2b6dd35112b1158de0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/MAX-body.txt",
+      "size": 470,
+      "sha256": "f97694e2231a5c617e5ce947040707eafbed07ed6791af3e8241d9f3f414671f"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/Math.hpp",
+      "size": 572,
+      "sha256": "26e71b8ba323d68015b6e7c67abab4ec125b9e5f996acce9413af27d9dce2b5b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/VECTOR2D_MAX.txt",
+      "size": 117,
+      "sha256": "41d5991f8cb7d6634c727d038d4028608519e7faa26b4222df8b617c902e02bf"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/Window.cpp",
+      "size": 124737,
+      "sha256": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/WindowTarget.cpp",
+      "size": 16614,
+      "sha256": "8bcaf37000cf55e1d2084bf732f0589b4ab49d36c778d8d4efa98949dd14734d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/XDGShell.cpp",
+      "size": 35489,
+      "sha256": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/characterize.py",
+      "size": 10530,
+      "sha256": "3cc3990f8b4441f3adf59915fefb981df2d2c70d0ae8dc8ddfad48f3dd05bbbb"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/layoutMaxSize.txt",
+      "size": 381,
+      "sha256": "55300164445c6547fb5e274cbf4c07231cb7709fe6d669477fd3e082b12b3e62"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/layoutMinSize.txt",
+      "size": 381,
+      "sha256": "2a2ae7160b118f0e37106839cea1d112b3bcfed16de43e17cf95fde21e0f739b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/inputs/realToReportSize-Wayland.txt",
+      "size": 97,
+      "sha256": "f5d0604e099118d56c4a8f168d0f93057196093c21a8f2e6c36195137e14162b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124627337410027/report.json",
+      "size": 5090,
+      "sha256": "f9b574b9cff6eea0d4614bb84757495841924068e24980c2d74ad430a9959d22"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/actual",
+      "size": 22800,
+      "sha256": "9276ff148f97c42c426770b700bc41a5e9ee92c704a971f090467da096ec1b10"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/actual.compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/actual.cpp",
+      "size": 6349,
+      "sha256": "99af203d79fcbcb0181876497be06e764c882042a23f75eef6f99e859ad54728"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/actual.d",
+      "size": 11715,
+      "sha256": "7b4b528d29fe6e1a608ca8bd06348f0e82087a9fb49257a311e7b706a18a22a0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/actual.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/actual.stdout",
+      "size": 1299,
+      "sha256": "de9c2a9630827c4bad0c7504fbadf2d7c1f73905aeb5154143cfd82b9b000e63"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/MAX-body.txt",
+      "size": 470,
+      "sha256": "f97694e2231a5c617e5ce947040707eafbed07ed6791af3e8241d9f3f414671f"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/MAX-finalization.txt",
+      "size": 123,
+      "sha256": "d4ef13f3704996651a9c2f57865c6d5e8ae29f76b180958999c2be7d4fe6b7c0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/Math.hpp",
+      "size": 572,
+      "sha256": "26e71b8ba323d68015b6e7c67abab4ec125b9e5f996acce9413af27d9dce2b5b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/VECTOR2D_MAX.txt",
+      "size": 117,
+      "sha256": "41d5991f8cb7d6634c727d038d4028608519e7faa26b4222df8b617c902e02bf"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/Window.cpp",
+      "size": 124737,
+      "sha256": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/WindowTarget.cpp",
+      "size": 16614,
+      "sha256": "8bcaf37000cf55e1d2084bf732f0589b4ab49d36c778d8d4efa98949dd14734d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/XDGShell.cpp",
+      "size": 35489,
+      "sha256": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/characterize.py",
+      "size": 10751,
+      "sha256": "c2f6f2027c807674c9c88252cfcc13d3051653844816e2891bd769aa69a0d90c"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/layoutMaxSize.txt",
+      "size": 381,
+      "sha256": "55300164445c6547fb5e274cbf4c07231cb7709fe6d669477fd3e082b12b3e62"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/layoutMinSize.txt",
+      "size": 381,
+      "sha256": "2a2ae7160b118f0e37106839cea1d112b3bcfed16de43e17cf95fde21e0f739b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/inputs/realToReportSize-Wayland.txt",
+      "size": 97,
+      "sha256": "f5d0604e099118d56c4a8f168d0f93057196093c21a8f2e6c36195137e14162b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/ldd.stdout",
+      "size": 497,
+      "sha256": "6d43b65e68890125abe03f49cc602d059a046244595fe91f5fd71ec710bdbc12"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/report.json",
+      "size": 41965,
+      "sha256": "7a0e0ebfc2aeadcc94f9cc0443fa0e1e37bf0c5fae0969be0a1f38e1cbbc0c4b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-bare-workarea",
+      "size": 22688,
+      "sha256": "d67cfb31f4a5530b401ccea90ab5fd77a7df290b999de4ef86fdb15347c9758b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-bare-workarea.compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-bare-workarea.cpp",
+      "size": 5914,
+      "sha256": "eb3a1e4549f2005cec56853487bdd17c9972c34f96253fb80b90a646a1b02ae1"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-bare-workarea.d",
+      "size": 11743,
+      "sha256": "83152dba257d3bd992d016a7a20c65fd0af5a8ce61772f5d3e3e0a1ae4be0bd0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-bare-workarea.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-bare-workarea.stdout",
+      "size": 1305,
+      "sha256": "a4c85a6451d2fb2aebc6d12188666be284b2a51b8c54371d7775fa3b87d560a8"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-client-times-scale",
+      "size": 22824,
+      "sha256": "8d9fc97554bf0bd8387a26f29cfc384810536f4c8ce004a83b7464a50e3c5501"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-client-times-scale.compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-client-times-scale.cpp",
+      "size": 6364,
+      "sha256": "f1337f65fbf2abe5d03298485354511319b210bfa5cb15e76c2d817b16138a98"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-client-times-scale.d",
+      "size": 11753,
+      "sha256": "51679024652501271c9d655cde0852b0da4ead42d3f30bdb97f355c01296f3bb"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-client-times-scale.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-1791124674571594068/unsafe-client-times-scale.stdout",
+      "size": 1299,
+      "sha256": "0e43b2166b3068e4d11b99e2133922a9d227641fc1a1b373a76d22cb196e41be"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize-corrected.py",
+      "size": 10751,
+      "sha256": "c2f6f2027c807674c9c88252cfcc13d3051653844816e2891bd769aa69a0d90c"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/characterize.py",
+      "size": 10530,
+      "sha256": "3cc3990f8b4441f3adf59915fefb981df2d2c70d0ae8dc8ddfad48f3dd05bbbb"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-edge-characterization-v166/qa/freeze.py",
+      "size": 3652,
+      "sha256": "8f16701e9bbdef2f783e41754ab85b7a269beea1667e6a5134e9a6920f67a099"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual",
+      "size": 22728,
+      "sha256": "7a2fab7de38037d22881eb976846cc48d28d51868bcf40c372eafc953e72cde2"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual.compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual.cpp",
+      "size": 6202,
+      "sha256": "2e6d1a316ffcf3fe973168f2a3c76f7fbcece6851c8d7808177e8a8617862a2f"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual.d",
+      "size": 11705,
+      "sha256": "215ed251b8f4a2416351c07b7169296a7b2249780fa433f07a5c80746ea8d2e3"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual.stdout",
+      "size": 1269,
+      "sha256": "bde7cb2c816dddbf3a5e2f03224e726b654a4f9e48cedb788abb0e64e65fd0c9"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/MAX-body.txt",
+      "size": 470,
+      "sha256": "f97694e2231a5c617e5ce947040707eafbed07ed6791af3e8241d9f3f414671f"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/Math.hpp",
+      "size": 572,
+      "sha256": "26e71b8ba323d68015b6e7c67abab4ec125b9e5f996acce9413af27d9dce2b5b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/VECTOR2D_MAX.txt",
+      "size": 117,
+      "sha256": "41d5991f8cb7d6634c727d038d4028608519e7faa26b4222df8b617c902e02bf"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/Window.cpp",
+      "size": 124737,
+      "sha256": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/WindowTarget.cpp",
+      "size": 16614,
+      "sha256": "8bcaf37000cf55e1d2084bf732f0589b4ab49d36c778d8d4efa98949dd14734d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/XDGShell.cpp",
+      "size": 35489,
+      "sha256": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/characterize.py",
+      "size": 10423,
+      "sha256": "ab486fe11a87343edb7ef02f6b4f660fa702a3f7ec6fa313067d061f30ae6a4e"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/layoutMaxSize.txt",
+      "size": 381,
+      "sha256": "55300164445c6547fb5e274cbf4c07231cb7709fe6d669477fd3e082b12b3e62"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/layoutMinSize.txt",
+      "size": 381,
+      "sha256": "2a2ae7160b118f0e37106839cea1d112b3bcfed16de43e17cf95fde21e0f739b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/inputs/realToReportSize-Wayland.txt",
+      "size": 97,
+      "sha256": "f5d0604e099118d56c4a8f168d0f93057196093c21a8f2e6c36195137e14162b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/report.json",
+      "size": 5043,
+      "sha256": "f1ac893662d711d1bd8df8d8f7beca83048ba53d558a9fb66aff8b5262be8932"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize.py",
+      "size": 10423,
+      "sha256": "ab486fe11a87343edb7ef02f6b4f660fa702a3f7ec6fa313067d061f30ae6a4e"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review-1791124740256767174/1-report.json",
+      "size": 1158,
+      "sha256": "2a06a7bc7bad0ba0d441484fe806dc7923b7e8f395a8d52deb15312bbb1d74c0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review-1791124740256767174/2-characterization.cpp",
+      "size": 4951,
+      "sha256": "2cc72669db600333575b40cda052eabaa1dc9f6ac9a9a8d15dd70671e5b4c8b7"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review-1791124740256767174/3-methods.cpp.inc",
+      "size": 1553,
+      "sha256": "2675b7cbba618a51cc263c32fce9686a6543a967b9537ad4684af1f2248d0b60"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review-1791124740256767174/4-test.py",
+      "size": 6525,
+      "sha256": "a418cc178d5e3b4425fc7d6df56849069cb810388078dee61557188f8142777b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review-1791124740256767174/5-test.py",
+      "size": 6527,
+      "sha256": "33a4845c1dca6989188f2c5e82b74910423b157a517d19856aa8be6d827848bc"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review-1791124740256767174/ldd.txt",
+      "size": 497,
+      "sha256": "e51910277fd5b7bdb628fc31143a928ae4a62cafa51cd18d81fd0510125b1afb"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review-1791124740256767174/report.json",
+      "size": 37543,
+      "sha256": "3d714f47d47754c136cb8392cc7ec24360d108cbfbc28ccebea819ad7204f1ee"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-review-v166/qa/review.py",
+      "size": 4910,
+      "sha256": "ca0b267cef927f19f8e59f92c4406b0b39230e1fe60f5ebbbbfbf799264bcebb"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/REVIEW.md",
+      "size": 2948,
+      "sha256": "67772ffedcb9ac8650e8c4e9423709b61b4c85cc2a92bc1ab5c8def06fa15e8b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/qa/audit.py",
+      "size": 1881,
+      "sha256": "23586f71c283ee41d33e39d8a5cc1ca78f92dec93e759bf73ddfdb52d46bc024"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/qa/review-1791124329570836574/SizeBounds.hpp",
+      "size": 2020,
+      "sha256": "e6744f519eab2be7c285b68a47b50f85ffe8c39067960b18b3a8c814e0f65839"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/qa/review-1791124329570836574/audit",
+      "size": 33712,
+      "sha256": "7b933f6d654e4a2bfa6ab97ca37552e3f5483b2d5772c5caecadfb0efd57ed35"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/qa/review-1791124329570836574/audit.cpp",
+      "size": 497,
+      "sha256": "24d46dca35380e880c65c635bea64eb67b4de73c902c6f76e5e2776bd2604872"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/qa/review-1791124329570836574/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/qa/review-1791124329570836574/report.json",
+      "size": 549,
+      "sha256": "efae2b5ee171ab2dbf7b5c2a7b5458375b497be2f1141c52392e9a38ba414444"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-integration-review-v163/reviewed-inputs.json",
+      "size": 1213,
+      "sha256": "eafae8ab2192325e1966593147e3f2d32fb3cdbd9e498fbf654f97efeccb1475"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/characterization-1791124489329679866/characterization.cpp",
+      "size": 4949,
+      "sha256": "dc4e9a23eb5181644f04f005985a35d39fab6bd4da8ad42ccf0126427ad6edb5"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/characterization-1791124489329679866/compile.stderr",
+      "size": 1424,
+      "sha256": "545b144bfd780fd7f6b52b98f3dde8c08c8294676a967c8f66c88dfb83d7a309"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/characterization-1791124489329679866/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/characterization-1791124489329679866/dependencies.d",
+      "size": 11625,
+      "sha256": "34c1373ca510d5d0ed61b83bbb989e2b8b1ba5cb021598cb134770573b56ad59"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/characterization-1791124489329679866/methods.cpp.inc",
+      "size": 1553,
+      "sha256": "2675b7cbba618a51cc263c32fce9686a6543a967b9537ad4684af1f2248d0b60"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/characterization-1791124489329679866/owning-Window.cpp",
+      "size": 124737,
+      "sha256": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/characterization-1791124489329679866/report.json",
+      "size": 1126,
+      "sha256": "704ebcd1c02934738c405fc81f07d2cf394713fb458280ff5607a1f9db772a56"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v164/qa/test.py",
+      "size": 6525,
+      "sha256": "a418cc178d5e3b4425fc7d6df56849069cb810388078dee61557188f8142777b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/README.md",
+      "size": 263,
+      "sha256": "154ad97a1519d2e5341041c5d43576043d453a9aaaafe2dea0c70d7bdafc8df9"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/characterization",
+      "size": 85480,
+      "sha256": "18578728decacd99af501348d9c3f96900573b127c32ad746e17be7af655ae89"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/characterization.cpp",
+      "size": 4951,
+      "sha256": "2cc72669db600333575b40cda052eabaa1dc9f6ac9a9a8d15dd70671e5b4c8b7"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/checks.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/checks.stdout",
+      "size": 492,
+      "sha256": "ddc8eff553c4e8957b6e093dee851c56fed1338f4d32640fe7b20316e4b49d0d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/dependencies.d",
+      "size": 11625,
+      "sha256": "14b52cb25f8bf9241be33074d5dc1580f8f03773e9118510d1e623a4bf53a36b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/methods.cpp.inc",
+      "size": 1553,
+      "sha256": "2675b7cbba618a51cc263c32fce9686a6543a967b9537ad4684af1f2248d0b60"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/owning-Window.cpp",
+      "size": 124737,
+      "sha256": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/report.json",
+      "size": 1158,
+      "sha256": "2a06a7bc7bad0ba0d441484fe806dc7923b7e8f395a8d52deb15312bbb1d74c0"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/test.py",
+      "size": 6527,
+      "sha256": "33a4845c1dca6989188f2c5e82b74910423b157a517d19856aa8be6d827848bc"
+    }
+  ],
+  "conversionManifestSHA256": "2a24176b9c4e3b1e07b8c424d69bd14be0beb8e09800d01aecbf267f638f5341",
+  "hintReviewSHA256": "3d714f47d47754c136cb8392cc7ec24360d108cbfbc28ccebea819ad7204f1ee"
+}

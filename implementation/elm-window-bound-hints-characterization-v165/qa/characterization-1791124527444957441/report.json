@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "compileExit": 0,
+  "command": [
+    "c++",
+    "-std=c++23",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-MD",
+    "-MF",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/dependencies.d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/characterization.cpp",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-bound-hints-characterization-v165/qa/characterization-1791124527444957441/characterization",
+    "-lhyprutils"
+  ],
+  "owningSourceSHA256": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+  "extractedMethodsSHA256": "2675b7cbba618a51cc263c32fce9686a6543a967b9537ad4684af1f2248d0b60",
+  "linkedLibrarySHA256": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811",
+  "scope": "Actual extracted owning CWindow bound-hint behavior with stub hint/rule inputs; no eligibility/model/native/release acceptance",
+  "nativeAcceptance": false,
+  "testExit": 0,
+  "checks": 13
+}
