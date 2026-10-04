@@ -1,0 +1,140 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual inspection helper CPU tests on independent synthetic external receipts; no GTK/native delivery",
+  "inputs": {
+    "qa/inspection-test.py": "efa0b8978df044cce3dcda9c71d44d367b93ed9daaebf49e7b7a34e9105d3233",
+    "qa/fixture-inspection.py": "d3b3df14a1d16c83f506e29f727aa0291450d3a610d4a0f714aa5cd2069db025",
+    "fixture.py": "45ed90ff855b6d4907a31b8023a7d6e7c259ca2a71a73c5a93c0e81170a4edf0"
+  },
+  "checks": [
+    {
+      "name": "DistinctInputAndDrawingWindowWithExactWidgetOwnerAccepted",
+      "passed": false,
+      "error": "ValueError('Event was not delivered to the declared recipient window')"
+    },
+    {
+      "name": "SameWidgetNameCannotSpoofActualWidgetIdentity",
+      "passed": true
+    },
+    {
+      "name": "SameNamesCannotSpoofActualWindowOwner",
+      "passed": true
+    },
+    {
+      "name": "TrueOwnerBooleanCannotOverrideDifferentRawOwner",
+      "passed": true
+    },
+    {
+      "name": "TrueOwnerBooleanCannotOverrideDifferentRecipientPointer",
+      "passed": true
+    },
+    {
+      "name": "MissingRawOwnerRejected",
+      "passed": true
+    },
+    {
+      "name": "MissingRecipientPointerRejected",
+      "passed": true
+    },
+    {
+      "name": "IntegerCannotStandInForWidgetIdentityBoolean",
+      "passed": true
+    },
+    {
+      "name": "DifferentSignalRecipientRejected",
+      "passed": true
+    },
+    {
+      "name": "DifferentEventWidgetRejected",
+      "passed": true
+    },
+    {
+      "name": "MissingActualGdkEventWindowRejected",
+      "passed": true
+    },
+    {
+      "name": "WrongCoordinateCannotCountAsExpectedReceipt",
+      "passed": true
+    },
+    {
+      "name": "NonfiniteCoordinateCannotCountAsExpectedReceipt",
+      "passed": true
+    },
+    {
+      "name": "InfiniteCoordinateCannotCountAsExpectedReceipt",
+      "passed": true
+    },
+    {
+      "name": "DifferentButtonDoesNotCountAsExpectedPress",
+      "passed": false,
+      "error": "ValueError('Event was not delivered to the declared recipient window')"
+    },
+    {
+      "name": "OldSequenceCannotCountAsNewDelivery",
+      "passed": true
+    },
+    {
+      "name": "DuplicateDeliveredPressesRemainVisibleForRunnerCountOracle",
+      "passed": false,
+      "error": "ValueError('Event was not delivered to the declared recipient window')"
+    },
+    {
+      "name": "NativePidTitleAddressAndActualAllocationJoin",
+      "passed": true
+    },
+    {
+      "name": "UnrelatedNativePidDoesNotJoin",
+      "passed": true
+    },
+    {
+      "name": "StaleNativeSizeDoesNotJoin",
+      "passed": true
+    },
+    {
+      "name": "AmbiguousNativeWindowJoinRejected",
+      "passed": true
+    },
+    {
+      "name": "IncompleteFinalWriteWaitsForNextObservation",
+      "passed": true
+    },
+    {
+      "name": "IdentityModeParentCoordinates",
+      "passed": true
+    },
+    {
+      "name": "ShrunkChildParentCoordinates",
+      "passed": true
+    },
+    {
+      "name": "ScaledChildUsesLogicalExtent",
+      "passed": true
+    },
+    {
+      "name": "OffsetMonitorOriginExcludedFromLocalParentCoordinates",
+      "passed": true
+    },
+    {
+      "name": "RotationRejectedInsteadOfInventedMapping",
+      "passed": true
+    },
+    {
+      "name": "OutsideAllocatedWidgetPointRejected",
+      "passed": true
+    },
+    {
+      "name": "SourcePreserved:qa/inspection-test.py",
+      "passed": true
+    },
+    {
+      "name": "SourcePreserved:qa/fixture-inspection.py",
+      "passed": true
+    },
+    {
+      "name": "SourcePreserved:fixture.py",
+      "passed": true
+    }
+  ],
+  "checkCount": 31
+}

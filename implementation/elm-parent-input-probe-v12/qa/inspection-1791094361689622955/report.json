@@ -1,0 +1,233 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual inspection helper CPU tests on independent synthetic external receipts; no GTK/native delivery",
+  "inputs": {
+    "qa/inspection-test.py": "9394ea493e0fa52e66899d9b1e4fbdc3dd7437afa2ae18e87f69b8d9a79140e1",
+    "qa/fixture-inspection.py": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+    "fixture.py": "45ed90ff855b6d4907a31b8023a7d6e7c259ca2a71a73c5a93c0e81170a4edf0"
+  },
+  "checks": [
+    {
+      "name": "DistinctInputAndDrawingWindowWithExactWidgetOwnerAccepted",
+      "passed": true
+    },
+    {
+      "name": "SameWidgetNameCannotSpoofActualWidgetIdentity",
+      "passed": true
+    },
+    {
+      "name": "SameSignalNameCannotSpoofActualSignalWidget",
+      "passed": true
+    },
+    {
+      "name": "MatchingRawPointerCannotOverrideWrongTypedWindowOwner",
+      "passed": true
+    },
+    {
+      "name": "MissingTypedActualWidgetRejected",
+      "passed": true
+    },
+    {
+      "name": "MissingTypedSignalWidgetRejected",
+      "passed": true
+    },
+    {
+      "name": "MissingTypedWindowOwnershipRejected",
+      "passed": true
+    },
+    {
+      "name": "IntegerCannotStandInForWindowOwnershipBoolean",
+      "passed": true
+    },
+    {
+      "name": "IntegerCannotStandInForWidgetIdentityBoolean",
+      "passed": true
+    },
+    {
+      "name": "DifferentSignalRecipientRejected",
+      "passed": true
+    },
+    {
+      "name": "DifferentEventWidgetRejected",
+      "passed": true
+    },
+    {
+      "name": "MissingActualGdkEventWindowRejected",
+      "passed": true
+    },
+    {
+      "name": "WrongCoordinateCannotCountAsExpectedReceipt",
+      "passed": true
+    },
+    {
+      "name": "NonfiniteCoordinateCannotCountAsExpectedReceipt",
+      "passed": true
+    },
+    {
+      "name": "InfiniteCoordinateCannotCountAsExpectedReceipt",
+      "passed": true
+    },
+    {
+      "name": "RawGpointerDiagnosticsDoNotOverrideTypedOwnershipWitness",
+      "passed": true
+    },
+    {
+      "name": "DifferentButtonDoesNotCountAsExpectedPress",
+      "passed": true
+    },
+    {
+      "name": "OldSequenceCannotCountAsNewDelivery",
+      "passed": true
+    },
+    {
+      "name": "DuplicateDeliveredPressesRemainVisibleForRunnerCountOracle",
+      "passed": true
+    },
+    {
+      "name": "NaNExpectedXRejected",
+      "passed": true
+    },
+    {
+      "name": "InfiniteExpectedYRejected",
+      "passed": true
+    },
+    {
+      "name": "NegativeInfiniteExpectedXRejected",
+      "passed": true
+    },
+    {
+      "name": "EmptyExpectedPointRejected",
+      "passed": true
+    },
+    {
+      "name": "ShortExpectedPointRejected",
+      "passed": true
+    },
+    {
+      "name": "LongExpectedPointRejected",
+      "passed": true
+    },
+    {
+      "name": "BooleanExpectedCoordinateRejected",
+      "passed": true
+    },
+    {
+      "name": "StringExpectedCoordinateRejected",
+      "passed": true
+    },
+    {
+      "name": "NaNToleranceRejected",
+      "passed": true
+    },
+    {
+      "name": "InfiniteToleranceRejected",
+      "passed": true
+    },
+    {
+      "name": "NegativeInfiniteToleranceRejected",
+      "passed": true
+    },
+    {
+      "name": "NegativeToleranceRejected",
+      "passed": true
+    },
+    {
+      "name": "BooleanToleranceRejected",
+      "passed": true
+    },
+    {
+      "name": "BooleanActualXRejected",
+      "passed": true
+    },
+    {
+      "name": "BooleanActualYRejected",
+      "passed": true
+    },
+    {
+      "name": "InfiniteActualYRejected",
+      "passed": true
+    },
+    {
+      "name": "NegativeInfiniteActualYRejected",
+      "passed": true
+    },
+    {
+      "name": "NaNActualYRejectedEvenWithoutPointFilter",
+      "passed": true
+    },
+    {
+      "name": "ZeroToleranceAcceptsExactDeliveredCoordinate",
+      "passed": true
+    },
+    {
+      "name": "ZeroToleranceRejectsNearDeliveredCoordinate",
+      "passed": true
+    },
+    {
+      "name": "FiniteToleranceAcceptsExactBoundary",
+      "passed": true
+    },
+    {
+      "name": "FiniteToleranceRejectsPointBeyondBoundary",
+      "passed": true
+    },
+    {
+      "name": "NativePidTitleAddressAndActualAllocationJoin",
+      "passed": true
+    },
+    {
+      "name": "UnrelatedNativePidDoesNotJoin",
+      "passed": true
+    },
+    {
+      "name": "StaleNativeSizeDoesNotJoin",
+      "passed": true
+    },
+    {
+      "name": "AmbiguousNativeWindowJoinRejected",
+      "passed": true
+    },
+    {
+      "name": "IncompleteFinalWriteWaitsForNextObservation",
+      "passed": true
+    },
+    {
+      "name": "IdentityModeParentCoordinates",
+      "passed": true
+    },
+    {
+      "name": "ShrunkChildParentCoordinates",
+      "passed": true
+    },
+    {
+      "name": "ScaledChildUsesLogicalExtent",
+      "passed": true
+    },
+    {
+      "name": "OffsetMonitorOriginExcludedFromLocalParentCoordinates",
+      "passed": true
+    },
+    {
+      "name": "RotationRejectedInsteadOfInventedMapping",
+      "passed": true
+    },
+    {
+      "name": "OutsideAllocatedWidgetPointRejected",
+      "passed": true
+    },
+    {
+      "name": "SourcePreserved:qa/inspection-test.py",
+      "passed": true
+    },
+    {
+      "name": "SourcePreserved:qa/fixture-inspection.py",
+      "passed": true
+    },
+    {
+      "name": "SourcePreserved:fixture.py",
+      "passed": true
+    }
+  ],
+  "checkCount": 55
+}

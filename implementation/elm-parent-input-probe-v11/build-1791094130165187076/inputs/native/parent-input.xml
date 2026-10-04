@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol name="elm_parent_input">
+  <interface name="elm_parent_input_v1" version="1">
+    <description summary="private parent-seat QA injection">Available only in the isolated test Weston. done confirms notify calls, never target delivery or presentation.</description>
+    <request name="destroy" type="destructor"/>
+    <request name="motion"><arg name="sequence" type="uint"/><arg name="x" type="int"/><arg name="y" type="int"/></request>
+    <request name="button"><arg name="sequence" type="uint"/><arg name="button" type="uint"/><arg name="state" type="uint"/></request>
+    <event name="done"><arg name="sequence" type="uint"/><arg name="accepted" type="uint"/></event>
+  </interface>
+</protocol>
