@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-output-focus-qa-v110",
-  "status": "Native regression passes105 with real nested second-output topology invalidation; full per-display surface/workarea/scale UX remains open.",
+  "activeSlice": "implementation/elm-output-padding-qa-v119",
+  "status": "Native ownership component passes114: asymmetric bars reserve own output, contained secondary popup, selected-output removal retires only owner host. Final global Elm controller across output views remains open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -771,12 +771,46 @@
       "cleanupPassed": true,
       "scope": "Actual nested output addition/removal and topology-scoped DOM focus only; per-display shell, physical displays, full output UX/release remain open",
       "failedLineage": "V109 preserved: successful second output creation then incorrect QA envelope lookup; V110 corrects lookup and strengthens exact DOM/publication check."
+    },
+    "outputOwnerV119": {
+      "evidence": "implementation/elm-output-padding-qa-v119/qa/slice-manifest.json",
+      "nativeChecks": 114,
+      "originalNativeChecks": 91,
+      "retainedCompiledControllerChecks": 67,
+      "retainedCompiledPresenterChecks": 12,
+      "newNativeHostTestGroups": 8,
+      "surfaceTestGroups": 4,
+      "quintNamedScenarios": 4,
+      "quintInvariantSamples": 1000,
+      "asymmetricPrivateOutputs": {
+        "WAYLAND-1": [
+          800,
+          600
+        ],
+        "QA-SECOND": [
+          640,
+          480
+        ]
+      },
+      "eachBarReservationTop": 48,
+      "secondaryPopupConfigure": [
+        4,
+        48,
+        632,
+        420
+      ],
+      "ownerRemovalHostExit": 0,
+      "ownerRemovalBackendExit": 0,
+      "otherHostPreserved": true,
+      "cleanupPassed": true,
+      "scope": "Native object ownership and per-output host component in two private fixture processes; final shared-controller multi-output architecture and hardware UX remain open",
+      "failedLineage": "V111 Quint set type error; V113 oversized popup; V115 bounded size still outside compositor padded rectangle; V117 wrapper-only change ineffective. V118 admitted geometry honors actual owning compositor padding; V119 full114 passes."
     }
   },
   "next": [
-    "Implement explicit per-output native host identity and owned surface retirement on removal; qualify bars/workarea, scale/transform/fullscreen/lock.",
-    "Merge reviewed menu surface and newest choice/return-focus controller changes after independent source closure.",
-    "Continue actual AT/IME/human UX, hardware/GPU/WebGPU, canonical scene/C00 and coherent release gates."
+    "Qualify scale/transform and live output geometry changes with open popup; general workarea and connector/output identity policy.",
+    "Integrate native ownership into one primary Elm controller with presentation views on all outputs, preserving menu/choice/recovery protocols.",
+    "Continue full scene, fullscreen/lock, actual AT/IME/human UX, hardware/performance/WebGPU, C00 and coherent release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

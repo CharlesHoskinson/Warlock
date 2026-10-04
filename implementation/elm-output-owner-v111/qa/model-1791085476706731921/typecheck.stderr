@@ -1,0 +1,21 @@
+
+ Error [QNT000]: Couldn't unify set and int
+Trying to unify Set[int] and int
+Trying to unify (Set[_t4], Set[_t4]) => Set[_t4] and (Set[int], int) => _t5
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-output-owner-v111/qa/model-1791085476706731921/output-owner.qnt:8:60
+  8:  action remove(id:int):bool=s'=if(id==s.owner) {...s,alive:s.alive.exclude(id),retired:true,mapped:false,popup:false,queued:0} else {...s,alive:s.alive.exclude(id)}
+                                                                ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Couldn't unify set and int
+Trying to unify Set[_t12] and int
+Trying to unify (Set[_t12], Set[_t12]) => Set[_t12] and (_t11, int) => _t13
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-output-owner-v111/qa/model-1791085476706731921/output-owner.qnt:8:145
+  8:  action remove(id:int):bool=s'=if(id==s.owner) {...s,alive:s.alive.exclude(id),retired:true,mapped:false,popup:false,queued:0} else {...s,alive:s.alive.exclude(id)}
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed

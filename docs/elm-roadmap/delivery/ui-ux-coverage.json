@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T03:40:38.604796+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T03:57:37.701480+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6784,6 +6784,40 @@
       "cleanupPassed": true,
       "scope": "Actual nested output addition/removal and topology-scoped DOM focus only; per-display shell, physical displays, full output UX/release remain open",
       "failedLineage": "V109 preserved: successful second output creation then incorrect QA envelope lookup; V110 corrects lookup and strengthens exact DOM/publication check."
+    },
+    {
+      "evidence": "implementation/elm-output-padding-qa-v119/qa/slice-manifest.json",
+      "nativeChecks": 114,
+      "originalNativeChecks": 91,
+      "retainedCompiledControllerChecks": 67,
+      "retainedCompiledPresenterChecks": 12,
+      "newNativeHostTestGroups": 8,
+      "surfaceTestGroups": 4,
+      "quintNamedScenarios": 4,
+      "quintInvariantSamples": 1000,
+      "asymmetricPrivateOutputs": {
+        "WAYLAND-1": [
+          800,
+          600
+        ],
+        "QA-SECOND": [
+          640,
+          480
+        ]
+      },
+      "eachBarReservationTop": 48,
+      "secondaryPopupConfigure": [
+        4,
+        48,
+        632,
+        420
+      ],
+      "ownerRemovalHostExit": 0,
+      "ownerRemovalBackendExit": 0,
+      "otherHostPreserved": true,
+      "cleanupPassed": true,
+      "scope": "Native object ownership and per-output host component in two private fixture processes; final shared-controller multi-output architecture and hardware UX remain open",
+      "failedLineage": "V111 Quint set type error; V113 oversized popup; V115 bounded size still outside compositor padded rectangle; V117 wrapper-only change ineffective. V118 admitted geometry honors actual owning compositor padding; V119 full114 passes."
     }
   ]
 }

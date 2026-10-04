@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Native monitor incarnation ownership, removal retirement and queued action suppression; abstract model, native runtime evidence separate.",
+  "sourceSHA256": "e2a520a0af005fb5bab4266b2ad44642318b0e5937d15d9f770d0f734c2cbc22",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "output-owner.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: Couldn't unify set and int\\nTrying to unify Set[int] and int\\nTrying to unify (Set[_t4], Set[_t4]) => Set[_t4] and (Set[int], int) => _t5\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-output-owner-v111/qa/model-1791085476706731921/output-owner.qnt:8:60\\n  8:  action remove(id:int):bool=s'=if(id==s.owner) {...s,alive:s.alive.exclude(id),retired:true,mapped:false,popup:false,queued:0} else {...s,alive:s.alive.exclude(id)}\\n                                                                ^^^^^^^^^^^^^^^^^^^\\n\\n\\n Error [QNT000]: Couldn't unify set and int\\nTrying to unify Set[_t12] and int\\nTrying to unify (Set[_t12], Set[_t12]) => Set[_t12] and (_t11, int) => _t13\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-output-owner-v111/qa/model-1791085476706731921/output-owner.qnt:8:145\\n  8:  action remove(id:int):bool=s'=if(id==s.owner) {...s,alive:s.alive.exclude(id),retired:true,mapped:false,popup:false,queued:0} else {...s,alive:s.alive.exclude(id)}\\n                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n\")",
+  "artifacts": {
+    "output-owner.qnt": "e2a520a0af005fb5bab4266b2ad44642318b0e5937d15d9f770d0f734c2cbc22",
+    "model.py": "4880026abf790ecc44ce15e45238a16294f10b9518eec81202f3392ca0162e47",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "05cfc7bb13ccbdbb2f90c84fc9995c7c6ed6913fa580ccd05eaa906bc93d14e6"
+  }
+}

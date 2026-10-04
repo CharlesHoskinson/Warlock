@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T03:40:38.604796+00:00",
+  "observedUTC": "2026-10-04T03:57:37.701480+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-output-focus-qa-v110",
+  "currentSlice": "implementation/elm-output-padding-qa-v119",
   "nextWork": [
-    "Implement explicit per-output native host identity and owned surface retirement on removal; qualify bars/workarea, scale/transform/fullscreen/lock.",
-    "Merge reviewed menu surface and newest choice/return-focus controller changes after independent source closure.",
-    "Continue actual AT/IME/human UX, hardware/GPU/WebGPU, canonical scene/C00 and coherent release gates."
+    "Qualify scale/transform and live output geometry changes with open popup; general workarea and connector/output identity policy.",
+    "Integrate native ownership into one primary Elm controller with presentation views on all outputs, preserving menu/choice/recovery protocols.",
+    "Continue full scene, fullscreen/lock, actual AT/IME/human UX, hardware/performance/WebGPU, C00 and coherent release."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through shared build-loop native lock and unchanged protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: opener return captures output-configuration generation and availability. Native105 passes original91 plus recovery/grab/topology; actual second nested output added/removed, generation1->2, matchingDOM117 cancelled focus. Compiled67+12; Quint9/1000. V109 QA envelope error retained; no requirement/cycle/release completion.",
+  "lastWorkClassification": "progress: retained native monitor ownership and selected-output removal retirement; clamp popup to logical monitor and owning compositor4px padding. Native114 including original91 and two asymmetric private bars/top48/pointer popup/owner removal pass; normal exits. Eight C host groups, retained exact67+12 Elm, Quint4/1000. Failed lineage retained. Two fixture controllers are not final global multi-output controller.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

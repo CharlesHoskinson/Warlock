@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "scope": "Native monitor incarnation ownership, removal retirement and queued action suppression; abstract model, native runtime evidence separate.",
+  "sourceSHA256": "13ee617028b4957210ec387e031da93a063b4a7f5e43839585328306a7d5d30f",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "output-owner.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "output-owner.qnt",
+        "--backend=typescript",
+        "--match=^(unrelatedRemovalTest|ownerRemovalTest|replacementTest|lateQueueTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "output-owner.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 4,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "output-owner.qnt": "13ee617028b4957210ec387e031da93a063b4a7f5e43839585328306a7d5d30f",
+    "model.py": "4880026abf790ecc44ce15e45238a16294f10b9518eec81202f3392ca0162e47",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unrelatedRemovalTest-0.itf.json": "220e937558fbdcbd3cb08bf16ea3495b85a4a08eb6d904f16ab0539e31445cbc",
+    "named-ownerRemovalTest-1.itf.json": "09c58682af53b9f30fa36adb3dc41747f6aae4ea9d1f66b4db15977c2039b037",
+    "named-replacementTest-2.itf.json": "fd76778fd62f6687b67d4e456af76241674ea48b05dc7fd54bdcbb1415fc18a1",
+    "named-lateQueueTest-3.itf.json": "30ea3c1e7435be725e5bb96355c9a255bc0c4359bfdfd2dad5303235ce5ad4a6",
+    "named.stdout": "0d2151ae03ab735c453234775aaf1958a770a2f803bddae7cbfd7b9912b2e45b",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "1ff34939cf6989d0657c62627db3bbbce23e2d85aa9164af16e37f1ffb565e18",
+    "invariants.stdout": "92609c9200bac8f9dc56e5e4373657f01d8fb6ad7f3210af502018be15963326",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
