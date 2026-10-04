@@ -1,0 +1,120 @@
+{
+  "passed": true,
+  "diagnosticCleanupQualified": true,
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "verifiedSourceRows": 416,
+  "verifiedArtifacts": 268,
+  "actualChecks": 27,
+  "activationJournals": [
+    {
+      "service": "org.a11y.Bus",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.a11y.Bus/3761288-1791149558301880236.jsonl",
+      "classification": {
+        "serviceOutcome": "cancelled",
+        "exitClasses": {
+          "3761303:11766201": "normal",
+          "3761308:11766201": "SIGTERM-cancellation",
+          "3761309:11766201": "normal"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "service": "org.freedesktop.impl.portal.PermissionStore",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.freedesktop.impl.portal.PermissionStore/3761212-1791149558131565282.jsonl",
+      "classification": {
+        "serviceOutcome": "cancelled",
+        "exitClasses": {
+          "3761213:11766184": "SIGTERM-cancellation"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "service": "org.freedesktop.impl.portal.desktop.gtk",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.gtk/3761259-1791149558226111304.jsonl",
+      "classification": {
+        "serviceOutcome": "cancelled",
+        "exitClasses": {
+          "3761281:11766193": "SIGTERM-cancellation"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "service": "org.freedesktop.impl.portal.desktop.hyprland",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.freedesktop.impl.portal.desktop.hyprland/3761331-1791149558485652015.jsonl",
+      "classification": {
+        "serviceOutcome": "cancelled",
+        "exitClasses": {
+          "3761368:11766219": "SIGTERM-cancellation"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "service": "org.freedesktop.portal.Desktop",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.freedesktop.portal.Desktop/3761205-1791149558092155995.jsonl",
+      "classification": {
+        "serviceOutcome": "cancelled",
+        "exitClasses": {
+          "3761206:11766180": "SIGTERM-cancellation"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "service": "org.freedesktop.portal.Documents",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.freedesktop.portal.Documents/3761220-1791149558175251824.jsonl",
+      "classification": {
+        "serviceOutcome": "normal",
+        "exitClasses": {
+          "3761249:11766188": "normal",
+          "3761255:11766188": "normal"
+        },
+        "normalServiceOperation": true
+      }
+    },
+    {
+      "service": "org.freedesktop.systemd1",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.freedesktop.systemd1/3761311-1791149558365305105.jsonl",
+      "classification": {
+        "serviceOutcome": "expected-unavailable",
+        "exitClasses": {
+          "3761315:11766207": "expected-unavailable"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "service": "org.freedesktop.systemd1",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.freedesktop.systemd1/3761370-1791149558576470743.jsonl",
+      "classification": {
+        "serviceOutcome": "expected-unavailable",
+        "exitClasses": {
+          "3761406:11766228": "expected-unavailable"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "service": "org.gtk.vfs.Daemon",
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/native-evidence/activation-journals/org.gtk.vfs.Daemon/3761313-1791149558365827657.jsonl",
+      "classification": {
+        "serviceOutcome": "cancelled",
+        "exitClasses": {
+          "3761316:11766207": "SIGTERM-cancellation",
+          "3761322:11766208": "SIGTERM-handler-exit15"
+        },
+        "normalServiceOperation": false
+      }
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/native-1791149554426845000/report.json": "8f9c9a2c10e356e8aadbfb0adcab1634f7ccc3ce675be0f02f4aabb9157cb8a6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/component-manifest.json": "5619425ec3a4b2d60fb26072d7fd5fbef44e6b2fefda90b3419e4bf37c392233",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/private_bus.py": "9b69d4abeb7ff9b197d64e86d3fab62c1c8529ecda946ca9f41906075d438f93",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/outcomes.py": "428a639129c9b289ff0732e6ce85124cbcb8da39e5187a6407c2b1e02ff6a619"
+  }
+}
