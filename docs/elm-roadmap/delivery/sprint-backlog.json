@@ -5002,6 +5002,17 @@
       "runtimeCandidate": "implementation/elm-shared-keyboard-runtime-v435",
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-keyboard-seat-focus-source-held-v449/qa/slice-manifest.json",
+      "manifestSHA256": "68e5c454daac62850674e00a695fd28ac3cc3e625ebe95d64a40fe641d7df875",
+      "summary": "Native445 read-only focus observer444 repeats shared capability failure24/normalcleanup: live popup52/sharedHost -> samefocus zero keyboardresources -> restored focus71/underlying fixture while grab remains. Causal owning setupKeyboard first-device desktop fallback overwrites seat popup. Fresh446 sole expiry guard EARS/OpenSpec;447 actual C++ predicate36/two bad controls and Quint7 named/1000x40/3 mutants pass (446 initial zero named retained); full448 actual InputManager TU compiles against694 exact Core89 headers. Frozen4491865files/6reports. Source correction prepared only; native fix/new core/plugin link unaccepted, candidate439 preserved.",
+      "nativeAcceptance": false,
+      "sourceCompileAccepted": true,
+      "causalNativeDiagnosis": true,
+      "candidate": "implementation/elm-keyboard-seat-focus-policy-v446",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   ]
 }

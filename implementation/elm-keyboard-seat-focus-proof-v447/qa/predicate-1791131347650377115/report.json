@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "scope": "Actual owning setupKeyboard predicate extracted against typed adapter and independent36-case focus oracle; no full compositor/native acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/managers/input/InputManager.cpp": "feedf32e2e3d23aeaed7a02ef4ab94be2d66f4b22873b3166026da1e9ece4765",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-seat-focus-policy-v446/candidate/src/managers/input/InputManager.cpp": "2f5bb41b1ac4b8706db87a263c685233e633c44810c551309589b8d859517e22"
+  },
+  "controls": [
+    {
+      "name": "candidate",
+      "exitCode": 0,
+      "expectedExitCode": 0
+    },
+    {
+      "name": "old-overwrite",
+      "exitCode": 1,
+      "expectedExitCode": 1
+    },
+    {
+      "name": "no-fallback",
+      "exitCode": 1,
+      "expectedExitCode": 1
+    }
+  ],
+  "checks": 36,
+  "artifacts": {
+    "candidate.cpp": "3d13e4fa0805e3acebc85613ee3da99f48ba3d4f4640850debad2e576525c06a",
+    "candidate": "56760924b098b05b763e93966196783dfc32bd2b79a007670dbc8e4052097bc2",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate.stdout": "a4b2c5db15348c29451e18b8307e5ef81625ea638e807935f39ceaa8d9ac7758",
+    "old-overwrite.cpp": "37715bbfdd651d526b1169a42de0db98d25daaeb6c55c1580d0415520c89db05",
+    "old-overwrite": "fe7a691b34e1f9732172741b36d0fe3e3ef84c3b19f1410a2fa99c3afcd43a50",
+    "old-overwrite-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "old-overwrite.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "no-fallback.cpp": "aeb5531b38e9253e43441e2ea0de5eb39b27e66b75d795a150129af248108f67",
+    "no-fallback": "82cb3ea8ab7119169d0859c2b6dcd18c6eb79fef13a671ec6167564fba3aea81",
+    "no-fallback-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "no-fallback.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

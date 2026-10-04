@@ -1,0 +1,16 @@
+
+  focus
+    1) additionalKeyboardNoFocusChangeTest failed after 1 test(s)
+
+  1 failed
+
+  1) additionalKeyboardNoFocusChangeTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-seat-focus-policy-v446/qa/model-1791131251764827902/additional-focus.qnt:19:99
+        19:  run additionalKeyboardNoFocusChangeTest = init.then(attach).then(expire).then(attach).then(all { assert(s.focus == 0), s' = s })
+                                                                                                              ^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=additionalKeyboardNoFocusChangeTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 additional-focus.qnt
