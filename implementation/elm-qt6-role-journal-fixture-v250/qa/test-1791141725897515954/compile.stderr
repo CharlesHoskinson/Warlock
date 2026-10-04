@@ -1,0 +1,206 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:3:35: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+    3 | if(parseCommand("1 create-owners",&c) != true)return 1;
+      |                                   ^~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:1:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:4:32: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+    4 | if(parseCommand("1 open-modal",&c) != true)return 2;
+      |                                ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:5:33: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+    5 | if(parseCommand("1 close-modal",&c) != true)return 3;
+      |                                 ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:6:33: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+    6 | if(parseCommand("1 close-owner",&c) != true)return 4;
+      |                                 ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:7:35: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+    7 | if(parseCommand("1 create-family",&c) != true)return 5;
+      |                                   ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:8:33: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+    8 | if(parseCommand("2 open-nested",&c) != true)return 6;
+      |                                 ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:9:34: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+    9 | if(parseCommand("3 close-nested",&c) != true)return 7;
+      |                                  ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:10:32: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   10 | if(parseCommand("4 open-popup",&c) != true)return 8;
+      |                                ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:11:33: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   11 | if(parseCommand("5 close-popup",&c) != true)return 9;
+      |                                 ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:12:29: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   12 | if(parseCommand("6 inspect",&c) != true)return 10;
+      |                             ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:13:26: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   13 | if(parseCommand("7 quit",&c) != true)return 11;
+      |                          ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:14:32: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   14 | if(parseCommand("8 minimize A",&c) != true)return 12;
+      |                                ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:15:31: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   15 | if(parseCommand("9 restore C",&c) != true)return 13;
+      |                               ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:16:33: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   16 | if(parseCommand("10 maximize A",&c) != true)return 14;
+      |                                 ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:17:35: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   17 | if(parseCommand("11 unmaximize C",&c) != true)return 15;
+      |                                   ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:18:47: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   18 | if(parseCommand("9223372036854775807 inspect",&c) != true)return 16;
+      |                                               ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:19:20: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   19 | if(parseCommand("",&c) != false)return 17;
+      |                    ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:20:29: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   20 | if(parseCommand("0 inspect",&c) != false)return 18;
+      |                             ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:21:30: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   21 | if(parseCommand("01 inspect",&c) != false)return 19;
+      |                              ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:22:30: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   22 | if(parseCommand("-1 inspect",&c) != false)return 20;
+      |                              ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:23:30: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   23 | if(parseCommand("+1 inspect",&c) != false)return 21;
+      |                              ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:24:31: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   24 | if(parseCommand("1.0 inspect",&c) != false)return 22;
+      |                               ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:25:32: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   25 | if(parseCommand("true inspect",&c) != false)return 23;
+      |                                ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:26:47: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   26 | if(parseCommand("9223372036854775808 inspect",&c) != false)return 24;
+      |                                               ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:27:228: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   27 | if(parseCommand("99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 inspect",&c) != false)return 25;
+      |                                                                                                                                                                                                                                    ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:28:29: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   28 | if(parseCommand("1 unknown",&c) != false)return 26;
+      |                             ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:29:30: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   29 | if(parseCommand("1 minimize",&c) != false)return 27;
+      |                              ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:30:32: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   30 | if(parseCommand("1 minimize B",&c) != false)return 28;
+      |                                ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:31:33: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   31 | if(parseCommand("1 minimize AA",&c) != false)return 29;
+      |                                 ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:32:31: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   32 | if(parseCommand("1 inspect A",&c) != false)return 30;
+      |                               ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:33:38: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   33 | if(parseCommand("1 quit extra extra",&c) != false)return 31;
+      |                                      ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:34:35: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   34 | if(parseCommand("1 inspect extra",&c) != false)return 32;
+      |                                   ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:35:38: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   35 | if(parseCommand("1 maximize C extra",&c) != false)return 33;
+      |                                      ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/parser-test.cpp:36:532: error: invalid initialization of non-const reference of type ‘Command&’ from an rvalue of type ‘Command*’
+   36 | if(parseCommand("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",&c) != false)return 34;
+      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/test-1791141725897515954/commands.hpp:7:59: note: in passing argument 2 of ‘bool parseCommand(const std::string&, Command&)’
+    7 | inline bool parseCommand(const std::string &line,Command &c) {
+      |                                                  ~~~~~~~~~^

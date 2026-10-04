@@ -1,0 +1,197 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-cli-valid-0",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-1",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-2",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-3",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-4",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-5",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-6",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-7",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-8",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-9",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-10",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-11",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-12",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-13",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-14",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-15",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-16",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-17",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-18",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-0",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-2",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-3",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-4",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-5",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-6",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-7",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-8",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-9",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-10",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-11",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-12",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-13",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-14",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-15",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-16",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-17",
+      "passed": true
+    },
+    {
+      "name": "describe-before-display",
+      "passed": true
+    },
+    {
+      "name": "reject-unowned-runtime-before-gtk",
+      "passed": true
+    },
+    {
+      "name": "actual-header-contract-table",
+      "passed": true
+    },
+    {
+      "name": "unsafe-overflow-int64-behaviorally-rejected",
+      "passed": true,
+      "exit": 27
+    },
+    {
+      "name": "unsafe-unknown-operation-behaviorally-rejected",
+      "passed": true,
+      "exit": 29
+    },
+    {
+      "name": "unsafe-leading-zero-behaviorally-rejected",
+      "passed": true,
+      "exit": 22
+    }
+  ],
+  "sourceInputs": {
+    "client-build-report.json": {
+      "sha256": "317b5164d35e67a2db3ae6bd5f51d6bfa6b7b2164c603dbd06f00df95bdb3094"
+    },
+    "native/commands.hpp": {
+      "sha256": "a849c9dff86a51f1dd93975e50c880d4b86cd2029916bb952c8222bcdd8b95ec"
+    },
+    "native/qt-role-client.cpp": {
+      "sha256": "83e8a3f065262e3a05deed454619733dcac81b23384e0533ccae330524d29418"
+    },
+    "qa/test.py": {
+      "sha256": "f4b1be03d7293337f4a6df5f0b693ecad948e7d763048d426c20555214a03e54"
+    }
+  },
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/client-build-report.json",
+  "buildReportSHA256": "317b5164d35e67a2db3ae6bd5f51d6bfa6b7b2164c603dbd06f00df95bdb3094"
+}
