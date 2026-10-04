@@ -1,0 +1,1 @@
+Fresh native regression derivative of elm-parent-transport-multi-v107. Only the AQ descriptor changes to frozen V120 held-cancellation. Original runner assertions, scenario identities, deadlines, recipients, pixels where applicable, owning Core89/plugin90 bindings and ordered cleanup remain unchanged. Native-only bounded qualification; full release remains open.

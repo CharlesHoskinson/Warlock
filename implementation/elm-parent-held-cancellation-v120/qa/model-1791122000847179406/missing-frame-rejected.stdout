@@ -1,0 +1,16 @@
+
+  held
+    1) allHeldCancelledTest failed after 1 test(s)
+
+  1 failed
+
+  1) allHeldCancelledTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-cancellation-v120/qa/model-1791122000847179406/missing-frame.qnt:21:113
+        21:   run allHeldCancelledTest = init.then(press(1)).then(press(2)).then(press(3)).then(lose).then(cancel).then(all{assert(s.released==3 and s.cancelled==Set(1,2,3) and s.cancelFrames==1),s'=s})
+                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=allHeldCancelledTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 missing-frame.qnt

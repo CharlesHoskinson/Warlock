@@ -1,0 +1,2331 @@
+[1;32mDEBUG [0m]: User-specified config location: '/run/user/1000/wqa/8f72/hyprland.lua'
+Welcome to Hyprland!
+
+                                                  
+                     YY    UJ                     
+                    YYY    UUJ                    
+                   XXXY    UUUU                   
+                  zXXXX    UUUUU                  
+                zzzzX        UUUUJ                
+               cczzz          UUUUJ               
+             vccccz            UUUUUJ             
+            vvcccc              UUUUUJ            
+           vvvvv                  UUUUJ           
+          uuuvv                    UUUUJ          
+         uuuuu                      UUUUU         
+        nnnuu                        UUUUU        
+       nnnnn                          YUUUU       
+       xxnn                            YUUU       
+       xxxn                            YYUU       
+      xxxx                              YYUU      
+      rxxx                              YYYY      
+      rrrx                              YYYY      
+       rrrx                            XXXY       
+       rrrr                            XXXX       
+        rrrr                          zzXX        
+         rrrr                        zzzz         
+          rrrrr                    ccczz          
+           rrrrrx                vccccc           
+             rrrrxxxx        uuvvvvvc             
+                rrxxxxxxnnnnuuuuuv                
+                    xxxxxnnnnu                    
+
+
+
+[1;33mWARN [0m]: Failed to change process scheduling strategy
+DEBUG ]: Old rlimit: soft -> 65536, hard -> 524288
+DEBUG ]: New rlimit: soft -> 524288, hard -> 524288
+WARN ]: WARNING: Hyprland is being launched without start-hyprland. This is highly advised against.
+DEBUG ]: Creating the EventLoopManager!
+DEBUG ]: Creating the KeybindManager!
+DEBUG ]: Creating the AnimationManager!
+DEBUG ]: Creating the DynamicPermissionManager!
+DEBUG ]: Creating the MonitorState!
+DEBUG ]: Creating the WorkspaceState!
+DEBUG ]: Creating the ConfigManager!
+DEBUG ]: [cfg] Config is either explicit or special.
+DEBUG ]: [cfg] Config is lua, loading lua mgr
+DEBUG ]: Creating the Error Overlay!
+DEBUG ]: Creating the LayoutManager!
+DEBUG ]: Creating the TokenManager!
+DEBUG ]: Creating the EventManager!
+DEBUG ]: Creating the PointerManager!
+DEBUG ]: Creating the AsyncResourceGatherer!
+[1;32mDEBUG [0mfrom aquamarine ]: Creating an Aquamarine backend!
+[1;32mDEBUG [0mfrom aquamarine ]: Private AQ_BACKENDS=wayland: mandatory parent, no DRM or libseat backend
+[1;32mDEBUG [0mfrom aquamarine ]: Starting the Aquamarine backend!
+[1;32mDEBUG [0mfrom aquamarine ]: Starting the Wayland backend!
+[1;32mDEBUG [0mfrom aquamarine ]: Connected to a wayland compositor: Hyprland
+[14:07:49.558644] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#2)
+[1;32mDEBUG [0mfrom aquamarine ]: Got registry at 0x55d99126a110
+[14:07:49.558659] {Default Queue}  -> wl_display#1.sync(new id wl_callback#3)
+[14:07:49.558772] {Display Queue} wl_display#1.delete_id(3)
+[14:07:49.558782] {Default Queue} wl_registry#2.global(1, "wl_compositor", 5)
+[14:07:49.558788] {Default Queue}  -> wl_registry#2.bind(1, "wl_compositor", 5, new id [unknown]#4)
+[14:07:49.558792] {Default Queue} wl_registry#2.global(2, "wl_subcompositor", 1)
+[14:07:49.558795] {Default Queue} wl_registry#2.global(3, "wp_viewporter", 1)
+[14:07:49.558799] {Default Queue}  -> wl_registry#2.bind(3, "wp_viewporter", 1, new id [unknown]#5)
+[14:07:49.558805] {Default Queue} wl_registry#2.global(4, "zxdg_output_manager_v1", 2)
+[14:07:49.558808] {Default Queue} wl_registry#2.global(5, "wp_presentation", 2)
+[14:07:49.558810] {Default Queue} wl_registry#2.global(6, "wp_single_pixel_buffer_manager_v1", 1)
+[14:07:49.558812] {Default Queue} wl_registry#2.global(7, "wp_tearing_control_manager_v1", 1)
+[14:07:49.558814] {Default Queue} wl_registry#2.global(8, "wp_fifo_manager_v1", 1)
+[14:07:49.558816] {Default Queue} wl_registry#2.global(9, "wp_commit_timing_manager_v1", 1)
+[14:07:49.558818] {Default Queue} wl_registry#2.global(10, "zwp_relative_pointer_manager_v1", 1)
+[14:07:49.558825] {Default Queue} wl_registry#2.global(11, "zwp_pointer_constraints_v1", 1)
+[14:07:49.558833] {Default Queue} wl_registry#2.global(12, "zwp_input_timestamps_manager_v1", 1)
+[14:07:49.558835] {Default Queue} wl_registry#2.global(13, "weston_capture_v1", 2)
+[14:07:49.558837] {Default Queue} wl_registry#2.global(14, "wl_data_device_manager", 3)
+[14:07:49.558839] {Default Queue} wl_registry#2.global(15, "wl_shm", 2)
+[14:07:49.558841] {Default Queue}  -> wl_registry#2.bind(15, "wl_shm", 1, new id [unknown]#6)
+[14:07:49.558844] {Default Queue} wl_registry#2.global(16, "wl_seat", 7)
+[14:07:49.558847] {Default Queue}  -> wl_registry#2.bind(16, "wl_seat", 7, new id [unknown]#7)
+[14:07:49.558852] {Default Queue} wl_registry#2.global(17, "zwp_linux_dmabuf_v1", 5)
+[14:07:49.558854] {Default Queue}  -> wl_registry#2.bind(17, "zwp_linux_dmabuf_v1", 4, new id [unknown]#8)
+[14:07:49.558859] {Default Queue}  -> zwp_linux_dmabuf_v1#8.get_default_feedback(new id zwp_linux_dmabuf_feedback_v1#9)
+[14:07:49.558865] {Default Queue}  -> wl_display#1.sync(new id wl_callback#10)
+[14:07:49.558867] {Default Queue} wl_registry#2.global(18, "zwp_linux_explicit_synchronization_v1", 2)
+[14:07:49.558869] {Default Queue} wl_registry#2.global(19, "wp_color_representation_manager_v1", 1)
+[14:07:49.558872] {Default Queue} wl_registry#2.global(20, "wl_output", 4)
+[14:07:49.558875] {Default Queue} wl_registry#2.global(21, "xdg_wm_base", 5)
+[14:07:49.558877] {Default Queue}  -> wl_registry#2.bind(21, "xdg_wm_base", 5, new id [unknown]#11)
+[14:07:49.558881] {Default Queue} wl_registry#2.global(22, "elm_parent_input_v1", 5)
+[14:07:49.558884] {Default Queue} wl_callback#3.done(0)
+[14:07:49.559025] {Display Queue} wl_display#1.delete_id(10)
+[14:07:49.559034] {Default Queue} wl_shm#6.format(0)
+[14:07:49.559040] {Default Queue} wl_shm#6.format(1)
+[14:07:49.559044] {Default Queue} wl_shm#6.format(842093144)
+[14:07:49.559049] {Default Queue} wl_shm#6.format(842093121)
+[14:07:49.559054] {Default Queue} wl_shm#6.format(842089048)
+[14:07:49.559058] {Default Queue} wl_shm#6.format(842089025)
+[14:07:49.559062] {Default Queue} wl_shm#6.format(842094674)
+[14:07:49.559067] {Default Queue} wl_shm#6.format(842088786)
+[14:07:49.559071] {Default Queue} wl_shm#6.format(842094658)
+[14:07:49.559075] {Default Queue} wl_shm#6.format(842088770)
+[14:07:49.559080] {Default Queue} wl_shm#6.format(892426322)
+[14:07:49.559084] {Default Queue} wl_shm#6.format(892420434)
+[14:07:49.559088] {Default Queue} wl_shm#6.format(892426306)
+[14:07:49.559093] {Default Queue} wl_shm#6.format(892420418)
+[14:07:49.559097] {Default Queue} wl_shm#6.format(909199186)
+[14:07:49.559101] {Default Queue} wl_shm#6.format(909199170)
+[14:07:49.559106] {Default Queue} wl_shm#6.format(875710290)
+[14:07:49.559110] {Default Queue} wl_shm#6.format(875710274)
+[14:07:49.559115] {Default Queue} wl_shm#6.format(875713112)
+[14:07:49.559120] {Default Queue} wl_shm#6.format(875713089)
+[14:07:49.559124] {Default Queue} wl_shm#6.format(875709016)
+[14:07:49.559127] {Default Queue} wl_shm#6.format(875708993)
+[14:07:49.559129] {Default Queue} wl_shm#6.format(875714642)
+[14:07:49.559131] {Default Queue} wl_shm#6.format(875708754)
+[14:07:49.559133] {Default Queue} wl_shm#6.format(875714626)
+[14:07:49.559134] {Default Queue} wl_shm#6.format(875708738)
+[14:07:49.559136] {Default Queue} wl_shm#6.format(808669784)
+[14:07:49.559138] {Default Queue} wl_shm#6.format(808669761)
+[14:07:49.559140] {Default Queue} wl_shm#6.format(808665688)
+[14:07:49.559142] {Default Queue} wl_shm#6.format(808665665)
+[14:07:49.559144] {Default Queue} wl_shm#6.format(942948952)
+[14:07:49.559146] {Default Queue} wl_shm#6.format(942948929)
+[14:07:49.559148] {Default Queue} wl_shm#6.format(942953048)
+[14:07:49.559150] {Default Queue} wl_shm#6.format(942953025)
+[14:07:49.559153] {Default Queue} wl_shm#6.format(1211384408)
+[14:07:49.559155] {Default Queue} wl_shm#6.format(1211384385)
+[14:07:49.559157] {Default Queue} wl_shm#6.format(1211388504)
+[14:07:49.559159] {Default Queue} wl_shm#6.format(1211388481)
+[14:07:49.559163] {Default Queue} wl_shm#6.format(1448695129)
+[14:07:49.559167] {Default Queue} wl_shm#6.format(1431918169)
+[14:07:49.559169] {Default Queue} wl_shm#6.format(1498831189)
+[14:07:49.559171] {Default Queue} wl_shm#6.format(1498765654)
+[14:07:49.559174] {Default Queue} wl_shm#6.format(842094158)
+[14:07:49.559175] {Default Queue} wl_shm#6.format(825382478)
+[14:07:49.559178] {Default Queue} wl_shm#6.format(909203022)
+[14:07:49.559180] {Default Queue} wl_shm#6.format(825644622)
+[14:07:49.559182] {Default Queue} wl_shm#6.format(875714126)
+[14:07:49.559184] {Default Queue} wl_shm#6.format(842290766)
+[14:07:49.559186] {Default Queue} wl_shm#6.format(808530000)
+[14:07:49.559188] {Default Queue} wl_shm#6.format(842084432)
+[14:07:49.559190] {Default Queue} wl_shm#6.format(909193296)
+[14:07:49.559192] {Default Queue} wl_shm#6.format(842093913)
+[14:07:49.559194] {Default Queue} wl_shm#6.format(842094169)
+[14:07:49.559196] {Default Queue} wl_shm#6.format(909202777)
+[14:07:49.559198] {Default Queue} wl_shm#6.format(909203033)
+[14:07:49.559200] {Default Queue} wl_shm#6.format(875713881)
+[14:07:49.559202] {Default Queue} wl_shm#6.format(875714137)
+[14:07:49.559204] {Default Queue} wl_shm#6.format(1448434008)
+[14:07:49.559206] {Default Queue} wl_seat#7.name("default")
+[14:07:49.559208] {Default Queue} wl_seat#7.capabilities(3)
+[14:07:49.559213] {Default Queue}  -> wl_seat#7.get_keyboard(new id wl_keyboard#3)
+[1;32mDEBUG [0mfrom aquamarine ]: New wayland keyboard wl_keyboard
+[14:07:49.559227] {Default Queue}  -> wl_seat#7.get_pointer(new id wl_pointer#12)
+[1;32mDEBUG [0mfrom aquamarine ]: New wayland pointer wl_pointer
+[14:07:49.559241] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.format_table(fd 15, 3776)
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB4H with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB4H with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB48 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB48 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB30 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AB24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XR24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XB24 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR15 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format AR12 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format RG16 with modifier 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUV9 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU11 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YU24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVU9 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV11 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YV24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S010 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S210 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S410 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S012 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S212 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S412 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S016 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S216 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format S416 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV12 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV21 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P010 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P012 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P016 with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format P030 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV16 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV61 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV24 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format NV42 with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format XYUV with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YUYV with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format YVYU with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format UYVY with modifier 4_TILED_MTL_MC_CCS
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier INVALID
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier X_TILED
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got format VYUY with modifier 4_TILED
+[14:07:49.559763] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.main_device(array[8])
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got main device
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got node /dev/dri/renderD129
+[14:07:49.559974] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_target_device(array[8])
+[14:07:49.559977] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_flags(0)
+[14:07:49.559980] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_formats(array[472])
+[14:07:49.559982] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_done()
+[14:07:49.559984] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.done()
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: Got done
+[14:07:49.559988] {Default Queue} wl_callback#10.done(0)
+[1;32mDEBUG [0mfrom aquamarine ]: zwp_linux_dmabuf_v1: opened node /dev/dri/renderD129 with fd 16
+[14:07:49.560137] {Default Queue}  -> wl_compositor#4.create_surface(new id wl_surface#10)
+[14:07:49.560144] {Default Queue}  -> wp_viewporter#5.get_viewport(new id wp_viewport#13, wl_surface#10)
+[14:07:49.560149] {Default Queue}  -> xdg_wm_base#11.get_xdg_surface(new id xdg_surface#14, wl_surface#10)
+[14:07:49.560155] {Default Queue}  -> xdg_surface#14.get_toplevel(new id xdg_toplevel#15)
+[14:07:49.560161] {Default Queue}  -> xdg_toplevel#15.set_title("aquamarine - WAYLAND-1")
+[14:07:49.560165] {Default Queue}  -> xdg_toplevel#15.set_app_id("aquamarine")
+[14:07:49.560168] {Default Queue}  -> wl_compositor#4.create_region(new id wl_region#16)
+[14:07:49.560172] {Default Queue}  -> wl_region#16.add(0, 0, 2147483647, 2147483647)
+[14:07:49.560176] {Default Queue}  -> wl_surface#10.set_input_region(wl_region#16)
+[14:07:49.560179] {Default Queue}  -> wl_surface#10.attach(nil, 0, 0)
+[14:07:49.560182] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.560185] {Default Queue}  -> wl_region#16.destroy()
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: initialized
+[1;32mDEBUG [0mfrom aquamarine ]: reopenDRMNode: opening node /dev/dri/renderD129
+[1;32mDEBUG [0mfrom aquamarine ]: Created a GBM allocator with drm fd 17
+[1;32mDEBUG [0m]: Instance Signature: efb50993780079460b0cbed1363e2166a2de1d9f_1791122869_662120070
+[1;32mDEBUG [0m]: Runtime directory: /run/user/1000/wqa/8f72/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791122869_662120070
+[1;32mDEBUG [0m]: Hyprland PID: 1857886
+[1;32mDEBUG [0m]: ===== SYSTEM INFO: =====
+[1;32mDEBUG [0m]: Hyprland 0.56.2 built from branch  at commit efb50993780079460b0cbed1363e2166a2de1d9f dirty ([gha] Nix: update inputs).
+Date: Wed Aug 5 08:13:21 2026
+Tag: v0.56.2, commits: 1
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.2, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+Version ABI string: efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6
+no flags were set
+
+
+System Information:
+System name: Linux
+Node name: hosk
+Release: 7.2.7-1-omarchy
+Version: #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000
+
+Libraries:
+Hyprgraphics: built against 0.5.1, system has 0.5.1
+Hyprutils: built against 0.14.2, system has 0.14.2
+Hyprcursor: built against 0.1.13, system has 0.1.13
+Hyprlang: built against 0.6.8, system has 0.6.8
+Aquamarine: built against 0.15.0, system has 0.15.0
+
+
+
+GPU information: 
+00:02.0 VGA compatible controller [0300]: Intel Corporation Arrow Lake-S [Intel Graphics] [8086:7d67] (rev 06) (prog-if 00 [VGA controller])
+02:00.0 VGA compatible controller [0300]: NVIDIA Corporation GB203M / GN22-X11 [GeForce RTX 5090 Max-Q / Mobile] [10de:2c58] (rev a1) (prog-if 00 [VGA controller])
+80:14.5 Non-VGA unclassified device [0000]: Intel Corporation Device [8086:7f2f] (rev 10)
+NVRM version: NVIDIA UNIX Open Kernel Module for x86_64  615.71.09  Release Build  (root@archiso)  
+
+
+os-release: NAME="Omarchy"
+PRETTY_NAME="Omarchy"
+ID=omarchy
+ID_LIKE=arch
+BUILD_ID="4.0.4.legion"
+VERSION_ID="4.0.4.legion"
+ANSI_COLOR="38;2;158;206;106"
+HOME_URL="https://omarchy.org/"
+DOCUMENTATION_URL="https://learn.omacom.io/2/the-omarchy-manual"
+SUPPORT_URL="https://discord.gg/tXFUdasqhY"
+BUG_REPORT_URL="https://github.com/basecamp/omarchy/issues"
+LOGO=omarchy
+
+
+plugins:
+	unknown: not runtime
+
+Backend: sessionless
+
+Monitor info:
+
+State:
+
+configProvider: lua
+backend: wayland
+
+
+
+[1;32mDEBUG [0m]: ========================
+[1;32mDEBUG [0m]: 
+
+
+[1;32mDEBUG [0m]: If you are crashing, or encounter any bugs, please consult https://wiki.hypr.land/Crashes-and-Bugs/
+
+
+[1;32mDEBUG [0m]: 
+Current splash: "Hello everyone this is YOUR daily dose of ‘read the wiki’" - Vaxry
+
+
+[1;32mDEBUG [0m]: Running on DRMFD: 16
+[1;32mDEBUG [0m]: Using RENDERNODEFD: 16
+[1;32mDEBUG [0m]: DRM DisplayNode syncobj timeline support: yes
+[1;32mDEBUG [0m]: DRM RenderNode syncobj timeline support: yes
+[1;32mDEBUG [0m]: wl_display_add_socket for wayland-1 succeeded with 0
+[1;32mDEBUG [0m]: Creating the CHyprOpenGLImpl!
+[1;32mDEBUG [0m]: Supported EGL global extensions: (16) EGL_EXT_device_base EGL_EXT_device_enumeration EGL_EXT_device_query EGL_EXT_platform_base EGL_KHR_client_get_all_proc_addresses EGL_EXT_client_extensions EGL_KHR_debug EGL_EXT_platform_device EGL_EXT_explicit_device EGL_EXT_platform_wayland EGL_KHR_platform_wayland EGL_EXT_platform_x11 EGL_KHR_platform_x11 EGL_EXT_platform_xcb EGL_MESA_platform_gbm EGL_KHR_platform_gbm EGL_MESA_platform_surfaceless
+[1;32mDEBUG [0m]: eglDeviceFromDRMFD: Using device /dev/dri/card0
+[1;32mDEBUG [0m]: EGL: IMG_context_priority supported, requesting high
+[1;32mDEBUG [0m]: EGL: EXT_create_context_robustness supported, requesting lose on reset
+[1;32mDEBUG [0m]: EGL: Using KHR_context_flush_control
+[1;32mDEBUG [0m]: EGL: Got a high priority context
+[1;32mDEBUG [0m]: Creating the Hypr OpenGL Renderer!
+[1;32mDEBUG [0m]: Using: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+[1;32mDEBUG [0m]: Vendor: Intel
+[1;32mDEBUG [0m]: Renderer: Mesa Intel(R) Graphics (ARL)
+[1;32mDEBUG [0m]: Supported extensions: (168) GL_EXT_blend_minmax GL_EXT_multi_draw_arrays GL_EXT_texture_filter_anisotropic GL_EXT_texture_compression_s3tc GL_EXT_texture_compression_dxt1 GL_EXT_texture_compression_rgtc GL_EXT_texture_format_BGRA8888 GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth24 GL_OES_element_index_uint GL_OES_fbo_render_mipmap GL_OES_mapbuffer GL_OES_rgb8_rgba8 GL_OES_standard_derivatives GL_OES_stencil8 GL_OES_texture_3D GL_OES_texture_float GL_OES_texture_float_linear GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_texture_npot GL_OES_vertex_half_float GL_EXT_draw_instanced GL_EXT_texture_sRGB_decode GL_OES_EGL_image GL_OES_depth_texture GL_AMD_performance_monitor GL_OES_packed_depth_stencil GL_EXT_texture_type_2_10_10_10_REV GL_NV_conditional_render GL_OES_get_program_binary GL_APPLE_texture_max_level GL_EXT_discard_framebuffer GL_EXT_read_format_bgra GL_EXT_texture_storage GL_NV_pack_subimage GL_NV_texture_barrier GL_EXT_frag_depth GL_NV_fbo_color_attachments GL_OES_EGL_image_external GL_OES_EGL_sync GL_OES_vertex_array_object GL_OES_viewport_array GL_ANGLE_pack_reverse_row_order GL_ANGLE_texture_compression_dxt3 GL_ANGLE_texture_compression_dxt5 GL_EXT_occlusion_query_boolean GL_EXT_robustness GL_EXT_sRGB GL_EXT_texture_rg GL_EXT_unpack_subimage GL_NV_draw_buffers GL_NV_read_buffer GL_NV_read_depth GL_NV_read_depth_stencil GL_NV_read_stencil GL_APPLE_sync GL_EXT_draw_buffers GL_EXT_instanced_arrays GL_EXT_map_buffer_range GL_EXT_shadow_samplers GL_KHR_debug GL_KHR_robustness GL_KHR_texture_compression_astc_ldr GL_NV_generate_mipmap_sRGB GL_NV_pixel_buffer_object GL_OES_depth_texture_cube_map GL_OES_required_internalformat GL_OES_surfaceless_context GL_EXT_color_buffer_float GL_EXT_debug_label GL_EXT_sRGB_write_control GL_EXT_separate_shader_objects GL_EXT_shader_framebuffer_fetch GL_EXT_shader_group_vote GL_EXT_shader_implicit_conversions GL_EXT_shader_integer_mix GL_EXT_tessellation_point_size GL_EXT_tessellation_shader GL_INTEL_conservative_rasterization GL_INTEL_performance_query GL_ANDROID_extension_pack_es31a GL_EXT_base_instance GL_EXT_compressed_ETC1_RGB8_sub_texture GL_EXT_copy_image GL_EXT_draw_buffers_indexed GL_EXT_draw_elements_base_vertex GL_EXT_gpu_shader5 GL_EXT_multi_draw_indirect GL_EXT_polygon_offset_clamp GL_EXT_primitive_bounding_box GL_EXT_render_snorm GL_EXT_shader_io_blocks GL_EXT_texture_border_clamp GL_EXT_texture_buffer GL_EXT_texture_cube_map_array GL_EXT_texture_norm16 GL_EXT_texture_view GL_KHR_blend_equation_advanced GL_KHR_blend_equation_advanced_coherent GL_KHR_context_flush_control GL_KHR_robust_buffer_access_behavior GL_NV_image_formats GL_NV_shader_noperspective_interpolation GL_OES_copy_image GL_OES_draw_buffers_indexed GL_OES_draw_elements_base_vertex GL_OES_gpu_shader5 GL_OES_primitive_bounding_box GL_OES_sample_shading GL_OES_sample_variables GL_OES_shader_io_blocks GL_OES_shader_multisample_interpolation GL_OES_tessellation_point_size GL_OES_tessellation_shader GL_OES_texture_border_clamp GL_OES_texture_buffer GL_OES_texture_cube_map_array GL_OES_texture_stencil8 GL_OES_texture_storage_multisample_2d_array GL_OES_texture_view GL_EXT_blend_func_extended GL_EXT_buffer_storage GL_EXT_float_blend GL_EXT_geometry_point_size GL_EXT_geometry_shader GL_EXT_shader_samples_identical GL_EXT_texture_sRGB_R8 GL_KHR_no_error GL_KHR_texture_compression_astc_sliced_3d GL_NV_fragment_shader_interlock GL_OES_EGL_image_external_essl3 GL_OES_geometry_point_size GL_OES_geometry_shader GL_OES_shader_image_atomic GL_EXT_clear_texture GL_EXT_clip_cull_distance GL_EXT_conservative_depth GL_EXT_disjoint_timer_query GL_EXT_texture_compression_s3tc_srgb GL_MESA_shader_integer_functions GL_EXT_clip_control GL_EXT_color_buffer_half_float GL_EXT_memory_object GL_EXT_memory_object_fd GL_EXT_protected_textures GL_EXT_semaphore GL_EXT_semaphore_fd GL_EXT_texture_compression_bptc GL_EXT_texture_mirror_clamp_to_edge GL_KHR_parallel_shader_compile GL_NV_alpha_to_coverage_dither_control GL_EXT_EGL_image_storage GL_EXT_shader_framebuffer_fetch_non_coherent GL_EXT_texture_shadow_lod GL_INTEL_blackhole_render GL_MESA_framebuffer_flip_y GL_NV_compute_shader_derivatives GL_EXT_demote_to_helper_invocation GL_EXT_depth_clamp GL_EXT_texture_query_lod GL_KHR_shader_subgroup GL_MESA_sampler_objects GL_EXT_EGL_image_storage_compression GL_EXT_texture_storage_compression GL_MESA_bgra GL_MESA_texture_const_bandwidth GL_EXT_shader_clock 
+[1;32mDEBUG [0m]: Supported EGL display extensions: (34) EGL_ANDROID_blob_cache EGL_ANDROID_native_fence_sync EGL_EXT_config_select_group EGL_EXT_create_context_robustness EGL_EXT_image_dma_buf_import EGL_EXT_image_dma_buf_import_modifiers EGL_EXT_protected_content EGL_EXT_query_reset_notification_strategy EGL_EXT_surface_compression EGL_IMG_context_priority EGL_KHR_cl_event2 EGL_KHR_config_attribs EGL_KHR_context_flush_control EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_get_all_proc_addresses EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image_base EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_surfaceless_context EGL_EXT_pixel_format_float EGL_KHR_wait_sync EGL_MESA_configless_context EGL_MESA_gl_interop EGL_MESA_image_dma_buf_export EGL_MESA_query_driver EGL_MESA_x11_native_visual_id 
+[1;32mDEBUG [0m]: Supported DMA-BUF formats:
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB4H (0x48344241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB4H (0x48344258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB48 (0x38344241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB48 (0x38344258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR30 (0x30335241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XR30 (0x30335258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB30 (0x30334241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB30 (0x30334258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR24 (0x34325241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB24 (0x34324241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XR24 (0x34325258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XB24 (0x34324258)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR15 (0x35315241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AR12 (0x32315241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format RG16 (0x36314752)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R8 (0x20203852)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R16 (0x20363152)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR88 (0x38385247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR32 (0x32335247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R  H (0x48202052)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format R  F (0x46202052)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR H (0x48205247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format GR F (0x46205247)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AB8F (0x46384241)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS_CC (0x10000000000000f)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED_MTL_RC_CCS (0x10000000000000d)
+[1;32mDEBUG [0m]: EGL: | with modifier 4_TILED (0x100000000000009)
+[1;32mDEBUG [0m]: EGL: | with modifier X_TILED (0x100000000000001)
+[1;32mDEBUG [0m]: EGL: | with modifier LINEAR (0x0)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YUV9 (0x39565559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU11 (0x31315559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU12 (0x32315559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU16 (0x36315559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YU24 (0x34325559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YVU9 (0x39555659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV11 (0x31315659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV12 (0x32315659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV16 (0x36315659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YV24 (0x34325659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S010 (0x30313053)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S210 (0x30313253)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S410 (0x30313453)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S012 (0x32313053)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S212 (0x32313253)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S412 (0x32313453)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S016 (0x36313053)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S216 (0x36313253)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format S416 (0x36313453)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV12 (0x3231564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV21 (0x3132564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P010 (0x30313050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P012 (0x32313050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P016 (0x36313050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format P030 (0x30333050)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV16 (0x3631564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV61 (0x3136564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV24 (0x3432564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format NV42 (0x3234564e)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format AYUV (0x56555941)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format XYUV (0x56555958)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y410 (0x30313459)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y412 (0x32313459)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y416 (0x36313459)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YUYV (0x56595559)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format YVYU (0x55595659)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format UYVY (0x59565955)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format VYUY (0x59555956)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y210 (0x30313259)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y212 (0x32313259)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: GPU Supports Format Y216 (0x36313259)
+[1;32mDEBUG [0m]: EGL: | with modifier INVALID (0xffffffffffffff)
+[1;32mDEBUG [0m]: EGL: 65 formats found in total. Some modifiers may be omitted as they are external-only.
+[1;32mDEBUG [0m]: Creating the HyprRenderer!
+[1;32mDEBUG [0m]: Aq backend has no session, omitting full DRM node checks
+[1;32mDEBUG [0m]: Primary DRM driver information: i915 v1.6.0 from 0 description Intel Graphics
+[1;32mDEBUG [0m]: Creating the ProtocolManager!
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLSeat]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLDataDevice]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLCompositor]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLSubcompositor]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLSHM]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Viewporter]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TearingControl]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [FractionalScale]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGOutput]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [CursorShape]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IdleInhibit]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [RelativePointer]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGDecoration]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [AlphaModifier]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [GammaControl]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ForeignToplevel]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PointerGestures]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ForeignToplevelWlr]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ShortcutsInhibit]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TextInputV1]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TextInputV3]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PointerConstraints]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [OutputPower]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGActivation]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IdleNotify]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IdleNotify]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [SessionLock]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [IMEv2]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [VirtualKeyboard]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [VirtualPointer]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [OutputManagement]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ServerDecorationKDE]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [FocusGrab]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [TabletV2]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [LayerShell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Presentation]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGShell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [DataDeviceWlr]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PrimarySelection]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XWaylandShell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ToplevelMapping]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [GlobalShortcuts]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGDialog]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [SinglePixel]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [SecurityContext]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [CTMControl]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [InputCapture]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [HyprlandSurface]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ContentType]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGTag]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGBell]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Hotkey]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ExtWorkspace]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ExtDataDevice]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [PointerWarp]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Fifo]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGForeignExporter]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [XDGForeignImporter]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [BackgroundEffect]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [CommitTiming]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [Screencopy]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ToplevelExport]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [OutputImageCaptureSource]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ForeignToplevelImageCaptureSource]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ImageCopyCapture]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [ColorManagement]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [MesaDRM]
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [LinuxDMABUF]
+[1;32mDEBUG [0m]: Creating the SeatManager!
+[1;32mDEBUG [0m]: Creating the SessionLockManager!
+[1;32mDEBUG [0m]: Creating CHyprCtl
+[1;32mDEBUG [0m]: Hypr socket started at /run/user/1000/wqa/8f72/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791122869_662120070/.socket.sock
+[1;32mDEBUG [0m]: Creating the InputManager!
+[1;32mDEBUG [0m]: Creating the XWaylandManager!
+[1;32mDEBUG [0m]: Creating the Debug Overlay!
+[1;32mDEBUG [0m]: Creating the NotificationOverlay!
+[1;32mDEBUG [0m]: Creating the PluginSystem!
+[1;32mDEBUG [0m]: Creating the DecorationPositioner!
+[1;32mDEBUG [0m]: Creating the CursorManager!
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find theme from env
+[1;32mDEBUG [0m]: [hc] themeNameFromEnv: env unset
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find any theme
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: no themes matched
+[1;31mERR [0m]: Hyprcursor failed loading theme "", falling back to Xcursor.
+[1;32mDEBUG [0m]: XCursor scanning theme default
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+[1;32mDEBUG [0m]: XCursor theme default inherits Adwaita
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+[1;32mDEBUG [0m]: XCursor theme AdwaitaLegacy inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme hicolor
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+[1;32mDEBUG [0m]: XCursor already has a shape default loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape context-menu loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape help loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape pointer loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape progress loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape wait loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name plus, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape crosshair loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape text loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape vertical-text loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-link, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape move loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-none, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grab loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grabbing loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape e-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape n-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ne-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape s-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape se-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape sw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape w-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ew-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ns-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nesw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nwse-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape col-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape row-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-scroll loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-in loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-out loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-resize loaded, skipping
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find theme from env
+[1;32mDEBUG [0m]: [hc] themeNameFromEnv: env unset
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: attempting to find any theme
+[1;32mDEBUG [0m]: [hc] CHyprcursorManager: no themes matched
+[1;31mERR [0m]: Hyprcursor failed loading theme "", falling back to Xcursor.
+[1;32mDEBUG [0m]: XCursor scanning theme default
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/default/index.theme
+[1;32mDEBUG [0m]: XCursor theme default inherits Adwaita
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme Adwaita
+[1;32mDEBUG [0m]: XCursor using theme path /usr/share/icons/Adwaita/cursors
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/Adwaita/index.theme
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor theme Adwaita inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme AdwaitaLegacy
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/AdwaitaLegacy/index.theme
+[1;32mDEBUG [0m]: XCursor theme AdwaitaLegacy inherits hicolor
+[1;32mDEBUG [0m]: XCursor scanning theme hicolor
+[1;32mDEBUG [0m]: XCursor parsing index.theme /usr/share/icons/hicolor/index.theme
+[1;32mDEBUG [0m]: XCursor already has a shape default loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape context-menu loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape help loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape pointer loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape progress loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape wait loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name plus, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape crosshair loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape text loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape vertical-text loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-link, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape move loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-none, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name crossed_circle, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grab loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape grabbing loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape e-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape n-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ne-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape s-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape se-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape sw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape w-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ew-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape ns-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nesw-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape nwse-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape col-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape row-resize loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-scroll loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-in loaded, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape zoom-out loaded, skipping
+[1;32mDEBUG [0m]: XCursor failed to find a legacy shape with name dnd-copy, skipping
+[1;32mDEBUG [0m]: XCursor already has a shape all-resize loaded, skipping
+[1;32mDEBUG [0m]: Creating the VersionKeeper!
+[1;32mDEBUG [0m]: FsUtils::getDataHome: no hyprland data home, creating.
+[1;32mDEBUG [0m]: Creating the DonationNag!
+[1;32mDEBUG [0m]: Creating the WelcomeManager!
+[1;32mDEBUG [0m]: [welcome] skipping, not autogen
+[1;32mDEBUG [0m]: Creating the ANRManager!
+[1;32mDEBUG [0m]: Starting XWayland
+[1;32mDEBUG [0m]: XWayland has been disabled, cleaning up...
+[1;32mDEBUG [0m]: Hyprland init finished.
+[1;32mDEBUG [0m]: Running on WAYLAND_DISPLAY: wayland-1
+[1;32mDEBUG [0m]: Hyprland is ready, running the event loop!
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 14 for implementation wayland
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 12 for implementation headless
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 13 for idle
+[14:07:49.644508] {Default Queue} wl_keyboard#3.repeat_info(40, 400)
+[14:07:49.644516] {Default Queue} wl_keyboard#3.keymap(1, fd 38, 35572)
+[1;32mDEBUG [0m]: New aquamarine keyboard with name wl_keyboard
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Attempting to create a keymap for layout us with variant  (rules: , model: , options: )
+[1;32mDEBUG [0m]: Updating keyboard 55d991472c80's translation state from a provided keymap
+[1;32mDEBUG [0m]: xkb: LED index 0 (name Num Lock) got index 1
+[1;32mDEBUG [0m]: xkb: LED index 1 (name Caps Lock) got index 0
+[1;32mDEBUG [0m]: xkb: LED index 2 (name Scroll Lock) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 0 (name Shift) got index 0
+[1;32mDEBUG [0m]: xkb: Mod index 1 (name Lock) got index 1
+[1;32mDEBUG [0m]: xkb: Mod index 2 (name Control) got index 2
+[1;32mDEBUG [0m]: xkb: Mod index 3 (name Mod1) got index 3
+[1;32mDEBUG [0m]: xkb: Mod index 4 (name Mod2) got index 4
+[1;32mDEBUG [0m]: xkb: Mod index 5 (name Mod3) got index 5
+[1;32mDEBUG [0m]: xkb: Mod index 6 (name Mod4) got index 6
+[1;32mDEBUG [0m]: xkb: Mod index 7 (name Mod5) got index 7
+[1;32mDEBUG [0m]: Updating keymap fd for keyboard wl_keyboard
+[1;32mDEBUG [0m]: Updated keymap fd to 40, keymap V1 to: 42
+[1;32mDEBUG [0m]: Set the keyboard layout to us and variant to  for keyboard "wl_keyboard"
+[1;32mDEBUG [0m]: New keyboard created, pointers Hypr: 55d991472c80 and AQ: 55d991271fe0
+[1;32mDEBUG [0m]: New aquamarine pointer with name wl_pointer
+[1;32mDEBUG [0m]: Attached pointer wl_pointer to global
+[1;32mDEBUG [0m]: New mouse created, pointer AQ: 55d991272460
+[14:07:49.645969] {Display Queue} wl_display#1.delete_id(16)
+[14:07:49.645972] {Default Queue} xdg_toplevel#15.wm_capabilities(array[12])
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: wm_capabilities received
+[14:07:49.645978] {Default Queue} xdg_toplevel#15.configure(800, 600, array[4])
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 800x600 until surface ACK
+[14:07:49.645982] {Default Queue} xdg_surface#14.configure(1)
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 1
+[14:07:49.645988] {Default Queue}  -> xdg_surface#14.ack_configure(1)
+[1;32mDEBUG [0m]: New aquamarine output with name WAYLAND-1
+[1;32mDEBUG [0m]: [CMonitorStateTracker] New monitor: WAYLAND-1
+[1;32mDEBUG [0m]: Applying monitor rule for WAYLAND-1
+[1;31mERR [0m]: Monitor WAYLAND-1 has NO PREFERRED MODE
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 800, y: 600] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 800, y: 600] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 800, y: 600] and format XR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 800, y: 600] XR24 of length 3
+[1;32mDEBUG [0m]: CMonitorState::ensureBufferPresent: no buffer or mismatched format, attaching one from the swapchain for modeset being possible
+[1;32mDEBUG [0m]: Monitor WAYLAND-1: requested 800x600@60.00Hz, using custom mode 800x600@0.00Hz
+[1;32mDEBUG [0m]: output WAYLAND-1 succeeded basic test on format DRM_FORMAT_XRGB8888
+[14:07:49.647641] {Default Queue}  -> zwp_linux_dmabuf_v1#8.create_params(new id zwp_linux_buffer_params_v1#16)
+[14:07:49.647646] {Default Queue}  -> zwp_linux_buffer_params_v1#16.add(fd 50, 0, 0, 3584, 16777216, 15)
+[14:07:49.647650] {Default Queue}  -> zwp_linux_buffer_params_v1#16.add(fd 51, 1, 2179072, 448, 16777216, 15)
+[14:07:49.647652] {Default Queue}  -> zwp_linux_buffer_params_v1#16.add(fd 52, 2, 2191360, 64, 16777216, 15)
+[14:07:49.647655] {Default Queue}  -> zwp_linux_buffer_params_v1#16.create_immed(new id wl_buffer#17, 800, 600, 875713112, 0)
+[14:07:49.647659] {Default Queue}  -> zwp_linux_buffer_params_v1#16.destroy()
+[14:07:49.647664] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.647666] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.647669] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.647671] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.647674] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.647680] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#18)
+[14:07:49.647685] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Starting ScreenshareManager
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 -> destroyed all render data
+[1;32mDEBUG [0m]: CMonitor::updateVCGTRamps: skipping, no gamma ramp for output
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 data dump: res 800x600@60.00Hz, scale 1.00, transform 0, pos -1x-1, 10b 0
+[1;33mWARN [0mfrom aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+[14:07:49.647732] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.647738] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.647744] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.647746] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.647749] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.647751] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Added new monitor with name WAYLAND-1 at [-1, -1] with size [800, 600], pointer 55d9912728b0
+[1;32mDEBUG [0m]: New monitor: WORKSPACEID 1, exists: 0
+[1;32mDEBUG [0m]: checking if we have seen this monitor before: WAYLAND-1
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 was not on any workspace
+[14:07:49.647807] {Default Queue}  -> wl_compositor#4.create_surface(new id wl_surface#19)
+[14:07:49.647811] {Default Queue}  -> wl_pointer#12.set_cursor(0, nil, 0, 0)
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Automatically selected format AR24 for new GBM buffer
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 24, y: 24] and format AR24 with modifier 0x10000000000000f : 4_TILED_MTL_RC_CCS_CC
+[1;32mDEBUG [0mfrom aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 24, y: 24] AR24 of length 2
+[1;32mDEBUG [0m]: Framebuffer "Monitor WAYLAND-1 blur FB" created, status 36053
+[1;32mDEBUG [0m]: Shaders initialized successfully.
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: compiling feature set 1 for surface.frag
+[14:07:49.718131] {Default Queue}  -> zwp_linux_dmabuf_v1#8.create_params(new id zwp_linux_buffer_params_v1#20)
+[14:07:49.718147] {Default Queue}  -> zwp_linux_buffer_params_v1#20.add(fd 56, 0, 0, 512, 16777216, 15)
+[14:07:49.718151] {Default Queue}  -> zwp_linux_buffer_params_v1#20.add(fd 57, 1, 16384, 64, 16777216, 15)
+[14:07:49.718154] {Default Queue}  -> zwp_linux_buffer_params_v1#20.add(fd 58, 2, 20480, 64, 16777216, 15)
+[14:07:49.718156] {Default Queue}  -> zwp_linux_buffer_params_v1#20.create_immed(new id wl_buffer#21, 24, 24, 875713089, 0)
+[14:07:49.718162] {Default Queue}  -> zwp_linux_buffer_params_v1#20.destroy()
+[14:07:49.718164] {Default Queue}  -> wl_surface#19.set_buffer_scale(1)
+[14:07:49.718168] {Default Queue}  -> wl_surface#19.set_buffer_transform(0)
+[14:07:49.718170] {Default Queue}  -> wl_surface#19.attach(wl_buffer#21, 0, 0)
+[14:07:49.718173] {Default Queue}  -> wl_surface#19.damage(0, 0, 2147483647, 2147483647)
+[14:07:49.718175] {Default Queue}  -> wl_surface#19.commit()
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLOutput (WAYLAND-1)]
+[1;32mDEBUG [0m]: arrangeMonitors: 1 to arrange
+[1;32mDEBUG [0m]: arrangeMonitors: WAYLAND-1 explicit [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: WAYLAND-1 xwayland [0, 0]
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[14:07:49.718254] {Default Queue}  -> zwp_linux_dmabuf_v1#8.create_params(new id zwp_linux_buffer_params_v1#22)
+[14:07:49.718257] {Default Queue}  -> zwp_linux_buffer_params_v1#22.add(fd 59, 0, 0, 512, 16777216, 15)
+[14:07:49.718259] {Default Queue}  -> zwp_linux_buffer_params_v1#22.add(fd 60, 1, 16384, 64, 16777216, 15)
+[14:07:49.718261] {Default Queue}  -> zwp_linux_buffer_params_v1#22.add(fd 61, 2, 20480, 64, 16777216, 15)
+[14:07:49.718263] {Default Queue}  -> zwp_linux_buffer_params_v1#22.create_immed(new id wl_buffer#23, 24, 24, 875713089, 0)
+[14:07:49.718267] {Default Queue}  -> wl_buffer#21.destroy()
+[14:07:49.718269] {Default Queue}  -> zwp_linux_buffer_params_v1#22.destroy()
+[14:07:49.718271] {Default Queue}  -> wl_surface#19.set_buffer_scale(1)
+[14:07:49.718272] {Default Queue}  -> wl_surface#19.set_buffer_transform(0)
+[14:07:49.718278] {Default Queue}  -> wl_surface#19.attach(wl_buffer#23, 0, 0)
+[14:07:49.718289] {Default Queue}  -> wl_surface#19.damage(0, 0, 2147483647, 2147483647)
+[14:07:49.718291] {Default Queue}  -> wl_surface#19.commit()
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[1;33mWARN [0m]: [FallbackStateKeeper] Start fired, removing fallback timer
+[1;32mDEBUG [0m]: Framebuffer "Monitor WAYLAND-1 workbuffer" created, status 36053
+[1;32mDEBUG [0m]: resolveAssetPath: looking at wall2.png unsuccessful: ec Success
+[1;32mDEBUG [0m]: compiling feature set 0 for quad.frag
+[1;32mDEBUG [0m]: compiling feature set 0 for passthru.frag
+[1;33mWARN [0mfrom aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+[14:07:49.753418] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.753424] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.753427] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.753430] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.753432] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.753435] {Default Queue}  -> wl_surface#10.commit()
+[1;33mWARN [0m]: FIXME: color management protocol is enabled and outputs changed, check preferred image description changes
+[14:07:49.753629] {Default Queue}  -> zwp_linux_dmabuf_v1#8.create_params(new id zwp_linux_buffer_params_v1#24)
+[14:07:49.753634] {Default Queue}  -> zwp_linux_buffer_params_v1#24.add(fd 60, 0, 0, 3584, 16777216, 15)
+[14:07:49.753638] {Default Queue}  -> zwp_linux_buffer_params_v1#24.add(fd 61, 1, 2179072, 448, 16777216, 15)
+[14:07:49.753640] {Default Queue}  -> zwp_linux_buffer_params_v1#24.add(fd 66, 2, 2191360, 64, 16777216, 15)
+[14:07:49.753642] {Default Queue}  -> zwp_linux_buffer_params_v1#24.create_immed(new id wl_buffer#25, 800, 600, 875713112, 0)
+[14:07:49.753645] {Default Queue}  -> zwp_linux_buffer_params_v1#24.destroy()
+[14:07:49.753650] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.753652] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.753654] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.753655] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:49.753657] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.753659] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.753686] {Display Queue} wl_display#1.delete_id(16)
+[14:07:49.753689] {Display Queue} wl_display#1.delete_id(18)
+[14:07:49.753691] {Default Queue} wl_keyboard#3.enter(2, wl_surface#10, array[0])
+[14:07:49.753694] {Default Queue} wl_keyboard#3.modifiers(2, 0, 0, 0, 0)
+[14:07:49.753705] {Default Queue} xdg_toplevel#15.configure(800, 600, array[8])
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: stage toplevel configure 800x600 until surface ACK
+[14:07:49.753711] {Default Queue} xdg_surface#14.configure(3)
+[1;32mDEBUG [0mfrom aquamarine ]: Output WAYLAND-1: configure surface with 3
+[14:07:49.753716] {Default Queue}  -> xdg_surface#14.ack_configure(3)
+[14:07:49.753718] {Default Queue} wl_pointer#12.enter(4, wl_surface#10, 100.00000000, 100.00000000)
+[1;32mDEBUG [0mfrom aquamarine ]: [wayland] focus changed: WAYLAND-1
+[14:07:49.753724] {Default Queue}  -> wl_pointer#12.set_cursor(4, nil, 0, 0)
+[14:07:49.753731] {Default Queue} wl_pointer#12.frame()
+[14:07:49.753735] {Default Queue} wl_callback#18.done(87134969)
+[14:07:49.753852] {Default Queue}  -> zwp_linux_dmabuf_v1#8.create_params(new id zwp_linux_buffer_params_v1#18)
+[14:07:49.753860] {Default Queue}  -> zwp_linux_buffer_params_v1#18.add(fd 57, 0, 0, 3584, 16777216, 15)
+[14:07:49.753863] {Default Queue}  -> zwp_linux_buffer_params_v1#18.add(fd 67, 1, 2179072, 448, 16777216, 15)
+[14:07:49.753865] {Default Queue}  -> zwp_linux_buffer_params_v1#18.add(fd 70, 2, 2191360, 64, 16777216, 15)
+[14:07:49.753872] {Default Queue}  -> zwp_linux_buffer_params_v1#18.create_immed(new id wl_buffer#16, 800, 600, 875713112, 0)
+[14:07:49.753882] {Default Queue}  -> zwp_linux_buffer_params_v1#18.destroy()
+[14:07:49.753885] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.753887] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.753889] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.753891] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:49.753892] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.753895] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.753897] {Default Queue}  -> wl_surface#10.commit()
+[1;33mWARN [0mfrom aquamarine ]: Output WAYLAND-1: pending state has a non-released buffer??
+[14:07:49.754012] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.754015] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.754017] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.754020] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.754022] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.754025] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857815
+[14:07:49.754132] {Display Queue} wl_display#1.delete_id(20)
+[14:07:49.754136] {Display Queue} wl_display#1.delete_id(21)
+[14:07:49.754138] {Display Queue} wl_display#1.delete_id(22)
+[14:07:49.754140] {Display Queue} wl_display#1.delete_id(24)
+[14:07:49.754142] {Display Queue} wl_display#1.delete_id(18)
+[14:07:49.754144] {Default Queue} wl_buffer#25.release()
+[14:07:49.754146] {Default Queue} wl_buffer#16.release()
+[14:07:49.763857] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.763875] {Default Queue} wl_callback#26.done(87135074)
+[14:07:49.764096] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.764102] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.764105] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.764108] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:49.764111] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.764114] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.764117] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.780311] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.780336] {Default Queue} wl_buffer#17.release()
+[14:07:49.780340] {Default Queue} wl_callback#26.done(87135091)
+[14:07:49.780553] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.780559] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.780563] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.780565] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:49.780568] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.780571] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.780574] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.797265] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.797293] {Default Queue} wl_buffer#25.release()
+[14:07:49.797297] {Default Queue} wl_callback#26.done(87135108)
+[14:07:49.797551] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.797557] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.797560] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.797563] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.797565] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.797569] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.797571] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.813825] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.813854] {Default Queue} wl_buffer#16.release()
+[14:07:49.813865] {Default Queue} wl_callback#26.done(87135124)
+[14:07:49.814145] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.814150] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.814153] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.814156] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:49.814159] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.814162] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.814164] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.830507] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.830543] {Default Queue} wl_buffer#17.release()
+[14:07:49.830548] {Default Queue} wl_callback#26.done(87135141)
+[14:07:49.830840] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.830846] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.830849] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.830852] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:49.830855] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.830858] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.830861] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.846989] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.847008] {Default Queue} wl_buffer#25.release()
+[14:07:49.847012] {Default Queue} wl_callback#26.done(87135158)
+[14:07:49.847196] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.847201] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.847205] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.847208] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.847210] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.847213] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.847216] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.863617] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.863634] {Default Queue} wl_buffer#16.release()
+[14:07:49.863638] {Default Queue} wl_callback#26.done(87135174)
+[14:07:49.863804] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.863809] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.863812] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.863814] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:49.863816] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.863819] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.863822] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.880264] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.880281] {Default Queue} wl_buffer#17.release()
+[14:07:49.880284] {Default Queue} wl_callback#26.done(87135191)
+[14:07:49.880459] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.880464] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.880468] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.880471] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:49.880473] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.880477] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.880480] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.896820] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.896850] {Default Queue} wl_buffer#25.release()
+[14:07:49.896857] {Default Queue} wl_callback#26.done(87135208)
+[14:07:49.897096] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.897101] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.897105] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.897107] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.897110] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.897127] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.897141] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.913454] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.913481] {Default Queue} wl_buffer#16.release()
+[14:07:49.913486] {Default Queue} wl_callback#26.done(87135224)
+[14:07:49.913734] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.913740] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.913743] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.913746] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:49.913749] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.913753] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.913756] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.930286] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.930303] {Default Queue} wl_buffer#17.release()
+[14:07:49.930307] {Default Queue} wl_callback#26.done(87135241)
+[14:07:49.930512] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.930518] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.930521] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.930524] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:49.930526] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.930530] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.930532] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.946925] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.946942] {Default Queue} wl_buffer#25.release()
+[14:07:49.946946] {Default Queue} wl_callback#26.done(87135258)
+[14:07:49.947102] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.947107] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.947110] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.947112] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.947115] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.947118] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.947121] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.963857] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.963886] {Default Queue} wl_buffer#16.release()
+[14:07:49.963893] {Default Queue} wl_callback#26.done(87135274)
+[14:07:49.964064] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.964069] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.964072] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.964075] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:49.964078] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.964082] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.964085] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.980536] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.980580] {Default Queue} wl_buffer#17.release()
+[14:07:49.980588] {Default Queue} wl_callback#26.done(87135291)
+[14:07:49.980874] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.980879] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.980883] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.980886] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:49.980889] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.980892] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.980895] {Default Queue}  -> wl_surface#10.commit()
+[14:07:49.996993] {Display Queue} wl_display#1.delete_id(26)
+[14:07:49.997019] {Default Queue} wl_buffer#25.release()
+[14:07:49.997024] {Default Queue} wl_callback#26.done(87135308)
+[14:07:49.997282] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:49.997296] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:49.997299] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:49.997302] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:49.997305] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:49.997308] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:49.997311] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.013644] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.013665] {Default Queue} wl_buffer#16.release()
+[14:07:50.013669] {Default Queue} wl_callback#26.done(87135324)
+[14:07:50.013854] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.013859] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.013862] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.013864] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.013867] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.013869] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.013872] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.030087] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.030102] {Default Queue} wl_buffer#17.release()
+[14:07:50.030105] {Default Queue} wl_callback#26.done(87135341)
+[14:07:50.030262] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.030267] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.030271] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.030273] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.030275] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.030279] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.030282] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.047023] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.047055] {Default Queue} wl_buffer#25.release()
+[14:07:50.047063] {Default Queue} wl_callback#26.done(87135358)
+[14:07:50.047270] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.047275] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.047278] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.047281] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.047283] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.047286] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.047289] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.063559] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.063587] {Default Queue} wl_buffer#16.release()
+[14:07:50.063590] {Default Queue} wl_callback#26.done(87135374)
+[14:07:50.063857] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.063864] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.063868] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.063870] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.063873] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.063877] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.063879] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.080468] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.080500] {Default Queue} wl_buffer#17.release()
+[14:07:50.080507] {Default Queue} wl_callback#26.done(87135391)
+[14:07:50.080763] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.080769] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.080773] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.080775] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.080778] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.080788] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.080801] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.096940] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.096965] {Default Queue} wl_buffer#25.release()
+[14:07:50.096971] {Default Queue} wl_callback#26.done(87135408)
+[14:07:50.097127] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.097132] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.097135] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.097138] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.097141] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.097144] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.097148] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.113302] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.113326] {Default Queue} wl_buffer#16.release()
+[14:07:50.113332] {Default Queue} wl_callback#26.done(87135424)
+[14:07:50.113506] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.113510] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.113513] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.113515] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.113517] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.113520] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.113522] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.130413] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.130443] {Default Queue} wl_buffer#17.release()
+[14:07:50.130450] {Default Queue} wl_callback#26.done(87135441)
+[14:07:50.130660] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.130665] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.130668] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.130670] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.130673] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.130676] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.130679] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.147234] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.147288] {Default Queue} wl_buffer#25.release()
+[14:07:50.147297] {Default Queue} wl_callback#26.done(87135458)
+[14:07:50.147590] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.147596] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.147600] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.147603] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.147606] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.147610] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.147614] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.163810] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.163847] {Default Queue} wl_buffer#16.release()
+[14:07:50.163855] {Default Queue} wl_callback#26.done(87135474)
+[14:07:50.164101] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.164106] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.164110] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.164112] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.164115] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.164118] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.164121] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.180464] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.180498] {Default Queue} wl_buffer#17.release()
+[14:07:50.180507] {Default Queue} wl_callback#26.done(87135491)
+[14:07:50.180712] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.180724] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.180735] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.180738] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.180740] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.180744] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.180746] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.196966] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.196997] {Default Queue} wl_buffer#25.release()
+[14:07:50.197006] {Default Queue} wl_callback#26.done(87135508)
+[14:07:50.197203] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.197208] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.197212] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.197214] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.197216] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.197219] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.197221] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.213910] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.213951] {Default Queue} wl_buffer#16.release()
+[14:07:50.213956] {Default Queue} wl_callback#26.done(87135524)
+[14:07:50.214216] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.214221] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.214225] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.214228] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.214230] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.214233] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.214236] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.230598] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.230635] {Default Queue} wl_buffer#17.release()
+[14:07:50.230643] {Default Queue} wl_callback#26.done(87135541)
+[14:07:50.230869] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.230874] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.230877] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.230880] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.230882] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.230885] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.230887] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.247010] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.247032] {Default Queue} wl_buffer#25.release()
+[14:07:50.247037] {Default Queue} wl_callback#26.done(87135558)
+[14:07:50.247262] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.247267] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.247271] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.247274] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.247277] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.247281] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.247284] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.263769] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.263796] {Default Queue} wl_buffer#16.release()
+[14:07:50.263800] {Default Queue} wl_callback#26.done(87135574)
+[14:07:50.264066] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.264074] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.264078] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.264081] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.264084] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.264088] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.264099] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.280147] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.280174] {Default Queue} wl_buffer#17.release()
+[14:07:50.280180] {Default Queue} wl_callback#26.done(87135591)
+[14:07:50.280598] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.280613] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.280619] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.280622] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.280626] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.280631] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.280636] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.296942] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.296971] {Default Queue} wl_buffer#25.release()
+[14:07:50.296978] {Default Queue} wl_callback#26.done(87135608)
+[14:07:50.297281] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.297294] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.297300] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.297304] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.297309] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.297316] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.297321] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.313709] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.313749] {Default Queue} wl_buffer#16.release()
+[14:07:50.313757] {Default Queue} wl_callback#26.done(87135624)
+[14:07:50.314101] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.314114] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.314120] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.314125] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.314130] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.314136] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.314142] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.330403] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.330426] {Default Queue} wl_buffer#17.release()
+[14:07:50.330431] {Default Queue} wl_callback#26.done(87135641)
+[14:07:50.330696] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.330708] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.330714] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.330718] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.330722] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.330728] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.330734] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.347085] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.347107] {Default Queue} wl_buffer#25.release()
+[14:07:50.347114] {Default Queue} wl_callback#26.done(87135658)
+[14:07:50.347403] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.347417] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.347424] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.347428] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.347433] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.347439] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.347444] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.363426] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.363446] {Default Queue} wl_buffer#16.release()
+[14:07:50.363451] {Default Queue} wl_callback#26.done(87135674)
+[14:07:50.363682] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.363693] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.363707] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.363725] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.363729] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.363734] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.363739] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.380403] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.380429] {Default Queue} wl_buffer#17.release()
+[14:07:50.380435] {Default Queue} wl_callback#26.done(87135691)
+[14:07:50.380714] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.380727] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.380733] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.380737] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.380742] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.380747] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.380753] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.396711] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.396739] {Default Queue} wl_buffer#25.release()
+[14:07:50.396745] {Default Queue} wl_callback#26.done(87135708)
+[14:07:50.397048] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.397061] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.397067] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.397072] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.397077] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.397084] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.397090] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.413708] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.413740] {Default Queue} wl_buffer#16.release()
+[14:07:50.413746] {Default Queue} wl_callback#26.done(87135724)
+[1;32mDEBUG [0m]: Creating a texture for BGTex
+[1;32mDEBUG [0m]: BGTex created for monitor WAYLAND-1
+[1;32mDEBUG [0m]: Framebuffer "BGTex scale" created, status 36053
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[1;32mDEBUG [0m]: BGTex scaled from 7680x4191 to 800x600 for monitor WAYLAND-1
+[14:07:50.460661] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.460675] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.460680] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.460683] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.460686] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.460691] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.460695] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.470639] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.470659] {Default Queue} wl_buffer#17.release()
+[14:07:50.470662] {Default Queue} wl_callback#26.done(87135782)
+[14:07:50.470887] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.470894] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.470898] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.470901] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.470905] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.470909] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.470912] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.487371] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.487389] {Default Queue} wl_buffer#25.release()
+[14:07:50.487393] {Default Queue} wl_callback#26.done(87135798)
+[14:07:50.487603] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.487611] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.487614] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.487626] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.487640] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.487644] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.487648] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857907
+[14:07:50.504233] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.504252] {Default Queue} wl_buffer#16.release()
+[14:07:50.504256] {Default Queue} wl_callback#26.done(87135815)
+[14:07:50.504447] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.504454] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.504458] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.504461] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.504464] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.504468] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.504471] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857908
+[1;32mDEBUG [0m]:  [PluginSystem] Plugin elm-held-state-qa loaded. Handle: 55d992252ac0, path: "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-state-observer-v114/qa/build-1791111118634736740/elm-held-state-qa.so", author: "local", description: "Read-only private input retirement observer", version: "0.1"
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: ApplyConfigToKeyboard for "wl_keyboard", hasconfig: 0
+[1;32mDEBUG [0m]: Not applying config to keyboard, it did not change.
+[14:07:50.521515] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.521526] {Default Queue} wl_buffer#17.release()
+[14:07:50.521530] {Default Queue} wl_callback#26.done(87135832)
+[14:07:50.521750] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.521760] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.521765] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.521768] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.521771] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.521775] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.521779] {Default Queue}  -> wl_surface#10.commit()
+[1;31mERR [0m]: CConfigWatcher: got an event for wd 1 which we don't have?!
+[14:07:50.537586] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.537611] {Default Queue} wl_buffer#25.release()
+[14:07:50.537616] {Default Queue} wl_callback#26.done(87135848)
+[14:07:50.537804] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.537814] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.537818] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.537821] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.537824] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.537828] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.537831] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.554010] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.554028] {Default Queue} wl_buffer#16.release()
+[14:07:50.554032] {Default Queue} wl_callback#26.done(87135865)
+[14:07:50.554209] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.554217] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.554221] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.554223] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.554226] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.554229] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.554232] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.570821] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.570846] {Default Queue} wl_buffer#17.release()
+[14:07:50.570863] {Default Queue} wl_callback#26.done(87135882)
+[14:07:50.571063] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.571072] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.571076] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.571079] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.571082] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.571086] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.571089] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.587751] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.587784] {Default Queue} wl_buffer#25.release()
+[14:07:50.587789] {Default Queue} wl_callback#26.done(87135898)
+[14:07:50.588057] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.588066] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.588070] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.588073] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.588077] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.588081] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.588085] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.604111] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.604134] {Default Queue} wl_buffer#16.release()
+[14:07:50.604138] {Default Queue} wl_callback#26.done(87135915)
+[14:07:50.604334] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.604343] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.604346] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.604349] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.604352] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.604356] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.604359] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.620612] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.620630] {Default Queue} wl_buffer#17.release()
+[14:07:50.620634] {Default Queue} wl_callback#26.done(87135932)
+[14:07:50.620792] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.620802] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.620805] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.620808] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.620811] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.620814] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.620818] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.637570] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.637589] {Default Queue} wl_buffer#25.release()
+[14:07:50.637593] {Default Queue} wl_callback#26.done(87135948)
+[14:07:50.637762] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.637771] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.637775] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.637777] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.637780] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.637784] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.637787] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.654220] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.654275] {Default Queue} wl_buffer#16.release()
+[14:07:50.654285] {Default Queue} wl_callback#26.done(87135965)
+[14:07:50.654640] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.654650] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.654655] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.654658] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.654670] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.654686] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.654690] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.671082] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.671115] {Default Queue} wl_buffer#17.release()
+[14:07:50.671120] {Default Queue} wl_callback#26.done(87135982)
+[14:07:50.671394] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.671404] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.671409] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.671412] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.671415] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.671420] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.671424] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.687472] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.687494] {Default Queue} wl_buffer#25.release()
+[14:07:50.687499] {Default Queue} wl_callback#26.done(87135998)
+[14:07:50.687686] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.687695] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.687699] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.687702] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.687704] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.687708] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.687712] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.704038] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.704058] {Default Queue} wl_buffer#16.release()
+[14:07:50.704063] {Default Queue} wl_callback#26.done(87136015)
+[14:07:50.704232] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.704241] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.704245] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.704253] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.704258] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.704262] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.704266] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.721164] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.721189] {Default Queue} wl_buffer#17.release()
+[14:07:50.721194] {Default Queue} wl_callback#26.done(87136032)
+[14:07:50.721415] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.721425] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.721428] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.721431] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.721434] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.721438] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.721441] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.737440] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.737471] {Default Queue} wl_buffer#25.release()
+[14:07:50.737475] {Default Queue} wl_callback#26.done(87136048)
+[14:07:50.737732] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.737740] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.737744] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.737748] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.737752] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.737756] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.737760] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.754291] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.754314] {Default Queue} wl_buffer#16.release()
+[14:07:50.754323] {Default Queue} wl_callback#26.done(87136065)
+[14:07:50.754583] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.754592] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.754596] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.754599] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.754603] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.754607] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.754612] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.771048] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.771071] {Default Queue} wl_buffer#17.release()
+[14:07:50.771076] {Default Queue} wl_callback#26.done(87136082)
+[14:07:50.771288] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.771296] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.771300] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.771303] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.771306] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.771310] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.771313] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.787576] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.787596] {Default Queue} wl_buffer#25.release()
+[14:07:50.787601] {Default Queue} wl_callback#26.done(87136098)
+[14:07:50.787797] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.787805] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.787809] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.787812] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.787815] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.787818] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.787822] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.804333] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.804360] {Default Queue} wl_buffer#16.release()
+[14:07:50.804365] {Default Queue} wl_callback#26.done(87136115)
+[14:07:50.804606] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.804614] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.804619] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.804621] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.804625] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.804629] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.804632] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.820659] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.820686] {Default Queue} wl_buffer#17.release()
+[14:07:50.820690] {Default Queue} wl_callback#26.done(87136132)
+[14:07:50.820949] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.820954] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.820957] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.820960] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.820962] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.820965] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.820968] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.837647] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.837671] {Default Queue} wl_buffer#25.release()
+[14:07:50.837675] {Default Queue} wl_callback#26.done(87136148)
+[14:07:50.837865] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.837874] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.837877] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.837880] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.837890] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.837905] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.837909] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.854277] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.854297] {Default Queue} wl_buffer#16.release()
+[14:07:50.854302] {Default Queue} wl_callback#26.done(87136165)
+[14:07:50.854498] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.854505] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.854509] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.854512] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.854515] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.854519] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.854522] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.870821] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.870840] {Default Queue} wl_buffer#17.release()
+[14:07:50.870844] {Default Queue} wl_callback#26.done(87136182)
+[14:07:50.871010] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.871017] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.871021] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.871024] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.871026] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.871030] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.871033] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.887628] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.887662] {Default Queue} wl_buffer#25.release()
+[14:07:50.887667] {Default Queue} wl_callback#26.done(87136198)
+[14:07:50.887960] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.887969] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.887974] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.887977] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.887980] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.887984] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.887987] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.904163] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.904195] {Default Queue} wl_buffer#16.release()
+[14:07:50.904199] {Default Queue} wl_callback#26.done(87136215)
+[14:07:50.904481] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.904490] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.904494] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.904497] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.904500] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.904503] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.904507] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.921047] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.921067] {Default Queue} wl_buffer#17.release()
+[14:07:50.921072] {Default Queue} wl_callback#26.done(87136232)
+[14:07:50.921252] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.921260] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.921264] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.921267] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.921269] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.921273] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.921276] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.937673] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.937693] {Default Queue} wl_buffer#25.release()
+[14:07:50.937698] {Default Queue} wl_callback#26.done(87136248)
+[14:07:50.937876] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.937896] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.937900] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.937902] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.937905] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.937908] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.937911] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.954361] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.954387] {Default Queue} wl_buffer#16.release()
+[14:07:50.954391] {Default Queue} wl_callback#26.done(87136265)
+[14:07:50.954597] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.954605] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.954609] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.954611] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:50.954614] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.954618] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.954622] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.971044] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.971068] {Default Queue} wl_buffer#17.release()
+[14:07:50.971073] {Default Queue} wl_callback#26.done(87136282)
+[14:07:50.971280] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.971288] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.971292] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.971295] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:50.971298] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.971301] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.971304] {Default Queue}  -> wl_surface#10.commit()
+[14:07:50.987380] {Display Queue} wl_display#1.delete_id(26)
+[14:07:50.987409] {Default Queue} wl_buffer#25.release()
+[14:07:50.987413] {Default Queue} wl_callback#26.done(87136298)
+[14:07:50.987667] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:50.987676] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:50.987679] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:50.987682] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:50.987685] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:50.987689] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:50.987694] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.004285] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.004313] {Default Queue} wl_buffer#16.release()
+[14:07:51.004318] {Default Queue} wl_callback#26.done(87136315)
+[14:07:51.004548] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.004557] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.004561] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.004565] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.004568] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.004572] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.004575] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.021022] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.021046] {Default Queue} wl_buffer#17.release()
+[14:07:51.021051] {Default Queue} wl_callback#26.done(87136332)
+[14:07:51.021273] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.021282] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.021286] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.021288] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.021291] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.021303] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.021317] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.037604] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.037624] {Default Queue} wl_buffer#25.release()
+[14:07:51.037629] {Default Queue} wl_callback#26.done(87136348)
+[14:07:51.037869] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.037878] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.037882] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.037885] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.037888] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.037892] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.037897] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.054390] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.054418] {Default Queue} wl_buffer#16.release()
+[14:07:51.054424] {Default Queue} wl_callback#26.done(87136365)
+[14:07:51.054702] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.054711] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.054715] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.054718] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.054721] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.054726] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.054729] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.070615] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.070641] {Default Queue} wl_buffer#17.release()
+[14:07:51.070647] {Default Queue} wl_callback#26.done(87136382)
+[14:07:51.071157] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.071166] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.071170] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.071173] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.071176] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.071179] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.071182] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.087636] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.087659] {Default Queue} wl_buffer#25.release()
+[14:07:51.087664] {Default Queue} wl_callback#26.done(87136398)
+[14:07:51.087879] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.087887] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.087891] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.087894] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.087897] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.087901] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.087904] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.104275] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.104294] {Default Queue} wl_buffer#16.release()
+[14:07:51.104298] {Default Queue} wl_callback#26.done(87136415)
+[14:07:51.104486] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.104493] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.104497] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.104500] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.104502] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.104506] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.104509] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.120861] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.120884] {Default Queue} wl_buffer#17.release()
+[14:07:51.120889] {Default Queue} wl_callback#26.done(87136432)
+[14:07:51.121096] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.121111] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.121126] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.121129] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.121132] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.121135] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.121138] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.137607] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.137632] {Default Queue} wl_buffer#25.release()
+[14:07:51.137637] {Default Queue} wl_callback#26.done(87136448)
+[14:07:51.137856] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.137865] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.137869] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.137872] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.137875] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.137879] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.137882] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.154051] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.154072] {Default Queue} wl_buffer#16.release()
+[14:07:51.154077] {Default Queue} wl_callback#26.done(87136465)
+[14:07:51.154281] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.154288] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.154292] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.154295] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.154298] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.154302] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.154305] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.170937] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.170961] {Default Queue} wl_buffer#17.release()
+[14:07:51.170966] {Default Queue} wl_callback#26.done(87136482)
+[14:07:51.171183] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.171191] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.171195] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.171198] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.171201] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.171205] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.171209] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.187649] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.187673] {Default Queue} wl_buffer#25.release()
+[14:07:51.187677] {Default Queue} wl_callback#26.done(87136498)
+[14:07:51.187887] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.187894] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.187898] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.187901] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.187903] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.187907] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.187912] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.204267] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.204291] {Default Queue} wl_buffer#16.release()
+[14:07:51.204296] {Default Queue} wl_callback#26.done(87136515)
+[14:07:51.204502] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.204509] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.204513] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.204515] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.204518] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.204522] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.204532] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.220866] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.220888] {Default Queue} wl_buffer#17.release()
+[14:07:51.220893] {Default Queue} wl_callback#26.done(87136532)
+[14:07:51.221091] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.221098] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.221102] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.221105] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.221107] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.221111] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.221114] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857910
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857912
+[14:07:51.237517] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.237532] {Default Queue} wl_buffer#25.release()
+[14:07:51.237537] {Default Queue} wl_callback#26.done(87136548)
+[14:07:51.237765] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.237773] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.237777] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.237780] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.237784] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.237788] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.237792] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.254320] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.254336] {Default Queue} wl_buffer#16.release()
+[14:07:51.254340] {Default Queue} wl_callback#26.done(87136565)
+[14:07:51.254541] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.254549] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.254553] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.254556] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.254559] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.254563] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.254567] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.270911] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.270933] {Default Queue} wl_buffer#17.release()
+[14:07:51.270938] {Default Queue} wl_callback#26.done(87136582)
+[14:07:51.271153] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.271161] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.271166] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.271170] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.271173] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.271177] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.271180] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857913
+[14:07:51.287536] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.287554] {Default Queue} wl_buffer#25.release()
+[14:07:51.287559] {Default Queue} wl_callback#26.done(87136598)
+[14:07:51.287761] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.287769] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.287773] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.287776] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.287779] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.287782] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.287786] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.304304] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.304326] {Default Queue} wl_buffer#16.release()
+[14:07:51.304338] {Default Queue} wl_callback#26.done(87136615)
+[14:07:51.304560] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.304569] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.304574] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.304577] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.304580] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.304583] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.304587] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: [CWLDataDeviceProtocol] New datamgr resource bound at 55d991555b50
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] New primary_seletion_manager at 55d991f8d170
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] New xdg_output for WAYLAND-1: client 55d9921d05d0 (not xwayland)
+[1;32mDEBUG [0m]: [CSHMPool] Resizing a SHM pool from 2304 to 6912
+[1;32mDEBUG [0m]: [CSHMPool] Resizing a SHM pool from 6912 to 16128
+[1;32mDEBUG [0m]: [CSHMPool] Resizing a SHM pool from 16128 to 34560
+[1;32mDEBUG [0m]: [CSHMPool] Resizing a SHM pool from 34560 to 71424
+[1;32mDEBUG [0m]: [CSHMPool] Resizing a SHM pool from 71424 to 145152
+[1;32mDEBUG [0m]: [CSHMPool] Resizing a SHM pool from 145152 to 292608
+[1;32mDEBUG [0m]: [CSHMPool] Resizing a SHM pool from 292608 to 587520
+[1;32mDEBUG [0m]: [CWLSeatProtocol] New seat resource bound at 55d991437210
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 23 at 55d99222b770
+[1;32mDEBUG [0m]: [CPrimarySelectionManager] New primary selection data device bound at 55d991f8e370
+[1;32mDEBUG [0m]: [CWLDataDeviceManagerResource] New data device bound at 55d991f8de10
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 26 at 55d991439370
+[14:07:51.320620] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.320637] {Default Queue} wl_buffer#17.release()
+[14:07:51.320641] {Default Queue} wl_callback#26.done(87136632)
+[14:07:51.320842] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.320850] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.320854] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.320857] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.320859] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.320863] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.320866] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857918
+[14:07:51.337401] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.337419] {Default Queue} wl_buffer#25.release()
+[14:07:51.337424] {Default Queue} wl_callback#26.done(87136648)
+[14:07:51.337673] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.337682] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.337686] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.337690] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.337693] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.337698] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.337702] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: [CXDGShellProtocol] New xdg_wm_base at 55d991f77480
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_surface with id 32 at 55d99127d760
+[1;32mDEBUG [0m]: [CXDGWMBase] New xdg_surface at 55d9922083f0
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 55d991f77480 gets a toplevel 55d99130c2f0
+[1;32mDEBUG [0m]: CWLSurface 55d9921976e0 called init()
+[1;32mDEBUG [0m]: [CXDGToplevelResource] Toplevel 55d99130c2f0 sets parent to 0
+[1;32mDEBUG [0m]: Window 55d992251ac0 set title to ELM-PARENT-INPUT-PROBE
+[1;32mDEBUG [0m]: Window 55d992251ac0 set class to fixture.py
+[1;32mDEBUG [0m]: Layout predicts size [Vector2D: x: 800, y: 600] for [Window 55d992251ac0: title: "ELM-PARENT-INPUT-PROBE"]
+[14:07:51.354362] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.354380] {Default Queue} wl_buffer#16.release()
+[14:07:51.354385] {Default Queue} wl_callback#26.done(87136665)
+[14:07:51.354624] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.354632] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.354635] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.354639] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.354642] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.354646] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.354650] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857935
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 55d9922083f0 requests geometry 0x0 800x600
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 38 at 55d991547200
+[1;32mDEBUG [0m]: Set keyboard focus to surface 55d99127d760, with [Window 55d992251ac0: title: "ELM-PARENT-INPUT-PROBE"]
+[1;32mDEBUG [0m]: Map request dispatched, monitor WAYLAND-1, window pos: [21.00000, 21.00000], window size: [758.00000, 558.00000]
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 55d9922083f0 requests geometry 0x0 758x558
+[1;32mDEBUG [0m]: [CWLCompositorResource] New wl_region with id 40 at 55d99224f4f0
+[14:07:51.371340] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.371349] {Default Queue} wl_buffer#17.release()
+[14:07:51.371352] {Default Queue} wl_callback#26.done(87136682)
+[1;32mDEBUG [0m]: compiling feature set 16 for shadow.frag
+[1;32mDEBUG [0m]: compiling feature set 8 for border.frag
+[14:07:51.471218] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.471238] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.471242] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.471245] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.471256] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.471260] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.471264] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857936
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857938
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857939
+[14:07:51.480925] {Default Queue} wl_pointer#12.motion(87137416, 400.00000000, 300.00000000)
+[1;32mDEBUG [0m]: [CPrimarySelectionProtocol] CPrimarySelectionProtocol::updateSelection: cannot send selection to a client without a data_device
+[14:07:51.481011] {Default Queue} wl_pointer#12.frame()
+[14:07:51.481023] {Default Queue} wl_pointer#12.button(5, 87137416, 272, 1)
+[14:07:51.481068] {Default Queue} wl_pointer#12.frame()
+[14:07:51.481072] {Default Queue} wl_pointer#12.button(6, 87137416, 272, 0)
+[14:07:51.481081] {Default Queue} wl_pointer#12.frame()
+[14:07:51.481084] {Default Queue} wl_pointer#12.frame()
+[14:07:51.481605] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.481610] {Default Queue} wl_buffer#25.release()
+[14:07:51.481613] {Default Queue} wl_callback#26.done(87136792)
+[14:07:51.481886] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.481894] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.481898] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.481901] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.481904] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.481907] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.481911] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: cursorImage request: shape 1 -> default
+[1;31mERR [0m]: getConvertedColor: failed to get image description
+[14:07:51.482486] {Default Queue}  -> zwp_linux_dmabuf_v1#8.create_params(new id zwp_linux_buffer_params_v1#18)
+[14:07:51.482498] {Default Queue}  -> zwp_linux_buffer_params_v1#18.add(fd 60, 0, 0, 512, 16777216, 15)
+[14:07:51.482508] {Default Queue}  -> zwp_linux_buffer_params_v1#18.add(fd 62, 1, 16384, 64, 16777216, 15)
+[14:07:51.482511] {Default Queue}  -> zwp_linux_buffer_params_v1#18.add(fd 65, 2, 20480, 64, 16777216, 15)
+[14:07:51.482514] {Default Queue}  -> zwp_linux_buffer_params_v1#18.create_immed(new id wl_buffer#24, 24, 24, 875713089, 0)
+[14:07:51.482518] {Default Queue}  -> wl_buffer#23.destroy()
+[14:07:51.482521] {Default Queue}  -> zwp_linux_buffer_params_v1#18.destroy()
+[14:07:51.482524] {Default Queue}  -> wl_surface#19.set_buffer_scale(1)
+[14:07:51.482526] {Default Queue}  -> wl_surface#19.set_buffer_transform(0)
+[14:07:51.482529] {Default Queue}  -> wl_surface#19.attach(wl_buffer#24, 0, 0)
+[14:07:51.482531] {Default Queue}  -> wl_surface#19.damage(0, 0, 2147483647, 2147483647)
+[14:07:51.482534] {Default Queue}  -> wl_surface#19.commit()
+[14:07:51.482536] {Default Queue}  -> wl_pointer#12.set_cursor(4, wl_surface#19, 3, 1)
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857941
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857942
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857943
+[14:07:51.492355] {Default Queue} wl_pointer#12.frame()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857945
+[14:07:51.496870] {Display Queue} wl_display#1.delete_id(23)
+[14:07:51.496878] {Display Queue} wl_display#1.delete_id(18)
+[14:07:51.496881] {Default Queue} wl_pointer#12.frame()
+[14:07:51.498279] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.498284] {Default Queue} wl_buffer#16.release()
+[14:07:51.498288] {Default Queue} wl_callback#26.done(87136809)
+[14:07:51.498677] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.498686] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.498690] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.498693] {Default Queue}  -> wl_surface#10.attach(wl_buffer#25, 0, 0)
+[14:07:51.498696] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.498699] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.498703] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857947
+[14:07:51.502844] {Default Queue} wl_pointer#12.frame()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857949
+[14:07:51.514882] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.514905] {Default Queue} wl_buffer#17.release()
+[14:07:51.514916] {Default Queue} wl_callback#26.done(87136826)
+[14:07:51.515298] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.515307] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.515311] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.515313] {Default Queue}  -> wl_surface#10.attach(wl_buffer#16, 0, 0)
+[14:07:51.515316] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.515320] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.515323] {Default Queue}  -> wl_surface#10.commit()
+[14:07:51.528712] {Default Queue} wl_pointer#12.frame()
+[14:07:51.529271] {Default Queue} wl_pointer#12.button(7, 87137464, 273, 1)
+[14:07:51.529310] {Default Queue} wl_pointer#12.frame()
+[14:07:51.531333] {Display Queue} wl_display#1.delete_id(26)
+[14:07:51.531339] {Default Queue} wl_buffer#25.release()
+[14:07:51.531343] {Default Queue} wl_callback#26.done(87136842)
+[14:07:51.531607] {Default Queue}  -> wp_viewport#13.set_destination(800, 600)
+[14:07:51.531612] {Default Queue}  -> xdg_surface#14.set_window_geometry(0, 0, 800, 600)
+[14:07:51.531615] {Default Queue}  -> wl_surface#10.set_buffer_scale(1)
+[14:07:51.531617] {Default Queue}  -> wl_surface#10.attach(wl_buffer#17, 0, 0)
+[14:07:51.531619] {Default Queue}  -> wl_surface#10.damage_buffer(0, 0, 2147483647, 2147483647)
+[14:07:51.531622] {Default Queue}  -> wl_surface#10.frame(new id wl_callback#26)
+[14:07:51.531624] {Default Queue}  -> wl_surface#10.commit()
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857951
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857952
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857953
+[1;35mCRIT [0mfrom aquamarine ]: Wayland parent transport failed; retiring nested resources
+[1;32mDEBUG [0m]: Pointer at 55d99151cdc0 removed
+[1;32mDEBUG [0m]: Keyboard at 55d991472c80 removed
+[1;32mDEBUG [0m]: Destroyed keyboard 55d991472c80
+[1;32mDEBUG [0m]: Destroy called for monitor WAYLAND-1
+[1;32mDEBUG [0m]: onDisconnect called for WAYLAND-1
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 -> destroyed all render data
+[1;32mDEBUG [0m]: Disconnecting Monitor WAYLAND-1 was on workspace 1
+[1;32mDEBUG [0m]: Removed monitor WAYLAND-1!
+[1;33mWARN [0mfrom aquamarine ]: Output WAYLAND-1: refusing commit before initial configure ACK/publication or after destroy
+[1;33mWARN [0m]: state.commit() failed in CMonitor::onDisconnect
+[1;32mDEBUG [0m]: [FallbackStateKeeper] Monitor WAYLAND-1 removed, entering fallback
+[1;32mDEBUG [0m]: Monitor WAYLAND-1 -> destroyed all render data
+[1;32mDEBUG [0m]: New aquamarine output with name FALLBACK
+[1;32mDEBUG [0m]: [CMonitorStateTracker] New monitor: FALLBACK
+[1;32mDEBUG [0m]: Applying monitor rule for FALLBACK
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1920, y: 1080] and format XR24 with modifier 0x0 : LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1920, y: 1080] and format XR24 with modifier 0x0 : LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: GBM: Allocated a new buffer with size [Vector2D: x: 1920, y: 1080] and format XR24 with modifier 0x0 : LINEAR
+[1;32mDEBUG [0mfrom aquamarine ]: Swapchain: Reconfigured a swapchain to [Vector2D: x: 1920, y: 1080] XR24 of length 3
+[1;32mDEBUG [0m]: CMonitorState::ensureBufferPresent: no buffer or mismatched format, attaching one from the swapchain for modeset being possible
+[1;32mDEBUG [0m]: Monitor FALLBACK: requested 1920x1080@60.00Hz, using preferred mode 1920x1080@60.00Hz
+[1;32mDEBUG [0m]: output FALLBACK succeeded basic test on format DRM_FORMAT_XRGB8888
+[1;32mDEBUG [0m]: Monitor FALLBACK -> destroyed all render data
+[1;32mDEBUG [0m]: CMonitor::updateVCGTRamps: skipping, no gamma ramp for output
+[1;32mDEBUG [0m]: Monitor FALLBACK data dump: res 1920x1080@60.00Hz, scale 1.00, transform 0, pos -1x-1, 10b 0
+[1;32mDEBUG [0m]: Added new monitor with name FALLBACK at [-1, -1] with size [1920, 1080], pointer 7f9e880029e0
+[1;32mDEBUG [0m]: New monitor: WORKSPACEID 2, exists: 0
+[1;32mDEBUG [0m]: checking if we have seen this monitor before: FALLBACK
+[1;32mDEBUG [0m]: Monitor FALLBACK was not on any workspace
+[1;32mDEBUG [0m]: [IWaylandProtocol] Registered global [WLOutput (FALLBACK)]
+[1;32mDEBUG [0m]: arrangeMonitors: 1 to arrange
+[1;32mDEBUG [0m]: arrangeMonitors: FALLBACK auto [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: FALLBACK xwayland [0, 0]
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;31mERR [0m]: BUG THIS: setPointerFocus without a valid mouse set
+[1;31mERR [0m]: BUG THIS: setKeyboardFocus without a valid keyboard set
+[1;32mDEBUG [0m]: Framebuffer "Monitor FALLBACK blur FB" created, status 36053
+[1;32mDEBUG [0m]: Framebuffer "Monitor FALLBACK workbuffer" created, status 36053
+[1;33mWARN [0m]: FIXME: color management protocol is enabled and outputs changed, check preferred image description changes
+[1;32mDEBUG [0m]: arrangeMonitors: 1 to arrange
+[1;32mDEBUG [0m]: arrangeMonitors: FALLBACK auto [0, 0]
+[1;32mDEBUG [0m]: arrangeMonitors: FALLBACK xwayland [0, 0]
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 12 for implementation headless
+[1;32mDEBUG [0mfrom aquamarine ]: backend: poll fd 13 for idle
+[1;31mERR [0m]: [src/protocols/core/Compositor.cpp:318] Cannot enter surface 55d99127d760 to FALLBACK, client hasn't bound the output
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] New xdg_output for FALLBACK: client 55d9921d05d0 (not xwayland)
+[1;32mDEBUG [0m]: [CXDGSurfaceResource] xdg_surface 55d9922083f0 requests geometry 0x0 758x558
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857954
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857955
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857956
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857957
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857958
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857959
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857960
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857961
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1857962
+[1;33mWARN [0m]: [/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/src/protocols/XDGShell.cpp:506] wl_surface destroyed before its xdg_surface role object
+[1;32mDEBUG [0m]: [Window 55d992251ac0: title: "ELM-PARENT-INPUT-PROBE", class: fixture.py] unmapped
+[1;31mERR [0m]: CSpace: recheckWorkArea on no parent / mon?!
+[1;32mDEBUG [0m]: Removing last node (dwindle)
+[1;33mWARN [0m]: ITarget: assignToSpace with a null space?
+[1;32mDEBUG [0m]: Unmapped was not focused, ignoring a refocus.
+[1;32mDEBUG [0m]: Destroying workspace ID 1
+[1;32mDEBUG [0m]: [Window 55d992251ac0: title: "ELM-PARENT-INPUT-PROBE", class: fixture.py] destroyed, queueing.
+[1;32mDEBUG [0m]: CWLSurface 55d9921976e0 called destroy()
+[1;31mERR [0m]: BUG THIS: setKeyboardFocus without a valid keyboard set
+[1;31mERR [0m]: BUG THIS: setPointerFocus without a valid mouse set
+[1;31mERR [0m]: BUG THIS: setKeyboardFocus without a valid keyboard set
+[1;31mERR [0m]: BUG THIS: setPointerFocus without a valid mouse set
+[1;32mDEBUG [0m]: Hyprctl: new connection from pid 1858012
+[1;32mDEBUG [0m]:  [PluginSystem] Plugin elm-held-state-qa unloaded.
+[1;32mDEBUG [0m]: [CXDGOutputProtocol] updating all xdg_output heads
+[1;31mERR [0m]: CConfigWatcher: got an event for wd 2 which we don't have?!
+[1;32mDEBUG [0m]: Hyprland received signal 15
+[1;32mDEBUG [0m]: Hyprland is stopping!
+[1;32mDEBUG [0m]: Kicked off the event loop! :(
+[1;32mDEBUG [0m]: Monitor FALLBACK -> destroyed all render data
+[1;32mDEBUG [0m]: Destroying workspace ID 2
+[1;32mDEBUG [0m]: Hyprland has reached the end.
