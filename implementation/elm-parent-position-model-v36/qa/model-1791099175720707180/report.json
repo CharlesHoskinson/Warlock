@@ -1,0 +1,54 @@
+{
+  "passed": false,
+  "scope": "Finite parent-coordinate event-loop contract; no native lifecycle or full-program refinement claim",
+  "namedScenarios": [
+    "stationaryScaleTest",
+    "restoreScaleTest",
+    "outputRelativeTest",
+    "outputOriginChangesTest",
+    "unfocusedMotionTest",
+    "focusLeaveBlocksReplayTest",
+    "stagedConfigureBlocksTest",
+    "ackAloneBlocksTest",
+    "staleCommitBlocksTest",
+    "freshCommitAllowsTest",
+    "deviceRetirementBlocksTest",
+    "outputRetirementBlocksTest",
+    "backendRetirementBlocksTest",
+    "supersedingWarpBlocksReplayTest",
+    "unchangedLayoutNoReplayTest",
+    "unrelatedLayoutNoReplayTest",
+    "clampedCoordinatesTest",
+    "disabledOutputBlocksTest",
+    "mirroredOutputBlocksTest"
+  ],
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "parent.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'enabled' is redefined in module 'parent'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v36/qa/model-1791099175720707180/parent.qnt:72:44\\n  72:   action monitorFlag(o: int, mirror: bool, enabled: bool): bool = {\\n                                                 ^^^^^^^^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "parent.qnt": "44a0214111d1238bcbc0c3db83d7607d89e5c80316a1bfa5ac1d4ec067049330",
+    "model.py": "d5b29fc530f9aae475cc071f12047bffe3974046dbd14166d6912df9868a1f6a",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "59779e7ebdf0801b9cbac791df3877ac8193fdb3989af642420bbb740c87fe64"
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Selected Quint traces versus actual parent routing/query fragments with typed ownership/monitor mocks; renderer, transport, general clamp and full program excluded",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-traces-v38/qa/replay.py": "567284a8a2b96890f659e9d7ca111aa0ebfc3202cf5dd6b937436bbb2ad0909c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-traces-v38/template.cpp": "c28443aab297fac58cd44f108f591f74b5389bcac910ae00a8dbf8685f4c55cd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/report.json": "b0f4dfba297f0e81190a043c7425799dc7c6d49d51a462e3c40f785ab570c18f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/parent.qnt": "498b8f4adfa6f5736b9665a68a2155262c03b0398df53b9cbc38d70ec99d9de4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/Wayland.cpp": "1f9d8ddf2912d5c884946a4f00a47350a6590a08ab10c8ba790beff00f2370f9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/NestedLifecycle.hpp": "3585891e7450e46a7ca139ca9c20fa672c6c4ee85e05020f3c127997b202b42b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/NestedPresentation.hpp": "b7417aeb5e4dbab50957aeaa24f6682ef66551e91b82ab168dbe9870f6a6c1c7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/BufferDimensions.hpp": "8b3925fc2fc86c8e7c2c5a05581f8578a680805eb50619dc22bdbe354fb467dc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/include/aquamarine/input/ParentInput.hpp": "ba600a08538d31db155371a765cd6d4ea96547913091bbfb3454d53133e2fab9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v31/candidate/src/pointer/PointerManager.cpp": "95893a03dec7b1c25958dd44db9aec01d3b806c31fe7e19b50e43f9f404778ca",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v31/candidate/src/pointer/ParentNormalizedPosition.hpp": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-ackAloneBlocksTest-7.itf.json": "4f3bc2f5b5071f0f2d4c1e6ad371138cac5092258c0a3e4fd17cfcbf6d1b6d46",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-backendRetirementBlocksTest-12.itf.json": "fbbf7095cc2a79e8ef43087c7e910079084635c24a1eb9fb90e401bf226e3e40",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-clampedCoordinatesTest-16.itf.json": "5f0acf8c72943a0ea960d6adaac7770e6a4a80dcffa2ede744a08540eeb513c2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-deviceRetirementBlocksTest-10.itf.json": "4751f89147801cce2a14a9f464d805e39ce1c6f01802c898236e3f8b3a54cb9f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-disabledOutputBlocksTest-17.itf.json": "6a1c9f907c5fbbf10922c32c0a39f179e53296effe55afe92698e417d271b23b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-focusLeaveBlocksReplayTest-5.itf.json": "a86bd5de21439d9440b1247d043f81e3b0294e511c255a56f124ffc2767a00d0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-freshCommitAllowsTest-9.itf.json": "67efc04b0d6151237e7a443997480aac244f78b44cbbe097f4632f17ab22810b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-mirroredOutputBlocksTest-18.itf.json": "bd45321fb58926fb4f373e14b681c7ee6f6918c7a61c0dd8e54a89c437ec3fdb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-outputOriginChangesTest-3.itf.json": "4d2c358a01118245d221bc328df530717ee87c8dd64788f681db2a61902887de",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-outputRelativeTest-2.itf.json": "638d50d171a2c933014ee47a1bc6ab4ad3c5d21107828684f30815e818d0e87e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-outputRetirementBlocksTest-11.itf.json": "e0a7386fee39895e5c63c6df753aa4c05b6b79d4b191623a407ea1965a44ece7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-restoreScaleTest-1.itf.json": "f8fac7f07fb212dc6ee75c9378b513b2c01452405b91b3cf83d90f6465e463f8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-stagedConfigureBlocksTest-6.itf.json": "5af93661b588e3a682fc3968fbf8fb1c6f5f43e1d2b47df506a8d9fc9ac311ce",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-staleCommitBlocksTest-8.itf.json": "1c4640b83ad91dda211c3936f19526a48975801770c5099b134537f7a1b6fc36",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-stationaryScaleTest-0.itf.json": "5c6a9e034aa121f7af0e4f378e935681994fd7c1256f1908481084455e01c164",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-supersedingWarpBlocksReplayTest-13.itf.json": "a3bbfbac7c9c66386d8596fc7e9f15924f3178b0641b57bf225863f5d5feceb2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-unchangedLayoutNoReplayTest-14.itf.json": "e26eca8925a62f36000448ebbdb1f2b014a2085bd1eb72c94ee35e6ad0863c65",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-unfocusedMotionTest-4.itf.json": "19323018174b6f2c187046cf18c0f75c25902f5ee2f0358043ecb2bd818db442",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/named-unrelatedLayoutNoReplayTest-15.itf.json": "b555944f5b3a48307926fc47ddd5356e4bb8df7baab0eec8b649bd204fb315dc"
+  },
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/include",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-position-v31/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-traces-v38/qa/replay-1791099412626046236/replay.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-traces-v38/qa/replay-1791099412626046236/replay"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-traces-v38/qa/replay-1791099412626046236/replay.cpp:12:10: fatal error: nlohmann/json.hpp: No such file or directory\\n   12 | #include <nlohmann/json.hpp>\\n      |          ^~~~~~~~~~~~~~~~~~~\\ncompilation terminated.\\n')",
+  "artifacts": {
+    "traces.json": "cc8c0b2c3b8ace66cf56a79bc339e104313d250f2d31bc75f51ed6ecdd3bfca7",
+    "extracted-fragments.json": "0d2983ca58851f6362136a4d1d0dd48932ddf13b8103f5de9ed9b9897f9eb0c9",
+    "replay.cpp": "e30df93032512ed034e9b694b584070be95bb6d61feb4927487c39ad9f2b3665",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "ff2104fc810d92af4010fa89669ed437bf6978eaaf4384cf52748c5661db0d88"
+  }
+}

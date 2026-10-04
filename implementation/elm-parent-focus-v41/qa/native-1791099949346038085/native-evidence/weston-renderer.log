@@ -1,0 +1,167 @@
+Date: 2026-10-04 MDT
+[01:45:49.498] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[01:45:49.499] Command line: /home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston --backend=headless --renderer=gl --shell=kiosk-shell.so --fake-seat --no-config --socket=weston-host --width=800 --height=600 --scale=1 --idle-time=0 --log=/home/hoskinson/window-integration-qa/elm-parent-input-1791099949346091645/weston-renderer.log --modules=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-capability-v40/build-1791099632854316645/parent-input.so
+[01:45:49.499] OS: Linux, 7.2.7-1-omarchy, #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000, x86_64
+[01:45:49.499] Flight recorder: enabled, scopes subscribed: log
+[01:45:49.499] Starting with no config file.
+[01:45:49.499] Output repaint window is 7 ms maximum.
+[01:45:49.499] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/headless-backend.so'
+[01:45:49.503] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/gl-renderer.so'
+[01:45:49.520] Using rendering device: /dev/dri/renderD129
+[01:45:49.523] EGL version: 1.5
+[01:45:49.523] EGL vendor: Mesa Project
+[01:45:49.523] EGL client APIs: OpenGL OpenGL_ES 
+[01:45:49.523] EGL features:
+               EGL Wayland extension: no
+               context priority: yes
+               buffer age: no
+               partial update: yes
+               swap buffers with damage: no
+               configless context: yes
+               surfaceless context: yes
+               dmabuf support: modifiers
+               fence sync: yes (native, wait)
+[01:45:49.525] GL version: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+[01:45:49.525] GLSL version: OpenGL ES GLSL ES 3.20
+[01:45:49.525] GL vendor: Intel
+[01:45:49.525] GL renderer: Mesa Intel(R) Graphics (ARL)
+[01:45:49.531] GL ES 3.2 - renderer features:
+               read-back format: ARGB8888
+               glReadPixels supports y-flip: yes
+               glReadPixels supports PBO: yes
+               wl_shm 10 bpc formats: yes
+               wl_shm 16 bpc formats: yes
+               wl_shm half-float formats: yes
+               internal R and RG formats: yes
+               OES_EGL_image_external: yes
+               GPU timeline: yes
+               Texture immutability: yes
+               Required precision: yes
+[01:45:49.531] Using GL renderer
+[01:45:49.531] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[01:45:49.531] Color manager: no-op
+                 protocol support: no
+[01:45:49.531] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[01:45:49.531] Output 'headless' using color profile: stock sRGB color profile
+[01:45:49.532] Output 'headless' enabled with head(s) headless
+[01:45:49.532] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: yes
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: yes
+               color operations: yes
+               color representation: yes
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[01:45:49.532] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/kiosk-shell.so'
+[01:45:49.532] Loading module '/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-capability-v40/build-1791099632854316645/parent-input.so'
+[01:45:51.384] elm-parent-input motion 1,1 actual 1.00,1.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.396] elm-parent-input motion 400,300 actual 400.00,300.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.396] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.396] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.406] elm-parent-input motion 45,45 actual 45.00,45.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.406] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.406] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.415] elm-parent-input motion 755,555 actual 755.00,555.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.415] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.415] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.479] elm-parent-input motion 400,300 actual 400.00,300.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.479] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.479] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.488] elm-parent-input motion 56,56 actual 56.00,56.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.488] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.489] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.498] elm-parent-input motion 744,544 actual 744.00,544.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.498] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.498] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.530] elm-parent-input motion 400,300 actual 400.00,300.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.531] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.531] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.541] elm-parent-input motion 75,84 actual 75.00,84.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.541] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.541] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.550] elm-parent-input motion 725,516 actual 725.00,516.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.551] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.551] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.586] elm-parent-input motion 400,300 actual 400.00,300.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.586] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.586] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.641] elm-parent-input motion 45,45 actual 45.00,45.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.641] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.641] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.651] elm-parent-input motion 755,555 actual 755.00,555.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.651] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.651] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.696] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.716] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.806] elm-parent-input motion 275,209 actual 275.00,209.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.827] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.884] elm-parent-input motion 275,209 actual 275.00,209.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.905] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.931] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:51.987] elm-parent-input motion 275,209 actual 275.00,209.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.008] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.057] elm-parent-input motion 278,213 actual 278.00,213.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.058] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.183] elm-parent-input motion 278,213 actual 278.00,213.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.204] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.229] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.285] elm-parent-input motion 278,213 actual 278.00,213.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.285] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.353] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.374] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.430] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.431] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.439] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.496] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.517] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.579] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.600] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.625] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.683] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.704] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.765] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.786] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.812] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.849] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.869] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.932] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:52.953] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.008] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.118] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.118] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.124] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.180] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.201] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.206] elm-parent-input button 273 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.232] elm-parent-input button 274 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.303] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.323] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.329] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.366] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.394] elm-parent-input capability requested=0 actual=0 accepted=1
+[01:45:53.436] elm-parent-input capability requested=0 actual=0 accepted=0
+[01:45:53.853] elm-parent-input capability requested=1 actual=1 accepted=1
+[01:45:53.902] elm-parent-input motion 281,214 actual 281.00,214.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.902] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.929] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:53.958] elm-parent-input capability requested=1 actual=1 accepted=0
+[01:45:54.015] elm-parent-input motion 281,214 actual 281.00,214.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.036] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.051] elm-parent-input capability requested=0 actual=0 accepted=1
+[01:45:54.101] elm-parent-input capability requested=0 actual=0 accepted=0
+[01:45:54.539] elm-parent-input capability requested=1 actual=1 accepted=1
+[01:45:54.601] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.622] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.648] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.697] elm-parent-input capability requested=1 actual=1 accepted=0
+[01:45:54.751] elm-parent-input motion 274,207 actual 274.00,207.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.905] elm-parent-input motion 400,300 actual 400.00,300.00 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.905] elm-parent-input button 272 state=1 focus=0x55d6cd087ab0 pid=497760
+[01:45:54.905] elm-parent-input button 272 state=0 focus=0x55d6cd087ab0 pid=497760
+[01:46:01.108] caught signal 15

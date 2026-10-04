@@ -1,0 +1,2491 @@
+{
+  "schema": 1,
+  "passed": true,
+  "releaseAcceptance": false,
+  "mainDesktopActions": false,
+  "scope": "Bounded model/extracted routing comparison and private parent pointer capability lifecycle",
+  "ancestorAcceptance": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-acceptance-v35/acceptance-manifest.json",
+  "ancestorAcceptanceSHA256": "065c68738aee68266fa90340e5a3e7d30d9384f96a204b49f5cdc692139c13b5",
+  "modelNamedScenarios": 19,
+  "modelInvariantSamples": 1000,
+  "modelMaxSteps": 40,
+  "extractedWitnessStates": 86,
+  "fullProgramRefinement": false,
+  "nativeFocusAcceptance": false,
+  "reports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v37/qa/model-1791099188929216528/report.json",
+      "sha256": "b0f4dfba297f0e81190a043c7425799dc7c6d49d51a462e3c40f785ab570c18f",
+      "scope": "Finite parent-coordinate event-loop contract; no native lifecycle or full-program refinement claim",
+      "native": false,
+      "checks": null
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-traces-v39/qa/replay-1791099459626872187/report.json",
+      "sha256": "5088638e7cc366c2843f4d80c1a814cd976708cb1f9a6c248eec62915988e004",
+      "scope": "Selected Quint traces versus actual parent routing/query fragments with typed ownership/monitor mocks; renderer, transport, general clamp and full program excluded",
+      "native": false,
+      "checks": null
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-capability-v40/qa/native-1791099701423667415/report.json",
+      "sha256": "492192a785d11757749a02f4e3aa33e870e42b9a0dc283c52b98e6eeb2c0abac",
+      "scope": "Original held-button campaign plus actual private parent pointer-capability loss/restoration on exact V32 core and V30 AQ; no physical-device or full-release acceptance",
+      "native": true,
+      "checks": 135
+    }
+  ],
+  "retainedFailures": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v36/qa/model-1791099175720707180/report.json",
+      "sha256": "6947d35f42e9f69a176ab2c0aeb4622d435794e7d421b49b1be6591bb42fc399"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-traces-v38/qa/replay-1791099412626046236/report.json",
+      "sha256": "877cfb8da7fe06fe6ac00378b2a197f24dc57a74d2e68c2dabfe47030d9b669e"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-v41/qa/native-1791099949346038085/report.json",
+      "sha256": "ca7d6cbac49af30f2157e3a70a60e8822ffe4ccf06a024f8b1a2e11d0478be74"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-v42/qa/native-1791100015265048828/report.json",
+      "sha256": "07a69e16a407ec1c5fa0e9410c2fad91ac773828a3cf3241dbc57b28e6acd1a9"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-v43/qa/native-1791100115139744701/report.json",
+      "sha256": "a829a11849b97c0d17f456a8ef9ec4e6b5aa13a9b55634b3b1f43d9848a57f5d"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-v44/qa/native-1791100162878095039/report.json",
+      "sha256": "6dc72793a686b4ddc2b07ed4d90c953ce346b5927b6186917e74f4e814475b6b"
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-focus-v46/qa/native-1791100365155458299/report.json",
+      "sha256": "96c49c56fcfe6788466830a456d365a9cdcfb4fcb0531cac7c91e44be5b553f5"
+    }
+  ],
+  "remaining": [
+    "Native parent focus loss/layout and full occlusion progress (V44/V46 failed)",
+    "Native staged/ACK/current-generation parent configure fencing and queued work retirement",
+    "Multiple outputs/rotation and physical input/output loss",
+    "Shared-shell coherent core integration, AT/IME, budgets, full roadmap and reversible release"
+  ],
+  "files": [
+    {
+      "path": "elm-parent-position-model-v36/qa/model-1791099175720707180/model.py",
+      "sha256": "d5b29fc530f9aae475cc071f12047bffe3974046dbd14166d6912df9868a1f6a",
+      "size": 3806
+    },
+    {
+      "path": "elm-parent-position-model-v36/qa/model-1791099175720707180/parent.qnt",
+      "sha256": "44a0214111d1238bcbc0c3db83d7607d89e5c80316a1bfa5ac1d4ec067049330",
+      "size": 7969
+    },
+    {
+      "path": "elm-parent-position-model-v36/qa/model-1791099175720707180/report.json",
+      "sha256": "6947d35f42e9f69a176ab2c0aeb4622d435794e7d421b49b1be6591bb42fc399",
+      "size": 2226
+    },
+    {
+      "path": "elm-parent-position-model-v36/qa/model-1791099175720707180/typecheck.stderr",
+      "sha256": "59779e7ebdf0801b9cbac791df3877ac8193fdb3989af642420bbb740c87fe64",
+      "size": 370
+    },
+    {
+      "path": "elm-parent-position-model-v36/qa/model-1791099175720707180/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v36/qa/model-1791099175720707180/version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v36/qa/model-1791099175720707180/version.stdout",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "size": 7
+    },
+    {
+      "path": "elm-parent-position-model-v36/qa/model.py",
+      "sha256": "d5b29fc530f9aae475cc071f12047bffe3974046dbd14166d6912df9868a1f6a",
+      "size": 3806
+    },
+    {
+      "path": "elm-parent-position-model-v36/spec/parent.qnt",
+      "sha256": "44a0214111d1238bcbc0c3db83d7607d89e5c80316a1bfa5ac1d4ec067049330",
+      "size": 7969
+    },
+    {
+      "path": "elm-parent-position-model-v37/README.md",
+      "sha256": "d816773672a943021ec77a5ee1c4d45851816144b50cece40e80ead7119252cc",
+      "size": 2485
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/invariants.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/invariants.stdout",
+      "sha256": "f4797123ca48979138e7e09f2f39ca0b83cd6e92da76bdc2bc3dea22fe5fde0e",
+      "size": 29579
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/model.py",
+      "sha256": "d5b29fc530f9aae475cc071f12047bffe3974046dbd14166d6912df9868a1f6a",
+      "size": 3806
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-ackAloneBlocksTest-7.itf.json",
+      "sha256": "4f3bc2f5b5071f0f2d4c1e6ad371138cac5092258c0a3e4fd17cfcbf6d1b6d46",
+      "size": 3786
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-backendRetirementBlocksTest-12.itf.json",
+      "sha256": "fbbf7095cc2a79e8ef43087c7e910079084635c24a1eb9fb90e401bf226e3e40",
+      "size": 3820
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-clampedCoordinatesTest-16.itf.json",
+      "sha256": "5f0acf8c72943a0ea960d6adaac7770e6a4a80dcffa2ede744a08540eeb513c2",
+      "size": 2395
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-deviceRetirementBlocksTest-10.itf.json",
+      "sha256": "4751f89147801cce2a14a9f464d805e39ce1c6f01802c898236e3f8b3a54cb9f",
+      "size": 3817
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-disabledOutputBlocksTest-17.itf.json",
+      "sha256": "6a1c9f907c5fbbf10922c32c0a39f179e53296effe55afe92698e417d271b23b",
+      "size": 3090
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-focusLeaveBlocksReplayTest-5.itf.json",
+      "sha256": "a86bd5de21439d9440b1247d043f81e3b0294e511c255a56f124ffc2767a00d0",
+      "size": 3811
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-freshCommitAllowsTest-9.itf.json",
+      "sha256": "67efc04b0d6151237e7a443997480aac244f78b44cbbe097f4632f17ab22810b",
+      "size": 4499
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-mirroredOutputBlocksTest-18.itf.json",
+      "sha256": "bd45321fb58926fb4f373e14b681c7ee6f6918c7a61c0dd8e54a89c437ec3fdb",
+      "size": 3084
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-outputOriginChangesTest-3.itf.json",
+      "sha256": "4d2c358a01118245d221bc328df530717ee87c8dd64788f681db2a61902887de",
+      "size": 3823
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-outputRelativeTest-2.itf.json",
+      "sha256": "638d50d171a2c933014ee47a1bc6ab4ad3c5d21107828684f30815e818d0e87e",
+      "size": 3107
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-outputRetirementBlocksTest-11.itf.json",
+      "sha256": "e0a7386fee39895e5c63c6df753aa4c05b6b79d4b191623a407ea1965a44ece7",
+      "size": 3815
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-restoreScaleTest-1.itf.json",
+      "sha256": "f8fac7f07fb212dc6ee75c9378b513b2c01452405b91b3cf83d90f6465e463f8",
+      "size": 3816
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-stagedConfigureBlocksTest-6.itf.json",
+      "sha256": "5af93661b588e3a682fc3968fbf8fb1c6f5f43e1d2b47df506a8d9fc9ac311ce",
+      "size": 3085
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-staleCommitBlocksTest-8.itf.json",
+      "sha256": "1c4640b83ad91dda211c3936f19526a48975801770c5099b134537f7a1b6fc36",
+      "size": 4488
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-stationaryScaleTest-0.itf.json",
+      "sha256": "5c6a9e034aa121f7af0e4f378e935681994fd7c1256f1908481084455e01c164",
+      "size": 3107
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-supersedingWarpBlocksReplayTest-13.itf.json",
+      "sha256": "a3bbfbac7c9c66386d8596fc7e9f15924f3178b0641b57bf225863f5d5feceb2",
+      "size": 3817
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-unchangedLayoutNoReplayTest-14.itf.json",
+      "sha256": "e26eca8925a62f36000448ebbdb1f2b014a2085bd1eb72c94ee35e6ad0863c65",
+      "size": 3108
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-unfocusedMotionTest-4.itf.json",
+      "sha256": "19323018174b6f2c187046cf18c0f75c25902f5ee2f0358043ecb2bd818db442",
+      "size": 2387
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named-unrelatedLayoutNoReplayTest-15.itf.json",
+      "sha256": "b555944f5b3a48307926fc47ddd5356e4bb8df7baab0eec8b649bd204fb315dc",
+      "size": 3111
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/named.stdout",
+      "sha256": "f48eb9b89a8ede59302d772171382dcd9ba0d9def491be1ce5406319fb682c6a",
+      "size": 946
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/origin-rejected.stderr",
+      "sha256": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+      "size": 20
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/origin-rejected.stdout",
+      "sha256": "621fa340f8486ab2088c21e4d8ece5b1136d3c8dc6cdaa7f1ccec0fb51ab1727",
+      "size": 606
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/origin-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/origin-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/origin.qnt",
+      "sha256": "1e7b87641f03f025f0d41399ad628c43261fe8d0bf63d8e358aab28a6bf4131a",
+      "size": 7984
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/parent.qnt",
+      "sha256": "498b8f4adfa6f5736b9665a68a2155262c03b0398df53b9cbc38d70ec99d9de4",
+      "size": 7990
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/report.json",
+      "sha256": "b0f4dfba297f0e81190a043c7425799dc7c6d49d51a462e3c40f785ab570c18f",
+      "size": 9196
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/sample-0.itf.json",
+      "sha256": "e416e8874b6a2737f42650d9f42c2c4d3dc7e23d08157dedffadaf339eebf515",
+      "size": 29301
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/superseding-rejected.stderr",
+      "sha256": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+      "size": 20
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/superseding-rejected.stdout",
+      "sha256": "4c7ccb4432344d1ce3e37a7ea84e00afe76481398e0a86368dce2ad227b680d6",
+      "size": 655
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/superseding-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/superseding-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/superseding.qnt",
+      "sha256": "78a47b262a7d5ca81578c197114472baf56721f01b34262d6fd634c9f540db23",
+      "size": 7983
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/unfocused-rejected.stderr",
+      "sha256": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+      "size": 20
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/unfocused-rejected.stdout",
+      "sha256": "e201cd5b8ef076734c8f1a8473894cab2587976b885fdb9e22021556a65cdb40",
+      "size": 615
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/unfocused-typecheck.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/unfocused-typecheck.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/unfocused.qnt",
+      "sha256": "20101bf8d6e3684ccf708b0df74f90aaddac974ed38d371e7e9c5c305e3bdde8",
+      "size": 7981
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/version.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model-1791099188929216528/version.stdout",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "size": 7
+    },
+    {
+      "path": "elm-parent-position-model-v37/qa/model.py",
+      "sha256": "d5b29fc530f9aae475cc071f12047bffe3974046dbd14166d6912df9868a1f6a",
+      "size": 3806
+    },
+    {
+      "path": "elm-parent-position-model-v37/spec/parent.qnt",
+      "sha256": "498b8f4adfa6f5736b9665a68a2155262c03b0398df53b9cbc38d70ec99d9de4",
+      "size": 7990
+    },
+    {
+      "path": "elm-parent-position-traces-v38/qa/replay-1791099412626046236/compile.stderr",
+      "sha256": "ff2104fc810d92af4010fa89669ed437bf6978eaaf4384cf52748c5661db0d88",
+      "size": 289
+    },
+    {
+      "path": "elm-parent-position-traces-v38/qa/replay-1791099412626046236/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v38/qa/replay-1791099412626046236/extracted-fragments.json",
+      "sha256": "0d2983ca58851f6362136a4d1d0dd48932ddf13b8103f5de9ed9b9897f9eb0c9",
+      "size": 6673
+    },
+    {
+      "path": "elm-parent-position-traces-v38/qa/replay-1791099412626046236/replay.cpp",
+      "sha256": "e30df93032512ed034e9b694b584070be95bb6d61feb4927487c39ad9f2b3665",
+      "size": 15306
+    },
+    {
+      "path": "elm-parent-position-traces-v38/qa/replay-1791099412626046236/report.json",
+      "sha256": "877cfb8da7fe06fe6ac00378b2a197f24dc57a74d2e68c2dabfe47030d9b669e",
+      "size": 8407
+    },
+    {
+      "path": "elm-parent-position-traces-v38/qa/replay-1791099412626046236/traces.json",
+      "sha256": "cc8c0b2c3b8ace66cf56a79bc339e104313d250f2d31bc75f51ed6ecdd3bfca7",
+      "size": 72950
+    },
+    {
+      "path": "elm-parent-position-traces-v38/qa/replay.py",
+      "sha256": "567284a8a2b96890f659e9d7ca111aa0ebfc3202cf5dd6b937436bbb2ad0909c",
+      "size": 6558
+    },
+    {
+      "path": "elm-parent-position-traces-v38/template.cpp",
+      "sha256": "c28443aab297fac58cd44f108f591f74b5389bcac910ae00a8dbf8685f4c55cd",
+      "size": 9119
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/extracted-fragments.json",
+      "sha256": "0d2983ca58851f6362136a4d1d0dd48932ddf13b8103f5de9ed9b9897f9eb0c9",
+      "size": 6673
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/origin",
+      "sha256": "c6c049daed24b62358003038e6d09e84c6f9928688cd282b745cb5f61c6b9d05",
+      "size": 81728
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/origin-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/origin-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/origin-rejected.stderr",
+      "sha256": "098c3e0d47f73334440d239f6ad86dab1eca4cc2862e562d756dbc2e6e9b498e",
+      "size": 135
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/origin-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/origin.cpp",
+      "sha256": "386611c14ccb03988ffa5bfe3c15b36ad5bf6e1e0895c5bcc1184d781270b339",
+      "size": 15302
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/readiness",
+      "sha256": "734a6368f58b3ec3534a27f677926cff77ab65a4948fb38a2dd08b544edfb64e",
+      "size": 81728
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/readiness-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/readiness-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/readiness-rejected.stderr",
+      "sha256": "259c7bc9b02a585873a69b074787bc2b6cd8b49c363454d381c1b97896c1fb7a",
+      "size": 127
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/readiness-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/readiness.cpp",
+      "sha256": "f91926bf07e22836bff3a5d5abf1050597cc87d6005c13dceb05e5ddc8f1925b",
+      "size": 15233
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/replay",
+      "sha256": "23a4d1c0d74e68706ab323b91ed79ae835974bdf96c17e58e8f8aea19b97aed7",
+      "size": 81728
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/replay.cpp",
+      "sha256": "8205c0ff2b09c348f68f3e6f5aad69959f7e521f2cd153365e1695bc4940c22c",
+      "size": 15260
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/replay.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/replay.stdout",
+      "sha256": "8cc0c353ebd8c85b3b8657fd07f1839969ceecfe00c2bcbf82535e667e575ebf",
+      "size": 11
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/report.json",
+      "sha256": "5088638e7cc366c2843f4d80c1a814cd976708cb1f9a6c248eec62915988e004",
+      "size": 13685
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/superseding",
+      "sha256": "491f434fbcea3ed44437cca571c828eba7c418046b86da4eee49d39dbc290d83",
+      "size": 77632
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/superseding-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/superseding-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/superseding-rejected.stderr",
+      "sha256": "e79bfccbf55fa5dd38a105b04ddcc4bd67fffcc25717a9fad7dc65887e59d5ec",
+      "size": 146
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/superseding-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/superseding.cpp",
+      "sha256": "c528c52cf5b274af51169a67fe65d88fb3bbd798fd068d02330be4eb3c04b0bf",
+      "size": 15222
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/traces.inc",
+      "sha256": "8be2140fec04276fcdb3b0d7b8eb8a430e2affd31eec84911ac48e40be3f5d58",
+      "size": 4060
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay-1791099459626872187/traces.json",
+      "sha256": "cc8c0b2c3b8ace66cf56a79bc339e104313d250f2d31bc75f51ed6ecdd3bfca7",
+      "size": 72950
+    },
+    {
+      "path": "elm-parent-position-traces-v39/qa/replay.py",
+      "sha256": "6852f52dc4097dcf4762fc3921afdfc750faeebceab26bfc5e1790d576b47347",
+      "size": 7163
+    },
+    {
+      "path": "elm-parent-position-traces-v39/template.cpp",
+      "sha256": "6b902c2350814ca636b7f2cbe2a91e64ca8ef3788e9ddd7d8b18ba3ffc36c402",
+      "size": 9073
+    },
+    {
+      "path": "elm-parent-capability-v40/aq-tuple.json",
+      "sha256": "b6d8a99fcc0cbb98ed4ee14826cd0ad636667129168b71ee6ae81b57c8569ab5",
+      "size": 582
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-closure.d",
+      "sha256": "462f40b3df9228ecf73f4a63f312801e483b5255bac1049c18c111cc83fc31f2",
+      "size": 2873
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-closure.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-closure.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-flags.stdout",
+      "sha256": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236",
+      "size": 21
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client-link.d",
+      "sha256": "3a5283ef47b7a5ebf9f18b19c7a3806dc3bd3002505c726701beb00196467d4e",
+      "size": 4575
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/client.d",
+      "sha256": "b750e048725c6577615fd88b7a928c42ae6a1de7992081b26722b43c82aed650",
+      "size": 270
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/generated/parent-input-client.h",
+      "sha256": "54f5091532f673f4a30e6414065bb2703c3d53c5acf5329811f24e6409da2e42",
+      "size": 4600
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/generated/parent-input-protocol.c",
+      "sha256": "b4cb3fd430e7e2e3b44bb1d938a4dfc7bb0983c57a7ead2723927819dbf327a8",
+      "size": 1055
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/generated/parent-input-server.h",
+      "sha256": "4f499762671128b6eef216c2d58743fc691ae1eafafe3693b84ce95f58738c55",
+      "size": 2820
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/inputs/build.py",
+      "sha256": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+      "size": 4509
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/inputs/fixture.py",
+      "sha256": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+      "size": 6593
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/inputs/native/SOURCE-API.md",
+      "sha256": "435d486b88d478ea8b1da473c424ea37e0267249012c7b50903dce16a2b5e91e",
+      "size": 3955
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/inputs/native/parent-input-client.c",
+      "sha256": "b029684cd7d7bee2ed038fe8d481264d3736ea4ab6492a747355460ee779cefd",
+      "size": 5819
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/inputs/native/parent-input-module.c",
+      "sha256": "002ab37624117dfd25412d137dd44fc9c7279962d67d1c1b058091aeb3efd962",
+      "size": 8121
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/inputs/native/parent-input.xml",
+      "sha256": "904e1187b8e8640d4e72d707b86950b0ff5a35d455f8a31620f032475dee1102",
+      "size": 873
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/inputs/qa/fixture-inspection.py",
+      "sha256": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+      "size": 5658
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-closure.d",
+      "sha256": "f44c2bb9ecd207877c63e78c768c91820f8bc8cad15070512b02cba113a6efcc",
+      "size": 4612
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-closure.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-closure.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-link.d",
+      "sha256": "ff0722c5abfb1ceeae71adee32f3a13fe9f22822d5a65c8d4cd570648b9fa29b",
+      "size": 4751
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-symbols.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module-symbols.stdout",
+      "sha256": "f2dd779829f7d73955a14a539da71b8bed4bc57415326b4f9909dd87c276744b",
+      "size": 35
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/module.d",
+      "sha256": "1b03dd52fc08494295b65e3957928a57f083b5f5815a3ed23bd4af1563952ffe",
+      "size": 266
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/parent-input-client",
+      "sha256": "7e536172bd54cda6dfb2cdf96b1ab5e64b01315dd473124eaabf51904ca8df9a",
+      "size": 17904
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/parent-input.so",
+      "sha256": "1fd2a027d84b13256ec2274585344ea562899fdec9a6bf4b7a30c108d8389ec1",
+      "size": 17640
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-client-header.stderr",
+      "sha256": "e7696b1c159fe7322749053e04f1680ec24c43990654d1991683a67585e25521",
+      "size": 179
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-client-header.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-closure.d",
+      "sha256": "18e2b4657d67630c1b252aaa5ffa0ab09a35821c9e3683175541ef426416c203",
+      "size": 1466
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-closure.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-closure.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-private-code.stderr",
+      "sha256": "e7696b1c159fe7322749053e04f1680ec24c43990654d1991683a67585e25521",
+      "size": 179
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-private-code.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-server-header.stderr",
+      "sha256": "e7696b1c159fe7322749053e04f1680ec24c43990654d1991683a67585e25521",
+      "size": 179
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/protocol-server-header.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/report.json",
+      "sha256": "f931277cc76646f3d7c3c2d9d0ae24a41d90e73cece89415a7ac430986c133ad",
+      "size": 23781
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/server-flags.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/build-1791099632854316645/server-flags.stdout",
+      "sha256": "fdfd0ea3c45a6360d92117f4e2fce1ee0e0bace7f204de84bdc3530047700e92",
+      "size": 68
+    },
+    {
+      "path": "elm-parent-capability-v40/build.py",
+      "sha256": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+      "size": 4509
+    },
+    {
+      "path": "elm-parent-capability-v40/candidate_host.py",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    {
+      "path": "elm-parent-capability-v40/fixture.py",
+      "sha256": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+      "size": 6593
+    },
+    {
+      "path": "elm-parent-capability-v40/native/SOURCE-API.md",
+      "sha256": "435d486b88d478ea8b1da473c424ea37e0267249012c7b50903dce16a2b5e91e",
+      "size": 3955
+    },
+    {
+      "path": "elm-parent-capability-v40/native/parent-input-client.c",
+      "sha256": "b029684cd7d7bee2ed038fe8d481264d3736ea4ab6492a747355460ee779cefd",
+      "size": 5819
+    },
+    {
+      "path": "elm-parent-capability-v40/native/parent-input-module.c",
+      "sha256": "002ab37624117dfd25412d137dd44fc9c7279962d67d1c1b058091aeb3efd962",
+      "size": 8121
+    },
+    {
+      "path": "elm-parent-capability-v40/native/parent-input.xml",
+      "sha256": "904e1187b8e8640d4e72d707b86950b0ff5a35d455f8a31620f032475dee1102",
+      "size": 873
+    },
+    {
+      "path": "elm-parent-capability-v40/native-build-report.json",
+      "sha256": "737a56a3a882ff5702dbf0acfcfda3bd363784877a7e94feb7b7b498f2f84721",
+      "size": 1341
+    },
+    {
+      "path": "elm-parent-capability-v40/parent-probe-build.json",
+      "sha256": "3daae34892f78fcf94be5a54153269cfd0a7ebf7ff0d3c2a945ff2a62a198ab6",
+      "size": 232
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/fixture-inspection.py",
+      "sha256": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+      "size": 5658
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/interactive-client.py",
+      "sha256": "265adaac46c2d59da6c2b74160fe8ae14b81fa5a89ab2a1128f94e797917bdcd",
+      "size": 8728
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/after-duplicate-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/after-three-held-buttons-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/after-unmatched-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-held-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-held-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-held-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-held-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-held-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-held.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-idle-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-idle-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-idle-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-idle-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-idle-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/capability-idle.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/duplicate-parent-press.log",
+      "sha256": "7405c7ffd32421bed452fc567a3b217f1cde88b9fe8e261cd333c46d48aca54b",
+      "size": 225
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/fixture-events.jsonl",
+      "sha256": "d0ddf05db6a7c5a0fce12b4bbcc23ea4c2f4df87c96c3db26450bcf0b88397d3",
+      "size": 125549
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-controller-eof-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-controller-eof.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-controller-quit-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-controller-quit.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-restore-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-restore.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-scale-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-scale.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-shrink-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/held-shrink.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/host-evidence.json",
+      "sha256": "5aded63f02311230c7ed601585cfa77ae47bd0d18f01b75da001917267197b51",
+      "size": 222787
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/hyprland.log",
+      "sha256": "a2fd9fe4ea1433d842c31fcbdcf4193badd18428dc3e818398fcba32d872a66e",
+      "size": 263386
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/privateBus.log",
+      "sha256": "75e44a9d3a3fd41df2ff63157ea2b3a77ae855b72502f50c6a74d566e7f5b21c",
+      "size": 315
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/recipient.log",
+      "sha256": "62acd19e35ec8ebf53fea978432d209fde05f6e3cd21290b8b5dd7c90582bedc",
+      "size": 257
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791099702_388375202/hyprland.log",
+      "sha256": "5fcb7d3864183632f195981451ce35f666ef52b05411a15a70190625680316a4",
+      "size": 31362
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/three-held-buttons-eof.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/unmatched-parent-release.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/weston-renderer.log",
+      "sha256": "a0660204860b5ada3b809d6e1396e87ef0fa8213fcc6e80827e17a4a0021e26a",
+      "size": 12559
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/native.py",
+      "sha256": "932ffb5b93ae6ebe0dfed03be806a26b7a43e94fa9addce8593acca24058cf9a",
+      "size": 17746
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native-1791099701423667415/report.json",
+      "sha256": "492192a785d11757749a02f4e3aa33e870e42b9a0dc283c52b98e6eeb2c0abac",
+      "size": 649542
+    },
+    {
+      "path": "elm-parent-capability-v40/qa/native.py",
+      "sha256": "932ffb5b93ae6ebe0dfed03be806a26b7a43e94fa9addce8593acca24058cf9a",
+      "size": 17746
+    },
+    {
+      "path": "elm-parent-focus-v41/aq-tuple.json",
+      "sha256": "b6d8a99fcc0cbb98ed4ee14826cd0ad636667129168b71ee6ae81b57c8569ab5",
+      "size": 582
+    },
+    {
+      "path": "elm-parent-focus-v41/build.py",
+      "sha256": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+      "size": 4509
+    },
+    {
+      "path": "elm-parent-focus-v41/candidate_host.py",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    {
+      "path": "elm-parent-focus-v41/fixture.py",
+      "sha256": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+      "size": 6593
+    },
+    {
+      "path": "elm-parent-focus-v41/native/SOURCE-API.md",
+      "sha256": "435d486b88d478ea8b1da473c424ea37e0267249012c7b50903dce16a2b5e91e",
+      "size": 3955
+    },
+    {
+      "path": "elm-parent-focus-v41/native/parent-input-client.c",
+      "sha256": "b029684cd7d7bee2ed038fe8d481264d3736ea4ab6492a747355460ee779cefd",
+      "size": 5819
+    },
+    {
+      "path": "elm-parent-focus-v41/native/parent-input-module.c",
+      "sha256": "002ab37624117dfd25412d137dd44fc9c7279962d67d1c1b058091aeb3efd962",
+      "size": 8121
+    },
+    {
+      "path": "elm-parent-focus-v41/native/parent-input.xml",
+      "sha256": "904e1187b8e8640d4e72d707b86950b0ff5a35d455f8a31620f032475dee1102",
+      "size": 873
+    },
+    {
+      "path": "elm-parent-focus-v41/native-build-report.json",
+      "sha256": "737a56a3a882ff5702dbf0acfcfda3bd363784877a7e94feb7b7b498f2f84721",
+      "size": 1341
+    },
+    {
+      "path": "elm-parent-focus-v41/parent-cover.py",
+      "sha256": "2042b0bbe283bcace7883380b9cd64a34f3b929f380b910e42370320474b8a23",
+      "size": 6613
+    },
+    {
+      "path": "elm-parent-focus-v41/parent-probe-build.json",
+      "sha256": "3daae34892f78fcf94be5a54153269cfd0a7ebf7ff0d3c2a945ff2a62a198ab6",
+      "size": 232
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/fixture-inspection.py",
+      "sha256": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+      "size": 5658
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/interactive-client.py",
+      "sha256": "265adaac46c2d59da6c2b74160fe8ae14b81fa5a89ab2a1128f94e797917bdcd",
+      "size": 8728
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/after-duplicate-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/after-three-held-buttons-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/after-unmatched-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-held-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-held-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-held-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-held-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-held-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-held.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-idle-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-idle-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-idle-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-idle-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-idle-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/capability-idle.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/duplicate-parent-press.log",
+      "sha256": "7405c7ffd32421bed452fc567a3b217f1cde88b9fe8e261cd333c46d48aca54b",
+      "size": 225
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/fixture-events.jsonl",
+      "sha256": "e65df543a3629fb257e037506610c58edbfb6c9bd7a67ae1553b1cbdfe8f4f0e",
+      "size": 128668
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-controller-eof-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-controller-eof.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-controller-quit-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-controller-quit.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-restore-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-restore.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-scale-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-scale.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-shrink-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/held-shrink.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/host-evidence.json",
+      "sha256": "f220363ee800c15b02fdc4b5c95979ac177d5324ccc6a756efe111dc782187cc",
+      "size": 223504
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/hyprland.log",
+      "sha256": "c7eb7e477ea65481cdd747a5b0e6985a50ddccc8a81b02d5212439c0b122435e",
+      "size": 275220
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/parent-focus-scale-2-anchor.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/parent-focus-scale-2-events.jsonl",
+      "sha256": "52514c9046794294d86fcf7f7a4005c4b5c73c0950657d4022f6c58cda37334a",
+      "size": 6591
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/parent-focus-scale-2.log",
+      "sha256": "07e09143b5fb7c53c5ebae744aa9a6e473dfae32cdcac34878499615aec81f23",
+      "size": 257
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/privateBus.log",
+      "sha256": "acacee7cbbb48f5d529943461cc75ac7f19afe519e882d8f057b0864c8f91716",
+      "size": 315
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/recipient.log",
+      "sha256": "fb64394450c24f36efc26d5fa2c7428431ea727d11a727854903974c7c7e8e32",
+      "size": 252
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791099950_1259911969/hyprland.log",
+      "sha256": "f491d47acb13be229b38fa68a90f4ca0b25254ce9ac7e7e27f47ed7b9c402c22",
+      "size": 31773
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/three-held-buttons-eof.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/unmatched-parent-release.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/weston-renderer.log",
+      "sha256": "cd62e881811d8a15a3e02ca91f94c31e2cda4f75fb25cdb111b71db4704231ba",
+      "size": 12925
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/native.py",
+      "sha256": "015097da5aff863623c49b64309b4c408cdd2968e89c9f704b3f4aeb1c7b5de8",
+      "size": 22608
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native-1791099949346038085/report.json",
+      "sha256": "ca7d6cbac49af30f2157e3a70a60e8822ffe4ccf06a024f8b1a2e11d0478be74",
+      "size": 655150
+    },
+    {
+      "path": "elm-parent-focus-v41/qa/native.py",
+      "sha256": "015097da5aff863623c49b64309b4c408cdd2968e89c9f704b3f4aeb1c7b5de8",
+      "size": 22608
+    },
+    {
+      "path": "elm-parent-focus-v42/aq-tuple.json",
+      "sha256": "b6d8a99fcc0cbb98ed4ee14826cd0ad636667129168b71ee6ae81b57c8569ab5",
+      "size": 582
+    },
+    {
+      "path": "elm-parent-focus-v42/build.py",
+      "sha256": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+      "size": 4509
+    },
+    {
+      "path": "elm-parent-focus-v42/candidate_host.py",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    {
+      "path": "elm-parent-focus-v42/fixture.py",
+      "sha256": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+      "size": 6593
+    },
+    {
+      "path": "elm-parent-focus-v42/native/SOURCE-API.md",
+      "sha256": "435d486b88d478ea8b1da473c424ea37e0267249012c7b50903dce16a2b5e91e",
+      "size": 3955
+    },
+    {
+      "path": "elm-parent-focus-v42/native/parent-input-client.c",
+      "sha256": "b029684cd7d7bee2ed038fe8d481264d3736ea4ab6492a747355460ee779cefd",
+      "size": 5819
+    },
+    {
+      "path": "elm-parent-focus-v42/native/parent-input-module.c",
+      "sha256": "002ab37624117dfd25412d137dd44fc9c7279962d67d1c1b058091aeb3efd962",
+      "size": 8121
+    },
+    {
+      "path": "elm-parent-focus-v42/native/parent-input.xml",
+      "sha256": "904e1187b8e8640d4e72d707b86950b0ff5a35d455f8a31620f032475dee1102",
+      "size": 873
+    },
+    {
+      "path": "elm-parent-focus-v42/native-build-report.json",
+      "sha256": "737a56a3a882ff5702dbf0acfcfda3bd363784877a7e94feb7b7b498f2f84721",
+      "size": 1341
+    },
+    {
+      "path": "elm-parent-focus-v42/parent-cover.py",
+      "sha256": "2042b0bbe283bcace7883380b9cd64a34f3b929f380b910e42370320474b8a23",
+      "size": 6613
+    },
+    {
+      "path": "elm-parent-focus-v42/parent-probe-build.json",
+      "sha256": "3daae34892f78fcf94be5a54153269cfd0a7ebf7ff0d3c2a945ff2a62a198ab6",
+      "size": 232
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/fixture-inspection.py",
+      "sha256": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+      "size": 5658
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/interactive-client.py",
+      "sha256": "265adaac46c2d59da6c2b74160fe8ae14b81fa5a89ab2a1128f94e797917bdcd",
+      "size": 8728
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/after-duplicate-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/after-three-held-buttons-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/after-unmatched-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-held-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-held-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-held-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-held-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-held-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-held.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-idle-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-idle-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-idle-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-idle-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-idle-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/capability-idle.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/duplicate-parent-press.log",
+      "sha256": "7405c7ffd32421bed452fc567a3b217f1cde88b9fe8e261cd333c46d48aca54b",
+      "size": 225
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/fixture-events.jsonl",
+      "sha256": "ce61f00ce71f3f6527270e835baf2bd9830beb42324a4d0e4c8ff97138c0e3b8",
+      "size": 125549
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-controller-eof-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-controller-eof.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-controller-quit-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-controller-quit.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-restore-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-restore.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-scale-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-scale.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-shrink-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/held-shrink.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/host-evidence.json",
+      "sha256": "19f5354c7bd51307b48512ea55c716d7e6dcb83edea4de8009a91417287c01bb",
+      "size": 224192
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/hyprland.log",
+      "sha256": "6c4324237ca67c667f7370dd20e3d5cc119a0648b5141eda9fc5871f6d04e759",
+      "size": 269256
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/parent-focus-scale-2-anchor.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/parent-focus-scale-2-events.jsonl",
+      "sha256": "6ce1e56f43ca37c5e12f968dbef3e2855b43d8db93e5c9d19b92d85fd7027f07",
+      "size": 7624
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/parent-focus-scale-2.log",
+      "sha256": "03f7245121e3c87f373fead061921d1446e075395c8a5453b5ceac7346bdbe8a",
+      "size": 257
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/privateBus.log",
+      "sha256": "ab2e4748681b206d56fe2a67f7562c8b7e47c69b60b2d67d27f121bc72e9ca53",
+      "size": 315
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/recipient.log",
+      "sha256": "57c8bbe3f8327ded217e0d7449084a299e1d825e2122e6d228cf4364a8020540",
+      "size": 252
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791100016_690810364/hyprland.log",
+      "sha256": "7066aadf4863b5895a60755c3334272854e939995752ef823b86822edfe0bb8e",
+      "size": 31748
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/three-held-buttons-eof.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/unmatched-parent-release.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/weston-renderer.log",
+      "sha256": "7b608f7c480b2093dc7b06c35174a1b4da629c6cfee4473d7193eb2a0d063336",
+      "size": 12759
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/native.py",
+      "sha256": "f2ab160e71f0a747f4371b56f33620bbf372c1fbcb4223d6826bc1bcab4a3b4c",
+      "size": 23077
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native-1791100015265048828/report.json",
+      "sha256": "07a69e16a407ec1c5fa0e9410c2fad91ac773828a3cf3241dbc57b28e6acd1a9",
+      "size": 655553
+    },
+    {
+      "path": "elm-parent-focus-v42/qa/native.py",
+      "sha256": "f2ab160e71f0a747f4371b56f33620bbf372c1fbcb4223d6826bc1bcab4a3b4c",
+      "size": 23077
+    },
+    {
+      "path": "elm-parent-focus-v43/aq-tuple.json",
+      "sha256": "b6d8a99fcc0cbb98ed4ee14826cd0ad636667129168b71ee6ae81b57c8569ab5",
+      "size": 582
+    },
+    {
+      "path": "elm-parent-focus-v43/build.py",
+      "sha256": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+      "size": 4509
+    },
+    {
+      "path": "elm-parent-focus-v43/candidate_host.py",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    {
+      "path": "elm-parent-focus-v43/fixture.py",
+      "sha256": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+      "size": 6593
+    },
+    {
+      "path": "elm-parent-focus-v43/native/SOURCE-API.md",
+      "sha256": "435d486b88d478ea8b1da473c424ea37e0267249012c7b50903dce16a2b5e91e",
+      "size": 3955
+    },
+    {
+      "path": "elm-parent-focus-v43/native/parent-input-client.c",
+      "sha256": "b029684cd7d7bee2ed038fe8d481264d3736ea4ab6492a747355460ee779cefd",
+      "size": 5819
+    },
+    {
+      "path": "elm-parent-focus-v43/native/parent-input-module.c",
+      "sha256": "002ab37624117dfd25412d137dd44fc9c7279962d67d1c1b058091aeb3efd962",
+      "size": 8121
+    },
+    {
+      "path": "elm-parent-focus-v43/native/parent-input.xml",
+      "sha256": "904e1187b8e8640d4e72d707b86950b0ff5a35d455f8a31620f032475dee1102",
+      "size": 873
+    },
+    {
+      "path": "elm-parent-focus-v43/native-build-report.json",
+      "sha256": "737a56a3a882ff5702dbf0acfcfda3bd363784877a7e94feb7b7b498f2f84721",
+      "size": 1341
+    },
+    {
+      "path": "elm-parent-focus-v43/parent-cover.py",
+      "sha256": "2042b0bbe283bcace7883380b9cd64a34f3b929f380b910e42370320474b8a23",
+      "size": 6613
+    },
+    {
+      "path": "elm-parent-focus-v43/parent-probe-build.json",
+      "sha256": "3daae34892f78fcf94be5a54153269cfd0a7ebf7ff0d3c2a945ff2a62a198ab6",
+      "size": 232
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/fixture-inspection.py",
+      "sha256": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+      "size": 5658
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/interactive-client.py",
+      "sha256": "265adaac46c2d59da6c2b74160fe8ae14b81fa5a89ab2a1128f94e797917bdcd",
+      "size": 8728
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/after-duplicate-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/after-three-held-buttons-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/after-unmatched-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-held-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-held-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-held-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-held-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-held-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-held.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-idle-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-idle-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-idle-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-idle-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-idle-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/capability-idle.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/duplicate-parent-press.log",
+      "sha256": "7405c7ffd32421bed452fc567a3b217f1cde88b9fe8e261cd333c46d48aca54b",
+      "size": 225
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/fixture-events.jsonl",
+      "sha256": "da3cffa3de020301180df8ec085c5c06b60507e72c025460ca8be9fd93a9d9b6",
+      "size": 126586
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-controller-eof-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-controller-eof.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-controller-quit-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-controller-quit.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-restore-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-restore.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-scale-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-scale.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-shrink-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/held-shrink.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/host-evidence.json",
+      "sha256": "d061e1550d043ab21bf2141b5b450c15b68602742489e9f9c2dde77e3b3dc713",
+      "size": 223904
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/hyprland.log",
+      "sha256": "a7bd03a1208c1c3be70a913bb80fe19c3f2c726348f50c66ced19b14cccd3c32",
+      "size": 277344
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/parent-focus-scale-2-anchor.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/parent-focus-scale-2-events.jsonl",
+      "sha256": "a26db23048aeb86864e55ff7727a71e212896cca96825f2b4ee5a07edaa93cac",
+      "size": 9698
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/parent-focus-scale-2.log",
+      "sha256": "8d7ba4fa57b5b04b2c45ef1de2a86f8b26d362d4d6c6ad7a9cf61c6a43993c64",
+      "size": 257
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/privateBus.log",
+      "sha256": "a78bd811ab17a0a1a127effd75e1fe8314f39ac9c04f2eceef411dadd87db0c8",
+      "size": 315
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/recipient.log",
+      "sha256": "ae1d39c96f055a0384c442e321b991f122f001e3b13c33463f13a1dd5e4c8152",
+      "size": 252
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791100116_1739013371/hyprland.log",
+      "sha256": "3deb9e0db63421a9f273f89c902ce04887ed1b9e310223ebebc79d83fa71f045",
+      "size": 31749
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/three-held-buttons-eof.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/unmatched-parent-release.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/weston-renderer.log",
+      "sha256": "8f06c9038d67387a3d9e8119437088cbb3a51913f85d670d2794b36cec93de1f",
+      "size": 12925
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/native.py",
+      "sha256": "2a7e9fa52e372900e1aa65e9afdc7517d3807f99a1f5e004c08442e334eebc17",
+      "size": 23170
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native-1791100115139744701/report.json",
+      "sha256": "a829a11849b97c0d17f456a8ef9ec4e6b5aa13a9b55634b3b1f43d9848a57f5d",
+      "size": 659546
+    },
+    {
+      "path": "elm-parent-focus-v43/qa/native.py",
+      "sha256": "2a7e9fa52e372900e1aa65e9afdc7517d3807f99a1f5e004c08442e334eebc17",
+      "size": 23170
+    },
+    {
+      "path": "elm-parent-focus-v44/aq-tuple.json",
+      "sha256": "b6d8a99fcc0cbb98ed4ee14826cd0ad636667129168b71ee6ae81b57c8569ab5",
+      "size": 582
+    },
+    {
+      "path": "elm-parent-focus-v44/build.py",
+      "sha256": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+      "size": 4509
+    },
+    {
+      "path": "elm-parent-focus-v44/candidate_host.py",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    {
+      "path": "elm-parent-focus-v44/fixture.py",
+      "sha256": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+      "size": 6593
+    },
+    {
+      "path": "elm-parent-focus-v44/native/SOURCE-API.md",
+      "sha256": "435d486b88d478ea8b1da473c424ea37e0267249012c7b50903dce16a2b5e91e",
+      "size": 3955
+    },
+    {
+      "path": "elm-parent-focus-v44/native/parent-input-client.c",
+      "sha256": "b029684cd7d7bee2ed038fe8d481264d3736ea4ab6492a747355460ee779cefd",
+      "size": 5819
+    },
+    {
+      "path": "elm-parent-focus-v44/native/parent-input-module.c",
+      "sha256": "002ab37624117dfd25412d137dd44fc9c7279962d67d1c1b058091aeb3efd962",
+      "size": 8121
+    },
+    {
+      "path": "elm-parent-focus-v44/native/parent-input.xml",
+      "sha256": "904e1187b8e8640d4e72d707b86950b0ff5a35d455f8a31620f032475dee1102",
+      "size": 873
+    },
+    {
+      "path": "elm-parent-focus-v44/native-build-report.json",
+      "sha256": "737a56a3a882ff5702dbf0acfcfda3bd363784877a7e94feb7b7b498f2f84721",
+      "size": 1341
+    },
+    {
+      "path": "elm-parent-focus-v44/parent-cover.py",
+      "sha256": "2042b0bbe283bcace7883380b9cd64a34f3b929f380b910e42370320474b8a23",
+      "size": 6613
+    },
+    {
+      "path": "elm-parent-focus-v44/parent-probe-build.json",
+      "sha256": "3daae34892f78fcf94be5a54153269cfd0a7ebf7ff0d3c2a945ff2a62a198ab6",
+      "size": 232
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/fixture-inspection.py",
+      "sha256": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+      "size": 5658
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/interactive-client.py",
+      "sha256": "265adaac46c2d59da6c2b74160fe8ae14b81fa5a89ab2a1128f94e797917bdcd",
+      "size": 8728
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/after-duplicate-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/after-three-held-buttons-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/after-unmatched-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-held-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-held-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-held-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-held-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-held-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-held.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-idle-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-idle-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-idle-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-idle-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-idle-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/capability-idle.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/duplicate-parent-press.log",
+      "sha256": "7405c7ffd32421bed452fc567a3b217f1cde88b9fe8e261cd333c46d48aca54b",
+      "size": 225
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/fixture-events.jsonl",
+      "sha256": "0963940eea62553b6c43ffd4d778523e77539454b3fa9716a6bdf003e657b5bf",
+      "size": 128344
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-controller-eof-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-controller-eof.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-controller-quit-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-controller-quit.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-restore-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-restore.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-scale-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-scale.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-shrink-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/held-shrink.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/host-evidence.json",
+      "sha256": "4e81159af81644657b9e231200a60c83b86ae2735ecb412009aa5cc57d6bf746",
+      "size": 223698
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/hyprland.log",
+      "sha256": "6ab68cf84b146f85d3f78af0898ab236e8b87a57b5ba1664e90ab61cf4e0a77b",
+      "size": 280148
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/parent-focus-scale-2-anchor.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/parent-focus-scale-2-events.jsonl",
+      "sha256": "5318363cf18ff077c40d0e05cf1d2b2e84d56ffe7528b24f958d05edb1b68876",
+      "size": 9698
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/parent-focus-scale-2.log",
+      "sha256": "5de8fa3a1f51aee0c4dba552683e1820c43b6c26913650785339b8fc6df9a1c9",
+      "size": 257
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/privateBus.log",
+      "sha256": "dfb9585ab3b35a6fa061fabf42eaa5bc4e36df2bbf5413810a0c6fb8106974d0",
+      "size": 315
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/recipient.log",
+      "sha256": "cfb7d5d7cff96afd41933dbd4db847b5c46b6fbf441f1bca2965530b38d8b2b8",
+      "size": 252
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791100163_612047548/hyprland.log",
+      "sha256": "09328b1819fe9fd3cd5cfb4c452028935254f9a8f274abe4cb46b84cb8002e17",
+      "size": 32258
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/three-held-buttons-eof.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/unmatched-parent-release.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/weston-renderer.log",
+      "sha256": "b53da07eaaf92d4fbeb4230401bb4d839b1cccf8039c69a17faf428d57d8c564",
+      "size": 12925
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/native.py",
+      "sha256": "dd95de65fa0a87ecb89add6f0eabc323c43c196a06f332433c14691962cbc019",
+      "size": 23170
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native-1791100162878095039/report.json",
+      "sha256": "6dc72793a686b4ddc2b07ed4d90c953ce346b5927b6186917e74f4e814475b6b",
+      "size": 662700
+    },
+    {
+      "path": "elm-parent-focus-v44/qa/native.py",
+      "sha256": "dd95de65fa0a87ecb89add6f0eabc323c43c196a06f332433c14691962cbc019",
+      "size": 23170
+    },
+    {
+      "path": "elm-parent-focus-v46/aq-tuple.json",
+      "sha256": "b6d8a99fcc0cbb98ed4ee14826cd0ad636667129168b71ee6ae81b57c8569ab5",
+      "size": 582
+    },
+    {
+      "path": "elm-parent-focus-v46/build.py",
+      "sha256": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+      "size": 4509
+    },
+    {
+      "path": "elm-parent-focus-v46/candidate_host.py",
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    {
+      "path": "elm-parent-focus-v46/fixture.py",
+      "sha256": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+      "size": 6593
+    },
+    {
+      "path": "elm-parent-focus-v46/native/SOURCE-API.md",
+      "sha256": "435d486b88d478ea8b1da473c424ea37e0267249012c7b50903dce16a2b5e91e",
+      "size": 3955
+    },
+    {
+      "path": "elm-parent-focus-v46/native/parent-input-client.c",
+      "sha256": "b029684cd7d7bee2ed038fe8d481264d3736ea4ab6492a747355460ee779cefd",
+      "size": 5819
+    },
+    {
+      "path": "elm-parent-focus-v46/native/parent-input-module.c",
+      "sha256": "002ab37624117dfd25412d137dd44fc9c7279962d67d1c1b058091aeb3efd962",
+      "size": 8121
+    },
+    {
+      "path": "elm-parent-focus-v46/native/parent-input.xml",
+      "sha256": "904e1187b8e8640d4e72d707b86950b0ff5a35d455f8a31620f032475dee1102",
+      "size": 873
+    },
+    {
+      "path": "elm-parent-focus-v46/native-build-report.json",
+      "sha256": "737a56a3a882ff5702dbf0acfcfda3bd363784877a7e94feb7b7b498f2f84721",
+      "size": 1341
+    },
+    {
+      "path": "elm-parent-focus-v46/parent-cover.py",
+      "sha256": "f238d163c1a3de1fa7194a6b826c3c0ecffc19a8b423ba2631638605257d0a80",
+      "size": 7508
+    },
+    {
+      "path": "elm-parent-focus-v46/parent-probe-build.json",
+      "sha256": "3daae34892f78fcf94be5a54153269cfd0a7ebf7ff0d3c2a945ff2a62a198ab6",
+      "size": 232
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/fixture-inspection.py",
+      "sha256": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+      "size": 5658
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/interactive-client.py",
+      "sha256": "265adaac46c2d59da6c2b74160fe8ae14b81fa5a89ab2a1128f94e797917bdcd",
+      "size": 8728
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/after-duplicate-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/after-three-held-buttons-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/after-unmatched-parent-refusal-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-held-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-held-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-held-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-held-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-held-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-held.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-idle-duplicate-disable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-idle-duplicate-enable.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-idle-motion-absent.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-idle-restore.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-idle-restored-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/capability-idle.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/duplicate-parent-press.log",
+      "sha256": "7405c7ffd32421bed452fc567a3b217f1cde88b9fe8e261cd333c46d48aca54b",
+      "size": 225
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/fixture-events.jsonl",
+      "sha256": "9a9ec05ef1fe7a83334624e0b03d571412d18129a46c6e5a79aefe7740e206e5",
+      "size": 128344
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-controller-eof-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-controller-eof.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-controller-quit-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-controller-quit.log",
+      "sha256": "d2c6c30a90c7bf2dcb86c2da006a155b870869ec1df84a497fe4994d9fdb838e",
+      "size": 164
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-restore-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-restore.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-scale-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-scale.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-shrink-clean-click.log",
+      "sha256": "814709410b591ccb486571cd8f1aaa37427a47b9686c9301f4dbdd557f4809e0",
+      "size": 224
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/held-shrink.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/host-evidence.json",
+      "sha256": "37f2d2a74b5526b2a4385dcd4895724565c38b451a05ba7fbc56ecfb1c0908b6",
+      "size": 223334
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/hyprland.log",
+      "sha256": "266407febb291859b14dd7de7f311ab291f8241f2bcfe27d660d9addd47b712e",
+      "size": 318299
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/parent-focus-scale-2-anchor.log",
+      "sha256": "6582cd04c67eee0ab3b56e73fde317b1c19a3addd16c6aadba2a06e5ebd0968d",
+      "size": 104
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/parent-focus-scale-2-events.jsonl",
+      "sha256": "610fd5dc41e23726ad55936d0c1a20ca5310a0c89a53a46844726fe8312cfc3a",
+      "size": 8709
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/parent-focus-scale-2.log",
+      "sha256": "a50692a4b0a10821861aaa4ea9ec008b3e690d1d82231f2b2b43602a2a766fec",
+      "size": 257
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/privateBus.log",
+      "sha256": "0c38ca1febd6cb2cdcb2c5850adca2b6ec06affdefea216c9ec0846d33ff4c58",
+      "size": 315
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/recipient.log",
+      "sha256": "b216c6fe79fa0563fa941d8397d64d78b9570ea6c7c6783324ecd37f044cf1ff",
+      "size": 252
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791100366_898821853/hyprland.log",
+      "sha256": "7fb259669b4c8a52401acbb98e96385f463856e8ef9b670e0ca9814248b12e1c",
+      "size": 32258
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/three-held-buttons-eof.log",
+      "sha256": "d5ff236913bf96e14ba5a0dd1a0efdd65ce3d356a75bfb058226f46d36fabed5",
+      "size": 284
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/unmatched-parent-release.log",
+      "sha256": "aae5202e182150f0842ddf29e56d7327d61b7611eb6ed1632ced5d0c3284fde7",
+      "size": 105
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/weston-renderer.log",
+      "sha256": "aca3deeadc4734580947ae58909b5c2717adbe3807d4a742cd18da9ca341bb34",
+      "size": 12925
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/native.py",
+      "sha256": "9840c590454123081b4e4ef403c8583179094d92be290ee7804ea0881cc968b4",
+      "size": 23176
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native-1791100365155458299/report.json",
+      "sha256": "96c49c56fcfe6788466830a456d365a9cdcfb4fcb0531cac7c91e44be5b553f5",
+      "size": 662349
+    },
+    {
+      "path": "elm-parent-focus-v46/qa/native.py",
+      "sha256": "9840c590454123081b4e4ef403c8583179094d92be290ee7804ea0881cc968b4",
+      "size": 23176
+    },
+    {
+      "path": "elm-parent-lifecycle-acceptance-v45/freeze.py",
+      "sha256": "36d08a54ab41df34c5478e428c86f1b8f68ce79f250587b70b03e1a688131b09",
+      "size": 5570
+    }
+  ]
+}

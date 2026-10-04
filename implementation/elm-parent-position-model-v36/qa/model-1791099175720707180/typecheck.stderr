@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'enabled' is redefined in module 'parent'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-position-model-v36/qa/model-1791099175720707180/parent.qnt:72:44
+  72:   action monitorFlag(o: int, mirror: bool, enabled: bool): bool = {
+                                                 ^^^^^^^^^^^^^
+
+error: parsing failed
