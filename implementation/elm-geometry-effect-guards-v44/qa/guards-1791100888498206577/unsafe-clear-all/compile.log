@@ -1,0 +1,6 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-clear-all/test.cpp:2:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-clear-all/EffectBarrier.hpp: In member function ‘void Elm::Geometry::Barriers::definitive(Elm::Geometry::Target)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-clear-all/EffectBarrier.hpp:20:28: error: unused parameter ‘target’ [-Werror=unused-parameter]
+   20 |     void definitive(Target target) { for(auto& e:entries_) if(e){e.reset();} }
+      |                     ~~~~~~~^~~~~~
+cc1plus: all warnings being treated as errors

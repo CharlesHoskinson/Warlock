@@ -1,0 +1,86 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual V42 authority-wide barrier CPU set-oracle replay; no native effects, journal, receipt, compositor reentrancy or recovery acceptance",
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-effects-v42/candidate/EffectBarrier.hpp",
+  "sourceSHA256": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3",
+  "checks": [
+    {
+      "name": "actual",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "checks 12532117\n",
+      "stderr": "",
+      "command": [
+        "g++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/actual/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/actual/test"
+      ]
+    },
+    {
+      "name": "unsafe-duplicate",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL duplicate operation cannot reserve again\n",
+      "command": [
+        "g++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-duplicate/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-duplicate/test"
+      ]
+    },
+    {
+      "name": "unsafe-drop-lifetime",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL native lifetime/incarnation isolated\n",
+      "command": [
+        "g++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-drop-lifetime/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-drop-lifetime/test"
+      ]
+    }
+  ],
+  "error": "AssertionError('In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-clear-all/test.cpp:2:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-clear-all/EffectBarrier.hpp: In member function \u2018void Elm::Geometry::Barriers::definitive(Elm::Geometry::Target)\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-guards-v44/qa/guards-1791100888498206577/unsafe-clear-all/EffectBarrier.hpp:20:28: error: unused parameter \u2018target\u2019 [-Werror=unused-parameter]\\n   20 |     void definitive(Target target) { for(auto& e:entries_) if(e){e.reset();} }\\n      |                     ~~~~~~~^~~~~~\\ncc1plus: all warnings being treated as errors\\n')",
+  "artifacts": {
+    "EffectBarrier.hpp": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3",
+    "actual/EffectBarrier.hpp": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3",
+    "actual/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual/run.log": "b368f8165df9081fc9360822ada08a2e3cbb505195f3e438f396ff6656df95a5",
+    "actual/test": "727364f235359beff05f47dddf9633f3e3211ebc25dddbf3320e7ce89c44fd50",
+    "actual/test.cpp": "96c15f72ab6971bc93de28badc0c6edc0f1ff88c5c44ec98d11789e8eee233b6",
+    "test.py": "540a78a6ae37526d2538ea0651acf53893f7024343f285ea0935c2a602b75360",
+    "unsafe-clear-all/EffectBarrier.hpp": "61645bf9bffa17ca3b1bd882cf8695a0731a87a6568ef0a5d9e720fe393488cd",
+    "unsafe-clear-all/compile.log": "79bcf30450327d6045b94ccb8f0bda5373bc2d328d9b73de3dc5186cbbd3486c",
+    "unsafe-clear-all/test.cpp": "96c15f72ab6971bc93de28badc0c6edc0f1ff88c5c44ec98d11789e8eee233b6",
+    "unsafe-drop-lifetime/EffectBarrier.hpp": "ad3de3b64290bf585bf8b49f6aa19b914f05cac1cd7472ea12267a56d4d03435",
+    "unsafe-drop-lifetime/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-drop-lifetime/run.log": "ec58ad04b7030bdeb2aaae2a806ec7c1dba20e0c557a6e03d86c9f5ab2cc9324",
+    "unsafe-drop-lifetime/test": "26c0739f5ccaf4da017e062920cf6d12e4168c2decc754fb250f1c4276567e8b",
+    "unsafe-drop-lifetime/test.cpp": "96c15f72ab6971bc93de28badc0c6edc0f1ff88c5c44ec98d11789e8eee233b6",
+    "unsafe-duplicate/EffectBarrier.hpp": "18856cdb33edd96d25bab2823b8d62e6ee13aec1472a1e54f502e822b9aa6054",
+    "unsafe-duplicate/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-duplicate/run.log": "5630b9fe0dfa0a16302a0080eb1827f20e94bc05a15b9008f2b826071bec5b97",
+    "unsafe-duplicate/test": "2b82fc9d1d3581ea0b928f902b025d78f047d011f29fe48f1d25c10f83d799f6",
+    "unsafe-duplicate/test.cpp": "96c15f72ab6971bc93de28badc0c6edc0f1ff88c5c44ec98d11789e8eee233b6"
+  }
+}
