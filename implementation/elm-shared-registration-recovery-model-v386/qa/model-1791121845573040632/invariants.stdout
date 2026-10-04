@@ -1,0 +1,621 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      next: 1,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 0,
+      slots: Set(),
+      unknown: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      next: 1,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 0,
+      slots: Set(),
+      unknown: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      next: 1,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 0,
+      slots: Set(),
+      unknown: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      next: 2,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 1,
+      slots: Set(1),
+      unknown: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      next: 2,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 1,
+      slots: Set(1),
+      unknown: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      next: 2,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 1,
+      slots: Set(1),
+      unknown: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      next: 2,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 1,
+      slots: Set(),
+      unknown: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      next: 2,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 1,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      next: 2,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 1,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      next: 3,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(2),
+      unknown: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      next: 3,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(2),
+      unknown: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      next: 3,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(2),
+      unknown: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      next: 3,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      next: 3,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 2,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      next: 4,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 3,
+      slots: Set(3),
+      unknown: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      next: 4,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 3,
+      slots: Set(3),
+      unknown: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      next: 4,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 3,
+      slots: Set(3),
+      unknown: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      next: 4,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 3,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      next: 4,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 3,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      next: 5,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(4),
+      unknown: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      next: 5,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(4),
+      unknown: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      next: 5,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(4),
+      unknown: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      next: 5,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      next: 5,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      next: 5,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      next: 5,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      next: 5,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      next: 5,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 4,
+      slots: Set(),
+      unknown: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      next: 6,
+      pending: true,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 5,
+      slots: Set(5),
+      unknown: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      next: 6,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 5,
+      slots: Set(5),
+      unknown: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      next: 6,
+      pending: false,
+      readNeeded: false,
+      refused: false,
+      rejected: 0,
+      sent: 5,
+      slots: Set(5),
+      unknown: true
+    }
+}
+
+[ok] No violation found (1097ms at 912 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

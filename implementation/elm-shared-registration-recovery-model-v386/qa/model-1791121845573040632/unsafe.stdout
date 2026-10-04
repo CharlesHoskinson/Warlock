@@ -1,0 +1,16 @@
+
+  recovery
+    1) wrongCertificateTest failed after 1 test(s)
+
+  1 failed
+
+  1) wrongCertificateTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-recovery-model-v386/qa/model-1791121845573040632/unsafe.qnt:17:126
+        17:  run wrongCertificateTest=init.then(issue).then(finish).then(issue).then(finish).then(issue).then(wrongCertificate).then(all{assert(s.refused and s.slots.size()==2 and s.sent==2),s'=s})
+                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x29828 --match=wrongCertificateTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unsafe.qnt

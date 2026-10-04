@@ -1,0 +1,19 @@
+{
+  "base": "implementation/elm-shared-context-disposition-wire-v132",
+  "ours": "implementation/elm-shared-pending-render-dismissal-v371",
+  "oursFrozenManifest": "implementation/elm-shared-render-dismissal-accepted-v379/qa/slice-manifest.json",
+  "oursFrozenManifestSHA256": "4e84137774d89702933db04081380f4599cc97dd881919ad229d7f350bc24a20",
+  "other": "implementation/elm-shared-registration-eof-integration-v144",
+  "otherBuildReport": "implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/report.json",
+  "otherBuildReportSHA256": "2c2ad0a68cf1f67f69578a00eed874699aac63eb44be43d1fa5d31a0eb4bb573",
+  "reviewedChanges": {
+    "src/Shell.elm": "ce352b58faaa53153312c7d762e7b5e450bd5862d20e93ea193c6f6f1b570f4a",
+    "src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "src/OutputController.elm": "7436175f8a41d576ba093fa1983ce35d0bcc4b5d02da5a15a875bbe5344d976c",
+    "src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "native/host.c": "cc4f31ae7b3361f7a298f7d808d4abdb782bcdfa481a6d8f1a78459553b89042",
+    "adapter/daemon.py": "269ed3c32e194204b94d249ab53b349b1c165b7b5f3976527b1aef3b42829013"
+  },
+  "prototype": true,
+  "fullReleaseAccepted": false
+}

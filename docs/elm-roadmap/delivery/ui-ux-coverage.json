@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T13:43:04.041850+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T13:52:58.793515+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7631,6 +7631,15 @@
       "manifest": "implementation/elm-shared-render-dismissal-accepted-v379/qa/slice-manifest.json",
       "manifestSHA256": "4e84137774d89702933db04081380f4599cc97dd881919ad229d7f350bc24a20",
       "summary": "Production371 fixes Escape during pending menu rendering while preserving native grabbed/configured/focused exact view/epoch/pub/lease/500ms physical-release proof. Enter retains full readiness. Controlled ancestor370 fails; final production48, controlled49, controlled Enter-refusal51 native checks pass normal cleanup on core89/plugin90/AQ105. Actual C90/key20/carrier34, recovery65/wire2 and Quint21/1000x40 pass; two unsafe controls detected. Source/failed infrastructure/freezer evidence frozen. Full UIUX/AT/IME/GPU/release and requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-registration-shutdown-accepted-v387",
+      "manifest": "implementation/elm-shared-registration-shutdown-accepted-v387/qa/slice-manifest.json",
+      "manifestSHA256": "f2e4114985f0ba936d40ffa876408ce66da9ba61a30b2b21b10c3b0db3595845",
+      "summary": "Final380 merges production371 input proof with reviewed144 registration/refusal and bounded broker output/ordered native drain. Actual native49 and target-retirement48 pass strict6s/pixels/receipts/client-empty/normal cleanup. Actual registration25, operation/deferred65, broker43, teardown10, shared37/49/23, adapted79/53/21 and C90/key20/carrier34 pass. Quint8/1000x40 and unsafe certificate control pass. Original native08/09/10 receipt/EOF faults and full UIUX/ATIME/GPU/release/requirements/sprints remain open.",
       "boundedNativeAcceptance": true,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []

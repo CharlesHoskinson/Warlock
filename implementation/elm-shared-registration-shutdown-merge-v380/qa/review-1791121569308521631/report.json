@@ -1,0 +1,284 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "scope": "Actual V132 broker framing/send/recovery store with CPU endpoint/catalog/event doubles and owned pipes; no native execution",
+  "checks": [
+    {
+      "name": "empty EOF normal/failure code",
+      "passed": true
+    },
+    {
+      "name": "empty EOF current full attached binding",
+      "passed": true
+    },
+    {
+      "name": "empty EOF disconnect only on failure",
+      "passed": true
+    },
+    {
+      "name": "empty EOF bounded owned CPU completion",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF normal/failure code",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF current full attached binding",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF disconnect only on failure",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF bounded owned CPU completion",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request normal/failure code",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request current full attached binding",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request disconnect only on failure",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request bounded owned CPU completion",
+      "passed": true
+    },
+    {
+      "name": "actual C schema5 host admission helper compiles",
+      "passed": true
+    },
+    {
+      "name": "actual C admits original full key before broker begin",
+      "passed": true
+    },
+    {
+      "name": "durable initial exact intent accepted",
+      "passed": true
+    },
+    {
+      "name": "same exact intent never resubmitted",
+      "passed": true
+    },
+    {
+      "name": "reopened schema5 preserves original full intent",
+      "passed": true
+    },
+    {
+      "name": "recovery transport binds current session/frontend",
+      "passed": true
+    },
+    {
+      "name": "durable unresolved record retains original issued binding",
+      "passed": true
+    },
+    {
+      "name": "watermarks preserve counters",
+      "passed": true
+    },
+    {
+      "name": "foreign lifetime refused",
+      "passed": true
+    },
+    {
+      "name": "exact4096 newline-inclusive frame accepted",
+      "passed": true
+    },
+    {
+      "name": "oversized frame refused",
+      "passed": true
+    },
+    {
+      "name": "partial final frame is not normal EOF",
+      "passed": true
+    },
+    {
+      "name": "concurrent output complete atomic frames",
+      "passed": true
+    },
+    {
+      "name": "every concurrent frame delivered once",
+      "passed": true
+    },
+    {
+      "name": "regular-file stdout remains supported",
+      "passed": true
+    },
+    {
+      "name": "backpressure bounded failure instead of indefinite hang",
+      "passed": true
+    },
+    {
+      "name": "backpressure no appended disconnected receipt/trailer",
+      "passed": true
+    },
+    {
+      "name": "partial output does not become completed frame",
+      "passed": true
+    },
+    {
+      "name": "confirmed-delivery-failure bounded failure instead of indefinite hang",
+      "passed": true
+    },
+    {
+      "name": "confirmed-delivery-failure no appended disconnected receipt/trailer",
+      "passed": true
+    },
+    {
+      "name": "startup-backpressure bounded failure instead of indefinite hang",
+      "passed": true
+    },
+    {
+      "name": "startup-backpressure no appended disconnected receipt/trailer",
+      "passed": true
+    },
+    {
+      "name": "delivery failure preserves confirmed durable status",
+      "passed": true
+    },
+    {
+      "name": "renewed frontend synchronizes original confirmed full key",
+      "passed": true
+    },
+    {
+      "name": "confirmed original key is not recovered as Unknown",
+      "passed": true
+    },
+    {
+      "name": "real broker initialized before delayed in-flight admission",
+      "passed": true
+    },
+    {
+      "name": "delayed operation actual C full-key admission",
+      "passed": true
+    },
+    {
+      "name": "normal EOF drains already accepted in-flight handler inside existing budget",
+      "passed": true
+    },
+    {
+      "name": "original exact outcome delivered before normal EOF exit",
+      "passed": true
+    },
+    {
+      "name": "foreign frontend rejects before execution or durable begin",
+      "passed": true
+    },
+    {
+      "name": "closed output peer causes prompt failure without exception-cleanup retry",
+      "passed": true
+    }
+  ],
+  "sourceInputs": {
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/daemon.py": "269ed3c32e194204b94d249ab53b349b1c165b7b5f3976527b1aef3b42829013",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "native/host.c": "cc4f31ae7b3361f7a298f7d808d4abdb782bcdfa481a6d8f1a78459553b89042",
+    "native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/shared-host.c": "854ee839f2017a902520da2feb115c4426fe213085efa302403f8467975e9261",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/geometry-carrier-test.c": "feed727a7ad21272b740232ba7caeab7b695179da484987ce0d46d82638de2cd",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/shared-context.h": "31447d4ecf8422dc653482cb2ac3972cbc3817b3daaf6d85a35d1a556575b43c",
+    "native/shared-context-test.c": "826721b1aaf4130e680d6df349b1239e82cf9ab2b9fefaeeaf85b4c1a17c7508"
+  },
+  "compileCommand": [
+    "cc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wno-unused-function",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-shutdown-merge-v380/qa/review-1791121569308521631/inputs/native/admission-test.c",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-shutdown-merge-v380/qa/review-1791121569308521631/admission",
+    "-I/usr/include/json-glib-1.0",
+    "-I/usr/include/glib-2.0",
+    "-I/usr/lib/glib-2.0/include",
+    "-I/usr/include/libmount",
+    "-I/usr/include/blkid",
+    "-I/usr/include/sysprof-6",
+    "-pthread",
+    "-ljson-glib-1.0",
+    "-lgio-2.0",
+    "-lgobject-2.0",
+    "-lglib-2.0"
+  ],
+  "admissionRun": {
+    "exitCode": 0,
+    "stdout": "host-intent-durable: {\"schema\":2,\"effectProtocol\":1,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+    "stderr": ""
+  },
+  "processExitCodes": [
+    0,
+    1,
+    1,
+    0,
+    0,
+    7,
+    7,
+    1,
+    0,
+    1
+  ],
+  "artifacts": {
+    "config.json": "dc452f16af20e675ee1c574eb08bc184e1f7867c9889525f1eb52caca4944d37",
+    "admission": "f19ab08cf36cb66ecc6cf1e69f925c6f0a9a7231c772ba14b179d8757818ad1e",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "regular-output": "db578ce0b75876b5230dec12e9fd42373072e8369624577c91af48eb7fd8254c",
+    "inputs/review.py": "5fe5f41161b485005e3ad8158620a0f1866b71ac2a627d649ee307078d2c7312",
+    "runtime/elm-window-recovery/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/migration-plan.json": "d8753c7c1d9bf1f59806893b1ea3c75314a99f4214af53698e9a5954000fbbd5",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/migration.json": "4facdeba612fdc9fe8bce1a07e5c5d5ae07c1807c5166b24a8aaf363d3ea5cd3",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/ledger-v5.initialized": "be51ebcde2cd5bcd275ceabd5f2e62ea3dabc6775ed8930019c59e1ec731d522",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/host-owner.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/ledger-v5.json": "212c3a2fa1ad86ded4e275960f62b099bf165db92db3c5ad16646dc8670fa62f",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/admissions-v1/5a6cd399ee4c2aa9fdbbd57069c265cfbf16541e7e93bf9b43c048512ed9b1ef.json": "1a45b542aacbe28eb0247e85dbaf15bb01430fd37dd90f4baad7bd771cfa2332",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/admissions-v1/e12167df0126c78c0fd2ef6a1fcc0a83a9c7c3d36fba260ad2e4007cd673b31a.json": "653ab37ca62f25f449e683158a25ca6bab388551a3caa9cd076d6552d8fc8dda",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/admissions-v1/29d790dd77b4242c0aaa9c818fc9e6fc6f50bdcbdc40c2c15cd8aabbde18adec.json": "651975f9e974a5c8ec6e0c6ef8ba6522878943376bb8681830e37deda0a2168a",
+    "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "inputs/adapter/daemon.py": "269ed3c32e194204b94d249ab53b349b1c165b7b5f3976527b1aef3b42829013",
+    "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "inputs/adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "inputs/adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "inputs/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "inputs/adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "inputs/adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "inputs/native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b"
+  }
+}

@@ -1,0 +1,1 @@
+Eight explicit abstract scenarios and bounded invariant traces for registration recovery. Two slots abstract production16; full matching certificate fields abstracted as exact versus wrong. Unsafe unrelated certificate control must fail. Actual compiled25 registration cases remain independent production proof.
