@@ -1,0 +1,12 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+AssertionError [ERR_ASSERTION]: '7' == '6'
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-geometry-bounds-fixtures-v416/qa/outputs-1791126787125589389/inputs/qa/outputs.cjs:20:141
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-geometry-bounds-fixtures-v416/qa/outputs-1791126787125589389/inputs/qa/outputs.cjs:10:100)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-geometry-bounds-fixtures-v416/qa/outputs-1791126787125589389/inputs/qa/outputs.cjs:20:1 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '7',
+  expected: '6',
+  operator: '==',
+  diff: 'simple'
+}

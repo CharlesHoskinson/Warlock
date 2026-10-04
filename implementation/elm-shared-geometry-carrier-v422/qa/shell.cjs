@@ -1,0 +1,32 @@
+const fs=require('fs'),assert=require('assert');
+const {Elm}=require(process.argv[2]);
+const binding={lifetime:'9007199254740993',session:'8',frontend:'1'},fresh={...binding,session:'9'};
+const context={lifetime:binding.lifetime,epoch:'1',output:'3',revision:'4'};
+const attach=b=>({protocolVersion:3,kind:'attached',binding:b});
+const projection=(b,id,min=false,revision='4')=>({protocolVersion:3,kind:'action-projection',binding:b,requestId:id,context:{...context,revision},scene:{revision,focused:null,windows:[{owner:null,application:'owned.app',available:true,incarnation:'7',label:'Window',minimized:min}]}});
+const act={kind:'user-action',operation:'minimize',incarnation:'7'},disconnect={kind:'host-disconnected'};
+const app=Elm.ShellReplay.init({flags:null});
+const deadline=setTimeout(()=>{throw new Error('Shell replay completion deadline');},4000);
+function replay(messages){return new Promise(resolve=>{const cb=rows=>{app.ports.outgoing.unsubscribe(cb);resolve(rows);};app.ports.outgoing.subscribe(cb);app.ports.incoming.send(messages);});}
+(async()=>{
+ const setup=[attach(binding),projection(binding,'1'),act];
+ const baseline=await replay(setup),intent=baseline[2].commands[0].intent;
+ const outcome=(b,status='Committed')=>({protocolVersion:3,kind:'effect-outcome',binding:b,intent,status});
+ const messages=[...setup,disconnect,{kind:'user-reconnect'},attach(fresh),projection(binding,'1',true,'5'),outcome(binding),act,projection(fresh,'2'),act];
+ const rows=await replay(messages);let checks=0;const check=v=>{assert(v);checks++;};
+ check(rows[0].model.phase==='Reconciling');check(!rows[0].model.available);check(rows[0].commands[0].binding.lifetime===binding.lifetime);
+ check(rows[1].model.phase==='Ready');check(rows[1].model.available);check(rows[2].model.effects.transaction.status==='Pending');check(!rows[2].model.available);
+ check(rows[3].model.effects.transaction.status==='Unknown');check(rows[3].model.phase==='Detached');check(rows[4].commands[0].kind==='host-reconnect');
+ check(rows[5].model.phase==='Reconciling');check(rows[5].commands.length===1&&rows[5].commands[0].kind==='projection-request');
+ check(rows[6].model.phase==='Reconciling'&&rows[6].commands.length===0);check(rows[7].model.effects.transaction.status==='Unknown');check(rows[8].commands.length===0);
+ check(rows[9].model.phase==='Ready'&&rows[9].model.available);check(rows[9].model.effects.windows[0].minimized===false);
+ check(rows[10].commands[0].intent.request==='2');check(rows[10].commands[0].binding.session==='9');
+ const reordered=await replay([attach(binding),{kind:'user-refresh'},projection(binding,'1'),projection(binding,'2')]);
+ check(reordered[2].model.phase==='Reconciling');check(reordered[2].model.effects.windows===null);check(reordered[3].model.phase==='Ready');
+ const wrong=await replay([attach(binding),{...projection(binding,'1'),context:{...context,lifetime:'5'}}]);
+ check(wrong[1].model.phase==='Reconciling'&&!wrong[1].model.available);
+ const terminal=await replay([...setup,outcome(binding),projection(binding,'2',true,'5'),outcome(binding,'Unknown')]);
+ check(terminal[3].model.phase==='Reconciling');check(terminal[3].model.effects.windows[0].minimized===false);
+ check(terminal[4].model.effects.windows[0].minimized===true);check(terminal[5].model.effects.transaction.status==='Committed');
+ fs.writeFileSync(process.argv[3],JSON.stringify({passed:true,checks,rows,reordered,wrong,terminal},null,2)+'\n');clearTimeout(deadline);
+})();

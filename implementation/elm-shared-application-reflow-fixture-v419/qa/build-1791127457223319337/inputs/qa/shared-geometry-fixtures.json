@@ -1,0 +1,349 @@
+{
+  "scope": "Fresh observation2 synthetic envelopes; ancestor1 retained separately; no native acceptance",
+  "attach": {
+    "protocolVersion": 3,
+    "kind": "geometry-attached",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "100",
+      "session": "200",
+      "frontend": "300"
+    },
+    "requestId": "2",
+    "capabilities": {
+      "observe": true,
+      "effects": true,
+      "effectProtocol": 2,
+      "operations": [
+        "maximize",
+        "restore-geometry"
+      ],
+      "placementCapacity": 256,
+      "canonicalScene": false
+    }
+  },
+  "facts": {
+    "protocolVersion": 3,
+    "kind": "geometry-facts",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "100",
+      "session": "200",
+      "frontend": "300"
+    },
+    "requestId": "3",
+    "sequence": "1",
+    "revision": "101",
+    "outputGeneration": "1",
+    "facts": {
+      "focused": null,
+      "inputBlocked": false,
+      "windows": [
+        {
+          "incarnation": "10",
+          "owner": null,
+          "workspace": "1",
+          "workspaceGeneration": "50",
+          "monitor": "0",
+          "outputOwnershipGeneration": "60",
+          "workAreaRevision": "70",
+          "workArea": [
+            0,
+            0,
+            800,
+            600
+          ],
+          "logicalGeometry": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "visualGeometry": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "nativeMode": "ordinary",
+          "clientMode": "ordinary",
+          "minimized": false,
+          "floating": true,
+          "grouped": false,
+          "fixedSize": false,
+          "constrainedSize": false,
+          "geometryEligible": true,
+          "ordinaryPlacementKnown": false,
+          "capabilities": {
+            "maximize": true,
+            "restoreGeometry": false
+          },
+          "sizePolicy": {
+            "inputs": {
+              "profile": "wayland-zero-origin-v1",
+              "rawMinimum": [
+                0,
+                0
+              ],
+              "rawMaximum": [
+                0,
+                0
+              ],
+              "layoutMinimum": [
+                1,
+                1
+              ],
+              "layoutMaximum": [
+                1.7976931348623157e+308,
+                1.7976931348623157e+308
+              ],
+              "geometryOrigin": [
+                0,
+                0
+              ],
+              "reservedTopLeft": [
+                0,
+                0
+              ],
+              "reservedBottomRight": [
+                0,
+                0
+              ],
+              "monitorScale": 1
+            },
+            "maximize": {
+              "logical": [
+                0,
+                0,
+                800,
+                600
+              ],
+              "visual": null,
+              "real": [
+                0,
+                0,
+                800,
+                600
+              ],
+              "configure": [
+                800,
+                600
+              ]
+            },
+            "restoreGeometry": null
+          }
+        },
+        {
+          "incarnation": "11",
+          "owner": "10",
+          "workspace": "1",
+          "workspaceGeneration": "50",
+          "monitor": "0",
+          "outputOwnershipGeneration": "60",
+          "workAreaRevision": "70",
+          "workArea": [
+            0,
+            0,
+            800,
+            600
+          ],
+          "logicalGeometry": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "visualGeometry": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "nativeMode": "ordinary",
+          "clientMode": "ordinary",
+          "minimized": false,
+          "floating": true,
+          "grouped": false,
+          "fixedSize": false,
+          "constrainedSize": false,
+          "geometryEligible": false,
+          "ordinaryPlacementKnown": false,
+          "capabilities": {
+            "maximize": false,
+            "restoreGeometry": false
+          },
+          "sizePolicy": {
+            "inputs": {
+              "profile": "wayland-zero-origin-v1",
+              "rawMinimum": [
+                0,
+                0
+              ],
+              "rawMaximum": [
+                0,
+                0
+              ],
+              "layoutMinimum": [
+                1,
+                1
+              ],
+              "layoutMaximum": [
+                1.7976931348623157e+308,
+                1.7976931348623157e+308
+              ],
+              "geometryOrigin": [
+                0,
+                0
+              ],
+              "reservedTopLeft": [
+                0,
+                0
+              ],
+              "reservedBottomRight": [
+                0,
+                0
+              ],
+              "monitorScale": 1
+            },
+            "maximize": {
+              "logical": [
+                0,
+                0,
+                800,
+                600
+              ],
+              "visual": null,
+              "real": [
+                0,
+                0,
+                800,
+                600
+              ],
+              "configure": [
+                800,
+                600
+              ]
+            },
+            "restoreGeometry": null
+          }
+        },
+        {
+          "incarnation": "20",
+          "owner": null,
+          "workspace": "1",
+          "workspaceGeneration": "50",
+          "monitor": "0",
+          "outputOwnershipGeneration": "60",
+          "workAreaRevision": "70",
+          "workArea": [
+            0,
+            0,
+            800,
+            600
+          ],
+          "logicalGeometry": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "visualGeometry": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "nativeMode": "ordinary",
+          "clientMode": "ordinary",
+          "minimized": false,
+          "floating": true,
+          "grouped": false,
+          "fixedSize": false,
+          "constrainedSize": false,
+          "geometryEligible": true,
+          "ordinaryPlacementKnown": false,
+          "capabilities": {
+            "maximize": true,
+            "restoreGeometry": false
+          },
+          "sizePolicy": {
+            "inputs": {
+              "profile": "wayland-zero-origin-v1",
+              "rawMinimum": [
+                0,
+                0
+              ],
+              "rawMaximum": [
+                0,
+                0
+              ],
+              "layoutMinimum": [
+                1,
+                1
+              ],
+              "layoutMaximum": [
+                1.7976931348623157e+308,
+                1.7976931348623157e+308
+              ],
+              "geometryOrigin": [
+                0,
+                0
+              ],
+              "reservedTopLeft": [
+                0,
+                0
+              ],
+              "reservedBottomRight": [
+                0,
+                0
+              ],
+              "monitorScale": 1
+            },
+            "maximize": {
+              "logical": [
+                0,
+                0,
+                800,
+                600
+              ],
+              "visual": null,
+              "real": [
+                0,
+                0,
+                800,
+                600
+              ],
+              "configure": [
+                800,
+                600
+              ]
+            },
+            "restoreGeometry": null
+          }
+        }
+      ]
+    }
+  },
+  "maxCommand": {
+    "protocolVersion": 3,
+    "kind": "window-effect",
+    "effectProtocol": 2,
+    "binding": {
+      "lifetime": "100",
+      "session": "200",
+      "frontend": "300"
+    },
+    "intent": {
+      "request": "1",
+      "generation": "1",
+      "incarnation": "10",
+      "operation": "maximize",
+      "context": {
+        "lifetime": "100",
+        "epoch": "300",
+        "output": "1",
+        "revision": "101"
+      }
+    }
+  }
+}

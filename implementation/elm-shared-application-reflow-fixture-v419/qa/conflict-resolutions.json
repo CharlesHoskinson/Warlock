@@ -1,0 +1,26 @@
+{
+  "scope": "Reviewed imperative merge; compile/tests required",
+  "resolutions": [
+    {
+      "file": "host.c",
+      "ours": "static void (*shared_input_cancel)(void);\nstatic GdkRectangle context_anchor;\nstatic gboolean has_context_anchor,shared_preserve_context_anchor;\n",
+      "base": "static void surface_receive(WebKitUserContentManager *,const char *,JsonNode *);\n",
+      "theirs": "typedef enum { SURFACE_IGNORED, SURFACE_PREFLIGHT_UNSENT, SURFACE_ADMITTED, SURFACE_UNCERTAIN } SurfaceDisposition;\nstatic SurfaceDisposition surface_receive(WebKitUserContentManager *,const char *,JsonNode *);\n",
+      "resolved": "static void (*shared_input_cancel)(void);\nstatic GdkRectangle context_anchor;\nstatic gboolean has_context_anchor,shared_preserve_context_anchor;\ntypedef enum { SURFACE_IGNORED, SURFACE_PREFLIGHT_UNSENT, SURFACE_ADMITTED, SURFACE_UNCERTAIN } SurfaceDisposition;\nstatic SurfaceDisposition surface_receive(WebKitUserContentManager *,const char *,JsonNode *);\n"
+    },
+    {
+      "file": "shared-host.c",
+      "ours": "    wire=json_to_string(translated,FALSE);surface_receive(primary_manager,wire,translated);shared_preserve_context_anchor=FALSE;json_node_unref(translated);\n",
+      "base": "    wire=json_to_string(translated,FALSE);surface_receive(primary_manager,wire,translated);json_node_unref(translated);\n",
+      "theirs": "    wire=json_to_string(translated,FALSE);SurfaceDisposition disposition=surface_receive(primary_manager,wire,translated);json_node_unref(translated);\n    if (certificate) {\n        JsonObject *co=json_node_get_object(certificate);guint64 revision;\n        const char *state=disposition==SURFACE_PREFLIGHT_UNSENT?\"preflight-unsent\":disposition==SURFACE_ADMITTED?\"admitted\":disposition==SURFACE_UNCERTAIN?\"uncertain\":NULL;\n        if (state && scope_lookup(json_object_get_member(co,\"scope\")) && surface_uint(json_object_get_member(co,\"revision\"),&revision) && revision==topology_revision) {\n            json_object_set_string_member(co,\"disposition\",state);surface_eval(view,\"receiveBatchDisposition\",certificate);\n        }\n        json_node_unref(certificate);\n    }\n",
+      "resolved": "    wire=json_to_string(translated,FALSE);SurfaceDisposition disposition=surface_receive(primary_manager,wire,translated);shared_preserve_context_anchor=FALSE;json_node_unref(translated);\n    if (certificate) {\n        JsonObject *co=json_node_get_object(certificate);guint64 revision;\n        const char *state=disposition==SURFACE_PREFLIGHT_UNSENT?\"preflight-unsent\":disposition==SURFACE_ADMITTED?\"admitted\":disposition==SURFACE_UNCERTAIN?\"uncertain\":NULL;\n        if (state && scope_lookup(json_object_get_member(co,\"scope\")) && surface_uint(json_object_get_member(co,\"revision\"),&revision) && revision==topology_revision) {\n            json_object_set_string_member(co,\"disposition\",state);surface_eval(view,\"receiveBatchDisposition\",certificate);\n        }\n        json_node_unref(certificate);\n    }\n"
+    },
+    {
+      "file": "shared-host.c",
+      "ours": "    if (!surface_preflight(&candidate,translated,g_queue_get_length(&requests),active_request?1:0,backend_ready,&admitted)) {json_node_unref(translated);goto refuse;}\n    shared_preserve_context_anchor=shared_anchor_for(next_popup,frame);\n",
+      "base": "    if (!surface_preflight(&candidate,translated,g_queue_get_length(&requests),active_request?1:0,backend_ready,&admitted)) {json_node_unref(translated);goto refuse;}\n",
+      "theirs": "    if (!surface_preflight(&candidate,translated,g_queue_get_length(&requests),active_request?1:0,backend_ready,&admitted)) {\n        shared_batch_notify(root,original,next_popup?next_popup:next_focus,publication,lease,SURFACE_PREFLIGHT_UNSENT);\n        json_node_unref(translated);goto refuse;\n    }\n    JsonNode *certificate=shared_batch_certificate(root,original,next_popup?next_popup:next_focus,publication,lease,SURFACE_ADMITTED);\n",
+      "resolved": "    if (!surface_preflight(&candidate,translated,g_queue_get_length(&requests),active_request?1:0,backend_ready,&admitted)) {\n        shared_batch_notify(root,original,next_popup?next_popup:next_focus,publication,lease,SURFACE_PREFLIGHT_UNSENT);\n        json_node_unref(translated);goto refuse;\n    }\n    JsonNode *certificate=shared_batch_certificate(root,original,next_popup?next_popup:next_focus,publication,lease,SURFACE_ADMITTED);\n    shared_preserve_context_anchor=shared_anchor_for(next_popup,frame);\n"
+    }
+  ]
+}
