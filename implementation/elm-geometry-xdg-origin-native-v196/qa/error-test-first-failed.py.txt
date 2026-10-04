@@ -1,0 +1,48 @@
+"""Actual runner error path with captured190 refusal and synthetic process/session.
+No executable, socket, compositor or GUI is launched by these test doubles.
+"""
+import importlib.util,json,resource,time,types,hashlib
+from pathlib import Path
+assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+s=Path(__file__).resolve().parents[1];r=s.parents[1]
+def load(name,path):
+ spec=importlib.util.spec_from_file_location(name,path);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m);return m
+runner=load('runner196',s/'qa/native.py');journal=load('journal194',r/'implementation/elm-geometry-client-journal-v194/journal.py')
+evidence=r/'implementation/elm-geometry-xdg-origin-native-v190/qa/native-1791129297579795954/native-evidence/finite-scale1.jsonl'
+raw=evidence.read_bytes();pid=json.loads(raw.splitlines()[-1])['pid']
+class Session:
+ def __init__(self,output,*args,**kw):
+  self.output=output;output.mkdir();self.env={};self.host=types.SimpleNamespace(runtime=output,logs=[],processes=[])
+  self.evidence={'hyprlandMaps':{'files':{'/synthetic/core':'core'}},'privateAquamarine':{'mappedVerified':True},'runtimeGone':True}
+  self.host.processes.append((None,{'name':'hyprland','pid':1}))
+ def __enter__(self):return self
+ def __exit__(self,*args):
+  for stream in self.host.logs:stream.close()
+  return False
+ def guard(self):pass
+ def ctl(self,*args):return 'ok'
+ def data(self,*args):return []
+class Process:
+ def __init__(self,command,**kw):
+  assert kw['stdin']==runner.subprocess.PIPE and kw['start_new_session'] is True
+  self.pid=pid;self.returncode=1;kw['stdout'].write(raw);kw['stdout'].flush()
+ def poll(self):return self.returncode
+class Endpoint:
+ def __init__(self,**kw):pass
+ def hello(self):pass
+ def geometry_attach(self,*args):return {'geometryProtocol':2,'capabilities':{'operations':['maximize','restore-geometry']}}
+host=types.SimpleNamespace(PrivateHyprSession=Session,original=types.SimpleNamespace(process=lambda pid:{'pid':pid},same_process=lambda row:True,mapped_files=lambda pid:{'files':{'/synthetic/plugin':'plugin'}}))
+runner.preflight=lambda:(host,{'binary':'/synthetic/core','sha256':'core','plugin':{'path':'/synthetic/plugin','sha256':'plugin'}},{'path':'/synthetic/client'},Endpoint,lambda pid:1,journal,{})
+runner.PROFILES=[('finite-scale1',[0,0,0,0,1],[400,300])]
+runner.subprocess.Popen=Process
+result=runner.run(False)
+assert result['passed'] is False
+assert "Actual fixture refused:" in result['error'] and 'buffer-byte-bound' in result['error']
+assert result['primaryProfile']=='finite-scale1' and result['primaryError']==result['error']
+assert result['profileCleanupErrors'] and result['profileCleanupErrors'][0]['step']=='validateTerminalJournal'
+assert 'InvalidJournal' in result['profileCleanupErrors'][0]['error']
+assert result['cleanupPassed'] is True and result['finalCleanupErrors']==[]
+assert any(row['name']=='actualClientsEmptyBeforePluginUnload' and row['passed'] for row in result['checks'])
+out=s/'qa'/('error-test-'+str(time.time_ns()));out.mkdir()
+(out/'report.json').write_text(json.dumps({'passed':True,'checks':7,'scope':'Actual196 runner with captured190 refusal bytes and synthetic process/session; no GUI/native qualification','sourceSHA256':hashlib.sha256((s/'qa/native.py').read_bytes()).hexdigest(),'evidenceSHA256':hashlib.sha256(raw).hexdigest(),'primaryError':result['error'],'cleanupErrors':result['profileCleanupErrors']},indent=2)+'\n')
+print(json.dumps({'passed':True,'report':str(out/'report.json')}))

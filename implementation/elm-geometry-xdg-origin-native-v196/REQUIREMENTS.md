@@ -1,0 +1,12 @@
+# Controlled XDG origin diagnostics
+
+This is a source-only private native campaign. Root reviews and launches it through the shared native lock and protected launcher. No main-session actions, GTK qualification or GEOMETRY-MENU-08/09/10 acceptance transfers.
+
+1. Before launch, verify held184 client, strict183 adapter, reviewed189 source, prepared185/188 core89/plugin409/AQ105, actual headers/dependencies/libraries and link closure. Explicitly load the plugin and verify mapped binary identities.
+2. Run separate actual single-window profiles: geometry origin(0,0) or(16,24), buffer scale1/2, raw minimum108×42. Add zero-origin finite maximum400×300 and fixed320×180 at both scales. Select by actual PID and exact unique title, then pin address and admitted native incarnation.
+3. Use strict negotiated observation2. Capture actual raw native boxes/modes/workspace/output and full facts. Zero-origin unbounded profiles must advertise supported lower-bound MAX and complete native MAX→ordinary restore. Nonzero conversion, insufficient finite maximum, and fixed hints must refuse native MAX without changing actual mode/geometry or producing a new configure.
+4. Bind configure→ACK→selected buffercommit via the reviewed client journal, and validate logical geometry, padded surface, buffer-scale multiplication and independent serial-derived colors. Issue an actual request-correlated sync barrier before selecting a complete journal generation. These queued requests are not a screenshot/presentation proof.
+5. Each transition has one absolute six-second deadline, including all client waits and final acceptance checks. Endpoint transport retains its original absolute three-second budget; child exit retains five seconds. No accepted result after the transition deadline.
+6. Quit each owned client normally and validate terminal journal. Observe actual address retirement and empty native client census before plugin unload. Record normal owned compositor/parent cleanup and final input hashes. Failure packets remain diagnostic and cleanup cannot make a failed campaign pass.
+
+Open gates: independent screenshot landmarks and physical pointer/local-coordinate admission are not assembled in this runner. Requested origin is journal evidence; clamped effective server geometry is recorded separately. Negative origin/subsurfaces, fractional viewport, tiny dimensions, GTK and full menu recovery remain outside scope. No policy/model/source adoption follows from this diagnostic campaign.

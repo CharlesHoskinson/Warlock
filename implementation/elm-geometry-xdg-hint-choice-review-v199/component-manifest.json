@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "sourceBlockerFound": false,
+  "nativeAcceptance": false,
+  "owningManifestSHA256": "8c38a16e0787ef991ae6f5505e7eff89e96bfb979a699cba3d3969ed496757ad",
+  "scope": "Independent final held197 protocol/source/evidence review; actual build/75+25+7+5 existing CPU proofs verified, no behavior rerun/native.",
+  "files": {
+    "REVIEW.md": {
+      "sha256": "e744fe1809dfde0b16d058e2aa10b095d748a7d895d05fb42b0fbbcfb4ccccfd",
+      "size": 6062,
+      "mode": 420
+    },
+    "inputs/HANDOFF.md": {
+      "sha256": "a1194d39af3fe5a2e31b28829a89318b23a483413ebd7dfca0defcee5795a7d0",
+      "size": 3885,
+      "mode": 420
+    },
+    "inputs/REQUIREMENTS.md": {
+      "sha256": "93963f1d0fd102881e243215b8ad073362c89ff87ed1b8da1cf3ec8f545b9ab1",
+      "size": 3454,
+      "mode": 420
+    },
+    "inputs/component-manifest.json": {
+      "sha256": "8c38a16e0787ef991ae6f5505e7eff89e96bfb979a699cba3d3969ed496757ad",
+      "size": 85178,
+      "mode": 420
+    },
+    "inputs/native/xdg-origin-client.c": {
+      "sha256": "bfd9ae895fcba50f90690cdc1b8b207ecc31e2240b36e93935a7288e37857b31",
+      "size": 27119,
+      "mode": 420
+    },
+    "inputs/qa/build.py": {
+      "sha256": "acf417473c832f9c5c745dfbca8f9760707c190ae36f505316c765992fe0568f",
+      "size": 5156,
+      "mode": 420
+    },
+    "inputs/qa/callback-test-prefix.c": {
+      "sha256": "a42a9b5fa645270c382ab1d1cea9b0e8b757122b431e4ac4bf0c4f7f3d9a94b7",
+      "size": 460,
+      "mode": 420
+    },
+    "inputs/qa/callback-test-suffix.c": {
+      "sha256": "eaddea0a10e39c1e4db0d9b539a8ecdf0d1262f4b60a9447d50b73dd65ab89f3",
+      "size": 1931,
+      "mode": 420
+    },
+    "inputs/qa/client-build-1791129756017735997/report.json": {
+      "sha256": "5c2c0a7995b67051b0e36fc27547e695420d885c6ea41d339565c0e5e5df2db4",
+      "size": 24190,
+      "mode": 420
+    },
+    "inputs/qa/helper-test.c": {
+      "sha256": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+      "size": 9105,
+      "mode": 420
+    },
+    "inputs/qa/test-1791129836690118791/report.json": {
+      "sha256": "78bceb2aa4820bd4cf72d57fcd2cdc6e98b295e177248794261b52af9d2ffcc0",
+      "size": 39741,
+      "mode": 420
+    },
+    "inputs/qa/test-final.py": {
+      "sha256": "bda4a49f66eec3ac53d09a7e7787b4f31b265950a56693ab6a4b3332055c0fff",
+      "size": 5796,
+      "mode": 420
+    },
+    "inputs/xdg-shell.xml": {
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df",
+      "size": 63846,
+      "mode": 420
+    },
+    "qa/held-review-1791130125900258222/report.json": {
+      "sha256": "4b78e7d4f2de083da0dc86fb6117f2b0c8e58edc36f2d26d5a71d486d6caca52",
+      "size": 443,
+      "mode": 420
+    },
+    "qa/held-verify.py": {
+      "sha256": "e56881c951e4e0c89269659ae3d3aecf3a0f2c212c3ac7fb3e007afd3f967bb7",
+      "size": 2175,
+      "mode": 420
+    },
+    "qa/review-1791130028093348253/report.json": {
+      "sha256": "42b2e86c502516a63d2a0be3f6f5d147e80d8bfe7fd953c25563e8ea28c81155",
+      "size": 425,
+      "mode": 420
+    },
+    "qa/verify.py": {
+      "sha256": "735f9e5c5677fd9fc196aae2dbf14f620cd403af8bbc9c7a7f8b9a94730b13f9",
+      "size": 2782,
+      "mode": 420
+    },
+    "source-snapshot.json": {
+      "sha256": "56efcd2b0b3af02c9410d645b4d023f3b83ef545a93c621d4f348ce9e8a26257",
+      "size": 3378,
+      "mode": 420
+    }
+  }
+}

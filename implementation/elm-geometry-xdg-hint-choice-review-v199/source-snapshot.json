@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "status": "owner reports final production source stable; tests/freezer pending at capture",
+  "sources": {
+    "native/xdg-origin-client.c": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/native/xdg-origin-client.c",
+      "capture": "inputs/native/xdg-origin-client.c",
+      "sha256": "bfd9ae895fcba50f90690cdc1b8b207ecc31e2240b36e93935a7288e37857b31",
+      "size": 27119
+    },
+    "REQUIREMENTS.md": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/REQUIREMENTS.md",
+      "capture": "inputs/REQUIREMENTS.md",
+      "sha256": "93963f1d0fd102881e243215b8ad073362c89ff87ed1b8da1cf3ec8f545b9ab1",
+      "size": 3454
+    },
+    "qa/build.py": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/build.py",
+      "capture": "inputs/qa/build.py",
+      "sha256": "acf417473c832f9c5c745dfbca8f9760707c190ae36f505316c765992fe0568f",
+      "size": 5156
+    },
+    "qa/client-build-1791129756017735997/report.json": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129756017735997/report.json",
+      "capture": "inputs/qa/client-build-1791129756017735997/report.json",
+      "sha256": "5c2c0a7995b67051b0e36fc27547e695420d885c6ea41d339565c0e5e5df2db4",
+      "size": 24190
+    },
+    "xdg-shell.xml": {
+      "original": "/usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml",
+      "capture": "inputs/xdg-shell.xml",
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df",
+      "size": 63846
+    },
+    "qa/test-1791129836690118791/report.json": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129836690118791/report.json",
+      "capture": "inputs/qa/test-1791129836690118791/report.json",
+      "sha256": "78bceb2aa4820bd4cf72d57fcd2cdc6e98b295e177248794261b52af9d2ffcc0",
+      "size": 39741
+    },
+    "qa/test-final.py": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-final.py",
+      "capture": "inputs/qa/test-final.py",
+      "sha256": "bda4a49f66eec3ac53d09a7e7787b4f31b265950a56693ab6a4b3332055c0fff",
+      "size": 5796
+    },
+    "qa/helper-test.c": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/helper-test.c",
+      "capture": "inputs/qa/helper-test.c",
+      "sha256": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+      "size": 9105
+    },
+    "qa/callback-test-prefix.c": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/callback-test-prefix.c",
+      "capture": "inputs/qa/callback-test-prefix.c",
+      "sha256": "a42a9b5fa645270c382ab1d1cea9b0e8b757122b431e4ac4bf0c4f7f3d9a94b7",
+      "size": 460
+    },
+    "qa/callback-test-suffix.c": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/callback-test-suffix.c",
+      "capture": "inputs/qa/callback-test-suffix.c",
+      "sha256": "eaddea0a10e39c1e4db0d9b539a8ecdf0d1262f4b60a9447d50b73dd65ab89f3",
+      "size": 1931
+    },
+    "HANDOFF.md": {
+      "original": "implementation/elm-geometry-xdg-hint-choice-fixture-v197/HANDOFF.md",
+      "capture": "inputs/HANDOFF.md",
+      "sha256": "a1194d39af3fe5a2e31b28829a89318b23a483413ebd7dfca0defcee5795a7d0",
+      "size": 3885
+    }
+  },
+  "nativeAcceptance": false
+}

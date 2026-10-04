@@ -1,0 +1,87 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "mainDesktopActions": false,
+  "checks": [
+    {
+      "name": "exactCoreMapped",
+      "passed": true
+    },
+    {
+      "name": "exactAquamarineMapped",
+      "passed": true
+    },
+    {
+      "name": "explicitPluginLoad",
+      "passed": true
+    },
+    {
+      "name": "exactPluginMapped",
+      "passed": true
+    },
+    {
+      "name": "negotiatedActualObservation2",
+      "passed": true
+    },
+    {
+      "name": "finite-scale1:actualNativeClientCensusEmptyBeforeNextActor",
+      "passed": true
+    },
+    {
+      "name": "actualClientsEmptyBeforePluginUnload",
+      "passed": true
+    },
+    {
+      "name": "normalPluginUnload",
+      "passed": true
+    }
+  ],
+  "scope": "Controlled XDG origin/scale/hint diagnostics; no screenshot, pointer, GTK or full menu acceptance",
+  "openGates": [
+    "actual presented pixels",
+    "physical pointer admission",
+    "GTK conformance",
+    "GEOMETRY-MENU-08/09/10"
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py": "ba2360489f4137150c472ed5f0f620e77f5f81655a59d9b827c21e05f9154eac",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/pins.json": "3bddce64f8149aa22530059ded94e056f91975c3b4a613c2013cef704cd24479",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/REQUIREMENTS.md": "c0c0a20a13665c46b7a1ffaaf6d0c7c8f2b9c3951b50f9ae235add2d0393b6c5"
+  },
+  "pluginMaps": {
+    "files": {
+      "/synthetic/plugin": "plugin"
+    }
+  },
+  "primaryError": "RuntimeError(\"Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\")",
+  "primaryTraceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 178, in run\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 96, in wait\n    session.guard();value=predicate()\n                          ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 178, in <lambda>\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n                                                     ~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 143, in rows\n    if refusals:raise RuntimeError('Actual fixture refused: '+repr(refusals[-1]))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\n",
+  "primaryProfile": "finite-scale1",
+  "profileCleanupErrors": [
+    {
+      "profile": "finite-scale1",
+      "step": "validateTerminalJournal",
+      "error": "InvalidJournal('event')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 178, in run\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 96, in wait\n    session.guard();value=predicate()\n                          ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 178, in <lambda>\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n                                                     ~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 143, in rows\n    if refusals:raise RuntimeError('Actual fixture refused: '+repr(refusals[-1]))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 223, in cleanup_step\n    try:action()\n        ~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 231, in validate_terminal\n    terminal=journal.parse(bounded_log(),client.pid,profile,terminal=True)\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-journal-v194/journal.py\", line 35, in parse\n    kind=r.get('event');require(type(kind) is str and kind in KNOWN,'event')\n                        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-journal-v194/journal.py\", line 6, in require\n    if not ok:raise InvalidJournal(why)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\njournal194.InvalidJournal: event\n"
+    }
+  ],
+  "finalCleanupErrors": [],
+  "error": "RuntimeError(\"Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 178, in run\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 96, in wait\n    session.guard();value=predicate()\n                          ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 178, in <lambda>\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n                                                     ~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-native-v196/qa/native.py\", line 143, in rows\n    if refusals:raise RuntimeError('Actual fixture refused: '+repr(refusals[-1]))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\n",
+  "cleanup": {
+    "hyprlandMaps": {
+      "files": {
+        "/synthetic/core": "core"
+      }
+    },
+    "privateAquamarine": {
+      "mappedVerified": true
+    },
+    "runtimeGone": true
+  },
+  "cleanupPassed": true,
+  "artifacts": {
+    "native.py": "ba2360489f4137150c472ed5f0f620e77f5f81655a59d9b827c21e05f9154eac",
+    "inputs.json": "2c5cf77d9e56329d47d06f6cf13063c39dc12fd02ee431724b29ba4e03255094",
+    "native-evidence/finite-scale1.jsonl": "6dcbd1ec8ef69b3cf66e7815cbd1d4061e44d564a72f66f3d1728b6aa69b9b5a"
+  }
+}
