@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "d2baa5500bb84a0bb2c6cbeef601814b",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T02:34:09.034331+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-surface-launch-qa-v72",
+  "nextWork": [
+    "Qualify actual native atomic preflight and cross-manager/stale frame/wrapper faults; configured/render/focus acknowledgements, gesture provenance, full window regression, per-output/reflow/AT/IME/human UX/hardware/release."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-surface-launch-qa-v72/qa/slice-manifest.json",
+      "sha256": "b12135f6c60280f5639858cdebc5491dbb4860765be341a442434dedb1ab495a",
+      "size": 4484
+    },
+    {
+      "path": "implementation/elm-surface-host-v70/qa/slice-manifest.json",
+      "sha256": "db2e6f5ed1f1611ab41842fcb494487553f0cc5adc84ffb6c87681c291ba0470",
+      "size": 20954
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

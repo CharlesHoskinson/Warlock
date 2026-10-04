@@ -1,0 +1,230 @@
+{
+  "passed": true,
+  "inputs": {
+    "src/Effects.elm": "bac8ea4b5b65f8f37fb34035a54cfbc49de7f697d401f3f938efcc0954294a91",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Binding.elm": "c1985aef94e7230e60edeadda491d40fa7cac4aabf340025b6f02038327595e5",
+    "src/Shell.elm": "1889c9000ef05fb27ff41b29c185cef85d257cbb0761e19c9a45029425e721e7",
+    "src/ShellReplay.elm": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "9d5e8167e9902c25cabdb5a9a5f670373ae1f86ba72a95ca25ca4b81f1e7e335",
+    "src/TaskbarShellReplay.elm": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "8241d22408b4293d42e1bba75b4398c5a23dc131ed5398ac833c2c9a7e168ce1",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Surface.elm": "f6f46dfc9f77428c3ff056e918b5dc2a2afceffe992da68a61e03a0f7c813d87",
+    "src/SurfaceController.elm": "896d2f3f4543fe3a7792a287459acf728c7b7816d86f1358d45d444e6c0be885",
+    "src/SurfaceRenderer.elm": "f6b1169843f04b8f442dda49a2c4fb3c1a5dd653a70a7bf868f5f18b2b178077",
+    "src/Popup.elm": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+    "src/SurfaceReplay.elm": "ed55cd706d340d038b6061a114b7613aeff06ad48335aed96af73e8398948519",
+    "src/Presentation.elm": "25658055f51bbdedc1a2afe5efe64515c11e02aca481bd1cc573cd093e0ed01e",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/Main.elm": "4b4ac5751a7140c99f4cfc1364c4181d1fdebfd2de02562d184a4dbab69a805d",
+    "native/host.c": "1d6d98031945d4eb8c1c4fa15804cfda46d388bffd267ca2ad4f05c0c85bda95",
+    "native/surface.h": "f3826212e445628957eeae1e85b9674e0511f20584898668b58b91efa1aa1c5e",
+    "assets/index.html": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+    "assets/shell.css": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+    "assets/adapter.js": "846a40168b8c9c861d244432bca5237ccb4304bcd96c34379e41bb5b55b43596",
+    "assets/popup-adapter.js": "9cc151195a6fd1c98784e00995abcb75b7a32cdb092620259498268548121272",
+    "assets/popup.html": "e7f22f6695e01a896e039a1bc00d40709aeb472338f422cacad0a4f6f01bd043",
+    "qa/build.py": "f4d917617fefdd37d7eb2890d6e0b1aa58a9379ac4637c15983591ba73343400",
+    "qa/replay.cjs": "592d95c610e33e5c09b556eceb6fd0914d6e3a58feab0bcb415f3f1e31b08671",
+    "qa/shell.cjs": "e9fcb34f279d228d8ba67498e988bdad6a6e03c7b83951b99bd9d958c7bef4ac",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "commands": [
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/popup-adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Popup.elm",
+        "--optimize",
+        "--output=assets/popup.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-checks",
+      "command": [
+        "node",
+        "qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/replay-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/ShellReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/shell.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-checks",
+      "command": [
+        "node",
+        "qa/shell.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/shell.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/shell-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "native/host.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/elm-host",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-host-v68/qa/build-1791080712714022247/elm-host",
+        "--self-test"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "binarySHA256": "5054498322f6222627cf21040498ca68705553cdb8b4ea68cda8f84d065b3fe4"
+}

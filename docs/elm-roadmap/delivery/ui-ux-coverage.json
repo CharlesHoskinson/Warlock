@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-03T23:23:15.094448+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T02:34:08.987015+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6633,6 +6633,41 @@
       "slice": "implementation/elm-surface-controller-v67",
       "level": "compiled controller/presentation components and abstract architecture model",
       "acceptance": "Current/stale callbacks and presentation admission only. Actual dual-view host origin, grab retirement, focus, IME/AT/human/hardware and release remain open."
+    },
+    {
+      "optimizedMainAndPopupBuild": true,
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "nativeCAdmissionTestGroups": 4,
+      "nativeSurfaceChecks": 20,
+      "nativeSurfaceAndLaunchChecks": 32,
+      "earlierSurfaceChecksRetained": true,
+      "nativeRole": "xdg_popup",
+      "nativeConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "barExclusive48": true,
+      "singleDesktopModel": true,
+      "actualOutsideDismissApplicationPointerAndKeyboard": true,
+      "actualElmEscapeReopen": true,
+      "actualGrabRetirementBeforeLaunchForward": true,
+      "actualOwnedGTKLaunchArgumentsReceipt": true,
+      "actualChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "nativeFaultRefinementAccepted": false,
+      "nativeATIMEAccepted": false,
+      "fullRegressionAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-launch-qa-v72/qa/slice-manifest.json",
+      "slice": "implementation/elm-surface-launch-qa-v72",
+      "level": "actual dual-view native role/grab/input and owned default launch",
+      "acceptance": "Unit-scale800x600/bar48/popup700x420, owned protocol pointer/keyboard and default GIO launch only. Actual AT/composing IME/human UX/outputs/hardware/full regression/release open."
     }
   ]
 }

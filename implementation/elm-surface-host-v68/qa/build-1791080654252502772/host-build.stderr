@@ -1,0 +1,8 @@
+native/host.c: In function ‘surface_receive’:
+native/host.c:363:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  363 |     if (surface_snapshot) json_node_unref(surface_snapshot);surface_snapshot=json_node_copy(frame);
+      |     ^~
+native/host.c:363:61: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  363 |     if (surface_snapshot) json_node_unref(surface_snapshot);surface_snapshot=json_node_copy(frame);
+      |                                                             ^~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors

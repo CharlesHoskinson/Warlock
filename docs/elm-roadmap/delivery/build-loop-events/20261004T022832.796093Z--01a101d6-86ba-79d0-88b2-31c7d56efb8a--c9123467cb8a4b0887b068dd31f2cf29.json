@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "c9123467cb8a4b0887b068dd31f2cf29",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T02:28:32.796093+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-surface-host-v70",
+  "nextWork": [
+    "Native wrapper refuses existing protected QS processes 218417 and 248177, both adopted PPID1280 and older than12h. Preserve until ownership/cleanup is established; continue CPU host integration proofs. Independent coordinator lane should inspect this conflict."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-surface-host-v70/qa/build-1791080854607227335/report.json",
+      "sha256": "efc843aa3293d34ae17d7e509defb44839df18747ed54290c7134cfda6d7a97f",
+      "size": 11230
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

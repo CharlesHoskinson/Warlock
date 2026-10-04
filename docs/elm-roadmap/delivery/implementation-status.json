@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-surface-controller-v67",
+  "activeSlice": "implementation/elm-surface-launch-qa-v72",
   "status": "Native GTK popup-window candidate passes actual layer-parent xdg_popup/grab/default geometry/bar48 and native19 lifecycle/input checks. V64 failed grab bookkeeping preserved; V65 unmap retirement accepted within experiment. Final Elm bar/presentation-only popup, stale epochs, outputs/IME/AT/full scene/hardware/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -629,9 +629,41 @@
       "nativeCloseBarrierImplemented": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-surface-controller-v67/qa/slice-manifest.json"
+    },
+    "dualViewSurfaceV70V72": {
+      "optimizedMainAndPopupBuild": true,
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "nativeCAdmissionTestGroups": 4,
+      "nativeSurfaceChecks": 20,
+      "nativeSurfaceAndLaunchChecks": 32,
+      "earlierSurfaceChecksRetained": true,
+      "nativeRole": "xdg_popup",
+      "nativeConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "barExclusive48": true,
+      "singleDesktopModel": true,
+      "actualOutsideDismissApplicationPointerAndKeyboard": true,
+      "actualElmEscapeReopen": true,
+      "actualGrabRetirementBeforeLaunchForward": true,
+      "actualOwnedGTKLaunchArgumentsReceipt": true,
+      "actualChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "nativeFaultRefinementAccepted": false,
+      "nativeATIMEAccepted": false,
+      "fullRegressionAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-launch-qa-v72/qa/slice-manifest.json"
     }
   },
-  "next": "Integrate the primary Elm bar and presentation-only popup with one controller, native manager origin enforcement, monotonic publication and closed-lease barriers, scoped popup lifetimes and atomic close-before-submit; qualify native regression and comprehensive UI/UX gates.",
+  "next": "Qualify atomic commit preflight and cross-manager/stale-frame/wrapper faults against the native host; implement configured/render/focus acknowledgements and gesture provenance, then full window regression, keyboard/reflow/AT/IME and per-output UX acceptance.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

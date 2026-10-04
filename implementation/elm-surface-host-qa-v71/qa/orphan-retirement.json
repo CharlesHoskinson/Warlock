@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "historicalNormalExitAccepted": false,
+  "mainDesktopActions": false,
+  "processes": [
+    {
+      "pid": 218417,
+      "startTicks": "367494",
+      "unit": "qa-harness-892458c371454045901dd8dcfc8a17b1.scope",
+      "description": "[systemd-run] /usr/bin/prlimit --core=1:1 -- /usr/bin/python3 /home/hoskinson/window-integration-qa/qa_run.py --inside-scope -- /usr/bin/python3 -B /home/hoskinson/omarchy-windows-parity/implementation/switcher-v1/tests/run_qml_probe.py",
+      "offscreen": true,
+      "noWaylandDisplay": true,
+      "sourceDirectoryGone": true,
+      "gone": true
+    },
+    {
+      "pid": 248177,
+      "startTicks": "406574",
+      "unit": "qa-harness-e69efa364b264cb692d0e777a6d28882.scope",
+      "description": "[systemd-run] /usr/bin/prlimit --core=1:1 -- /usr/bin/python3 /home/hoskinson/window-integration-qa/qa_run.py --inside-scope -- /usr/bin/python3 -B /home/hoskinson/omarchy-windows-parity/implementation/switcher-v1/tests/run_qml_probe.py",
+      "offscreen": true,
+      "noWaylandDisplay": true,
+      "sourceDirectoryGone": true,
+      "gone": true
+    }
+  ]
+}
