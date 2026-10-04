@@ -1,0 +1,191 @@
+{
+  "passed": false,
+  "checks": 45,
+  "namedChecks": [
+    {
+      "id": "existing-Shell-generates-native-command-no-optimistic-observation:0",
+      "passed": true
+    },
+    {
+      "id": "existing-Shell-generates-native-command-no-optimistic-observation:1",
+      "passed": true
+    },
+    {
+      "id": "existing-Shell-generates-native-command-no-optimistic-observation:2",
+      "passed": true
+    },
+    {
+      "id": "existing-Shell-generates-native-command-no-optimistic-observation:3",
+      "passed": true
+    },
+    {
+      "id": "existing-Shell-generates-native-command-no-optimistic-observation:4",
+      "passed": true
+    },
+    {
+      "id": "existing-Shell-generates-native-command-no-optimistic-observation:5",
+      "passed": true
+    },
+    {
+      "id": "pending-Shell-menu-and-taskbar-no-extra-command:5",
+      "passed": true
+    },
+    {
+      "id": "pending-Shell-menu-and-taskbar-no-extra-command:6",
+      "passed": true
+    },
+    {
+      "id": "stale-provider-capture-cannot-allocate-native-command:3",
+      "passed": true
+    },
+    {
+      "id": "native-provider-from-transient-canonicalizes-root:2",
+      "passed": true
+    },
+    {
+      "id": "native-provider-disabled-state-accurate:2",
+      "passed": true
+    },
+    {
+      "id": "native-provider-rejects-zero-outputId:2",
+      "passed": true
+    },
+    {
+      "id": "native-provider-rejects-zero-providerId:2",
+      "passed": true
+    },
+    {
+      "id": "native-provider-rejects-zero-capabilityGeneration:2",
+      "passed": true
+    },
+    {
+      "id": "native-provider-refuses-missing-and-nonready-projection:1",
+      "passed": true
+    },
+    {
+      "id": "native-provider-refuses-missing-and-nonready-projection:3",
+      "passed": true
+    },
+    {
+      "id": "native-provider-refuses-retired-incarnation:2",
+      "passed": true
+    },
+    {
+      "id": "Unknown-menu-reopen-no-retry-through-menu-primary-or-transient:6",
+      "passed": true
+    },
+    {
+      "id": "Unknown-menu-reopen-no-retry-through-menu-primary-or-transient:7",
+      "passed": true
+    },
+    {
+      "id": "Unknown-menu-reopen-no-retry-through-menu-primary-or-transient:8",
+      "passed": true
+    },
+    {
+      "id": "Unknown-menu-reopen-no-retry-through-menu-primary-or-transient:9",
+      "passed": true
+    },
+    {
+      "id": "unrelated-taskbar-Activate-remains-allowed-and-receipt-accepted:6",
+      "passed": true
+    },
+    {
+      "id": "unrelated-taskbar-Activate-remains-allowed-and-receipt-accepted:7",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-menu-receipt-after-B-completed-independent-of-Shell-current:7",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-menu-receipt-after-B-completed-independent-of-Shell-current:8",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-menu-receipt-after-B-completed-independent-of-Shell-current:9",
+      "passed": true
+    },
+    {
+      "id": "Unknown-survives-real-reconnect-and-native-frontend-rebind:11",
+      "passed": true
+    },
+    {
+      "id": "Unknown-survives-real-reconnect-and-native-frontend-rebind:12",
+      "passed": true
+    },
+    {
+      "id": "Unknown-survives-real-reconnect-and-native-frontend-rebind:13",
+      "passed": true
+    },
+    {
+      "id": "Unknown-survives-real-reconnect-and-native-frontend-rebind:15",
+      "passed": true
+    },
+    {
+      "id": "malformed-native-receipt-effect-protocol-cannot-resolve-engine-or-registry:4",
+      "passed": true
+    },
+    {
+      "id": "malformed-native-receipt-bad-revision-cannot-resolve-engine-or-registry:4",
+      "passed": true
+    },
+    {
+      "id": "malformed-native-receipt-extra-field-cannot-resolve-engine-or-registry:4",
+      "passed": true
+    },
+    {
+      "id": "malformed-native-receipt-invalid-status-cannot-resolve-engine-or-registry:4",
+      "passed": true
+    },
+    {
+      "id": "malformed-native-receipt-reason-bound-cannot-resolve-engine-or-registry:4",
+      "passed": true
+    },
+    {
+      "id": "wrong-full-native-key-preserves-both-authorities:4",
+      "passed": true
+    },
+    {
+      "id": "stale-menu-dismiss-and-forged-receipt-preserve-live-group-picker:6",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: stale-menu-dismiss-and-forged-receipt-preserve-live-group-picker[6].picker"
+    },
+    {
+      "id": "stale-menu-dismiss-and-forged-receipt-preserve-live-group-picker:7",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: stale-menu-dismiss-and-forged-receipt-preserve-live-group-picker[7].picker"
+    },
+    {
+      "id": "stale-menu-dismiss-and-forged-receipt-preserve-live-group-picker:8",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: stale-menu-dismiss-and-forged-receipt-preserve-live-group-picker[8].picker"
+    },
+    {
+      "id": "valid-group-primary-closes-active-menu-before-picker:2",
+      "passed": true
+    },
+    {
+      "id": "valid-group-primary-closes-active-menu-before-picker:3",
+      "passed": true
+    },
+    {
+      "id": "implicit-detach-promotes-pending-to-Unknown-and-preserves-late-correlation:4",
+      "passed": true
+    },
+    {
+      "id": "implicit-detach-promotes-pending-to-Unknown-and-preserves-late-correlation:5",
+      "passed": true
+    },
+    {
+      "id": "implicit-detach-promotes-pending-to-Unknown-and-preserves-late-correlation:6",
+      "passed": true
+    },
+    {
+      "id": "implicit-detach-closes-visible-nonmutating-menu:3",
+      "passed": true
+    }
+  ],
+  "traces": 24,
+  "decoderCases": 0
+}

@@ -1,0 +1,33 @@
+-- SHADOWING --------------------------------------------- src/NativeOutcome.elm
+
+The name `decoder` is first defined here:
+
+34| decoder = strict ["protocolVersion","kind","effectProtocol","binding","intent","status","reason","revision","outputGeneration"]
+    ^^^^^^^
+But then it is defined AGAIN over here:
+
+20| exact name decoder expected = D.field name decoder |> D.andThen (\value ->
+               ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+                                                            NativeOutcome  ↑    
+====o======================================================================o====
+    ↓  MenuBridge
+
+
+-- BAD TUPLE ------------------------------------------------ src/MenuBridge.elm
+
+I only accept tuples with two or three items. This has too many:
+
+143| menuEvent : Menu.Msg -> Shell.Model -> Model -> ( Model, Shell.Model, List Shell.Effect, Maybe String )
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+

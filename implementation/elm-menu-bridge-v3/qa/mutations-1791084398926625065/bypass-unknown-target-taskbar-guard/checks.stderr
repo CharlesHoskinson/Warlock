@@ -1,0 +1,185 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+Unknown-menu-reopen-no-retry-through-menu-primary-or-transient:8: AssertionError [ERR_ASSERTION]: Unknown-menu-reopen-no-retry-through-menu-primary-or-transient[8].commands
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+...
+    },
++   {
++     binding: {
++       frontend: '300',
++       lifetime: '100',
++       session: '200'
++     },
++     effectProtocol: 1,
++     intent: {
++       context: {
++         epoch: '300',
++         lifetime: '100',
++         output: '1',
++         revision: '1'
++       },
++       generation: '2',
++       incarnation: '10',
++       operation: 'activate',
++       request: '2'
++     },
++     kind: 'window-effect',
++     protocolVersion: 3
++   }
+  ]
+
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:15:17)
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:14:58)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:28:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:20:11)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:27:7
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+Unknown-menu-reopen-no-retry-through-menu-primary-or-transient:9: AssertionError [ERR_ASSERTION]: Unknown-menu-reopen-no-retry-through-menu-primary-or-transient[9].commands
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+...
+    },
++   {
++     binding: {
++       frontend: '300',
++       lifetime: '100',
++       session: '200'
++     },
++     effectProtocol: 1,
++     intent: {
++       context: {
++         epoch: '300',
++         lifetime: '100',
++         output: '1',
++         revision: '1'
++       },
++       generation: '2',
++       incarnation: '10',
++       operation: 'activate',
++       request: '2'
++     },
++     kind: 'window-effect',
++     protocolVersion: 3
++   }
+  ]
+
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:15:17)
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:14:58)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:28:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:20:11)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:27:7
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+Unknown-survives-real-reconnect-and-native-frontend-rebind:12: AssertionError [ERR_ASSERTION]: Unknown-survives-real-reconnect-and-native-frontend-rebind[12].commands
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+...
+    },
++   {
++     binding: {
++       frontend: '301',
++       lifetime: '100',
++       session: '200'
++     },
++     effectProtocol: 1,
++     intent: {
++       context: {
++         epoch: '301',
++         lifetime: '100',
++         output: '1',
++         revision: '2'
++       },
++       generation: '2',
++       incarnation: '10',
++       operation: 'minimize',
++       request: '2'
++     },
++     kind: 'window-effect',
++     protocolVersion: 3
++   }
+  ]
+
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:15:17)
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:14:58)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:28:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:20:11)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:27:7
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+Unknown-survives-real-reconnect-and-native-frontend-rebind:13: AssertionError [ERR_ASSERTION]: Unknown-survives-real-reconnect-and-native-frontend-rebind[13].commands
++ actual - expected
+... Skipped lines
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+...
+    },
++   {
++     binding: {
++       frontend: '301',
++       lifetime: '100',
++       session: '200'
++     },
++     effectProtocol: 1,
++     intent: {
++       context: {
++         epoch: '301',
++         lifetime: '100',
++         output: '1',
++         revision: '2'
++       },
++       generation: '2',
++       incarnation: '10',
++       operation: 'minimize',
++       request: '2'
++     },
++     kind: 'window-effect',
++     protocolVersion: 3
++   }
+  ]
+
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:15:17)
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:14:58)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:28:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:20:11)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:27:7
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+Unknown-survives-real-reconnect-and-native-frontend-rebind:15: AssertionError [ERR_ASSERTION]: Unknown-survives-real-reconnect-and-native-frontend-rebind[15].outstanding
+
+0 !== 1
+
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:15:17)
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:14:58)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:28:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:20:11)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/mutations-1791084398926625065/bypass-unknown-target-taskbar-guard/qa/replay.cjs:27:7
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

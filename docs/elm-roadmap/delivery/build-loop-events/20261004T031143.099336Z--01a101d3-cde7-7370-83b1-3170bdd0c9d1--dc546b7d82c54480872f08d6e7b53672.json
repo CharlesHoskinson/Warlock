@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "eventId": "dc546b7d82c54480872f08d6e7b53672",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T03:11:43.099336+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-menu-bridge-v3",
+  "nextWork": [
+    "Qualify actual shared Shell-generated commands and common menu/taskbar Unknown guard; freeze adapter source closure.",
+    "Integrate into one shared SurfaceController: new menu mode/lease, native checked gesture routing and atomic popup-close plus command. Preserve authenticated old-key receipt flow; lost journal recovery remains unimplemented."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-menu-bridge-v3/SCOPE.md",
+      "sha256": "a6ab7e4e71986b0edbbc2c2c2ac6c4899093f2680fd9004590d27f95fc93419a",
+      "size": 1633
+    },
+    {
+      "path": "implementation/elm-menu-bridge-v3/src/TaskbarShell.elm",
+      "sha256": "7090321204e89de840c032dd5ea76d87f846a7d746c2fd7abaaddef9cb02855a",
+      "size": 4298
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

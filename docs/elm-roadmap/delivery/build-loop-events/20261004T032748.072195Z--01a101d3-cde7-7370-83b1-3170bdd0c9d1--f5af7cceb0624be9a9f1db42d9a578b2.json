@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "eventId": "f5af7cceb0624be9a9f1db42d9a578b2",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T03:27:48.072195+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-menu-bridge-v3",
+  "nextWork": [
+    "Qualified adapter ready for the shared-controller lane: merge MenuBridge, NativeProvider, NativeOutcome and TaskbarShell edits into its latest reviewed candidate, preserving pending-choice/inspection/recovery changes; do not copy the older V79 controller over it.",
+    "Next menu integration cycle: implement one context-menu mode, native checked right-click/Menu/Shift-F10 gesture, per-menu lease and atomic popup-close plus command; qualify original window regressions and delayed receipts through global serialized native QA.",
+    "Remaining mandatory authority work includes all-origin Unknown retention and lost-broker journal/recovery; continue full right-click providers/operations and S01-S16 release gates."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-menu-bridge-v3/qa/implementation-manifest.json",
+      "sha256": "4b55d37661d4b90cedd57d317c21f0d588a6c9bac0c96dc728f2fe9b92a136da",
+      "size": 108651
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

@@ -1,0 +1,5037 @@
+{
+  "traces": [
+    {
+      "id": "existing-Shell-generates-native-command-no-optimistic-observation",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "2",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "2"
+            },
+            "scene": {
+              "revision": "2",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": true,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": true,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 0,
+          "value": {
+            "shell": {
+              "phase": "Reconciling",
+              "request": "1",
+              "available": false
+            },
+            "commands": []
+          }
+        },
+        {
+          "at": 1,
+          "value": {
+            "shell": {
+              "phase": "Ready",
+              "available": true
+            },
+            "commands": []
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "produced": {
+              "incarnation": "10",
+              "enabled": [
+                false,
+                true
+              ],
+              "output": "1",
+              "matchesExpectedBinding": true
+            },
+            "commands": []
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "menu": null,
+            "registry": 1,
+            "outstanding": 1,
+            "shell": {
+              "effects": {
+                "request": "1",
+                "generation": "1",
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            },
+            "observed": {
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "minimized": false,
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "minimized": false,
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "minimized": false,
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "registry": 0,
+            "outstanding": 0,
+            "shell": {
+              "phase": "Reconciling",
+              "request": "2",
+              "effects": {
+                "transaction": {
+                  "status": "Committed"
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        },
+        {
+          "at": 5,
+          "value": {
+            "observed": {
+              "context": {
+                "revision": "2"
+              },
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "minimized": true,
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "minimized": true,
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "minimized": false,
+                  "available": true
+                }
+              ]
+            },
+            "shell": {
+              "phase": "Ready"
+            },
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pending-Shell-menu-and-taskbar-no-extra-command",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "20",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "20"
+            },
+            "title": "Window B",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "taskbar",
+          "operation": "minimize",
+          "incarnation": "20"
+        }
+      ],
+      "expect": [
+        {
+          "at": 5,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            }
+          }
+        },
+        {
+          "at": 6,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "stale-provider-capture-cannot-allocate-native-command",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "open",
+          "provider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "999",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        }
+      ],
+      "expect": [
+        {
+          "at": 3,
+          "value": {
+            "commands": [],
+            "outstanding": 0,
+            "registry": 0,
+            "shell": {
+              "effects": {
+                "request": "0",
+                "generation": "0",
+                "transaction": null
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "native-provider-from-transient-canonicalizes-root",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "11",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "produced": {
+              "incarnation": "10",
+              "title": "Window A",
+              "enabled": [
+                false,
+                true
+              ],
+              "output": "1",
+              "matchesExpectedBinding": true
+            },
+            "commands": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "native-provider-disabled-state-accurate",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": false
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": false,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "produced": {
+              "enabled": [
+                false,
+                false
+              ],
+              "matchesExpectedBinding": true
+            },
+            "commands": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "native-provider-rejects-zero-outputId",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "0",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10"
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "produced": null,
+            "commands": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "native-provider-rejects-zero-providerId",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "777",
+            "providerId": "0",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10"
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "produced": null,
+            "commands": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "native-provider-rejects-zero-capabilityGeneration",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "0"
+          },
+          "incarnation": "10"
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "produced": null,
+            "commands": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "native-provider-refuses-missing-and-nonready-projection",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "99",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 1,
+          "value": {
+            "produced": null,
+            "commands": [],
+            "shell": {
+              "phase": "Reconciling"
+            }
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "produced": null,
+            "commands": [],
+            "shell": {
+              "phase": "Reconciling"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "native-provider-refuses-retired-incarnation",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produce",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "99",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "99"
+            },
+            "title": "Window B",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 2,
+          "value": {
+            "produced": null,
+            "commands": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "Unknown-menu-reopen-no-retry-through-menu-primary-or-transient",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "2",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "primary",
+          "key": "application:org.a"
+        },
+        {
+          "op": "taskbar",
+          "operation": "minimize",
+          "incarnation": "11"
+        }
+      ],
+      "expect": [
+        {
+          "at": 6,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Unknown"
+                }
+              }
+            }
+          }
+        },
+        {
+          "at": 7,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Unknown"
+                }
+              }
+            }
+          }
+        },
+        {
+          "at": 8,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Unknown"
+                }
+              }
+            }
+          }
+        },
+        {
+          "at": 9,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Unknown"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "unrelated-taskbar-Activate-remains-allowed-and-receipt-accepted",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "2",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "primary",
+          "key": "application:org.b"
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "2",
+              "generation": "2",
+              "incarnation": "20",
+              "operation": "activate",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 6,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              },
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "20",
+                  "operation": "activate",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            }
+          }
+        },
+        {
+          "at": 7,
+          "value": {
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "phase": "Reconciling",
+              "effects": {
+                "transaction": {
+                  "status": "Committed"
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "delayed-A-menu-receipt-after-B-completed-independent-of-Shell-current",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "2",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "20",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "20"
+            },
+            "title": "Window B",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "2",
+              "generation": "2",
+              "incarnation": "20",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 7,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              },
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "20",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 2,
+            "registry": 2
+          }
+        },
+        {
+          "at": 8,
+          "value": {
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Committed",
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "20",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "100",
+                      "epoch": "300",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "at": 9,
+          "value": {
+            "outstanding": 0,
+            "registry": 0,
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              },
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "20",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "shell": {
+              "effects": {
+                "transaction": {
+                  "status": "Committed",
+                  "intent": {
+                    "request": "2",
+                    "generation": "2",
+                    "incarnation": "20",
+                    "operation": "minimize",
+                    "context": {
+                      "lifetime": "100",
+                      "epoch": "300",
+                      "output": "1",
+                      "revision": "1"
+                    }
+                  }
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Unknown-survives-real-reconnect-and-native-frontend-rebind",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "2",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "kind": "host-disconnected"
+          }
+        },
+        {
+          "op": "reconnect"
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "301"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "301"
+            },
+            "requestId": "3",
+            "context": {
+              "lifetime": "100",
+              "epoch": "301",
+              "output": "1",
+              "revision": "2"
+            },
+            "scene": {
+              "revision": "2",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "2",
+            "capabilityGeneration": "2"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "2",
+            "capabilityGeneration": "2",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "301",
+              "revision": "2",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "taskbar",
+          "operation": "minimize",
+          "incarnation": "10"
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "2",
+            "capabilityGeneration": "2"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "2",
+            "capabilityGeneration": "2",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "301",
+              "revision": "2",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        }
+      ],
+      "expect": [
+        {
+          "at": 11,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1
+          }
+        },
+        {
+          "at": 12,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1
+          }
+        },
+        {
+          "at": 13,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 0,
+            "registry": 0
+          }
+        },
+        {
+          "at": 15,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              },
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "301"
+                },
+                "intent": {
+                  "request": "2",
+                  "generation": "2",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "301",
+                    "output": "1",
+                    "revision": "2"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "malformed-native-receipt-effect-protocol-cannot-resolve-engine-or-registry",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 99,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "phase": "Ready",
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "malformed-native-receipt-bad-revision-cannot-resolve-engine-or-registry",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": 0,
+            "outputGeneration": "888"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "phase": "Ready",
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "malformed-native-receipt-extra-field-cannot-resolve-engine-or-registry",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888",
+            "extra": "forbidden"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "phase": "Ready",
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "malformed-native-receipt-invalid-status-cannot-resolve-engine-or-registry",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Done",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "phase": "Ready",
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "malformed-native-receipt-reason-bound-cannot-resolve-engine-or-registry",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "phase": "Ready",
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            },
+            "observed": {
+              "context": {
+                "revision": "1"
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "wrong-full-native-key-preserves-both-authorities",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "99",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Committed",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        }
+      ],
+      "expect": [
+        {
+          "at": 4,
+          "value": {
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ],
+            "outstanding": 1,
+            "registry": 1,
+            "shell": {
+              "phase": "Ready",
+              "effects": {
+                "transaction": {
+                  "status": "Pending"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "stale-menu-dismiss-and-forged-receipt-preserve-live-group-picker",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "effect-outcome",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "10",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "100",
+                "epoch": "300",
+                "output": "1",
+                "revision": "1"
+              }
+            },
+            "status": "Unknown",
+            "reason": "",
+            "revision": "999",
+            "outputGeneration": "888"
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "2",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                },
+                {
+                  "incarnation": "21",
+                  "label": "Window B2",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "primary",
+          "key": "application:org.b"
+        },
+        {
+          "op": "staleDismiss",
+          "menu": 0
+        },
+        {
+          "op": "forgedReceipt"
+        }
+      ],
+      "expect": [
+        {
+          "at": 6,
+          "value": {
+            "picker": {
+              "key": "application:org.b",
+              "generation": "1"
+            },
+            "menu": null,
+            "outstanding": 1,
+            "registry": 1
+          }
+        },
+        {
+          "at": 7,
+          "value": {
+            "picker": {
+              "key": "application:org.b",
+              "generation": "1"
+            },
+            "outstanding": 1,
+            "registry": 1,
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "at": 8,
+          "value": {
+            "picker": {
+              "key": "application:org.b",
+              "generation": "1"
+            },
+            "outstanding": 1,
+            "registry": 1,
+            "commands": [
+              {
+                "protocolVersion": 3,
+                "kind": "window-effect",
+                "effectProtocol": 1,
+                "binding": {
+                  "lifetime": "100",
+                  "session": "200",
+                  "frontend": "300"
+                },
+                "intent": {
+                  "request": "1",
+                  "generation": "1",
+                  "incarnation": "10",
+                  "operation": "minimize",
+                  "context": {
+                    "lifetime": "100",
+                    "epoch": "300",
+                    "output": "1",
+                    "revision": "1"
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "valid-group-primary-closes-active-menu-before-picker",
+      "steps": [
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "attached",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "1",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "frame",
+          "frame": {
+            "protocolVersion": 3,
+            "kind": "action-projection",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300"
+            },
+            "requestId": "2",
+            "context": {
+              "lifetime": "100",
+              "epoch": "300",
+              "output": "1",
+              "revision": "1"
+            },
+            "scene": {
+              "revision": "1",
+              "focused": null,
+              "windows": [
+                {
+                  "incarnation": "10",
+                  "label": "Window A",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "11",
+                  "label": "Transient A",
+                  "minimized": false,
+                  "owner": "10",
+                  "application": "org.a",
+                  "available": true
+                },
+                {
+                  "incarnation": "20",
+                  "label": "Window B",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                },
+                {
+                  "incarnation": "21",
+                  "label": "Window B2",
+                  "minimized": false,
+                  "owner": null,
+                  "application": "org.b",
+                  "available": true
+                }
+              ]
+            }
+          }
+        },
+        {
+          "op": "produceOpen",
+          "scope": {
+            "outputId": "777",
+            "providerId": "1",
+            "capabilityGeneration": "1"
+          },
+          "incarnation": "10",
+          "expectedProvider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "100",
+              "session": "200",
+              "frontend": "300",
+              "revision": "1",
+              "outputId": "777",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "100",
+              "session": "200",
+              "incarnation": "10"
+            },
+            "title": "Window A",
+            "capabilities": [
+              "Restore",
+              "Minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "Restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "Minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "primary",
+          "key": "application:org.b"
+        }
+      ],
+      "expect": [
+        {
+          "at": 3,
+          "value": {
+            "menu": {
+              "id": 1
+            },
+            "picker": null
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "menu": null,
+            "picker": {
+              "key": "application:org.b",
+              "generation": "1"
+            },
+            "commands": [],
+            "registry": 0,
+            "outstanding": 0
+          }
+        }
+      ]
+    }
+  ]
+}

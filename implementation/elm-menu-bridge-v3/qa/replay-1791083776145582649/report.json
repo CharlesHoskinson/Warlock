@@ -1,0 +1,61 @@
+{
+  "passed": false,
+  "scope": "Production TaskbarShell/MenuBridge/NativeProvider plus existing Shell/Effects compiled CPU behavior; no native GUI acceptance",
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Binding.elm": "ee7c0e7be6767197a8d217d4ba85240723511ffb6c8564d108b553605aed898e",
+    "src/BridgeReplay.elm": "a3768839d3491aa01ff6a35ecb414e0bfb159d76ec67e2a7db89c8424938397f",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "8241d22408b4293d42e1bba75b4398c5a23dc131ed5398ac833c2c9a7e168ce1",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Effects.elm": "bac8ea4b5b65f8f37fb34035a54cfbc49de7f697d401f3f938efcc0954294a91",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/Main.elm": "287fbfc296b548842f40f77fe80359bd5c63ac24e4a048697c38664de69ea5b3",
+    "src/Menu.elm": "27880ef23761f4957064eae529e2a5681de9d68bb163aa7570f6c1049890067c",
+    "src/MenuBridge.elm": "1efd45a271f2c10a14d7d85af7dac4d4ebd6f1d55104d107314fbace8596f0b1",
+    "src/NativeOutcome.elm": "e55ae5c5ed0b7588252621caa4af34ac237ad2235d8c2cc2f29f1270381e60b7",
+    "src/NativeProvider.elm": "fae652b6fa84577f1e660618bda0285c2b940e67f4f2d35ce581e8e1d6e9073b",
+    "src/Popup.elm": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+    "src/Presentation.elm": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/Provider.elm": "76db65a92f727733e5c4dd5056b98aa16c02fe394c5dc8bba2992c2cc1e30d25",
+    "src/ReceiptRouter.elm": "233eaacb6fba099ebd3d843d6c5f9e7e4424793ebff178dc81f830756878e095",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Shell.elm": "1889c9000ef05fb27ff41b29c185cef85d257cbb0761e19c9a45029425e721e7",
+    "src/ShellReplay.elm": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c",
+    "src/Surface.elm": "c403665ab19341303bf72ae969ea19d7299aab57a997998fad9b8187662b958a",
+    "src/SurfaceController.elm": "896d2f3f4543fe3a7792a287459acf728c7b7816d86f1358d45d444e6c0be885",
+    "src/SurfaceRenderer.elm": "129421e01ad93aed742ee94b6786d10ace66c05df03205a195f54b3397004f65",
+    "src/SurfaceReplay.elm": "f7cdec8e4770e06b445bc2a512dfa46ae98545d3cb0a9b919f22f7b0c1d31ac8",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "324ef55ac15b9d98bace8f33e7a002c4932fd80f53676486f651e3dd1e5d0a8f",
+    "src/TaskbarShellReplay.elm": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/replay.cjs": "5031abb57f75601d1b2c503113371ef612bba3bfb85bfbd2dffe12a6a1db7a8c",
+    "qa/fixtures.json": "aad36513f5b675d749af61b3dc746a651b05a5164e4be3d9fa3d780f009f27f3",
+    "qa/replay.py": "939dd8de14c0c9d3a1288b0bf025edd00b4b2835a30440d2efe8ba60f0085f6e",
+    "upstream.json": "f47adb3eb2396c96b5fc95718d7f93585e65caa2331b32b119bd7b0b751cc658",
+    "qa/freeze.py": "1eba94991de1b2d1d9272c4ff5b27e84ddc26f919d980d17b8d4f475353d1e02"
+  },
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/BridgeReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-bridge-v3/qa/replay-1791083776145582649/replay.js"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\nVerifying dependencies (0/7)\\nVerifying dependencies (1/7)\\nVerifying dependencies (2/7)\\nVerifying dependencies (3/7)\\nVerifying dependencies (4/7)\\nVerifying dependencies (5/7)\\nVerifying dependencies (6/7)\\nVerifying dependencies (7/7)\\n                            \\nDependencies ready!\\nCompiling ...\\nCompiling (1)\\nCompiling (2)\\nCompiling (3)\\nCompiling (4)\\nCompiling (5)\\nCompiling (6)\\nCompiling (7)\\nCompiling (8)\\nCompiling (9)\\nCompiling (10)\\nDetected problems in 2 modules.\\n-- SHADOWING --------------------------------------------- src/NativeOutcome.elm\\n\\nThe name `decoder` is first defined here:\\n\\n34| decoder = strict [\"protocolVersion\",\"kind\",\"effectProtocol\",\"binding\",\"intent\",\"status\",\"reason\",\"revision\",\"outputGeneration\"]\\n    ^^^^^^^\\nBut then it is defined AGAIN over here:\\n\\n20| exact name decoder expected = D.field name decoder |> D.andThen (\\\\value ->\\n               ^^^^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n                                                            NativeOutcome  \u2191    \\n====o======================================================================o====\\n    \u2193  MenuBridge\\n\\n\\n-- BAD TUPLE ------------------------------------------------ src/MenuBridge.elm\\n\\nI only accept tuples with two or three items. This has too many:\\n\\n143| menuEvent : Menu.Msg -> Shell.Model -> Model -> ( Model, Shell.Model, List Shell.Effect, Maybe String )\\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nI recommend switching to records. Each item will be named, and you can use the\\n`point.x` syntax to access them.\\n\\nNote: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on\\nworking with large chunks of data in Elm.\\n\\n')"
+}
