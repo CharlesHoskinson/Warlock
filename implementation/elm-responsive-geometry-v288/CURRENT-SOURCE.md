@@ -1,0 +1,3 @@
+Fresh286 replays original258161 current physical GUI menu/real configuredACK/serialRGB/held-delivery/identity recovery assertions unchanged on278 CSS-only optimized assets. Source gate retains original100 lifetime-oracle correction only, checks AST identities/deadlines/observertransport unchanged.280 exact-current893 bounds and28289 menu/285166 heldloss accepted separately. Full473 original combined GUI/currentrecovery40 not yet accepted.
+
+288 fresh286 source derivative adds unchanged actual255 relay-manifest.json retained in original258; failed286 preflight preserved. No native launched in286.
