@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Prospective source/pair/dependency review only; native query not yet executed",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-native-v586/SPEC.md": "c994fcbfb158980335774a445a7774141c2cf8649f4ae2aaf05c0700e50e411f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-native-v586/qa/peer.py": "aec940a189fe0261b68176d16a6b85445353964e97eb131357b88f4220b72a46",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-native-v586/qa/native.py": "92f802cf8490f84559a5e7c2dbea92f6df0dd3f62c2393bfc47fdb7ce8b9f7ba",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-native-v586/qa/preflight.py": "70be5198ff8d43c59caa0a9ff5aef39bc133d82995380017360e3441324dc6a8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-runtime-v585/candidate_host.py": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-runtime-v585/aq-tuple.json": "4d4c71943b05bb0453184dccb6caabadb72067445ff980e9359bd427ba4d433e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-runtime-v585/parent-probe-build.json": "5c719c99fde9da4357b90e711c50f34d61ed0daca5f6d94cfdedcaf705254221",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-runtime-v585/native-build-report.json": "67c22fd23aac5166c0fa0588ffdd67e606ad69d09e8c8f68bb210a15a73a1848",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-runtime-v585/SPEC.md": "e8f81fe995b13540ddff6981d4d4baa2f089a058996ca36830c7be23a2934adb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-registration-query-runtime-v585/qa/build-pair-manifest.json": "39ceaad4b96191d9559110bb9374c7fb8831d670b1a7461a60d44f8458ab3721",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/geometry_endpoint.py": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/daemon.py": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/adapter/geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-reconciliation-reviewed-v582/qa/slice-manifest.json": "c990deed11a69a543a7a1e6cd7807842bd0f9e037b6c09856e6ec06828c96ef3"
+  },
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/Hyprland",
+      "sha256": "bda6ce0094961c285673589afa2b61fe2b97321a1d86b248823b482122fec0f5"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-query-v579/qa/build-1791144328035448433/elm-window-geometry-authority.so",
+      "sha256": "39b02e1b3fbe5de5d31187c97fa89c78e95310a4bf82009abc5f211507994061"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "reviewedProducer": "/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-reconciliation-reviewed-v582/qa/slice-manifest.json"
+}

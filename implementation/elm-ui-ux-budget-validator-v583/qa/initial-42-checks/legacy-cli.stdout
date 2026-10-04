@@ -1,0 +1,25 @@
+{
+  "verdict": "calibration-only",
+  "completeness": "incomplete",
+  "schemaReady": false,
+  "performanceAccepted": false,
+  "issues": [
+    {
+      "path": "currentShellBaseline",
+      "reason": "missing comparative baseline"
+    },
+    {
+      "path": "approvedThresholds",
+      "reason": "missing frozen numeric thresholds"
+    },
+    {
+      "path": "candidateCalibration.instrumentationOverhead",
+      "reason": "missing measured instrumentation overhead"
+    },
+    {
+      "path": "candidateCalibration.helperToDOMReceiptMs",
+      "reason": "helper-to-DOM is not native presentation latency"
+    }
+  ],
+  "inputSHA256": "4a5c5c230d9f15bafc8e016de160b654077c0bb0ef448e6ed0c841fcbe3cc921"
+}

@@ -1,0 +1,5245 @@
+{
+  "schema": "elm-budget-preflight/1",
+  "frozenUTC": "2026-10-01T00:00:00Z",
+  "approvalReference": "SYNTHETIC-TEST-NOT-PRODUCT-APPROVAL",
+  "workloads": [
+    {
+      "id": "cold-start",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "cold",
+      "definition": "synthetic cold-start",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "idle",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic idle",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "catalog-refresh",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic catalog-refresh",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "switcher",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic switcher",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "minimized-preview",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic minimized-preview",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "first-capture",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic first-capture",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "reversible-motion",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic reversible-motion",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "output-transfer",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic output-transfer",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    },
+    {
+      "id": "soak",
+      "fixtureSHA256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "warmCold": "warm",
+      "definition": "synthetic soak",
+      "metrics": {
+        "latency": {
+          "unit": "ms",
+          "definition": "synthetic latency",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "native-seat-input",
+            "endEvent": "native-present",
+            "measurementKind": "native-input-to-present",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "ms",
+            "definition": "synthetic latency",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "cpu": {
+          "unit": "percent-one-core",
+          "definition": "synthetic cpu",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "percent-one-core",
+            "definition": "synthetic cpu",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "wakeups": {
+          "unit": "count-per-second",
+          "definition": "synthetic wakeups",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count-per-second",
+            "definition": "synthetic wakeups",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "memory": {
+          "unit": "KiB",
+          "definition": "synthetic memory",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "KiB",
+            "definition": "synthetic memory",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "frame-misses": {
+          "unit": "count",
+          "definition": "synthetic frame-misses",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "count",
+            "definition": "synthetic frame-misses",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "power": {
+          "unit": "W",
+          "definition": "synthetic power",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "W",
+            "definition": "synthetic power",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        },
+        "copy-transfer": {
+          "unit": "bytes",
+          "definition": "synthetic copy-transfer",
+          "minimumSamples": 3,
+          "limits": {
+            "absoluteMax": 4,
+            "regressionMaxPercent": 10,
+            "overheadMax": 0.5
+          },
+          "baseline": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          },
+          "candidate": {
+            "sourceTuple": "synthetic source",
+            "evidenceReference": "fixture only",
+            "evidenceSHA256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+            "clockDomain": "CLOCK_MONOTONIC",
+            "clockMapping": "same-domain",
+            "startEvent": "sample-start",
+            "endEvent": "sample-end",
+            "measurementKind": "whole-process-group-sample",
+            "adapter": "synthetic gpu",
+            "driver": "synthetic driver",
+            "backend": "synthetic backend",
+            "engine": "synthetic engine",
+            "wholeProcessGroupComplete": true,
+            "output": {
+              "id": "synthetic-output",
+              "width": 800,
+              "height": 600,
+              "refreshHz": 60,
+              "scale": 1,
+              "transform": "normal"
+            },
+            "unit": "bytes",
+            "definition": "synthetic copy-transfer",
+            "samples": [
+              1,
+              2,
+              3
+            ],
+            "count": 3,
+            "p50": 2,
+            "p95": 3,
+            "p99": 3,
+            "instrumentationOverhead": 0.1,
+            "measuredUTC": "2026-10-02T00:00:00Z"
+          }
+        }
+      }
+    }
+  ]
+}

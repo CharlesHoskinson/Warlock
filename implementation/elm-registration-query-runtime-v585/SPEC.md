@@ -1,0 +1,1 @@
+Private host216 source and parent/AQ inputs are byte identical; only prospective compiled owning205/plugin579 descriptor and pair evidence are rebound. No protected launcher/main display/core limit changes. Parent transport acceptance is lineage, not new plugin acceptance.

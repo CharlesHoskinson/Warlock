@@ -1,0 +1,10 @@
+-- BAD FLAGS ----------------------------------------------------- src/Probe.elm
+
+Your `main` program wants an unspecified type from JavaScript.
+
+16| main = Platform.worker {init=\_ -> ((),Cmd.none),subscriptions=\_ -> incoming Run,update=\(Run raw) _ ->
+    ^^^^
+But type variables like `flags` cannot be given as flags. I need to know exactly
+what type of data I am getting, so I can guarantee that unexpected data cannot
+sneak in and crash the Elm program.
+
