@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "AUnknownDurable",
+      "passed": true
+    },
+    {
+      "name": "AUncertaintyInitiallyRecoverable",
+      "passed": true
+    },
+    {
+      "name": "BCommitDurable",
+      "passed": true
+    },
+    {
+      "name": "AUnknownMustSurviveUnrelatedBCommitAndColdRestart",
+      "passed": true
+    }
+  ],
+  "scope": "Actual durable journal reproduction; no native mutation or GUI acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-broker-v285/qa/repro.py": "5f0e404f9d5d7c7c56b07e4c2eff47fbf221d11a9571529ca8959bc9895a56c9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-broker-v285/adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-broker-v285/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+  },
+  "observedRecovery": {
+    "protocolVersion": 3,
+    "kind": "host-uncertain",
+    "binding": {
+      "lifetime": "71",
+      "session": "4",
+      "frontend": "5"
+    },
+    "intent": {
+      "request": "41",
+      "generation": "43",
+      "incarnation": "7",
+      "operation": "maximize",
+      "context": {
+        "lifetime": "71",
+        "epoch": "3",
+        "output": "14",
+        "revision": "13"
+      }
+    },
+    "effectProtocol": 2
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "first attached",
+      "passed": true
+    },
+    {
+      "name": "initial exact allocation marks",
+      "passed": true
+    },
+    {
+      "name": "first negotiation",
+      "passed": true
+    },
+    {
+      "name": "negotiated strict geometry",
+      "passed": true
+    },
+    {
+      "name": "A native Unknown published",
+      "passed": true
+    },
+    {
+      "name": "B definitive commit published",
+      "passed": true
+    },
+    {
+      "name": "first broker normal EOF",
+      "passed": true
+    },
+    {
+      "name": "cold broker attached",
+      "passed": true
+    },
+    {
+      "name": "cold allocator includes committed B",
+      "passed": true
+    },
+    {
+      "name": "cold broker retains original A exactly",
+      "passed": true
+    },
+    {
+      "name": "cold recovery completes negotiation",
+      "passed": true
+    },
+    {
+      "name": "cold start did not repeat native submission",
+      "passed": true
+    },
+    {
+      "name": "duplicate request retires transport without invented receipt",
+      "passed": true
+    },
+    {
+      "name": "duplicate failure exit",
+      "passed": true
+    },
+    {
+      "name": "duplicate performed zero extra submissions",
+      "passed": true
+    },
+    {
+      "name": "duplicate kept A uncertainty",
+      "passed": true
+    },
+    {
+      "name": "latest known B remains durable",
+      "passed": true
+    },
+    {
+      "name": "strict prototype3 migration preserves A",
+      "passed": true
+    },
+    {
+      "name": "strict migration publishes schema4",
+      "passed": true
+    },
+    {
+      "name": "prior collection is preserved byte-for-byte",
+      "passed": true
+    },
+    {
+      "name": "prior collection hash bound",
+      "passed": true
+    },
+    {
+      "name": "old collection producer change refused",
+      "passed": true
+    },
+    {
+      "name": "cold old producer modification still refused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "qa/multi.py": "b0aa0a0feee1a7baf9b2af899098598e307c4beb2667e94272e31ccd370eed04",
+    "qa/transport.py": "c9a490a810118875dfe949b01129190791e22ae0baad7baf13d73d37f548d19f",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "a6efd63dea43a43346829efff4f3ad820e66edc01237ff453554edfb2ab99983",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "adapter/recovery_store.py": "04470ca705d10ed063db1a56785be69d983011e150ab05d96b2b863274fff2df",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715"
+  },
+  "scope": "Real broker subprocess and durable ledger; synthetic native transport; no live host admission, native geometry/pixels or release acceptance"
+}

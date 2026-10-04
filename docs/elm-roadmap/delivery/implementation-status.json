@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-geometry-recovery-acceptance-v284",
+  "activeSlice": "implementation/elm-multi-recovery-acceptance-v292",
   "status": "Host binding failures preserve verified instance context for explicit retry. Actual C/native22+22 and original137 qualification pass; next integrate durable recovery with reviewed geometry/menu before coherent release acceptance.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -1581,12 +1581,41 @@
         "Retained V281 missing lifetime-helper compiler failure; corrected V282 optimized Main/Popup/shared-controller tests pass",
         "Actual merged native recovery+geometry/context host, source/ABI closure, pixel/input/fault and broad release gates remain open"
       ]
+    },
+    "multiRecoveryV292": {
+      "passed": true,
+      "scope": "Bounded multi-intent cold broker/ledger preservation and compiled Elm allocation recovery; live host handoff remains open",
+      "ledgerChecks": 64,
+      "brokerRecoveryChecks": 219,
+      "framingChecks": 1011,
+      "coldBrokerMigrationChecks": 23,
+      "originalColdReproductionChecks": 4,
+      "receiptOrderChecks": 3,
+      "compiledInheritedElmChecks": [
+        78,
+        53,
+        21
+      ],
+      "compiledElmRecoveryChecks": 45,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "multiUnknownColdBrokerRecoveryAccepted": true,
+      "nativeHostAdmissionIntegrated": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-multi-recovery-acceptance-v292/qa/slice-manifest.json",
+      "limitations": [
+        "Actual broker uses synthetic native peer for CPU evidence; no new native geometry/pixels/AT/hardware acceptance",
+        "Current persistent host-writer lock and mutable singleton admission deliberately refuse new ledger adoption; integrate live shared-host admission/definitive retirement protocol next",
+        "128 allocation scopes bounded; native full storage/provisioning/global old-broker revocation, restore timing, GPU/AT/IME/physical/human/budgets/C00/release remain open"
+      ]
     }
   },
   "next": [
-    "Implement bounded durable multi-intent recovery preserving every Pending/Unknown across unrelated effects and cold restarts; strict schema1/schema2 migration and host/broker correlation, shared IDs and capacity refusal before submission. Replay original V283 oracle unchanged on fresh source.",
-    "Emit strictly typed informational recovery for each unresolved operation; no automatic replay or snapshot-as-settlement. Compose reviewed recovery host with geometry/context carrier only after the durability defect is closed.",
-    "Freeze and qualify one actual host/broker/core/plugin/Elm tuple with original regression and failure/pixel/input gates; continue restore timing, native storage/provisioning/global revocation, GPU/WebGPU/AT/IME/physical/human/budgets/C00/rollback/release."
+    "Implement live shared-host bounded per-key admission/ledger handoff and durable definitive settlement retirement, preserving unread intents and avoiding resurrection after later actions. Separate whole-host ownership from bounded storage locks, retain explicit old-producer refusal and no automatic replay.",
+    "Integrate reviewed geometry/context/menu behavior into the accepted shared-output recovery host and one Elm model/allocator; use latest owning core hit-test fixes without discarding newer Window behavior, and menu staged-selection refresh/revalidation after popup closure.",
+    "Compile C/Elm and exact cross-language keys/migration/locks/capacity/faults, run selected Quint, freeze one actual source/ABI tuple, then serialized original and recovery pixel/input native campaigns. Continue original restore, storage/provisioning/global revocation, GPU/WebGPU/AT/IME/physical/human/budgets/C00/rollback/full release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
@@ -1606,9 +1635,16 @@
     },
     {
       "id": "DURABLE-UNKNOWN-001",
-      "status": "open",
+      "status": "resolved for bounded broker/store cold-restart and compiled Elm model; native host handoff and release remain open",
       "description": "Single-latest journal loses durable AUnknown when unrelated BCommitted overwrites it; cold reader emits no A uncertainty. Elm unresolved state allows unrelated actions. Preserve every unresolved operation durably before native adoption.",
-      "evidence": "implementation/elm-unresolved-recovery-repro-v283/qa/repro-1791105305850643468/report.json"
+      "evidence": "implementation/elm-unresolved-recovery-repro-v283/qa/repro-1791105305850643468/report.json",
+      "resolutionEvidence": "implementation/elm-multi-recovery-acceptance-v292/qa/slice-manifest.json"
+    },
+    {
+      "id": "NATIVE-LEDGER-HANDOFF-001",
+      "status": "open",
+      "description": "Existing host retains host-writer lock and mutates singleton admission. New ledger refuses adoption until host bounded full-key admissions, critical-section ownership and definitive retirement preserve unread/lost receipts across cold restart.",
+      "evidence": "implementation/elm-multi-recovery-acceptance-v292/HOST-HANDOFF.md"
     }
   ],
   "resolvedBoundedFindings": [

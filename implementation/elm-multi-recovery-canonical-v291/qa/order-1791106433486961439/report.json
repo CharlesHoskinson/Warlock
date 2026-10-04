@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "originalPendingDurable",
+      "passed": true
+    },
+    {
+      "name": "reorderedJSONIsSameFullKey",
+      "passed": true
+    },
+    {
+      "name": "reorderedOriginalReceiptSettlesExactlyOne",
+      "passed": true
+    }
+  ],
+  "scope": "Actual full-key ledger correlation; no native/GUI acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/qa/order.py": "2e5c038ad0a8a55dff130d5bc54c0ee1baa28f4f3163c6bb0814978d79490657",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/daemon.py": "a6efd63dea43a43346829efff4f3ad820e66edc01237ff453554edfb2ab99983",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/recovery_store.py": "04470ca705d10ed063db1a56785be69d983011e150ab05d96b2b863274fff2df",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-multi-recovery-canonical-v291/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715"
+  }
+}

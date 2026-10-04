@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "Bounded unresolved target preservation, allocator retention, no replay and storage poison/correction. Capacity2 models the bounded principle; actual64/128 budgets and full keys are filesystem tests. No automatic implementation refinement.",
+  "sourceSHA256": "0a60966637c4a06b3189e5805c8ac3c5a2137d524cd02bbd9b5257969c2496a0",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(coldPreservesEarlierUnknownTest|capacityNoEvictionTest|duplicateNoResubmitTest|unrelatedCommitOnlyOneTest|coldNeverReplaysTest|wrongReceiptInertTest|definitiveSettlementRetainsWatermarkTest|failurePoisonsWritesTest|explicitCorrectionOnlyTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 9,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "0a60966637c4a06b3189e5805c8ac3c5a2137d524cd02bbd9b5257969c2496a0",
+    "model.py": "3ee65ef3b691db5afb6ed68240f6bf4be1cfcb1becac29fd4cd70ca71c5b4b89",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-coldPreservesEarlierUnknownTest-0.itf.json": "74f3c4b15be82555b04af380a13f2b0201cf7f0e6210a7c6b0a02e5058b9cd9e",
+    "named-capacityNoEvictionTest-1.itf.json": "b18f4febe6543a52b9eab350a90244854003a537165dbecd0adf46646a41dd4a",
+    "named-duplicateNoResubmitTest-2.itf.json": "afcc6f876e6358671f60df17c8e1499601149e5db774d9486a3595977dd1eb00",
+    "named-unrelatedCommitOnlyOneTest-3.itf.json": "df24c448c0fd870245249bb415950679fbbc0ab03a67c27b33c6357d1d743de0",
+    "named-coldNeverReplaysTest-4.itf.json": "2dcac0d686370acc064af4ed444ada3f6963a919a8362d9ab28686bf2154649d",
+    "named-wrongReceiptInertTest-5.itf.json": "acc85854dc322025c4c3cf2160cb1bd365d6177fffc08279fd2b6831b599cd4d",
+    "named-definitiveSettlementRetainsWatermarkTest-6.itf.json": "8389a2e09236cdc586b86741cccb3fcb2bcf6c07d4a3e23377b06a4289c91940",
+    "named-failurePoisonsWritesTest-7.itf.json": "68007dc6871bd9749407973f1bb790c9eea870ac446011bf7fc07667b9eb316a",
+    "named-explicitCorrectionOnlyTest-8.itf.json": "0eb2b2aa085f7ec4d07cdf2d4b4cf2a7d97616f4ffc59e40880eacdee6a8a880",
+    "named.stdout": "51fe91c7e7b9907ade88136fada16a4398c51b3a10d987e8ba87a0db67e95b57",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "79afebc17be8db3a30b610eeb1aa5cb6a5562915415c300a2cb73228f211cd5a",
+    "invariants.stdout": "1131a8b4f0f55fc251e4dd3ec7ae9c2ea4a27310b2ff40b2c963c5b7833fc94b",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

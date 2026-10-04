@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T09:17:22.632932+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T09:39:06.974664+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7504,6 +7504,35 @@
         "V283 original AUnknown preservation assertion fails after unrelated BCommit and cold restart; implement bounded multi-intent durable ledger before native integration",
         "Retained V281 missing lifetime-helper compiler failure; corrected V282 optimized Main/Popup/shared-controller tests pass",
         "Actual merged native recovery+geometry/context host, source/ABI closure, pixel/input/fault and broad release gates remain open"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Bounded multi-intent cold broker/ledger preservation and compiled Elm allocation recovery; live host handoff remains open",
+      "ledgerChecks": 64,
+      "brokerRecoveryChecks": 219,
+      "framingChecks": 1011,
+      "coldBrokerMigrationChecks": 23,
+      "originalColdReproductionChecks": 4,
+      "receiptOrderChecks": 3,
+      "compiledInheritedElmChecks": [
+        78,
+        53,
+        21
+      ],
+      "compiledElmRecoveryChecks": 45,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "multiUnknownColdBrokerRecoveryAccepted": true,
+      "nativeHostAdmissionIntegrated": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-multi-recovery-acceptance-v292/qa/slice-manifest.json",
+      "limitations": [
+        "Actual broker uses synthetic native peer for CPU evidence; no new native geometry/pixels/AT/hardware acceptance",
+        "Current persistent host-writer lock and mutable singleton admission deliberately refuse new ledger adoption; integrate live shared-host admission/definitive retirement protocol next",
+        "128 allocation scopes bounded; native full storage/provisioning/global old-broker revocation, restore timing, GPU/AT/IME/physical/human/budgets/C00/release remain open"
       ]
     }
   ]

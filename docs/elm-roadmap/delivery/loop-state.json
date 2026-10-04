@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T09:17:22.632932+00:00",
+  "observedUTC": "2026-10-04T09:39:06.974664+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-geometry-recovery-acceptance-v284",
+  "currentSlice": "implementation/elm-multi-recovery-acceptance-v292",
   "nextWork": [
-    "Implement bounded durable multi-intent recovery preserving every Pending/Unknown across unrelated effects and cold restarts; strict schema1/schema2 migration and host/broker correlation, shared IDs and capacity refusal before submission. Replay original V283 oracle unchanged on fresh source.",
-    "Emit strictly typed informational recovery for each unresolved operation; no automatic replay or snapshot-as-settlement. Compose reviewed recovery host with geometry/context carrier only after the durability defect is closed.",
-    "Freeze and qualify one actual host/broker/core/plugin/Elm tuple with original regression and failure/pixel/input gates; continue restore timing, native storage/provisioning/global revocation, GPU/WebGPU/AT/IME/physical/human/budgets/C00/rollback/release."
+    "Implement live shared-host bounded per-key admission/ledger handoff and durable definitive settlement retirement, preserving unread intents and avoiding resurrection after later actions. Separate whole-host ownership from bounded storage locks, retain explicit old-producer refusal and no automatic replay.",
+    "Integrate reviewed geometry/context/menu behavior into the accepted shared-output recovery host and one Elm model/allocator; use latest owning core hit-test fixes without discarding newer Window behavior, and menu staged-selection refresh/revalidation after popup closure.",
+    "Compile C/Elm and exact cross-language keys/migration/locks/capacity/faults, run selected Quint, freeze one actual source/ABI tuple, then serialized original and recovery pixel/input native campaigns. Continue original restore, storage/provisioning/global revocation, GPU/WebGPU/AT/IME/physical/human/budgets/C00/rollback/full release."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through shared build-loop native lock and unchanged protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "Progress: real broker recovery193 and framing1011, optimized Elm inherited78/53/21 plus new34 pass; compiler failure retained/fixed. Actual cold journal repro V283 fails: earlier Unknown lost after unrelated commit. Release/native adoption withheld; bounded durable multi-intent recovery is next.",
+  "lastWorkClassification": "Progress: tested V70 snapshot adopted into bounded schema4 broker store; cold Unknown loss, close-failure poison and JSON-order correlation reproduced/fixed. Final ledger64/broker219/framing1011/cold23/originalrepro4/order3; optimized Elm78/53/21+45 and Quint9/1000 samples40 pass. Live native shared-host admission/retirement handoff is next; release open.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }
