@@ -1,0 +1,206 @@
+{
+  "schema": 1,
+  "passed": true,
+  "frozenUTCUnixNs": 1791102657198360778,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a599fdc0bfe84c6fb1feabb304df966c.scope",
+    "coreLimit": 1
+  },
+  "geometryNativeAccepted": true,
+  "geometryMenuAccepted": false,
+  "fullRoadmapAccepted": false,
+  "unknownNativeFaultRecoveryAccepted": false,
+  "competingPeersAccepted": false,
+  "workareaOwnershipChangeAccepted": false,
+  "releaseAccepted": false,
+  "deploymentAccepted": false,
+  "quintGeometryModelLogicApproved": false,
+  "scope": "Isolated singleton native effect2 maximize/restore geometry + legacy minimized MAX composition; CPU and historical failures separately attributed",
+  "nativeQualification": {
+    "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v55/qa/native-1791102357953536490/report.json",
+    "reportSHA256": "740c96970369e465a2ba96d937812a8e9914cb6ab3d36ec8632834fd701217c5",
+    "nativeChecks": 96,
+    "pixelChecks": 7,
+    "normalCleanup": true,
+    "mainDesktopActions": false,
+    "nativeCore": {
+      "result": "pass",
+      "binary": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/build-1791101053270682069/Hyprland",
+      "sha256": "5f1237c8c66671d6d451c346f93dcefd3ce203cecd385d8068092aeffe2376b1",
+      "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/build-1791101053270682069/report.json",
+      "buildReportSHA256": "d6391f03c7df483631f40482ef911bc9f22aa5c8faf9535aff349c9d28754ac3",
+      "closureReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/qa/final-closure-1791101398597946230/closure.json",
+      "closureReportSHA256": "743fd76c1c598f5c0ff4ebc8f8c71de4b75efa804f44fee46ce4c1ed292e1fdd",
+      "nativeAcceptance": false
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-owning-pair-v49/qa/build-1791101699419310570/elm-window-geometry-authority.so",
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-viewport-v8/build-1791091844697498690/cmake/libaquamarine.so.0.15.0",
+      "sha256": "48fba8868cd21b523a75c8347299c40c48cb2f5a6e2fce78342bd87b68d983c3"
+    },
+    "client": {
+      "result": "pass",
+      "client": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-suspend-v53/qa/client-build-1791102127026085440/xdg-max-client",
+      "clientSHA256": "f47c2ce1a555f0df70df9d675b1df7074d49e21789615dd4650a63d0d4cb42e9",
+      "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-suspend-v53/qa/client-build-1791102127026085440/report.json",
+      "buildReportSHA256": "f3df071c42e3f2c24ddf3cd647c33050e37025eb3511ba579b1028ce4e549b7b",
+      "nativeAcceptance": false,
+      "requiresXdgVersion": 6,
+      "suspendedStateObserved": true
+    },
+    "pairManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-owning-pair-v49/qa/build-pair-manifest.json",
+    "pairManifestSHA256": "bd2e92fafa05355a0fb1fb07fadc5ff83f1e42a446dc00aad3ea8c120afbd81b",
+    "coreManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/component-manifest.json",
+    "coreManifestSHA256": "dd924d35c3568b4b0e0434bbc2eb841789e69c4451806a6a62659111180ca712",
+    "contractCPU": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101638979185401/report.json",
+    "contractCPUSHA256": "15633de63e0b09628be96d8f1757ffd50048675eaf3d5c6ec28f6866eaffaaf0",
+    "legacyMenuManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-regression-v52/component-manifest.json",
+    "legacyMenuManifestSHA256": "8a7bb989909ae5572dc3152c67779293c72f9b989cefcabac747b3cb34b391e7",
+    "preflight": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v55/qa/preflight-1791102259102730218/report.json",
+    "preflightSHA256": "d430e2f2a25998cbd37d17401173d2d243f0864e5ea16f9794534b0535e1db14",
+    "historicalOldFixtureCPU": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v51/qa/preflight-1791102156356623552/report.json",
+    "historicalOldFixtureCPUSHA256": "11357473d0bc9a914c58750923a1bbe8bd496cdef0f76e4bc0fbfaebe274cff6",
+    "failedDescriptorKeyPreflight": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v54/qa/preflight-1791102233943763456/report.json",
+    "failedDescriptorKeyPreflightSHA256": "c874a533339cf0f728c042beeb232ee971531d377ca5a67cef38dcb52828cfdd"
+  },
+  "acceptanceDocument": "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/delivery/GEOMETRY-NATIVE-V55-ACCEPTANCE.md",
+  "acceptanceDocumentSHA256": "c47a8a5d9a41775611a97deaf3346daefadf174860951c5f924201be9d4881b7",
+  "component": "elm-geometry-effect-native-v51",
+  "files": [
+    {
+      "path": "qa/native.py",
+      "size": 28965,
+      "mode": 420,
+      "sha256": "5dc37886a8f5bff4e883ec362e7b5ebdd648b9048a6a669f5dda99509c6dca4b"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/0/native.py",
+      "size": 28965,
+      "mode": 420,
+      "sha256": "5dc37886a8f5bff4e883ec362e7b5ebdd648b9048a6a669f5dda99509c6dca4b"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/1/candidate_host.py",
+      "size": 10929,
+      "mode": 292,
+      "sha256": "4f8c7192cea489fa93058b3867a6d16b339338689ae38dd18fabb4bfa10221cd"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/10/report.json",
+      "size": 23510,
+      "mode": 420,
+      "sha256": "4a34904d504a7fd8537f480dd88a3cf697b62ff86555a7201b05db5339e519d2"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/11/grim",
+      "size": 43504,
+      "mode": 493,
+      "sha256": "8fb2e84762652dd82dea186f415577cb40ff7e4fab7f6ae59100848c7428e23d"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/12/magick",
+      "size": 14824,
+      "mode": 493,
+      "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/13/effect_endpoint.py",
+      "size": 6985,
+      "mode": 420,
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/14/endpoint.py",
+      "size": 9532,
+      "mode": 420,
+      "sha256": "af542ec41ddcb7bc73b15723e7d8d9b340870901e5e9d0a4883b3babb876cc87"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/15/geometry_endpoint.py",
+      "size": 13106,
+      "mode": 420,
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/2/native-build-report.json",
+      "size": 790,
+      "mode": 292,
+      "sha256": "25df3e2e4066f7b7300f7c8d4e7fc01ffecd7206b57f4cfaffc40f9c30c565dc"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/3/link-build-report.json",
+      "size": 298,
+      "mode": 292,
+      "sha256": "09911ce0361cfac8c7269cc812e00af05376c91fc40564298cc1a5d6ba4b8c04"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/4/aq-tuple.json",
+      "size": 474,
+      "mode": 292,
+      "sha256": "5b411e851ceb56cb3420dd843a7e3d9acb91ac745333dc72dcdddc214916298a"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/5/client-build-report.json",
+      "size": 529,
+      "mode": 420,
+      "sha256": "36273f0c88bf2c3ab851e05dc6734aa081fd9196323edc56d9ad8a711edaad43"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/6/native-build-report.json",
+      "size": 2007,
+      "mode": 292,
+      "sha256": "0a79541d93deb2ffb72eae2df0583a81f9f3bb07e7ff57e129109c7a1c69e16e"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/7/report.json",
+      "size": 595839,
+      "mode": 292,
+      "sha256": "4353dba2bc6120c3e2f1af49e0fba810bd2e139ad0aaa673709c04f251795eb9"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/8/build-pair-manifest.json",
+      "size": 273892,
+      "mode": 292,
+      "sha256": "bd2e92fafa05355a0fb1fb07fadc5ff83f1e42a446dc00aad3ea8c120afbd81b"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/inputs/9/component-manifest.json",
+      "size": 418702,
+      "mode": 292,
+      "sha256": "dd924d35c3568b4b0e0434bbc2eb841789e69c4451806a6a62659111180ca712"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/native.py",
+      "size": 28965,
+      "mode": 420,
+      "sha256": "5dc37886a8f5bff4e883ec362e7b5ebdd648b9048a6a669f5dda99509c6dca4b"
+    },
+    {
+      "path": "qa/preflight-1791102156356623552/report.json",
+      "size": 5874,
+      "mode": 420,
+      "sha256": "11357473d0bc9a914c58750923a1bbe8bd496cdef0f76e4bc0fbfaebe274cff6"
+    },
+    {
+      "path": "qa/preflight.py",
+      "size": 1985,
+      "mode": 420,
+      "sha256": "c3fad91b6bbf314bc912877c8bd7ef757f891cfd0d7c18e8e537663b60bed310"
+    },
+    {
+      "path": "qa/syntax-1791101762255212180/report.json",
+      "size": 261,
+      "mode": 420,
+      "sha256": "cfc311acd94a89d131edae4b5a18b3559e0a2ae78326fcac1eca012a77224c05"
+    },
+    {
+      "path": "qa/syntax.py",
+      "size": 533,
+      "mode": 420,
+      "sha256": "6db5d53f3c962b9a12c5a00841ff97804899abef79fdef68cb02a3eacb7e9c31"
+    }
+  ]
+}

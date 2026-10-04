@@ -1,0 +1,14 @@
+--- v1/src/render/Renderer.cpp
++++ v2/src/render/Renderer.cpp
+@@ -412,9 +412,8 @@
+     // Native floating MAX participates in the same bottom-to-top stack as
+     // ordinary floats. Do not draw a previously raised float above it after
+     // MAX is raised again. Keep true fullscreen and pinned priority unchanged.
+-    const bool respectFloatingMaxStack = pWorkspaceWindow->m_isFloating &&
+-        Fullscreen::controller()->getFullscreenModes(pWorkspaceWindow).internal == Fullscreen::FSMODE_MAXIMIZED;
+-    bool floatingMaxSeen = false;
++    const bool respectFloatingMaxStack = pWorkspaceWindow->m_isFloating && Fullscreen::controller()->getFullscreenModes(pWorkspaceWindow).internal == Fullscreen::FSMODE_MAXIMIZED;
++    bool       floatingMaxSeen         = false;
+ 
+     // then render windows over fullscreen.
+     for (auto const& w : Desktop::windowState()->windows()) {

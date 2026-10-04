@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "validation": "6 protected source/model tests passed; native build not run",
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5147,
+      "sha256": "b56b85ce9e10d140841805bbac55e3bb2d72620fd38c41cadcfba0ca8051a9d4"
+    },
+    {
+      "path": "candidate/src/render/Renderer.cpp",
+      "bytes": 143891,
+      "sha256": "e07c4f2a5b2f41fe8c2a2cfd231d06de0a022a382e169669c828af1adc7e7337"
+    },
+    {
+      "path": "floating-max-stack.patch",
+      "bytes": 1202,
+      "sha256": "6cde3c587fe35c1dd405066fcb491731f9db487699a6ec86f04561061642f074"
+    },
+    {
+      "path": "original/src/desktop/state/ViewHitTester.cpp",
+      "bytes": 15675,
+      "sha256": "1bcc02a03db80b0519e516b41b3e0d0e70df08d6aa50b006b6a4362854524a09"
+    },
+    {
+      "path": "original/src/desktop/state/WindowState.cpp",
+      "bytes": 3055,
+      "sha256": "2e06622b84e9063d91e39a85c643ab5dfaa56a8574f41b2df480009be42aa477"
+    },
+    {
+      "path": "original/src/desktop/view/Window.cpp",
+      "bytes": 124226,
+      "sha256": "d735d454cc4b7983f19626514d310669047da46780c509ffae68ccf072211ded"
+    },
+    {
+      "path": "original/src/managers/fullscreen/FullscreenController.cpp",
+      "bytes": 25095,
+      "sha256": "044cf13d2c070a0e794e6d90d0d8eccab201d437b6ba24ac80eff6686fc4d106"
+    },
+    {
+      "path": "original/src/render/Renderer.cpp",
+      "bytes": 143211,
+      "sha256": "9af8a74e7dc42ba3c5532303b9bb4ee7c350d4cef2f2c8984e41f2a01b3bdd22"
+    },
+    {
+      "path": "source-manifest.json",
+      "bytes": 1184,
+      "sha256": "3148e8412e9407ffb155ff09d423450c4fdbc58e8985ee644617512673702548"
+    },
+    {
+      "path": "stage.py",
+      "bytes": 2660,
+      "sha256": "724d27b719533023a0074080dd70b0a401722d3a82fc5dbf09a497725ca14e6c"
+    },
+    {
+      "path": "test_stack_policy.py",
+      "bytes": 2871,
+      "sha256": "6a61b410b09d8bf98a47bb205538a6a7d2e224a920379e1a2351dfe1254efebb"
+    }
+  ]
+}

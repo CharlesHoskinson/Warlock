@@ -1,0 +1,42 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-8cc2d98c593d4e2faf8c44a233503dad.scope",
+    "coreLimit": 1
+  },
+  "checks": {
+    "oneObserver": true,
+    "online": true,
+    "sameEpoch": true,
+    "monotonic": true,
+    "noRejectedRecords": true,
+    "noErrors": true,
+    "deployedSourcesStable": true
+  },
+  "before": {
+    "online": true,
+    "epoch": "8c7e10c596184a5c9c73a38e1b308c63",
+    "sequence": 952,
+    "accepted": 952,
+    "rejected": 0,
+    "error": ""
+  },
+  "after": {
+    "online": true,
+    "epoch": "8c7e10c596184a5c9c73a38e1b308c63",
+    "sequence": 979,
+    "accepted": 979,
+    "rejected": 0,
+    "error": ""
+  },
+  "observer": [
+    {
+      "pid": 164716,
+      "ppid": 1520,
+      "start": "287561"
+    }
+  ],
+  "intervalSeconds": 18,
+  "nativeWindowAcceptance": false,
+  "readOnly": true
+}

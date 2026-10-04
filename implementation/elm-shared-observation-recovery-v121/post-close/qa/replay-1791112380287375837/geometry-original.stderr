@@ -1,0 +1,74 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+Maximize uses actual shared allocator and geometry revision full key AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+        session: '200'
+      },
++     kind: 'projection-request',
++     protocolVersion: 3,
++     requestId: '4'
++   },
++   {
++     binding: {
++       frontend: '300',
++       lifetime: '100',
++       session: '200'
+-     effectProtocol: 2,
+-     intent: {
+-       context: {
+-         epoch: '300',
+-         lifetime: '100',
+-         output: '1',
+-         revision: '101'
+-       },
+-       generation: '1',
+-       incarnation: '10',
+-       operation: 'maximize',
+-       request: '1'
+      },
++     geometryProtocol: 1,
++     kind: 'geometry-facts-request',
++     minimumWatermark: '1',
+-     kind: 'window-effect',
+      protocolVersion: 3,
++     requestId: '5'
+    }
+  ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:35:107
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:11:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:35:2
+duplicate geometry callback cannot allocate again AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'0' !== '1'
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:36:169
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:11:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:36:2
+geometry receipt never creates observed maximized state AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:38:185
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:11:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:38:2
+AssertionError [ERR_ASSERTION]: separate fresh observation requests
+    at observe (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:19:2)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112380287375837/inputs/qa/original/geometry.cjs:39:15

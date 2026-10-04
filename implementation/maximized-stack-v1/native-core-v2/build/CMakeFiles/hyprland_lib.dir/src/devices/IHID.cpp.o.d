@@ -1,0 +1,46 @@
+CMakeFiles/hyprland_lib.dir/src/devices/IHID.cpp.o: \
+ /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/devices/IHID.cpp \
+ /usr/include/stdc-predef.h \
+ /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/devices/IHID.hpp \
+ /usr/include/c++/16/cstdint /usr/include/c++/16/string \
+ /usr/include/c++/16/set \
+ /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/devices/../helpers/signal/Signal.hpp \
+ /usr/include/hyprutils/signal/Signal.hpp /usr/include/c++/16/functional \
+ /usr/include/c++/16/any /usr/include/c++/16/type_traits \
+ /usr/include/c++/16/utility /usr/include/c++/16/vector \
+ /usr/include/c++/16/memory /usr/include/c++/16/bits/memoryfwd.h \
+ /usr/include/c++/16/bits/allocator.h \
+ /usr/include/c++/16/bits/stl_tempbuf.h \
+ /usr/include/c++/16/bits/stl_construct.h \
+ /usr/include/c++/16/bits/stl_uninitialized.h \
+ /usr/include/c++/16/bits/stl_raw_storage_iter.h \
+ /usr/include/c++/16/bits/align.h \
+ /usr/include/c++/16/bits/uses_allocator.h \
+ /usr/include/c++/16/bits/alloc_traits.h \
+ /usr/include/c++/16/debug/debug.h /usr/include/c++/16/bits/unique_ptr.h \
+ /usr/include/c++/16/bits/shared_ptr.h \
+ /usr/include/c++/16/bits/shared_ptr_atomic.h \
+ /usr/include/c++/16/bits/atomic_base.h \
+ /usr/include/c++/16/backward/auto_ptr.h \
+ /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h \
+ /usr/include/c++/16/bits/ranges_uninitialized.h \
+ /usr/include/c++/16/bits/ranges_algobase.h \
+ /usr/include/c++/16/bits/uses_allocator_args.h \
+ /usr/include/c++/16/bits/out_ptr.h /usr/include/c++/16/bits/version.h \
+ /usr/include/c++/16/tuple /usr/include/c++/16/bits/ptr_traits.h \
+ /usr/include/c++/16/bits/indirect.h /usr/include/c++/16/compare \
+ /usr/include/c++/16/initializer_list \
+ /usr/include/c++/16/bits/allocated_ptr.h \
+ /usr/include/c++/16/bits/utility.h \
+ /usr/include/c++/16/bits/functional_hash.h \
+ /usr/include/c++/16/bits/memory_resource.h \
+ /usr/include/c++/16/pstl/glue_memory_defs.h \
+ /usr/include/c++/16/bits/stl_iterator_base_types.h \
+ /usr/include/c++/16/pstl/execution_defs.h \
+ /usr/include/hyprutils/memory/SharedPtr.hpp \
+ /usr/include/hyprutils/memory/ImplBase.hpp \
+ /usr/include/hyprutils/memory/Casts.hpp /usr/include/c++/16/bit \
+ /usr/include/hyprutils/memory/WeakPtr.hpp \
+ /usr/include/hyprutils/memory/UniquePtr.hpp \
+ /usr/include/hyprutils/misc/HyprAssert.hpp /usr/include/c++/16/exception \
+ /usr/include/c++/16/iostream /usr/include/hyprutils/signal/Listener.hpp

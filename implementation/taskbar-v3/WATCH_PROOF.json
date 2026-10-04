@@ -1,0 +1,50 @@
+{
+  "schema": "taskbar-watch-implementation-proof-v3",
+  "nativeAcceptance": false,
+  "deployed": false,
+  "priorCandidate": "../taskbar-v2",
+  "reason": "Watch only finalized preview publications, suppressing transient capture and motion writes.",
+  "origin": {
+    "path": "/home/hoskinson/.local/bin/hypr-taskbar",
+    "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1"
+  },
+  "candidateSources": {
+    "taskbar_watch.py": "8d3130921532aa89d615a4925c23d48e170c4139a54954600b3a376fae6d9908",
+    "taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "hypr-taskbar": "89eefa63d6eb59e53b5e41c89fb97355455f53becd0e96029eac4f4032390eab",
+    "tests/test_preview_publications.py": "c8cbaa7de73cf1b7fffa61fa5aed81118464bd078f1cb541859c88ee49a7a433",
+    "tests/test_taskbar_watch.py": "447de0c8d2a04d78463e0660ed8f03f515c7ea35a07c4497d633032df111644e",
+    "tests/test_taskbar_catalog.py": "acb8bef76aafa5134020045b5aca03185c71e7e0d2a713eda0be91499ec6e6e2",
+    "tests/run_existing_backend.py": "6ae5161ff6fba6cb0a977ce5a4ea31ffd47cb8d7edee933af26cc96c03883163"
+  },
+  "watchProof": {
+    "result": "pass",
+    "checks": 45,
+    "runs": [
+      {
+        "invocation": "45c9ef5b62934e1094416112c82cb1d1",
+        "tests": 68,
+        "contents": "33 inherited watcher +24 catalog +11 initial preview cases",
+        "result": "passed"
+      },
+      {
+        "invocation": "36c4841d75914e8284b2f85c17f54772",
+        "tests": 12,
+        "contents": "11 preview cases rerun +1 new finalized-publication-during-snapshot case",
+        "result": "passed"
+      }
+    ],
+    "catalogChecksSeparate": 24
+  },
+  "unchangedInstalledBackendProof": {
+    "result": "pass",
+    "checks": 15,
+    "seconds": 0.105,
+    "scope": "qa-harness-e8a7502520d34a7299a73092c05b70bf.scope",
+    "invocation": "c59c790406294effa7f5f93d1d04ab88",
+    "suitePath": "/home/hoskinson/.local/share/hypr-taskbar/test_backend.py",
+    "suiteSHA256": "10565a647483f1fe81de69991d4568f742a087a7bf69d7dac88587ef5328bd7a",
+    "modifications": "Only backend import redirected by runner; suite unchanged. Isolated XDG_CACHE_HOME.",
+    "source": "tests/preview-publication-report.json"
+  }
+}

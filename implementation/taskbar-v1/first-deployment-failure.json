@@ -1,0 +1,10 @@
+{
+  "result": "fail",
+  "phase": "live first deployment",
+  "reason": "Snapshot observer invalidated its own unchanged Snap Groups state rewrite, creating a feedback loop. Actual live stream reached sequence64 at about9s and239 at later inspection. Rolled back to original helper+widget_v65 immediately. These samples are diagnostics, not a precise benchmark.",
+  "snapHelperBehavior": "hypr-snap-groups list writes state.tmp then state.json on every snapshot.",
+  "nativeABIChanged": false,
+  "rollbackVerifiedOriginalHelper": true,
+  "correctiveDerivative": "../taskbar-v2",
+  "observedEpoch": "cf8074c6ddb84df5a813f07e46ad7b1f"
+}

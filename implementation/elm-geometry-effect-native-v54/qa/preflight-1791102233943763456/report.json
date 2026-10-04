@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual native runner source/build preflight only; no GUI",
+  "runner": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v54/qa/native.py",
+  "runnerSHA256": "652274bd31181104fb4e99177890c2129a8be8a819f02864ab8f99886b92d41e",
+  "error": "KeyError('requiresXdgVersion6')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v54/qa/preflight.py\", line 22, in <module>\n    exec(compile(program,str(RUNNER),'exec'),namespace)\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v54/qa/native.py\", line 294, in <module>\n    assert fixture['requiresXdgVersion6'] is True and fixture['suspendedStateObserved'] is True\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^\nKeyError: 'requiresXdgVersion6'\n",
+  "artifacts": {}
+}

@@ -1,0 +1,22 @@
+{
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d279f3d7ebc240ec9c84ceecb6383e3b.scope",
+    "coreLimit": 1
+  },
+  "prepared": true,
+  "enabled": false,
+  "restartPerformed": false,
+  "package": "/home/hoskinson/.local/share/omarchy-native-pairs/floating-max-stack-v2",
+  "proof": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v2/native-stack-smoke-1791036734961323596.json",
+  "autostartOriginalSHA256": "25b0bdcc920dcf9a27f1f1d79ec4e1f954f52cedb7c5f6a7d0d14e1f836d1257",
+  "autostartCandidateSHA256": "0603ebd15227555fd1ae052da9905124719462f045fc9b69bba9163adc01592c",
+  "files": {
+    "/home/hoskinson/.local/share/omarchy-native-pairs/floating-max-stack-v2/Hyprland": "51d08b1c5f96123d31f274e2e52de83d01e3a780083b1e16c532e1c4401915b7",
+    "/home/hoskinson/.local/share/omarchy-native-pairs/floating-max-stack-v2/hyprbars.so": "51c97c4fff7de1eb389538c3c526297b80f546f8873a10d0fed09fc0f85ebd70",
+    "/home/hoskinson/.local/share/omarchy-native-pairs/floating-max-stack-v2/pair.json": "9bca8ecb7e1129c3e1971dcdf988f60f083d69b37471da44b467f68c48319ca2",
+    "/home/hoskinson/.local/share/omarchy-native-pairs/floating-max-stack-v2/launch": "98cc49014eb87ecadef9d2e6fcfb04cb643dafc411bef049edc6f1a82a2b6add"
+  },
+  "unit": "wayland-wm@hyprland.desktop.service",
+  "stagedUnitSHA256": "648ef05e6e938a81bc3ab668f676634ea0d5f7bbf85795edf15ae214ef97d35c",
+  "remainingGate": "Apply wiring then logout/restart closes current applications; requires explicit user agreement"
+}

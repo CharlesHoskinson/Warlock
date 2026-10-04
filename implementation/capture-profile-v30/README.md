@@ -1,0 +1,9 @@
+# V30 capture profiling derivative
+
+Opt-in research instrumentation, never activated or installed. `native_desktop.py` and `pipe_transport.py` derive from archived V29; all other modules load explicitly from the original manifest root. Original SHA-256 and derivative SHA-256 are verified by `profile_entry.py`. Materializer preserves calls, locks, errors, command ownership/types and timeout arguments; tracing adds overhead, so record it when comparing latency.
+
+Bounded 2,048-record in-memory trace with fixed labels, no pixel data, command arguments, window titles or addresses. Private 0700 caller-created directory, 0600 exclusive file; no overwrite/symlink path. Dropped count is explicit. No trace disk I/O until entry termination. Trace publication can fail independently from the campaign; do not interpret a missing trace as campaign acceptance.
+
+Measured: adapter capture/preview spans, lock wait/held durations, query/identity-check calls, grim/magick supervised calls, seed queue observation and renderer event receipt. Unsupported: individual PNG encode/decode durations, GPU upload durations, exact frame-ready instant, compositor or physical presentation latency. `renderer_presented_receipt` is a renderer report observed by Python, not independent presentation proof. Renderer seed queue and seeded receipts are explicitly distinct.
+
+Root must first review/freeze source projection and integrate with the unchanged native campaign. Invoke any approved entry only through `/home/hoskinson/window-integration-qa/qa_run.py`; this driver does not provide a native GUI grant. Example suffix: `profile_entry.py --trace /private-0700-directory/trace.json --entry /absolute/V29/reviewed_entry.py [args]`. The full original source inventory remains part of preflight; this derivative is not source-ready acceptance and does not extend deadlines.

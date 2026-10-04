@@ -1,0 +1,44 @@
+{
+  "owning_core": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "original_repo": "/home/hoskinson/src/hyprland-motion-audit",
+  "files": [
+    {
+      "path": "src/render/Renderer.cpp",
+      "sha256": "9af8a74e7dc42ba3c5532303b9bb4ee7c350d4cef2f2c8984e41f2a01b3bdd22"
+    },
+    {
+      "path": "src/desktop/state/ViewHitTester.cpp",
+      "sha256": "1bcc02a03db80b0519e516b41b3e0d0e70df08d6aa50b006b6a4362854524a09"
+    },
+    {
+      "path": "src/desktop/state/WindowState.cpp",
+      "sha256": "2e06622b84e9063d91e39a85c643ab5dfaa56a8574f41b2df480009be42aa477"
+    },
+    {
+      "path": "src/desktop/view/Window.cpp",
+      "sha256": "d735d454cc4b7983f19626514d310669047da46780c509ffae68ccf072211ded"
+    },
+    {
+      "path": "src/managers/fullscreen/FullscreenController.cpp",
+      "sha256": "044cf13d2c070a0e794e6d90d0d8eccab201d437b6ba24ac80eff6686fc4d106"
+    }
+  ],
+  "deployment": "not built or loaded",
+  "candidate": {
+    "path": "src/render/Renderer.cpp",
+    "sha256": "b1d840d49e360ed45790ac5a4bad95e2a8420e5ee85438f6c476454ca0a1d244",
+    "changed_lines": 12,
+    "policy": "render order only; no input, alpha, allowedOverFullscreen or geometry mutations"
+  },
+  "previous_candidate": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/candidate/src/render/Renderer.cpp",
+    "sha256": "e07c4f2a5b2f41fe8c2a2cfd231d06de0a022a382e169669c828af1adc7e7337"
+  },
+  "formatting": {
+    "clang_format": "clang-format version 22.1.8",
+    "style_file": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/.clang-format",
+    "style_sha256": "e26fb6230666b3e478be217eb85ce030b946b6247482939613025d684ee10f59",
+    "range": "412:428",
+    "logic_changed": false
+  }
+}

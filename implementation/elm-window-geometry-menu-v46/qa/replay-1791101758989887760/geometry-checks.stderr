@@ -1,0 +1,30 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+late original full key resolves ledger after session rebind AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ [
++   {
++     effectProtocol: 2,
++     intent: {
++       context: {
++         epoch: '300',
++         lifetime: '100',
++         output: '1',
++         revision: '101'
++       },
++       generation: '1',
++       incarnation: '10',
++       operation: 'maximize',
++       request: '1'
++     },
++     status: 'Unknown'
++   }
++ ]
+- []
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/replay-1791101758989887760/inputs/qa/geometry.cjs:87:217
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/replay-1791101758989887760/inputs/qa/geometry.cjs:11:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/replay-1791101758989887760/inputs/qa/geometry.cjs:87:2

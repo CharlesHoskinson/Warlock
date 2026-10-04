@@ -1,0 +1,226 @@
+#!/usr/bin/env python3
+"""Address-targeted titlebar menus and Snap Assist host."""
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import sys
+
+sys.path.insert(0, str(Path.home() / '.local/share/hypr-window-controls'))
+from window_state import scope_settings, switcher_candidates
+
+HOME = Path.home()
+CONFIG = os.environ.get('HYPR_SWITCHER_CONFIG', str(HOME / '.local/share/hypr-window-controls'))
+BIN = HOME / '.local/bin'
+
+def ctl(*args):
+    return subprocess.check_output(['hyprctl', *args], text=True)
+
+def run(*args):
+    return subprocess.run([str(a) for a in args], check=True, stdout=subprocess.DEVNULL)
+
+def restore_candidate(candidate):
+    address = candidate.get('address','')
+    if re.fullmatch(r'0x[0-9a-fA-F]+',address):
+        run(BIN/'hypr-windowctl','restore',address,candidate.get('stableId',''),
+            candidate.get('pid') if type(candidate.get('pid')) is int else '')
+
+
+def switcher_ipc(method, *args):
+    result = subprocess.run(['qs', '-p', CONFIG, 'ipc', 'call', 'controls', method,
+                             *[str(arg) for arg in args]], capture_output=True,
+                            text=True, check=True, timeout=3)
+    return json.loads(result.stdout)
+
+
+def switcher_prepare():
+    active = json.loads(subprocess.check_output(['hyprctl', 'activewindow', '-j'], text=True, timeout=3))
+    windows = json.loads(subprocess.check_output(['hyprctl', 'clients', '-j'], text=True, timeout=3))
+    address = active.get('address', '')
+    window = next((value for value in windows if value.get('address') == address), None)
+    if window is None:
+        raise ValueError('No current switcher origin')
+    candidates = switcher_candidates(windows, window.get('workspace', {}).get('name'),
+        scope_settings(HOME / '.config/omarchy/taskbar-settings.json').get('switcherScope', 'current'))
+    if not candidates:
+        raise ValueError('No switcher candidates')
+    monitors = json.loads(subprocess.check_output(['hyprctl', 'monitors', '-j'], text=True, timeout=3))
+    monitor = next((value for value in monitors if value['id'] == window['monitor']), None)
+    if monitor is None:
+        raise ValueError('Switcher origin monitor disappeared')
+    return dict(mode='switcher', address=address, candidates=candidates, screen=monitor['name'],
+                x=(monitor['width'] / monitor['scale'] - 360) // 2,
+                y=(monitor['height'] / monitor['scale'] - 350) // 2)
+
+
+def switcher_protocol(mode, args):
+    if mode == 'switcher-barrier':
+        if len(args) != 2 or args[0] != os.environ.get('HYPRLAND_INSTANCE_SIGNATURE'):
+            raise ValueError('Barrier must name this selected compositor session')
+        switcher_ipc('switchBarrier', args[0], int(args[1]))
+        return
+    if mode == 'switcher-restore-guarded':
+        if len(args) != 3:
+            raise ValueError('Expected epoch, generation and token')
+        candidate = switcher_ipc('claimSwitchRestore', args[0], int(args[1]), args[2])
+        if not isinstance(candidate, dict):
+            return
+        # The shell's one-use token guards dispatch; the native helper still
+        # guards address reuse with stableId and PID at the effect boundary.
+        if not re.fullmatch(r'0x[0-9a-fA-F]+', str(candidate.get('address', ''))) or type(candidate.get('pid')) is not int or candidate['pid'] <= 0 or not str(candidate.get('stableId', '')):
+            raise ValueError('Switcher restore lacks stable candidate identity')
+        restore_candidate(candidate)
+        return
+    expected = 4 if mode == 'switcher-step' else 3
+    if len(args) != expected or args[0] != os.environ.get('HYPRLAND_INSTANCE_SIGNATURE'):
+        raise ValueError('Switch request must name this selected compositor session')
+    session, generation, ordinal = args[0], int(args[1]), int(args[2])
+    if mode == 'switcher-release':
+        switcher_ipc('switchRelease', session, generation, ordinal)
+        return
+    lease = switcher_ipc('switchStep', session, generation, ordinal, int(args[3]))
+    if not lease.get('accepted') or not lease.get('builder'):
+        return
+    try:
+        payload = switcher_prepare()
+        switcher_ipc('switchReady', lease['epoch'], generation, lease['token'], json.dumps(payload))
+    except (ValueError, KeyError, OSError, subprocess.SubprocessError):
+        switcher_ipc('cancelSwitch', generation, lease['token'])
+        raise
+
+def main():
+    mode = sys.argv[1] if len(sys.argv) > 1 else 'layouts'
+    if mode in ('switcher-step', 'switcher-release', 'switcher-restore-guarded', 'switcher-barrier'):
+        switcher_protocol(mode, sys.argv[2:])
+        return
+    if mode in ('switcher', 'switcher-commit'):
+        raise ValueError('Switcher requires the staged generation-bound Lua bindings and a running controls shell')
+    if mode == 'switcher-restore':
+        restore_candidate(json.loads(sys.argv[2]))
+        return
+    if mode == 'hide':
+        subprocess.run(['qs', '-p', CONFIG, 'ipc', 'call', 'controls', 'hide'], stdout=subprocess.DEVNULL)
+        return
+    if mode in ('switcher', 'switcher-commit'):
+        result = subprocess.run(['qs', '-p', CONFIG, 'ipc', 'call', 'controls', 'state'], capture_output=True, text=True)
+        try:
+            menu = json.loads(result.stdout)
+        except ValueError:
+            menu = {}
+        current = menu.get('request', {})
+        if mode == 'switcher-commit':
+            if menu.get('opened') and current.get('mode') == 'switcher':
+                selected = menu.get('selected', 0)
+                candidates = current.get('candidates', [])
+                subprocess.run(['qs', '-p', CONFIG, 'ipc', 'call', 'controls', 'hide'], stdout=subprocess.DEVNULL)
+                if candidates and 0 <= selected < len(candidates):
+                    restore_candidate(candidates[selected])
+            return
+        if menu.get('opened') and current.get('mode') == 'switcher':
+            step = -1 if len(sys.argv) > 2 and sys.argv[2] == '-1' else 1
+            run('qs', '-p', CONFIG, 'ipc', 'call', 'controls', 'cycle', str(step))
+            return
+        address = json.loads(ctl('activewindow', '-j')).get('address', '')
+    else:
+        address = sys.argv[2] if len(sys.argv) > 2 else json.loads(ctl('activewindow', '-j')).get('address', '')
+    if not re.fullmatch(r'0x[0-9a-fA-F]+', address):
+        return
+    windows = json.loads(ctl('clients', '-j'))
+    w = next((w for w in windows if w['address'] == address), None)
+    if not w:
+        return
+    if mode == 'snapbar-release':
+        cursor = json.loads(ctl('cursorpos', '-j'))
+        monitors = json.loads(ctl('monitors', '-j'))
+        m = next((m for m in monitors if m['id'] == w['monitor']), monitors[0])
+        result = subprocess.run(['qs', '-p', CONFIG, 'ipc', 'call', 'controls', 'pick', str(int(cursor['x'] - m['x'])), str(int(cursor['y'] - m['y']))], capture_output=True, text=True)
+        zone = result.stdout.strip()
+        subprocess.run(['qs', '-p', CONFIG, 'ipc', 'call', 'controls', 'hide'], stdout=subprocess.DEVNULL)
+        if zone in ('left','right','top_left','top_right','bottom_left','bottom_right','third_left','third_center','third_right','two_thirds_left','two_thirds_right'):
+            ctl('eval', f'hypr_snap_zone("{zone}","{address}")')
+        else:
+            mx,my = m['x'],m['y']
+            mw,mh = m['width']/m['scale'],m['height']/m['scale']
+            edge = 'left' if cursor['x'] <= mx+6 else 'right' if cursor['x'] >= mx+mw-6 else ''
+            if edge:
+                zone = ('top_' if cursor['y'] <= my+80 else 'bottom_' if cursor['y'] >= my+mh-80 else '') + edge
+            elif cursor['y'] <= my+6:
+                zone = 'maximize'
+            if zone:
+                ctl('eval', f'hypr_snap_zone("{zone}","{address}")')
+            else:
+                ctl('eval', f'hypr_snap_discard_release("{address}")')
+        return
+    if mode == 'act':
+        action = sys.argv[3]
+        expected_id = sys.argv[4] if len(sys.argv) > 4 else ''
+        expected_pid = sys.argv[5] if len(sys.argv) > 5 else ''
+        if expected_id and str(w.get('stableId', '')) != expected_id:
+            return
+        if expected_pid and str(w.get('pid', '')) != expected_pid:
+            return
+        if action in ('minimize', 'restore'):
+            if action == 'restore' and w.get('workspace', {}).get('name') != 'special:win-minimized':
+                ctl('eval', f'hypr_snap_restore("{address}")')
+            else:
+                run(BIN / 'hypr-windowctl', action, address)
+        elif action == 'maximize':
+            ctl('dispatch', f'hl.dsp.window.fullscreen({{mode="maximized",action="toggle",window="address:{address}"}})')
+            run(BIN / 'hypr-snap-groups', 'unsnap', address)
+        elif action == 'pin':
+            run(BIN / 'hypr-pin-toggle', address)
+        elif action == 'close':
+            ctl('dispatch', f'hl.dsp.window.close({{window="address:{address}"}})')
+        elif action == 'motion':
+            run(BIN / 'hypr-reduced-motion', 'toggle')
+        elif action == 'layouts':
+            run(BIN / 'hypr-window-menu', 'layouts', address)
+        elif action in ('move', 'resize'):
+            ctl('dispatch', f'hl.dsp.focus({{window="address:{address}"}})')
+            ctl('dispatch', f'hl.dsp.window.{"drag" if action == "move" else "resize"}({{}})')
+        elif action.startswith('zone:') and action[5:] in ('left', 'right', 'top_left', 'top_right', 'bottom_left', 'bottom_right', 'maximize', 'third_left', 'third_center', 'third_right', 'two_thirds_left', 'two_thirds_right'):
+            ctl('eval', f'hypr_snap_zone("{action[5:]}", "{address}")')
+        elif action.startswith('assist:'):
+            _, candidate, zone = action.split(':')
+            run(BIN / 'hypr-snap-groups', 'select', address, candidate, zone)
+        return
+    monitors = json.loads(ctl('monitors', '-j'))
+    m = next((m for m in monitors if m['id'] == w['monitor']), monitors[0])
+    cursor = json.loads(ctl('cursorpos', '-j'))
+    params = {'mode': mode, 'address': address, 'stableId': w.get('stableId', ''), 'pid': w.get('pid'),
+              'title': w.get('title', ''), 'screen': m['name'],
+              'monitorX': m['x'], 'monitorY': m['y'],
+              'x': max(12, cursor['x'] - m['x']), 'y': max(12, cursor['y'] - m['y'] + 12),
+              'pinned': w.get('pinned', False), 'maximized': bool(w.get('fullscreen')),
+              'extendedLayouts': m['width'] / m['scale'] >= 1280,
+              'reducedMotion': (HOME / '.config/hypr/reduced-motion').exists() and (HOME / '.config/hypr/reduced-motion').read_text().strip() == '1'}
+    if mode == 'assist':
+        zone = sys.argv[3] if len(sys.argv) > 3 else ''
+        data = json.loads(subprocess.check_output([str(BIN / 'hypr-snap-groups'), 'assist-data', address, zone], text=True))
+        if not data['candidates'] or not data['zones']:
+            return
+        params.update(data)
+        params['x'] = (m['width'] / m['scale'] - 360) // 2
+        params['y'] = (m['height'] / m['scale'] - 280) // 2
+    elif mode == 'snapbar':
+        params['x'] = (m['width'] / m['scale'] - 330) // 2
+        params['y'] = 40
+    elif mode == 'switcher':
+        workspace = w.get('workspace', {}).get('name')
+        candidates = switcher_candidates(windows, workspace,
+            scope_settings(HOME / '.config/omarchy/taskbar-settings.json').get('switcherScope', 'current'))
+        if not candidates:
+            return
+        params['candidates'] = candidates
+        params['x'] = (m['width'] / m['scale'] - 360) // 2
+        params['y'] = (m['height'] / m['scale'] - 350) // 2
+        params['reverse'] = len(sys.argv) > 2 and sys.argv[2] == '-1'
+    payload = json.dumps(params)
+    result = subprocess.run(['qs', '-p', CONFIG, 'ipc', 'call', 'controls', 'open', payload], capture_output=True)
+    if result.returncode:
+        env = {**os.environ, 'HYPR_WINDOW_MENU': payload}
+        subprocess.run(['qs', '-p', CONFIG, '-d', '-n'], env=env, check=True, stdout=subprocess.DEVNULL)
+
+if __name__ == '__main__':
+    main()

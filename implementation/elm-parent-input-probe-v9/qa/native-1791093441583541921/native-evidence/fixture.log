@@ -1,0 +1,20 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v9/fixture.py:11: PyGIWarning: Gdk was imported without specifying a version first. Use gi.require_version('Gdk', '4.0') before import to ensure that the right version gets loaded.
+  from gi.repository import Gdk, GLib, Gtk
+Traceback (most recent call last):
+  File "/usr/lib/python3.14/site-packages/gi/importer.py", line 137, in create_module
+    introspection_module = get_introspection_module(namespace)
+  File "/usr/lib/python3.14/site-packages/gi/module.py", line 247, in get_introspection_module
+    module = IntrospectionModule(namespace, version)
+  File "/usr/lib/python3.14/site-packages/gi/module.py", line 107, in __init__
+    repository.require(namespace, version)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+gi.RepositoryError: Requiring namespace 'Gdk' version '3.0', but '4.0' is already loaded
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v9/fixture.py", line 11, in <module>
+    from gi.repository import Gdk, GLib, Gtk
+  File "/usr/lib/python3.14/site-packages/gi/importer.py", line 139, in create_module
+    raise ImportError(e) from e
+ImportError: Requiring namespace 'Gdk' version '3.0', but '4.0' is already loaded

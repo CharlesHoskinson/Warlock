@@ -1,0 +1,187 @@
+{
+  "result": "pass",
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-1c3bcaf3bfe64ac38c686c92f1d19378.scope",
+    "coreLimit": 1
+  },
+  "commands": [
+    {
+      "label": "snapshot decoder",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/node/latest/bin/node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/tests/test_snapshot_stream.js"
+      ],
+      "exitCode": 0,
+      "stdout": "Snapshot stream: 21 acceptance, epoch, ordering, bound and malformed-shape checks passed\n",
+      "stderr": ""
+    },
+    {
+      "label": "five actual named stream scenarios",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/stream_test.qnt",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "\n  stream_test\n    ok increasingTest passed 1 test(s)\n    ok duplicateTest passed 1 test(s)\n    ok foreignEpochTest passed 1 test(s)\n    ok stoppedTest passed 1 test(s)\n    ok restartTest passed 1 test(s)\n\n  5 passing (62ms)\n",
+      "stderr": ""
+    },
+    {
+      "label": "2000 invariant traces",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/stream.qnt",
+        "--invariant",
+        "allProps",
+        "--max-samples",
+        "2000",
+        "--max-steps",
+        "100",
+        "--seed",
+        "20261003",
+        "--verbosity",
+        "1"
+      ],
+      "exitCode": 0,
+      "stdout": "[ok] No violation found (706ms at 2833 traces/second).\nUse --seed=0x1383567 --backend=rust to reproduce.\n",
+      "stderr": ""
+    },
+    {
+      "label": "service lint",
+      "command": [
+        "/usr/lib/qt6/bin/qmllint",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/widget_v67/Service.qml"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "Warning: /home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/widget_v67/Service.qml:71:5: Type QProcess::ExitStatus of parameter exitStatus in signal called exited was not found, but is required to compile onExited. Did you add all imports and dependencies? [signal-handler-parameters]\n    onExited: function(code) {\n    ^^^^^^^^\n"
+    },
+    {
+      "label": "Windows.qml parse",
+      "command": [
+        "/usr/lib/qt6/bin/qmlformat",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/widget_v67/Windows.qml"
+      ],
+      "exitCode": 0,
+      "stdout": "Parsed complete source; formatted output omitted (67774 chars)",
+      "stderr": ""
+    },
+    {
+      "label": "WindowMotion.qml parse",
+      "command": [
+        "/usr/lib/qt6/bin/qmlformat",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/widget_v67/WindowMotion.qml"
+      ],
+      "exitCode": 0,
+      "stdout": "Parsed complete source; formatted output omitted (12995 chars)",
+      "stderr": ""
+    },
+    {
+      "label": "TaskbarPopup.qml parse",
+      "command": [
+        "/usr/lib/qt6/bin/qmlformat",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/widget_v67/TaskbarPopup.qml"
+      ],
+      "exitCode": 0,
+      "stdout": "Parsed complete source; formatted output omitted (6838 chars)",
+      "stderr": ""
+    },
+    {
+      "label": "actual Qt service",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/tests/run_qt_probe.py"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"result\": \"pass\", \"report\": \"/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/tests/qt-service-report.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "actual Qt failed-start retry",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/tests/run_qt_probe.py",
+        "--failed-start"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"result\": \"pass\", \"report\": \"/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/tests/qt-failed-start-report.json\"}\n",
+      "stderr": ""
+    },
+    {
+      "label": "actual Qt service-discovery-probe.qml",
+      "command": [
+        "/usr/bin/quickshell",
+        "--no-color",
+        "-p",
+        "/tmp/taskbar-qt-state-rxq412b9"
+      ],
+      "exitCode": 0,
+      "stdout": "  INFO: Launching config: \"/tmp/taskbar-qt-state-rxq412b9/shell.qml\"\n  INFO: Shell ID: \"af0dcd88f7876d13504d99c8ec664bf0\" Path ID \"af0dcd88f7876d13504d99c8ec664bf0\"\n  INFO: Saving logs to \"/run/user/1000/wqa/c215/quickshell/by-id/eyh3e93cmt/log.qslog\"\n  INFO: Configuration Loaded\n DEBUG qml: TASKBAR_DISCOVERY_PROBE {\"passed\":true,\"changes\":4}\n",
+      "stderr": ""
+    },
+    {
+      "label": "actual Qt service-probe.qml",
+      "command": [
+        "/usr/bin/quickshell",
+        "--no-color",
+        "-p",
+        "/tmp/taskbar-qt-state-kf5iryeq"
+      ],
+      "exitCode": 0,
+      "stdout": "  INFO: Launching config: \"/tmp/taskbar-qt-state-kf5iryeq/shell.qml\"\n  INFO: Shell ID: \"69fc3c9fe849badd54949bee0d76abf7\" Path ID \"69fc3c9fe849badd54949bee0d76abf7\"\n  INFO: Saving logs to \"/run/user/1000/wqa/0de0/quickshell/by-id/iyh3e93cmt/log.qslog\"\n  INFO: Configuration Loaded\n DEBUG qml: TASKBAR_SERVICE_PROBE {\"passed\":true,\"accepted\":3,\"rejected\":2,\"exitReset\":true,\"refresh\":true}\n",
+      "stderr": ""
+    },
+    {
+      "label": "independent watch review",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/taskbar-v2/tests/review/test_watch_review.py"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": "test_desktop_moved_out_marks_dirty (__main__.RenameReviewTests.test_desktop_moved_out_marks_dirty) ... ok\ntest_exact_file_moved_out_marks_dirty (__main__.RenameReviewTests.test_exact_file_moved_out_marks_dirty) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n"
+    }
+  ],
+  "sourceHashes": {
+    "hypr-taskbar": "89eefa63d6eb59e53b5e41c89fb97355455f53becd0e96029eac4f4032390eab",
+    "taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "taskbar_watch.py": "0838274ffa6c41069c716298927b915836c2035bdb33c30c29023d914e677a66",
+    "stream.qnt": "28845fa68cf1820425476790acfe9efa032bdfe7a9367198d52dc5d73c662641",
+    "stream_test.qnt": "76e3f7d63e187c877d188908ccf14719f06be379ae13d9f8d6ed98891bda7b69",
+    "install.py": "5094630cf39936afe7fd0615f1b92a00816e2979f7deb517b15593300c94cc8d",
+    "tests/test_taskbar_catalog.py": "acb8bef76aafa5134020045b5aca03185c71e7e0d2a713eda0be91499ec6e6e2",
+    "tests/benchmark_catalog.py": "f40169881c387bc98783ce2152ddc216458fddce1301cdbce9571e781e31b431",
+    "tests/test_taskbar_watch.py": "447de0c8d2a04d78463e0660ed8f03f515c7ea35a07c4497d633032df111644e",
+    "tests/test_snapshot_stream.js": "47c014ddb9b4b62b7eb2568bbded34114f6a9b1c2cf3171504819475d6f58534",
+    "tests/run_existing_backend.py": "6ae5161ff6fba6cb0a977ce5a4ea31ffd47cb8d7edee933af26cc96c03883163",
+    "tests/run_qt_probe.py": "2bd079e6cb4ec3ab026753b4d077699272bdffb92c7821bc2606bf2ec821efbc",
+    "tests/validate_integration.py": "94496322f5491fc7fea1c1f2692f5c144551c3ad9efdca2ec0ecfcbe182fb9b6",
+    "tests/native_observer_smoke.py": "82f62d57238d47954b0bb89ff5371b53ec62228f1e2a4f4cc542a5944117b366",
+    "widget_v66/Windows.qml": "811cc7703d8a61c67216ddd0a4ff16aacc656113ffcbf9a0c1e6dbba0fc7b57d",
+    "widget_v66/WindowMotion.qml": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95",
+    "widget_v66/TaskbarPopup.qml": "f517a32d2d604348e17c9a3c2776cff8b98f389564967482122a4923a2bb5dc7",
+    "widget_v66/SnapshotStream.js": "76370d666614ee8f53f40a8e0f002fec9e0db744ff72def5854d652dd7ecabff",
+    "widget_v66/Service.qml": "777e96287d0cc7cf8d8d2d6462e743d047f814852931e51dbc36eeebc510ba3b",
+    "widget_v67/Windows.qml": "811cc7703d8a61c67216ddd0a4ff16aacc656113ffcbf9a0c1e6dbba0fc7b57d",
+    "widget_v67/WindowMotion.qml": "6812a49f86ff33c30a307a6d424ef2efb0514543339c16b9a915bf60c96f2a95",
+    "widget_v67/TaskbarPopup.qml": "f517a32d2d604348e17c9a3c2776cff8b98f389564967482122a4923a2bb5dc7",
+    "widget_v67/SnapshotStream.js": "76370d666614ee8f53f40a8e0f002fec9e0db744ff72def5854d652dd7ecabff",
+    "widget_v67/Service.qml": "3b27c3766836573b3dfa574a26f2baf79540904d98349c92f2a69dcad34cbdab",
+    "tests/qt-probe/Service.qml": "777e96287d0cc7cf8d8d2d6462e743d047f814852931e51dbc36eeebc510ba3b",
+    "tests/qt-probe/SnapshotStream.js": "76370d666614ee8f53f40a8e0f002fec9e0db744ff72def5854d652dd7ecabff",
+    "tests/review/fake-observer.py": "c9562b9855f7e690ce6c8ef312d6bc9af71c8b6c7d219b7bcd6d48a360925acd",
+    "tests/review/service-probe.qml": "3bbb590c4427d688967fa28c8559418ea2656fd217a44633ae3f4aa2419b3720",
+    "tests/review/test_watch_review.py": "023d9a9778fbafdd2d67f78643ff256095f52b10c4b2998b77155958a059f723",
+    "tests/review/service-discovery-probe.qml": "cd2cd73cd1394cfab95eb368e31dece63333f9fd257772e213436ba60e7bde42"
+  },
+  "sourceStable": true,
+  "error": null,
+  "actualQuickshell": true,
+  "nativeWindowAcceptance": false
+}

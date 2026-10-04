@@ -1,0 +1,26 @@
+-- UNFINISHED CASE ---------------------------------------- src/TaskbarShell.elm
+
+I was partway through parsing a `case` expression, but I got stuck here:
+
+22|                 case D.decodeValue (D.field "kind" D.string) raw of
+23|                     Ok "effect-outcome" ->
+24|                         if NativeOutcome.valid raw then MenuBridge.nativeFrame (E.encode 0 raw) model.menus |> Tuple.first
+25|                         else model.menus
+26|                     Ok "host-disconnected" -> MenuBridge.connectionLost model.menus
+27|                     Shell.UnsentOperations operations ->
+                                                            ^
+I was expecting to see an expression next. What should I do when I run into this
+particular pattern?
+
+Note: Here is an example of a valid `case` expression for reference.
+
+    case maybeWidth of
+      Just width ->
+        width + 200
+
+      Nothing ->
+        400
+
+Notice the indentation. Each pattern is aligned, and each branch is indented a
+bit more than the corresponding pattern. That is important!
+

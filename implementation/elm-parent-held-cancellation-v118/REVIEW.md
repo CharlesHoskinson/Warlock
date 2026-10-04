@@ -1,0 +1,1 @@
+Fresh derivative preserves V117 actual helper CPU proof and failed Quint parse. Annotated action parameters require an explicit bool return annotation; corrected model syntax only. Actual source unchanged. Requalify helper, inherited transport bodies, explicit named model and full export/header-preserving owning library before native held loss.

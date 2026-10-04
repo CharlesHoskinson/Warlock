@@ -1,0 +1,70 @@
+{
+  "schema": "taskbar-watch-implementation-proof-v2",
+  "nativeAcceptance": false,
+  "deployed": false,
+  "priorCandidate": "../taskbar-v1",
+  "reason": "Root live observation found snapshot feedback from unconditional snap helper atomic state rewrites; original deployment was rolled back. Fresh derivative filters only finalized snap state by bounded content and mode. Native helper unchanged.",
+  "origin": {
+    "path": "/home/hoskinson/.local/bin/hypr-taskbar",
+    "sha256": "58215e6cb07b364988a0d5c38e9a4f63d7803e2b7f78481ea3a7104fa55f02e1"
+  },
+  "candidateSources": {
+    "hypr-taskbar": "89eefa63d6eb59e53b5e41c89fb97355455f53becd0e96029eac4f4032390eab",
+    "taskbar_watch.py": "0838274ffa6c41069c716298927b915836c2035bdb33c30c29023d914e677a66",
+    "taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "tests/test_taskbar_watch.py": "447de0c8d2a04d78463e0660ed8f03f515c7ea35a07c4497d633032df111644e",
+    "tests/run_existing_backend.py": "6ae5161ff6fba6cb0a977ce5a4ea31ffd47cb8d7edee933af26cc96c03883163"
+  },
+  "watchProof": {
+    "result": "pass",
+    "checks": 33,
+    "seconds": 7.214,
+    "scope": "qa-harness-ad822467d9274b85876acc29ba2a6e5f.scope",
+    "invocation": "e2b7315e275f4b3ead3744f290d6e465",
+    "tests": [
+      "ObserveTests.test_initial_and_idle_do_not_query_continuously",
+      "ObserveTests.test_burst_coalesces_and_fragmented_event_waits_for_newline",
+      "ObserveTests.test_stdin_refresh_coalesces_and_eof_exits",
+      "ObserveTests.test_invalid_control_terminates_and_closes_peer",
+      "ObserveTests.test_local_files_are_timely_and_session_order_is_ignored",
+      "ObserveTests.test_production_snap_list_selfrewrite_does_not_trigger_refresh_loop",
+      "ObserveTests.test_external_snap_change_during_snapshot_is_not_swallowed",
+      "ObserveTests.test_content_equal_snap_mode_change_is_still_dirty",
+      "ObserveTests.test_temporary_snap_writes_and_lock_files_are_ignored",
+      "ObserveTests.test_directory_created_after_start_is_discovered",
+      "ObserveTests.test_replaced_directory_gets_new_watch",
+      "ObserveTests.test_moved_out_exact_file_and_catalog_entry_are_dirty",
+      "ObserveTests.test_file_permission_changes_are_dirty",
+      "ObserveTests.test_reconciliation_refreshes_missing_event_fields",
+      "ObserveTests.test_disconnect_preserves_epoch_without_stale_output",
+      "ObserveTests.test_socket_replacement_reconnects_selected_path",
+      "ObserveTests.test_snapshot_rejects_lifetime_replacement_during_query",
+      "ObserveTests.test_snapshot_failure_emits_no_partial_json",
+      "ObserveTests.test_snapshot_output_bound_emits_no_partial_json",
+      "ObserveTests.test_snapshot_nonfinite_json_is_rejected",
+      "ObserveTests.test_shutdown_closes_event_subscription",
+      "BoundsTests.test_production_paths_watch_finalized_snap_state_only",
+      "BoundsTests.test_oversize_and_invalid_json_use_inode_metadata",
+      "BoundsTests.test_unreadable_content_falls_back_without_hiding_metadata_changes",
+      "BoundsTests.test_control_bound_and_unknown_commands",
+      "BoundsTests.test_control_fragmentation",
+      "BoundsTests.test_signature_cannot_escape_selected_runtime",
+      "BoundsTests.test_endpoint_rejects_regular_file_and_symlink",
+      "BoundsTests.test_event_buffer_bound",
+      "BoundsTests.test_new_peer_lifetime_is_not_adopted",
+      "BoundsTests.test_missing_endpoint_has_bounded_retry",
+      "LegacyCliTests.test_sigterm_during_readonly_query_reaps_child_and_exits",
+      "LegacyCliTests.test_one_shot_snapshot_keeps_legacy_shape_and_fresh_queries"
+    ]
+  },
+  "unchangedInstalledBackendProof": {
+    "result": "pass",
+    "checks": 15,
+    "seconds": 0.105,
+    "scope": "qa-harness-e8a7502520d34a7299a73092c05b70bf.scope",
+    "invocation": "57cb16fa458248738bc4b030bcbd3051",
+    "suitePath": "/home/hoskinson/.local/share/hypr-taskbar/test_backend.py",
+    "suiteSHA256": "10565a647483f1fe81de69991d4568f742a087a7bf69d7dac88587ef5328bd7a",
+    "modifications": "Only backend import redirected by runner; suite unchanged. Isolated XDG_CACHE_HOME."
+  }
+}

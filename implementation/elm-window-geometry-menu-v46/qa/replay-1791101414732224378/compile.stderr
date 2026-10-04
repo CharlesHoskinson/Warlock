@@ -1,0 +1,16 @@
+-- SHADOWING ---------------------------------------- src/GeometryProjection.elm
+
+The name `decoder` is first defined here:
+
+80| decoder caps = strict ["protocolVersion","kind","geometryProtocol","binding","requestId","sequence","revision","outputGeneration","facts"]
+    ^^^^^^^
+But then it is defined AGAIN over here:
+
+21| exact name decoder value = D.field name decoder |> D.andThen (\x -> if x==value then D.succeed () else D.fail "Geometry version")
+               ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

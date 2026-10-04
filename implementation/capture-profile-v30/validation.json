@@ -1,0 +1,20 @@
+{
+  "tests": 7,
+  "result": "passed",
+  "launcher": "/home/hoskinson/window-integration-qa/qa_run.py",
+  "observer_test_scope": "bounded sink, permissions, exception propagation, disabled tracing, lock release, label distinction, source hash preservation",
+  "qml_lint": "passed without warnings using Qt6 qmllint and installed Quickshell type metadata",
+  "native_capture_validation": "not run; root serial private GUI campaign required",
+  "deadlines_changed": false,
+  "unsupported_phases": [
+    "individual PNG encoding",
+    "individual PNG decoding",
+    "GPU upload duration",
+    "independent physical presentation"
+  ],
+  "observed_receipts": [
+    "seeded",
+    "uploaded",
+    "presented (renderer report only)"
+  ]
+}

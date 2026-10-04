@@ -1,0 +1,40 @@
+{
+  "status": "CPU accepted; live validation owned by root",
+  "scope": "finalized preview invalidation only; taskbar-v2 unchanged",
+  "preserved_v2_watcher_sha256": "0838274ffa6c41069c716298927b915836c2035bdb33c30c29023d914e677a66",
+  "previous_deployed_v2_helper_sha256": "89eefa63d6eb59e53b5e41c89fb97355455f53becd0e96029eac4f4032390eab",
+  "candidate_v3_helper_sha256": "89eefa63d6eb59e53b5e41c89fb97355455f53becd0e96029eac4f4032390eab",
+  "original_installed_suite_sha256": "10565a647483f1fe81de69991d4568f742a087a7bf69d7dac88587ef5328bd7a",
+  "runs": [
+    {
+      "invocation": "45c9ef5b62934e1094416112c82cb1d1",
+      "tests": 68,
+      "contents": "33 inherited watcher +24 catalog +11 initial preview cases",
+      "result": "passed"
+    },
+    {
+      "invocation": "36c4841d75914e8284b2f85c17f54772",
+      "tests": 12,
+      "contents": "11 preview cases rerun +1 new finalized-publication-during-snapshot case",
+      "result": "passed"
+    },
+    {
+      "invocation": "c59c790406294effa7f5f93d1d04ab88",
+      "tests": 15,
+      "contents": "byte-unchanged installed backend suite, candidate import only redirected",
+      "result": "passed"
+    }
+  ],
+  "distinct_observer_catalog_preview_tests": 69,
+  "behavior": "Suppress nonfinal root preview files, preserve final pixel rewrites regardless of previewReady and preserve final publications/delete/attributes, directory replacement/creation, overflow, unrelated changes and concurrent finalized publication during snapshot",
+  "sources": {
+    "taskbar_watch.py": "8d3130921532aa89d615a4925c23d48e170c4139a54954600b3a376fae6d9908",
+    "taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "hypr-taskbar": "89eefa63d6eb59e53b5e41c89fb97355455f53becd0e96029eac4f4032390eab",
+    "tests/test_preview_publications.py": "c8cbaa7de73cf1b7fffa61fa5aed81118464bd078f1cb541859c88ee49a7a433",
+    "tests/test_taskbar_watch.py": "447de0c8d2a04d78463e0660ed8f03f515c7ea35a07c4497d633032df111644e",
+    "tests/test_taskbar_catalog.py": "acb8bef76aafa5134020045b5aca03185c71e7e0d2a713eda0be91499ec6e6e2",
+    "tests/run_existing_backend.py": "6ae5161ff6fba6cb0a977ce5a4ea31ffd47cb8d7edee933af26cc96c03883163"
+  },
+  "limitations": "No native GUI acceptance or deployed query-rate claim; generic nonpreview trees remain unchanged; source taskbar-v2 never edited."
+}

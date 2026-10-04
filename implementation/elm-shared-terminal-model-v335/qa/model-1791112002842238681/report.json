@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "Abstract exact release qualification for terminal popup navigation, repeated Escape, no synthetic release, repeat/deadline/retirement refusal. Valid scope represents full engine/view/generation/publication/lease/epoch; deadline is abstract, not native timing evidence.",
+  "sourceSHA256": "c44f75f9605e5e0e68420de43cc1e34a08e6065813a9cd7285e6912118bf6d5e",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(pressNeverClosesTest|releaseOnceTest|secondEscapeTest|forgedReleaseTest|retirementKeepsHeldTest|scopeChangeRefusesTest|deadlineNeverRenewedTest|repeatNeverClosesTest|replayPreservesOriginalTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 9,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "c44f75f9605e5e0e68420de43cc1e34a08e6065813a9cd7285e6912118bf6d5e",
+    "model.py": "c6a159a1c15bcd5fde28be7cabb7f7a8d3bf2892ae32d5591398e7543d1fb5d9",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-pressNeverClosesTest-0.itf.json": "ce63f25354abb4a163986f436e61185644cfa39309ddc4ba1c4d11e58dc503c7",
+    "named-releaseOnceTest-1.itf.json": "604a7dd365d5a3fef224a5cd5924c9356584c1163c5c882ad7ab0048a484b6c3",
+    "named-secondEscapeTest-2.itf.json": "928f3c06cc494194c3c9e7c9fbfab8cb5e5312657353ec65197a183663b0536c",
+    "named-forgedReleaseTest-3.itf.json": "3fd9bbb5c171bb27cd71386fef13570d2f67c06acebaaf307ea760178e2bbcc3",
+    "named-retirementKeepsHeldTest-4.itf.json": "3eed9c032cce7d9c95b2c6fa63faa0e872348d75932774383e56889ff9dafe4a",
+    "named-scopeChangeRefusesTest-5.itf.json": "c5869fd665c10a33a31f5330835eb9f4e708efd20b53e36d9eb14172429d156e",
+    "named-deadlineNeverRenewedTest-6.itf.json": "197147e2afead060fa7f9506cb55c9942d4cff0c2a8b244175c16a266248444a",
+    "named-repeatNeverClosesTest-7.itf.json": "0ecf702c96d43334ec194a126872ffad802872dfedbe83cb4d69e28d80630712",
+    "named-replayPreservesOriginalTest-8.itf.json": "cf0d40da3f155b42833f7a50978b7319c36d9992a7864fa8262cd9f7755d4554",
+    "named.stdout": "8d5b697d51140f299b332d76bb9ff029937db79daaf6958998e4aa98e710094d",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "e1078d18ae7389bf6116aeda7ae2ba94141948ac0a3c136482873b8ddbad0ec6",
+    "invariants.stdout": "e0699bcdb70f1ddccb16074ddf9e39e9d84df4d142b7f7437341d431064818cf",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

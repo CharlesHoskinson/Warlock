@@ -1,0 +1,15 @@
+# Installed taskbar efficiency update
+
+Activated on 2026-10-03 through the protected QA launcher. Runtime helper: `~/.local/bin/hypr-taskbar` → `~/.local/share/hypr-taskbar-v3/hypr-taskbar`. Omarchy plugin manifest now uses fresh `widget_v68` entries and one shell service, version 1.1.1. Original widget_v65 and verified helper/manifest backups remain available.
+
+The application catalog has private atomic caching with desktop-file precedence, actions, masking, recursive update/install/remove invalidation and unreadable/mutating-source refusal preserved. One compositor event subscription feeds every taskbar instance, coalesces bursts, observes settings/catalog/preview changes and periodically reconciles. The widget's 900 ms snapshot timer is removed. Queries remain fresh short-lived requests; the observer holds only the event socket. Epoch/sequence validation, failed-start retry, bounded messages and normal control-pipe shutdown are tested in actual offscreen Quickshell.
+
+Actions, capture timers and native motion authority retain their original implementations. This is an observation/presentation update, not completed Windows parity or acknowledged-command consolidation.
+
+Validation: 24 catalog tests, 45 watcher/preview tests, 15 unchanged backend tests, 21 stream decoder checks, five named Quint scenarios and 2,000 invariant traces. Actual Qt probes include shared consumers, service replacement, process restart, refresh and failed-start recovery. `tests/integration-report.json` freezes the checked source hashes. `tests/native-observer-report.json` records an 18-second read-only selected-main-compositor check: 19 ordered snapshots, normal shutdown and unchanged client identities/geometry. Periodic previews remain active, so a quiet desktop is not expected to produce only the initial snapshot. The synthetic 1,000-entry catalog fixture reduced median load from 121.96 ms to 26.32 ms with zero warm parser calls; this is not an end-to-end production latency claim.
+
+The first v1 live attempt exposed snapshot-generated Snap Groups atomic rewrites triggering its own observer. It was rolled back immediately. All v1 code/failure/deployment evidence is preserved in `../taskbar-v1`. v2 watches only finalized state and suppresses equal content/mode/owner rewrites, retaining actual changes and concurrent events; regression tests include the exact provider rewrite pattern.
+
+Rollback (protected QA launcher): run `install.py rollback`. Backup path and installed hashes are in `deployment.json`; rollback refuses to overwrite a subsequently changed manifest. Do not edit installed runtime files in place; create a new derivative and new QML entry directory.
+
+Post-installation `tests/live-service-report.json` passed: one shell-owned observer, stable epoch, monotonic snapshots, no rejected records/errors and all installed hashes verified. Cross-output externally rewritten pixel redisplay remains unverified; the prior widget image revision mechanism is preserved.

@@ -1,0 +1,918 @@
+{
+  "passed": true,
+  "scope": "CPU source/evidence integrity only; no native acceptance",
+  "checks": [
+    {
+      "name": "45 actual wrapper checks passed",
+      "passed": true
+    },
+    {
+      "name": "current tested source qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "current tested source qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "retained evidence release.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained evidence release.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained evidence timeout.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained evidence timeout.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained evidence malformed.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained evidence malformed.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained evidence eof.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained evidence eof.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained evidence locked.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained evidence locked.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-1/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-8/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-9/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-13/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-14/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-14/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-15/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-15/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-16/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-16/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-17/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-17/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-18/gate.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence control-18/held.json",
+      "passed": true
+    },
+    {
+      "name": "retained evidence inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "retained evidence inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "owned CPU child terminal release",
+      "passed": true
+    },
+    {
+      "name": "owned CPU child terminal timeout",
+      "passed": true
+    },
+    {
+      "name": "owned CPU child terminal malformed",
+      "passed": true
+    },
+    {
+      "name": "owned CPU child terminal eof",
+      "passed": true
+    },
+    {
+      "name": "owned CPU child terminal locked",
+      "passed": true
+    },
+    {
+      "name": "exact frozen V59 manifest",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/Main-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/Main-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/Popup-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/Popup-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/adapter-syntax.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/adapter-syntax.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/context-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/context-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/context-syntax.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/context-syntax.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/context-tests",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/context-tests.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/context-tests.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/elm-host",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-carrier-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-carrier-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-carrier-tests",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-carrier-tests.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-carrier-tests.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-checks.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/geometry-checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/host-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/host-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/host-self-test.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/host-self-test.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/host.d",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/catalog_authority.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/catalog_transport.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/daemon.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/geometry_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/taskbar_catalog.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/adapter/taskbar_projection.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/adapter.js",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/context.js",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/elm.js",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/index.html",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/popup-adapter.js",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/popup.html",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/popup.js",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/assets/shell.css",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Main.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Main.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/d.dat",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/i.dat",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/lock",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm-stuff/0.19.2/o.dat",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/lineage/broker-held.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/lineage/elm-held.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/lineage/host-held.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/context-events.h",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/context-keys-test.c",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/context-keys.h",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/context-state.h",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/geometry-carrier-test.c",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/host.c",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/surface-test.c",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/native/surface.h",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/qa/build.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/qa/fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/qa/geometry-fixtures.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/qa/geometry.cjs",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/qa/menu.cjs",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/qa/native-contract.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/qa/refresh.cjs",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/menu-checks.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/menu-checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/menu-checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/pkg-config.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/pkg-config.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/popup-adapter-syntax.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/popup-adapter-syntax.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/refresh-checks.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/refresh-checks.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/refresh-checks.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/replay-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/replay-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/replay.js",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/report.json",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/surface-compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/surface-compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/surface-tests",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/surface-tests.stderr",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build-1791103452303629948/surface-tests.stdout",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/build.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "V59 frozen file qa/native-contract.json",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/catalog_authority.py",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/catalog_transport.py",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/daemon.py",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/geometry_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/taskbar_catalog.py",
+      "passed": true
+    },
+    {
+      "name": "imported captured backend inputs/adapter/taskbar_projection.py",
+      "passed": true
+    }
+  ],
+  "selectedReport": {
+    "path": "qa/hold-1791104684942757105/report.json",
+    "sha256": "f851bc87b539c7932896ca5490dd11bf52300987033cc67e018c79215b955ac5"
+  }
+}

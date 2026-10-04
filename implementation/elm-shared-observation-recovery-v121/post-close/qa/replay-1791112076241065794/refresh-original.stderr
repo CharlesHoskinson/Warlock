@@ -1,0 +1,42 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+notifications during Pending defer without observation or effect allocation AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'5' !== '3'
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:41:155
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:10:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:41:2
+receipt drains queued notification with fresh observations not replayed effect AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ []
+- [
+-   [
+-     'projection-request',
+-     '4'
+-   ],
+-   [
+-     'geometry-facts-request',
+-     '5'
+-   ]
+- ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:43:121
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:10:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:43:2
+Unknown receipt also refreshes while retaining native barrier AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 2
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:44:136
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:10:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/post-close/qa/replay-1791112076241065794/inputs/qa/original/refresh.cjs:44:2

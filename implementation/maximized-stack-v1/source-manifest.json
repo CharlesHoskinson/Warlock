@@ -1,0 +1,33 @@
+{
+  "owning_core": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "original_repo": "/home/hoskinson/src/hyprland-motion-audit",
+  "files": [
+    {
+      "path": "src/render/Renderer.cpp",
+      "sha256": "9af8a74e7dc42ba3c5532303b9bb4ee7c350d4cef2f2c8984e41f2a01b3bdd22"
+    },
+    {
+      "path": "src/desktop/state/ViewHitTester.cpp",
+      "sha256": "1bcc02a03db80b0519e516b41b3e0d0e70df08d6aa50b006b6a4362854524a09"
+    },
+    {
+      "path": "src/desktop/state/WindowState.cpp",
+      "sha256": "2e06622b84e9063d91e39a85c643ab5dfaa56a8574f41b2df480009be42aa477"
+    },
+    {
+      "path": "src/desktop/view/Window.cpp",
+      "sha256": "d735d454cc4b7983f19626514d310669047da46780c509ffae68ccf072211ded"
+    },
+    {
+      "path": "src/managers/fullscreen/FullscreenController.cpp",
+      "sha256": "044cf13d2c070a0e794e6d90d0d8eccab201d437b6ba24ac80eff6686fc4d106"
+    }
+  ],
+  "deployment": "not built or loaded",
+  "candidate": {
+    "path": "src/render/Renderer.cpp",
+    "sha256": "e07c4f2a5b2f41fe8c2a2cfd231d06de0a022a382e169669c828af1adc7e7337",
+    "changed_lines": 15,
+    "policy": "render order only; no input, alpha, allowedOverFullscreen or geometry mutations"
+  }
+}

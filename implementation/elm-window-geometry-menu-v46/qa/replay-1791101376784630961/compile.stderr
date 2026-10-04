@@ -1,0 +1,21 @@
+-- UNFINISHED PARENTHESES --------------------------- src/GeometryProjection.elm
+
+I was expecting to see a closing parenthesis next:
+
+81|     (D.map8 (\_ _ _ binding request sequence revision rest ->
+82|         let (output,facts)=rest
+83|             context=case D.decodeValue (D.map2 Tuple.pair (D.field "lifetime" positive) (D.field "frontend" positive)) (Binding.encode binding) of
+84|                 Ok (life,epoch) -> {lifetime=life,epoch=epoch,output=output,revision=revision}
+85|                 Err _ -> {lifetime=UInt64.zero,epoch=UInt64.zero,output=output,revision=revision}
+86|         in {binding=binding,request=request,sequence=sequence,context=context,focused=facts.focused,blocked=facts.blocked,windows=facts.windows})
+87|         (exact "protocolVersion" D.int 3) (exact "kind" D.string "geometry-facts") (exact "geometryProtocol" D.int 1)
+88|         (D.field "binding" Binding.decoder) (D.field "requestId" positive) (D.field "sequence" positive) (D.field "revision" positive)
+89|         (D.map2 Tuple.pair (D.field "outputGeneration" positive)
+90|             (D.field "facts" (strict ["focused","inputBlocked","windows"] (D.map3 (\focus blocked rows -> {focused=focus,blocked=blocked,windows=rows}) (D.field "focused" (D.nullable positive)) (D.field "inputBlocked" D.bool) (D.field "windows" (D.list windowDecoder))))))
+91|     |> D.andThen (\snapshot -> if validRows caps snapshot.blocked snapshot.windows && (snapshot.focused |> Maybe.map (\id -> List.any (\row -> row.incarnation==id) snapshot.windows) |> Maybe.withDefault True) then D.succeed snapshot else D.fail "Geometry facts coherence")
+                                                                                                                                                                                                                                                                                    ^
+Try adding a ) to see if that helps!
+
+Note: I can get confused by indentation in cases like this, so maybe you have a
+closing parenthesis but it is not indented enough?
+

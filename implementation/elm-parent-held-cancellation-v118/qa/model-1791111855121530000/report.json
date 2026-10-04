@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Bounded held-button loss/cancellation-before-retirement abstraction; actual C++ callback lifetime and native recipient/core state separate",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "held.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: Couldn't unify set and int\\nTrying to unify Set[int] and int\\nTrying to unify (Set[_t9], Set[_t9]) => Set[_t9] and (Set[int], int) => _t10\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-cancellation-v118/qa/model-1791111855121530000/held.qnt:12:16\\n  12:     {...s,held:s.held.exclude(button),released:s.released+1} else s\\n                     ^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n\")",
+  "artifacts": {
+    "held.qnt": "48f58e6fd13ffbd6410f4435bf9e5c23a704ba32ac98d924442a05e2022884e4",
+    "model.py": "d1d1597a95844f3c804cae7d25527e3a1c62243258f49f9e26fcc19824475c32",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "940c2a4d2494b8bdbb92d78b00bdde2056f4e3fdef212cfbf3c5e69328a3ba94"
+  }
+}

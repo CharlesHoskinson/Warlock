@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-cancellation-v117/qa/model-1791111780704115302/held.qnt:9:28
+  9:   action press(button:int) = s'=if(s.pointerLive and not(s.failed) and button>0 and button<=3 and not(s.held.contains(button)))
+                                ^
+
+
+ Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-cancellation-v117/qa/model-1791111780704115302/held.qnt:10:63
+  10:     {...s,held:s.held.union(Set(button)),pressed:s.pressed+1} else s
+                                                                    ^^^^
+
+error: parsing failed

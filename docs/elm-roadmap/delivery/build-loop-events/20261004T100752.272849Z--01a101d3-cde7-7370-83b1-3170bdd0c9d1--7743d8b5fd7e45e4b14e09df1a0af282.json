@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "7743d8b5fd7e45e4b14e09df1a0af282",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T10:07:52.272849+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-geometry-broker-eof-relay-fixed-v89",
+  "nextWork": [
+    "V86actualrelay19CPUprototype preserved, independentreview found unreadpipe drop/blockingstdout. FreshV89 nonblockingbounded8192queues+FIONREADprecutdrain+absoluteEOF3s passedbaseline19 anddeterministic7edgechecks (edges1791108362218362572); independentreview pending, thenfreeze andV83realEOFReconnect nativeQA. V85 full78/21/53 traces exposedgenuine samefamilyUnknown stageadmission bug; V87freshactualguard full78+53+21 plus59+5mutants PASS, extrafamilyQA/freezepending. V82receiptselector52+30heldc211.. preservesoriginalUnknowndiagnostic failure; full09/newoptimizedV87tuple+closedreceiptrelay profile next. V79native96/7 remainsacceptedbounded; primarysharedhost/fullroadmap/release/deploymentopen."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-geometry-broker-eof-relay-fixed-v89/qa/edges-1791108362218362572/report.json",
+      "sha256": "aa805bd1b3b091a16331fc22d1e0fc0215420b65526bb2a9e80a3c093f474bb4",
+      "size": 1549
+    },
+    {
+      "path": "implementation/elm-geometry-broker-eof-relay-fixed-v89/qa/test-1791108380794109700/report.json",
+      "sha256": "3fab292781b2ac97a923a7472278ecde7609f2c1cbf05ced0e9b501cc53484f9",
+      "size": 3292
+    },
+    {
+      "path": "implementation/elm-geometry-broker-eof-relay-v86/qa/test-1791108004319978760/report.json",
+      "sha256": "b706fdb0878fd26c5f26f01a2260be6fe544273460cc7b82d3d386215ecf2348",
+      "size": 3292
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

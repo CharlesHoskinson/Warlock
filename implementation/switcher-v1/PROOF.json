@@ -1,0 +1,68 @@
+{
+  "schema": "staged-switcher-source-proof-v1",
+  "deployed": false,
+  "nativeAcceptance": false,
+  "sources": {
+    "hypr-window-menu": "4fe2d901acc421da1ca273ba39582861649fd1becc4de4bd11d4c24dda6851e2",
+    "shell.qml": "db5dc36caa2c9bc2aba832f589f9746e47750bc7886bb86153b68203c395214f",
+    "SwitcherController.qml": "8b919e082874962b308da2125f07ad9cdf338ac90a65858c618dd55c6a05de81",
+    "SwitcherState.js": "a7b87b2b5de32df87572d313558674e4c3e8f33e79c655566aaddd8a4000da01",
+    "switcher-bindings.lua": "d0c706036cd2173bd5c760401049126136296d339d04ce31efe039a285d97ea0",
+    "tests/test_switcher_state.js": "fe6df9e6a5eda8650a32d1ec76cdbe970bfcbbf9e7d226f35c6f5bc0f8943a3b",
+    "tests/test_switcher_helper.py": "a1efcaa58a050f822a7ca211e69ba6460774b1910c1372dd3f7d096c88081445",
+    "tests/test_bindings.lua": "66fc75e3e7fc191ef01d413669b04d72c0312ca4f3f8bbf3114f07b53b3c5947",
+    "tests/probe.qml": "a9ebdf40c276df7cfa5422e025d9f692b11f0be64fc2930e69b6e88279c5c854",
+    "tests/run_qml_probe.py": "f0a7a31ea71c996d50653a759e6a1d6a8f0b34e44cb2e07909a96b45eb6bf346",
+    "tests/validate_shell_load.py": "467b8e5d3c8827d30ac3f0061bdb4c86cd22cbd225d2f6679ec32c61bd7be805"
+  },
+  "originSources": {
+    "/home/hoskinson/.local/bin/hypr-window-menu": "40cc927d71c2558e2fd64079cb7b6fc4a32a4a956d33cadaad20271f342cd327",
+    "/home/hoskinson/.local/share/hypr-window-controls/shell.qml": "4e629c679e8c55c9d46d21d72269c74943054a5e42854ad89498373ef72b51bc",
+    "/home/hoskinson/.config/hypr/snap.lua": "389bc19a23e090e1a43d446fc927a65e265b1742bbbd15a88b1163ef0fc59e7c"
+  },
+  "proofs": [
+    {
+      "kind": "productionReducer",
+      "checks": 28,
+      "scope": "qa-harness-a14d49183dc74744bcecd78aa6c80467.scope",
+      "result": "pass"
+    },
+    {
+      "kind": "LuaBindingEventIdentity",
+      "checks": 8,
+      "scope": "qa-harness-7b975cf0c72b488c81d3e15297098378.scope",
+      "result": "pass"
+    },
+    {
+      "kind": "actualOffscreenQuickshellController",
+      "checks": 10,
+      "scope": "qa-harness-e69efa364b264cb692d0e777a6d28882.scope",
+      "result": "pass"
+    },
+    {
+      "kind": "PythonHelperProtocol",
+      "checks": 8,
+      "scope": "qa-harness-560d721d10664102a7b16852d5a40fea.scope",
+      "result": "pass"
+    }
+  ],
+  "priorFailures": [
+    {
+      "scope": "qa-harness-8448efe07f4d4c18a936f12c5e8316df.scope",
+      "reason": "probe called owned_runtime with an argument; corrected runner context manager"
+    },
+    {
+      "scope": "qa-harness-b8d200c5a1a2467cb677e43120e0e555.scope",
+      "reason": "inherited GTK platform theme attempted display; corrected isolated offscreen environment"
+    },
+    {
+      "scope": "qa-harness-9a6dd8723fac4956876d232411a8c818.scope",
+      "reason": "SwitcherController tried to redeclare Item.visible final property; renamed presentationOpen"
+    },
+    {
+      "scope": "qa-harness-637c013af2fb44e7823fe469bafaced8.scope",
+      "reason": "full controls shell cannot load PanelWindow under offscreen platform; private native validation remains open"
+    }
+  ],
+  "limitations": "See README startup prerequisite, async reload-barrier delivery, claim-to-native-effect gap, shell restart input binding, and unaccepted full overlay."
+}

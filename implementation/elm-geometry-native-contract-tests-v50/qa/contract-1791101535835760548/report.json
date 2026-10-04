@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual V48 private placement header and extracted contract admission/raw-size/capability/fingerprint logic; no native mutation, ABI, projection acquisition, configure, pixels or full-menu acceptance",
+  "inputs": {
+    "native/CONTRACT.md": "78f18c44c18c1e895fb8672cadba8a40bfe8274453888f846d5b500e49b8ee19",
+    "native/authority.cpp": "f51ac87a588f405345402a6410883f0ec31449d4de2d22f1d37cb51a896879e4",
+    "native/geometry-effects.inc": "811a878d5d52f68ab7f01942c2c5c40c0e8df6a53b84f908443477700f97d50b",
+    "native/geometry.inc": "9ab78c35ee287f795fd0d047bdf802afc2d996053a64477b6e40856832803cd5",
+    "candidate/EffectBarrier.hpp": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3",
+    "candidate/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202"
+  },
+  "checks": [
+    {
+      "name": "actual",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "checks 292\n",
+      "stderr": ""
+    },
+    {
+      "name": "unsafe-no-negotiation",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL effect2 before attach denied before journal\n"
+    },
+    {
+      "name": "unsafe-hello-retains-negotiation",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL actual hello clears operation negotiation\n"
+    },
+    {
+      "name": "unsafe-Unknown-capability",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL Unknown barrier disables both geometry actions\n"
+    },
+    {
+      "name": "unsafe-version-fingerprint",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL effect version participates in shared fingerprint\n"
+    }
+  ],
+  "artifacts": {
+    "actual/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "actual/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual/run.log": "f7bc01c1738ffb7e8d117562caf07ae55dabd813e312be0d813618f702a146a4",
+    "actual/test": "0d1bd2e87f5187ff0d3b08e90717e7738856ade210e71e2308b27d350a85d074",
+    "actual/test.cpp": "b57571ba2a5bcc3134ac7cee338e7ad20ab1c8dfea55ca9fbd04cee97ea22af8",
+    "inputs/candidate/EffectBarrier.hpp": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3",
+    "inputs/candidate/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "inputs/native/CONTRACT.md": "78f18c44c18c1e895fb8672cadba8a40bfe8274453888f846d5b500e49b8ee19",
+    "inputs/native/authority.cpp": "f51ac87a588f405345402a6410883f0ec31449d4de2d22f1d37cb51a896879e4",
+    "inputs/native/geometry-effects.inc": "811a878d5d52f68ab7f01942c2c5c40c0e8df6a53b84f908443477700f97d50b",
+    "inputs/native/geometry.inc": "9ab78c35ee287f795fd0d047bdf802afc2d996053a64477b6e40856832803cd5",
+    "test.py": "1917c8a84a21aa4c453942d5ccd92c3cf0931f76bbf2f99769ef433326cc2459",
+    "unsafe-Unknown-capability/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "unsafe-Unknown-capability/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-Unknown-capability/run.log": "0169256227abaf07b8aa4815abd290e8fb1068eaba71e885c6531a0e500e5a40",
+    "unsafe-Unknown-capability/test": "5b84f0fa1133625b1166f4df961653f6ff301ea6cd84a2ae5f5b68d345409045",
+    "unsafe-Unknown-capability/test.cpp": "5149298d81a42863b948d1de19aea8df913d3ea6190defffb3a30bf99526fb01",
+    "unsafe-hello-retains-negotiation/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "unsafe-hello-retains-negotiation/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-hello-retains-negotiation/run.log": "243b05eae395942bacfd5e2c71a27b7cfd772b1453cbe7aa97ddecab4332ce7f",
+    "unsafe-hello-retains-negotiation/test": "111d0e69a93e29c870379217f1bfb46fa7bb8c0b5a9f9d8892ba8976d8e537b2",
+    "unsafe-hello-retains-negotiation/test.cpp": "25a3a3a1f903c3c91741af6c9103c7d5a137b19ec6920392bb09d9f1a4433847",
+    "unsafe-no-negotiation/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "unsafe-no-negotiation/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-no-negotiation/run.log": "8cd5fe6294397f60b2b4104299e3d246abcdfd5c378b149d2069716a867d01d4",
+    "unsafe-no-negotiation/test": "e956d77d2897d541448f7e19524c9c2d12bfff3db3835007f752a397b21963d9",
+    "unsafe-no-negotiation/test.cpp": "37fd66f1f06bd786545b901b040d1ce19e67fc39ec9f1cfd6131e01aa21f0ee1",
+    "unsafe-version-fingerprint/PlacementPolicy.hpp": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202",
+    "unsafe-version-fingerprint/compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-version-fingerprint/run.log": "a6e600856b3e12b3d247e4e285b2a02d7ddaeb112136d022c8f303e64bf08e24",
+    "unsafe-version-fingerprint/test": "4a3f4f23a522c739565fbcda639f840a82fdd8e6898a8285d8c8469c1564895a",
+    "unsafe-version-fingerprint/test.cpp": "01ddc85f8e0ea81abf344ef80d99d74795cfeee9359974d217dbd039a64aa17b"
+  }
+}

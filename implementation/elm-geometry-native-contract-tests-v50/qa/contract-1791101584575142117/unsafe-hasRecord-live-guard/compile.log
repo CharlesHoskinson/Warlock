@@ -1,0 +1,6 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101584575142117/unsafe-hasRecord-live-guard/test.cpp:2:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101584575142117/unsafe-hasRecord-live-guard/PlacementPolicy.hpp: In member function ‘bool Elm::Placement::Records::hasRecord(const Elm::Placement::Identity&, const std::optional<Elm::Placement::Identity>&) const’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101584575142117/unsafe-hasRecord-live-guard/PlacementPolicy.hpp:83:78: error: unused parameter ‘owningLiveIdentity’ [-Werror=unused-parameter]
+   83 |     bool hasRecord(const Identity& requested, const std::optional<Identity>& owningLiveIdentity) const {
+      |                                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors

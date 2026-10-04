@@ -1,0 +1,1 @@
+Preserve V117 parse failure and V118 type error: Quint exclude accepts a set argument. Fresh V119 uses exclude(Set(button)) with the same intended physical-release semantics; no production source change. Explicit 10 names, 1000x40 invariant samples and seven typechecked negative controls required.

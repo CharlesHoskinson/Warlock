@@ -1,0 +1,8 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101517751082319/actual/test.cpp: In function ‘std::string invoke(Session&, const std::string&)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101517751082319/actual/test.cpp:106:3: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  106 |   if(failure)g_error_free(failure);g_object_unref(parser);return "JSON-ERROR";
+      |   ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101517751082319/actual/test.cpp:106:36: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  106 |   if(failure)g_error_free(failure);g_object_unref(parser);return "JSON-ERROR";
+      |                                    ^~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors

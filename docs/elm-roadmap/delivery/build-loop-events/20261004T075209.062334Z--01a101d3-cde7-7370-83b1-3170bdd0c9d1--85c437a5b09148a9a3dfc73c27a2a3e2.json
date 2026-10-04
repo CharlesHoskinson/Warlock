@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "85c437a5b09148a9a3dfc73c27a2a3e2",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T07:52:09.062334+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-geometry-observer-native-v39",
+  "nextWork": [
+    "V39 actual native observer reaches matching identity/ordinary geometry/workarea but fails constraint oracle: owning XDGShell initializes finite max defaults despite unspecified protocol limit. Cleanup PASS; failed source/report/local protocol/source captures retained. Review a fresh core default correction with full owning-header dependency closure; no fixture-only workaround or magic sentinel. Freeze V34/V36 original68 acceptance. V38 decoder132 CPU PASS, no observer native acceptance yet; full S01-S16 active."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-geometry-observer-native-v39/qa/native-1791100141973200584/report.json",
+      "sha256": "9e5a2ad14c85a401664bd8b9818cf56e3ad4185865cbc7f2296fe020cb80e652",
+      "size": 367531
+    },
+    {
+      "path": "implementation/elm-geometry-observer-native-v39/diagnosis/inputs.json",
+      "sha256": "280675fee6b52d9860e5c592e823ed7f06562f3c120d1fe4bf6da40fc6637316",
+      "size": 787
+    },
+    {
+      "path": "implementation/elm-geometry-observer-adapter-v38/qa/geometry-endpoint-1791100045917134683/report.json",
+      "sha256": "e66600d287b53c922f8d4a0556940aeddf50df168eda2928d8457d1c4d1d3b0f",
+      "size": 13892
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

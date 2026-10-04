@@ -1,0 +1,2986 @@
+
+---
+events:
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:12 (find_program)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_UNAME"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "uname"
+    candidate_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/bin/"
+    searched_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/uname"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/uname"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/uname"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/uname"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/uname"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/uname"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/uname"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/uname"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/uname"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/uname"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/uname"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/uname"
+      - "/home/hoskinson/.cargo/bin/uname"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/uname"
+      - "/home/hoskinson/.local/share/mise/shims/uname"
+      - "/usr/share/omarchy/bin/uname"
+      - "/usr/local/sbin/uname"
+      - "/usr/local/bin/uname"
+    found: "/usr/bin/uname"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:218 (message)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      The system is: Linux - 7.2.7-1-omarchy - x86_64
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeUnixFindMake.cmake:5 (find_program)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_MAKE_PROGRAM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gmake"
+      - "make"
+      - "smake"
+    candidate_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gmake"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gmake"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gmake"
+      - "/home/hoskinson/.cargo/bin/gmake"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gmake"
+      - "/home/hoskinson/.local/share/mise/shims/gmake"
+      - "/usr/share/omarchy/bin/gmake"
+      - "/usr/local/sbin/gmake"
+      - "/usr/local/bin/gmake"
+      - "/usr/bin/gmake"
+      - "/home/hoskinson/.local/bin/gmake"
+      - "/usr/lib/jvm/default/bin/gmake"
+      - "/usr/bin/site_perl/gmake"
+      - "/usr/bin/vendor_perl/gmake"
+      - "/usr/bin/core_perl/gmake"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/make"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/make"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/make"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/make"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/make"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/make"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/make"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/make"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/make"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/make"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/make"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/make"
+      - "/home/hoskinson/.cargo/bin/make"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/make"
+      - "/home/hoskinson/.local/share/mise/shims/make"
+      - "/usr/share/omarchy/bin/make"
+      - "/usr/local/sbin/make"
+      - "/usr/local/bin/make"
+    found: "/usr/bin/make"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:73 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:64 (_cmake_find_compiler)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER"
+    description: "C compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "cc"
+      - "gcc"
+      - "cl"
+      - "bcc"
+      - "xlc"
+      - "icx"
+      - "clang"
+    candidate_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/cc"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/cc"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/cc"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/cc"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/cc"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/cc"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/cc"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/cc"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/cc"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/cc"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/cc"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/cc"
+      - "/home/hoskinson/.cargo/bin/cc"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/cc"
+      - "/home/hoskinson/.local/share/mise/shims/cc"
+      - "/usr/share/omarchy/bin/cc"
+      - "/usr/local/sbin/cc"
+      - "/usr/local/bin/cc"
+    found: "/usr/bin/cc"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:501 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCCompilerId.c.in"
+    candidate_directories:
+      - "/usr/share/cmake/Modules/"
+    found: "/usr/share/cmake/Modules/CMakeCCompilerId.c.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:122 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /usr/bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/4.4.3/CompilerIdC/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_AR"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_RANLIB"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_STRIP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "strip"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/strip"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_LINKER"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "ld"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/ld"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_NM"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "nm"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/nm"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJDUMP"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objdump"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/objdump"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_OBJCOPY"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "objcopy"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/objcopy"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_READELF"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "readelf"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/readelf"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_DLLTOOL"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "dlltool"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/dlltool"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/dlltool"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/dlltool"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/dlltool"
+      - "/home/hoskinson/.cargo/bin/dlltool"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/dlltool"
+      - "/home/hoskinson/.local/share/mise/shims/dlltool"
+      - "/usr/share/omarchy/bin/dlltool"
+      - "/usr/local/sbin/dlltool"
+      - "/usr/local/bin/dlltool"
+      - "/home/hoskinson/.local/bin/dlltool"
+      - "/usr/lib/jvm/default/bin/dlltool"
+      - "/usr/bin/site_perl/dlltool"
+      - "/usr/bin/vendor_perl/dlltool"
+      - "/usr/bin/core_perl/dlltool"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_ADDR2LINE"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "addr2line"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    found: "/usr/bin/addr2line"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeFindBinUtils.cmake:247 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:200 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_TAPI"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "tapi"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/tapi"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/tapi"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/tapi"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/tapi"
+      - "/home/hoskinson/.cargo/bin/tapi"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/tapi"
+      - "/home/hoskinson/.local/share/mise/shims/tapi"
+      - "/usr/share/omarchy/bin/tapi"
+      - "/usr/local/sbin/tapi"
+      - "/usr/local/bin/tapi"
+      - "/home/hoskinson/.local/bin/tapi"
+      - "/usr/lib/jvm/default/bin/tapi"
+      - "/usr/bin/site_perl/tapi"
+      - "/usr/bin/vendor_perl/tapi"
+      - "/usr/bin/core_perl/tapi"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-16.2"
+      - "gcc-ar-16"
+      - "gcc-ar16"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ar-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.cargo/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ar-16.2"
+      - "/usr/share/omarchy/bin/gcc-ar-16.2"
+      - "/usr/local/sbin/gcc-ar-16.2"
+      - "/usr/local/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/bin/gcc-ar-16.2"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16.2"
+      - "/usr/bin/site_perl/gcc-ar-16.2"
+      - "/usr/bin/vendor_perl/gcc-ar-16.2"
+      - "/usr/bin/core_perl/gcc-ar-16.2"
+      - "/usr/bin/gcc-ar-16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ar-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ar-16"
+      - "/home/hoskinson/.cargo/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ar-16"
+      - "/usr/share/omarchy/bin/gcc-ar-16"
+      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/local/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/bin/gcc-ar-16"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16"
+      - "/usr/bin/site_perl/gcc-ar-16"
+      - "/usr/bin/vendor_perl/gcc-ar-16"
+      - "/usr/bin/core_perl/gcc-ar-16"
+      - "/usr/bin/gcc-ar16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ar16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ar16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ar16"
+      - "/home/hoskinson/.cargo/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ar16"
+      - "/usr/share/omarchy/bin/gcc-ar16"
+      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/local/bin/gcc-ar16"
+      - "/home/hoskinson/.local/bin/gcc-ar16"
+      - "/usr/lib/jvm/default/bin/gcc-ar16"
+      - "/usr/bin/site_perl/gcc-ar16"
+      - "/usr/bin/vendor_perl/gcc-ar16"
+      - "/usr/bin/core_perl/gcc-ar16"
+    found: "/usr/bin/gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:201 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_C_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-16.2"
+      - "gcc-ranlib-16"
+      - "gcc-ranlib16"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ranlib-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.cargo/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ranlib-16.2"
+      - "/usr/share/omarchy/bin/gcc-ranlib-16.2"
+      - "/usr/local/sbin/gcc-ranlib-16.2"
+      - "/usr/local/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/bin/gcc-ranlib-16.2"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16.2"
+      - "/usr/bin/site_perl/gcc-ranlib-16.2"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16.2"
+      - "/usr/bin/core_perl/gcc-ranlib-16.2"
+      - "/usr/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ranlib-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.cargo/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ranlib-16"
+      - "/usr/share/omarchy/bin/gcc-ranlib-16"
+      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/local/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/bin/gcc-ranlib-16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16"
+      - "/usr/bin/site_perl/gcc-ranlib-16"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16"
+      - "/usr/bin/core_perl/gcc-ranlib-16"
+      - "/usr/bin/gcc-ranlib16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ranlib16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ranlib16"
+      - "/home/hoskinson/.cargo/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ranlib16"
+      - "/usr/share/omarchy/bin/gcc-ranlib16"
+      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/local/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/bin/gcc-ranlib16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib16"
+      - "/usr/bin/site_perl/gcc-ranlib16"
+      - "/usr/bin/vendor_perl/gcc-ranlib16"
+      - "/usr/bin/core_perl/gcc-ranlib16"
+    found: "/usr/bin/gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompiler.cmake:54 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:69 (_cmake_find_compiler)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER"
+    description: "CXX compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "c++"
+      - "CC"
+      - "g++"
+      - "aCC"
+      - "cl"
+      - "bcc"
+      - "xlC"
+      - "icpx"
+      - "icx"
+      - "clang++"
+    candidate_directories:
+      - "/usr/bin/"
+    found: "/usr/bin/c++"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:501 (find_file)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:538 (CMAKE_DETERMINE_COMPILER_ID_WRITE)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:8 (CMAKE_DETERMINE_COMPILER_ID_BUILD)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "file"
+    variable: "src_in"
+    description: "Path to a file."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "CMakeCXXCompilerId.cpp.in"
+    candidate_directories:
+      - "/usr/share/cmake/Modules/"
+    found: "/usr/share/cmake/Modules/CMakeCXXCompilerId.cpp.in"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:125 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /usr/bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/4.4.3/CompilerIdCXX/a.out
+      
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:18 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_AR"
+    description: "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ar-16.2"
+      - "gcc-ar-16"
+      - "gcc-ar16"
+      - "gcc-ar"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ar-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.cargo/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ar-16.2"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ar-16.2"
+      - "/usr/share/omarchy/bin/gcc-ar-16.2"
+      - "/usr/local/sbin/gcc-ar-16.2"
+      - "/usr/local/bin/gcc-ar-16.2"
+      - "/home/hoskinson/.local/bin/gcc-ar-16.2"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16.2"
+      - "/usr/bin/site_perl/gcc-ar-16.2"
+      - "/usr/bin/vendor_perl/gcc-ar-16.2"
+      - "/usr/bin/core_perl/gcc-ar-16.2"
+      - "/usr/bin/gcc-ar-16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ar-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ar-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ar-16"
+      - "/home/hoskinson/.cargo/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ar-16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ar-16"
+      - "/usr/share/omarchy/bin/gcc-ar-16"
+      - "/usr/local/sbin/gcc-ar-16"
+      - "/usr/local/bin/gcc-ar-16"
+      - "/home/hoskinson/.local/bin/gcc-ar-16"
+      - "/usr/lib/jvm/default/bin/gcc-ar-16"
+      - "/usr/bin/site_perl/gcc-ar-16"
+      - "/usr/bin/vendor_perl/gcc-ar-16"
+      - "/usr/bin/core_perl/gcc-ar-16"
+      - "/usr/bin/gcc-ar16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ar16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ar16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ar16"
+      - "/home/hoskinson/.cargo/bin/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ar16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ar16"
+      - "/usr/share/omarchy/bin/gcc-ar16"
+      - "/usr/local/sbin/gcc-ar16"
+      - "/usr/local/bin/gcc-ar16"
+      - "/home/hoskinson/.local/bin/gcc-ar16"
+      - "/usr/lib/jvm/default/bin/gcc-ar16"
+      - "/usr/bin/site_perl/gcc-ar16"
+      - "/usr/bin/vendor_perl/gcc-ar16"
+      - "/usr/bin/core_perl/gcc-ar16"
+    found: "/usr/bin/gcc-ar"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Compiler/GNU-FindBinUtils.cmake:30 (find_program)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:207 (include)"
+      - "CMakeLists.txt:7 (project)"
+    mode: "program"
+    variable: "CMAKE_CXX_COMPILER_RANLIB"
+    description: "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: false
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: false
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcc-ranlib-16.2"
+      - "gcc-ranlib-16"
+      - "gcc-ranlib16"
+      - "gcc-ranlib"
+    candidate_directories:
+      - "/usr/bin/"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+    searched_directories:
+      - "/usr/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ranlib-16.2"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.cargo/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ranlib-16.2"
+      - "/usr/share/omarchy/bin/gcc-ranlib-16.2"
+      - "/usr/local/sbin/gcc-ranlib-16.2"
+      - "/usr/local/bin/gcc-ranlib-16.2"
+      - "/home/hoskinson/.local/bin/gcc-ranlib-16.2"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16.2"
+      - "/usr/bin/site_perl/gcc-ranlib-16.2"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16.2"
+      - "/usr/bin/core_perl/gcc-ranlib-16.2"
+      - "/usr/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ranlib-16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.cargo/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ranlib-16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ranlib-16"
+      - "/usr/share/omarchy/bin/gcc-ranlib-16"
+      - "/usr/local/sbin/gcc-ranlib-16"
+      - "/usr/local/bin/gcc-ranlib-16"
+      - "/home/hoskinson/.local/bin/gcc-ranlib-16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib-16"
+      - "/usr/bin/site_perl/gcc-ranlib-16"
+      - "/usr/bin/vendor_perl/gcc-ranlib-16"
+      - "/usr/bin/core_perl/gcc-ranlib-16"
+      - "/usr/bin/gcc-ranlib16"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcc-ranlib16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcc-ranlib16"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcc-ranlib16"
+      - "/home/hoskinson/.cargo/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcc-ranlib16"
+      - "/home/hoskinson/.local/share/mise/shims/gcc-ranlib16"
+      - "/usr/share/omarchy/bin/gcc-ranlib16"
+      - "/usr/local/sbin/gcc-ranlib16"
+      - "/usr/local/bin/gcc-ranlib16"
+      - "/home/hoskinson/.local/bin/gcc-ranlib16"
+      - "/usr/lib/jvm/default/bin/gcc-ranlib16"
+      - "/usr/bin/site_perl/gcc-ranlib16"
+      - "/usr/bin/vendor_perl/gcc-ranlib16"
+      - "/usr/bin/core_perl/gcc-ranlib16"
+    found: "/usr/bin/gcc-ranlib"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-lScaMN"
+      binary: "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-lScaMN"
+    cmakeVariables:
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: false
+      stdout: |
+        Change Dir: '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-lScaMN'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4a066/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_4a066.dir/build.make CMakeFiles/cmTC_4a066.dir/build
+        make[1]: Entering directory '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-lScaMN'
+        Building C object CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o
+        /usr/bin/cc   -v -o CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.1 20260810 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a066.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4a066.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccmu60aT.s
+        GNU C23 (GCC) version 16.2.1 20260810 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 16.2.1 20260810, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.28-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: f931fde8682f21d1ebcf65f6b881e532
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a066.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o /tmp/ccmu60aT.s
+        GNU assembler version 2.47 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.47
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_4a066
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a066.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.1 20260810 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4a066' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4a066.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccG66knH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4a066 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
+        collect2 version 16.2.1 20260810
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccG66knH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4a066 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
+        GNU ld (GNU Binutils) 2.47
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4a066' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4a066.'
+        /usr/bin/cc  -v -Wl,-v CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -o cmTC_4a066
+        make[1]: Leaving directory '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-lScaMN'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild))("|,| |$)]
+        ignore line: [Change Dir: '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-lScaMN']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4a066/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_4a066.dir/build.make CMakeFiles/cmTC_4a066.dir/build]
+        ignore line: [make[1]: Entering directory '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-lScaMN']
+        ignore line: [Building C object CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/usr/bin/cc   -v -o CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.1 20260810 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a066.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4a066.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64 -version -o /tmp/ccmu60aT.s]
+        ignore line: [GNU C23 (GCC) version 16.2.1 20260810 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 16.2.1 20260810  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.28-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: f931fde8682f21d1ebcf65f6b881e532]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a066.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o /tmp/ccmu60aT.s]
+        ignore line: [GNU assembler version 2.47 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.47]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_4a066]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a066.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.1 20260810 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_4a066' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_4a066.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccG66knH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4a066 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccG66knH.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
+          arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s_asneeded] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_4a066] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
+          arg [-latomic_asneeded] ==> lib [atomic_asneeded]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_s_asneeded] ==> lib [gcc_s_asneeded]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+        ignore line: [collect2 version 16.2.1 20260810]
+        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccG66knH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4a066 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker [/usr/bin/ld]
+        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccG66knH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4a066 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker architecture flags [-m;elf]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/ccG66knH.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s_asneeded --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_4a066 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_4a066.dir/CMakeCCompilerABI.c.o -lgcc -lgcc_s_asneeded -latomic_asneeded -lc -lgcc -lgcc_s_asneeded /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+        linker tool for 'C': /usr/bin/ld -m;elf
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s_asneeded;atomic_asneeded;c;gcc;gcc_s_asneeded]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the C compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.47
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:123 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-CAhYXv"
+      binary: "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-CAhYXv"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_CXX_STDLIB_MODULES_JSON: ""
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: false
+      stdout: |
+        Change Dir: '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-CAhYXv'
+        
+        Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_81b19/fast
+        /usr/bin/make  -f CMakeFiles/cmTC_81b19.dir/build.make CMakeFiles/cmTC_81b19.dir/build
+        make[1]: Entering directory '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-CAhYXv'
+        Building CXX object CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o
+        /usr/bin/c++   -v -o CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.1 20260810 (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_81b19.dir/'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_81b19.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cczjjKcL.s
+        GNU C++20 (GCC) version 16.2.1 20260810 (x86_64-pc-linux-gnu)
+        	compiled by GNU C version 16.2.1 20260810, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.4.1, isl version isl-0.28-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../x86_64-pc-linux-gnu/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/x86_64-pc-linux-gnu
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/backward
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        Compiler executable checksum: 4e9ac8b201f4ca740be09d0c7a39f82f
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_81b19.dir/'
+         as -v --64 -o CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o /tmp/cczjjKcL.s
+        GNU assembler version 2.47 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.47
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_81b19
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81b19.dir/link.txt --verbose=1
+        Using built-in specs.
+        COLLECT_GCC=/usr/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper
+        Target: x86_64-pc-linux-gnu
+        Configured with: ../gcc/configure --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 16.2.1 20260810 (GCC) 
+        COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_81b19' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_81b19.'
+         /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc65IQ7R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_81b19 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
+        collect2 version 16.2.1 20260810
+        /usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc65IQ7R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_81b19 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o
+        GNU ld (GNU Binutils) 2.47
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_81b19' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_81b19.'
+        /usr/bin/c++  -v -Wl,-v CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_81b19
+        make[1]: Leaving directory '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-CAhYXv'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:255 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/x86_64-pc-linux-gnu]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/backward]
+          add: [/usr/lib/gcc/x86_64-pc-linux-gnu/16/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16] ==> [/usr/include/c++/16]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/x86_64-pc-linux-gnu] ==> [/usr/include/c++/16/x86_64-pc-linux-gnu]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/backward] ==> [/usr/include/c++/16/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/include] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/16;/usr/include/c++/16/x86_64-pc-linux-gnu;/usr/include/c++/16/backward;/usr/lib/gcc/x86_64-pc-linux-gnu/16/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:291 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|"|[0-9]+>[ 	-]*Build:[ 	0-9]+ ms[ 	]*)?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|wild))("|,| |$)]
+        ignore line: [Change Dir: '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-CAhYXv']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_81b19/fast]
+        ignore line: [/usr/bin/make  -f CMakeFiles/cmTC_81b19.dir/build.make CMakeFiles/cmTC_81b19.dir/build]
+        ignore line: [make[1]: Entering directory '/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build/CMakeFiles/CMakeScratch/TryCompile-CAhYXv']
+        ignore line: [Building CXX object CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/usr/bin/c++   -v -o CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.1 20260810 (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_81b19.dir/']
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_81b19.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64 -version -o /tmp/cczjjKcL.s]
+        ignore line: [GNU C++20 (GCC) version 16.2.1 20260810 (x86_64-pc-linux-gnu)]
+        ignore line: [	compiled by GNU C version 16.2.1 20260810  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.4.1  isl version isl-0.28-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../x86_64-pc-linux-gnu/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/x86_64-pc-linux-gnu]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../include/c++/16/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 4e9ac8b201f4ca740be09d0c7a39f82f]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_81b19.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o /tmp/cczjjKcL.s]
+        ignore line: [GNU assembler version 2.47 (x86_64-pc-linux-gnu) using BFD version (GNU Binutils) 2.47]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_81b19]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_81b19.dir/link.txt --verbose=1]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/usr/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper]
+        ignore line: [Target: x86_64-pc-linux-gnu]
+        ignore line: [Configured with: ../gcc/configure --enable-languages=ada c c++ d fortran go lto m2 objc obj-c++ rust cobol --enable-bootstrap --prefix=/usr --libdir=/usr/lib --libexecdir=/usr/lib --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=https://gitlab.archlinux.org/archlinux/packaging/packages/gcc/-/issues --with-build-config=bootstrap-lto --with-gcc-major-version-only --with-linker-hash-style=gnu --with-system-zlib --enable-cet=auto --enable-checking=release --enable-clocale=gnu --enable-default-pie --enable-default-ssp --enable-gnu-indirect-function --enable-gnu-unique-object --enable-libstdcxx-backtrace --enable-link-serialization=1 --enable-linker-build-id --enable-lto --enable-multilib --enable-plugin --enable-shared --enable-threads=posix --disable-fixincludes --disable-libssp --disable-libstdcxx-pch --disable-werror]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 16.2.1 20260810 (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/16/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_81b19' '-shared-libgcc' '-mtune=generic' '-march=x86-64' '-dumpdir' 'cmTC_81b19.']
+        link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc65IQ7R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_81b19 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/cc65IQ7R.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-latomic_asneeded] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_81b19] ==> ignore
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib]
+          arg [-L/lib/../lib] ==> dir [/lib/../lib]
+          arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
+          arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../..]
+          arg [-L/lib] ==> dir [/lib]
+          arg [-L/usr/lib] ==> dir [/usr/lib]
+          arg [-v] ==> ignore
+          arg [CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-latomic_asneeded] ==> lib [atomic_asneeded]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o]
+          arg [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+        ignore line: [collect2 version 16.2.1 20260810]
+        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc65IQ7R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_81b19 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker [/usr/bin/ld]
+        link line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc65IQ7R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_81b19 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> linker architecture flags [-m;elf]
+        ignore line: [/usr/bin/ld -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/16/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/16/lto-wrapper -plugin-opt=-fresolution=/tmp/cc65IQ7R.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-latomic_asneeded -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -o cmTC_81b19 /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/16 -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../.. -L/lib -L/usr/lib -v CMakeFiles/cmTC_81b19.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -latomic_asneeded -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o /usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o]
+        linker tool for 'CXX': /usr/bin/ld -m;elf
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/Scrt1.o] ==> [/usr/lib/Scrt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crti.o] ==> [/usr/lib/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib/crtn.o] ==> [/usr/lib/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16] ==> [/usr/lib/gcc/x86_64-pc-linux-gnu/16]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../../../lib] ==> [/usr/lib]
+        collapse library dir [/lib/../lib] ==> [/lib]
+        collapse library dir [/usr/lib/../lib] ==> [/usr/lib]
+        collapse library dir [/usr/lib/gcc/x86_64-pc-linux-gnu/16/../../..] ==> [/usr/lib]
+        collapse library dir [/lib] ==> [/lib]
+        collapse library dir [/usr/lib] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;atomic_asneeded;c;gcc_s;gcc]
+        implicit objs: [/usr/lib/Scrt1.o;/usr/lib/crti.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtbeginS.o;/usr/lib/gcc/x86_64-pc-linux-gnu/16/crtendS.o;/usr/lib/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-pc-linux-gnu/16;/usr/lib;/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CMakeDetermineLinkerId.cmake:41 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:337 (cmake_determine_linker_id)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:7 (project)"
+    message: |
+      Running the CXX compiler's linker: "/usr/bin/ld" "-v"
+      GNU ld (GNU Binutils) 2.47
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CTest.cmake:171 (find_program)"
+      - "CMakeLists.txt:12 (include)"
+    mode: "program"
+    variable: "GITCOMMAND"
+    description: "Path to a program."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "git"
+    candidate_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/git"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/git"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/git"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/git"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/git"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/git"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/git"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/git"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/git"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/git"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/git"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/git"
+      - "/home/hoskinson/.cargo/bin/git"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/git"
+      - "/home/hoskinson/.local/share/mise/shims/git"
+      - "/usr/share/omarchy/bin/git"
+      - "/usr/local/sbin/git"
+      - "/usr/local/bin/git"
+    found: "/usr/bin/git"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CTest.cmake:188 (find_program)"
+      - "CMakeLists.txt:12 (include)"
+    mode: "program"
+    variable: "MEMORYCHECK_COMMAND"
+    description: "Path to the memory checking command, used for memory error detection."
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "purify"
+      - "valgrind"
+      - "boundscheck"
+      - "drmemory"
+      - "cuda-memcheck"
+      - "compute-sanitizer"
+    candidate_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/purify"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/purify"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/purify"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/purify"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/purify"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/purify"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/purify"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/purify"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/purify"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/purify"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/purify"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/purify"
+      - "/home/hoskinson/.cargo/bin/purify"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/purify"
+      - "/home/hoskinson/.local/share/mise/shims/purify"
+      - "/usr/share/omarchy/bin/purify"
+      - "/usr/local/sbin/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/bin/purify"
+      - "/home/hoskinson/.local/bin/purify"
+      - "/usr/lib/jvm/default/bin/purify"
+      - "/usr/bin/site_perl/purify"
+      - "/usr/bin/vendor_perl/purify"
+      - "/usr/bin/core_perl/purify"
+      - "/usr/local/bin/purify"
+      - "/usr/local/sbin/purify"
+      - "/usr/local/purify"
+      - "/usr/bin/purify"
+      - "/usr/sbin/purify"
+      - "/usr/purify"
+      - "/bin/purify"
+      - "/sbin/purify"
+      - "/usr/X11R6/bin/purify"
+      - "/usr/X11R6/sbin/purify"
+      - "/usr/X11R6/purify"
+      - "/usr/pkg/bin/purify"
+      - "/usr/pkg/sbin/purify"
+      - "/usr/pkg/purify"
+      - "/opt/bin/purify"
+      - "/opt/sbin/purify"
+      - "/opt/purify"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/valgrind"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/valgrind"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/valgrind"
+      - "/home/hoskinson/.cargo/bin/valgrind"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/valgrind"
+      - "/home/hoskinson/.local/share/mise/shims/valgrind"
+      - "/usr/share/omarchy/bin/valgrind"
+      - "/usr/local/sbin/valgrind"
+      - "/usr/local/bin/valgrind"
+      - "/usr/bin/valgrind"
+      - "/home/hoskinson/.local/bin/valgrind"
+      - "/usr/lib/jvm/default/bin/valgrind"
+      - "/usr/bin/site_perl/valgrind"
+      - "/usr/bin/vendor_perl/valgrind"
+      - "/usr/bin/core_perl/valgrind"
+      - "/usr/local/bin/valgrind"
+      - "/usr/local/sbin/valgrind"
+      - "/usr/local/valgrind"
+      - "/usr/bin/valgrind"
+      - "/usr/sbin/valgrind"
+      - "/usr/valgrind"
+      - "/bin/valgrind"
+      - "/sbin/valgrind"
+      - "/usr/X11R6/bin/valgrind"
+      - "/usr/X11R6/sbin/valgrind"
+      - "/usr/X11R6/valgrind"
+      - "/usr/pkg/bin/valgrind"
+      - "/usr/pkg/sbin/valgrind"
+      - "/usr/pkg/valgrind"
+      - "/opt/bin/valgrind"
+      - "/opt/sbin/valgrind"
+      - "/opt/valgrind"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/boundscheck"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/boundscheck"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/boundscheck"
+      - "/home/hoskinson/.cargo/bin/boundscheck"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/boundscheck"
+      - "/home/hoskinson/.local/share/mise/shims/boundscheck"
+      - "/usr/share/omarchy/bin/boundscheck"
+      - "/usr/local/sbin/boundscheck"
+      - "/usr/local/bin/boundscheck"
+      - "/usr/bin/boundscheck"
+      - "/home/hoskinson/.local/bin/boundscheck"
+      - "/usr/lib/jvm/default/bin/boundscheck"
+      - "/usr/bin/site_perl/boundscheck"
+      - "/usr/bin/vendor_perl/boundscheck"
+      - "/usr/bin/core_perl/boundscheck"
+      - "/usr/local/bin/boundscheck"
+      - "/usr/local/sbin/boundscheck"
+      - "/usr/local/boundscheck"
+      - "/usr/bin/boundscheck"
+      - "/usr/sbin/boundscheck"
+      - "/usr/boundscheck"
+      - "/bin/boundscheck"
+      - "/sbin/boundscheck"
+      - "/usr/X11R6/bin/boundscheck"
+      - "/usr/X11R6/sbin/boundscheck"
+      - "/usr/X11R6/boundscheck"
+      - "/usr/pkg/bin/boundscheck"
+      - "/usr/pkg/sbin/boundscheck"
+      - "/usr/pkg/boundscheck"
+      - "/opt/bin/boundscheck"
+      - "/opt/sbin/boundscheck"
+      - "/opt/boundscheck"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/drmemory"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/drmemory"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/drmemory"
+      - "/home/hoskinson/.cargo/bin/drmemory"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/drmemory"
+      - "/home/hoskinson/.local/share/mise/shims/drmemory"
+      - "/usr/share/omarchy/bin/drmemory"
+      - "/usr/local/sbin/drmemory"
+      - "/usr/local/bin/drmemory"
+      - "/usr/bin/drmemory"
+      - "/home/hoskinson/.local/bin/drmemory"
+      - "/usr/lib/jvm/default/bin/drmemory"
+      - "/usr/bin/site_perl/drmemory"
+      - "/usr/bin/vendor_perl/drmemory"
+      - "/usr/bin/core_perl/drmemory"
+      - "/usr/local/bin/drmemory"
+      - "/usr/local/sbin/drmemory"
+      - "/usr/local/drmemory"
+      - "/usr/bin/drmemory"
+      - "/usr/sbin/drmemory"
+      - "/usr/drmemory"
+      - "/bin/drmemory"
+      - "/sbin/drmemory"
+      - "/usr/X11R6/bin/drmemory"
+      - "/usr/X11R6/sbin/drmemory"
+      - "/usr/X11R6/drmemory"
+      - "/usr/pkg/bin/drmemory"
+      - "/usr/pkg/sbin/drmemory"
+      - "/usr/pkg/drmemory"
+      - "/opt/bin/drmemory"
+      - "/opt/sbin/drmemory"
+      - "/opt/drmemory"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/cuda-memcheck"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/cuda-memcheck"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/cuda-memcheck"
+      - "/home/hoskinson/.cargo/bin/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/cuda-memcheck"
+      - "/home/hoskinson/.local/share/mise/shims/cuda-memcheck"
+      - "/usr/share/omarchy/bin/cuda-memcheck"
+      - "/usr/local/sbin/cuda-memcheck"
+      - "/usr/local/bin/cuda-memcheck"
+      - "/usr/bin/cuda-memcheck"
+      - "/home/hoskinson/.local/bin/cuda-memcheck"
+      - "/usr/lib/jvm/default/bin/cuda-memcheck"
+      - "/usr/bin/site_perl/cuda-memcheck"
+      - "/usr/bin/vendor_perl/cuda-memcheck"
+      - "/usr/bin/core_perl/cuda-memcheck"
+      - "/usr/local/bin/cuda-memcheck"
+      - "/usr/local/sbin/cuda-memcheck"
+      - "/usr/local/cuda-memcheck"
+      - "/usr/bin/cuda-memcheck"
+      - "/usr/sbin/cuda-memcheck"
+      - "/usr/cuda-memcheck"
+      - "/bin/cuda-memcheck"
+      - "/sbin/cuda-memcheck"
+      - "/usr/X11R6/bin/cuda-memcheck"
+      - "/usr/X11R6/sbin/cuda-memcheck"
+      - "/usr/X11R6/cuda-memcheck"
+      - "/usr/pkg/bin/cuda-memcheck"
+      - "/usr/pkg/sbin/cuda-memcheck"
+      - "/usr/pkg/cuda-memcheck"
+      - "/opt/bin/cuda-memcheck"
+      - "/opt/sbin/cuda-memcheck"
+      - "/opt/cuda-memcheck"
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/compute-sanitizer"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/compute-sanitizer"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/compute-sanitizer"
+      - "/home/hoskinson/.cargo/bin/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/compute-sanitizer"
+      - "/home/hoskinson/.local/share/mise/shims/compute-sanitizer"
+      - "/usr/share/omarchy/bin/compute-sanitizer"
+      - "/usr/local/sbin/compute-sanitizer"
+      - "/usr/local/bin/compute-sanitizer"
+      - "/usr/bin/compute-sanitizer"
+      - "/home/hoskinson/.local/bin/compute-sanitizer"
+      - "/usr/lib/jvm/default/bin/compute-sanitizer"
+      - "/usr/bin/site_perl/compute-sanitizer"
+      - "/usr/bin/vendor_perl/compute-sanitizer"
+      - "/usr/bin/core_perl/compute-sanitizer"
+      - "/usr/local/bin/compute-sanitizer"
+      - "/usr/local/sbin/compute-sanitizer"
+      - "/usr/local/compute-sanitizer"
+      - "/usr/bin/compute-sanitizer"
+      - "/usr/sbin/compute-sanitizer"
+      - "/usr/compute-sanitizer"
+      - "/bin/compute-sanitizer"
+      - "/sbin/compute-sanitizer"
+      - "/usr/X11R6/bin/compute-sanitizer"
+      - "/usr/X11R6/sbin/compute-sanitizer"
+      - "/usr/X11R6/compute-sanitizer"
+      - "/usr/pkg/bin/compute-sanitizer"
+      - "/usr/pkg/sbin/compute-sanitizer"
+      - "/usr/pkg/compute-sanitizer"
+      - "/opt/bin/compute-sanitizer"
+      - "/opt/sbin/compute-sanitizer"
+      - "/opt/compute-sanitizer"
+    found: false
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+  -
+    kind: "find-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CTest.cmake:196 (find_program)"
+      - "CMakeLists.txt:12 (include)"
+    mode: "program"
+    variable: "COVERAGE_COMMAND"
+    description: "Path to the coverage program that CTest uses for performing coverage inspection"
+    settings:
+      SearchFramework: "NEVER"
+      SearchAppBundle: "NEVER"
+      CMAKE_FIND_USE_CMAKE_PATH: true
+      CMAKE_FIND_USE_CMAKE_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_SYSTEM_ENVIRONMENT_PATH: true
+      CMAKE_FIND_USE_CMAKE_SYSTEM_PATH: true
+      CMAKE_FIND_USE_INSTALL_PREFIX: true
+    names:
+      - "gcov"
+    candidate_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/"
+      - "/home/hoskinson/.cargo/bin/"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/"
+      - "/home/hoskinson/.local/share/mise/shims/"
+      - "/usr/share/omarchy/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/bin/"
+      - "/usr/bin/"
+      - "/home/hoskinson/.local/bin/"
+      - "/usr/lib/jvm/default/bin/"
+      - "/usr/bin/site_perl/"
+      - "/usr/bin/vendor_perl/"
+      - "/usr/bin/core_perl/"
+      - "/usr/local/bin/"
+      - "/usr/local/sbin/"
+      - "/usr/local/"
+      - "/usr/bin/"
+      - "/usr/sbin/"
+      - "/usr/"
+      - "/bin/"
+      - "/sbin/"
+      - "/usr/X11R6/bin/"
+      - "/usr/X11R6/sbin/"
+      - "/usr/X11R6/"
+      - "/usr/pkg/bin/"
+      - "/usr/pkg/sbin/"
+      - "/usr/pkg/"
+      - "/opt/bin/"
+      - "/opt/sbin/"
+      - "/opt/"
+    searched_directories:
+      - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path/gcov"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA/gcov"
+      - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/claude/latest/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/node/latest/bin/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin/gcov"
+      - "/home/hoskinson/.cargo/bin/gcov"
+      - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins/gcov"
+      - "/home/hoskinson/.local/share/mise/shims/gcov"
+      - "/usr/share/omarchy/bin/gcov"
+      - "/usr/local/sbin/gcov"
+      - "/usr/local/bin/gcov"
+    found: "/usr/bin/gcov"
+    search_context:
+      ENV{PATH}:
+        - "/home/hoskinson/.codex/packages/app-server-daemon/releases/0.160.0-x86_64-unknown-linux-musl/codex-path"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0nhbtKA"
+        - "/home/hoskinson/.codex/tmp/arg0/codex-arg0Fcwwxo"
+        - "/home/hoskinson/.local/share/mise/installs/codex/0.160.0/codex-path"
+        - "/home/hoskinson/.local/share/mise/installs/claude/latest"
+        - "/home/hoskinson/.local/share/mise/installs/codex/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/gh/latest/gh_2.102.0_linux_amd64/bin"
+        - "/home/hoskinson/.local/share/mise/installs/node/latest/bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/npm-xai-official-grok/latest/node_modules/.bin"
+        - "/home/hoskinson/.local/share/mise/installs/pi/latest/pi"
+        - "/home/hoskinson/.local/share/mise/installs/pipx-hermes-agent/latest/bin"
+        - "/home/hoskinson/.cargo/bin"
+        - "/home/hoskinson/.local/share/mise/installs/uv/latest/.mise-bins"
+        - "/home/hoskinson/.local/share/mise/shims"
+        - "/usr/share/omarchy/bin"
+        - "/usr/local/sbin"
+        - "/usr/local/bin"
+        - "/usr/bin"
+        - "/home/hoskinson/.local/bin"
+        - "/usr/lib/jvm/default/bin"
+        - "/usr/bin/site_perl"
+        - "/usr/bin/vendor_perl"
+        - "/usr/bin/core_perl"
+      CMAKE_INSTALL_PREFIX: "/usr/local"
+      CMAKE_SYSTEM_PREFIX_PATH:
+        - "/usr/local"
+        - "/usr"
+        - "/"
+        - "/usr"
+        - "/usr/local"
+        - "/usr/X11R6"
+        - "/usr/pkg"
+        - "/opt"
+...

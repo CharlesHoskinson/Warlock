@@ -1,0 +1,31 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+geometry full-key rejects wrong generation AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:68:138
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:11:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:68:53
+geometry full-key rejects wrong geometry revision AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:68:138
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:11:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:68:53
+geometry full-key rejects wrong operation AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:68:138
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:11:81)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-menu-v46/qa/mutations-1791102245824922874/receipt-full-key/inputs/qa/geometry.cjs:68:53

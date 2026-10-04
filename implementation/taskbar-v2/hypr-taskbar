@@ -1,0 +1,366 @@
+#!/usr/bin/env python3
+"""Taskbar catalog and actions. Commands use argv, never shell interpolation."""
+import configparser
+import fcntl
+import json
+import os
+from pathlib import Path
+import re
+import shlex
+import subprocess
+import sys
+import tempfile
+import xml.etree.ElementTree as ET
+from taskbar_catalog import load_catalog
+
+sys.path.insert(0, str(Path.home() / '.local/share/hypr-window-controls'))
+from window_state import desktop_owner, monitor_owner
+
+HOME = Path.home()
+CONFIG = Path(os.environ.get('XDG_CONFIG_HOME', HOME / '.config')) / 'omarchy'
+DATA = Path(os.environ.get('XDG_DATA_HOME', HOME / '.local/share'))
+PINS = CONFIG / 'taskbar-pins.json'
+SETTINGS = CONFIG / 'taskbar-settings.json'
+ORDER = CONFIG / 'taskbar-order.json'
+ADDRESS = re.compile(r'^0x[0-9a-fA-F]+$')
+
+
+def entries():
+    return load_catalog(data_home=DATA)
+
+
+def load_pins():
+    try:
+        pins = json.loads(PINS.read_text())
+        return list(dict.fromkeys(p for p in pins if isinstance(p, str))) if isinstance(pins, list) else []
+    except (OSError, ValueError):
+        return []
+
+
+def set_pin(key, enabled, catalog):
+    if key not in catalog:
+        raise ValueError('Application has no installed desktop entry')
+    CONFIG.mkdir(parents=True, exist_ok=True)
+    with (CONFIG / '.taskbar-pins.lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        pins = load_pins()
+        if enabled and key not in pins:
+            pins.append(key)
+        elif not enabled:
+            pins = [p for p in pins if p != key]
+        fd, name = tempfile.mkstemp(prefix='.taskbar-pins.', dir=CONFIG)
+        try:
+            with os.fdopen(fd, 'w') as output:
+                json.dump(pins, output)
+                output.write('\n')
+            os.replace(name, PINS)
+        finally:
+            if os.path.exists(name):
+                os.unlink(name)
+
+
+def clients():
+    return json.loads(subprocess.check_output(['hyprctl', 'clients', '-j'], text=True, timeout=3))
+
+
+def key_for(window, catalog):
+    appclass = str(window.get('class') or window.get('initialClass') or '').lower()
+    if appclass == 'org.quickshell' and window.get('title') == 'Files' and 'omarchy-files' in catalog:
+        return 'omarchy-files'
+    if appclass in {k.lower(): k for k in catalog}:
+        return next(k for k in catalog if k.lower() == appclass)
+    for key, entry in catalog.items():
+        if key != 'omarchy-files' and entry['wmclass'].lower() == appclass and appclass:
+            return key
+    return 'class:' + (appclass or window['address'])
+
+
+def recent_files(entry):
+    result = []
+    try:
+        tree = ET.parse(DATA / 'recently-used.xbel')
+        bookmarks = sorted(tree.getroot().findall('bookmark'), key=lambda b: b.get('modified', ''), reverse=True)
+        for bookmark in bookmarks:
+            uri = bookmark.get('href', '')
+            if not uri.startswith('file://'):
+                continue
+            mime = bookmark.find('.//{http://www.freedesktop.org/standards/shared-mime-info}mime-type')
+            names = [a.get('name', '').lower() for a in bookmark.findall('.//{http://www.freedesktop.org/standards/desktop-bookmarks}application')]
+            mime_type = mime.get('type', '') if mime is not None else ''
+            if entry['name'].lower() not in names and entry['id'].lower() not in names and mime_type not in entry['mime']:
+                continue
+            from urllib.parse import unquote, urlparse
+            path = Path(unquote(urlparse(uri).path))
+            if path.is_file():
+                result.append({'name': path.name, 'uri': uri})
+            if len(result) == 6:
+                break
+    except (OSError, ET.ParseError):
+        pass
+    return result
+
+
+def preview_ready(window):
+    address = str(window.get('address', ''))
+    if not ADDRESS.fullmatch(address):
+        return False
+    cache = Path(os.environ.get('XDG_RUNTIME_DIR', HOME / '.cache')) / 'hypr-window-previews'
+    image = cache / (address + '-0.png')
+    if not image.is_file():
+        return False
+    metadata = cache / (address + '.json')
+    identity = {'pid': window.get('pid'), 'stableId': window.get('stableId', '')}
+    try:
+        with (cache / (address + '.lock')).open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            try:
+                previous = json.loads(metadata.read_text())
+            except (OSError, ValueError):
+                previous = None
+            if previous != identity:
+                for candidate in (image, cache / (address + '-1.png'), metadata):
+                    candidate.unlink(missing_ok=True)
+                return False
+            return image.is_file()
+    except OSError:
+        return False
+
+
+def attention_state():
+    path = Path(os.environ.get('XDG_RUNTIME_DIR', HOME / '.cache')) / 'hypr-taskbar-attention.json'
+    try:
+        data = json.loads(path.read_text())
+        return data if isinstance(data, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def launcher_state():
+    path = Path(os.environ.get('XDG_RUNTIME_DIR', HOME / '.cache')) / 'hypr-taskbar-launcher.json'
+    try:
+        data = json.loads(path.read_text())
+        return data if isinstance(data, dict) else {}
+    except (OSError, ValueError):
+        return {}
+
+
+def session_group_order(values):
+    """Keep running app positions independent of compositor stacking order."""
+    CONFIG.mkdir(parents=True, exist_ok=True)
+    path = CONFIG / 'taskbar-session-order.json'
+    instance = os.environ.get('HYPRLAND_INSTANCE_SIGNATURE', '')
+    current = [g['key'] for g in values]
+    with (CONFIG / '.taskbar-session-order.lock').open('a') as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        previous = None
+        try:
+            previous = json.loads(path.read_text())
+            keys = previous.get('keys', []) if previous.get('instance') == instance else []
+            keys = list(dict.fromkeys(key for key in keys if isinstance(key, str) and key in current))
+        except (OSError, ValueError, AttributeError, TypeError):
+            keys = []
+        keys.extend(key for key in current if key not in keys)
+        state = {'instance': instance, 'keys': keys}
+        if not path.exists() or previous != state:
+            fd, name = tempfile.mkstemp(prefix='.taskbar-session-order.', dir=CONFIG)
+            with os.fdopen(fd, 'w') as output:
+                json.dump(state, output)
+            os.replace(name, path)
+        return keys
+
+
+def snapshot(catalog):
+    try:
+        settings = json.loads(SETTINGS.read_text())
+    except (OSError, ValueError):
+        settings = {}
+    groups = {}
+    attention = attention_state()
+    launchers = launcher_state()
+    monitors, workspaces = [], []
+    try:
+        monitors = json.loads(subprocess.check_output(['hyprctl', 'monitors', '-j'], text=True, timeout=3))
+        workspaces = json.loads(subprocess.check_output(['hyprctl', 'workspaces', '-j'], text=True, timeout=3))
+    except (subprocess.SubprocessError, ValueError):
+        pass
+    for key in load_pins():
+        if key in catalog:
+            groups[key] = {'key': key, 'desktopId': key, 'name': catalog[key]['name'], 'icon': catalog[key]['icon'], 'pinned': True, 'windows': []}
+    active = ''
+    for window in clients():
+        workspace = window.get('workspace', {}).get('name', '')
+        if not window.get('mapped') or not (re.fullmatch(r'[0-9]+', workspace) or workspace == 'special:win-minimized'):
+            continue
+        key = key_for(window, catalog)
+        entry = catalog.get(key, {})
+        if key not in groups:
+            groups[key] = {'key': key, 'desktopId': entry.get('id', ''), 'name': entry.get('name', window.get('class') or 'Window'), 'icon': entry.get('icon', window.get('class') or 'application-x-executable'), 'pinned': False, 'windows': []}
+        window['previewReady'] = preview_ready(window)
+        window['homeWorkspace'], window['homePinned'] = desktop_owner(window)
+        window['homeMonitor'] = monitor_owner(window, monitors, workspaces)
+        window['urgent'] = attention.get(str(window.get('address', '')).lower()) == {'pid': window.get('pid'), 'stableId': window.get('stableId', '')}
+        groups[key]['windows'].append(window)
+        if window.get('focusHistoryID') == 0 and workspace != 'special:win-minimized':
+            active = window['address']
+    for group in groups.values():
+        entry = catalog.get(group['desktopId'])
+        group['launcher'] = launchers.get(group['desktopId'], {})
+        group['actions'] = [{'id': a['id'], 'name': a['name']} for a in entry['actions']] if entry else []
+        group['recent'] = recent_files(entry) if entry else []
+    snap = []
+    tool = HOME / '.local/bin/hypr-snap-groups'
+    if tool.exists():
+        try:
+            snap = json.loads(subprocess.check_output([str(tool), 'list', '--json'], text=True, timeout=4))
+        except (subprocess.SubprocessError, ValueError):
+            pass
+    try:
+        order = json.loads(ORDER.read_text())
+    except (OSError, ValueError):
+        order = []
+    values = list(groups.values())
+    session_order = session_group_order(values)
+    values.sort(key=lambda g: (0, order.index(g['key'])) if g['key'] in order else (1, session_order.index(g['key'])))
+    motion = HOME / '.config/hypr/reduced-motion'
+    try:
+        reduced_motion = motion.read_text().strip() == '1'
+    except OSError:
+        reduced_motion = False
+    return {'groups': values, 'focusedAddress': active, 'snapGroups': snap, 'settings': settings, 'monitors': monitors, 'reducedMotion': reduced_motion}
+
+
+def launch(entry, action='', uri=''):
+    if not action and not uri:
+        subprocess.Popen(['gio', 'launch', entry['path']], start_new_session=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        return
+    command = entry['exec']
+    if action:
+        candidates = [a for a in entry['actions'] if a['id'] == action]
+        if not candidates:
+            raise ValueError('Unknown desktop action')
+        command = candidates[0]['exec']
+    argv = []
+    supplied = False
+    for token in shlex.split(command):
+        if token in ('%f', '%F', '%u', '%U'):
+            if uri:
+                from urllib.parse import unquote, urlparse
+                argv.append(unquote(urlparse(uri).path) if token.lower() == '%f' else uri)
+                supplied = True
+        elif token == '%i':
+            argv.extend(['--icon', entry['icon']])
+        else:
+            token = token.replace('%%', '\0').replace('%c', entry['name']).replace('%k', entry['path'])
+            token = re.sub(r'%[A-Za-z]', '', token).replace('\0', '%')
+            if token:
+                argv.append(token)
+    if uri and not supplied:
+        argv.append(uri)
+    if not argv:
+        raise ValueError('Desktop action has no command')
+    if entry['terminal']:
+        argv = ['omarchy-terminal', '-e'] + argv
+    subprocess.Popen(argv, start_new_session=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+
+
+def quicklist_action(app, identifier):
+    from gi.repository import Gio, GLib
+    launcher = launcher_state().get(app, {})
+    item = next((item for item in launcher.get('quicklistItems', []) if item.get('id') == identifier), None)
+    if not item or not item.get('enabled') or not launcher.get('quicklist') or not launcher.get('sender', '').startswith(':'):
+        raise ValueError('Application action is unavailable')
+    bus = Gio.bus_get_sync(Gio.BusType.SESSION, None)
+    try:
+        bus.call_sync(launcher['sender'], launcher['quicklist'], 'com.canonical.dbusmenu',
+                      'Event', GLib.Variant('(isvu)', (identifier, 'clicked', GLib.Variant('s',''), 0)),
+                      None, Gio.DBusCallFlags.NONE, 3000, None)
+    except GLib.Error as error:
+        raise ValueError('Application action failed: ' + error.message) from error
+
+
+def quicklist_show(app):
+    from gi.repository import Gio, GLib
+    try:
+        Gio.bus_get_sync(Gio.BusType.SESSION, None).call_sync('org.omarchy.Taskbar',
+            '/org/omarchy/Taskbar', 'org.omarchy.Taskbar', 'QuicklistShow',
+            GLib.Variant('(s)', (app,)), None, Gio.DBusCallFlags.NONE, 3000, None)
+    except GLib.Error as error:
+        raise ValueError('Application menu is unavailable: ' + error.message) from error
+
+
+def main():
+    args = sys.argv[1:]
+    command = args[0] if args else 'snapshot'
+    if command in ('observe', 'watch'):
+        if len(args) != 1:
+            raise ValueError('Usage: hypr-taskbar observe')
+        from taskbar_watch import observe, watched_paths
+        observe(lambda: snapshot(entries()), watched_paths(HOME, CONFIG, DATA))
+        return
+    catalog = entries()
+    if command == 'snapshot':
+        print(json.dumps(snapshot(catalog)))
+    elif command == 'pin-chooser':
+        labels = {e['name'] + ' (' + e['id'] + ')': e['id'] for e in catalog.values()}
+        choice = subprocess.run(['omarchy', 'menu', 'select', 'Pin application'] + sorted(labels), text=True, capture_output=True)
+        key = labels.get(choice.stdout.strip())
+        if key:
+            set_pin(key, True, catalog)
+    elif command == 'catalog':
+        print(json.dumps([{'id': e['id'], 'name': e['name'], 'icon': e['icon']} for e in catalog.values()]))
+    elif command == 'config' and len(args) == 3:
+        choices = {'combineMode': ('always', 'when-full', 'never'), 'displayMode': ('all', 'monitor'),
+                   'desktopScope': ('current', 'all'), 'switcherScope': ('current', 'all')}
+        if args[1] not in choices or args[2] not in choices[args[1]]:
+            raise ValueError('Invalid taskbar setting')
+        try:
+            settings = json.loads(SETTINGS.read_text())
+        except (OSError, ValueError):
+            settings = {}
+        settings[args[1]] = args[2]
+        CONFIG.mkdir(parents=True, exist_ok=True)
+        fd, name = tempfile.mkstemp(prefix='.taskbar-settings.', dir=CONFIG)
+        with os.fdopen(fd, 'w') as output:
+            json.dump(settings, output)
+        os.replace(name, SETTINGS)
+    elif command == 'reorder' and len(args) == 3:
+        groups = [g['key'] for g in snapshot(catalog)['groups']]
+        if args[1] not in groups or args[2] not in groups:
+            raise ValueError('Unknown taskbar group')
+        if args[1] != args[2]:
+            groups.remove(args[1])
+            groups.insert(groups.index(args[2]), args[1])
+        CONFIG.mkdir(parents=True, exist_ok=True)
+        fd, name = tempfile.mkstemp(prefix='.taskbar-order.', dir=CONFIG)
+        with os.fdopen(fd, 'w') as output:
+            json.dump(groups, output)
+        os.replace(name, ORDER)
+    elif command in ('pin', 'unpin') and len(args) == 2:
+        set_pin(args[1], command == 'pin', catalog)
+    elif command == 'launch' and len(args) in (2, 3):
+        launch(catalog[args[1]], args[2] if len(args) == 3 else '')
+    elif command == 'quicklist' and len(args) == 3:
+        quicklist_action(args[1], int(args[2]))
+    elif command == 'quicklist-show' and len(args) == 2:
+        quicklist_show(args[1])
+    elif command == 'recent' and len(args) == 3:
+        entry = catalog[args[1]]
+        if args[2] not in [r['uri'] for r in recent_files(entry)]:
+            raise ValueError('File is not in this application recent list')
+        launch(entry, uri=args[2])
+    elif command == 'restore-group' and len(args) == 2:
+        group = next((g for g in snapshot(catalog)['groups'] if g['key'] == args[1]), None)
+        if group:
+            for window in reversed(group['windows']):
+                if ADDRESS.fullmatch(window['address']):
+                    subprocess.run([str(HOME / '.local/bin/hypr-windowctl'), 'restore', window['address']], check=True, timeout=8)
+    else:
+        raise ValueError('Usage: hypr-taskbar snapshot|catalog|pin ID|unpin ID|launch ID [ACTION]|recent ID URI|restore-group KEY')
+
+
+if __name__ == '__main__':
+    try:
+        main()
+    except (ValueError, KeyError, OSError, subprocess.SubprocessError) as error:
+        print('Taskbar: ' + str(error), file=sys.stderr)
+        sys.exit(2)

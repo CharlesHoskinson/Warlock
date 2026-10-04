@@ -1,0 +1,59 @@
+{
+  "scope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-ab3eff3dc445491aa0ef6bfec6317f65.scope",
+    "coreLimit": 1
+  },
+  "owningCore": "efb50993780079460b0cbed1363e2166a2de1d9f",
+  "result": "fail",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "clone",
+        "--shared",
+        "--no-checkout",
+        "/home/hoskinson/src/hyprland-motion-audit",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core",
+        "checkout",
+        "--detach",
+        "efb50993780079460b0cbed1363e2166a2de1d9f"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "git",
+        "-C",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core",
+        "submodule",
+        "update",
+        "--init",
+        "--depth",
+        "1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "cmake",
+        "-S",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core/build",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_CXX_FLAGS_RELEASE=-O2 -DNDEBUG"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "installed": false,
+  "error": "RuntimeError('Native build command failed: cmake')"
+}

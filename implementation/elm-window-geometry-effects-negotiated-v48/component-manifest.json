@@ -1,0 +1,110 @@
+{
+  "schema": 1,
+  "passed": true,
+  "frozenUTCUnixNs": 1791102657198360778,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a599fdc0bfe84c6fb1feabb304df966c.scope",
+    "coreLimit": 1
+  },
+  "geometryNativeAccepted": true,
+  "geometryMenuAccepted": false,
+  "fullRoadmapAccepted": false,
+  "unknownNativeFaultRecoveryAccepted": false,
+  "competingPeersAccepted": false,
+  "workareaOwnershipChangeAccepted": false,
+  "releaseAccepted": false,
+  "deploymentAccepted": false,
+  "quintGeometryModelLogicApproved": false,
+  "scope": "Isolated singleton native effect2 maximize/restore geometry + legacy minimized MAX composition; CPU and historical failures separately attributed",
+  "nativeQualification": {
+    "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v55/qa/native-1791102357953536490/report.json",
+    "reportSHA256": "740c96970369e465a2ba96d937812a8e9914cb6ab3d36ec8632834fd701217c5",
+    "nativeChecks": 96,
+    "pixelChecks": 7,
+    "normalCleanup": true,
+    "mainDesktopActions": false,
+    "nativeCore": {
+      "result": "pass",
+      "binary": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/build-1791101053270682069/Hyprland",
+      "sha256": "5f1237c8c66671d6d451c346f93dcefd3ce203cecd385d8068092aeffe2376b1",
+      "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/build-1791101053270682069/report.json",
+      "buildReportSHA256": "d6391f03c7df483631f40482ef911bc9f22aa5c8faf9535aff349c9d28754ac3",
+      "closureReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/qa/final-closure-1791101398597946230/closure.json",
+      "closureReportSHA256": "743fd76c1c598f5c0ff4ebc8f8c71de4b75efa804f44fee46ce4c1ed292e1fdd",
+      "nativeAcceptance": false
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-owning-pair-v49/qa/build-1791101699419310570/elm-window-geometry-authority.so",
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-viewport-v8/build-1791091844697498690/cmake/libaquamarine.so.0.15.0",
+      "sha256": "48fba8868cd21b523a75c8347299c40c48cb2f5a6e2fce78342bd87b68d983c3"
+    },
+    "client": {
+      "result": "pass",
+      "client": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-suspend-v53/qa/client-build-1791102127026085440/xdg-max-client",
+      "clientSHA256": "f47c2ce1a555f0df70df9d675b1df7074d49e21789615dd4650a63d0d4cb42e9",
+      "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-suspend-v53/qa/client-build-1791102127026085440/report.json",
+      "buildReportSHA256": "f3df071c42e3f2c24ddf3cd647c33050e37025eb3511ba579b1028ce4e549b7b",
+      "nativeAcceptance": false,
+      "requiresXdgVersion": 6,
+      "suspendedStateObserved": true
+    },
+    "pairManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-owning-pair-v49/qa/build-pair-manifest.json",
+    "pairManifestSHA256": "bd2e92fafa05355a0fb1fb07fadc5ff83f1e42a446dc00aad3ea8c120afbd81b",
+    "coreManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/component-manifest.json",
+    "coreManifestSHA256": "dd924d35c3568b4b0e0434bbc2eb841789e69c4451806a6a62659111180ca712",
+    "contractCPU": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-native-contract-tests-v50/qa/contract-1791101638979185401/report.json",
+    "contractCPUSHA256": "15633de63e0b09628be96d8f1757ffd50048675eaf3d5c6ec28f6866eaffaaf0",
+    "legacyMenuManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-regression-v52/component-manifest.json",
+    "legacyMenuManifestSHA256": "8a7bb989909ae5572dc3152c67779293c72f9b989cefcabac747b3cb34b391e7",
+    "preflight": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v55/qa/preflight-1791102259102730218/report.json",
+    "preflightSHA256": "d430e2f2a25998cbd37d17401173d2d243f0864e5ea16f9794534b0535e1db14",
+    "historicalOldFixtureCPU": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v51/qa/preflight-1791102156356623552/report.json",
+    "historicalOldFixtureCPUSHA256": "11357473d0bc9a914c58750923a1bbe8bd496cdef0f76e4bc0fbfaebe274cff6",
+    "failedDescriptorKeyPreflight": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v54/qa/preflight-1791102233943763456/report.json",
+    "failedDescriptorKeyPreflightSHA256": "c874a533339cf0f728c042beeb232ee971531d377ca5a67cef38dcb52828cfdd"
+  },
+  "acceptanceDocument": "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/delivery/GEOMETRY-NATIVE-V55-ACCEPTANCE.md",
+  "acceptanceDocumentSHA256": "c47a8a5d9a41775611a97deaf3346daefadf174860951c5f924201be9d4881b7",
+  "component": "elm-window-geometry-effects-negotiated-v48",
+  "files": [
+    {
+      "path": "candidate/EffectBarrier.hpp",
+      "size": 863,
+      "mode": 420,
+      "sha256": "9f1e2459a996df3aa71b5834c766054c8cac33ac80a751e9500fc818392a5ac3"
+    },
+    {
+      "path": "candidate/PlacementPolicy.hpp",
+      "size": 4647,
+      "mode": 420,
+      "sha256": "764d627049e787220dd66be2c93ce1da5bb20ff1a821523e75210a9f7b854202"
+    },
+    {
+      "path": "native/CONTRACT.md",
+      "size": 4987,
+      "mode": 420,
+      "sha256": "78f18c44c18c1e895fb8672cadba8a40bfe8274453888f846d5b500e49b8ee19"
+    },
+    {
+      "path": "native/authority.cpp",
+      "size": 38301,
+      "mode": 420,
+      "sha256": "f51ac87a588f405345402a6410883f0ec31449d4de2d22f1d37cb51a896879e4"
+    },
+    {
+      "path": "native/geometry-effects.inc",
+      "size": 11864,
+      "mode": 420,
+      "sha256": "811a878d5d52f68ab7f01942c2c5c40c0e8df6a53b84f908443477700f97d50b"
+    },
+    {
+      "path": "native/geometry.inc",
+      "size": 8863,
+      "mode": 420,
+      "sha256": "9ab78c35ee287f795fd0d047bdf802afc2d996053a64477b6e40856832803cd5"
+    }
+  ]
+}

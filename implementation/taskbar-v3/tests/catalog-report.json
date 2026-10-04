@@ -1,0 +1,20 @@
+{
+  "kind": "CPU fixture acceptance only",
+  "tests": 24,
+  "result": "passed",
+  "test_invocation": "b298dab0cda148d8a636e1e6badd793e",
+  "benchmark_invocation": "f5d613cd86d74768aadc589c8bb1fce2",
+  "benchmark": {
+    "fixture_entries": 1000,
+    "iterations": 10,
+    "warm_parse_calls": 0,
+    "uncached_parse_median_ms": 121.96341950004808,
+    "warm_full_load_median_ms": 26.320299999952113
+  },
+  "limitations": "Synthetic filesystem fixture; no native GUI acceptance or deployed performance claim. Warm catalog still fingerprints filesystem twice.",
+  "sources": {
+    "taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "tests/test_taskbar_catalog.py": "acb8bef76aafa5134020045b5aca03185c71e7e0d2a713eda0be91499ec6e6e2",
+    "tests/benchmark_catalog.py": "f40169881c387bc98783ce2152ddc216458fddce1301cdbce9571e781e31b431"
+  }
+}

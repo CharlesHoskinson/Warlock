@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "mainDesktopActions": false,
+  "scope": "Parent-seat injection plus exact one GTK recipient coordinates for four unrotated single-output modes only; no cursor/pixel/multioutput/stale-callback/release acceptance",
+  "checks": [],
+  "error": "AssertionError('fixture.py')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v9/qa/native.py\", line 27, in <module>\n    for rel,sha in build['inputs'].items():assert host.digest(ROOT/rel)==sha,rel\n                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: fixture.py\n",
+  "cleanupPassed": false,
+  "artifacts": {}
+}

@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Bounded held-button loss/cancellation-before-retirement abstraction; actual C++ callback lifetime and native recipient/core state separate",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "held.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-cancellation-v117/qa/model-1791111780704115302/held.qnt:9:28\\n  9:   action press(button:int) = s'=if(s.pointerLive and not(s.failed) and button>0 and button<=3 and not(s.held.contains(button)))\\n                                ^\\n\\n\\n Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-cancellation-v117/qa/model-1791111780704115302/held.qnt:10:63\\n  10:     {...s,held:s.held.union(Set(button)),pressed:s.pressed+1} else s\\n                                                                    ^^^^\\n\\nerror: parsing failed\\n[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\\n\")",
+  "artifacts": {
+    "held.qnt": "d30686e0d4efe63c47a34ae2e6a40d3d60eb9c2ea240727ba5f6b420654be604",
+    "model.py": "d1d1597a95844f3c804cae7d25527e3a1c62243258f49f9e26fcc19824475c32",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "30eeb3f5862d901575d9b0b1ebf686ea0c27446396bffc9e565f899cd9ed6eab"
+  }
+}
