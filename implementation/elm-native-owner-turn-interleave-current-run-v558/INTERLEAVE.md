@@ -1,0 +1,5 @@
+# Corrected owner-state scheduling campaign
+
+Supersedes546/547 unsupported-observation fixtures after548 proved the trigger was filtered. Actual owner-retirement552 oracle passes old507 publication1/current521 publication0. Fresh550/551 Main QA port passes optimized Elm/native compile and actualC168 checks; SurfaceController source and native admission remain byte-exact. Native runner original533 assertions/check/wait AST and six-second deadlines unchanged. Preflight freezes exact source/runtime owning470/471/AQ155/observer477; launcher serial/protected. Old553 expected first context-open failure must be retained with observed proof/publication and normalcleanup; current554 intended original89 pass. Artificial scheduling does not close historical504 cause.
+
+Fresh557/558 binds555/556 zero-delay event-turn correction;553/554 hidden-rAF timeouts remain failed, no causal acceptance. Compile/currentC guards pass, same native scope and original behavioral AST.

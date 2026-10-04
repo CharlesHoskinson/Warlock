@@ -5311,6 +5311,23 @@
       "pointerRaceCausallyResolved": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "nativeAcceptance": true,
+      "source": "implementation/elm-stable-surface-publication-v521",
+      "diagnosticSources": [
+        "implementation/elm-native-owner-turn-interleave-before-v555",
+        "implementation/elm-native-owner-turn-interleave-current-v556"
+      ],
+      "controlledCurrentNativeChecks": 89,
+      "controlledMechanismConfirmed": true,
+      "historical504CauseConfirmed": false,
+      "pointerRaceCausallyResolved": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-native-owner-counterfactual-reviewed-v561/qa/slice-manifest.json",
+      "manifestSHA256": "69ce75e7b31ca7b537ae49dbaf93ceb5fc005d3ffa07a2618c7cfdbe4b572219",
+      "summary": "Controlled real native publication/input counterfactual: old557 ownerupdate8->9 retains originalproof8 and refuses at2433us, fullSurface equal excludingpub/requests/focus empty, original6s failure preserved normalcleanup4checks. Current558 ownerupdate6->6 no commit accepts realproof at2106us, asyncDOMverify and original89 allpass normalcleanup. Separate QA-only Main port/native hook derivatives555/556; production521 coherent307 remains prior531. Actual552 exactevent oracle passes;559 fulltrace/reporthash analyzer passes. Retain543compile/548filteredunknown/553554hiddenrAF failures, earlierfixtures, inheritedmutationarchives.561 frozen2632files18reports; controlledmechanismconfirmed, historical504 exacttriggerunconfirmed, fullrelease unchanged."
     }
   ]
 }

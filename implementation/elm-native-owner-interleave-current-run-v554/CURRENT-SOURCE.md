@@ -1,0 +1,1 @@
+Fresh525 derivative selects532 QA logging build only. Original89 assertions/deadlines/fixtures preserved; logging overhead prevents treating this as uninstrumented performance acceptance. No causal504 repair claim.
