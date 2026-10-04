@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "checks": [
+    "exact fresh fractional surface coordinates",
+    "reject pid 124",
+    "reject pid 123.0",
+    "reject sequence True",
+    "reject ownedSurface 1",
+    "reject button 273",
+    "reject buttonState 0",
+    "reject localFixed [4224.0, 6208]",
+    "reject local [nan, 24.25]",
+    "reject local [16.5001, 24.25]",
+    "reject pointerSerial -1",
+    "reject pointerTime False",
+    "reject event 'pointer-motion'",
+    "reject stale",
+    "reject reversed",
+    "reject missing release",
+    "reject surface vs buffer scale",
+    "reject bool expected point",
+    "reject huge integer expected point"
+  ],
+  "nativeAcceptance": false,
+  "scope": "Synthetic decoder controls; no pointer injection, native recipient or hardware qualification",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/oracle.py": "45a97d355179b186bb40d74890e813231f3917b43bacdc9e547f10076728ad21",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/qa/test.py": "92f98d9cd4c849876d7287f68fe6601e0c1de7fb23dbcda030ceade9c8c1a5ee",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-journal-oracle-v213/REQUIREMENTS.md": "77158af2477b56eca3fb52be05044c6559e8497f4c4aeef5935cc88f5b6e5266"
+  }
+}
