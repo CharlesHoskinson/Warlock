@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'select' is redefined in module 'picker'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-focus-v38/qa/model-1791072742214791165/picker.qnt:11:9
+  11:  action select=all{s.open,s.shown==s.scope,not(s.pending),s'={...s,open:false,pending:true,effects:s.effects+1,focused:"native"}}
+              ^^^^^^
+
+error: parsing failed

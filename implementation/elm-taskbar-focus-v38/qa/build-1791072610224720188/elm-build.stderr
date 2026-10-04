@@ -1,0 +1,26 @@
+-- TYPE MISMATCH -------------------------------------------------- src/Main.elm
+
+The right side of (|>) needs to be a function so I can pipe arguments to it!
+
+27|                 if model.picker |> Maybe.map .generation == Just picker.generation then Cmd.none else
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+But instead of a function, I am seeing:
+
+    Bool
+
+-- TYPE MISMATCH -------------------------------------------------- src/Main.elm
+
+I need both sides of (==) to be the same type:
+
+27|                 if model.picker |> Maybe.map .generation == Just picker.generation then Cmd.none else
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The left side of (==) is:
+
+    Maybe { a | generation : b } -> Maybe b
+
+But the right side is:
+
+    Maybe UInt64.Counter
+
+Different types can never be equal though! Which side is messed up?
+

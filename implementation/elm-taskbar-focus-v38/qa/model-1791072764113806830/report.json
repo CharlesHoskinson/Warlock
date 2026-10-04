@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "Abstract picker focus/lifetime guards; browser DOM/native refinement and complete keyboard/IME/AT remain separate",
+  "sourceSHA256": "d94333b8f8b42be5813d06268cda07e9332b224acac2955051580928732d4e71",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "picker.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "picker.qnt",
+        "--backend=typescript",
+        "--match=^(openFocusTest|escapeOpenerTest|oldFocusAfterCloseTest|oldFocusAfterReopenTest|nativeScopeChangeTest|selectionDoesNotRestoreOpenerTest|duplicatePendingSelectionTest|retiredPickerSelectionTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "picker.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "picker.qnt": "d94333b8f8b42be5813d06268cda07e9332b224acac2955051580928732d4e71",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-openFocusTest-0.itf.json": "ff0a9025c7c5e376aa7890e10afb4d6a6e0f15c34cb1e67a0c7e99b12e344908",
+    "named-escapeOpenerTest-1.itf.json": "86d08f99897082bd5dbabd1ef4bf123eab91a5828bba52d6827a306f08472a81",
+    "named-oldFocusAfterCloseTest-2.itf.json": "4dbfc51ae1dcaaa07e9829918fae07b97819c556a6e3a88d1faffb172ddea630",
+    "named-oldFocusAfterReopenTest-3.itf.json": "dd165bf7af29236b84e8733edc2d3df90ccb7d190a672173798b27609e155589",
+    "named-nativeScopeChangeTest-4.itf.json": "b6927cda37a475adb2b8fe20caba000671c156226327ad0faff6c61de3ba8058",
+    "named-selectionDoesNotRestoreOpenerTest-5.itf.json": "5b24be38f7850ce4225788113ef00e76ca381aebc00fcf075892b4e7a39dc1e9",
+    "named-duplicatePendingSelectionTest-6.itf.json": "0738eb59c6c95cceafe953d5d4c9e23a0f93ad042a9d09e5135bca21d35dd4bf",
+    "named-retiredPickerSelectionTest-7.itf.json": "788da405a25ea2460f742d73bf2ede65c95905502225f53304e54a902be0a3dd",
+    "named.stdout": "73433af283b37cf8e58ee2b9fc05b9753a38f57a7fa6d002b9145fffc9072def",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "59ded2826e3b5e1131e65126cc34bf60c6f9f6e71ce11c7b4ff10e3296969100",
+    "invariants.stdout": "4adcee91f93d5eb64019d6343ed994fa765ffd858d20f2c17de5116eac2049e6",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

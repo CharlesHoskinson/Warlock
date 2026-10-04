@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-taskbar-ui-v35",
-  "status": "Native taskbar action projection qualified on original lifecycle/activation fixtures; actual native packets admitted by Elm. Grouped Main/picker controller and native host compile with scoped/generation guards; native GUI and complete UX acceptance pending.",
+  "activeSlice": "implementation/elm-taskbar-family-picker-v40",
+  "status": "Grouped taskbar/picker qualified in isolated native pointer/keyboard tests, including minimized restore, modal-family selection and exact-journal recovery. Identity-bound DOM opener/choice focus and composing Escape guard implemented; full UX/AT/IME, production bar/popup, catalog and release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -375,9 +375,47 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-taskbar-ui-v35/qa/slice-manifest.json"
+    },
+    "taskbarFocusV38": {
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "optimizedHostBuildAndSelfTests": true,
+      "identityBoundDOMFocus": true,
+      "composingEscapeIgnoredInSource": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-focus-v38/qa/slice-manifest.json"
+    },
+    "taskbarKeyboardV39": {
+      "nativeChecks": 48,
+      "actualEscapeAndOpenerFocus": true,
+      "actualTabEnterSelectionAndKeyboardDelivery": true,
+      "actualPointerCloseReachable": true,
+      "actualGroupedActivationAndSingleMinimizeRestore": true,
+      "exactJournalNoReplayRecovery": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-keyboard-v39/qa/slice-manifest.json"
+    },
+    "taskbarFamilyPickerV40": {
+      "nativeChecks": 61,
+      "actualPickerRestoresMinimizedFamily": true,
+      "actualModalChildCollapse": true,
+      "actualRootSelectionModalKeyboardDelivery": true,
+      "retainedKeyboardPointerRecoveryCases": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json"
     }
   },
-  "next": "Qualify V35 grouped UI and labeled picker with actual pointer/keyboard/minimize/restore and broker recovery on the frozen V33 native pair. Complete native popup/input/keyboard focus lifetime, catalog/icons/pins and launch, switcher/previews, coherent scene, hardware/GPU/WebGPU, UI/UX/AT/IME and release.",
+  "next": "Refine picker label/state spacing and reflow from actual capture; qualify long labels/overflow and external native state notifications. Implement production taskbar/popup roles and catalog/icons/pins/launch, then switcher/previews and remaining scene/GPU/WebGPU/AT/IME/hardware/human UX/release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
@@ -387,7 +425,14 @@
     "executionAcceptance": false,
     "humanParticipantEvidence": false
   },
-  "blockingCandidateDefects": [],
+  "blockingCandidateDefects": [
+    {
+      "id": "UX-PICKER-001",
+      "status": "open bounded visual finding",
+      "description": "Picker document label and state text adjoin without spacing; refine separation and long-label reflow before UX acceptance.",
+      "evidence": "implementation/elm-taskbar-family-picker-v40/qa/native-1791072864264661300/native-evidence/elm-family-picker.png"
+    }
+  ],
   "resolvedBoundedFindings": [
     {
       "id": "NMIN-001",
@@ -408,6 +453,11 @@
       "id": "INPUT-HOLE-001",
       "status": "Resolved for unit-scale untransformed owner/MAX native fixtures in V23; complete role/output/device acceptance remains open",
       "evidence": "implementation/elm-input-hit-v23/qa/slice-manifest.json"
+    },
+    {
+      "id": "UIQA-SCHEMA-001",
+      "status": "Resolved V38 grouped-render QA host contract; V39/V40 normal host/backend exit",
+      "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json"
     }
   ]
 }

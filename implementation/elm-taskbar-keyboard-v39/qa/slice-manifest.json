@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "observedUTC": "2026-10-04T00:16:30.637505+00:00",
+  "wholeFeatureAccepted": false,
+  "canonicalSceneCapability": false,
+  "completedRequirementIds": [],
+  "scope": "Native isolated taskbar picker/window actions and recovery only; full UX/release open",
+  "reports": {
+    "qa/native-1791072694142149567/report.json": {
+      "passed": true,
+      "sha256": "adedf9722b54f7df325a53587f3ec30cc3c38353b9497946834c4f080be9ee91",
+      "checks": 48,
+      "namedScenarios": null,
+      "invariantSamples": null
+    }
+  },
+  "files": {
+    "README.md": "003dfa0d2d123e1967e0baa1b65cdaff7321a65193790b5733273fa2a9bae730",
+    "fixture.py": "54f09254b80ad3c313bd7705d4e15518ce76957c32f6867a7fc6cb2693686b87",
+    "qa/native-1791072694142149567/native-evidence/authority-config.json": "83a5b8b242df2d695e9fd34de06f87833a7a3dbd36d70c757ac7c6590af695d6",
+    "qa/native-1791072694142149567/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791072694142149567/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791072694142149567/native-evidence/elm-effects-restored.png": "77cdf8c7efaf56f27e2ac3e44670bbb4bea11486cb36caacad7d8d6c2f1d6d72",
+    "qa/native-1791072694142149567/native-evidence/elm-webview.log": "32eb8eb4d0fee1cfa44bbb8f2ca5b2a03463c3042edca1930a98eb7a3e9ccb2a",
+    "qa/native-1791072694142149567/native-evidence/fixture-control.events.jsonl": "3aa787bf351db55c53a999d9d352040137f4f4079bc7427062927ff7df0cc2da",
+    "qa/native-1791072694142149567/native-evidence/fixture.log": "f15036d1d660290ec9decbf2197de24bab385c1a8fcbf1d1a7a9de4e1a176ff7",
+    "qa/native-1791072694142149567/native-evidence/host-evidence.json": "6e1304240b88b17dbd93c378a3e03160cc03e9b9f3627fc5be98cb200a94b5f9",
+    "qa/native-1791072694142149567/native-evidence/hyprland.log": "9df3b57fa2e293769988e7925e65a2d71b1242b50f9c72f58ad71d43ed662373",
+    "qa/native-1791072694142149567/native-evidence/privateBus.log": "73f4306cfdb75b3e673dca969558ac41ab39f85f378bfac377835acf264de984",
+    "qa/native-1791072694142149567/native-evidence/runtime-archive/.flatpak/webkit-2797597-13/bwrapinfo.json": "189fcd934d1a8d5bc44a3d40129ad3fa1588d323fc6ef77978a8ca760c7ca6a1",
+    "qa/native-1791072694142149567/native-evidence/runtime-archive/.flatpak/webkit-2797597-4/bwrapinfo.json": "07b099197d14b2991029afbc9c9e7a2b016f83279e2f111a7b6f827ff16dca2b",
+    "qa/native-1791072694142149567/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791072694_1304707245/hyprland.log": "75cffabed4fcfe1f4821f23c9c4789c5a96ffe4db1ee158eb1b92b151b5799d9",
+    "qa/native-1791072694142149567/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791072694142149567/native-evidence/weston-renderer.log": "e699cb786811e69ae2eb7883650650845025a59a1c5fdfe3edb60de592775e97",
+    "qa/native-1791072694142149567/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791072694142149567/report.json": "adedf9722b54f7df325a53587f3ec30cc3c38353b9497946834c4f080be9ee91",
+    "qa/native.py": "6510f98ae9ed5b8ec223f3c228f578d772342e73232db570a27c7291ca6de316"
+  }
+}

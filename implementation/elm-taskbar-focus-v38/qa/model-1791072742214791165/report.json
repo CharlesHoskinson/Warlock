@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "scope": "Abstract picker focus/lifetime guards; browser DOM/native refinement and complete keyboard/IME/AT remain separate",
+  "sourceSHA256": "f4603a3b03298502617167d45dab6873ea12904d60f2d6564145fdecf4d58f04",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "picker.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\n Error [QNT101]: Built-in name \\'select\\' is redefined in module \\'picker\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-focus-v38/qa/model-1791072742214791165/picker.qnt:11:9\\n  11:  action select=all{s.open,s.shown==s.scope,not(s.pending),s\\'={...s,open:false,pending:true,effects:s.effects+1,focused:\"native\"}}\\n              ^^^^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "picker.qnt": "f4603a3b03298502617167d45dab6873ea12904d60f2d6564145fdecf4d58f04",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "a7370741be9f96d12ac30c14081f04c794c201899ff0a724927543261b2d2230"
+  }
+}

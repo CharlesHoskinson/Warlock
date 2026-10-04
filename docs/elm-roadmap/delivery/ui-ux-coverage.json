@@ -6346,6 +6346,53 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-taskbar-ui-v35/qa/slice-manifest.json",
       "acceptance": "Grouped view and picker controller are implemented and compile; native pointer, focus/keyboard/AT/IME, popup/input, catalog/pins and release acceptance pending."
+    },
+    {
+      "slice": "implementation/elm-taskbar-focus-v38",
+      "level": "compiled controller/DOM-focus implementation and abstract model",
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "optimizedHostBuildAndSelfTests": true,
+      "identityBoundDOMFocus": true,
+      "composingEscapeIgnoredInSource": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-focus-v38/qa/slice-manifest.json",
+      "acceptance": "Source composing-Escape guard does not establish actual IME compatibility; complete keyboard/AT/UX and production surface acceptance open."
+    },
+    {
+      "slice": "implementation/elm-taskbar-keyboard-v39",
+      "level": "actual native pointer/keyboard/Elm and broker recovery",
+      "nativeChecks": 48,
+      "actualEscapeAndOpenerFocus": true,
+      "actualTabEnterSelectionAndKeyboardDelivery": true,
+      "actualPointerCloseReachable": true,
+      "actualGroupedActivationAndSingleMinimizeRestore": true,
+      "exactJournalNoReplayRecovery": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-keyboard-v39/qa/slice-manifest.json",
+      "acceptance": "Bounded same-output two-document/one-family GUI only; production bar/popup, AT/IME and full UX/release separate."
+    },
+    {
+      "slice": "implementation/elm-taskbar-family-picker-v40",
+      "level": "actual native minimized/modal family picker and retained keyboard/recovery",
+      "nativeChecks": 61,
+      "actualPickerRestoresMinimizedFamily": true,
+      "actualModalChildCollapse": true,
+      "actualRootSelectionModalKeyboardDelivery": true,
+      "retainedKeyboardPointerRecoveryCases": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json",
+      "acceptance": "Actual minimized picker restore and unique modal root selection only; observed label/state spacing finding, long-label/overflow, production layout, AT/IME/human UX and release remain open."
     }
   ]
 }

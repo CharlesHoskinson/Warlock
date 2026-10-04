@@ -1,0 +1,662 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      effects: 0,
+      focused: "opener",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 0,
+      scope: 1,
+      shown: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 0,
+      scope: 2,
+      shown: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 0,
+      scope: 2,
+      shown: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 0,
+      scope: 2,
+      shown: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 0,
+      scope: 2,
+      shown: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 0,
+      scope: 2,
+      shown: 2
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 2,
+      shown: 2
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 2,
+      shown: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 2,
+      shown: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 2,
+      shown: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 1,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 2,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 2,
+      scope: 3,
+      shown: 2
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 2,
+      scope: 4,
+      shown: 2
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 2,
+      scope: 4,
+      shown: 2
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 0,
+      open: false,
+      pending: false,
+      queuedGeneration: -1,
+      queuedScope: 2,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 1,
+      open: true,
+      pending: false,
+      queuedGeneration: 1,
+      queuedScope: 4,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 1,
+      open: true,
+      pending: false,
+      queuedGeneration: 1,
+      queuedScope: 4,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 1,
+      open: true,
+      pending: false,
+      queuedGeneration: 1,
+      queuedScope: 4,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 1,
+      open: true,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 3,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 1,
+      open: true,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 3,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      effects: 0,
+      focused: "native",
+      generation: 1,
+      open: true,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 3,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: true,
+      queuedGeneration: 0,
+      queuedScope: 3,
+      scope: 4,
+      shown: 4
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: true,
+      queuedGeneration: 0,
+      queuedScope: 3,
+      scope: 5,
+      shown: 4
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: true,
+      queuedGeneration: 0,
+      queuedScope: 4,
+      scope: 5,
+      shown: 4
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: true,
+      queuedGeneration: 0,
+      queuedScope: 4,
+      scope: 6,
+      shown: 4
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: true,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 4
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: true,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 4
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 4
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 4
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 6
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 6
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 6
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 6
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 6
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      effects: 1,
+      focused: "native",
+      generation: 1,
+      open: false,
+      pending: false,
+      queuedGeneration: 0,
+      queuedScope: 5,
+      scope: 6,
+      shown: 6
+    }
+}
+
+[ok] No violation found (799ms at 1252 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
