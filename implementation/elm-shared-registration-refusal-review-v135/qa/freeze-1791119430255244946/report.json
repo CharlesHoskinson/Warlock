@@ -1,0 +1,747 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "usabilityAcceptance": false,
+  "checks": [
+    {
+      "name": "compiled reproduction PASS",
+      "passed": true
+    },
+    {
+      "name": "tested source elm.json",
+      "passed": true
+    },
+    {
+      "name": "tested source upstream.json",
+      "passed": true
+    },
+    {
+      "name": "tested source src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Bar.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/BatchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/OutputController.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/OutputReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/SharedRecoveryReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source src/UnsentOperation.elm",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/review.cjs",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/usability.py",
+      "passed": true
+    },
+    {
+      "name": "captured artifact worker.js",
+      "passed": true
+    },
+    {
+      "name": "captured artifact compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "captured artifact compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "captured artifact checks.json",
+      "passed": true
+    },
+    {
+      "name": "captured artifact review.stdout",
+      "passed": true
+    },
+    {
+      "name": "captured artifact review.stderr",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/elm.json",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/evidence.json",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Bar.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/BatchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/OutputController.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/OutputReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/SharedRecoveryReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/src/UnsentOperation.elm",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/qa/review.cjs",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "captured artifact inputs/qa/usability.py",
+      "passed": true
+    },
+    {
+      "name": "three actual required failures preserved",
+      "passed": true
+    },
+    {
+      "name": "failed usability exact compiled input",
+      "passed": true
+    },
+    {
+      "name": "failed usability exact test source",
+      "passed": true
+    },
+    {
+      "name": "source132 component unchanged",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/OutputController.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/OutputReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Bar.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/SharedRecoveryReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/BatchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "unchanged upstream src/UnsentOperation.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Effects.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/UInt64.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/ActionProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Replay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Binding.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Shell.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/ShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Taskbar.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/TaskbarReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/TaskbarShell.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/TaskbarShellReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Catalog.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Launch.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/LaunchReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/CatalogReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Desktop.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/DesktopReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Surface.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/SurfaceController.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/SurfaceRenderer.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Popup.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/SurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Presentation.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/PresentationReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Main.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Inspection.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/OutputController.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/OutputReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Bar.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/GeometryProjection.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/NativeOutcome.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/SharedRecoveryReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Menu.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/Provider.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/ReceiptRouter.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/MenuBridge.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/NativeProvider.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/MenuSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/OutputSurfaceReplay.elm",
+      "passed": true
+    },
+    {
+      "name": "actual production byte-exact src/UnsentOperation.elm",
+      "passed": true
+    }
+  ]
+}

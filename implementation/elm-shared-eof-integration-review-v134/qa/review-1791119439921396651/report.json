@@ -1,0 +1,90 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "scope": "Actual V132 broker framing/send/recovery store with CPU endpoint/catalog/event doubles and owned pipes; no native execution",
+  "checks": [
+    {
+      "name": "empty EOF normal/failure code",
+      "passed": true
+    },
+    {
+      "name": "empty EOF current full attached binding",
+      "passed": true
+    },
+    {
+      "name": "empty EOF disconnect only on failure",
+      "passed": true
+    },
+    {
+      "name": "empty EOF bounded owned CPU completion",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF normal/failure code",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF current full attached binding",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF disconnect only on failure",
+      "passed": true
+    },
+    {
+      "name": "truncated EOF bounded owned CPU completion",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request normal/failure code",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request current full attached binding",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request disconnect only on failure",
+      "passed": true
+    },
+    {
+      "name": "closed unsupported request bounded owned CPU completion",
+      "passed": true
+    }
+  ],
+  "sourceManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/component-manifest.json",
+  "sourceManifestSHA256": "cc8705f27977aca6a52e56296fa5bd02c6531848f356ea9377714fb3d35b04b0",
+  "error": "Refused('No matching durable host admission')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-integration-review-v134/qa/review.py\", line 84, in <module>\n    check('durable initial exact intent accepted',store.begin(bound,intent,1) is True)\n                                                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-integration-review-v134/qa/review-1791119439921396651/inputs/adapter/recovery_store.py\", line 18, in begin\n    def begin(self,bound,intent,effectProtocol=1):return self.ledger.begin(bound,intent,effectProtocol)\n                                                         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-integration-review-v134/qa/review-1791119439921396651/inputs/adapter/admission_ledger.py\", line 165, in begin\n    if not any(key(r)==key(wanted) for r in self.admissions(directory)):raise Refused('No matching durable host admission')\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nendpoint.Refused: No matching durable host admission\n",
+  "processExitCodes": [
+    0,
+    1,
+    1
+  ],
+  "artifacts": {
+    "config.json": "3237e9b33ddad2ddb78c67f451fa1df5700cfbf210abd0feebe651006e147ef3",
+    "inputs/review.py": "1722bed172f77ec7e40222b939b3dcfefcf02d82d66aff2f7bf20e3c688c4e88",
+    "runtime/elm-window-recovery/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/migration-plan.json": "d8753c7c1d9bf1f59806893b1ea3c75314a99f4214af53698e9a5954000fbbd5",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/migration.json": "4facdeba612fdc9fe8bce1a07e5c5d5ae07c1807c5166b24a8aaf363d3ea5cd3",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/ledger-v5.json": "82650329e68ea355abba2897771bb425c33bdaa33ed4d077ea3594b53b4935ea",
+    "runtime/elm-window-recovery/qa_eof_134/9007199254740993/ledger-v5.initialized": "be51ebcde2cd5bcd275ceabd5f2e62ea3dabc6775ed8930019c59e1ec731d522",
+    "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "inputs/adapter/daemon.py": "ca8cd61f3d663a3cbc10dcb51b25f1b639a201432d8f4f3813c8727ddae71844",
+    "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "inputs/adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "inputs/adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "inputs/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "inputs/adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "inputs/adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1"
+  }
+}
