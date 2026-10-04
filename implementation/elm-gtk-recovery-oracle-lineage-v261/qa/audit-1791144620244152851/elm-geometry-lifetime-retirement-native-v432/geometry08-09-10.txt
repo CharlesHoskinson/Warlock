@@ -1,0 +1,84 @@
+    # Reconnect occurs after a saved native MAX origin exists.
+    settle_menu('Maximize','maximize',2,1);old_binding=geometry()['binding'];count=len(effects());deadline=time.monotonic()+6
+    check('reconnectQuiescentBeforeEOF',coherent() is not None and coherent()['outstanding']==0 and coherent()['registry']==0 and coherent()['transaction']=='Committed' and len(effects())==count)
+    actor=relay.actor_status(relay_control);owned={row['pid']:row for row in session.host.descendants()}
+    for kind in ['relay','child']:
+     record=actor[kind];check('reconnectExactOwnedActor:'+kind,record['pid'] in owned and owned[record['pid']]['start']==record['start'] and host.original.same_process(owned[record['pid']]))
+    child_command=[part for part in Path('/proc',str(actor['child']['pid']),'cmdline').read_bytes().split(b'\0') if part]
+    relay_command=[part for part in Path('/proc',str(actor['relay']['pid']),'cmdline').read_bytes().split(b'\0') if part]
+    check('reconnectExactCapturedBrokerAndRelayCommands',child_command==[b'/usr/bin/python3',b'-B',str(captured_backend).encode(),str(receipt_config).encode()] and relay_command==[b'/usr/bin/python3',b'-B',str(backend_path).encode(),str(relay_config).encode()])
+    old_log_size=len(log.read_text(errors='replace').splitlines());old_config_bytes=relay_config.read_bytes();old_receipt_bytes=receipt_config.read_bytes();relay.close_stdin(relay_control)
+    def eof_status():
+     if not (relay_control/'exit.json').exists() or (relay_control/'exit.json').stat().st_size==0:return None
+     status=relay.exit_status(relay_control)
+     check('reconnectOwnedBrokerNormalEOF',status['relay']==actor['relay'] and status['child']==actor['child'] and status['childExit']==0 and status['stdinClosed'] is True,status=status)
+     return status
+    retired_actor=wait(eof_status,deadline=deadline)
+    wait(lambda:projection() if projection() and projection()['phase']=='Detached' and projection()['reconnect'] else None,deadline=deadline)
+    wait(lambda:True if not host.original.same_process(owned[actor['relay']['pid']]) and not host.original.same_process(owned[actor['child']['pid']]) else None,deadline=deadline)
+    check('reconnectHostObservedNormalRelayExit',any(line=='backend-exit: waited=1 normal=1 code=0' for line in log.read_text(errors='replace').splitlines()[old_log_size:]))
+    check('reconnectNoNativeEffectDuringDisconnect',len(effects())==count and projection()['outstanding']==0 and projection()['registry']==0)
+    private_json(OUTPUT/'relay-config-actor-1.json',json.loads(old_config_bytes));check('reconnectRetiredConfigArchivedExact', (OUTPUT/'relay-config-actor-1.json').read_bytes()==old_config_bytes);relay_control=OUTPUT/'relay-actor-2';relay_control.mkdir(mode=0o700)
+    private_json(OUTPUT/'receipt-config-actor-1.json',json.loads(old_receipt_bytes));check('receiptActorOneConfigArchivedExact',(OUTPUT/'receipt-config-actor-1.json').read_bytes()==old_receipt_bytes)
+    receipt_control=OUTPUT/'receipt-actor-2';receipt_control.mkdir(mode=0o700);private_json(receipt_control/'gate.json',{'action':'hold'})
+    next_receipt=OUTPUT/'receipt-config-next.json';private_json(next_receipt,{'authorityConfig':str(config_path),'controlDirectory':str(receipt_control),'incarnation':identity,'effectOperation':'restore-geometry','selectorOrdinal':1});old_receipt_inode=receipt_config.stat().st_ino;os.replace(next_receipt,receipt_config);check('receiptActorTwoFreshConfiguration',receipt_config.stat().st_ino!=old_receipt_inode)
+    next_config=OUTPUT/'relay-config-next.json';private_json(next_config,{'profile':'receipt','receiptConfig':str(receipt_config),'controlDirectory':str(relay_control),'runtime':config['runtime'],'instance':config['instance']});os.replace(next_config,relay_config)
+    report['reconnectFixture']={'retiredActor':actor,'normalEOF':retired_actor,'oldConfigSHA256':__import__('hashlib').sha256(old_config_bytes).hexdigest(),'newConfigSHA256':host.digest(relay_config),'actualDetachedBeforePhysicalClick':True,'deadlineSeconds':6,'oldReceiptConfigSHA256':__import__('hashlib').sha256(old_receipt_bytes).hexdigest(),'newReceiptConfigSHA256':host.digest(receipt_config),'receiptActorOneOrdinal':2,'receiptActorTwoOrdinal':1}
+    parent_pointer(wait(lambda:projection()['reconnect'] if projection() and projection()['phase']=='Detached' else None,deadline=deadline),272,deadline)
+    new_attach=wait(lambda:next((r for r in reversed(incoming()) if r.get('kind')=='geometry-attached' and r['binding']!=old_binding),None),deadline=deadline)
+    wait(lambda:coherent() and geometry_row() and geometry()['binding']==new_attach['binding'] and geometry_row()['ordinaryPlacementKnown'],deadline=deadline)
+    new_actor=relay.actor_status(relay_control);check('reconnectFreshBrokerActor',new_actor['relay']!=actor['relay'] and new_actor['child']!=actor['child']);new_owned={r['pid']:r for r in session.host.descendants()}
+    for kind in ['relay','child']:
+     record=new_actor[kind];check('reconnectNewActorOwned:'+kind,record['pid'] in new_owned and new_owned[record['pid']]['start']==record['start'] and host.original.same_process(new_owned[record['pid']]))
+    check('reconnectFreshActorFixedCommands',Path('/proc',str(new_actor['child']['pid']),'cmdline').read_bytes().split(b'\0')[:-1]==[b'/usr/bin/python3',b'-B',str(captured_backend).encode(),str(receipt_config).encode()] and Path('/proc',str(new_actor['relay']['pid']),'cmdline').read_bytes().split(b'\0')[:-1]==[b'/usr/bin/python3',b'-B',str(backend_path).encode(),str(relay_config).encode()]);report['reconnectFixture']['newActor']=new_actor
+    menu=open_menu(deadline=deadline);check('reconnectRenegotiatesPreservingSavedOriginNoReplay',not action(menu,'Restore')['disabled'] and action(menu,'Maximize')['disabled'] and len(effects())==count and new_attach['binding']['lifetime']==old_binding['lifetime'],oldBinding=old_binding,newAttach=new_attach,geometry=geometry());parent_pointer(menu['close'],272,deadline);wait(lambda:coherent() if coherent() and coherent()['menu'] is None else None,deadline=deadline)
+    report['scenarios'].append('GEOMETRY-MENU-08')
+    # Delivery fault holds an already committed native receipt, not the native operation.
+    deadline=time.monotonic()+6;menu=open_menu('Open',deadline);item=action(menu,'Restore');check('heldRestoreGeometryEnabled',not item['disabled'])
+    before=evidence.latest_buffer();previous_geometry_sequence=int(geometry()['sequence']);dispatched_lease=projection()['lease'];count=len(effects());inspection_start=len(frames('surface-inspection: '))
+    parent_pointer(item,272,deadline)
+    issued=wait(lambda:effects()[-1] if len(effects())==count+1 else None,deadline=deadline)
+    check('heldExactRestoreGeometryNamespace',issued['effectProtocol']==2 and issued['intent']['operation']=='restore-geometry' and issued['intent']['incarnation']==identity)
+    def held_marker():
+     path=receipt_control/'held.json'
+     return relay.read_private(path) if path.exists() and path.stat().st_size else None
+    held=wait(held_marker,deadline=deadline);held_receipt=held['receipt'];owner=held['wrapper'];current_owned={r['pid']:r for r in session.host.descendants()}
+    check('heldReceiptOwnerIsExactLiveActorTwo',owner==new_actor['child'] and owner['pid'] in current_owned and current_owned[owner['pid']]['start']==owner['start'] and host.original.same_process(current_owned[owner['pid']]))
+    check('heldReceiptIsActualFullCommittedKey',held['effectProtocol']==2 and held['binding']==issued['binding'] and held['intent']==issued['intent'] and held_receipt['effectProtocol']==2 and held_receipt['binding']==issued['binding'] and held_receipt['intent']==issued['intent'] and held_receipt['status']=='Committed')
+    pending=wait(lambda:projection() if projection() and projection()['menu'] is None and projection()['outstanding']==1 and projection()['registry']==1 and projection()['transaction']=='Pending' else None,deadline=deadline)
+    def matching_outcomes():return [r for r in incoming() if r.get('kind')=='effect-outcome' and r.get('effectProtocol')==2 and r.get('binding')==issued['binding'] and r.get('intent')==issued['intent']]
+    check('heldPendingClosesPopupAndNoOutcome',pending['menu'] is None and pending['outstanding']==1 and not matching_outcomes(),pending=pending)
+    native,buffer=wait(lambda:evidence.settled(0,before['sequence'],False),deadline=deadline)
+    observer.parentDeadline=deadline
+    try:fresh=wait(lambda:observer.geometry_facts('3'),deadline=deadline)
+    finally:observer.parentDeadline=float('inf')
+    fresh_row=next(r for r in fresh['facts']['windows'] if r['incarnation']==identity)
+    check('heldNativeRestoreCommittedBeforeDelivery',fresh_row['nativeMode']=='ordinary' and not fresh_row['minimized'] and not fresh_row['ordinaryPlacementKnown'] and fresh_row['visualGeometry']==[*native['at'],*native['size']] and native['at']==[83,61] and native['size']==[320,180],observerFacts=fresh)
+    def notification_after_intent():
+     lines=log.read_text(errors='replace').splitlines();index=next(i for i,line in enumerate(lines) if line.startswith('frontend-request: ') and json.loads(line.split(': ',1)[1])==issued)
+     return next((json.loads(line.split(': ',1)[1]) for line in lines[index+1:] if line.startswith('backend-frame: ') and json.loads(line.split(': ',1)[1]).get('kind')=='host-refresh'),None)
+    notification=wait(notification_after_intent,deadline=deadline)
+    check('heldRealNotificationWhilePending',notification['kind']=='host-refresh' and projection()['menu'] is None and projection()['transaction']=='Pending' and projection()['outstanding']==1 and projection()['registry']==1 and not matching_outcomes() and len(effects())==count+1)
+    check('heldSelectedBufferUsesActualConfigureAck',buffer['serial']==buffer['ackedSerial'] and buffer['suspended'] is False and any(r['event']=='configure' and r['serial']==buffer['serial'] and r['ackedSerial']==buffer['serial'] and r['sequence']<buffer['sequence'] and [r['width'],r['height']]==native['size'] and r['suspended'] is False for r in evidence.events()),buffer=buffer)
+    evidence.validate_pixels('held-restore-geometry',native,buffer,deadline)
+    check('heldNoDuplicateDispatch',len(effects())==count+1 and not matching_outcomes())
+    release=receipt.write_release(receipt_control)
+    delivered=wait(lambda:matching_outcomes()[0] if matching_outcomes() else None,deadline=deadline)
+    check('heldExactOriginalReceiptReleasedOnce',delivered==held_receipt and len(matching_outcomes())==1)
+    facts=wait(lambda:geometry_row() if geometry_row() and int(geometry()['sequence'])>previous_geometry_sequence and not geometry_row()['minimized'] and geometry_row()['nativeMode']=='ordinary' and geometry_row()['visualGeometry']==[*native['at'],*native['size']] else None,deadline=deadline)
+    wait(lambda:coherent() if coherent() and coherent()['menu'] is None and coherent()['outstanding']==0 and coherent()['registry']==0 else None,deadline=deadline)
+    check('heldOneIntentOnlyAfterRefresh',len(effects())==count+1 and len(matching_outcomes())==1)
+    lines=log.read_text(errors='replace').splitlines();dispatch_index=next(i for i,line in enumerate(lines) if line.startswith('frontend-request: ') and json.loads(line.split(': ',1)[1])==issued)
+    check('heldNativePopupRetiredBeforeEffectQueue',any(i<dispatch_index and line.startswith('surface-popup-closed: lease='+dispatched_lease) for i,line in enumerate(lines)))
+    report['receiptHold09']={'scope':'Actual native commit with delivery held; separate observer facts are never injected into Elm','held':held,'issued':issued,'pending':pending,'notification':notification,'observerFacts':fresh,'buffer':buffer,'receipt':delivered,'freshElmFacts':facts,'deadlineSeconds':6,'finishedBeforeDeadline':time.monotonic()<deadline}
+    report['scenarios'].append('GEOMETRY-MENU-09')
+    # Retire the exact open-menu target, then map a fresh same-title/application client.
+    deadline=time.monotonic()+6;menu=open_menu(deadline=deadline);count=len(effects());retired_pid=client.pid;client.stdin.write(b'quit\n');client.stdin.flush();client.wait(timeout=max(.001,deadline-time.monotonic()));check('retiredClientNormalExit',client.returncode==0)
+    wait(lambda:coherent() if coherent() and coherent()['menu'] is None and all(r['incarnation']!=identity for r in geometry()['facts']['windows']) else None,deadline=deadline)
+    replacement_log=OUTPUT/'replacement-xdg.log';replacement_stream=os.fdopen(os.open(replacement_log,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600),'wb');session.host.logs.append(replacement_stream)
+    client=subprocess.Popen([fixture['client']],stdin=subprocess.PIPE,stdout=replacement_stream,stderr=subprocess.STDOUT,env=dict(session.env,WAYLAND_DEBUG='1'),cwd=session.host.runtime,start_new_session=True);replacement_identity=host.original.process(client.pid);replacement_identity.update(name='replacement-xdg-client',command=[fixture['client']],log=str(replacement_log));session.host.processes.append((client,replacement_identity))
+    replacement=wait(lambda:next((w for w in session.data('clients') if w.get('pid')==client.pid and w.get('title')=='ELM-MAXIMIZE-PROBE'),None),deadline=deadline)
+    replacement_fact=wait(lambda:next((r for r in geometry()['facts']['windows'] if r['incarnation']!=identity),None),deadline=deadline)
+    report['retirementAddressDiagnostic']={'originalAddress':report['fixtureIdentity']['address'],'replacementAddress':replacement['address'],'addressReused':replacement['address']==report['fixtureIdentity']['address'],'scope':'Address allocation is not lifetime identity; original431 address assertion preserved as failed evidence'}
+    check('retirementNeverTargetsSameTitleReplacement',client.pid!=retired_pid and replacement['stableId']!=report['fixtureIdentity']['stableId'] and replacement_fact['incarnation']!=identity and replacement['fullscreen']==replacement['fullscreenClient']==0 and not replacement_fact['minimized'] and len(effects())==count and coherent()['menu'] is None,replacement=replacement,geometry=replacement_fact)
+    report['scenarios'].append('GEOMETRY-MENU-10')
