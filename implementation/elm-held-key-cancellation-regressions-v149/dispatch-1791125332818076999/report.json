@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "scope": "Serial reviewed native dispatch; individual report/cleanup/ABI evidence required",
+  "cases": [
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-1",
+      "alreadyCompleted": true,
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-1/qa/native-1791125231344880810/report.json",
+      "reportSHA256": "ea28cef16f6b1a410f7fb3946ebaa1473798c2dfcffb00eb1e2cfd5af8a8e042"
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-2",
+      "runnerSHA256": "de0a956bca306ad1ae50a454f12dbbac5490098a936dbf1374a28054d6c40908",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-2/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-2/qa/native-1791125333012448499/report.json",
+          "sha256": "c5a2aeb79b3cbdd6b93af600ea74da0cec5de9ae42562d2e088944cda97e17be"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-3",
+      "runnerSHA256": "de0a956bca306ad1ae50a454f12dbbac5490098a936dbf1374a28054d6c40908",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-3/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-masks-v148/mask-3/qa/native-1791125338310055296/report.json",
+          "sha256": "bb5e5fd1110ce349982cdf0be59d6efa8d88dc762ad26069371a6ca047051c1f"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-input-v141",
+      "runnerSHA256": "0472b0f5a6fe19718146610a7da5048a280f5622f8fa7458516ef18f9adfc4b3",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-input-v141/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-input-v141/qa/native-1791125343445841499/report.json",
+          "sha256": "8a012337ce36cf35f80818513203a58f23b9f8aacab1099277b4bdd08f3e61c4"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-geometry-v142",
+      "runnerSHA256": "9b6aabb5f4e3ea752df421b220cb1274f56a4d15069839545f83b1fc0615e4e1",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-geometry-v142/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-geometry-v142/qa/native-1791125351255587323/report.json",
+          "sha256": "55bad59e42f46d53469f116436574a78fa004cd1e8f8ca0b429c7ee435d70fa1"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-unheld-v143",
+      "runnerSHA256": "eec5edff190a4fa939134e967d42a1dbd9d17f52f14fd2d9ef0192f0fcbab72c",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-unheld-v143/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-unheld-v143/qa/native-1791125356751138272/report.json",
+          "sha256": "2317626236ccfe8591dfd575568e0e4e5469f583080da63f4ee5231f83dd204b"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-pointer-v144",
+      "runnerSHA256": "0441fa19f79ab8a3825aace42de728072e723d5a3805c7d79806da30ff34d6b4",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-pointer-v144/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-held-key-cancellation-pointer-v144/qa/native-1791125360674366220/report.json",
+          "sha256": "7176f2797248f3ca85f0f02f41b479e0f3117d362e5e72208e82fa851214f0fc"
+        }
+      ]
+    }
+  ]
+}

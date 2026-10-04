@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "mainDesktopActions": false,
+  "scope": "Private protocol6 held-key child PID/start connection loss; actual GTK keyboard recipient and Core89 key/modifier/keybind ledgers; unchanged AQ120 baseline, no installed change or full release acceptance",
+  "checks": [],
+  "heldKeyMask": 1,
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-native-v134/qa/native.py\", line 33, in <module>\n    report.update(buildReport=str(buildPath),buildReportSHA256=host.digest(buildPath),inputs={str(p):host.digest(p) for p in [Path(__file__),ROOT/'candidate_host.py',ROOT/'parent-probe-build.json',ROOT/'aq-tuple.json',ROOT/'native-build-report.json',ROOT/'fixture.py',ROOT/'qa/fixture-inspection.py',ROOT/'qa/interactive-client.py',ROOT/'observer-build.json',ROOT/'held-mask.json']})\n                                                                                                     ~~~~~~~~~~~^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-native-v134/candidate_host.py\", line 34, in digest\n    def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()\n                                           ~~~~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-native-v134/native-build-report.json'\n",
+  "cleanupPassed": false,
+  "artifacts": {}
+}

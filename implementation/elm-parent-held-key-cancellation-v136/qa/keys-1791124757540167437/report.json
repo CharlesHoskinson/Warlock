@@ -1,0 +1,76 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual private key admission/cancellation helper and keyboard destructor; real Hyprutils ownership/typed signals; native callback wiring and Core ledgers separate",
+  "commands": [
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys-1791124757540167437/candidate.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys-1791124757540167437/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys-1791124757540167437/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-release-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys-1791124757540167437/missing-release.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys-1791124757540167437/missing-release"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-release-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys-1791124757540167437/missing-release"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys.py": "a9a2636bc48f78ff012adcbdb150eaa2e69c6592482f5e3f142aed007b899c3c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/candidate/src/backend/Wayland.cpp": "0c3c23fe25d6dc524c04898c2df34a4d5b6fc29684e1471e51e8399d22327050",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/keys-template.cpp": "aa358c347ae1af41a0ffa3935301315ba9a32f62192be9796653d807cefa0d21"
+  },
+  "candidateChecks": 2735,
+  "error": "AssertionError()",
+  "artifacts": {
+    "candidate.cpp": "29af60519d674309efaa917cd76eaeac68e49326358a0c84c87cc2876887e481",
+    "candidate": "d00c18353495fdabb69c8d458e40884deee3d1d6deef4d345ba42c48f2df12f5",
+    "candidate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-run.stdout": "46e356a04d120c4eab0f0bce6272c4c58d17e9772552823593dae9010219c828",
+    "candidate-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release.cpp": "fd777e24021d800b771d128d7024b0337716346655d29bfac86d9bacc3ae9247",
+    "missing-release": "b8b40ca8a8af438c1b273da34e0f21a8f7f8a77301bc0a9f7dc5c3785ec26c6d",
+    "missing-release-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release-run.stderr": "0418f098e7bc51d5b1708a0304688ea28f9aeb8b84d5719d96b83e965b30d679"
+  }
+}

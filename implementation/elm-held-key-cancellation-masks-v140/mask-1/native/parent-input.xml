@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<protocol name="elm_parent_input">
+  <interface name="elm_parent_input_v1" version="6">
+    <description summary="private parent-seat QA injection">Available only in the isolated test Weston. done confirms notify calls, never target delivery or presentation.</description>
+    <request name="destroy" type="destructor"/>
+    <request name="motion"><arg name="sequence" type="uint"/><arg name="x" type="int"/><arg name="y" type="int"/></request>
+    <request name="button"><arg name="sequence" type="uint"/><arg name="button" type="uint"/><arg name="state" type="uint"/></request>
+    <request name="pointer_capability" since="2"><arg name="sequence" type="uint"/><arg name="enabled" type="uint"/></request>
+    <request name="pointer_burst" since="3"><arg name="sequence" type="uint"/><arg name="cycles" type="uint"/><arg name="enabled" type="uint"/></request>
+    <request name="disconnect_child" since="4"><arg name="sequence" type="uint"/><arg name="pid" type="int"/><arg name="started" type="string"/></request>
+    <request name="disconnect_held_child" since="5"><arg name="sequence" type="uint"/><arg name="pid" type="int"/><arg name="started" type="string"/><arg name="held_mask" type="uint"/></request>
+    <request name="key" since="6"><arg name="sequence" type="uint"/><arg name="key" type="uint"/><arg name="state" type="uint"/></request>
+    <request name="disconnect_held_key_child" since="6"><arg name="sequence" type="uint"/><arg name="pid" type="int"/><arg name="started" type="string"/><arg name="held_mask" type="uint"/></request>
+    <event name="done"><arg name="sequence" type="uint"/><arg name="accepted" type="uint"/></event>
+  </interface>
+</protocol>

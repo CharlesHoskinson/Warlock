@@ -1,0 +1,622 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 0,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 0,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 0,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 0,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 0,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 0,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 1,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 2,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 2,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 2,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 2,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 3,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: false,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      cancelled: Set(),
+      failed: true,
+      held: Set(1, 2),
+      keyboardLive: true,
+      modifierResets: 0,
+      pressed: 4,
+      released: 2,
+      retired: false
+    }
+}
+
+[ok] No violation found (929ms at 1076 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1349a --backend=typescript to reproduce.
