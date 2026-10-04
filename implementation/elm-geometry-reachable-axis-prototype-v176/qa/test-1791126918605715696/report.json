@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-MMD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/qa/test-1791126918605715696/dependencies.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/qa/cases.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/qa/test-1791126918605715696/cases"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/qa/test-1791126918605715696/cases"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/qa/cases.cpp": "6b5d01dc9cd0cc630ef1cea8627e37c38927d191264362770c7b3b288d0b2eb6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/qa/test.py": "fe65c2801b01618e9940c7a0f31a80a23038cd02816503d725470f6af4981a54",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/candidate/ReachableAxis.hpp": "a6f0be9d0ed8e75e92ea33dae2aadbc31711cf676d3dcaaf5cb88652e48bcaa6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-prototype-v176/spec/REQUIREMENTS.md": "5fe4ada58ac46df82dd487d58faa39a0b5deb3053e519015d5cc5b172eb98516",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-coordinate-policy-v402/candidate/ProspectiveGeometry.hpp": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+    "/usr/lib/libhyprutils.so.0.14.2": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811"
+  },
+  "nativeAcceptance": false,
+  "modelAcceptance": false,
+  "policyAcceptance": false,
+  "releaseAcceptance": false,
+  "scope": "Explicit-domain monotone IEEE prototype checked against actual owning project enumeration"
+}

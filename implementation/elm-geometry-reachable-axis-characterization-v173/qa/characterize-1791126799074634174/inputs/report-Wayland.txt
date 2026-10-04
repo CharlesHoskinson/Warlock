@@ -1,0 +1,6 @@
+
+    if (!m_isX11)
+        return m_realSize->goal().clamp(Vector2D{0, 0}, Math::VECTOR2D_MAX);
+
+
+ throw 1; // Uncharacterized X11 path is explicit refusal.

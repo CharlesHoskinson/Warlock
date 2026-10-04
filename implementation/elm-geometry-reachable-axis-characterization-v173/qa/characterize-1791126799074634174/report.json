@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "scope": "Actual owning arithmetic characterization only; no native/model/production acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/spec/REQUIREMENTS.md": "c1248bdbbd26fee462fdcca065589f8f4d08b1dd9696a207244c0e9e99548df3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/cases.cpp": "6a277787d2cc06b06704a47766c7fc6bdca52b08a7bd8a57cff1ed5651b807b9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/run.py": "404a3006a4d08fd3c4ff1485e3612952ab7b62d58cec8522668df18ff50a8d6e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-constraint-coordinate-review-v155/reviewed-inputs.json": "4264a3cc192db2ffdcbc6ea921ac950ddecfd5f96331951bff91f8bac0900d52",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f",
+    "/usr/lib/libhyprutils.so.0.14.2": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811",
+    "/usr/bin/c++": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9"
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-MMD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/actual.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/actual.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/actual"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-MMD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-bare-logical.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-bare-logical.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-bare-logical"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-MMD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-ordinary-reserve.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-ordinary-reserve.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-ordinary-reserve"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "controls": [
+    {
+      "name": "unsafe-bare-logical",
+      "rejected": true,
+      "failures": [
+        "actual edge aware rounding visual then asymmetric reserve",
+        "configure follows actual real both axes",
+        "rounded visual width INTMAXplus1 restores supported real after reserve"
+      ]
+    },
+    {
+      "name": "unsafe-ordinary-reserve",
+      "rejected": true,
+      "failures": [
+        "ordinary ignores MAX reservation",
+        "ordinary ignores MAX reservation",
+        "ordinary uses rounded logical regardless visual",
+        "ordinary configure comes from logical real box"
+      ]
+    }
+  ],
+  "checks": 151,
+  "compilerDependencies": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/actual.cpp": "7d6b94206e89359ff5b6b76edbd484f852b361df7cfa393711a3fd54dc824142",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-bare-logical.cpp": "c6888c788f57528de6c92c46b82f3a1e0997bc2bae52f2a69616ed461e3a7c22",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126799074634174/unsafe-ordinary-reserve.cpp": "6773af8703a186655e24bd66f87cd1b85b1097cd1f5e5c3f1d8b748087cb5b42"
+  },
+  "linkedLibraries": {
+    "/usr/lib/libhyprutils.so.0.14.2": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811",
+    "/usr/lib/libstdc++.so.6.0.36": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e",
+    "/usr/lib/libm.so.6": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+    "/usr/lib/libgcc_s.so.1": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+    "/usr/lib/libc.so.6": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+    "/usr/lib/libpixman-1.so.0.46.4": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+    "/usr/lib/ld-linux-x86-64.so.2": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb"
+  },
+  "artifacts": {
+    "actual.cpp": "7d6b94206e89359ff5b6b76edbd484f852b361df7cfa393711a3fd54dc824142",
+    "actual.d": "ccab251cf04936c1cdb196ea90ec713cf9a8f0176c627f0bb766e1a0fa1ce7b3",
+    "actual": "7793543ecb93c0563855ccfd6a6b95a553918047c0c7e77727148ae7b50dde01",
+    "actual-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual.stdout": "67a3979e694d4cc4d4bb7b0cafc03780e87eec7ee395a5e5c64a10fbe03ffa31",
+    "actual.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-bare-logical.cpp": "c6888c788f57528de6c92c46b82f3a1e0997bc2bae52f2a69616ed461e3a7c22",
+    "unsafe-bare-logical.d": "f450377a7df7e264c47b667ea381de55fe2105913b6ad7585a4b009d028bac1b",
+    "unsafe-bare-logical": "e72245163353a141c9b79992e8465f4162d2f0e8791e93d0c77aaf05b29a8da3",
+    "unsafe-bare-logical-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-bare-logical.stdout": "41854b7ee2a314e1adb2fc263ecafe5f5ccd08d8699c7320c356b32a893461da",
+    "unsafe-bare-logical.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-ordinary-reserve.cpp": "6773af8703a186655e24bd66f87cd1b85b1097cd1f5e5c3f1d8b748087cb5b42",
+    "unsafe-ordinary-reserve.d": "57a5ee961b4624d6b613ebb2b7984989a23ba69bec8f135bbcdb19effa9efa04",
+    "unsafe-ordinary-reserve": "e33f16a6e2265ff5bdc7df0ba16eb02b2983777f0669531e4b8e834ce9981295",
+    "unsafe-ordinary-reserve-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-ordinary-reserve.stdout": "243d4c043e910be37d4d3870f73b0dc44802427260eb1a7e0c5241bd194c29f9",
+    "unsafe-ordinary-reserve.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ldd.stdout": "4640cc824fb282bcfa99b61dbbbe6fe19e0ff8466f842d530df0b1110ac20228",
+    "inputs/WindowTarget.cpp": "8bcaf37000cf55e1d2084bf732f0589b4ab49d36c778d8d4efa98949dd14734d",
+    "inputs/Target.cpp": "49323833c6bc327656e6d02245ebbccf7643fc94f4fbee3cebbae035bbd4ca06",
+    "inputs/Window.cpp": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+    "inputs/MAX.txt": "d5877a1adaffa347b00d11ead71010872c59009ab70ff93839da2f89ebb15535",
+    "inputs/ordinary.txt": "82f0418b0bcfa90883750b8125d63219eb8a77164b047aa194b02b18499bfa09",
+    "inputs/round.txt": "7a3311a0303297b8a6f493c84302f648cbcf0ccf6cebe1a860b7e47fb92c5b45",
+    "inputs/report-Wayland.txt": "9bfbc00f069f1ddf14a22188f2839742a557469f347cb09ca797e9682568dc28",
+    "inputs/REQUIREMENTS.md": "c1248bdbbd26fee462fdcca065589f8f4d08b1dd9696a207244c0e9e99548df3",
+    "inputs/cases.cpp": "6a277787d2cc06b06704a47766c7fc6bdca52b08a7bd8a57cff1ed5651b807b9",
+    "inputs/run.py": "404a3006a4d08fd3c4ff1485e3612952ab7b62d58cec8522668df18ff50a8d6e"
+  }
+}

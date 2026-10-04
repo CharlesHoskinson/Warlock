@@ -1,0 +1,49 @@
+{
+  "passed": false,
+  "scope": "Actual owning arithmetic characterization only; no native/model/production acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/spec/REQUIREMENTS.md": "c1248bdbbd26fee462fdcca065589f8f4d08b1dd9696a207244c0e9e99548df3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/cases.cpp": "923c9905bd920829bc5c626da067634e45c8f110f436ec2cf4d77f0891ed6e21",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/run.py": "4c81d820102a839041c3c18525dc75a46a5ac71ec0c55b3c58dfe3b30e3dc9a7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-constraint-coordinate-review-v155/reviewed-inputs.json": "4264a3cc192db2ffdcbc6ea921ac950ddecfd5f96331951bff91f8bac0900d52",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f",
+    "/usr/lib/libhyprutils.so.0.14.2": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811",
+    "/usr/bin/c++": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9"
+  },
+  "commands": [
+    {
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-MMD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "controls": [],
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual.cpp: In function \u2018int main()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual.cpp:77:69: error: conversion from \u2018<brace-enclosed initializer list>\u2019 to \u2018Hyprutils::Math::Vector2D\u2019 is ambiguous\\n   77 |  {CWindow w;CWindowTarget t;t.m_window=&w;w.reserved={{1e-8,0},{0,0}};t.setPositionGlobal({{0,0,268435456.,200},{}});t.maximize(true);\\n      |                                                                     ^\\n  \u2022 there are 2 candidates\\nIn file included from /usr/include/hyprutils/math/Box.hpp:3,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual.cpp:1:\\n    \u2022 candidate 1: \u2018constexpr Hyprutils::Math::Vector2D::Vector2D(int, int)\u2019\\n      /usr/include/hyprutils/math/Vector2D.hpp:15:19:\\n         15 |         constexpr Vector2D(int xx, int yy) : x(Hyprutils::Memory::sc<double>(xx)), y(Hyprutils::Memory::sc<double>(yy)) {\\n            |                   ^~~~~~~~\\n    \u2022 candidate 2: \u2018constexpr Hyprutils::Math::Vector2D::Vector2D(double, double)\u2019\\n      /usr/include/hyprutils/math/Vector2D.hpp:12:19:\\n         12 |         constexpr Vector2D(double xx, double yy) : x(xx), y(yy) {\\n            |                   ^~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual.cpp: In member function \u2018Hyprutils::Math::Vector2D CWindow::realToReportSize()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-reachable-axis-characterization-v173/qa/characterize-1791126509625892048/actual.cpp:19:1: error: control reaches end of non-void function [-Werror=return-type]\\n   19 | }\\n      | ^\\ncc1plus: all warnings being treated as errors\\n')",
+  "artifacts": {
+    "actual.cpp": "8441a8dbd9893342586ad8a2cb024ecbdddf7c048f4eae33a298ca1807d2df95",
+    "actual.d": "e969013565ea52d289f5966518c1db97986383dee1dac116240261d554bade59",
+    "actual-compile.stderr": "ddc833a802ce1640a82c2b3ba798036533e23ad318813c41e5c93bdfb4e11559",
+    "inputs/WindowTarget.cpp": "8bcaf37000cf55e1d2084bf732f0589b4ab49d36c778d8d4efa98949dd14734d",
+    "inputs/Target.cpp": "49323833c6bc327656e6d02245ebbccf7643fc94f4fbee3cebbae035bbd4ca06",
+    "inputs/Window.cpp": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+    "inputs/MAX.txt": "d5877a1adaffa347b00d11ead71010872c59009ab70ff93839da2f89ebb15535",
+    "inputs/ordinary.txt": "82f0418b0bcfa90883750b8125d63219eb8a77164b047aa194b02b18499bfa09",
+    "inputs/round.txt": "7a3311a0303297b8a6f493c84302f648cbcf0ccf6cebe1a860b7e47fb92c5b45",
+    "inputs/report-Wayland.txt": "f5d0604e099118d56c4a8f168d0f93057196093c21a8f2e6c36195137e14162b",
+    "inputs/REQUIREMENTS.md": "c1248bdbbd26fee462fdcca065589f8f4d08b1dd9696a207244c0e9e99548df3",
+    "inputs/cases.cpp": "923c9905bd920829bc5c626da067634e45c8f110f436ec2cf4d77f0891ed6e21",
+    "inputs/run.py": "4c81d820102a839041c3c18525dc75a46a5ac71ec0c55b3c58dfe3b30e3dc9a7"
+  }
+}
