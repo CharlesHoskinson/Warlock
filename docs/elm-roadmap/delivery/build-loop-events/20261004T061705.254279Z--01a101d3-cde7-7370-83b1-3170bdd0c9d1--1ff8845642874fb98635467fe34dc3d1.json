@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "1ff8845642874fb98635467fe34dc3d1",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T06:17:05.254279+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-parent-button-lifecycle-v14",
+  "nextWork": [
+    "Qualify persistent parent input held buttons across child resize/scale and normal controller quit/EOF/refusal using actual GTK receipts; preserve frozen V12 and other workers parent-resize/menu derivatives"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-input-probe-v12/qa/implementation-manifest.json",
+      "sha256": "7f1800f59a40564d162802c49655e635bd127749b1b027676ce26ce3a5a81065",
+      "size": 27827
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

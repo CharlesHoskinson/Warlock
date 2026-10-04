@@ -1,0 +1,115 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Real GDK3 enum and allocated Event CPU witnesses; extracted actual receipt function; no native event delivery",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/fixture.py": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/qa/event-kind-test.py": "83b87eb78e6275ee0dcdd11f1bbedf24367bb57f367f5b06d1cd8019f5263d47",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v12/fixture.py": "45ed90ff855b6d4907a31b8023a7d6e7c259ca2a71a73c5a93c0e81170a4edf0"
+  },
+  "checks": [
+    {
+      "name": "OriginalFixtureAstUnchangedExceptTwoReceiptFields",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:button-press",
+      "passed": false,
+      "error": "TypeError(\"int() argument must be a string, a bytes-like object or a real number, not 'EventButton'\")"
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:2button-press",
+      "passed": false,
+      "error": "TypeError(\"int() argument must be a string, a bytes-like object or a real number, not 'EventButton'\")"
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:3button-press",
+      "passed": false,
+      "error": "TypeError(\"int() argument must be a string, a bytes-like object or a real number, not 'EventButton'\")"
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:button-release",
+      "passed": false,
+      "error": "TypeError(\"int() argument must be a string, a bytes-like object or a real number, not 'EventButton'\")"
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:motion-notify",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:enter-notify",
+      "passed": true
+    },
+    {
+      "name": "DoubleAndTriplePressReceiptsNotDroppedOrRemovedFromOriginalCount",
+      "passed": true
+    },
+    {
+      "name": "AllOriginalRecipientCountsPreserved",
+      "passed": true
+    },
+    {
+      "name": "PhysicalPress4DistinguishableFromDouble5AndTriple6",
+      "passed": false,
+      "error": "AssertionError(([], [4, 5, 6]))"
+    },
+    {
+      "name": "PhysicalRelease7RemainsSeparateReceipt",
+      "passed": false,
+      "error": "AssertionError(([], [7]))"
+    },
+    {
+      "name": "OriginalInputPreserved:/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/fixture.py",
+      "passed": true
+    },
+    {
+      "name": "OriginalInputPreserved:/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/qa/event-kind-test.py",
+      "passed": true
+    },
+    {
+      "name": "OriginalInputPreserved:/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v12/fixture.py",
+      "passed": true
+    }
+  ],
+  "checkCount": 14,
+  "receipts": [
+    {
+      "kind": "motion",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 3,
+      "eventTypeNick": "motion-notify",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": null,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8730096053274",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    },
+    {
+      "kind": "enter",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 10,
+      "eventTypeNick": "enter-notify",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": null,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8730096053274",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    }
+  ]
+}

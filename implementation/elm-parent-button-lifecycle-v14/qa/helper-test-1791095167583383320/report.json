@@ -1,0 +1,134 @@
+{
+  "passed": true,
+  "scope": "actual parser CPU methods; no process/GUI/input launch",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-883a8afa1c8a4db2a462a66d80501fe2.scope",
+    "coreLimit": 1
+  },
+  "sources": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/qa/interactive-client.py": "8b40ccb86c25974521cf984c29d86412b97cf25d670091f154081799c7c320fe",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/qa/helper-test.py": "a25803c86f40bd41bf733f2c38c8341c523475c6ba31f50a318eae158bbe3d3f"
+  },
+  "checks": [
+    {
+      "name": "one-exact-acknowledgment",
+      "passed": true,
+      "evidence": {
+        "guardCalls": 1,
+        "receipt": {
+          "sequence": 1,
+          "accepted": true,
+          "scope": "parent-notify-only"
+        }
+      }
+    },
+    {
+      "name": "actual-readiness-packet",
+      "passed": true,
+      "evidence": {
+        "ready": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "name": "duplicate-ack-in-one-read-rejected",
+      "passed": true,
+      "evidence": "Multiple parent receipts for one outstanding request"
+    },
+    {
+      "name": "matching-ack-plus-unexpected-json-rejected",
+      "passed": true,
+      "evidence": "Multiple parent receipts for one outstanding request"
+    },
+    {
+      "name": "malformed-json-rejected",
+      "passed": true,
+      "evidence": "Expecting value: line 1 column 13 (char 12)"
+    },
+    {
+      "name": "partial-newline-held-once",
+      "passed": true,
+      "evidence": {
+        "bytesConsumed": 65,
+        "notReplayed": true
+      }
+    },
+    {
+      "name": "out-of-order-sequence-rejected",
+      "passed": true,
+      "evidence": "Unexpected or out-of-order parent receipt"
+    },
+    {
+      "name": "boolean-sequence-does-not-alias-one",
+      "passed": true,
+      "evidence": "Unexpected or out-of-order parent receipt"
+    },
+    {
+      "name": "host-guard-before-receipt-acceptance",
+      "passed": true,
+      "evidence": {
+        "rejection": "test host identity denied",
+        "logNotConsumed": true
+      }
+    },
+    {
+      "name": "native-stderr-preserved-outside-json",
+      "passed": true,
+      "evidence": {
+        "stderrPreserved": true
+      }
+    },
+    {
+      "name": "single-read-byte-bound",
+      "passed": true,
+      "evidence": "Parent client log exceeded bounded observation"
+    },
+    {
+      "name": "partial-line-cumulative-bound",
+      "passed": true,
+      "evidence": "Parent client log line exceeded bound"
+    },
+    {
+      "name": "total-log-observation-bound",
+      "passed": true,
+      "evidence": "Parent client log exceeded bounded observation"
+    },
+    {
+      "name": "early-client-exit-is-not-ack",
+      "passed": true,
+      "evidence": "Parent client exited before acknowledgment: 6"
+    },
+    {
+      "name": "refusal-ack-readable-before-exit6",
+      "passed": true,
+      "evidence": {
+        "refusalObservedBeforeNormalExit6": true
+      }
+    },
+    {
+      "name": "expired-ack-deadline-refuses",
+      "passed": true,
+      "evidence": "Six-second parent acknowledgment deadline"
+    }
+  ],
+  "artifacts": {
+    "inputs/helper-test.py": "a25803c86f40bd41bf733f2c38c8341c523475c6ba31f50a318eae158bbe3d3f",
+    "inputs/interactive-client.py": "8b40ccb86c25974521cf984c29d86412b97cf25d670091f154081799c7c320fe",
+    "owned-log-01.log": "827cb789378c533155e132d455eea0098dbd7bb8d04f2c265714194b5a3425db",
+    "owned-log-02.log": "008bec5f437c0cd5dd45e1db012450c596197069d5f3ada2200abdd4c69fdb89",
+    "owned-log-03.log": "4619622ac2c069dd294eba8af7f76f80868a8213f5179d71b838df380602516b",
+    "owned-log-04.log": "7e58c7ae96b78df22606cbc504aec5096e08e2860999949e1ab041d6e84eca9d",
+    "owned-log-05.log": "4a18ee3ec0a538f6f919650b61162d70cc100f3c3e88386d41fb6aab41c1a6c8",
+    "owned-log-06.log": "827cb789378c533155e132d455eea0098dbd7bb8d04f2c265714194b5a3425db",
+    "owned-log-07.log": "c9001411c0732a64a6a250c072ad035be7016b99818092543ee93ee796bfd0fe",
+    "owned-log-08.log": "7872bb620aab979d357a0dabc5b381f8b62f5fd4c7dc666c016f549223eac46a",
+    "owned-log-09.log": "827cb789378c533155e132d455eea0098dbd7bb8d04f2c265714194b5a3425db",
+    "owned-log-10.log": "34f438700ad76bcaf4084463202a004d263eda36ca87d82728ab630fdb06ba78",
+    "owned-log-11.log": "1abe08ebecf1c18cab71f6fe28aaddf20268f85bad78bb9a72f88ca47c874662",
+    "owned-log-12.log": "1abe08ebecf1c18cab71f6fe28aaddf20268f85bad78bb9a72f88ca47c874662",
+    "owned-log-13.log": "2620df77fcb5b402aaad1300c195f9579dd5b9f515834e1fefb6bacfa3dccd84",
+    "owned-log-14.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owned-log-15.log": "74799d3777c11bcef20e8a57435f77c4140a16b9fd2dc3990a972f7ff9adc8cc",
+    "owned-log-16.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

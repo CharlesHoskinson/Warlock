@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual extracted seat-retirement callback, all eight held records and previous unsafe body rejected; not real seat hot-unplug",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/native/parent-input-module.c": "cd552c7bf620b4760c829fcede6141e124a0fbd1481e9dbad1fa09711fb075d4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v12/native/parent-input-module.c": "08c7304345e16fcac804f5546e0785c43541d6cd46807401e025fe617065867e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/qa/seat-retirement-test.py": "63e627b51547f22f94b0e59ad3dbd84c98b99252a145d95a722c3f103c51a14d"
+  },
+  "checks": [
+    {
+      "name": "actual",
+      "passed": true,
+      "exitCode": 0,
+      "extractedCallbackSHA256": "960b7e3d1b462b66687793ff6b90894a373403ee8d30410fe27facfa897b56c7"
+    },
+    {
+      "name": "previous-unsafe",
+      "passed": true,
+      "exitCode": 1,
+      "extractedCallbackSHA256": "494d479f5636fac5d548121f89d9127633421bba7f3a9ee46c2a8bb3c7a9f066"
+    }
+  ]
+}

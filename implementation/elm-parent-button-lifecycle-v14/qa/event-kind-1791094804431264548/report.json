@@ -1,0 +1,185 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Real GDK3 enum and allocated Event CPU witnesses; extracted actual receipt function; no native event delivery",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/fixture.py": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/qa/event-kind-test.py": "9cedea1cc8fa149a66a7ff464e823c9fb54f341c26f321b0fbf8c622afe1ba22",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v12/fixture.py": "45ed90ff855b6d4907a31b8023a7d6e7c259ca2a71a73c5a93c0e81170a4edf0"
+  },
+  "checks": [
+    {
+      "name": "OriginalFixtureAstUnchangedExceptTwoReceiptFields",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:button-press",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:2button-press",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:3button-press",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:button-release",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:motion-notify",
+      "passed": true
+    },
+    {
+      "name": "ActualGdkEnumAndExtractedReceipt:enter-notify",
+      "passed": true
+    },
+    {
+      "name": "DoubleAndTriplePressReceiptsNotDroppedOrRemovedFromOriginalCount",
+      "passed": true
+    },
+    {
+      "name": "AllOriginalRecipientCountsPreserved",
+      "passed": true
+    },
+    {
+      "name": "PhysicalPress4DistinguishableFromDouble5AndTriple6",
+      "passed": true
+    },
+    {
+      "name": "PhysicalRelease7RemainsSeparateReceipt",
+      "passed": true
+    },
+    {
+      "name": "OriginalInputPreserved:/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/fixture.py",
+      "passed": true
+    },
+    {
+      "name": "OriginalInputPreserved:/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-button-lifecycle-v14/qa/event-kind-test.py",
+      "passed": true
+    },
+    {
+      "name": "OriginalInputPreserved:/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v12/fixture.py",
+      "passed": true
+    }
+  ],
+  "checkCount": 14,
+  "receipts": [
+    {
+      "kind": "button-press",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 4,
+      "eventTypeNick": "button-press",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": 1,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8783204449306",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    },
+    {
+      "kind": "button-press",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 5,
+      "eventTypeNick": "2button-press",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": 1,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8783204449306",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    },
+    {
+      "kind": "button-press",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 6,
+      "eventTypeNick": "3button-press",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": 1,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8783204449306",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    },
+    {
+      "kind": "button-release",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 7,
+      "eventTypeNick": "button-release",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": 1,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8783204449306",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    },
+    {
+      "kind": "motion",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 3,
+      "eventTypeNick": "motion-notify",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": null,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8783204449306",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    },
+    {
+      "kind": "enter",
+      "x": 20.0,
+      "y": 30.0,
+      "eventType": 10,
+      "eventTypeNick": "enter-notify",
+      "eventTime": 55,
+      "sendEvent": false,
+      "button": null,
+      "signalRecipient": "parent-input-recipient",
+      "gdkEventWidget": null,
+      "eventWidgetIsRecipient": false,
+      "signalWidgetIsRecipient": true,
+      "eventWindowIsOwned": false,
+      "eventWindowOwnerReference": null,
+      "recipientNativeReference": "8783204449306",
+      "eventWindowOwnerIsRecipient": false,
+      "eventWindowReference": null
+    }
+  ]
+}
