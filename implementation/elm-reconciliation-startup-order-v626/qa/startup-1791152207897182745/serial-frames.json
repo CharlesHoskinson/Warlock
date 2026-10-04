@@ -1,0 +1,264 @@
+[
+  {
+    "protocolVersion": 3,
+    "kind": "attached",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "host-recovery-watermarks",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    },
+    "request": "13",
+    "generation": "13"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "host-reservation-unknown",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    },
+    "record": {
+      "binding": {
+        "frontend": "1",
+        "lifetime": "19",
+        "session": "1"
+      },
+      "effectProtocol": 1,
+      "intent": {
+        "context": {
+          "epoch": "1",
+          "lifetime": "19",
+          "output": "7",
+          "revision": "21"
+        },
+        "generation": "12",
+        "incarnation": "2",
+        "operation": "minimize",
+        "request": "12"
+      },
+      "schema": 2,
+      "status": "Unknown"
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "host-reservation-unknown",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    },
+    "record": {
+      "binding": {
+        "frontend": "1",
+        "lifetime": "19",
+        "session": "3"
+      },
+      "effectProtocol": 1,
+      "intent": {
+        "context": {
+          "epoch": "1",
+          "lifetime": "19",
+          "output": "7",
+          "revision": "21"
+        },
+        "generation": "13",
+        "incarnation": "3",
+        "operation": "minimize",
+        "request": "13"
+      },
+      "schema": 2,
+      "status": "Unknown"
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "binding-retirement",
+    "retirementProtocol": 1,
+    "operation": "retire",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    },
+    "queriedBinding": {
+      "lifetime": "19",
+      "session": "1",
+      "frontend": "1"
+    },
+    "requestId": "1",
+    "sequence": "51",
+    "grantState": "Retired"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "host-geometry-negotiate"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "host-reservation-released",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    },
+    "record": {
+      "binding": {
+        "frontend": "1",
+        "lifetime": "19",
+        "session": "1"
+      },
+      "effectProtocol": 1,
+      "intent": {
+        "context": {
+          "epoch": "1",
+          "lifetime": "19",
+          "output": "7",
+          "revision": "21"
+        },
+        "generation": "12",
+        "incarnation": "2",
+        "operation": "minimize",
+        "request": "12"
+      },
+      "schema": 2,
+      "status": "Unknown"
+    },
+    "release": {
+      "id": "0630b2d41109c679dd1b9feab7df6e227cf639d28c88e6d403fe956acae7ffcd",
+      "proof": {
+        "protocolVersion": 3,
+        "kind": "binding-retirement",
+        "retirementProtocol": 1,
+        "operation": "retire",
+        "binding": {
+          "lifetime": "19",
+          "session": "10",
+          "frontend": "1"
+        },
+        "queriedBinding": {
+          "lifetime": "19",
+          "session": "1",
+          "frontend": "1"
+        },
+        "requestId": "1",
+        "sequence": "51",
+        "grantState": "Retired"
+      },
+      "observation": {
+        "actionRequestId": "91",
+        "geometryRequestId": "37",
+        "actionContext": {
+          "lifetime": "19",
+          "epoch": "1",
+          "output": "7",
+          "revision": "22"
+        },
+        "geometryContext": {
+          "lifetime": "19",
+          "epoch": "1",
+          "output": "7",
+          "revision": "29"
+        }
+      }
+    }
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "binding-retirement",
+    "retirementProtocol": 1,
+    "operation": "retire",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    },
+    "queriedBinding": {
+      "lifetime": "19",
+      "session": "3",
+      "frontend": "1"
+    },
+    "requestId": "2",
+    "sequence": "52",
+    "grantState": "Retired"
+  },
+  {
+    "protocolVersion": 3,
+    "kind": "host-reservation-released",
+    "binding": {
+      "lifetime": "19",
+      "session": "10",
+      "frontend": "1"
+    },
+    "record": {
+      "binding": {
+        "frontend": "1",
+        "lifetime": "19",
+        "session": "3"
+      },
+      "effectProtocol": 1,
+      "intent": {
+        "context": {
+          "epoch": "1",
+          "lifetime": "19",
+          "output": "7",
+          "revision": "21"
+        },
+        "generation": "13",
+        "incarnation": "3",
+        "operation": "minimize",
+        "request": "13"
+      },
+      "schema": 2,
+      "status": "Unknown"
+    },
+    "release": {
+      "id": "58b7f065df9c277cc6da63bdf98cd0319f1b85d5fe5289c021c23b8328c91d3b",
+      "proof": {
+        "protocolVersion": 3,
+        "kind": "binding-retirement",
+        "retirementProtocol": 1,
+        "operation": "retire",
+        "binding": {
+          "lifetime": "19",
+          "session": "10",
+          "frontend": "1"
+        },
+        "queriedBinding": {
+          "lifetime": "19",
+          "session": "3",
+          "frontend": "1"
+        },
+        "requestId": "2",
+        "sequence": "52",
+        "grantState": "Retired"
+      },
+      "observation": {
+        "actionRequestId": "92",
+        "geometryRequestId": "38",
+        "actionContext": {
+          "lifetime": "19",
+          "epoch": "1",
+          "output": "7",
+          "revision": "22"
+        },
+        "geometryContext": {
+          "lifetime": "19",
+          "epoch": "1",
+          "output": "7",
+          "revision": "29"
+        }
+      }
+    }
+  }
+]

@@ -1,0 +1,743 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT405]: Module protocol_tests imports an unknown module protocol
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:2:2
+  2:  import protocol.* from "./protocol"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'protocol' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:2:2
+  2:  import protocol.* from "./protocol"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT405]: Module 'release' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:3:2
+  3:  import release.* from "./release"
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'start' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:30
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                  ^^^^^
+
+
+ Error [QNT404]: Name 'ready' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:41
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                             ^^^^^
+
+
+ Error [QNT404]: Name 'actionRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:53
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                         ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'geometryRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:70
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'durableRelease' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:89
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:110
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ReleaseRecords' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:115
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                       ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:153
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                             ^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:172
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                                                ^
+
+
+ Error [QNT404]: Name 'protocolProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:201
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                                                                             ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:216
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ReleaseRecords' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:221
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:259
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:275
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DeliverProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:4:280
+  4:  run freshReadyRelease64Test=start.then(ready).then(actionRead).then(geometryRead).then(durableRelease).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and q.releasedScopes==Set(1) and protocolProps),send(ReleaseRecords(1))}).then(all {assert(q.released==64),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'start' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:35
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                       ^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:46
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'EnqueueRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:51
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:94
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'EnqueueRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:99
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ready' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:142
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                  ^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:154
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ProcessRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:159
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:181
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ProcessRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:186
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                              ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:208
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                    ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Reply' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:213
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                         ^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:229
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                         ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Reply' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:234
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                              ^^^^^^^^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:262
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 'joined' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:284
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                                                ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:291
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:299
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                                                               ^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:323
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                                                                                       ^
+
+
+ Error [QNT404]: Name 'protocolProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:349
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:364
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ReleaseRecords' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:5:369
+  5:  run queuedBeforeAnnouncementTest=start.then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueRead({id:2,kind:2,output:1}))).then(ready).then(send(ProcessRead(1))).then(send(ProcessRead(2))).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(q.ordinary==2 and not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'start' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:36
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                        ^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:47
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                   ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Announce' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:52
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                        ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:71
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                           ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DeliverProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:76
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:96
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'EnqueueRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:101
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:144
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'EnqueueReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:149
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                         ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'GOOD' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:162
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                      ^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:175
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ProcessReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:180
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                        ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'GOOD' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:193
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                     ^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:206
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ProcessRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:211
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                       ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:233
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Reply' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:238
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                  ^^^^^^^^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:266
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                              ^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:290
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                      ^
+
+
+ Error [QNT404]: Name 'protocolProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:308
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                        ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:323
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DeliverProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:6:328
+  6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'start' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:34
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                      ^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:45
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                 ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Announce' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:50
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                      ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:69
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                         ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DeliverProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:74
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                              ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:94
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'EnqueueReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:99
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                       ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'GOOD' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:112
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                    ^^^^
+
+
+ Error [QNT404]: Name 'actionRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:125
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                 ^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'geometryRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:142
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                  ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:177
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                                                     ^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:190
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:214
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                                                                                          ^
+
+
+ Error [QNT404]: Name 'protocolProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:240
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                                                                                                                    ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:255
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ProcessReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:260
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                                                                                                                                        ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'GOOD' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:7:273
+  7:  run ackEnqueuedNotProcessedTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(actionRead).then(geometryRead).then(all {assert(not(q.ready) and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))})
+                                                                                                                                                                                                                                                                                     ^^^^
+
+
+ Error [QNT404]: Name 'start' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:42
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                              ^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:53
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                         ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Announce' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:58
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                              ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:77
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                 ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DeliverProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:82
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                      ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:102
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'EnqueueReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:107
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                               ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'GOOD' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:120
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                            ^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:133
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'EnqueueRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:138
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:181
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ProcessReady' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:186
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'GOOD' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:199
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                           ^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:212
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                        ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'ProcessRead' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:217
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                             ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:239
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Reply' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:244
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                        ^^^^^^^^
+
+
+ Error [QNT404]: Name 'q' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:272
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                    ^
+
+
+ Error [QNT404]: Name 'protocolProps' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:296
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:311
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DeliverProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:8:316
+  8:  run freshEnqueueBeforeAckProcessingTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady(GOOD))).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                                ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'start' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:9:23
+  9:  run foreignReadyTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady({...GOOD,current:9}))).then(send(ProcessReady({...GOOD,current:9}))).then(all {assert(not(q.ready) and not(q.ackQueued) and protocolProps),send(DeliverProof)})
+                           ^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:9:34
+  9:  run foreignReadyTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady({...GOOD,current:9}))).then(send(ProcessReady({...GOOD,current:9}))).then(all {assert(not(q.ready) and not(q.ackQueued) and protocolProps),send(DeliverProof)})
+                                      ^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Announce' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:9:39
+  9:  run foreignReadyTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady({...GOOD,current:9}))).then(send(ProcessReady({...GOOD,current:9}))).then(all {assert(not(q.ready) and not(q.ackQueued) and protocolProps),send(DeliverProof)})
+                                           ^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:9:58
+  9:  run foreignReadyTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady({...GOOD,current:9}))).then(send(ProcessReady({...GOOD,current:9}))).then(all {assert(not(q.ready) and not(q.ackQueued) and protocolProps),send(DeliverProof)})
+                                                              ^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'DeliverProof' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:9:63
+  9:  run foreignReadyTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady({...GOOD,current:9}))).then(send(ProcessReady({...GOOD,current:9}))).then(all {assert(not(q.ready) and not(q.ackQueued) and protocolProps),send(DeliverProof)})
+                                                                   ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'send' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:9:83
+  9:  run foreignReadyTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueReady({...GOOD,current:9}))).then(send(ProcessReady({...GOOD,current:9}))).then(all {assert(not(q.ready) and not(q.ackQueued) and protocolProps),send(DeliverProof)})
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+

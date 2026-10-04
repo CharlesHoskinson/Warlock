@@ -1,0 +1,2425 @@
+[
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "attached",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "compositor": {
+        "pid": 3310266,
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1791143277_872630886",
+        "coreHash": "efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6"
+      },
+      "capabilities": {
+        "observe": true,
+        "effects": true,
+        "minimizedState": true,
+        "effectProtocol": 1,
+        "operations": [
+          "minimize",
+          "restore",
+          "activate"
+        ],
+        "canonicalScene": false,
+        "taskbarProjectionProtocol": 1,
+        "effectInvalidationProtocol": 1
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "action-projection",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "1",
+      "context": {
+        "lifetime": "13066731177979386763",
+        "epoch": "2",
+        "output": "1",
+        "revision": "21"
+      },
+      "scene": {
+        "revision": "21",
+        "focused": "2",
+        "windows": [
+          {
+            "incarnation": "2",
+            "application": "GTK Application",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": false,
+            "owner": null,
+            "available": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-geometry-negotiate"
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "geometry-attached",
+      "geometryProtocol": 2,
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "2",
+      "capabilities": {
+        "observe": true,
+        "effects": true,
+        "effectProtocol": 2,
+        "operations": [
+          "maximize",
+          "restore-geometry"
+        ],
+        "placementCapacity": 256,
+        "canonicalScene": false
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "geometry-facts",
+      "geometryProtocol": 2,
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "3",
+      "sequence": "48",
+      "revision": "21",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "2",
+        "inputBlocked": false,
+        "windows": [
+          {
+            "incarnation": "2",
+            "owner": null,
+            "workspace": "1",
+            "workspaceGeneration": "1",
+            "monitor": "0",
+            "outputOwnershipGeneration": "1",
+            "workAreaRevision": "1",
+            "workArea": [
+              0,
+              48,
+              800,
+              552
+            ],
+            "logicalGeometry": [
+              20,
+              68,
+              760,
+              512
+            ],
+            "visualGeometry": [
+              21,
+              69,
+              758,
+              510
+            ],
+            "nativeMode": "ordinary",
+            "clientMode": "ordinary",
+            "minimized": false,
+            "floating": false,
+            "grouped": false,
+            "fixedSize": false,
+            "constrainedSize": true,
+            "geometryEligible": false,
+            "ordinaryPlacementKnown": false,
+            "sizePolicy": {
+              "inputs": {
+                "profile": "wayland-zero-origin-v1",
+                "rawMinimum": [
+                  108,
+                  42
+                ],
+                "rawMaximum": [
+                  0,
+                  0
+                ],
+                "layoutMinimum": [
+                  108,
+                  42
+                ],
+                "layoutMaximum": [
+                  1.7976931348623157e+308,
+                  1.7976931348623157e+308
+                ],
+                "geometryOrigin": [
+                  0,
+                  0
+                ],
+                "reservedTopLeft": [
+                  1,
+                  1
+                ],
+                "reservedBottomRight": [
+                  1,
+                  1
+                ],
+                "monitorScale": 1
+              },
+              "maximize": {
+                "logical": [
+                  0,
+                  48,
+                  800,
+                  552
+                ],
+                "visual": null,
+                "real": [
+                  1,
+                  49,
+                  798,
+                  550
+                ],
+                "configure": [
+                  798,
+                  550
+                ]
+              },
+              "restoreGeometry": null
+            },
+            "capabilities": {
+              "maximize": false,
+              "restoreGeometry": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "101",
+          "incarnation": "1",
+          "operation": "minimize",
+          "request": "1"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "102",
+          "incarnation": "2",
+          "operation": "minimize",
+          "request": "2"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "103",
+          "incarnation": "3",
+          "operation": "minimize",
+          "request": "3"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "104",
+          "incarnation": "4",
+          "operation": "minimize",
+          "request": "4"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "105",
+          "incarnation": "5",
+          "operation": "minimize",
+          "request": "5"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "106",
+          "incarnation": "6",
+          "operation": "minimize",
+          "request": "6"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "107",
+          "incarnation": "7",
+          "operation": "minimize",
+          "request": "7"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "108",
+          "incarnation": "8",
+          "operation": "minimize",
+          "request": "8"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "109",
+          "incarnation": "9",
+          "operation": "minimize",
+          "request": "9"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "110",
+          "incarnation": "10",
+          "operation": "minimize",
+          "request": "10"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "111",
+          "incarnation": "11",
+          "operation": "minimize",
+          "request": "11"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "112",
+          "incarnation": "12",
+          "operation": "minimize",
+          "request": "12"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "113",
+          "incarnation": "13",
+          "operation": "minimize",
+          "request": "13"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "114",
+          "incarnation": "14",
+          "operation": "minimize",
+          "request": "14"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "115",
+          "incarnation": "15",
+          "operation": "minimize",
+          "request": "15"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "116",
+          "incarnation": "16",
+          "operation": "minimize",
+          "request": "16"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "117",
+          "incarnation": "17",
+          "operation": "minimize",
+          "request": "17"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "118",
+          "incarnation": "18",
+          "operation": "minimize",
+          "request": "18"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "119",
+          "incarnation": "19",
+          "operation": "minimize",
+          "request": "19"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "120",
+          "incarnation": "20",
+          "operation": "minimize",
+          "request": "20"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "121",
+          "incarnation": "21",
+          "operation": "minimize",
+          "request": "21"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "122",
+          "incarnation": "22",
+          "operation": "minimize",
+          "request": "22"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "123",
+          "incarnation": "23",
+          "operation": "minimize",
+          "request": "23"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "124",
+          "incarnation": "24",
+          "operation": "minimize",
+          "request": "24"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "125",
+          "incarnation": "25",
+          "operation": "minimize",
+          "request": "25"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "126",
+          "incarnation": "26",
+          "operation": "minimize",
+          "request": "26"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "127",
+          "incarnation": "27",
+          "operation": "minimize",
+          "request": "27"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "128",
+          "incarnation": "28",
+          "operation": "minimize",
+          "request": "28"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "129",
+          "incarnation": "29",
+          "operation": "minimize",
+          "request": "29"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "130",
+          "incarnation": "30",
+          "operation": "minimize",
+          "request": "30"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "131",
+          "incarnation": "31",
+          "operation": "minimize",
+          "request": "31"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "132",
+          "incarnation": "32",
+          "operation": "minimize",
+          "request": "32"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "133",
+          "incarnation": "33",
+          "operation": "minimize",
+          "request": "33"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "134",
+          "incarnation": "34",
+          "operation": "minimize",
+          "request": "34"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "135",
+          "incarnation": "35",
+          "operation": "minimize",
+          "request": "35"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "136",
+          "incarnation": "36",
+          "operation": "minimize",
+          "request": "36"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "137",
+          "incarnation": "37",
+          "operation": "minimize",
+          "request": "37"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "138",
+          "incarnation": "38",
+          "operation": "minimize",
+          "request": "38"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "139",
+          "incarnation": "39",
+          "operation": "minimize",
+          "request": "39"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "140",
+          "incarnation": "40",
+          "operation": "minimize",
+          "request": "40"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "141",
+          "incarnation": "41",
+          "operation": "minimize",
+          "request": "41"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "142",
+          "incarnation": "42",
+          "operation": "minimize",
+          "request": "42"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "143",
+          "incarnation": "43",
+          "operation": "minimize",
+          "request": "43"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "144",
+          "incarnation": "44",
+          "operation": "minimize",
+          "request": "44"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "145",
+          "incarnation": "45",
+          "operation": "minimize",
+          "request": "45"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "146",
+          "incarnation": "46",
+          "operation": "minimize",
+          "request": "46"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "147",
+          "incarnation": "47",
+          "operation": "minimize",
+          "request": "47"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "148",
+          "incarnation": "48",
+          "operation": "minimize",
+          "request": "48"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "149",
+          "incarnation": "49",
+          "operation": "minimize",
+          "request": "49"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "150",
+          "incarnation": "50",
+          "operation": "minimize",
+          "request": "50"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "151",
+          "incarnation": "51",
+          "operation": "minimize",
+          "request": "51"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "152",
+          "incarnation": "52",
+          "operation": "minimize",
+          "request": "52"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "153",
+          "incarnation": "53",
+          "operation": "minimize",
+          "request": "53"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "154",
+          "incarnation": "54",
+          "operation": "minimize",
+          "request": "54"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "155",
+          "incarnation": "55",
+          "operation": "minimize",
+          "request": "55"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "156",
+          "incarnation": "56",
+          "operation": "minimize",
+          "request": "56"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "157",
+          "incarnation": "57",
+          "operation": "minimize",
+          "request": "57"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "158",
+          "incarnation": "58",
+          "operation": "minimize",
+          "request": "58"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "159",
+          "incarnation": "59",
+          "operation": "minimize",
+          "request": "59"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "160",
+          "incarnation": "60",
+          "operation": "minimize",
+          "request": "60"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "161",
+          "incarnation": "61",
+          "operation": "minimize",
+          "request": "61"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "162",
+          "incarnation": "62",
+          "operation": "minimize",
+          "request": "62"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "163",
+          "incarnation": "63",
+          "operation": "minimize",
+          "request": "63"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "164",
+          "incarnation": "64",
+          "operation": "minimize",
+          "request": "64"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "165",
+          "incarnation": "65",
+          "operation": "minimize",
+          "request": "65"
+        },
+        "status": "Unknown"
+      }
+    }
+  }
+]

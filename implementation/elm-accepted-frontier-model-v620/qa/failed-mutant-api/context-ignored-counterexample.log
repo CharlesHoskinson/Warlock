@@ -1,0 +1,17 @@
+
+  frontier
+    1) changedContextSameIdRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) changedContextSameIdRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/context-ignored/frontier.qnt:43:28
+        43:  action assertBlocked=all {assert(s.reserved and safety),fire(Noop)}
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf233 --match=changedContextSameIdRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/context-ignored/frontier.qnt
+error: Tests failed

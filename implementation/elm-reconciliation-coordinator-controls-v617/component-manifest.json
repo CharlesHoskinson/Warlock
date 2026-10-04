@@ -1,0 +1,1201 @@
+{
+  "component": "elm-reconciliation-coordinator-controls-v617",
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "272dcd8966999a6c6c0311b41c1bd23c82f17c998a07a409de09c4f2e34c0c9a",
+      "size": 951
+    },
+    "SPEC.md": {
+      "sha256": "edafd512e4da3e51465cfd72a9c97e1b15cf64e8080c5204ecd9d8fbcc11bd28",
+      "size": 2170
+    },
+    "adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    "adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    "adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    "adapter/daemon.py": {
+      "sha256": "1e0d9da01f06fc28504be3aaba966cb9bdd173b42674f31ca0ddb70c0e4bf838",
+      "size": 10853
+    },
+    "adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    "adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    "adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    "adapter/grant_endpoint.py": {
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "size": 4610
+    },
+    "adapter/reconciliation.py": {
+      "sha256": "6ff8c5141dfe5b3212c51e237165e9c84edcd0a02e86bd7c429d4cda4524d150",
+      "size": 5393
+    },
+    "adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    "adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    "adapter/recovery_store.py": {
+      "sha256": "35351b0c5ae5257c230cb6fd87117b1dc239a9ba82cc6f7bafb9a42a39c24b75",
+      "size": 2591
+    },
+    "adapter/retirement_ledger.py": {
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "size": 18804
+    },
+    "adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    "adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    "native/admission-test.c": {
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    "native/context-keys-test.c": {
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    "native/context-keys.h": {
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    "native/geometry-carrier-test.c": {
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425
+    },
+    "native/handoff-test.c": {
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    "native/host-fault.h": {
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    "native/host-journal.h": {
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    "native/host.c": {
+      "sha256": "a9e858e404867412723c2973db58e60b09a7b623192efc0bb9ca40c1f7f3336e",
+      "size": 62609
+    },
+    "native/reconciliation-carrier-test.c": {
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "size": 3024
+    },
+    "native/recovery-presentation-test.c": {
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "size": 2766
+    },
+    "native/shared-context-test.c": {
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901
+    },
+    "native/shared-context.h": {
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281
+    },
+    "native/shared-host.c": {
+      "sha256": "854ee839f2017a902520da2feb115c4426fe213085efa302403f8467975e9261",
+      "size": 36776
+    },
+    "native/surface-test.c": {
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    "native/surface.h": {
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "size": 5561
+    },
+    "qa/freeze.py": {
+      "sha256": "9eb1e0e1c08bffdf9a978f44662b2840b8aed39d0387d424ed969e172b321bf1",
+      "size": 1966
+    },
+    "qa/test.py": {
+      "sha256": "ef8927611312fe84e38352c4ce8194ec73967ce92b75dbfaa674122b3aa15da5",
+      "size": 20091
+    },
+    "qa/tests-1791150400922859665/admission-test": {
+      "sha256": "de8a941c5aa357f3c81c5467ce4dc408673828e010f189aefe2c939d736ce614",
+      "size": 33536
+    },
+    "qa/tests-1791150400922859665/admission-test-compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/admission-test-compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/elm-host": {
+      "sha256": "8dfb3492967578f1881695fbe76352f9b06a591d1e4aa2177371d50084bc251a",
+      "size": 149752
+    },
+    "qa/tests-1791150400922859665/elm-host-compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/elm-host-compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/elm-host-self-tests.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/elm-host-self-tests.stdout": {
+      "sha256": "186f2a2ad93e7991dd7558b5301bc9817a3f2dc21e7d310119dd8c700b273c22",
+      "size": 712
+    },
+    "qa/tests-1791150400922859665/flags.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/flags.stdout": {
+      "sha256": "6cc9c1c055cb28056a5ae95d2ad83db1f4d3a203caecc15f680486028dee888c",
+      "size": 935
+    },
+    "qa/tests-1791150400922859665/geometry-carrier": {
+      "sha256": "5cbe3044bab0bf3a1cbdb24bc5c7e8686584ab390f400cb198415d9e96c8c84a",
+      "size": 108816
+    },
+    "qa/tests-1791150400922859665/geometry-carrier-compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/geometry-carrier-compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/geometry-carrier-tests.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/geometry-carrier-tests.stdout": {
+      "sha256": "98e14afac10c4d54e23008dfda907d8b3835af0ba689b6f9141503b40a8d5116",
+      "size": 28
+    },
+    "qa/tests-1791150400922859665/invalid-ready-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/invalid-ready-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/invalid-ready/config.json": {
+      "sha256": "f6474713383fdcf5972acd37b9f13b437a92fcd68ccdb7aab3268758ce67dc81",
+      "size": 173
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/admissions-v1/be56946cd913941a5585ee8225f9502b05914e28274ad56c7b79f3fe933d699a.json": {
+      "sha256": "3626b0c1becdd085e1423cf1b48ee7a9ea171ef68791876b62400f5adac5b1cf",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "f1a4f641f25940f01eac904fb592cedda712a42307f75ea089ac26d5e7785d5f",
+      "size": 662
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/invalid-ready/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-extra-field-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-extra-field-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-extra-field-admit-3.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-extra-field-admit-3.stdout": {
+      "sha256": "8a6e6b665dc4397dd828d9e44b422816556e393f990864f226c965fbe4262198",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/config.json": {
+      "sha256": "acaa94a5afca954de5e4a8426a290e02d344bcb1a5e01a8304101f062f524490",
+      "size": 177
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/admissions-v1/45cd3de762b19801c0e1c1a03d6e3262cc66562f1e6c8d99674e946d1cbacf40.json": {
+      "sha256": "d3a65d85f751fdaab87e37dcc4441412146b4eb75d7b5898fa3230de981ede89",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/admissions-v1/be56946cd913941a5585ee8225f9502b05914e28274ad56c7b79f3fe933d699a.json": {
+      "sha256": "3626b0c1becdd085e1423cf1b48ee7a9ea171ef68791876b62400f5adac5b1cf",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "14f19e5367ffe306e29358178f203fef4caff9ef1dd9b00cafb587ebcc9fe7ed",
+      "size": 1016
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-extra-field/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-refused-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-refused-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-refused-admit-3.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-refused-admit-3.stdout": {
+      "sha256": "8a6e6b665dc4397dd828d9e44b422816556e393f990864f226c965fbe4262198",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-refused/config.json": {
+      "sha256": "634c02611b0540504c0dbd56f3335625a6912278df70e09dd96c6eff25e8ed40",
+      "size": 173
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/admissions-v1/45cd3de762b19801c0e1c1a03d6e3262cc66562f1e6c8d99674e946d1cbacf40.json": {
+      "sha256": "d3a65d85f751fdaab87e37dcc4441412146b4eb75d7b5898fa3230de981ede89",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/admissions-v1/be56946cd913941a5585ee8225f9502b05914e28274ad56c7b79f3fe933d699a.json": {
+      "sha256": "3626b0c1becdd085e1423cf1b48ee7a9ea171ef68791876b62400f5adac5b1cf",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "14f19e5367ffe306e29358178f203fef4caff9ef1dd9b00cafb587ebcc9fe7ed",
+      "size": 1016
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-refused/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-registered-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-registered-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-registered-admit-3.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-registered-admit-3.stdout": {
+      "sha256": "8a6e6b665dc4397dd828d9e44b422816556e393f990864f226c965fbe4262198",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-registered/config.json": {
+      "sha256": "35284867c6d401095faa72487bca7bcc0ec4af0e47cff408ef75418c7af68ba3",
+      "size": 176
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/admissions-v1/45cd3de762b19801c0e1c1a03d6e3262cc66562f1e6c8d99674e946d1cbacf40.json": {
+      "sha256": "d3a65d85f751fdaab87e37dcc4441412146b4eb75d7b5898fa3230de981ede89",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/admissions-v1/be56946cd913941a5585ee8225f9502b05914e28274ad56c7b79f3fe933d699a.json": {
+      "sha256": "3626b0c1becdd085e1423cf1b48ee7a9ea171ef68791876b62400f5adac5b1cf",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "14f19e5367ffe306e29358178f203fef4caff9ef1dd9b00cafb587ebcc9fe7ed",
+      "size": 1016
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-registered/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation-admit-3.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation-admit-3.stdout": {
+      "sha256": "8a6e6b665dc4397dd828d9e44b422816556e393f990864f226c965fbe4262198",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/config.json": {
+      "sha256": "c2c25be411b0c106aa2927072e31e67b8b05e3caaba78e5a5e938a516ffe371a",
+      "size": 181
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/admissions-v1/45cd3de762b19801c0e1c1a03d6e3262cc66562f1e6c8d99674e946d1cbacf40.json": {
+      "sha256": "d3a65d85f751fdaab87e37dcc4441412146b4eb75d7b5898fa3230de981ede89",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/admissions-v1/be56946cd913941a5585ee8225f9502b05914e28274ad56c7b79f3fe933d699a.json": {
+      "sha256": "3626b0c1becdd085e1423cf1b48ee7a9ea171ef68791876b62400f5adac5b1cf",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "14f19e5367ffe306e29358178f203fef4caff9ef1dd9b00cafb587ebcc9fe7ed",
+      "size": 1016
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/proof-wrong-operation/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/read-output-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/read-output-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/read-output/config.json": {
+      "sha256": "9486f1ca242b5aa60966b4d8d4e25085dc72c78a87660ae7f21de0341a41dbb1",
+      "size": 171
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/admissions-v1/be56946cd913941a5585ee8225f9502b05914e28274ad56c7b79f3fe933d699a.json": {
+      "sha256": "3626b0c1becdd085e1423cf1b48ee7a9ea171ef68791876b62400f5adac5b1cf",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "f1a4f641f25940f01eac904fb592cedda712a42307f75ea089ac26d5e7785d5f",
+      "size": 662
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/read-output/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/reconciliation-carrier": {
+      "sha256": "04153d1a1cf373e48bf567b59010a3b46f35789444e080b1cf946d31463450f2",
+      "size": 108656
+    },
+    "qa/tests-1791150400922859665/reconciliation-carrier-compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/reconciliation-carrier-compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/reconciliation-carrier-tests.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/reconciliation-carrier-tests.stdout": {
+      "sha256": "af24689a935b49f819138ea5a422f8f1e9ab588019a2b9c19d83b662d1719b6c",
+      "size": 34
+    },
+    "qa/tests-1791150400922859665/release-output-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/release-output-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/release-output/config.json": {
+      "sha256": "593f1874cedd2bde1d41d92118d4bef5a304361126d05571fae571183b63e0c6",
+      "size": 174
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "d4a018d2f42be8d678648d8451ae4788ca379d0ef4ac160419132f33e3bdc076",
+      "size": 1259
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/release-output/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/report.json": {
+      "sha256": "e9a47ac457c01dd73e5ed37f3854f93f81fe07f4c4f465dd76375ce9368b67ee",
+      "size": 15082
+    },
+    "qa/tests-1791150400922859665/retry-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/retry-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/retry/config.json": {
+      "sha256": "f667dbb9cc62b44e6f0456bd7f8336a231fe3a6871cc3dd549ab5167385b5e37",
+      "size": 165
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "91cda63da02d9f89f797e4e8d7ccec6f4f80de170bae4c0ed161eaf778e446a0",
+      "size": 1259
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/retry/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/same-scope-admit-3.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-admit-3.stdout": {
+      "sha256": "228ca0b9108df07bcdd56b90e504e9934bf99d99c1836c63bf7c92035bb296d4",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure-admit-3.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure-admit-3.stdout": {
+      "sha256": "228ca0b9108df07bcdd56b90e504e9934bf99d99c1836c63bf7c92035bb296d4",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/config.json": {
+      "sha256": "0aa5794ed9c71af70b51b2f3e0862485911433a84d63c087b2628bc0e1b38928",
+      "size": 185
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/admissions-v1/914bf85146da663b0b89402c7540c129d27c54b4e9792668ef5d7cf91c7c7687.json": {
+      "sha256": "649a36ca5ea6f8d284040149b9ad8aa5c6f85c3260b9a9dfccff93595158cfcc",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "aabaef2eb992bfe3b4c187ec411c59615a71b11aecd9b0c17966305d8396fb7d",
+      "size": 1520
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope-output-failure/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope/config.json": {
+      "sha256": "12d619f56687f1b40578a98c941fa3fdd15d786f6165b29adda403cfd32d2395",
+      "size": 170
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "6d9ae9d7c1f86af2e40ac11e539058ab92dee7dc09f0122f14493626868f6802",
+      "size": 2118
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/same-scope/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/scopes-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/scopes-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/scopes-admit-3.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/scopes-admit-3.stdout": {
+      "sha256": "8a6e6b665dc4397dd828d9e44b422816556e393f990864f226c965fbe4262198",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/scopes/config.json": {
+      "sha256": "c5acfcbd9959764581c9f0a466cbf7596c9883a95a05d130cfb2ceb5f95719bc",
+      "size": 166
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "91a8607627535b477b4952c23bea33d2317210ff2dbe2b0f922da4774af485a8",
+      "size": 2210
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/scopes/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/startup-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/startup-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/startup/config.json": {
+      "sha256": "bc7931d5b6180da828a14948260cdc5bb22a0f88387fa0e43794f3364523c630",
+      "size": 167
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "d4a018d2f42be8d678648d8451ae4788ca379d0ef4ac160419132f33e3bdc076",
+      "size": 1259
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/startup/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/storage-release-admit-2.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/storage-release-admit-2.stdout": {
+      "sha256": "e4fad5ee310df88ae6ecbfb42f35d23fee3fcddf13afebf457e06d972e0b3330",
+      "size": 283
+    },
+    "qa/tests-1791150400922859665/storage-release/config.json": {
+      "sha256": "d2f5ca036b2c926cf11db988f246dc9ec611aadb6eee038e8359287417c3c4f6",
+      "size": 175
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/admissions-v1/be56946cd913941a5585ee8225f9502b05914e28274ad56c7b79f3fe933d699a.json": {
+      "sha256": "3626b0c1becdd085e1423cf1b48ee7a9ea171ef68791876b62400f5adac5b1cf",
+      "size": 261
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "f1a4f641f25940f01eac904fb592cedda712a42307f75ea089ac26d5e7785d5f",
+      "size": 662
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/tests-1791150400922859665/storage-release/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    }
+  },
+  "frontendIntegrated": false,
+  "nativeAcceptance": false,
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v615",
+  "parentProductionFiles": {
+    "adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    "adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    "adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    "adapter/daemon.py": {
+      "sha256": "1e0d9da01f06fc28504be3aaba966cb9bdd173b42674f31ca0ddb70c0e4bf838",
+      "size": 10853
+    },
+    "adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    "adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    "adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    "adapter/grant_endpoint.py": {
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "size": 4610
+    },
+    "adapter/reconciliation.py": {
+      "sha256": "6ff8c5141dfe5b3212c51e237165e9c84edcd0a02e86bd7c429d4cda4524d150",
+      "size": 5393
+    },
+    "adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    "adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    "adapter/recovery_store.py": {
+      "sha256": "35351b0c5ae5257c230cb6fd87117b1dc239a9ba82cc6f7bafb9a42a39c24b75",
+      "size": 2591
+    },
+    "adapter/retirement_ledger.py": {
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "size": 18804
+    },
+    "adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    "adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    "native/admission-test.c": {
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    "native/context-keys-test.c": {
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    "native/context-keys.h": {
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    "native/geometry-carrier-test.c": {
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425
+    },
+    "native/handoff-test.c": {
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    "native/host-fault.h": {
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    "native/host-journal.h": {
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    "native/host.c": {
+      "sha256": "a9e858e404867412723c2973db58e60b09a7b623192efc0bb9ca40c1f7f3336e",
+      "size": 62609
+    },
+    "native/reconciliation-carrier-test.c": {
+      "sha256": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d",
+      "size": 3024
+    },
+    "native/recovery-presentation-test.c": {
+      "sha256": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+      "size": 2766
+    },
+    "native/shared-context-test.c": {
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901
+    },
+    "native/shared-context.h": {
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281
+    },
+    "native/shared-host.c": {
+      "sha256": "854ee839f2017a902520da2feb115c4426fe213085efa302403f8467975e9261",
+      "size": 36776
+    },
+    "native/surface-test.c": {
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    "native/surface.h": {
+      "sha256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+      "size": 5561
+    }
+  },
+  "report": "qa/tests-1791150400922859665/report.json",
+  "reportAssertions": 102,
+  "schema": 1
+}

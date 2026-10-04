@@ -1,0 +1,40 @@
+{
+  "name": "cross-domain-equality",
+  "detected": true,
+  "scenario": "valid",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/mutations-1791150347217862715/cross-domain-equality/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/mutations-1791150347217862715/cross-domain-equality",
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/mutations-1791150347217862715/cross-domain-equality/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/mutations-1791150347217862715/cross-domain-equality/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/mutations-1791150347217862715/cross-domain-equality/rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/mutations-1791150347217862715/cross-domain-equality",
+      "exitCode": 0
+    }
+  ],
+  "mutatedSourceSHA256": "620a33beeb1cd594c37a056a97eaa28e164d3b048d464f6cf244fa17efd5946b",
+  "counterexample": {
+    "events": "events.json",
+    "rows": "rows.json",
+    "expected": "valid release keeps historical Unknown, clears exact live/menu only, ready ack precedes requested reads; rejected release remains blocked"
+  }
+}

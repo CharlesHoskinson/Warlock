@@ -1,0 +1,17 @@
+
+  protocol_tests
+    1) unannouncedScopeCannotReleaseTest failed after 1 test(s)
+
+  1 failed
+
+  1) unannouncedScopeCannotReleaseTest:
+       Error [QNT502]: Variable q not set
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/release-unannounced/protocol_tests.qnt:19:86
+        19:  run unannouncedScopeCannotReleaseTest=start.then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(all {q'=q,fire(Ack)}).then(send(ReleaseRecords(1))).then(all {assert(q.released==0 and protocolProps),send(DeliverProof)})
+                                                                                                 ^
+    Use --seed=0xefdb --match=unannouncedScopeCannotReleaseTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/release-unannounced/protocol_tests.qnt
+error: Tests failed

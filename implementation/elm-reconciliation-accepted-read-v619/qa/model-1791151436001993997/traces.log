@@ -1,0 +1,553 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: false,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 0,
+      requestedG: 0,
+      reserved: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      acceptedA: 0,
+      acceptedG: 0,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 1,
+      requestedG: 1,
+      reserved: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      acceptedA: 1,
+      acceptedG: 0,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 1,
+      requestedG: 1,
+      reserved: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      acceptedA: 1,
+      acceptedG: 0,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 1,
+      requestedG: 1,
+      reserved: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      acceptedA: 1,
+      acceptedG: 0,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 1,
+      requestedG: 1,
+      reserved: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      acceptedA: 1,
+      acceptedG: 1,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 2,
+      requestedG: 2,
+      reserved: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      acceptedA: 1,
+      acceptedG: 2,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 2,
+      requestedG: 2,
+      reserved: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 2,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Ready",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 2,
+      requestedG: 2,
+      reserved: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 2,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 3,
+      requestedG: 3,
+      reserved: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 2,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 3,
+      requestedG: 3,
+      reserved: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 2,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 3,
+      requestedG: 3,
+      reserved: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 2,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 3,
+      requestedG: 3,
+      reserved: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 2,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 3,
+      requestedG: 3,
+      reserved: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 3,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 4,
+      requestedG: 4,
+      reserved: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 4,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 4,
+      requestedG: 4,
+      reserved: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 4,
+      dirty: false,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 4,
+      requestedG: 4,
+      reserved: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 4,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 4,
+      requestedG: 4,
+      reserved: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 4,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 4,
+      requestedG: 4,
+      reserved: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      acceptedA: 2,
+      acceptedG: 4,
+      dirty: true,
+      effects: 0,
+      generation: 15,
+      history: "Unknown",
+      phase: "Reconciling",
+      proof: true,
+      releaseA: 0,
+      releaseG: 0,
+      request: 12,
+      requestedA: 4,
+      requestedG: 4,
+      reserved: true
+    }
+}
+
+[ok] No violation found (303ms at 1650 traces/second).
+Trace length statistics: max=26, min=26, average=26.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0xf1ce --backend=typescript to reproduce.

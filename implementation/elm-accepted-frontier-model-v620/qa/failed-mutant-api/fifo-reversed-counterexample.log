@@ -1,0 +1,8 @@
+
+ Error [QNT404]: Name 'last' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/fifo-reversed/frontier.qnt:29:80
+  29:  | Deliver=>if(st.wire.length()>0) {val rest={...st,wire:st.wire.tail()};match st.wire.last() {| ReadFrame(r)=>accepted(rest,r) | ReleaseFrame(p)=>released(rest,p)}} else st
+                                                                                     ^^^^^^^^^^^^^^
+
+error: parsing failed

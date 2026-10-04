@@ -1,0 +1,4299 @@
+An example execution:
+
+[State 0]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed: Set(),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set()
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 1]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed: Set(),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set()
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 2]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed: Set(),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set()
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 3]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed: Set(),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set()
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 4]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed: Set(),
+      queued:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 5]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed: Set(),
+      queued:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 6]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 7]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 8]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 9]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 10]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 11]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 12]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 13]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 1,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 1,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: true,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 14]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 15]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 0,
+      announced: Set(),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 16]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 2,
+      announced: Set(2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 17]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 2,
+      announced: Set(2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 18]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 2,
+      announced: Set(2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 19]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 2,
+      announced: Set(2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 20]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 2,
+      announced: Set(2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 21]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 22]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 23]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 24]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 25]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 26]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 2,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 2,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 27]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 28]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 29]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 30]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 31]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 32]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 33]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 34]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 35]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued: Set(),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 36]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set({ domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 }),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 37]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set({ domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 }),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 38]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set({ domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 }),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 39]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set({ domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 }),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 40]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set({ domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 }),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 41]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 42]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 43]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 44]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 45]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 46]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 3,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 3,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 47]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 48]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 49]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 50]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 51]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 52]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 53]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 54]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 55]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 56]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 57]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 58]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 59]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 60]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 61]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 62]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 63]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 64]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 65]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 66]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 67]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 68]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 69]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 70]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 71]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 72]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 73]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 74]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 75]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 76]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 77]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 78]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 79]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[State 80]
+{
+  q:
+    {
+      ackQueued: false,
+      actionAccepted: 0,
+      actionExpected: 0,
+      actionOutput: 0,
+      active: 1,
+      announced: Set(1, 2),
+      delivered: false,
+      domain: 4,
+      geometryAccepted: 0,
+      geometryExpected: 0,
+      geometryOutput: 0,
+      ordinary: 0,
+      processed:
+        Set({ domain: 1, fresh: false, id: 1, kind: 1, output: 1, scope: 0 }),
+      queued:
+        Set(
+          { domain: 3, fresh: false, id: 3, kind: 1, output: 2, scope: 1 },
+          { domain: 3, fresh: false, id: 4, kind: 2, output: 2, scope: 1 }
+        ),
+      ready: false,
+      released: 0,
+      releasedScopes: Set(),
+      seen: Set(1, 3, 4)
+    },
+  s:
+    {
+      ack: false,
+      actionRead: false,
+      committed: false,
+      durableFile: true,
+      effect: false,
+      file: true,
+      frontendEpoch: 4,
+      geometry: false,
+      history: Set(1),
+      nativeRetired: false,
+      proof: false,
+      proofDurable: false,
+      proofSynced: false,
+      proofWritten: false,
+      reads: false,
+      recordSynced: false,
+      recordWritten: false,
+      releasedRecord: false,
+      releasedSynced: false,
+      rootReady: false,
+      stage: 0,
+      visibleStage: 0
+    }
+}
+
+[ok] No violation found (18351ms at 109 traces/second).
+Trace length statistics: max=81, min=81, average=81.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0xefda --backend=typescript to reproduce.

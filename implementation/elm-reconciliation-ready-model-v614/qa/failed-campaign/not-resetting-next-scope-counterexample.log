@@ -1,0 +1,17 @@
+
+  protocol_tests
+    1) nextScopeClearsAcceptedTest failed after 1 test(s)
+
+  1 failed
+
+  1) nextScopeClearsAcceptedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/not-resetting-next-scope/protocol_tests.qnt:15:122
+        15:  run nextScopeClearsAcceptedTest=start.then(ready).then(actionRead).then(geometryRead).then(send(Announce(2))).then(all {assert(q.active==2 and not(q.ready) and q.actionExpected==0 and q.geometryExpected==0 and q.actionAccepted==0 and q.geometryAccepted==0 and protocolProps),send(ProcessReady(GOOD))}).then(all {assert(not(q.ready)),send(DeliverProof)})
+                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xefdb --match=nextScopeClearsAcceptedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/not-resetting-next-scope/protocol_tests.qnt
+error: Tests failed

@@ -1,0 +1,26 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "flags",
+      "passed": true
+    },
+    {
+      "name": "admission-test-compile",
+      "passed": true
+    },
+    {
+      "name": "geometry-carrier-compile",
+      "passed": true
+    },
+    {
+      "name": "geometry-carrier-tests",
+      "passed": true
+    },
+    {
+      "name": "reconciliation-carrier-compile",
+      "passed": false
+    }
+  ],
+  "error": "AssertionError('reconciliation-carrier-compile')"
+}

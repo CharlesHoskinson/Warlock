@@ -1,0 +1,803 @@
+{
+  "passed": true,
+  "assertions": 192,
+  "checks": [
+    {
+      "name": "unchanged608-driver",
+      "passed": true
+    },
+    {
+      "name": "inherited608 driver passed",
+      "passed": true
+    },
+    {
+      "name": "pkg-config",
+      "passed": true
+    },
+    {
+      "name": "actual608-C-producer-compiles",
+      "passed": true
+    },
+    {
+      "name": "actual C admission reconnect 12",
+      "passed": true
+    },
+    {
+      "name": "delivery certificate anchors exact original release",
+      "passed": true
+    },
+    {
+      "name": "certificate hash binds anchor and fresh payload",
+      "passed": true
+    },
+    {
+      "name": "delivery sidecar private single link",
+      "passed": true
+    },
+    {
+      "name": "initial attestation preserves parent V6 exact bytes",
+      "passed": true
+    },
+    {
+      "name": "exact payload attestation idempotent",
+      "passed": true
+    },
+    {
+      "name": "new current binding produces fresh anchored delivery",
+      "passed": true
+    },
+    {
+      "name": "bounded latest delivery replaces old hotcache only",
+      "passed": true
+    },
+    {
+      "name": "stale sequence cannot replace latest certificate",
+      "passed": true
+    },
+    {
+      "name": "same sequence different payload cannot replace certificate",
+      "passed": true
+    },
+    {
+      "name": "wrong exact Unknown cannot attest",
+      "passed": true
+    },
+    {
+      "name": "Registered proof cannot create join",
+      "passed": true
+    },
+    {
+      "name": "Future proof cannot create join",
+      "passed": true
+    },
+    {
+      "name": "refused malformed native proof cannot attest",
+      "passed": true
+    },
+    {
+      "name": "one accepted domain cannot attest",
+      "passed": true
+    },
+    {
+      "name": "actual C admission reconnect 13",
+      "passed": true
+    },
+    {
+      "name": "new same-target request admitted",
+      "passed": true
+    },
+    {
+      "name": "unrelated same-target live reservation untouched",
+      "passed": true
+    },
+    {
+      "name": "live unreleased Unknown has no delivery anchor",
+      "passed": true
+    },
+    {
+      "name": "delivery input rejects sequence 0",
+      "passed": true
+    },
+    {
+      "name": "delivery input rejects sequence True",
+      "passed": true
+    },
+    {
+      "name": "delivery input rejects requestId 01",
+      "passed": true
+    },
+    {
+      "name": "delivery input rejects grantState Future",
+      "passed": true
+    },
+    {
+      "name": "invalid input preserves latest cache and live state",
+      "passed": true
+    },
+    {
+      "name": "sidecar count65 refuses before certificate traversal",
+      "passed": true
+    },
+    {
+      "name": "definitive record cannot be reclassified as delivery Unknown",
+      "passed": true
+    },
+    {
+      "name": "actual C admission per-record 12",
+      "passed": true
+    },
+    {
+      "name": "actual C admission per-record 13",
+      "passed": true
+    },
+    {
+      "name": "latest certificate is independent per historical record",
+      "passed": true
+    },
+    {
+      "name": "cache replacement does not rewrite either immutable anchor",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-symlink 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused symlink",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-hardlink 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused hardlink",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-public 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused public",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-duplicateJSON 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused duplicateJSON",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-missing 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused missing",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-marker-bool 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused marker-bool",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-marker-extra 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused marker-extra",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-foreign-anchor 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused foreign-anchor",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-duplicate-certificate 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused duplicate-certificate",
+      "passed": true
+    },
+    {
+      "name": "actual C admission unsafe-schema-bool 12",
+      "passed": true
+    },
+    {
+      "name": "unsafe sidecar refused schema-bool",
+      "passed": true
+    },
+    {
+      "name": "actual C admission partial-writes 12",
+      "passed": true
+    },
+    {
+      "name": "partial writes loop to exact certificate",
+      "passed": true
+    },
+    {
+      "name": "actual C admission zero-write 12",
+      "passed": true
+    },
+    {
+      "name": "storage failure has no attestation zero-write",
+      "passed": true
+    },
+    {
+      "name": "storage failure poisons zero-write",
+      "passed": true
+    },
+    {
+      "name": "poison refuses inherited snapshot zero-write",
+      "passed": true
+    },
+    {
+      "name": "poison refuses delivery snapshot zero-write",
+      "passed": true
+    },
+    {
+      "name": "poison refuses attestation zero-write",
+      "passed": true
+    },
+    {
+      "name": "reopen storage failure keeps original archive zero-write",
+      "passed": true
+    },
+    {
+      "name": "actual C admission write-error 12",
+      "passed": true
+    },
+    {
+      "name": "storage failure has no attestation write-error",
+      "passed": true
+    },
+    {
+      "name": "storage failure poisons write-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses inherited snapshot write-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses delivery snapshot write-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses attestation write-error",
+      "passed": true
+    },
+    {
+      "name": "reopen storage failure keeps original archive write-error",
+      "passed": true
+    },
+    {
+      "name": "actual C admission cleanup-error 12",
+      "passed": true
+    },
+    {
+      "name": "storage failure has no attestation cleanup-error",
+      "passed": true
+    },
+    {
+      "name": "storage failure poisons cleanup-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses inherited snapshot cleanup-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses delivery snapshot cleanup-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses attestation cleanup-error",
+      "passed": true
+    },
+    {
+      "name": "reopen storage failure keeps original archive cleanup-error",
+      "passed": true
+    },
+    {
+      "name": "actual C admission close-error 12",
+      "passed": true
+    },
+    {
+      "name": "storage failure has no attestation close-error",
+      "passed": true
+    },
+    {
+      "name": "storage failure poisons close-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses inherited snapshot close-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses delivery snapshot close-error",
+      "passed": true
+    },
+    {
+      "name": "poison refuses attestation close-error",
+      "passed": true
+    },
+    {
+      "name": "reopen storage failure keeps original archive close-error",
+      "passed": true
+    },
+    {
+      "name": "actual C admission crash-1 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack crash1",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure crash1",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility crash1",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive crash1",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate crash1",
+      "passed": true
+    },
+    {
+      "name": "actual C admission crash-2 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack crash2",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure crash2",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility crash2",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive crash2",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate crash2",
+      "passed": true
+    },
+    {
+      "name": "actual C admission crash-3 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack crash3",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure crash3",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility crash3",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive crash3",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate crash3",
+      "passed": true
+    },
+    {
+      "name": "actual C admission crash-4 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack crash4",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure crash4",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility crash4",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive crash4",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate crash4",
+      "passed": true
+    },
+    {
+      "name": "actual C admission crash-5 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack crash5",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure crash5",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility crash5",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive crash5",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate crash5",
+      "passed": true
+    },
+    {
+      "name": "actual C admission crash-6 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack crash6",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure crash6",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility crash6",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive crash6",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate crash6",
+      "passed": true
+    },
+    {
+      "name": "actual C admission after-1 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack after1",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure after1",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility after1",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive after1",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate after1",
+      "passed": true
+    },
+    {
+      "name": "actual C admission after-2 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack after2",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure after2",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility after2",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive after2",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate after2",
+      "passed": true
+    },
+    {
+      "name": "actual C admission after-3 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack after3",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure after3",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility after3",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive after3",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate after3",
+      "passed": true
+    },
+    {
+      "name": "actual C admission after-4 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack after4",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure after4",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility after4",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive after4",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate after4",
+      "passed": true
+    },
+    {
+      "name": "actual C admission after-5 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack after5",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure after5",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility after5",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive after5",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate after5",
+      "passed": true
+    },
+    {
+      "name": "actual C admission after-6 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack after6",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure after6",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility after6",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive after6",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate after6",
+      "passed": true
+    },
+    {
+      "name": "actual C admission before-1 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack before1",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure before1",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility before1",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive before1",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate before1",
+      "passed": true
+    },
+    {
+      "name": "actual C admission before-2 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack before2",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure before2",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility before2",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive before2",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate before2",
+      "passed": true
+    },
+    {
+      "name": "actual C admission before-3 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack before3",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure before3",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility before3",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive before3",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate before3",
+      "passed": true
+    },
+    {
+      "name": "actual C admission before-4 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack before4",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure before4",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility before4",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive before4",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate before4",
+      "passed": true
+    },
+    {
+      "name": "actual C admission before-5 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack before5",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure before5",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility before5",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive before5",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate before5",
+      "passed": true
+    },
+    {
+      "name": "actual C admission before-6 12",
+      "passed": true
+    },
+    {
+      "name": "interruption has no ack before6",
+      "passed": true
+    },
+    {
+      "name": "restart barrier before positive exposure before6",
+      "passed": true
+    },
+    {
+      "name": "restart sidecar exact visibility before6",
+      "passed": true
+    },
+    {
+      "name": "crash never rewrites original parent archive before6",
+      "passed": true
+    },
+    {
+      "name": "explicit retry persists same fresh certificate before6",
+      "passed": true
+    }
+  ],
+  "inherited608Report": "qa/tests-1791151770841883391/report.json",
+  "inherited608Assertions": 248,
+  "nativeAcceptance": false,
+  "nativeAuthentication": false,
+  "powerLossSimulation": false,
+  "productionWired": false,
+  "claim": "Real isolated filesystem and unchanged608 compiled C admissions; synthetic constructable typed proofs/accepted contexts; crash-visible restart and pre/post-call storage faults",
+  "sourceSHA256": {
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/geometry_endpoint.py": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+    "adapter/daemon.py": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "adapter/geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "adapter/grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "adapter/retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "adapter/delivery_ledger.py": "ae155585959d162dbc0a55b5c29fab948a8975ffc7e76e77e6338060289cecc0",
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c"
+  }
+}

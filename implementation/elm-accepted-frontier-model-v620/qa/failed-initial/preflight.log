@@ -1,0 +1,16 @@
+Running as unit: qa-harness-5d3c115f49704702aaf88a720c5572c1.scope; invocation ID: 5cdff98dd3e44eb9bc1c0a07a86c1258
+
+ Error [QNT000]: mismatched input 'action' expecting {'}', '|', 'and', 'or', 'iff', 'implies', 'leadsTo', 'match', 'Set', 'List', 'import', 'export', 'from', 'as', LOW_ID, CAP_ID}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/frontier.qnt:3:13
+  3:  type Pair={action:Read,geometry:Read,proof:int}
+                 ^^^^^^
+
+
+ Error [QNT000]: extraneous input 'type' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/frontier.qnt:4:2
+  4:  type Frame=ReadFrame(Read) | ReleaseFrame(Pair)
+      ^^^^
+
+error: parsing failed

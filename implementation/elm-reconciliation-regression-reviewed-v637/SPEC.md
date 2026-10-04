@@ -1,0 +1,1 @@
+Bounded current626 menu regression extension to625. Original89 menu checks pass with original deadlines and ordered normalcleanup.632/633 onlyfailed sourcepreflights: incorrect direct-daemon expectation; originalcapability/focus need fresh current626 receipt/relay capture634 and remain unrun. No full473/fullUIUX/release acceptance.

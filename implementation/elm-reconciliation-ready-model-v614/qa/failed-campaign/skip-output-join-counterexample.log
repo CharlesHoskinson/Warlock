@@ -1,0 +1,17 @@
+
+  protocol_tests
+    1) differentOutputBlocksTest failed after 1 test(s)
+
+  1 failed
+
+  1) differentOutputBlocksTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt:17:207
+        17:  run differentOutputBlocksTest=start.then(ready).then(actionRead).then(send(EnqueueRead({id:2,kind:2,output:2}))).then(send(ProcessRead(2))).then(send(Reply(2))).then(send(Durable(NativeRetire))).then(all {assert(not(joined(q)) and not(s.nativeRetired) and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xefdb --match=differentOutputBlocksTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt
+error: Tests failed

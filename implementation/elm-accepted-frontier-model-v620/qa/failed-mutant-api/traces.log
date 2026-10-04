@@ -1,0 +1,1475 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 0,
+      expectedG: 0,
+      explicit: false,
+      history: 0,
+      next: 1,
+      pendingA: false,
+      pendingG: false,
+      phase: 0,
+      proof: 0,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire: []
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 0,
+      expectedG: 0,
+      explicit: false,
+      history: 0,
+      next: 1,
+      pendingA: false,
+      pendingG: false,
+      phase: 0,
+      proof: 0,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire: [ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })]
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 0,
+      expectedG: 0,
+      explicit: false,
+      history: 0,
+      next: 1,
+      pendingA: false,
+      pendingG: false,
+      phase: 0,
+      proof: 0,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 })
+        ]
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 0,
+      expectedG: 0,
+      explicit: false,
+      history: 0,
+      next: 1,
+      pendingA: false,
+      pendingG: false,
+      phase: 0,
+      proof: 0,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 })
+        ]
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 })
+        ]
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 })
+        ]
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 })
+        ]
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 1,
+      expectedG: 2,
+      explicit: false,
+      history: 0,
+      next: 3,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 1,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          })
+        ]
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: false,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          })
+        ]
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          })
+        ]
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          })
+        ]
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: false,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      acceptedA: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      acceptedG: { id: 0, kind: 0, output: 0, proof: 0, revision: 0 },
+      dirty: true,
+      durable: true,
+      effects: 0,
+      expectedA: 3,
+      expectedG: 4,
+      explicit: false,
+      history: 0,
+      next: 5,
+      pendingA: true,
+      pendingG: true,
+      phase: 1,
+      proof: 2,
+      releaseA: 0,
+      releaseG: 0,
+      reserved: true,
+      wire:
+        [
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 1, kind: 1, output: 1, proof: 1, revision: 10 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 2, kind: 2, output: 1, proof: 1, revision: 20 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReleaseFrame({
+            a: { id: 1, kind: 1, output: 1, proof: 1, revision: 10 },
+            g: { id: 2, kind: 2, output: 1, proof: 1, revision: 20 },
+            proof: 1
+          }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 }),
+          ReadFrame({ id: 3, kind: 1, output: 1, proof: 1, revision: 11 })
+        ]
+    }
+}
+
+[ok] No violation found (732ms at 1366 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0xf232 --backend=typescript to reproduce.

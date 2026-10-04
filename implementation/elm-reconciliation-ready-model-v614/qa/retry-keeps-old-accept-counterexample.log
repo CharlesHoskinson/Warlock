@@ -1,0 +1,17 @@
+
+  protocol_tests
+    1) retryLatestActionInvalidatesTest failed after 1 test(s)
+
+  1 failed
+
+  1) retryLatestActionInvalidatesTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/retry-keeps-old-accept/protocol_tests.qnt:16:199
+        16:  run retryLatestActionInvalidatesTest=start.then(ready).then(actionRead).then(geometryRead).then(send(EnqueueRead({id:3,kind:1,output:1}))).then(send(ProcessRead(3))).then(send(Reply(1))).then(all {assert(q.actionExpected==3 and q.actionAccepted==0 and not(joined(q)) and protocolProps),send(Reply(3))}).then(all {assert(joined(q) and q.actionAccepted==3),send(DeliverProof)})
+                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xefdb --match=retryLatestActionInvalidatesTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/retry-keeps-old-accept/protocol_tests.qnt
+error: Tests failed

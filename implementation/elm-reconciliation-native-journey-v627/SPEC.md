@@ -1,0 +1,1 @@
+Original135 unchanged scenario identities/deadlines, candidate626 startup host-writer lock-order correction. Preserves failed618 startup, no native acceptance until terminal qualified report. Actual source/ABI preflight before isolated serial launch.

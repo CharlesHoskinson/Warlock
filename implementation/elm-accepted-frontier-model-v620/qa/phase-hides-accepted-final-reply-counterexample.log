@@ -1,0 +1,17 @@
+
+  frontier
+    1) finalGeometryDrainQueuedReleaseTest failed after 1 test(s)
+
+  1 failed
+
+  1) finalGeometryDrainQueuedReleaseTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/phase-hides-accepted-final-reply/frontier.qnt:47:210
+        47:  run finalGeometryDrainQueuedReleaseTest=init.then(proof).then(fire(Accept(A1))).then(fire(Dirty)).then(fire(SyncRelease)).then(fire(QueueRead(G2))).then(fire(QueueRelease(OLD))).then(fire(Deliver)).then(all {assert(s.phase==1 and s.expectedA==3 and s.expectedG==4 and s.acceptedG==G2),fire(Deliver)}).then(assertReleased).then(fire(Explicit)).then(all {assert(s.effects==0 and not(s.explicit)),fire(Noop)})
+                                                                                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf233 --match=finalGeometryDrainQueuedReleaseTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/phase-hides-accepted-final-reply/frontier.qnt
+error: Tests failed
