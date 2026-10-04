@@ -1,0 +1,169 @@
+{
+  "sourceHeld": true,
+  "nativeAcceptance": false,
+  "scope": "Prepared source and protected CPU preflight only; independent source review/root native launch not executed",
+  "acceptedPreflight": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/preflight-1791131747546279221/report.json",
+  "acceptedPreflightSHA256": "40b972c850e4830bee2b0e1b68e4aa502e9a3d15861e4f091b302af7ad51217d",
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "f31650b73134c8b000dd233c38f8fe07c919f069743922ddcf876999a66eb2c4",
+      "size": 3066,
+      "mode": 420
+    },
+    "REQUIREMENTS.md": {
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086,
+      "mode": 420
+    },
+    "origin.json": {
+      "sha256": "62e998ae5852a8f433ddc7f8d1daea3661427e71e98ee470c9cfefc6c351a3ec",
+      "size": 308,
+      "mode": 420
+    },
+    "pins.json": {
+      "sha256": "6cf38465c56726c8ed36bf4df8f92f9543dbced19e4d163c583e949601ad07b6",
+      "size": 4359,
+      "mode": 420
+    },
+    "profiles.json": {
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898,
+      "mode": 420
+    },
+    "qa/error-test-1791131030571394488/report.json": {
+      "sha256": "884990379b671c58cb06373899345e55019571405fabf6e9fb8facf131d6f0ed",
+      "size": 3304,
+      "mode": 420
+    },
+    "qa/error-test-1791131747551275612/report.json": {
+      "sha256": "4d8fbbc222f0630b42a2a7d8edd602aed697ffaf056b80bdd4743d9c436811a2",
+      "size": 3305,
+      "mode": 420
+    },
+    "qa/error-test.py": {
+      "sha256": "ac80cf5ccb23753cf9a67c346116baf66e5db822b34cd239e0f763cdf661f8c3",
+      "size": 3534,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "de0ff5a60a4a660dc5694c4affc122eb7be509999bce042208fc83927ddc5213",
+      "size": 1254,
+      "mode": 420
+    },
+    "qa/native-1791131030563612771/inputs.json": {
+      "sha256": "0dc79ea524ad3f7c14e6f8d3f36551d46dcc50816432881768a0603185226c9e",
+      "size": 728,
+      "mode": 420
+    },
+    "qa/native-1791131030563612771/native-evidence/finite-scale1.jsonl": {
+      "sha256": "6dcbd1ec8ef69b3cf66e7815cbd1d4061e44d564a72f66f3d1728b6aa69b9b5a",
+      "size": 577,
+      "mode": 384
+    },
+    "qa/native-1791131030563612771/native.py": {
+      "sha256": "a985d844696ba3dd0d24f5394585eda39cae9989868c5edf6aaac0d0920564b0",
+      "size": 24707,
+      "mode": 420
+    },
+    "qa/native-1791131030563612771/report.json": {
+      "sha256": "9357642925632d0441ee803010f47c248f1a993bc1eafa3168c1b4628fb95f88",
+      "size": 8728,
+      "mode": 420
+    },
+    "qa/native-1791131747545811564/inputs.json": {
+      "sha256": "efbb284560751e1040844cc07f34b9b75c613f1b9839f25a1fdf4c651cac5340",
+      "size": 728,
+      "mode": 420
+    },
+    "qa/native-1791131747545811564/native-evidence/finite-scale1.jsonl": {
+      "sha256": "6dcbd1ec8ef69b3cf66e7815cbd1d4061e44d564a72f66f3d1728b6aa69b9b5a",
+      "size": 577,
+      "mode": 384
+    },
+    "qa/native-1791131747545811564/native.py": {
+      "sha256": "ca4b37efeaba17152b834c3faa8913c6cfaba1f5775fe9dfdf55adb4c06d8c2a",
+      "size": 27227,
+      "mode": 420
+    },
+    "qa/native-1791131747545811564/report.json": {
+      "sha256": "b8446c61d4d289a7616531820139fa43746f43e4de9655fb5984a05248b91aa4",
+      "size": 8766,
+      "mode": 420
+    },
+    "qa/native.py": {
+      "sha256": "ca4b37efeaba17152b834c3faa8913c6cfaba1f5775fe9dfdf55adb4c06d8c2a",
+      "size": 27227,
+      "mode": 420
+    },
+    "qa/plan-test-1791131138219645402/report.json": {
+      "sha256": "d2b185bf352a37faec72877c89ce5b1d9b8aa01dd33fc4e6efe464fd860e4a9a",
+      "size": 1138,
+      "mode": 420
+    },
+    "qa/plan-test-1791131747537878181/report.json": {
+      "sha256": "21a01093e8026ce8c117ace06d8322db8acd4c5f92facdf46ecd5e0a6fc6952f",
+      "size": 1138,
+      "mode": 420
+    },
+    "qa/plan-test.py": {
+      "sha256": "e2ce7c527ae84deaeaf025fd3cc0ea28aea0a3bdfb0dc21aa1fee6441b48ee24",
+      "size": 2340,
+      "mode": 420
+    },
+    "qa/preflight-1791131508223312882/inputs.json": {
+      "sha256": "c66de71e7d42326ab39804b1e658fa4c6fef477abeb9a82221061cd5be0fa43a",
+      "size": 480931,
+      "mode": 420
+    },
+    "qa/preflight-1791131508223312882/native.py": {
+      "sha256": "0a2439ba22a7337bb314b6c2c94a78ed5c39575cc20e6d8c85727cf661b3fe4d",
+      "size": 25233,
+      "mode": 420
+    },
+    "qa/preflight-1791131508223312882/report.json": {
+      "sha256": "24cc10725e5c608127a558bc8250c96a20ee01b2525d63d8a86064c9676945ad",
+      "size": 486844,
+      "mode": 420
+    },
+    "qa/preflight-1791131747546279221/inputs.json": {
+      "sha256": "d74e38cb1ee820f48600562299cd5e767fb77908595c335d7a252e74be2105a2",
+      "size": 480931,
+      "mode": 420
+    },
+    "qa/preflight-1791131747546279221/native.py": {
+      "sha256": "ca4b37efeaba17152b834c3faa8913c6cfaba1f5775fe9dfdf55adb4c06d8c2a",
+      "size": 27227,
+      "mode": 420
+    },
+    "qa/preflight-1791131747546279221/report.json": {
+      "sha256": "40b972c850e4830bee2b0e1b68e4aa502e9a3d15861e4f091b302af7ad51217d",
+      "size": 486844,
+      "mode": 420
+    },
+    "qa/snapshot-test-1791131246287494940/report.json": {
+      "sha256": "c5c9b1dc60cd49a6586c1a6431eea934816a3365c72eb853064a8a1d47335d88",
+      "size": 1236,
+      "mode": 420
+    },
+    "qa/snapshot-test-1791131700500255040/report.json": {
+      "sha256": "1266a42dfef50b4fad37ab8625d5c39e730a4e80e53da45ade398025503e998e",
+      "size": 1236,
+      "mode": 420
+    },
+    "qa/snapshot-test-1791131747539256302/report.json": {
+      "sha256": "1266a42dfef50b4fad37ab8625d5c39e730a4e80e53da45ade398025503e998e",
+      "size": 1236,
+      "mode": 420
+    },
+    "qa/snapshot-test-first-failed.py.txt": {
+      "sha256": "d673c94ac6714fe296c52a76575bf5e070790f0756018fbe18b49960c1a669df",
+      "size": 3219,
+      "mode": 420
+    },
+    "qa/snapshot-test.py": {
+      "sha256": "7f48c14a0623960b36962d6081a8ff3672f9fdfc688db5f588f6d3616d5a9fa6",
+      "size": 3845,
+      "mode": 420
+    }
+  }
+}

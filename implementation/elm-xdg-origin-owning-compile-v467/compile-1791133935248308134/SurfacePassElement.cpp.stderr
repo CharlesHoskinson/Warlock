@@ -1,0 +1,10 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-compile-v467/compile-1791133935248308134/owning-headers/src/render/pass/SurfacePassElement.cpp: In member function ‘Hyprutils::Math::CBox CSurfacePassElement::getTexBox()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-compile-v467/compile-1791133935248308134/owning-headers/src/render/pass/SurfacePassElement.cpp:74:55: error: invalid use of incomplete type ‘class CXDGSurfaceResource’
+   74 |         const auto geom = m_data.pWindow->m_xdgSurface->m_current.geometry;
+      |                                                       ^~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-compile-v467/compile-1791133935248308134/owning-headers/src/render/pass/SurfacePassElement.cpp:4:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-compile-v467/compile-1791133935248308134/owning-headers/src/render/pass/../../desktop/view/Window.hpp:29:7: note: forward declaration of ‘class CXDGSurfaceResource’
+   29 | class CXDGSurfaceResource;
+      |       ^~~~~~~~~~~~~~~~~~~
+At global scope:
+cc1plus: note: unrecognized command-line option ‘-Wno-gnu-zero-variadic-macro-arguments’ may have been intended to silence earlier diagnostics
