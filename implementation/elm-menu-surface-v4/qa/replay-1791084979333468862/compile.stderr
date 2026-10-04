@@ -1,0 +1,34 @@
+-- NAMING ERROR ----------------------------------------------- src/Provider.elm
+
+I cannot find a `NativeBinding.authorityIdentity` variable:
+
+289|                             , target = Menu.Window (Menu.windowId (NativeBinding.authorityIdentity raw.context.native) (UInt64.string raw.target.incarnation))
+                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The `NativeBinding` module does not expose a `authorityIdentity` variable. These
+names seem close though:
+
+    NativeBinding.decoder
+    NativeBinding.encode
+    NativeBinding.matchesContext
+    NativeBinding.replaces
+
+Hint: Read <https://elm-lang.org/0.19.2/imports> to see how `import`
+declarations work in Elm.
+
+                                                                 Provider  ↑    
+====o======================================================================o====
+    ↓  Surface
+
+
+-- NAME MISMATCH ----------------------------------------------- src/Surface.elm
+
+I just saw a type annotation for `resolve`, but it is followed by a definition
+for `resolveAction`:
+
+103| resolve : Counter -> Counter -> D.Value -> Desktop.Model -> Maybe Desktop.Msg
+104| resolveAction publication lease raw model =
+     ^
+These names do not match! Is there a typo?
+
+    resolveAction -> resolve
+

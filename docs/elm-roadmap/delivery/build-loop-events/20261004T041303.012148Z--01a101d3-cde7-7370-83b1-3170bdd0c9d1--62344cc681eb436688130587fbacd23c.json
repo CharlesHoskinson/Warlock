@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "62344cc681eb436688130587fbacd23c",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T04:13:03.012148+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-menu-surface-v4",
+  "nextWork": [
+    "Qualify visible right-click/Menu/ShiftF10 and original window regression; fix demonstrated GTK replay ordering without weakening physical proof, freeze coherent tuple, then merge with latest output integration lane."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-menu-surface-v4/qa/replay-1791086499436389533/report.json",
+      "sha256": "489a5e7c64d17d5e7a15212a27d2ee8c37fe2b7090caf3805299f8bd737ec4c9",
+      "size": 606415
+    },
+    {
+      "path": "implementation/elm-menu-surface-v4/qa/native-1791087017436824163/report.json",
+      "sha256": "f45137208c4ca7ecc3a9f79834d7d61a2fea1d3895d1bfb6bd57733925178f1b",
+      "size": 241934
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

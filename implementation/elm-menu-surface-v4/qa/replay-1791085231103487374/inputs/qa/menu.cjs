@@ -1,0 +1,66 @@
+'use strict';
+const fs=require('fs'),assert=require('assert/strict');
+const app=require(process.argv[2]).Elm.MenuSurfaceReplay.init({flags:null});
+const fixture=JSON.parse(fs.readFileSync(process.argv[3],'utf8'));
+const timer=setTimeout(()=>{throw Error('Surface menu replay deadline');},15000);
+function replay(events){return new Promise(resolve=>{const receive=value=>{app.ports.outgoing.unsubscribe(receive);resolve(value);};app.ports.outgoing.subscribe(receive);app.ports.incoming.send(events);});}
+const native=frame=>({kind:'native',frame}),baseline=[native(fixture.attached),native(fixture.projection)];
+const wire=(frame,kind,id,surface='popup')=>({surfaceProtocol:2,kind,surface,publication:frame.publication,lease:frame.lease,id});
+const context=(frame,id,surface='bar',trigger='pointer')=>({kind:'action',action:{...wire(frame,'surface-context',id,surface),trigger,x:40,y:20}});
+const action=(frame,id,surface='popup')=>({kind:'action',action:wire(frame,'surface-action',id,surface)});
+const navigate=(frame,key)=>({kind:'action',action:{surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',publication:frame.publication,lease:frame.lease,key}});
+(async()=>{const cases=[];async function check(name,events,verify){try{const rows=await replay(events);verify(rows,rows.at(-1));cases.push({name,passed:true,rows});}catch(error){cases.push({name,passed:false,error:String(error)});console.error(name+': '+error.stack);}}
+const ready=(await replay(baseline)).at(-1).frame;
+const openA=[...baseline,context(ready,'bar:group:application:org.a')];
+const open=(await replay(openA)).at(-1).frame;
+await check('current secondary context opens menu without native action',openA,(_,last)=>{assert.equal(last.frame.mode,'menu');assert(last.rendererAdmitted);assert.equal(last.requests.length,0);assert.equal(last.outstanding,0);assert.equal(last.registry,0);assert.equal(last.menu.selected,1);});
+await check('menu presentation carries explicit disabled Restore and available Minimize',openA,(_,last)=>{assert.deepEqual(last.frame.popup.map(row=>({label:row.label,enabled:row.enabled})),[{label:'Close',enabled:true},{label:'Restore',enabled:false},{label:'Minimize',enabled:true}]);});
+for(const [name,change] of [['old publication',{publication:'0'}],['old lease',{lease:'9'}],['numeric publication',{publication:1}],['unknown role',{surface:'overlay'}],['wrong protocol',{surfaceProtocol:3}],['bad trigger',{trigger:'script'}],['fractional point',{x:1.5}],['extra command',{exec:'/bin/sh'}],['unknown identity',{id:'bar:group:application:missing'}]]){
+const ev=context(ready,'bar:group:application:org.a');ev.action={...ev.action,...change};
+await check('invalid context '+name,[...baseline,ev],(_,last)=>{assert.equal(last.frame.mode,'closed');assert.equal(last.requests.length,0);assert.equal(last.frame.publication,ready.publication);});}
+await check('keyboard context shares native provider and target',[...baseline,context(ready,'bar:group:application:org.a','bar','keyboard')],(_,last)=>{assert.equal(last.frame.mode,'menu');assert.equal(last.menu.selected,1);assert.equal(last.requests.length,0);});
+await check('disabled Restore cannot allocate an operation',[...openA,action(open,'menu:1:0')],(_,last)=>{assert.equal(last.frame.mode,'menu');assert.equal(last.outstanding,0);assert.equal(last.registry,0);assert.equal(last.requests.length,0);});
+for(const key of ['Home','End','ArrowUp','ArrowDown'])await check('navigation skips disabled and never sends '+key,[...openA,navigate(open,key)],(_,last)=>{assert.equal(last.menu.selected,1);assert.equal(last.frame.mode,'menu');assert.equal(last.requests.length,0);});
+await check('stale navigation preserves current menu',[...openA,navigate({...open,publication:'0'},'Enter')],(_,last)=>{assert.equal(last.frame.publication,open.publication);assert.equal(last.requests.length,0);assert.equal(last.outstanding,0);});
+await check('Escape closes current menu without native operation',[...openA,navigate(open,'Escape')],(_,last)=>{assert.equal(last.frame.mode,'closed');assert.equal(last.menu,null);assert.equal(last.requests.length,0);});
+const dispatched=[...openA,action(open,'menu:1:1')];
+await check('Minimize closes publication before exactly one real full intent',dispatched,(_,last)=>{assert.equal(last.frame.mode,'closed');assert.equal(last.outstanding,1);assert.equal(last.registry,1);assert.equal(last.order[0],'publish');assert.equal(last.requests.length,1);assert.deepEqual(last.requests[0],fixture.firstCommand);assert.equal(last.shell.effects.windows[0].minimized,false);});
+await check('Enter uses selected enabled action exactly once',[...openA,navigate(open,'Enter')],(_,last)=>{assert.equal(last.frame.mode,'closed');assert.equal(last.registry,1);assert.deepEqual(last.requests,[fixture.firstCommand]);});
+await check('duplicate old callback cannot forward',[...dispatched,action(open,'menu:1:1')],(_,last)=>{assert.equal(last.registry,1);assert.equal(last.requests.length,0);assert.equal(last.outstanding,1);});
+await check('correlated receipt clears ledger without optimistic observation',[...dispatched,native(fixture.committed)],(_,last)=>{assert.equal(last.outstanding,0);assert.equal(last.registry,0);assert.equal(last.shell.phase,'Reconciling');assert.equal(last.shell.effects.windows[0].minimized,false);});
+const bContext=context(open,'bar:group:application:org.b');
+const replacement=[...openA,bContext];const replaced=(await replay(replacement)).at(-1).frame;
+await check('replacement menu obtains a distinct lease',replacement,(_,last)=>{assert.equal(last.frame.mode,'menu');assert.notEqual(last.frame.lease,open.lease);assert.equal(last.menu.id,2);assert.equal(last.requests.length,0);});
+await check('stale dismissal cannot close replacement lease',[...replacement,{kind:'dismiss',lease:open.lease}],(_,last)=>{assert.equal(last.frame.mode,'menu');assert.equal(last.frame.publication,replaced.publication);});
+await check('current native dismissal closes without cancel or send',[...replacement,{kind:'dismiss',lease:replaced.lease}],(_,last)=>{assert.equal(last.frame.mode,'closed');assert.equal(last.requests.length,0);});
+const unavailable=JSON.parse(JSON.stringify(fixture.projection));unavailable.scene.windows.forEach(row=>row.available=false);
+const disabledBaseline=[native(fixture.attached),native(unavailable)];const disabledFrame=(await replay(disabledBaseline)).at(-1).frame;
+await check('unavailable bar context refuses unsupported target',[...disabledBaseline,context(disabledFrame,'bar:group:application:org.a')],(_,last)=>{assert.equal(last.frame.mode,'closed');assert.equal(last.outstanding,0);assert.equal(last.requests.length,0);});
+
+const grouped=JSON.parse(JSON.stringify(fixture.projection));grouped.scene.windows.forEach(row=>row.application='org.grouped');
+const groupBaseline=[native(fixture.attached),native(grouped)];const groupReady=(await replay(groupBaseline)).at(-1).frame;
+const groupPicker=[...groupBaseline,context(groupReady,'bar:group:application:org.grouped')];const picker=(await replay(groupPicker)).at(-1).frame;
+await check('ambiguous family context opens picker without choosing a target',groupPicker,(_,last)=>{assert.equal(last.frame.mode,'picker');assert.equal(last.menu,null);assert.equal(last.requests.length,0);});
+await check('popup explicit root context replaces picker with native menu',[...groupPicker,context(picker,'family:10','popup')],(_,last)=>{assert.equal(last.frame.mode,'menu');assert.equal(last.menu.selected,1);assert.equal(last.requests.length,0);});
+await check('popup ownership alias cannot substitute an unlisted root',[...groupPicker,context(picker,'family:11','popup')],(_,last)=>{assert.equal(last.frame.mode,'picker');assert.equal(last.menu,null);assert.equal(last.frame.publication,picker.publication);});
+await check('stale popup scope cannot open context menu',[...groupPicker,context({...picker,lease:'0'},'family:10','popup')],(_,last)=>{assert.equal(last.frame.mode,'picker');assert.equal(last.requests.length,0);assert.equal(last.frame.publication,picker.publication);});
+const unknown={...fixture.committed,status:'Unknown',reason:'No definitive outcome'};
+const fresh=JSON.parse(JSON.stringify(fixture.projection));fresh.requestId='2';fresh.context.revision='2';fresh.scene.revision='2';
+const unknownReady=[...dispatched,native(unknown),native(fresh)];const unknownFrame=(await replay(unknownReady)).at(-1).frame;
+const reopenedUnknown=[...unknownReady,context(unknownFrame,'bar:group:application:org.a')];const unknownMenu=(await replay(reopenedUnknown)).at(-1).frame;
+await check('fresh observed facts never resolve Unknown or enable menu retry',reopenedUnknown,(_,last)=>{assert.equal(last.menu.status,'unknown');assert.equal(last.outstanding,1);assert.equal(last.registry,1);assert.equal(last.frame.mode,'menu');assert(last.frame.popup.filter(row=>row.id.startsWith('menu:')).every(row=>!row.enabled));assert.equal(last.requests.length,0);});
+await check('Unknown taskbar primary cannot bypass existing native menu ledger',[...reopenedUnknown,action(unknownMenu,'bar:group:application:org.a','bar')],(_,last)=>{assert.equal(last.requests.length,0);assert.equal(last.registry,1);assert.equal(last.outstanding,1);});
+const bOpen=[...reopenedUnknown,context(unknownMenu,'bar:group:application:org.b')];const bMenu=(await replay(bOpen)).at(-1).frame;
+const bDispatch=[...bOpen,action(bMenu,'menu:3:1')];
+const commandB=JSON.parse(JSON.stringify(fixture.firstCommand));commandB.intent={...commandB.intent,request:'2',generation:'2',incarnation:'20',context:{...commandB.intent.context,revision:'2'}};
+await check('unrelated target obtains its own engine-generated native intent',bDispatch,(_,last)=>{assert.deepEqual(last.requests,[commandB]);assert.equal(last.registry,2);assert.equal(last.outstanding,2);assert.equal(last.frame.mode,'closed');});
+const receiptB={...fixture.committed,intent:commandB.intent};
+await check('B receipt then delayed A receipt reconciles original map only',[...bDispatch,native(receiptB),native(fixture.committed)],(rows,last)=>{assert.equal(rows.at(-2).registry,1);assert.equal(rows.at(-2).outstanding,1);assert.equal(last.registry,0);assert.equal(last.outstanding,0);assert.deepEqual(last.shell.effects.transaction.intent,commandB.intent);assert.equal(last.shell.effects.transaction.status,'Committed');assert.equal(last.shell.effects.windows[0].minimized,false);assert.equal(last.requests.length,0);});
+const newBinding={...fixture.binding,frontend:'301'};const rebindProjection=JSON.parse(JSON.stringify(fresh));rebindProjection.binding=newBinding;rebindProjection.requestId='3';rebindProjection.context.epoch='301';rebindProjection.context.revision='3';rebindProjection.scene.revision='3';
+const rebind=[...unknownReady,native({protocolVersion:3,kind:'host-disconnected'}),native({...fixture.attached,binding:newBinding}),native(rebindProjection)];const reboundFrame=(await replay(rebind)).at(-1).frame;
+const reopenedRebind=[...rebind,context(reboundFrame,'bar:group:application:org.a')];const reboundMenu=(await replay(reopenedRebind)).at(-1).frame;
+await check('frontend rebind of same window never releases unresolved action',reopenedRebind,(_,last)=>{assert.equal(last.menu.status,'unknown');assert.equal(last.registry,1);assert.equal(last.outstanding,1);assert.equal(last.requests.length,0);});
+await check('same target primary remains guarded after frontend replacement',[...reopenedRebind,action(reboundMenu,'bar:group:application:org.a','bar')],(_,last)=>{assert.equal(last.requests.length,0);assert.equal(last.registry,1);});
+await check('original full receipt resolves retained old binding once',[...reopenedRebind,native(fixture.committed),native(fixture.committed)],(_,last)=>{assert.equal(last.registry,0);assert.equal(last.outstanding,0);assert.equal(last.shell.effects.transaction.status,'Unknown');assert.equal(last.requests.length,0);});
+const passed=cases.every(row=>row.passed);fs.writeFileSync(process.argv[4],JSON.stringify({passed,checks:cases.length,cases,scope:'Compiled production visible menu controller; synthetic native facts; native gesture authority qualified separately'},null,2)+'\n');clearTimeout(timer);if(!passed)process.exitCode=1;
+})().catch(error=>{clearTimeout(timer);console.error(error.stack);process.exitCode=1;});
