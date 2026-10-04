@@ -1,0 +1,70 @@
+            # Targeted geometry retires old provider authority; reopening requires a new gesture.
+            pointer(target('Open'),273)
+            wait(menu)
+            geometry_journal=effects()
+            import re
+            def latest_menu_popup():
+                values=[tuple(map(int,match.groups())) for match in re.finditer(r'xdg_popup[#@]\d+\.configure\((\d+), (\d+), (\d+), (\d+)\)',(OUTPUT/'elm-webview.log').read_text(errors='replace'))]
+                return values[-1] if values else None
+            def geometry_authority():
+                values=[frame['context'] for frame in frames('backend-frame: ') if frame.get('kind')=='action-projection']
+                return values[-1] if values else None
+            def geometry_keyboard_ready(lease):
+                values=[state for token,state in re.findall(r'surface-native-keyboard-focus: lease=(\d+) in=(\d+)',(OUTPUT/'elm-webview.log').read_text(errors='replace')) if token==lease]
+                return bool(values and values[-1]=='1')
+            def geometry_pointer(item,button=272):
+                monitors=s.data('monitors')
+                assert len(monitors)==1 and monitors[0]['name']=='WAYLAND-1' and monitors[0]['x']==0 and monitors[0]['y']==0
+                mon=monitors[0]
+                width=round(mon['width']/mon['scale']);height=round(mon['height']/mon['scale'])
+                x,y=(round(v) for v in item['point'])
+                assert item['visible'] and 0<x<width and 0<y<height
+                observed=projection()
+                assert observed and observed['phase']=='Coherent'
+                if observed.get('picker') or observed.get('menu'):
+                    wait(lambda:geometry_keyboard_ready(projection()['lease']))
+                result=subprocess.run([str(POINTER),str(width),str(height)],input=f'move {x} {y}\nsleep 100\nbutton {button} 1\nsleep 50\nbutton {button} 0\nsleep 100\n',text=True,capture_output=True,env=s.env,timeout=5)
+                check('menuGeometryPointerNormalExit',result.returncode==0,point=[x,y],extent=[width,height],button=button,stderr=result.stderr)
+            def geometry_target(state):
+                if not projection() or not projection()['picker']:
+                    geometry_pointer(wait(group))
+                item=wait(lambda:row(state))
+                wait(lambda:geometry_keyboard_ready(projection()['lease']))
+                return item
+            before_resize=geometry_authority()
+            resize_receipt=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="640x480@60",position="0x0",scale=1})').strip()
+            check('menuReflowResizeRequested',resize_receipt=='ok',receipt=resize_receipt)
+            wait(lambda:any(m['name']=='WAYLAND-1' and m['width']==640 and m['height']==480 for m in s.data('monitors')))
+            retired_resize=wait(lambda:projection() if projection() and projection()['phase']=='Coherent' and projection()['menu'] is None and geometry_authority()['output']!=before_resize['output'] else None)
+            check('menuReflowResizedAuthorityRetiresProviderWithoutEffect',effects()==geometry_journal and retired_resize['registry']==0 and retired_resize['outstanding']==0,before=before_resize,after=geometry_authority(),projection=retired_resize)
+            resized_authority=geometry_authority()
+            geometry_pointer(geometry_target('Open'),273)
+            fresh_resize=wait(lambda:projection() if projection() and projection()['phase']=='Coherent' and projection()['menu'] and projection()['menu']['incarnation']==identity else None)
+            resized=wait(lambda:latest_menu_popup() if latest_menu_popup() and latest_menu_popup()[0]>=0 and latest_menu_popup()[1]>=48 and latest_menu_popup()[0]+latest_menu_popup()[2]<=640 and latest_menu_popup()[1]+latest_menu_popup()[3]<=480 else None)
+            check('menuReflowExplicitResizedContextUsesCurrentAuthority',geometry_authority()['output']==resized_authority['output'] and effects()==geometry_journal,authority=geometry_authority(),projection=fresh_resize)
+            check('menuReflowInsideResizedWorkarea',all(a['visible'] for a in fresh_resize['menu']['actions']) and fresh_resize['menu']['close']['visible'],configure=resized,projection=fresh_resize)
+            before_scale=geometry_authority()
+            scaled_receipt=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="960x640@60",position="0x0",scale=2,transform=0})').strip()
+            check('menuReflowIntegerScaleRequested',scaled_receipt=='ok',receipt=scaled_receipt)
+            scaled=wait(lambda:next((m for m in s.data('monitors') if m['name']=='WAYLAND-1' and m['scale']==2 and m['width']==960 and m['height']==640),None))
+            retired_scale=wait(lambda:projection() if projection() and projection()['phase']=='Coherent' and projection()['menu'] is None and geometry_authority()['output']!=before_scale['output'] else None)
+            check('menuReflowScaledAuthorityRetiresProviderWithoutEffect',effects()==geometry_journal and retired_scale['registry']==0 and retired_scale['outstanding']==0,before=before_scale,after=geometry_authority(),projection=retired_scale)
+            scaled_authority=geometry_authority()
+            geometry_pointer(geometry_target('Open'),273)
+            fresh_scale=wait(lambda:projection() if projection() and projection()['phase']=='Coherent' and projection()['menu'] and projection()['menu']['incarnation']==identity else None)
+            scaled_popup=wait(lambda:latest_menu_popup() if latest_menu_popup() and latest_menu_popup()[0]>=0 and latest_menu_popup()[1]>=48 and latest_menu_popup()[0]+latest_menu_popup()[2]<=480 and latest_menu_popup()[1]+latest_menu_popup()[3]<=320 else None)
+            wait(lambda:'set_buffer_scale(2)' in (OUTPUT/'elm-webview.log').read_text(errors='replace'))
+            layers=[row for output in s.data('layers').values() for rows in output['levels'].values() for row in rows if row['pid']==web.pid]
+            check('menuReflowExplicitScaledContextUsesCurrentAuthority',geometry_authority()['output']==scaled_authority['output'] and effects()==geometry_journal,authority=geometry_authority(),projection=fresh_scale)
+            check('menuReflowScaledBarReservationAndBuffers',scaled['reserved'][1]==48 and len(layers)==1 and layers[0]['h']==48,monitor=scaled,layers=layers)
+            check('menuReflowInsideScaledLogicalWorkarea',all(a['visible'] for a in fresh_scale['menu']['actions']) and fresh_scale['menu']['close']['visible'],configure=scaled_popup,projection=fresh_scale)
+            wait(lambda:geometry_keyboard_ready(fresh_scale['lease']))
+            check('menuReflowScaledEscapeHasCurrentNativeKeyboardReady',geometry_keyboard_ready(fresh_scale['lease']),lease=fresh_scale['lease'])
+            key(1)
+            wait(lambda:projection() if projection() and projection()['menu'] is None else None)
+            check('menuReflowActualEscapeAfterScaleNoEffect',effects()==geometry_journal,projection=projection())
+            restored_geometry=s.ctl('eval','hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1,transform=0})').strip()
+            check('menuReflowRestoresOriginalFixtureGeometry',restored_geometry=='ok',receipt=restored_geometry)
+            wait(lambda:any(m['name']=='WAYLAND-1' and m['scale']==1 and m['width']==800 and m['height']==600 for m in s.data('monitors')))
+            wait(lambda:projection() if projection() and projection()['phase']=='Coherent' else None)
+

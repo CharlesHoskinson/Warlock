@@ -1,0 +1,20 @@
+{
+  "reviewer": "elm_review",
+  "passed": true,
+  "scope": "Read-only source review for build/native qualification",
+  "sources": {
+    "candidate/src/backend/Wayland.cpp": "4cbcd3671e2330f07ab51621142b8848cc44b7949ce997b1f55c52ae6efa403b",
+    "candidate/src/backend/NestedPresentation.hpp": "b7417aeb5e4dbab50957aeaa24f6682ef66551e91b82ab168dbe9870f6a6c1c7",
+    "candidate/src/backend/NestedLifecycle.hpp": "3585891e7450e46a7ca139ca9c20fa672c6c4ee85e05020f3c127997b202b42b",
+    "candidate/CMakeLists.txt": "13f97ff7e8913510a6b6609008406c6dcd799e0d421d202686ece1d5f3df65a1"
+  },
+  "nativeAcceptance": false,
+  "remaining": [
+    "Actual original resize/scaling/reset campaign",
+    "Parent pointer coordinate recipients",
+    "Native stale callback/teardown interleavings",
+    "Cursor fallback",
+    "Multioutput routing",
+    "Viewport global-removal scheduler bookkeeping cleanup"
+  ]
+}

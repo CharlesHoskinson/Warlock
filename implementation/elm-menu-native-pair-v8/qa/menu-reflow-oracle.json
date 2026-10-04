@@ -1,0 +1,37 @@
+{
+  "scope": "Additional targeted menu resize/integer-scale/Escape checks; original rotation failure remains open",
+  "originalSource": {
+    "path": "implementation/elm-menu-output-v5/qa/native.py",
+    "sha256": "dd95aa2ca3582e9446b2f5a6de82276067ec0d0bc70a0701ab2af15a38220b1d"
+  },
+  "extensionSHA256": "1363a42348463d0c34491a34c287ad09cba95b9955753b6caf6638b7d4517821",
+  "addedChecks": [
+    "menuReflowResizeRequested",
+    "menuReflowResizedAuthorityRetiresProviderWithoutEffect",
+    "menuReflowExplicitResizedContextUsesCurrentAuthority",
+    "menuReflowInsideResizedWorkarea",
+    "menuReflowIntegerScaleRequested",
+    "menuReflowScaledAuthorityRetiresProviderWithoutEffect",
+    "menuReflowExplicitScaledContextUsesCurrentAuthority",
+    "menuReflowScaledBarReservationAndBuffers",
+    "menuReflowInsideScaledLogicalWorkarea",
+    "menuReflowScaledEscapeHasCurrentNativeKeyboardReady",
+    "menuReflowActualEscapeAfterScaleNoEffect",
+    "menuReflowRestoresOriginalFixtureGeometry"
+  ],
+  "originalHelpers": [
+    "check",
+    "wait",
+    "pointer",
+    "keyboard",
+    "key",
+    "keyboard_target",
+    "target"
+  ],
+  "remaining": [
+    "parent rotation campaign",
+    "complete native pointer/key async cancellation interleavings",
+    "mixed/fractional scale",
+    "other outputs/removal in menu mode"
+  ]
+}
