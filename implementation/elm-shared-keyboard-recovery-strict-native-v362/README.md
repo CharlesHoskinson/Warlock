@@ -1,0 +1,1 @@
+Fresh zero-dwell combined-source native campaign. All inherited oracles retained; strict post-predicate and post-capture checks enforce the original six-second deadlines. Source359; private runtime336 only. No installed desktop changes.

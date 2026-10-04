@@ -1,0 +1,186 @@
+[1;32mDEBUG [0m]: User-specified config location: '/run/user/1000/wqa/3b02/hyprland.lua'
+Welcome to Hyprland!
+
+                                                  
+                     YY    UJ                     
+                    YYY    UUJ                    
+                   XXXY    UUUU                   
+                  zXXXX    UUUUU                  
+                zzzzX        UUUUJ                
+               cczzz          UUUUJ               
+             vccccz            UUUUUJ             
+            vvcccc              UUUUUJ            
+           vvvvv                  UUUUJ           
+          uuuvv                    UUUUJ          
+         uuuuu                      UUUUU         
+        nnnuu                        UUUUU        
+       nnnnn                          YUUUU       
+       xxnn                            YUUU       
+       xxxn                            YYUU       
+      xxxx                              YYUU      
+      rxxx                              YYYY      
+      rrrx                              YYYY      
+       rrrx                            XXXY       
+       rrrr                            XXXX       
+        rrrr                          zzXX        
+         rrrr                        zzzz         
+          rrrrr                    ccczz          
+           rrrrrx                vccccc           
+             rrrrxxxx        uuvvvvvc             
+                rrxxxxxxnnnnuuuuuv                
+                    xxxxxnnnnu                    
+
+
+
+[1;33mWARN [0m]: Failed to change process scheduling strategy
+DEBUG ]: Old rlimit: soft -> 65536, hard -> 524288
+DEBUG ]: New rlimit: soft -> 524288, hard -> 524288
+WARN ]: WARNING: Hyprland is being launched without start-hyprland. This is highly advised against.
+DEBUG ]: Creating the EventLoopManager!
+DEBUG ]: Creating the KeybindManager!
+DEBUG ]: Creating the AnimationManager!
+DEBUG ]: Creating the DynamicPermissionManager!
+DEBUG ]: Creating the MonitorState!
+DEBUG ]: Creating the WorkspaceState!
+DEBUG ]: Creating the ConfigManager!
+DEBUG ]: [cfg] Config is either explicit or special.
+DEBUG ]: [cfg] Config is lua, loading lua mgr
+DEBUG ]: Creating the Error Overlay!
+DEBUG ]: Creating the LayoutManager!
+DEBUG ]: Creating the TokenManager!
+DEBUG ]: Creating the EventManager!
+DEBUG ]: Disabling stdout logs (debug.enable_stdout_logs = 0). Further logs will be written to /run/user/1000/wqa/3b02/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791120231_1637585880/hyprland.log
+DEBUG ]: Creating the PointerManager!
+DEBUG ]: Creating the AsyncResourceGatherer!
+[13:23:51.627814] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#2)
+[13:23:51.627852] {Default Queue}  -> wl_display#1.sync(new id wl_callback#3)
+[13:23:51.627944] {Display Queue} wl_display#1.delete_id(3)
+[13:23:51.627961] {Default Queue} wl_registry#2.global(1, "wl_compositor", 5)
+[13:23:51.627972] {Default Queue}  -> wl_registry#2.bind(1, "wl_compositor", 5, new id [unknown]#4)
+[13:23:51.627982] {Default Queue} wl_registry#2.global(2, "wl_subcompositor", 1)
+[13:23:51.627989] {Default Queue} wl_registry#2.global(3, "wp_viewporter", 1)
+[13:23:51.627999] {Default Queue}  -> wl_registry#2.bind(3, "wp_viewporter", 1, new id [unknown]#5)
+[13:23:51.628009] {Default Queue} wl_registry#2.global(4, "zxdg_output_manager_v1", 2)
+[13:23:51.628014] {Default Queue} wl_registry#2.global(5, "wp_presentation", 2)
+[13:23:51.628020] {Default Queue} wl_registry#2.global(6, "wp_single_pixel_buffer_manager_v1", 1)
+[13:23:51.628026] {Default Queue} wl_registry#2.global(7, "wp_tearing_control_manager_v1", 1)
+[13:23:51.628032] {Default Queue} wl_registry#2.global(8, "wp_fifo_manager_v1", 1)
+[13:23:51.628038] {Default Queue} wl_registry#2.global(9, "wp_commit_timing_manager_v1", 1)
+[13:23:51.628043] {Default Queue} wl_registry#2.global(10, "zwp_relative_pointer_manager_v1", 1)
+[13:23:51.628049] {Default Queue} wl_registry#2.global(11, "zwp_pointer_constraints_v1", 1)
+[13:23:51.628055] {Default Queue} wl_registry#2.global(12, "zwp_input_timestamps_manager_v1", 1)
+[13:23:51.628080] {Default Queue} wl_registry#2.global(13, "weston_capture_v1", 2)
+[13:23:51.628099] {Default Queue} wl_registry#2.global(14, "wl_data_device_manager", 3)
+[13:23:51.628105] {Default Queue} wl_registry#2.global(15, "wl_shm", 2)
+[13:23:51.628113] {Default Queue}  -> wl_registry#2.bind(15, "wl_shm", 1, new id [unknown]#6)
+[13:23:51.628122] {Default Queue} wl_registry#2.global(16, "wl_seat", 7)
+[13:23:51.628129] {Default Queue}  -> wl_registry#2.bind(16, "wl_seat", 7, new id [unknown]#7)
+[13:23:51.628141] {Default Queue} wl_registry#2.global(17, "zwp_linux_dmabuf_v1", 5)
+[13:23:51.628148] {Default Queue}  -> wl_registry#2.bind(17, "zwp_linux_dmabuf_v1", 4, new id [unknown]#8)
+[13:23:51.628161] {Default Queue}  -> zwp_linux_dmabuf_v1#8.get_default_feedback(new id zwp_linux_dmabuf_feedback_v1#9)
+[13:23:51.628174] {Default Queue}  -> wl_display#1.sync(new id wl_callback#10)
+[13:23:51.628180] {Default Queue} wl_registry#2.global(18, "zwp_linux_explicit_synchronization_v1", 2)
+[13:23:51.628186] {Default Queue} wl_registry#2.global(19, "wp_color_representation_manager_v1", 1)
+[13:23:51.628192] {Default Queue} wl_registry#2.global(20, "wl_output", 4)
+[13:23:51.628198] {Default Queue} wl_registry#2.global(21, "xdg_wm_base", 5)
+[13:23:51.628204] {Default Queue}  -> wl_registry#2.bind(21, "xdg_wm_base", 5, new id [unknown]#11)
+[13:23:51.628215] {Default Queue} wl_registry#2.global(22, "elm_parent_input_v1", 3)
+[13:23:51.628221] {Default Queue} wl_callback#3.done(0)
+[13:23:51.628341] {Display Queue} wl_display#1.delete_id(10)
+[13:23:51.628354] {Default Queue} wl_shm#6.format(0)
+[13:23:51.628362] {Default Queue} wl_shm#6.format(1)
+[13:23:51.628367] {Default Queue} wl_shm#6.format(842093144)
+[13:23:51.628373] {Default Queue} wl_shm#6.format(842093121)
+[13:23:51.628379] {Default Queue} wl_shm#6.format(842089048)
+[13:23:51.628384] {Default Queue} wl_shm#6.format(842089025)
+[13:23:51.628390] {Default Queue} wl_shm#6.format(842094674)
+[13:23:51.628395] {Default Queue} wl_shm#6.format(842088786)
+[13:23:51.628401] {Default Queue} wl_shm#6.format(842094658)
+[13:23:51.628407] {Default Queue} wl_shm#6.format(842088770)
+[13:23:51.628412] {Default Queue} wl_shm#6.format(892426322)
+[13:23:51.628417] {Default Queue} wl_shm#6.format(892420434)
+[13:23:51.628422] {Default Queue} wl_shm#6.format(892426306)
+[13:23:51.628427] {Default Queue} wl_shm#6.format(892420418)
+[13:23:51.628433] {Default Queue} wl_shm#6.format(909199186)
+[13:23:51.628438] {Default Queue} wl_shm#6.format(909199170)
+[13:23:51.628444] {Default Queue} wl_shm#6.format(875710290)
+[13:23:51.628450] {Default Queue} wl_shm#6.format(875710274)
+[13:23:51.628455] {Default Queue} wl_shm#6.format(875713112)
+[13:23:51.628461] {Default Queue} wl_shm#6.format(875713089)
+[13:23:51.628466] {Default Queue} wl_shm#6.format(875709016)
+[13:23:51.628472] {Default Queue} wl_shm#6.format(875708993)
+[13:23:51.628477] {Default Queue} wl_shm#6.format(875714642)
+[13:23:51.628483] {Default Queue} wl_shm#6.format(875708754)
+[13:23:51.628488] {Default Queue} wl_shm#6.format(875714626)
+[13:23:51.628493] {Default Queue} wl_shm#6.format(875708738)
+[13:23:51.628498] {Default Queue} wl_shm#6.format(808669784)
+[13:23:51.628504] {Default Queue} wl_shm#6.format(808669761)
+[13:23:51.628509] {Default Queue} wl_shm#6.format(808665688)
+[13:23:51.628514] {Default Queue} wl_shm#6.format(808665665)
+[13:23:51.628520] {Default Queue} wl_shm#6.format(942948952)
+[13:23:51.628525] {Default Queue} wl_shm#6.format(942948929)
+[13:23:51.628530] {Default Queue} wl_shm#6.format(942953048)
+[13:23:51.628535] {Default Queue} wl_shm#6.format(942953025)
+[13:23:51.628540] {Default Queue} wl_shm#6.format(1211384408)
+[13:23:51.628546] {Default Queue} wl_shm#6.format(1211384385)
+[13:23:51.628551] {Default Queue} wl_shm#6.format(1211388504)
+[13:23:51.628556] {Default Queue} wl_shm#6.format(1211388481)
+[13:23:51.628561] {Default Queue} wl_shm#6.format(1448695129)
+[13:23:51.628568] {Default Queue} wl_shm#6.format(1431918169)
+[13:23:51.628573] {Default Queue} wl_shm#6.format(1498831189)
+[13:23:51.628578] {Default Queue} wl_shm#6.format(1498765654)
+[13:23:51.628591] {Default Queue} wl_shm#6.format(842094158)
+[13:23:51.628600] {Default Queue} wl_shm#6.format(825382478)
+[13:23:51.628605] {Default Queue} wl_shm#6.format(909203022)
+[13:23:51.628611] {Default Queue} wl_shm#6.format(825644622)
+[13:23:51.628616] {Default Queue} wl_shm#6.format(875714126)
+[13:23:51.628622] {Default Queue} wl_shm#6.format(842290766)
+[13:23:51.628627] {Default Queue} wl_shm#6.format(808530000)
+[13:23:51.628632] {Default Queue} wl_shm#6.format(842084432)
+[13:23:51.628638] {Default Queue} wl_shm#6.format(909193296)
+[13:23:51.628644] {Default Queue} wl_shm#6.format(842093913)
+[13:23:51.628649] {Default Queue} wl_shm#6.format(842094169)
+[13:23:51.628654] {Default Queue} wl_shm#6.format(909202777)
+[13:23:51.628660] {Default Queue} wl_shm#6.format(909203033)
+[13:23:51.628666] {Default Queue} wl_shm#6.format(875713881)
+[13:23:51.628671] {Default Queue} wl_shm#6.format(875714137)
+[13:23:51.628676] {Default Queue} wl_shm#6.format(1448434008)
+[13:23:51.628682] {Default Queue} wl_seat#7.name("default")
+[13:23:51.628689] {Default Queue} wl_seat#7.capabilities(3)
+[13:23:51.628700] {Default Queue}  -> wl_seat#7.get_keyboard(new id wl_keyboard#3)
+[13:23:51.628723] {Default Queue}  -> wl_seat#7.get_pointer(new id wl_pointer#12)
+[13:23:51.628745] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.format_table(fd 15, 3776)
+[13:23:51.629183] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.main_device(array[8])
+[13:23:51.629746] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_target_device(array[8])
+[13:23:51.629756] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_flags(0)
+[13:23:51.629764] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_formats(array[472])
+[13:23:51.629771] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.tranche_done()
+[13:23:51.629778] {Default Queue} zwp_linux_dmabuf_feedback_v1#9.done()
+[13:23:51.629787] {Default Queue} wl_callback#10.done(0)
+[13:23:51.630152] {Default Queue} wl_keyboard#3.repeat_info(40, 400)
+[13:23:51.630168] {Default Queue} wl_keyboard#3.keymap(1, fd 17, 35572)
+[13:23:51.630223] {Default Queue}  -> wl_compositor#4.create_surface(new id wl_surface#10)
+[13:23:51.630236] {Default Queue}  -> wp_viewporter#5.get_viewport(new id wp_viewport#13, wl_surface#10)
+[13:23:51.630257] {Default Queue}  -> xdg_wm_base#11.get_xdg_surface(new id xdg_surface#14, wl_surface#10)
+[13:23:51.630269] {Default Queue}  -> xdg_surface#14.get_toplevel(new id xdg_toplevel#15)
+[13:23:51.630284] {Default Queue}  -> xdg_toplevel#15.set_title("aquamarine - WAYLAND-1")
+[13:23:51.630292] {Default Queue}  -> xdg_toplevel#15.set_app_id("aquamarine")
+[13:23:51.630300] {Default Queue}  -> wl_compositor#4.create_region(new id wl_region#16)
+[13:23:51.630310] {Default Queue}  -> wl_region#16.add(0, 0, 2147483647, 2147483647)
+[13:23:51.630320] {Default Queue}  -> wl_surface#10.set_input_region(wl_region#16)
+[13:23:51.630329] {Default Queue}  -> wl_surface#10.attach(nil, 0, 0)
+[13:23:51.630338] {Default Queue}  -> wl_surface#10.commit()
+[13:23:51.630346] {Default Queue}  -> wl_region#16.destroy()
+[13:24:00.985964] {Default Queue}  -> xdg_toplevel#15.destroy()
+[13:24:00.986052] {Default Queue}  -> xdg_surface#14.destroy()
+[13:24:00.986067] {Default Queue}  -> wp_viewport#13.destroy()
+[13:24:00.986080] {Default Queue}  -> wl_surface#10.destroy()
+[13:24:00.986119] {Default Queue}  -> wp_viewporter#5.destroy()
+[13:24:00.986133] {Default Queue}  -> wl_keyboard#3.release()
+[13:24:00.986149] {Default Queue}  -> wl_pointer#12.release()
+[13:24:00.986165] {Default Queue}  -> zwp_linux_dmabuf_feedback_v1#9.destroy()
+[13:24:00.986178] {Default Queue}  -> zwp_linux_dmabuf_v1#8.destroy()
+[13:24:00.986189] {Default Queue}  -> wl_shm#6.release()
+[13:24:00.986200] {Default Queue}  -> wl_compositor#4.release()
+[13:24:00.986210] {Default Queue}  -> xdg_wm_base#11.destroy()
+[13:24:00.986220] {Default Queue}  -> wl_seat#7.release()

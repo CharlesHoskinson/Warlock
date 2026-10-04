@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T12:40:35.713513+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T13:26:33.770313+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7604,6 +7604,15 @@
       "manifestSHA256": "e3353e6f12bb24e60c3a65718dc32771879e004e849e65e3668fc35f3fbd54fd",
       "summary": "Source344 qualifies both physical release/WebKit orderings: zero-dwell native39 and original50ms native39 pass on exact core89/plugin90/AQ105, including repeated Escape, menu/navigation, one committed minimize/restore and disappearance/return pixels. Actual C73/key20/carrier34 and Quint14/1000x40 pass. Fast predecessor failure frozen, all3 native cleanup pass. Full release/requirements/sprints remain open.",
       "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-keyboard-recovery-evidence-v365",
+      "manifest": "implementation/elm-shared-keyboard-recovery-evidence-v365/qa/slice-manifest.json",
+      "manifestSHA256": "748949dd1aa7280365f3bc9455ff41f59cafd2b397420663533907f71c0d64ba",
+      "summary": "Source359 combines native keyboard proof with certified batch dispositions and exact Pending-only unsent recovery. Compiled C76/key20/carrier34, local refusal65, browser wire2, shared37/49/23 and adapted semantic79/53/21 pass. Native36048 passes bounded observations; strict zero-dwell362 fails Escape after ShiftF10 during publication transition; strict normal364 fails fixture startup. All cleanup pass; no strict native, AT, release, requirement or sprint closure. Earlier implicit-click bypass fix/proof retained in frozen source358 packet.",
+      "boundedNativeAcceptance": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
     }

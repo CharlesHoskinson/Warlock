@@ -1,0 +1,35 @@
+{
+  "scope": "Fresh source132 shared batch/recovery plus source353 keyboard proof; acceptance remains separate until current tests/native rerun",
+  "parents": [
+    {
+      "path": "implementation/elm-shared-context-disposition-wire-v132/component-manifest.json",
+      "sha256": "cc8705f27977aca6a52e56296fa5bd02c6531848f356ea9377714fb3d35b04b0"
+    },
+    {
+      "path": "implementation/elm-shared-keyboard-proof-acceptance-v358/qa/slice-manifest.json",
+      "sha256": "5ec617cf0d6e9ff23522deb661e6ca7c1036f77abc4b33f4f811f90a6fc48de4"
+    }
+  ],
+  "overrides": [
+    {
+      "path": "assets/context.js",
+      "source": "implementation/elm-shared-keyboard-menu-proof-v353/assets/context.js",
+      "sha256": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2"
+    },
+    {
+      "path": "src/Surface.elm",
+      "source": "implementation/elm-shared-keyboard-menu-proof-v353/src/Surface.elm",
+      "sha256": "a639b18fb0302b74eeedf92ac1481291694d7b4fa9c3ae0ad9ac1f0d20a5d547"
+    },
+    {
+      "path": "native/shared-context.h",
+      "source": "implementation/elm-shared-keyboard-menu-proof-v353/native/shared-context.h",
+      "sha256": "f0cdd58efee3df0b36ad6c6487474e1055ef59a82f16c31814a83ea38fc0b083"
+    },
+    {
+      "path": "native/shared-context-test.c",
+      "source": "implementation/elm-shared-keyboard-menu-proof-v353/native/shared-context-test.c",
+      "sha256": "a9ea4819e2a068661b60e17f45ba13fc871fdfa1612da25710b1a2af95a8fb4a"
+    }
+  ]
+}

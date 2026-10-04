@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-shared-terminal-order-acceptance-v348",
-  "status": "Source344 qualifies both physical release/WebKit orderings: zero-dwell native39 and original50ms native39 pass on exact core89/plugin90/AQ105, including repeated Escape, menu/navigation, one committed minimize/restore and disappearance/return pixels. Actual C73/key20/carrier34 and Quint14/1000x40 pass. Fast predecessor failure frozen, all3 native cleanup pass. Full release/requirements/sprints remain open.",
+  "activeSlice": "implementation/elm-shared-keyboard-recovery-evidence-v365",
+  "status": "Source359 combines native keyboard proof with certified batch dispositions and exact Pending-only unsent recovery. Compiled C76/key20/carrier34, local refusal65, browser wire2, shared37/49/23 and adapted semantic79/53/21 pass. Native36048 passes bounded observations; strict zero-dwell362 fails Escape after ShiftF10 during publication transition; strict normal364 fails fixture startup. All cleanup pass; no strict native, AT, release, requirement or sprint closure. Earlier implicit-click bypass fix/proof retained in frozen source358 packet.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1706,12 +1706,20 @@
       "maxSteps": 40,
       "boundedNativeAcceptance": true,
       "fullReleaseAccepted": false
+    },
+    "sharedKeyboardRecoveryV365": {
+      "manifest": "implementation/elm-shared-keyboard-recovery-evidence-v365/qa/slice-manifest.json",
+      "manifestSHA256": "748949dd1aa7280365f3bc9455ff41f59cafd2b397420663533907f71c0d64ba",
+      "summary": "Source359 combines native keyboard proof with certified batch dispositions and exact Pending-only unsent recovery. Compiled C76/key20/carrier34, local refusal65, browser wire2, shared37/49/23 and adapted semantic79/53/21 pass. Native36048 passes bounded observations; strict zero-dwell362 fails Escape after ShiftF10 during publication transition; strict normal364 fails fixture startup. All cleanup pass; no strict native, AT, release, requirement or sprint closure. Earlier implicit-click bypass fix/proof retained in frozen source358 packet.",
+      "strictNativeAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   },
   "next": [
-    "Qualify keyboard Close-control, repeat/held-loss and floating multi-action/Max/output retirement/reflow journeys on integrated source344/core89/plugin90/AQ105.",
-    "Review latest independent shared batch disposition/unsent refusal and broker EOF/deadline/recovery closure, merge into source344 without losing early/normal native proof ordering or schema5, and rerun combined native faults/effects/pixels.",
-    "Continue full S01-S16 original restore/recovery/drag/timing, GPU/WebGPU/AT/IME/physical/human/resource budgets/C00 and reversible deployment/rollback gates."
+    "Diagnose and fix native Escape/publication race on fresh source with exact scope/release/500ms guards and original6s deadlines; preserve362/364 failures.",
+    "Review registration cap/refusal and schema5 EOF/output retirement independent work; integrate only reviewed source then rerun coherent native fault/effect/pixel campaigns.",
+    "Continue full S01-S16 UI/UX, original restore/recovery/drag/timing, GPU/WebGPU/AT/IME/physical/human/resource budgets/C00 and reversible deployment/rollback gates."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
