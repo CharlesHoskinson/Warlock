@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-surface-regression-qa-v93",
-  "status": "Dual-view native window regression accepted within private scope: original91 plus focused grab refusal; full replacement acceptance remains open.",
+  "activeSlice": "implementation/elm-choice-focus-qa-v103",
+  "status": "Private dual-view native regression passes99 including bounded choice expiry, late reply refusal, explicit facts-only refresh and fresh opener focus restoration; complete replacement remains open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -735,12 +735,26 @@
       "originalCheckAndWaitASTPreserved": true,
       "scope": "Private dual-view Elm/native regression only; complete requirements/sprints/release remain open",
       "failedLineage": "V83 optimized Main shadowing; V86 stale post-close dependency; V88 blanket seat-grab refusal; V90 source preflight; V91 request reuse; V92 same-PID binding replacement; V94 Quint syntax. All preserved."
+    },
+    "choiceFocusV103": {
+      "evidence": "implementation/elm-choice-focus-qa-v103/qa/slice-manifest.json",
+      "nativeChecks": 99,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 64,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 21,
+      "quintInvariantSamples": 2000,
+      "realChoiceTimeoutSeconds": 2.202003597005387,
+      "cleanupPassed": true,
+      "originalOracleAndDeadlineHelpersASTPreserved": true,
+      "scope": "Single-output private timeout/fresh facts/DOM focus only; full desktop/release open",
+      "failedLineage": "V96/V97 Elm parser failures; V100 real post-close focus regression preserved. V102 fresh facts focus handoff fixed; V103 full99 pass."
     }
   },
   "next": [
-    "Add pending-choice timeout and explicit feedback without automatic effect replay.",
-    "Qualify per-output roles/workarea/geometry/fullscreen/lock and integrate reviewed menu bridge into single controller.",
-    "Complete native AT/IME, hardware/performance, full scene, compositor feasibility and coherent release gates."
+    "Qualify cross-output return focus and taskbar/transient/workarea geometry, fullscreen/lock roles.",
+    "Integrate independently reviewed menu surface with one shared controller.",
+    "Complete native AT/IME, human UX, hardware/performance, canonical scene, C00/WebGPU and coherent release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

@@ -1,0 +1,27 @@
+-- LET PROBLEM ------------------------------------------------- src/Surface.elm
+
+I was partway through parsing a `let` expression, but I got stuck here:
+
+49|     let
+50|         application = {id="bar:applications",domId=Desktop.key model "control:opener",label="Applications",ariaLabel="Open applications",detail="",enabled=model.windows.shell.phase/=Shell.Detached,message=Desktop.capture model |> Maybe.map Desktop.OpenApplications}
+51|         groupControl group =
+52|             let scoped = Shell.capture model.windows.shell
+53|                 ready = Shell.available model.windows.shell && Taskbar.primary False group.families/=Taskbar.Unavailable
+54|                 operation = case Taskbar.primary False group.families of
+55|                     Taskbar.Apply Effects.Minimize _ -> "Minimize "
+56|                     Taskbar.Apply Effects.Restore _ -> "Restore "
+57|                     Taskbar.Apply Effects.Activate _ -> "Activate "
+58|                     Taskbar.Picker -> "Choose a window from "
+59|                     _ -> "Unavailable "
+60|                 label = group.families |> List.head |> Maybe.map .label |> Maybe.withDefault "Windows"
+61|             in {id="bar:group:" ++ group.key,domId=scoped |> Maybe.map (\stamp -> "group:" ++ Shell.stampKey stamp ++ ":" ++ group.key) |> Maybe.withDefault "detached-group",label=label,ariaLabel=operation ++ label,detail=String.fromInt (List.length group.families),enabled=ready,message=if ready then scoped |> Maybe.map (\stamp -> Desktop.Window (TaskbarShell.Primary stamp group.key)) else Nothing}
+62|         reconnect = {id="bar:reconnect",domId="reconnect",label="Reconnect",ariaLabel="Reconnect to the window system",detail="",enabled=not model.windows.shell.reconnecting,message=Just (Desktop.Window (TaskbarShell.Native Shell.Reconnect))}
+63|     retry = {id="bar:refresh-windows",domId=Desktop.key model "refresh-windows",label="Refresh windows",ariaLabel="Refresh windows",detail="",enabled=model.choice==Nothing,message=Just Desktop.RetryWindows}
+        ^
+Based on the indentation, I was expecting to see the in keyword next. Is there a
+typo?
+
+Note: This can also happen if you are trying to define another value within the
+`let` but it is not indented enough. Make sure each definition has exactly the
+same amount of spaces before it. They should line up exactly!
+

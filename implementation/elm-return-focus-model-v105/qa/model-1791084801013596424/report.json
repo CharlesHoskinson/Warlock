@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Explicit picker-close DOM focus handoff after matching fresh facts. Abstract single-output model; native and compiled controller proofs are separate.",
+  "sourceSHA256": "bbbd9b41c5507a5947f911e1debc96ac2107f70f6ced6eb7a10df4ecd3f83cec",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "surfaces.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--match=^(closeFirstTest|freshScopeTest|staleTest|duplicateTest|disconnectTest|rebindTest|goneTest|newPopupTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "surfaces.qnt": "bbbd9b41c5507a5947f911e1debc96ac2107f70f6ced6eb7a10df4ecd3f83cec",
+    "model.py": "8313acd9cd58bb669e7581d3816cae1b373ac14ac0a9d554fd641605a12898dd",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-closeFirstTest-0.itf.json": "e0800cd8ec5a2cc7877b78d7fb3d37b2cb79ddfbed2a554cc78638d0b5153556",
+    "named-freshScopeTest-1.itf.json": "a1a25269f24b6ed0e67c2d44e5ecb659a16fae0e3e3e64b5d7d7c4b84df1f6a4",
+    "named-staleTest-2.itf.json": "f7fa119b8d007cac82dae049e2cef33a6967c645d3e1532970b0e25500c37fee",
+    "named-duplicateTest-3.itf.json": "29042b621f81ae71b313c03b79f8a581aea939cff5c6a5f2e67ea55ef578253c",
+    "named-disconnectTest-4.itf.json": "72cc4f010151eee8c1a9c489df4af9e37208d7c1cf85bf7c5436de5836d1fae1",
+    "named-rebindTest-5.itf.json": "795d253f260a40bda2139ebe40444312eb59fc36f19e17472508beab30fc11b0",
+    "named-goneTest-6.itf.json": "4303d7751fab071e79080631754cdf88352be02c95d4325b2a9b201f56e755c5",
+    "named-newPopupTest-7.itf.json": "4b8874cfd763bf05a72d82b7defd49142f4439c27c55c3bbbeeeb0d972134d69",
+    "named.stdout": "7c8140edcfab4c3d8dc331057df0f78f5af322e486ed366659b198b2046f8fdd",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "86a5d1b1405759c751a80e35d6eee313f7d8ce170f99d1fbfbf9f23e36483c37",
+    "invariants.stdout": "6ef4cb751e18289b49c2f29b7f9a6ab657211b2a4161dbeb40fdc402aeb0a4a4",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

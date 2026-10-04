@@ -1,0 +1,1031 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 1,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: true,
+      token: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 1,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 2,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 2,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 4,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 4,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 4,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: true,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 1,
+      root: false,
+      token: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 5,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 6,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 6,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 6,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 6,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 6,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 7,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 7,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 7,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 7,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      application: true,
+      authorized: false,
+      available: false,
+      binding: 7,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: false,
+      dispatchedRevision: 0,
+      dispatches: 0,
+      expected: 0,
+      expired: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      requests: 0,
+      revision: 2,
+      root: false,
+      token: 0
+    }
+}
+
+[ok] No violation found (944ms at 1059 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
