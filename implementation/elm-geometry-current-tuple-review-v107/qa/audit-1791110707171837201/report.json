@@ -1,0 +1,217 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "menu09CurrentTupleAccepted": false,
+  "scope": "Read-only existing exact tuple/header/archive/runtime evidence audit; no builds, loading or GUI",
+  "checks": [
+    {
+      "name": "core89 owning ancestor exact geometry73 component",
+      "passed": true
+    },
+    {
+      "name": "current core89 binary and archive exact owning report",
+      "passed": true
+    },
+    {
+      "name": "ancestor core73 archive unchanged",
+      "passed": true
+    },
+    {
+      "name": "694 core and plugin owning headers same ancestor",
+      "passed": true
+    },
+    {
+      "name": "all 694 actual captured core/plugin header bytes verified",
+      "passed": true
+    },
+    {
+      "name": "one Pointer replacement retains432 exact geometry73 payloads",
+      "passed": true
+    },
+    {
+      "name": "MAX full screen and XDG payloads retained",
+      "passed": true
+    },
+    {
+      "name": "plugin90 exact core89 owning descriptor",
+      "passed": true
+    },
+    {
+      "name": "152 plugin strong imports resolved owning core",
+      "passed": true
+    },
+    {
+      "name": "negotiated native geometry source unchanged from pair75",
+      "passed": true
+    },
+    {
+      "name": "AQ105 exact AQ79 parent component",
+      "passed": true
+    },
+    {
+      "name": "all AQ79 public headers unchanged in AQ105",
+      "passed": true
+    },
+    {
+      "name": "current AQ105 exact library report",
+      "passed": true
+    },
+    {
+      "name": "historical604 firstanchor tuple bound AQ79",
+      "passed": true
+    },
+    {
+      "name": "actual AQ105 input159 maps current core89 and AQ105",
+      "passed": true
+    },
+    {
+      "name": "input159 does not imply loaded authority plugin",
+      "passed": true
+    }
+  ],
+  "retainedGeometryPayloads": [
+    {
+      "name": "Window.cpp.o",
+      "size": 1053392,
+      "sha256": "a74529d3ff69cac54580ada96b35881682d9f276f86eb4a075c0b84c93417911"
+    },
+    {
+      "name": "FullscreenController.cpp.o",
+      "size": 358456,
+      "sha256": "06ebe5891350d4b52e06392c2ec574b36aa30ef5a7a3779123e4222a838c4222"
+    },
+    {
+      "name": "XDGShell.cpp.o",
+      "size": 558256,
+      "sha256": "f76b602d29c015877d448eef23ad90dbd1509aa47fd12ef7bddb53ae156d9e9c"
+    }
+  ],
+  "noCoreMergeNeeded": true,
+  "tuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/Hyprland",
+      "sha256": "3e02556699f1e1667a88ace26f656ee380fce8a39b20d405a3f0d2757c65cd73"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/elm-window-geometry-authority.so",
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/cmake/libaquamarine.so.0.15.0",
+      "sha256": "b7431f7036d28ed1f87a1aec9374a7700a2ebb9e819a707f0e8368a87cfcff97"
+    }
+  },
+  "owningHeaders": 694,
+  "unchangedArchiveMembers": 432,
+  "aqPublicHeaders": 19,
+  "pins": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/component-manifest.json": {
+      "sha256": "4f10f5f3fba7f3186e7c9fdb13e45ad7bc2b08614755d081f8e620986f34d5fb",
+      "size": 170550
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/report.json": {
+      "sha256": "78cf190a801980fd159d86acefd9e715f7dcd259608253e539ff2cb9a424656c",
+      "size": 361613
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/report.json": {
+      "sha256": "673219a31839ff80f232bf61cd2d31b0d24d9f9f43e5fea44ac5f5c59d6dd2c6",
+      "size": 696755
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/native-build-report.json": {
+      "sha256": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+      "size": 1753
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json": {
+      "sha256": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f",
+      "size": 398590
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/component-manifest.json": {
+      "sha256": "12b8c5ad32e64c8cd78fefa072877ba68244d5f6023997094edb07a7b582c089",
+      "size": 126455
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/report.json": {
+      "sha256": "c66fbedf7b9d56f16ce064c676246272355c648aeb0cf665860970b0ab71bf94",
+      "size": 93233
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/component-manifest.json": {
+      "sha256": "ea95dbdcac7b61ca0c43338338ea73cf135d4b9b806fe1effb72cc9debad84bf",
+      "size": 167671
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/Hyprland": {
+      "sha256": "3e02556699f1e1667a88ace26f656ee380fce8a39b20d405a3f0d2757c65cd73",
+      "size": 19627776
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/libhyprland_lib.a": {
+      "sha256": "7ad9657f8aa997e6bc1de3647dbdc82e1632c7b248a92d0abe22ac15e2ff5ad6",
+      "size": 91313552
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/libhyprland_lib.a": {
+      "sha256": "bdc6e0e26094319c60bc9e6c28aca3372c54adeef7254aa52741dc4e6fb14942",
+      "size": 91311416
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/ancestor-archive-payloads.json": {
+      "sha256": "5c905683c0c894bef9a3aee16ce74a9075bc97b96921d55c15953b8d47c3b43c",
+      "size": 63214
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/new-archive-payloads.json": {
+      "sha256": "980c41429d391b98bcea9889a9e3a59d4d83d685479559601bea47d4759674d2",
+      "size": 63214
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/elm-window-geometry-authority.so": {
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c",
+      "size": 294656
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/component-manifest.json": {
+      "sha256": "dc9d333188317d3b7d98fa43b7b7d8ac90204763b76cb64dc2c11ec356f743c1",
+      "size": 127113
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/upstream.json": {
+      "sha256": "1f2c6bb068a2f265bc2a3474de96ba7fbaead7dc7fcfb857773c0fa181b0767a",
+      "size": 9161
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/cmake/libaquamarine.so.0.15.0": {
+      "sha256": "b7431f7036d28ed1f87a1aec9374a7700a2ebb9e819a707f0e8368a87cfcff97",
+      "size": 1900856
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-acceptance-v96/acceptance-manifest.json": {
+      "sha256": "d50be687e5776faa25f1465ad43363339c7e7d84f91d0ade868d3728efd61e68",
+      "size": 574846
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-input-v106/qa/native-1791110169811044634/report.json": {
+      "sha256": "73c981fd61a2a2c5d3e982259ddaf17c96ea34f4537031c6ad287e015e49c74b",
+      "size": 704819
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-input-v106/candidate_host.py": {
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-input-v106/native-build-report.json": {
+      "sha256": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+      "size": 1753
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-input-v106/aq-tuple.json": {
+      "sha256": "d45aa58f8f53fae95de815a20bf62ad2ab1d59d5afec89d8706f4ecf0f424dc8",
+      "size": 670
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-input-v106/parent-probe-build.json": {
+      "sha256": "ca0d1b5b977ead42c4f1bfe45ffdf9f911347e19e773494711a52deab51cc22d",
+      "size": 239
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/candidate_host.py": {
+      "sha256": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+      "size": 1366
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/native.py": {
+      "sha256": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+      "size": 41959
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-native-v77/candidate_host.py": {
+      "sha256": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+      "size": 8817
+    },
+    "/home/hoskinson/omarchy-windows-parity/docs/elm-roadmap/delivery/loop-state.json": {
+      "sha256": "02f462aa51bab274d17f136c1995e790ce18063b22624ef4c05f223dd7efa8aa",
+      "size": 2552
+    }
+  }
+}

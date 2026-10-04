@@ -1,0 +1,35 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "menu09CurrentTupleAccepted": false,
+  "releaseAcceptance": false,
+  "scope": "Read-only current tuple ABI/archive lineage and adoption contracts; no build or GUI",
+  "noCoreMergeNeeded": true,
+  "auditReport": {
+    "path": "qa/audit-1791110707171837201/report.json",
+    "sha256": "6bc522bb25a87584540f624c764097435535c3adcf8925cddaccd8ca696f19cb"
+  },
+  "files": {
+    "ADOPTION.md": {
+      "sha256": "2a28e42cf7a20f3b5cb0e2c99b1b46d4bcf5fa2c71afe08e5e998d37a4ec38e6",
+      "size": 4364,
+      "mode": 420
+    },
+    "qa/audit.py": {
+      "sha256": "f0bb4b48f277556996d0f25f9396fb23b1db804f9931dcf6f6f16fb8d516c502",
+      "size": 6063,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "dd477fffdd5bd7a036b635eac08d924fb4398f92fbd6994f808ebf762b11a8d1",
+      "size": 1529,
+      "mode": 420
+    },
+    "qa/audit-1791110707171837201/report.json": {
+      "sha256": "6bc522bb25a87584540f624c764097435535c3adcf8925cddaccd8ca696f19cb",
+      "size": 9694,
+      "mode": 420
+    }
+  }
+}

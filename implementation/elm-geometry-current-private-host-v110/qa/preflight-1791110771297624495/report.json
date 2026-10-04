@@ -1,0 +1,72 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "source origin core_host.py",
+      "passed": true
+    },
+    {
+      "name": "source origin candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "source origin native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "source origin acceptance-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source origin aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:ReviewedWestonHost",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:PrivateHyprSession",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:verify_inputs",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:aq_tuple",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact candidate_host.py:ReviewedWestonHost",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact candidate_host.py:PrivateHyprSession",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact candidate_host.py:input_tuple",
+      "passed": true
+    }
+  ],
+  "scope": "Exact current tuple adapter closure and unchanged protected host implementation; no GUI",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-v110/candidate_host.py": "d57d793aca6ce06dce46bfcfb13ece997dc28c897eba1bba5ad511bdcb519f8c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-v110/core_host.py": "e0d941b06b89db920130e628d5db7da55dcc5068b336d57b8e0f71b31c57c352",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-v110/native-build-report.json": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-v110/aq-tuple.json": "d45aa58f8f53fae95de815a20bf62ad2ab1d59d5afec89d8706f4ecf0f424dc8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-v110/source-origins.json": "834cce9fc2c9628a77af9e452a83a6342f9e43a07a06b8df70971f394d98eb86",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-v110/qa/preflight.py": "4a40a8972d9cec12281b2ecb2027ef368af2e08c9efa24408f067b7b1b9e6f5f"
+  },
+  "error": "RuntimeError('Owning plugin source/evidence changed: implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/include/hyprland')",
+  "artifacts": {
+    "inputs/candidate_host.py": "d57d793aca6ce06dce46bfcfb13ece997dc28c897eba1bba5ad511bdcb519f8c",
+    "inputs/core_host.py": "e0d941b06b89db920130e628d5db7da55dcc5068b336d57b8e0f71b31c57c352",
+    "inputs/native-build-report.json": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+    "inputs/aq-tuple.json": "d45aa58f8f53fae95de815a20bf62ad2ab1d59d5afec89d8706f4ecf0f424dc8",
+    "inputs/source-origins.json": "834cce9fc2c9628a77af9e452a83a6342f9e43a07a06b8df70971f394d98eb86",
+    "inputs/qa/preflight.py": "4a40a8972d9cec12281b2ecb2027ef368af2e08c9efa24408f067b7b1b9e6f5f"
+  }
+}

@@ -1,0 +1,1826 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fullRoadmapAccepted": false,
+  "scope": "Actual shared recovery production semantic regressions211 and current private host closure23; no disposition-specific or native acceptance",
+  "semanticChecks": 211,
+  "hostPreflightChecks": 23,
+  "productionRoot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104",
+  "tuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/Hyprland",
+      "sha256": "3e02556699f1e1667a88ace26f656ee380fce8a39b20d405a3f0d2757c65cd73"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/elm-window-geometry-authority.so",
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+    },
+    "aquamarine": {
+      "manifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/component-manifest.json",
+      "manifestSHA256": "12b8c5ad32e64c8cd78fefa072877ba68244d5f6023997094edb07a7b582c089",
+      "library": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/cmake/libaquamarine.so.0.15.0",
+      "librarySHA256": "b7431f7036d28ed1f87a1aec9374a7700a2ebb9e819a707f0e8368a87cfcff97",
+      "compatibility": "Fresh AQ105 full owning compile; all V79 public headers and predecessor exported symbols preserved; coherent core89/plugin90 classes unchanged; exact runtime mapping required"
+    },
+    "parentInputManifest": "5c39d644a9254043f7262ffa2b509e761abe4a6198662ad49872a54b44d3274b"
+  },
+  "compiledImportClosure": [
+    "ActionProjection",
+    "Binding",
+    "Catalog",
+    "Desktop",
+    "Effects",
+    "GeometryProjection",
+    "Inspection",
+    "Launch",
+    "Main",
+    "Menu",
+    "MenuBridge",
+    "MenuSurfaceReplay",
+    "NativeOutcome",
+    "NativeProvider",
+    "OutputController",
+    "Popup",
+    "Presentation",
+    "Provider",
+    "ReceiptRouter",
+    "Shell",
+    "Surface",
+    "SurfaceController",
+    "SurfaceRenderer",
+    "Taskbar",
+    "TaskbarShell",
+    "UInt64"
+  ],
+  "nonProductionSnapshotDifferences": [
+    {
+      "path": "src/BatchReplay.elm",
+      "snapshotSHA256": "35f55fb7773215e8e45c56d8fb81eafa058942ab2aa492955321f642b0e4b07a",
+      "currentSHA256": "8a7df4daadafa88718cc3795c7647e4ab789c982bc9c02a833eadde2bf4f64e3",
+      "reason": "Independent QA worker outside actual compiled targets"
+    }
+  ],
+  "originalImmediateDispatchDiagnosticsRetained": {
+    "menu": {
+      "exitCode": 1,
+      "completedReport": true,
+      "passed": false,
+      "checks": 78,
+      "casesPassed": 64,
+      "note": "Byte-exact old traces/oracles; failures/fatal old-protocol setup remain failures, never counted as new protocol passes."
+    },
+    "geometry": {
+      "exitCode": 1,
+      "completedReport": false,
+      "passed": false,
+      "checks": null,
+      "casesPassed": 0,
+      "note": "Byte-exact old traces/oracles; failures/fatal old-protocol setup remain failures, never counted as new protocol passes."
+    },
+    "refresh": {
+      "exitCode": 1,
+      "completedReport": true,
+      "passed": false,
+      "checks": 21,
+      "casesPassed": 18,
+      "note": "Byte-exact old traces/oracles; failures/fatal old-protocol setup remain failures, never counted as new protocol passes."
+    }
+  },
+  "reports": [
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/report.json",
+      "sha256": "0f713e822c853825d7e8228fccf521f61f24d0d37d9cbf87a90e3ad5ef25faf7"
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/report.json",
+      "sha256": "f6341d7751600dce5bb09ee119f8602f3822a476e403c44a770c632a708d75ef"
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/report.json",
+      "sha256": "9330b67191e935235327858c564fcba5789a5821f911cfd7042b965311c0ce61"
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/elm-batch-recovery-regression-held-v116/qa/freeze.py",
+      "sha256": "9def410051ea0c4585379224ac4031c22ad87ff1b6fe427a187a708f3756402f",
+      "size": 4796
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/aq-tuple.json",
+      "sha256": "d45aa58f8f53fae95de815a20bf62ad2ab1d59d5afec89d8706f4ecf0f424dc8",
+      "size": 670
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/candidate_host.py",
+      "sha256": "627a181f28a0bd5038164f1dd18b2ef2e8b54749c26b8d94e089994f1fd4f73f",
+      "size": 9094
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/core_host.py",
+      "sha256": "e0d941b06b89db920130e628d5db7da55dcc5068b336d57b8e0f71b31c57c352",
+      "size": 10932
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/native-build-report.json",
+      "sha256": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+      "size": 1753
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/parent-failure.json",
+      "sha256": "8627b69f4839a0728bd41881fb06f51d64888cf832bab2769cfc662108123368",
+      "size": 878
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/inputs/aq-tuple.json",
+      "sha256": "d45aa58f8f53fae95de815a20bf62ad2ab1d59d5afec89d8706f4ecf0f424dc8",
+      "size": 670
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/inputs/candidate_host.py",
+      "sha256": "627a181f28a0bd5038164f1dd18b2ef2e8b54749c26b8d94e089994f1fd4f73f",
+      "size": 9094
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/inputs/core_host.py",
+      "sha256": "e0d941b06b89db920130e628d5db7da55dcc5068b336d57b8e0f71b31c57c352",
+      "size": 10932
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/inputs/native-build-report.json",
+      "sha256": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+      "size": 1753
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/inputs/qa/preflight.py",
+      "sha256": "4a40a8972d9cec12281b2ecb2027ef368af2e08c9efa24408f067b7b1b9e6f5f",
+      "size": 3825
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/inputs/source-origins.json",
+      "sha256": "834cce9fc2c9628a77af9e452a83a6342f9e43a07a06b8df70971f394d98eb86",
+      "size": 1299
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight-1791110830508333771/report.json",
+      "sha256": "9330b67191e935235327858c564fcba5789a5821f911cfd7042b965311c0ce61",
+      "size": 5414
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/qa/preflight.py",
+      "sha256": "4a40a8972d9cec12281b2ecb2027ef368af2e08c9efa24408f067b7b1b9e6f5f",
+      "size": 3825
+    },
+    {
+      "path": "implementation/elm-geometry-current-private-host-links-v112/source-origins.json",
+      "sha256": "834cce9fc2c9628a77af9e452a83a6342f9e43a07a06b8df70971f394d98eb86",
+      "size": 1299
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/elm.json",
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/ActionProjection.elm",
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Bar.elm",
+      "sha256": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+      "size": 899
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Catalog.elm",
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/CatalogReplay.elm",
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Desktop.elm",
+      "sha256": "7b05fff000f8e2d6c2c900bfc3cd0ae3be3db14eddadd93f326452cf8148ef5d",
+      "size": 20341
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/DesktopReplay.elm",
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Effects.elm",
+      "sha256": "8378163e1fbd0267977c5e5e4c98cc0bf0646d42613ad1c7b6c93eacafaa3b9b",
+      "size": 14215
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/GeometryProjection.elm",
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Inspection.elm",
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Launch.elm",
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/LaunchReplay.elm",
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Main.elm",
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Menu.elm",
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/MenuBridge.elm",
+      "sha256": "7067c679c6f4dec298def8a5dddcc66826eb6cd80502c971a2d8850c58a297a4",
+      "size": 23952
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/MenuSurfaceReplay.elm",
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/NativeOutcome.elm",
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/OutputController.elm",
+      "sha256": "95c7e84410507b374782e9a6770787bd33ed7bfaa899b362d12034dbd392cdab",
+      "size": 14862
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/OutputReplay.elm",
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Popup.elm",
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Presentation.elm",
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/PresentationReplay.elm",
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Provider.elm",
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/ReceiptRouter.elm",
+      "sha256": "86cfcb23cdab7624e173be3e14e35e73bf99f493412195a501595ceced19489d",
+      "size": 8870
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Replay.elm",
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Shell.elm",
+      "sha256": "c55ba823629952bab3b471b09bf9014751a9fd1061f9c9d56c9f3f53e2e7f999",
+      "size": 23266
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/ShellReplay.elm",
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Surface.elm",
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/SurfaceController.elm",
+      "sha256": "601641fefbc7b45ce2932a22f9f7c1d554e2de486e625de8a726fdad00cbca77",
+      "size": 4229
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/SurfaceRenderer.elm",
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/SurfaceReplay.elm",
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/Taskbar.elm",
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/TaskbarShell.elm",
+      "sha256": "53dd141b5f5908f44d5d92db42756504ba147d98295c40e42448dcdb50130631",
+      "size": 5996
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/TaskbarShellReplay.elm",
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "implementation/elm-shared-batch-disposition-v104/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/README.md",
+      "sha256": "945fe9fa33963d362858fda4e847ce8c16f65c0b2e34449d1aefaf412f20281b",
+      "size": 1462
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/origins.json",
+      "sha256": "3874529bdf93a29eaf6460bf4df10a1cbc14e0e9e7c1fd4b4bf6a6ea19cbfbfe",
+      "size": 7122
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/original/fixtures.json",
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b",
+      "size": 2495
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/original/geometry-fixtures.json",
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699",
+      "size": 4353
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/original/geometry.cjs",
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8",
+      "size": 20743
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/original/menu.cjs",
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439",
+      "size": 26522
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/original/refresh.cjs",
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f",
+      "size": 11336
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/post-close.cjs",
+      "sha256": "f07b575c5a3396c683e7e800b4748edbc079fba258b0f3ba99c2f5bb53d6ea59",
+      "size": 20863
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/Main-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/Main-compile.stdout",
+      "sha256": "825e8f19598c1a73221621c98a8680249670a167bcfd3cfae1e295e67b19ca14",
+      "size": 253
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/Main.js",
+      "sha256": "f3929bd58036b809963bff05aacbc319345593125c726560b3cbbd5124510cb8",
+      "size": 464833
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/Popup-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/Popup-compile.stdout",
+      "sha256": "442b0acdec654381921e0aa03c4eb22be6235d6aa67480d6917c95086bc53220",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/Popup.js",
+      "sha256": "05e3176e948d242a76a20cb5ba0701b6966275c7dc9c89504b55fe33863e2bd9",
+      "size": 134703
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/compile.stdout",
+      "sha256": "7cb7182f04567557b24c95956690f06dbad018fe10eefa7b59486ffb6f694fb0",
+      "size": 815
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/geometry-original.stderr",
+      "sha256": "8588a1184ec1f464672b59f758586cb88e6d5d5de953d79afccbb2582e915edf",
+      "size": 4130
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/geometry-original.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "sha256": "8352e66cee2ad9138a85362353d80bfb83cf136666ed12bb54d26c5903495e5f",
+      "size": 798
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "sha256": "1a2bf3901ca9e1fac8515e7bf098fd4aff465e4101989bc30e01e5da5296f153",
+      "size": 3465
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "sha256": "6adbbd22e6a9ddab67978cd202426b77efdd0442b63d2712361c4dd7f84963c7",
+      "size": 48334
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "sha256": "d810c7cdd69b9010c3acd04d18e08bbd26a38ef624e1c84f5b63059cf2006a2f",
+      "size": 40092
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224",
+      "size": 21663
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "sha256": "ceb5a5388a24bc3b2895192367b586237da8f6b3677eee4fe90c794690ca5c14",
+      "size": 31174
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611",
+      "size": 5360
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649",
+      "size": 25310
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193",
+      "size": 8687
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Main.elmi",
+      "sha256": "51689692f6843b357016f6a73993845a657156176c8d5310f2b5f28ea22c5e50",
+      "size": 1038
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Main.elmo",
+      "sha256": "44c46b88a16f21fbf2095298781ca690ba1d2493eb175cfce3f9072c97978d0b",
+      "size": 7474
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24",
+      "size": 8087
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8",
+      "size": 20718
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "sha256": "b2d5df96e0eb657889c650ca077ba0b23392b1ddd20be19bf6e53888e6405940",
+      "size": 70494
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "sha256": "71749ab45c300a839001ae6d088c26e0079c37d3b3a10b6cf457cffbb34dedc6",
+      "size": 41618
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "sha256": "22e83636dc32aee7f68327fa371c47f35a7c84a55ffb71745ae9ede3f7f01f48",
+      "size": 250
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "sha256": "cc2371e05766521e2b5ffb85f48ac360a4c8d68a9d0474a461c2dcd54a2ce868",
+      "size": 15548
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "sha256": "dd3373c11db64453f071cdccc6c0c6b3b56ed57847f5d1f97ff9ce41e95493db",
+      "size": 5451
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/OutputController.elmi",
+      "sha256": "4eec8b0b3043851a889a5d77c05217147d7ac5931fcc573689cb21a06da0c0aa",
+      "size": 3065
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/OutputController.elmo",
+      "sha256": "6621f3920fd84efa12572932622141bbc2c607f85835ab0d694903995fed2a6d",
+      "size": 34476
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "sha256": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc",
+      "size": 335
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "sha256": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf",
+      "size": 3427
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+      "size": 780
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "sha256": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86",
+      "size": 4637
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f",
+      "size": 10376
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48",
+      "size": 30848
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "sha256": "f746a2016976e03d2aa4a5b82de94dba924ee247bd5695790150726da5e317c4",
+      "size": 3865
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "sha256": "af25e18214e494537685a3e567032a3f2feabce8313ca705aa1b107b87b196cc",
+      "size": 22618
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "sha256": "f1d2d8e5f79a77db758e784f337715f2c69f987dcea288fe30b1d4eece7db589",
+      "size": 55899
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "sha256": "8603081d0d807953bd332bf881d70d3a841685bd51a6620ee84f234b4f62469e",
+      "size": 47740
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "sha256": "cada1d9113cc59d49f47b8d28f367335f9e1f7441f42aaa0c1bdc8952d026737",
+      "size": 27137
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "sha256": "491ff23367ae8d7c04a9bcf4c1e72d003a64ba32b543d2b3274a95f39cca600b",
+      "size": 29190
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "sha256": "6ecfc3a66824574efe191b28a9aa378319a19cf1233d4b904a67511682e14d36",
+      "size": 14299
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "sha256": "8720997e0998b2e1645904bdfa7bc176c2f1092a72f1e0d8765b9cc44ec94a9a",
+      "size": 9164
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+      "size": 1849
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+      "size": 12984
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "sha256": "a80fa1e5053e4d125ae83afdf3c5545af736c6e88d4192552f37c6b0c3978a44",
+      "size": 22407
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "sha256": "18fbe54067f7499137c3f8e7c0fdd42e7aac6335f0c509e06bb459d9e2f2ac09",
+      "size": 12059
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/d.dat",
+      "sha256": "2a467f6feeb105230c6784cb6b47da36cc61acf6582bc29b7898c215f453d56b",
+      "size": 10729
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/i.dat",
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm-stuff/0.19.2/o.dat",
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/elm.json",
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/original/fixtures.json",
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b",
+      "size": 2495
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/original/geometry-fixtures.json",
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699",
+      "size": 4353
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/original/geometry.cjs",
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8",
+      "size": 20743
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/original/menu.cjs",
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439",
+      "size": 26522
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/original/refresh.cjs",
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f",
+      "size": 11336
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/post-close.cjs",
+      "sha256": "f07b575c5a3396c683e7e800b4748edbc079fba258b0f3ba99c2f5bb53d6ea59",
+      "size": 20863
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/replay.py",
+      "sha256": "e059e24847c68e6a62d21bb70c036d0bddbfc2a1599bce0ebf99e2f63818f707",
+      "size": 4800
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/qa/upstream.json",
+      "sha256": "cd660a6eb4d18742ef87314e08b4b6e7986212b5892772b50647220b0d94bf70",
+      "size": 845
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/source-worker/MenuSurfaceReplay.elm",
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/ActionProjection.elm",
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Bar.elm",
+      "sha256": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+      "size": 899
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/BatchReplay.elm",
+      "sha256": "35f55fb7773215e8e45c56d8fb81eafa058942ab2aa492955321f642b0e4b07a",
+      "size": 7039
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Catalog.elm",
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/CatalogReplay.elm",
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Desktop.elm",
+      "sha256": "7b05fff000f8e2d6c2c900bfc3cd0ae3be3db14eddadd93f326452cf8148ef5d",
+      "size": 20341
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/DesktopReplay.elm",
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Effects.elm",
+      "sha256": "8378163e1fbd0267977c5e5e4c98cc0bf0646d42613ad1c7b6c93eacafaa3b9b",
+      "size": 14215
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/GeometryProjection.elm",
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Inspection.elm",
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Launch.elm",
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/LaunchReplay.elm",
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Main.elm",
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Menu.elm",
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/MenuBridge.elm",
+      "sha256": "7067c679c6f4dec298def8a5dddcc66826eb6cd80502c971a2d8850c58a297a4",
+      "size": 23952
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/MenuSurfaceReplay.elm",
+      "sha256": "84b25332a2d437e813100dcbbc32738c0216eedcea9ba94251423aa3c25ff9dd",
+      "size": 6427
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/NativeOutcome.elm",
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/OutputController.elm",
+      "sha256": "95c7e84410507b374782e9a6770787bd33ed7bfaa899b362d12034dbd392cdab",
+      "size": 14862
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/OutputReplay.elm",
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Popup.elm",
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Presentation.elm",
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/PresentationReplay.elm",
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Provider.elm",
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/ReceiptRouter.elm",
+      "sha256": "86cfcb23cdab7624e173be3e14e35e73bf99f493412195a501595ceced19489d",
+      "size": 8870
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Replay.elm",
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Shell.elm",
+      "sha256": "c55ba823629952bab3b471b09bf9014751a9fd1061f9c9d56c9f3f53e2e7f999",
+      "size": 23266
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/ShellReplay.elm",
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Surface.elm",
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/SurfaceController.elm",
+      "sha256": "601641fefbc7b45ce2932a22f9f7c1d554e2de486e625de8a726fdad00cbca77",
+      "size": 4229
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/SurfaceRenderer.elm",
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/SurfaceReplay.elm",
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/Taskbar.elm",
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/TaskbarShell.elm",
+      "sha256": "53dd141b5f5908f44d5d92db42756504ba147d98295c40e42448dcdb50130631",
+      "size": 5996
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/TaskbarShellReplay.elm",
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/inputs/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/menu-original-checks.json",
+      "sha256": "53ce737a6028cdce8fc4efcd9915fbd6709b1f2c07f43bf04e611d3880cafb60",
+      "size": 1258599
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/menu-original.stderr",
+      "sha256": "783b02624b9a387897ea1909979c2c9fead4b43e5bee573f70d8d34325b05e4f",
+      "size": 14060
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/menu-original.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/post-close-checks.json",
+      "sha256": "6216d4a13223b67f15950aa0de829649b987f08f31c7219c0bcedfbf5091c778",
+      "size": 2081559
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/post-close.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "size": 123
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/post-close.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/refresh-original-checks.json",
+      "sha256": "c8762c1188648ccca454ca6eb464aacf67053d37184a8ab0e821c3d04b05b22b",
+      "size": 1441307
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/refresh-original.stderr",
+      "sha256": "ab6ec75419fb9f2be9317360ba263153f29720f30762899d78619dd59d25e360",
+      "size": 2906
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/refresh-original.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/replay.js",
+      "sha256": "3c9a6e5005df7c0db71428358c4ea8227d217184ad9caeb5393c41408fbb1986",
+      "size": 395585
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay-1791110820482726038/report.json",
+      "sha256": "f6341d7751600dce5bb09ee119f8602f3822a476e403c44a770c632a708d75ef",
+      "size": 2244197
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/replay.py",
+      "sha256": "e059e24847c68e6a62d21bb70c036d0bddbfc2a1599bce0ebf99e2f63818f707",
+      "size": 4800
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/qa/upstream.json",
+      "sha256": "cd660a6eb4d18742ef87314e08b4b6e7986212b5892772b50647220b0d94bf70",
+      "size": 845
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/post-close/src/MenuSurfaceReplay.elm",
+      "sha256": "84b25332a2d437e813100dcbbc32738c0216eedcea9ba94251423aa3c25ff9dd",
+      "size": 6427
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/original/fixtures.json",
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b",
+      "size": 2495
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/original/geometry-fixtures.json",
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699",
+      "size": 4353
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/original/geometry.cjs",
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8",
+      "size": 20743
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/original/menu.cjs",
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439",
+      "size": 26522
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/original/refresh.cjs",
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f",
+      "size": 11336
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/Main-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/Main-compile.stdout",
+      "sha256": "38f29a7640373385fa480c04f4ab5a7447d6401b303954ef6cdb72b0149b11fe",
+      "size": 251
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/Main.js",
+      "sha256": "f3929bd58036b809963bff05aacbc319345593125c726560b3cbbd5124510cb8",
+      "size": 464833
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/Popup-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/Popup-compile.stdout",
+      "sha256": "985c956adfdd91567d9cca2e2b2e6c94c712249a814cb166bae9ddba9d4584bc",
+      "size": 239
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/Popup.js",
+      "sha256": "05e3176e948d242a76a20cb5ba0701b6966275c7dc9c89504b55fe33863e2bd9",
+      "size": 134703
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/compile.stdout",
+      "sha256": "690cf230d99ad8121333a4cd6c68cb4e265685ebdc8dd28c78953b81a410154a",
+      "size": 813
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/geometry-original.stderr",
+      "sha256": "dbf3939a9dbe75a31dfecbf99be974b84f7fe57ca850ea90a61357939d409ae2",
+      "size": 4108
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/geometry-original.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/geometry-staged-checks.json",
+      "sha256": "670a50b5bc8062d18ca5b5cffcf58b899fa7232fa41c936f72a77d14621c3308",
+      "size": 2024838
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/geometry-staged.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "size": 123
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/geometry-staged.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/geometry-trace-adaptation.diff",
+      "sha256": "502d95146c9884b49ac8135244081427439584760ec26fdb9a0c22578aebf68b",
+      "size": 7278
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "sha256": "8352e66cee2ad9138a85362353d80bfb83cf136666ed12bb54d26c5903495e5f",
+      "size": 798
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "sha256": "1a2bf3901ca9e1fac8515e7bf098fd4aff465e4101989bc30e01e5da5296f153",
+      "size": 3465
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "sha256": "6adbbd22e6a9ddab67978cd202426b77efdd0442b63d2712361c4dd7f84963c7",
+      "size": 48334
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "sha256": "d810c7cdd69b9010c3acd04d18e08bbd26a38ef624e1c84f5b63059cf2006a2f",
+      "size": 40092
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224",
+      "size": 21663
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "sha256": "ceb5a5388a24bc3b2895192367b586237da8f6b3677eee4fe90c794690ca5c14",
+      "size": 31174
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611",
+      "size": 5360
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649",
+      "size": 25310
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193",
+      "size": 8687
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Main.elmi",
+      "sha256": "51689692f6843b357016f6a73993845a657156176c8d5310f2b5f28ea22c5e50",
+      "size": 1038
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Main.elmo",
+      "sha256": "44c46b88a16f21fbf2095298781ca690ba1d2493eb175cfce3f9072c97978d0b",
+      "size": 7474
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24",
+      "size": 8087
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8",
+      "size": 20718
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "sha256": "b2d5df96e0eb657889c650ca077ba0b23392b1ddd20be19bf6e53888e6405940",
+      "size": 70494
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "sha256": "71749ab45c300a839001ae6d088c26e0079c37d3b3a10b6cf457cffbb34dedc6",
+      "size": 41618
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "sha256": "22e83636dc32aee7f68327fa371c47f35a7c84a55ffb71745ae9ede3f7f01f48",
+      "size": 250
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "sha256": "cc2371e05766521e2b5ffb85f48ac360a4c8d68a9d0474a461c2dcd54a2ce868",
+      "size": 15548
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "sha256": "dd3373c11db64453f071cdccc6c0c6b3b56ed57847f5d1f97ff9ce41e95493db",
+      "size": 5451
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/OutputController.elmi",
+      "sha256": "4eec8b0b3043851a889a5d77c05217147d7ac5931fcc573689cb21a06da0c0aa",
+      "size": 3065
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/OutputController.elmo",
+      "sha256": "6621f3920fd84efa12572932622141bbc2c607f85835ab0d694903995fed2a6d",
+      "size": 34476
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "sha256": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc",
+      "size": 335
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "sha256": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf",
+      "size": 3427
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+      "size": 780
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "sha256": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86",
+      "size": 4637
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f",
+      "size": 10376
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48",
+      "size": 30848
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "sha256": "f746a2016976e03d2aa4a5b82de94dba924ee247bd5695790150726da5e317c4",
+      "size": 3865
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "sha256": "af25e18214e494537685a3e567032a3f2feabce8313ca705aa1b107b87b196cc",
+      "size": 22618
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "sha256": "f1d2d8e5f79a77db758e784f337715f2c69f987dcea288fe30b1d4eece7db589",
+      "size": 55899
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "sha256": "8603081d0d807953bd332bf881d70d3a841685bd51a6620ee84f234b4f62469e",
+      "size": 47740
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "sha256": "cada1d9113cc59d49f47b8d28f367335f9e1f7441f42aaa0c1bdc8952d026737",
+      "size": 27137
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "sha256": "491ff23367ae8d7c04a9bcf4c1e72d003a64ba32b543d2b3274a95f39cca600b",
+      "size": 29190
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "sha256": "6ecfc3a66824574efe191b28a9aa378319a19cf1233d4b904a67511682e14d36",
+      "size": 14299
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "sha256": "8720997e0998b2e1645904bdfa7bc176c2f1092a72f1e0d8765b9cc44ec94a9a",
+      "size": 9164
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+      "size": 1849
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+      "size": 12984
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "sha256": "a80fa1e5053e4d125ae83afdf3c5545af736c6e88d4192552f37c6b0c3978a44",
+      "size": 22407
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "sha256": "18fbe54067f7499137c3f8e7c0fdd42e7aac6335f0c509e06bb459d9e2f2ac09",
+      "size": 12059
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/d.dat",
+      "sha256": "31f11fa7939539627f5f63281303ba27992ddd57d7fb3f589a79209ee509c9a1",
+      "size": 10677
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/i.dat",
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/lock",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm-stuff/0.19.2/o.dat",
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/elm.json",
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/original/fixtures.json",
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b",
+      "size": 2495
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/original/geometry-fixtures.json",
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699",
+      "size": 4353
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/original/geometry.cjs",
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8",
+      "size": 20743
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/original/menu.cjs",
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439",
+      "size": 26522
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/original/refresh.cjs",
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f",
+      "size": 11336
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/replay.py",
+      "sha256": "cf3af4ae4ecf37384f9dc91f2334a58d3567a5f617063d4d7a7b6041fcd319a1",
+      "size": 5656
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/staged/geometry.cjs",
+      "sha256": "0b3fc7d2e1484e8ec5388004abf3efdeddad7131aadd799ca3cf9469a668485d",
+      "size": 20852
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/staged/menu.cjs",
+      "sha256": "3c76058ef34c32ff0754091d7e89511b4a96e99fb0cbe78ce32574e5d5b3eec3",
+      "size": 26644
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/staged/refresh.cjs",
+      "sha256": "6b92a113892889911131978d2dfa753ea0c0ca7d650514ed15fdd1dfd2672591",
+      "size": 11393
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/staged/stage.cjs",
+      "sha256": "3c840530a97e1617f934e0179449c91669bf190d99db5ae117266a30ce2f7ad0",
+      "size": 2198
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/qa/upstream.json",
+      "sha256": "cd660a6eb4d18742ef87314e08b4b6e7986212b5892772b50647220b0d94bf70",
+      "size": 845
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/source-worker/MenuSurfaceReplay.elm",
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/ActionProjection.elm",
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Bar.elm",
+      "sha256": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+      "size": 899
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/BatchReplay.elm",
+      "sha256": "35f55fb7773215e8e45c56d8fb81eafa058942ab2aa492955321f642b0e4b07a",
+      "size": 7039
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Catalog.elm",
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/CatalogReplay.elm",
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Desktop.elm",
+      "sha256": "7b05fff000f8e2d6c2c900bfc3cd0ae3be3db14eddadd93f326452cf8148ef5d",
+      "size": 20341
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/DesktopReplay.elm",
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Effects.elm",
+      "sha256": "8378163e1fbd0267977c5e5e4c98cc0bf0646d42613ad1c7b6c93eacafaa3b9b",
+      "size": 14215
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/GeometryProjection.elm",
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Inspection.elm",
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Launch.elm",
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/LaunchReplay.elm",
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Main.elm",
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Menu.elm",
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/MenuBridge.elm",
+      "sha256": "7067c679c6f4dec298def8a5dddcc66826eb6cd80502c971a2d8850c58a297a4",
+      "size": 23952
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/MenuSurfaceReplay.elm",
+      "sha256": "84b25332a2d437e813100dcbbc32738c0216eedcea9ba94251423aa3c25ff9dd",
+      "size": 6427
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/NativeOutcome.elm",
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/OutputController.elm",
+      "sha256": "95c7e84410507b374782e9a6770787bd33ed7bfaa899b362d12034dbd392cdab",
+      "size": 14862
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/OutputReplay.elm",
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Popup.elm",
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Presentation.elm",
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/PresentationReplay.elm",
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Provider.elm",
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/ReceiptRouter.elm",
+      "sha256": "86cfcb23cdab7624e173be3e14e35e73bf99f493412195a501595ceced19489d",
+      "size": 8870
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Replay.elm",
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Shell.elm",
+      "sha256": "c55ba823629952bab3b471b09bf9014751a9fd1061f9c9d56c9f3f53e2e7f999",
+      "size": 23266
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/ShellReplay.elm",
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Surface.elm",
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/SurfaceController.elm",
+      "sha256": "601641fefbc7b45ce2932a22f9f7c1d554e2de486e625de8a726fdad00cbca77",
+      "size": 4229
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/SurfaceRenderer.elm",
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/SurfaceReplay.elm",
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/Taskbar.elm",
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/TaskbarShell.elm",
+      "sha256": "53dd141b5f5908f44d5d92db42756504ba147d98295c40e42448dcdb50130631",
+      "size": 5996
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/TaskbarShellReplay.elm",
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/inputs/src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/menu-original-checks.json",
+      "sha256": "53ce737a6028cdce8fc4efcd9915fbd6709b1f2c07f43bf04e611d3880cafb60",
+      "size": 1258599
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/menu-original.stderr",
+      "sha256": "d0ad109d2b69f32a5ef176719b334df47a018bea38e3b80f592fc75808d95f42",
+      "size": 13976
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/menu-original.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/menu-staged-checks.json",
+      "sha256": "453826e761b7cef995d5c39f3be73ec6e21961d7264d2b3e2a87712ebd30efc5",
+      "size": 1373325
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/menu-staged.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "size": 123
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/menu-staged.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/menu-trace-adaptation.diff",
+      "sha256": "ec687c12b0b250a90a86977432868c8f8d28397420aa458d911a3ea86ad371a4",
+      "size": 12461
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/refresh-original-checks.json",
+      "sha256": "c8762c1188648ccca454ca6eb464aacf67053d37184a8ab0e821c3d04b05b22b",
+      "size": 1441307
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/refresh-original.stderr",
+      "sha256": "7b0c92658172052075554ef389417cc73d4bcc400e500dbbcf24deb24b5d9d3a",
+      "size": 2888
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/refresh-original.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/refresh-staged-checks.json",
+      "sha256": "d8fb846e8845fcb6f8f42ede9c560db01c8d3735401ff4294ff87c4093c8a69f",
+      "size": 1515554
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/refresh-staged.stderr",
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+      "size": 123
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/refresh-staged.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/refresh-trace-adaptation.diff",
+      "sha256": "954714b2da88c512faf5bf3ea18ccc096bdab282d8e21ac0a506b67f8c632350",
+      "size": 4570
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/replay.js",
+      "sha256": "3c9a6e5005df7c0db71428358c4ea8227d217184ad9caeb5393c41408fbb1986",
+      "size": 395585
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay-1791110787029714375/report.json",
+      "sha256": "0f713e822c853825d7e8228fccf521f61f24d0d37d9cbf87a90e3ad5ef25faf7",
+      "size": 28407
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/replay.py",
+      "sha256": "cf3af4ae4ecf37384f9dc91f2334a58d3567a5f617063d4d7a7b6041fcd319a1",
+      "size": 5656
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/staged/geometry.cjs",
+      "sha256": "0b3fc7d2e1484e8ec5388004abf3efdeddad7131aadd799ca3cf9469a668485d",
+      "size": 20852
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/staged/menu.cjs",
+      "sha256": "3c76058ef34c32ff0754091d7e89511b4a96e99fb0cbe78ce32574e5d5b3eec3",
+      "size": 26644
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/staged/refresh.cjs",
+      "sha256": "6b92a113892889911131978d2dfa753ea0c0ca7d650514ed15fdd1dfd2672591",
+      "size": 11393
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/staged/stage.cjs",
+      "sha256": "3c840530a97e1617f934e0179449c91669bf190d99db5ae117266a30ce2f7ad0",
+      "size": 2198
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/qa/upstream.json",
+      "sha256": "cd660a6eb4d18742ef87314e08b4b6e7986212b5892772b50647220b0d94bf70",
+      "size": 845
+    },
+    {
+      "path": "implementation/elm-shared-batch-semantic-regressions-v108/semantic/src/MenuSurfaceReplay.elm",
+      "sha256": "84b25332a2d437e813100dcbbc32738c0216eedcea9ba94251423aa3c25ff9dd",
+      "size": 6427
+    }
+  ]
+}

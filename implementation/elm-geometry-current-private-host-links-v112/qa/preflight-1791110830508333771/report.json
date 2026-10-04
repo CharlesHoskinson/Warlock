@@ -1,0 +1,133 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "source origin core_host.py",
+      "passed": true
+    },
+    {
+      "name": "source origin candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "source origin native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "source origin acceptance-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "source origin aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:ReviewedWestonHost",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:PrivateHyprSession",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:verify_inputs",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact core_host.py:aq_tuple",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact candidate_host.py:ReviewedWestonHost",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact candidate_host.py:PrivateHyprSession",
+      "passed": true
+    },
+    {
+      "name": "protected implementation exact candidate_host.py:input_tuple",
+      "passed": true
+    },
+    {
+      "name": "current owning core89 selected",
+      "passed": true
+    },
+    {
+      "name": "current core component closure selected",
+      "passed": true
+    },
+    {
+      "name": "plugin90 owns exact core89",
+      "passed": true
+    },
+    {
+      "name": "current AQ105 selected",
+      "passed": true
+    },
+    {
+      "name": "fixed original parent input selected",
+      "passed": true
+    },
+    {
+      "name": "source stable candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "source stable core_host.py",
+      "passed": true
+    },
+    {
+      "name": "source stable native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "source stable aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "source stable source-origins.json",
+      "passed": true
+    },
+    {
+      "name": "source stable preflight.py",
+      "passed": true
+    }
+  ],
+  "scope": "Exact current tuple adapter closure and unchanged protected host implementation; no GUI",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-links-v112/candidate_host.py": "627a181f28a0bd5038164f1dd18b2ef2e8b54749c26b8d94e089994f1fd4f73f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-links-v112/core_host.py": "e0d941b06b89db920130e628d5db7da55dcc5068b336d57b8e0f71b31c57c352",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-links-v112/native-build-report.json": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-links-v112/aq-tuple.json": "d45aa58f8f53fae95de815a20bf62ad2ab1d59d5afec89d8706f4ecf0f424dc8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-links-v112/source-origins.json": "834cce9fc2c9628a77af9e452a83a6342f9e43a07a06b8df70971f394d98eb86",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-current-private-host-links-v112/qa/preflight.py": "4a40a8972d9cec12281b2ecb2027ef368af2e08c9efa24408f067b7b1b9e6f5f"
+  },
+  "tuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/Hyprland",
+      "sha256": "3e02556699f1e1667a88ace26f656ee380fce8a39b20d405a3f0d2757c65cd73"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/elm-window-geometry-authority.so",
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+    },
+    "aquamarine": {
+      "manifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/component-manifest.json",
+      "manifestSHA256": "12b8c5ad32e64c8cd78fefa072877ba68244d5f6023997094edb07a7b582c089",
+      "library": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/cmake/libaquamarine.so.0.15.0",
+      "librarySHA256": "b7431f7036d28ed1f87a1aec9374a7700a2ebb9e819a707f0e8368a87cfcff97",
+      "compatibility": "Fresh AQ105 full owning compile; all V79 public headers and predecessor exported symbols preserved; coherent core89/plugin90 classes unchanged; exact runtime mapping required"
+    },
+    "parentInputManifest": "5c39d644a9254043f7262ffa2b509e761abe4a6198662ad49872a54b44d3274b"
+  },
+  "artifacts": {
+    "inputs/candidate_host.py": "627a181f28a0bd5038164f1dd18b2ef2e8b54749c26b8d94e089994f1fd4f73f",
+    "inputs/core_host.py": "e0d941b06b89db920130e628d5db7da55dcc5068b336d57b8e0f71b31c57c352",
+    "inputs/native-build-report.json": "76360f9662d2137f9a29b1aee26c1618220d48b66dc31dd873cfefa8ff851ae6",
+    "inputs/aq-tuple.json": "d45aa58f8f53fae95de815a20bf62ad2ab1d59d5afec89d8706f4ecf0f424dc8",
+    "inputs/source-origins.json": "834cce9fc2c9628a77af9e452a83a6342f9e43a07a06b8df70971f394d98eb86",
+    "inputs/qa/preflight.py": "4a40a8972d9cec12281b2ecb2027ef368af2e08c9efa24408f067b7b1b9e6f5f"
+  }
+}
