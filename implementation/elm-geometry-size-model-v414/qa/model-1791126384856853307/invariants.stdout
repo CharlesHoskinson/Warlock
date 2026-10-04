@@ -1,0 +1,703 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      blocked: false,
+      clientMax: 0,
+      clientMin: 2,
+      layoutMax: 100,
+      layoutMin: 0,
+      mutations: 0,
+      scope: true,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      blocked: false,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 100,
+      layoutMin: 0,
+      mutations: 0,
+      scope: true,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      blocked: false,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 100,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      blocked: false,
+      clientMax: 12,
+      clientMin: 7,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      blocked: false,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 13,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 13,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 13,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 13,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 12,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 7,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 13,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: false,
+      valid: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 13,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: false,
+      valid: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 13,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: false,
+      valid: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: false,
+      valid: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 13,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 7,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 11,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 12,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 7,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 7,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 7,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 4,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      blocked: true,
+      clientMax: 12,
+      clientMin: 12,
+      layoutMax: 6,
+      layoutMin: 0,
+      mutations: 0,
+      scope: false,
+      target: 3,
+      unknown: true,
+      valid: false
+    }
+}
+
+[ok] No violation found (1047ms at 955 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

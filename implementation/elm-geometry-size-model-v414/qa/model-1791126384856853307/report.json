@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "scope": "Abstract one-axis integer feasibility and retained scope/input/Unknown gates;100 is an unbounded sentinel for bounded targets. Named cases give semantics; nonnegative mutation invariant is only a trace sanity check. C++ tests cover both axes/nonfinite doubles. No automatic production refinement or native acceptance.",
+  "sourceSHA256": "dbb7f2785318f0642b0e8fc2e78579ca35b3cd5d3627c80423efd50f01f27cb0",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(minimumOnlyTest|minimumAboveWorkareaTest|finiteMaximumBelowTest|finiteMaximumEqualTest|fixedAxisTest|malformedBoundTest|rawLayoutConflictTest|changedOriginalTest|inputBlockedTest|staleScopeTest|unknownBarrierTest|combinedFixedIntersectionTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "unsafeLowerBound": {
+    "command": [
+      "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+      "test",
+      "unsafe.qnt",
+      "--backend=typescript",
+      "--match=^minimumAboveWorkareaTest$",
+      "--max-samples=1",
+      "--seed=170024"
+    ],
+    "exitCode": 1,
+    "detected": true
+  },
+  "unsafeCombinedFixed": {
+    "command": [
+      "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+      "test",
+      "unsafe-fixed.qnt",
+      "--backend=typescript",
+      "--match=^combinedFixedIntersectionTest$",
+      "--max-samples=1",
+      "--seed=170024"
+    ],
+    "exitCode": 1,
+    "detected": true
+  },
+  "namedScenarios": 12,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "dbb7f2785318f0642b0e8fc2e78579ca35b3cd5d3627c80423efd50f01f27cb0",
+    "model.py": "facdbb68ef08b87cdca44c7144cf01e1fef2f4c084413a19c6ff3220103276fd",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-combinedFixedIntersectionTest-0.itf.json": "56937e807f7df9e7a1f689ef59d9141199380b29ff1b275ca5fae33785f2206a",
+    "named-minimumOnlyTest-1.itf.json": "9ce5f15393f7107f619f053a76a0932edb9595ad6438734a646c21879dc4f318",
+    "named-minimumAboveWorkareaTest-2.itf.json": "9f5b4bb4e8efb2c5ee56b1109fed1c857c0d55acb0b60f01191c56e90af27433",
+    "named-finiteMaximumBelowTest-3.itf.json": "47d6ac45b53fbb62559967025fcef89c90fa9c0ad52204120ed34689cdb998c2",
+    "named-finiteMaximumEqualTest-4.itf.json": "7157d156e2da7eee85044cc4adee7e8862b18ec1da47fc491996bdc5df4d0c43",
+    "named-fixedAxisTest-5.itf.json": "a6fe53e8c2628f9f51ec3da6fd0c45875e4594aee66d8367060bbfb3ed71bf2d",
+    "named-malformedBoundTest-6.itf.json": "244584da47631fd022fd37f9775eddbf7a501da52ae210ca3e506a5a5a8b2010",
+    "named-rawLayoutConflictTest-7.itf.json": "b3c525c47adb62ab0462adc4261a2e52f70b88b31ae1bd856ba957cac50ed03b",
+    "named-changedOriginalTest-8.itf.json": "53f5a418f4c374ad10e426afabddc757051412afd8089204ae748b56493f121e",
+    "named-inputBlockedTest-9.itf.json": "961115723228b7fee560468926ea42879c00994d951137f166d104d5d22b08a8",
+    "named-staleScopeTest-10.itf.json": "56f127f7ddcea685bb5cac5e1e25e1e2122adb3f4f4e04f28dce5cb5dee595b9",
+    "named-unknownBarrierTest-11.itf.json": "edf8cbf59e3317b12be2dca62b6ea190d63fb67725040b0374783e49bdeb002f",
+    "named.stdout": "12898f0ad9e53c4cd6e314cce80d87307d4f9b20d91a40738e6f9e09aa900301",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "892202f9d4a623171c4291bf8576ba8d55d69b916b7a26262ac8cfb17dfcf931",
+    "invariants.stdout": "94185d5c859e642619a3b3657a873fd0b12561d49a909bc9153ec59d25ddc01c",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe.qnt": "24bac23991c65f5c0db65c0be891ea003a5f3a6d6e552881d98e5ef2b57fc6da",
+    "unsafe.stdout": "b3956e358718e0ecd5a547afe3f34d77bb08397768eeb20c7e2f7fc1a4e328d5",
+    "unsafe.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "unsafe-fixed.qnt": "8405e408a9df3cd2371fffd1bec744a671e1e4f58bb074f43e31188097897904",
+    "unsafe-fixed.stdout": "2fcfd541c2f916cadd6d32be68a787c67ac2c8d515a6c8d02c8b81578c9e7cd9",
+    "unsafe-fixed.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}
