@@ -1,0 +1,198 @@
+{
+  "passed": true,
+  "scope": "Native runner source/deadline and actual owning tuple preflight only; no GUI, physical operation or native acceptance",
+  "inputs": {
+    "core_host.py": "b22dadb4c49f5e72ec652544723e264d45feda3b9dd02a8eeff092cc2aa471b6",
+    "candidate_host.py": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+    "aq-tuple.json": "3f84f6bd76d0e1ed56405bff08fde0b0d759c707c6f3defc1f2d20a9f53d2164",
+    "native-build-report.json": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+    "upstream.json": "1969d24a50bd4c3e4c1477348ce7a55343749b383d947cdff7628687fbbd1f92",
+    "qa/native.py": "a41461a005c08e4f2adab49b3ec6b61a973e3e4515250117e722635b2df956d8",
+    "qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "qa/preflight.py": "ed04d2aa0701a0a2771cc91965f13c834bdf6ff6d5a71e2b1a3c074732bdaaeb"
+  },
+  "checks": [
+    {
+      "name": "unchanged original function check",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function wait",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function frames",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function projection",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function incoming",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function effects",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function geometry",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function geometry_row",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function coherent",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function row",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function parent_pointer",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function open_menu",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function action",
+      "passed": true
+    },
+    {
+      "name": "unchanged original function settle_menu",
+      "passed": true
+    },
+    {
+      "name": "run scenario assertions preserved except source capture and deferred partial09",
+      "passed": true
+    },
+    {
+      "name": "client evidence byte exact ancestral helper",
+      "passed": true
+    },
+    {
+      "name": "exact original runner source retained",
+      "passed": true
+    },
+    {
+      "name": "scenario09 explicitly deferred not accepted",
+      "passed": true
+    },
+    {
+      "name": "private host protection unchanged aq_tuple",
+      "passed": true
+    },
+    {
+      "name": "private host protection unchanged verify_inputs",
+      "passed": true
+    },
+    {
+      "name": "private host protection unchanged launch",
+      "passed": true
+    },
+    {
+      "name": "private host protection unchanged wait_socket",
+      "passed": true
+    },
+    {
+      "name": "private host protection unchanged __init__",
+      "passed": true
+    },
+    {
+      "name": "private host protection unchanged __enter__",
+      "passed": true
+    },
+    {
+      "name": "actual V74 staged CPU build passed",
+      "passed": true
+    },
+    {
+      "name": "fresh exact V73 core selected",
+      "passed": true
+    },
+    {
+      "name": "fresh exact V75 plugin selected",
+      "passed": true
+    },
+    {
+      "name": "exact private V30 AQ selected",
+      "passed": true
+    },
+    {
+      "name": "fixed V14 module/client qualification retained",
+      "passed": true
+    },
+    {
+      "name": "original Weston/AQ compatibility inputs unchanged",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight core_host.py",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight upstream.json",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "source held during preflight qa/preflight.py",
+      "passed": true
+    }
+  ],
+  "selectedTuple": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/Hyprland",
+      "sha256": "f1430c86174efa5682c40545daa3c7d823e29943ef07f8c992da59a0641617ad"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-owning-pair-v75/qa/build-1791106521814701312/elm-window-geometry-authority.so",
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+    },
+    "aq": {
+      "manifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/component-manifest.json",
+      "manifestSHA256": "bc6183edf3ca5c4efbda284fb68bef9c427b7aa80b2ae039c0a15164aec54ac6",
+      "library": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/build-1791098020734308423/cmake/libaquamarine.so.0.15.0",
+      "librarySHA256": "1763ba3b38832b67ed70d9470661cdc18073ca0924f1ef962ffcbf61cf754ff5",
+      "compatibility": "Exact V30 private AQ, exact V73 monitor/header and parent hit-test merged core, V75 negotiated geometry authority; no installed changes or native claim."
+    },
+    "fixedParentInputManifest": "5c39d644a9254043f7262ffa2b509e761abe4a6198662ad49872a54b44d3274b",
+    "stagedBuild": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-build-v74/qa/build-1791106471110680936/report.json",
+    "stagedBuildSHA256": "aac1bc049dd090789c5c8bb0f43bd9db2e5da90e494804acc487a798159a4acd"
+  },
+  "artifacts": {
+    "inputs/core_host.py": "b22dadb4c49f5e72ec652544723e264d45feda3b9dd02a8eeff092cc2aa471b6",
+    "inputs/candidate_host.py": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+    "inputs/aq-tuple.json": "3f84f6bd76d0e1ed56405bff08fde0b0d759c707c6f3defc1f2d20a9f53d2164",
+    "inputs/native-build-report.json": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+    "inputs/upstream.json": "1969d24a50bd4c3e4c1477348ce7a55343749b383d947cdff7628687fbbd1f92",
+    "inputs/qa/native.py": "a41461a005c08e4f2adab49b3ec6b61a973e3e4515250117e722635b2df956d8",
+    "inputs/qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "inputs/qa/preflight.py": "ed04d2aa0701a0a2771cc91965f13c834bdf6ff6d5a71e2b1a3c074732bdaaeb"
+  }
+}

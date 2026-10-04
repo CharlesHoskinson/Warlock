@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Exact original function and campaign AST comparison; original 96 checks and 7 pixel stages require fresh native execution",
+  "runnerSHA256": "f49c658dec779028fdbc2dab9741ecf5edeced1605b99121fa1e78e285ec578c",
+  "originalSHA256": "e30dc4d4703454b3d767ac4c40992ea4755f34b2edec91b0d3dba3723988c3ae",
+  "exactFunctions": [
+    "check",
+    "wait",
+    "events",
+    "native_window",
+    "latest_buffer",
+    "request",
+    "settled",
+    "rid",
+    "refused",
+    "facts",
+    "one_fact",
+    "correlate",
+    "validate_pixels",
+    "intent_for",
+    "native_effect"
+  ],
+  "exactNativeCampaign": true,
+  "exactTeardown": true,
+  "unchangedCampaignAssertions": 1,
+  "unchangedCampaignCheckCallsites": 17,
+  "originalNativeChecks": 96,
+  "originalPixelStages": 7,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-effect-native-v55/qa/native.py": "e30dc4d4703454b3d767ac4c40992ea4755f34b2edec91b0d3dba3723988c3ae",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-native-regression-v79/qa/freeze.py": "9e443f6a7122438d70314565ff98e6b8e0f6bd894819f3b28df6f7b90dc6f773",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-native-regression-v79/qa/native.py": "f49c658dec779028fdbc2dab9741ecf5edeced1605b99121fa1e78e285ec578c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-native-regression-v79/qa/original-v55-native.py": "e30dc4d4703454b3d767ac4c40992ea4755f34b2edec91b0d3dba3723988c3ae",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-native-regression-v79/qa/preflight.py": "c3fad91b6bbf314bc912877c8bd7ef757f891cfd0d7c18e8e537663b60bed310",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-native-regression-v79/qa/source-check.py": "4c1e829f33a52e8e2da4cad899ae43722f09aed06015b3f68dd6a668eef96b52",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-native-regression-v79/qa/tuple_preflight.py": "bc9da99db342313666d997d7175ba2963e97ec415564b6bb68f2432956f1690c"
+  }
+}

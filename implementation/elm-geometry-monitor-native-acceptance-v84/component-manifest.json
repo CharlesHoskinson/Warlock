@@ -1,0 +1,565 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "scope": "Actual native single floating Wayland window geometry96/7 on V73/V75/V30; original menu campaign failure110 preserved. No full menu/shared-host/hardware/release acceptance.",
+  "boundedGeometryNativeAccepted": true,
+  "fullMenuNativeAccepted": false,
+  "fullRoadmapAccepted": false,
+  "releaseAccepted": false,
+  "inventoryBase": "/home/hoskinson/omarchy-windows-parity",
+  "files": {
+    "implementation/elm-geometry-staged-menu-native-v77/README.md": {
+      "sha256": "5998a2a4d3f8e4fbb17fa491fd1f16bc672383a63d775705ef862ea1501e7e46",
+      "size": 2066
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/aq-tuple.json": {
+      "sha256": "3f84f6bd76d0e1ed56405bff08fde0b0d759c707c6f3defc1f2d20a9f53d2164",
+      "size": 630
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/candidate_host.py": {
+      "sha256": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+      "size": 8817
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/core_host.py": {
+      "sha256": "b22dadb4c49f5e72ec652544723e264d45feda3b9dd02a8eeff092cc2aa471b6",
+      "size": 10939
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/freeze-1791107310919948052/report.json": {
+      "sha256": "538f431664d3a12a25f8b2cfa4f21892b57a752585861392487969bd511dc8ee",
+      "size": 2247
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/freeze.py": {
+      "sha256": "759ee013a623989290e61f8a92e04e2f62f753aadf09315f898248c1966795b2",
+      "size": 2870
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/held-source-manifest.json": {
+      "sha256": "d5a9c11862d587175890cc814e852f1f73cb3481fa497883e7e4941236da6559",
+      "size": 6105
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/0/native.py": {
+      "sha256": "a41461a005c08e4f2adab49b3ec6b61a973e3e4515250117e722635b2df956d8",
+      "size": 26601
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/1/candidate_host.py": {
+      "sha256": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+      "size": 8817
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/10/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/11/evdev-keyboard": {
+      "sha256": "7bb54790faf1c47ab3a4184d84fa07fc1ab34c44d762ef457696f147777e95c0",
+      "size": 23240
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/12/parent-input-client": {
+      "sha256": "307d623700077c6311c75d2d40f7c32def203f9c2fef05769e64b69d05c2e61e",
+      "size": 17912
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/13/report.json": {
+      "sha256": "aac1bc049dd090789c5c8bb0f43bd9db2e5da90e494804acc487a798159a4acd",
+      "size": 5368433
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/14/client-build-report.json": {
+      "sha256": "a6fa464f3390d64e8e18b3275d1cbb2d5cc2b5bed55df635fc27166f347911cc",
+      "size": 596
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/15/inspection.py": {
+      "sha256": "190909b78137d0eb8b921a0a003ed33abe850acc80403fda2d4dc7d036c86ab2",
+      "size": 3048
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/2/core_host.py": {
+      "sha256": "b22dadb4c49f5e72ec652544723e264d45feda3b9dd02a8eeff092cc2aa471b6",
+      "size": 10939
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/3/aq-tuple.json": {
+      "sha256": "3f84f6bd76d0e1ed56405bff08fde0b0d759c707c6f3defc1f2d20a9f53d2164",
+      "size": 630
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/4/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/5/component-manifest.json": {
+      "sha256": "9678ba49758ba4fd7688d1c0faed2a1fafef4b91e62be3d7dad23e830fb25b5a",
+      "size": 3254605
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/6/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/7/component-manifest.json": {
+      "sha256": "ea95dbdcac7b61ca0c43338338ea73cf135d4b9b806fe1effb72cc9debad84bf",
+      "size": 167671
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/8/held-source-manifest.json": {
+      "sha256": "7119b6b63fbb60a39b9eae19d67b87746c00b75096f063dee0d5bf82c124a5a0",
+      "size": 208357
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/inputs/9/upstream.json": {
+      "sha256": "1969d24a50bd4c3e4c1477348ce7a55343749b383d947cdff7628687fbbd1f92",
+      "size": 2531
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/authority-config.json": {
+      "sha256": "f39835beb5ea005bd370001cc48f437e7343425b30f635de8d1123891543ffc6",
+      "size": 244
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/elm-webview.log": {
+      "sha256": "ca9413cd3938a5e197f7e69e32dcfbb0e83f7a941d9f38664bcae7b236dddeb4",
+      "size": 255261
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/external-max-pixels-0.png": {
+      "sha256": "c8704aa40e32ad025c8e9245966dd11f1afd9441e4e2b676f516fa291c4f3ec1",
+      "size": 11049
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/host-evidence.json": {
+      "sha256": "00f10b8fd2e8e16ec464ef22fbdbd02a2a3aa192f638dccfe96613584273500f",
+      "size": 213794
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/hyprland.log": {
+      "sha256": "5aaa278e36ea364b5a9950f050e4ac0edd27223c98885264122fa1e299f6cb3a",
+      "size": 2615
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/maximize-pixels-0.png": {
+      "sha256": "460e6a0fdcd153dfe233e769f626da2177b2e7e9598f3b732f146fcfa9701485",
+      "size": 11066
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/privateBus.log": {
+      "sha256": "7b871a295be6ece467a74b4da2d17b47d154d9042ef2126fd30cc10a0c1bedad",
+      "size": 6099
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/restore-geometry-pixels-0.png": {
+      "sha256": "87e47473d81bdd6591eed96683186ba41cb67bfbd80d9358a94c31cf079aa5dc",
+      "size": 41305
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/restore-pixels-0.png": {
+      "sha256": "74c9f1d67c1906a05be639bc5de6a81bdf63813116e01b5895968f2ae6c9edb3",
+      "size": 11048
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/runtime-archive/.flatpak/webkit-993466-20/bwrapinfo.json": {
+      "sha256": "c9f79c803ea3eaa4dc42b8767b8b69cbc26bd6be1482692d64e51875a8532094",
+      "size": 160
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/runtime-archive/.flatpak/webkit-993466-24/bwrapinfo.json": {
+      "sha256": "028795dba10cd09033a9d51837c85d4f9624f1f2361a0ae079a0eb53d6d31202",
+      "size": 160
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/runtime-archive/.flatpak/webkit-993466-4/bwrapinfo.json": {
+      "sha256": "3c700f35bedac931628f42410f226cfe4185d74c586d5c1e171d77639df19757",
+      "size": 193
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/runtime-archive/.flatpak/webkit-993466-5/bwrapinfo.json": {
+      "sha256": "b1be3b5ca8e415afe41bb7017a02c2995bba620b02fe7d04b84a68e85f8279f6",
+      "size": 193
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791107393_801405979/hyprland.log": {
+      "sha256": "f67ba10885f3501445d67e552f92ad0fa38ef12c2cebb2a13090fe532c0abf81",
+      "size": 24338
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/runtime-archive/hyprland.lua": {
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/weston-renderer.log": {
+      "sha256": "0dbab7faee114c921e42580e16df9d3b8b269051208b8613102ec79e3040bd6a",
+      "size": 8005
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/native-evidence/xdg-max-client.log": {
+      "sha256": "bec5a1f74cccf56ca052a2884d2c2a72ca711ccb51be0caefb4a044c1f48d3cd",
+      "size": 35733
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/report.json": {
+      "sha256": "e79f5bc2cb688f5e2022ab4eb1346c0681c2d2d2175f5b5b7259dc777990fd89",
+      "size": 458971
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native.py": {
+      "sha256": "a41461a005c08e4f2adab49b3ec6b61a973e3e4515250117e722635b2df956d8",
+      "size": 26601
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/aq-tuple.json": {
+      "sha256": "3f84f6bd76d0e1ed56405bff08fde0b0d759c707c6f3defc1f2d20a9f53d2164",
+      "size": 630
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/candidate_host.py": {
+      "sha256": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+      "size": 8817
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/core_host.py": {
+      "sha256": "b22dadb4c49f5e72ec652544723e264d45feda3b9dd02a8eeff092cc2aa471b6",
+      "size": 10939
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/qa/native.py": {
+      "sha256": "a41461a005c08e4f2adab49b3ec6b61a973e3e4515250117e722635b2df956d8",
+      "size": 26601
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/qa/preflight.py": {
+      "sha256": "ed04d2aa0701a0a2771cc91965f13c834bdf6ff6d5a71e2b1a3c074732bdaaeb",
+      "size": 5059
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/inputs/upstream.json": {
+      "sha256": "1969d24a50bd4c3e4c1477348ce7a55343749b383d947cdff7628687fbbd1f92",
+      "size": 2531
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight-1791107198982356291/report.json": {
+      "sha256": "cf0a227df8f5ec8a6f43a2ffb8f8632519d43e5b0ab79548d2e9a60892fc43c1",
+      "size": 6808
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/preflight.py": {
+      "sha256": "ed04d2aa0701a0a2771cc91965f13c834bdf6ff6d5a71e2b1a3c074732bdaaeb",
+      "size": 5059
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/upstream.json": {
+      "sha256": "1969d24a50bd4c3e4c1477348ce7a55343749b383d947cdff7628687fbbd1f92",
+      "size": 2531
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/README.md": {
+      "sha256": "d21d8fcaaed35a06266dfa572236031cfb1eef0829281f6f21d10155d89e4f6c",
+      "size": 1145
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/freeze.py": {
+      "sha256": "d6ea94ff45439f3209685f262a008fd3a206d4572b2b1ddf547c7e493be54977",
+      "size": 2803
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/held-source-manifest.json": {
+      "sha256": "e5e3a3180de9e8c3a67a2e262ccd4e5d830bef81608edf767754cf61a6c0c6d2",
+      "size": 10431
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/0/native.py": {
+      "sha256": "f49c658dec779028fdbc2dab9741ecf5edeced1605b99121fa1e78e285ec578c",
+      "size": 28781
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/1/candidate_host.py": {
+      "sha256": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+      "size": 8817
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/10/component-manifest.json": {
+      "sha256": "ea95dbdcac7b61ca0c43338338ea73cf135d4b9b806fe1effb72cc9debad84bf",
+      "size": 167671
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/11/report.json": {
+      "sha256": "f3df071c42e3f2c24ddf3cd647c33050e37025eb3511ba579b1028ce4e549b7b",
+      "size": 32661
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/12/grim": {
+      "sha256": "8fb2e84762652dd82dea186f415577cb40ff7e4fab7f6ae59100848c7428e23d",
+      "size": 43504
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/13/magick": {
+      "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+      "size": 14824
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/14/tuple_preflight.py": {
+      "sha256": "bc9da99db342313666d997d7175ba2963e97ec415564b6bb68f2432956f1690c",
+      "size": 2651
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/15/component-manifest.json": {
+      "sha256": "3b1f68d711718c62011a32fd64d6ae70d14bda76489f1b5deb3d6904a2fbccc9",
+      "size": 18031
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/16/link-closure.json": {
+      "sha256": "2c64a89619a5f97256030a22e434a3d3bba472361c2983feed09a448997d42a3",
+      "size": 20150
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/17/report.json": {
+      "sha256": "673219a31839ff80f232bf61cd2d31b0d24d9f9f43e5fea44ac5f5c59d6dd2c6",
+      "size": 696755
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/18/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/19/endpoint.py": {
+      "sha256": "af542ec41ddcb7bc73b15723e7d8d9b340870901e5e9d0a4883b3babb876cc87",
+      "size": 9532
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/2/core_host.py": {
+      "sha256": "b22dadb4c49f5e72ec652544723e264d45feda3b9dd02a8eeff092cc2aa471b6",
+      "size": 10939
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/20/geometry_endpoint.py": {
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/3/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/4/aq-tuple.json": {
+      "sha256": "3f84f6bd76d0e1ed56405bff08fde0b0d759c707c6f3defc1f2d20a9f53d2164",
+      "size": 630
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/5/upstream.json": {
+      "sha256": "1969d24a50bd4c3e4c1477348ce7a55343749b383d947cdff7628687fbbd1f92",
+      "size": 2531
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/6/client-build-report.json": {
+      "sha256": "a6fa464f3390d64e8e18b3275d1cbb2d5cc2b5bed55df635fc27166f347911cc",
+      "size": 596
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/7/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/8/report.json": {
+      "sha256": "efac40983b96e59498626f552e632c765bdee3d04fd857519441afe70c57cae0",
+      "size": 399282
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/inputs/9/held-source-manifest.json": {
+      "sha256": "7119b6b63fbb60a39b9eae19d67b87746c00b75096f063dee0d5bf82c124a5a0",
+      "size": 208357
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/desired-maximize-duplicate-pixels-0.png": {
+      "sha256": "022097a60fe57b284a06d80a80e3e40a80214d1064367cbe4e41b6ab8eeef6e2",
+      "size": 5434
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/desired-restore-duplicate-pixels-0.png": {
+      "sha256": "dd542907e8a38bdb77f60fe44f0177491f23dd00d2219a5f3e19ad0c2e7fa865",
+      "size": 36615
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/exact-maximize-retry-pixels-0.png": {
+      "sha256": "a13dcf844ef5feddf92dde4a352db9e23db19d4fa8d35d92003f9d121a0d86a8",
+      "size": 5435
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/host-evidence.json": {
+      "sha256": "ff2d100982b49ce033390340d9c445aa624c5dd256cc19884135758d302a9ad0",
+      "size": 211958
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/hyprland.log": {
+      "sha256": "70e563d2b136a35a085ef2b93bcc6187c3bb822040536d57f055dbab225edd66",
+      "size": 2615
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/maximize-pixels-0.png": {
+      "sha256": "f6b52be5191a4d6f8079f71e4fcdd469ab3ebc41c9f7a63fd126d14ecb9f5c44",
+      "size": 5434
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/ordinary-pixels-0.png": {
+      "sha256": "2805895a759b25b141678f6cbecc98abcf44c9e189a23feb65ed5f73e6c2f768",
+      "size": 36614
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/privateBus.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/restore-geometry-pixels-0.png": {
+      "sha256": "daac9c31ad5e91de0580812996e54f6e8bb219e03a8fad988ca537d61b76b862",
+      "size": 36615
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/restore-minimized-maximized-pixels-0.png": {
+      "sha256": "dfc8e21aa613f8fe69ba5e492497da0cbc834248275c7e12bced337f350b4011",
+      "size": 5434
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791107527_929723960/hyprland.log": {
+      "sha256": "e31940144ebfa66b30feffc7cde811863db75ee4eb630a0db217877430c29c7f",
+      "size": 24338
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/runtime-archive/hyprland.lua": {
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/weston-renderer.log": {
+      "sha256": "3f642c802586a59d07d909ed894d05ffc549023bfc825ae7721dda6d7ef89035",
+      "size": 3769
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native-evidence/xdg-max-client.log": {
+      "sha256": "5045b60e58e151a16981481209e513c8f9e598e1cc8cd3de05399d76ced468b7",
+      "size": 23714
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/native.py": {
+      "sha256": "f49c658dec779028fdbc2dab9741ecf5edeced1605b99121fa1e78e285ec578c",
+      "size": 28781
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/report.json": {
+      "sha256": "d1356eaac9637237a74f38a9194871fa3df7a550c39533ccd2e3e196e0705816",
+      "size": 461043
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/native.py": {
+      "sha256": "f49c658dec779028fdbc2dab9741ecf5edeced1605b99121fa1e78e285ec578c",
+      "size": 28781
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/original-v55-native.py": {
+      "sha256": "e30dc4d4703454b3d767ac4c40992ea4755f34b2edec91b0d3dba3723988c3ae",
+      "size": 29339
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/0/native.py": {
+      "sha256": "f49c658dec779028fdbc2dab9741ecf5edeced1605b99121fa1e78e285ec578c",
+      "size": 28781
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/1/candidate_host.py": {
+      "sha256": "7daa8982a687ab8f95333952ea102cff2b755cbf5bc5d6770ca1828c4c537534",
+      "size": 8817
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/10/component-manifest.json": {
+      "sha256": "ea95dbdcac7b61ca0c43338338ea73cf135d4b9b806fe1effb72cc9debad84bf",
+      "size": 167671
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/11/report.json": {
+      "sha256": "f3df071c42e3f2c24ddf3cd647c33050e37025eb3511ba579b1028ce4e549b7b",
+      "size": 32661
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/12/grim": {
+      "sha256": "8fb2e84762652dd82dea186f415577cb40ff7e4fab7f6ae59100848c7428e23d",
+      "size": 43504
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/13/magick": {
+      "sha256": "dbc5182c0a05e4a12cdba9effb3184890612cdf6dbb716c07524a55eb1079b18",
+      "size": 14824
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/14/tuple_preflight.py": {
+      "sha256": "bc9da99db342313666d997d7175ba2963e97ec415564b6bb68f2432956f1690c",
+      "size": 2651
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/15/component-manifest.json": {
+      "sha256": "3b1f68d711718c62011a32fd64d6ae70d14bda76489f1b5deb3d6904a2fbccc9",
+      "size": 18031
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/16/link-closure.json": {
+      "sha256": "2c64a89619a5f97256030a22e434a3d3bba472361c2983feed09a448997d42a3",
+      "size": 20150
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/17/report.json": {
+      "sha256": "673219a31839ff80f232bf61cd2d31b0d24d9f9f43e5fea44ac5f5c59d6dd2c6",
+      "size": 696755
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/18/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/19/endpoint.py": {
+      "sha256": "af542ec41ddcb7bc73b15723e7d8d9b340870901e5e9d0a4883b3babb876cc87",
+      "size": 9532
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/2/core_host.py": {
+      "sha256": "b22dadb4c49f5e72ec652544723e264d45feda3b9dd02a8eeff092cc2aa471b6",
+      "size": 10939
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/20/geometry_endpoint.py": {
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/3/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/4/aq-tuple.json": {
+      "sha256": "3f84f6bd76d0e1ed56405bff08fde0b0d759c707c6f3defc1f2d20a9f53d2164",
+      "size": 630
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/5/upstream.json": {
+      "sha256": "1969d24a50bd4c3e4c1477348ce7a55343749b383d947cdff7628687fbbd1f92",
+      "size": 2531
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/6/client-build-report.json": {
+      "sha256": "a6fa464f3390d64e8e18b3275d1cbb2d5cc2b5bed55df635fc27166f347911cc",
+      "size": 596
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/7/native-build-report.json": {
+      "sha256": "30b119a1552935d68cfe303cd2373ad49048c9a5b41d6b106af3d7347a4c5663",
+      "size": 1743
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/8/report.json": {
+      "sha256": "efac40983b96e59498626f552e632c765bdee3d04fd857519441afe70c57cae0",
+      "size": 399282
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/inputs/9/held-source-manifest.json": {
+      "sha256": "7119b6b63fbb60a39b9eae19d67b87746c00b75096f063dee0d5bf82c124a5a0",
+      "size": 208357
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/native.py": {
+      "sha256": "f49c658dec779028fdbc2dab9741ecf5edeced1605b99121fa1e78e285ec578c",
+      "size": 28781
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight-1791107344520008568/report.json": {
+      "sha256": "40770511f4e19b33c816f4ce06211168c4e442c69d24ae181f1c283633b4efd6",
+      "size": 8295
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/preflight.py": {
+      "sha256": "c3fad91b6bbf314bc912877c8bd7ef757f891cfd0d7c18e8e537663b60bed310",
+      "size": 1985
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/source-check-1791107016697937364/report.json": {
+      "sha256": "048134193392f95e4818aadcf6238ab2c1ebcb73e5743c0c7b281c8884cf8dcb",
+      "size": 1969
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/source-check-1791107282510652130/report.json": {
+      "sha256": "f70eac6b88c4eb4c21443ce32a7068bacca34ca4a35996ed1c31857c5cf7bb77",
+      "size": 2154
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/source-check-1791107385891759147/report.json": {
+      "sha256": "35566eb5494060393c9fbad135171cef9431d3b62644784a6e79ff139469960a",
+      "size": 2154
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/source-check.py": {
+      "sha256": "4c1e829f33a52e8e2da4cad899ae43722f09aed06015b3f68dd6a668eef96b52",
+      "size": 3018
+    },
+    "implementation/elm-geometry-monitor-native-regression-v79/qa/tuple_preflight.py": {
+      "sha256": "bc9da99db342313666d997d7175ba2963e97ec415564b6bb68f2432956f1690c",
+      "size": 2651
+    },
+    "implementation/elm-geometry-monitor-native-acceptance-v84/qa/freeze.py": {
+      "sha256": "bbd578366cce9f3403833b97df5a1fae5ae7718f82d85bb88f788c06c01a4d41",
+      "size": 3551
+    }
+  },
+  "reports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-native-v77/qa/native-1791107389900372198/report.json",
+      "sha256": "e79f5bc2cb688f5e2022ab4eb1346c0681c2d2d2175f5b5b7259dc777990fd89",
+      "passed": false,
+      "cleanupPassed": true
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-native-regression-v79/qa/native-1791107523831396904/report.json",
+      "sha256": "d1356eaac9637237a74f38a9194871fa3df7a550c39533ccd2e3e196e0705816",
+      "passed": true,
+      "cleanupPassed": true
+    }
+  ],
+  "remaining": [
+    "Correct menu08 disconnect precondition without increasing absolute6s deadline",
+    "Full09 actual matching receipt held while facts and notifications progress",
+    "Menu10 exact target retirement/replacement",
+    "Fresh semantic traces for original14menu+3refresh and geometry setup failures",
+    "Shared-output durable admission/recovery and remaining S01\u2013S16 mandatory release/deployment gates"
+  ]
+}

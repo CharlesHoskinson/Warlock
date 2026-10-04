@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Native runner source, AST preservation and actual owning tuple preflight closure only; no GUI or operation acceptance",
+  "checks": [
+    {
+      "name": "actual preflight passed",
+      "passed": true
+    },
+    {
+      "name": "tested source core_host.py",
+      "passed": true
+    },
+    {
+      "name": "tested source candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "tested source aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "tested source native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "tested source upstream.json",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/core_host.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "frozen ancestor parentHost",
+      "passed": true
+    },
+    {
+      "name": "frozen ancestor parentRunner",
+      "passed": true
+    },
+    {
+      "name": "frozen ancestor copiedClientHelper",
+      "passed": true
+    },
+    {
+      "name": "frozen ancestor originalCoreHost",
+      "passed": true
+    },
+    {
+      "name": "frozen ancestor clientHelperParent",
+      "passed": true
+    },
+    {
+      "name": "selected own host pinned",
+      "passed": true
+    },
+    {
+      "name": "executed scope preserved",
+      "passed": true
+    }
+  ]
+}
