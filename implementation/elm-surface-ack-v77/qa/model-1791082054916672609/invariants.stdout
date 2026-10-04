@@ -1,0 +1,908 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 0,
+      open: false,
+      pending: false,
+      pub: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 0,
+      open: false,
+      pending: false,
+      pub: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: true,
+      pub: 2
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 1,
+      appliedPub: 2,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: true,
+      pub: 2
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: false,
+      pub: 3
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: false,
+      pub: 3
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: false,
+      pub: 3
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: true,
+      pub: 4
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: false,
+      pub: 5
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 1,
+      appliedPub: 5,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: false,
+      pub: 5
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: false,
+      pub: 6
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 1,
+      appliedPub: 6,
+      attempts: 0,
+      barrier: 0,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: true,
+      pending: false,
+      pub: 6
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 1,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: false,
+      pending: false,
+      pub: 6
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 1,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: false,
+      pending: false,
+      pub: 6
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 1,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: false,
+      pending: false,
+      pub: 6
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 1,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 1,
+      open: false,
+      pending: false,
+      pub: 6
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 1,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 2,
+      open: true,
+      pending: true,
+      pub: 7
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 2,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 2,
+      open: false,
+      pending: false,
+      pub: 7
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 2,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: true,
+      pub: 8
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 3,
+      appliedPub: 8,
+      attempts: 0,
+      barrier: 2,
+      configured: 0,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: true,
+      pub: 8
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 3,
+      appliedPub: 8,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 3,
+      issuedPub: 8,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 8
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 3,
+      appliedPub: 8,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 3,
+      issuedPub: 8,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 8
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: true,
+      pub: 9
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 3,
+      appliedPub: 9,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 0,
+      focusedPub: 0,
+      issuedLease: 3,
+      issuedPub: 9,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 9
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: true,
+      appliedLease: 3,
+      appliedPub: 9,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 9
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 3,
+      appliedPub: 9,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 9
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: true,
+      pub: 10
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 11
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 11
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 2,
+      configured: 3,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: true,
+      pending: false,
+      pub: 12
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 3,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: false,
+      pending: false,
+      pub: 12
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 3,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: false,
+      pending: false,
+      pub: 12
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 3,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 3,
+      open: false,
+      pending: false,
+      pub: 12
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 3,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 4,
+      open: true,
+      pending: true,
+      pub: 13
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 3,
+      configured: 4,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 4,
+      open: true,
+      pending: true,
+      pub: 13
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 3,
+      configured: 4,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 4,
+      open: true,
+      pending: true,
+      pub: 13
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 3,
+      configured: 4,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 4,
+      open: true,
+      pending: false,
+      pub: 14
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 4,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 4,
+      open: false,
+      pending: false,
+      pub: 14
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 4,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 5,
+      open: true,
+      pending: true,
+      pub: 15
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 5,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 5,
+      open: false,
+      pending: false,
+      pub: 15
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      accepted: false,
+      appliedLease: 0,
+      appliedPub: 0,
+      attempts: 0,
+      barrier: 5,
+      configured: 0,
+      emitted: false,
+      focusedLease: 3,
+      focusedPub: 9,
+      issuedLease: 0,
+      issuedPub: 0,
+      lease: 5,
+      open: false,
+      pending: false,
+      pub: 15
+    }
+}
+
+[ok] No violation found (2056ms at 486 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

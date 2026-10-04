@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "sourceLogSHA256": "489f20d77cbb9ddbf2688f836ca0b66677b802d98c76e5b637d9d10019603aaf",
+  "defaultConfigure": [
+    50,
+    48,
+    700,
+    420
+  ],
+  "leases": [
+    {
+      "lease": "1",
+      "popupId": "50",
+      "surfaceId": "49",
+      "configureLine": 509,
+      "surfaceConfigureLine": 520,
+      "ackLine": 521,
+      "openLine": 523,
+      "publication": "4",
+      "renderLine": 605,
+      "focusIssueLine": 606,
+      "focusAppliedLine": 628
+    },
+    {
+      "lease": "2",
+      "popupId": "52",
+      "surfaceId": "53",
+      "configureLine": 720,
+      "surfaceConfigureLine": 731,
+      "ackLine": 732,
+      "openLine": 734,
+      "publication": "9",
+      "renderLine": 803,
+      "focusIssueLine": 804,
+      "focusAppliedLine": 819
+    },
+    {
+      "lease": "3",
+      "popupId": "44",
+      "surfaceId": "37",
+      "configureLine": 926,
+      "surfaceConfigureLine": 937,
+      "ackLine": 938,
+      "openLine": 940,
+      "publication": "14",
+      "renderLine": 1015,
+      "focusIssueLine": 1016,
+      "focusAppliedLine": 1042
+    }
+  ],
+  "scope": "Exact owning Wayland popup/surface configure and ack precede native grab completion, current DOM render and focus. No transformed/multi-output/hardware/AT acceptance."
+}

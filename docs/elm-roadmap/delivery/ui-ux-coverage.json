@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T02:34:08.987015+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T02:51:55.812344+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6668,6 +6668,43 @@
       "slice": "implementation/elm-surface-launch-qa-v72",
       "level": "actual dual-view native role/grab/input and owned default launch",
       "acceptance": "Unit-scale800x600/bar48/popup700x420, owned protocol pointer/keyboard and default GIO launch only. Actual AT/composing IME/human UX/outputs/hardware/full regression/release open."
+    },
+    {
+      "optimizedMainAndPopupBuild": true,
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "actualHostCTestGroups": 6,
+      "actualSurfaceCTestGroups": 4,
+      "quintNamedRuns": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeChecks": 36,
+      "priorNative32IdentitiesRetained": true,
+      "scopedConfigureRenderFocusAcknowledgements": true,
+      "exactOwningPopupConfigureAckBeforeFocus": true,
+      "nativeDefaultConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "actualFocusAcknowledgedOnLeases": 3,
+      "leaseScopedNativeCallbacks": true,
+      "nativeCPreflightFaultTests": true,
+      "realGtkWebKitFaultInjectionAccepted": false,
+      "automaticModelBasedCRefinement": false,
+      "normalHostBackendExit": true,
+      "actualOwnedLaunchChildExitCode": 0,
+      "cleanupPassed": true,
+      "nativeATIMEAccepted": false,
+      "fullWindowRegressionAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-ack-qa-v78/qa/slice-manifest.json",
+      "slice": "implementation/elm-surface-ack-qa-v78",
+      "level": "actual current-publication native configure/render/DOM focus synchronization and retained default launch/input",
+      "acceptance": "Only unit-scale800x600 private output and protocol input helper. Native GTK/WebKit fault campaigns, keyboard bar invocation/recovery controls, full91 regression, transformed outputs, AT/composing IME/human/hardware/release open."
     }
   ]
 }

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "f7a0ae83797147a8852bd12303644a07",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T02:51:55.850981+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-surface-ack-qa-v78",
+  "nextWork": [
+    "Implement missing bar reconnect/recovery and operation accessible names; qualify original91 window regression on dual-view candidate. Then real GTK/WebKit fault injection, gesture provenance, outputs/reflow/keyboard/AT/IME/hardware/release."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-surface-ack-qa-v78/qa/slice-manifest.json",
+      "sha256": "8509f806f105eaed5380ea2f3d2c4083f8f0cc541a4ed36da3db6187068e9a2d",
+      "size": 4645
+    },
+    {
+      "path": "implementation/elm-surface-ack-qa-v78/qa/protocol-focus-order.json",
+      "sha256": "6372f86528d61bf67b9ea120c743bdab0d18b259036d23024d806f8d13391b12",
+      "size": 1272
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

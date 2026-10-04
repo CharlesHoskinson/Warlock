@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-surface-launch-qa-v72",
+  "activeSlice": "implementation/elm-surface-ack-qa-v78",
   "status": "Native GTK popup-window candidate passes actual layer-parent xdg_popup/grab/default geometry/bar48 and native19 lifecycle/input checks. V64 failed grab bookkeeping preserved; V65 unmap retirement accepted within experiment. Final Elm bar/presentation-only popup, stale epochs, outputs/IME/AT/full scene/hardware/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -661,9 +661,43 @@
       "fullRegressionAccepted": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-surface-launch-qa-v72/qa/slice-manifest.json"
+    },
+    "nativePopupAcknowledgementsV77V78": {
+      "optimizedMainAndPopupBuild": true,
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "actualHostCTestGroups": 6,
+      "actualSurfaceCTestGroups": 4,
+      "quintNamedRuns": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeChecks": 36,
+      "priorNative32IdentitiesRetained": true,
+      "scopedConfigureRenderFocusAcknowledgements": true,
+      "exactOwningPopupConfigureAckBeforeFocus": true,
+      "nativeDefaultConfigure": [
+        50,
+        48,
+        700,
+        420
+      ],
+      "actualFocusAcknowledgedOnLeases": 3,
+      "leaseScopedNativeCallbacks": true,
+      "nativeCPreflightFaultTests": true,
+      "realGtkWebKitFaultInjectionAccepted": false,
+      "automaticModelBasedCRefinement": false,
+      "normalHostBackendExit": true,
+      "actualOwnedLaunchChildExitCode": 0,
+      "cleanupPassed": true,
+      "nativeATIMEAccepted": false,
+      "fullWindowRegressionAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-ack-qa-v78/qa/slice-manifest.json"
     }
   },
-  "next": "Qualify atomic commit preflight and cross-manager/stale-frame/wrapper faults against the native host; implement configured/render/focus acknowledgements and gesture provenance, then full window regression, keyboard/reflow/AT/IME and per-output UX acceptance.",
+  "next": "Complete reconnect/recovery controls and window-operation accessible names in the surface graph, then run the original91 window regression on this dual-view tuple. Continue actual GTK/WebKit stale/manager/readiness fault injection, gesture provenance, per-output/reflow/keyboard/AT/IME/hardware and release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

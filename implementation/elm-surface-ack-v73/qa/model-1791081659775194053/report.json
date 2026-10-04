@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "Abstract native configuration/presentation/focus readiness and retirement ordering. Direct C tests/native observations are separate; no automatic model-based C refinement asserted",
+  "sourceSHA256": "7099fdd489c498e95caadb9598ca0eb053e4ff5d80d74fd937ca3b1f10b541e5",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "surfaces.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--match=^(configureFirstTest|renderFirstTest|staleRenderTest|staleFocusTest|currentReplacementTest|duplicateFocusTest|prematureActionTest|launchCloseTest|refreshFocusTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 9,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "surfaces.qnt": "7099fdd489c498e95caadb9598ca0eb053e4ff5d80d74fd937ca3b1f10b541e5",
+    "model.py": "bb0ba0b2627074f42bb3bc9c510323a2e46cb1c2f1d6d4ae6b67e6f255ca28ad",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-configureFirstTest-0.itf.json": "bbfb8b05cd4b9ba6baa1ab89b4763478c4ffdcba81273839a1f684141e6fa181",
+    "named-renderFirstTest-1.itf.json": "1fc770d409b7c6e3cf52f9180bf9f7cedb8673c05d7efbc3b7eaea3c0d2ed81e",
+    "named-staleRenderTest-2.itf.json": "c0b953eed03aba63a4dd185ddf6a35e43c3fc09d425ace0a93017efc17ece428",
+    "named-staleFocusTest-3.itf.json": "400a10c4c463c77b963940dfe59d48bd38900f3d94f060c5138675d370f83602",
+    "named-currentReplacementTest-4.itf.json": "8296cc3af7c7536c01cf106a1727e2c690cd478c627e69adb16691049dca44b8",
+    "named-duplicateFocusTest-5.itf.json": "dab8536fac3a4aadcd3eb11c296f2bd783355340b023f5540e030fb12905e23c",
+    "named-prematureActionTest-6.itf.json": "2511f7eb143b4ce472f2e9d494051a2e2d39b29e813337088db94a530678065b",
+    "named-launchCloseTest-7.itf.json": "60ad5be23d9f63053285c7a5999d2d1027755d657a1181d6c56d8cd86b98936d",
+    "named-refreshFocusTest-8.itf.json": "c87d6f8e21152b4d0afb369fa0a16c767f4af8f04e2d650e204287d9d7b2b6e4",
+    "named.stdout": "5426b420f56c663e9fbbbc80ecce9e609512bd7de3834cecea864c9ad3dbd7c9",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "64ae516ddfb346e627e123283f83bbd9919eca8492a7f26e2f20747cbf4af629",
+    "invariants.stdout": "f7b1b40539c7d36d8720e9b53eb4c0ca0014eaec21c32eb1c1bf933898f82cf3",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
