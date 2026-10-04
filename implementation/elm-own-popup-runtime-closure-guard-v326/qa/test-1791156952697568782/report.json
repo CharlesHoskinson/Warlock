@@ -1,0 +1,68 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual procfs self ELF/libc plus synthetic hostile maps; no native compositor/plugin load",
+  "mutants": [
+    {
+      "name": "digest-bypass",
+      "killed": true,
+      "exitCode": 1
+    },
+    {
+      "name": "start-bypass",
+      "killed": true,
+      "exitCode": 1
+    },
+    {
+      "name": "inode-bypass",
+      "killed": true,
+      "exitCode": 1
+    },
+    {
+      "name": "alias-bypass",
+      "killed": true,
+      "exitCode": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v326/guard.py": "32f73ca84d7b495392cdfd2281e50398844366a62cafd1b5af2c323f586d8dbb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v326/qa/test.py": "2c4ea6913dbddc91edf6d7d208eb7652942a92edcbefc54885424e323f39309f"
+  },
+  "checks": [
+    "actual self ELF/libc map identity",
+    "actual self process bracket never native claim",
+    "wrong start",
+    "wrong artifact digest",
+    "expired deadline",
+    "missing mapped binary",
+    "wrong mapped inode",
+    "alternate binary",
+    "deleted binary alternate",
+    "oversize",
+    "malformed",
+    "bad permissions",
+    "no inode",
+    "conflicting inode",
+    "escaped map pathname",
+    "stat wrong PID",
+    "boolean PID",
+    "zombie child"
+  ],
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "artifacts": {
+    "guard.py": "32f73ca84d7b495392cdfd2281e50398844366a62cafd1b5af2c323f586d8dbb",
+    "test.py": "2c4ea6913dbddc91edf6d7d208eb7652942a92edcbefc54885424e323f39309f",
+    "digest-bypass.py": "ee58435c45f38daf3081a77201ad13db171e4d7fc59caec130a512a3dff5fbb8",
+    "digest-bypass.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "digest-bypass.stderr": "42ad157de185332a5f2234b12e2c22220ceee85957649d032391d4d3c9081d90",
+    "start-bypass.py": "baaa2735553d7c9dce8451fa92b39d874b74aa6c3c516c5f9bc1d69032199417",
+    "start-bypass.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "start-bypass.stderr": "b77eafbd112b0c34f52a4c15f4fcdcf12c91008b1b8139264622409496f65d3e",
+    "inode-bypass.py": "b25a8f0efce5f1c33bf2bb19bb8c90ef38a120d796f5f21f3496f0af2d172315",
+    "inode-bypass.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inode-bypass.stderr": "a62a877d695cb8fddd8d8243e80f62b177917cbe39cbaaef1dfa681cee90ff3e",
+    "alias-bypass.py": "edf4c0b896d1bcafc08821410465471ada845a71269fd73f70b0291cf782771f",
+    "alias-bypass.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "alias-bypass.stderr": "29d5d8a3c0e9af8a08dfbde8ea303bdef747631f7440a95de3eb089480a87d3f"
+  }
+}

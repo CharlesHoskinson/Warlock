@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v326/qa/test-1791156969867317853/test.py", line 38, in <module>
+    print(json.dumps(exercise(Path(sys.argv[2]))));raise SystemExit(0)
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v326/qa/test-1791156969867317853/test.py", line 26, in exercise
+    bad=copy.deepcopy(maps);bad[binary]=(identity[binary][0],identity[binary][1],identity[binary][2]+1);reject('wrong mapped inode',lambda:g.match_maps(bad,required,identity))
+                                                                                                        ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v326/qa/test-1791156969867317853/test.py", line 11, in reject
+    raise AssertionError('unsafe acceptance: '+name)
+AssertionError: unsafe acceptance: wrong mapped inode

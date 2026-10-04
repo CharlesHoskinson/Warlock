@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual procfs self ELF/libc plus synthetic hostile maps; no native compositor/plugin load",
+  "mutants": [],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v329/guard.py": "5128d61dc32af99cbb64f21afd0d1a30c0dcc3b60d042367300386b11256b7e7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v329/qa/test.py": "a4adc2056f5457022f18f67bfca8b7b343801c41514c7bed8b47711421943dbf"
+  },
+  "error": "IsADirectoryError(21, 'Is a directory')",
+  "artifacts": {
+    "guard.py": "5128d61dc32af99cbb64f21afd0d1a30c0dcc3b60d042367300386b11256b7e7",
+    "test.py": "a4adc2056f5457022f18f67bfca8b7b343801c41514c7bed8b47711421943dbf"
+  }
+}

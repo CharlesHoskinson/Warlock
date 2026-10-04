@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual procfs self ELF/libc plus synthetic hostile maps; no native compositor/plugin load",
+  "mutants": [],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v326/guard.py": "134328843bc755d7bdd19435ad05dc719ffa034758363b87b100aeceddfbea61",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-runtime-closure-guard-v326/qa/test.py": "a578664116a73dacc6e9a4a70569b645e9f899248a31e52b9d9720fe68361b1d"
+  },
+  "error": "Refused('mapped inode differs: /usr/bin/python3.14')",
+  "artifacts": {
+    "guard.py": "134328843bc755d7bdd19435ad05dc719ffa034758363b87b100aeceddfbea61",
+    "test.py": "a578664116a73dacc6e9a4a70569b645e9f899248a31e52b9d9720fe68361b1d"
+  }
+}
