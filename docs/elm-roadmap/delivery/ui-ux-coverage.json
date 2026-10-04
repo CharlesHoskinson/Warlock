@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T08:34:29.238626+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T08:40:32.005220+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7381,6 +7381,49 @@
         "Native busy is a held actual QA Journal writer, not two production shells; legacy owner provisioning performed explicitly by fixture",
         "Original full137 on V256/V89 does not qualify newer geometry/menu/GPU release or independent restore animation deadlines",
         "Other native storage stages/classes, physical/human UX, AT/IME/budgets/C00/full release remain open"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Actual committed minimize/restore followed by broker settlement read refusal, repair/Unknown UI and explicit same-host reconnect without replay",
+      "cases": [
+        {
+          "operation": "minimize",
+          "nativeChecks": 45,
+          "actualPixelInputStages": 6,
+          "nativeCommittedStateAcrossRecovery": true,
+          "sameHost": true,
+          "cleanupPassed": true
+        },
+        {
+          "operation": "restore",
+          "nativeChecks": 47,
+          "actualPixelInputStages": 6,
+          "nativeCommittedStateAcrossRecovery": false,
+          "sameHost": true,
+          "cleanupPassed": true
+        }
+      ],
+      "nativeCheckCounts": [
+        45,
+        47
+      ],
+      "selectedNativeWorkloads": 2,
+      "actualPixelInputStagesPerCase": 6,
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "nativeSettlementReadRefusalAccepted": true,
+      "hostBindingRetryAccepted": false,
+      "nativeDiskFullAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-settlement-v265/qa/slice-manifest.json",
+      "limitations": [
+        "Actual public-mode refusal of settle read after native Committed, not native disk exhaustion or post-rename directory-fsync failure",
+        "Host journal binding retry loses instance descriptor on failure; reproduce/fix/qualify next",
+        "Original137/compiler/Quint and earlier recovery packets retained, not rerun; full release remains open"
       ]
     }
   ]

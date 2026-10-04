@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-storage-qualified-v262",
-  "status": "Stale disabled actions preserve recovery explanation; actual busy/legacy-owner correction and original full137 GUI regression qualified on V256/V89. Additional settlement/host-bind/full storage, newer integration and full release remain open.",
+  "activeSlice": "implementation/elm-storage-settlement-v265",
+  "status": "Actual committed minimize/restore followed by failed journal settlement qualified45/47 with six pixel/input stages and same-host explicit recovery without replay. Host-bind retry descriptor defect, other storage stages and full release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1468,6 +1468,44 @@
       "newerGeometryMenuGPUReleaseAccepted": false,
       "completedRequirementIds": [],
       "evidence": "implementation/elm-storage-qualified-v262/qa/slice-manifest.json"
+    },
+    "storageSettlementV265": {
+      "passed": true,
+      "scope": "Actual committed minimize/restore followed by broker settlement read refusal, repair/Unknown UI and explicit same-host reconnect without replay",
+      "cases": [
+        {
+          "operation": "minimize",
+          "nativeChecks": 45,
+          "actualPixelInputStages": 6,
+          "nativeCommittedStateAcrossRecovery": true,
+          "sameHost": true,
+          "cleanupPassed": true
+        },
+        {
+          "operation": "restore",
+          "nativeChecks": 47,
+          "actualPixelInputStages": 6,
+          "nativeCommittedStateAcrossRecovery": false,
+          "sameHost": true,
+          "cleanupPassed": true
+        }
+      ],
+      "nativeCheckCounts": [
+        45,
+        47
+      ],
+      "selectedNativeWorkloads": 2,
+      "actualPixelInputStagesPerCase": 6,
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "nativeSettlementReadRefusalAccepted": true,
+      "hostBindingRetryAccepted": false,
+      "nativeDiskFullAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-settlement-v265/qa/slice-manifest.json"
     }
   },
   "next": [

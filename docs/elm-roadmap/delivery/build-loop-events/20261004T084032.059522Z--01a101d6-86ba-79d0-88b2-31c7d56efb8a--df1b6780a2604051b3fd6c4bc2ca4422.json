@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "df1b6780a2604051b3fd6c4bc2ca4422",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T08:40:32.059522+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-storage-settlement-v265",
+  "nextWork": [
+    "Reproduce/fix host admission lock/privacy failure retiring instance descriptor and qualify same-host retry; full/readonly/later fsync storage, legacy provisioning, coherent final matrix, global broker revocation, restore timing and new geometry/menu/GPU/full release"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-storage-settlement-v265/qa/slice-manifest.json",
+      "sha256": "be8ae578c55863339af7fa3b533229fa88c67d08715f3820d5ca940a07c90988",
+      "size": 15368
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
