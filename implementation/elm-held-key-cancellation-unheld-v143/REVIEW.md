@@ -1,0 +1,3 @@
+Fresh native regression derivative of elm-parent-transport-native-v111. Only the AQ descriptor changes to frozen V120 held-cancellation. Original runner assertions, scenario identities, deadlines, recipients, pixels where applicable, owning Core89/plugin90 bindings and ordered cleanup remain unchanged. Native-only bounded qualification; full release remains open.
+
+Fresh AQ138-only descriptor derivative. Original native runner, full owning Core89/plugin90 pair, deadlines and assertions unchanged. Historical AQ105/120 scope strings remain but mapped AQ138 digest and frozen descriptor establish actual runtime tuple.

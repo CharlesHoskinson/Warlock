@@ -1,0 +1,51 @@
+--- original/geometry
++++ staged/geometry
+@@ -7,6 +7,7 @@
+ const negotiated=[...baseline,native({protocolVersion:3,kind:'host-geometry-negotiate'}),native(fixture.attach),native(fixture.facts)];
+ const timer=setTimeout(()=>{throw Error('Geometry replay deadline');},20000);
+ function replay(events){return new Promise(resolve=>{const receive=value=>{app.ports.outgoing.unsubscribe(receive);resolve(value)};app.ports.outgoing.subscribe(receive);app.ports.incoming.send(events)});}
++const stage=require('./stage.cjs')(replay);
+ const cases=[];
+ async function check(name,events,verify){let rows;try{rows=await replay(events);verify(rows,rows.at(-1));cases.push({name,passed:true,rows})}catch(error){cases.push({name,passed:false,error:String(error),rows});console.error(name,error.stack)}}
+ const action=(frame,id,surface='popup')=>({kind:'action',action:{surfaceProtocol:2,kind:'surface-action',surface,publication:frame.publication,lease:frame.lease,id}});
+@@ -31,7 +32,7 @@
+  await check('geometry observation separately admitted with independent revision',negotiated,(_,last)=>{assert.equal(last.geometry.revision,'101');assert.equal(last.shell.effects.request,'0');assert.equal(last.requests.length,0);assert.equal(last.shell.effects.windows[0].minimized,false)});
+  const ordinary=await open(negotiated);
+  await check('negotiated ordinary Restore disabled Maximize enabled frozen table',ordinary.events,(_,last)=>{assert.deepEqual(last.frame.popup.map(x=>[x.label,x.enabled]),[['Close',true],['Restore',false],['Minimize',true],['Maximize',true]])});
+- const max=[...ordinary.events,action(ordinary.last.frame,'menu:1:2')];
++ const max=await stage([...ordinary.events,action(ordinary.last.frame,'menu:1:2')]);
+  await check('Maximize uses actual shared allocator and geometry revision full key',max,(_,last)=>{assert.deepEqual(last.requests,[fixture.maxCommand]);assert.equal(last.registry,1);assert.equal(last.outstanding,1);assert.equal(last.frame.mode,'closed');assert.equal(last.geometry.windows[0].mode,'ordinary');assert.equal(last.shell.effects.windows[0].minimized,false)});
+  await check('duplicate geometry callback cannot allocate again',[...max,action(ordinary.last.frame,'menu:1:2')],(_,last)=>{assert.equal(last.requests.length,0);assert.equal(last.shell.effects.request,'1');assert.equal(last.registry,1)});
+  const committed=[...max,native(receipt(fixture.maxCommand))];
+@@ -39,19 +40,19 @@
+  let sequence=await observe(committed,{mode:'maximized',minimized:false,known:true},2,102);
+  const maximized=await open(sequence);
+  await check('observed maximized supports RestoreGeometry and disabled Maximize',maximized.events,(_,last)=>{assert.deepEqual(last.frame.popup.map(x=>[x.label,x.enabled]),[['Close',true],['Restore',true],['Minimize',true],['Maximize',false]]);assert.equal(last.geometry.windows[0].mode,'maximized')});
+- const min=[...maximized.events,action(maximized.last.frame,`menu:${maximized.last.menu.id}:1`)];
++ const min=await stage([...maximized.events,action(maximized.last.frame,`menu:${maximized.last.menu.id}:1`)]);
+  const minCommand=clone(base.firstCommand);minCommand.intent.request='2';minCommand.intent.generation='2';minCommand.intent.context.revision='2';
+  await check('Maximized Minimize uses legacy scene revision and next shared IDs',min,(_,last)=>{assert.deepEqual(last.requests,[minCommand]);assert.equal(last.geometry.windows[0].mode,'maximized')});
+  sequence=await observe([...min,native(receipt(minCommand))],{mode:'maximized',minimized:true,known:true},3,103);
+  const minimized=await open(sequence);
+  await check('minimized saved Max keeps legacy Restore and disables Maximize',minimized.events,(_,last)=>{assert.deepEqual(last.frame.popup.map(x=>[x.label,x.enabled]),[['Close',true],['Restore',true],['Minimize',false],['Maximize',false]])});
+- const restoreMin=[...minimized.events,action(minimized.last.frame,`menu:${minimized.last.menu.id}:0`)];
++ const restoreMin=await stage([...minimized.events,action(minimized.last.frame,`menu:${minimized.last.menu.id}:0`)]);
+  const restoreMinCommand=clone(minCommand);restoreMinCommand.intent={...restoreMinCommand.intent,request:'3',generation:'3',operation:'restore',context:{...restoreMinCommand.intent.context,revision:'3'}};
+  await check('Restore minimized remains effect1 restore with next shared IDs',restoreMin,(_,last)=>assert.deepEqual(last.requests,[restoreMinCommand]));
+  sequence=await observe([...restoreMin,native(receipt(restoreMinCommand))],{mode:'maximized',minimized:false,known:true},4,104);
+  const restoredMax=await open(sequence);
+  await check('fresh restore observation retains Maximized mode',restoredMax.events,(_,last)=>{assert.equal(last.geometry.windows[0].mode,'maximized');assert.equal(last.geometry.windows[0].minimized,false)});
+- const restoreGeo=[...restoredMax.events,action(restoredMax.last.frame,`menu:${restoredMax.last.menu.id}:0`)];
++ const restoreGeo=await stage([...restoredMax.events,action(restoredMax.last.frame,`menu:${restoredMax.last.menu.id}:0`)]);
+  const restoreGeoCommand=clone(fixture.maxCommand);restoreGeoCommand.intent={...restoreGeoCommand.intent,request:'4',generation:'4',operation:'restore-geometry',context:{...restoreGeoCommand.intent.context,revision:'104'}};
+  await check('RestoreGeometry distinct effect2 uses fourth shared identity',restoreGeo,(_,last)=>assert.deepEqual(last.requests,[restoreGeoCommand]));
+  const final=await observe([...restoreGeo,native(receipt(restoreGeoCommand))],{mode:'ordinary',minimized:false,known:false},5,105);
+@@ -94,7 +95,7 @@
+  await check('fresh geometry pending disables mutations but keeps Close available',refreshing,(_,last)=>{assert(last.frame.popup.filter(x=>x.id.startsWith('menu:')).every(x=>!x.enabled));assert(last.frame.popup.find(x=>x.label==='Close').enabled)});
+  await check('stale pre-refresh callback cannot dispatch during geometry pending',[...refreshing,action(ordinary.last.frame,'menu:1:2')],(_,last)=>{assert.equal(last.registry,0);assert.equal(last.requests.length,0);assert.equal(last.shell.effects.request,'0')});
+  const other=await open(unknownReady,'bar:group:application:org.b');
+- const otherEvents=[...other.events,action(other.last.frame,`menu:${other.last.menu.id}:2`)];
++ const otherEvents=await stage([...other.events,action(other.last.frame,`menu:${other.last.menu.id}:2`)]);
+  const otherCommand=clone(fixture.maxCommand);otherCommand.intent={...otherCommand.intent,request:'2',generation:'2',incarnation:'20',context:{...otherCommand.intent.context,revision:'102'}};
+  await check('unrelated geometry target still uses shared next IDs',otherEvents,(_,last)=>{assert.deepEqual(last.requests,[otherCommand]);assert.equal(last.registry,2);assert.equal(last.unresolved.length,2)});
+  await check('B geometry receipt then delayed A receipt settles only full registered keys',[...otherEvents,native(receipt(otherCommand)),native(receipt(fixture.maxCommand))],(_,last)=>{assert.equal(last.registry,0);assert.equal(last.outstanding,0);assert.deepEqual(last.unresolved,[]);assert.deepEqual(last.shell.effects.transaction.intent,otherCommand.intent);assert.equal(last.shell.effects.transaction.status,'Committed');assert.equal(last.geometry.windows.find(w=>w.incarnation==='20').mode,'ordinary');assert.equal(last.requests.length,0)});

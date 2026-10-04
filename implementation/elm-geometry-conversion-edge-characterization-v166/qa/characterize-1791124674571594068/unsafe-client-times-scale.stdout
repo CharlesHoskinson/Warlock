@@ -1,0 +1,25 @@
+PASS no-reserve empty visual uses logical box
+PASS actual configure and decoration calls occur once
+PASS distinct visual box governs prospective client box
+PASS bare logical workarea control differs
+PASS asymmetric decoration extents applied exactly once
+PASS asymmetric configure uses real client size
+OBSERVED real-box -9 22 96 75
+PASS fractional negative origin real CBox rounding then reservation
+PASS no-client-configure path still updates prospective box
+PASS GTK108x42 raw minimum converts with nonzero geometry origin
+PASS zero maximum remains zero despite geometry origin
+PASS ownerless GTK minimum stays raw108x42
+PASS raw positive maximum1 is suppressed by actual layout threshold
+PASS tiny raw maximum 2 adds geometry offset
+PASS tiny raw maximum 3 adds geometry offset
+PASS tiny raw maximum 4 adds geometry offset
+PASS negative geometry origin can produce negative layout maximum
+PASS zero and1 minimum axes suppressed before geometry offset
+PASS zero geometry origin preserves finite maximum
+PASS Waylandscale1 configure size remains logical108x42
+FAIL Waylandscale2 configure size does not multiply
+FAIL client-times-scale unsafe control differs at scale2
+FAIL actual Wayland report clamps negative axis to zero
+FAIL Wayland report preserves fractional logical goal
+TOTAL 23 FAILED 4

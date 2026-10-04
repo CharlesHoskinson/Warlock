@@ -1,0 +1,114 @@
+{
+  "passed": false,
+  "scope": "Required usability assertions deliberately fail on unchanged V132; no fix, GUI, certificate or native effect execution",
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "minimize proven local non-submission must not retain indefinitely Pending native-issued mapping",
+      "passed": false,
+      "actual": {
+        "issued": [
+          {
+            "binding": {
+              "lifetime": "12037388133217397494",
+              "session": "11368147789958501132",
+              "frontend": "1"
+            },
+            "protocol": 1,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "12"
+              }
+            }
+          }
+        ],
+        "unresolved": [
+          {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "12"
+              }
+            },
+            "protocol": 1,
+            "status": "Pending"
+          }
+        ],
+        "submitted": null
+      }
+    },
+    {
+      "name": "restore-geometry proven local non-submission must not retain indefinitely Pending native-issued mapping",
+      "passed": false,
+      "actual": {
+        "issued": [
+          {
+            "binding": {
+              "lifetime": "12037388133217397494",
+              "session": "11368147789958501132",
+              "frontend": "1"
+            },
+            "protocol": 2,
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "restore-geometry",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "15"
+              }
+            }
+          }
+        ],
+        "unresolved": [
+          {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "restore-geometry",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "15"
+              }
+            },
+            "protocol": 2,
+            "status": "Pending"
+          }
+        ],
+        "submitted": null
+      }
+    },
+    {
+      "name": "proven local non-submission must not retain unmatched expected observation IDs",
+      "passed": false,
+      "actual": {
+        "legacy": "30",
+        "geometry": "31",
+        "attach": null,
+        "deferNotifications": false
+      }
+    }
+  ],
+  "input": "qa/review-1791119213760603058/checks.json",
+  "inputSHA256": "3a98a55ad820b5c66c9f3536963d5cb49d20eafb5e61d1c4f6c257928918b15c",
+  "sourceSHA256": "68327b490e508c1e1a9c445958883e6ad53b7964b99251d6ff27fc081960854d"
+}

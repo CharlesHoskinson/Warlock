@@ -1,0 +1,1 @@
+Independent review requires separate native output ownership and workspace-owned workarea records to represent multiple workspaces on one output. V161 refines those declarations and preserves all other V160 types. No logic was written; this draft/typecheck remains historical evidence.

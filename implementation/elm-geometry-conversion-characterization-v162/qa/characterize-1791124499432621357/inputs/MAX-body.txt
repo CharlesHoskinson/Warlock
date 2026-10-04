@@ -1,0 +1,11 @@
+
+            CBox nodeBox   = m_box.logicalBox;
+            CBox visualBox = m_box.visualBox.empty() ? nodeBox : m_box.visualBox;
+            nodeBox.round();
+            visualBox.round();
+
+            // Reserved area must be updated before this is called
+            const auto RESERVED = m_window->getFullWindowReservedArea();
+
+            m_window->setBox({visualBox.pos() + RESERVED.topLeft, visualBox.size() - (RESERVED.topLeft + RESERVED.bottomRight)});
+        

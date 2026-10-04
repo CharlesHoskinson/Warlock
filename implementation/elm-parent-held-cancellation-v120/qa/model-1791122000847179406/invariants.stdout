@@ -1,0 +1,622 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: false,
+      held: Set(),
+      pointerLive: true,
+      pressed: 0,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: false,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cancelFrames: 0,
+      cancelled: Set(),
+      failed: true,
+      held: Set(2),
+      pointerLive: true,
+      pressed: 1,
+      released: 0,
+      retired: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: true,
+      pressed: 1,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: true,
+      pressed: 1,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: true,
+      pressed: 1,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: true,
+      pressed: 1,
+      released: 1,
+      retired: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      cancelFrames: 1,
+      cancelled: Set(2),
+      failed: true,
+      held: Set(),
+      pointerLive: false,
+      pressed: 1,
+      released: 1,
+      retired: true
+    }
+}
+
+[ok] No violation found (1317ms at 759 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1349a --backend=typescript to reproduce.

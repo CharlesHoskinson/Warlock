@@ -1,0 +1,197 @@
+{
+  "sourceLog": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-reconnect-native-v83/qa/native-1791108937556480076/native-evidence/elm-webview.log",
+  "sourceLogSHA256": "4f9540d9abe56c397ea98361e7638bb6e03149d8fce9dcbf40fa183ae468328e",
+  "sourceFailureReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-reconnect-native-v83/qa/native-1791108937556480076/report.json",
+  "binding": {
+    "lifetime": "12037388133217397494",
+    "session": "11368147789958501132",
+    "frontend": "1"
+  },
+  "attached": {
+    "protocolVersion": 3,
+    "kind": "attached",
+    "binding": {
+      "lifetime": "12037388133217397494",
+      "session": "11368147789958501132",
+      "frontend": "1"
+    },
+    "compositor": {
+      "pid": 1106465,
+      "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1791108940_1075617176",
+      "coreHash": "efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6"
+    },
+    "capabilities": {
+      "observe": true,
+      "effects": true,
+      "minimizedState": true,
+      "effectProtocol": 1,
+      "operations": [
+        "minimize",
+        "restore",
+        "activate"
+      ],
+      "canonicalScene": false,
+      "taskbarProjectionProtocol": 1,
+      "effectInvalidationProtocol": 1
+    }
+  },
+  "geometryAttach": {
+    "protocolVersion": 3,
+    "kind": "geometry-attached",
+    "geometryProtocol": 1,
+    "binding": {
+      "lifetime": "12037388133217397494",
+      "session": "11368147789958501132",
+      "frontend": "1"
+    },
+    "requestId": "47",
+    "capabilities": {
+      "observe": true,
+      "effects": true,
+      "effectProtocol": 2,
+      "operations": [
+        "maximize",
+        "restore-geometry"
+      ],
+      "placementCapacity": 256,
+      "canonicalScene": false
+    }
+  },
+  "projection51": {
+    "protocolVersion": 3,
+    "kind": "action-projection",
+    "binding": {
+      "lifetime": "12037388133217397494",
+      "session": "11368147789958501132",
+      "frontend": "1"
+    },
+    "requestId": "51",
+    "context": {
+      "lifetime": "12037388133217397494",
+      "epoch": "1",
+      "output": "1",
+      "revision": "12"
+    },
+    "scene": {
+      "revision": "12",
+      "focused": "1",
+      "windows": [
+        {
+          "incarnation": "1",
+          "application": "elm-maximize-probe",
+          "label": "ELM-MAXIMIZE-PROBE",
+          "minimized": false,
+          "owner": null,
+          "available": true
+        }
+      ]
+    }
+  },
+  "geometry52": {
+    "protocolVersion": 3,
+    "kind": "geometry-facts",
+    "geometryProtocol": 1,
+    "binding": {
+      "lifetime": "12037388133217397494",
+      "session": "11368147789958501132",
+      "frontend": "1"
+    },
+    "requestId": "52",
+    "sequence": "25",
+    "revision": "15",
+    "outputGeneration": "1",
+    "facts": {
+      "focused": "1",
+      "inputBlocked": false,
+      "windows": [
+        {
+          "incarnation": "1",
+          "owner": null,
+          "workspace": "1",
+          "workspaceGeneration": "1",
+          "monitor": "0",
+          "outputOwnershipGeneration": "1",
+          "workAreaRevision": "1",
+          "workArea": [
+            0,
+            48,
+            800,
+            552
+          ],
+          "logicalGeometry": [
+            0,
+            48,
+            800,
+            552
+          ],
+          "visualGeometry": [
+            1,
+            49,
+            798,
+            550
+          ],
+          "nativeMode": "maximized",
+          "clientMode": "maximized",
+          "minimized": false,
+          "floating": true,
+          "grouped": false,
+          "fixedSize": false,
+          "constrainedSize": false,
+          "geometryEligible": true,
+          "ordinaryPlacementKnown": true,
+          "capabilities": {
+            "maximize": false,
+            "restoreGeometry": true
+          }
+        }
+      ]
+    }
+  },
+  "orderedNativeEvidence": [
+    {
+      "line": 2080,
+      "text": "backend-frame: {\"protocolVersion\":3,\"kind\":\"action-projection\",\"binding\":{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"},\"requestId\":\"51\",\"context\":{\"lifetime\":\"12037388133217397494\",\"epoch\":\"1\",\"output\":\"1\",\"revision\":\"12\"},\"scene\":{\"revision\":\"12\",\"focused\":\"1\",\"windows\":[{\"incarnation\":\"1\",\"application\":\"elm-maximize-probe\",\"label\":\"ELM-MAXIMIZE-PROBE\",\"minimized\":false,\"owner\":null,\"available\":true}]}}"
+    },
+    {
+      "line": 2081,
+      "text": "backend-frame: {\"protocolVersion\":3,\"kind\":\"geometry-facts\",\"geometryProtocol\":1,\"binding\":{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"},\"requestId\":\"52\",\"sequence\":\"25\",\"revision\":\"15\",\"outputGeneration\":\"1\",\"facts\":{\"focused\":\"1\",\"inputBlocked\":false,\"windows\":[{\"incarnation\":\"1\",\"owner\":null,\"workspace\":\"1\",\"workspaceGeneration\":\"1\",\"monitor\":\"0\",\"outputOwnershipGeneration\":\"1\",\"workAreaRevision\":\"1\",\"workArea\":[0,48,800,552],\"logicalGeometry\":[0,48,800,552],\"visualGeometry\":[1,49,798,550],\"nativeMode\":\"maximized\",\"clientMode\":\"maximized\",\"minimized\":false,\"floating\":true,\"grouped\":false,\"fixedSize\":false,\"constrainedSize\":false,\"geometryEligible\":true,\"ordinaryPlacementKnown\":true,\"capabilities\":{\"maximize\":false,\"restoreGeometry\":true}}]}}"
+    },
+    {
+      "line": 2082,
+      "text": "surface-commit: publication=91 lease=9 open=0"
+    },
+    {
+      "line": 2084,
+      "text": "surface-commit: publication=92 lease=9 open=0"
+    },
+    {
+      "line": 2140,
+      "text": "surface-commit: publication=93 lease=10 open=1"
+    },
+    {
+      "line": 2193,
+      "text": "backend-frame: {\"protocolVersion\":3,\"kind\":\"host-refresh\"}"
+    },
+    {
+      "line": 2219,
+      "text": "surface-popup-closed: lease=10"
+    },
+    {
+      "line": 2220,
+      "text": "surface-refused: commit-preflight"
+    },
+    {
+      "line": 2222,
+      "text": "surface-commit: publication=95 lease=10 open=0"
+    },
+    {
+      "line": 2233,
+      "text": "backend-frame: {\"protocolVersion\":3,\"kind\":\"host-refresh\"}"
+    },
+    {
+      "line": 2235,
+      "text": "surface-commit: publication=96 lease=10 open=0"
+    }
+  ],
+  "normalization": "CPU initial request correlations become1/2/3; all actual producer binding/context/window/capability fields remain exact. No raw full native trace replay claimed."
+}

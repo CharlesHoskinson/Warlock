@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "scope": "Abstract bounded registration, local non-submission and exact matched certificate inventory recovery. Two slots abstract production16; certificate matching abstracts full binding/scope/revision/publication/lease/literal batch. Unknown state never inferred from capacity recovery; native and refinement evidence separate.",
+  "sourceSHA256": "528d4d8c8d6a18eee7df04652efe856eaac211645569f9c55b7bb2e9b35cf2fa",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(capacityRefusalTest|exactCapacityRecoveryTest|wrongCertificateTest|unknownSurvivesCapacityRecoveryTest|admittedCertificateNeverReplaysTest|uncertainCertificateNeverSettlesTest|refusedNotificationsStayBoundedTest|freshUserIntentAfterRecoveryTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "unsafeCertificate": {
+    "command": [
+      "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+      "test",
+      "unsafe.qnt",
+      "--backend=typescript",
+      "--match=^wrongCertificateTest$",
+      "--max-samples=1",
+      "--seed=170024"
+    ],
+    "exitCode": 1,
+    "detected": true
+  },
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "528d4d8c8d6a18eee7df04652efe856eaac211645569f9c55b7bb2e9b35cf2fa",
+    "model.py": "6a468eb0fd9256c4bebdb094caaa663a65d4bb67b1e4f74fe1eb051bade0c39a",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-capacityRefusalTest-0.itf.json": "050efb18235d34a00ad7a0d737cb1ed7d75bd3fcf374ca5b9cdc377ee9b2ca93",
+    "named-exactCapacityRecoveryTest-1.itf.json": "a289ec47a711f183bb94ba70af199dcbc1ef9669c6edc4d372abea7e2cd9101e",
+    "named-wrongCertificateTest-2.itf.json": "325d8da5d237b433067e1c7cdb098df0555496542c2bb6dad8be787e03532434",
+    "named-unknownSurvivesCapacityRecoveryTest-3.itf.json": "2aa214e168a31418b7aa4de9728fab9294feec82c61c9ca07610e1b8a1fd4d55",
+    "named-admittedCertificateNeverReplaysTest-4.itf.json": "7f084d58bee54c0e392a2271d62623bac78355bdea5898ef4968c58d35873b30",
+    "named-uncertainCertificateNeverSettlesTest-5.itf.json": "339e449ab086a4c663c80bbbbf677e4a7d1052a27dc03a5702470b7c216daf46",
+    "named-refusedNotificationsStayBoundedTest-6.itf.json": "3fb1b25d621c54008bd1fef6dd33bd9a5cb46a67064455743e65f2c2cfe13d21",
+    "named-freshUserIntentAfterRecoveryTest-7.itf.json": "a6b348b41b34447c829fe607e78a10f19a1abafafbf130463e791c2396c3c8e5",
+    "named.stdout": "bdcebc629332831a0a7123462289004e595b146631a27a2ece37db15f8c4498d",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "b4bec3defd9eacc9a7f40d717fb2a25a9c69a6d4a1ecfabe793a1d255ecb0d3f",
+    "invariants.stdout": "bbe79aac7eede79529f81c8e12b1de16bc9d159b6cc1169b8f696f5fe7d301d2",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe.qnt": "0e5512dd205551973ec1b347a4d8ca88bab2d573fa549435bef0fba5fa947e0e",
+    "unsafe.stdout": "d4ca844df4171ccde8f3f41f650e8775628531190dcd896507d953206265b22a",
+    "unsafe.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

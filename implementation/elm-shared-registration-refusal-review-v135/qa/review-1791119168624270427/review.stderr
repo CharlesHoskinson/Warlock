@@ -1,0 +1,44 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ {
++   focus: [],
++   kind: 'view-commit',
++   projection: {
++     focusOwner: null,
++     frame: {
++       bar: [
++         {
++           ariaLabel: 'Open applications',
++           detail: '',
++           domId: 'applications:{"lifetime":"12037388133217397494","session":"11368147789958501132","frontend":"1"}:1:control:opener',
++           enabled: true,
++           id: 'bar:applications',
++           label: 'Applications'
++         }
++       ],
++       lease: '0',
++       mode: 'closed',
++       popup: [],
++       publication: '2',
++       status: 'Updating window information…',
++       surfaceProtocol: 2
++     },
++     kind: 'view-frame',
++     popupOwner: null,
++     revision: '0',
++     viewProtocol: 1,
++     views: []
++   },
++   requests: [],
++   viewProtocol: 1
++ }
+- null
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-refusal-review-v135/qa/review-1791119168624270427/inputs/qa/review.cjs:15:91
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-refusal-review-v135/qa/review-1791119168624270427/inputs/qa/review.cjs:7:27)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-refusal-review-v135/qa/review-1791119168624270427/inputs/qa/review.cjs:15:2
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

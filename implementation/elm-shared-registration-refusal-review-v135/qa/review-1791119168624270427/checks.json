@@ -1,0 +1,117 @@
+{
+  "passed": false,
+  "checks": [
+    "missing scope suppresses actual projection send but retains allocated expected ID"
+  ],
+  "findings": [
+    {
+      "kind": "read-stranding",
+      "cause": "missing-live-scope",
+      "expected": "1"
+    }
+  ],
+  "traces": {
+    "noScope": {
+      "submitted": null,
+      "batchCount": 0,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "0",
+        "views": [],
+        "focusOwner": null,
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "1",
+          "lease": "0",
+          "mode": "closed",
+          "status": "Updating window information…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": "1",
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": null,
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": null,
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "1",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Updating window information…",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "1"
+        }
+      ],
+      "issued": [],
+      "unresolvedFull": [],
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": false,
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Updating window information…",
+        "recoveryFailure": null
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    }
+  },
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ {\n+   focus: [],\n+   kind: 'view-commit',\n+   projection: {\n+     focusOwner: null,\n+     frame: {\n+       bar: [\n+         {\n+           ariaLabel: 'Open applications',\n+           detail: '',\n+           domId: 'applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener',\n+           enabled: true,\n+           id: 'bar:applications',\n+           label: 'Applications'\n+         }\n+       ],\n+       lease: '0',\n+       mode: 'closed',\n+       popup: [],\n+       publication: '2',\n+       status: 'Updating window information…',\n+       surfaceProtocol: 2\n+     },\n+     kind: 'view-frame',\n+     popupOwner: null,\n+     revision: '0',\n+     viewProtocol: 1,\n+     views: []\n+   },\n+   requests: [],\n+   viewProtocol: 1\n+ }\n- null\n"
+}

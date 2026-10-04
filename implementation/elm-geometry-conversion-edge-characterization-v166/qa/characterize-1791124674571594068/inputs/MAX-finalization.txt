@@ -1,0 +1,4 @@
+        m_window->updateWindowDecos();
+        if (CONFIGURECLIENT)
+            m_window->sendWindowSize();
+        return;

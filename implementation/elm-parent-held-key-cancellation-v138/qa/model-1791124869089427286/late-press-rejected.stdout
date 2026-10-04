@@ -1,0 +1,16 @@
+
+  held
+    1) latePressRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) latePressRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v138/qa/model-1791124869089427286/late-press.qnt:27:83
+        27:   run latePressRefusedTest = init.then(lose).then(press(1)).then(cancel).then(all{assert(s.pressed==0 and s.released==0),s'=s})
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=latePressRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 late-press.qnt

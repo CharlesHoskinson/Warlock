@@ -1,0 +1,96 @@
+{
+  "passed": true,
+  "scope": "Abstract ordered native press/release versus asynchronous WebKit message, exact once terminal dispatch, no synthetic release, repeat/deadline/retirement refusal. Valid scope summarizes engine/view/generation/publication/lease/epoch; Implicit keyboard-click suppression is modeled explicitly; no automatic refinement or native timing proof.",
+  "sourceSHA256": "5b3d84a34b233108f910ff09cf36f4132ca1199d4cd2afb84548698903c13b1a",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(pressNeverClosesTest|releaseOnceTest|secondEscapeTest|forgedReleaseTest|retirementKeepsHeldTest|scopeChangeRefusesTest|deadlineNeverRenewedTest|repeatNeverClosesTest|replayPreservesOriginalTest|earlyReleaseTest|earlyReleaseOnceTest|expiredEarlyReleaseTest|changedEarlyReleaseTest|webWithoutNativePressTest|implicitClickCannotBypassTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "unsafeBrowserFallback": {
+    "command": [
+      "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+      "test",
+      "unsafe.qnt",
+      "--backend=typescript",
+      "--match=^implicitClickCannotBypassTest$",
+      "--max-samples=1",
+      "--seed=170024"
+    ],
+    "exitCode": 1,
+    "detected": true
+  },
+  "namedScenarios": 15,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "5b3d84a34b233108f910ff09cf36f4132ca1199d4cd2afb84548698903c13b1a",
+    "model.py": "89cf7119d7c42a00670d2535e22b110af46198143277c454abfb5f8f4c3190c5",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-pressNeverClosesTest-0.itf.json": "bdf32ad6fd3f8c3459f268a67060b68ded79a42451cca1b19bd4f9a3c9ee1c6b",
+    "named-releaseOnceTest-1.itf.json": "ba77b8b6e88408145f09f8c81edce17dec37a14264ebfd57811f59d9ec03f4e5",
+    "named-secondEscapeTest-2.itf.json": "7c42b0c22efff73fb5ec6c331eb6e3411cbee1d8e35bf0430bcba00d280d2f16",
+    "named-forgedReleaseTest-3.itf.json": "5fbf96b5cd0b384b518ed00a50daed2cb9a5cc3fbfe5ebc1f46fd1bf0f4f06d0",
+    "named-retirementKeepsHeldTest-4.itf.json": "431eca11e832caa8b038ee7a052e928cb92991824ca1319c7e729ef928b3dd67",
+    "named-scopeChangeRefusesTest-5.itf.json": "058bceeb14c672aa4f89867f81a9b118fe37e42845af9e12b9fc79cba0d8d34d",
+    "named-deadlineNeverRenewedTest-6.itf.json": "963613614b1b744c790f45b2c2b42f4d8b6bd841203e1970401a35c503d04975",
+    "named-repeatNeverClosesTest-7.itf.json": "1a3913bbb097a615db74445d2e5d523f6641a45e5205013c62e95870bcc4143b",
+    "named-replayPreservesOriginalTest-8.itf.json": "e1921739c6551e55fd771d76389eccf9172122fd85a6884f391fc35eda4563ed",
+    "named-earlyReleaseTest-9.itf.json": "b1d68e29471f13af28ad65dd5169f73b17730cdaf6508eb8f6767f0afe8553db",
+    "named-earlyReleaseOnceTest-10.itf.json": "89d9d3a546eee63e53e639eabbbaf826246f3d573ae396a39bc7e6e2573e3427",
+    "named-expiredEarlyReleaseTest-11.itf.json": "3c7beef38629dd4ca2a1bb3bacd8cc9585c36000eaea08c1480ce6a432a3e261",
+    "named-changedEarlyReleaseTest-12.itf.json": "ddd3f90faa028720183b2adf5f0d90070cb01aa2ad9428a875e52a0498454087",
+    "named-webWithoutNativePressTest-13.itf.json": "bca7350ec96505c16d0b833c85e5acf87889b3b664f32298d93be3c4756947f0",
+    "named-implicitClickCannotBypassTest-14.itf.json": "655b627d2a19190874b1a0fdcf2e84d458c554e14759624164ea9ab75dc7cf5d",
+    "named.stdout": "4368d7ff5a47a55746e2c57e73d727cb69debdbc9691a3e37221dd359c4b46af",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "58d4b8d0d6a2c4069e711e1cbec2037f96f777a5724bf5e5951fa8927901fb3a",
+    "invariants.stdout": "2074127a17a6e7592c7e75b4447670b5baf1f2c90933ebaf302bec69f3b79d74",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe.qnt": "e249825eeb96be35b613ce4b513354792d1d1e23409d14d43ae11f461fb2fb1d",
+    "unsafe.stdout": "9a5bb57cc754dd9e04ff9a1ff7795ac884aba6fe252014c46a0a4e02c835b9c2",
+    "unsafe.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

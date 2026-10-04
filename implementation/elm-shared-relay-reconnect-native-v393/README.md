@@ -1,0 +1,1 @@
+Additive actual normal broker EOF and physical user reconnect subset on source380/relay391. One original6s whole-transition deadline covers actor retirement, Detached, physical click, fresh binding/actor/current command/observations and unchanged native window/no replay. Original geometry08 saved-max-origin and09held/10still pending. All baseline50 retained.

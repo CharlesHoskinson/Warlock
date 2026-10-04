@@ -1,0 +1,8 @@
+Vector2D CXDGToplevelResource::layoutMinSize() {
+    Vector2D minSize;
+    if (m_current.minSize.x > 1)
+        minSize.x = m_owner ? m_current.minSize.x + m_owner->m_current.geometry.pos().x : m_current.minSize.x;
+    if (m_current.minSize.y > 1)
+        minSize.y = m_owner ? m_current.minSize.y + m_owner->m_current.geometry.pos().y : m_current.minSize.y;
+    return minSize;
+}

@@ -1,0 +1,16 @@
+
+  recovery
+    1) pendingRenderEnterRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) pendingRenderEnterRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-render-dismissal-model-v373/qa/model-1791120965962754841/unsafe-render.qnt:38:118
+        38:  run pendingRenderEnterRefusedTest=init.then(enter).then(renderPending).then(press).then(web).then(release).then(all{assert(s.closed==0 and s.popup),s'=s})
+                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x29828 --match=pendingRenderEnterRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unsafe-render.qnt

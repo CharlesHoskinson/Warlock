@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "scope": "Pure policy entry-point review and exposed-helper diagnostic only; no native/model acceptance",
+  "input": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-v395/candidate/SizeBounds.hpp",
+  "inputSHA256": "e6744f519eab2be7c285b68a47b50f85ffe8c39067960b18b3a8c814e0f65839",
+  "checks": [
+    "same-space minimum-only admits",
+    "raw tiny maximum remains restrictive",
+    "derive rejects NaN layout minimum",
+    "direct intersect diagnostic admits malformed NaN layout minimum"
+  ]
+}

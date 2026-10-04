@@ -1,0 +1,8 @@
+Vector2D CXDGToplevelResource::layoutMaxSize() {
+    Vector2D maxSize;
+    if (m_current.maxSize.x > 1)
+        maxSize.x = m_owner ? m_current.maxSize.x + m_owner->m_current.geometry.pos().x : m_current.maxSize.x;
+    if (m_current.maxSize.y > 1)
+        maxSize.y = m_owner ? m_current.maxSize.y + m_owner->m_current.geometry.pos().y : m_current.maxSize.y;
+    return maxSize;
+}

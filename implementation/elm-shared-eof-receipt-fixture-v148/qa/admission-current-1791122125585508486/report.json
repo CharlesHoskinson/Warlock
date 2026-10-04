@@ -1,0 +1,149 @@
+{
+  "passed": true,
+  "scope": "Actual current144 C/schema5 broker admission with no native dispatch, and exact historical V100 Committed receipt replay only",
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "checks": [
+    {
+      "name": "exact current C durable schema5 admission compiles",
+      "passed": true
+    },
+    {
+      "name": "historical real native receipt hash matches failed campaign frozen artifacts",
+      "passed": true
+    },
+    {
+      "name": "historical original actual status is Committed",
+      "passed": true
+    },
+    {
+      "name": "without actual host admission broker cannot authorize effect",
+      "passed": true
+    },
+    {
+      "name": "actual current C admission stores original full protocol2 key",
+      "passed": true
+    },
+    {
+      "name": "actual store admits that exact key once",
+      "passed": true
+    },
+    {
+      "name": "duplicate key does not authorize native resubmission",
+      "passed": true
+    },
+    {
+      "name": "foreign frontend cannot consume original host admission",
+      "passed": true
+    },
+    {
+      "name": "renewed current binding preserves original full unknown intent",
+      "passed": true
+    },
+    {
+      "name": "native execution is never inferred from historical receipt fixture",
+      "passed": true
+    },
+    {
+      "name": "old compositor lifetime is rejected",
+      "passed": true
+    },
+    {
+      "name": "original five-second holder deadline retained",
+      "passed": true
+    },
+    {
+      "name": "exact recorded native receipt held without forwarding",
+      "passed": true
+    },
+    {
+      "name": "actual notification frame passes during recorded hold",
+      "passed": true
+    },
+    {
+      "name": "wrong renewed binding cannot release original receipt",
+      "passed": true
+    },
+    {
+      "name": "private gate releases exact original recorded receipt once",
+      "passed": true
+    },
+    {
+      "name": "duplicate selected recorded receipt is rejected",
+      "passed": true
+    },
+    {
+      "name": "current broker uses actual inherited kernel SO_PEERCRED transport",
+      "passed": true
+    }
+  ],
+  "compileCommand": [
+    "cc",
+    "-std=c11",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wno-unused-function",
+    "-MD",
+    "-MF",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/admission-current-1791122125585508486/admission.d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/admission-current-1791122125585508486/inputs/native/admission-test.c",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/admission-current-1791122125585508486/admission",
+    "-I/usr/include/json-glib-1.0",
+    "-I/usr/include/glib-2.0",
+    "-I/usr/lib/glib-2.0/include",
+    "-I/usr/include/libmount",
+    "-I/usr/include/blkid",
+    "-I/usr/include/sysprof-6",
+    "-pthread",
+    "-ljson-glib-1.0",
+    "-lgio-2.0",
+    "-lgobject-2.0",
+    "-lglib-2.0"
+  ],
+  "admission": {
+    "exitCode": 0,
+    "stdout": "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"5735349452885836276\",\"session\":\"11882637573489890173\",\"frontend\":\"1\"},\"intent\":{\"request\":\"6\",\"generation\":\"6\",\"incarnation\":\"1\",\"operation\":\"restore-geometry\",\"context\":{\"lifetime\":\"5735349452885836276\",\"epoch\":\"1\",\"output\":\"1\",\"revision\":\"16\"}},\"status\":\"Pending\"}\n",
+    "stderr": ""
+  },
+  "artifacts": {
+    "admission.d": "69b05bb078655a66b12c0114c1c14f27b0cf5489759eae5874470bb735e77178",
+    "admission": "f19ab08cf36cb66ecc6cf1e69f925c6f0a9a7231c772ba14b179d8757818ad1e",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "historical-v100-held.json": "1144743d8ea0393dbf9ddd6504fbdc09a3323b4a735558247fac7a7ba6a3b753",
+    "authority.json": "d941904d0baa9703a988ddbc76f5506198d84bde600d3c1f9f60ca5795adf689",
+    "inputs/backend-pin.json": "c64313d34603c306722b1bcfa26417d846b9e402d9da1acefa4ed26d58ad2092",
+    "inputs/fixture-source-pin.json": "62962fb544fb78d696e3c8fc1b74c00f7e9caafa0d03dee00938337ee387b1e3",
+    "receipt-control/gate.json": "d48ebaae684aca50d303e24f316c191a4a89445a58838787ebe515fc149681a0",
+    "receipt-control/held.json": "0595224ba63a7ef4b9007eaf7f93a372635bcfa570a4fc61c0ad018a2dafd9ac",
+    "runtime/elm-window-recovery/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/migration-plan.json": "c980ec7f2b1325fb6dbd08629a5a5dd9fa83c22e6657f7f823ae57192509a9e6",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/migration.json": "967779f19b38119aff3f04b687feded06b728fbefafc64f2d24848c03e7c5cf1",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/host-writer.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/ledger-v5.initialized": "a4e1cdb81139170bcd531d66a3b65223c5d013a08efb51f1b7f131235c31a98d",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/host-owner.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/ledger-v5.json": "de041b7eace4c2253ef29ab7dd99a1388c00a8a0a1ee83c33647c63cdab03803",
+    "runtime/elm-window-recovery/qa_current_148/5735349452885836276/admissions-v1/8c4275b2d3757b7e087444d2fd89734c872dff857cb918ed4ab1812ca31dfe03.json": "69c837a95b19f6dea20bbd613327da82012c8935eb5b9d1618fecaaffd09c479",
+    "inputs/qa/admission-current.py": "496abe04c8accf0f1791822955f1f55cf0754f9061f9f7ad9a9f1a4769552b38",
+    "inputs/qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "inputs/qa/deadline.py": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+    "inputs/qa/edges.py": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+    "inputs/qa/legacy-staged-test.py": "864b8cb89ea6a59982712ad82d5e30a35b3aa382f834bb0a764c97bf458e119d",
+    "inputs/qa/profile-current.py": "691b761571902257f3bb571ca92ae86be985745fe2cb97a6df6ab3b71154fb3a",
+    "inputs/qa/profile-test.py": "b1d120c8a3e2fe35f6bd8a837421ac1938a3d9dccc57aeaa2a8441dab9eb6474",
+    "inputs/qa/receipt-test.py": "ea3230bb66b04110a113f7d14585b9570ec592294ed77973c37ee015559f330e",
+    "inputs/qa/relay.py": "15192ac63edb77b2e7a31f77c8a90574ddb9c70243cb7a30cf03f11111543e79",
+    "inputs/qa/selector-test.py": "b7bb05f020e9a28db71838f0abd4371acaa8b8301893d98e2efcc517155da1d9",
+    "inputs/qa/test.py": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+    "inputs/qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72",
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c"
+  }
+}

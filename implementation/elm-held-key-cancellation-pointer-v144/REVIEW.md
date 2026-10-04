@@ -1,0 +1,1 @@
+AQ138-only descriptor derivative of original128 mask7 pointer cancellation. Original35 checks,6s deadlines,Core89/plugin90 ABI and actual GTK per-button recipients retained. No keyboard key held in this regression. Private host, socket/PID/start,mapped library and normal ordered cleanup gates remain unchanged.

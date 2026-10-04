@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "scope": "Controlled late observation of real child normal completion; unsafe previous publication ordering must fail exact cutoff oracle",
+  "checks": [
+    {
+      "name": "candidate exact late-publication outcome",
+      "passed": true
+    },
+    {
+      "name": "candidate no fabricated stdout",
+      "passed": true
+    },
+    {
+      "name": "candidate completion record agrees with cutoff",
+      "passed": true
+    },
+    {
+      "name": "candidate refuses absolute late completion",
+      "passed": true
+    },
+    {
+      "name": "unsafe-ancestor exact late-publication outcome",
+      "passed": true
+    },
+    {
+      "name": "unsafe-ancestor no fabricated stdout",
+      "passed": true
+    },
+    {
+      "name": "unsafe-ancestor completion record agrees with cutoff",
+      "passed": true
+    }
+  ],
+  "candidate": {
+    "exitCode": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/deadline-1791121769479030512/inputs/qa/deadline.py\", line 25, in <module>\n    r.pump([sys.executable,'-B','-c','import sys;sys.stdin.buffer.read()'],sys.argv[2]);raise SystemExit(0)\n    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/deadline-1791121769479030512/inputs/qa/relay.py\", line 106, in pump\n    if deadline is not None and time.monotonic()>=deadline:raise RelayFailure('Broker EOF deadline')\n                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\ndeadline_relay.RelayFailure: Broker EOF deadline\n",
+    "normalRecordPublished": false
+  },
+  "unsafe-ancestor": {
+    "exitCode": 0,
+    "stderr": "",
+    "normalRecordPublished": true
+  },
+  "artifacts": {
+    "candidate/gate.json": "1591b56b1402a1bf348ff7f42c96a3928311d000e80109f2e88c375f6e5f7663",
+    "candidate/actor.json": "32b98a43b2f17a6605c3cfddd4cfcd06bfdb2a78a9ac155c972d8fb80a122d31",
+    "unsafe-ancestor/gate.json": "30fa20aad7162c26a971c007df2b296a5f4a40cbf8cc625dd4dce1442bcfa736",
+    "unsafe-ancestor/actor.json": "d0ce7f4d33864a94c56fff5ce77aab6e4f9e31372ca1b3d534314b73c5f387cb",
+    "unsafe-ancestor/exit.json": "f9e4f537f284be91437d0a74ef9fc692b79e4fe7790f776add8bd72707f2a838",
+    "inputs/qa/deadline.py": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+    "inputs/qa/relay.py": "15192ac63edb77b2e7a31f77c8a90574ddb9c70243cb7a30cf03f11111543e79",
+    "inputs/qa/unsafe-success-first.py": "52b120fa4f01f29805ebe299247179ec31f18a90e0faf3371d21ed77a61c7ef3"
+  }
+}

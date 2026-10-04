@@ -1,0 +1,127 @@
+{
+  "passed": true,
+  "scope": "Closed current144 schema5 profile, actual parser and source AST; no socket or native launch",
+  "checks": [
+    {
+      "name": "broker exactly current captured daemon fixed Python argv",
+      "passed": true
+    },
+    {
+      "name": "receipt exactly new148 entrypoint fixed Python argv",
+      "passed": true
+    },
+    {
+      "name": "unknown profile refused",
+      "passed": true
+    },
+    {
+      "name": "arbitrary command refused",
+      "passed": true
+    },
+    {
+      "name": "arbitrary backend refused",
+      "passed": true
+    },
+    {
+      "name": "mixed profile refused",
+      "passed": true
+    },
+    {
+      "name": "extra authority refused",
+      "passed": true
+    },
+    {
+      "name": "boolean path refused",
+      "passed": true
+    },
+    {
+      "name": "public receipt config refused",
+      "passed": true
+    },
+    {
+      "name": "symlink config refused",
+      "passed": true
+    },
+    {
+      "name": "hardlinked config refused",
+      "passed": true
+    },
+    {
+      "name": "actual unchanged receipt parser accepts ordinal2",
+      "passed": true
+    },
+    {
+      "name": "actual unchanged parser retains default ordinal1",
+      "passed": true
+    },
+    {
+      "name": "actual parser rejects boolean ordinal",
+      "passed": true
+    },
+    {
+      "name": "actual parser rejects ordinal3",
+      "passed": true
+    },
+    {
+      "name": "actual parser rejects unsupported held operation",
+      "passed": true
+    },
+    {
+      "name": "actual parser rejects code injection",
+      "passed": true
+    },
+    {
+      "name": "isolated exact receipt sources verify",
+      "passed": true
+    },
+    {
+      "name": "changed receipt code refuses before child launch",
+      "passed": true
+    },
+    {
+      "name": "changed receipt mode refuses",
+      "passed": true
+    },
+    {
+      "name": "all original V92 pump identity controls and3s deadlines unchanged",
+      "passed": true
+    },
+    {
+      "name": "original ReceiptHold5s exact key selector/watchdog implementation unchanged",
+      "passed": true
+    },
+    {
+      "name": "original receipt supervision/normalEOF release semantics unchanged",
+      "passed": true
+    },
+    {
+      "name": "host-compatible entrypoint source byteidentical",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "receipt.json": "a2c56c7af1a3e7e3c1a45b39b290b2af35d84582f3e96dc09067f54ab2d7fe42",
+    "public.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "inputs/backend-pin.json": "c64313d34603c306722b1bcfa26417d846b9e402d9da1acefa4ed26d58ad2092",
+    "inputs/fixture-source-pin.json": "62962fb544fb78d696e3c8fc1b74c00f7e9caafa0d03dee00938337ee387b1e3",
+    "isolated-fixture/fixture-source-pin.json": "62962fb544fb78d696e3c8fc1b74c00f7e9caafa0d03dee00938337ee387b1e3",
+    "isolated-fixture/backend-pin.json": "c64313d34603c306722b1bcfa26417d846b9e402d9da1acefa4ed26d58ad2092",
+    "isolated-fixture/qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72",
+    "isolated-fixture/qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "isolated-fixture/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "inputs/qa/admission-current.py": "496abe04c8accf0f1791822955f1f55cf0754f9061f9f7ad9a9f1a4769552b38",
+    "inputs/qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "inputs/qa/deadline.py": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+    "inputs/qa/edges.py": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+    "inputs/qa/legacy-staged-test.py": "864b8cb89ea6a59982712ad82d5e30a35b3aa382f834bb0a764c97bf458e119d",
+    "inputs/qa/profile-current.py": "691b761571902257f3bb571ca92ae86be985745fe2cb97a6df6ab3b71154fb3a",
+    "inputs/qa/profile-test.py": "b1d120c8a3e2fe35f6bd8a837421ac1938a3d9dccc57aeaa2a8441dab9eb6474",
+    "inputs/qa/receipt-test.py": "ea3230bb66b04110a113f7d14585b9570ec592294ed77973c37ee015559f330e",
+    "inputs/qa/relay.py": "15192ac63edb77b2e7a31f77c8a90574ddb9c70243cb7a30cf03f11111543e79",
+    "inputs/qa/selector-test.py": "b7bb05f020e9a28db71838f0abd4371acaa8b8301893d98e2efcc517155da1d9",
+    "inputs/qa/test.py": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+    "inputs/qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72"
+  }
+}

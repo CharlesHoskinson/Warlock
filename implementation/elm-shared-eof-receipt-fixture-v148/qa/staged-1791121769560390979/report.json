@@ -1,0 +1,148 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "captured wrapper resolves exact current144 schema5 backend",
+      "passed": true
+    },
+    {
+      "name": "foreign cached endpoint refuses before native transport",
+      "passed": true
+    },
+    {
+      "name": "postclose observations and notifications pass before selected operation receipt",
+      "passed": true
+    },
+    {
+      "name": "other geometry operation passes unchanged",
+      "passed": true
+    },
+    {
+      "name": "explicit RestoreGeometry Committed is held without delivery",
+      "passed": true
+    },
+    {
+      "name": "facts are not deferred during delivery hold",
+      "passed": true
+    },
+    {
+      "name": "restore geometry exact original receipt released once",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'restore'",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'minimize'",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation True",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation None",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'RestoreGeometry'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'xxxxxxxxxx'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason '\\ud800'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'bad\\n'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'bad\\x85'",
+      "passed": true
+    },
+    {
+      "name": "strict private host-compatible wrapper configuration",
+      "passed": true
+    },
+    {
+      "name": "entrypoint preserves config and explicit operation argv",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid extra",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid operation",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid counter",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid missingpath",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid pathType",
+      "passed": true
+    },
+    {
+      "name": "public wrapperconfig refused",
+      "passed": true
+    },
+    {
+      "name": "symlink wrapperconfig refused",
+      "passed": true
+    },
+    {
+      "name": "actual wrapper run CLI supervises exact held backend main normally",
+      "passed": false
+    }
+  ],
+  "inputs": {
+    "qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72",
+    "qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "backend-pin.json": "c64313d34603c306722b1bcfa26417d846b9e402d9da1acefa4ed26d58ad2092",
+    "qa/staged-test.py": "864b8cb89ea6a59982712ad82d5e30a35b3aa382f834bb0a764c97bf458e119d",
+    "upstream.json": "68599b690847dfd7b194e1eab8e9d76432b8223e3373a811e07b3542243b84fe"
+  },
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-051b6b0cea174a4b9be5c465b8252d4b.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "scope": "Actual held broker selector/strict endpoint decoders and wrapper CLI with synthetic native transport, never real execution or facts/pixels acceptance",
+  "error": "AssertionError('actual wrapper run CLI supervises exact held backend main normally')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/staged-test.py\", line 94, in <module>\n    check('actual wrapper run CLI supervises exact held backend main normally',w.main()==0)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-eof-receipt-fixture-v148/qa/staged-test.py\", line 18, in check\n    def check(name,value):checks.append({'name':name,'passed':bool(value)});assert value,name\n                                                                                   ^^^^^\nAssertionError: actual wrapper run CLI supervises exact held backend main normally\n",
+  "artifacts": {
+    "authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "wrapper.json": "107a68cb8686478fce6297e00caac884012cf98d72540ac13bb60396217074b0",
+    "inputs/backend-pin.json": "c64313d34603c306722b1bcfa26417d846b9e402d9da1acefa4ed26d58ad2092",
+    "inputs/upstream.json": "68599b690847dfd7b194e1eab8e9d76432b8223e3373a811e07b3542243b84fe",
+    "control1/gate.json": "9e0b1218c17be0d78756754861a9ae7600d449b77ff90ff932fc642198ab88a8",
+    "control1/held.json": "2d623be1c246dace0cc33a74475ab41553b56eee71a6a0f887a0c69261a4ea03",
+    "control2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control3/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control12/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "inputs/qa/wrapper.py": "150be4b287b6174477bd1033ff3ef7c017a01de411f7eb6d018a387bd033af72",
+    "inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "inputs/qa/backend.py": "38d11b808739b9f4bc50753741d82ad7df727ed2e744bb7d9111554d230c3664",
+    "inputs/qa/staged-test.py": "864b8cb89ea6a59982712ad82d5e30a35b3aa382f834bb0a764c97bf458e119d"
+  }
+}

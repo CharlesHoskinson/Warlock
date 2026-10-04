@@ -1,0 +1,16 @@
+
+  held
+    1) oneHeldCancelledTest failed after 1 test(s)
+
+  1 failed
+
+  1) oneHeldCancelledTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v136/qa/model-1791124757543230223/wrong-set.qnt:20:83
+        20:   run oneHeldCancelledTest = init.then(press(1)).then(lose).then(cancel).then(all{assert(s.held.size()==0 and s.released==1 and s.cancelled==Set(1)),s'=s})
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=oneHeldCancelledTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 wrong-set.qnt

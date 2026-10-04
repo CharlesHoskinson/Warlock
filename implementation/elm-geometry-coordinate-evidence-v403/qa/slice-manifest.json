@@ -1,0 +1,598 @@
+{
+  "schema": 1,
+  "scope": "Bounded zero-origin prospective geometry prototype; no native or wire acceptance",
+  "nativeAcceptance": false,
+  "completedRequirementIds": [],
+  "acceptedReport": {
+    "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/report.json",
+    "sha256": "d44c3a5046157bdda1cdba7802c8e93df0412ad1b3773febb688471a38014d37",
+    "size": 8035
+  },
+  "reports": [
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/report.json",
+      "sha256": "83a242025bdcafd332b83a40dcb7404ad50a49f3b9d0e342793845f590e82511",
+      "size": 3471,
+      "passed": false,
+      "checks": null
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/report.json",
+      "sha256": "f55b5897ce53f37f0154e9fe2ae3a84becd7f9b03c447052180e91a1d99913e3",
+      "size": 3050,
+      "passed": true,
+      "checks": 1710
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/report.json",
+      "sha256": "c06899a75f3715add9b29ac37b51eda1ed4ff7c5045730377d055e7f7d57b3e7",
+      "size": 7162,
+      "passed": false,
+      "checks": 1710
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/report.json",
+      "sha256": "d44c3a5046157bdda1cdba7802c8e93df0412ad1b3773febb688471a38014d37",
+      "size": 8035,
+      "passed": true,
+      "checks": 1710
+    }
+  ],
+  "sourceAudit": {
+    "path": "implementation/elm-geometry-constraint-coordinate-review-v155/reviewed-inputs.json",
+    "sha256": "4264a3cc192db2ffdcbc6ea921ac950ddecfd5f96331951bff91f8bac0900d52",
+    "size": 2638
+  },
+  "files": [
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/compile.stderr",
+      "sha256": "37cd83c9c5bb5aa0e9e92202b2e31eea27e6c4f2a3439ad2d26144c2ca69b43b",
+      "size": 1605
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/dependencies.d",
+      "sha256": "0d574536631250e20bd182e546de812619ffad8dc158c2d990b77fefde3a9432",
+      "size": 11377
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/inputs/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/inputs/qa/projection-test.cpp",
+      "sha256": "b6c2bbd78e1afd61fb8e55c8129266019582215cb0c26c8044d29fa04801fb74",
+      "size": 3687
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/inputs/qa/test.py",
+      "sha256": "f8687fefb07c889bda73003cff1ef6642560c53f1aae84ca59a70977129e8202",
+      "size": 2916
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/inputs/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-1791124309724232342/report.json",
+      "sha256": "83a242025bdcafd332b83a40dcb7404ad50a49f3b9d0e342793845f590e82511",
+      "size": 3471
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/projection-test.cpp",
+      "sha256": "b6c2bbd78e1afd61fb8e55c8129266019582215cb0c26c8044d29fa04801fb74",
+      "size": 3687
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/qa/test.py",
+      "sha256": "f8687fefb07c889bda73003cff1ef6642560c53f1aae84ca59a70977129e8202",
+      "size": 2916
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v399/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/checks.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/checks.stdout",
+      "sha256": "e3b9d12be253b5ee61207531b90ba819dd0a78dc11ac0e2af64cb88c18075b32",
+      "size": 13
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/dependencies.d",
+      "sha256": "d88d7e6f73c7f4efdb49d8d6bf8e0eaf4d623ef1b5431e891bcbe4e0072089fd",
+      "size": 11377
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/inputs/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/inputs/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/inputs/qa/test.py",
+      "sha256": "f8687fefb07c889bda73003cff1ef6642560c53f1aae84ca59a70977129e8202",
+      "size": 2916
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/inputs/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/owning-headers/hyprutils/math/Box.hpp",
+      "sha256": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+      "size": 6238
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/owning-headers/hyprutils/math/Misc.hpp",
+      "sha256": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f",
+      "size": 433
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/owning-headers/hyprutils/math/Vector2D.hpp",
+      "sha256": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+      "size": 8301
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/owning-headers/hyprutils/memory/Casts.hpp",
+      "sha256": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+      "size": 816
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/projection-test",
+      "sha256": "22a898a7511e588efa6e388146f706208a2324e06f3c745cf8036e7fa83d7f3f",
+      "size": 25528
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-1791124329257793214/report.json",
+      "sha256": "f55b5897ce53f37f0154e9fe2ae3a84becd7f9b03c447052180e91a1d99913e3",
+      "size": 3050
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/qa/test.py",
+      "sha256": "f8687fefb07c889bda73003cff1ef6642560c53f1aae84ca59a70977129e8202",
+      "size": 2916
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v400/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/checks.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/checks.stdout",
+      "sha256": "e3b9d12be253b5ee61207531b90ba819dd0a78dc11ac0e2af64cb88c18075b32",
+      "size": 13
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/candidate/ProspectiveGeometry.hpp",
+      "sha256": "fb3ab48b514a68408cee9e52cf55d34ec79eb88821a23e689c001493dd28f97a",
+      "size": 3190
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/compile.stderr",
+      "sha256": "8524fab7e3542e09cfdfcc68051c66358cd8b00c4ec64b6feb7c7950df40a35a",
+      "size": 3374
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/dependencies.d",
+      "sha256": "92cbc11dfd93344ff8c85b0803c3024825c83899e9a66dfa0c3de6619b409b9d",
+      "size": 11377
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/inputs/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/inputs/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/inputs/qa/test.py",
+      "sha256": "edcb9c54aa23bc6092e9dfcd13e5e3571969497c0932675db17170719b98b82b",
+      "size": 4767
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/inputs/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/owning-headers/hyprutils/math/Box.hpp",
+      "sha256": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+      "size": 6238
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/owning-headers/hyprutils/math/Misc.hpp",
+      "sha256": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f",
+      "size": 433
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/owning-headers/hyprutils/math/Vector2D.hpp",
+      "sha256": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+      "size": 8301
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/owning-headers/hyprutils/memory/Casts.hpp",
+      "sha256": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+      "size": 816
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/projection-test",
+      "sha256": "22a898a7511e588efa6e388146f706208a2324e06f3c745cf8036e7fa83d7f3f",
+      "size": 25528
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/report.json",
+      "sha256": "c06899a75f3715add9b29ac37b51eda1ed4ff7c5045730377d055e7f7d57b3e7",
+      "size": 7162
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/qa/test.py",
+      "sha256": "edcb9c54aa23bc6092e9dfcd13e5e3571969497c0932675db17170719b98b82b",
+      "size": 4767
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v401/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/checks.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/checks.stdout",
+      "sha256": "e3b9d12be253b5ee61207531b90ba819dd0a78dc11ac0e2af64cb88c18075b32",
+      "size": 13
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/configure-multiplies-scale/candidate/ProspectiveGeometry.hpp",
+      "sha256": "8d5f4dfdbbed86ff5393a864f9dfa212da4460698cd02252e9115a11eb18b003",
+      "size": 3226
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/configure-multiplies-scale/checks.stderr",
+      "sha256": "f4d55110f50d0294e7a4edd8a2b23431f723d29574f6eeb80e629cc69c9a1913",
+      "size": 15
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/configure-multiplies-scale/checks.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/configure-multiplies-scale/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/configure-multiplies-scale/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/configure-multiplies-scale/projection-test",
+      "sha256": "e41cede7020e7256385cd7d02b0ebba361a4509acab83402558f44d96a528f9f",
+      "size": 25528
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/configure-multiplies-scale/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/double-max-reserves/candidate/ProspectiveGeometry.hpp",
+      "sha256": "f9a5564fcd058fc3e143a2c0a1750eb3e03bd16ed73e83d83be8ff62d5162463",
+      "size": 3190
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/double-max-reserves/checks.stderr",
+      "sha256": "e4f12f1d975d4caa34ede338d0f32e1af88b474aeb1905eb64a5d4c3bbddb901",
+      "size": 15
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/double-max-reserves/checks.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/double-max-reserves/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/double-max-reserves/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/double-max-reserves/projection-test",
+      "sha256": "e76df929b01431a62b9440edcae49519e75bec039ff00e06fa13adaa28c3efa4",
+      "size": 25528
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/double-max-reserves/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/nonzero-origin-guessed/candidate/ProspectiveGeometry.hpp",
+      "sha256": "264c7fd3dd138782e1845d9311d90fb1acbd4b54872dccd6bb454b127a6613cf",
+      "size": 3155
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/nonzero-origin-guessed/checks.stderr",
+      "sha256": "af0d504764560aaa95753510d803ebee2d2cf9c7e4ff3809ad2d8fa467adfcc7",
+      "size": 16
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/nonzero-origin-guessed/checks.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/nonzero-origin-guessed/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/nonzero-origin-guessed/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/nonzero-origin-guessed/projection-test",
+      "sha256": "ba636dba0a4e7eac4f9c451f8f1a8ba1a1f08498b65aaf3cd594f26fa6e05547",
+      "size": 25448
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/nonzero-origin-guessed/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/raw-checks-real-not-integer/candidate/ProspectiveGeometry.hpp",
+      "sha256": "b0a34d7d378dc2ec0f1fdb2808ac15f616b79341cd17f2b4e5da2337f16ad950",
+      "size": 3183
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/raw-checks-real-not-integer/checks.stderr",
+      "sha256": "639c944f75a7de4278673cce978227dd34377e11b704b36e2876bfbeefb43fd1",
+      "size": 16
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/raw-checks-real-not-integer/checks.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/raw-checks-real-not-integer/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/raw-checks-real-not-integer/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/raw-checks-real-not-integer/projection-test",
+      "sha256": "0fc83000f21d9d17e6333776c4d5ec81a6b0e9fbbecdbc82fb7e4c4b7a2f2add",
+      "size": 25528
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/raw-checks-real-not-integer/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/restore-subtracts-reserves/candidate/ProspectiveGeometry.hpp",
+      "sha256": "9471b019a5ad6972dad933aef4c966be9e31c3429d5e7430d9f10cad43de0a96",
+      "size": 3268
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/restore-subtracts-reserves/checks.stderr",
+      "sha256": "16c07ae87a6f6b9fcc91ae94ab1422116cad146e9940f1a47892797b6ea6fc25",
+      "size": 15
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/restore-subtracts-reserves/checks.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/restore-subtracts-reserves/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/restore-subtracts-reserves/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/restore-subtracts-reserves/projection-test",
+      "sha256": "e969728a093fc3a03150d3942f219becfb49dd504fbf2ac78ea135e4789d4c3e",
+      "size": 25528
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/controls/restore-subtracts-reserves/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/dependencies.d",
+      "sha256": "6723a65343dcfa69363da805c273a25b424900e8ba8486bd2fcdd92aec190d59",
+      "size": 11377
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/inputs/candidate/ProspectiveGeometry.hpp",
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/inputs/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/inputs/qa/test.py",
+      "sha256": "c5cc8534746ccb6241640cf3fbe0b9d5d695876c716c559b08c13b4a20a60124",
+      "size": 4767
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/inputs/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/owning-headers/hyprutils/math/Box.hpp",
+      "sha256": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+      "size": 6238
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/owning-headers/hyprutils/math/Misc.hpp",
+      "sha256": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f",
+      "size": 433
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/owning-headers/hyprutils/math/Vector2D.hpp",
+      "sha256": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+      "size": 8301
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/owning-headers/hyprutils/memory/Casts.hpp",
+      "sha256": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+      "size": 816
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/projection-test",
+      "sha256": "22a898a7511e588efa6e388146f706208a2324e06f3c745cf8036e7fa83d7f3f",
+      "size": 25528
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-1791124436709484431/report.json",
+      "sha256": "d44c3a5046157bdda1cdba7802c8e93df0412ad1b3773febb688471a38014d37",
+      "size": 8035
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/projection-test.cpp",
+      "sha256": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+      "size": 3691
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/qa/test.py",
+      "sha256": "c5cc8534746ccb6241640cf3fbe0b9d5d695876c716c559b08c13b4a20a60124",
+      "size": 4767
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-policy-v402/spec/REQUIREMENTS.md",
+      "sha256": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446",
+      "size": 2627
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-evidence-v403/HANDOFF.md",
+      "sha256": "6fb17ad6bbfcc177fe0db0253ca60cbc395a895253d34f9d13541a45ba84c172",
+      "size": 2200
+    },
+    {
+      "path": "implementation/elm-geometry-coordinate-evidence-v403/qa/freeze.py",
+      "sha256": "e2d1248701c447f047352ede8a8fb8f2660718932db4dbd35df7dc27f690baca",
+      "size": 2478
+    }
+  ]
+}

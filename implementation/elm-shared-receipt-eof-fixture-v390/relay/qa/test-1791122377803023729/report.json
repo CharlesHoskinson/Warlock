@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "scope": "Actual relay subprocess/pipe ownership and strict private controls; no native GUI or compositor acceptance",
+  "checks": [
+    {
+      "name": "exact real relay PID/start and owned child live",
+      "passed": true
+    },
+    {
+      "name": "public EOF request binds exact live actor",
+      "passed": true
+    },
+    {
+      "name": "duplicate control never replays EOF",
+      "passed": true
+    },
+    {
+      "name": "all raw bytes forwarded without synthesis",
+      "passed": true
+    },
+    {
+      "name": "relay exits normally after child normal EOF",
+      "passed": true
+    },
+    {
+      "name": "explicit exact normal child exit proof",
+      "passed": true
+    },
+    {
+      "name": "both original processes gone",
+      "passed": true
+    },
+    {
+      "name": "natural host EOF exits both normally and forwards final bytes",
+      "passed": true
+    },
+    {
+      "name": "wrong start refuses without invented output",
+      "passed": true
+    },
+    {
+      "name": "gate inode replacement refuses",
+      "passed": true
+    },
+    {
+      "name": "nonzero child exit cannot publish normal status",
+      "passed": true
+    },
+    {
+      "name": "duplicate keys refused",
+      "passed": true
+    },
+    {
+      "name": "oversized record refused",
+      "passed": true
+    },
+    {
+      "name": "extra control fields refused",
+      "passed": true
+    },
+    {
+      "name": "public directory refuses",
+      "passed": true
+    },
+    {
+      "name": "symlink directory refuses",
+      "passed": true
+    },
+    {
+      "name": "public file refuses",
+      "passed": true
+    },
+    {
+      "name": "hardlinked file refuses",
+      "passed": true
+    },
+    {
+      "name": "symlink file refuses",
+      "passed": true
+    }
+  ],
+  "processExitCodes": [
+    0,
+    0,
+    1,
+    1,
+    1
+  ],
+  "artifacts": {
+    "hardlink.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "control-1/gate.json": "953797d26d3141131d3b54e9c5febf7717d7d1da02299c27c98da9f6e880afd4",
+    "control-1/actor.json": "41827900ed6524dce801d4e8a223038ddd79dfcf7032f0a36b9bcd5fa86f746d",
+    "control-1/exit.json": "6755ced4a16fd33696d5db81d04eef7e24983fcbef4789bb16585b2da9b75890",
+    "control-2/gate.json": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+    "control-2/actor.json": "1a771944a5935c58b88815180676e481866b5c43fbade3ca260e4d27b9a6fe0d",
+    "control-2/exit.json": "c91905148971c647135f01f8458b51f8fed35623fe9cab958f6553ed13226006",
+    "control-3/gate.json": "be0019e845b6aee8af6592076a51a3aacb65b9bedfa3e7350bd095d38f3938a4",
+    "control-3/actor.json": "3f6b9587c9aeebc373ebbd057d4519036b40955d0475f805af0f9ccc8c66bf4c",
+    "control-4/actor.json": "1975f70ab43eceb7c99b59e6621301279c6918ad7cbc70ac33d9a434eca2e47d",
+    "control-4/gate.json": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+    "control-5/gate.json": "9eb138f84f4dacc72adac34b9a2220df2a8faf0bf6a4da63bb30d798b5deacd6",
+    "control-5/actor.json": "ddee37f4830aa83f59ebb35c3ea74c5523a7d5e86b343b690cee383ede18b915",
+    "inputs/qa/test.py": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+    "inputs/qa/relay.py": "c18bc27c5bb1d3c2fa1ebbf704d895e799899aadc076c68d7b8337f9f4277836"
+  }
+}

@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T12:40:35.713513+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T14:22:06.249624+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7604,6 +7604,61 @@
       "manifestSHA256": "e3353e6f12bb24e60c3a65718dc32771879e004e849e65e3668fc35f3fbd54fd",
       "summary": "Source344 qualifies both physical release/WebKit orderings: zero-dwell native39 and original50ms native39 pass on exact core89/plugin90/AQ105, including repeated Escape, menu/navigation, one committed minimize/restore and disappearance/return pixels. Actual C73/key20/carrier34 and Quint14/1000x40 pass. Fast predecessor failure frozen, all3 native cleanup pass. Full release/requirements/sprints remain open.",
       "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-keyboard-recovery-evidence-v365",
+      "manifest": "implementation/elm-shared-keyboard-recovery-evidence-v365/qa/slice-manifest.json",
+      "manifestSHA256": "748949dd1aa7280365f3bc9455ff41f59cafd2b397420663533907f71c0d64ba",
+      "summary": "Source359 combines native keyboard proof with certified batch dispositions and exact Pending-only unsent recovery. Compiled C76/key20/carrier34, local refusal65, browser wire2, shared37/49/23 and adapted semantic79/53/21 pass. Native36048 passes bounded observations; strict zero-dwell362 fails Escape after ShiftF10 during publication transition; strict normal364 fails fixture startup. All cleanup pass; no strict native, AT, release, requirement or sprint closure. Earlier implicit-click bypass fix/proof retained in frozen source358 packet.",
+      "boundedNativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-navigation-diagnostic-evidence-v368",
+      "manifest": "implementation/elm-shared-navigation-diagnostic-evidence-v368/qa/slice-manifest.json",
+      "manifestSHA256": "e68732b55a0bf382b2e4ac53267788bc64dca63f4378409e8afb8803a552d69b",
+      "summary": "Read-only diagnostic source366 changes only QA refusal logging. Actual optimized host/C76/key20/carrier34 pass; strict original-deadline zero-dwell native367 passes48 input/release/receipt/pixel checks and normal cleanup. Source359 failure362 remains open: pending presentation acknowledgement is a hypothesis requiring controlled reproduction. No render-transition, AT, full native/release, requirement or sprint acceptance.",
+      "boundedNativeAcceptance": true,
+      "renderTransitionQualified": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-render-dismissal-accepted-v379",
+      "manifest": "implementation/elm-shared-render-dismissal-accepted-v379/qa/slice-manifest.json",
+      "manifestSHA256": "4e84137774d89702933db04081380f4599cc97dd881919ad229d7f350bc24a20",
+      "summary": "Production371 fixes Escape during pending menu rendering while preserving native grabbed/configured/focused exact view/epoch/pub/lease/500ms physical-release proof. Enter retains full readiness. Controlled ancestor370 fails; final production48, controlled49, controlled Enter-refusal51 native checks pass normal cleanup on core89/plugin90/AQ105. Actual C90/key20/carrier34, recovery65/wire2 and Quint21/1000x40 pass; two unsafe controls detected. Source/failed infrastructure/freezer evidence frozen. Full UIUX/AT/IME/GPU/release and requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-registration-shutdown-accepted-v387",
+      "manifest": "implementation/elm-shared-registration-shutdown-accepted-v387/qa/slice-manifest.json",
+      "manifestSHA256": "f2e4114985f0ba936d40ffa876408ce66da9ba61a30b2b21b10c3b0db3595845",
+      "summary": "Final380 merges production371 input proof with reviewed144 registration/refusal and bounded broker output/ordered native drain. Actual native49 and target-retirement48 pass strict6s/pixels/receipts/client-empty/normal cleanup. Actual registration25, operation/deferred65, broker43, teardown10, shared37/49/23, adapted79/53/21 and C90/key20/carrier34 pass. Quint8/1000x40 and unsafe certificate control pass. Original native08/09/10 receipt/EOF faults and full UIUX/ATIME/GPU/release/requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-receipt-eof-accepted-v394",
+      "manifest": "implementation/elm-shared-receipt-eof-accepted-v394/qa/slice-manifest.json",
+      "manifestSHA256": "a67206657a60f996fe8d0eebb5844020588a582cf63d9e8a28f61b2c0cfff68b",
+      "summary": "Current schema5 receipt/EOF fixture391 verifies captured source380; AST-exact original hold/pump algorithms retained. CPU45/52/19/7/7 plus exact profile9 pass; predecessor path/oracle failures frozen. Actual relay baseline50 and physical EOF/reconnect subset57 pass strict6s/normal EOF/owned fresh actors/same lifetime/fresh binding/native facts/no replay/pixels/clientempty cleanup. Original geometry08 savedMax/09heldreceipt/10full contract and full UIUX/GPU/ATIME/release/requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-geometry-size-policy-evidence-v398",
+      "manifest": "implementation/elm-geometry-size-policy-evidence-v398/qa/slice-manifest.json",
+      "manifestSHA256": "510c4c4b1c401f5ab9baf4410b0ddf9ee8918149935080dd2a68fc91e02d161a",
+      "summary": "Native397 reproduces current380 GTK floating Max refusal, binding exact toplevel/PID/address/incarnation and actual minimum108x42/unbounded raw maximum0x0; original multi-action assertion fails, cleanup passes. Additive EARS SB001-008/OpenSpec pure intersected per-axis size policy395 passes796 C++ checks; Quint396 selected11 cases/1000 trace samples and unsafe lower-bound control pass. No native authority/projection mutation or maximize acceptance; source380 remains frozen and full obligations open.",
+      "boundedNativeAcceptance": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
     }

@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "scope": "Synthetic owned subprocess transport adversaries, no native acceptance",
+  "checks": [
+    {
+      "name": "kernel queued pre-cut bytes are forwarded exactly",
+      "passed": true
+    },
+    {
+      "name": "controlled backlog cut exits normally",
+      "passed": true
+    },
+    {
+      "name": "backlog actor identities gone",
+      "passed": true
+    },
+    {
+      "name": "non-draining host cannot defeat absolute EOF deadline",
+      "passed": true
+    },
+    {
+      "name": "blocked output records deadline refusal",
+      "passed": true
+    },
+    {
+      "name": "blocked output cannot publish normal status",
+      "passed": true
+    },
+    {
+      "name": "blocked output child terminated and reaped",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "backlog/gate.json": "2e4b103870fa9548dcc002100d7987cbe05bb0d7913980d3158f5d02caa7bd66",
+    "backlog/actor.json": "d557c6d958a124548ab404d77ba52281ac191987642ff80a9ae5f71da51eade9",
+    "backlog/exit.json": "91fb144490874be287c5a68b4b53ac864fb289a87269311681c75e38b1ea7d81",
+    "blocked/gate.json": "6b6a898a037acc579f6ae67e1c8333e22f5bf4af50803de6bd88a4da1de03da7",
+    "blocked/actor.json": "4bdfc918a60da026cc2cf229774aa8aa7b8506d0fd533e03eac7c93fa8fcb500",
+    "inputs/qa/relay.py": "c18bc27c5bb1d3c2fa1ebbf704d895e799899aadc076c68d7b8337f9f4277836",
+    "inputs/qa/test.py": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+    "inputs/qa/edges.py": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017"
+  }
+}

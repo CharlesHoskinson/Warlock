@@ -1,0 +1,1404 @@
+{
+  "passed": true,
+  "checks": [
+    "missing scope suppresses actual projection send but retains allocated expected ID",
+    "refresh without scope cannot discharge never-submitted expected read",
+    "minimize real reducer issues Pending but full inventory sends nothing",
+    "minimize ordinary refresh preserves original never-sent Pending barrier",
+    "restore-geometry real reducer issues Pending but full inventory sends nothing",
+    "restore-geometry ordinary refresh preserves original never-sent Pending barrier",
+    "request-count registration-only stress suppresses transport and retains actual Pending key",
+    "request-count exhaustion remains latched after refused registration",
+    "UTF8-byte-bound registration-only stress suppresses transport and retains actual Pending key",
+    "UTF8-byte-bound exhaustion remains latched after refused registration",
+    "full inventory strands both newly allocated read slots before forwarding",
+    "subsequent notification does not replace never-sent read IDs",
+    "menu local reservation survives paired-read non-submission with no native issued key",
+    "menu prepared deadline retires local-only intent but transport remains exhausted"
+  ],
+  "findings": [
+    {
+      "kind": "read-stranding",
+      "cause": "missing-live-scope",
+      "expected": "1"
+    },
+    {
+      "kind": "operation-stranding",
+      "cause": "inventory-16",
+      "protocol": 1,
+      "issued": [
+        {
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "protocol": 1,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "kind": "operation-stranding",
+      "cause": "inventory-16",
+      "protocol": 2,
+      "issued": [
+        {
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "protocol": 2,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "restore-geometry",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "15"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "traces": {
+    "noScope": {
+      "submitted": null,
+      "batchCount": 0,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "0",
+        "views": [],
+        "focusOwner": null,
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "1",
+          "lease": "0",
+          "mode": "closed",
+          "status": "Updating window information…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": "1",
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": null,
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": null,
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "1",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Updating window information…",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "1"
+        }
+      ],
+      "issued": [],
+      "unresolvedFull": [],
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": false,
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Updating window information…",
+        "recoveryFailure": null
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    "minimize": {
+      "submitted": null,
+      "batchCount": 16,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "47",
+          "lease": "0",
+          "mode": "closed",
+          "status": "Applying window change…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            },
+            {
+              "id": "bar:group:application:elm-maximize-probe",
+              "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+              "label": "ELM-MAXIMIZE-PROBE",
+              "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+              "detail": "1",
+              "enabled": false
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [
+        {
+          "effectProtocol": 1,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          },
+          "status": "Pending"
+        }
+      ],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "47",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Applying window change…",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "window-effect",
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          }
+        }
+      ],
+      "issued": [
+        {
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "protocol": 1,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          }
+        }
+      ],
+      "unresolvedFull": [
+        {
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          },
+          "protocol": 1,
+          "status": "Pending"
+        }
+      ],
+      "requests": [],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "29",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "1",
+          "generation": "1",
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "12"
+              }
+            },
+            "status": "Pending"
+          }
+        },
+        "status": "Applying window change…",
+        "recoveryFailure": null
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    "restore-geometry": {
+      "submitted": null,
+      "batchCount": 16,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "47",
+          "lease": "0",
+          "mode": "closed",
+          "status": "Applying window change…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            },
+            {
+              "id": "bar:group:application:elm-maximize-probe",
+              "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+              "label": "ELM-MAXIMIZE-PROBE",
+              "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+              "detail": "1",
+              "enabled": false
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [
+        {
+          "effectProtocol": 2,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "restore-geometry",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "15"
+            }
+          },
+          "status": "Pending"
+        }
+      ],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "47",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Applying window change…",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "window-effect",
+          "effectProtocol": 2,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "restore-geometry",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "15"
+            }
+          }
+        }
+      ],
+      "issued": [
+        {
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "protocol": 2,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "restore-geometry",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "15"
+            }
+          }
+        }
+      ],
+      "unresolvedFull": [
+        {
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "restore-geometry",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "15"
+            }
+          },
+          "protocol": 2,
+          "status": "Pending"
+        }
+      ],
+      "requests": [],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "29",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "1",
+          "generation": "1",
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "restore-geometry",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "15"
+              }
+            },
+            "status": "Pending"
+          }
+        },
+        "status": "Applying window change…",
+        "recoveryFailure": null
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    "request-count": {
+      "submitted": null,
+      "batchCount": 3,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "8",
+          "lease": "0",
+          "mode": "closed",
+          "status": "Applying window change…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            },
+            {
+              "id": "bar:group:application:elm-maximize-probe",
+              "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+              "label": "ELM-MAXIMIZE-PROBE",
+              "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+              "detail": "1",
+              "enabled": false
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [
+        {
+          "effectProtocol": 1,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          },
+          "status": "Pending"
+        }
+      ],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "8",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Applying window change…",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "window-effect",
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          }
+        }
+      ],
+      "issued": [
+        {
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "protocol": 1,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          }
+        }
+      ],
+      "unresolvedFull": [
+        {
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          },
+          "protocol": 1,
+          "status": "Pending"
+        }
+      ],
+      "requests": [],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "3",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "1",
+          "generation": "1",
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "12"
+              }
+            },
+            "status": "Pending"
+          }
+        },
+        "status": "Applying window change…",
+        "recoveryFailure": null
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    "UTF8-byte-bound": {
+      "submitted": null,
+      "batchCount": 3,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "8",
+          "lease": "0",
+          "mode": "closed",
+          "status": "Applying window change…",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            },
+            {
+              "id": "bar:group:application:elm-maximize-probe",
+              "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+              "label": "ELM-MAXIMIZE-PROBE",
+              "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+              "detail": "1",
+              "enabled": false
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": null,
+        "geometry": null,
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [
+        {
+          "effectProtocol": 1,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          },
+          "status": "Pending"
+        }
+      ],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "8",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Applying window change…",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "window-effect",
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          }
+        }
+      ],
+      "issued": [
+        {
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "protocol": 1,
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          }
+        }
+      ],
+      "unresolvedFull": [
+        {
+          "intent": {
+            "request": "1",
+            "generation": "1",
+            "incarnation": "1",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "12037388133217397494",
+              "epoch": "1",
+              "output": "1",
+              "revision": "12"
+            }
+          },
+          "protocol": 1,
+          "status": "Pending"
+        }
+      ],
+      "requests": [],
+      "shell": {
+        "phase": "Ready",
+        "notificationQueued": false,
+        "request": "3",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "1",
+          "generation": "1",
+          "transaction": {
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "12037388133217397494",
+                "epoch": "1",
+                "output": "1",
+                "revision": "12"
+              }
+            },
+            "status": "Pending"
+          }
+        },
+        "status": "Applying window change…",
+        "recoveryFailure": null
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    "readCapacity": {
+      "submitted": null,
+      "batchCount": 16,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "47",
+          "lease": "0",
+          "mode": "closed",
+          "status": "Connected",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            },
+            {
+              "id": "bar:group:application:elm-maximize-probe",
+              "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+              "label": "ELM-MAXIMIZE-PROBE",
+              "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+              "detail": "1",
+              "enabled": false
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": "30",
+        "geometry": "31",
+        "attach": null,
+        "deferNotifications": false
+      },
+      "preparedToken": null,
+      "prepared": null,
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": null,
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "47",
+        "lease": "0",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "30"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "geometry-facts-request",
+          "geometryProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "31",
+          "minimumWatermark": "25"
+        }
+      ],
+      "issued": [],
+      "unresolvedFull": [],
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": false,
+        "request": "31",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Connected",
+        "recoveryFailure": null
+      },
+      "outstanding": 0,
+      "registry": 0,
+      "menu": null
+    },
+    "menuPrepared": {
+      "submitted": null,
+      "batchCount": 16,
+      "outputs": {
+        "viewProtocol": 1,
+        "kind": "view-frame",
+        "revision": "1",
+        "views": [
+          {
+            "id": "1",
+            "generation": "1"
+          }
+        ],
+        "focusOwner": {
+          "id": "1",
+          "generation": "1"
+        },
+        "popupOwner": null,
+        "frame": {
+          "surfaceProtocol": 2,
+          "publication": "48",
+          "lease": "1",
+          "mode": "closed",
+          "status": "Connected",
+          "bar": [
+            {
+              "id": "bar:applications",
+              "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+              "label": "Applications",
+              "ariaLabel": "Open applications",
+              "detail": "",
+              "enabled": true
+            },
+            {
+              "id": "bar:group:application:elm-maximize-probe",
+              "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+              "label": "ELM-MAXIMIZE-PROBE",
+              "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+              "detail": "1",
+              "enabled": false
+            }
+          ],
+          "popup": []
+        }
+      },
+      "correlation": {
+        "legacy": "30",
+        "geometry": "31",
+        "attach": null,
+        "deferNotifications": true
+      },
+      "preparedToken": "1",
+      "prepared": {
+        "token": "1",
+        "legacyRequest": "30",
+        "geometryRequest": "31",
+        "legacyReady": false,
+        "geometryReady": false
+      },
+      "geometry": {
+        "revision": "15",
+        "output": "1",
+        "windows": [
+          {
+            "incarnation": "1",
+            "mode": "maximized",
+            "minimized": false
+          }
+        ]
+      },
+      "unresolved": [],
+      "providerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerScope": {
+        "outputId": "1",
+        "providerId": "1"
+      },
+      "ownerExhausted": false,
+      "focus": [],
+      "order": [
+        "publish",
+        "local",
+        "local",
+        "local"
+      ],
+      "frame": {
+        "surfaceProtocol": 2,
+        "publication": "48",
+        "lease": "1",
+        "mode": "closed",
+        "status": "Connected",
+        "bar": [
+          {
+            "id": "bar:applications",
+            "domId": "applications:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:2:control:opener",
+            "label": "Applications",
+            "ariaLabel": "Open applications",
+            "detail": "",
+            "enabled": true
+          },
+          {
+            "id": "bar:group:application:elm-maximize-probe",
+            "domId": "group:{\"lifetime\":\"12037388133217397494\",\"session\":\"11368147789958501132\",\"frontend\":\"1\"}:1:12:application:elm-maximize-probe",
+            "label": "ELM-MAXIMIZE-PROBE",
+            "ariaLabel": "Minimize ELM-MAXIMIZE-PROBE",
+            "detail": "1",
+            "enabled": false
+          }
+        ],
+        "popup": []
+      },
+      "rendererAdmitted": true,
+      "attemptedRequests": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "30"
+        },
+        {
+          "protocolVersion": 3,
+          "kind": "geometry-facts-request",
+          "geometryProtocol": 1,
+          "binding": {
+            "lifetime": "12037388133217397494",
+            "session": "11368147789958501132",
+            "frontend": "1"
+          },
+          "requestId": "31",
+          "minimumWatermark": "25"
+        }
+      ],
+      "issued": [],
+      "unresolvedFull": [],
+      "requests": [],
+      "shell": {
+        "phase": "Reconciling",
+        "notificationQueued": false,
+        "request": "31",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "1",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Connected",
+        "recoveryFailure": null
+      },
+      "outstanding": 1,
+      "registry": 0,
+      "menu": null
+    }
+  },
+  "scope": "Actual compiled controller; known local non-submission evidence, no native certificate/receipt manufactured; request-count and UTF8 tests stress only register boundary",
+  "nativeAcceptance": false,
+  "usabilityAcceptance": false
+}

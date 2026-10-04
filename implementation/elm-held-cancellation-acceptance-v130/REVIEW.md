@@ -1,0 +1,1 @@
+Preserves V129 failed freezer source and exit evidence. Cursor195 has the original report field sourceInputs; other campaigns use inputs. Fresh V130 verifies the existing captured field explicitly, without changing any native source, deadline, oracle, report or result.

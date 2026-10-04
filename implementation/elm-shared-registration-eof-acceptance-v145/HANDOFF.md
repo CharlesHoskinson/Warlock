@@ -1,0 +1,9 @@
+# Combined registration and EOF CPU qualification
+
+V144 is the clean three-way merge of held V138 and V140 on source132. All75 source rows reverify against their final parents; each production delta comes byte-exact from one parent. Independent read-only review found no merge blocker. Native context, strict disposition and schema5 storage protocol are preserved.
+
+Actual integrated CPU results pass certificate62/deferred attach3, registration25, broker output43, teardown10 and currentV325 semantic78/53/21 plus postclose59. Optimized Main/Bar/Popup and actual C host/context73/key20/geometry34/selftests pass. Final build captures1005 compiler dependencies, seven tools and144 linked libraries. Legacy pre-stable-menu traces remain failed historical diagnostics; no oracles were rewritten or failures promoted.
+
+Local register refusal retires only exact internally proven-never-forwarded Pending/read slots, preserves unrelated Unknown/original router keys, emits degraded presentation and blocks new allocation until verified recovery. Output poisoning prevents a partial receipt receiving an appended frame; durable settlement is retained despite delivery failure. Normal stdinEOF is drained within bounded host shutdown, without changing native3s/receipt5s/scenario6s budgets.
+
+CPU acceptance only. Parent source132's native48 and retirement evidence does not transfer to this changed source. Native current-schema5 EOF/held-receipt fixtures are being prepared in V148; original08/09/10 remain unaccepted. PrimaryV365 also exposes a broader native Escape/publication race on the input lineage; do not claim the baseline closes it. Rebase reviewed native proof changes and run coherent fault/effect/pixel/input gates, then full S01–S16/UIUX/restore/drag/workspaces/outputs/hardware/AT/IME/performance/release/deploy/rollback/user-flow obligations. No installed changes.

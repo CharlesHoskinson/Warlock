@@ -1,0 +1,1 @@
+Independent review rejected this unlaunched native harness: PID-only placement is ambiguous because the unchanged fixture has two windows; geometry receipt checks omit protocol2. Source and preflight are retained. Fresh V151 corrects exact authority-title/address/incarnation selection and full protocol correlation. No native evidence claimed.

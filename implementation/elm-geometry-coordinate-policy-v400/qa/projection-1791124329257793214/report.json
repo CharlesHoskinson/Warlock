@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Zero-origin pure prospective conversion with owning math library; no native or wire integration",
+  "inputs": {
+    "candidate/ProspectiveGeometry.hpp": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+    "qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "qa/test.py": "f8687fefb07c889bda73003cff1ef6642560c53f1aae84ca59a70977129e8202",
+    "spec/REQUIREMENTS.md": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "exitCode": 0
+    },
+    {
+      "name": "checks",
+      "exitCode": 0
+    }
+  ],
+  "owningBuildReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json",
+    "sha256": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f"
+  },
+  "owningLibrary": {
+    "path": "/usr/lib/libhyprutils.so.0.14.2",
+    "sha256": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811"
+  },
+  "checks": 1710,
+  "owningMathHeaders": {
+    "/usr/include/hyprutils/math/Box.hpp": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+    "/usr/include/hyprutils/math/Vector2D.hpp": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+    "/usr/include/hyprutils/memory/Casts.hpp": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+    "/usr/include/hyprutils/math/Misc.hpp": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f"
+  },
+  "artifacts": {
+    "dependencies.d": "d88d7e6f73c7f4efdb49d8d6bf8e0eaf4d623ef1b5431e891bcbe4e0072089fd",
+    "projection-test": "22a898a7511e588efa6e388146f706208a2324e06f3c745cf8036e7fa83d7f3f",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks.stdout": "e3b9d12be253b5ee61207531b90ba819dd0a78dc11ac0e2af64cb88c18075b32",
+    "checks.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owning-headers/hyprutils/math/Box.hpp": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+    "owning-headers/hyprutils/math/Vector2D.hpp": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+    "owning-headers/hyprutils/math/Misc.hpp": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f",
+    "owning-headers/hyprutils/memory/Casts.hpp": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+    "inputs/candidate/ProspectiveGeometry.hpp": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+    "inputs/qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "inputs/qa/test.py": "f8687fefb07c889bda73003cff1ef6642560c53f1aae84ca59a70977129e8202",
+    "inputs/spec/REQUIREMENTS.md": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446"
+  }
+}

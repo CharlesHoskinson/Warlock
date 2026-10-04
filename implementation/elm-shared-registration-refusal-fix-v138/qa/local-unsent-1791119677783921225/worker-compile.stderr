@@ -1,0 +1,14 @@
+-- TYPE MISMATCH -------------------------------------- src/OutputController.elm
+
+The 1st argument to `list` is not what I expect:
+
+179|                     presentation = E.object [("viewProtocol",E.int 1),("kind",E.string "view-commit"),("projection",frame settled),("requests",E.list identity []),("focus",E.list identity [])]
+                                                                                                                                                           ^^^^^^^^
+This `identity` value is a:
+
+    Scope -> Counter
+
+But `list` needs the 1st argument to be:
+
+    Scope -> E.Value
+

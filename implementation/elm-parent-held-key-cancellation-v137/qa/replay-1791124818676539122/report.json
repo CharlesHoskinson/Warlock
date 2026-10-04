@@ -1,0 +1,307 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual dispatch/poll/output destroy/destructor/frame-idle bodies with real Hyprutils weak/shared ownership; typed transport/core protocol fixtures; native transport and full refinement separate",
+  "commands": [
+    {
+      "name": "original-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/original.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/original"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "original-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/original"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/candidate.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "devices-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/devices.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/devices"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "devices-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/devices"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "descriptor-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/descriptor.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/descriptor"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "descriptor-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/descriptor"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "focus-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/focus.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/focus"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "focus-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/focus"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "publication-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/publication.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/publication"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "publication-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/publication"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "frame-copy-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/frame-copy.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/frame-copy"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "frame-copy-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/frame-copy"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "late-frame-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/late-frame.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/late-frame"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "late-frame-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/late-frame"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "output-once-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/output-once.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/output-once"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "output-once-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay-1791124818676539122/output-once"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/replay3.py": "979b1b3ad9435f6cdc6997d9b6ddb7b35865498be9e9fc777ab95a05e3a9cb9f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/qa/template.cpp": "831764fb848ba3f5d73e80d5c81e040e02e754606358e4c333ed3c475a86e50b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/candidate/src/backend/Wayland.cpp": "a3e4e82cbc1a98f890bd33e6fb0e89c2b5eec25678f0c675ba2e671186c7daa8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v137/candidate/src/backend/Wayland.cpp": "0c3c23fe25d6dc524c04898c2df34a4d5b6fc29684e1471e51e8399d22327050"
+  },
+  "candidateChecks": 63,
+  "candidateValidated": true,
+  "mutantsRejected": 7,
+  "originalViolation": "actual vectors retired",
+  "artifacts": {
+    "original.cpp": "5088f4b789bf0e81d979d480004f2c7dd39d0a71096ec6340fc2a1ed1d32f944",
+    "original": "283bf8d98b9022dbf132c60f65715a8f88d45372ce4532c32fc5707b64e62973",
+    "original-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stderr": "5fb6d4c16d14a2f32f18100de17e77de1ce6b02f3285ec3bb956d50d8caf8182",
+    "candidate.cpp": "5f3205fdb77e1e734a52212648850cfb6eb350254a813efa69338ae0f76401f5",
+    "candidate": "b319e5c5a91a0dba9da008d91948244f91122bb9fe549838454070b6dbdd6d2d",
+    "candidate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-run.stdout": "529baa9ea5b4093e27aa95e766c22df145ab060c2e94d81030b5518320689b9b",
+    "candidate-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices.cpp": "2766668fc2498beb430cd130254d8114f02c02ec18334fa898921c87be2a9af4",
+    "devices": "4ef6c6a62a5a909e7499e189d01e852083fd7cc5871e4d33f2ba76ce903fd7ef",
+    "devices-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices-run.stderr": "5fb6d4c16d14a2f32f18100de17e77de1ce6b02f3285ec3bb956d50d8caf8182",
+    "descriptor.cpp": "6939102d80674152560b7f17b5a63af62cd3007f40066040351dba11a3267724",
+    "descriptor": "9510f42bd8d63f10896923a1004c4e2187e11f5d286073f37fe1583e0d184c9e",
+    "descriptor-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "descriptor-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "descriptor-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "descriptor-run.stderr": "efdfc0cda99f10834ddab6f1b0b1e48d08a38d17fd5a17a05148b9124dcda0b0",
+    "focus.cpp": "84f0598843393fde367f5985578b8abf0bc241e3d6bac85ed77899e422b768a9",
+    "focus": "d037e3c44c9ac8e2311bb6da0edaf57d5f32ac4f1b4a7eaabfd4d6a75203ba4f",
+    "focus-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-run.stderr": "59cffa96f22c54d978600df13873f1eb06e7d4e8e1e825eac90582c2650874cb",
+    "publication.cpp": "aaaea79f56ec52d718c30f31d83ae01dfe44f03be8a44e1dbfd1f792d4d274c4",
+    "publication": "471c04f02fc1d39b27b9c6ddcb15f3c4f8a26a8080c96e0d53f4d10d50b5fb1e",
+    "publication-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication-run.stderr": "b4429e4826e23afea5c1f0cd6ffb9d5f37041690890d00a3c4cd3d07a909d331",
+    "frame-copy.cpp": "955a11ff5d9b1cf83cb40371986ed6e9db4e1f6b25ffcfc0bb52a1f207c1190f",
+    "frame-copy": "4dd7bdc5b972bdeecbc457df9390d525ae159f177fbb3665794ed99e11acc446",
+    "frame-copy-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frame-copy-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frame-copy-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "frame-copy-run.stderr": "23724c40b10a837a4773c287ca697a4f2808d6caf64691e95185af9294ce4948",
+    "late-frame.cpp": "583ea63bab7a4d47094d12aa6a3e3b033a6d9d2f83bdd4f31a874bd5572f263a",
+    "late-frame": "dc8311394cc988a619773ae47252076cceefa64e40ad8bbda5a3e6b7b10d5366",
+    "late-frame-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "late-frame-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "late-frame-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "late-frame-run.stderr": "10661045c5980ef1272bc3ddad386dc94536c18870f218512be21ffc9c11f472",
+    "output-once.cpp": "eac4bef4ef93b1e995e862155989061185e850b21e6f5317680b9421e3b05fc5",
+    "output-once": "2382abe36acc32c36b182878c2d8b3d2bfd61a8944c85386cf2185175ac303cc",
+    "output-once-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-once-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-once-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-once-run.stderr": "4d90b89d0db6e4fcbb9619f896c25b7a5f85f31af03ba38a3b30d12216735fc3"
+  }
+}

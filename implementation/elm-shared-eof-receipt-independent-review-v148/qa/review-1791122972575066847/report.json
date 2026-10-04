@@ -1,0 +1,1378 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "full08Accepted": false,
+  "full09Accepted": false,
+  "full10Accepted": false,
+  "scope": "Independent immutable fixture source/pin/AST/import-only review; no child, socket, receipt settlement or native action",
+  "checks": [
+    {
+      "name": "expected reviewed fixture manifest",
+      "passed": true
+    },
+    {
+      "name": "held integrity and narrow native scope",
+      "passed": true
+    },
+    {
+      "name": "held file HANDOFF.md",
+      "passed": true
+    },
+    {
+      "name": "held file backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file fixture-source-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file parent.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/admission",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/admission.d",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/authority.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/historical-v100-held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/fixture-source-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/native/admission-test.c",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/native/host-journal.h",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/native/surface.h",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/admission-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/legacy-staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/profile-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/receipt-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/receipt-control/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/receipt-control/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/host-writer.lock",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/admissions-v1/8c4275b2d3757b7e087444d2fd89734c872dff857cb918ed4ab1812ca31dfe03.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/host-owner.lock",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/host-writer.lock",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/ledger-v5.initialized",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/ledger-v5.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/migration-plan.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/migration.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/qa_current_148/5735349452885836276/writer.lock",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current-1791122125585508486/runtime/elm-window-recovery/writer.lock",
+      "passed": true
+    },
+    {
+      "name": "held file qa/admission-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/candidate/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/candidate/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/inputs/qa/unsafe-success-first.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/unsafe-ancestor/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/unsafe-ancestor/exit.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline-1791121769479030512/unsafe-ancestor/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/backlog/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/backlog/exit.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/backlog/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/blocked/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/blocked/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/inputs/qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges-1791121769476991342/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/freeze-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791121769485049923/inputs/backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791121769485049923/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791121769485049923/inputs/qa/receipt-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791121769485049923/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791121769485049923/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/control-1/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/inputs/backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/inputs/qa/receipt-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122207632665964/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-1/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-13/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-14/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-14/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-15/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-15/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-16/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-16/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-17/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-17/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-18/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-18/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-8/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/control-9/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/eof.stderr",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/eof.stdout",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/inputs/backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/inputs/qa/supervisor-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/locked.stderr",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/locked.stdout",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/malformed.stderr",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/malformed.stdout",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/release.stderr",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/release.stdout",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/timeout.stderr",
+      "passed": true
+    },
+    {
+      "name": "held file qa/hold-1791122290936490365/timeout.stdout",
+      "passed": true
+    },
+    {
+      "name": "held file qa/legacy-receipt-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/legacy-staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/authority.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/fixture-source-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/admission-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/legacy-staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/profile-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/receipt-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/isolated-fixture/backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/isolated-fixture/fixture-source-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/isolated-fixture/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/isolated-fixture/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/isolated-fixture/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/public.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/receipt.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current-1791122207631948940/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/authority.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control1/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control12/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control13/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control14/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control15/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control16/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control17/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control18/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control19/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control20/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control21/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control22/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control23/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control23/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control24/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control3/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/control9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/parent.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/receipt-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791121769578017360/wrapper.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/authority.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control1/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control12/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control13/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control14/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control15/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control16/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control17/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control18/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control19/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control20/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control21/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control22/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control23/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control23/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control24/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control3/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/control9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/parent.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/admission-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/legacy-staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/profile-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/profile-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/receipt-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-1791122207675783263/wrapper.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/selector-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/authority.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control1/held.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control10/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control11/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control12/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control6/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control7/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control8/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/control9/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/inputs/backend-pin.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/inputs/qa/backend.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/inputs/qa/broker-entrypoint.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/inputs/qa/staged-test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/inputs/qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/staged-1791121769560390979/wrapper.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/supervisor-current.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-1/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-1/exit.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-2/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-2/exit.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-3/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-4/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-5/actor.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/control-5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/hardlink.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test-1791121752973483375/report.json",
+      "passed": true
+    },
+    {
+      "name": "held file qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "held file qa/wrapper.py",
+      "passed": true
+    },
+    {
+      "name": "held file upstream.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-acceptance-v145/component-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/report.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-terminal-runtime-v336/candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-terminal-runtime-v336/aq-tuple.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-terminal-runtime-v336/native-build-report.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-terminal-runtime-v336/parent-probe-build.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/geometry_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/geometry_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/daemon.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/daemon.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/catalog_transport.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/catalog_transport.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/catalog_authority.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/catalog_authority.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/taskbar_catalog.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/taskbar_catalog.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/taskbar_projection.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/taskbar_projection.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/recovery_journal.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/recovery_journal.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/recovery_fault.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/recovery_fault.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/durable_ledger.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/durable_ledger.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/recovery_store.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/recovery_store.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/qa/build-1791121323616998481/inputs/adapter/admission_ledger.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-eof-integration-v144/adapter/admission_ledger.py",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-eof-deadline-v92/qa/held-source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-eof-relay-v90/qa/held-source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "held owning external closure /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-selector-v82/qa/held-source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "fixed final145 frozen manifest",
+      "passed": true
+    },
+    {
+      "name": "fixed13 actual captured broker dependencies",
+      "passed": true
+    },
+    {
+      "name": "actual verified backend fixed source",
+      "passed": true
+    },
+    {
+      "name": "actual source-only broker imports pinned daemon",
+      "passed": true
+    },
+    {
+      "name": "current delivery writer bounded and unpoisoned",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V92 AST pump",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V92 AST actor_status",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V92 AST exit_status",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V92 AST close_stdin",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V92 AST directory",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V92 AST read_private",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V92 AST decode",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V82 AST ReceiptHold",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V82 AST supervise",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V82 AST write_release",
+      "passed": true
+    },
+    {
+      "name": "unchanged exact V82 AST main",
+      "passed": true
+    },
+    {
+      "name": "unchanged fixed receipt entrypoint bytes",
+      "passed": true
+    },
+    {
+      "name": "selected distinct CPU report relay",
+      "passed": true
+    },
+    {
+      "name": "selected distinct CPU report deadline",
+      "passed": true
+    },
+    {
+      "name": "selected distinct CPU report edges",
+      "passed": true
+    },
+    {
+      "name": "selected distinct CPU report profiles",
+      "passed": true
+    },
+    {
+      "name": "selected distinct CPU report actualAdmissionHistoricalReceipt",
+      "passed": true
+    },
+    {
+      "name": "selected distinct CPU report syntheticSelector",
+      "passed": true
+    },
+    {
+      "name": "selected distinct CPU report syntheticSupervision",
+      "passed": true
+    }
+  ],
+  "manifestSHA256": "daf8e357930c9326c20b01c8b8adc1482c166364b3d10b62159584946a81eba2",
+  "checkedFiles": 279,
+  "sourceSHA256": "e73a974ed5b5730881608ba1fd984df46a59c7f4c532c5f4a3ea92941491d81f",
+  "limitations": [
+    "Tuple336 and exact144 backend only; current380 runtime requires fresh binding",
+    "Historical100 real receipt bytes only; no current native Pending settlement",
+    "Relay/hold source review does not qualify actual EOF/notifications/receipt release or six-second native scenario"
+  ]
+}

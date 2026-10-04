@@ -1,0 +1,59 @@
+{
+  "passed": true,
+  "scope": "Actual C host teardown blocks with deterministic time/drain API doubles; no GUI or native process claim",
+  "checks": [
+    {
+      "name": "ancestor actual block compiles",
+      "passed": true
+    },
+    {
+      "name": "owning ancestor two-second budget prematurely forces legal native request",
+      "passed": true
+    },
+    {
+      "name": "owning ancestor removed reader before bounded completion",
+      "passed": true
+    },
+    {
+      "name": "ancestor ready-callback storm bypasses its outer time cap",
+      "passed": true
+    },
+    {
+      "name": "candidate actual block compiles",
+      "passed": true
+    },
+    {
+      "name": "candidate allows existing native3 deadline completion",
+      "passed": true
+    },
+    {
+      "name": "candidate drains while awaiting normal completion",
+      "passed": true
+    },
+    {
+      "name": "one global shutdown bound including write-close stays below original five-second fixture cap",
+      "passed": true
+    },
+    {
+      "name": "receipt withheld beyond shutdown is forced uncertainty not normal completion",
+      "passed": true
+    },
+    {
+      "name": "candidate inner drain loops enforce the same global cap under callback storm",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "test.py": "27b238b81cec186d63c050c40ef0c1f02eae114d2aaed5274092ae50ac99da0a",
+    "ancestor-host.c": "3abe445636fdbb428deeb749514768604dd4795001a320b3ea8cc0b8a67e7e65",
+    "ancestor.c": "e3d46c4dbb607009747fdffde25e8d10a047742dc30d3b6a0ab630797a751404",
+    "ancestor": "481b4a6bb55a4d70d9d32fbc1e8e0487a768abec1e2ae7ec2943845affe0395d",
+    "ancestor.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ancestor.stdout": "0cc85a4c349bf4376797b9ded7ef1011c10ded5f876691fd3ecf7ec91e24d3b2",
+    "candidate-host.c": "cc4f31ae7b3361f7a298f7d808d4abdb782bcdfa481a6d8f1a78459553b89042",
+    "candidate.c": "980df8034f1fe9aa55f819ae708cd91451cbca910b2496c6988a629237ec963a",
+    "candidate": "4564f81209387a86206a44a96cbaee505ed37c183608369ed136438564de992e",
+    "candidate.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate.stdout": "f13556034a0a3841cf036bfe3762a1711241c1d9739d83eb9b236b9bf3d0d020"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "passed": false,
+  "scope": "Extracted actual MAX body/XDG layout min-max/Wayland report branch with stub dependencies and real paired Hyprutils; no policy, native, X11 or presentation acceptance",
+  "reviewedInputs": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-constraint-coordinate-review-v155/reviewed-inputs.json",
+  "reviewedInputsSHA256": "4264a3cc192db2ffdcbc6ea921ac950ddecfd5f96331951bff91f8bac0900d52",
+  "pairReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json",
+  "pairReportSHA256": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f",
+  "slices": {
+    "MAX-body": "f97694e2231a5c617e5ce947040707eafbed07ed6791af3e8241d9f3f414671f",
+    "layoutMinSize": "2a2ae7160b118f0e37106839cea1d112b3bcfed16de43e17cf95fde21e0f739b",
+    "layoutMaxSize": "55300164445c6547fb5e274cbf4c07231cb7709fe6d669477fd3e082b12b3e62",
+    "realToReportSize-Wayland": "f5d0604e099118d56c4a8f168d0f93057196093c21a8f2e6c36195137e14162b",
+    "VECTOR2D_MAX": "41d5991f8cb7d6634c727d038d4028608519e7faa26b4222df8b617c902e02bf"
+  },
+  "runs": {
+    "actual": {
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-conversion-characterization-v162/qa/characterize-1791124499432621357/actual",
+        "-lhyprutils"
+      ],
+      "exitCode": 1,
+      "binarySHA256": "7a2fab7de38037d22881eb976846cc48d28d51868bcf40c372eafc953e72cde2",
+      "checks": 23,
+      "failedNames": [
+        "fractional negative origin real CBox rounding then reservation",
+        "no-client-configure path still updates prospective box"
+      ]
+    }
+  },
+  "error": "AssertionError('actual: PASS no-reserve empty visual uses logical box\\nPASS actual configure and decoration calls occur once\\nPASS distinct visual box governs prospective client box\\nPASS bare logical workarea control differs\\nPASS asymmetric decoration extents applied exactly once\\nPASS asymmetric configure uses real client size\\nFAIL fractional negative origin real CBox rounding then reservation\\nFAIL no-client-configure path still updates prospective box\\nPASS GTK108x42 raw minimum converts with nonzero geometry origin\\nPASS zero maximum remains zero despite geometry origin\\nPASS ownerless GTK minimum stays raw108x42\\nPASS raw positive maximum1 is suppressed by actual layout threshold\\nPASS tiny raw maximum 2 adds geometry offset\\nPASS tiny raw maximum 3 adds geometry offset\\nPASS tiny raw maximum 4 adds geometry offset\\nPASS negative geometry origin can produce negative layout maximum\\nPASS zero and1 minimum axes suppressed before geometry offset\\nPASS zero geometry origin preserves finite maximum\\nPASS Waylandscale1 configure size remains logical108x42\\nPASS Waylandscale2 configure size does not multiply\\nPASS client-times-scale unsafe control differs at scale2\\nPASS actual Wayland report clamps negative axis to zero\\nPASS Wayland report preserves fractional logical goal\\nTOTAL 23 FAILED 2\\n')",
+  "artifacts": {
+    "actual.cpp": "2e6d1a316ffcf3fe973168f2a3c76f7fbcece6851c8d7808177e8a8617862a2f",
+    "actual.d": "215ed251b8f4a2416351c07b7169296a7b2249780fa433f07a5c80746ea8d2e3",
+    "actual": "7a2fab7de38037d22881eb976846cc48d28d51868bcf40c372eafc953e72cde2",
+    "actual.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual.stdout": "bde7cb2c816dddbf3a5e2f03224e726b654a4f9e48cedb788abb0e64e65fd0c9",
+    "actual.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/Window.cpp": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+    "inputs/XDGShell.cpp": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b",
+    "inputs/WindowTarget.cpp": "8bcaf37000cf55e1d2084bf732f0589b4ab49d36c778d8d4efa98949dd14734d",
+    "inputs/Math.hpp": "26e71b8ba323d68015b6e7c67abab4ec125b9e5f996acce9413af27d9dce2b5b",
+    "inputs/MAX-body.txt": "f97694e2231a5c617e5ce947040707eafbed07ed6791af3e8241d9f3f414671f",
+    "inputs/layoutMinSize.txt": "2a2ae7160b118f0e37106839cea1d112b3bcfed16de43e17cf95fde21e0f739b",
+    "inputs/layoutMaxSize.txt": "55300164445c6547fb5e274cbf4c07231cb7709fe6d669477fd3e082b12b3e62",
+    "inputs/realToReportSize-Wayland.txt": "f5d0604e099118d56c4a8f168d0f93057196093c21a8f2e6c36195137e14162b",
+    "inputs/VECTOR2D_MAX.txt": "41d5991f8cb7d6634c727d038d4028608519e7faa26b4222df8b617c902e02bf",
+    "inputs/characterize.py": "ab486fe11a87343edb7ef02f6b4f660fa702a3f7ec6fa313067d061f30ae6a4e"
+  }
+}

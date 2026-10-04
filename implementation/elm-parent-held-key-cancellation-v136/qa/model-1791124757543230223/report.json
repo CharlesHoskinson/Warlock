@@ -1,0 +1,184 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Bounded held-key loss/cancellation-before-retirement abstraction; actual C++ callback lifetime and native recipient/core state separate",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "held.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "held.qnt",
+        "--backend=typescript",
+        "--match=^(oneHeldCancelledTest|allHeldCancelledTest|unheldLossSilentTest|duplicatePressRefusedTest|alreadyReleasedExcludedTest|repeatCancellationSilentTest|cancellationBeforeRetirementTest|latePressRefusedTest|lostPhysicalReleaseCannotBalanceTest|staleCancellationAfterRetirementTest)$",
+        "--max-samples=1",
+        "--seed=79001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "held.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-cancel-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-cancel.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-cancel-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-cancel.qnt",
+        "--backend=typescript",
+        "--match=^oneHeldCancelledTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "wrong-set-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "wrong-set.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "wrong-set-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "wrong-set.qnt",
+        "--backend=typescript",
+        "--match=^oneHeldCancelledTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-frame-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-frame.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-frame-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-frame.qnt",
+        "--backend=typescript",
+        "--match=^allHeldCancelledTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "invented-release-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "invented-release.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invented-release-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "invented-release.qnt",
+        "--backend=typescript",
+        "--match=^unheldLossSilentTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "error": "AssertionError(('duplicate-press', 0))",
+  "artifacts": {
+    "held.qnt": "07c068d4fd47929dd0f4f2ad9589a7c4d92d1d25d31cd2fe1e5891faadd43bf1",
+    "model.py": "98a5b14c9f847cf986df528ce7e0b06ad201c82db82d0437affdbf98cfd81b08",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-oneHeldCancelledTest-0.itf.json": "fc6c20663e3a230794ebf1a771f309146e844580f99453e994046a487831dd41",
+    "named-allHeldCancelledTest-1.itf.json": "0c1263cb9a2654913a7fc292e50f83842c6954d42aa350e8d35f509980c28c9c",
+    "named-unheldLossSilentTest-2.itf.json": "c7cd55cf249133530a0aa09458676fe1c182e6eedc02af74a501c925d8ab8bf5",
+    "named-duplicatePressRefusedTest-3.itf.json": "9890a5eb89690bdb0aeed48113d0c3da34e2c97e9af9c7aaf61ba65aa182dffb",
+    "named-alreadyReleasedExcludedTest-4.itf.json": "f52a1d375ec015762c795747bc4fe3de3b15d7c18c68d70b222265a9fd24bd21",
+    "named-repeatCancellationSilentTest-5.itf.json": "066dcf008053a7b434f358ce904edc420ce25f0c11fa5903e1992314a2451fd8",
+    "named-cancellationBeforeRetirementTest-6.itf.json": "413dabd48193184d32d0a656ab8166498ea1785d0a4bd9f0c95300abc50c9310",
+    "named-latePressRefusedTest-7.itf.json": "04b995c14c48a928f3826630272426a4821e87ebfe448069f3923093c0935823",
+    "named-lostPhysicalReleaseCannotBalanceTest-8.itf.json": "1b34d393942d1754276e3c66b07dc7bee02ef30af180d5b1de1e52d5d915ce23",
+    "named-staleCancellationAfterRetirementTest-9.itf.json": "1d5db393422829a1aade7c4f7ee9c996df1d0631b8f71dd1d82a2b16541fd1c1",
+    "named.stdout": "180f1b9ca4c629b3fdb32913ec3fb1dfbe03e4481c482a93780acd198ecc9f70",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "c69151f47803241cbaf39c8cdde43986495b408b6d4cbfa6ae4fe3a474e7c1ba",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-cancel.qnt": "8e6fbcb78b2582c068eba9c4cbae6c9c9955178618ed40f2ca809419842d1f69",
+    "missing-cancel-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-cancel-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-cancel-rejected.stdout": "52c2b8b0365e4ad0d9e0c5f4988ea7330cb9baf2437e72649b205d6ed0e5420f",
+    "missing-cancel-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "wrong-set.qnt": "adcbc3a73464e656f89f209330dc5a5e472f0cd610e6a3deb4ad5f467f3e2662",
+    "wrong-set-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-set-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-set-rejected.stdout": "b19897591802b0e2ad2dfd2e754f540292cc5a7ad0abc0c911c7c653044cc025",
+    "wrong-set-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "missing-frame.qnt": "0a2d44cd53b2cb3f19298dd734fc24ccdee778df24d97b027dcfe44233a84072",
+    "missing-frame-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-frame-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-frame-rejected.stdout": "731d56db0088a448a45d140585c73379dc64ed64035520f03fdcf7cf039edcb8",
+    "missing-frame-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "invented-release.qnt": "dd139b9ef89d2768fcb367c8c255062da0123f511aef818980d6b75eb8909187",
+    "invented-release-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-release-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-release-rejected.stdout": "0ba6e07fd308a36cf6e366c502ab011d55d90319ace56270153c388658d9a173",
+    "invented-release-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

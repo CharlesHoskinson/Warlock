@@ -1,0 +1,39 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/qa/projection-test.cpp:1:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/qa/../candidate/ProspectiveGeometry.hpp: In function ‘std::optional<Elm::ProspectiveGeometry::Projection> Elm::ProspectiveGeometry::project(Input)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/qa/../candidate/ProspectiveGeometry.hpp:54:36: error: no match for ‘operator*’ (operand types are ‘int’ and ‘Hyprutils::Math::Vector2D’)
+   54 |                   selected.size()-2*(input.reserved.topLeft+input.reserved.bottomRight)};
+      |                                   ~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                   |                        |
+      |                                   int                      Hyprutils::Math::Vector2D
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/qa/../candidate/ProspectiveGeometry.hpp:54:88: error: no matching function for call to ‘Hyprutils::Math::CBox::CBox(<brace-enclosed initializer list>)’
+   54 |                   selected.size()-2*(input.reserved.topLeft+input.reserved.bottomRight)};
+      |                                                                                        ^
+  • there are 6 candidates
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-coordinate-policy-v401/qa/projection-1791124404066481765/controls/double-max-reserves/qa/../candidate/ProspectiveGeometry.hpp:2:
+    • candidate 1: ‘Hyprutils::Math::CBox::CBox(const Hyprutils::Math::Vector2D&, const Hyprutils::Math::Vector2D&)’
+      /usr/include/hyprutils/math/Box.hpp:89:9:
+         89 |         CBox(const Vector2D& pos, const Vector2D& size) {
+            |         ^~~~
+      • conversion of argument 2 would be ill-formed:
+    • candidate 2: ‘Hyprutils::Math::CBox::CBox(double)’
+      /usr/include/hyprutils/math/Box.hpp:78:9:
+         78 |         CBox(const double d) {
+            |         ^~~~
+      • candidate expects 1 argument, 2 provided
+    • candidate 3: ‘Hyprutils::Math::CBox::CBox()’
+      /usr/include/hyprutils/math/Box.hpp:70:9:
+         70 |         CBox() {
+            |         ^~~~
+      • candidate expects 0 arguments, 2 provided
+    • candidate 4: ‘Hyprutils::Math::CBox::CBox(double, double, double, double)’
+      /usr/include/hyprutils/math/Box.hpp:61:9:
+         61 |         CBox(double x_, double y_, double w_, double h_) {
+            |         ^~~~
+      • candidate expects 4 arguments, 2 provided
+    • candidate 5: ‘constexpr Hyprutils::Math::CBox::CBox(const Hyprutils::Math::CBox&)’
+      /usr/include/hyprutils/math/Box.hpp:52:11:
+         52 |     class CBox {
+            |           ^~~~
+      • candidate expects 1 argument, 2 provided
+    • candidate 6: ‘constexpr Hyprutils::Math::CBox::CBox(Hyprutils::Math::CBox&&)’
+      • candidate expects 1 argument, 2 provided

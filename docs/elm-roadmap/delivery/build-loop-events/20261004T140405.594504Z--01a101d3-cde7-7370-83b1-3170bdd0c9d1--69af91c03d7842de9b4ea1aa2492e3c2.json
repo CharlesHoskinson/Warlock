@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "69af91c03d7842de9b4ea1aa2492e3c2",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T14:04:05.594504+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-shared-floating-menu-native-v152",
+  "nextWork": [
+    "Run reviewed additive floating multi-action Max/restore native route on combined380; finish independent review of held148 and integrate original08/09/10 without deadline or source substitution. Full S01-S16/UIUX/release/deployment/rollback remains open."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-shared-floating-menu-native-v152/qa/preflight.json",
+      "sha256": "c5e9a4f8ee16f90bef91dc0f2229b2093d0a6a51f521e59d4742490abe98815c",
+      "size": 32052
+    },
+    {
+      "path": "implementation/elm-shared-eof-receipt-fixture-v148/component-manifest.json",
+      "sha256": "daf8e357930c9326c20b01c8b8adc1482c166364b3d10b62159584946a81eba2",
+      "size": 64483
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

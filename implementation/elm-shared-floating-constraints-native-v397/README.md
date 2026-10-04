@@ -1,0 +1,1 @@
+Read-only actual GTK xdg_toplevel size-request diagnostic on frozen source380. Original152 multi-action assertion and6s retained; expected representative floating capability failure remains failure. Exact title/PID/address/incarnation and per-toplevel protocol requests captured. Effective layout constraints still require native readback.

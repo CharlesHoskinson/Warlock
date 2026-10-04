@@ -1,0 +1,16 @@
+
+  recovery
+    1) implicitClickCannotBypassTest failed after 1 test(s)
+
+  1 failed
+
+  1) implicitClickCannotBypassTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-render-dismissal-model-v373/qa/model-1791120965962754841/unsafe.qnt:36:82
+        36:  run implicitClickCannotBypassTest=init.then(press).then(implicitClick).then(all{assert(s.closed==0 and s.held and s.available),s'=s}).then(web).then(release).then(all{assert(s.closed==1),s'=s})
+                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x29828 --match=implicitClickCannotBypassTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unsafe.qnt

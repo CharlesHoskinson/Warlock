@@ -1,0 +1,16 @@
+
+  held
+    1) unheldLossSilentTest failed after 1 test(s)
+
+  1 failed
+
+  1) unheldLossSilentTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-held-key-cancellation-v138/qa/model-1791124869089427286/invented-release.qnt:22:68
+        22:   run unheldLossSilentTest = init.then(lose).then(cancel).then(all{assert(s.released==0 and s.modifierResets==0),s'=s})
+                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=unheldLossSilentTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 invented-release.qnt

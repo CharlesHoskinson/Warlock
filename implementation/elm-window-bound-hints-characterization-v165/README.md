@@ -1,0 +1,1 @@
+Fresh QA-only derivative164 resolves an ambiguous Vector2D NaN test constructor by spelling both arguments asdouble. Exact extracted owning minSize/maxSize methods are unchanged. Failure164 compiler evidence retained. No geometry/model/native eligibility change.
