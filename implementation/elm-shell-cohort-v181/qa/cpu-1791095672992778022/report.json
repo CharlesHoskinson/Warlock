@@ -1,0 +1,122 @@
+{
+  "passed": true,
+  "scope": "Real isolated user-scope forced cleanup and outside-peer preservation; no GUI/host/release acceptance",
+  "checks": [
+    {
+      "name": "exactOwnedQAScopeIdentified",
+      "passed": true
+    },
+    {
+      "name": "controlledMainAndDetachedHelperShareOnlyOwnedCgroup",
+      "passed": true
+    },
+    {
+      "name": "helperEscapedProcessGroupButNotCgroup",
+      "passed": true,
+      "main": {
+        "pid": 195310,
+        "start": "6377765",
+        "pgid": 195310,
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-shell-cohort-1791095672992818017.scope\n",
+        "core": [
+          1,
+          1
+        ],
+        "helper": 195312
+      },
+      "helper": {
+        "pid": 195312,
+        "start": "6377768",
+        "pgid": 195312,
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-shell-cohort-1791095672992818017.scope\n",
+        "core": [
+          1,
+          1
+        ]
+      },
+      "peer": {
+        "pid": 195309,
+        "start": "6377763",
+        "pgid": 195309,
+        "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a211189eb7d54543abda3c2c07f0cc17.scope\n",
+        "core": [
+          1,
+          1
+        ]
+      }
+    },
+    {
+      "name": "exactCoreLimitInheritedByEveryWorker",
+      "passed": true
+    },
+    {
+      "name": "stopPolicyIsWholeCgroupWithOriginalFiveSecondGrace",
+      "passed": true
+    },
+    {
+      "name": "forcedScopeStopRemovesMainAndDetachedHelper",
+      "passed": true,
+      "jobExitCode": -9,
+      "stop": {
+        "exitCode": 0,
+        "stdout": "",
+        "stderr": "",
+        "elapsedSeconds": 5.081949485000223
+      }
+    },
+    {
+      "name": "outsidePeerAndOriginalQAScopePreserved",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-cohort-v181/qa/cpu.py": "738570d1f6691856b8556c0add8097af6459b570cff91ac286026ce5ad8c0a17",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-cohort-v181/qa/worker.py": "7ce971a541127d90495ad34f9c23828ea56f14de9e028fefe2796c35f7636e7d"
+  },
+  "unit": "qa-harness-shell-cohort-1791095672992818017.scope",
+  "parentCgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-a211189eb7d54543abda3c2c07f0cc17.scope\n",
+  "command": [
+    "systemd-run",
+    "--user",
+    "--scope",
+    "--quiet",
+    "--slice=qa-harness.slice",
+    "--unit=qa-harness-shell-cohort-1791095672992818017.scope",
+    "--property=KillMode=control-group",
+    "--property=TimeoutStopSec=5s",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-cohort-v181/qa/worker.py",
+    "cohort",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shell-cohort-v181/qa/cpu-1791095672992778022/cohort.json"
+  ],
+  "properties": {
+    "Id": "qa-harness-shell-cohort-1791095672992818017.scope",
+    "ActiveState": "active",
+    "SubState": "running",
+    "TimeoutStopUSec": "5s",
+    "ControlGroup": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-shell-cohort-1791095672992818017.scope",
+    "KillMode": "control-group"
+  },
+  "stop": {
+    "exitCode": 0,
+    "stdout": "",
+    "stderr": "",
+    "elapsedSeconds": 5.081949485000223
+  },
+  "postStopProperties": {
+    "Id": "qa-harness-shell-cohort-1791095672992818017.scope",
+    "ActiveState": "failed",
+    "SubState": "failed",
+    "TimeoutStopUSec": "5s",
+    "ControlGroup": "",
+    "KillMode": "control-group"
+  },
+  "peerNormalExit": true,
+  "artifacts": {
+    "peer.json": "f32882a80648d0332dc5d577f11d7c4566f157495d86938a343c986cb2c24547",
+    "scope.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cohort.json": "117117c4235933db8dd55e8e8396009ad882e221cb69dadb01446b4825abc695",
+    "cohort.helper.json": "5c22a8c7b30aae8fb596f691c528cfc5aaf6966ef7921e107b80ea74309bc5da"
+  }
+}

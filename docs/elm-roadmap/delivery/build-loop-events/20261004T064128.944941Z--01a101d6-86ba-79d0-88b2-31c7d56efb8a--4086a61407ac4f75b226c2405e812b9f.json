@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "4086a61407ac4f75b226c2405e812b9f",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T06:41:28.944941+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-cohort-native-v183",
+  "nextWork": [
+    "Actual native isolated shell cohort restart/cancel, cgroup exclusion of compositor/application fixtures and empty helper cleanup; then stalled-host force teardown"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-host-cohort-v182/cohort.py",
+      "sha256": "87b4293aa64700d53f6fa64bc7963fffd4716341fc7a20b99fc4aa3648704aa5",
+      "size": 6550
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

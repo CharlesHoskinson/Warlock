@@ -7025,6 +7025,31 @@
       "performanceBudgetsAccepted": false,
       "cleanupPassed": true,
       "scope": "Private actual sealed supervisor restart/cancellation through native recovery controls; failure/final geometry and real application keyboard preserved; pending-intent/AT/hotplug/atomic restart/full release remain open"
+    },
+    {
+      "passed": true,
+      "scope": "Actual owned transient shell scope cooperative and forced teardown; externally launched applications/compositor preserved; no production app launch or release acceptance",
+      "cooperativeNativeChecks": 40,
+      "forcedNativeChecks": 42,
+      "actualCohortCPUChecks": 7,
+      "forcedStopSeconds": 5.050370658995234,
+      "forcedResidualHelpersRemoved": 3,
+      "scopeMembersRemaining": [],
+      "forcedStopWrapperExitCode": 1,
+      "sealedRuntimeFiles": 18,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "retainedOriginalNativeChecks": 91,
+      "retainedFullNativeChecks": 137,
+      "retainedRecoveryQuintNamed": 6,
+      "retainedRecoveryQuintSamples": 1000,
+      "performanceBudgetsAccepted": false,
+      "evidence": "implementation/elm-cohort-native-v186/qa/slice-manifest.json",
+      "limitations": [
+        "Application launch not implemented; future launches require independently owned application scopes",
+        "Wrapper startup/death races, pending Unknown/former authenticated scope, atomic reservations, recovery hotplug/AT/IME remain open",
+        "Full137/original91 and recovery Quint6/1000 retained, not rerun by40/42 selected campaigns"
+      ]
     }
   ]
 }
