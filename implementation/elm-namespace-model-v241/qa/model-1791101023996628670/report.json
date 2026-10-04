@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Namespace ownership and stable restartable migration contract; abstract model, not automatic C/filesystem/Elm refinement.",
+  "sourceSHA256": "9ff78d6c7d680f5b5058283249151cd9f6f4b71fe5c26a868ce53ce7509aa38e",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(ownedImportTest|foreignInstanceTest|foreignLifetimeTest|ambiguousOwnerTest|lockedLegacyTest|stableResumeTest|noResurrectionTest|independentNamespacesTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170018",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170019",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "9ff78d6c7d680f5b5058283249151cd9f6f4b71fe5c26a868ce53ce7509aa38e",
+    "model.py": "3a1ef144420c03389cc13dec68ccf2be071c73501723fbcc5741c8391d2a0ddf",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-ownedImportTest-0.itf.json": "51789e5ab0a23992aea3a6ced83bf98d89089e74e07f347d7f87736124b6208c",
+    "named-foreignInstanceTest-1.itf.json": "dd36422d1ace7215843b57cb600387269b850e30c1a9c6e918efb62944bd2c04",
+    "named-foreignLifetimeTest-2.itf.json": "d0de241ebc25082be4f061594e0424a8fdfa751fb2aafa0e5185b95624f107d7",
+    "named-ambiguousOwnerTest-3.itf.json": "e352274726da97e749ba12099b6a2323fcf9b4d6a11299a1dc33c48db50ac099",
+    "named-lockedLegacyTest-4.itf.json": "8cb6fd570aa1c93a02f3dc9de570965ae1170371e2bb9ec5269882b678bd74e8",
+    "named-stableResumeTest-5.itf.json": "409a065c84c6d3e43715209fb53d86dc51f3000fe56652a3510d214ce075fa8d",
+    "named-noResurrectionTest-6.itf.json": "1de6abdf5576d767aac1cc430cae25fd49829bb2ef40f7ba15fc96a77ec8879e",
+    "named-independentNamespacesTest-7.itf.json": "c6358f322ca940798cc4678bdfccba5c91168edd164a7a5df8c7587435b08cb4",
+    "named.stdout": "8795e5900575c24a703be600511e1e16ba6f039d10a8debfd4b975c80cf7a93f",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "ccfbe2f17c5615815ef4fb80c68fa51b80a7a006d3281cb179c50f71f76ed04d",
+    "invariants.stdout": "017d54ecd590ea68c04c9c698a0b7a5defdc4f1d55a02efdbd1db8484ef138ed",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

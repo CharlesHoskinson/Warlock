@@ -1,0 +1,13 @@
+In file included from native/host.c:14,
+                 from native/shared-host.c:3:
+native/host-journal.h: In function ‘admission_open’:
+native/host-journal.h:53:9: error: conflicting types for ‘base’; have ‘int’
+   53 |     int base=admission_child(root,"elm-window-recovery");close(root);if(base<0)return FALSE;
+      |         ^~~~
+native/host-journal.h:39:57: note: previous definition of ‘base’ with type ‘char *’
+   39 |     g_autofree char *parent=g_path_get_dirname(config),*base=g_path_get_basename(config);
+      |                                                         ^~~~
+native/host-journal.h:53:9: error: unused variable ‘base’ [-Werror=unused-variable]
+   53 |     int base=admission_child(root,"elm-window-recovery");close(root);if(base<0)return FALSE;
+      |         ^~~~
+cc1: all warnings being treated as errors

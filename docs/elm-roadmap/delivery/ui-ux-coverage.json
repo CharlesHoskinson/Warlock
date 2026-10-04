@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T05:32:29.225270+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T08:07:02.933234+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7193,6 +7193,41 @@
         "Single controlled window at fixed private output; original restore38/recovery34/case34 timing, multiwindow/modal/device behavior and release are not established",
         "Instance/lifetime journal namespace/migration, storage-error UX and global old-live-broker revocation remain open",
         "Compiler/Quint/admission/full original native results are retained, not rerun by these four selected native campaigns"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Instance/lifetime recovery journal isolation and ownership-qualified restartable migration, one actual unread-minimize recovery case",
+      "cpuNamespaceChecks": 42,
+      "cpuJournalChecks": 19,
+      "compiledAdmissionChecks": 22,
+      "compiledElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeChecks": 59,
+      "nativeSelectedCases": 1,
+      "actualPixelStages": 6,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "preparedNativeCasesNotExecuted": [
+        "elm-namespaced-restore-native-v242",
+        "elm-namespaced-minimize-lost-v243",
+        "elm-namespaced-restore-lost-v244"
+      ],
+      "completedRequirementIds": [],
+      "fullOriginalNativeRegressionAccepted": false,
+      "legacyOwnershipProvisioningAccepted": false,
+      "storageErrorUXAccepted": false,
+      "evidence": "implementation/elm-namespace-acceptance-v245/qa/slice-manifest.json",
+      "limitations": [
+        "One actual unread-minimize case on changed V238 build; other three prepared native cases not executed",
+        "Abstract Quint contract is not an automated implementation refinement proof",
+        "Legacy ownership provisioning, storage-error UX, global old-live-broker revocation and full release remain open"
       ]
     }
   ]

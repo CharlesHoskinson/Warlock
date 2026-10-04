@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-minimize-restore-recovery-v235",
-  "status": "Four coherent real minimize/restore unread/lost-receipt recovery cases pass57/59/57/59 native checks with actual body pixels, keyboard eligibility and current-state primary actions. Dead cgroup descriptor ENODEV reproduced6 CPU checks and guarded cleanup fixed. Full original timing/requirements/release open.",
+  "activeSlice": "implementation/elm-namespace-acceptance-v245",
+  "status": "Instance/lifetime recovery isolation and explicit ownership-qualified migration qualified in CPU/compiled/Quint checks and one real unread-minimize case. Remaining prepared native cases, legacy provisioning/storage UX and full release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1300,6 +1300,36 @@
         "Instance/lifetime journal namespace/migration, storage-error UX and global old-live-broker revocation remain open",
         "Compiler/Quint/admission/full original native results are retained, not rerun by these four selected native campaigns"
       ]
+    },
+    "namespaceV245": {
+      "passed": true,
+      "scope": "Instance/lifetime recovery journal isolation and ownership-qualified restartable migration, one actual unread-minimize recovery case",
+      "cpuNamespaceChecks": 42,
+      "cpuJournalChecks": 19,
+      "compiledAdmissionChecks": 22,
+      "compiledElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeChecks": 59,
+      "nativeSelectedCases": 1,
+      "actualPixelStages": 6,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "preparedNativeCasesNotExecuted": [
+        "elm-namespaced-restore-native-v242",
+        "elm-namespaced-minimize-lost-v243",
+        "elm-namespaced-restore-lost-v244"
+      ],
+      "completedRequirementIds": [],
+      "fullOriginalNativeRegressionAccepted": false,
+      "legacyOwnershipProvisioningAccepted": false,
+      "storageErrorUXAccepted": false,
+      "evidence": "implementation/elm-namespace-acceptance-v245/qa/slice-manifest.json"
     }
   },
   "next": [

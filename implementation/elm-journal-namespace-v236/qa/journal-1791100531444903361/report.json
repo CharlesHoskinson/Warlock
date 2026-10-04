@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "emptyJournalHasNoRecovery",
+      "passed": true
+    },
+    {
+      "name": "concurrentWriterRefused",
+      "passed": true
+    },
+    {
+      "name": "pendingDurablyRoundTrips",
+      "passed": true
+    },
+    {
+      "name": "freshBindingRecoversOnlyUncertainIntent",
+      "passed": true
+    },
+    {
+      "name": "foreignCompositorRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchedReceiptRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchDoesNotClearPending",
+      "passed": true
+    },
+    {
+      "name": "durableCommitIsNotUnknown",
+      "passed": true
+    },
+    {
+      "name": "duplicateTerminalReceiptRefused",
+      "passed": true
+    },
+    {
+      "name": "writerConfirmsDurableSubmission",
+      "passed": true
+    },
+    {
+      "name": "abruptWriterExitIsRecorded",
+      "passed": true
+    },
+    {
+      "name": "freshWriterReadsUnknownAfterActualDeath",
+      "passed": true
+    },
+    {
+      "name": "duplicateJSONRefused",
+      "passed": true
+    },
+    {
+      "name": "publicRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "oversizeRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "unsupportedOperationRefusedBeforeWrite",
+      "passed": true
+    },
+    {
+      "name": "rejectedWritePreservesRecord",
+      "passed": true
+    },
+    {
+      "name": "publicRecoveryDirectoryRefused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-journal-namespace-v236/qa/journal.py": "b4dfb3a4d61723b7ced9f8d9332c2c28b7f2e096c63e35bee5436f3fd0b0d1f6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-journal-namespace-v236/adapter/recovery_journal.py": "1b2123bbaece3beea17e066c79f24bab3242a6e468cd4dfa0e0176ceae54e106",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-journal-namespace-v236/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  }
+}
