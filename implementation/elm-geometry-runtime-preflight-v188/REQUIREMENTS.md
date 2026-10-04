@@ -1,0 +1,3 @@
+# Prepared-runtime preflight completion
+
+Read-only CPU preparation, no native or release acceptance. Validate held185 descriptor and owning409 compile/link closure; verify every declared linked-library identity in addition to source/dependencies; import exact unchanged protected336 host through185 without constructing a session or launching GUI. Preserve facade source, protected launcher, prior evidence and model logic. Host import and successful hashes do not mean plugin load, live mapping, client ACK/pixels, consumers or native lifecycle acceptance. Record exact manifest and source/library evidence for a later reviewed native runner.
