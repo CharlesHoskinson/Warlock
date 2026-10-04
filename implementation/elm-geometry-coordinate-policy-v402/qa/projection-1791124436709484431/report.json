@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Zero-origin pure prospective conversion with owning math library; no native or wire integration",
+  "inputs": {
+    "candidate/ProspectiveGeometry.hpp": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+    "qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "qa/test.py": "c5cc8534746ccb6241640cf3fbe0b9d5d695876c716c559b08c13b4a20a60124",
+    "spec/REQUIREMENTS.md": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "exitCode": 0
+    },
+    {
+      "name": "checks",
+      "exitCode": 0
+    }
+  ],
+  "owningBuildReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json",
+    "sha256": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f"
+  },
+  "owningLibrary": {
+    "path": "/usr/lib/libhyprutils.so.0.14.2",
+    "sha256": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811"
+  },
+  "checks": 1710,
+  "owningMathHeaders": {
+    "/usr/include/hyprutils/math/Box.hpp": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+    "/usr/include/hyprutils/math/Vector2D.hpp": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+    "/usr/include/hyprutils/memory/Casts.hpp": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+    "/usr/include/hyprutils/math/Misc.hpp": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f"
+  },
+  "controls": [
+    {
+      "name": "double-max-reserves",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "restore-subtracts-reserves",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "raw-checks-real-not-integer",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "configure-multiplies-scale",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "nonzero-origin-guessed",
+      "exitCode": 1,
+      "detected": true
+    }
+  ],
+  "artifacts": {
+    "dependencies.d": "6723a65343dcfa69363da805c273a25b424900e8ba8486bd2fcdd92aec190d59",
+    "projection-test": "22a898a7511e588efa6e388146f706208a2324e06f3c745cf8036e7fa83d7f3f",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks.stdout": "e3b9d12be253b5ee61207531b90ba819dd0a78dc11ac0e2af64cb88c18075b32",
+    "checks.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/double-max-reserves/projection-test": "e76df929b01431a62b9440edcae49519e75bec039ff00e06fa13adaa28c3efa4",
+    "controls/double-max-reserves/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/double-max-reserves/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/double-max-reserves/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/double-max-reserves/checks.stderr": "e4f12f1d975d4caa34ede338d0f32e1af88b474aeb1905eb64a5d4c3bbddb901",
+    "controls/restore-subtracts-reserves/projection-test": "e969728a093fc3a03150d3942f219becfb49dd504fbf2ac78ea135e4789d4c3e",
+    "controls/restore-subtracts-reserves/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/restore-subtracts-reserves/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/restore-subtracts-reserves/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/restore-subtracts-reserves/checks.stderr": "16c07ae87a6f6b9fcc91ae94ab1422116cad146e9940f1a47892797b6ea6fc25",
+    "controls/raw-checks-real-not-integer/projection-test": "0fc83000f21d9d17e6333776c4d5ec81a6b0e9fbbecdbc82fb7e4c4b7a2f2add",
+    "controls/raw-checks-real-not-integer/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/raw-checks-real-not-integer/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/raw-checks-real-not-integer/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/raw-checks-real-not-integer/checks.stderr": "639c944f75a7de4278673cce978227dd34377e11b704b36e2876bfbeefb43fd1",
+    "controls/configure-multiplies-scale/projection-test": "e41cede7020e7256385cd7d02b0ebba361a4509acab83402558f44d96a528f9f",
+    "controls/configure-multiplies-scale/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/configure-multiplies-scale/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/configure-multiplies-scale/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/configure-multiplies-scale/checks.stderr": "f4d55110f50d0294e7a4edd8a2b23431f723d29574f6eeb80e629cc69c9a1913",
+    "controls/nonzero-origin-guessed/projection-test": "ba636dba0a4e7eac4f9c451f8f1a8ba1a1f08498b65aaf3cd594f26fa6e05547",
+    "controls/nonzero-origin-guessed/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/nonzero-origin-guessed/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/nonzero-origin-guessed/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/nonzero-origin-guessed/checks.stderr": "af0d504764560aaa95753510d803ebee2d2cf9c7e4ff3809ad2d8fa467adfcc7",
+    "controls/nonzero-origin-guessed/candidate/ProspectiveGeometry.hpp": "264c7fd3dd138782e1845d9311d90fb1acbd4b54872dccd6bb454b127a6613cf",
+    "controls/nonzero-origin-guessed/qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "controls/configure-multiplies-scale/candidate/ProspectiveGeometry.hpp": "8d5f4dfdbbed86ff5393a864f9dfa212da4460698cd02252e9115a11eb18b003",
+    "controls/configure-multiplies-scale/qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "controls/raw-checks-real-not-integer/candidate/ProspectiveGeometry.hpp": "b0a34d7d378dc2ec0f1fdb2808ac15f616b79341cd17f2b4e5da2337f16ad950",
+    "controls/raw-checks-real-not-integer/qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "controls/restore-subtracts-reserves/candidate/ProspectiveGeometry.hpp": "9471b019a5ad6972dad933aef4c966be9e31c3429d5e7430d9f10cad43de0a96",
+    "controls/restore-subtracts-reserves/qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "controls/double-max-reserves/candidate/ProspectiveGeometry.hpp": "f9a5564fcd058fc3e143a2c0a1750eb3e03bd16ed73e83d83be8ff62d5162463",
+    "controls/double-max-reserves/qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "owning-headers/hyprutils/math/Box.hpp": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+    "owning-headers/hyprutils/math/Vector2D.hpp": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+    "owning-headers/hyprutils/math/Misc.hpp": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f",
+    "owning-headers/hyprutils/memory/Casts.hpp": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+    "inputs/candidate/ProspectiveGeometry.hpp": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+    "inputs/qa/projection-test.cpp": "892532e2c4c1568c90f6bd65054fc1fc1cba247af6ae579867496029de7ad0bf",
+    "inputs/qa/test.py": "c5cc8534746ccb6241640cf3fbe0b9d5d695876c716c559b08c13b4a20a60124",
+    "inputs/spec/REQUIREMENTS.md": "ed2a6806121d79c8c3e45978e108184da2d6d85d3aa5a0b4a1037660f0091446"
+  }
+}
