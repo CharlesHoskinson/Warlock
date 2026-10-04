@@ -1,0 +1,971 @@
+{
+  "passed": true,
+  "scope": "CPU only: actual fixture helpers/callbacks and CLI; no compositor/GTK/presentation proof",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6ed5c359758c410ab713cca0b7cbab8e.scope",
+    "coreLimit": 1
+  },
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/report.json",
+  "buildReportSHA256": "e6a20d72749820b6744cdc08de152a617a336d898d45edf797bbbbfbae6918b4",
+  "commands": [
+    {
+      "name": "actual-build",
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wl,-z,defs",
+        "-Wl,--wrap=wl_display_connect",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/actual",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/actual/helper.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/actual/helper-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated/xdg-shell-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/actual/helper"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/actual/helper"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "unsafe-buffer-no-scale-build",
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wl,-z,defs",
+        "-Wl,--wrap=wl_display_connect",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-buffer-no-scale",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-buffer-no-scale/helper.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-buffer-no-scale/helper-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated/xdg-shell-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-buffer-no-scale/helper"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "unsafe-buffer-no-scale",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-buffer-no-scale/helper"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "unsafe-origin-missing-build",
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wl,-z,defs",
+        "-Wl,--wrap=wl_display_connect",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-origin-missing",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-origin-missing/helper.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-origin-missing/helper-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated/xdg-shell-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-origin-missing/helper"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "unsafe-origin-missing",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-origin-missing/helper"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "unsafe-foreign-recipient-build",
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wl,-z,defs",
+        "-Wl,--wrap=wl_display_connect",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-foreign-recipient",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-foreign-recipient/helper.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-foreign-recipient/helper-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated/xdg-shell-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-foreign-recipient/helper"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "unsafe-foreign-recipient",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-foreign-recipient/helper"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "unsafe-MAX-clamp-build",
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wl,-z,defs",
+        "-Wl,--wrap=wl_display_connect",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-MAX-clamp",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-MAX-clamp/helper.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-MAX-clamp/helper-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated/xdg-shell-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-MAX-clamp/helper"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "unsafe-MAX-clamp",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-MAX-clamp/helper"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "unsafe-ordinary-no-max-build",
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wl,-z,defs",
+        "-Wl,--wrap=wl_display_connect",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-ordinary-no-max",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-ordinary-no-max/helper.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-ordinary-no-max/helper-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/generated/xdg-shell-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-ordinary-no-max/helper"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "unsafe-ordinary-no-max",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/unsafe-ordinary-no-max/helper"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "cli-0",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cli-1",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cli-2",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--scale",
+        "2"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cli-3",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "256",
+        "--origin-y",
+        "256"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cli-4",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-height",
+        "42",
+        "--height",
+        "42"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "cli-5",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--max-width",
+        "1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-6",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--scale",
+        "0"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-7",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--scale",
+        "3"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-8",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "-1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-9",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "257"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-10",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "01"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-11",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "+1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-12",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        " 1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-13",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "1.0"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-14",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x",
+        "99999999999999999"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-15",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--width",
+        "0"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-16",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--width",
+        "31"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-17",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--width",
+        "4097"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-18",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--width",
+        "4096",
+        "--height",
+        "4096",
+        "--scale",
+        "2"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-19",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--scale",
+        "1",
+        "--scale",
+        "2"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-20",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--max-width",
+        "7",
+        "--min-width",
+        "8"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-21",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--origin-x"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-22",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--unknown",
+        "1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-23",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--validate"
+      ],
+      "exitCode": 64
+    },
+    {
+      "name": "cli-24",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129575587800319/xdg-origin-client",
+        "--validate",
+        "--min-height",
+        "42",
+        "--max-height",
+        "41"
+      ],
+      "exitCode": 64
+    }
+  ],
+  "runs": {
+    "actual": {
+      "helperChecks": 75,
+      "failures": 0,
+      "connections": 0,
+      "exitCode": 0,
+      "sourceSHA256": "e00b9f150d4ec2caa18647193f15262e116241626ea0f4a2cf0e425f8f4d2c0a",
+      "binarySHA256": "022c4b118662d485253af97bd0105cb7ddbc680dd75366cffeb1740f4f6345f0"
+    },
+    "unsafe-buffer-no-scale": {
+      "helperChecks": 75,
+      "failures": 3,
+      "connections": 0,
+      "exitCode": 1,
+      "sourceSHA256": "3b34998cebc80e4ae809fc8e2cab5f8cf7ffbab92dfd1262fdb77c63676603ad",
+      "binarySHA256": "b87f4fe79ef43f18285cfb6f8f1371622836b53c9d05634cabb711f6c4774f32"
+    },
+    "unsafe-origin-missing": {
+      "helperChecks": 75,
+      "failures": 7,
+      "connections": 0,
+      "exitCode": 1,
+      "sourceSHA256": "34a46c1067882c5781dee833ff337a1e370fdec12266834926b4c708e7d115b5",
+      "binarySHA256": "554b67346c927310c596ca50323eb0ec98781b7b9af637e53b5dbaa0ad53eac4"
+    },
+    "unsafe-foreign-recipient": {
+      "helperChecks": 75,
+      "failures": 5,
+      "connections": 0,
+      "exitCode": 1,
+      "sourceSHA256": "bc3fd0fafcbbf1e602069e11f5e9b550e9b6aaa49025dc8f0c4e91062c215e9e",
+      "binarySHA256": "a4e74ca78343bdc71808dcb23a4e65c2e24fe699d9f3a02245766ffd0a343306"
+    },
+    "unsafe-MAX-clamp": {
+      "helperChecks": 75,
+      "failures": 4,
+      "connections": 0,
+      "exitCode": 1,
+      "sourceSHA256": "c94248bbc94c2eb42c8409d1cac153496ba76e0fc146b87d2067dd0678011b6f",
+      "binarySHA256": "c2ce542b44e9d5b37899c03250098e9d7b5ce245eeb1e524dc09ad47ce4525d7"
+    },
+    "unsafe-ordinary-no-max": {
+      "helperChecks": 75,
+      "failures": 9,
+      "connections": 0,
+      "exitCode": 1,
+      "sourceSHA256": "965621358b630166e31173f773965d62de8267e72f99dae938ddfe22075e640c",
+      "binarySHA256": "d773f06e4499d837a108644f40a3ca781736a89cd94ca90ae08eb3adce3bcf00"
+    }
+  },
+  "cli": [
+    {
+      "arguments": [],
+      "exitCode": 0,
+      "profile": {
+        "valid": true,
+        "geometry": [
+          16,
+          24,
+          320,
+          180
+        ],
+        "surfaceSize": [
+          352,
+          228
+        ],
+        "bufferSize": [
+          352,
+          228
+        ],
+        "scale": 1,
+        "rawMinimum": [
+          0,
+          0
+        ],
+        "rawMaximum": [
+          0,
+          0
+        ],
+        "bytes": 321024
+      }
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0"
+      ],
+      "exitCode": 0,
+      "profile": {
+        "valid": true,
+        "geometry": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "surfaceSize": [
+          320,
+          180
+        ],
+        "bufferSize": [
+          320,
+          180
+        ],
+        "scale": 1,
+        "rawMinimum": [
+          0,
+          0
+        ],
+        "rawMaximum": [
+          0,
+          0
+        ],
+        "bytes": 230400
+      }
+    },
+    {
+      "arguments": [
+        "--scale",
+        "2"
+      ],
+      "exitCode": 0,
+      "profile": {
+        "valid": true,
+        "geometry": [
+          16,
+          24,
+          320,
+          180
+        ],
+        "surfaceSize": [
+          352,
+          228
+        ],
+        "bufferSize": [
+          704,
+          456
+        ],
+        "scale": 2,
+        "rawMinimum": [
+          0,
+          0
+        ],
+        "rawMaximum": [
+          0,
+          0
+        ],
+        "bytes": 1284096
+      }
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "256",
+        "--origin-y",
+        "256"
+      ],
+      "exitCode": 0,
+      "profile": {
+        "valid": true,
+        "geometry": [
+          256,
+          256,
+          320,
+          180
+        ],
+        "surfaceSize": [
+          592,
+          460
+        ],
+        "bufferSize": [
+          592,
+          460
+        ],
+        "scale": 1,
+        "rawMinimum": [
+          0,
+          0
+        ],
+        "rawMaximum": [
+          0,
+          0
+        ],
+        "bytes": 1089280
+      }
+    },
+    {
+      "arguments": [
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-height",
+        "42",
+        "--height",
+        "42"
+      ],
+      "exitCode": 0,
+      "profile": {
+        "valid": true,
+        "geometry": [
+          16,
+          24,
+          320,
+          42
+        ],
+        "surfaceSize": [
+          352,
+          90
+        ],
+        "bufferSize": [
+          352,
+          90
+        ],
+        "scale": 1,
+        "rawMinimum": [
+          108,
+          42
+        ],
+        "rawMaximum": [
+          0,
+          42
+        ],
+        "bytes": 126720
+      }
+    },
+    {
+      "arguments": [
+        "--max-width",
+        "1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--scale",
+        "0"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--scale",
+        "3"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "-1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "257"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "01"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "+1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        " 1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "1.0"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x",
+        "99999999999999999"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--width",
+        "0"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--width",
+        "31"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--width",
+        "4097"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--width",
+        "4096",
+        "--height",
+        "4096",
+        "--scale",
+        "2"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--scale",
+        "1",
+        "--scale",
+        "2"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--max-width",
+        "7",
+        "--min-width",
+        "8"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--origin-x"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--unknown",
+        "1"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--validate"
+      ],
+      "exitCode": 64
+    },
+    {
+      "arguments": [
+        "--min-height",
+        "42",
+        "--max-height",
+        "41"
+      ],
+      "exitCode": 64
+    }
+  ],
+  "sourceInputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs/xdg-origin-client.c": "e00b9f150d4ec2caa18647193f15262e116241626ea0f4a2cf0e425f8f4d2c0a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs/test.py": "cc7e4dcc0d20a23cf471c82268d35cd7b812bc2ac771a956ee9cc50d9b9ccf74",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/test-1791129668620439049/inputs/REQUIREMENTS.md": "93963f1d0fd102881e243215b8ad073362c89ff87ed1b8da1cf3ec8f545b9ab1"
+  },
+  "artifacts": {
+    "actual-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual.stdout": "6765c47cf90bd0368ad7d7ab53130380655488a8d6f2bf0feb1fe21d62550e66",
+    "actual.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "unsafe-buffer-no-scale-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-buffer-no-scale-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-buffer-no-scale.stdout": "411297fd3ae264ea6ac34401c4a0cfff9de3aac93581a9b5877b85acb47ce622",
+    "unsafe-buffer-no-scale.stderr": "cc7eccee525953c8f81a3c3aa46d3df244ec2c9bc55a15f17344c6cf3c015757",
+    "unsafe-origin-missing-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-origin-missing-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-origin-missing.stdout": "b0bfca70d15528e1cf8cef4d849d7a4b1184dbdacb5e262e1b77a51f711da27d",
+    "unsafe-origin-missing.stderr": "8a3e4e2a0ed5e9233f706a9d8cbcd592c8518e30e3292db2c9ac98173d16af66",
+    "unsafe-foreign-recipient-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-foreign-recipient-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-foreign-recipient.stdout": "6b373a4764feb5ce740712e6958eec3b2afdc751a5d210103ee1f52f920b699c",
+    "unsafe-foreign-recipient.stderr": "3aea3142fe4edfab2e270f9ad3199261ab91a97dcb5df07adc9756bcc427a227",
+    "unsafe-MAX-clamp-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-MAX-clamp-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-MAX-clamp.stdout": "0557b94454ba089250ed0d4e19126dc0e9cfecabcf0c2b297565037c51e8911a",
+    "unsafe-MAX-clamp.stderr": "6ada065620f923f182bbfaecec67b80ca9add1b27c62b992735de6fa8c53fe91",
+    "unsafe-ordinary-no-max-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-ordinary-no-max-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-ordinary-no-max.stdout": "cd95ae219394cd8352a8a4e67f868d3a9d964d46ae584ec8c0631fc1c665bdac",
+    "unsafe-ordinary-no-max.stderr": "6524b78a8510bff02905367ea0a77e01d1baa15ecf77651a819ceb5217183f40",
+    "cli-0.stdout": "3110a7a9341b6b509839c6d80e3c0897f6ce687b69174d8050f41dd8fab0f9ab",
+    "cli-0.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-1.stdout": "1b773140d97a71ee4d3857c43bf9ef61d5febb52bfedbe607dabd422435cc428",
+    "cli-1.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-2.stdout": "4a0b8eb51c5013c1f9aa70c0d26c413adb0247706d6f71edbbd1c957bc1d11fb",
+    "cli-2.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-3.stdout": "b2b41bcdfffda3838d03359eca733a7d29b33a76c4433e067320d2b4e9ff915a",
+    "cli-3.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-4.stdout": "fdb20a53a9ddae7a6c33ce8a481eff830ba8ca5a022b4de053cfd33c4bd3b789",
+    "cli-4.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-5.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-5.stderr": "408c66cf797b38b50346ce8504534ee74ea1894c54c0ae2eb68518e573cd658c",
+    "cli-6.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-6.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-7.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-7.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-8.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-8.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-9.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-9.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-10.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-10.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-11.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-11.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-12.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-12.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-13.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-13.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-14.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-14.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-15.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-15.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-16.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-16.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-17.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-17.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-18.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-18.stderr": "408c66cf797b38b50346ce8504534ee74ea1894c54c0ae2eb68518e573cd658c",
+    "cli-19.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-19.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-20.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-20.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-21.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-21.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-22.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-22.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-23.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-23.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "cli-24.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cli-24.stderr": "287208d5a9ab6292c10a021f29a5cae231c70ad7abfe05cfa47080466415a808",
+    "inputs/xdg-origin-client.c": "e00b9f150d4ec2caa18647193f15262e116241626ea0f4a2cf0e425f8f4d2c0a",
+    "inputs/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "inputs/test.py": "cc7e4dcc0d20a23cf471c82268d35cd7b812bc2ac771a956ee9cc50d9b9ccf74",
+    "inputs/REQUIREMENTS.md": "93963f1d0fd102881e243215b8ad073362c89ff87ed1b8da1cf3ec8f545b9ab1",
+    "actual/xdg-origin-client.c": "e00b9f150d4ec2caa18647193f15262e116241626ea0f4a2cf0e425f8f4d2c0a",
+    "actual/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "actual/helper.d": "7c012050ab68eeedb26630c7ac4198983df8795b9fe93d9b2d7f86dc2dfdac39",
+    "actual/helper": "022c4b118662d485253af97bd0105cb7ddbc680dd75366cffeb1740f4f6345f0",
+    "unsafe-buffer-no-scale/xdg-origin-client.c": "3b34998cebc80e4ae809fc8e2cab5f8cf7ffbab92dfd1262fdb77c63676603ad",
+    "unsafe-buffer-no-scale/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "unsafe-buffer-no-scale/helper.d": "2ab412b9dce6839fb03fba24bd1f080ebd11b7d05beefebe8d6c12f4e1ed7865",
+    "unsafe-buffer-no-scale/helper": "b87f4fe79ef43f18285cfb6f8f1371622836b53c9d05634cabb711f6c4774f32",
+    "unsafe-origin-missing/xdg-origin-client.c": "34a46c1067882c5781dee833ff337a1e370fdec12266834926b4c708e7d115b5",
+    "unsafe-origin-missing/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "unsafe-origin-missing/helper.d": "e292c1fdabe5ba3bfeac7f3ecb06332385c7d5a94c5acfafda55e539d6ac56b8",
+    "unsafe-origin-missing/helper": "554b67346c927310c596ca50323eb0ec98781b7b9af637e53b5dbaa0ad53eac4",
+    "unsafe-foreign-recipient/xdg-origin-client.c": "bc3fd0fafcbbf1e602069e11f5e9b550e9b6aaa49025dc8f0c4e91062c215e9e",
+    "unsafe-foreign-recipient/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "unsafe-foreign-recipient/helper.d": "28cbb076bd9363cb194506e328b8a5505e53a12ecfb43bea0c584cccb2dd7dfc",
+    "unsafe-foreign-recipient/helper": "a4e74ca78343bdc71808dcb23a4e65c2e24fe699d9f3a02245766ffd0a343306",
+    "unsafe-MAX-clamp/xdg-origin-client.c": "c94248bbc94c2eb42c8409d1cac153496ba76e0fc146b87d2067dd0678011b6f",
+    "unsafe-MAX-clamp/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "unsafe-MAX-clamp/helper.d": "c4eea3f182aa69115f8a0d0946390f66713c31b66b1136189b5bad562e3d2076",
+    "unsafe-MAX-clamp/helper": "c2ce542b44e9d5b37899c03250098e9d7b5ce245eeb1e524dc09ad47ce4525d7",
+    "unsafe-ordinary-no-max/xdg-origin-client.c": "965621358b630166e31173f773965d62de8267e72f99dae938ddfe22075e640c",
+    "unsafe-ordinary-no-max/helper-test.c": "1c8dbc7b230790beb331230bde897860de223cd2e917c87309641c5e4153900d",
+    "unsafe-ordinary-no-max/helper.d": "5972e95194a2f35087fd9033b1455108726c3a44ca201234a6464e43dac15cad",
+    "unsafe-ordinary-no-max/helper": "d773f06e4499d837a108644f40a3ca781736a89cd94ca90ae08eb3adce3bcf00"
+  }
+}

@@ -1,0 +1,1 @@
+Fresh446 model selector correction only: discover seven actual named runs independent of indentation and require exact nonempty count. Logic byte-exact446. Prior446 passed invariants and three mutants but selected zero names; report retained without named-scenario acceptance.

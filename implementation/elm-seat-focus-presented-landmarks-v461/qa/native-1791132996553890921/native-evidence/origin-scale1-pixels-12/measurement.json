@@ -1,0 +1,850 @@
+{
+  "passed": false,
+  "directory": "/home/hoskinson/window-integration-qa/xdg-origin-1791132996766535499/origin-scale1-pixels-12",
+  "owner": {
+    "pid": 2591998,
+    "start": "10110429",
+    "pgid": 2591998,
+    "name": "origin-scale1",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129756017735997/xdg-origin-client",
+      "--origin-x",
+      "16",
+      "--origin-y",
+      "24",
+      "--right-pad",
+      "16",
+      "--bottom-pad",
+      "24",
+      "--scale",
+      "1",
+      "--width",
+      "320",
+      "--height",
+      "180",
+      "--min-width",
+      "108",
+      "--min-height",
+      "42",
+      "--max-width",
+      "0",
+      "--max-height",
+      "0"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/xdg-origin-1791132996766535499/origin-scale1.jsonl"
+  },
+  "incarnation": "2",
+  "address": "0x55a969d1bf40",
+  "bufferSequence": 12,
+  "output": {
+    "id": 0,
+    "name": "WAYLAND-1",
+    "description": "",
+    "make": "",
+    "model": "",
+    "serial": "",
+    "width": 800,
+    "height": 600,
+    "physicalWidth": 0,
+    "physicalHeight": 0,
+    "refreshRate": 60.0,
+    "x": 0,
+    "y": 0,
+    "activeWorkspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "specialWorkspace": {
+      "id": 0,
+      "name": ""
+    },
+    "reserved": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "scale": 1,
+    "transform": 0,
+    "focused": true,
+    "dpmsStatus": true,
+    "vrr": false,
+    "solitary": "0",
+    "solitaryBlockedBy": [
+      "NOTIFICATION",
+      "WINDOWED",
+      "CANDIDATE"
+    ],
+    "activelyTearing": false,
+    "tearingBlockedBy": [
+      "NOT_TORN",
+      "USER",
+      "SUPPORT",
+      "CANDIDATE",
+      "HW_CURSOR"
+    ],
+    "directScanoutTo": "0",
+    "directScanoutBlockedBy": [
+      "USER",
+      "CANDIDATE"
+    ],
+    "disabled": false,
+    "currentFormat": "XRGB8888",
+    "mirrorOf": "none",
+    "availableModes": [],
+    "colorManagementPreset": "srgb",
+    "sdrBrightness": 1,
+    "sdrSaturation": 1,
+    "sdrMinLuminance": 0.2,
+    "sdrMaxLuminance": 80,
+    "hardwareCursorsInUse": true
+  },
+  "native": {
+    "address": "0x55a969d1bf40",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      -1,
+      -1
+    ],
+    "size": [
+      800,
+      600
+    ],
+    "workspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "elm-xdg-origin-probe",
+    "title": "ELM-XDG-ORIGIN-PROBE-2591998",
+    "initialClass": "elm-xdg-origin-probe",
+    "initialTitle": "ELM-XDG-ORIGIN-PROBE-2591998",
+    "pid": 2591998,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "18000001"
+  },
+  "buffer": {
+    "pid": 2591998,
+    "event": "buffercommit",
+    "sequence": 12,
+    "monotonicNs": 97266576982255,
+    "serial": 8,
+    "ackedSerial": 8,
+    "width": 800,
+    "height": 600,
+    "maximized": false,
+    "fullscreen": false,
+    "resizing": false,
+    "bufferSerial": 8,
+    "geometry": [
+      16,
+      24,
+      800,
+      600
+    ],
+    "surfaceSize": [
+      832,
+      648
+    ],
+    "bufferSize": [
+      832,
+      648
+    ],
+    "scale": 1,
+    "inflight": 1,
+    "allocatedBytes": 2156544,
+    "argb": "ff2071c8",
+    "landmarks": [
+      {
+        "point": [
+          20,
+          28
+        ],
+        "argb": "ffff3030"
+      },
+      {
+        "point": [
+          812,
+          28
+        ],
+        "argb": "ff30ff30"
+      },
+      {
+        "point": [
+          20,
+          620
+        ],
+        "argb": "ff3030ff"
+      },
+      {
+        "point": [
+          812,
+          620
+        ],
+        "argb": "ffffff30"
+      },
+      {
+        "point": [
+          416,
+          324
+        ],
+        "argb": "ff2071c8"
+      }
+    ]
+  },
+  "captureMethod": "one actual grim output capture; no capture retry",
+  "oracleArguments": {
+    "monitor_origin": [
+      0,
+      0
+    ],
+    "monitor_scale": 1,
+    "real": [
+      -1,
+      -1,
+      800,
+      600
+    ],
+    "geometry": [
+      16,
+      24,
+      800,
+      600
+    ],
+    "serial": 8,
+    "observed_serials": [
+      6,
+      7,
+      8
+    ],
+    "diagnostic_nonzero": true
+  },
+  "configureEvent": {
+    "pid": 2591998,
+    "event": "configure",
+    "sequence": 10,
+    "monotonicNs": 97266574324764,
+    "serial": 8,
+    "ackedSerial": 7,
+    "width": 800,
+    "height": 600,
+    "maximized": false,
+    "fullscreen": false,
+    "resizing": false,
+    "configuredWidth": 800,
+    "configuredHeight": 600
+  },
+  "artifacts": {
+    "grim.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture.png": "3df24dc0b08d63f07e54047980f68ea838169c1a001033291c7da51cf0110b63",
+    "dimensions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "decode.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture.rgb": "b4f19fdf620c2b206662a5935fb6bff7bf7ba0367b4a49dc7b49b8f3342bcbd7"
+  },
+  "dimensions": [
+    800,
+    600
+  ],
+  "samples": [
+    {
+      "surfaceLocal": [
+        20,
+        28
+      ],
+      "screenshotPixel": [
+        3,
+        3
+      ],
+      "expectedRGB": [
+        255,
+        48,
+        48
+      ],
+      "measured": [
+        {
+          "pixel": [
+            2,
+            2
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            2
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            2
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            3
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            3
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            3
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            4
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            4
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            4
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        812,
+        28
+      ],
+      "screenshotPixel": [
+        795,
+        3
+      ],
+      "expectedRGB": [
+        48,
+        255,
+        48
+      ],
+      "measured": [
+        {
+          "pixel": [
+            794,
+            2
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            2
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            2
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            3
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            3
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            3
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            4
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            4
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            4
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        20,
+        620
+      ],
+      "screenshotPixel": [
+        3,
+        595
+      ],
+      "expectedRGB": [
+        48,
+        48,
+        255
+      ],
+      "measured": [
+        {
+          "pixel": [
+            2,
+            594
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            594
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            594
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            595
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            595
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            595
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            596
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            596
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            596
+          ],
+          "rgb": [
+            32,
+            32,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        812,
+        620
+      ],
+      "screenshotPixel": [
+        795,
+        595
+      ],
+      "expectedRGB": [
+        255,
+        255,
+        48
+      ],
+      "measured": [
+        {
+          "pixel": [
+            794,
+            594
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            594
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            594
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            595
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            595
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            595
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            596
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            596
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            596
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        416,
+        324
+      ],
+      "screenshotPixel": [
+        399,
+        299
+      ],
+      "expectedRGB": [
+        32,
+        113,
+        200
+      ],
+      "measured": [
+        {
+          "pixel": [
+            398,
+            298
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            399,
+            298
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            400,
+            298
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            398,
+            299
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            399,
+            299
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            400,
+            299
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            398,
+            300
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            399,
+            300
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            400,
+            300
+          ],
+          "rgb": [
+            32,
+            113,
+            200
+          ]
+        }
+      ]
+    }
+  ],
+  "error": "Refused('presented landmark mismatch')"
+}

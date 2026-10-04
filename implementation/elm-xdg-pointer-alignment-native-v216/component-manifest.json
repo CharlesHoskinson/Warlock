@@ -1,0 +1,89 @@
+{
+  "sourceHeld": true,
+  "passed": true,
+  "scope": "source-only pointer-alignment requirements; no executable native runner or native acceptance",
+  "files": {
+    "PLAN.md": {
+      "sha256": "08e387c14d66b1533e472adc59bcc498f19de2dbfe46949e1285394c4733801b",
+      "size": 1604
+    },
+    "REQUIREMENTS.md": {
+      "sha256": "e2ebb59ff886f7dc6cfdd4e4be6af33f0526c0aecb7bb7496511df571f50b511",
+      "size": 6956
+    },
+    "qa/freeze.py": {
+      "sha256": "fff2cde60869f952306fdce874fade8a0d6e446329edac792fd15cd041698053",
+      "size": 2712
+    }
+  },
+  "externalFiles": {
+    "implementation/elm-shared-keyboard-runtime-v435/candidate_host.py": {
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    "implementation/elm-shared-keyboard-runtime-v435/aq-tuple.json": {
+      "sha256": "4d4c71943b05bb0453184dccb6caabadb72067445ff980e9359bd427ba4d433e",
+      "size": 667
+    },
+    "implementation/elm-shared-keyboard-runtime-v435/parent-probe-build.json": {
+      "sha256": "ca0d1b5b977ead42c4f1bfe45ffdf9f911347e19e773494711a52deab51cc22d",
+      "size": 239
+    },
+    "implementation/elm-seat-burst-fixture-fixed-v82/qa/interactive-client.py": {
+      "sha256": "265adaac46c2d59da6c2b74160fe8ae14b81fa5a89ab2a1128f94e797917bdcd",
+      "size": 8728
+    },
+    "implementation/elm-seat-burst-fixture-fixed-v82/native/parent-input-module.c": {
+      "sha256": "6e7c13d1c16eeb1f9be7506831d520ce28a4d7c54639d76d980a43284a33ff61",
+      "size": 9364
+    },
+    "implementation/elm-seat-burst-fixture-fixed-v82/native/parent-input-client.c": {
+      "sha256": "d8d4c0323f4811d934f473f946209dc5c3c950f953dc4f89207b2ff8b7be2ddc",
+      "size": 6477
+    },
+    "implementation/elm-seat-burst-fixture-fixed-v82/build-1791106310522558513/report.json": {
+      "sha256": "c55e251642e5dcca82acad23e5bd23eb24f54f7ae0f798520d1fe282fe82894b",
+      "size": 24026
+    },
+    "implementation/elm-shared-keyboard-menu-native-v436/qa/native.py": {
+      "sha256": "97318e0b54ccf6a8f2f2a963f431c3bc09923a4de2036017649fbfa02d3223cf",
+      "size": 26020
+    },
+    "implementation/elm-geometry-staged-menu-native-v77/qa/native.py": {
+      "sha256": "a41461a005c08e4f2adab49b3ec6b61a973e3e4515250117e722635b2df956d8",
+      "size": 26601
+    },
+    "implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend/Wayland.cpp": {
+      "sha256": "9ef8d6fe94388879bcfb716c26d5f148e87e0b33a582db76fa629bcfa13b6fa0",
+      "size": 58894
+    },
+    "implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend/NestedPresentation.hpp": {
+      "sha256": "b7417aeb5e4dbab50957aeaa24f6682ef66551e91b82ab168dbe9870f6a6c1c7",
+      "size": 2901
+    },
+    "implementation/elm-geometry-xdg-hint-choice-fixture-v197/component-manifest.json": {
+      "sha256": "8c38a16e0787ef991ae6f5505e7eff89e96bfb979a699cba3d3969ed496757ad",
+      "size": 85178
+    },
+    "implementation/elm-xdg-presented-landmark-oracle-v210/component-manifest.json": {
+      "sha256": "cab09061c578e6b4015abfd495f6bfb022f578c1d0b920ccc059557c6e1e96b9",
+      "size": 4302
+    },
+    "implementation/elm-xdg-pointer-journal-oracle-v213/component-manifest.json": {
+      "sha256": "af45469f364e5b63cb49732775caa81240a2f587c016b1f1269254b4d1f9df77",
+      "size": 3511
+    },
+    "implementation/elm-xdg-pointer-journal-independent-review-v215/component-manifest.json": {
+      "sha256": "ab3574a06e47a760cd1c03e71cd817b2c6554a65bf87de9270ee650d12503e29",
+      "size": 28723
+    },
+    "implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/report.json": {
+      "sha256": "1394cfd7791abbf3b01c04cd2ffd7b0c8f965e82b2b1bd2dc365ceef091d20bb",
+      "size": 1107739
+    }
+  },
+  "nativeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "nonzeroCapabilityAccepted": false,
+  "mutableScreenshotSourceCaptured": false
+}

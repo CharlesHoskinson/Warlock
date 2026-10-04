@@ -1,0 +1,16 @@
+
+  focus
+    1) missingSeatFallsBackTest failed after 1 test(s)
+
+  1 failed
+
+  1) missingSeatFallsBackTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-seat-focus-proof-v447/qa/model-1791131304186460802/missing-fallback.qnt:17:75
+        17:  run missingSeatFallsBackTest = init.then(expire).then(attach).then(all { assert(s.focus == 1), s' = s })
+                                                                                      ^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=missingSeatFallsBackTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 missing-fallback.qnt

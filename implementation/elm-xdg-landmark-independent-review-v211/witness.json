@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Finding reproduced against actual held208 using its synthetic image function; not native capture or presentation acceptance",
+  "finding": "Noncanonical equal-valued float/bool observation history accepted",
+  "rows": [
+    {
+      "name": "valid-control",
+      "history": [
+        86,
+        87
+      ],
+      "historyTypes": [
+        "int",
+        "int"
+      ],
+      "serial": 87,
+      "accepted": true,
+      "nativeAcceptance": false
+    },
+    {
+      "name": "equal-float-history",
+      "history": [
+        87.0
+      ],
+      "historyTypes": [
+        "float"
+      ],
+      "serial": 87,
+      "accepted": true,
+      "nativeAcceptance": false
+    },
+    {
+      "name": "equal-bool-history",
+      "history": [
+        true
+      ],
+      "historyTypes": [
+        "bool"
+      ],
+      "serial": 1,
+      "accepted": true,
+      "nativeAcceptance": false
+    }
+  ],
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v208/oracle.py",
+  "sourceSHA256": "1e5142bff327ed438046e0389da70f5b6c3127460dc4cc94a71f87bf05a3ad16",
+  "manifestSHA256": "48fcb8bd0017ebf6924fcb1a484585bfbe3eb8f9d09b6196367ad6c7cedf7bb8"
+}

@@ -1,0 +1,33 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "name": "missing-history-type-guard",
+      "rejected": true,
+      "firstFailedOracle": "float equality history: unsafe metadata accepted",
+      "sourceSHA256": "18e6a12720325e7636c649eb47864369f0593734f723f50fc6b4bf204ec9e295"
+    },
+    {
+      "name": "missing-bool-option-guard",
+      "rejected": true,
+      "firstFailedOracle": "invalid option zero 0: unsafe metadata accepted",
+      "sourceSHA256": "85bb4f4af95a98a0305e9eac2b638f8e0178722f963f74a4970f10328f47575b"
+    },
+    {
+      "name": "excluded-zero-history-bound",
+      "rejected": true,
+      "firstFailedOracle": "valid boundary refused: integer domain",
+      "sourceSHA256": "182863b4884bc62e2df2d328c3fb9182320d76673f62e4e1a918ee01aa2d0264"
+    },
+    {
+      "name": "truncated-history-upper-bound",
+      "rejected": true,
+      "firstFailedOracle": "valid boundary refused: integer domain",
+      "sourceSHA256": "25765776fa9e537e642bfd7128c4df0a6673a5754df8e14fbc6b597f067e427f"
+    }
+  ],
+  "scope": "Four executed unsafe production-oracle source controls rejected by actual boundary fixtures; no native capture/GUI acceptance",
+  "sourceSHA256": "a209e966d2601548ca4bdac49f3e1dc4791f8b1bcfde3949d265f66bfefbd7ec",
+  "testSourceSHA256": "1307c78d02ffe804c008b548581744ca328695e50508bf1bd337d70f8c704f0f",
+  "scriptSHA256": "9a9a0de68393926609682c2cf1c75960f8f921d4d829e19438cd56f0ad5a384c"
+}

@@ -1,0 +1,11 @@
+# Typed metadata correction held for independent review
+
+V208 remains frozen. Before correcting source, protected witness1791132346213198279 confirms its actual oracle accepts[87.0]/serial87,[True]/serial1,[False]/serial0 and string diagnostic option. Those successful unsafe calls are defect evidence, not presentation acceptance.
+
+V210 validates every history entry as exact int0..UINT32MAX before comparison, validates selected serial explicitly, and requires exact bool diagnostic_nonzero on every call. Sampling/transform/extent logic is unchanged. Original24 synthetic controls pass unchanged;64 new metadata/boundary tests pass. Four executed source mutants are rejected: omitted history guard, omitted bool guard, excluded0 and truncated upper bound. The initial62-test source was exactly recovered/hash-matched beside its earlier report; final tests add None/empty-tuple history coverage.
+
+Final protected reports: original24 qa/test-1791132578072609671/report.json; new64 qa/test-1791132578058133747/report.json; controls qa/mutations-1791132524188492751/report.json. No GUI/native screenshot, client/core or model change.
+
+API remains inspect(rgb bytes,width,height,monitor_origin,monitor_scale integer1/2,real[x,y,w,h],geometry[originX,originY,w,h],serial uint32,observed_serials exact list/tuple[uint32],diagnostic_nonzero bool=False). Returns five surfaceLocal/screenshotPixel/rgb records,serial,diagnosticNonzero and nonzeroCapabilityAccepted=false; mismatch raises Refused without partial sample records. Save PNG/RGB/args before calling for failure diagnosis. Expected transform is floor((real.origin+surfaceLocal-geometry.origin-monitor_origin)*monitorScale), a hypothesis for nonzero diagnostic calls rather than advertised capability.
+
+Caller must pin actual process/native identity, selected configure/ACK/buffer, monitor/screenshot dimensions and lifetime/deadline before and after capture. Distinct full32 serial low18 color aliases are refused; exact integer repeats allowed. Full32 wrap/generation remains caller-owned and not proven by RGB. Coordinate vectors are trusted typed native inputs: malformed None can raise TypeError failclosed; this is not a general untrusted decoder. Pointer/input, rendered nonzero support, GTK, full08–10 and full release remain open.

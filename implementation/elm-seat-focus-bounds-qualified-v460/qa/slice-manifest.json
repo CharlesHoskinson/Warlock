@@ -1,0 +1,542 @@
+{
+  "passed": true,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "scope": "Actual corrected owning450/451/AQ155 controlled XDG geometry constraints/feasible bounds/refusal/display-scale profiles",
+  "parentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-bounded-acceptance-v458/qa/slice-manifest.json",
+  "parentManifestSHA256": "b76584ceca2a713776f231c1ffc1ea6afa0eed94eb8d1c04bed49bd0adc32191",
+  "ancestorAcceptance": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-acceptance-v209/acceptance-manifest.json",
+  "ancestorAcceptanceSHA256": "bb977ec8ef1464aa2879c70290d4920e551b38019a49927261df4e8d97c8d5d4",
+  "files": [
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/HANDOFF.md",
+      "sha256": "fe5c614e5c27c61038bb1096ce8128407747502816b5f01e3d2afcbb9dffa135",
+      "size": 968
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/REQUIREMENTS.md",
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/origin.json",
+      "sha256": "85df9918e56fc51528aa367b04992d4112c15e98dc7607b2358096e9d1ff031c",
+      "size": 566
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/pins.json",
+      "sha256": "50d0220b05dc4733762fdb5db6fedc32bd2604c4caa1f7d143ce980a6d1314d3",
+      "size": 4734
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/profiles.json",
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/error-test-1791132719101446209/report.json",
+      "sha256": "c11dbd3e8778542e16041a9d6e8c0a78e5399c4188858855715e9e8e4d1c0247",
+      "size": 3275
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/error-test.py",
+      "sha256": "ac80cf5ccb23753cf9a67c346116baf66e5db822b34cd239e0f763cdf661f8c3",
+      "size": 3534
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132719091536317/inputs.json",
+      "sha256": "62fa0661136584bd5f4df53627ec140987d6e7e2fe06867712753213d92df04c",
+      "size": 708
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132719091536317/native-evidence/finite-scale1.jsonl",
+      "sha256": "6dcbd1ec8ef69b3cf66e7815cbd1d4061e44d564a72f66f3d1728b6aa69b9b5a",
+      "size": 577
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132719091536317/native.py",
+      "sha256": "3cf697fa744d458a667fb824f6d6c719a9bf98b90f06d724060af8ed152f4b18",
+      "size": 27222
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132719091536317/report.json",
+      "sha256": "bfd9a036fe34dcb36d53dbfd44f829e9866f5ec4e8e8e3c9ac74e99e923a7e6c",
+      "size": 8672
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/inputs.json",
+      "sha256": "25e532a0d01c42b6d625127bb7585fc5f3b9def4669c66286f7a23cfe8751650",
+      "size": 476013
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/feasible-finite-monitor1-buffer1.jsonl",
+      "sha256": "747dedebbab717a161f54fde7cbe25e7f7840b3aa7b8dc1abe90290063a96fc3",
+      "size": 9499
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/feasible-finite-monitor1-buffer2.jsonl",
+      "sha256": "63f4f9cb63d326a4ead608f2e9e2516d8df31992434cad2450b7cd4258ff3015",
+      "size": 9519
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/feasible-high-min-monitor1-buffer1.jsonl",
+      "sha256": "947229aebbfe8f24d19fcda3431943ffa8e710207a591f8b896056d7d843b024",
+      "size": 9499
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/feasible-high-min-monitor1-buffer2.jsonl",
+      "sha256": "1110f612ec7e6f965df6d58057af6e0686a5746fbd0902eac4bf66b331e8fc70",
+      "size": 9519
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/finite-scale1.jsonl",
+      "sha256": "66288b38e6ed49363b01190f4e7b50bfe30c6c0d1a9116e6b9b53a690c1f09a8",
+      "size": 4450
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/finite-scale2.jsonl",
+      "sha256": "d6aaddae565ca4d64150e251da582353642a2dbd2d499231c6a7db43474333d3",
+      "size": 4464
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/fixed-scale1.jsonl",
+      "sha256": "b4f94c2365aa7c163b16fcced00be2b47e64bc999b40b9236a1cc9d43a11157f",
+      "size": 4456
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/fixed-scale2.jsonl",
+      "sha256": "184a6243374f99a78c2541d90ad54dce9726da7d2b45b354e6ad521699e97767",
+      "size": 4456
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/host-evidence.json",
+      "sha256": "33db4b1173879f989974aae56695223375c758fd6fe8e08fcc68ce82a5b08f2f",
+      "size": 209328
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/hyprland.log",
+      "sha256": "90147dfc50e9effe91a203b880996b36b10beb1d2f237bb0c7b79cdf1db967c9",
+      "size": 208064
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/minimum-above-workarea-monitor1-buffer1.jsonl",
+      "sha256": "dbcafcae42baa62e6c1f10ad765a093d0da3012f5ce6ee3a2f5850958ab7bfbf",
+      "size": 5676
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/minimum-above-workarea-monitor1-buffer2.jsonl",
+      "sha256": "6d85ca4b85f08f03d8ce8f00103ebda54d22486c07e6961fcf232d7b5022080f",
+      "size": 5688
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/origin-scale1.jsonl",
+      "sha256": "41d2a3a117ae486754068166192a0a99106a2ba020b58dfbcee6e5fc9256e304",
+      "size": 5641
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/origin-scale2.jsonl",
+      "sha256": "89972807e5d03a02fb50827cbd1f86a14f2ed38294540991c73303163b6c455e",
+      "size": 5706
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/privateBus.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791132729_1336804025/hyprland.log",
+      "sha256": "2361e50537fe9192ed57a62d160913d641b2d58b9e0987ecd537888ba93a5587",
+      "size": 24339
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/weston-renderer.log",
+      "sha256": "3f790e3f1890d776d594c55e1833e5f8907b439d847908bc08264f3db7d2bf71",
+      "size": 3756
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/zero-scale1.jsonl",
+      "sha256": "66f3f40b47bcc041c8b9b0f40d02331b8bc81557916cba93fd1c21e75c161fb0",
+      "size": 9408
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native-evidence/zero-scale2.jsonl",
+      "sha256": "44131ee6290643c0cb778d8f986bc0f18e885b8cfe0e0aae8e44c00a3c614230",
+      "size": 9519
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/native.py",
+      "sha256": "3cf697fa744d458a667fb824f6d6c719a9bf98b90f06d724060af8ed152f4b18",
+      "size": 27222
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/report.json",
+      "sha256": "9df30ac31f6109eeb8606097ac8be495a5780277fe25fac855c7a38252e36e03",
+      "size": 1199077
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/inputs.json",
+      "sha256": "25e532a0d01c42b6d625127bb7585fc5f3b9def4669c66286f7a23cfe8751650",
+      "size": 476013
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/feasible-finite-monitor2-buffer1.jsonl",
+      "sha256": "f0c14649746aec8a1b4e6aad4b509e9f921157ddd6f1329115a63711d57e4088",
+      "size": 9408
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/feasible-finite-monitor2-buffer2.jsonl",
+      "sha256": "6760d57d76fd93745c81cd00bb49075038570770b55a746b67729a801ec4ada7",
+      "size": 9519
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/feasible-high-min-monitor2-buffer1.jsonl",
+      "sha256": "2bcdb2a12d80653eb33664a35b0a57f84e4ede4d20ce5f5eea3a3d2faf7a6755",
+      "size": 9433
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/feasible-high-min-monitor2-buffer2.jsonl",
+      "sha256": "2f199bfb8c7a66a3595ca3956f16f2b6aa5209c44a71495cda0a36eaf0addc30",
+      "size": 9519
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/host-evidence.json",
+      "sha256": "70b56d06bb24c07f0230c77c95e7e3ed81dd0e521a1c2db0f78ae3d9b8554275",
+      "size": 210208
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/hyprland.log",
+      "sha256": "b2507659034ad4018261f85e84705bf4ba3cd56e67765837221d3d6d05907c26",
+      "size": 180132
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/minimum-above-workarea-monitor2-buffer1.jsonl",
+      "sha256": "c9b2c1eb2e5fcd46e2b2ec1d5dd1370a0d413c7445b93b1380c717755cfd162f",
+      "size": 5676
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/minimum-above-workarea-monitor2-buffer2.jsonl",
+      "sha256": "fc6204cc9253043816e9ba4fe10905e938f20d5f1fd40a590d54835e9a2dfb29",
+      "size": 5688
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/privateBus.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791132735_851289992/hyprland.log",
+      "sha256": "42aaab4780ed091747d6b52b9bf5619becab9f6dffacc198e56a0101183f947e",
+      "size": 24350
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "60fad1e6e6785fac747409c3ffaff3992f6712925473728b82984e0904ef1ca1",
+      "size": 243
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/weston-renderer.log",
+      "sha256": "2a4e7d70251a0f7bf1b2d893b4d9f19d091ba71601142cdf9f68055ed7ebaade",
+      "size": 3758
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/native.py",
+      "sha256": "3cf697fa744d458a667fb824f6d6c719a9bf98b90f06d724060af8ed152f4b18",
+      "size": 27222
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/report.json",
+      "sha256": "3a725af97c996a0e72476c265d2b4f6d6510ff588e9f311de06fa1fe964c5d1b",
+      "size": 1033620
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/inputs.json",
+      "sha256": "25e532a0d01c42b6d625127bb7585fc5f3b9def4669c66286f7a23cfe8751650",
+      "size": 476013
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/dmabuf-probe.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/dmabuf-probe.stdout",
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/high-min-small-logical-monitor2-buffer1.jsonl",
+      "sha256": "2ccd7f1f3c7400b0f350f22a3bce7c92f9f2d25b4a03c78c1d449f145dfda4c1",
+      "size": 5623
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/high-min-small-logical-monitor2-buffer2.jsonl",
+      "sha256": "dfd5ce45e25af58c8768c652708eecf47e75d6691cb57389aa97ebfd7e38d481",
+      "size": 5629
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/host-evidence.json",
+      "sha256": "aa81f371f4a165bddc478e5b73624a1c9b0ca450f952bd1e5a774f7bf33ee897",
+      "size": 209628
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/hyprland.log",
+      "sha256": "a26a3424bd5aca564caa4df40cfd0967be8176715315b9401ee3d6481e5ae976",
+      "size": 134903
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/privateBus.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791132741_1220557010/hyprland.log",
+      "sha256": "17e20cbcd587fa0270f4cb229d3ac1a12ed270ce3bcd86439d7c0bae40d078de",
+      "size": 24339
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/runtime-archive/hyprland.lua",
+      "sha256": "e8ea01321b08bab43c36659cbd45d7fa9da755f4b457002e90d444a48d205c2f",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/weston-renderer.log",
+      "sha256": "304bb829b3e7425de8b8aeee3df533d0de6a17687996f19eec8b2b0deba74cba",
+      "size": 3756
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native-evidence/weston.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/native.py",
+      "sha256": "3cf697fa744d458a667fb824f6d6c719a9bf98b90f06d724060af8ed152f4b18",
+      "size": 27222
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/report.json",
+      "sha256": "79ecc0dccb26c64093ef4baa0b63aafea6a694a2698a753c6b5b62d18df0b747",
+      "size": 862801
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native.py",
+      "sha256": "3cf697fa744d458a667fb824f6d6c719a9bf98b90f06d724060af8ed152f4b18",
+      "size": 27222
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/plan-test-1791132707774621101/report.json",
+      "sha256": "47b1bcb6ab768a5dc4e665dd88cc3668208b4db2b978ee49ae82d225c16e9f85",
+      "size": 1123
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/plan-test.py",
+      "sha256": "e2ce7c527ae84deaeaf025fd3cc0ea28aea0a3bdfb0dc21aa1fee6441b48ee24",
+      "size": 2340
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/preflight-1791132693835726730/inputs.json",
+      "sha256": "25e532a0d01c42b6d625127bb7585fc5f3b9def4669c66286f7a23cfe8751650",
+      "size": 476013
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/preflight-1791132693835726730/native.py",
+      "sha256": "3cf697fa744d458a667fb824f6d6c719a9bf98b90f06d724060af8ed152f4b18",
+      "size": 27222
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/preflight-1791132693835726730/report.json",
+      "sha256": "117b6de04a41c550f685f134973e242463512481cdb08a84c88c9e818542b0ff",
+      "size": 481928
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/snapshot-test-1791132708019173821/report.json",
+      "sha256": "88e289053fb63763cf7745c74c09066a7498d4747f3b0d1e4132c084bcf5d00a",
+      "size": 1226
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/snapshot-test.py",
+      "sha256": "7f48c14a0623960b36962d6081a8ff3672f9fdfc688db5f588f6d3616d5a9fa6",
+      "size": 3845
+    },
+    {
+      "path": "implementation/elm-seat-focus-bounds-qualified-v460/HANDOFF.md",
+      "sha256": "3ad9b0da5b25bd4023c56dfe0fc2f92d56394601e6b607593a8abf6a53c6962e",
+      "size": 2007
+    },
+    {
+      "path": "implementation/elm-seat-focus-bounds-qualified-v460/qa/freeze.py",
+      "sha256": "cae6191080ca29f22d0c14da5a32a7cd8514ce1091e69eb1773f4e01f9b60c36",
+      "size": 5852
+    }
+  ],
+  "symlinks": [],
+  "reports": [
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/error-test-1791132719101446209/report.json",
+      "sha256": "c11dbd3e8778542e16041a9d6e8c0a78e5399c4188858855715e9e8e4d1c0247",
+      "passed": true,
+      "classification": "CPU preflight/preservation/helper/error-path"
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132719091536317/report.json",
+      "sha256": "bfd9a036fe34dcb36d53dbfd44f829e9866f5ec4e8e8e3c9ac74e99e923a7e6c",
+      "passed": false,
+      "classification": "Synthetic actual-runner error-path fixture; no GUI launched"
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/report.json",
+      "sha256": "9df30ac31f6109eeb8606097ac8be495a5780277fe25fac855c7a38252e36e03",
+      "passed": true,
+      "classification": "Actual protected native campaign"
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/report.json",
+      "sha256": "3a725af97c996a0e72476c265d2b4f6d6510ff588e9f311de06fa1fe964c5d1b",
+      "passed": true,
+      "classification": "Actual protected native campaign"
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/report.json",
+      "sha256": "79ecc0dccb26c64093ef4baa0b63aafea6a694a2698a753c6b5b62d18df0b747",
+      "passed": true,
+      "classification": "Actual protected native campaign"
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/plan-test-1791132707774621101/report.json",
+      "sha256": "47b1bcb6ab768a5dc4e665dd88cc3668208b4db2b978ee49ae82d225c16e9f85",
+      "passed": true,
+      "classification": "CPU preflight/preservation/helper/error-path"
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/preflight-1791132693835726730/report.json",
+      "sha256": "117b6de04a41c550f685f134973e242463512481cdb08a84c88c9e818542b0ff",
+      "passed": true,
+      "classification": "CPU preflight/preservation/helper/error-path"
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/snapshot-test-1791132708019173821/report.json",
+      "sha256": "88e289053fb63763cf7745c74c09066a7498d4747f3b0d1e4132c084bcf5d00a",
+      "passed": true,
+      "classification": "CPU preflight/preservation/helper/error-path"
+    }
+  ],
+  "nativeEvidence": [
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132727673870270/report.json",
+      "sha256": "9df30ac31f6109eeb8606097ac8be495a5780277fe25fac855c7a38252e36e03",
+      "checks": 372,
+      "profiles": [
+        "feasible-finite-monitor1-buffer1",
+        "feasible-finite-monitor1-buffer2",
+        "feasible-high-min-monitor1-buffer1",
+        "feasible-high-min-monitor1-buffer2",
+        "finite-scale1",
+        "finite-scale2",
+        "fixed-scale1",
+        "fixed-scale2",
+        "minimum-above-workarea-monitor1-buffer1",
+        "minimum-above-workarea-monitor1-buffer2",
+        "origin-scale1",
+        "origin-scale2",
+        "zero-scale1",
+        "zero-scale2"
+      ],
+      "physicalMode": [
+        800,
+        600
+      ],
+      "monitorScale": 1
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132734382325907/report.json",
+      "sha256": "3a725af97c996a0e72476c265d2b4f6d6510ff588e9f311de06fa1fe964c5d1b",
+      "checks": 186,
+      "profiles": [
+        "feasible-finite-monitor2-buffer1",
+        "feasible-finite-monitor2-buffer2",
+        "feasible-high-min-monitor2-buffer1",
+        "feasible-high-min-monitor2-buffer2",
+        "minimum-above-workarea-monitor2-buffer1",
+        "minimum-above-workarea-monitor2-buffer2"
+      ],
+      "physicalMode": [
+        1600,
+        1200
+      ],
+      "monitorScale": 2
+    },
+    {
+      "path": "implementation/elm-seat-focus-feasible-bounds-v459/qa/native-1791132740101619374/report.json",
+      "sha256": "79ecc0dccb26c64093ef4baa0b63aafea6a694a2698a753c6b5b62d18df0b747",
+      "checks": 46,
+      "profiles": [
+        "high-min-small-logical-monitor2-buffer1",
+        "high-min-small-logical-monitor2-buffer2"
+      ],
+      "physicalMode": [
+        800,
+        600
+      ],
+      "monitorScale": 2
+    }
+  ],
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+      "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+      "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "nativeAcceptance": true,
+  "nativeCheckCount": 604,
+  "profileCount": 22,
+  "sameTupleSharedRegressionChecks": 307,
+  "nativePixelsAccepted": false,
+  "physicalPointerAccepted": false,
+  "gtkConstrainedConformanceAccepted": false,
+  "fullGeometryAccepted": false,
+  "fullReleaseAccepted": false,
+  "completedRequirementIds": []
+}

@@ -1,0 +1,16 @@
+
+  recovery
+    1) nativeEscapeDeadlineNeverRenewedTest failed after 1 test(s)
+
+  1 failed
+
+  1) nativeEscapeDeadlineNeverRenewedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/render-ack-renews-deadline.qnt:38:147
+        38:  run nativeEscapeDeadlineNeverRenewedTest=init.then(press).then(renderLag).then(nativeEscape).then(expire).then(renderAck).then(release).then(all{assert(s.popup and s.closed==0 and s.expired),s'=s})
+                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=nativeEscapeDeadlineNeverRenewedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 render-ack-renews-deadline.qnt

@@ -1,0 +1,15 @@
+{
+  "owningCore": "implementation/elm-core-seat-focus-restoration-v450",
+  "parentContract": "implementation/elm-xdg-coordinate-design-held-v465/qa/slice-manifest.json",
+  "originalSourceSHA256": {
+    "src/render/pass/SurfacePassElement.cpp": "ea559690633f8f2e0da7709cb3c00f12b54bc20fbe631437633744676eff24f8",
+    "src/render/ElementRenderer.cpp": "32f79c359a5ae6a265f7b2feee5c190d643371dd984d2bdda6a4ef203ccec828",
+    "src/desktop/state/ViewHitTester.cpp": "1bcc02a03db80b0519e516b41b3e0d0e70df08d6aa50b006b6a4362854524a09"
+  },
+  "changedFiles": [
+    "src/render/pass/SurfacePassElement.cpp",
+    "src/render/ElementRenderer.cpp",
+    "src/desktop/state/ViewHitTester.cpp"
+  ],
+  "nativeAcceptance": false
+}

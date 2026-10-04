@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "stage": "CPU preflight before native launch",
+  "observedExitCode": 1,
+  "observedError": "KeyError: 'symlinks'",
+  "rawStderrPreserved": false,
+  "nativeReportCreated": false,
+  "reason": "Ancestor439 contains regular files and no symlinks member; original415 preflight expected a mandatory separate member."
+}

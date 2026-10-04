@@ -1,0 +1,1 @@
+Read-only owning Core89 observer: additive keyboard focus surface/client/resource identity and live seat keyboard weak-resource count. Existing held-state fields/schema1 unchanged. Public owning APIs only; no state mutation/refocus. Build/native observations separate.

@@ -1,0 +1,7 @@
+"use strict";
+const fs=require("fs"),vm=require("vm"),assert=require("assert/strict");
+function load(file){const calls=[];const ports=new Proxy({}, {get:(_,name)=>({send:value=>calls.push({name,value}),subscribe:()=>{}})});const window={elmHostQA:false,webkit:{messageHandlers:{native:{postMessage:()=>{}}}}};vm.runInNewContext(fs.readFileSync(file,"utf8"),{window,Elm:{Main:{init:()=>({ports})}},document:{getElementById:()=>({})},requestAnimationFrame:()=>{}});return {window,calls};}
+const old=load(process.argv[2]),current=load(process.argv[3]);assert.equal(typeof old.window.receiveBatchDisposition,"undefined");assert.equal(typeof current.window.receiveBatchDisposition,"function");
+const certificate={viewProtocol:1,kind:"batch-disposition",disposition:"preflight-unsent",scope:{id:"1",generation:"1"},revision:"1",publication:"9",lease:"3",binding:{lifetime:"100",session:"200",frontend:"300"},batch:'{"requests":[],"literal":"É \" 😀"}'};
+current.window.receiveBatchDisposition(certificate);assert.equal(current.calls.length,1);assert.equal(current.calls[0].name,"nativeBatchDispositions");assert.equal(current.calls[0].value,certificate);assert.equal(current.calls[0].value.batch,certificate.batch);
+fs.writeFileSync(process.argv[4],JSON.stringify({passed:true,nativeAcceptance:false,checks:["previous actual browser asset lacks native disposition callback","new actual browser asset forwards identical literal certificate exactly once to declared Elm port"]},null,2)+"\n");

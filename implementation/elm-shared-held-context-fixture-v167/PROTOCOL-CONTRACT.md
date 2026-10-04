@@ -1,0 +1,3 @@
+# Protocol8 extension before implementation
+
+Version8 adds KEY_F1068 to the existing bounded key request. Resource versions1..7 continue refusing68. Wire request/event signatures and old since versions are unchanged. New clients require8; the old151 client still binds7 and is a negative control for68. A/Shift masks remain1..3; internal F10 bit4 participates in balancing and prevents an old mask request from accepting a mismatched F10 hold. Controller destruction, capability restoration and unfocused releases balance all three recorded keys. Original151 remains immutable. Parent done is not target delivery.

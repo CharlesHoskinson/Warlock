@@ -1,0 +1,20 @@
+{
+  "passed": false,
+  "scope": "Source inventory review; both prior manifests rejected before native launch",
+  "failures": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-held-context-fixture-v167/component-manifest.json",
+      "sha256": "19c90ecab51479f6e2833309a81065c46f60eac82ab561505949f39732420ab6",
+      "rejected": true,
+      "reason": "Empty files inventory; compiled source/build proof remains separate. No native launch occurred."
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-held-key-host-v168/component-manifest.json",
+      "sha256": "069ac38fe0cf3ea0fc51b952187b603b9d63f08f73426711b42890cbfcbb31f8",
+      "rejected": true,
+      "reason": "Empty files inventory; compiled source/build proof remains separate. No native launch occurred."
+    }
+  ],
+  "rawBuildOutputsRetained": true,
+  "correction": "Fresh170/171 with appended file rows, minimum count and build-input inclusion checks"
+}

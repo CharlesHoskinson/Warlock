@@ -1,0 +1,33 @@
+import hashlib,json,resource,sys,time
+from pathlib import Path
+sys.path.insert(0,'/home/hoskinson/window-integration-qa')
+from qa_launch import require_qa_scope
+require_qa_scope();assert resource.getrlimit(resource.RLIMIT_CORE)==(1,1)
+r=Path('/home/hoskinson/omarchy-windows-parity');s=Path(__file__).resolve().parents[1];p=r/'implementation/elm-xdg-presented-landmark-native-v212/qa/native-1791133183538677576/report.json';records={}
+def verify(p,expected=None):
+ p=Path(p);data=p.read_bytes();sha=hashlib.sha256(data).hexdigest();assert expected is None or sha==expected,str(p);records[str(p)]={'sha256':sha,'size':len(data)};return sha
+verify(p);d=json.loads(p.read_text());assert not d['passed'] and d['cleanupPassed'] and d['primaryProfile']=='origin-scale1' and not d['profileCleanupErrors'] and not d['finalCleanupErrors']
+for name,digest in d['inputs'].items():verify(name,digest)
+for name,digest in d['artifacts'].items():verify(p.parent/name,digest)
+manifest=r/'implementation/elm-xdg-presented-landmark-native-v212/component-manifest.json';verify(manifest,'73293f58e1799bd5a6f474075d2df17278b0a391da5551c5eb384cf76e4fa362')
+captures=d['pixelCaptures'];assert len(captures)==4 and all(c['passed'] for c in captures[:3]) and not captures[-1]['passed']
+results=[];colors=[(255,48,48),(48,255,48),(48,48,255),(255,255,48)]
+for c in captures:
+ directory=p.parent/'native-evidence'/Path(c['directory']).name;rgb=directory/'capture.rgb';verify(rgb,c['artifacts']['capture.rgb']);data=rgb.read_bytes();w,h=c['dimensions'];assert len(data)==w*h*3
+ boxes=[]
+ for color in colors:
+  target=bytes(color);indices=[];start=0
+  while True:
+   offset=data.find(target,start)
+   if offset<0:break
+   if offset%3==0:indices.append(offset//3)
+   start=offset+1
+  if not indices:
+   boxes.append({'rgb':color,'pixelCount':0,'inclusiveBounds':None});continue
+  xs=[n%w for n in indices];ys=[n//w for n in indices];boxes.append({'rgb':color,'pixelCount':len(indices),'inclusiveBounds':[min(xs),min(ys),max(xs),max(ys)]})
+ geometry=c['buffer']['geometry'];surface=c['buffer']['surfaceSize'];real=c['oracleArguments']['real'];gx,gy,gw,gh=geometry
+ local_origins=[(gx,gy),(gx+gw-8,gy),(gx,gy+gh-8),(gx+gw-8,gy+gh-8)]
+ affine=[{'sourceCornerRect':[lx,ly,8,8],'predictedContinuousBounds':[real[0]+lx*real[2]/surface[0],real[1]+ly*real[3]/surface[1],real[0]+(lx+8)*real[2]/surface[0],real[1]+(ly+8)*real[3]/surface[1]]} for lx,ly in local_origins]
+ results.append({'name':c['owner']['name'],'selectedSerial':c['buffer']['ackedSerial'],'actualCapturePassed':c['passed'],'nativeReal':real,'committedGeometry':geometry,'surfaceSize':surface,'observedCornerRegions':boxes,'fullSurfaceAffineHypothesis':affine,'unshiftedSurfaceLocalPrediction':[{'sourceCornerRect':[lx,ly,8,8],'predictedContinuousBounds':[real[0]+lx,real[1]+ly,real[0]+lx+8,real[1]+ly+8]} for lx,ly in local_origins],'samples':c['samples'],'error':c.get('error')})
+out=s/'qa'/('analyze-'+str(time.time_ns()));out.mkdir();report={'evidenceIntegrityPassed':True,'originalCampaignPassed':False,'actualNativeChecksReached':len(d['checks']),'actualPassedChecks':sum(c['passed'] for c in d['checks']),'cleanupPassed':True,'zeroBuffer1CaptureCount':3,'nonzeroBuffer1PresentedAlignmentAccepted':False,'buffer2Executed':False,'rendererBranchProven':False,'fullGeometryAccepted':False,'fullRoadmapAccepted':False,'releaseAccepted':False,'captures':results,'files':records};(out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
+files={str(f.relative_to(s)):{'sha256':hashlib.sha256(f.read_bytes()).hexdigest(),'size':f.stat().st_size} for f in sorted(s.rglob('*')) if f.is_file() and f.name!='failure-manifest.json'};(s/'failure-manifest.json').write_text(json.dumps({'evidenceIntegrityPassed':True,'campaignPassed':False,'cleanupPassed':True,'releaseAccepted':False,'files':files,'externalFiles':records},indent=2)+'\n');print(json.dumps({'report':str(out/'report.json'),'verifiedFiles':len(records),'nativeCampaignPassed':False,'cornerRegions':results[-1]['observedCornerRegions']}))

@@ -1,0 +1,9 @@
+# Four-profile actual rendered landmark campaign
+
+Requirements recorded before implementation. Derive from held204 without modifying it. This is a separate four-profile subset, never the full22 bounds campaign. Current435/core89/plugin409/AQ155 remain the exact owning tuple. Zero-origin bufferScale1 and2 each observe actual ordinary, MAX and restored ordinary; nonzero-origin bufferScale1 and2 observe ordinary only as an explicit175 rendering hypothesis, without advertising geometry support or dispatching a nonzero geometry operation. MonitorScale1 and physical800x600 are verified independently of bufferScale.
+
+Retain selected204 identity, receipt, mode, actual placement restoration, protocol and cleanup assertions and original six-second phase deadlines/three-second transport. Screenshot capture and RGB decode consume the same existing phase budget. Do not retry effects or extend deadlines. A single actual grim capture follows each admitted snapshot; queued ACK/commit and server sync alone never count as presented evidence.
+
+Bind every capture to exact client PID/start/native incarnation/address, current output dimensions/origin/monitor scale, native visual box and committed geometry, complete actual ACK history of this actor and selected ACK serial. Use reviewed held210 oracle with all serial history entries and explicit nonzero diagnostic flag. Reject distinct serials aliasing low18-bit RGB; serial reuse/wrap of selected ACK across distinct configure events is unsupported and refused. Exact repeated snapshots of one selected configure are allowed.
+
+Persist PNG/RGB, arguments, expected colors, measured nine-pixel neighborhoods and oracle error even on failure. Bound capture/decode files and decoded extents. Never infer pixels from journals; no source/core capability change, GTK, pointer or full menu acceptance. Root alone reviews and launches native through protected global coordinator. CPU/preflight runs create no GUI sessions.

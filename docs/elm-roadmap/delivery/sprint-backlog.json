@@ -4991,6 +4991,138 @@
       "fullGeometryCampaignAccepted": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-shared-keyboard-loss-failure-v443/qa/slice-manifest.json",
+      "manifestSHA256": "d0eb12ce88362907866d2373bd12122326539caf2d1fc42cd1c9524b821b3e1e",
+      "summary": "Shared open-menu loss441 focus cancellation passed then unsupported parentEscape fixture failure; fresh442 focus cancellation/recovered parentA/native Escape passed, capability cancellation/core ledgers/releases/no-effect/output preserved but fresh parentA typing after restoration failed original6s. ParentHypr trace enter/key30 down/up; shared host newkeyboard keymap/repeat with noenter/key pair while popupbuffer continues. Both normal cleanup. Frozen44369files/2failedreports. Current439 source422/runtime435/AQ155 remains candidate; QA440 onlyparent151 faultmodule. Cause not yet proven; native keyboard focus/resource observer next. No new native acceptance.",
+      "nativeAcceptance": false,
+      "evidenceIntegrityPassed": true,
+      "sourceCandidate": "implementation/elm-shared-geometry-carrier-v422",
+      "runtimeCandidate": "implementation/elm-shared-keyboard-runtime-v435",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-keyboard-seat-focus-source-held-v449/qa/slice-manifest.json",
+      "manifestSHA256": "68e5c454daac62850674e00a695fd28ac3cc3e625ebe95d64a40fe641d7df875",
+      "summary": "Native445 read-only focus observer444 repeats shared capability failure24/normalcleanup: live popup52/sharedHost -> samefocus zero keyboardresources -> restored focus71/underlying fixture while grab remains. Causal owning setupKeyboard first-device desktop fallback overwrites seat popup. Fresh446 sole expiry guard EARS/OpenSpec;447 actual C++ predicate36/two bad controls and Quint7 named/1000x40/3 mutants pass (446 initial zero named retained); full448 actual InputManager TU compiles against694 exact Core89 headers. Frozen4491865files/6reports. Source correction prepared only; native fix/new core/plugin link unaccepted, candidate439 preserved.",
+      "nativeAcceptance": false,
+      "sourceCompileAccepted": true,
+      "causalNativeDiagnosis": true,
+      "candidate": "implementation/elm-keyboard-seat-focus-policy-v446",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-seat-focus-bounded-acceptance-v458/qa/slice-manifest.json",
+      "manifestSHA256": "b76584ceca2a713776f231c1ffc1ea6afa0eed94eb8d1c04bed49bd0adc32191",
+      "summary": "Core450 guarded first-keyboard fallback preserves live popup seat focus. Only InputManager archive payload changed;432 payloads/694 public headers/13412 exports retained. Owning geometry451 and observer452 rebuilt; source422/shared host unchanged/runtime453/AQ155. Actual native45489 held-key focus/capability loss and recovered typing,455161 geometry/menu01-10 ACK/pixels/held receipt,45657 physical reconnect pass with normal cleanup on exact same tuple. Frozen4583009files/7reports; failed freezer457 full-contract-flag mistake retained/corrected bounded oracle. Full-contract flags remain false; no requirement/release completion.",
+      "nativeAcceptance": true,
+      "nativeChecks": 307,
+      "nativeReports": 3,
+      "source": "implementation/elm-shared-geometry-carrier-v422",
+      "runtime": "implementation/elm-seat-focus-restored-runtime-v453",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+          "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "boundedSeatFocusCorrectionQualified": true,
+      "fullGeometryCampaignAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-seat-focus-bounds-qualified-v460/qa/slice-manifest.json",
+      "manifestSHA256": "de87949b83f13b6ea51b159342a8e90288cfc0880aea60ac4af77bbd90c2acb6",
+      "summary": "Fresh459 preserves exact204/201 source scenarios/checks/deadlines with runtime453/new Core450/plugin451/AQ155. Actual3 sessions passed604 controlled XDG bounds/constraint/refusal/ACK geometry checks across22 profiles (800x600 scale1 14,1600x1200 scale2 6,800x600 scale2 2). Exactmaps/output/workarea gate/normalcleanup. CPU plan7/error7/snapshot5/preflight pass; synthetic error-path refusal explicitly excluded from native counts. Frozen46079files/8reports. Parent458307 shared menu/geometry/keyboard regressions same exact tuple retained. Pixels/physical pointer/GTK/hardware/fullrelease unqualified.",
+      "nativeAcceptance": true,
+      "nativeChecks": 604,
+      "profileCount": 22,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+          "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "sameTupleSharedRegressionChecks": 307,
+      "nativePixelsAccepted": false,
+      "physicalPointerAccepted": false,
+      "gtkConstrainedConformanceAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-nonzero-origin-presentation-failure-v462/qa/slice-manifest.json",
+      "manifestSHA256": "ea3657b7a15b5f7083a9cc0e4f67a989e404193a8f23f1112c251dc4f14f9290",
+      "summary": "Fresh461 actual screenshot212 derivative on corrected450/451/AQ155. Preflight/test pass; actualnative60checks normalcleanup fails origin-scale1 landmark prediction at geometry[16,24,800,600]/native[-1,-1,800,600]. Zero-scale1 ordinary/MAX/restored five RGB landmarks with postcaptureidentity pass3frames; origin image begins near[15,23], first3 predicted landmarks background. Nonzero transform explicitly hypothetical; no causal renderer defect claim or newpixel acceptance. Frozen46257files3reports. Parent460604profile checks and458307 sharedGUI same tuple preserved. Next source/renderer/projection coordinate diagnosis and actual pointer before enablingnonzero/fullrelease.",
+      "nativeAcceptance": false,
+      "causalRendererDefectConfirmed": false,
+      "nativePixelsAccepted": false,
+      "nativeFailureCleanupPassed": true,
+      "checksReached": 60,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-xdg-coordinate-design-held-v465/qa/slice-manifest.json",
+      "manifestSHA256": "f72ae292632c0e1903a0eb3e0741adb266a546b5cae3835847c2ff5d462d3943",
+      "summary": "463 actual frozenPNG/RGB/native/ACK diagnostic9checks confirms red extent15,23..22,30 translated by committed geometry16,24 relative native-1,-1; owning ElementRenderer geometryUVdisabled and rootquadunshifted candidates, not callbackcausality.464 EARS/OpenSpec exact coordinate contract preserves fullsurface/shadows and inversepointer, buffer/outputscales separate. Quint8 explicitnamed/1000x40/4typedmutants pass. Frozen46544files2reports; no native correction/refinement/requirements/fullrelease acceptance. Next complete fullsurface renderer + UV/source/viewport/subsurface/input mapping owningcandidate then actualsame-tuple screenshots/pointer/regressions.",
+      "diagnosticChecks": 9,
+      "quintNamedScenarios": 8,
+      "quintSamples": 1000,
+      "quintMaxSteps": 40,
+      "quintMutantsRejected": 4,
+      "nativeAcceptance": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-xdg-origin-render-qualified-v474/qa/slice-manifest.json",
+      "manifestSHA256": "5153ea2a98eb9896a695202f8979a2a6eaa61686b5b33438d0dc00d0402ac69a",
+      "summary": "Candidate466 fullsurfacequad geometry-origin/projection, preservedviewportUV and inversehit transform; compile467 incompleteXDGShelltype failed retained.468 explicitincludes fixes;469 actual3TUs compiled694 ownheaders.470 fullcore3/433archivepayloadreplacements430unchanged (includingseatfocus), exactrelink13412exports/694headers unchanged.471 owning geometry strongclosure;472 sharedhost unchanged/AQ155. Actual473 passed124 checks4profiles8strictPNG/RGB frames and postcapture ACK/buffer/target/output identity with normalcleanup; unchanged461failure nowcorrected. Frozen4743317files7reports. Physicalpointer/nonzerooperations/GTK/roles/newcore307shared+604bounds regressions and fullrelease unqualified.",
+      "nativeAcceptance": true,
+      "nativeChecks": 124,
+      "actualPixelFrames": 8,
+      "profileCount": 4,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "nativePixelsAccepted": true,
+      "physicalPointerAccepted": false,
+      "nonzeroGeometryOperationsAccepted": false,
+      "sharedRegressionOnNewCoreAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   ]
 }

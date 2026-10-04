@@ -1,0 +1,16 @@
+
+  coordinates
+    1) pointerInverseTest failed after 1 test(s)
+
+  1 failed
+
+  1) pointerInverseTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-coordinate-contract-v464/qa/model-1791133562380195337/missing-inverse-origin.qnt:22:85
+        22:  run pointerInverseTest = init.then(doubleProjection).then(doubleOutput).then(all { assert(local(screen(20)) == 20), s' = s })
+                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x1368d --match=pointerInverseTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 missing-inverse-origin.qnt

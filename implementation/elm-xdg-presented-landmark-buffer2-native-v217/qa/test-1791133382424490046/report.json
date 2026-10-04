@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "all45-measured-neighborhoods-1",
+      "passed": true
+    },
+    {
+      "name": "actual-held-oracle-positive-1",
+      "passed": true
+    },
+    {
+      "name": "actual-measured-mismatch-retained-1",
+      "passed": true
+    },
+    {
+      "name": "actual-oracle-rejects-mismatch-1",
+      "passed": true
+    },
+    {
+      "name": "all45-measured-neighborhoods-2",
+      "passed": true
+    },
+    {
+      "name": "actual-held-oracle-positive-2",
+      "passed": true
+    },
+    {
+      "name": "actual-measured-mismatch-retained-2",
+      "passed": true
+    },
+    {
+      "name": "actual-oracle-rejects-mismatch-2",
+      "passed": true
+    },
+    {
+      "name": "actual-capture-helper-positive",
+      "passed": true
+    },
+    {
+      "name": "actual-capture-retains-mismatch",
+      "passed": true
+    },
+    {
+      "name": "capture-raw-artifacts-preserved",
+      "passed": true
+    },
+    {
+      "name": "ambiguous-configure-rejected-before-tools",
+      "passed": true
+    },
+    {
+      "name": "remaining-buffer2-subset-explicit",
+      "passed": true
+    },
+    {
+      "name": "nonzero-no-effect-dispatch",
+      "passed": true
+    },
+    {
+      "name": "original-six-second-wait-preserved",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/qa/native.py": "e732ee754fa715be0c3fa09a3295b24d24ba2b939a40b35dc8dd6666509794dd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/qa/pixels.py": "47486cf947914216a59b284de4f5187c2bda62b1c4fab45f8bf4a60458cd7ae4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/qa/test.py": "b7c4e3fb391fbbba82de8d69ba0cf3f6a6c3b9d2fe40ec41238939aa6c72aa4a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-buffer2-native-v217/oracle-pin.json": "c90009acb075233965c996f550d6a58845870e009b898bad2cbfdc31a74761a7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/component-manifest.json": "cab09061c578e6b4015abfd495f6bfb022f578c1d0b920ccc059557c6e1e96b9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/HANDOFF.md": "f4b6e17c1ad3dca6ec9d3bd15c7f9d027d3c1f210e66414ba9c5e56dddb41b61",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/REQUIREMENTS.md": "84b8378553ef5707a6ae689b10bfd01c89c1e8b55876a13e2acf0fd0bbbaed1f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/oracle.py": "a209e966d2601548ca4bdac49f3e1dc4791f8b1bcfde3949d265f66bfefbd7ec",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/origin.json": "e157abb237b8e29a5096fed2253fa26f09bcbd500f69b0c5c6b46f01ea21d0ca",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/original/HANDOFF.md": "d3cab73a20453ce343dea1f30543fa62f0d9ba8eb4fa304b060f83aa358f04a3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/original/REQUIREMENTS.md": "2076d910dda564f552332e405c608e9fc950e7a56b39a14284a55462f86b1d3e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/original/oracle.py": "1e5142bff327ed438046e0389da70f5b6c3127460dc4cc94a71f87bf05a3ad16",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/freeze.py": "a8b29586bc2af757a4cce0c0e8bbf4165785f4695b144e902ee3ddb88198cbaa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/mutations-1791132524188492751/excluded-zero-history-bound.py": "182863b4884bc62e2df2d328c3fb9182320d76673f62e4e1a918ee01aa2d0264",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/mutations-1791132524188492751/missing-bool-option-guard.py": "85bb4f4af95a98a0305e9eac2b638f8e0178722f963f74a4970f10328f47575b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/mutations-1791132524188492751/missing-history-type-guard.py": "18e6a12720325e7636c649eb47864369f0593734f723f50fc6b4bf204ec9e295",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/mutations-1791132524188492751/report.json": "9b75a0c7108415f60bfeb46276480c739bf9cde03e31ae116696569f086bf294",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/mutations-1791132524188492751/truncated-history-upper-bound.py": "25765776fa9e537e642bfd7128c4df0a6673a5754df8e14fbc6b597f067e427f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/mutations.py": "9a9a0de68393926609682c2cf1c75960f8f921d4d829e19438cd56f0ad5a384c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/original-test.py": "5ed7b58c53a3b884132a4c826e41d65ef6ee46aa8ebbb71ab0ff6d414368c0af",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/test-1791132431166676490/report.json": "4b8d57ac15bf38c087d67d7ce5aa24ed6ff839a13e94dac6c34e44a0283d5aa1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/test-1791132578058133747/report.json": "a383d383ef21134eb3fffdea26050d5ac207db62f08f40ba9788df42e56c80bb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/test-1791132578072609671/report.json": "d55adef1b86e596d7759932463b6be0b2eff615c4d51b91ed09600ce1aa1bc7a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/test-62-captured.py.txt": "cd12b56d94a62f0bde8c2eb234b2c22ff885ab133a23864bede70e988ec7f3f8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/test.py": "1307c78d02ffe804c008b548581744ca328695e50508bf1bd337d70f8c704f0f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/witness-1791132346213198279/report.json": "ef0c9f9ced32328fba63e290fd28dadd292d97cfad9c7d5ee472258ee1bf5d15",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-presented-landmark-oracle-v210/qa/witness.py": "87589bcc1eff95e6bb0696e7cee9ed66d412d7c5a1e46e9479918a82edb3681b"
+  }
+}

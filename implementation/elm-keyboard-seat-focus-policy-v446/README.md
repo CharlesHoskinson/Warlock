@@ -1,0 +1,1 @@
+One owning InputManager setupKeyboard predicate guard candidate, additive EARS/OpenSpec and bounded Quint model. Native445 proves popup focus redirected to underlying client on restoration. No native correction accepted yet.

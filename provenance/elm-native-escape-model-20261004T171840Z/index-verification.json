@@ -1,0 +1,293 @@
+{
+  "passed": true,
+  "priorHEAD": "82f150722bf079bd832f2146eea1a252ca831314",
+  "manifestSHA256": "7c5121f0314c230e1d1f3137783f47001b9bd252bcb81ec3b660d288f72653cc",
+  "verifiedIndexFiles": 71,
+  "scope": "Owned model183 archive raw index bytes and modes; no native/refinement or roadmap completion claim",
+  "files": {
+    "docs/elm-roadmap/delivery/NATIVE-ESCAPE-V183-MODEL.md": {
+      "mode": "100644",
+      "blob": "4c042d12ffd03e12c86b2f81650470088bce3bcd"
+    },
+    "docs/elm-roadmap/delivery/build-loop-events/20261004T171832.394191Z--f6779148-8f5d-4bdf-8a0f-044184e486f2--28efbaab384f47cda7626d7295ff1eb7.json": {
+      "mode": "100644",
+      "blob": "512c705528c37f7f58f321ecd269d5352428e1b1"
+    },
+    "implementation/elm-native-escape-order-model-v183/SPEC.md": {
+      "mode": "100644",
+      "blob": "9afc4fe78c6c93ef1e6a9af97d6876a56cc47afc"
+    },
+    "implementation/elm-native-escape-order-model-v183/component-manifest.json": {
+      "mode": "100644",
+      "blob": "5988e4e489d3ae3e63bd20f08a0f08304dc2171c"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/freeze.py": {
+      "mode": "100644",
+      "blob": "b895bba8de90905f9b295fb467192a0a866a7e8f"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/invariants.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/invariants.stdout": {
+      "mode": "100644",
+      "blob": "ef5b7df79b22090d5a610e24637077103cf92282"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/model.py": {
+      "mode": "100644",
+      "blob": "1cd1c36ed5f314a9a9430fc0271631269a55af1f"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-changedEarlyReleaseTest-12.itf.json": {
+      "mode": "100644",
+      "blob": "f7b73275cc4b47fc2841fcc0b71838eb9f190acc"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-deadlineNeverRenewedTest-6.itf.json": {
+      "mode": "100644",
+      "blob": "db58ea88935da683e466d9e71310f9faf10dc86e"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-earlyReleaseOnceTest-10.itf.json": {
+      "mode": "100644",
+      "blob": "e189880bad429d767f0351450948cfb98e51a58b"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-earlyReleaseTest-9.itf.json": {
+      "mode": "100644",
+      "blob": "3ca29bb2a328d582c74db681055507bb864b446a"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-expiredEarlyReleaseTest-11.itf.json": {
+      "mode": "100644",
+      "blob": "26d3ad10c27564bebb3b05d0d01bac852cee0640"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-forgedReleaseTest-3.itf.json": {
+      "mode": "100644",
+      "blob": "381e42b41609ad454a1d03c760eb1edd15a816d8"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeBeforeDOMAckTest-14.itf.json": {
+      "mode": "100644",
+      "blob": "f9f04ce746ac7054b7be4850404bf07ec25520c8"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeCannotApproveOldReleaseTest-22.itf.json": {
+      "mode": "100644",
+      "blob": "309f02b50186bfe65e1e3220ece0dc7c8d6bc635"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeDeadlineNeverRenewedTest-18.itf.json": {
+      "mode": "100644",
+      "blob": "790de8ced922aa738fb613b706a86f3557d3f2fd"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeExpiredPressRefusedTest-23.itf.json": {
+      "mode": "100644",
+      "blob": "972fc3400328acc4236c7d573b36cd0bd1fb76de"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeOneReleaseOnceTest-16.itf.json": {
+      "mode": "100644",
+      "blob": "f817ff28b9fb1b6a12569d10cfac3f5ed79b9933"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeRepeatRefusedTest-19.itf.json": {
+      "mode": "100644",
+      "blob": "06eb8512b5a1e0e8f93481bc6f6e3170307f9d5e"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeRetirementRefusedTest-20.itf.json": {
+      "mode": "100644",
+      "blob": "ca6953622d87527e1c1a28670dc5ed14f600a2ca"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeScopeChangeRefusedTest-17.itf.json": {
+      "mode": "100644",
+      "blob": "76c39e41053497b7aadafc559397fe797ffd6c28"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-nativeEscapeWithoutPhysicalPressTest-21.itf.json": {
+      "mode": "100644",
+      "blob": "8724c3cb95faab592d8310bf955838e3718f72d4"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-pressNeverClosesTest-0.itf.json": {
+      "mode": "100644",
+      "blob": "31812e42b64e900f5830a8099436f4b745e146fd"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-releaseOnceTest-1.itf.json": {
+      "mode": "100644",
+      "blob": "02a7156cd28803340e82e1dc2b94f5fa22aab8ce"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-repeatNeverClosesTest-7.itf.json": {
+      "mode": "100644",
+      "blob": "aee4f08590d2e89b318afb4d97bfcf2435d58af6"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-replayPreservesOriginalTest-8.itf.json": {
+      "mode": "100644",
+      "blob": "7189b1986a2b2a9f2dcedb3c63194c4c286ecda2"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-retirementKeepsHeldTest-4.itf.json": {
+      "mode": "100644",
+      "blob": "1b0e2401d65042409d003b0a95082a57900d6f68"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-scopeChangeRefusesTest-5.itf.json": {
+      "mode": "100644",
+      "blob": "427b7234b79e83d906804c748eced86c3added21"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-secondEscapeTest-2.itf.json": {
+      "mode": "100644",
+      "blob": "73e6e105e3733daf2a112a75c5a6f2ef146d0a37"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-staleDOMCallbackStillRefusedTest-15.itf.json": {
+      "mode": "100644",
+      "blob": "2e67945d3455bd51c5dc9460054a3987972574c0"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named-webWithoutNativePressTest-13.itf.json": {
+      "mode": "100644",
+      "blob": "cbcc0c3f677d8646f7e4773d4657fb36db366823"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/named.stdout": {
+      "mode": "100644",
+      "blob": "52b4ad90fadce23d8c32992975b1cd04d83a8df3"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-closes-on-press-rejected.stderr": {
+      "mode": "100644",
+      "blob": "ad4af9f8337f189a4087be190a51ee5c5fe83b65"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-closes-on-press-rejected.stdout": {
+      "mode": "100644",
+      "blob": "9653f1101c4f19e467ffd22f1eda0363ba0a173a"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-closes-on-press-typecheck.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-closes-on-press-typecheck.stdout": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-closes-on-press.qnt": {
+      "mode": "100644",
+      "blob": "189723cad8b4b189e6db7cdca6924fa8096bdce9"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-does-not-consume-rejected.stderr": {
+      "mode": "100644",
+      "blob": "ad4af9f8337f189a4087be190a51ee5c5fe83b65"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-does-not-consume-rejected.stdout": {
+      "mode": "100644",
+      "blob": "c4c001c5179c6fa08986c961eb95ebf0684770a4"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-does-not-consume-typecheck.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-does-not-consume-typecheck.stdout": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-does-not-consume.qnt": {
+      "mode": "100644",
+      "blob": "a1e3782fc2fd636640eccb726e5aada1740389ab"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-expired-approval-rejected.stderr": {
+      "mode": "100644",
+      "blob": "ad4af9f8337f189a4087be190a51ee5c5fe83b65"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-expired-approval-rejected.stdout": {
+      "mode": "100644",
+      "blob": "b9aed7a641ff1fa5902b8d736ed8d188473b777e"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-expired-approval-typecheck.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-expired-approval-typecheck.stdout": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-expired-approval.qnt": {
+      "mode": "100644",
+      "blob": "9ab5d3cb49d5697c3ce52702ebebaebdc9154ccc"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-requires-dom-rejected.stderr": {
+      "mode": "100644",
+      "blob": "ad4af9f8337f189a4087be190a51ee5c5fe83b65"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-requires-dom-rejected.stdout": {
+      "mode": "100644",
+      "blob": "796b70bd2e3635d71b5cec9277f82063a7a753e3"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-requires-dom-typecheck.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-requires-dom-typecheck.stdout": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-requires-dom.qnt": {
+      "mode": "100644",
+      "blob": "fad12ad16e5207157d611a350cb6f46cd37f2cba"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/recovery.qnt": {
+      "mode": "100644",
+      "blob": "c2f4759f70a58fca0debfbdf665346e9f5c16d5f"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/render-ack-renews-deadline-rejected.stderr": {
+      "mode": "100644",
+      "blob": "ad4af9f8337f189a4087be190a51ee5c5fe83b65"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/render-ack-renews-deadline-rejected.stdout": {
+      "mode": "100644",
+      "blob": "91b31831e7cffe575ca7e534926250ca77cfa265"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/render-ack-renews-deadline-typecheck.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/render-ack-renews-deadline-typecheck.stdout": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/render-ack-renews-deadline.qnt": {
+      "mode": "100644",
+      "blob": "b747773585e4ab36018344acb77cfd89511524ad"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/report.json": {
+      "mode": "100644",
+      "blob": "62da1e2da120402c5b9bf7ae464a7451ab3cd5ef"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/stale-web-admitted-rejected.stderr": {
+      "mode": "100644",
+      "blob": "ad4af9f8337f189a4087be190a51ee5c5fe83b65"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/stale-web-admitted-rejected.stdout": {
+      "mode": "100644",
+      "blob": "d1c394c62d3d621544596cf2fe5952ec53cc0c4b"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/stale-web-admitted-typecheck.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/stale-web-admitted-typecheck.stdout": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/stale-web-admitted.qnt": {
+      "mode": "100644",
+      "blob": "1dc1f08699d1e5395d5de4ae95a3affd650b19e5"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/typecheck.stderr": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/typecheck.stdout": {
+      "mode": "100644",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    "implementation/elm-native-escape-order-model-v183/qa/model.py": {
+      "mode": "100644",
+      "blob": "1cd1c36ed5f314a9a9430fc0271631269a55af1f"
+    },
+    "implementation/elm-native-escape-order-model-v183/spec/recovery.qnt": {
+      "mode": "100644",
+      "blob": "c2f4759f70a58fca0debfbdf665346e9f5c16d5f"
+    },
+    "implementation/elm-native-escape-order-model-v183/upstream.json": {
+      "mode": "100644",
+      "blob": "8aa55448bd26b2ef754fecf0b6bf2efdae07d96d"
+    }
+  }
+}
