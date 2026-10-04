@@ -331,3 +331,23 @@ views, so failure/recovery must be tested before host selection. Identical trace
 while private-memory growth remains similar. This is not a budget, leak-free,
 hardware-rendering, accessibility or release claim. Numeric performance limits,
 current-shell comparison, production overhead and long-soak acceptance stay open.
+
+## Native recovery experiment (2026-10-04)
+
+V168 found a real renderer-failure regression: exiting the host dropped its bar
+reservation and resized tiled clients. V169 keeps the48px native bars, disables
+script-message ingress, closes popup/I/O/backend ownership and substitutes trusted
+GTK recovery controls. Its native Restart button requests exit3; the renderer
+cannot invoke it. V170 independently checks failure-time geometry and actual
+application keyboard recipient, real Restart input, fresh binding/snapshot and
+old-packet refusal through the independent QA connection. This last observation
+does not establish reuse of a formerly authenticated connection or pending intent
+persistence. The reviewed fixture launches the new host; production supervision,
+keyboard-only/AT and recovery hotplug remain required. [Evidence](../../implementation/elm-native-recovery-qa-v171/HANDOFF.md)
+
+Actual optimized/C build and full137 native/original91 regression pass. A separate
+abstract recovery contract passes six named Quint scenarios/1000 traces; it is not
+automated native refinement. Failure-time/final geometry is preserved, while
+atomic reservation during restart is unproven. V166 separately proves shared-view
+shader execution/display on Intel Mesa; graphics, fallback and menu/core work
+must be integrated and requalified as a single release tuple.

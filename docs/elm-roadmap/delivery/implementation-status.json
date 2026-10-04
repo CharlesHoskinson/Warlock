@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-related-soak-v164",
-  "status": "Related-view prototype native137 retains original91/shared-output behavior with one renderer and nine processes; identical100-cycle traced workload111 passes. Private growth persists; correlated failure/GPU/current-shell/AT/IME/menu/release gates open.",
+  "activeSlice": "implementation/elm-native-recovery-qa-v171",
+  "status": "Native recovery now retains bar reservation on renderer failure; focused31, full native137/original91 and recovery Quint6/1000 pass. Related graphics142 qualifies Intel shader/display separately. Production supervisor/pending/hotplug/AT/IME/coherent menu/GPU tuple/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1066,6 +1066,46 @@
         "performanceBudgetsAccepted": false
       },
       "performanceBudgetsAccepted": false
+    },
+    "relatedGPUV166": {
+      "evidence": "implementation/elm-related-gpu-qa-v166/qa/slice-manifest.json",
+      "nativeChecks": 142,
+      "originalNativeChecks": 91,
+      "shaderReadback": [
+        17,
+        193,
+        71,
+        255
+      ],
+      "nativeDisplayedPixel": [
+        17,
+        193,
+        71
+      ],
+      "nativeRenderer": "Mesa Intel(R) Graphics (ARL)",
+      "webgpu": "unavailable in secure origin",
+      "scope": "Native related-view shared-renderer shader readback/display and Mesa Intel engine diagnostics, browser WebGPU unavailable; budgets/full graphics/device/AT/IME/menu/release qualification remain open"
+    },
+    "nativeRecoveryV171": {
+      "nativeChecks": 137,
+      "originalNativeChecks": 91,
+      "focusedRecoveryChecks": 31,
+      "recoveryQuintNamedScenarios": 6,
+      "recoveryQuintInvariantSamples": 1000,
+      "failureTimeGeometryPreserved": true,
+      "nativeRestartExit": 3,
+      "observedRendererProcesses": 1,
+      "singleOutputProcessCount": 9,
+      "dualOutputProcessCount": 9,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-native-recovery-qa-v171/qa/slice-manifest.json",
+      "scope": "Native reservation-preserving renderer failure/restart component31 plus original91/shared-output137; production supervisor/pending-effects/hotplug recovery/coherent GPU/menu/budgets/AT/IME/release remain open",
+      "limitations": [
+        "Reviewed fixture launches fresh host after actual native Restart exit3; production supervisor not implemented",
+        "Failure-time and final geometry checked, no atomic reservation across restart",
+        "Old packet refused via independent QA authority connection; no former-connection reuse or in-flight Unknown reconciliation proof",
+        "Recovery hotplug/zero outputs and keyboard-only/AT remain open"
+      ]
     }
   },
   "next": [

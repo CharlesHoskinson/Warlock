@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "1ee954ded07b4b93b9f6314fd125a9eb",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T05:53:39.926571+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-related-gpu-qa-v166",
+  "nextWork": [
+    "Build and qualify actual related-view shader/readback/native screenshot with original91/shared-output cases; separate QA-only diagnostic renderer and WebGPU unavailable capability"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-related-gpu-v165/native/shared-host.c",
+      "sha256": "92e02801dbad6f60397ee0f8ac4696ec822cc8ed21d2298ca35f7c5d8419ce7b",
+      "size": 30170
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-model-v172/qa/model-1791093911868298654/recovery.qnt:9:28
+  9:  action snapshot(epoch:int)=s'=if(s.phase=="Starting" and epoch==s.epoch){...s,phase:"Live",reserved:48,bridge:true,accepted:false} else {...s,accepted:false}
+                                ^
+
+
+ Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-model-v172/qa/model-1791093911868298654/recovery.qnt:9:133
+  9:  action snapshot(epoch:int)=s'=if(s.phase=="Starting" and epoch==s.epoch){...s,phase:"Live",reserved:48,bridge:true,accepted:false} else {...s,accepted:false}
+                                                                                                                                         ^^^^
+
+error: parsing failed

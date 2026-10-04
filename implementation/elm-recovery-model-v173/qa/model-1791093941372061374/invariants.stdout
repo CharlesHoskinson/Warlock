@@ -1,0 +1,621 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Drain",
+      reserved: 48
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "Recovery",
+      reserved: 48
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "RestartRequested",
+      reserved: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "RestartRequested",
+      reserved: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "RestartRequested",
+      reserved: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "RestartRequested",
+      reserved: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "RestartRequested",
+      reserved: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 0,
+      epoch: 1,
+      lastEpoch: 0,
+      phase: "RestartRequested",
+      reserved: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Starting",
+      reserved: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Starting",
+      reserved: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Starting",
+      reserved: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Starting",
+      reserved: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: false,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Starting",
+      reserved: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      accepted: false,
+      backend: true,
+      bridge: true,
+      effects: 0,
+      epoch: 2,
+      lastEpoch: 0,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      accepted: true,
+      backend: true,
+      bridge: true,
+      effects: 1,
+      epoch: 2,
+      lastEpoch: 2,
+      phase: "Live",
+      reserved: 48
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      accepted: false,
+      backend: false,
+      bridge: false,
+      effects: 1,
+      epoch: 2,
+      lastEpoch: 2,
+      phase: "Stopped",
+      reserved: 0
+    }
+}
+
+[ok] No violation found (770ms at 1299 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

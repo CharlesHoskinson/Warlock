@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "fe971c65698f489f807bdcf5814b7786",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T06:09:16.757408+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-native-recovery-qa-v171",
+  "nextWork": [
+    "Actual supervisor for native Restart exit3; old authenticated-scope/pending Unknown, hotplug/zero-output/AT, atomic restart reservation and coherent GPU/menu tuple; full sprints/C00/release remain open"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-native-recovery-qa-v171/qa/slice-manifest.json",
+      "sha256": "d4f9bb9703abd68fdd60667e96852161407892f57ecc635b24879f6868e99ee3",
+      "size": 56763
+    },
+    {
+      "path": "implementation/elm-related-gpu-qa-v166/qa/slice-manifest.json",
+      "sha256": "53a3a0c668aa96d43b220eed378c8d8a2e320b42e7b893ef9b0577020d30a204",
+      "size": 39367
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

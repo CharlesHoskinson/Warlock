@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "scope": "Native recovery reservation/ingress/restart epoch contract; abstract model, not automated C/Elm refinement, pending-effects or hotplug acceptance.",
+  "sourceSHA256": "9c6354353d7309ca1479d2c7c720204541a526555da2cd3a846616e0c2c4ffa7",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(failureReservationTest|recoveryIngressTest|earlyRestartTest|restartFreshSnapshotTest|retiredEpochTest|stopCancelsRecoveryTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 6,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "9c6354353d7309ca1479d2c7c720204541a526555da2cd3a846616e0c2c4ffa7",
+    "model.py": "73d6193f4e9447bf71e7627977c0dbb7db91133896d198253bfc78bd973200b7",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-failureReservationTest-0.itf.json": "a2c7bc30b280edf9ccc948c9d135847202d9f979dc780a7d3d5e891eda456af6",
+    "named-recoveryIngressTest-1.itf.json": "8bf2a15680a4edbe242535083dd944b8839e806a01acba0711aeb6ee02bf8dbd",
+    "named-earlyRestartTest-2.itf.json": "70486653c4f27d6edbc4d0d725f860affafcf24f76e278d10306f9714de37ebe",
+    "named-restartFreshSnapshotTest-3.itf.json": "f4f1d609510828f36069be65e3456d9d15a2fe94779fa43ef8dd039aa433307f",
+    "named-retiredEpochTest-4.itf.json": "dbd65b3237c6f6f8c53ad06b794598981c9e968acd5d46777ed9bfdcb0e510d8",
+    "named-stopCancelsRecoveryTest-5.itf.json": "d0b5362a29c4a0a8c538890a7059d8a270114e2bdb742baa4bc4ec1fa6731bdd",
+    "named.stdout": "5b643644587e305c28b4d734a4cab56b5b6ff201b5ea5a27a6a3fa953726b55a",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "bfa0a284996298d55f211097402dd09b9e3f652885f84d7e5d4117d03ff64ba4",
+    "invariants.stdout": "b8f075db070a58d8a79c19be9444d8eb221491263391049759ad1b14d208b658",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

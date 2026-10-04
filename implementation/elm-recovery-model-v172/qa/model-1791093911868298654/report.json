@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Native recovery reservation/ingress/restart epoch contract; abstract model, not automated C/Elm refinement, pending-effects or hotplug acceptance.",
+  "sourceSHA256": "2d50c1cc4caf0466f81bf70457f86f3af531d24292105f36bfa430234487ac27",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\n Error [QNT000]: mismatched input \\'=\\' expecting \\':\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-model-v172/qa/model-1791093911868298654/recovery.qnt:9:28\\n  9:  action snapshot(epoch:int)=s\\'=if(s.phase==\"Starting\" and epoch==s.epoch){...s,phase:\"Live\",reserved:48,bridge:true,accepted:false} else {...s,accepted:false}\\n                                ^\\n\\n\\n Error [QNT000]: extraneous input \\'else\\' expecting {<EOF>, \\'module\\', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-model-v172/qa/model-1791093911868298654/recovery.qnt:9:133\\n  9:  action snapshot(epoch:int)=s\\'=if(s.phase==\"Starting\" and epoch==s.epoch){...s,phase:\"Live\",reserved:48,bridge:true,accepted:false} else {...s,accepted:false}\\n                                                                                                                                         ^^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "recovery.qnt": "2d50c1cc4caf0466f81bf70457f86f3af531d24292105f36bfa430234487ac27",
+    "model.py": "73d6193f4e9447bf71e7627977c0dbb7db91133896d198253bfc78bd973200b7",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "a0cccc778b86485ac9c5f192239065ad9710e717d554c96c88e4a25f0fae0225"
+  }
+}

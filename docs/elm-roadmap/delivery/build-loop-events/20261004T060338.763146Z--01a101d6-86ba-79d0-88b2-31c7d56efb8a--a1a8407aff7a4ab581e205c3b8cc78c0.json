@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "a1a8407aff7a4ab581e205c3b8cc78c0",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T06:03:38.763146+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-renderer-recovery-v170",
+  "nextWork": [
+    "Native V169 failure recovery retains48px bar reservation and quarantines bridge; test unchanged geometry/application recipient plus real GTK Restart and retired binding refusal; preserve failed V167/V168"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-native-recovery-v169/native/shared-host.c",
+      "sha256": "76a84e7777308f4d67104f6d1c640bc4088cd4523bdcdad7635140d740e4d7c1",
+      "size": 30407
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

@@ -6977,6 +6977,40 @@
       "comparison": "implementation/elm-related-soak-v164/comparison.json",
       "performanceBudgetsAccepted": false,
       "scope": "Instrumented private related-view shared host post-warmup repetition: process-tree CPU/RSS and helper-to-DOM receipt samples, not approved budgets/native presentation/long soak/full performance acceptance"
+    },
+    {
+      "evidence": "implementation/elm-related-gpu-qa-v166/qa/slice-manifest.json",
+      "nativeChecks": 142,
+      "originalNativeChecks": 91,
+      "shaderReadback": [
+        17,
+        193,
+        71,
+        255
+      ],
+      "nativeDisplayedPixel": [
+        17,
+        193,
+        71
+      ],
+      "nativeRenderer": "Mesa Intel(R) Graphics (ARL)",
+      "webgpu": "unavailable",
+      "scope": "Native related-view shared-renderer shader readback/display and Mesa Intel engine diagnostics, browser WebGPU unavailable; budgets/full graphics/device/AT/IME/menu/release qualification remain open"
+    },
+    {
+      "evidence": "implementation/elm-native-recovery-qa-v171/qa/slice-manifest.json",
+      "nativeChecks": 137,
+      "originalNativeChecks": 91,
+      "focusedRecoveryChecks": 31,
+      "recoveryQuintNamedScenarios": 6,
+      "recoveryQuintInvariantSamples": 1000,
+      "failureTimeGeometryPreserved": true,
+      "nativeRestartExit": 3,
+      "cleanupPassed": true,
+      "scope": "Native reservation-preserving renderer failure/restart component31 plus original91/shared-output137; production supervisor/pending-effects/hotplug recovery/coherent GPU/menu/budgets/AT/IME/release remain open",
+      "limitations": [
+        "Production supervisor, pending Unknown, hotplug/zero outputs, AT/IME and atomic restart reservation remain open"
+      ]
     }
   ]
 }
