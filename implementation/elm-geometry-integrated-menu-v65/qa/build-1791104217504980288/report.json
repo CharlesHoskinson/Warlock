@@ -1,0 +1,18 @@
+{
+  "passed": false,
+  "scope": "Actual combined Elm and host CPU build/replay; no native GUI, ABI load or release acceptance",
+  "commands": [],
+  "inputs": {
+    "lineage/previous-build-held.json": "90b3838d01da30e9e99f76290eb7dd96bd49a84499b602e38e6339b4e97d68e3",
+    "lineage/elm-held.json": "27ed7148d101cafb220f3ed21e2d3e14a1df5880f4924d01ff510473dccce450"
+  },
+  "origins": {
+    "lineage/previous-build-held.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v59/component-manifest.json",
+    "lineage/elm-held.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/held-source-manifest.json"
+  },
+  "error": "AttributeError(\"'list' object has no attribute 'items'\")",
+  "artifacts": {
+    "inputs/lineage/elm-held.json": "27ed7148d101cafb220f3ed21e2d3e14a1df5880f4924d01ff510473dccce450",
+    "inputs/lineage/previous-build-held.json": "90b3838d01da30e9e99f76290eb7dd96bd49a84499b602e38e6339b4e97d68e3"
+  }
+}

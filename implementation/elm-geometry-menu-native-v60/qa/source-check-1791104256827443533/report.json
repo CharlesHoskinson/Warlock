@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "CPU preflight, extracted helper identity and absolute deadline checks only",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-235f515fafd84e459e7c09b096068ce7.scope",
+    "coreLimit": 1
+  },
+  "sources": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-v60/qa/native.py": "f714139e0f08326e130619967b92019aea25fe941139e274c46ee6d1ed7f558a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-v60/qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-v60/candidate_host.py": "9adcaa483e9b02a92257f8df898efab35b7a0faae3161f64b8a275c9aa38a787",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-v60/upstream.json": "45fed5e41e882a041c34f941fe39ead464283d5689f09fc33bcf5a231e7d2b07",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-v60/qa/source-check.py": "7574712eeb09942d5d35e76e06d2bafa27b30aa75f980cd08a96428e9b495797"
+  },
+  "deadlineChecks": 3,
+  "extractedFunctions": 6,
+  "sourceHeld": true,
+  "selectedBuild": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v59/qa/build-1791103452303629948/report.json",
+  "selectedBuildSHA256": "b0320e54bcd2f3b58dbb5702e07ae2d58b821473fd8cb1b3c5d90fd382da73b4",
+  "compiledBinarySHA256": "ad155e8f2703b357251b7276fdfd2d92d86078482cf0a2d101d217272528b368",
+  "selectedPair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/build-1791101053270682069/Hyprland",
+      "sha256": "5f1237c8c66671d6d451c346f93dcefd3ce203cecd385d8068092aeffe2376b1",
+      "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/core/build-1791101053270682069/report.json",
+      "buildReportSHA256": "d6391f03c7df483631f40482ef911bc9f22aa5c8faf9535aff349c9d28754ac3",
+      "versionHeaderSHA256": "0cb4913dc18c35bc0fb5e33f8786453c0781216bb4ead20b2afd82ba84981946",
+      "componentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/component-manifest.json",
+      "componentManifestSHA256": "dd924d35c3568b4b0e0434bbc2eb841789e69c4451806a6a62659111180ca712",
+      "inventoryBase": "/home/hoskinson/omarchy-windows-parity"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-owning-pair-v49/qa/build-1791101699419310570/elm-window-geometry-authority.so",
+      "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+    }
+  },
+  "fixture": {
+    "result": "pass",
+    "client": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-suspend-v53/qa/client-build-1791102127026085440/xdg-max-client",
+    "clientSHA256": "f47c2ce1a555f0df70df9d675b1df7074d49e21789615dd4650a63d0d4cb42e9",
+    "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-suspend-v53/qa/client-build-1791102127026085440/report.json",
+    "buildReportSHA256": "f3df071c42e3f2c24ddf3cd647c33050e37025eb3511ba579b1028ce4e549b7b",
+    "nativeAcceptance": false,
+    "requiresXdgVersion": 6,
+    "suspendedStateObserved": true
+  },
+  "allContractScenariosPassed": false
+}
