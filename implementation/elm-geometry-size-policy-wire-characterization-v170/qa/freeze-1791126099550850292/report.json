@@ -1,0 +1,1363 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual producer31 checks/13 samples passed",
+      "passed": true
+    },
+    {
+      "name": "actual tested runner unchanged",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact dependencies.d",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact characterization",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact compile.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact compile.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact producer-fragments.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact producer-fragments.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact producer-fragments.json",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact ldd.stdout",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact ldd.stderr",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/upstream-report.json",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/SPEC.md",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/test.py",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/actual-number-rectangle.inc",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/actual-size-policy-expression.inc",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/characterization.cpp",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/native/geometry-policy.inc",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/native/geometry.inc",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/candidate/ProspectiveGeometry.hpp",
+      "passed": true
+    },
+    {
+      "name": "retained tested artifact inputs/candidate/PlacementPolicy.hpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-wire-characterization-v170/qa/characterization-1791125837259617921/inputs/characterization.cpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/stdc-predef.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bit",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/concepts",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/version.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++config.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/os_defines.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/features.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/features-time64.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/wordsize.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/timesize.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/sys/cdefs.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/long-double.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/gnu/stubs.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/gnu/stubs-64.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/cpu_defines.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/pstl/pstl_config.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/type_traits",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ext/numeric_traits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/cpp_type_traits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ext/type_traits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/charconv",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/requires_hosted.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/charconv.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/error_constants.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cerrno",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/errno.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/errno.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/linux/errno.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm/errno.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm-generic/errno.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm-generic/errno-base.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/error_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cmath",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/math.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/libc-header-start.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/math-vector.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/libm-simd-decl-stubs.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/floatn.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/floatn-common.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/flt-eval-method.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/fp-logb.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/fp-fast.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/mathcalls-macros.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/mathcalls-helper-functions.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/mathcalls.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/mathcalls-narrow.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/iscanonical.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/std_abs.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/stdlib.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stddef.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/waitflags.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/waitstatus.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/locale_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/__locale_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/sys/types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/typesizes.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/time64.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/clock_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/clockid_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/time_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/timer_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/stdint-intn.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/endian.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/endian.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/endianness.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/byteswap.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/uintn-identity.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/sys/select.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/select.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/sigset_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/__sigset_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/struct_timeval.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/struct_timespec.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/pthreadtypes.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/thread-shared-types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/pthreadtypes-arch.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/atomic_wide_counter.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/struct_mutex.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/struct_rwlock.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/alloca.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/stdlib-bsearch.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/stdlib-float.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/specfun.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stdexcept_throw.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/exception_defines.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stdexcept_throwfwd.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_algobase.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_pair.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/move.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/utility.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/compare",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_iterator_base_types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/iterator_concepts.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ptr_traits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ranges_cmp.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_iterator_base_funcs.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/concept_check.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/debug/assertions.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_iterator.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/new",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/exception.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/new_except.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_construct.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/debug/debug.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/predefined_ops.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_function.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/backward/binders.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/limits",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/gamma.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/special_function_util.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/bessel_function.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/beta_function.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/ell_integral.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/exp_integral.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/hypergeometric.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/legendre_function.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/modified_bessel_func.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/poly_hermite.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/poly_laguerre.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tr1/riemann_zeta.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cstdint",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/stdint.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/wchar.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/stdint-uintn.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/stdint-least.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/iostream",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ostream",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ostream.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ios",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/iosfwd",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stringfwd.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/memoryfwd.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/postypes.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cwchar",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/wchar.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdarg.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/wint_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/mbstate_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/__mbstate_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/__FILE.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/FILE.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/exception",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/exception_ptr.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/cxxabi_init_exception.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/typeinfo",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/hash_bytes.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/nested_exception.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/char_traits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/localefwd.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++locale.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/clocale",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/locale.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/locale.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cctype",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/ctype.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ios_base.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ext/atomicity.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/gthr-default.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/pthread.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/sched.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/sched.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/linux/sched/types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/linux/types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm/types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm-generic/types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm-generic/int-ll64.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm/bitsperlong.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm-generic/bitsperlong.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/linux/posix_types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/linux/stddef.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm/posix_types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm/posix_types_64.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/asm-generic/posix_types.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/struct_sched_param.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/cpu-set.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/time.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/time.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/timex.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/struct_tm.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/struct_itimerspec.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/setjmp.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/struct___jmp_buf_tag.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/pthread_stack_min-dynamic.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/atomic_word.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/sys/single_threaded.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/locale_classes.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/functexcept.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/string",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/allocator.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/c++allocator.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/new_allocator.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/new_throw.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ostream_insert.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/cxxabi_forced.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/range_access.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/initializer_list",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/erase_if.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/basic_string.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ext/alloc_traits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/alloc_traits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/string_view",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/functional_hash.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ranges_base.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/max_size_type.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/numbers",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/string_view.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ranges_algobase.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/invoke.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ranges_util.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ext/string_conversions.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cstdlib",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cstdio",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/stdio.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/__fpos_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/__fpos64_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/struct_FILE.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/types/cookie_io_functions_t.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/stdio_lim.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/stdio.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/basic_string.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/memory_resource.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cstddef",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/uses_allocator.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/uses_allocator_args.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/tuple",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/locale_classes.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/system_error",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/stdexcept",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stdexcept_except.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/streambuf",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/streambuf.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/basic_ios.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/locale_facets.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/cwctype",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/wctype.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/wctype-wchar.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_base.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/streambuf_iterator.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/ctype_inline.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/locale_facets.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/basic_ios.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/format",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/array",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/locale",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/locale_facets_nonio.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ctime",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/time_members.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/x86_64-pc-linux-gnu/bits/messages_members.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/libintl.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/codecvt.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/locale_facets_nonio.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/locale_conv.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/optional",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/enable_special_members.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/span",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/monostate.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/formatfwd.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/unicode.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_algo.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/algorithmfwd.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_heap.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/uniform_int_dist.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_tempbuf.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/unicode-data.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ostream_print.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ostream.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/istream",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/istream.tcc",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/memory",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_uninitialized.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_raw_storage_iter.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/align.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/unique_ptr.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/shared_ptr.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/shared_ptr_base.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/allocated_ptr.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/refwrap.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ext/aligned_buffer.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/ext/concurrence.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/shared_ptr_atomic.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/atomic_base.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/atomic_lockfree_defines.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/atomic_wait.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/backward/auto_ptr.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/ranges_uninitialized.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/out_ptr.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/pstl/glue_memory_defs.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/pstl/execution_defs.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-wire-characterization-v170/qa/characterization-1791125837259617921/inputs/candidate/PlacementPolicy.hpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-size-policy-wire-characterization-v170/qa/characterization-1791125837259617921/inputs/candidate/ProspectiveGeometry.hpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/hyprutils/math/Box.hpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/hyprutils/math/Vector2D.hpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/hyprutils/memory/Casts.hpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/utility",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/stl_relops.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/bits/intcmp.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/hyprutils/math/Misc.hpp",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/c++/16/climits",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/limits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/syslimits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/limits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/posix1_lim.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/local_lim.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/linux/limits.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/posix2_lim.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/xopen_lim.h",
+      "passed": true
+    },
+    {
+      "name": "compiler owning dependency /usr/include/bits/uio_lim.h",
+      "passed": true
+    },
+    {
+      "name": "actual resolved library /usr/lib/libhyprutils.so.0.14.2",
+      "passed": true
+    },
+    {
+      "name": "actual resolved library /usr/lib/libstdc++.so.6.0.36",
+      "passed": true
+    },
+    {
+      "name": "actual resolved library /usr/lib/libm.so.6",
+      "passed": true
+    },
+    {
+      "name": "actual resolved library /usr/lib/libgcc_s.so.1",
+      "passed": true
+    },
+    {
+      "name": "actual resolved library /usr/lib/libc.so.6",
+      "passed": true
+    },
+    {
+      "name": "actual resolved library /usr/lib/libpixman-1.so.0.46.4",
+      "passed": true
+    },
+    {
+      "name": "actual resolved library /usr/lib/ld-linux-x86-64.so.2",
+      "passed": true
+    }
+  ],
+  "sourceSHA256": "2e02de6659390ef9ba68be83c33e11969d43c4a2a21a74deb2204c6364b58da9"
+}

@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "scope": "Actual captured helper diagnostics; fixed-effective-axis admission is a blocker, not production acceptance",
+  "input": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-coordinate-authority-v406/qa/build-1791125085822287165/inputs/candidate/ProspectiveGeometry.hpp",
+  "inputSHA256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+  "checks": [
+    "effective fixed width accepted counterexample",
+    "upper bound still blocks oversize",
+    "feasible lower-bound case accepted"
+  ],
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-authority-protocol-review-v168/qa/review-1791125352957944371/audit.cpp: In function \u2018int main()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-authority-protocol-review-v168/qa/review-1791125352957944371/audit.cpp:3:90: error: conversion from \u2018<brace-enclosed initializer list>\u2019 to \u2018Hyprutils::Math::Vector2D\u2019 is ambiguous\\n    3 | Input i{Operation::Maximize,{0,0,128,180},{},{},{0,0},1,{{128,0},{0,0}},{{1,1},{128,top}}};\\n      |                                                                                          ^\\n  \u2022 there are 2 candidates\\nIn file included from /usr/include/hyprutils/math/Box.hpp:3,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-authority-protocol-review-v168/qa/review-1791125352957944371/ProspectiveGeometry.hpp:2,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-authority-protocol-review-v168/qa/review-1791125352957944371/audit.cpp:1:\\n    \u2022 candidate 1: \u2018constexpr Hyprutils::Math::Vector2D::Vector2D(int, int)\u2019\\n      /usr/include/hyprutils/math/Vector2D.hpp:15:19:\\n         15 |         constexpr Vector2D(int xx, int yy) : x(Hyprutils::Memory::sc<double>(xx)), y(Hyprutils::Memory::sc<double>(yy)) {\\n            |                   ^~~~~~~~\\n    \u2022 candidate 2: \u2018constexpr Hyprutils::Math::Vector2D::Vector2D(double, double)\u2019\\n      /usr/include/hyprutils/math/Vector2D.hpp:12:19:\\n         12 |         constexpr Vector2D(double xx, double yy) : x(xx), y(yy) {\\n            |                   ^~~~~~~~\\n')"
+}
