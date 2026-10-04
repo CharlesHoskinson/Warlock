@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Abstract launch controller, selection retirement, uncertain outcomes and timer/ack tokens; native refinement/GUI separate",
+  "sourceSHA256": "cd0180cb19a645c36986fd90e137f0bbd61c1bb2f486e0b1fef6dd5f80fada89",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "launch.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'select' is redefined in module 'launch'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/model-1791076235794541128/launch.qnt:5:9\\n  5:  action select=s'={...s,shown:s.revision,emitted:false}\\n             ^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "launch.qnt": "cd0180cb19a645c36986fd90e137f0bbd61c1bb2f486e0b1fef6dd5f80fada89",
+    "model.py": "34cd40d3d588e6d7b426e4dc12707fa55bdb38adf0a2d36639b394188a8465bc",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "267ffb4661da03ceba0b28bfc17fa967f72851b2e4b1a1ebf5a59be98549c292"
+  }
+}

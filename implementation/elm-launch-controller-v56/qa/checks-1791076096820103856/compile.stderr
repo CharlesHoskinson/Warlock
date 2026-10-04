@@ -1,0 +1,16 @@
+-- SHADOWING ---------------------------------------------- src/LaunchReplay.elm
+
+The name `next` is first defined here:
+
+53|         next = { model = model, selections = selections }
+            ^^^^
+But then it is defined AGAIN over here:
+
+45|                             let (next, intent) = Launch.start selection state.model
+                                     ^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

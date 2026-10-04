@@ -1,0 +1,58 @@
+{
+  "passed": false,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Launch.elm": "7355882dc9ce611e96ae8e4152c6c9debfa5f1fa8da554430e5726c45fb102f4",
+    "src/LaunchReplay.elm": "33bd7e6fcb2d2c374b2c79a1cc9e407d079a808216df762216203e4b50a83fc6",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/launch.cjs": "4c6b47353ede6ed28b905dbcdb9561d55ad50bdd0f4a069c320970e302588aff",
+    "qa/check.py": "97a947fa576d38cb47aff5fe72bf3688efa07e5bf173fa9d710ba5bb695c4611"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/LaunchReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076067350277014/launch.js"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "nativeReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/native-1791075707665392131/report.json",
+    "sha256": "5fa2b79f7e7a0b81b4c2030cbe5e18ead89b9d69d8d00c28c4650afaa946f692",
+    "snapshotSHA256": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80"
+  },
+  "error": "AssertionError('-- BAD TUPLE ---------------------------------------------------- src/Launch.elm\\n\\nI only accept tuples with two or three items. This has too many:\\n\\n170|         (D.map5 (\\\\version kind intent state reason -> ( version, kind, intent, state, reason ))\\n                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nI recommend switching to records. Each item will be named, and you can use the\\n`point.x` syntax to access them.\\n\\nNote: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on\\nworking with large chunks of data in Elm.\\n\\n-- BAD TUPLE ---------------------------------------------------- src/Launch.elm\\n\\nI only accept tuples with two or three items. This has too many:\\n\\n178|             (\\\\( version, kind, intent, state, reason ) ->\\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nI recommend switching to records. Each item will be named, and you can use the\\n`point.x` syntax to access them.\\n\\nNote: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on\\nworking with large chunks of data in Elm.\\n\\n')",
+  "artifacts": {
+    "native-snapshot.json": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80",
+    "native-report.json": "5fa2b79f7e7a0b81b4c2030cbe5e18ead89b9d69d8d00c28c4650afaa946f692",
+    "compile.stdout": "41b8bdee425a1230ef49a192f02193090638af346670540e8467b79edacfa391",
+    "compile.stderr": "19ba4b6bd9d8fd985049ca76cc0aceeedf8ef25b5205449f054c2a40fca9a013",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "inputs/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "inputs/src/Launch.elm": "7355882dc9ce611e96ae8e4152c6c9debfa5f1fa8da554430e5726c45fb102f4",
+    "inputs/src/LaunchReplay.elm": "33bd7e6fcb2d2c374b2c79a1cc9e407d079a808216df762216203e4b50a83fc6",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "inputs/qa/launch.cjs": "4c6b47353ede6ed28b905dbcdb9561d55ad50bdd0f4a069c320970e302588aff",
+    "inputs/qa/check.py": "97a947fa576d38cb47aff5fe72bf3688efa07e5bf173fa9d710ba5bb695c4611",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm-stuff/0.19.2/d.dat": "df9703b4f7197f10437121e0222bd1f9f3690e06ac428ad34e456f1dfa1c1771",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/Catalog.elmo": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+    "inputs/elm-stuff/0.19.2/Catalog.elmi": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb"
+  }
+}

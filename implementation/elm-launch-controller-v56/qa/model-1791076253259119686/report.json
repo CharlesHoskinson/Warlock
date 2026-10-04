@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Abstract launch controller, selection retirement, uncertain outcomes and timer/ack tokens; native refinement/GUI separate",
+  "sourceSHA256": "98745966f5da6db08af68403740a3acb907a5f11470798a54c1c0c98e907f208",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "launch.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "launch.qnt",
+        "--backend=typescript",
+        "--match=^(pendingTest|staleSelectionTest|uncertaintyTest|disconnectTest|retiredTimerTest|retiredAckTest|freshActionTest|acknowledgementTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "launch.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "launch.qnt": "98745966f5da6db08af68403740a3acb907a5f11470798a54c1c0c98e907f208",
+    "model.py": "34cd40d3d588e6d7b426e4dc12707fa55bdb38adf0a2d36639b394188a8465bc",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-pendingTest-0.itf.json": "f63c12c5d9e663960d9a2ea3a86f024cb57f8f71cff1f0567f6030c1a06e0ced",
+    "named-staleSelectionTest-1.itf.json": "56affb88b88fd84231a61ee63fc09c8bd35e9f25b5fe4a8401cc1853c131aa47",
+    "named-uncertaintyTest-2.itf.json": "531e44b63337470a5b565344782cc9ac4bb85ff433c5c6a0cadcd98f33f8cff7",
+    "named-disconnectTest-3.itf.json": "a0326e5013ebca2494c9d07db4d6047d3b399e2e5619d6f3b55f24cbe693a179",
+    "named-retiredTimerTest-4.itf.json": "4f697aae705871aec17a6cf68767fcc18130d625a511c0a9f1950de2950241b9",
+    "named-retiredAckTest-5.itf.json": "0c16aa4fb4e5379f39f3942e7fe0b0efa6d6b806a43bc922de290f9771b9269e",
+    "named-freshActionTest-6.itf.json": "2cceb5d573ab87d035822e7a2c9550973b29013beb19a58adaa3038c9759b66c",
+    "named-acknowledgementTest-7.itf.json": "bda25d16a3cbd9b1348068cde94e7c2b6d8c18a1a50274e1ea8dd0aab9b9c737",
+    "named.stdout": "6cf48fd2ffd9cf9fbb6e31adb9754d6402f55fbd4fbab6fb176a720652d9cd44",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "437cb3b9c717249719095b189b878642ff2a13e3fe7aa113dbc3036f0d67dabd",
+    "invariants.stdout": "7b1301c67c9832908d5affc690cf7bd7c7295a17e29d70c34ce5c81db39f24a1",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

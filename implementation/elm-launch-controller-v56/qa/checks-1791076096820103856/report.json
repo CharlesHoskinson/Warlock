@@ -1,0 +1,60 @@
+{
+  "passed": false,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Launch.elm": "ca52e9f19b14b121f10bb216ec73f01377ab8ec820bb2508ee89baf129545919",
+    "src/LaunchReplay.elm": "33bd7e6fcb2d2c374b2c79a1cc9e407d079a808216df762216203e4b50a83fc6",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/launch.cjs": "4c6b47353ede6ed28b905dbcdb9561d55ad50bdd0f4a069c320970e302588aff",
+    "qa/check.py": "c9761bf10137372bb36cce22d46d52a007174f4af7f812c1b47bdab3ae5a89c8"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/LaunchReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076096820103856/launch.js"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "nativeReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/native-1791075707665392131/report.json",
+    "sha256": "5fa2b79f7e7a0b81b4c2030cbe5e18ead89b9d69d8d00c28c4650afaa946f692",
+    "snapshotSHA256": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80"
+  },
+  "error": "AssertionError('-- SHADOWING ---------------------------------------------- src/LaunchReplay.elm\\n\\nThe name `next` is first defined here:\\n\\n53|         next = { model = model, selections = selections }\\n            ^^^^\\nBut then it is defined AGAIN over here:\\n\\n45|                             let (next, intent) = Launch.start selection state.model\\n                                     ^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n')",
+  "artifacts": {
+    "native-snapshot.json": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80",
+    "native-report.json": "5fa2b79f7e7a0b81b4c2030cbe5e18ead89b9d69d8d00c28c4650afaa946f692",
+    "compile.stdout": "d5042b9df6d6e014402994b983bf677120b368099459cf5b525337531f744183",
+    "compile.stderr": "77610770b6786b70a469782561dce0f157d7cf498d52ffab738125f328909257",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "inputs/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "inputs/src/Launch.elm": "ca52e9f19b14b121f10bb216ec73f01377ab8ec820bb2508ee89baf129545919",
+    "inputs/src/LaunchReplay.elm": "33bd7e6fcb2d2c374b2c79a1cc9e407d079a808216df762216203e4b50a83fc6",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "inputs/qa/launch.cjs": "4c6b47353ede6ed28b905dbcdb9561d55ad50bdd0f4a069c320970e302588aff",
+    "inputs/qa/check.py": "c9761bf10137372bb36cce22d46d52a007174f4af7f812c1b47bdab3ae5a89c8",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/d.dat": "b98a6a6d5955c222add310e0d0c58c5ffcef1eeceb58377b0a2e4fad46b04850",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/Catalog.elmo": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+    "inputs/elm-stuff/0.19.2/Catalog.elmi": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+    "inputs/elm-stuff/0.19.2/Launch.elmo": "db0f21c9ec2fdea743dde346e006abfd2a10b94b0fc40dbd1963751cb15b88b5",
+    "inputs/elm-stuff/0.19.2/Launch.elmi": "69b05e59f40e2ad3b3ac2507968108b690e8ad7ed2e1d03a2f7dfe49bca85c04"
+  }
+}

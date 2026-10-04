@@ -1,0 +1,1152 @@
+{
+  "passed": true,
+  "checks": 31,
+  "scope": "Compiled pure controller and actual native receipt replay; authenticated transport/GUI not qualified",
+  "cases": [
+    {
+      "name": "lossless scoped request enters Pending",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        }
+      ]
+    },
+    {
+      "name": "duplicate selection callback cannot launch again",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "submitted receipt accepted without readiness claim",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Submitted",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "refusal clears Pending",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Refused",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "unknown requires explicit acknowledgement",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Unknown",
+          "selections": 2,
+          "intent": null
+        },
+        {
+          "status": "Unknown",
+          "selections": 2,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "explicit new user action after unknown acknowledgement",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 2,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 2,
+          "intent": {
+            "request": "2",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        }
+      ]
+    },
+    {
+      "name": "old selection remains retired after acknowledgement",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "disconnect preserves uncertainty and retires catalog",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "new host cannot settle old pending launch",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "wrong host receipt ignored",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "receipt correlation request",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "receipt correlation lifetime",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "receipt correlation generation",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "receipt correlation entry",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored extra root",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored extra intent",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored unknown status",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored invalid reason",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored numeric counter",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored zero counter",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored version",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed receipt ignored kind",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "catalog refresh retires even same-generation callbacks",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "catalog change retires stale selection",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "malformed refresh retires selection",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "removed entry never selected",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "receipt still correlates after catalog changed during flight",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Submitted",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "duplicate receipt cannot override settled state",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Submitted",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Submitted",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "timeout does not resubmit on late receipt",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Unknown",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    },
+    {
+      "name": "submitted permits fresh intentional launch",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Submitted",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Submitted",
+          "selections": 2,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 2,
+          "intent": {
+            "request": "2",
+            "lifetime": "9007199254740993",
+            "generation": "18446744073709551615",
+            "entry": "fixture"
+          }
+        }
+      ]
+    },
+    {
+      "name": "actual native GIO receipt settles matching compiled controller",
+      "rows": [
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 0,
+          "intent": null
+        },
+        {
+          "status": "Idle",
+          "selections": 1,
+          "intent": null
+        },
+        {
+          "status": "Pending",
+          "selections": 1,
+          "intent": {
+            "request": "1",
+            "lifetime": "267480224538334409",
+            "generation": "1",
+            "entry": "fixture"
+          }
+        },
+        {
+          "status": "Submitted",
+          "selections": 1,
+          "intent": null
+        }
+      ]
+    }
+  ]
+}

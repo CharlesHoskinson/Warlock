@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T01:04:31.907840+00:00",
+  "observedUTC": "2026-10-04T01:11:59.492543+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-catalog-launch-v55",
+  "currentSlice": "implementation/elm-launch-controller-v56",
   "nextWork": [
-    "Implement typed launch receipts and Pending/Unknown controller with current selection/catalog/host scope guards, then authenticated host/broker catalog transport.",
+    "Integrate catalog snapshot/default launch envelopes into authenticated host/broker binding, then current Elm shell/launcher selection and receipt controller; serial real native launch fixture.",
     "Integrate qualified catalog IDs, pins/icons and default launcher into production taskbar/popup roles; qualify activation tokens, terminal/actions/URI/DBus and application readiness.",
     "Continue enlarged text/small-output picker, native AT/IME/human UX, scene/roles, original deadlines, outputs/devices/hardware/GPU/WebGPU and release gates."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: V55 preserves legacy parser byte-for-byte, typed catalog IDs/counters/intents, native generation/file revalidation and GIO submission journal. 24 parser/23 compiled/22 isolated native checks and Quint8/1000 passed. No GUI launch, authenticated transport, readiness or full requirement accepted.",
+  "lastWorkClassification": "progress: V56 implements opaque launch model/selection/Pending/Unknown, complete intent/host receipt correlation, scoped timeout and acknowledgement tokens. Compiled33 includes actual V55 native receipt and stale-token regressions; Quint8/1000 passed. No host/GUI integration or full requirement accepted.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

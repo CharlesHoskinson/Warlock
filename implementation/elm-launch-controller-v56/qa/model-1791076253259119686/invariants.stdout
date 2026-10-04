@@ -1,0 +1,703 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 1,
+      shown: 1,
+      timer: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 2,
+      shown: 1,
+      timer: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 2,
+      shown: 2,
+      timer: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 2,
+      shown: 2,
+      timer: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 3,
+      shown: 2,
+      timer: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 4,
+      shown: 2,
+      timer: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 5,
+      shown: 2,
+      timer: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 5,
+      shown: 5,
+      timer: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 6,
+      shown: 5,
+      timer: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 6,
+      shown: 5,
+      timer: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 7,
+      shown: 5,
+      timer: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 7,
+      shown: 7,
+      timer: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      ack: 0,
+      callback: 0,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Idle",
+      request: 0,
+      revision: 7,
+      shown: 7,
+      timer: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: true,
+      phase: "Pending",
+      request: 1,
+      revision: 8,
+      shown: 7,
+      timer: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Pending",
+      request: 1,
+      revision: 9,
+      shown: 7,
+      timer: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 10,
+      shown: 7,
+      timer: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 10,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 11,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 12,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 13,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 14,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 14,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 15,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 16,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 16,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 17,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 18,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 19,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: true,
+      connected: true,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 20,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 21,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 22,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 22,
+      shown: 10,
+      timer: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 22,
+      shown: 22,
+      timer: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 22,
+      shown: 22,
+      timer: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 23,
+      shown: 22,
+      timer: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 24,
+      shown: 22,
+      timer: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 24,
+      shown: 24,
+      timer: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 24,
+      shown: 24,
+      timer: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 25,
+      shown: 24,
+      timer: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 25,
+      shown: 25,
+      timer: 0
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      ack: 0,
+      callback: 7,
+      catalog: false,
+      connected: false,
+      emitted: false,
+      phase: "Submitted",
+      request: 1,
+      revision: 25,
+      shown: 25,
+      timer: 0
+    }
+}
+
+[ok] No violation found (1189ms at 841 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

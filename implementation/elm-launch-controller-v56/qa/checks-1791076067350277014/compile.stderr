@@ -1,0 +1,24 @@
+-- BAD TUPLE ---------------------------------------------------- src/Launch.elm
+
+I only accept tuples with two or three items. This has too many:
+
+170|         (D.map5 (\version kind intent state reason -> ( version, kind, intent, state, reason ))
+                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+
+-- BAD TUPLE ---------------------------------------------------- src/Launch.elm
+
+I only accept tuples with two or three items. This has too many:
+
+178|             (\( version, kind, intent, state, reason ) ->
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+I recommend switching to records. Each item will be named, and you can use the
+`point.x` syntax to access them.
+
+Note: Read <https://elm-lang.org/0.19.2/tuples> for more comprehensive advice on
+working with large chunks of data in Elm.
+

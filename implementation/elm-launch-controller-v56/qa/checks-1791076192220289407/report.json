@@ -1,0 +1,78 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/launch.cjs": "7485377a7872292b5acb5bb9d7060484e81d88ec5a4eb6c13c170648ff8c5d1f",
+    "qa/check.py": "3405813341ba44cb2de78b2b79176f85f01e74218b2d922117bac71e92d11d81"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/LaunchReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076192220289407/launch.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "typed",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076192220289407/inputs/qa/launch.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076192220289407/launch.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076192220289407/native-report.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076192220289407/native-snapshot.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-controller-v56/qa/checks-1791076192220289407/typed.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "nativeReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-catalog-launch-v55/qa/native-1791075707665392131/report.json",
+    "sha256": "5fa2b79f7e7a0b81b4c2030cbe5e18ead89b9d69d8d00c28c4650afaa946f692",
+    "snapshotSHA256": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80"
+  },
+  "typedChecks": 33,
+  "artifacts": {
+    "native-snapshot.json": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80",
+    "native-report.json": "5fa2b79f7e7a0b81b4c2030cbe5e18ead89b9d69d8d00c28c4650afaa946f692",
+    "launch.js": "f01b32e264732235fb143133ef405304b2fc3645e9b4c93c27df46f3ac0fadc9",
+    "compile.stdout": "e680464654f2926adc58bb5589158313a711fd41f5729c5fb4fdb800477e80aa",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typed.json": "cb403ccdece85f0126a53cd82fa794dd03921c9f43f36cd9a03136fd7dbcce1a",
+    "typed.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typed.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "inputs/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "inputs/src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "inputs/src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "inputs/qa/launch.cjs": "7485377a7872292b5acb5bb9d7060484e81d88ec5a4eb6c13c170648ff8c5d1f",
+    "inputs/qa/check.py": "3405813341ba44cb2de78b2b79176f85f01e74218b2d922117bac71e92d11d81",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm-stuff/0.19.2/d.dat": "9d5d46ffa70527214103917b5118ff908fce4d5c6f8c561f5d5e44f41ad67a2a",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/Catalog.elmo": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+    "inputs/elm-stuff/0.19.2/Catalog.elmi": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+    "inputs/elm-stuff/0.19.2/Launch.elmo": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+    "inputs/elm-stuff/0.19.2/Launch.elmi": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+    "inputs/elm-stuff/0.19.2/LaunchReplay.elmo": "0e4c3989dd004017e7e38724738ae477306fc1d7d1e04042727dff89da682dfd",
+    "inputs/elm-stuff/0.19.2/LaunchReplay.elmi": "118034db333b62a2d8bb7dddab23ad0d1b467c78332650ea8f9042578a9425df"
+  }
+}

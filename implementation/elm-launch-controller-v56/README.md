@@ -1,0 +1,13 @@
+# Typed launch controller V56
+
+Pure Elm launch state for the V55 native catalog/default submission contract. This is an S07/S11 component; host transport and launcher GUI acceptance remain open.
+
+The opaque model owns the current host identity, admitted catalog, lossless presentation/request counters and Idle/Pending/Submitted/Refused/Unknown phases. Selection tokens capture host, presentation revision, catalog lifetime/generation and admitted desktop ID. A refresh retires prior selection tokens even if native generation is unchanged. Sending advances presentation revision immediately, so duplicate click callbacks cannot submit another launch. A fresh intentional selection after a known outcome can submit the next request.
+
+Receipts are strict versioned records, correlated with the complete outstanding intent and its host. Unknown fields, malformed counters/status/reasons, mismatched request/catalog/entry/host and late or duplicate receipts cannot settle a newer transaction. A matching receipt can settle an in-flight request after catalog refresh, because it reports the original operation rather than current selection state. Submitted means native submission, never application/window readiness.
+
+Disconnect and scoped timeout preserve Unknown. Unknown blocks new launches until an explicit acknowledgement followed by a fresh selection. Both timers and acknowledgements use opaque request tokens: old callbacks cannot time out or dismiss a newer transaction. Acknowledgement is a user decision to continue after uncertainty; it does not establish whether the original application launched. Production UI must explain that uncertainty and provide observation/reconciliation before offering another launch.
+
+Evidence: 33 compiled replay checks including the V55 actual GIO receipt; eight explicitly selected Quint cases and 1000 invariant samples/40 steps. The abstract model covers scope retirement, pending/uncertainty and timer/ack token guards. It is not an implementation-refinement proof or native Unknown injection. Failed compiler/model packets and earlier accepted checks remain preserved. V55 catalog decoder checks are historical; this derivative adds the scope accessor and has no new claim of all 23 catalog decoder checks rerun.
+
+Next: authenticated binding envelopes and native host catalog routing, current projection/launcher UI selection integration, real serial native launch fixture, pins/icons/search and production taskbar/popup roles. AT/IME, text enlargement/small outputs, human UX, hardware/GPU/WebGPU and complete release gates remain open. No installed session changed.

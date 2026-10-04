@@ -6500,6 +6500,20 @@
       "applicationReadinessAccepted": false,
       "evidence": "implementation/elm-catalog-launch-v55/qa/slice-manifest.json",
       "acceptance": "Legacy catalog semantics and bounded ID/generation/journal/default GIO recorder only. No native GUI launch, launch controller, transport authentication, AT/IME, full launcher UX or release acceptance."
+    },
+    {
+      "slice": "implementation/elm-launch-controller-v56",
+      "level": "compiled pure launch controller and actual native receipt replay plus abstract model",
+      "compiledElmChecks": 33,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "retiredSelectionTimerAcknowledgementGuards": true,
+      "wholeFeatureAccepted": false,
+      "guiIntegrationAccepted": false,
+      "applicationReadinessAccepted": false,
+      "evidence": "implementation/elm-launch-controller-v56/qa/slice-manifest.json",
+      "acceptance": "Typed launch state/correlation/uncertainty component only. Native GUI launch, authenticated host envelopes, reconciliation UX, AT/IME, production launcher/taskbar and release separate."
     }
   ]
 }

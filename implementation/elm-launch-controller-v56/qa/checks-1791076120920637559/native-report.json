@@ -1,0 +1,137 @@
+{
+  "passed": true,
+  "scope": "Real GIO submission to owned argv recorder, not GUI/application readiness or authenticated broker integration",
+  "inputs": {
+    "native/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "native/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "qa/native_catalog.py": "e6d81ad7848b3e0ae8a798fff84bc21cca78c8e81e81928af90eb1fdd6031347"
+  },
+  "checks": [
+    {
+      "name": "presentation excludes command and paths",
+      "passed": true
+    },
+    {
+      "name": "generation stable without native changes",
+      "passed": true
+    },
+    {
+      "name": "native GIO submission accepted",
+      "passed": true,
+      "outcome": {
+        "catalogProtocol": 1,
+        "kind": "launch-outcome",
+        "intent": {
+          "request": "1",
+          "lifetime": "267480224538334409",
+          "generation": "1",
+          "entry": "fixture"
+        },
+        "status": "Submitted",
+        "reason": "native-submission-accepted"
+      }
+    },
+    {
+      "name": "actual recorded GIO arguments preserved",
+      "passed": true,
+      "actual": [
+        "literal space",
+        "$HOME",
+        "%",
+        "Catalog Fixture",
+        "/tmp/elm-catalog-pkf1pvw2/data/applications/fixture.desktop",
+        "--icon",
+        "fixture-icon"
+      ],
+      "expected": [
+        "literal space",
+        "$HOME",
+        "%",
+        "Catalog Fixture",
+        "/tmp/elm-catalog-pkf1pvw2/data/applications/fixture.desktop",
+        "--icon",
+        "fixture-icon"
+      ]
+    },
+    {
+      "name": "original desktop filename preserved",
+      "passed": true
+    },
+    {
+      "name": "exact retry returns original receipt",
+      "passed": true
+    },
+    {
+      "name": "caller cannot mutate journal receipt",
+      "passed": true
+    },
+    {
+      "name": "semantic retry returns original receipt",
+      "passed": true
+    },
+    {
+      "name": "same request different identity refused",
+      "passed": true
+    },
+    {
+      "name": "desktop byte change invalidates generation",
+      "passed": true
+    },
+    {
+      "name": "catalog generation advances for native-only changes",
+      "passed": true
+    },
+    {
+      "name": "removed entry cannot launch",
+      "passed": true
+    },
+    {
+      "name": "retired authority refuses",
+      "passed": true
+    },
+    {
+      "name": "malformed intent refused {'request': '0'}",
+      "passed": true
+    },
+    {
+      "name": "malformed intent refused {'generation': True}",
+      "passed": true
+    },
+    {
+      "name": "arbitrary path text is not a launch route",
+      "passed": true
+    },
+    {
+      "name": "malformed intent refused {'extra': 'exec'}",
+      "passed": true
+    },
+    {
+      "name": "no duplicate or stale launch process",
+      "passed": true
+    },
+    {
+      "name": "oversized projection refused whole",
+      "passed": true
+    },
+    {
+      "name": "oversized projection retires availability without advancing authority",
+      "passed": true
+    },
+    {
+      "name": "unavailable projection cannot launch",
+      "passed": true
+    },
+    {
+      "name": "projection recovers through complete refresh",
+      "passed": true
+    }
+  ],
+  "prototypeLifetime": "267480224538334409",
+  "artifacts": {
+    "snapshot.json": "155dd4e897565889c72073ef01003e07fb3197170fceb8f8c7b971ccd7cb6e80",
+    "argv-receipt.json": "07fb77617540d4d96e705e3667b172be354fa3dd89acfd9e5d8e71625de3d10d",
+    "inputs/native/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/native/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/qa/native_catalog.py": "e6d81ad7848b3e0ae8a798fff84bc21cca78c8e81e81928af90eb1fdd6031347"
+  }
+}
