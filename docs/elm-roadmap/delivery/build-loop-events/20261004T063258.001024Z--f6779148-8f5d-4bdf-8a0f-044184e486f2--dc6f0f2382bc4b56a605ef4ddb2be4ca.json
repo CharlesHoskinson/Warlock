@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "dc6f0f2382bc4b56a605ef4ddb2be4ca",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:32:58.001024+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-parent-cursor-v15",
+  "nextWork": [
+    "Run deterministic GTK cursor against actual private parent framebuffer; custom/blank pixel oracle and observed parent hotspot for original/shrink/scale/restore modes on frozen V8/V10 tuple."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-cursor-v15/qa/native.py",
+      "sha256": "0ec7d96975be6a6143f3093725b432c85abe10d087cc37e24a375482cbca4020",
+      "size": 14255
+    },
+    {
+      "path": "implementation/elm-parent-cursor-v15/fixture.py",
+      "sha256": "7792066b227a04ad7d2694f4336a53f808e8cf46ec882e2146682a3847eaa044",
+      "size": 7103
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

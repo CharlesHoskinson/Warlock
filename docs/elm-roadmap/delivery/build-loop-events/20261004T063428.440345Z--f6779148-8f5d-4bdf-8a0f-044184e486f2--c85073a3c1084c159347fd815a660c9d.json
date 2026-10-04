@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "c85073a3c1084c159347fd815a660c9d",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:34:28.440345+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-parent-cursor-v15",
+  "nextWork": [
+    "V15 actual parent cursor pixels/hotspot/custom-to-blank passed76 with normal cleanup. Fresh V16 must qualify an existing cursor through resize/scale without application replacement and subsequent motion, before coherent menu/shared-host integration and broader release gates."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-cursor-v15/qa/slice-manifest.json",
+      "sha256": "2c71cc7d85296529d4e344dda23d95dd3edffe77eba54c122727cfab3616c102",
+      "size": 4267
+    },
+    {
+      "path": "docs/elm-roadmap/delivery/PARENT-CURSOR-V15-ACCEPTANCE.md",
+      "sha256": "c9be1432db8ca20ade81f39943ba52dbdb21fa975bef69f1e2f9cf72b2f9f465",
+      "size": 1689
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

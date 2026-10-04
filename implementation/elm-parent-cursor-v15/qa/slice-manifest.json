@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "passed": true,
+  "normalCleanup": true,
+  "scope": "Deterministic native GTK cursor, parent framebuffer pixels and hotspot through original/shrink/scale/restore viewport",
+  "checks": 76,
+  "source": {
+    "fixture.py": "7792066b227a04ad7d2694f4336a53f808e8cf46ec882e2146682a3847eaa044",
+    "qa/native.py": "0ec7d96975be6a6143f3093725b432c85abe10d087cc37e24a375482cbca4020"
+  },
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v15/qa/native-1791095594826501191/report.json",
+  "nativeReportSHA256": "63f2a67cffe584d79c41feb008a57d97eafa3163a412832714f3db895e08b0ff",
+  "parentInputManifest": "implementation/elm-parent-input-probe-v10/qa/slice-manifest.json",
+  "parentInputManifestSHA256": "480d1bfaa50611a6348af2d9b9c9ed8c0676b8c8c333fe9215f5c14c69044ce0",
+  "menuParentManifest": "implementation/elm-menu-parent-input-v13/qa/slice-manifest.json",
+  "menuParentManifestSHA256": "7fa541cc725a872e1aa2bab6ed7f9f212f8b3af50fd8b1438c0d28afafad8329",
+  "artifacts": {
+    "native.py": "0ec7d96975be6a6143f3093725b432c85abe10d087cc37e24a375482cbca4020",
+    "report.json": "63f2a67cffe584d79c41feb008a57d97eafa3163a412832714f3db895e08b0ff",
+    "fixture-source.py": "7792066b227a04ad7d2694f4336a53f808e8cf46ec882e2146682a3847eaa044",
+    "native-evidence/privateBus.log": "2c49d6146250b376220af71e91faebcd59eee0ab05d2dabec1e94e86a3f8e158",
+    "native-evidence/weston.log": "e8ab3941cba0d8eae5ac87ac34bcbc3391d04c35540e3c821c2ee0e4117b3f12",
+    "native-evidence/weston-renderer.log": "08043ef0bf24e774efbf6de9e986298e6682526b1c253a580f611948889ca62f",
+    "native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-evidence/hyprland.log": "a23a6afd77d80f1fab55f1f0e2ef38f30fa11c40bb43d4603965f549ab8891c1",
+    "native-evidence/fixture.log": "9810c3e26e73295f0172d89ec00f00299387f59c675b7e6077a659ee53fcf729",
+    "native-evidence/fixture-events.jsonl": "6300c231efc5c1372508cb3f228cce0f637e08df43a377709ab729fd3c05d663",
+    "native-evidence/host-evidence.json": "6a628d238890b51351fec54b55ea23adf35e90d9ed79df368a246c21e77b438e",
+    "native-evidence/capture-original800x600-custom/wayland-screenshot-2026-10-04_00-33-17.png": "772ee036ccd991996a0ec84db74111d8f79be675831df7dd112b6b219f54f98b",
+    "native-evidence/capture-original800x600-blank/wayland-screenshot-2026-10-04_00-33-18.png": "5d02a28390ff5c016a910ac593b785db07a0de7ca165b0344178beaa99587fb1",
+    "native-evidence/capture-shrunk640x480-custom/wayland-screenshot-2026-10-04_00-33-18.png": "aed0823c5e7344c8d6fc5a605721b21ace984fda60a5674914d107c136311efc",
+    "native-evidence/capture-shrunk640x480-blank/wayland-screenshot-2026-10-04_00-33-19.png": "8d4be25c406ad80823a66b9387008dfb6f2c07e3a022c2ad3e1db1c90f79f687",
+    "native-evidence/capture-scaled960x640-custom/wayland-screenshot-2026-10-04_00-33-20.png": "661f862ed3392dd33dec8314dfb40e8ad0c984a4b9191f927b3f234d43088206",
+    "native-evidence/capture-scaled960x640-blank/wayland-screenshot-2026-10-04_00-33-20.png": "6b1279c8c68b5663b703b73299c7c3ff0e0d3b0bc68cf0c9c4529400fdb12dad",
+    "native-evidence/capture-restored800x600-custom/wayland-screenshot-2026-10-04_00-33-21.png": "f868b15fd0f60044818bede31b1c8037afb465d1fe91841ecfe99968416b4ec4",
+    "native-evidence/capture-restored800x600-blank/wayland-screenshot-2026-10-04_00-33-21.png": "66a79e1f75650bb2914acde208a6aef8787f23216230a125e1e0ae170458e3c1",
+    "native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791095595_1570053967/hyprland.log": "ce16a4f357a44cfa0c89a6e4fa45f52f2c1c06c8cbb7edd5fa9f67cbede30038"
+  },
+  "remaining": [
+    "Existing cursor across geometry transitions without replacement",
+    "Rotation/multiple outputs and pointer capability loss",
+    "Physical output/device, accessibility/IME and coherent full release"
+  ],
+  "mainDesktopActions": false,
+  "acceptance": "Bounded private native cursor pixels/hotspot/custom-to-blank only; no sprint or requirement completion."
+}
