@@ -1,0 +1,232 @@
+"""Controlled XDG native diagnostics. Source-only until root's serialized launch."""
+import argparse
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import time
+import traceback
+
+SLICE = Path(__file__).resolve().parents[1]
+REPO = SLICE.parents[1]
+RUNTIME = REPO / 'implementation/elm-geometry-producer-runtime-v185'
+FIXTURE = REPO / 'implementation/elm-geometry-xdg-origin-fixture-v184'
+ADAPTER = REPO / 'implementation/elm-geometry-numeric-refusal-prototype-v183/candidate/adapter'
+JOURNAL = REPO / 'implementation/elm-geometry-client-journal-v192'
+LUA = b'hl.config({xwayland={enabled=false},animations={enabled=false}})\nhl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})\n'
+PROFILES = [(f'{kind}-scale{scale}', [x,y,pad_x,pad_y,scale], maximum)
+    for scale in (1,2) for kind,x,y,pad_x,pad_y,maximum in (
+        ('zero',0,0,0,0,[0,0]), ('origin',16,24,16,24,[0,0]),
+        ('finite',0,0,0,0,[400,300]), ('fixed',0,0,0,0,[320,180]))]
+
+def sha(path):
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+def load(name, path):
+    spec=importlib.util.spec_from_file_location(name,path)
+    module=importlib.util.module_from_spec(spec);sys.modules[name]=module;spec.loader.exec_module(module)
+    return module
+
+def preflight():
+    pins=json.loads((SLICE/'pins.json').read_text()); files={}
+    def verify(path,digest):
+        path=Path(path);assert sha(path)==digest,str(path);files[str(path)]=digest
+    for path,digest in pins['files'].items():verify(path,digest)
+    for relative,manifest_path in pins['manifests'].items():
+        base=REPO/relative;manifest=json.loads(Path(manifest_path).read_text())
+        for name,row in manifest['files'].items():verify(base/name,row['sha256'])
+    meta=json.loads((RUNTIME/'native-build-report.json').read_text())
+    for key in ('pluginBuildReport','linkClosureReport','coreComponentManifest','buildReport'):
+        verify(meta[key],meta[key+'SHA256'])
+    build=json.loads(Path(meta['pluginBuildReport']).read_text())
+    assert build['passed'] and not build['missingSymbols']
+    assert build['core']=={'path':meta['binary'],'sha256':meta['sha256']} or (
+        build['core']['path']==meta['binary'] and build['core']['sha256']==meta['sha256'])
+    verify(meta['binary'],meta['sha256']);verify(meta['plugin']['path'],meta['plugin']['sha256'])
+    for section in ('inputs','dependencies','tools','linkedLibraries'):
+        for path,digest in build[section].items():
+            verify(Path(path) if Path(path).is_absolute() else REPO/'implementation/elm-geometry-coordinate-authority-v409'/path,digest)
+    for name,digest in build['owningHeaders'].items():verify(Path(meta['pluginBuildReport']).parent/'owning-headers'/name,digest)
+    for name,digest in build['artifacts'].items():verify(Path(meta['pluginBuildReport']).parent/name,digest)
+    closure=json.loads(Path(meta['linkClosureReport']).read_text())
+    assert closure['passed'] and not closure['missingSymbols'] and closure['plugin']==meta['plugin']
+    client=json.loads((FIXTURE/'client-build-report.json').read_text())['client']
+    verify(client['path'],client['sha256']);verify(client['buildReport'],client['buildReportSHA256'])
+    client_build=json.loads(Path(client['buildReport']).read_text());assert client_build['passed']
+    for section in ('inputs','dependencies','tools','linkedLibraries'):
+        for path,digest in client_build[section].items():verify(path,digest)
+    for name,digest in client_build['artifacts'].items():verify(Path(client['buildReport']).parent/name,digest)
+    host=load('origin_private_host',RUNTIME/'candidate_host.py')
+    host.original.qa.require_qa_scope();host.verify_inputs();host.aq_tuple()
+    sys.path.insert(0,str(ADAPTER))
+    from geometry_endpoint import GeometryEndpoint
+    from endpoint import start_time
+    journal=load('origin_client_journal',JOURNAL/'journal.py')
+    return host,meta,client,GeometryEndpoint,start_time,journal,files
+
+def run(preflight_only=False):
+    out=SLICE/'qa'/('preflight-' if preflight_only else 'native-')
+    out=Path(str(out)+str(time.time_ns()));out.mkdir()
+    report={'passed':False,'nativeAcceptance':False,'mainDesktopActions':False,'checks':[],
+        'scope':'Controlled XDG origin/scale/hint diagnostics; no screenshot, pointer, GTK or full menu acceptance',
+        'openGates':['actual presented pixels','physical pointer admission','GTK conformance','GEOMETRY-MENU-08/09/10']}
+    session=None;client=None;loaded=False;output=None
+    def check(name,value,**data):
+        report['checks'].append({'name':name,'passed':bool(value),**data});assert value,name
+    try:
+        host,meta,fixture,Endpoint,start_time,journal,inputs=preflight()
+        report['inputs']=inputs
+        report['inputs'][str(Path(__file__))]=sha(__file__)
+        report['inputs'][str(SLICE/'pins.json')]=sha(SLICE/'pins.json')
+        shutil.copy2(__file__,out/'native.py')
+        (out/'inputs.json').write_text(json.dumps(report['inputs'],indent=2)+'\n')
+        if preflight_only:
+            check('actualPinnedInputsAndHostImportWithoutSession',True,files=len(inputs))
+            report['passed']=True
+            return report
+        output=Path('/home/hoskinson/window-integration-qa')/('xdg-origin-'+str(time.time_ns()))
+        def wait(predicate,deadline=None):
+            deadline=time.monotonic()+6 if deadline is None else deadline
+            while time.monotonic()<deadline:
+                session.guard();value=predicate()
+                if time.monotonic()>=deadline:raise RuntimeError('Original six-second deadline')
+                if value:return value
+                time.sleep(min(.04,max(0,deadline-time.monotonic())))
+            raise RuntimeError('Original six-second deadline')
+        request_number=0;effect_number=0
+        def rid():
+            nonlocal request_number
+            request_number+=1;return str(request_number)
+        with host.PrivateHyprSession(output,dict(os.environ),800,600,LUA,mesa_vendor=True) as session:
+            try:
+                check('exactCoreMapped',session.evidence['hyprlandMaps']['files'].get(str(Path(meta['binary']).resolve()))==meta['sha256'])
+                check('exactAquamarineMapped',session.evidence['privateAquamarine']['mappedVerified'] is True)
+                check('explicitPluginLoad',session.ctl('plugin','load',meta['plugin']['path']).strip()=='ok');loaded=True
+                compositor=next(row for _,row in session.host.processes if row['name']=='hyprland')
+                maps=host.original.mapped_files(compositor['pid']);report['pluginMaps']=maps
+                check('exactPluginMapped',maps['files'].get(str(Path(meta['plugin']['path']).resolve()))==meta['plugin']['sha256'])
+                endpoint=Endpoint(runtime=str(session.host.runtime),instance=session.env['HYPRLAND_INSTANCE_SIGNATURE'],
+                    pid=compositor['pid'],expected_start=start_time(compositor['pid']),binary_sha256=meta['sha256'])
+                endpoint.hello();attach=endpoint.geometry_attach(rid(),2)
+                check('negotiatedActualObservation2',attach['geometryProtocol']==2 and attach['capabilities']['operations']==['maximize','restore-geometry'])
+                for name,profile,maximum in PROFILES:
+                    x,y,right,bottom,scale=profile
+                    command=[fixture['path'],'--origin-x',str(x),'--origin-y',str(y),'--right-pad',str(right),'--bottom-pad',str(bottom),
+                        '--scale',str(scale),'--min-width','108' if name.startswith(('zero','origin','finite')) else '320',
+                        '--min-height','42' if name.startswith(('zero','origin','finite')) else '180',
+                        '--max-width',str(maximum[0]),'--max-height',str(maximum[1])]
+                    log=output/(name+'.jsonl');stream=os.fdopen(os.open(log,os.O_WRONLY|os.O_CREAT|os.O_EXCL,0o600),'wb')
+                    session.host.logs.append(stream)
+                    client=subprocess.Popen(command,stdin=subprocess.PIPE,stdout=stream,stderr=subprocess.STDOUT,env=session.env,
+                        cwd=session.host.runtime,start_new_session=True)
+                    identity=host.original.process(client.pid);identity.update(name=name,command=command,log=str(log));session.host.processes.append((client,identity))
+                    previous=[];address=None
+                    def rows():
+                        nonlocal previous
+                        data=log.read_bytes()
+                        if len(data)>2*1024*1024:raise RuntimeError('Journal byte bound')
+                        complete=data[:data.rfind(b'\n')+1]
+                        # Poll only complete JSON records. Strong generation validation occurs after sync.
+                        parsed=[json.loads(line) for line in complete.splitlines()]
+                        if parsed[:len(previous)]!=previous:raise RuntimeError('Observed journal changed')
+                        previous=parsed
+                        if any(r.get('event')=='refused' for r in parsed):raise RuntimeError('Fixture refused')
+                        return parsed
+                    def native():
+                        matching=[r for r in session.data('clients') if r.get('pid')==client.pid and r.get('title')==f'ELM-XDG-ORIGIN-PROBE-{client.pid}']
+                        if len(matching)>1:raise RuntimeError('Ambiguous actual client')
+                        if matching and address is not None and matching[0]['address']!=address:raise RuntimeError('Replaced address')
+                        return matching[0] if matching else None
+                    def send(command,deadline):
+                        session.guard();assert client.poll() is None and host.original.same_process(identity)
+                        before=len(rows());assert time.monotonic()<deadline
+                        client.stdin.write((command+'\n').encode());client.stdin.flush()
+                        request=wait(lambda:next((r for r in rows()[before:] if r.get('event')=='request' and r.get('command')==command),None),deadline)
+                        barrier=wait(lambda:next((r for r in rows() if r.get('event')=='server-barrier' and r.get('requestSequence')==request['sequence']),None),deadline)
+                        check(name+':'+command+':exactBarrier',barrier['command']==command and barrier['requestSerial']==request['serial'] and barrier['sequence']>request['sequence'])
+                        return request
+                    def snapshot(deadline):
+                        send('sync',deadline)
+                        parsed=journal.parse(log.read_bytes(),client.pid,profile)
+                        check(name+':completeConfigureAckCommitGeneration',parsed['ready'] and parsed['commits']>0)
+                        buffer=next(r for r in reversed(parsed['events']) if r['event']=='buffercommit')
+                        serial=buffer['ackedSerial'];argb=f'ff{0x28^(serial&63):02x}{0x71^((serial>>6)&63):02x}{0xc8^((serial>>12)&63):02x}'
+                        check(name+':independentSerialColor',buffer['argb']==argb)
+                        facts=endpoint.geometry_facts(rid());assert time.monotonic()<deadline
+                        all_rows=facts['facts']['windows'];assert len(all_rows)==1
+                        fact=all_rows[0];projection=endpoint.snapshot(rid());raw=native();assert time.monotonic()<deadline
+                        check(name+':actualNativeIncarnationIdentity',raw is not None and len(projection['windows'])==1 and
+                            projection['windows'][0]['incarnation']==fact['incarnation'] and projection['windows'][0]['label']==raw['title'])
+                        report.setdefault('profiles',[]).append({'name':name,'profile':profile,'maximum':maximum,'native':raw,'facts':facts,'buffer':buffer,'journal':str(log)})
+                        return fact,facts,buffer,raw
+                    try:
+                        deadline=time.monotonic()+6
+                        wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']
+                        selector=json.dumps('address:'+address)
+                        check(name+':exactAddressFloatingSetup',session.ctl('eval','local r=hl.dispatch(hl.dsp.window.float({action="enable",window='+selector+'})); if type(r)~="table" or r.ok~=true then error("float refused") end').strip()=='ok')
+                        fact,facts,buffer,raw=snapshot(deadline)
+                        supported=name.startswith('zero')
+                        check(name+':truthfulConversionAndLowerBoundSupport',fact['capabilities']['maximize'] is supported and
+                            fact['nativeMode']==fact['clientMode']=='ordinary' and fact['minimized'] is False)
+                        if name.startswith('origin'):
+                            check(name+':nonzeroOriginNoProjection',fact['sizePolicy']['maximize'] is None and fact['geometryEligible'] is False)
+                        effect_number+=1
+                        intent={'request':str(effect_number),'generation':str(effect_number),'incarnation':fact['incarnation'],'operation':'maximize','context':endpoint.geometry_context(facts)}
+                        deadline=time.monotonic()+6
+                        receipt=endpoint.geometry_effect(intent);assert time.monotonic()<deadline
+                        check(name+':exactGeometryReceipt',receipt['intent']==intent and receipt['effectProtocol']==2 and receipt['status']==('Committed' if supported else 'Refused'),receipt=receipt)
+                        if supported:
+                            wait(lambda:native() and native()['fullscreen']==native()['fullscreenClient']==1 and any(r.get('event')=='buffercommit' and r['sequence']>buffer['sequence'] and r['maximized'] for r in rows()),deadline)
+                            maxfact,maxfacts,maxbuffer,maxraw=snapshot(deadline)
+                            check(name+':maxActualClientAndNativeMode',maxfact['nativeMode']==maxfact['clientMode']=='maximized' and maxbuffer['maximized'] is True and maxfact['capabilities']['restoreGeometry'] is True)
+                            effect_number+=1;intent={'request':str(effect_number),'generation':str(effect_number),'incarnation':fact['incarnation'],'operation':'restore-geometry','context':endpoint.geometry_context(maxfacts)}
+                            deadline=time.monotonic()+6;receipt=endpoint.geometry_effect(intent);assert time.monotonic()<deadline
+                            check(name+':exactRestoreReceipt',receipt['intent']==intent and receipt['status']=='Committed' and receipt['effectProtocol']==2)
+                            wait(lambda:native() and native()['fullscreen']==native()['fullscreenClient']==0 and any(r.get('event')=='buffercommit' and r['sequence']>maxbuffer['sequence'] and not r['maximized'] for r in rows()),deadline)
+                            restored,_,restorebuffer,restoreraw=snapshot(deadline)
+                            check(name+':ordinaryPlacementRestored',restoreraw['at']==raw['at'] and restoreraw['size']==raw['size'] and restorebuffer['geometry']==buffer['geometry'] and restored['incarnation']==fact['incarnation'])
+                        else:
+                            send('sync',deadline);current=native()
+                            check(name+':refusalNoMutation',all(current[k]==raw[k] for k in ('address','at','size','fullscreen','fullscreenClient')) and
+                                next(r for r in reversed(rows()) if r['event']=='buffercommit')==buffer)
+                    finally:
+                        if client.poll() is None:
+                            client.stdin.write(b'quit\n');client.stdin.flush();client.stdin.close();client.wait(timeout=5)
+                        terminal=journal.parse(log.read_bytes(),client.pid,profile,terminal=True)
+                        check(name+':normalClientExit',client.returncode==0 and terminal['normalExit'])
+                        wait(lambda:native() is None)
+                        wait(lambda:session.data('clients')==[])
+                        check(name+':actualNativeClientCensusEmptyBeforeNextActor',session.data('clients')==[])
+                        client=None
+            finally:
+                if client is not None and client.poll() is None:
+                    try:client.stdin.write(b'quit\n');client.stdin.flush();client.stdin.close();client.wait(timeout=5)
+                    except Exception as error:report['clientCleanupError']=repr(error)
+                if loaded:
+                    wait(lambda:session.data('clients')==[])
+                    check('actualClientsEmptyBeforePluginUnload',session.data('clients')==[])
+                    check('normalPluginUnload',session.ctl('plugin','unload',meta['plugin']['path']).strip()=='ok');loaded=False
+        report['cleanup']=session.evidence
+        check('normalPrivateCoreAndParentCleanup',not any(session.evidence.get(k) for k in ('cleanupErrors','unexpectedInnerDescendants','remainingDescendants')) and bool(session.evidence.get('runtimeGone')))
+        for path,digest in report['inputs'].items():assert sha(path)==digest,path
+        report['passed']=True
+    except Exception as error:
+        report['passed']=False;report['error']=repr(error);report['traceback']=traceback.format_exc()
+        if session is not None:report['cleanup']=session.evidence
+    finally:
+        if output is not None and output.exists():shutil.copytree(output,out/'native-evidence',dirs_exist_ok=True)
+        if session is not None:
+            report['cleanupPassed']=not any(session.evidence.get(k) for k in ('cleanupErrors','unexpectedInnerDescendants','remainingDescendants')) and bool(session.evidence.get('runtimeGone'))
+            report['passed']=report['passed'] and report['cleanupPassed'] and not report.get('clientCleanupError')
+        report['artifacts']={str(p.relative_to(out)):sha(p) for p in out.rglob('*') if p.is_file()}
+        (out/'report.json').write_text(json.dumps(report,indent=2)+'\n')
+        print(json.dumps({'passed':report['passed'],'report':str(out/'report.json')}))
+    return report
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser();parser.add_argument('--preflight',action='store_true');args=parser.parse_args()
+    sys.exit(0 if run(args.preflight)['passed'] else 1)
