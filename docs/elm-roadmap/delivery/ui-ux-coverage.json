@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T11:03:09.541110+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T12:29:53.362706+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7587,6 +7587,15 @@
       "manifestSHA256": "35bd1876256a02ff47e514b41be50d3beef459dfffe78324cb1c635ab1eb9fcf",
       "summary": "Shared native context proof and stable paired-observation menu integrated; compiled outputs37/recovery49/menu23, adapted menu78/geometry53/refresh21/postclose59 and two bounded Quint models pass. Six native campaigns remain failed, all normal cleanup; latest verifies pointer/Menu/first Escape/sole-enabled navigation, then exposes lost Escape release. No release or requirement closure.",
       "nativeAcceptance": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-terminal-acceptance-v342",
+      "manifest": "implementation/elm-shared-terminal-acceptance-v342/qa/slice-manifest.json",
+      "manifestSHA256": "df43a65b27a2e4b800e73b4ab846e32cfbc8038d9e901c19b6df06dbaced6c02",
+      "summary": "Bounded native shared menu accepted: exact physical release fixes repeated Escape; standard Menu/Shift-F10/sole-enabled ArrowDown and actual minimize/restore each exactly once with committed receipts, unchanged workspace/monitor and disappearance/return pixels. Latest39 native checks on core89/plugin90/AQ105 pass normal cleanup; original input22 also pass on old/new tuples. Actual C68/key20/carrier34 and Quint9/1000x40 pass. Two QA failures frozen. Full release/requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
       "completedRequirementIds": []
     }
   ]
