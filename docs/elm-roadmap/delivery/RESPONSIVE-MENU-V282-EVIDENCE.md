@@ -1,0 +1,7 @@
+The CSS-corrected278 GUI passes original260 full-menu native regression on exactCore205/plugin206/AQ155. Fresh281 source review requires identical AST check calls to original260, original deadlines, actual GTK fixture and normal private D-Bus environment. All89 actual reached checks passed, final hashes unchanged, GUI/backend/client normal exit, empty native census before observer/plugin unload, no unexpected descendants and runtime retirement.
+
+This qualifies native pointer context, Menu/Shift-F10/arrow/Enter/Escape routes, real held-key cancellation on focus and keyboard-capability loss, unchanged/cancelled paths, native minimize/restore and actual pixel attribution, floating Max/geometryRestore and retirement/replacement. Original scope limits remain: floating extension does not independently qualify client configure/ACK; same278 parent280 all22 bounds/893checks/20 serialRGB supplies bounded window-bounds evidence separately. No full original137, all473 general GUI, renderer recovery40, ATIME/hardware/performance/user/fullrelease claim.
+
+Held282:38 files, SHA2561a6ec0b775f5fffa9d1a565aec8933ca177f3592aeaf77e8f089091484b0d687. Parent280 hold SHA256803d21b080df49b90e6f4272975d2c32456006ec5cbb22682a4d2332c967954b. No installed desktop changes.
+
+Authorized GitHub publication of local95849cb is confirmed at9e60b0430a923765ba586b671caa1c4662d6f658 on feature/elm,357448 byteverifiedsource entries,12 LFS objects10849740975bytes. See publications/20261004-gui-bounds.281/282 acceptance is subsequent work, to be included in the next publication.
