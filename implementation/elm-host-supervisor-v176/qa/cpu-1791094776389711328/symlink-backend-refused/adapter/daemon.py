@@ -1,0 +1,1 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-host-supervisor-v176/qa/cpu-1791094776389711328/symlink-backend-refused/assets/index.html

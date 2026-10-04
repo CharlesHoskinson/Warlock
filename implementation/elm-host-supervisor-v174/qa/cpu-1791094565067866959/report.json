@@ -1,0 +1,317 @@
+{
+  "passed": true,
+  "scope": "Actual synthetic subprocess and capsule refusal tests; not native GUI/release acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-supervisor-v174/supervisor.py": "ec1f34d7f12820f993ff29be9409e438c1acc12bc654c1423de303429bdcc3f3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-supervisor-v174/qa/cpu.py": "8cb7cf484fe6e101c64f3d65a4270c28aa5549396af453a97ce0f52a0dd632ec"
+  },
+  "checks": [
+    {
+      "name": "normal-exit",
+      "passed": true,
+      "exitCode": 0,
+      "launchCount": 1,
+      "starts": [
+        {
+          "generation": 1,
+          "pid": 120115,
+          "start": "6266974"
+        }
+      ],
+      "exits": [
+        {
+          "generation": 1,
+          "pid": 120115,
+          "exitCode": 0,
+          "stopping": false,
+          "forced": false
+        }
+      ]
+    },
+    {
+      "name": "native-restart-only",
+      "passed": true,
+      "exitCode": 0,
+      "launchCount": 2,
+      "starts": [
+        {
+          "generation": 1,
+          "pid": 120118,
+          "start": "6266981"
+        },
+        {
+          "generation": 2,
+          "pid": 120121,
+          "start": "6266983"
+        }
+      ],
+      "exits": [
+        {
+          "generation": 1,
+          "pid": 120118,
+          "exitCode": 3,
+          "stopping": false,
+          "forced": false
+        },
+        {
+          "generation": 2,
+          "pid": 120121,
+          "exitCode": 0,
+          "stopping": false,
+          "forced": false
+        }
+      ]
+    },
+    {
+      "name": "failure-not-retried",
+      "passed": true,
+      "exitCode": 1,
+      "launchCount": 1,
+      "starts": [
+        {
+          "generation": 1,
+          "pid": 120123,
+          "start": "6266993"
+        }
+      ],
+      "exits": [
+        {
+          "generation": 1,
+          "pid": 120123,
+          "exitCode": 1,
+          "stopping": false,
+          "forced": false
+        }
+      ]
+    },
+    {
+      "name": "tampered-next-generation-refused",
+      "passed": true,
+      "exitCode": 2,
+      "launchCount": 1,
+      "starts": [
+        {
+          "generation": 1,
+          "pid": 120126,
+          "start": "6267004"
+        }
+      ],
+      "exits": [
+        {
+          "generation": 1,
+          "pid": 120126,
+          "exitCode": 3,
+          "stopping": false,
+          "forced": false
+        }
+      ]
+    },
+    {
+      "name": "modified-binary-refused",
+      "passed": true,
+      "exitCode": 2,
+      "launchCount": 0,
+      "starts": [],
+      "exits": []
+    },
+    {
+      "name": "unsealed-adapter-entry-refused",
+      "passed": true,
+      "exitCode": 2,
+      "launchCount": 0,
+      "starts": [],
+      "exits": []
+    },
+    {
+      "name": "duplicate-manifest-member-refused",
+      "passed": true,
+      "exitCode": 2,
+      "launchCount": 0,
+      "starts": [],
+      "exits": []
+    },
+    {
+      "name": "public-authority-refused",
+      "passed": true,
+      "exitCode": 2,
+      "launchCount": 0,
+      "starts": [],
+      "exits": []
+    },
+    {
+      "name": "symlink-backend-refused",
+      "passed": true,
+      "exitCode": 2,
+      "launchCount": 0,
+      "starts": [],
+      "exits": []
+    },
+    {
+      "name": "normal-stop-forwarded",
+      "passed": true,
+      "exitCode": 0,
+      "launchCount": 1,
+      "starts": [
+        {
+          "generation": 1,
+          "pid": 120213,
+          "start": "6267048"
+        }
+      ],
+      "exits": [
+        {
+          "generation": 1,
+          "pid": 120213,
+          "exitCode": 0,
+          "stopping": true,
+          "forced": false
+        }
+      ]
+    },
+    {
+      "name": "normal-stop-not-forced",
+      "passed": true
+    },
+    {
+      "name": "stop-cancels-restart-request",
+      "passed": true,
+      "exitCode": 0,
+      "launchCount": 1,
+      "starts": [
+        {
+          "generation": 1,
+          "pid": 120220,
+          "start": "6267060"
+        }
+      ],
+      "exits": [
+        {
+          "generation": 1,
+          "pid": 120220,
+          "exitCode": 3,
+          "stopping": true,
+          "forced": false
+        }
+      ]
+    },
+    {
+      "name": "cancelled-restart-exit-retained",
+      "passed": true
+    },
+    {
+      "name": "unresponsive-stop-escalates",
+      "passed": true,
+      "exitCode": 1,
+      "launchCount": 1,
+      "starts": [
+        {
+          "generation": 1,
+          "pid": 120222,
+          "start": "6267073"
+        }
+      ],
+      "exits": [
+        {
+          "generation": 1,
+          "pid": 120222,
+          "exitCode": -9,
+          "stopping": true,
+          "forced": true
+        }
+      ]
+    },
+    {
+      "name": "forced-stop-is-failure",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "normal-exit/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "normal-exit/manifest.json": "0b9f56d801af6f9922a85a567fb779dfd5baf8510a3d71c75d2933e79b760123",
+    "normal-exit/authority.json": "c74272907cad2c690872ec3461a58110678380a52204e34821224c1e7ade1f34",
+    "normal-exit/stdout.log": "5e64e3cf33a9fa57e7f82d5b17f800744be48050068c86ac7b361c7d8d0f2700",
+    "normal-exit/count.txt": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "normal-exit/ready-1": "7872dfec19e32178ae1491663f1e025785b4db6d4c16cd2de6937fd9c6aa6cf2",
+    "native-restart-only/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "native-restart-only/manifest.json": "90a7127d80fd15b6e3ad77edf59539a6dd5895cbc45c1fe2a1e46f0fa73b47a2",
+    "native-restart-only/authority.json": "2ce95143aae8a20dbf89bfe016d1ab7cd1991e5e446673e8ca55fdf6d8e90606",
+    "native-restart-only/stdout.log": "da10397ae525deb63723cff722432b61a8590cc80c559b9142dca8818c02771d",
+    "native-restart-only/count.txt": "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35",
+    "native-restart-only/ready-1": "b6cb56cb96a74f13f45b85dc5256656a878630bbe8a09ebed62b6a6a62c8425b",
+    "native-restart-only/ready-2": "42d6aed21cfcaf0a1fddb70f71413675cb75419c9a55e784ce46cc6566b9c8c4",
+    "failure-not-retried/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "failure-not-retried/manifest.json": "8be440c7b0a3bac058a877117a150f315f8ccd889ce4f5ff62896bf20f8913a2",
+    "failure-not-retried/authority.json": "009a4a672b483c88f318f3932c299e470d3fcddb945181ef26ad9c3fa57997c9",
+    "failure-not-retried/stdout.log": "744434ff45eab29f9fb3e8222c09d8c1c03d25bb61a6304b0b1446f622d8c6e8",
+    "failure-not-retried/count.txt": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "failure-not-retried/ready-1": "bebde83b464a142aebd387110c0a42c371f9c16a59fd10e7e6bec119ac344bf4",
+    "tampered-next-generation-refused/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "tampered-next-generation-refused/manifest.json": "8b629da735ddd0f2978b5958143ffd35f1dfde9acf11053adaf66baec3133566",
+    "tampered-next-generation-refused/authority.json": "22e17a6c4946329279c3b9a6e2c6cb71e8c6503ba182ddb65cb1480ef184ea96",
+    "tampered-next-generation-refused/stdout.log": "3c92e0087425004f11cd3ec37aa9eb9076e0be5efcaa255d8796bd879f1a21d9",
+    "tampered-next-generation-refused/count.txt": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "tampered-next-generation-refused/ready-1": "dd9051c6ddf558a838324310e0bac6f734ca6afd3862e4923513c060f209ffc9",
+    "modified-binary-refused/host": "b80012851cf027c6d8adda328907d400c95773958fb4fec3e544a02cd5eeab0e",
+    "modified-binary-refused/manifest.json": "0ce1bace95c4930739ccaa651d015f71fc6c93b001ff84cc08a322d1d1762a50",
+    "modified-binary-refused/authority.json": "a5bd03dcf28073719870506a82553df2b2851d18e41521b528b4a2d461f2e296",
+    "modified-binary-refused/stdout.log": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "unsealed-adapter-entry-refused/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "unsealed-adapter-entry-refused/manifest.json": "9f4e9f06219f05a71a79d5eb671552db39734d1ff98f9ca7f211b742edb86579",
+    "unsealed-adapter-entry-refused/authority.json": "623d296065266b3854b94e509361d26ab4be66efe307b3ea18f01993b70a2fa3",
+    "unsealed-adapter-entry-refused/stdout.log": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "duplicate-manifest-member-refused/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "duplicate-manifest-member-refused/manifest.json": "8285f5575741b407824855da9a491c92ad7e1ce38b839294184f5a5d208ca5fa",
+    "duplicate-manifest-member-refused/authority.json": "f497219a4a161dc819d2c192d1ddd5d9286d3d4ae45b9cf4c34f4edda6c40825",
+    "duplicate-manifest-member-refused/stdout.log": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "public-authority-refused/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "public-authority-refused/manifest.json": "17f059483bd788b7a7e11e0d80086df28887fb13bfa33afd0e563815f87ee0be",
+    "public-authority-refused/authority.json": "020279cbd3fe2e6a318b0edeffb1a1bc9deb029747ecf37cafe667ed84d63261",
+    "public-authority-refused/stdout.log": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "symlink-backend-refused/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "symlink-backend-refused/manifest.json": "f98d5d97f16618c186ba48bd5e9431eb8f5f5846c1fa13dffdbf1328dc441e7a",
+    "symlink-backend-refused/authority.json": "c42d8c9cd1512efd2108884cee1c3c3dcc07e51250fb538a2a3160cd95079dd1",
+    "symlink-backend-refused/stdout.log": "b16e3928d6a253c731460c33ec6a2d6a72dc6626d2b5f15702d030cb868f7f4b",
+    "normal-stop-forwarded/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "normal-stop-forwarded/manifest.json": "f65407d17a9de99f8fe64cfd6833147e0190e756dd7221b9de2cc9f836b50ce5",
+    "normal-stop-forwarded/authority.json": "fdf24656de1c7cd96fef4744410d965a036cd0f1a54872cc0b4e010385cd88cf",
+    "normal-stop-forwarded/stdout.log": "aab261d32e787310330dc574289e7ae55fd990e2d647a34bde71b2866d2146a8",
+    "normal-stop-forwarded/count.txt": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "normal-stop-forwarded/ready-1": "07cf83566e5cb7a477cb2df991ef8c67ccedc162841fe5f71d92988df4230ac6",
+    "stop-cancels-restart-request/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "stop-cancels-restart-request/manifest.json": "6c8d013217c6556c7b6d3dc7756c7f7f0726926d79dd14eb3192c9d86d5f5323",
+    "stop-cancels-restart-request/authority.json": "8e82865ef97ac59a4c54457768c8d987aa60a860bfd39df45558fc0559121198",
+    "stop-cancels-restart-request/stdout.log": "ef3a91bf887bd025159539a32e7027ae3f7919990bf96a9a947712e260cc4f00",
+    "stop-cancels-restart-request/count.txt": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "stop-cancels-restart-request/ready-1": "9676c1b7445ab5d818f2273bb4ad2aeb65a702848a64c9fa3a74bf52a181beea",
+    "unresponsive-stop-escalates/host": "d27061af4dae3a7a1611f3904d9c433596cfa9ef92df028fe04523a08d0bd1fe",
+    "unresponsive-stop-escalates/manifest.json": "4f2b5d66712c3f62a214da5904f486eb5d155ecae815199228e10d7321bf59d6",
+    "unresponsive-stop-escalates/authority.json": "b58c923bbf11d2097203d4eb8874a4fedfc4b6f74a236104058a6b1e3364da32",
+    "unresponsive-stop-escalates/stdout.log": "e1efa9b04c27196f7c82c14b63d2d645be08deee906de6bc3c658b41598c7ef7",
+    "unresponsive-stop-escalates/count.txt": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+    "unresponsive-stop-escalates/ready-1": "7d6880ed9689415f3a644923482226725ea2178b2b5fc49f6fe9a7f6a6282fa1",
+    "unresponsive-stop-escalates/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "unresponsive-stop-escalates/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "stop-cancels-restart-request/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "stop-cancels-restart-request/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "normal-stop-forwarded/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "normal-stop-forwarded/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "symlink-backend-refused/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "public-authority-refused/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "public-authority-refused/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "duplicate-manifest-member-refused/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "duplicate-manifest-member-refused/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "unsealed-adapter-entry-refused/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "unsealed-adapter-entry-refused/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "unsealed-adapter-entry-refused/adapter/selectors.py": "d5063820fd280baf7649198108ca65da3423d89b8db4c489bf760a6045630fde",
+    "modified-binary-refused/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "modified-binary-refused/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "tampered-next-generation-refused/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "tampered-next-generation-refused/adapter/daemon.py": "b80012851cf027c6d8adda328907d400c95773958fb4fec3e544a02cd5eeab0e",
+    "failure-not-retried/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "failure-not-retried/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "native-restart-only/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "native-restart-only/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0",
+    "normal-exit/assets/index.html": "47d4848e33e76967bd664164c6577b03c59d3b1d9fce73b02394db29b6b3784e",
+    "normal-exit/adapter/daemon.py": "9b8053ebfa927cdeca369db922e43b6f0d802636ebddb9bcf1cdcccfd29d1ca0"
+  }
+}

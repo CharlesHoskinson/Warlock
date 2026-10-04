@@ -7011,6 +7011,20 @@
       "limitations": [
         "Production supervisor, pending Unknown, hotplug/zero outputs, AT/IME and atomic restart reservation remain open"
       ]
+    },
+    {
+      "evidence": "implementation/elm-supervisor-native-v179/qa/slice-manifest.json",
+      "nativeChecks": 38,
+      "actualSubprocessChecks": 15,
+      "actualSupervisorOwnsReplacement": true,
+      "supervisedGenerations": 2,
+      "thirdGenerationAfterStop": false,
+      "idleWaitChannel": "ep_poll",
+      "idleObservedSeconds": 2,
+      "idleContextSwitchDelta": 0,
+      "performanceBudgetsAccepted": false,
+      "cleanupPassed": true,
+      "scope": "Private actual sealed supervisor restart/cancellation through native recovery controls; failure/final geometry and real application keyboard preserved; pending-intent/AT/hotplug/atomic restart/full release remain open"
     }
   ]
 }

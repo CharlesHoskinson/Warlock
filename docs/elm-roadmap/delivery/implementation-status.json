@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-native-recovery-qa-v171",
-  "status": "Native recovery now retains bar reservation on renderer failure; focused31, full native137/original91 and recovery Quint6/1000 pass. Related graphics142 qualifies Intel shader/display separately. Production supervisor/pending/hotplug/AT/IME/coherent menu/GPU tuple/release remain open.",
+  "activeSlice": "implementation/elm-supervisor-native-v179",
+  "status": "Actual event-driven supervisor qualifies sealed runtime/restart/cancellation:15 subprocess and38 native checks pass; two generations, no third after stop, ep_poll idle context-switch delta0 over2s. Native V169 unchanged; pending/AT/hotplug/service/GPU/menu/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1105,6 +1105,31 @@
         "Failure-time and final geometry checked, no atomic reservation across restart",
         "Old packet refused via independent QA authority connection; no former-connection reuse or in-flight Unknown reconciliation proof",
         "Recovery hotplug/zero outputs and keyboard-only/AT remain open"
+      ]
+    },
+    "hostSupervisorV179": {
+      "nativeChecks": 38,
+      "actualSubprocessChecks": 15,
+      "actualSupervisorOwnsReplacement": true,
+      "supervisedGenerations": 2,
+      "thirdGenerationAfterStop": false,
+      "hostExitCodes": [
+        3,
+        1
+      ],
+      "supervisorExitCode": 0,
+      "forcedNativeStop": false,
+      "sealedRuntimeFiles": 18,
+      "idleWaitChannel": "ep_poll",
+      "idleObservedSeconds": 2,
+      "idleContextSwitchDelta": 0,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-supervisor-native-v179/qa/slice-manifest.json",
+      "scope": "Private actual sealed supervisor restart/cancellation through native recovery controls; failure/final geometry and real application keyboard preserved; pending-intent/AT/hotplug/atomic restart/full release remain open",
+      "limitations": [
+        "Forced-stop helper/service ownership not fully qualified",
+        "Pending Unknown/former authenticated scope, atomic restart reservation, recovery hotplug/zero outputs and AT remain open",
+        "Full137/original91 and recovery Quint6/1000 are inherited, not repeated by this38-check workload"
       ]
     }
   },

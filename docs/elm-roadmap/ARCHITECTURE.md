@@ -351,3 +351,21 @@ automated native refinement. Failure-time/final geometry is preserved, while
 atomic reservation during restart is unproven. V166 separately proves shared-view
 shader execution/display on Intel Mesa; graphics, fallback and menu/core work
 must be integrated and requalified as a single release tuple.
+
+## Supervised native recovery experiment (2026-10-04)
+
+V178 verifies the frozen V169 native ELF, actual compiled assets, complete adapter
+directory and core/config boundary before every host generation. Native exit3
+requests a new host; failures are not retried, and root cancellation prevents
+another generation. Idle waiting uses Linux pidfd readiness and a signal wakeup
+pipe rather than a recurring timer. V179 runs the actual supervisor: native38 and
+subprocess15 checks pass, including a real Restart replacement and second-failure
+cancellation. Five ep_poll observations over2s show no context-switch increase.
+This is bounded idle observation, not full performance-budget acceptance.
+[Source and evidence](../../implementation/elm-supervisor-native-v179/HANDOFF.md)
+
+Private generation logs prevent cross-generation DOM joins. The fixture does not
+launch the replacement process. Source/ABI closure retains V171's full137/original91
+and recovery Quint6/1000 separately. Forced-stop helper ownership, production service
+packaging, pending-operation Unknown reconciliation, recovery hotplug/zero outputs,
+keyboard-only/AT and atomic reservation during restart remain required.

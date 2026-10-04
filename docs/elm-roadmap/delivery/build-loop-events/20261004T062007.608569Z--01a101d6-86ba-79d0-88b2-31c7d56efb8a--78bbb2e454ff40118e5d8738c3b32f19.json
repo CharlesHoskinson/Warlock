@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "78bbb2e454ff40118e5d8738c3b32f19",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T06:20:07.608569+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-supervisor-native-v177",
+  "nextWork": [
+    "Protected actual sealed supervisor restart after native button and second-renderer failure cancellation; native child PID/ELF identity, separate logs, fresh snapshot/binding and application recipient"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-host-supervisor-v176/supervisor.py",
+      "sha256": "c0454bd9780f9791aa82f22077f51e15755ac211ad1d0eecd39d493fdf1d90f2",
+      "size": 7259
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
