@@ -1,0 +1,29 @@
+{
+  "scope": "Retained failed harness attempts, not failed production repairs",
+  "attempts": [
+    {
+      "path": "qa/replay-1791144897551190670",
+      "accepted": false,
+      "compileExitEvidence": "qa/replay-1791144897551190670/compile.stderr",
+      "outputRowsPresent": false
+    },
+    {
+      "path": "qa/replay-1791144913833365197",
+      "accepted": false,
+      "compileExitEvidence": "qa/replay-1791144913833365197/compile.stderr",
+      "outputRowsPresent": false
+    },
+    {
+      "path": "qa/replay-1791144933660535190",
+      "accepted": false,
+      "compileExitEvidence": "qa/replay-1791144933660535190/compile.stderr",
+      "outputRowsPresent": true
+    },
+    {
+      "path": "qa/replay-1791144967661843289",
+      "accepted": true,
+      "compileExitEvidence": "qa/replay-1791144967661843289/compile.stderr",
+      "outputRowsPresent": true
+    }
+  ]
+}

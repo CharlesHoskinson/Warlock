@@ -1,0 +1,701 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "CPU structural preflight and synthetic/adversarial fixtures only; no thresholds approved, measurements acquired, evidence authenticity or native/GPU/release acceptance.",
+  "checks": [
+    {
+      "name": "synthetic-complete-schema-ready-not-accepted",
+      "passed": true,
+      "verdict": "ready-for-evaluation"
+    },
+    {
+      "name": "reject-null-absolute-limit",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.limits.absoluteMax",
+          "reason": "finite nonnegative numeric limit required; booleans rejected"
+        }
+      ]
+    },
+    {
+      "name": "reject-boolean-absolute-limit",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.limits.absoluteMax",
+          "reason": "finite nonnegative numeric limit required; booleans rejected"
+        }
+      ]
+    },
+    {
+      "name": "reject-negative-absolute-limit",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.limits.absoluteMax",
+          "reason": "finite nonnegative numeric limit required; booleans rejected"
+        }
+      ]
+    },
+    {
+      "name": "reject-nan-absolute-limit",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.limits.absoluteMax",
+          "reason": "finite nonnegative numeric limit required; booleans rejected"
+        }
+      ]
+    },
+    {
+      "name": "reject-infinite-absolute-limit",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.limits.absoluteMax",
+          "reason": "finite nonnegative numeric limit required; booleans rejected"
+        }
+      ]
+    },
+    {
+      "name": "reject-overflow-integer-absolute-limit",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.limits.absoluteMax",
+          "reason": "finite nonnegative numeric limit required; booleans rejected"
+        }
+      ]
+    },
+    {
+      "name": "missing-regression-limit",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.limits.regressionMaxPercent",
+          "reason": "finite nonnegative numeric limit required; booleans rejected"
+        }
+      ]
+    },
+    {
+      "name": "missing-overhead",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.instrumentationOverhead",
+          "reason": "measured finite overhead within frozen maximum required"
+        }
+      ]
+    },
+    {
+      "name": "overhead-exceeds-frozen-maximum",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.instrumentationOverhead",
+          "reason": "measured finite overhead within frozen maximum required"
+        }
+      ]
+    },
+    {
+      "name": "missing-clock-domain",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.clockDomain",
+          "reason": "explicit identity/clock/event/reference required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.candidate.clockDomain",
+          "reason": "native monotonic domain or measured mapping hash required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.clockDomain",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "missing-clock-mapping",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.clockMapping",
+          "reason": "same-domain declaration or measured mapping hash required"
+        }
+      ]
+    },
+    {
+      "name": "wall-clock-cannot-be-native-latency",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.baseline.clockDomain",
+          "reason": "native monotonic domain or measured mapping hash required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.candidate.clockDomain",
+          "reason": "native monotonic domain or measured mapping hash required"
+        }
+      ]
+    },
+    {
+      "name": "dom-present-cannot-be-native-endpoint",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.baseline.endEvent",
+          "reason": "latency boundary must be native seat input to native presentation"
+        },
+        {
+          "path": "workloads[0].metrics.latency.candidate.endEvent",
+          "reason": "latency boundary must be native seat input to native presentation"
+        }
+      ]
+    },
+    {
+      "name": "wrong-clock-comparison",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.clockDomain",
+          "reason": "native monotonic domain or measured mapping hash required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.clockDomain",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "helper-dom-not-native-presentation",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.measurementKind",
+          "reason": "latency needs actual native input-to-presentation; helper-to-DOM is calibration only"
+        },
+        {
+          "path": "workloads[0].metrics.latency.measurementKind",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "missing-native-present-end-event",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.endEvent",
+          "reason": "explicit identity/clock/event/reference required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.candidate.endEvent",
+          "reason": "latency boundary must be native seat input to native presentation"
+        },
+        {
+          "path": "workloads[0].metrics.latency.endEvent",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "empty-samples",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.samples",
+          "reason": "nonempty finite nonnegative samples required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.candidate.count",
+          "reason": "count must match samples and meet frozen minimum"
+        }
+      ]
+    },
+    {
+      "name": "false-sample-count",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.count",
+          "reason": "count must match samples and meet frozen minimum"
+        }
+      ]
+    },
+    {
+      "name": "minimum-samples-not-met",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.baseline.count",
+          "reason": "count must match samples and meet frozen minimum"
+        },
+        {
+          "path": "workloads[0].metrics.latency.candidate.count",
+          "reason": "count must match samples and meet frozen minimum"
+        }
+      ]
+    },
+    {
+      "name": "inconsistent-p99",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.p99",
+          "reason": "nearest-rank percentile must agree with samples"
+        }
+      ]
+    },
+    {
+      "name": "infinite-sample",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.samples",
+          "reason": "nonempty finite nonnegative samples required"
+        }
+      ]
+    },
+    {
+      "name": "missing-workload-fixture-identity",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].fixtureSHA256",
+          "reason": "workload fixture hash required"
+        }
+      ]
+    },
+    {
+      "name": "missing-workload-category",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads",
+          "reason": "exact nine unique required workload identities required"
+        }
+      ]
+    },
+    {
+      "name": "duplicate-workload-category",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads",
+          "reason": "exact nine unique required workload identities required"
+        }
+      ]
+    },
+    {
+      "name": "wrong-device-comparison",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.adapter",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "missing-driver",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.driver",
+          "reason": "explicit identity/clock/event/reference required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.driver",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "different-output-refresh",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.output",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "missing-output-scale",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.output.scale",
+          "reason": "finite positive value required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.output",
+          "reason": "baseline/candidate comparable identity/event definition required"
+        }
+      ]
+    },
+    {
+      "name": "partial-process-lifetime",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.wholeProcessGroupComplete",
+          "reason": "complete lifetime accounting required"
+        }
+      ]
+    },
+    {
+      "name": "post-hoc-threshold-freeze",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[0].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[0].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[0].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[0].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[0].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[0].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[1].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[1].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[1].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[1].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[1].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[1].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[1].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[2].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[2].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[2].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[2].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[2].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[2].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[2].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[3].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[3].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[3].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[3].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[3].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[3].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[3].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[4].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[4].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[4].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[4].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[4].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[4].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[4].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[5].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[5].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[5].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[5].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[5].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[5].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[5].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[6].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[6].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[6].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[6].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[6].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[6].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[6].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[7].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[7].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[7].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[7].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[7].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[7].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[7].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[8].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[8].metrics.cpu.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[8].metrics.wakeups.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[8].metrics.memory.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[8].metrics.frame-misses.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[8].metrics.power.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        },
+        {
+          "path": "workloads[8].metrics.copy-transfer.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        }
+      ]
+    },
+    {
+      "name": "timezone-free-clock-stamp",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate.measuredUTC",
+          "reason": "timezone-aware timestamp required"
+        },
+        {
+          "path": "workloads[0].metrics.latency.candidate.measuredUTC",
+          "reason": "candidate measurement must follow budget freeze"
+        }
+      ]
+    },
+    {
+      "name": "unit-mismatch",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.latency.candidate",
+          "reason": "observation units/definition must match budget"
+        }
+      ]
+    },
+    {
+      "name": "missing-metric-category",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics",
+          "reason": "exact seven metric categories required; justified exclusions must be explicit"
+        }
+      ]
+    },
+    {
+      "name": "unreviewed-applicability-exclusion",
+      "passed": true,
+      "issues": [
+        {
+          "path": "workloads[0].metrics.power",
+          "reason": "exclusion requires reason and review reference; applicability is not independently accepted"
+        }
+      ]
+    },
+    {
+      "name": "explicit-exclusion-structural-only",
+      "passed": true
+    },
+    {
+      "name": "complete-schema-with-exceeded-budget-never-accepted",
+      "passed": true
+    },
+    {
+      "name": "actual-null-calibration-remains-incomplete",
+      "passed": true
+    },
+    {
+      "name": "reject-nan-json",
+      "passed": true
+    },
+    {
+      "name": "reject-duplicate-field-json",
+      "passed": true
+    },
+    {
+      "name": "cli-valid",
+      "passed": true,
+      "exit": 0
+    },
+    {
+      "name": "cli-legacy",
+      "passed": true,
+      "exit": 2
+    },
+    {
+      "name": "cli-invalid",
+      "passed": true,
+      "exit": 2
+    },
+    {
+      "name": "original-budgets-byte-unchanged",
+      "passed": true
+    }
+  ],
+  "currentBudgetsSHA256": "4a5c5c230d9f15bafc8e016de160b654077c0bb0ef448e6ed0c841fcbe3cc921",
+  "reviewedHistoricalInputs": {
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/report.json": "23558d5868865800447b688b0c6828e53b52e1d5d4e7b96431c6eabbe0d1208e",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/report.json": "d0109499fb3cb2650d18f9151c348ff1a2244d37380c1db255b643cde28050dd"
+  },
+  "sourceHashes": {
+    "validator.py": "69cd9cd04ed87e79844f68c6384481bf04c47351709e708f0e2d28638ac90874",
+    "qa/test.py": "be8b883a1342de9fd5387bd315a0164f402f0cb0a3cced88910a93bffb928e61"
+  },
+  "mainDesktopActions": false
+}

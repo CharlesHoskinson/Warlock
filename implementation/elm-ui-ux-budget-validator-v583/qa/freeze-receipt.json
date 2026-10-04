@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "files": 28,
+  "manifestSHA256": "2b59e922edad80af9eb7c0ea6c026e3dd40f7421e158ad7230627c14350e6398",
+  "command": [
+    "PYTHONDONTWRITEBYTECODE=1",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/window-integration-qa/qa_run.py",
+    "--",
+    "/usr/bin/python3",
+    "-B",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-ui-ux-budget-validator-v583/qa/freeze.py"
+  ],
+  "scope": "CPU budget-matrix structural preflight only; no performance/native/GPU/release acceptance"
+}
