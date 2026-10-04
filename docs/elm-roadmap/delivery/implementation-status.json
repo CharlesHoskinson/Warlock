@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-registration-query-qualified-v587",
-  "status": "Active: private registration query25 accepted only; full recovery remains unimplemented, honest recovery GUI and monotonic grant retirement in progress. Budget matrix remains calibration-only.",
+  "activeSlice": "implementation/elm-native-retirement-graphics-reviewed-v598",
+  "status": "Active: native grant retirement42 and current graphics14 are bounded accepted; WebGPU unavailable. UI59235compiled, actual durable admission/reconciliation/frontend release unimplemented.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -2099,11 +2099,36 @@
       "manifest": "implementation/elm-registration-query-qualified-v587/qa/slice-manifest.json",
       "manifestSHA256": "2e77e814c7e9a908aa852046785e61e94d723904bb455b61f692d6d919110fb6",
       "summary": "585 byteidentical216 privatehost binds compiled579 owning205/AQ155.586 reviewedprotected serialnative25checks/allpass normalcleanup: anotherlivepeer grant survivesattach, samepeer frontendadvance invalidatesold, exact current/queried identities/authenticated peer/foreignscope/schema/UInt64 refusals, zero clients/effects and normalregisteredpeer exits/plugin unload. Queryaccepted only; no durable retirement or GUI tuple acceptance.583 independent44CPU structuralbudget preflight currentactualbudgets calibration-only/incomplete, no performanceAccepted.584 untouchedpubliccompiledGUI56711assertions reproduces misleadingenabledUnknown/noeffect/counterconsumption, RetryWindows no-op, publicRefresh onlyreads, catalogreachable.587 freezes278files; baseline521/205/206/AQ155473 unchanged.588 granthelper/model and589 honest recoveryGUI underway; no requirements closed."
+    },
+    "nativeRetirementGraphicsV598": {
+      "source": "implementation/elm-native-grant-retirement-authority-v594",
+      "guiCandidate": "implementation/elm-recovery-context-feedback-v592",
+      "nativeGrantRetirementAccepted": true,
+      "nativeGrantRetirementChecks": 42,
+      "graphicsComponentNativeChecks": 14,
+      "currentGraphicsComponentAccepted": true,
+      "browserWebGPUStatus": "unavailable",
+      "browserWebGPUHardwareAccepted": false,
+      "performanceAccepted": false,
+      "quintNamedScenarios": 22,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 10,
+      "compiledGrantChecks": 2069,
+      "compiledGrantMutantsRejected": 11,
+      "recoveryPresentationCompiledChecks": 35,
+      "recoveryPresentationNativeAccepted": false,
+      "durableReconciliationImplemented": false,
+      "fullReleaseAccepted": false,
+      "nativeAcceptance": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-native-retirement-graphics-reviewed-v598/qa/slice-manifest.json",
+      "manifestSHA256": "cb1bb3dc2b35e6278d83a64137342ca78f8655eed917537804dbf7c9b67ec36f",
+      "summary": "58822Quint1000x40/10mutants;2069compiledRegistryUBSan/11controls.594actualowning205 authority integratesmonotonic allocator+allfourlegacy bindingguards+strictretirementproof;595byteexact216transport rebind;59642native/allpass normalcleanup oldlivegrant revoked/oldinterfacesdenied/monotonicreattach/irreversibleold vs future/callerprotected.590verifier-shape/count failures preserved;588 unchanged.58921compiled honestuncertainty/publishedread-onlyrefresh/cap259amendment;59235compiled fixes contextualcatalog/launch/choice masking, optimizedMainBarPopup/C pass; no nativeUI acceptance.5911842CPU/12claimchecks plus14 actualcurrenttuple graphicsnative allpass normalcleanup IntelMesa/renderD129/acceleratedCanvas/DMABuf/shaderpixels/secondoutput; WebGPUunavailable; idle5scalibrationonly.597reviewrecord-shapefailure retained;598 freezes3581files. Actualdurablerelease/frontendreconciliation/fullcandidatequalification remainsunimplemented; baseline521/205/206/AQ155473 unchanged.599strictproofconsumer and601pureElmdecoder inprogress; no requirements closed."
     }
   },
   "next": [
-    "Integrate reviewed588 lifetime-monotonic native grant allocator and authenticated exact retirement helper after its Quint/compiler controls. Require irreversible already-retired evidence for actualoldjournal binding, not future/absent table state: future sessionID/frontend can later become live. Positive authority retirement then post-barrier current reads, durable history/admission retirement and only fresh explicit user intent; original135 recovery deadline retained.",
-    "Review589 actualGUI567-derived per-target uncertainty/disabled mutation/keyboard-reachable observation-only refresh and explicit bounded bar capacity259 amendment; integrate independent231 additional geometry read/output correlation guards after source review. Complete coherent native135/473/fullbounds, GTK260/Qtroles, genericUIUX/layering/restore/motion/currentGPU/separateWebGPU/physicaloutputs/ATIME;583 now structural budget preflight only, approved numerical thresholds/actual measurements/human journeys/S01-S16/C00/release/rollback remain open."
+    "Native594 monotonic grant retirement now qualified59642 with normalcleanup: liveoldpeer revoked, allfour interfaces denyoldgrant, reattachnewIDneverrevivesold/futureproofsrefuse. Implement600 durable Unknownhistory vs reservation/admission retirement consuming strict599proof after samecurrentbinding frontend-requested projection+geometry observations; persist/fullkey/fsync/unlink/absence beforefrontend release, no forged terminal outcome/no oldclick replay.601 pure decoder retainsoldbindings and explicit independent acceptedread contexts/IDs; integrate in592/independent231geometryguards after verified storage failure/restart tests.",
+    "591 current521-derived graphics14native checks pass own205/206/AQ155 with actualIntel engine attribution/displayedshader/secondoutput/normalcleanup; browserWebGPU unavailable, noWGSL/hardwarebrowser acceptance.59235compiled honest pertargetrecovery/contextualfeedback builds; nativekeyboard/ATIME/fullbounds/full135/473 pending. GenericGTK263/260/Qtroles/rendererRecovery267 independent lanes continue; fullS01-S16/C00/layering/restore/motion/hybridphysicalGPU/outputs/devicefailure/approvedbudgets/humanjourneys/coherentrelease/rollback remainactive."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

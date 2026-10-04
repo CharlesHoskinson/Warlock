@@ -1,0 +1,16 @@
+
+  registry
+    1) queryForeignCallerTest failed after 1 test(s)
+
+  1 failed
+
+  1) queryForeignCallerTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/model-1791145632834935758/query-auth.qnt:37:76
+        37:   run queryForeignCallerTest = init.then(hello(1)).then(hello(2)).then(all{assert(stateOf(s,0,0,s.b,s.bf,true)==0),s'=s})
+                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xe5b3 --match=queryForeignCallerTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 query-auth.qnt

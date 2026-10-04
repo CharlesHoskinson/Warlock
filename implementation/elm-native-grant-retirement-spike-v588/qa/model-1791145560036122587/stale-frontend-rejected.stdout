@@ -1,0 +1,16 @@
+
+  registry
+    1) staleTargetTest failed after 1 test(s)
+
+  1 failed
+
+  1) staleTargetTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/model-1791145560036122587/stale-frontend.qnt:29:118
+        29:   run staleTargetTest = init.then(hello(1)).then(hello(2)).then(hello(2)).then(retire(s.a,s.af,s.b,1,true)).then(all{assert(s.b == 2 and s.bf == 2),s'=s})
+                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xe5b3 --match=staleTargetTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 stale-frontend.qnt

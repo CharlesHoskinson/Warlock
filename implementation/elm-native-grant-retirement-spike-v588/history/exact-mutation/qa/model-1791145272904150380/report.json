@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "label": "typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "registry.qnt"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "named",
+      "argv": [
+        "quint",
+        "test",
+        "registry.qnt",
+        "--backend=typescript",
+        "--match=^(exactRetirementTest|reattachTest|oldGrantDeniedTest|detachNoReuseTest|foreignCallerTest|foreignLifetimeTest|staleTargetTest|currentCallerTest|allocatorExhaustionTest|frontendExhaustionTest)$",
+        "--max-samples=1",
+        "--seed=58801"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "invariants",
+      "argv": [
+        "quint",
+        "run",
+        "registry.qnt",
+        "--backend=typescript",
+        "--invariant=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=58802"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "caller-bypass-typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "caller-bypass.qnt"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "caller-bypass-rejected",
+      "argv": [
+        "quint",
+        "test",
+        "caller-bypass.qnt",
+        "--backend=typescript",
+        "--match=^foreignCallerTest$",
+        "--max-samples=1",
+        "--seed=58803"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "lifetime-bypass-typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "lifetime-bypass.qnt"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "lifetime-bypass-rejected",
+      "argv": [
+        "quint",
+        "test",
+        "lifetime-bypass.qnt",
+        "--backend=typescript",
+        "--match=^foreignLifetimeTest$",
+        "--max-samples=1",
+        "--seed=58803"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "self-retire-typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "self-retire.qnt"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "self-retire-rejected",
+      "argv": [
+        "quint",
+        "test",
+        "self-retire.qnt",
+        "--backend=typescript",
+        "--match=^currentCallerTest$",
+        "--max-samples=1",
+        "--seed=58803"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "stale-frontend-typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "stale-frontend.qnt"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "stale-frontend-rejected",
+      "argv": [
+        "quint",
+        "test",
+        "stale-frontend.qnt",
+        "--backend=typescript",
+        "--match=^staleTargetTest$",
+        "--max-samples=1",
+        "--seed=58803"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "id-exhaustion-typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "id-exhaustion.qnt"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "id-exhaustion-rejected",
+      "argv": [
+        "quint",
+        "test",
+        "id-exhaustion.qnt",
+        "--backend=typescript",
+        "--match=^allocatorExhaustionTest$",
+        "--max-samples=1",
+        "--seed=58803"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "frontend-exhaustion-typecheck",
+      "argv": [
+        "quint",
+        "typecheck",
+        "frontend-exhaustion.qnt"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "frontend-exhaustion-rejected",
+      "argv": [
+        "quint",
+        "test",
+        "frontend-exhaustion.qnt",
+        "--backend=typescript",
+        "--match=^frontendExhaustionTest$",
+        "--max-samples=1",
+        "--seed=58803"
+      ],
+      "exit": 1
+    }
+  ],
+  "namedScenarios": [
+    "exactRetirementTest",
+    "reattachTest",
+    "oldGrantDeniedTest",
+    "detachNoReuseTest",
+    "foreignCallerTest",
+    "foreignLifetimeTest",
+    "staleTargetTest",
+    "currentCallerTest",
+    "allocatorExhaustionTest",
+    "frontendExhaustionTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 6,
+  "modelSHA256": "9744cd7709852f43366de6010fd43827595ab98c9bc6e305e6e53f54e1df5287"
+}

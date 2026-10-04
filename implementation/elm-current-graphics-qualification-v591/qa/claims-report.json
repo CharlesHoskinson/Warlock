@@ -1,0 +1,55 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "compute-known-result-distinct-from-hardware",
+      "passed": true
+    },
+    {
+      "name": "refuse-wrong-result",
+      "passed": true
+    },
+    {
+      "name": "refuse-bool-result",
+      "passed": true
+    },
+    {
+      "name": "refuse-validation-error",
+      "passed": true
+    },
+    {
+      "name": "refuse-missing-adapter",
+      "passed": true
+    },
+    {
+      "name": "refuse-insecure-context",
+      "passed": true
+    },
+    {
+      "name": "refuse-unexposed-execution",
+      "passed": true
+    },
+    {
+      "name": "refuse-unknown-status",
+      "passed": true
+    },
+    {
+      "name": "explicit-unavailable",
+      "passed": true
+    },
+    {
+      "name": "explicit-no-adapter",
+      "passed": true
+    },
+    {
+      "name": "explicit-failed",
+      "passed": true
+    },
+    {
+      "name": "malformed-record-refused",
+      "passed": true
+    }
+  ],
+  "scope": "Synthetic CPU API/compute-claim classification only; no browser or GPU execution",
+  "sourceSHA256": "8278fa73b3ef7d0e074bcea16141c95e9386c9260c83ef1b47c64c197c1cb595"
+}

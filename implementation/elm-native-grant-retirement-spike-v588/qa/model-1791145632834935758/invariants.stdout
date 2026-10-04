@@ -1,0 +1,89 @@
+An example execution:
+
+[State 0] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 1] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 2] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 3] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 4] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 5] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 6] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 7] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 8] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 9] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 10] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 11] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 12] { s: { a: 0, af: 0, b: 0, bf: 0, last: 0, retired: Set() } }
+
+[State 13] { s: { a: 1, af: 1, b: 0, bf: 0, last: 1, retired: Set() } }
+
+[State 14] { s: { a: 0, af: 0, b: 0, bf: 0, last: 1, retired: Set() } }
+
+[State 15] { s: { a: 0, af: 0, b: 0, bf: 0, last: 1, retired: Set() } }
+
+[State 16] { s: { a: 0, af: 0, b: 0, bf: 0, last: 1, retired: Set() } }
+
+[State 17] { s: { a: 2, af: 1, b: 0, bf: 0, last: 2, retired: Set() } }
+
+[State 18] { s: { a: 2, af: 1, b: 3, bf: 1, last: 3, retired: Set() } }
+
+[State 19] { s: { a: 2, af: 1, b: 3, bf: 2, last: 3, retired: Set() } }
+
+[State 20] { s: { a: 2, af: 1, b: 3, bf: 2, last: 3, retired: Set() } }
+
+[State 21] { s: { a: 2, af: 1, b: 3, bf: 3, last: 3, retired: Set() } }
+
+[State 22] { s: { a: 2, af: 1, b: 3, bf: 4, last: 3, retired: Set() } }
+
+[State 23] { s: { a: 2, af: 1, b: 3, bf: 4, last: 3, retired: Set() } }
+
+[State 24] { s: { a: 2, af: 1, b: 3, bf: 4, last: 3, retired: Set() } }
+
+[State 25] { s: { a: 2, af: 1, b: 3, bf: 4, last: 3, retired: Set() } }
+
+[State 26] { s: { a: 2, af: 1, b: 3, bf: 4, last: 3, retired: Set() } }
+
+[State 27] { s: { a: 2, af: 1, b: 0, bf: 0, last: 3, retired: Set(3) } }
+
+[State 28] { s: { a: 2, af: 1, b: 0, bf: 0, last: 3, retired: Set(3) } }
+
+[State 29] { s: { a: 2, af: 1, b: 0, bf: 0, last: 3, retired: Set(3) } }
+
+[State 30] { s: { a: 2, af: 1, b: 0, bf: 0, last: 3, retired: Set(3) } }
+
+[State 31] { s: { a: 2, af: 1, b: 4, bf: 1, last: 4, retired: Set(3) } }
+
+[State 32] { s: { a: 2, af: 1, b: 4, bf: 1, last: 4, retired: Set(3) } }
+
+[State 33] { s: { a: 2, af: 1, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[State 34] { s: { a: 2, af: 2, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[State 35] { s: { a: 2, af: 3, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[State 36] { s: { a: 2, af: 3, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[State 37] { s: { a: 2, af: 3, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[State 38] { s: { a: 2, af: 3, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[State 39] { s: { a: 2, af: 3, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[State 40] { s: { a: 0, af: 0, b: 0, bf: 0, last: 4, retired: Set(3) } }
+
+[ok] No violation found (860ms at 1163 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0xe5b2 --backend=typescript to reproduce.

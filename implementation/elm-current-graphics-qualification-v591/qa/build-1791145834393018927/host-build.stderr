@@ -1,0 +1,35 @@
+native/shared-host.c: In function ‘main’:
+native/shared-host.c:398:9: error: ‘gpu_diagnostic’ undeclared (first use in this function); did you mean ‘diagnostics’?
+  398 |         gpu_diagnostic=WEBKIT_WEB_VIEW(g_object_new(WEBKIT_TYPE_WEB_VIEW,"web-context",shared_context,"settings",shared_settings,NULL));g_object_ref_sink(gpu_diagnostic);
+      |         ^~~~~~~~~~~~~~
+      |         diagnostics
+native/shared-host.c:398:9: note: each undeclared identifier is reported only once for each function it appears in
+In file included from /usr/include/glib-2.0/gobject/gobject.h:30,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:31,
+                 from /usr/include/glib-2.0/glib-object.h:24,
+                 from /usr/include/glib-2.0/gio/gioenums.h:30,
+                 from /usr/include/glib-2.0/gio/giotypes.h:30,
+                 from /usr/include/glib-2.0/gio/gio.h:28,
+                 from /usr/include/gtk-3.0/gdk/gdkapplaunchcontext.h:28,
+                 from /usr/include/gtk-3.0/gdk/gdk.h:32,
+                 from /usr/include/gtk-3.0/gtk/gtk.h:30,
+                 from native/host.c:2,
+                 from native/shared-host.c:3:
+native/shared-host.c:399:67: error: ‘native_gpu_loaded’ undeclared (first use in this function)
+  399 |         g_signal_connect(gpu_diagnostic,"load-changed",G_CALLBACK(native_gpu_loaded),NULL);g_signal_connect(gpu_diagnostic,"decide-policy",G_CALLBACK(native_gpu_policy),NULL);
+      |                                                                   ^~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gsignal.h:549:60: note: in definition of macro ‘g_signal_connect’
+  549 |     g_signal_connect_data ((instance), (detailed_signal), (c_handler), (data), NULL, (GConnectFlags) 0)
+      |                                                            ^~~~~~~~~
+native/shared-host.c:399:56: note: in expansion of macro ‘G_CALLBACK’
+  399 |         g_signal_connect(gpu_diagnostic,"load-changed",G_CALLBACK(native_gpu_loaded),NULL);g_signal_connect(gpu_diagnostic,"decide-policy",G_CALLBACK(native_gpu_policy),NULL);
+      |                                                        ^~~~~~~~~~
+native/shared-host.c:399:151: error: ‘native_gpu_policy’ undeclared (first use in this function)
+  399 |         g_signal_connect(gpu_diagnostic,"load-changed",G_CALLBACK(native_gpu_loaded),NULL);g_signal_connect(gpu_diagnostic,"decide-policy",G_CALLBACK(native_gpu_policy),NULL);
+      |                                                                                                                                                       ^~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/gobject/gsignal.h:549:60: note: in definition of macro ‘g_signal_connect’
+  549 |     g_signal_connect_data ((instance), (detailed_signal), (c_handler), (data), NULL, (GConnectFlags) 0)
+      |                                                            ^~~~~~~~~
+native/shared-host.c:399:140: note: in expansion of macro ‘G_CALLBACK’
+  399 |         g_signal_connect(gpu_diagnostic,"load-changed",G_CALLBACK(native_gpu_loaded),NULL);g_signal_connect(gpu_diagnostic,"decide-policy",G_CALLBACK(native_gpu_policy),NULL);
+      |                                                                                                                                            ^~~~~~~~~~

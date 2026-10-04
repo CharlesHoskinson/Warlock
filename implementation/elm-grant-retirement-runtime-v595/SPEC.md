@@ -1,0 +1,1 @@
+Private runtime585/216 implementation and parent/AQ hashes unchanged. Descriptor/plugin rebound to compiled594 owning205. Parent transport/native GUI evidence is ancestry only; new grant behavior requires private qualification.
