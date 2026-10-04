@@ -1,0 +1,77 @@
+{
+  "startedMonotonic": 99157.849747027,
+  "commands": [
+    "press 272",
+    "release 272"
+  ],
+  "probeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "peer": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  },
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound.py"
+  ],
+  "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound/attempt-1791134891913999081/stdout.raw",
+  "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound/attempt-1791134891913999081/stderr.raw",
+  "process": {
+    "pid": 2724450,
+    "startTime": "10299562",
+    "name": "owned-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound.py"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound/attempt-1791134891913999081/stdout.raw"
+  },
+  "registered": true,
+  "mayHavePressed": true,
+  "stdoutBytes": 177,
+  "stdoutSHA256": "145e7a6d6488b7bf9968d2030fb9ac1f8294d038868c5e5cb7a207882878859f",
+  "stderrBytes": 5000,
+  "stderrSHA256": "c59d3c0480cc2d71d8f646e735e92da65450311eec46e81a5db8c7e6e8a92054",
+  "error": "Refused('Parent output bound')",
+  "timeout": false,
+  "terminated": true,
+  "exitCode": -15,
+  "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+  "releaseAttempt": {
+    "scope": "release-only failure cleanup; never probe acceptance",
+    "originalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound/attempt-1791134891913999081",
+    "probeAccepted": false,
+    "peer": {
+      "cpuFixturePeer": true,
+      "nativeAdmission": false
+    },
+    "commands": [
+      "release 272"
+    ],
+    "argv": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound.py"
+    ],
+    "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound/attempt-1791134891913999081/release-cleanup/stdout.raw",
+    "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound/attempt-1791134891913999081/release-cleanup/stderr.raw",
+    "physicalHardwareAccepted": false,
+    "process": {
+      "pid": 2724451,
+      "startTime": "10299566",
+      "name": "owned-parent-input",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound.py"
+      ],
+      "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/stderrBound/attempt-1791134891913999081/release-cleanup/stdout.raw"
+    },
+    "registered": true,
+    "mayHavePressed": false,
+    "stdoutBytes": 112,
+    "stdoutSHA256": "5e7893287fefcba0cf186495d15a55665186a4224ed4e85e08d005145d6fa9df",
+    "stderrBytes": 5000,
+    "stderrSHA256": "c59d3c0480cc2d71d8f646e735e92da65450311eec46e81a5db8c7e6e8a92054",
+    "error": "Refused('Parent output bound')",
+    "timeout": false,
+    "terminated": true,
+    "exitCode": 0,
+    "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+    "explicitReleaseAdmission": false
+  }
+}

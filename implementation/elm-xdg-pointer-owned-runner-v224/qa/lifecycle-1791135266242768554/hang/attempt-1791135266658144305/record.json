@@ -1,0 +1,81 @@
+{
+  "startedMonotonic": 99532.593895629,
+  "commands": [
+    "press 272",
+    "release 272"
+  ],
+  "probeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "peer": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  },
+  "byteBound": 4096,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang.py"
+  ],
+  "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang/attempt-1791135266658144305/stdout.raw",
+  "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang/attempt-1791135266658144305/stderr.raw",
+  "process": {
+    "pid": 2766879,
+    "startTime": "10337036",
+    "name": "owned-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang.py"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang/attempt-1791135266658144305/stdout.raw"
+  },
+  "actualStart": "10337036",
+  "registered": true,
+  "mayHavePressed": true,
+  "stdoutBytes": 47,
+  "stdoutSHA256": "008bec5f437c0cd5dd45e1db012450c596197069d5f3ada2200abdd4c69fdb89",
+  "stderrBytes": 0,
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "error": "TimeoutExpired(['/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang.py'], 0.14988355898822192)",
+  "timeout": true,
+  "terminated": true,
+  "exitCode": -15,
+  "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+  "releaseAttempt": {
+    "scope": "release-only failure cleanup; never probe acceptance",
+    "originalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang/attempt-1791135266658144305",
+    "probeAccepted": false,
+    "peer": {
+      "cpuFixturePeer": true,
+      "nativeAdmission": false
+    },
+    "commands": [
+      "release 272"
+    ],
+    "byteBound": 4096,
+    "argv": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang.py"
+    ],
+    "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang/attempt-1791135266658144305/release-cleanup/stdout.raw",
+    "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang/attempt-1791135266658144305/release-cleanup/stderr.raw",
+    "physicalHardwareAccepted": false,
+    "process": {
+      "pid": 2767107,
+      "startTime": "10337051",
+      "name": "owned-parent-input",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang.py"
+      ],
+      "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang/attempt-1791135266658144305/release-cleanup/stdout.raw"
+    },
+    "actualStart": "10337051",
+    "registered": true,
+    "mayHavePressed": false,
+    "stdoutBytes": 47,
+    "stdoutSHA256": "008bec5f437c0cd5dd45e1db012450c596197069d5f3ada2200abdd4c69fdb89",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "error": "TimeoutExpired(['/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135266242768554/hang.py'], 0.499840824995772)",
+    "timeout": true,
+    "terminated": true,
+    "exitCode": -15,
+    "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+    "explicitReleaseAdmission": false
+  }
+}

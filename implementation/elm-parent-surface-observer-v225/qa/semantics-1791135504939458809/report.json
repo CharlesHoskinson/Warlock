@@ -1,0 +1,44 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "release_all-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "resource_destroyed-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "motion_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "button_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "pointer_capability_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "pointer_burst_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "seat_destroyed-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "valid_point-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "focused_pid-byte-identical",
+      "passed": true
+    }
+  ],
+  "inputs": {},
+  "error": "AssertionError()"
+}

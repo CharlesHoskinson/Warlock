@@ -1,0 +1,54 @@
+{
+  "startedMonotonic": 99097.088639906,
+  "commands": [
+    "press 272",
+    "release 272"
+  ],
+  "probeAccepted": true,
+  "physicalHardwareAccepted": false,
+  "peer": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  },
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134831142292602/normal.py"
+  ],
+  "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134831142292602/normal/attempt-1791134831152891001/stdout.raw",
+  "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134831142292602/normal/attempt-1791134831152891001/stderr.raw",
+  "process": {
+    "pid": 2717564,
+    "startTime": "10293486",
+    "name": "owned-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134831142292602/normal.py"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134831142292602/normal/attempt-1791134831152891001/stdout.raw"
+  },
+  "registered": true,
+  "mayHavePressed": true,
+  "stdoutBytes": 177,
+  "stdoutSHA256": "145e7a6d6488b7bf9968d2030fb9ac1f8294d038868c5e5cb7a207882878859f",
+  "stderrBytes": 0,
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exitCode": 0,
+  "receipts": [
+    {
+      "ready": true,
+      "scope": "parent-notify-only"
+    },
+    {
+      "sequence": 1,
+      "accepted": true,
+      "scope": "parent-notify-only"
+    },
+    {
+      "sequence": 2,
+      "accepted": true,
+      "scope": "parent-notify-only"
+    }
+  ],
+  "peerAfter": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "actualMethod": "point",
+  "sourceSHA256": "3ea42291c2177cf0528516e232fe7918510317e859c6a0efce0c8a809a041bd8",
+  "cases": [
+    {
+      "sign": 1,
+      "exception": "OverflowError",
+      "expected": "Refused"
+    },
+    {
+      "sign": -1,
+      "exception": "OverflowError",
+      "expected": "Refused"
+    }
+  ],
+  "nativeObservation": false
+}

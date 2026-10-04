@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "release_all-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "resource_destroyed-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "motion_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "button_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "pointer_capability_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "pointer_burst_request-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "seat_destroyed-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "valid_point-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "focused_pid-byte-identical",
+      "passed": true
+    },
+    {
+      "name": "original-input-interface-opcodes-byte-identical",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/original/parent-input-module.c": "6e7c13d1c16eeb1f9be7506831d520ce28a4d7c54639d76d980a43284a33ff61",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/native/parent-input-module.c": "f0bd1982a702769eb0d61eea41b0660b88d3852cd140cdecf7832ab22954162b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/original/parent-input.xml": "b6bb9bdd149d8a69f96fbfc239f5830a980a121dc8b34ec44127b83343829a54",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/native/parent-input.xml": "7f28f00de0002b84b27bc021f4b19bbe2fe8444300a94eec01688b8864d5edbe",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/semantics.py": "dd1be7b3afdec691bdd49ce26f63768f1d2da62bcf97e38f6ea98192b75095a4"
+  }
+}
