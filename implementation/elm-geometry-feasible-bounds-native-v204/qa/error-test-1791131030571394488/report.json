@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": 7,
+  "scope": "Actual196 runner with captured190 refusal bytes and synthetic process/session; no GUI/native qualification",
+  "sourceSHA256": "a985d844696ba3dd0d24f5394585eda39cae9989868c5edf6aaac0d0920564b0",
+  "evidenceSHA256": "6dcbd1ec8ef69b3cf66e7815cbd1d4061e44d564a72f66f3d1728b6aa69b9b5a",
+  "primaryError": "RuntimeError(\"Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\")",
+  "cleanupErrors": [
+    {
+      "profile": "finite-scale1",
+      "step": "validateTerminalJournal",
+      "error": "InvalidJournal('event')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in run\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 97, in wait\n    session.guard();value=predicate()\n                          ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in <lambda>\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n                                                     ~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 148, in rows\n    if refusals:raise RuntimeError('Actual fixture refused: '+repr(refusals[-1]))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 238, in cleanup_step\n    try:action()\n        ~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 246, in validate_terminal\n    terminal=journal.parse(bounded_log(),client.pid,profile,terminal=True)\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-journal-v194/journal.py\", line 35, in parse\n    kind=r.get('event');require(type(kind) is str and kind in KNOWN,'event')\n                        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-journal-v194/journal.py\", line 6, in require\n    if not ok:raise InvalidJournal(why)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\njournal194.InvalidJournal: event\n"
+    }
+  ]
+}

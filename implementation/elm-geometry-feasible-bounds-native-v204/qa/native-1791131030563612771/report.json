@@ -1,0 +1,95 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "mainDesktopActions": false,
+  "checks": [
+    {
+      "name": "exactCoreMapped",
+      "passed": true
+    },
+    {
+      "name": "exactAquamarineMapped",
+      "passed": true
+    },
+    {
+      "name": "explicitPluginLoad",
+      "passed": true
+    },
+    {
+      "name": "exactPluginMapped",
+      "passed": true
+    },
+    {
+      "name": "negotiatedActualObservation2",
+      "passed": true
+    },
+    {
+      "name": "finite-scale1:actualNativeClientCensusEmptyBeforeNextActor",
+      "passed": true
+    },
+    {
+      "name": "actualClientsEmptyBeforePluginUnload",
+      "passed": true
+    },
+    {
+      "name": "normalPluginUnload",
+      "passed": true
+    }
+  ],
+  "scope": "Controlled XDG origin/scale/hint diagnostics; no screenshot, pointer, GTK or full menu acceptance",
+  "openGates": [
+    "actual presented pixels",
+    "physical pointer admission",
+    "GTK conformance",
+    "GEOMETRY-MENU-08/09/10"
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py": "a985d844696ba3dd0d24f5394585eda39cae9989868c5edf6aaac0d0920564b0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/pins.json": "6608bd77a3069a2f6dd5396dffc76426bcfff8f2922ae5e672046b592ead35ac",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/REQUIREMENTS.md": "1017f8f76dd32bccfbfe149c4a04ff73357b741e22c081cd0bbf4c4669e57c97",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/profiles.json": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a"
+  },
+  "requestedOutput": {
+    "physicalMode": [
+      800,
+      600
+    ],
+    "monitorScale": 1
+  },
+  "pluginMaps": {
+    "files": {
+      "/synthetic/plugin": "plugin"
+    }
+  },
+  "primaryError": "RuntimeError(\"Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\")",
+  "primaryTraceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in run\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 97, in wait\n    session.guard();value=predicate()\n                          ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in <lambda>\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n                                                     ~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 148, in rows\n    if refusals:raise RuntimeError('Actual fixture refused: '+repr(refusals[-1]))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\n",
+  "primaryProfile": "finite-scale1",
+  "profileCleanupErrors": [
+    {
+      "profile": "finite-scale1",
+      "step": "validateTerminalJournal",
+      "error": "InvalidJournal('event')",
+      "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in run\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 97, in wait\n    session.guard();value=predicate()\n                          ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in <lambda>\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n                                                     ~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 148, in rows\n    if refusals:raise RuntimeError('Actual fixture refused: '+repr(refusals[-1]))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 238, in cleanup_step\n    try:action()\n        ~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 246, in validate_terminal\n    terminal=journal.parse(bounded_log(),client.pid,profile,terminal=True)\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-journal-v194/journal.py\", line 35, in parse\n    kind=r.get('event');require(type(kind) is str and kind in KNOWN,'event')\n                        ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-journal-v194/journal.py\", line 6, in require\n    if not ok:raise InvalidJournal(why)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^\njournal194.InvalidJournal: event\n"
+    }
+  ],
+  "finalCleanupErrors": [],
+  "error": "RuntimeError(\"Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in run\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 97, in wait\n    session.guard();value=predicate()\n                          ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 186, in <lambda>\n    wait(lambda:any(r.get('event')=='ready' for r in rows()),deadline);raw=wait(native,deadline);address=raw['address']\n                                                     ~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-feasible-bounds-native-v204/qa/native.py\", line 148, in rows\n    if refusals:raise RuntimeError('Actual fixture refused: '+repr(refusals[-1]))\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: Actual fixture refused: {'pid': 2319759, 'event': 'refused', 'sequence': 3, 'monotonicNs': 93567169705339, 'serial': 9, 'ackedSerial': 9, 'width': 800, 'height': 600, 'maximized': False, 'fullscreen': False, 'reason': 'buffer-byte-bound'}\n",
+  "cleanup": {
+    "hyprlandMaps": {
+      "files": {
+        "/synthetic/core": "core"
+      }
+    },
+    "privateAquamarine": {
+      "mappedVerified": true
+    },
+    "runtimeGone": true
+  },
+  "cleanupPassed": true,
+  "artifacts": {
+    "native.py": "a985d844696ba3dd0d24f5394585eda39cae9989868c5edf6aaac0d0920564b0",
+    "inputs.json": "0dc79ea524ad3f7c14e6f8d3f36551d46dcc50816432881768a0603185226c9e",
+    "native-evidence/finite-scale1.jsonl": "6dcbd1ec8ef69b3cf66e7815cbd1d4061e44d564a72f66f3d1728b6aa69b9b5a"
+  }
+}
