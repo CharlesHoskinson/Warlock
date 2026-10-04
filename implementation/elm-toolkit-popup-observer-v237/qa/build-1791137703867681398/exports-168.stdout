@@ -1,0 +1,11 @@
+0000000000001280 T BrotliDefaultAllocFunc
+0000000000001290 T BrotliDefaultFreeFunc
+00000000000012a0 T BrotliGetDictionary
+0000000000001370 T BrotliGetTransforms
+00000000000012b0 T BrotliSetDictionaryData
+0000000000001330 T BrotliSharedDictionaryAttach
+0000000000001380 T BrotliSharedDictionaryCreateInstance
+00000000000012c0 T BrotliSharedDictionaryDestroyInstance
+00000000000014a0 T BrotliTransformDictionaryWord
+0000000000002080 R _kBrotliContextLookupTable
+0000000000002000 R _kBrotliPrefixCodeRanges
