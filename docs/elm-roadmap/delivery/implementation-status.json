@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-choice-focus-qa-v103",
-  "status": "Private dual-view native regression passes99 including bounded choice expiry, late reply refusal, explicit facts-only refresh and fresh opener focus restoration; complete replacement remains open.",
+  "activeSlice": "implementation/elm-output-focus-qa-v110",
+  "status": "Native regression passes105 with real nested second-output topology invalidation; full per-display surface/workarea/scale UX remains open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -749,12 +749,34 @@
       "originalOracleAndDeadlineHelpersASTPreserved": true,
       "scope": "Single-output private timeout/fresh facts/DOM focus only; full desktop/release open",
       "failedLineage": "V96/V97 Elm parser failures; V100 real post-close focus regression preserved. V102 fresh facts focus handoff fixed; V103 full99 pass."
+    },
+    "outputFocusV110": {
+      "evidence": "implementation/elm-output-focus-qa-v110/qa/slice-manifest.json",
+      "nativeChecks": 105,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 67,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "actualNestedOutputs": [
+        "WAYLAND-1",
+        "QA-SECOND"
+      ],
+      "outputGenerationChange": [
+        "1",
+        "2"
+      ],
+      "matchingDOMPublication": "117",
+      "cancelledFocus": "",
+      "cleanupPassed": true,
+      "scope": "Actual nested output addition/removal and topology-scoped DOM focus only; per-display shell, physical displays, full output UX/release remain open",
+      "failedLineage": "V109 preserved: successful second output creation then incorrect QA envelope lookup; V110 corrects lookup and strengthens exact DOM/publication check."
     }
   },
   "next": [
-    "Qualify cross-output return focus and taskbar/transient/workarea geometry, fullscreen/lock roles.",
-    "Integrate independently reviewed menu surface with one shared controller.",
-    "Complete native AT/IME, human UX, hardware/performance, canonical scene, C00/WebGPU and coherent release."
+    "Implement explicit per-output native host identity and owned surface retirement on removal; qualify bars/workarea, scale/transform/fullscreen/lock.",
+    "Merge reviewed menu surface and newest choice/return-focus controller changes after independent source closure.",
+    "Continue actual AT/IME/human UX, hardware/GPU/WebGPU, canonical scene/C00 and coherent release gates."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T03:35:02.135589+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T03:40:38.604796+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6762,6 +6762,28 @@
       "originalOracleAndDeadlineHelpersASTPreserved": true,
       "scope": "Single-output private timeout/fresh facts/DOM focus only; full desktop/release open",
       "failedLineage": "V96/V97 Elm parser failures; V100 real post-close focus regression preserved. V102 fresh facts focus handoff fixed; V103 full99 pass."
+    },
+    {
+      "evidence": "implementation/elm-output-focus-qa-v110/qa/slice-manifest.json",
+      "nativeChecks": 105,
+      "originalNativeChecks": 91,
+      "compiledControllerChecks": 67,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "actualNestedOutputs": [
+        "WAYLAND-1",
+        "QA-SECOND"
+      ],
+      "outputGenerationChange": [
+        "1",
+        "2"
+      ],
+      "matchingDOMPublication": "117",
+      "cancelledFocus": "",
+      "cleanupPassed": true,
+      "scope": "Actual nested output addition/removal and topology-scoped DOM focus only; per-display shell, physical displays, full output UX/release remain open",
+      "failedLineage": "V109 preserved: successful second output creation then incorrect QA envelope lookup; V110 corrects lookup and strengthens exact DOM/publication check."
     }
   ]
 }

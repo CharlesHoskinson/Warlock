@@ -1,0 +1,826 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: true,
+      output: 1,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: true,
+      output: 1,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      binding: 1,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 1,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      binding: 2,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 1,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 1,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 1,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 1,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      binding: 3,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 1,
+      chosenOutput: 1,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 1,
+      revision: 1
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: true,
+      picker: false,
+      ready: false,
+      request: 2,
+      revision: 1
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 2,
+      revision: 1
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: true,
+      picker: false,
+      ready: false,
+      request: 3,
+      revision: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: false,
+      picker: false,
+      ready: true,
+      request: 3,
+      revision: 2
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 2,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 3,
+      revision: 2
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      binding: 4,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 3,
+      revision: 2
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      binding: 5,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 3,
+      revision: 2
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      binding: 5,
+      chosenBinding: 4,
+      chosenOutput: 2,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      ready: true,
+      request: 3,
+      revision: 2
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      binding: 5,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: true,
+      picker: false,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      binding: 5,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: true,
+      picker: false,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      binding: 5,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: true,
+      picker: false,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      binding: 6,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: false,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      binding: 6,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      binding: 6,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      binding: 6,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 5,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 4,
+      revision: 2
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 3,
+      pending: true,
+      picker: false,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 4,
+      pending: true,
+      picker: false,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 4,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 5,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 6,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      binding: 7,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      binding: 8,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      binding: 9,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: true,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      binding: 9,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: false,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      binding: 9,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: false,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      binding: 9,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: false,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      binding: 10,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: false,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      binding: 10,
+      chosenBinding: 7,
+      chosenOutput: 3,
+      connected: false,
+      focusedRevision: 0,
+      focuses: 0,
+      group: false,
+      output: 7,
+      pending: false,
+      picker: true,
+      ready: false,
+      request: 5,
+      revision: 2
+    }
+}
+
+[ok] No violation found (836ms at 1196 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
