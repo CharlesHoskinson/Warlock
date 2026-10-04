@@ -1,0 +1,7 @@
+# Correlated projection recovery + native Escape composition
+
+Source498 and held190 differ only in Shell.elm, adapter/daemon.py, native/shared-context.h and native/shared-context-test.c across production source directories. Adopt the two190 C files into fresh507; keep every498 Elm/backend/asset file byte-exact.190 introduces effectless Escape intent from admitted native press and immutable current menu proof, forwarded solely through matched physical release. It leaves Enter, effect authority and delayed DOM admission fences in place.498 retires matching read terminals and clears queued retry at UInt64 exhaustion. These touch separate authority boundaries; neither may weaken the other.
+
+Owning core470/plugin471/AQ155 stays unchanged. Current other lane reports a separate keyboard restoration/popup-grab failure187; that unresolved compositor defect remains open and is not solved by this source merge.
+
+Required qualification: full optimizedMain/Bar/Popup/C build; actual168 helper assertions and10 rejected compiled Escape mutations; actual typed projection boundary cases; original89 menu/keyboard/retirement, joint161 and reconnect57 against one current build and fixture source binding. Preserve early Escape and stale callback/held-release negative assertions. No combined native acceptance is asserted by this review. Historical190 model and498 model are retained provenance; this review is not a new Quint execution.

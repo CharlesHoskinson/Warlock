@@ -1,0 +1,1 @@
+Fresh elm-current-projection-geometry-regression-v504 derivative selecting combined507 build and frozen511 fixture where applicable. Original assertion/deadline/cleanup semantics retained; no native acceptance until new campaign terminal.

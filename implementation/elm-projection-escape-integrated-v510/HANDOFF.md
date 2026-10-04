@@ -1,0 +1,11 @@
+# Integrated projection recovery and native Escape
+
+507 combines accepted498 Elm/backend retry recovery with held190 shared-context C helper and actual168 helper tests. Every other production file is byte-exact498.506 source review and509 frozen compiled component establish provenance; unchanged constituent Quint models remain prior evidence, not new runs.507 optimizedMain/Bar/Popup and C host compile;10 compiled Escape mutations rejected;50814 actual typed projection cases pass.
+
+503 binds actual498 captured adapter and passes receipt/relay CPU checks;504 actual161-scenario campaign fails after138 reached checks at original held-restore menu-opening six-second deadline, normalcleanup.505 is CPU-preflight only. Failure504 remains preserved and unclosed.
+
+511 rebinds actual507 captured adapter to held509 component with unchanged relay/receipt semantics and fresh CPU checks. Exact owning core470/plugin471/AQ155/observer477 unchanged.512 original joint161 passes allGEOMETRY-MENU-01–10;513 reconnect57 and514 menu/keyboard/retirement89 pass, allnormalcleanup. Combined307 on one actual507 build. Native Escape intents were actually stored3times in513 and5times in514. CPU/native component acceptance does not close the release.
+
+515 extracts504 native right-button press/release followed by closed native publication95/lease9 commit, trusted DOM input and origin-or-proof refusal.512 stores zero native Escape intents: its pass does not establish that Escape fixed this intermittent pointer race. Next deterministically reproduce and model physical proof/native publication/rendered DOM ordering, preserving stale-target/view/lease/deadline refusal and no effect replay.
+
+Other lane owns GTK role/modal observer work235 and retained popup-grab keyboard-capability restoration defect187. Integrate fixes only after owning tuple review and regression. Pure native bounds604 use adapter183 and do not exercise changed Elm host; repeating them alone would not qualify507. Full roles/layering/input/restore/motion, hardwareGPU/separateWebGPU, output/ATIME/budgets/human journeys/S01-S16/C00/deployment/rollback remain open.242 baseline requirements and417 scenario statuses unchanged. Main desktop and drafts untouched.

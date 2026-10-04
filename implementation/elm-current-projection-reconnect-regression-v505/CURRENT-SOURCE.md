@@ -1,0 +1,1 @@
+Fresh derivative of elm-xdg-origin-reconnect-regression-v480 selecting source498/build1791137123957237382 and reviewed503 current backend fixture. Original native assertion calls, scenario identities and observation deadlines are retained. Actual native acceptance requires fresh run.
