@@ -1,0 +1,84 @@
+{
+  "passed": true,
+  "scope": "Injected catalog transport component failures; actual native peers/GUI separate",
+  "checks": [
+    {
+      "name": "bound catalog response correlation",
+      "passed": true
+    },
+    {
+      "name": "process and path checked before and after",
+      "passed": true
+    },
+    {
+      "name": "old binding",
+      "passed": true
+    },
+    {
+      "name": "boolean protocol",
+      "passed": true
+    },
+    {
+      "name": "unknown protocol",
+      "passed": true
+    },
+    {
+      "name": "unknown field",
+      "passed": true
+    },
+    {
+      "name": "zero request",
+      "passed": true
+    },
+    {
+      "name": "numeric request",
+      "passed": true
+    },
+    {
+      "name": "unknown route",
+      "passed": true
+    },
+    {
+      "name": "invalid envelopes never access catalog",
+      "passed": true
+    },
+    {
+      "name": "retired process prevents catalog",
+      "passed": true
+    },
+    {
+      "name": "retired paths prevents catalog",
+      "passed": true
+    },
+    {
+      "name": "native scope failures never access catalog",
+      "passed": true
+    },
+    {
+      "name": "full envelope capacity refuses whole snapshot",
+      "passed": true
+    },
+    {
+      "name": "retired binding prevents native submission",
+      "passed": true
+    },
+    {
+      "name": "no submission before binding validation",
+      "passed": true
+    },
+    {
+      "name": "bound native outcome wrapped without readiness claim",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "qa/transport.py": "bd3eb94ba3ef8e36a1ce3eb703cd3377e635bd727828b127f573ddf10bc25f4a",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "12a6414a208545587871d3352a9623c47aadb7996d3f1d1f9d9712481ea60aae",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715"
+  }
+}

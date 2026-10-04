@@ -1,0 +1,1100 @@
+{
+  "passed": true,
+  "checks": 16,
+  "scope": "Compiled Desktop envelope/state integration; native GUI separate",
+  "cases": [
+    {
+      "name": "no catalog request before attachment",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog request carries authenticated binding",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "catalog reply binds current request",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects old request",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects old binding",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects unknown outer field",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "catalog rejects wrong version",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "refresh replaces outstanding request",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "2",
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "null catalog retires selection",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "desktop launch uses bound ID intent",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "correlated bound outcome settles",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "status": "Submitted",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "outcome rejects old binding",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "outcome rejects extra field",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "outcome rejects unknown version",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "disconnect retires catalog and preserves Unknown",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "status": "Unknown",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Unknown",
+          "count": 0,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    },
+    {
+      "name": "close preserves in-flight receipt correlation",
+      "rows": [
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": null,
+          "open": false,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "projection-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 0,
+          "expected": "1",
+          "open": true,
+          "selections": 0,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 0,
+          "wires": []
+        },
+        {
+          "status": "Idle",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": true,
+          "selections": 1,
+          "wires": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9",
+                "generation": "1",
+                "entry": "fixture"
+              }
+            }
+          ]
+        },
+        {
+          "status": "Pending",
+          "count": 1,
+          "expected": null,
+          "open": false,
+          "selections": 1,
+          "wires": []
+        },
+        {
+          "status": "Submitted",
+          "count": 1,
+          "expected": null,
+          "open": false,
+          "selections": 1,
+          "wires": []
+        }
+      ]
+    }
+  ]
+}

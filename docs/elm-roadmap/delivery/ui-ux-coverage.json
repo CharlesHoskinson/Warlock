@@ -6514,6 +6514,36 @@
       "applicationReadinessAccepted": false,
       "evidence": "implementation/elm-launch-controller-v56/qa/slice-manifest.json",
       "acceptance": "Typed launch state/correlation/uncertainty component only. Native GUI launch, authenticated host envelopes, reconciliation UX, AT/IME, production launcher/taskbar and release separate."
+    },
+    {
+      "slice": "implementation/elm-launch-host-v57",
+      "level": "compiled Desktop/host integration and injected transport failure components",
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "desktopEnvelopeChecks": 16,
+      "injectedTransportChecks": 17,
+      "compiledLaunchChecksInheritedByExactInputs": 33,
+      "newQuintRun": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launch-host-v57/qa/slice-manifest.json",
+      "acceptance": "Binding/request/receipt/state integration only; native route and production GUI separate."
+    },
+    {
+      "slice": "implementation/elm-launch-native-v58",
+      "level": "actual authenticated native pointer/Elm/GIO launch plus original regression",
+      "retainedOriginalNativeChecks": 91,
+      "ownedLauncherNativeChecks": 17,
+      "actualMappedOwnedGTKWindow": true,
+      "actualNativeArgumentReceipt": true,
+      "actualChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "launcherKeyboardFocusAccepted": false,
+      "nativeATIMEAccepted": false,
+      "productionSurfaceRolesAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launch-native-v58/qa/slice-manifest.json",
+      "acceptance": "Controlled single-app catalog/default800x420 route and all original91 identities/order only. No production launcher/search/pins/icons, full keyboard/reflow/AT/IME or release acceptance."
     }
   ]
 }

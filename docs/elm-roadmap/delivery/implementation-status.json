@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-launch-controller-v56",
-  "status": "Typed launch controller passes compiled33 including actual GIO receipt correlation, stale selection/host/timeout/ack guards and Unknown handling; Quint8/1000 passed. Authenticated catalog transport, native GUI integration, production launcher/taskbar and full UX/hardware/release remain open.",
+  "activeSlice": "implementation/elm-launch-native-v58",
+  "status": "Authenticated launcher GUI route passes original window/picker91 plus owned application17 including real GIO argv, native window mapping and actual child exit0. Desktop16/transport17 pass, optimized host built, launch33 inherited by exact bytes. Full production taskbar/launcher, keyboard/AT/IME/search/pins/icons/hardware/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -515,6 +515,31 @@
       "guiIntegrationAccepted": false,
       "nativeUnknownInjectionAccepted": false,
       "evidence": "implementation/elm-launch-controller-v56/qa/slice-manifest.json"
+    },
+    "launchHostV57": {
+      "optimizedMainHostCompiled": true,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "desktopEnvelopeChecks": 16,
+      "injectedTransportChecks": 17,
+      "launchControllerChecksInheritedByExactInputs": 33,
+      "newQuintRun": false,
+      "productionControlBoundBytes": 4096,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launch-host-v57/qa/slice-manifest.json"
+    },
+    "launchNativeV58": {
+      "originalNativeChecks": 91,
+      "originalAssertionIdentitiesAndOrderPreserved": true,
+      "ownedLauncherNativeChecks": 17,
+      "actualGTKApplicationMapped": true,
+      "actualGIOArgumentsAndOriginalFilename": true,
+      "actualChildExitCode": 0,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "productionSurfaceRolesAccepted": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-launch-native-v58/qa/slice-manifest.json"
     }
   },
   "next": "Qualify text enlargement and small-output picker/keyboard focus metrics; continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews. Complete scene/hardware/GPU/WebGPU/AT/IME/human UX and release gates.",

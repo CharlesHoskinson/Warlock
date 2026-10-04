@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "observedUTC": "2026-10-04T01:23:58.269803+00:00",
+  "scope": "Native91 original identities/order plus owned launcher17; not production/release acceptance",
+  "wholeFeatureAccepted": false,
+  "completedRequirementIds": [],
+  "reports": {
+    "qa/build-1791076637138663765/report.json": {
+      "passed": true,
+      "sha256": "0ee444a48a34bca787b5c0df763888ee95a1107807429502442783b36506514d",
+      "checks": 0,
+      "typedChecks": null
+    },
+    "qa/checks-1791076927759484108/report.json": {
+      "passed": true,
+      "sha256": "62e48786d473158dbdc69437e384996be52781d5c5e9a4f6f0e59fece91e93e2",
+      "checks": 0,
+      "typedChecks": 16
+    },
+    "qa/transport-1791076844381796481/report.json": {
+      "passed": true,
+      "sha256": "b07699772c55bb94a32fafa094322880f93d6d2b821095becfcbe9d6c68b28fc",
+      "checks": 17,
+      "typedChecks": null
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-native-v58/qa/native-1791076668291870502/report.json": {
+      "passed": true,
+      "sha256": "2b631a11fa416952a0135a6cc837061723216524297f4afbf191156cdb56f501",
+      "checks": 91,
+      "cleanupPassed": true
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-launch-native-v58/qa/native-1791076788726236476/report.json": {
+      "passed": true,
+      "sha256": "92d4691e0377b7261031292847fb07270641e9dfac320ea876074624bfdbf00b",
+      "checks": 17,
+      "cleanupPassed": true
+    }
+  },
+  "files": {
+    "README.md": "7d435a9cd57fc487b60e27238a6eb69e1c3486267053718ab64dfc37898c771b",
+    "fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "launch_fixture.py": "d3a880ba019fc4d8a3a6a8d8c1182f2bb003209ac527a1f0ca33e5fb004128d8",
+    "launch_supervisor.py": "04acd51f9a8a2da6fcd8b119207eb245ac384d7b0ac55a03b0efd3c7f3a454dd",
+    "qa/freeze-failure-1791077038151933905/freeze.py": "abb86303aa027f2c527c008608f2ab02f07784f0824943878609802339cdd49a",
+    "qa/freeze-failure-1791077038151933905/report.json": "e3f8f5c75bf339810580f9817f5ead8ab9df64c97e52eb4d2d3243c40aa1fd81",
+    "qa/freeze.py": "5c50673eba384b4e2b2605f5a6c163da03017d546390660d0e25e40a1753b324",
+    "qa/launch.py": "6596ff3d36ef8217c7fc6522ee0b49e1e61b9f073313d798b218c6b3d3641796",
+    "qa/native-1791076668291870502/native-evidence/authority-config.json": "0ddd9bec6942f078310e63477131b6cfb4fbfd11f3dfea8d4fb4dc84177562db",
+    "qa/native-1791076668291870502/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791076668291870502/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791076668291870502/native-evidence/elm-effects-restored.png": "d52a4e97832410f778d22714e927a076129ccbfb3e130cfdcca0d1974cac97be",
+    "qa/native-1791076668291870502/native-evidence/elm-family-picker.png": "279cd50af8d8f1c059d7e14d062a5e2909109bcd6829f1522e740a3c43119c1c",
+    "qa/native-1791076668291870502/native-evidence/elm-many-picker.png": "0502717d463daf93ac49882f85ad52b209eff1efcc804f2aa1b00b8cd75a0441",
+    "qa/native-1791076668291870502/native-evidence/elm-webview.log": "108145687c134a8a9b1c142015e254b022473f617d3390bed152fce2036d9224",
+    "qa/native-1791076668291870502/native-evidence/fixture-control.events.jsonl": "f7eea82ef396a4dd147bd28c74f83b8074a8fa10d7deeb154d416f2136aa3310",
+    "qa/native-1791076668291870502/native-evidence/fixture.log": "ff9ce875b8faa3ff5f943c6dbaff1f34c447240f8abf76d6798692561cc3dc5b",
+    "qa/native-1791076668291870502/native-evidence/host-evidence.json": "44fdd00df3eedce6c34f634860bc0df15d12d510ea19a686370fa63ae0709ff1",
+    "qa/native-1791076668291870502/native-evidence/hyprland.log": "4702457e2b53fcefea7b176bddc09f62e72b981c2d723cdfbc96f4e7e4838371",
+    "qa/native-1791076668291870502/native-evidence/privateBus.log": "ebcf439bf019846b9a2075f31b2ea7b8f531615386fdfd1b6aa7017f5bc487fd",
+    "qa/native-1791076668291870502/native-evidence/runtime-archive/.flatpak/webkit-3026476-13/bwrapinfo.json": "4e69a0adfcc9f87af692583851bfd413368879b3127772a1b5002ee86024aabb",
+    "qa/native-1791076668291870502/native-evidence/runtime-archive/.flatpak/webkit-3026476-4/bwrapinfo.json": "79fd7e9ac81f222a638e09aa102cc2151fd19f70833b100043d565e8843f6200",
+    "qa/native-1791076668291870502/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791076669_30134433/hyprland.log": "2790622efd9b6a2fae0aaf8f6fdd17a34a6a65c2ebeee4e00a5ba2ecb724a961",
+    "qa/native-1791076668291870502/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791076668291870502/native-evidence/weston-renderer.log": "70738c906686f61b1a6c38c79cf97431b3c9d970e11863d5e660fc0166e88c70",
+    "qa/native-1791076668291870502/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791076668291870502/report.json": "2b631a11fa416952a0135a6cc837061723216524297f4afbf191156cdb56f501",
+    "qa/native-1791076788726236476/native-evidence/authority-config.json": "44b30ca24a106856ec4729ad5dc96abf91bee48dd549bf899082d23cada2555d",
+    "qa/native-1791076788726236476/native-evidence/catalog-cache/catalog.json": "7a2344b5e972d737957229e059fb3e24fb7b73ce513ad9b2d210fb0b1e5e9e0e",
+    "qa/native-1791076788726236476/native-evidence/catalog-data/applications/owned-fixture.desktop": "5b3c73efbc64f8e36756fb5141f70ec4519df5e6865bacdfae4cd5aba87db243",
+    "qa/native-1791076788726236476/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791076788726236476/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791076788726236476/native-evidence/elm-applications.png": "8109c1343e03473cdd35c0b9976255467d5011df775e5218d1720f4a34449bc1",
+    "qa/native-1791076788726236476/native-evidence/elm-webview.log": "0175966579d847f344f93e54cb498f28c2e59200df931621db6f9f55c2f31d0a",
+    "qa/native-1791076788726236476/native-evidence/fixture.log": "ff9ce875b8faa3ff5f943c6dbaff1f34c447240f8abf76d6798692561cc3dc5b",
+    "qa/native-1791076788726236476/native-evidence/host-evidence.json": "457dff63a6299622f0903c411ac542f1387292a700ea4b2a330bcb794c7b393d",
+    "qa/native-1791076788726236476/native-evidence/hyprland.log": "727d5b2648d9c2bdf6183f701448ce2a8f00a59c83348f798c89be49145e1c0f",
+    "qa/native-1791076788726236476/native-evidence/launch-argv.json": "6588b02ad60bf81a4c79dd41c31f3195a1d7e74bb78d9b0fea053573cfee3a2f",
+    "qa/native-1791076788726236476/native-evidence/launch-quit": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791076788726236476/native-evidence/privateBus.log": "4eed318a6a178c5db8475442d59c1ba9215fcabf8d1a5298c338723086847638",
+    "qa/native-1791076788726236476/native-evidence/runtime-archive/.flatpak/webkit-3033248-13/bwrapinfo.json": "d765726bc83d6bb807ea0c7966768a44ca9e9c85bb6238474c0648a97bce5696",
+    "qa/native-1791076788726236476/native-evidence/runtime-archive/.flatpak/webkit-3033248-4/bwrapinfo.json": "9d7bdb8647214dac36049a28215c471dbda5f01f9fce2301858aaa034ff739ff",
+    "qa/native-1791076788726236476/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791076789_965170475/hyprland.log": "cfd920651ac16c84492c48bedf321d7db3fd63a5f781ccf50ecb7379ee9d4be0",
+    "qa/native-1791076788726236476/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791076788726236476/native-evidence/weston-renderer.log": "4ecd13238d4eaadcca6daec33397cb1f626f0eb83d950f7a3d51ba7e6aa53a7f",
+    "qa/native-1791076788726236476/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791076788726236476/report.json": "92d4691e0377b7261031292847fb07270641e9dfac320ea876074624bfdbf00b",
+    "qa/regression.py": "f27b69d15ab7818cc4187474962c8415e36fe26ff6fe9eb7cce5af58e91865bb"
+  }
+}
