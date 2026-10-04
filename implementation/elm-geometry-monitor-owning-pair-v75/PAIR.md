@@ -1,0 +1,5 @@
+V75 compiles unchanged V49 geometry authority sources against the actual V73 merged monitor/pointer/geometry core. All 694 captured owning headers are selected by an isolated include tree, and actual compiler dependencies exclude installed Hyprland headers and mutable owner source headers.
+
+The plugin remains byte-identical to V49 because its sources and consumed header ABI are unchanged. This is compatible compile evidence, not a claim that the earlier core's native results qualify V73. Strong-symbol closure resolves 152 required imports against the exact core and hashed libraries. No plugin has been loaded by this build.
+
+The private native adapter must explicitly select the V30 Aquamarine input backend retained by the prior monitor/pointer tuple and verify mapped runtime libraries. Default ldd output alone does not prove this selection. Original menu/native deadlines, window identities, acknowledgments, pixels, cleanup and input scenarios remain required. Shared-host multi-intent recovery, hardware/AT/IME, release and deployment remain separate gates.
