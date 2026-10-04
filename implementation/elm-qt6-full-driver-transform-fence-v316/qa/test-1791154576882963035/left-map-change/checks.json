@@ -1,0 +1,269 @@
+{
+  "checks": [
+    {
+      "name": "QT01:exact-bound-scene-before-after-capture",
+      "passed": false,
+      "before": {
+        "qt": {
+          "event": "inspect",
+          "role": "A",
+          "instance": 1,
+          "mapGeneration": 1,
+          "surfaceId": 42,
+          "pid": 100,
+          "processStarted": 300,
+          "visible": true,
+          "windowWidth": 320,
+          "windowHeight": 180,
+          "devicePixelRatio": 2,
+          "landmarkWindowX": 10,
+          "landmarkWindowY": 20,
+          "landmarkWidth": 100,
+          "landmarkHeight": 60,
+          "surfaceTransformAvailable": true,
+          "surfaceTransformResourceId": 42,
+          "surfaceToWindowX": -6,
+          "surfaceToWindowY": -30,
+          "clientMarginLeft": 6,
+          "clientMarginTop": 30,
+          "clientMarginRight": 7,
+          "clientMarginBottom": 8
+        },
+        "native": {
+          "address": "0xabc",
+          "pid": 100,
+          "title": "ELM-QT6-A-100",
+          "xwayland": false,
+          "at": [
+            83,
+            61
+          ],
+          "size": [
+            320,
+            180
+          ]
+        },
+        "wire": {
+          "toplevelId": 44,
+          "xdgSurfaceId": 43,
+          "wlSurfaceId": 42,
+          "surfaceEpoch": 1,
+          "parentToplevel": null,
+          "windowGeometry": [
+            16,
+            24,
+            320,
+            180
+          ],
+          "configure": {
+            "index": 5,
+            "serial": 7
+          },
+          "ack": {
+            "index": 6,
+            "serial": 7
+          },
+          "lastCommitIndex": 8,
+          "bufferId": 50,
+          "presentationProved": false
+        },
+        "identity": {
+          "role": "A",
+          "instance": 1,
+          "mapGeneration": 1,
+          "surfaceId": 42,
+          "pid": 100,
+          "processStarted": 300
+        },
+        "nativeRole": {
+          "address": "0xabc",
+          "pid": 100,
+          "parentAddress": "0x0",
+          "xdgToplevel": true,
+          "dialogPresent": false,
+          "dialogModal": false,
+          "nativeModal": false,
+          "inputBlocked": false,
+          "acceptsInput": true,
+          "hidden": false,
+          "xwayland": false
+        },
+        "presentationProved": false,
+        "marker": {
+          "window": [
+            18,
+            28
+          ],
+          "surface": [
+            24,
+            58
+          ],
+          "global": [
+            91,
+            95
+          ],
+          "surfaceToWindow": [
+            -6,
+            -30
+          ],
+          "clientMargins": [
+            6,
+            30,
+            7,
+            8
+          ],
+          "nativeReal": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "windowGeometry": [
+            16,
+            24,
+            320,
+            180
+          ],
+          "identity": {
+            "role": "A",
+            "instance": 1,
+            "mapGeneration": 1,
+            "surfaceId": 42
+          },
+          "presentationProved": false
+        }
+      },
+      "after": {
+        "qt": {
+          "event": "inspect",
+          "role": "A",
+          "instance": 1,
+          "mapGeneration": 1,
+          "surfaceId": 42,
+          "pid": 100,
+          "processStarted": 300,
+          "visible": true,
+          "windowWidth": 320,
+          "windowHeight": 180,
+          "devicePixelRatio": 2,
+          "landmarkWindowX": 10,
+          "landmarkWindowY": 20,
+          "landmarkWidth": 100,
+          "landmarkHeight": 60,
+          "surfaceTransformAvailable": true,
+          "surfaceTransformResourceId": 42,
+          "surfaceToWindowX": -9,
+          "surfaceToWindowY": -30,
+          "clientMarginLeft": 9,
+          "clientMarginTop": 30,
+          "clientMarginRight": 7,
+          "clientMarginBottom": 8
+        },
+        "native": {
+          "address": "0xabc",
+          "pid": 100,
+          "title": "ELM-QT6-A-100",
+          "xwayland": false,
+          "at": [
+            83,
+            61
+          ],
+          "size": [
+            320,
+            180
+          ]
+        },
+        "wire": {
+          "toplevelId": 44,
+          "xdgSurfaceId": 43,
+          "wlSurfaceId": 42,
+          "surfaceEpoch": 1,
+          "parentToplevel": null,
+          "windowGeometry": [
+            16,
+            24,
+            320,
+            180
+          ],
+          "configure": {
+            "index": 5,
+            "serial": 7
+          },
+          "ack": {
+            "index": 6,
+            "serial": 7
+          },
+          "lastCommitIndex": 8,
+          "bufferId": 50,
+          "presentationProved": false
+        },
+        "identity": {
+          "role": "A",
+          "instance": 1,
+          "mapGeneration": 1,
+          "surfaceId": 42,
+          "pid": 100,
+          "processStarted": 300
+        },
+        "nativeRole": {
+          "address": "0xabc",
+          "pid": 100,
+          "parentAddress": "0x0",
+          "xdgToplevel": true,
+          "dialogPresent": false,
+          "dialogModal": false,
+          "nativeModal": false,
+          "inputBlocked": false,
+          "acceptsInput": true,
+          "hidden": false,
+          "xwayland": false
+        },
+        "presentationProved": false,
+        "marker": {
+          "window": [
+            18,
+            28
+          ],
+          "surface": [
+            27,
+            58
+          ],
+          "global": [
+            94,
+            95
+          ],
+          "surfaceToWindow": [
+            -9,
+            -30
+          ],
+          "clientMargins": [
+            9,
+            30,
+            7,
+            8
+          ],
+          "nativeReal": [
+            83,
+            61,
+            320,
+            180
+          ],
+          "windowGeometry": [
+            16,
+            24,
+            320,
+            180
+          ],
+          "identity": {
+            "role": "A",
+            "instance": 1,
+            "mapGeneration": 1,
+            "surfaceId": 42
+          },
+          "presentationProved": false
+        }
+      }
+    }
+  ],
+  "nativeAcceptance": false
+}

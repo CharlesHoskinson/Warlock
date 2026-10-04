@@ -1,0 +1,61 @@
+{
+  "role": {
+    "event": "inspect",
+    "role": "A",
+    "instance": 1,
+    "mapGeneration": 1,
+    "surfaceId": 42,
+    "pid": 100,
+    "processStarted": 300,
+    "visible": true,
+    "windowWidth": 320,
+    "windowHeight": 180,
+    "devicePixelRatio": 2,
+    "landmarkWindowX": 10,
+    "landmarkWindowY": 20,
+    "landmarkWidth": 100,
+    "landmarkHeight": 60,
+    "surfaceTransformAvailable": true,
+    "surfaceTransformResourceId": 42,
+    "surfaceToWindowX": -6,
+    "surfaceToWindowY": -30,
+    "clientMarginLeft": 6,
+    "clientMarginTop": 30,
+    "clientMarginRight": 7,
+    "clientMarginBottom": 8
+  },
+  "native": {
+    "address": "0xabc",
+    "pid": 100,
+    "title": "ELM-QT6-A-100",
+    "xwayland": false,
+    "at": [
+      83,
+      61
+    ],
+    "size": [
+      320,
+      180
+    ]
+  },
+  "roleState": {
+    "schema": 1,
+    "pid": 200,
+    "windows": [
+      {
+        "address": "0xabc",
+        "pid": 100,
+        "parentAddress": "0x0",
+        "xdgToplevel": true,
+        "dialogPresent": false,
+        "dialogModal": false,
+        "nativeModal": false,
+        "inputBlocked": false,
+        "acceptsInput": true,
+        "hidden": false,
+        "xwayland": false
+      }
+    ]
+  },
+  "raw": "[19:18:30.269154] {Default Queue} -> wl_compositor@1.create_surface(new id wl_surface@42)\n[19:18:30.269154] {Default Queue} -> xdg_wm_base@2.get_xdg_surface(new id xdg_surface@43, wl_surface@42)\n[19:18:30.269154] {Default Queue} -> xdg_surface@43.get_toplevel(new id xdg_toplevel@44)\n[19:18:30.269154] {Default Queue} -> xdg_toplevel@44.set_title(\"ELM-QT6-A-100\")\n[19:18:30.269154] {Default Queue} -> xdg_surface@43.set_window_geometry(16, 24, 320, 180)\n[19:18:30.269154] {Default Queue} xdg_surface@43.configure(7)\n[19:18:30.269154] {Default Queue} -> xdg_surface@43.ack_configure(7)\n[19:18:30.269154] {Default Queue} -> wl_surface@42.attach(wl_buffer@50, 0, 0)\n[19:18:30.269154] {Default Queue} -> wl_surface@42.commit()\n"
+}

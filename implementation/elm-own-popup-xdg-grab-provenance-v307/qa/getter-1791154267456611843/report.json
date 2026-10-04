@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual getter body extraction with typed mock lifetime/resource/grab dependencies; whole-grab census/authenticated host still external",
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-xdg-grab-provenance-v307/candidate/src/protocols/XDGShell.cpp",
+  "sourceSHA256": "72e4f130b7cee6a062c20d5f17a78dbf7af3f1fa178d48b88dcb0742b5685758",
+  "controls": [
+    {
+      "name": "production",
+      "exitCode": 0,
+      "sourceSHA256": "e9a6d08c69237ee38014f597281a1c38c3165fac76ca9e34cc7238dcf34c8695"
+    },
+    {
+      "name": "unsafe-active-grab",
+      "exitCode": -6,
+      "sourceSHA256": "1c0afa9f63582c7145a9b4f56137ff944d24b691116154048ea4890d7ace142a"
+    },
+    {
+      "name": "unsafe-mapped",
+      "exitCode": -6,
+      "sourceSHA256": "3a046071c2959cdb23cf50e5196085e5fcdeba745c1557c826ba2eb2a123a702"
+    },
+    {
+      "name": "unsafe-membership",
+      "exitCode": -6,
+      "sourceSHA256": "d047bb00ba985355e9f871ecaa9d00d4d278777883d181273fa5aaad6c9f1e22"
+    }
+  ],
+  "tools": {
+    "/usr/bin/c++": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9"
+  },
+  "artifacts": {
+    "production.cpp": "e9a6d08c69237ee38014f597281a1c38c3165fac76ca9e34cc7238dcf34c8695",
+    "production.d": "38cc2e3e6eeef0649976ebb755855a7a2f6254a16515d44b10985bf62abbc687",
+    "production": "e56edf8dde02bc5ee7e9503ad88f670ccfbccb167fe7ee403a2435b9181483fb",
+    "production.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "production.stdout": "279c689eff41b132493fadbcf7f3461a57fa0679b368b6b7aec0e5006ca4ccd5",
+    "production.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-active-grab.cpp": "1c0afa9f63582c7145a9b4f56137ff944d24b691116154048ea4890d7ace142a",
+    "unsafe-active-grab.d": "fb6c7a52aa4bf93f0edb2d3daf4ab5140a6c5b5e7000a6153b316380e7d6dcb2",
+    "unsafe-active-grab": "901b798f3197b144cb753064628cae57fcb97b157dce4f64f47c74b0088ec347",
+    "unsafe-active-grab.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-active-grab.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-active-grab.stderr": "ba8df7e1b4b9371b6cec8562e3d5018d201e13bec8930394016fbd971ceac19c",
+    "unsafe-mapped.cpp": "3a046071c2959cdb23cf50e5196085e5fcdeba745c1557c826ba2eb2a123a702",
+    "unsafe-mapped.d": "40b25d213e148d48e2207c43bb543b75a14127826d62abc113b7ad311b1a1945",
+    "unsafe-mapped": "1e9031dac65d9c8f05ef3ded590ada03211863ceb5aa6488625064d3399bd5e8",
+    "unsafe-mapped.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-mapped.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-mapped.stderr": "0b1460b73d4dc72b16d5f99f90d5940bc446a51b8330ea200f6a786783d93523",
+    "unsafe-membership.cpp": "d047bb00ba985355e9f871ecaa9d00d4d278777883d181273fa5aaad6c9f1e22",
+    "unsafe-membership.d": "7798719f4e1959efedad4d452bb3bdb45c9529f368c23af0683a578840e3a700",
+    "unsafe-membership": "9a117d2de66c6a5e62f44fb37b09b270ad9acf8c744e080ae9ae79f45ba5f7f2",
+    "unsafe-membership.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-membership.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-membership.stderr": "8d98fa96727d8c4aca30190ae18ea0555632cfae0070ac0fa4fed36ce692a754"
+  }
+}

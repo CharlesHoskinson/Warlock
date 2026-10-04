@@ -1,0 +1,15 @@
+# Owning XDG grab accessor
+
+This isolated Core205 derivative adds the nonvirtual out-of-line `CXDGShellProtocol::currentActiveGrab() const` and separate `SXDGActiveGrabSnapshot` type. It changes no existing class data, eligibility, focus, grab lifecycle, serial policy or native effect. Install/deployment and native acceptance are false.
+
+The optional strong snapshot contains `grab`, `owner`, and ordered `popups`. It requires exact equality with the currently installed seat grab, unique current protocol-registry popups, current mapped XDG/surface/resource associations, existing `grab->accepts(surface)` membership and exactly one current owner. It fails closed beyond64 grabbed or512 registered popup entries. A nullable immediate XDG parent remains valid, including a layer-shell popup. It must be queried and consumed within the serialized owner callback, never cached as authority.
+
+The API does **not** establish that no other surface belongs to the grab. Root305 must census all native surfaces against this same held grab and join exact current public CPopup resource/root/layer association, trusted host310 popup/bar resource and full view/generation/topology/publication/lease. Unknown/foreign accepted members or incomplete census must refuse own-popup proof. Existing native eligibility remains false until actual close/fence and separately correlated fresh observations. This accessor does not validate the original XDG grab serial.
+
+Protected actual compile report: `qa/compile-1791153820804918030/report.json`. The earlier PermissionError attempt and exact script are preserved. Actual full build: `build-1791154124276959170/report.json`. Actual consumer audit: `qa/audit-1791154009981036333/report.json`.
+
+The audit resolves every one of433 ordered current205 archive payloads against its actual compiled object/source/dependencies, preserving duplicate-basename identity. Nineteen actual XDG header consumers were rebuilt. Current469 SurfacePassElement/ElementRenderer dependencies add two consumers to the old17. Current469 hit,448 InputManager,202 SeatManager,89 PointerManager,47 MonitorRuleManager,7 Monitor and WindowPolicy lineage are retained. SeatManager/PointerManager/Monitor/MonitorRuleManager/WindowPolicy are demonstrated nonconsumers. All414 other ordered archive payloads remain identical. The new694-header capture differs only in XDGShell.hpp; current205/AQ155 link dependency hashes and all old dynamic exports are retained, with the additive getter exported. The derivative binary/plugin ABI must still be paired exactly in a fresh coherent native campaign.
+
+Actual-body extraction report `qa/getter-1791154267456611843/report.json` passes23 witnesses and rejects three compiled unsafe getter variants. Its resource/lifetime/seat dependencies are typed stubs; it is not a live compositor scheduling proof. Tests deliberately accept an extra grab surface to preserve the API boundary above.
+
+Original GTK02 own-popup eligibility failure, all prior sources/reports, original deadlines, and the pending full GTK/Qt contracts remain unchanged. No GUI, Quint logic, installed headers/core or primary lane edits were performed.

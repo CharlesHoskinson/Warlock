@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "error": "AssertionError('/usr/bin/python3#symlink')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/preflight.py\", line 65, in main\n    _,core,fixture,observer,probe,build,keymap,files=verify();report.update(passed=True,verifiedFiles=len(files),inputs=files,owningCore=core['sha256'],fixture=fixture['artifact'],eventTypes=json.loads((ROOT/'qt-domains-build-report.json').read_text())['constants'],GUIBuild=str(build))\n                                                     ~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/preflight.py\", line 38, in verify\n    entry(prefix/rel if prefix else rel,row)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/preflight.py\", line 22, in entry\n    if 'symlink' in row:assert path.is_symlink() and os.readlink(path)==row['symlink'],str(path);files[str(path)]={'symlink':row['symlink']};return\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: /usr/bin/python3#symlink\n"
+}

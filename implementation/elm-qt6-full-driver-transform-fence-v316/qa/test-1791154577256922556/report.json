@@ -1,0 +1,20 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual frozen driver/join/decoder functions; synthetic native state, protocol journal and capture collaborators, no PNG/native presentation claim.",
+  "error": "AssertionError('left-map-change-actual-method-refuses')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-transform-fence-v316/qa/test.py\", line 36, in main\n    after=join(dict(q,**changes));yes(name+'-identical-rawACK-and-commit',before['wire']==after['wire']);yes(name+'-fresh-mapping-differs',before['marker']!=after['marker']);refuses(name+'-actual-method-refuses',lambda after=after,name=name:capture(after,name))\n                                                                                                                                                                              ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-transform-fence-v316/qa/test.py\", line 24, in refuses\n    raise AssertionError(name)\nAssertionError: left-map-change-actual-method-refuses\n",
+  "checks": [
+    "fresh-actual-join-positive",
+    "unchanged-actual-capture-method",
+    "left-map-change-identical-rawACK-and-commit",
+    "left-map-change-fresh-mapping-differs"
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-transform-fence-v316/qa/test.py": "2a057cc997eef2a3764197978a8bd1c02cf5b0c73d0b22600899b3f68306ea27",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/driver.py": "c3cc31a77ece82d8dc8423cff29996d05975d6548092d3a8afd26eb91d48896f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/helpers/scene.py": "ca3dc007641666c5f02a164611726b065f8f58159b08d6f166275507af34d6a6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/helpers/geometry.py": "b2de96997c043a1f9a7f6d14403f6bab282385e099d873b28347592dd04d92ee",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/helpers/protocol.py": "8c5fbbf87a8d918fe75bed35dd879519b8874d9602216ba147b887c268e7112f"
+  }
+}

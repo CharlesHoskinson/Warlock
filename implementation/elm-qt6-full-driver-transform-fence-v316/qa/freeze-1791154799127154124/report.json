@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "upstreamLiveClosurePassed": false,
+  "environmentDrift": [
+    {
+      "path": "/etc/ld.so.cache",
+      "expected": {
+        "sha256": "dee782dafa5acff4eec97790a5e55a4b89601eaad7d2be9b6b137d9b1eb5db77"
+      },
+      "actual": {
+        "sha256": "3ff2a8a8b577bf0c13c6d6d63c58aee62f748f30c2248653c2ee30b16fbdd734",
+        "size": 154043
+      },
+      "capture": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-transform-fence-v316/qa/freeze-1791154799127154124/observed-ld.so.cache",
+      "captureSHA256": "3ff2a8a8b577bf0c13c6d6d63c58aee62f748f30c2248653c2ee30b16fbdd734"
+    }
+  ],
+  "ownFiles": 69,
+  "externalFiles": 12656,
+  "manifestSHA256": "270d425c5544a1ddedbade49f901438366d38598916a2b32fa9fba3ef5dc111b"
+}
