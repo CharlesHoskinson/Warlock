@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "exact authenticated old-native generic refusal is typed but remains fatal",
+      "passed": true
+    },
+    {
+      "name": "no reason invents geometry unavailable binding-mismatch",
+      "passed": true
+    },
+    {
+      "name": "no reason invents geometry unavailable wrong-thread",
+      "passed": true
+    },
+    {
+      "name": "no reason invents geometry unavailable unverified-peer",
+      "passed": true
+    },
+    {
+      "name": "no reason invents geometry unavailable unsupported-operation",
+      "passed": true
+    },
+    {
+      "name": "no reason invents geometry unavailable unsupported-request",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal extra",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal wrongversion",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal reasonobject",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal empty",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal long",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal control",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal C1",
+      "passed": true
+    },
+    {
+      "name": "malformed refusal surrogate",
+      "passed": true
+    },
+    {
+      "name": "missing reason is ordinary schema failure",
+      "passed": true
+    },
+    {
+      "name": "duplicate reason cannot become typed",
+      "passed": true
+    },
+    {
+      "name": "authentication deadline before classification wrongpeer",
+      "passed": true
+    },
+    {
+      "name": "authentication deadline before classification socketreplacement",
+      "passed": true
+    },
+    {
+      "name": "authentication deadline before classification processchanged",
+      "passed": true
+    },
+    {
+      "name": "authentication deadline before classification lateEOF",
+      "passed": true
+    },
+    {
+      "name": "authentication deadline before classification connectsendbudget",
+      "passed": true
+    },
+    {
+      "name": "authentication deadline before classification lateparse",
+      "passed": true
+    },
+    {
+      "name": "bounded Unicode reason 256 UTF16 units valid",
+      "passed": true
+    },
+    {
+      "name": "real owned Unix socket verified process and exact request refusal",
+      "passed": true
+    },
+    {
+      "name": "held V56 and actual old-native source unchanged",
+      "passed": true
+    },
+    {
+      "name": "real strict observe-only attach preserves legacy restore and denies geometry effect",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "qa/hold.py": "909d44b4068e779ae89c74d1b3d3a7396d5afb464bbee620f62442be87ccd84c",
+    "qa/original-routing.py": "ff372fdfa7d9d358cec9ed3e832b9df836b1f52f9714e0ad0bbf9ec0ad79bcb8",
+    "qa/refusal-test.py": "3c86f654b3875b062113f3162db10679cc7272847229345eb9a03737007e030b",
+    "qa/routing.py": "7d39b8e3e31d8fc3a9979e7390ed75af27eb5b4861b2319f443fe135a19903a8",
+    "qa/strong.py": "750d590c4fb58be50e9ecfaae8550b0eab427009eb1b7f9ada45853e29c87567",
+    "qa/test.py": "35134023087d84356870301865982403fa0acfb8e65c2219212a6a0c19cc2c35",
+    "parent-inputs.json": "41292fe2c22c26fe36cb876c7bf7a8510313dbe348510118ac5bbf98468bb957",
+    "SCOPE.md": "6020a25dcc5c9c60fcaaeba734856d1741c64e7b524df347610ddb8e5bc6225d",
+    "source-lineage.json": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f"
+  },
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-e506b527ed404669aa69de002045052b.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "fallbackImplemented": false,
+  "scope": "Actual handler and endpoint with synthetic authenticated transport; actual V8 generic request-schema is ambiguous and remains disconnected. No unsupported fallback or native menu acceptance.",
+  "artifacts": {
+    "inputs/parent-inputs.json": "41292fe2c22c26fe36cb876c7bf7a8510313dbe348510118ac5bbf98468bb957",
+    "inputs/SCOPE.md": "6020a25dcc5c9c60fcaaeba734856d1741c64e7b524df347610ddb8e5bc6225d",
+    "inputs/source-lineage.json": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+    "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "inputs/adapter/daemon.py": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0",
+    "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "inputs/qa/hold.py": "909d44b4068e779ae89c74d1b3d3a7396d5afb464bbee620f62442be87ccd84c",
+    "inputs/qa/original-routing.py": "ff372fdfa7d9d358cec9ed3e832b9df836b1f52f9714e0ad0bbf9ec0ad79bcb8",
+    "inputs/qa/refusal-test.py": "3c86f654b3875b062113f3162db10679cc7272847229345eb9a03737007e030b",
+    "inputs/qa/routing.py": "7d39b8e3e31d8fc3a9979e7390ed75af27eb5b4861b2319f443fe135a19903a8",
+    "inputs/qa/strong.py": "750d590c4fb58be50e9ecfaae8550b0eab427009eb1b7f9ada45853e29c87567",
+    "inputs/qa/test.py": "35134023087d84356870301865982403fa0acfb8e65c2219212a6a0c19cc2c35"
+  }
+}

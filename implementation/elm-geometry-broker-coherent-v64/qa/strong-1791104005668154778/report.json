@@ -1,0 +1,518 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual imported broker handler/main and copied strict endpoint validators with synthetic transport; no process/socket identity, native mutation, compositor event authentication, configure/pixels or Elm end-to-end acceptance",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6077ff8f612e4dacab86ae6e5d123ac6.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "source-lineage.json": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+    "SCOPE.md": "6020a25dcc5c9c60fcaaeba734856d1741c64e7b524df347610ddb8e5bc6225d",
+    "qa/strong.py": "750d590c4fb58be50e9ecfaae8550b0eab427009eb1b7f9ada45853e29c87567"
+  },
+  "checks": [
+    {
+      "name": "explicit attach forwards exact caller request and receipt once",
+      "passed": true
+    },
+    {
+      "name": "zero watermark accepted and caller requestId preserved",
+      "passed": true
+    },
+    {
+      "name": "effect 1 minimize preserves full caller IDs and version exactly once",
+      "passed": true
+    },
+    {
+      "name": "effect 1 restore preserves full caller IDs and version exactly once",
+      "passed": true
+    },
+    {
+      "name": "effect 1 activate preserves full caller IDs and version exactly once",
+      "passed": true
+    },
+    {
+      "name": "effect 2 maximize preserves full caller IDs and version exactly once",
+      "passed": true
+    },
+    {
+      "name": "effect 2 restore-geometry preserves full caller IDs and version exactly once",
+      "passed": true
+    },
+    {
+      "name": "actual Unknown receipt forwarded without changing to refusal",
+      "passed": true
+    },
+    {
+      "name": "failure no retry no invented outcome window-effect",
+      "passed": true
+    },
+    {
+      "name": "failure no retry no invented outcome projection-request",
+      "passed": true
+    },
+    {
+      "name": "failure no retry no invented outcome geometry-facts-request",
+      "passed": true
+    },
+    {
+      "name": "bad full receipt rejected after one send without fabricated outcome",
+      "passed": true
+    },
+    {
+      "name": "effect before attach refused without native send",
+      "passed": true
+    },
+    {
+      "name": "bool effect version refuses",
+      "passed": true
+    },
+    {
+      "name": "unknown effect version 0",
+      "passed": true
+    },
+    {
+      "name": "unknown effect version 3",
+      "passed": true
+    },
+    {
+      "name": "unknown effect version '2'",
+      "passed": true
+    },
+    {
+      "name": "unknown effect version None",
+      "passed": true
+    },
+    {
+      "name": "bool native version geometry-attach",
+      "passed": true
+    },
+    {
+      "name": "stale full binding geometry-attach",
+      "passed": true
+    },
+    {
+      "name": "extra exact field geometry-attach",
+      "passed": true
+    },
+    {
+      "name": "missing exact field geometry-attach",
+      "passed": true
+    },
+    {
+      "name": "bool native version geometry-facts-request",
+      "passed": true
+    },
+    {
+      "name": "stale full binding geometry-facts-request",
+      "passed": true
+    },
+    {
+      "name": "extra exact field geometry-facts-request",
+      "passed": true
+    },
+    {
+      "name": "missing exact field geometry-facts-request",
+      "passed": true
+    },
+    {
+      "name": "bool native version window-effect",
+      "passed": true
+    },
+    {
+      "name": "stale full binding window-effect",
+      "passed": true
+    },
+    {
+      "name": "extra exact field window-effect",
+      "passed": true
+    },
+    {
+      "name": "missing exact field window-effect",
+      "passed": true
+    },
+    {
+      "name": "bool native version projection-request",
+      "passed": true
+    },
+    {
+      "name": "stale full binding projection-request",
+      "passed": true
+    },
+    {
+      "name": "extra exact field projection-request",
+      "passed": true
+    },
+    {
+      "name": "missing exact field projection-request",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-attachTrue",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-attach0",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-attach2",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-attach'1'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-attach'0'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-attach'01'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-attach'-1'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-attach'18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-attach1",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-attachTrue",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-facts-requestTrue",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-facts-request0",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-facts-request2",
+      "passed": true
+    },
+    {
+      "name": "bad geometry version geometry-facts-request'1'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-facts-request'0'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-facts-request'01'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-facts-request'-1'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-facts-request'18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-facts-request1",
+      "passed": true
+    },
+    {
+      "name": "requestId canonical positive geometry-facts-requestTrue",
+      "passed": true
+    },
+    {
+      "name": "watermark allows canonical string zero only '00'",
+      "passed": true
+    },
+    {
+      "name": "watermark allows canonical string zero only '-1'",
+      "passed": true
+    },
+    {
+      "name": "watermark allows canonical string zero only '18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "watermark allows canonical string zero only 0",
+      "passed": true
+    },
+    {
+      "name": "watermark allows canonical string zero only True",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter request'0'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter request'01'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter request'-1'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter request'18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter requestTrue",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter generation'0'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter generation'01'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter generation'-1'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter generation'18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter generationTrue",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter incarnation'0'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter incarnation'01'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter incarnation'-1'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter incarnation'18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "strict full effect counter incarnationTrue",
+      "passed": true
+    },
+    {
+      "name": "zero effect context lifetime",
+      "passed": true
+    },
+    {
+      "name": "zero effect context epoch",
+      "passed": true
+    },
+    {
+      "name": "zero effect context output",
+      "passed": true
+    },
+    {
+      "name": "zero effect context revision",
+      "passed": true
+    },
+    {
+      "name": "extra intent field refuses",
+      "passed": true
+    },
+    {
+      "name": "extra full context field refuses",
+      "passed": true
+    },
+    {
+      "name": "stale geometry intent epoch refuses locally",
+      "passed": true
+    },
+    {
+      "name": "unsupported closed operation 1'maximize'",
+      "passed": true
+    },
+    {
+      "name": "unsupported closed operation 1'restore-geometry'",
+      "passed": true
+    },
+    {
+      "name": "unsupported closed operation 2'restore'",
+      "passed": true
+    },
+    {
+      "name": "unsupported closed operation 2'minimize'",
+      "passed": true
+    },
+    {
+      "name": "unsupported closed operation 2'close'",
+      "passed": true
+    },
+    {
+      "name": "unsupported closed operation 2True",
+      "passed": true
+    },
+    {
+      "name": "projection uses exact caller requestId in three coherent observations",
+      "passed": true
+    },
+    {
+      "name": "incoherent bracket sends refresh hint only without fabricated facts",
+      "passed": true
+    },
+    {
+      "name": "unsupported hello cannot reset authority through broker",
+      "passed": true
+    },
+    {
+      "name": "unsupported native route refuses without send",
+      "passed": true
+    },
+    {
+      "name": "partial framing waits newline error expectation",
+      "passed": true
+    },
+    {
+      "name": "partial framing waits newline authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "partial newline dispatches exactly one attach",
+      "passed": true
+    },
+    {
+      "name": "two complete lines routed once error expectation",
+      "passed": true
+    },
+    {
+      "name": "two complete lines routed once authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "coalesced lines preserve attach then facts order",
+      "passed": true
+    },
+    {
+      "name": "input bound rejects before effect error expectation",
+      "passed": true
+    },
+    {
+      "name": "input bound rejects before effect authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "input overflow emits no effect or guessed receipt",
+      "passed": true
+    },
+    {
+      "name": "duplicate JSON key rejects error expectation",
+      "passed": true
+    },
+    {
+      "name": "duplicate JSON key rejects authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "duplicate JSON members reject before native request",
+      "passed": true
+    },
+    {
+      "name": "trusted event produces refresh hint error expectation",
+      "passed": true
+    },
+    {
+      "name": "trusted event produces refresh hint authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "event hint never makes geometry facts",
+      "passed": true
+    },
+    {
+      "name": "event EOF retires transport error expectation",
+      "passed": true
+    },
+    {
+      "name": "event EOF retires transport authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "event loss fabricates no effect receipt",
+      "passed": true
+    },
+    {
+      "name": "near-bound aggregate is not frame overflow error expectation",
+      "passed": true
+    },
+    {
+      "name": "near-bound aggregate is not frame overflow authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "near-bound main preserves two valid requests",
+      "passed": true
+    },
+    {
+      "name": "truncated frontend EOF error expectation",
+      "passed": true
+    },
+    {
+      "name": "truncated frontend EOF authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "truncated main dispatches no incomplete request",
+      "passed": true
+    },
+    {
+      "name": "strong near-bound tail plus read remains per-frame error expectation",
+      "passed": true
+    },
+    {
+      "name": "strong near-bound tail plus read remains per-frame authenticated hello precedes geometry prompt",
+      "passed": true
+    },
+    {
+      "name": "strong main preserves valid requests across aggregate overflow point",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "duplicate JSON key rejects.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "event EOF retires transport.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "input bound rejects before effect.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "inputs/SCOPE.md": "6020a25dcc5c9c60fcaaeba734856d1741c64e7b524df347610ddb8e5bc6225d",
+    "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "inputs/adapter/daemon.py": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0",
+    "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "inputs/qa/strong.py": "750d590c4fb58be50e9ecfaae8550b0eab427009eb1b7f9ada45853e29c87567",
+    "inputs/source-lineage.json": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+    "near-bound aggregate is not frame overflow.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "partial framing waits newline.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "strong near-bound tail plus read remains per-frame.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "truncated frontend EOF.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "trusted event produces refresh hint.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "two complete lines routed once.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  }
+}

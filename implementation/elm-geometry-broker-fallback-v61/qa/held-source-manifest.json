@@ -1,0 +1,267 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "unsupportedNativeFallbackImplemented": false,
+  "completedRequirementIds": [],
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-3e8fd1c207964f36864dc32b1b9d775c.scope",
+    "coreLimit": 1
+  },
+  "reports": [
+    {
+      "path": "qa/routing-1791103840406898053/report.json",
+      "sha256": "6b525560b7e30311c7a45d440cc49f011d613e68d37bcedf0a97e26feaeb3487",
+      "checks": 109
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/report.json",
+      "sha256": "a8920995886de556070b577ae65d59aaab219aa16f9e79bd62319feff9e78ddb",
+      "checks": 26
+    }
+  ],
+  "files": [
+    {
+      "path": "SCOPE.md",
+      "sha256": "ef2396cb8d8138be99a572bc27b40640c81201ebc5eeb89bd790efd99c7d21a2",
+      "size": 1650
+    },
+    {
+      "path": "adapter/catalog_authority.py",
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "adapter/catalog_transport.py",
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "adapter/daemon.py",
+      "sha256": "1adb68ed3f015c850178e113a60cbd6962c3496166fa079e4598ef0a06b804fc",
+      "size": 6251
+    },
+    {
+      "path": "adapter/effect_endpoint.py",
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    {
+      "path": "adapter/endpoint.py",
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "adapter/geometry_endpoint.py",
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106
+    },
+    {
+      "path": "adapter/taskbar_catalog.py",
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "adapter/taskbar_projection.py",
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "parent-inputs.json",
+      "sha256": "41292fe2c22c26fe36cb876c7bf7a8510313dbe348510118ac5bbf98468bb957",
+      "size": 2205
+    },
+    {
+      "path": "qa/failed-syntax-initial/refusal-test.py",
+      "sha256": "da652cb6f86d9d000c604f21c875be96c450df200f3116686043f18fa984ef25",
+      "size": 7040
+    },
+    {
+      "path": "qa/failed-syntax-initial/report.json",
+      "sha256": "c9caab15b8c3ef5a7266c5ea85cc751e21fd5bfe7d83cab986e152524d4b1061",
+      "size": 178
+    },
+    {
+      "path": "qa/hold.py",
+      "sha256": "a56f5c4de7b9b001a55abd2839fcdbe7cb6cecd0a7ad5153699147f460e3eba4",
+      "size": 1661
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/SCOPE.md",
+      "sha256": "ef2396cb8d8138be99a572bc27b40640c81201ebc5eeb89bd790efd99c7d21a2",
+      "size": 1650
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/catalog_authority.py",
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/catalog_transport.py",
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/daemon.py",
+      "sha256": "1adb68ed3f015c850178e113a60cbd6962c3496166fa079e4598ef0a06b804fc",
+      "size": 6251
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/effect_endpoint.py",
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/endpoint.py",
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/geometry_endpoint.py",
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/taskbar_catalog.py",
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/adapter/taskbar_projection.py",
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/parent-inputs.json",
+      "sha256": "41292fe2c22c26fe36cb876c7bf7a8510313dbe348510118ac5bbf98468bb957",
+      "size": 2205
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/qa/refusal-test.py",
+      "sha256": "3c86f654b3875b062113f3162db10679cc7272847229345eb9a03737007e030b",
+      "size": 8463
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/qa/test.py",
+      "sha256": "ff372fdfa7d9d358cec9ed3e832b9df836b1f52f9714e0ad0bbf9ec0ad79bcb8",
+      "size": 14574
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/inputs/source-lineage.json",
+      "sha256": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+      "size": 1770
+    },
+    {
+      "path": "qa/refusal-1791103834038357875/report.json",
+      "sha256": "a8920995886de556070b577ae65d59aaab219aa16f9e79bd62319feff9e78ddb",
+      "size": 5708
+    },
+    {
+      "path": "qa/refusal-test.py",
+      "sha256": "3c86f654b3875b062113f3162db10679cc7272847229345eb9a03737007e030b",
+      "size": 8463
+    },
+    {
+      "path": "qa/routing-1791103840406898053/duplicate JSON key rejects.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "qa/routing-1791103840406898053/event EOF retires transport.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "qa/routing-1791103840406898053/input bound rejects before effect.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/SCOPE.md",
+      "sha256": "ef2396cb8d8138be99a572bc27b40640c81201ebc5eeb89bd790efd99c7d21a2",
+      "size": 1650
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/catalog_authority.py",
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/catalog_transport.py",
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/daemon.py",
+      "sha256": "1adb68ed3f015c850178e113a60cbd6962c3496166fa079e4598ef0a06b804fc",
+      "size": 6251
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/effect_endpoint.py",
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/endpoint.py",
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/geometry_endpoint.py",
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/taskbar_catalog.py",
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/adapter/taskbar_projection.py",
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/qa/test.py",
+      "sha256": "ff372fdfa7d9d358cec9ed3e832b9df836b1f52f9714e0ad0bbf9ec0ad79bcb8",
+      "size": 14574
+    },
+    {
+      "path": "qa/routing-1791103840406898053/inputs/source-lineage.json",
+      "sha256": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+      "size": 1770
+    },
+    {
+      "path": "qa/routing-1791103840406898053/partial framing waits newline.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "qa/routing-1791103840406898053/report.json",
+      "sha256": "6b525560b7e30311c7a45d440cc49f011d613e68d37bcedf0a97e26feaeb3487",
+      "size": 14175
+    },
+    {
+      "path": "qa/routing-1791103840406898053/trusted event produces refresh hint.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "qa/routing-1791103840406898053/two complete lines routed once.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "qa/test.py",
+      "sha256": "ff372fdfa7d9d358cec9ed3e832b9df836b1f52f9714e0ad0bbf9ec0ad79bcb8",
+      "size": 14574
+    },
+    {
+      "path": "source-lineage.json",
+      "sha256": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+      "size": 1770
+    }
+  ],
+  "scope": "Bounded typed refusal validation and strict observe-only compatibility. Actual V8 ambiguous request-schema remains fatal; native fallback and full geometry compatibility stay open."
+}

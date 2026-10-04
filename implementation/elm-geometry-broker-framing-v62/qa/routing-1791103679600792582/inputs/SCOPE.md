@@ -1,0 +1,1 @@
+Fresh V56 derivative changes only bounded stream framing. Per-wire-frame4096 includes newline; tail must terminate before EOF, malformed/oversize failsclosed. Source lineage names ancestral sources, not transformed target hashes. No native or release acceptance.
