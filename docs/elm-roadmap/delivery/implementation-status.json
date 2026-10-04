@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-seat-focus-bounded-acceptance-v458",
+  "activeSlice": "implementation/elm-seat-focus-bounds-qualified-v460",
   "status": "Native445 read-only focus observer444 repeats shared capability failure24/normalcleanup: live popup52/sharedHost -> samefocus zero keyboardresources -> restored focus71/underlying fixture while grab remains. Causal owning setupKeyboard first-device desktop fallback overwrites seat popup. Fresh446 sole expiry guard EARS/OpenSpec;447 actual C++ predicate36/two bad controls and Quint7 named/1000x40/3 mutants pass (446 initial zero named retained); full448 actual InputManager TU compiles against694 exact Core89 headers. Frozen4491865files/6reports. Source correction prepared only; native fix/new core/plugin link unaccepted, candidate439 preserved.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -1886,11 +1886,39 @@
       "fullGeometryCampaignAccepted": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    "seatFocusBoundsV460": {
+      "manifest": "implementation/elm-seat-focus-bounds-qualified-v460/qa/slice-manifest.json",
+      "manifestSHA256": "de87949b83f13b6ea51b159342a8e90288cfc0880aea60ac4af77bbd90c2acb6",
+      "summary": "Fresh459 preserves exact204/201 source scenarios/checks/deadlines with runtime453/new Core450/plugin451/AQ155. Actual3 sessions passed604 controlled XDG bounds/constraint/refusal/ACK geometry checks across22 profiles (800x600 scale1 14,1600x1200 scale2 6,800x600 scale2 2). Exactmaps/output/workarea gate/normalcleanup. CPU plan7/error7/snapshot5/preflight pass; synthetic error-path refusal explicitly excluded from native counts. Frozen46079files/8reports. Parent458307 shared menu/geometry/keyboard regressions same exact tuple retained. Pixels/physical pointer/GTK/hardware/fullrelease unqualified.",
+      "nativeAcceptance": true,
+      "nativeChecks": 604,
+      "profileCount": 22,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+          "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "sameTupleSharedRegressionChecks": 307,
+      "nativePixelsAccepted": false,
+      "physicalPointerAccepted": false,
+      "gtkConstrainedConformanceAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   },
   "next": [
-    "Integrate independently qualified constrained/scaled/nonzero-origin geometry and strict numeric refusal onto new owningCore450/plugin451/AQ155; review latest independent checkpoints and preserve their evidence/source lanes.",
-    "Qualify additional physical keyboards/lost focus surfaces and canonical layering/focus policy, comprehensive UIUX/AT-SPI/IME, actual GPU plus separate WebGPU, mixed hardware outputs, measured budgets/human journeys, all S01-S16/C00 and reversible release."
+    "Review fresh independent landmark oracle210/211 and frozen native profile corpus; qualify actual screenshot and physical pointer against selected ACK/buffer on corrected owning450 tuple. Integrate strict numeric refusal and actual GTK constrained-window path without assuming synthetic oracle acceptance.",
+    "Complete canonical layering/focus/input/UX, hardware GPU with separate WebGPU, mixed outputs, accessibility/IME, calibrated budgets/human journeys and S01-S16/C00/reversible release; keep all417 planned until requirements-wide acceptance."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

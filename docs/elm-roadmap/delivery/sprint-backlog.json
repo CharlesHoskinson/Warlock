@@ -5041,6 +5041,34 @@
       "fullGeometryCampaignAccepted": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-seat-focus-bounds-qualified-v460/qa/slice-manifest.json",
+      "manifestSHA256": "de87949b83f13b6ea51b159342a8e90288cfc0880aea60ac4af77bbd90c2acb6",
+      "summary": "Fresh459 preserves exact204/201 source scenarios/checks/deadlines with runtime453/new Core450/plugin451/AQ155. Actual3 sessions passed604 controlled XDG bounds/constraint/refusal/ACK geometry checks across22 profiles (800x600 scale1 14,1600x1200 scale2 6,800x600 scale2 2). Exactmaps/output/workarea gate/normalcleanup. CPU plan7/error7/snapshot5/preflight pass; synthetic error-path refusal explicitly excluded from native counts. Frozen46079files/8reports. Parent458307 shared menu/geometry/keyboard regressions same exact tuple retained. Pixels/physical pointer/GTK/hardware/fullrelease unqualified.",
+      "nativeAcceptance": true,
+      "nativeChecks": 604,
+      "profileCount": 22,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+          "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "sameTupleSharedRegressionChecks": 307,
+      "nativePixelsAccepted": false,
+      "physicalPointerAccepted": false,
+      "gtkConstrainedConformanceAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   ]
 }
