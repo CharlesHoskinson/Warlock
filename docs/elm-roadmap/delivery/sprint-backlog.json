@@ -5123,6 +5123,34 @@
       "sharedRegressionOnNewCoreAccepted": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-xdg-origin-combined-qualification-v484/qa/slice-manifest.json",
+      "manifestSHA256": "1860680083a19d1db101ed30f066a2b25b8442e63071663953124f368a5fbbc4",
+      "summary": "475 metadata preflight/noGUI failures retained;476 actual pointer285 checks40synthetic parent-seat gestures16before/aftercaptures4origin/bufferprofiles pass.477 observer rebuiltown470;479 joint geometry161/480 physicalreconnect57/4813bounds604 (22profiles) pass normalcleanup,1107 acceptednewchecks.478 fullshared menu fails86 original6s same-title replacement taskbarAwaiting; heldfocus/cap recovery preservepopup resources1->0->1.482log/source diagnosis unansweredprojection58, geometry59received thenrefreshes; source422 sceneNone sendsuncorrelatedhostrefresh whileShell pendingprojectiongatesqueue. Candidatecausalhandler/model replay needed; no fullshared/release acceptance. Failed482/483 freezer metadata-schema/generator assumptions retained;484 verifies initialflag and finalstage-readback separately. Frozen1413files16reports.",
+      "boundedNativeAcceptance": true,
+      "acceptedNativeChecks": 1107,
+      "pointerGestures": 40,
+      "pointerPixelFrames": 16,
+      "syntheticParentPointerAccepted": true,
+      "physicalHardwareAccepted": false,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "fullSharedMenuRegressionAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   ]
 }
