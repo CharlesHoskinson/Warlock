@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-taskbar-projection-v33",
-  "status": "Typed taskbar family/action projection and displayed-scope callback guards implemented; compiled/model/endpoint checks passed. Exact plugin compiles; native grouping and integrated taskbar UI acceptance remain pending.",
+  "activeSlice": "implementation/elm-taskbar-ui-v35",
+  "status": "Native taskbar action projection qualified on original lifecycle/activation fixtures; actual native packets admitted by Elm. Grouped Main/picker controller and native host compile with scoped/generation guards; native GUI and complete UX acceptance pending.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -352,9 +352,32 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-taskbar-projection-v33/qa/slice-manifest.json"
+    },
+    "taskbarNativeV34": {
+      "ordinaryNativeChecks": 100,
+      "diagnosticNativeChecks": 131,
+      "retainedOriginalAssertionIdentities": true,
+      "actualNativePackets": 20,
+      "compiledActualPacketChecks": 120,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-native-v34/qa/slice-manifest.json"
+    },
+    "taskbarUIV35": {
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "optimizedMainCompiled": true,
+      "nativeHostBuildAndSelfTestsPassed": true,
+      "groupedMainViewImplemented": true,
+      "pickerGenerationGuards": true,
+      "nativeGUICampaignRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-ui-v35/qa/slice-manifest.json"
     }
   },
-  "next": "Run serialized native family/focus/application projection regression against the frozen V33 pair; integrate taskbar groups and labeled picker with scoped events. Complete catalog/icons/pins, popup/input lifecycle, switcher/previews, coherent scene, GPU/WebGPU, UI/UX/AT/IME and release gates.",
+  "next": "Qualify V35 grouped UI and labeled picker with actual pointer/keyboard/minimize/restore and broker recovery on the frozen V33 native pair. Complete native popup/input/keyboard focus lifetime, catalog/icons/pins and launch, switcher/previews, coherent scene, hardware/GPU/WebGPU, UI/UX/AT/IME and release.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

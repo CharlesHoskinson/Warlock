@@ -1,0 +1,517 @@
+{
+  "passed": true,
+  "checks": 60,
+  "scope": "Actual native action packets admitted by compiled Elm family/decision worker; full scene and integrated UI separate",
+  "packets": [
+    {
+      "name": "initialRoots",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": false,
+                "available": true
+              },
+              {
+                "root": "2",
+                "label": "SCENE-MAX",
+                "minimized": false,
+                "active": true,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "2"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "rootMinimized",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": true,
+                "available": true
+              },
+              {
+                "root": "2",
+                "label": "SCENE-MAX",
+                "minimized": true,
+                "active": false,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "restore",
+                "root": "2"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "rootRestored",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": false,
+                "available": true
+              },
+              {
+                "root": "2",
+                "label": "SCENE-MAX",
+                "minimized": false,
+                "active": true,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "2"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "allRootsMinimized",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": true,
+                "active": false,
+                "available": true
+              },
+              {
+                "root": "2",
+                "label": "SCENE-MAX",
+                "minimized": true,
+                "active": false,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "restore",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "restore",
+                "root": "2"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "minimizedWithLateChild",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": true,
+                "available": true
+              },
+              {
+                "root": "4",
+                "label": "SCENE-OWNER",
+                "minimized": true,
+                "active": false,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "restore",
+                "root": "4"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "familyRestoredModalFocused",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": false,
+                "available": true
+              },
+              {
+                "root": "4",
+                "label": "SCENE-OWNER",
+                "minimized": false,
+                "active": true,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "4"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "modalRetired",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": true,
+                "available": true
+              },
+              {
+                "root": "4",
+                "label": "SCENE-OWNER",
+                "minimized": false,
+                "active": false,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "4"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "ownerActivated",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": false,
+                "available": true
+              },
+              {
+                "root": "4",
+                "label": "SCENE-OWNER",
+                "minimized": false,
+                "active": true,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "4"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "peerActivated",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": true,
+                "available": true
+              },
+              {
+                "root": "4",
+                "label": "SCENE-OWNER",
+                "minimized": false,
+                "active": false,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "4"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    },
+    {
+      "name": "modalActivated",
+      "result": {
+        "passed": true,
+        "groups": [
+          {
+            "key": "application:GTK Application",
+            "families": [
+              {
+                "root": "1",
+                "label": "SCENE-PEER",
+                "minimized": false,
+                "active": false,
+                "available": true
+              },
+              {
+                "root": "4",
+                "label": "SCENE-OWNER",
+                "minimized": false,
+                "active": true,
+                "available": true
+              }
+            ]
+          }
+        ],
+        "decisions": [
+          {
+            "key": "application:GTK Application",
+            "primary": {
+              "kind": "picker"
+            },
+            "selections": [
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "1"
+              },
+              {
+                "kind": "effect",
+                "operation": "activate",
+                "root": "4"
+              }
+            ]
+          }
+        ],
+        "zero": {
+          "kind": "unavailable"
+        },
+        "canonicalScene": false
+      }
+    }
+  ]
+}

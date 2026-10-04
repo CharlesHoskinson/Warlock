@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/taskbar-1791071664426703686/taskbar.js": "607214b0562e2d9f5b193757137f804ae367f346365bdac42d141425ce6e7a1a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay.py": "176018087db61e7fc9cbc83ceb8a8ae054983eab6a4fadebd2a5c5495988d7d5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay.cjs": "db2574ad6fb8b08e0772f13a05763016319b282b9674862c7c44f222c4456c0b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/native-1791071820671783752/report.json": "62f109d2cff252d0f171c6de696d84aecd57cd85e4ed000a83501f17593d6b97",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/native-1791071991283566877/report.json": "036b8cd64fcc7cda6e99a470c526fbaaa72edd0459e3333c3446705e02eef586"
+  },
+  "commands": [
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay-1791072102476303523/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/taskbar-1791071664426703686/taskbar.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay-1791072102476303523/native-0.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay-1791072102476303523/checks-0.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay-1791072102476303523/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-projection-v33/qa/taskbar-1791071664426703686/taskbar.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay-1791072102476303523/native-1.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-native-v34/qa/replay-1791072102476303523/checks-1.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Frozen V33 Elm worker on both actual native V34 campaigns",
+  "checks": 120,
+  "nativeCampaigns": 2,
+  "packets": 20,
+  "artifacts": {
+    "replay.cjs": "db2574ad6fb8b08e0772f13a05763016319b282b9674862c7c44f222c4456c0b",
+    "native-0.json": "62f109d2cff252d0f171c6de696d84aecd57cd85e4ed000a83501f17593d6b97",
+    "checks-0.json": "bdc3392c7d3f89ed13dff40f773beb6e035c8de56f12032ec67490e0513e765f",
+    "stderr-0": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "native-1.json": "036b8cd64fcc7cda6e99a470c526fbaaa72edd0459e3333c3446705e02eef586",
+    "checks-1.json": "b82b3442e96178909d3bd3bc9e6a85cc6e159a53e7ce2b3e81e4c00a7e2d3d03",
+    "stderr-1": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+  }
+}

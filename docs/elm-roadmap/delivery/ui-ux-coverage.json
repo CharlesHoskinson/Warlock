@@ -6317,6 +6317,35 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-taskbar-projection-v33/qa/slice-manifest.json",
       "acceptance": "Action-policy/family graph and displayed-scope replay only. Real native grouping, integrated picker/taskbar, catalog/icons/pins, AT/keyboard/IME, human UX and release acceptance pending."
+    },
+    {
+      "slice": "implementation/elm-taskbar-native-v34",
+      "level": "native action projection and actual compiled packet replay",
+      "ordinaryNativeChecks": 100,
+      "diagnosticNativeChecks": 131,
+      "retainedOriginalAssertionIdentities": true,
+      "actualNativePackets": 20,
+      "compiledActualPacketChecks": 120,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-native-v34/qa/slice-manifest.json",
+      "acceptance": "Native family/application/focus/minimized projection only; full paint/input scene and GUI/AT/UX/release separate."
+    },
+    {
+      "slice": "implementation/elm-taskbar-ui-v35",
+      "level": "compiled grouped GUI/controller and host self-tests",
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "optimizedMainCompiled": true,
+      "nativeHostBuildAndSelfTestsPassed": true,
+      "groupedMainViewImplemented": true,
+      "pickerGenerationGuards": true,
+      "nativeGUICampaignRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-ui-v35/qa/slice-manifest.json",
+      "acceptance": "Grouped view and picker controller are implemented and compile; native pointer, focus/keyboard/AT/IME, popup/input, catalog/pins and release acceptance pending."
     }
   ]
 }
