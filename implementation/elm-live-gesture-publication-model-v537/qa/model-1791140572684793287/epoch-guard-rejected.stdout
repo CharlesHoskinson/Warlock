@@ -1,0 +1,16 @@
+
+  pipeline
+    1) laterInputRefusesTest failed after 1 test(s)
+
+  1 failed
+
+  1) laterInputRefusesTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-live-gesture-publication-model-v537/qa/model-1791140572684793287/epoch-guard.qnt:23:116
+        23:  run laterInputRefusesTest = init.then(press).then(release).then(laterInput).then(callback).then(finish).then(all {assert(s.forwards==0),s'=s})
+                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=laterInputRefusesTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 epoch-guard.qnt

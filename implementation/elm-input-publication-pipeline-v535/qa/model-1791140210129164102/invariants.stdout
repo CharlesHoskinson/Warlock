@@ -1,0 +1,950 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 0,
+      dom: 10,
+      epoch: 1,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 10,
+      released: false,
+      view: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 0,
+      dom: 10,
+      epoch: 1,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 10,
+      released: false,
+      view: 2
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 0,
+      dom: 10,
+      epoch: 1,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 10,
+      released: false,
+      view: 2
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 10,
+      epoch: 1,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 1,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 1,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 1,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 1,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 3
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 2,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 3
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 2,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 3
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      book: 2,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 2,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 2,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 11,
+      released: false,
+      view: 3
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 3,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 12,
+      released: false,
+      view: 3
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 4,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 13,
+      released: false,
+      view: 3
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 4,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 13,
+      released: false,
+      view: 3
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 5,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 14,
+      released: false,
+      view: 3
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 5,
+      dom: 11,
+      epoch: 2,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 14,
+      released: false,
+      view: 3
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 5,
+      dom: 11,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 14,
+      released: false,
+      view: 3
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 5,
+      dom: 11,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 14,
+      released: false,
+      view: 3
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 5,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 14,
+      released: false,
+      view: 3
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 5,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 14,
+      released: false,
+      view: 3
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 5,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 14,
+      released: false,
+      view: 3
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 6,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 15,
+      released: false,
+      view: 3
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 6,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 15,
+      released: false,
+      view: 4
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 6,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 15,
+      released: false,
+      view: 5
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 6,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 15,
+      released: false,
+      view: 5
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 6,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 15,
+      released: false,
+      view: 5
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 6,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 15,
+      released: false,
+      view: 6
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 7,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 16,
+      released: false,
+      view: 6
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 8,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 17,
+      released: false,
+      view: 6
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 8,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 17,
+      released: false,
+      view: 6
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 9,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 18,
+      released: false,
+      view: 6
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 9,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 18,
+      released: false,
+      view: 7
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 9,
+      dom: 14,
+      epoch: 3,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 18,
+      released: false,
+      view: 7
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 9,
+      dom: 14,
+      epoch: 4,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 18,
+      released: false,
+      view: 7
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      age: 501,
+      available: false,
+      book: 9,
+      dom: 14,
+      epoch: 4,
+      forwards: 0,
+      lease: 2,
+      pending: false,
+      pressed: false,
+      proofEpoch: 0,
+      proofLease: 0,
+      proofPub: 0,
+      proofView: 0,
+      pub: 18,
+      released: false,
+      view: 7
+    }
+}
+
+[ok] No violation found (952ms at 1050 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13756 --backend=typescript to reproduce.
