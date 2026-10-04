@@ -1,0 +1,1 @@
+Read only final229 after hold; bind exact470/plugin471/AQ155 and unchanged225 observer; preserve224/228 evidence. Review allP01-P10, zero asserts and Q1 nonzero worldPoint R+(local−G) binding R.size==G.size. No GUI, no capability inference, no general transforms or acceptance transfer.

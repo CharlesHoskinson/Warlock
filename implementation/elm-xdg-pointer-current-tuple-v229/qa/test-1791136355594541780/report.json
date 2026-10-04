@@ -1,0 +1,102 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "completePair",
+      "passed": true
+    },
+    {
+      "name": "motionDoesNotHideButton",
+      "passed": true
+    },
+    {
+      "name": "extraOtherButton",
+      "passed": true
+    },
+    {
+      "name": "foreignButton",
+      "passed": true
+    },
+    {
+      "name": "duplicate",
+      "passed": true
+    },
+    {
+      "name": "missing",
+      "passed": true
+    },
+    {
+      "name": "reordered",
+      "passed": true
+    },
+    {
+      "name": "wrongLocal",
+      "passed": true
+    },
+    {
+      "name": "ownership",
+      "passed": true
+    },
+    {
+      "name": "prebaselineIgnored",
+      "passed": true
+    },
+    {
+      "name": "cursorIndependentExact",
+      "passed": true
+    },
+    {
+      "name": "cursorReject{'x': 84, 'y': 61}",
+      "passed": true
+    },
+    {
+      "name": "cursorReject{'x': True, 'y': 61}",
+      "passed": true
+    },
+    {
+      "name": "cursorReject{'x': nan, 'y': 61}",
+      "passed": true
+    },
+    {
+      "name": "cursorReject{'x': 83, 'y': 61, 'recipient': 19}",
+      "passed": true
+    },
+    {
+      "name": "expiredOriginalDeadline",
+      "passed": true
+    },
+    {
+      "name": "remainingOriginalDeadline",
+      "passed": true
+    },
+    {
+      "name": "actualSyntax:native.py",
+      "passed": true
+    },
+    {
+      "name": "actualSyntax:pixels.py",
+      "passed": true
+    },
+    {
+      "name": "actualSyntax:pointer.py",
+      "passed": true
+    },
+    {
+      "name": "EveryOriginalAssertPreserved",
+      "passed": true
+    },
+    {
+      "name": "ActualAQNormalizesSurfaceLocal",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/test.py": "62e29d9b89a8cf737e5af25786b5f401f3414ff70f6f08e300fb209e14077acb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/native.py": "2ea78dce84f12cc4e877438180edfed904aec8990e5114dfb327879579a39961",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/pointer.py": "f7b85cb51c5ef0600f5ca01d69c596cf6188dc170873fb850c2f7ff49dc25426",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/pixels.py": "47486cf947914216a59b284de4f5187c2bda62b1c4fab45f8bf4a60458cd7ae4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/original/native.py": "67b9ecc5f9b0a625d96a312eb28676bf914ae99ab3494f863a6d7f31c916c31b"
+  },
+  "nativeLaunched": false,
+  "scope": "Actual helper boundary/syntax and preservation checks; no input delivery or pixel claim"
+}
