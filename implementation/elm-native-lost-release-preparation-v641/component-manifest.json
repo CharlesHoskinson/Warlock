@@ -1,0 +1,311 @@
+{
+  "checks": 25,
+  "component": "elm-native-lost-release-preparation-v641",
+  "copiedFixtureInputs": {
+    "fixture-adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    "fixture-adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    "fixture-adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    "fixture-adapter/daemon.py": {
+      "sha256": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+      "size": 10016
+    },
+    "fixture-adapter/delivery_ledger.py": {
+      "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+      "size": 7783
+    },
+    "fixture-adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    "fixture-adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "fixture-adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "fixture-adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    "fixture-adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    "fixture-adapter/grant_endpoint.py": {
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "size": 4610
+    },
+    "fixture-adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    "fixture-adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    "fixture-adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643
+    },
+    "fixture-adapter/retirement_ledger.py": {
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "size": 18804
+    },
+    "fixture-adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    "fixture-adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    "fixture-native/admission-test.c": {
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    "fixture-native/host-journal.h": {
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    "fixture-native/surface.h": {
+      "sha256": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+      "size": 5561
+    },
+    "fixture.py": {
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    "qa/inspection.py": {
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    }
+  },
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "f96bbaddfdc235301024b22a7f589ea1968aca6fafd9fdad23ad46bc3f251102",
+      "size": 1579
+    },
+    "SPEC.md": {
+      "sha256": "2af389b76357d58d5d158c82f8f12e720f743ad2c9bd6f33fbf5e07706c94d78",
+      "size": 3390
+    },
+    "fixture-adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    "fixture-adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    "fixture-adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    "fixture-adapter/daemon.py": {
+      "sha256": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+      "size": 10016
+    },
+    "fixture-adapter/delivery_ledger.py": {
+      "sha256": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4",
+      "size": 7783
+    },
+    "fixture-adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    "fixture-adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    "fixture-adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    "fixture-adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    "fixture-adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    "fixture-adapter/grant_endpoint.py": {
+      "sha256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "size": 4610
+    },
+    "fixture-adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    "fixture-adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    "fixture-adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643
+    },
+    "fixture-adapter/retirement_ledger.py": {
+      "sha256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "size": 18804
+    },
+    "fixture-adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    "fixture-adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    "fixture-native/admission-test.c": {
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    "fixture-native/host-journal.h": {
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    "fixture-native/surface.h": {
+      "sha256": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+      "size": 5561
+    },
+    "fixture.py": {
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    "qa/controls-1791153465947021714/admission-test": {
+      "sha256": "f19ab08cf36cb66ecc6cf1e69f925c6f0a9a7231c772ba14b179d8757818ad1e",
+      "size": 33536
+    },
+    "qa/controls-1791153465947021714/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/controls-1791153465947021714/marker-fsync/lost-release.json": {
+      "sha256": "b1191e27aa7fe7d71f1e0080f76da5cd40682a19b7a0f7a4a14367dae3cbe815",
+      "size": 2252
+    },
+    "qa/controls-1791153465947021714/marker-write-zero/lost-release.json": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/controls-1791153465947021714/public-marker/lost-release.json": {
+      "sha256": "b1191e27aa7fe7d71f1e0080f76da5cd40682a19b7a0f7a4a14367dae3cbe815",
+      "size": 2252
+    },
+    "qa/controls-1791153465947021714/report.json": {
+      "sha256": "090c68552c2354eb059f3adf3dda63f730c4f07f6e3476fc3f0d80c590423bd3",
+      "size": 3207
+    },
+    "qa/controls-1791153465947021714/runtime/config.json": {
+      "sha256": "ce4b371ba69f38af4a882571f30b23e7f1e84dda3cd6830da67b23f79897c0ae",
+      "size": 166
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/host-owner.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/ledger-v5.initialized": {
+      "sha256": "c8a436e9bde2f64e4ae3a2f97329609b84f7a7e2de45b2616bb976ac755d15dc",
+      "size": 66
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/ledger-v5.json": {
+      "sha256": "169efee713d66ae02244212e3c2f1e5b659f22abbf02355598c18aa72d1c374f",
+      "size": 195
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/ledger-v6.initialized": {
+      "sha256": "200939c8d653bc877595e17c6d2f3fb17f3083f2869b9304b6ce76ce68ce30ae",
+      "size": 67
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/ledger-v6.json": {
+      "sha256": "510f0c86db8353823d05782edbdbd2a5842b717f64052618fc54033ab0f82830",
+      "size": 1258
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/migration-plan.json": {
+      "sha256": "babd6c3850fd06813995a91a4a7ce4dc1c86f6212fb768f708bffbc208891521",
+      "size": 172
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/migration.json": {
+      "sha256": "bc3159780d1d73d720c4709ba0d7e04dcf3c1ebc66b6732c2daf06adaed2f175",
+      "size": 153
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/release-deliveries-v1.initialized": {
+      "sha256": "10900cdf7fd4f7059e7b1e5e9af7f1720779c7e8f46ebc0badceab17c4f65ba6",
+      "size": 68
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/release-deliveries-v1.json": {
+      "sha256": "aef09f49f8404930ac581b97458e946be73d5f919a4f387565ff2306a08a58ff",
+      "size": 962
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/Test/19/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/host-writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/controls-1791153465947021714/runtime/elm-window-recovery/writer.lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/controls-1791153465947021714/single/lost-release.json": {
+      "sha256": "b1191e27aa7fe7d71f1e0080f76da5cd40682a19b7a0f7a4a14367dae3cbe815",
+      "size": 2252
+    },
+    "qa/controls-1791153465947021714/synthetic-daemon.py": {
+      "sha256": "0a4551c386250c6449eb92d1e1640662959edb7f041f15da28f46b5564e491dd",
+      "size": 59
+    },
+    "qa/controls-1791153465947021714/wrong-campaign/lost-release.json": {
+      "sha256": "411592c1d4e4d5c4f4006b9450968dfda1dc02ca60b603cd07a894bcb5522a8e",
+      "size": 2252
+    },
+    "qa/controls.py": {
+      "sha256": "8220941d8e46b01a5ee05596dd5c830ad4023041b3f114659e761f31223edb58",
+      "size": 6924
+    },
+    "qa/fault_backend.py": {
+      "sha256": "50481b3a9f59e16dba275f9ddeca5ae4ae192bd851b642c170e7f8e5ea948b9c",
+      "size": 7147
+    },
+    "qa/freeze.py": {
+      "sha256": "3b0ac4c138779ea87e0054597ad4c18106701fd37215d8f890a24e9565854729",
+      "size": 1944
+    },
+    "qa/inspection.py": {
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    "qa/preflight.py": {
+      "sha256": "fb5619be3799227fa5ac78dd490b5cb6cbaac0ca46dbf05579790e210164ceb8",
+      "size": 3722
+    },
+    "qa/runner.py": {
+      "sha256": "c8ee4c551d03f1138b1d410a0e22f382f3162a7a3ae6493055d6bc1c07d826d4",
+      "size": 11897
+    }
+  },
+  "intentionalUnsafeFixtureSymlinks": {
+    "qa/controls-1791153465947021714/symlink-marker/lost-release.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-lost-release-preparation-v641/qa/controls-1791153465947021714/single/lost-release.json"
+  },
+  "nativeLaunched": false,
+  "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-lost-release-preparation-v641/qa/controls-1791153465947021714/report.json",
+  "schema": 1,
+  "targetPreflightPending": true
+}
