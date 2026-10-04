@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual reload scheduling/render/consume fragments with typed event-loop singleton mocks; monitor body excluded",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/candidate/src/config/shared/monitor/MonitorRuleManager.cpp": "80f6eb39572c718913c89b776c6f732371d220755f67f36d89be4ddf4f9a926a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/template.cpp": "0a7d1f1998a3cb614e42554ac5bd3887ad96418540bdf4c976b1aa70628ccca5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/test.py": "36580d1e298544395036a290c499a3f532ea1ed68884ce272eb5a6efe9bb84ba"
+  },
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/test-1791101066587506241/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/test-1791101066587506241/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/test-1791101066587506241/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/test-1791101066587506241/unsafe.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/test-1791101066587506241/unsafe"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-monitor-reload-v47/qa/test-1791101066587506241/unsafe"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "checks": 14,
+  "lateClearMutationRejected": true,
+  "artifacts": {
+    "test.cpp": "270cbc9c136c73aca261aab50e090f9f15621af49c4506897a810cd3ef6508a0",
+    "test": "e09a02a416810d978e6bf584278b62c316f390530a8a11fa1fff89eaa12e850b",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test.stdout": "5ab3331659b15aa5baafba40b0c79e1f4e7b21b4e81766e4687e2a6956f21281",
+    "test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe.cpp": "6a2c89aa3f4e4162ea8a721f697b70489d917fd5ada869879de704f840433995",
+    "unsafe": "c403b8e56e15275ae394fb850d0e62bd359fe0b16b546cf037c3a9d35e0dc21f",
+    "mutation-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutation-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutation-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutation-rejected.stderr": "deb898f47931f809db85546f8246a48b7ee9214d751ce44d174e233b663d0ab0"
+  }
+}

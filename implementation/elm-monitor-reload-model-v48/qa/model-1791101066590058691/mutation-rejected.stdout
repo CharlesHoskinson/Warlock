@@ -1,0 +1,16 @@
+
+  reload
+    1) reentrantRequestSurvivesTest failed after 1 test(s)
+
+  1 failed
+
+  1) reentrantRequestSurvivesTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-monitor-reload-model-v48/qa/model-1791101066590058691/clear-late.qnt:23:106
+        23:   run reentrantRequestSurvivesTest = init.then(request).then(idle).then(request).then(complete).then(all{assert(s.pending and s.queued==1 and s.applied==1),s'=s}).then(idle).then(complete).then(all{assert(s.applied==2 and not(s.pending)),s'=s})
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xbb83 --match=reentrantRequestSurvivesTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 clear-late.qnt

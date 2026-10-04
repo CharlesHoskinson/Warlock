@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "715fac3af29e42bea1a7fa7dad49958d",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T08:02:40.191274+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-core-monitor-reload-v47",
+  "nextWork": [
+    "Owning monitor rule manager only dispatches deferred updates from render.preChecks, which a fully occluded nested parent can withhold. Add coalesced event-loop dispatch, consume pending before callbacks, preserve reentrant requests and render fallback. Model/actual fragment CPU proof, exact archive rebuild preserving V31 pointer fixes, unchanged authority rebuild, original full parent cover scale/reentry native oracle without deadline widening."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-core-monitor-reload-v47/candidate/src/config/shared/monitor/MonitorRuleManager.cpp",
+      "sha256": "80f6eb39572c718913c89b776c6f732371d220755f67f36d89be4ddf4f9a926a",
+      "size": 11548
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

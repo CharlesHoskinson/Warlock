@@ -1,0 +1,99 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Bounded serialized reload dispatch abstraction; no actual monitor application proof",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "reload.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "reload.qnt",
+        "--backend=typescript",
+        "--match=^(coalescedRequestsTest|noParentFrameNeededTest|renderWinsNoDuplicateTest|reentrantRequestSurvivesTest|renderReentrancySurvivesTest|stoppedTaskCannotApplyTest)$",
+        "--max-samples=1",
+        "--seed=48001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "reload.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=48002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "clear-late.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "clear-late.qnt",
+        "--backend=typescript",
+        "--match=^reentrantRequestSurvivesTest$",
+        "--max-samples=1",
+        "--seed=48003"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "coalescedRequestsTest",
+    "noParentFrameNeededTest",
+    "renderWinsNoDuplicateTest",
+    "reentrantRequestSurvivesTest",
+    "renderReentrancySurvivesTest",
+    "stoppedTaskCannotApplyTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "lateClearMutationRejected": true,
+  "sourceSHA256": "e2b5884600cb7d8fead54347bc5ac2154ca85861cf8755eb856f9d286c7163c9",
+  "artifacts": {
+    "reload.qnt": "e2b5884600cb7d8fead54347bc5ac2154ca85861cf8755eb856f9d286c7163c9",
+    "model.py": "a91b4aeb4b0b92433617ae95f26d0cc34b93f919d3922e43a128ca3a76415bab",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-coalescedRequestsTest-0.itf.json": "b8801ad0a9b5d3ee0a6a8b57ae570776f358bd7a32ef39509cc497682aeccc9b",
+    "named-noParentFrameNeededTest-1.itf.json": "68ea8b08d0ff213d38d94dc6952af2abaef91b27659324be09763a5fc356f3ab",
+    "named-renderWinsNoDuplicateTest-2.itf.json": "96391bcd7ef1f9bef8d05118bb79567becdcef269f2383f3fb2e6a6fecca64ba",
+    "named-reentrantRequestSurvivesTest-3.itf.json": "72b4aab383a93b5d35c9b6a7cf5aa2c604e5823a1e4735909bbd0b95e6d315d9",
+    "named-renderReentrancySurvivesTest-4.itf.json": "991636321ff30da8d41feb3cf613f827e291617ab6d1d420e722b2a059df5dfe",
+    "named-stoppedTaskCannotApplyTest-5.itf.json": "5588289574fc6cd27793ed63c35d1952490c4b630bb24c30c765d663d1015ca2",
+    "named.stdout": "a90d6baea02b4f47cfae914ad005e4393bd7135f26873c876fd21b0dd17788e7",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "6b01b4387f98ee0f8c671687b672494c1433202ee924314838c7d5d8e43d7d05",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "clear-late.qnt": "c8a3b34b7368a760cd8b0a9414a33da1005476cd8a05acc65041d7dbf5a60880",
+    "mutation-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutation-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutation-rejected.stdout": "4b98a4d986fd6fdab5312f747996ebc71187465a4f8948f17a14f3d6b2b7d642",
+    "mutation-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}
