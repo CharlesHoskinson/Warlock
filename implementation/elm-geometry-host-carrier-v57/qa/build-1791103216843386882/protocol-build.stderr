@@ -1,0 +1,5 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/build-1791103216843386882/mutant-protocol/geometry-carrier-test.c:2:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/build-1791103216843386882/mutant-protocol/host.c: In function ‘request_kind’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/build-1791103216843386882/mutant-protocol/host.c:176:96: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+  176 |         if (json_node_get_value_type(protocol)!=G_TYPE_INT64 || json_node_get_int(protocol)!=1 && FALSE ||
+cc1: all warnings being treated as errors

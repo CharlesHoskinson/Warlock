@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "scope": "Isolated V8 native host observation carrier; no final integration/release or GUI acceptance",
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8",
+  "parentFiles": {
+    "native/host.c": "1a4fb6c8f847514abf38776ef8433068ba4357c162038dfbcfadf08701d8fd27",
+    "native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/context-state.h": "86f5b17ef3d8253f6b40b7be721b1f069851d7d181b0402733dc95ffe54f5e32",
+    "native/context-events.h": "ac6dc3eff335d441b40367db40f6f1813213fb468d8ef3f1ab12160a941212f4",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9"
+  },
+  "queueBound": 16,
+  "controlByteBound": 4096,
+  "nativeAcceptance": false
+}

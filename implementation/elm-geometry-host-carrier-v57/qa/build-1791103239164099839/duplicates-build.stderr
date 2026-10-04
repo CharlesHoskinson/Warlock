@@ -1,0 +1,5 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/build-1791103239164099839/mutant-duplicates/geometry-carrier-test.c:2:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/build-1791103239164099839/mutant-duplicates/host.c:128:17: error: ‘geometry_contains’ defined but not used [-Werror=unused-function]
+  128 | static gboolean geometry_contains(JsonNode *node) {
+      |                 ^~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors

@@ -1,0 +1,11 @@
+native/geometry-carrier-test.c: In function ‘main’:
+native/geometry-carrier-test.c:33:5: error: this ‘for’ clause does not guard... [-Werror=misleading-indentation]
+   33 |     for(guint i=2;i<16;i++) json_array_add_element(requests_array,json_node_copy(root));CHECK(surface_preflight(&gate,commit,0,0,TRUE,&result));CHECK(!surface_preflight(&gate,commit,0,1,TRUE,&result));
+      |     ^~~
+native/geometry-carrier-test.c:7:18: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘for’
+    7 | #define CHECK(x) do { checks++; if (!(x)) {g_printerr("failed %u: %s\n",checks,#x);return 1;} } while(0)
+      |                  ^~
+native/geometry-carrier-test.c:33:89: note: in expansion of macro ‘CHECK’
+   33 |     for(guint i=2;i<16;i++) json_array_add_element(requests_array,json_node_copy(root));CHECK(surface_preflight(&gate,commit,0,0,TRUE,&result));CHECK(!surface_preflight(&gate,commit,0,1,TRUE,&result));
+      |                                                                                         ^~~~~
+cc1: all warnings being treated as errors
