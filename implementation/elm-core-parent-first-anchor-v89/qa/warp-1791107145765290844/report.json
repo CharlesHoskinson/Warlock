@@ -1,0 +1,38 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual new parent warp helper and prior listener body, real Hyprutils weak/shared pointers with typed normal InputManager floor-dedup/policy fixture; native transport separate",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer/PointerManager.cpp": "109a5e8315233cb07ccb4ca773262d0011e854052c03e4ceb977a0faeb3c17e0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/candidate/src/pointer/PointerManager.cpp": "93f64fac640b7be73832db66e05417013c36d1d542550fedb8fbe8a124f86c25",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-template.cpp": "e4953816f1c69587a8d483230d88d56c93f9c5e321e64c1d7c6188544adbda05",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp.py": "a46b29f0c83d47462d577fa199057d4c5d8efeeb4f1000eeb93d1462d0de4a76",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer/ParentNormalizedPosition.hpp": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112"
+  },
+  "commands": [
+    {
+      "name": "original-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:31:5: error: \u2018ParentPolicy\u2019 does not name a type\\n   31 |     ParentPolicy::NormalizedPosition normalized;\\n      |     ^~~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp: In member function \u2018void ParentPointerPosition::clear()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:37:46: error: \u2018normalized\u2019 was not declared in this scope\\n   37 |     void clear() { device = {}; output = {}; normalized.clear(); appliedBox = {}; dispatching = false; surfaceHitTestPending = false; committedWindow = {}; }\\n      |                                              ^~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp: In function \u2018bool dispatchParentWarp(const Hyprutils::Memory::CWeakPointer<IPointer>&, const std::shared_ptr<ParentPointerPosition>&, const Aquamarine::IPointer::SWarpEvent&)\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:49:34: error: \u2018using std::__shared_ptr_access<ParentPointerPosition, __gnu_cxx::_S_atomic, false, false>::element_type = struct ParentPointerPosition\u2019 {aka \u2018struct ParentPointerPosition\u2019} has no member named \u2018normalized\u2019\\n   49 |                 !parentPosition->normalized.remember(event.absolute.x,event.absolute.y)) {\\n      |                                  ^~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp: In function \u2018int main()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:77:75: error: \u2018using std::__shared_ptr_access<ParentPointerPosition, __gnu_cxx::_S_atomic, false, false>::element_type = struct ParentPointerPosition\u2019 {aka \u2018struct ParentPointerPosition\u2019} has no member named \u2018normalized\u2019\\n   77 |  {Fixture f;check(!f.warp(NAN,.5),\"nonfinite refused\");check(!f.position->normalized.point&&input.refreshes==0,\"bad point clears anchor\");}\\n      |                                                                           ^~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:82:89: error: \u2018using std::__shared_ptr_access<ParentPointerPosition, __gnu_cxx::_S_atomic, false, false>::element_type = struct ParentPointerPosition\u2019 {aka \u2018struct ParentPointerPosition\u2019} has no member named \u2018normalized\u2019\\n   82 |  {Fixture f;input.refreshCallback=[&]{f.position->clear();};f.warp();check(!f.position->normalized.point&&!f.position->dispatching,\"reentrant retirement not resurrected\");}\\n      |                                                                                         ^~~~~~~~~~\\n')",
+  "artifacts": {
+    "original.cpp": "13f7f78adf5a764428fe30bf4127ae7976fa5eca883026bd6949d5d6fbee79c5",
+    "original-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-compile.stderr": "6604f01a4c977f0d0c8456a67fda5aaec6a23af23881a23f4af59c7ea8ec831e"
+  }
+}

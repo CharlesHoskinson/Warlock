@@ -1,0 +1,10 @@
+{
+  "scope": "First acceptance freezer rejects absent actual named coverage; frozen prior source/model report unchanged",
+  "runnerSHA256": "9f1c0cc3401893a9eb03f4ef07ced616c00e6b342ab1bf04a8cea9c4c0df6ec4",
+  "priorModelReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/model-1791107173328506746/report.json",
+  "priorModelReportSHA256": "ff700cf60b0f4fb1504005ef3281c063c0a0b4d9629868054fbdbc3e6ebfd9ec",
+  "namedCasesActuallyExecuted": 0,
+  "expected": 10,
+  "cause": "Run declaration name extractor required a literal space before =; model declarations omit that space, producing ^()$ selector. Invariant1000 and six explicitly selected mutations did run.",
+  "freshProof": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-model-v97"
+}

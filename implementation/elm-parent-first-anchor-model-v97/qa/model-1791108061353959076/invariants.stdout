@@ -1,0 +1,827 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 1,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: true,
+      next: 1,
+      output: 1,
+      point: 0,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 2,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: true,
+      next: 2,
+      output: 1,
+      point: 0,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 2,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 2,
+      output: 1,
+      point: 0,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 2,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 2,
+      output: 1,
+      point: 0,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 2,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 2,
+      output: 1,
+      point: 0,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 3,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 0,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 3,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 0,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 3,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 1,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 1,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 0,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 1,
+      ready: true,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 0,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 3,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 4,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 4,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 4,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 4,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 4,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 4,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      allowFocus: true,
+      device: 4,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 4,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 4,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 4,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 5,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 5,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 1,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 2,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 3,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 3,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 3,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 5,
+      output: 1,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 6,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 1,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 6,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 6,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 6,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 6,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 6,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 6,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 0,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 6,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 7,
+      focus: 0,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 7,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 7,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 7,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 7,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 7,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      allowFocus: false,
+      device: 7,
+      focus: 2,
+      lastDevice: 0,
+      lastOutput: 0,
+      lastPoint: 0,
+      live: false,
+      next: 7,
+      output: 2,
+      point: 4,
+      ready: false,
+      refreshes: 0,
+      violations: 0
+    }
+}
+
+[ok] No violation found (931ms at 1074 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1349a --backend=typescript to reproduce.

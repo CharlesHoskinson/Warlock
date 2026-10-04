@@ -1,0 +1,195 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual deferred hit-test helper with typed weak ownership, event-loop, monitor/query and InputManager mocks; native routing excluded",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer/PointerManager.cpp": "109a5e8315233cb07ccb4ca773262d0011e854052c03e4ceb977a0faeb3c17e0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/template2.cpp": "8c2c10c0c358f9e90619cc7c5e07d39ab580ecb7847636d54005eec35c715882",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test3.py": "8b5fdef2bfdc183bea679d230947d4c19141c8cde8d1d84e5008433279bdef99",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/desktop/view/Window.cpp": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer/ParentPointerFocus.hpp": "6dac8387e71b0b8bb8c002e30f770c82718791319cf5be0aff637b8e3ffceaf2"
+  },
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/superseding.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/superseding"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/superseding"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/ownership.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/ownership"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/ownership"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/readiness.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/readiness"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/readiness"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/geometry.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/geometry"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/geometry"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/ordinary-commit.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/ordinary-commit"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/test-1791107173327125155/ordinary-commit"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "checks": 29,
+  "mutantsRejected": 5,
+  "callerSchedulesAfterLayoutBookkeeping": true,
+  "artifacts": {
+    "test.py": "8b5fdef2bfdc183bea679d230947d4c19141c8cde8d1d84e5008433279bdef99",
+    "extracted-helper.cpp": "7641c32cf95d0f870d18a56f5ffda62f4d9245d7ab8408bb606e8d156a08e3f4",
+    "test.cpp": "70b17b0c9f53080347723d360a38b2a2912c1e0cfaabc613a3ac31e6d1c83c07",
+    "test": "131281145e3da8092560e97c1a504a5765874efd058eec3b66e3be484bb174e1",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test.stdout": "db6b3826f8d08ba5bb3f7d361262bb3034c1aeda333eaa1b291bc2bcb21d5b2c",
+    "test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseding.cpp": "addc45b34ab8ef71405435ea1866ed10d15363254ecfecf181a1ed6f25a9fd47",
+    "superseding": "d5596cac498fba3510e5d8b1f32dd84eeba387620d1dc917d1b0f1bff03e61e6",
+    "superseding-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseding-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseding-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseding-rejected.stderr": "c404b4048910d1bd72165bf143ceedd697b0b90b2a1d7e87cacefbd1c0610072",
+    "ownership.cpp": "e1bb4e7dcaea416457a2f402a4e11b157b38c59d9a78eaef780aa9b0137a55dd",
+    "ownership": "5f3310389d51604caa2ed86a2e6cc5ee4771923ed6047a0d2a463fe6a7153b34",
+    "ownership-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ownership-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ownership-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ownership-rejected.stderr": "66badc9e4c583ebc1d2bb2d3d1fbc56b037fc6157989b06c92775de3efedcb7d",
+    "readiness.cpp": "f97acd87722e8d2554ad20e5b1f6282ba3f2c483a37f648cb771b3c344ce6cf2",
+    "readiness": "790591f590f8880189cb1f98b7266323f37baa9baa09dfc701128e425d332743",
+    "readiness-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "readiness-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "readiness-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "readiness-rejected.stderr": "a97ba1e35d6cbef881e75356999223604d15b7f540d1ee93d3d4cfc1b118c13f",
+    "geometry.cpp": "988ef0d5605153d461aaea589e142f9ea759270d3628442bcdf3b2f744ff2f16",
+    "geometry": "90807865499f835784d9bf5bc7d40248d57bc0bea02183bdbc08712fe73c1798",
+    "geometry-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-rejected.stderr": "00cccb6b0b6907133c748f73281537d20f8eba9607c4e73a4ea7f2b6f073893d",
+    "ordinary-commit.cpp": "c74138679a046c0f9407bdd09b61383478bfb23e2dd8b7187b00ed8138054702",
+    "ordinary-commit": "03abc05543d7da9b2afa15c792cc5ade45773c40c5bab64e72ca1a9b8c0b7c86",
+    "ordinary-commit-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-commit-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-commit-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-commit-rejected.stderr": "5529e148e68b5e60b078f0f6a24688e1e16d2d6622ef961a30921a33fcd77add"
+  }
+}

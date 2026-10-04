@@ -1,0 +1,16 @@
+
+  anchor
+    1) ordinaryWarpPreservesProgramFocusTest failed after 1 test(s)
+
+  1 failed
+
+  1) ordinaryWarpPreservesProgramFocusTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-model-v97/qa/model-1791108061353959076/ordinary-focus.qnt:27:99
+        27:  run ordinaryWarpPreservesProgramFocusTest=init.then(warp).then(programFocus).then(warp).then(all{assert(s.focus==2 and s.refreshes==1),s'=s})
+                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=ordinaryWarpPreservesProgramFocusTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ordinary-focus.qnt

@@ -1,0 +1,243 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual new parent warp helper and prior listener body, real Hyprutils weak/shared pointers with typed normal InputManager floor-dedup/policy fixture; native transport separate",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer/PointerManager.cpp": "109a5e8315233cb07ccb4ca773262d0011e854052c03e4ceb977a0faeb3c17e0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/candidate/src/pointer/PointerManager.cpp": "93f64fac640b7be73832db66e05417013c36d1d542550fedb8fbe8a124f86c25",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-template2.cpp": "4293112514ddedf8d7c3626a7b8ee9aed0a20f9a855a4e5393e7a83b453b2235",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp2.py": "b9cfc1c6c8e60443e48869a17216c41dc6591533ede883b290ed3a9673e0d350",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer/ParentNormalizedPosition.hpp": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112"
+  },
+  "commands": [
+    {
+      "name": "original-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/original.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/original"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "original-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/original"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/candidate.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-refresh-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/missing-refresh.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/missing-refresh"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-refresh-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/missing-refresh"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "ordinary-focus-steal-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/ordinary-focus-steal.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/ordinary-focus-steal"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "ordinary-focus-steal-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/ordinary-focus-steal"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "output-identity-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/output-identity.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/output-identity"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "output-identity-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/output-identity"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "inactive-parent-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/inactive-parent.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/inactive-parent"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "inactive-parent-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/inactive-parent"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "shutdown-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/candidate/src/pointer",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/shutdown.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/shutdown"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "shutdown-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107173327274874/shutdown"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "checks": 24,
+  "mutantsRejected": 5,
+  "originalStationaryFailureReproduced": true,
+  "artifacts": {
+    "original.cpp": "67f84f02283986bcb3b6a457687c5b95b8f518aad87f96fdd8c66be13197846a",
+    "original": "8275743ce8685e41e92c6606a0eac3722f4cc0a4afc4b265a5f04de76d176041",
+    "original-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stderr": "3eb9f00b7af5266da96d755811595438c58c7d2d7b183a088e4ce601863a175e",
+    "candidate.cpp": "4c505416e96716b74ac09666f19ef734b463757cbe2747b236ffede0849f0638",
+    "candidate": "ddf6190f355cc8bb55c75b1ddc3ca184c35a069bd6f84fecd199b254352290c0",
+    "candidate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-run.stdout": "70ac142b513797a5923fb6c355ff3fcefc28edd34d14b3731a6154a87fbccf84",
+    "candidate-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-refresh.cpp": "ce1cc7342c2431db816a8d83dbd9c6805088009b3f9118340823e64689c99ba1",
+    "missing-refresh": "33cfbe68135e78fcd4cf2330ae297ad25c0c54c819152c7b27001ee8ed918eee",
+    "missing-refresh-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-refresh-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-refresh-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-refresh-run.stderr": "3eb9f00b7af5266da96d755811595438c58c7d2d7b183a088e4ce601863a175e",
+    "ordinary-focus-steal.cpp": "78d7cdfa86f03e90608153e2e2ace94cc8acd5240150ab59cca38a11d4e73c31",
+    "ordinary-focus-steal": "396f30437f13345de98ab59ae3553b216b5cfed7f87138d124aac7c1f2757fd8",
+    "ordinary-focus-steal-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-focus-steal-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-focus-steal-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-focus-steal-run.stderr": "69813d66ed77ec1c6ba52312be3d178715da52a25442fdbddb7a74af9fa26432",
+    "output-identity.cpp": "85c3d9e13f77ba92aa3bf838913355a111e5971b311dfd44b4c54e24aee32765",
+    "output-identity": "cec0b32b0a27a1fc4764d3a1f43c46839020b792c0bc64a383616bee31f6afb4",
+    "output-identity-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-identity-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-identity-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-identity-run.stderr": "78cc1aecd17f3600882ea0519d92fadb9cc8f2db7890291a0b986fdac2650bad",
+    "inactive-parent.cpp": "7b61e5bb3fa5844f66dcc2f2bdab9bec6adba811b05ec09a70744fb054f8ba4a",
+    "inactive-parent": "05328f4c0a03635b133027bfffc1a7b624c24414ffb41ba9d123dc36f68fc0ab",
+    "inactive-parent-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inactive-parent-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inactive-parent-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inactive-parent-run.stderr": "929581e350b249e0e26f3e47a9b7292d8f76a8acdfaf7da34918e558d50daed5",
+    "shutdown.cpp": "9f57b75282233574319bf3ebe5a0f5aea49635cb0d183b54a209641a72b43665",
+    "shutdown": "c51ae8f8ec662bab4fa489f410681fc8f991a7a1453b699a8d621a3d20aef467",
+    "shutdown-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-run.stderr": "42c33b32a631de780c1105e90345aae8ebff5db3d6cfdee11c2658ba4670f3f4"
+  }
+}

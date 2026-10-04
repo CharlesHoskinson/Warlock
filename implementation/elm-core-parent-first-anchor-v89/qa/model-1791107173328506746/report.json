@@ -1,0 +1,236 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Bounded first-anchor/floor-dedup/normal-policy abstraction; native transport separate",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "anchor.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "anchor.qnt",
+        "--backend=typescript",
+        "--match=^()$",
+        "--max-samples=1",
+        "--seed=79001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "anchor.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-refresh-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-refresh.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-refresh-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-refresh.qnt",
+        "--backend=typescript",
+        "--match=^firstStationaryAnchorTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "ordinary-focus-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "ordinary-focus.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "ordinary-focus-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "ordinary-focus.qnt",
+        "--backend=typescript",
+        "--match=^ordinaryWarpPreservesProgramFocusTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "output-identity-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "output-identity.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "output-identity-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "output-identity.qnt",
+        "--backend=typescript",
+        "--match=^outputStationaryAnchorTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "readiness-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "readiness.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "readiness-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "readiness.qnt",
+        "--backend=typescript",
+        "--match=^inactiveParentRefusedTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "shutdown-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "shutdown.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "shutdown-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "shutdown.qnt",
+        "--backend=typescript",
+        "--match=^shutdownRefusedTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "normal-policy-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "normal-policy.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "normal-policy-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "normal-policy.qnt",
+        "--backend=typescript",
+        "--match=^normalGrabPolicyTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 6,
+  "sourceSHA256": "6b65385d4d2d4aa9e2a5061925e29cb1ac3f4c9923b08384886520492f700cd1",
+  "artifacts": {
+    "anchor.qnt": "6b65385d4d2d4aa9e2a5061925e29cb1ac3f4c9923b08384886520492f700cd1",
+    "model.py": "1b2fb9194ee6e65ecbde31c7214f2f9fe691ecc1cb7b2dad6c87a18a6f54f537",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named.stdout": "de299aea3d1bcfab8843457195d6cd13a96c9ea895085e1cc63c969765a9a8c5",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "0e90601629e05fdd6fc375f987c57e2c7f70b7e063d1d9fd07bba03361a56d93",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-refresh.qnt": "8debd140a8833b7c9a37de54f0ddb397904df09c1e44a95916815f753b3285f4",
+    "missing-refresh-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-refresh-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-refresh-rejected.stdout": "af67e735442859b3b583cd75984075cab619b68e0a3eb9ed215adcd3d2fb58a5",
+    "missing-refresh-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "ordinary-focus.qnt": "9ab6276944c7e3e9a3ae0f1e1bf23526cae83a1cda543035dd5cd45978a27586",
+    "ordinary-focus-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-focus-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ordinary-focus-rejected.stdout": "af788ed3c5ba0e45b2bed3136038890f3e4505bc0d2ee7b9fe8fd947a0fb94fb",
+    "ordinary-focus-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "output-identity.qnt": "4325df3c81cc7b1d2b85bf3cde901c86a26a7ffb2c03389eb3198e6eaa632430",
+    "output-identity-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-identity-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-identity-rejected.stdout": "273c0da154febaeb1a0295d0bea1d94b66565460f5b99e62708828d56999bac3",
+    "output-identity-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "readiness.qnt": "36e88393fa394f5615128f687b7c4b4f5286ea408b5630694587ac3da1fc91fd",
+    "readiness-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "readiness-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "readiness-rejected.stdout": "f253cb22d2ac8846e7902f34bc2de202a0f3cfc5bdcfbe481c4a7b95d0580690",
+    "readiness-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "shutdown.qnt": "007a1d0d61b6a75fcfd5db48b3972f2d45e3544513bf88e7433f946757098f72",
+    "shutdown-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "shutdown-rejected.stdout": "8f55c575d7e85a42b67570e957a8b3f86755097258b1978158bbd85821b5d5e6",
+    "shutdown-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "normal-policy.qnt": "1d5af82eb4c60a128412a3b9d531a83edb80963d8ef2ac3eaa300e5ca1d0ca5a",
+    "normal-policy-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normal-policy-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "normal-policy-rejected.stdout": "2b4d0d73a854149f432ca230a74cbe82ee645bb732a82d0cc6ebfda83928e29e",
+    "normal-policy-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

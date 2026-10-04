@@ -1,0 +1,18 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:31:5: error: ‘ParentPolicy’ does not name a type
+   31 |     ParentPolicy::NormalizedPosition normalized;
+      |     ^~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp: In member function ‘void ParentPointerPosition::clear()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:37:46: error: ‘normalized’ was not declared in this scope
+   37 |     void clear() { device = {}; output = {}; normalized.clear(); appliedBox = {}; dispatching = false; surfaceHitTestPending = false; committedWindow = {}; }
+      |                                              ^~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp: In function ‘bool dispatchParentWarp(const Hyprutils::Memory::CWeakPointer<IPointer>&, const std::shared_ptr<ParentPointerPosition>&, const Aquamarine::IPointer::SWarpEvent&)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:49:34: error: ‘using std::__shared_ptr_access<ParentPointerPosition, __gnu_cxx::_S_atomic, false, false>::element_type = struct ParentPointerPosition’ {aka ‘struct ParentPointerPosition’} has no member named ‘normalized’
+   49 |                 !parentPosition->normalized.remember(event.absolute.x,event.absolute.y)) {
+      |                                  ^~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:77:75: error: ‘using std::__shared_ptr_access<ParentPointerPosition, __gnu_cxx::_S_atomic, false, false>::element_type = struct ParentPointerPosition’ {aka ‘struct ParentPointerPosition’} has no member named ‘normalized’
+   77 |  {Fixture f;check(!f.warp(NAN,.5),"nonfinite refused");check(!f.position->normalized.point&&input.refreshes==0,"bad point clears anchor");}
+      |                                                                           ^~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/warp-1791107145765290844/original.cpp:82:89: error: ‘using std::__shared_ptr_access<ParentPointerPosition, __gnu_cxx::_S_atomic, false, false>::element_type = struct ParentPointerPosition’ {aka ‘struct ParentPointerPosition’} has no member named ‘normalized’
+   82 |  {Fixture f;input.refreshCallback=[&]{f.position->clear();};f.warp();check(!f.position->normalized.point&&!f.position->dispatching,"reentrant retirement not resurrected");}
+      |                                                                                         ^~~~~~~~~~

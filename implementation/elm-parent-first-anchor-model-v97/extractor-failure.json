@@ -1,0 +1,6 @@
+{
+  "runner": "qa/model.py",
+  "runnerSHA256": "f0f8587d676c49a9d66c872b12abb748ba9a2894d43a02d8c532d4e6f1323b35",
+  "cause": "Explicit len(names)==10 guard rejects single-space indentation before invoking Quint; fresh model2 accepts arbitrary indentation and spacing before =.",
+  "sourceSHA256": "6b65385d4d2d4aa9e2a5061925e29cb1ac3f4c9923b08384886520492f700cd1"
+}

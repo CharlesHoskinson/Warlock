@@ -1,0 +1,16 @@
+
+  anchor
+    1) shutdownRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) shutdownRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-model-v97/qa/model-1791108061353959076/shutdown.qnt:31:66
+        31:  run shutdownRefusedTest=init.then(shutdown).then(warp).then(all{assert(s.focus==0 and s.refreshes==0),s'=s})
+                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=shutdownRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 shutdown.qnt

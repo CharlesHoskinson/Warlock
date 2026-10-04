@@ -1,0 +1,16 @@
+
+  anchor
+    1) normalGrabPolicyTest failed after 1 test(s)
+
+  1 failed
+
+  1) normalGrabPolicyTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/model-1791107173328506746/normal-policy.qnt:32:82
+        32:  run normalGrabPolicyTest=init.then(programFocus).then(grab).then(warp).then(all{assert(s.focus==2 and s.refreshes==1),s'=s})
+                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=normalGrabPolicyTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 normal-policy.qnt

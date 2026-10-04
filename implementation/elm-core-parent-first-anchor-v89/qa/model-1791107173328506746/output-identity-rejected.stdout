@@ -1,0 +1,16 @@
+
+  anchor
+    1) outputStationaryAnchorTest failed after 1 test(s)
+
+  1 failed
+
+  1) outputStationaryAnchorTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/qa/model-1791107173328506746/output-identity.qnt:26:88
+        26:  run outputStationaryAnchorTest=init.then(warp).then(outputChange).then(warp).then(all{assert(s.focus==1 and s.refreshes==2),s'=s})
+                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=outputStationaryAnchorTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 output-identity.qnt
