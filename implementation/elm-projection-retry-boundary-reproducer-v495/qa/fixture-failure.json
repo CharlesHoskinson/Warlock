@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "scope": "Fixture changed independent geometry slot to maximum but expected59; actual typed exhaustion preserves maximum geometry slot",
+  "actual": {
+    "phase": "exhausted",
+    "model": {
+      "phase": "Exhausted",
+      "transportRefused": false,
+      "notificationQueued": true,
+      "request": "18446744073709551615",
+      "available": false,
+      "reconnecting": false,
+      "effects": {
+        "windows": null,
+        "connected": false,
+        "request": "0",
+        "generation": "0",
+        "transaction": null
+      },
+      "status": "Restart the shell to continue.",
+      "recoveryFailure": null
+    },
+    "expected": null,
+    "geometryExpected": "18446744073709551615",
+    "retry": true,
+    "effectsPreserved": true,
+    "commands": 0
+  },
+  "nativeAcceptance": false
+}

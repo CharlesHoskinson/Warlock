@@ -5183,6 +5183,35 @@
       "pointerHelperAuditSHA256": "6b9e59462da648078946b0a1aac9cda9b8bdbf146ef837df8ce55ed623e5518d",
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "nativeAcceptance": true,
+      "source": "implementation/elm-projection-retry-exhaustion-v498",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "typedCompiledCases": 14,
+      "quintNamedScenarios": 9,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 6,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-projection-retry-boundary-qualified-v502/qa/slice-manifest.json",
+      "manifestSHA256": "0b0f01cb2d60c228a8f51997279b56852df4ccb93e861ac5c64c18c787a053fc",
+      "summary": "496 actual compiledShell490 reproduces single-terminal UInt64-ceiling retry retention (494/495 fixture mistakes preserved).498 clears retry on exhaustion; 497 model cardinality failure preserved. OptimizedMainBarPopup/C build passes;49914typedcases cover ceiling/duplicates/deferred andtransport explicitresume/disconnect plus decoder fences. Quint9named/1000x40/6mutationcontrols.500 original89 native menu/keyboard/retirement pass on unchanged470/471/AQ155/observer477 with orderedcleanup.501 three resumed read-only UX experts prioritize exact baseline IDs and AT/IME/motion/hardware/budgets gaps. Frozen502663files5reports; no requirement or release completion.",
+      "nativeChecks": 89,
+      "uiUxReview": "implementation/elm-uiux-resumption-review-v501/REVIEW.md"
     }
   ]
 }

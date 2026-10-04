@@ -1,0 +1,1 @@
+Fresh compiled actual Shell490 boundary witness. Counter maximum is a synthetic typed state; this is not native acceptance. The expected defect is an exhausted shell retaining its retry flag. Frozen source490 is unchanged.

@@ -1,0 +1,704 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 58,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 59,
+      retry: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 58,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 59,
+      retry: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: true,
+      expected: 58,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 59,
+      retry: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 58,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 59,
+      retry: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: true,
+      expected: 58,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 59,
+      retry: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: true,
+      expected: 58,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 59,
+      retry: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: true,
+      expected: 58,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 59,
+      retry: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: true,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 59,
+      retry: true
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: true,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 59,
+      retry: true
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 59,
+      retry: true
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 59,
+      retry: true
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: false,
+      refused: false,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: true,
+      refused: false,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      active: true,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 59,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: true
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: false,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: false,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: false,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: false,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: false
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      active: false,
+      binding: 1,
+      deferred: false,
+      expected: 0,
+      geometry: 0,
+      issued: 0,
+      pending: true,
+      refused: true,
+      request: 60,
+      retry: false
+    }
+}
+
+[ok] No violation found (992ms at 1008 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13756 --backend=typescript to reproduce.

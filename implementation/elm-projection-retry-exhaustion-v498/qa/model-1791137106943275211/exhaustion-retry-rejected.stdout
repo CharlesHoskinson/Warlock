@@ -1,0 +1,16 @@
+
+  terminal
+    1) exhaustionRevokesTest failed after 1 test(s)
+
+  1 failed
+
+  1) exhaustionRevokesTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-retry-exhaustion-v498/qa/model-1791137106943275211/exhaustion-retry.qnt:28:93
+        28:  run exhaustionRevokesTest = init.then(ceiling).then(terminal(1,58)).then(drain).then(all { assert(not(s.active) and not(s.retry) and s.expected == 0 and s.geometry == 59 and s.issued == 0), s' = s })
+                                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=exhaustionRevokesTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 exhaustion-retry.qnt
