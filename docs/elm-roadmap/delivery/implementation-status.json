@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-shared-terminal-acceptance-v342",
-  "status": "Bounded native shared menu accepted: exact physical release fixes repeated Escape; standard Menu/Shift-F10/sole-enabled ArrowDown and actual minimize/restore each exactly once with committed receipts, unchanged workspace/monitor and disappearance/return pixels. Latest39 native checks on core89/plugin90/AQ105 pass normal cleanup; original input22 also pass on old/new tuples. Actual C68/key20/carrier34 and Quint9/1000x40 pass. Two QA failures frozen. Full release/requirements/sprints remain open.",
+  "activeSlice": "implementation/elm-shared-terminal-order-acceptance-v348",
+  "status": "Source344 qualifies both physical release/WebKit orderings: zero-dwell native39 and original50ms native39 pass on exact core89/plugin90/AQ105, including repeated Escape, menu/navigation, one committed minimize/restore and disappearance/return pixels. Actual C73/key20/carrier34 and Quint14/1000x40 pass. Fast predecessor failure frozen, all3 native cleanup pass. Full release/requirements/sprints remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1690,11 +1690,27 @@
       "maxSteps": 40,
       "boundedNativeAcceptance": true,
       "fullReleaseAccepted": false
+    },
+    "sharedTerminalOrderV348": {
+      "manifest": "implementation/elm-shared-terminal-order-acceptance-v348/qa/slice-manifest.json",
+      "manifestSHA256": "e3353e6f12bb24e60c3a65718dc32771879e004e849e65e3668fc35f3fbd54fd",
+      "source": "implementation/elm-shared-terminal-early-release-v344",
+      "fastNativeChecks": 39,
+      "originalTimingNativeChecks": 39,
+      "nativeCampaigns": 3,
+      "nativeCampaignsPassed": 2,
+      "nativeCleanupPassed": 3,
+      "contextGuardChecks": 73,
+      "quintNamedScenarios": 14,
+      "invariantSamples": 1000,
+      "maxSteps": 40,
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false
     }
   },
   "next": [
-    "Qualify fast release, repeated/held-loss keyboard cases and Close-control terminal release without clearing held/replay guards; floating multi-action/Max and output retirement/reflow remain open.",
-    "Integrate independently held shared batch disposition and broker EOF/deadline/recovery evidence with source333 and exact core89/plugin90/AQ105 tuple, rerun actual combined fault/effect/pixel/input cases.",
+    "Qualify keyboard Close-control, repeat/held-loss and floating multi-action/Max/output retirement/reflow journeys on integrated source344/core89/plugin90/AQ105.",
+    "Review latest independent shared batch disposition/unsent refusal and broker EOF/deadline/recovery closure, merge into source344 without losing early/normal native proof ordering or schema5, and rerun combined native faults/effects/pixels.",
     "Continue full S01-S16 original restore/recovery/drag/timing, GPU/WebGPU/AT/IME/physical/human/resource budgets/C00 and reversible deployment/rollback gates."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",

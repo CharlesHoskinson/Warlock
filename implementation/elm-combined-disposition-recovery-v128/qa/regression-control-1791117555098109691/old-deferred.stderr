@@ -1,0 +1,16 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
+    'projection-request',
++   'geometry-facts-request'
+-   'geometry-attach'
+  ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/deferred.cjs:24:108
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/deferred.cjs:7:76)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/deferred.cjs:24:2
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
