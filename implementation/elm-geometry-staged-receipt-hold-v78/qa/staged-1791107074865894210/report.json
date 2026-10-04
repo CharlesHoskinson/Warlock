@@ -1,0 +1,140 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "captured wrapper resolves same exact V74/V64 backend",
+      "passed": true
+    },
+    {
+      "name": "foreign cached endpoint refuses before native transport",
+      "passed": true
+    },
+    {
+      "name": "postclose observations and notifications pass before selected operation receipt",
+      "passed": true
+    },
+    {
+      "name": "other geometry operation passes unchanged",
+      "passed": true
+    },
+    {
+      "name": "explicit RestoreGeometry Committed is held without delivery",
+      "passed": true
+    },
+    {
+      "name": "facts are not deferred during delivery hold",
+      "passed": true
+    },
+    {
+      "name": "restore geometry exact original receipt released once",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'restore'",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'minimize'",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation True",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation None",
+      "passed": true
+    },
+    {
+      "name": "selector closed operation 'RestoreGeometry'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'xxxxxxxxxx'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason '\\ud800'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'bad\\n'",
+      "passed": true
+    },
+    {
+      "name": "strict receipt reason 'bad\\x85'",
+      "passed": true
+    },
+    {
+      "name": "strict private host-compatible wrapper configuration",
+      "passed": true
+    },
+    {
+      "name": "entrypoint preserves config and explicit operation argv",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid extra",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid operation",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid counter",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid missingpath",
+      "passed": true
+    },
+    {
+      "name": "private wrapperconfig invalid pathType",
+      "passed": true
+    },
+    {
+      "name": "public wrapperconfig refused",
+      "passed": true
+    },
+    {
+      "name": "symlink wrapperconfig refused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "qa/wrapper.py": "7001e1e07ac2626979a8dd5289af8233c096656736652e8c219aa150fec21827",
+    "qa/broker-entrypoint.py": "fb5811d340128ca921dc716a9f790063cf3e8663317c2bb9a03f351d71745b7f",
+    "qa/staged-test.py": "02facd97db7ccadc949de23659478435f0228c2f567864cbea5ce84b895204de",
+    "upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1"
+  },
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-f7ffd6688739434aaa5f107e526468d9.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "scope": "Actual held broker selector/strict endpoint decoders and wrapper CLI with synthetic native transport, never real execution or facts/pixels acceptance",
+  "error": "HoldFailure('QA initial hold gate')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-receipt-hold-v78/qa/staged-test.py\", line 94, in <module>\n    check('actual wrapper run CLI supervises exact held backend main normally',w.main()==0)\n                                                                               ~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-receipt-hold-v78/qa/staged-1791107074865894210/inputs/qa/wrapper.py\", line 182, in main\n    backend=load_backend();holder=ReceiptHold(args.control_directory,args.incarnation,backend.send,operation=args.effect_operation);backend.send=holder.intercept\n                                  ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-receipt-hold-v78/qa/staged-test.py\", line 92, in make_holder\n    def make_holder(*a,**kw):h=actual_holder(*a,**kw);holder.append(h);return h\n                               ~~~~~~~~~~~~~^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-receipt-hold-v78/qa/staged-1791107074865894210/inputs/qa/wrapper.py\", line 54, in __init__\n    if decode(os.read(fd,MAX_BYTES+1))!={'action':'hold'}:raise HoldFailure('QA initial hold gate')\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nwrapper.HoldFailure: QA initial hold gate\n",
+  "artifacts": {
+    "authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "wrapper.json": "3f3b2a3d8d776a7de15b3950e8ef7ee22bced30447d9dd9624cad92964b4a23e",
+    "inputs/upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+    "control1/gate.json": "3f4ac2e8992044f2254488b6c8e3420ead813c7c669da4a320b10eaafa22d1b8",
+    "control1/held.json": "fd2401adf4beadaa01efac878e12db9018119fce7466413c141034dc4e7d59be",
+    "control2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control3/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control12/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "inputs/qa/wrapper.py": "7001e1e07ac2626979a8dd5289af8233c096656736652e8c219aa150fec21827",
+    "inputs/qa/broker-entrypoint.py": "fb5811d340128ca921dc716a9f790063cf3e8663317c2bb9a03f351d71745b7f",
+    "inputs/qa/staged-test.py": "02facd97db7ccadc949de23659478435f0228c2f567864cbea5ce84b895204de"
+  }
+}
