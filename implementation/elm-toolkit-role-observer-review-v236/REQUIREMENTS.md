@@ -1,0 +1,1 @@
+Read only held235 observer; verify exact470 owning ABI/source/build closure and unchanged477 query. Review sideeffects, bounds/private-thread guards/registration rollback. No GUI or toolkit effective-modal acceptance; diagnostic addresses require independently owned native incarnation/PID/start.

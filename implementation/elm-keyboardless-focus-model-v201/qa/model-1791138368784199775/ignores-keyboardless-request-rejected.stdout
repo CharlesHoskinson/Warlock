@@ -1,0 +1,16 @@
+
+  focus
+    1) keyboardlessPopupRequestTest failed after 1 test(s)
+
+  1 failed
+
+  1) keyboardlessPopupRequestTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v201/qa/model-1791138368784199775/ignores-keyboardless-request.qnt:25:83
+        25:  run keyboardlessPopupRequestTest = init.then(expire).then(request(2)).then(all { assert(s.count == 0 and s.focus == 2 and s.delivered == 0 and s.keys == 0), s' = s })
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=keyboardlessPopupRequestTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ignores-keyboardless-request.qnt

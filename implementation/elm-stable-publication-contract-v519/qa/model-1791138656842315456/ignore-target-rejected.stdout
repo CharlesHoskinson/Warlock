@@ -1,0 +1,16 @@
+
+  stable
+    1) targetRevokesTest failed after 1 test(s)
+
+  1 failed
+
+  1) targetRevokesTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-stable-publication-contract-v519/qa/model-1791138656842315456/ignore-target.qnt:21:60
+        21:  run targetRevokesTest = init.then(targetChange).then(all {assert(s.publication==11 and not(proofCurrent)),s'=s})
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=targetRevokesTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ignore-target.qnt

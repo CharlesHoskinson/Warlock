@@ -1,0 +1,15 @@
+-- LET PROBLEM --------------------------------------------------- src/Probe.elm
+
+I was partway through parsing a `let` expression, but I got stuck here:
+
+12|  let before=C.initial
+13|      (after,effects)=C.update (C.Interaction (Desktop.PresentationOwner (Just {outputId=(UInt64.next UInt64.zero |> Maybe.withDefault UInt64.zero),providerId=(UInt64.next UInt64.zero |> Maybe.withDefault UInt64.zero)}))) before
+14|      identity frame = D.decodeValue (D.map5 (\mode status bar popup lease -> E.object [("mode",E.string mode),("status",E.string status),("bar",bar),("popup",popup),("lease",E.string lease)])) (D.field "mode" D.string) (D.field "status" D.string) (D.field "bar" D.value) (D.field "popup" D.value) (D.field "lease" D.string)) frame |> Result.map (E.encode 0) |> Result.withDefault "invalid"
+                                                                                                                                                                                                                                                                                                                                       ^
+Based on the indentation, I was expecting to see the in keyword next. Is there a
+typo?
+
+Note: This can also happen if you are trying to define another value within the
+`let` but it is not indented enough. Make sure each definition has exactly the
+same amount of spaces before it. They should line up exactly!
+

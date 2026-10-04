@@ -1,0 +1,5 @@
+# Parent keyboard plus read-only surface observer union
+
+Requirements before code. Preserve exact captured151 input interface version7 request/event order and all original input/keyboard/disconnect/balance handlers. Add225 separate observer interface version1 with its exact read-only header/query and listener lifecycle; no native query mutations, no overloaded legacy opcodes. One persistent sameUID controller owns both interfaces, originalinput sequence allocator shared with observe PID START, no automatic quit between heldpress/release.
+
+Compile actual Weston15 owning public/private ABI and complete source/dependency/tool/library closure under protected CPU only. Test actual XML/function preservation, observer rejection/lifetime callbacks plus unsafe controls and client correlation with synthetic dispatch. Runtime/socket/peer/process/module pinning, recipient journal/fullinterval/proof and original6s remain future root-only native runner obligations. No GUI/install/main session changes, no pointer-only225 or legacy151 acceptance transfer to this union.

@@ -1,0 +1,300 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "actual snapshot decoder/Actor.close executed with synthetic journal/mock owned process; no GUI or native delivery",
+  "sourceInputs": {
+    "inputs/actor.py": "e5b823eeb10f9f56ed9f99dd1ae802a0e5301fad1b21e290b719803fc6789061",
+    "inputs/journal-test.py": "dfc29877c2668e5e9b061133295a649cb31246b2cb3012baae8a3a063b7d7467",
+    "inputs/journal.py": "1f2353977b6aef621b79a9c982d8885b649318cdedfa6dd45e4ccca6df7d87fa"
+  },
+  "cases": [
+    {
+      "name": "valid-owned-pointer",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/valid-owned-pointer.json"
+    },
+    {
+      "name": "stale-map-generation",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/stale-map-generation.json"
+    },
+    {
+      "name": "float-source-surface",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/float-source-surface.json"
+    },
+    {
+      "name": "missing-raw-event",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/missing-raw-event.json"
+    },
+    {
+      "name": "wrong-raw-kind",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/wrong-raw-kind.json"
+    },
+    {
+      "name": "float-raw-time",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/float-raw-time.json"
+    },
+    {
+      "name": "negative-raw-time",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/negative-raw-time.json"
+    },
+    {
+      "name": "absent-profile",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/absent-profile.json"
+    },
+    {
+      "name": "unknown-profile",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/unknown-profile.json"
+    },
+    {
+      "name": "mixed-profile",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/mixed-profile.json"
+    },
+    {
+      "name": "hidden-row-gap",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/hidden-row-gap.json"
+    },
+    {
+      "name": "missing-first-row",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/missing-first-row.json"
+    },
+    {
+      "name": "bool-resource-equality",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/bool-resource-equality.json"
+    },
+    {
+      "name": "foreign-pid",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "journal actor ownership",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/foreign-pid.json"
+    },
+    {
+      "name": "foreign-start",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "journal actor ownership",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/foreign-start.json"
+    },
+    {
+      "name": "foreign-role",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "actual role/resource recipient",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/foreign-role.json"
+    },
+    {
+      "name": "foreign-instance",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "actual role/resource recipient",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/foreign-instance.json"
+    },
+    {
+      "name": "button-evdev-domain",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "explicit GDK button domain",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/button-evdev-domain.json"
+    },
+    {
+      "name": "button-bool",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "explicit GDK button domain",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/button-bool.json"
+    },
+    {
+      "name": "nonfinite-checked-coordinate",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "nonfinite JSON",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/nonfinite-checked-coordinate.json"
+    },
+    {
+      "name": "nonfinite-unchecked-metadata",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/nonfinite-unchecked-metadata.json"
+    },
+    {
+      "name": "duplicate-json-key",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "duplicate journal key"
+    },
+    {
+      "name": "malformed-json-typed-gap",
+      "classification": "other-error",
+      "expectedCharacterization": "other-error",
+      "matched": true,
+      "error": "JSONDecodeError('Expecting property name enclosed in double quotes: line 1 column 2 (char 1)')"
+    },
+    {
+      "name": "invalid-utf8-typed-gap",
+      "classification": "other-error",
+      "expectedCharacterization": "other-error",
+      "matched": true,
+      "error": "UnicodeDecodeError('utf-8', b'\\xff\\n', 0, 1, 'invalid start byte')"
+    },
+    {
+      "name": "valid-profile-independent-groups",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/valid-profile-independent-groups.json"
+    },
+    {
+      "name": "valid-profile-default-group",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/valid-profile-default-group.json"
+    },
+    {
+      "name": "full-pointer-extra-foreign-role",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "entire interval exact pair",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/full-pointer-extra-foreign-role.json"
+    },
+    {
+      "name": "valid-owned-key",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/valid-owned-key.json"
+    },
+    {
+      "name": "key-wrong-raw-kind",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/key-wrong-raw-kind.json"
+    },
+    {
+      "name": "key-evdev-domain-mismatch",
+      "classification": "typed-refused",
+      "expectedCharacterization": "typed-refused",
+      "matched": true,
+      "error": "explicit GDK keyboard domain mismatch",
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/key-evdev-domain-mismatch.json"
+    },
+    {
+      "name": "blocked-pointer-full-key-leak",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/blocked-pointer-full-key-leak.json"
+    },
+    {
+      "name": "draft-stale-role-recreation",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/draft-stale-role-recreation.json"
+    },
+    {
+      "name": "normal-terminal-close",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/normal-terminal-close.json"
+    },
+    {
+      "name": "normalexit-plus-partial-malformed-tail",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/normalexit-plus-partial-malformed-tail.json"
+    },
+    {
+      "name": "normalexit-followed-by-live-record",
+      "classification": "accepted",
+      "expectedCharacterization": "accepted",
+      "matched": true,
+      "witness": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-review-v241/qa/characterization-1791138627249850961/normalexit-followed-by-live-record.json"
+    }
+  ],
+  "actualGdkEnums": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "gdkHeader": {
+    "path": "/usr/include/gtk-4.0/gdk/gdkevents.h",
+    "sha256": "8c0108ba93241bd6a8eb46fd868d86b3603ae78e03e9d55ca3785b4d07bc93a0"
+  },
+  "unsafeAccepted": [
+    "stale-map-generation",
+    "float-source-surface",
+    "missing-raw-event",
+    "wrong-raw-kind",
+    "float-raw-time",
+    "negative-raw-time",
+    "absent-profile",
+    "unknown-profile",
+    "mixed-profile",
+    "hidden-row-gap",
+    "missing-first-row",
+    "bool-resource-equality",
+    "nonfinite-unchecked-metadata",
+    "key-wrong-raw-kind",
+    "blocked-pointer-full-key-leak",
+    "draft-stale-role-recreation",
+    "normalexit-plus-partial-malformed-tail",
+    "normalexit-followed-by-live-record"
+  ],
+  "typedErrorGaps": [
+    "malformed-json-typed-gap",
+    "invalid-utf8-typed-gap"
+  ]
+}

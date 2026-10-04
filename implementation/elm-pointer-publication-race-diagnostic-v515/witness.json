@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "scope": "Read-only extraction of frozen504 failure; no causal repair or native acceptance",
+  "report": "implementation/elm-current-projection-geometry-regression-v504/qa/native-1791137782792904306/report.json",
+  "reportSHA256": "efdb1d95d23289bf85e0978cb9668880290b7250774976a4c824228d294ba238",
+  "log": "implementation/elm-current-projection-geometry-regression-v504/qa/native-1791137782792904306/native-evidence/elm-webview.log",
+  "logSHA256": "f9eb5f26eec8e4a4a921fbe2bc766b51b38d35052123274a0fa16e81539533c1",
+  "lineStart": 2297,
+  "lineEnd": 2306,
+  "trace": [
+    "[18:16:29.797514] {Default Queue} wl_pointer#21.button(135, 102055733, 273, 1)",
+    "[18:16:29.797518] {Default Queue} wl_pointer#21.frame()",
+    "[18:16:29.797524] {Default Queue} wl_pointer#21.button(136, 102055733, 273, 0)",
+    "[18:16:29.797527] {Default Queue} wl_pointer#21.frame()",
+    "surface-commit: publication=95 lease=9 open=0",
+    "view-commit: popup=0 focus=1 publication=95",
+    "surface-inspection: {\"surfaceProtocol\":2,\"kind\":\"surface-inspection\",\"publication\":\"95\",\"lease\":\"9\",\"body\":{\"phase\":\"Coherent\",\"transaction\":\"Committed\",\"groups\":[{\"key\":\"application:elm-maximize-probe\",\"domId\":\"group:{\\\"lifetime\\\":\\\"16664384183139558174\\\",\\\"session\\\":\\\"2630774727839894358\\\",\\\"frontend\\\":\\\"1\\\"}:1:12:application:elm-maximize-probe\",\"title\":\"ELM-MAXIMIZE-PROBE\",\"active\":true,\"expanded\":false}],\"menu\":null,\"mode\":\"closed\",\"outstanding\":0,\"registry\":0,\"picker\":null,\"openerId\":\"applications:{\\\"lifetime\\\":\\\"16664384183139558174\\\",\\\"session\\\":\\\"2630774727839894358\\\",\\\"frontend\\\":\\\"1\\\"}:6:control:opener\",\"reconnectId\":\"reconnect\"}}",
+    "context-input-report: {\"kind\":\"context-input-report\",\"phase\":\"press\",\"button\":2,\"buttons\":2,\"trusted\":true,\"id\":\"bar:group:application:elm-maximize-probe\"}",
+    "context-input-report: {\"kind\":\"context-input-report\",\"phase\":\"release\",\"button\":2,\"buttons\":0,\"trusted\":true,\"id\":\"bar:group:application:elm-maximize-probe\"}",
+    "surface-context-refused: origin-or-proof"
+  ],
+  "nativeChecksReached": 138,
+  "cleanupPassed": true,
+  "combined512Passed": true,
+  "combined512NativeEscapeStoredCount": 0,
+  "causeConfirmed": false
+}

@@ -1,0 +1,7 @@
+# Held235 role observer source review
+
+No source blocker identified for a separately reviewed native attempt. The new elm_role_state query checks exact command, owner thread, private runtime/UID/backend and live compositor/window state. It reads mapped windows only, keeps strong window/parent/xdg/toplevel/dialog references during formatting, emits bounded scalar diagnostics and refuses beyond256 windows/65536 bytes. It does not focus, raise, notify, resize or set modality. A failed second command registration unregisters and resets the first; exit unregisters both. Original477 held-state query remains byte-identical.
+
+Fields distinguish actual XDG dialog presence/modal bit from CWindow::isModal(), input-block reasons and acceptsInput() results. These must not be equated or inferred from GTK set_modal. An ancestor89 implementation of isModal is Xwayland-only: interpreting a current false nativeModal requires owning native behavior/lineage evidence, not overriding it because dialogModal is true. This observer reports the method result and cannot qualify effective Wayland modality or input isolation by itself.
+
+Address strings are diagnostics with no lifetime authority. A runner must independently bind fixture PID/start, native incarnation, resource identity, actual parent and retirement, and prove blocked negative input, actual pointer/key recipients and pixels. Strong-symbol closure/ABI hash checks are compile prerequisites, not live mapping proof. No GUI, native modal, GTK conformance or roadmap acceptance is asserted here.

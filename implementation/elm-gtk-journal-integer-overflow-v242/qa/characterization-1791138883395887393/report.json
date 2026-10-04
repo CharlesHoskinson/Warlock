@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "consumerAccepted": false,
+  "nativeAcceptance": false,
+  "exceptionType": "ValueError",
+  "typedRefused": false,
+  "reason": "Exceeds the limit (4300 digits) for integer string conversion: value has 5000 digits; use sys.set_int_max_str_digits() to increase the limit",
+  "unsafeWitnessConfirmed": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-journal-integer-overflow-v242/original/journal.py": "9f3f0e6c7cb4b657f618b0c364b37183300ce60ec7a423e2394e05c651b98732",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-journal-integer-overflow-v242/input.jsonl": "1c7f69b2f3e417eb1b24c15bbb209e0c03535e3fb94f88d57c419ca68da5053a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-journal-integer-overflow-v242/qa/characterize.py": "e283a58b7feda2d8378e66fe1393bdd5003a3b7903925858880bb8da85266509"
+  }
+}

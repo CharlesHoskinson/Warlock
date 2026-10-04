@@ -1,0 +1,16 @@
+-- NAMING ERROR -------------------------------------------------- src/Probe.elm
+
+I cannot find a `C.Model` variant:
+
+13|  let before=C.Model {desktop=Desktop.initial,publication=D.decodeValue UInt64.decoder (E.string "10") |> Result.withDefault UInt64.zero,lease=D.decodeValue UInt64.decoder (E.string "2") |> Result.withDefault UInt64.zero,exhausted=False}
+                ^^^^^^^
+The `C` module does not expose a `Model` variant. These names seem close though:
+
+    D.Index
+    D.Field
+    D.OneOf
+    C.Renderer
+
+Hint: Read <https://elm-lang.org/0.19.2/imports> to see how `import`
+declarations work in Elm.
+

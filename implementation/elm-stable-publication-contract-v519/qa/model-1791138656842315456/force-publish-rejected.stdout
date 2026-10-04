@@ -1,0 +1,16 @@
+
+  stable
+    1) internalPreservesProofTest failed after 1 test(s)
+
+  1 failed
+
+  1) internalPreservesProofTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-stable-publication-contract-v519/qa/model-1791138656842315456/force-publish.qnt:19:65
+        19:  run internalPreservesProofTest = init.then(internal).then(all {assert(s.book==1 and s.publication==10 and proofCurrent),s'=s})
+                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=internalPreservesProofTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 force-publish.qnt

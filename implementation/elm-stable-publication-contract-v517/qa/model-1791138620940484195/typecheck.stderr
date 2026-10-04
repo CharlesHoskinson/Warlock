@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'enabled' is redefined in module 'stable'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-stable-publication-contract-v517/qa/model-1791138620940484195/stable.qnt:4:38
+  4:  action commit(status:int,target:int,enabled:bool,mode:int,lease:int,commands:int): bool = {
+                                          ^^^^^^^^^^^^
+
+error: parsing failed

@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Admitted keyboardless focus/current client-resource lifecycle abstraction; no native input or C++ refinement claim",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "focus.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v199/qa/model-1791138318506994994/focus.qnt:13:31\\n  13:  action request(desired: int) = s' = { ...s, focus: desired, delivered: if (s.count > 0) desired else s.delivered }\\n                                    ^\\n\\n\\n Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v199/qa/model-1791138318506994994/focus.qnt:14:2\\n  14:  action bind(client: int) = s' = { ...s, delivered: if (s.count > 0 and s.focus != 0 and client == s.focus) s.focus else s.delivered }\\n       ^^^^^^\\n\\nerror: parsing failed\\n[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\\n\")",
+  "artifacts": {
+    "focus.qnt": "231371186075497660efb03d07da0e47d1c40a0ce05e0104ec28c6e0af41c11f",
+    "model.py": "1e7f9f8fc2e71c97640d438c5bc90427c8272e03ea1ac1ee8c95d663f9a48db8",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "d0a527abdeae91cd6873f1eba0bb1fae4b3b6a857e9a922a8c61041fb594c724"
+  }
+}

@@ -1,0 +1,246 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "nativeAcceptance": false,
+  "completion": false,
+  "scope": "Compiled exact guard diagnosis and corrected guard filesystem tests only",
+  "files": {
+    "REQUIREMENTS.md": {
+      "sha256": "7f90d35813da87135652faa5d906b43d0d9232f5090a9786b4b5b404e1c5a42d",
+      "size": 538,
+      "mode": 420
+    },
+    "REVIEW.md": {
+      "sha256": "d6f23db3de6c0982f0321324f5ca897329e93ebac5a97a2dc5e37c9f3a72dd58",
+      "size": 2000,
+      "mode": 420
+    },
+    "original/failed-compile/actual-function.c": {
+      "sha256": "45d4eb31ab756fa76db8380ec898e1459f3b9c83c65843fd2f3717a16e03158a",
+      "size": 794,
+      "mode": 420
+    },
+    "original/failed-compile/compile.stderr": {
+      "sha256": "37ff9937123240c848ae6b21caa5bfb2e1b31ec13855f31e7b627f4e314d66ca",
+      "size": 1809,
+      "mode": 420
+    },
+    "original/failed-compile/compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "original/failed-compile/test.c": {
+      "sha256": "d2526040a30f3f9dcdbe8630adc02d449ff54fd82b7fa98faeda1e69fd2cc97a",
+      "size": 1142,
+      "mode": 420
+    },
+    "original/failed-witness.py": {
+      "sha256": "94d18f3e6034866fa8de48485d457a54c8e998d83aa752ef48f458d6fc1f9774",
+      "size": 3162,
+      "mode": 420
+    },
+    "qa/corrected-1791139567202455330/gtk": {
+      "sha256": "35c55632d4fac0865d3bde566a8ca2672700e91ff44820f3cfa8d3ec7ae2d503",
+      "size": 16816,
+      "mode": 493
+    },
+    "qa/corrected-1791139567202455330/gtk-actual.txt": {
+      "sha256": "b22f7285ab83f9ea6dd47a6d07594a6a554d5b1491aee7b87d1ba28fc7108c06",
+      "size": 1079,
+      "mode": 420
+    },
+    "qa/corrected-1791139567202455330/gtk-compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/corrected-1791139567202455330/gtk.c": {
+      "sha256": "2a8512e9216c400a8b6090596e5b9c3f62e1a08020e1363ca74af4ead29b4a67",
+      "size": 1340,
+      "mode": 420
+    },
+    "qa/corrected-1791139567202455330/observer": {
+      "sha256": "0becbb8dbcf0aaefa5089985b00a25f577bfe49b39ddf2dcff0a88fcb419c90e",
+      "size": 276768,
+      "mode": 493
+    },
+    "qa/corrected-1791139567202455330/observer-actual.txt": {
+      "sha256": "c39c5c9c3d185fa60e8459e4ad4e666b3babf105c7ea284524272e5147919c67",
+      "size": 764,
+      "mode": 420
+    },
+    "qa/corrected-1791139567202455330/observer-compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/corrected-1791139567202455330/observer.cpp": {
+      "sha256": "e2490617b4e039118c9cd51800210b3652abc131b041910b436d2b6d13328faf",
+      "size": 956,
+      "mode": 420
+    },
+    "qa/corrected-1791139567202455330/report.json": {
+      "sha256": "955eb4d0dc4a99f8dc1aa8f101da6c8f1656b5a4f889787d44ee7b776daad7a1",
+      "size": 2285,
+      "mode": 420
+    },
+    "qa/corrected.py": {
+      "sha256": "bf509e1031d62250992ad3f05b0434e219d8e438eb897c95d86b78a036966cc7",
+      "size": 4245,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "cf23e5e07e47daa22e8cdc20c4f05271fc673b3d7aed4ba1445d9543d822f276",
+      "size": 2355,
+      "mode": 420
+    },
+    "qa/old-observer-1791139600376674684/actual-function.txt": {
+      "sha256": "36d1efda8b437e56856f360a1165ca1b29ad6aa0bafa3ad2478f38b57acbc3a3",
+      "size": 530,
+      "mode": 420
+    },
+    "qa/old-observer-1791139600376674684/actual.stdout": {
+      "sha256": "4355a46b19d348dc2f57c046f8ef63d4538ebb936000f3c9ee954a27460dd865",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/old-observer-1791139600376674684/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/old-observer-1791139600376674684/guard": {
+      "sha256": "c9c408514b729c3bf1ab9020ccc6ef2b340616b9bc2eaa3848924e59c691a5fb",
+      "size": 264800,
+      "mode": 493
+    },
+    "qa/old-observer-1791139600376674684/report.json": {
+      "sha256": "01f80a08b2cbfbc111a70ed62bcb65dde1c2a2e60f51050f1440a0349842244f",
+      "size": 330,
+      "mode": 420
+    },
+    "qa/old-observer-1791139600376674684/test.cpp": {
+      "sha256": "05924e6663aed9e47c181109ab3d5bd9cab9a69254be8b835b9a440d4256473c",
+      "size": 722,
+      "mode": 420
+    },
+    "qa/old-observer.py": {
+      "sha256": "09889a577ea68c6318906d9c1f8924289940891f86c30a9eea8687ae2bf7f59c",
+      "size": 1605,
+      "mode": 420
+    },
+    "qa/parent-1791139401575564500/actual-function.c": {
+      "sha256": "2796afdd0d676982cbf4dcd31dcf1032483e15d92aa084c6425a027fded6a342",
+      "size": 594,
+      "mode": 420
+    },
+    "qa/parent-1791139401575564500/actual.stdout": {
+      "sha256": "baeca4ff68c7509963b4a88534417eb8b8e8edd5efbeb6339f3cfa22040aba0d",
+      "size": 128,
+      "mode": 420
+    },
+    "qa/parent-1791139401575564500/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/parent-1791139401575564500/guard": {
+      "sha256": "9d061d811a919e9a4e84e393b5506e299042e8c533930c776cb6840551a776f3",
+      "size": 16432,
+      "mode": 493
+    },
+    "qa/parent-1791139401575564500/report.json": {
+      "sha256": "b38871993ca3c39899cf075150fb59bb5b37a608aa3b6b9f7f01798b0765a1d8",
+      "size": 523,
+      "mode": 420
+    },
+    "qa/parent-1791139401575564500/test.c": {
+      "sha256": "846b7d073388bad4cebc492cfa262fb67671dc960c0dafe6ced4e6605bf8464d",
+      "size": 1042,
+      "mode": 420
+    },
+    "qa/parent.py": {
+      "sha256": "ea739dcf1ad8b30e0b7ced03f5546e20123242bade3dbea3dc871b503724ff53",
+      "size": 2419,
+      "mode": 420
+    },
+    "qa/witness-1791139327241351105/actual-function.c": {
+      "sha256": "45d4eb31ab756fa76db8380ec898e1459f3b9c83c65843fd2f3717a16e03158a",
+      "size": 794,
+      "mode": 420
+    },
+    "qa/witness-1791139327241351105/actual-private": {
+      "sha256": "9a57977505d3c6921e243160240c39415e606f508b06519c5bea5a8d9d472f79",
+      "size": 16512,
+      "mode": 493
+    },
+    "qa/witness-1791139327241351105/actual.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791139327241351105/actual.stdout": {
+      "sha256": "cc6fedbf9de15c5e65a868fcce90d035ab6a5f3fe94f3c258964c77f1106c552",
+      "size": 102,
+      "mode": 420
+    },
+    "qa/witness-1791139327241351105/compile.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791139327241351105/compile.stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791139327241351105/report.json": {
+      "sha256": "f31f64a6150725d7503d6c0d11e0542aa35e243ff1b1e5fe05067405fe9ba963",
+      "size": 1529,
+      "mode": 420
+    },
+    "qa/witness-1791139327241351105/test.c": {
+      "sha256": "8fa5661142d01f90e0a3903c1d04f442bd9045bee64e6f35cc249208ec0bf9c0",
+      "size": 1166,
+      "mode": 420
+    },
+    "qa/witness.py": {
+      "sha256": "bace03c9e856959012fce0f7a6e68aff5d828f5eeb4d4a0c6f13b78be445da03",
+      "size": 3187,
+      "mode": 420
+    }
+  },
+  "externalSources": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-fixture-v233/native/gtk-role-client.c": {
+      "sha256": "b2e5cc6d75aa6c1a0b8d78e5ccb6110882739024e828a08f964e8e628d78acf3",
+      "size": 18411
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input-client.c": {
+      "sha256": "05038f58c1e1996b9843dce4cac800f2e4e71257d3c7c41aa73da495735308fc",
+      "size": 12612
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-surface-observer-v239/native/parent-input-module.c": {
+      "sha256": "ae6c05a98befc85078a6e58d7c1d2456a6b1335a1a9f7f5fc68fb7899a858abd",
+      "size": 21495
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-toolkit-popup-owned-observer-v240/native/observer.cpp": {
+      "sha256": "ada841d74f5cbcae1205218f994e98ff18ddb9850ac1b07b294fafd3dfdc929d",
+      "size": 10979
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/native/gtk-role-client.c": {
+      "sha256": "78d1ed4100ede590aec1bb96e52ac0684d0aba32602cc565925c70a75393b6df",
+      "size": 18743
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-toolkit-popup-canonical-observer-v246/native/observer.cpp": {
+      "sha256": "9c1927914f47144e942561e5103be00c252a2a5a3d8a0bec74913b1f7610b805",
+      "size": 11213
+    }
+  },
+  "reports": [
+    "qa/witness-1791139327241351105/report.json",
+    "qa/parent-1791139401575564500/report.json",
+    "qa/corrected-1791139567202455330/report.json",
+    "qa/old-observer-1791139600376674684/report.json"
+  ]
+}

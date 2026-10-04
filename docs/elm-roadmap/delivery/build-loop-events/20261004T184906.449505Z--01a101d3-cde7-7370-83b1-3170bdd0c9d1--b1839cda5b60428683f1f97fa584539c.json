@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "eventId": "b1839cda5b60428683f1f97fa584539c",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T18:49:06.449505+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-gtk-runtime-isolation-review-v245",
+  "nextWork": [
+    "Preserved unsafe241 consumer35 +root2425000digit exception; corrected243 actual71+5unsafecontrols nowheld. Late245 reproducedheld233/240 traversal and239 socket isolation gaps; fresh244GTK compile9220/40CLI19callback controls+246observer9221 compiledandfrozen099b015/99c4e0b; independent245 exactguard14 realfilesystem cases pass (canonicalprivate accepted,dotdot/main/symlink/non0700 refused), noGUI. Fresh247client/server canonicalprivate guard inprogress.238fullGTK01-08 runner targets current521actualbuild8800/shared52589 interface, replacingstopped233/240/239; planningledgerdrift exactold/current and242/417semanticidentity preserved. FullS01-S16/release/deployment remainsactive."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-gtk-runtime-isolation-review-v245/component-manifest.json",
+      "sha256": "d98d405e3f7493b04bf8d942f77d092a2c01186d1268af7d27300388e0dd7c6f",
+      "size": 9100
+    },
+    {
+      "path": "implementation/elm-gtk-role-canonical-runtime-v244/component-manifest.json",
+      "sha256": "099b015693f87ed87d128d6f228c16507da851443f8c12a4d01fe580117922b5",
+      "size": 15754
+    },
+    {
+      "path": "implementation/elm-toolkit-popup-canonical-observer-v246/component-manifest.json",
+      "sha256": "99c4e0b4b866aa2c849dd17e31e08eb8cb204dc70092f58d99dcf9e06c72ae00",
+      "size": 335294
+    },
+    {
+      "path": "implementation/elm-gtk-role-journal-corrected-review-v243/component-manifest.json",
+      "sha256": "acf485599cd937d43d692f5b77fff4fc6819929d283e93e4fcc7cd97d1c73826",
+      "size": 45439
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

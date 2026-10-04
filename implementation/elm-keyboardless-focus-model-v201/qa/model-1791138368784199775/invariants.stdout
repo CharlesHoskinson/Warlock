@@ -1,0 +1,130 @@
+An example execution:
+
+[State 0]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 1]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 2]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 3]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 4]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 5]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 6]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 7]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 8]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 9]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 10]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 11]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 12]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 13]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 14]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 15]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 16]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 17]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 18]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 19]
+{ s: { count: 1, delivered: 1, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 20]
+{ s: { count: 2, delivered: 1, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 21]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 22]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 23]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 24]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 25]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 26]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 27]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 28]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 29]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 30]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 31]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 32]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 33]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 34]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 35]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[State 36]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 37]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 38]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 2, keys: 0, violations: 0 } }
+
+[State 39]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 0, keys: 0, violations: 0 } }
+
+[State 40]
+{ s: { count: 0, delivered: 0, desktop: 1, focus: 1, keys: 0, violations: 0 } }
+
+[ok] No violation found (821ms at 1218 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1349a --backend=typescript to reproduce.

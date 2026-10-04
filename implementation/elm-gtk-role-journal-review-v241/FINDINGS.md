@@ -1,0 +1,11 @@
+# Preserved predecessor consumer findings
+
+The protected actual-snapshot run characterized 35 cases; its success means the recorded predecessor behavior was reproduced, including unsafe acceptance. It does not mean the consumer satisfied the stronger contract. Native acceptance is false.
+
+`inputs/journal.py`, `actor.py`, and `journal-test.py` are immutable copies of the mutable V238 predecessor before its owner corrected the boundaries. The test imports these actual files and executes their decoder/interval functions. Terminal tests execute actual Actor.close/read/persist using real private temporary logs and a mock owned process; they do not create a GTK display or prove real child shutdown. GDK button/key event enum values 2/3/4/5 were obtained by compiling the actual installed GTK4 headers, not inferred from Linux evdev constants.
+
+Observed unsafe acceptances: missing first/skipped event sequences; stale map generation; integral-float and bool surface-resource comparisons; missing raw event, wrong event kind and noncanonical raw time; absent/unknown/switched profile; nonfinite 1e400 outside the limited coordinate checks; key event kind mismatch; draft inspection from a different instance/map/resource; and normalexit followed by unterminated malformed bytes or another complete live record. Invalid JSON/UTF-8 raised untyped decoder exceptions. Each accepted witness and classification is retained in the selected characterization packet.
+
+The pointer-only blocked_interval ignores keyboard events. This needs an explicit pointer-only scope and a separate full keyboard interval when claiming keyboard non-delivery; the old result is not itself proof of all-input blocking. Full pointer and keyboard positive intervals already refuse extra same- or foreign-role events in their respective domains. Correct PID/start and typed GDK button/key identity mismatches already refuse.
+
+Owner corrections underway after this snapshot: consecutive rows, primitive finite fields, exact selected profile, canonical recipient/map/resource identities, compiled event kind/time, explicit draft identities and terminal complete unique final normalexit. Their behavior must be qualified in a distinct follow-up packet. This historical packet is never rewritten as a corrected-consumer pass. Final native runner and full role/input/modal/GTK semantics remain open.

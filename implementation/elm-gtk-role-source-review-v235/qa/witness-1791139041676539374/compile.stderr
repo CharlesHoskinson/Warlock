@@ -1,0 +1,10 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-source-review-v235/qa/witness-1791139041676539374/test.c: In function ‘fake_stat’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-source-review-v235/qa/witness-1791139041676539374/test.c:11:135: error: ‘S_IFDIR’ undeclared (first use in this function); did you mean ‘S_ISDIR’?
+   11 | static int fake_stat(const char *path,struct stat *st){memset(st,0,sizeof *st);st->st_uid=getuid();st->st_mode=(!strcmp(path,runtime)?S_IFDIR|0700:S_IFSOCK|0600);return 0;}
+      |                                                                                                                                       ^~~~~~~
+      |                                                                                                                                       S_ISDIR
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-source-review-v235/qa/witness-1791139041676539374/test.c:11:135: note: each undeclared identifier is reported only once for each function it appears in
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-source-review-v235/qa/witness-1791139041676539374/test.c:11:148: error: ‘S_IFSOCK’ undeclared (first use in this function); did you mean ‘S_ISSOCK’?
+   11 | static int fake_stat(const char *path,struct stat *st){memset(st,0,sizeof *st);st->st_uid=getuid();st->st_mode=(!strcmp(path,runtime)?S_IFDIR|0700:S_IFSOCK|0600);return 0;}
+      |                                                                                                                                                    ^~~~~~~~
+      |                                                                                                                                                    S_ISSOCK

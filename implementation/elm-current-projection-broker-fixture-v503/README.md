@@ -1,0 +1,1 @@
+Fresh197 fixture derivative bound to frozen502 source498 adapter and build. Receipt hold and relay pump behavior are unchanged; source verifier now resolves repository-relative502 inventory. No native acceptance from fixture CPU checks.

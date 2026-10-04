@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "sourceSHA256": "b2e5cc6d75aa6c1a0b8d78e5ccb6110882739024e828a08f964e8e628d78acf3",
+  "scope": "actual extracted callbacks with mock GTK objects; no GTK display/input/native proof",
+  "error": "b'/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-fixture-v233/qa/callbacks-1791137991271418679/stale-controller/test.c:18:18: error: \\xe2\\x80\\x98gtk_event_controller_get_widget\\xe2\\x80\\x99 defined but not used [-Werror=unused-function]\\n   18 | static GtkWidget*gtk_event_controller_get_widget(GtkEventController*c){return c->widget;}\\n      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\ncc1: all warnings being treated as errors\\n'"
+}

@@ -1,0 +1,16 @@
+
+  focus
+    1) retiredKeyboardlessPopupFallsBackTest failed after 1 test(s)
+
+  1 failed
+
+  1) retiredKeyboardlessPopupFallsBackTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v201/qa/model-1791138368784199775/retains-retired-focus.qnt:27:105
+        27:  run retiredKeyboardlessPopupFallsBackTest = init.then(request(2)).then(expire).then(attach).then(all { assert(s.focus == 1 and s.delivered == 1 and s.keys == 0), s' = s })
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=retiredKeyboardlessPopupFallsBackTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 retains-retired-focus.qnt

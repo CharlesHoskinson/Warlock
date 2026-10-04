@@ -1,0 +1,38 @@
+{
+  "diagnosisConfirmed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual private_environment function compiled with protected-scope/environment/stat precondition stubs; no GTK/display/socket interaction",
+  "ownerSourceSHA256": "b2e5cc6d75aa6c1a0b8d78e5ccb6110882739024e828a08f964e8e628d78acf3",
+  "scriptSHA256": "bace03c9e856959012fce0f7a6e68aff5d828f5eeb4d4a0c6f13b78be445da03",
+  "cases": [
+    {
+      "runtime": "/run/user/1000/wqa/isolated",
+      "actualAccepted": true,
+      "expectedPrivateLeaf": true
+    },
+    {
+      "runtime": "/run/user/1000/wqa/.",
+      "actualAccepted": true,
+      "expectedPrivateLeaf": false
+    },
+    {
+      "runtime": "/run/user/1000/wqa/..",
+      "actualAccepted": true,
+      "expectedPrivateLeaf": false
+    },
+    {
+      "runtime": "/run/user/1000",
+      "actualAccepted": false,
+      "expectedPrivateLeaf": false
+    }
+  ],
+  "artifacts": {
+    "actual-function.c": "45d4eb31ab756fa76db8380ec898e1459f3b9c83c65843fd2f3717a16e03158a",
+    "test.c": "8fa5661142d01f90e0a3903c1d04f442bd9045bee64e6f35cc249208ec0bf9c0",
+    "actual-private": "9a57977505d3c6921e243160240c39415e606f508b06519c5bea5a8d9d472f79",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual.stdout": "cc6fedbf9de15c5e65a868fcce90d035ab6a5f3fe94f3c258964c77f1106c552",
+    "actual.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

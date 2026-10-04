@@ -1,0 +1,745 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      book: 0,
+      effects: 0,
+      enabled: true,
+      epoch: 1,
+      lease: 2,
+      mode: 0,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 10,
+      status: 1,
+      target: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      book: 1,
+      effects: 0,
+      enabled: false,
+      epoch: 1,
+      lease: 2,
+      mode: 0,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 11,
+      status: 1,
+      target: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      book: 2,
+      effects: 0,
+      enabled: false,
+      epoch: 1,
+      lease: 2,
+      mode: 0,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 12,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      book: 3,
+      effects: 0,
+      enabled: false,
+      epoch: 1,
+      lease: 2,
+      mode: 0,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 12,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      book: 4,
+      effects: 0,
+      enabled: false,
+      epoch: 1,
+      lease: 2,
+      mode: 0,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 12,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      book: 4,
+      effects: 0,
+      enabled: false,
+      epoch: 2,
+      lease: 2,
+      mode: 0,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 12,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      book: 4,
+      effects: 0,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 0,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 12,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      book: 5,
+      effects: 0,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 13,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      book: 6,
+      effects: 0,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 13,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      book: 7,
+      effects: 0,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 13,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      book: 8,
+      effects: 1,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 14,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      book: 9,
+      effects: 1,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 14,
+      status: 1,
+      target: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      book: 10,
+      effects: 1,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 15,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      book: 11,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 16,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      book: 12,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 2,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 16,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      book: 13,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 17,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      book: 14,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 17,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      book: 15,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 17,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      book: 16,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 17,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      book: 17,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 17,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      book: 18,
+      effects: 2,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 17,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      book: 19,
+      effects: 3,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      book: 20,
+      effects: 3,
+      enabled: false,
+      epoch: 3,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      book: 20,
+      effects: 3,
+      enabled: false,
+      epoch: 4,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      book: 21,
+      effects: 3,
+      enabled: false,
+      epoch: 4,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      book: 21,
+      effects: 3,
+      enabled: false,
+      epoch: 5,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      book: 21,
+      effects: 3,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      book: 22,
+      effects: 3,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      book: 23,
+      effects: 3,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      book: 24,
+      effects: 3,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 18,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      book: 25,
+      effects: 4,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 19,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      book: 26,
+      effects: 5,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      book: 27,
+      effects: 5,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      book: 28,
+      effects: 5,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      book: 29,
+      effects: 5,
+      enabled: false,
+      epoch: 6,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      book: 29,
+      effects: 5,
+      enabled: false,
+      epoch: 7,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      book: 30,
+      effects: 5,
+      enabled: false,
+      epoch: 7,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      book: 31,
+      effects: 5,
+      enabled: false,
+      epoch: 7,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      book: 31,
+      effects: 5,
+      enabled: false,
+      epoch: 8,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      book: 32,
+      effects: 5,
+      enabled: false,
+      epoch: 8,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 20,
+      status: 2,
+      target: 2
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      book: 33,
+      effects: 6,
+      enabled: false,
+      epoch: 8,
+      lease: 3,
+      mode: 1,
+      proof: 10,
+      proofEpoch: 1,
+      publication: 21,
+      status: 2,
+      target: 2
+    }
+}
+
+[ok] No violation found (1859ms at 538 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x13756 --backend=typescript to reproduce.

@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Complete surface identity abstracted by representative fields; no new native or UInt64 refinement",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "stable.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'enabled' is redefined in module 'stable'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-stable-publication-contract-v517/qa/model-1791138620940484195/stable.qnt:4:38\\n  4:  action commit(status:int,target:int,enabled:bool,mode:int,lease:int,commands:int): bool = {\\n                                          ^^^^^^^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "stable.qnt": "6dc47e6c20031a340840ec7ef3f073528f9b30589ef4ee62e461ef07a6d609ae",
+    "model.py": "a30d71a85d2a6833fb05d013ec5272a171c516014807e1dd309f3c094a72c289",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "4d879ae50ae5b849d68b7ee5db7f881e3a2cce8046df8bc6bb6187ba5d858399"
+  }
+}

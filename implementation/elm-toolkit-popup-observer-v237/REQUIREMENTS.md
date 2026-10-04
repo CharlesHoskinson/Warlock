@@ -1,0 +1,7 @@
+# Public popup diagnostics
+
+P01. Retain235 role/held queries and exact private UID runtime/owning470 ABI/thread gates. Add independent elm_popup_state read-only query; no private-member access or native policy mutation.
+P02. Enumerate public OtherViewState mapped popup views only, withactual wl_surface resource/client PID/UID and T1 root resource/client identity. Observe native global coordinates/size and current seat-grab membership for popup/root, keyboard/pointer grab flags and pointer/keyboard focus resource. Immediate xdg parent and input serial still require independently captured actual Wayland wire; T1 root is not immediate parent or grab owner.
+P03. Bound public view census512, result256popups/65536bytes and finite coordinates/sizes. Refuse instead of truncation. Addresses describe this sample only; runner binds process lifetimes/client resource generations and actual protocol parent serials.
+P04. Compile actualsource with exact470owning694headers/strongsymbol closure/dependencytools/libs, then independentreview and freeze before anyGUI. Compilation and query metadata neverqualify presentation, recipient, GTK semantics or atomicity.
+P05. Support unchanged234 GTK06 popup/grab oracle and fullGTK01..08 alongside233 journal and native pixels/input. Missing immediateparent or owner proof remains explicit until actual wire+native correlations exist; don't silently narrow popup test.

@@ -1,0 +1,7 @@
+# GTK role fixture source review
+
+The held233 GTK4 fixture records requested toolkit modal/transient/group state separately from actual GdkToplevel state and Wayland surface identity. It does not manufacture native modality. Explicit groups separate independentC; default-group mode deliberately preserves the toolkit default alternative. Map generations and immutable instance identities prevent same-title recreation being mistaken for the original surface.
+
+Current-controller/emitter guards, disconnected retained controller refs on retirement, draw ancestry checks, bounded canonical sequence commands and finite owned roles provide a defensible CPU-only lifecycle base. The actual callback and parser compiled tests are scoped source tests; they cannot qualify GTK input recipient, xdg_dialog propagation, immediate popup parent/grab serial, compositor focus, presentation or native retirement.
+
+A runtime-isolation blocker was discovered after provisional source feedback: private_environment accepts dot/dotdot private-leaf aliases under owned-stat preconditions. Do not run this held fixture under a private-only adoption claim. The actual compiled unsafe witness, failed earlier scaffold and fresh244/246 correction controls are held independently at ../elm-gtk-runtime-isolation-review-v245/component-manifest.json. Root244 is the fresh corrected successor;233 stays unchanged. Native role/modal/popup, GTK keyboard hold-release, normal native empty-census and full menu08–10 gates remain open.

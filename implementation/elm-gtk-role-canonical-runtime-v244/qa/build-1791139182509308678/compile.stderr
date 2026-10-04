@@ -1,0 +1,5 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/qa/build-1791139182509308678/inputs/native/gtk-role-client.c: In function ‘canonical_runtime’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/qa/build-1791139182509308678/inputs/native/gtk-role-client.c:75:17: error: implicit declaration of function ‘realpath’ [-Wimplicit-function-declaration]
+   75 |  char *resolved=realpath(runtime,NULL);
+      |                 ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/qa/build-1791139182509308678/inputs/native/gtk-role-client.c:75:17: error: initialization of ‘char *’ from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
