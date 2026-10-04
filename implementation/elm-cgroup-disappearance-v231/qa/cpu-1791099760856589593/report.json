@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "exactOwnedScopeContainsUnreapedChild",
+      "passed": true,
+      "unit": "qa-harness-cgroup-disappear-1791099760856621834.scope",
+      "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-cgroup-disappear-1791099760856621834.scope",
+      "pid": 484135,
+      "start": "6786549"
+    },
+    {
+      "name": "parentScopeExcluded",
+      "passed": true
+    },
+    {
+      "name": "heldDescriptorInitiallyListsOwnedChild",
+      "passed": true
+    },
+    {
+      "name": "ownedChildStopsByDeclaredSignal",
+      "passed": true,
+      "exitCode": -15
+    },
+    {
+      "name": "systemdRemovesEmptyOwnedGroup",
+      "passed": true
+    },
+    {
+      "name": "deadHeldDescriptorReturnsENODEV",
+      "passed": true,
+      "errno": 19,
+      "errorName": "ENODEV"
+    }
+  ],
+  "deadErrno": 19,
+  "deadErrorName": "ENODEV"
+}

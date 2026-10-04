@@ -1,0 +1,34 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "exactOwnedScopeContainsUnreapedChild",
+      "passed": true,
+      "unit": "qa-harness-cgroup-disappear-1791099724961813164.scope",
+      "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-cgroup-disappear-1791099724961813164.scope",
+      "pid": 481481,
+      "start": "6782960"
+    },
+    {
+      "name": "parentScopeExcluded",
+      "passed": true
+    },
+    {
+      "name": "heldDescriptorInitiallyListsOwnedChild",
+      "passed": true
+    },
+    {
+      "name": "ownedChildStopsByDeclaredSignal",
+      "passed": true,
+      "exitCode": -15
+    },
+    {
+      "name": "systemdRemovesEmptyOwnedGroup",
+      "passed": true
+    }
+  ],
+  "deadErrno": 19,
+  "deadErrorName": "ENODEV",
+  "error": "TypeError(\"check() got multiple values for argument 'name'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-cgroup-disappearance-v228/qa/cpu.py\", line 28, in <module>\n    check('deadHeldDescriptorReturnsENODEV',report['deadErrno']==errno.ENODEV,errno=report['deadErrno'],name=report.get('deadErrorName'))\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nTypeError: check() got multiple values for argument 'name'\n"
+}

@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-admission-settled-native-v214",
-  "status": "Bound host durable admission before publication/broker read passes57 unread and43 settled native checks;22 real C/filesystem/correlation,19 journal,30+20+27 compiled and Quint8/1000 pass. Full requirements/release remain open.",
+  "activeSlice": "implementation/elm-minimize-restore-recovery-v235",
+  "status": "Four coherent real minimize/restore unread/lost-receipt recovery cases pass57/59/57/59 native checks with actual body pixels, keyboard eligibility and current-state primary actions. Dead cgroup descriptor ENODEV reproduced6 CPU checks and guarded cleanup fixed. Full original timing/requirements/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1231,10 +1231,79 @@
         "Interrupted minimize/restore, global former-live-broker revocation and full original91/coherent release tuple still require qualification",
         "Quint8/1000 is abstract admission/settlement policy, not automatic C/filesystem/Elm refinement"
       ]
+    },
+    "minimizeRestoreRecoveryV235": {
+      "passed": true,
+      "scope": "Four real single-window minimize/restore unread/lost-receipt recovery cases on actual pixels/input and current-state primary actions; original restore timing/full release open",
+      "cases": [
+        {
+          "case": "minimizeUnread",
+          "operation": "minimize",
+          "faultBoundary": "unread",
+          "nativeChecks": 57,
+          "minimizedAcrossRecovery": false,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "restoreUnread",
+          "operation": "restore",
+          "faultBoundary": "unread",
+          "nativeChecks": 59,
+          "minimizedAcrossRecovery": true,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "minimizeLostReceipt",
+          "operation": "minimize",
+          "faultBoundary": "lost",
+          "nativeChecks": 57,
+          "minimizedAcrossRecovery": true,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "restoreLostReceipt",
+          "operation": "restore",
+          "faultBoundary": "lost",
+          "nativeChecks": 59,
+          "minimizedAcrossRecovery": false,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        }
+      ],
+      "selectedCases": 4,
+      "nativeCheckCounts": [
+        57,
+        59,
+        57,
+        59
+      ],
+      "distinctBaselineScenarioCountNotInferred": true,
+      "actualDeadCgroupDescriptorChecks": 6,
+      "observedDeadDescriptorErrno": 19,
+      "sameSupervisorRuntimeCoreTuple": true,
+      "actualPixelStagesPerCase": 6,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "originalRestoreTimingAccepted": false,
+      "sealedRuntimeFiles": 20,
+      "evidence": "implementation/elm-minimize-restore-recovery-v235/qa/slice-manifest.json",
+      "limitations": [
+        "Single controlled window at fixed private output; original restore38/recovery34/case34 timing, multiwindow/modal/device behavior and release are not established",
+        "Instance/lifetime journal namespace/migration, storage-error UX and global old-live-broker revocation remain open",
+        "Compiler/Quint/admission/full original native results are retained, not rerun by these four selected native campaigns"
+      ]
     }
   },
   "next": [
-    "Qualify interrupted minimize/restore on durable host tuple; address storage-error UX and compositor-instance journal namespace/migration, then global former-live-broker revocation and integrated new core/menu/GPU original regressions.",
+    "Implement compositor-instance/lifetime journal namespace and migration; qualify storage-error UX and old-live-broker revocation, then original restore timing and coherent integrated updated core/menu/GPU regressions.",
     "Measure and freeze workload/resource/input-presentation budgets on the shared host; qualify GPU context loss/recovery and keep WebGPU unavailability explicit.",
     "Integrate reviewed menu/new native buffer/viewport tuple with shared scope/controller host; preserve old accepted source/ABI evidence and rerun original campaigns.",
     "Continue actual AT/IME, physical output/device and human UX, full scene/window operations, zero-output recovery, C00 and release."

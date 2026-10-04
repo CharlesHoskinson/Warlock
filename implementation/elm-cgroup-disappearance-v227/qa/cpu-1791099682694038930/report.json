@@ -1,0 +1,32 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "exactOwnedScopeContainsUnreapedChild",
+      "passed": true,
+      "unit": "qa-harness-cgroup-disappear-1791099682694073076.scope",
+      "group": "/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-cgroup-disappear-1791099682694073076.scope",
+      "pid": 478699,
+      "start": "6778733"
+    },
+    {
+      "name": "parentScopeExcluded",
+      "passed": true
+    },
+    {
+      "name": "heldDescriptorInitiallyListsOwnedChild",
+      "passed": true
+    },
+    {
+      "name": "ownedChildStopsByDeclaredSignal",
+      "passed": true,
+      "exitCode": -15
+    },
+    {
+      "name": "systemdRemovesEmptyOwnedGroup",
+      "passed": true
+    }
+  ],
+  "error": "OSError(19, 'No such device')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-cgroup-disappearance-v227/qa/cpu.py\", line 25, in <module>\n    os.lseek(fd,0,os.SEEK_SET)\n    ~~~~~~~~^^^^^^^^^^^^^^^^^^\nOSError: [Errno 19] No such device\n"
+}

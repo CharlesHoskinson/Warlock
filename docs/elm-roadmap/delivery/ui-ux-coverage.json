@@ -7125,6 +7125,75 @@
         "Interrupted minimize/restore, global former-live-broker revocation and full original91/coherent release tuple still require qualification",
         "Quint8/1000 is abstract admission/settlement policy, not automatic C/filesystem/Elm refinement"
       ]
+    },
+    {
+      "passed": true,
+      "scope": "Four real single-window minimize/restore unread/lost-receipt recovery cases on actual pixels/input and current-state primary actions; original restore timing/full release open",
+      "cases": [
+        {
+          "case": "minimizeUnread",
+          "operation": "minimize",
+          "faultBoundary": "unread",
+          "nativeChecks": 57,
+          "minimizedAcrossRecovery": false,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "restoreUnread",
+          "operation": "restore",
+          "faultBoundary": "unread",
+          "nativeChecks": 59,
+          "minimizedAcrossRecovery": true,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "minimizeLostReceipt",
+          "operation": "minimize",
+          "faultBoundary": "lost",
+          "nativeChecks": 57,
+          "minimizedAcrossRecovery": true,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        },
+        {
+          "case": "restoreLostReceipt",
+          "operation": "restore",
+          "faultBoundary": "lost",
+          "nativeChecks": 59,
+          "minimizedAcrossRecovery": false,
+          "actualPixelStages": 6,
+          "actualNoAutoResubmission": true,
+          "cleanupPassed": true
+        }
+      ],
+      "selectedCases": 4,
+      "nativeCheckCounts": [
+        57,
+        59,
+        57,
+        59
+      ],
+      "distinctBaselineScenarioCountNotInferred": true,
+      "actualDeadCgroupDescriptorChecks": 6,
+      "observedDeadDescriptorErrno": 19,
+      "sameSupervisorRuntimeCoreTuple": true,
+      "actualPixelStagesPerCase": 6,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "originalRestoreTimingAccepted": false,
+      "sealedRuntimeFiles": 20,
+      "evidence": "implementation/elm-minimize-restore-recovery-v235/qa/slice-manifest.json",
+      "limitations": [
+        "Single controlled window at fixed private output; original restore38/recovery34/case34 timing, multiwindow/modal/device behavior and release are not established",
+        "Instance/lifetime journal namespace/migration, storage-error UX and global old-live-broker revocation remain open",
+        "Compiler/Quint/admission/full original native results are retained, not rerun by these four selected native campaigns"
+      ]
     }
   ]
 }
