@@ -1,0 +1,142 @@
+"""Protected CPU-only build of an unchanged authority for the frozen V7 core."""
+import hashlib
+import json
+import os
+from pathlib import Path
+import resource
+import shlex
+import shutil
+import subprocess
+import time
+
+assert resource.getrlimit(resource.RLIMIT_CORE) == (1, 1), 'Use protected qa_run.py'
+ROOT = Path(__file__).resolve().parents[1]
+REPO = ROOT.parents[1]
+OWNER = REPO / 'implementation/maximized-stack-v1/native-core-v2'
+OUT = ROOT / 'qa' / ('build-' + str(time.time_ns()))
+OUT.mkdir()
+report = {'passed': False, 'nativeAcceptance': False, 'installed': False,
+          'scope': 'Exact owning binary/plugin compile closure only; no host or GUI', 'commands': []}
+
+
+def sha(p):
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+
+
+def verify_inventory(root, entries):
+    for entry in entries:
+        p = root / entry['path']
+        if 'symlink' in entry:
+            assert p.is_symlink() and os.readlink(p) == entry['symlink'], str(p)
+        else:
+            assert not p.is_symlink() and p.is_file(), str(p)
+            assert p.stat().st_size == entry['size'] and sha(p) == entry['sha256'], str(p)
+
+
+def run(name, command):
+    p = subprocess.run(command, capture_output=True, text=True, timeout=240)
+    (OUT / (name + '.stdout')).write_text(p.stdout)
+    (OUT / (name + '.stderr')).write_text(p.stderr)
+    report['commands'].append({'name': name, 'command': command, 'exitCode': p.returncode})
+    print(name, p.returncode, flush=True)
+    assert p.returncode == 0, p.stderr[-6000:]
+    return p.stdout
+
+
+try:
+    upstream = json.loads((ROOT / 'upstream.json').read_text())
+    parent = Path(upstream['parent'])
+    component = Path(upstream['coreComponent'])
+    parent_manifest = parent / 'qa/build-pair-manifest.json'
+    component_manifest = component / 'component-manifest.json'
+    assert sha(parent_manifest) == upstream['parentPairManifestSHA256']
+    assert sha(component_manifest) == upstream['coreComponentManifestSHA256']
+    inventory = json.loads(component_manifest.read_text())
+    assert inventory['passed'] and not inventory['nativeAcceptance']
+    verify_inventory(component, inventory['files'])
+    inherited = {}
+    for rel, digest in upstream['inheritedFiles'].items():
+        local = ROOT / ('qa/inherited/' + Path(rel).name if rel.startswith('qa/') else rel)
+        assert sha(parent / rel) == digest and sha(local) == digest, rel
+        inherited[rel] = digest
+    parent_pair = json.loads(parent_manifest.read_text())
+    for rel, digest in parent_pair['files'].items():
+        assert sha(parent / rel) == digest, rel
+    pair = json.loads((ROOT / 'native-build-report.json').read_text())
+    assert sha(ROOT / 'native-build-report.json') == upstream['coreDescriptorSHA256']
+    assert pair['result'] == 'pass' and sha(pair['binary']) == pair['sha256']
+    assert sha(pair['buildReport']) == pair['buildReportSHA256'] == inventory['buildReportSHA256']
+    core = json.loads(Path(pair['buildReport']).read_text())
+    assert core['passed'] and core['binary'] == pair['binary'] and core['binarySHA256'] == pair['sha256']
+    for rel, digest in core['inputs'].items():
+        assert sha(component / rel) == digest, rel
+        assert sha(Path(pair['buildReport']).parent / 'inputs' / rel) == digest, rel
+    for path, digest in core['dependencies'].items():
+        assert sha(path) == digest, path
+    for name in ('SceneModal.hpp', 'WindowPolicy.hpp', 'SceneTrace.hpp'):
+        assert sha(ROOT / 'candidate' / name) == sha(component / 'candidate' / name), name
+    assert sha(OWNER / 'src/version.h') == core['owningVersionHeaderSHA256']
+    # Bind V89's inherited compiler capture to the live owning headers before
+    # copying. No /usr/include/hyprland or mutable owning source is compiled.
+    previous_build = parent / parent_pair['buildReport']
+    assert sha(previous_build) == parent_pair['buildReportSHA256']
+    previous = json.loads(previous_build.read_text())
+    for path, digest in previous['dependencies'].items():
+        assert sha(path) == digest, path
+    files = [p for p in sorted(ROOT.rglob('*')) if p.is_file() and 'build-' not in str(p.relative_to(ROOT)) and p.name != 'build-pair-manifest.json']
+    inputs = {str(p.relative_to(ROOT)): sha(p) for p in files}
+    for p in files:
+        dest = OUT / 'inputs' / p.relative_to(ROOT)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(p, dest)
+        dest.chmod(0o444)
+    headers = {}
+    for p in sorted(OWNER.rglob('*')):
+        if p.is_file() and p.suffix in ('.h', '.hpp', '.hh', '.hxx') and 'build' not in p.relative_to(OWNER).parts:
+            rel = str(p.relative_to(OWNER))
+            headers[rel] = sha(p)
+            dest = OUT / 'owning-headers' / rel
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(p, dest)
+            dest.chmod(0o444)
+    include = OUT / 'include'
+    include.mkdir()
+    (include / 'hyprland').symlink_to(OUT / 'owning-headers', target_is_directory=True)
+    flags = shlex.split(run('flags', ['pkg-config', '--cflags', 'json-glib-1.0', 'pixman-1', 'libdrm', 'libinput', 'wayland-server', 'libeis-1.0']))
+    libs = shlex.split(run('libs', ['pkg-config', '--libs', 'json-glib-1.0']))
+    binary = OUT / 'elm-window-effect-authority.so'
+    run('compile', ['g++', '-std=c++23', '-O2', '-fPIC', '-shared', '-Wall', '-Wextra', '-Werror', '-Wno-unused-parameter',
+        '-isystem', str(include), '-isystem', str(OUT / 'owning-headers'), '-isystem', str(OUT / 'owning-headers/src'),
+        '-isystem', str(OUT / 'owning-headers/protocols'), '-I' + str(OUT / 'inputs/candidate'), *flags,
+        '-MD', '-MF', str(OUT / 'authority.d'), str(OUT / 'inputs/native/authority.cpp'), '-o', str(binary), *libs])
+    paths = shlex.split((OUT / 'authority.d').read_text().replace('\\\n', ' ').split(':', 1)[1])
+    dependencies = {str(Path(p).resolve()): sha(Path(p).resolve()) for p in paths}
+    assert not any(p.startswith('/usr/include/hyprland') or p.startswith(str(OWNER) + '/') for p in dependencies)
+    symbols = run('core-symbols', ['nm', '-D', '-C', pair['binary']])
+    for symbol in ('Desktop::WindowPolicy::applyMinimized', 'Desktop::WindowPolicy::isMinimized', 'Render::SceneTrace::snapshots'):
+        assert symbol in symbols, symbol
+    plugin_symbols = run('plugin-symbols', ['nm', '-D', '--defined-only', str(binary)])
+    for symbol in ('PLUGIN_INIT', 'PLUGIN_EXIT', 'PLUGIN_API_VERSION'):
+        assert symbol in plugin_symbols, symbol
+    # Final checks cover both captured and live compilation inputs.
+    for rel, digest in inputs.items():
+        assert sha(ROOT / rel) == sha(OUT / 'inputs' / rel) == digest, rel
+    for rel, digest in headers.items():
+        assert sha(OWNER / rel) == sha(OUT / 'owning-headers' / rel) == digest, rel
+    for path, digest in dependencies.items():
+        assert sha(path) == digest, path
+    verify_inventory(component, inventory['files'])
+    assert sha(component_manifest) == upstream['coreComponentManifestSHA256']
+    assert sha(parent_manifest) == upstream['parentPairManifestSHA256']
+    assert sha(pair['binary']) == pair['sha256'] and sha(pair['buildReport']) == pair['buildReportSHA256']
+    report.update(passed=True, binary=str(binary), binarySHA256=sha(binary), inputs=inputs,
+                  owningHeaders=headers, dependencies=dependencies, inheritedFiles=inherited,
+                  inheritedBuildReport=str(previous_build), inheritedBuildReportSHA256=sha(previous_build),
+                  core={'path': pair['binary'], 'sha256': pair['sha256'], 'versionHeaderSHA256': core['owningVersionHeaderSHA256'],
+                        'buildReport': pair['buildReport'], 'buildReportSHA256': pair['buildReportSHA256'],
+                        'componentManifest': str(component_manifest), 'componentManifestSHA256': sha(component_manifest)})
+except Exception as e:
+    report['error'] = repr(e)
+(OUT / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
+print(OUT / 'report.json', flush=True)
+raise SystemExit(not report['passed'])

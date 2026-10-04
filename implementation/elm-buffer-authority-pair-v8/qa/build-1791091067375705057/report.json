@@ -1,0 +1,96 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "installed": false,
+  "scope": "Exact owning binary/plugin compile closure only; no host or GUI",
+  "commands": [
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "json-glib-1.0",
+        "pixman-1",
+        "libdrm",
+        "libinput",
+        "wayland-server",
+        "libeis-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "libs",
+      "command": [
+        "pkg-config",
+        "--libs",
+        "json-glib-1.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compile",
+      "command": [
+        "g++",
+        "-std=c++23",
+        "-O2",
+        "-fPIC",
+        "-shared",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/include",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/owning-headers",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/owning-headers/src",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/owning-headers/protocols",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/inputs/candidate",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/libdrm",
+        "-I/usr/include/libei-1.0",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/authority.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/inputs/native/authority.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/elm-window-effect-authority.so",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lglib-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "core-symbols",
+      "command": [
+        "nm",
+        "-D",
+        "-C",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-buffer-size-v7/build-1791090562611157328/Hyprland"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "plugin-symbols",
+      "command": [
+        "nm",
+        "-D",
+        "--defined-only",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-1791091067375705057/elm-window-effect-authority.so"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "error": "AssertionError('PLUGIN_INIT')"
+}
