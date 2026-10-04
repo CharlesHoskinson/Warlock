@@ -1,0 +1,49 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "heldFirstBindRefused",
+      "passed": true,
+      "receipt": {
+        "first": 0,
+        "instanceRetained": 1,
+        "lifetimeRetired": 1
+      }
+    },
+    {
+      "name": "heldRetryAfterActualCorrection",
+      "passed": true,
+      "receipt": {
+        "retry": 1,
+        "foreignLifetimeRefused": 1,
+        "sameLifetimeIdempotent": 0
+      },
+      "exitCode": 0
+    },
+    {
+      "name": "heldInstanceContextRetained",
+      "passed": true
+    },
+    {
+      "name": "heldFailedLifetimeResourcesRetired",
+      "passed": true
+    },
+    {
+      "name": "heldForeignLifetimeRefused",
+      "passed": true
+    },
+    {
+      "name": "heldSameLifetimeBindIdempotent",
+      "passed": false
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fix-v267/qa/retry.py": "91470737ab197292bba69093f636be749bdfd4604f71557a8f154204b79e7ed8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fix-v267/qa/retry.c": "15a3950c38233a34c2bb197ba1c083e1219c929baf8c34e88926295c3138a969",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fix-v267/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fix-v267/native/host-journal.h": "7d021f54378cee214c775be1ae3a14dafcd333fcf56fc3272eee879af9b9efed"
+  },
+  "scope": "Compiled actual C admission resources and real filesystem/flock; native GUI acceptance separate",
+  "error": "AssertionError('heldSameLifetimeBindIdempotent')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fix-v267/qa/retry.py\", line 38, in <module>\n    check(fault+'SameLifetimeBindIdempotent',second['sameLifetimeIdempotent']==1)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fix-v267/qa/retry.py\", line 10, in check\n    def check(name,value,**evidence):report['checks'].append({'name':name,'passed':bool(value),**evidence});assert value,name\n                                                                                                                   ^^^^^\nAssertionError: heldSameLifetimeBindIdempotent\n"
+}

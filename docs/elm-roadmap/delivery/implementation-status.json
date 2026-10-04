@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-storage-settlement-v265",
-  "status": "Actual committed minimize/restore followed by failed journal settlement qualified45/47 with six pixel/input stages and same-host explicit recovery without replay. Host-bind retry descriptor defect, other storage stages and full release remain open.",
+  "activeSlice": "implementation/elm-host-bind-acceptance-v274",
+  "status": "Host binding failures preserve verified instance context for explicit retry. Actual C/native22+22 and original137 qualification pass; next integrate durable recovery with reviewed geometry/menu before coherent release acceptance.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1506,6 +1506,34 @@
       "allRecoveryStagesAccepted": false,
       "completedRequirementIds": [],
       "evidence": "implementation/elm-storage-settlement-v265/qa/slice-manifest.json"
+    },
+    "hostBindV274": {
+      "passed": true,
+      "scope": "Host admission failed-lifetime retirement preserves instance context for explicit retry; actual lock/privacy correction and original137",
+      "compiledRetryChecks": 14,
+      "retainedCompiledAdmissionChecks": 22,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeHostBindingCheckCounts": [
+        22,
+        22
+      ],
+      "originalNativeRegressionChecks": 137,
+      "originalNativeBaselineChecks": 91,
+      "sameGUIBuildCorePair": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "nativeHostBindingRetryAccepted": true,
+      "allRecoveryStagesAccepted": false,
+      "newerGeometryMenuGPUReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-host-bind-acceptance-v274/qa/slice-manifest.json"
     }
   },
   "next": [

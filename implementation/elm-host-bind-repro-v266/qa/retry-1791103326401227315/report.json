@@ -1,0 +1,33 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "heldFirstBindRefused",
+      "passed": true,
+      "receipt": {
+        "first": 0,
+        "instanceRetained": 0,
+        "lifetimeRetired": 1
+      }
+    },
+    {
+      "name": "heldRetryAfterActualCorrection",
+      "passed": false,
+      "receipt": {
+        "retry": 0,
+        "foreignLifetimeRefused": 1,
+        "sameLifetimeIdempotent": 0
+      },
+      "exitCode": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-repro-v266/qa/retry.py": "f0fe8eee25c9e1ede7648c8b50c101a0c6d9082b0d3976548cc9666c8ae09f98",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-repro-v266/qa/retry.c": "15a3950c38233a34c2bb197ba1c083e1219c929baf8c34e88926295c3138a969",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-stale-fix-v256/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-stale-fix-v256/native/host-journal.h": "1b4cba0f62b26a2522bf2d05cd79ce20d69173c7748e358c372008946281ffbb"
+  },
+  "scope": "Compiled actual C admission resources and real filesystem/flock; native GUI acceptance separate",
+  "error": "AssertionError('heldRetryAfterActualCorrection')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-repro-v266/qa/retry.py\", line 34, in <module>\n    check(fault+'RetryAfterActualCorrection',second['retry']==1,receipt=second,exitCode=child.returncode)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-repro-v266/qa/retry.py\", line 10, in check\n    def check(name,value,**evidence):report['checks'].append({'name':name,'passed':bool(value),**evidence});assert value,name\n                                                                                                                   ^^^^^\nAssertionError: heldRetryAfterActualCorrection\n"
+}

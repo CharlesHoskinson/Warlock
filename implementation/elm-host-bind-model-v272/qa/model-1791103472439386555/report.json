@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Admission lifetime failure retires lifetime resources while preserving explicit instance retry; abstract model, not automatic C/filesystem/Elm refinement.",
+  "sourceSHA256": "3ee38c54689b3b337e9d17ef4fd2b49a26f6baffe82e750d035bfd191ca7d8fc",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(failedBindRetainsInstanceTest|correctionDoesNotAutoBindTest|explicitRetryBindsAfterCorrectionTest|repeatedFailureRetainsInstanceTest|wrongLifetimeCannotReplaceLiveBindingTest|finalCloseRetiresEverythingTest|stoppedHostCannotRetryTest|successfulBindOwnsLifetimeTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "3ee38c54689b3b337e9d17ef4fd2b49a26f6baffe82e750d035bfd191ca7d8fc",
+    "model.py": "e81decc4b357895bb461abbd81f2df270d3bbb7bb0a5e2d2e2aaccd99d2c671e",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-failedBindRetainsInstanceTest-0.itf.json": "37775c4075d7bef97216a06f224f02c6ed48b14dc519c527bd4f2545675cb8c0",
+    "named-correctionDoesNotAutoBindTest-1.itf.json": "d75fe69751cd0b28d918b0be51dabca72e26c1116497355027bd7f7e23832bcf",
+    "named-explicitRetryBindsAfterCorrectionTest-2.itf.json": "d25fc89864220ade2be9aada933de874ebccfc3a5ac6115740679a5c28eea0b5",
+    "named-repeatedFailureRetainsInstanceTest-3.itf.json": "2e79910f3cfa199c767eed04e05dac144128a7400befb5af22401e1b6d62b5b0",
+    "named-wrongLifetimeCannotReplaceLiveBindingTest-4.itf.json": "cd73d31c90620c7c99cd263ffcb07143fb641e96711737333b287fedb424482e",
+    "named-finalCloseRetiresEverythingTest-5.itf.json": "4519dfd33b7e904cba22b618fa9fe9a60e620bae196e5330ca380d0a7bc50514",
+    "named-stoppedHostCannotRetryTest-6.itf.json": "48bb3c4f2683d6f2d3d81dc9bfcdaec7ecce7ea84aa9aecfd4f9a3cf24924571",
+    "named-successfulBindOwnsLifetimeTest-7.itf.json": "9a10ef5f3c764a5bfd856a6beef54e44f1260be2d8dcb54998ddb0d685a1e681",
+    "named.stdout": "cfa85435954529642b4e75458630720d32dab67d1b3ea627f19548d8d9bd42bc",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "f98cb8622d074e0e422b81cd8345d1c7702435543182b6ea524f3ea26191601a",
+    "invariants.stdout": "b5d1b92b9ce98f5b89efc8081be2c32d25d0fb642f09f04b34b883ac9f4bd3f3",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

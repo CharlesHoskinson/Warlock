@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "heldFirstBindRefused",
+      "passed": true,
+      "receipt": {
+        "first": 0,
+        "instanceRetained": 1,
+        "lifetimeRetired": 1
+      }
+    },
+    {
+      "name": "heldRetryAfterActualCorrection",
+      "passed": true,
+      "receipt": {
+        "retry": 1,
+        "foreignLifetimeRefused": 1,
+        "sameLifetimeIdempotent": 1
+      },
+      "exitCode": 0
+    },
+    {
+      "name": "heldInstanceContextRetained",
+      "passed": true
+    },
+    {
+      "name": "heldFailedLifetimeResourcesRetired",
+      "passed": true
+    },
+    {
+      "name": "heldForeignLifetimeRefused",
+      "passed": true
+    },
+    {
+      "name": "heldSameLifetimeBindIdempotent",
+      "passed": true
+    },
+    {
+      "name": "heldFinalCloseReleasesAllResources",
+      "passed": true
+    },
+    {
+      "name": "publicFirstBindRefused",
+      "passed": true,
+      "receipt": {
+        "first": 0,
+        "instanceRetained": 1,
+        "lifetimeRetired": 1
+      }
+    },
+    {
+      "name": "publicRetryAfterActualCorrection",
+      "passed": true,
+      "receipt": {
+        "retry": 1,
+        "foreignLifetimeRefused": 1,
+        "sameLifetimeIdempotent": 1
+      },
+      "exitCode": 0
+    },
+    {
+      "name": "publicInstanceContextRetained",
+      "passed": true
+    },
+    {
+      "name": "publicFailedLifetimeResourcesRetired",
+      "passed": true
+    },
+    {
+      "name": "publicForeignLifetimeRefused",
+      "passed": true
+    },
+    {
+      "name": "publicSameLifetimeBindIdempotent",
+      "passed": true
+    },
+    {
+      "name": "publicFinalCloseReleasesAllResources",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fixed-v268/qa/retry.py": "91470737ab197292bba69093f636be749bdfd4604f71557a8f154204b79e7ed8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fixed-v268/qa/retry.c": "29c2c135a1dbc40a98cde7003c543283041fc1000d121b11c57f0d9234a76ddf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fixed-v268/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-bind-fixed-v268/native/host-journal.h": "7d021f54378cee214c775be1ae3a14dafcd333fcf56fc3272eee879af9b9efed"
+  },
+  "scope": "Compiled actual C admission resources and real filesystem/flock; native GUI acceptance separate"
+}

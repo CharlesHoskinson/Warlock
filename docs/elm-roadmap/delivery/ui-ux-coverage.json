@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T08:40:32.005220+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T08:53:26.307046+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7424,6 +7424,39 @@
         "Actual public-mode refusal of settle read after native Committed, not native disk exhaustion or post-rename directory-fsync failure",
         "Host journal binding retry loses instance descriptor on failure; reproduce/fix/qualify next",
         "Original137/compiler/Quint and earlier recovery packets retained, not rerun; full release remains open"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Host admission failed-lifetime retirement preserves instance context for explicit retry; actual lock/privacy correction and original137",
+      "compiledRetryChecks": 14,
+      "retainedCompiledAdmissionChecks": 22,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeHostBindingCheckCounts": [
+        22,
+        22
+      ],
+      "originalNativeRegressionChecks": 137,
+      "originalNativeBaselineChecks": 91,
+      "sameGUIBuildCorePair": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "nativeHostBindingRetryAccepted": true,
+      "allRecoveryStagesAccepted": false,
+      "newerGeometryMenuGPUReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-host-bind-acceptance-v274/qa/slice-manifest.json",
+      "limitations": [
+        "Only failed host-lifetime lock retirement changed; actual public/held lock cases and original137 qualified on V268/V89",
+        "New geometry/menu broker currently lacks the accepted durable journal; integrate and qualify one coherent producer/allocator tuple before replacement acceptance",
+        "Final recovery matrix, native storage classes, legacy provisioning, global broker revocation, restore timing, GPU/AT/IME/physical/human/budgets/C00/full release remain open"
       ]
     }
   ]
