@@ -1,0 +1,16 @@
+
+  focus
+    1) restoredKeyboardEntersRecordedPopupTest failed after 1 test(s)
+
+  1 failed
+
+  1) restoredKeyboardEntersRecordedPopupTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v201/qa/model-1791138368784199775/invented-restoration-key.qnt:26:107
+        26:  run restoredKeyboardEntersRecordedPopupTest = init.then(expire).then(request(2)).then(attach).then(all { assert(s.focus == 2 and s.delivered == 2 and s.keys == 0), s' = s })
+                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=restoredKeyboardEntersRecordedPopupTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 invented-restoration-key.qnt

@@ -1,0 +1,16 @@
+
+  focus
+    1) keyboardlessRequestNeverEntersTest failed after 1 test(s)
+
+  1 failed
+
+  1) keyboardlessRequestNeverEntersTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v201/qa/model-1791138368784199775/enters-without-device.qnt:32:120
+        32:  run keyboardlessRequestNeverEntersTest = init.then(expire).then(request(2)).then(request(2)).then(bind(2)).then(all { assert(s.delivered == 0 and s.keys == 0), s' = s })
+                                                                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=keyboardlessRequestNeverEntersTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 enters-without-device.qnt

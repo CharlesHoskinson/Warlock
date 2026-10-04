@@ -1,0 +1,109 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Verbatim actual C++ setter/resource methods with synthetic devices/client/surface/callback fixtures, not GTK/native/seat-policy admission evidence",
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-method-controls-v203/candidate/src/managers/SeatManager.cpp",
+  "sourceSHA256": "5fecb67b4ad570ebdaeda0c624c0d768b071cdff76be3d206340e06a0053df63",
+  "controls": [
+    {
+      "name": "baseline",
+      "accepted": true,
+      "exitCode": 0,
+      "binarySHA256": "81e555ca3edaff8cfdd75529868bc2425c9f67efdba41122efaea8f00368c43c"
+    },
+    {
+      "name": "discards-absent-focus",
+      "accepted": true,
+      "exitCode": 1,
+      "binarySHA256": "ff4daaecd2165e49730f4fe50fa04262027a0961256578a83148f7dfd11ba9b6"
+    },
+    {
+      "name": "missing-first-enter",
+      "accepted": true,
+      "exitCode": 1,
+      "binarySHA256": "770e157d7964bc63cdf83b9c4163f66d1d335647066b365ab5609caad6d49aa4"
+    },
+    {
+      "name": "enters-stale-focus",
+      "accepted": true,
+      "exitCode": 1,
+      "binarySHA256": "6364d755365bc68a0808e4e4121b2079b2c735a456d60422cd4d83506cc76b68"
+    },
+    {
+      "name": "enters-old-keyboard",
+      "accepted": true,
+      "exitCode": 1,
+      "binarySHA256": "fd16e381e1bef7a91f56f3486728578e4eebf7b70f168b4f18e945e0b357d922"
+    },
+    {
+      "name": "drops-destroy-listener",
+      "accepted": true,
+      "exitCode": 1,
+      "binarySHA256": "77656ed521d3b5400b15bd74d49095fbfd7d622253cd1f44e35a5d93220609a2"
+    },
+    {
+      "name": "enters-foreign-resource",
+      "accepted": true,
+      "exitCode": 1,
+      "binarySHA256": "effebf9b45afd00d1a82f7f3b949b0743944d52d623082a08add817a760e4be9"
+    },
+    {
+      "name": "reenters-on-additional-device",
+      "accepted": true,
+      "exitCode": 1,
+      "binarySHA256": "630c5667d0c048957c44b85ac6dbcec035a4891c6aa3d19441ab5ec64fbd275e"
+    }
+  ],
+  "artifacts": {
+    "production-methods.cpp": "ba858d567a49dadcd25e96e0da2d2ea391c752ce6024e97aba9a80323bd0a5da",
+    "template.cpp": "38f8ec312dec0e2447599b66c5e29e2196e6841c7cd79b51ed49212182d42c82",
+    "baseline.cpp": "74f8f8aa31b6aff49ca9cc29ace32143a2bdffd69f2af76d611e28b904fa7f1e",
+    "baseline": "81e555ca3edaff8cfdd75529868bc2425c9f67efdba41122efaea8f00368c43c",
+    "baseline-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline.stdout": "44b7ddd18dfc67d91c0bb033c5ec51be2b30ff93c37c901e0565b6ede9977b45",
+    "baseline.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "discards-absent-focus.cpp": "7056845e2a5744bf16bca784122b1002fe14eee81d93543a737cabbefa3d34c7",
+    "discards-absent-focus": "ff4daaecd2165e49730f4fe50fa04262027a0961256578a83148f7dfd11ba9b6",
+    "discards-absent-focus-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "discards-absent-focus-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "discards-absent-focus.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "discards-absent-focus.stderr": "4bead44a3ce17860d97a9449ca5bea903b52b0f7e299840ec03c58d65427b6b2",
+    "missing-first-enter.cpp": "0da2aab6ccd281a78dd503055083b20bd942dd68a4d54a6dbd06c0267dc4b9c8",
+    "missing-first-enter": "770e157d7964bc63cdf83b9c4163f66d1d335647066b365ab5609caad6d49aa4",
+    "missing-first-enter-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-first-enter-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-first-enter.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-first-enter.stderr": "7ebc4915c8d5c0d1f636356c9a048ddc4b3b10fcc4a1ee234edcccd594f450b5",
+    "enters-stale-focus.cpp": "08af7063b4842cd847e92f3cdd68b3adb2ca6ac41efd91875ffee0325653845d",
+    "enters-stale-focus": "6364d755365bc68a0808e4e4121b2079b2c735a456d60422cd4d83506cc76b68",
+    "enters-stale-focus-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-stale-focus-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-stale-focus.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-stale-focus.stderr": "5d98320a1b536e3a50319676c06bd763afb9b13f4db273d6a6c7a48013b36c36",
+    "enters-old-keyboard.cpp": "85ad787af47abe07c74cbe83120d66995cc3a6941f7bdb4d8e7f9a842d3c39ca",
+    "enters-old-keyboard": "fd16e381e1bef7a91f56f3486728578e4eebf7b70f168b4f18e945e0b357d922",
+    "enters-old-keyboard-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-old-keyboard-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-old-keyboard.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-old-keyboard.stderr": "df41aa0f96eb24ed40c57b3655c99f44f4b7ecd15fd80f615310b74f48b8cdde",
+    "drops-destroy-listener.cpp": "bf425f2f01b211bb2faf62b3d1e06e7576e1cb59fc07ac28468ebad11d124f0b",
+    "drops-destroy-listener": "77656ed521d3b5400b15bd74d49095fbfd7d622253cd1f44e35a5d93220609a2",
+    "drops-destroy-listener-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "drops-destroy-listener-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "drops-destroy-listener.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "drops-destroy-listener.stderr": "2e8378d98d777ab8a481b15c69771fed77c3f0c19aacdc160872ad8eb4291e13",
+    "enters-foreign-resource.cpp": "933b4122d33298570e13b32fc0226114e681093611a9bc3927d4ffa50dcf45de",
+    "enters-foreign-resource": "effebf9b45afd00d1a82f7f3b949b0743944d52d623082a08add817a760e4be9",
+    "enters-foreign-resource-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-foreign-resource-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-foreign-resource.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-foreign-resource.stderr": "b5fbf70084d275f76d7c612d2528f5a2dd9e909b12c9cdf023db8ae820c83b62",
+    "reenters-on-additional-device.cpp": "dd30f692412d1c2132a5d8954456e990905d5a98f2b4391ca4e533da130f7d8f",
+    "reenters-on-additional-device": "630c5667d0c048957c44b85ac6dbcec035a4891c6aa3d19441ab5ec64fbd275e",
+    "reenters-on-additional-device-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reenters-on-additional-device-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reenters-on-additional-device.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "reenters-on-additional-device.stderr": "97e39ba9fcebf89eff157c4c876e7beb031c41ef40e9c4728d05b9884d3d9fcf"
+  }
+}

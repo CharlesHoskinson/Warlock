@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v199/qa/model-1791138318506994994/focus.qnt:13:31
+  13:  action request(desired: int) = s' = { ...s, focus: desired, delivered: if (s.count > 0) desired else s.delivered }
+                                    ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-model-v199/qa/model-1791138318506994994/focus.qnt:14:2
+  14:  action bind(client: int) = s' = { ...s, delivered: if (s.count > 0 and s.focus != 0 and client == s.focus) s.focus else s.delivered }
+       ^^^^^^
+
+error: parsing failed

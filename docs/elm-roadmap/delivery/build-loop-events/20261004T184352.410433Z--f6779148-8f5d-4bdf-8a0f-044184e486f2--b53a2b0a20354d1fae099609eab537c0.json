@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "b53a2b0a20354d1fae099609eab537c0",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T18:43:52.410433+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-keyboardless-menu-capability-v209",
+  "nextWork": [
+    "Progress:201model17/1000x40/9mutants PASS; exactsource200 SeatManager records focus/destroylistener while device absent and firstactive keyboard reenters still-current focus with callback reentry fences.202fullTU694headers PASS,203verbatimmethods22checks/7controlled mutants PASS;204source897files frozen retains199parser/200SIG6counterfactualcontrol.205Corelinked+identicalrelink,432oldpayloads/694publicheaders/13412exports retained;206plugin207observer exactowning205 compiledclosed.208runtimehostbyteexact185; GUI507 source adopted fromprimary510 with headerbyteexact190 andfixture511 currentbackend;209cap/210focus preflightPASS, original187/188six-second focus oracles unchanged no addedfocusactions.209native now serial. Next original210+joint161/reconnect57/full89 on newtuple, preserveallfailures; physicalhardware/GPU/WebGPU/output/ATIME/UX/budgets/human/fullS01-S16/C00/reversible release remain open."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-keyboardless-focus-source-held-v204/qa/slice-manifest.json",
+      "sha256": "8fb255ad62b29246dd5e1087188376733fe359b98fa65b3f7c523aa94bf6b3a0",
+      "size": 250938
+    },
+    {
+      "path": "implementation/elm-core-keyboardless-focus-v205/component-manifest.json",
+      "sha256": "81dbdd89a0f650f075f96ec435e271d9b997458ce5bbc94d437e684c67ef6852",
+      "size": 142399
+    },
+    {
+      "path": "implementation/elm-keyboardless-menu-capability-v209/qa/preflight.json",
+      "sha256": "53ea8b9563e77416fad578d89894edde763440991e4489227cb7baa240253b6c",
+      "size": 26695
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

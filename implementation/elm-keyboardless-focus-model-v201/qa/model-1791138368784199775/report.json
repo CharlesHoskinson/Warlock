@@ -1,0 +1,358 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Admitted keyboardless focus/current client-resource lifecycle abstraction; no native input or C++ refinement claim",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "focus.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "focus.qnt",
+        "--backend=typescript",
+        "--match=^(popupPreservedTest|rootPreservedTest|missingSeatFallsBackTest|nullDesktopNoFocusTest|additionalKeyboardNoFocusChangeTest|removalRestorationKeepsPopupTest|expiredPopupRestorationFallsBackTest|keyboardlessPopupRequestTest|restoredKeyboardEntersRecordedPopupTest|retiredKeyboardlessPopupFallsBackTest|nullKeyboardlessFocusClearsIntentTest|latestKeyboardlessFocusWinsTest|additionalKeyboardPreservesLatestFocusTest|reopenPopupWhileKeyboardAbsentTest|keyboardlessRequestNeverEntersTest|foreignKeyboardResourceCannotEnterTest|destroyedFocusNeverEntersForeignResourceTest)$",
+        "--max-samples=1",
+        "--seed=79001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "focus.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "old-unconditional-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "old-unconditional.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "old-unconditional-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "old-unconditional.qnt",
+        "--backend=typescript",
+        "--match=^popupPreservedTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-fallback-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-fallback.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-fallback-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-fallback.qnt",
+        "--backend=typescript",
+        "--match=^missingSeatFallsBackTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "additional-focus-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "additional-focus.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "additional-focus-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "additional-focus.qnt",
+        "--backend=typescript",
+        "--match=^additionalKeyboardNoFocusChangeTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "ignores-keyboardless-request-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "ignores-keyboardless-request.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "ignores-keyboardless-request-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "ignores-keyboardless-request.qnt",
+        "--backend=typescript",
+        "--match=^keyboardlessPopupRequestTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-restored-enter-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-restored-enter.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-restored-enter-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-restored-enter.qnt",
+        "--backend=typescript",
+        "--match=^restoredKeyboardEntersRecordedPopupTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "enters-without-device-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "enters-without-device.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "enters-without-device-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "enters-without-device.qnt",
+        "--backend=typescript",
+        "--match=^keyboardlessRequestNeverEntersTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "retains-retired-focus-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "retains-retired-focus.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "retains-retired-focus-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "retains-retired-focus.qnt",
+        "--backend=typescript",
+        "--match=^retiredKeyboardlessPopupFallsBackTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "foreign-resource-enters-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "foreign-resource-enters.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "foreign-resource-enters-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "foreign-resource-enters.qnt",
+        "--backend=typescript",
+        "--match=^foreignKeyboardResourceCannotEnterTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "invented-restoration-key-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "invented-restoration-key.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invented-restoration-key-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "invented-restoration-key.qnt",
+        "--backend=typescript",
+        "--match=^restoredKeyboardEntersRecordedPopupTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "popupPreservedTest",
+    "rootPreservedTest",
+    "missingSeatFallsBackTest",
+    "nullDesktopNoFocusTest",
+    "additionalKeyboardNoFocusChangeTest",
+    "removalRestorationKeepsPopupTest",
+    "expiredPopupRestorationFallsBackTest",
+    "keyboardlessPopupRequestTest",
+    "restoredKeyboardEntersRecordedPopupTest",
+    "retiredKeyboardlessPopupFallsBackTest",
+    "nullKeyboardlessFocusClearsIntentTest",
+    "latestKeyboardlessFocusWinsTest",
+    "additionalKeyboardPreservesLatestFocusTest",
+    "reopenPopupWhileKeyboardAbsentTest",
+    "keyboardlessRequestNeverEntersTest",
+    "foreignKeyboardResourceCannotEnterTest",
+    "destroyedFocusNeverEntersForeignResourceTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 9,
+  "sourceSHA256": "98ed3ca79b436fc353468e4b56e1efab803265dcba53fd6e6b96abe97a71b95b",
+  "artifacts": {
+    "focus.qnt": "98ed3ca79b436fc353468e4b56e1efab803265dcba53fd6e6b96abe97a71b95b",
+    "model.py": "3a5470316a0d2336712416e139ac2e5fca16e72724d8d0e3ad69c9a689dc2068",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-popupPreservedTest-0.itf.json": "95046d2d699932bfd0e3970f0e44ccaa105a1cb0fefb212b94e80a16f400f886",
+    "named-rootPreservedTest-1.itf.json": "f3c01cdd969bc2d51c44dd22b8bbbeca5e92e6d0af8c1779f51edafdd131d957",
+    "named-missingSeatFallsBackTest-2.itf.json": "0625be5cd9f30215819f070766da727bce3a5eb50ec44cd267acee12e010232c",
+    "named-nullDesktopNoFocusTest-3.itf.json": "4fa905d3004d36a4fba019cf365b58e04e8848f6562405d0c8fbe42e92f8d4d8",
+    "named-additionalKeyboardNoFocusChangeTest-4.itf.json": "fb700bdca3af5834b794859b73101a674aa5f587c08c1c403caf8bf92ddc36ec",
+    "named-removalRestorationKeepsPopupTest-5.itf.json": "de6b110153830739f8773b3ec3b01b1cf65dadd5232df53c302845c8fe970356",
+    "named-expiredPopupRestorationFallsBackTest-6.itf.json": "a2f04faf2ec04069304bf6daa179287c9dd31cb608b241f3b9df3a017a39c478",
+    "named-keyboardlessPopupRequestTest-7.itf.json": "261f3567ca4486b8132220b1ab36dd9fb044724f8008b70d7137e292ea988824",
+    "named-restoredKeyboardEntersRecordedPopupTest-8.itf.json": "813516cb9421a6ca958f8abf84f3b28a33da6e227d1a89f78eaab4f6845768ca",
+    "named-retiredKeyboardlessPopupFallsBackTest-9.itf.json": "37351f27df8175ed91797d717757955f3084be40ecc348efc704c1706473c811",
+    "named-nullKeyboardlessFocusClearsIntentTest-10.itf.json": "37351f27df8175ed91797d717757955f3084be40ecc348efc704c1706473c811",
+    "named-latestKeyboardlessFocusWinsTest-11.itf.json": "dbe5e108c0c918cde808a631835799a24f27b2aa4cfd641ba95c9121ee1b36d1",
+    "named-additionalKeyboardPreservesLatestFocusTest-12.itf.json": "0e68f68e0f7f37288add473af8aa81d78d5277e57ebf6ee2a0cb657a45657c65",
+    "named-reopenPopupWhileKeyboardAbsentTest-13.itf.json": "c1308139965a97906ebeaa53310efcc37ae46de58d8c048797b4ece64ba8fe2f",
+    "named-keyboardlessRequestNeverEntersTest-14.itf.json": "2fe816bf4536ef5086163a038910d1bcc383e26be07f14b1b48688811c715110",
+    "named-foreignKeyboardResourceCannotEnterTest-15.itf.json": "0036b6b4eb29eb9c68c34348351f52dc92d2c7419e542c7d15bcfc4b8aa54449",
+    "named-destroyedFocusNeverEntersForeignResourceTest-16.itf.json": "2a8642cb4f097319c2ab2b57d351fdc7e8a5cd23ec023180174fe66a7605e695",
+    "named.stdout": "6723c423071d4317184b21675765326be3cca357287bc1849ba7943fda66754a",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "8d559472add5cbc84050e5607e5b482da8af26e4482eb933497f878db8723d16",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "old-unconditional.qnt": "0b3446e6e7328b10d1bc06b903feced34063dc36658e66c92df7e7ef2a2f1427",
+    "old-unconditional-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "old-unconditional-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "old-unconditional-rejected.stdout": "4170e06ef22070ff66695b51cb4bb8e6b2a00aad2b4aee549a8175c3ab2a52e2",
+    "old-unconditional-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "missing-fallback.qnt": "73b8c3a7159483d4363752efc7d6607777f779b8936bfac400b1267317e4f059",
+    "missing-fallback-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-fallback-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-fallback-rejected.stdout": "6e58d5281e6343b4e8f19fb5861a51441b8f26fb74472491de740a4849639490",
+    "missing-fallback-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "additional-focus.qnt": "6bc79dc6cf6952afe84ebb54481eaac48fb27445f0b7bc95206971ef941194dd",
+    "additional-focus-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "additional-focus-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "additional-focus-rejected.stdout": "5aff9dfd6ada946fb3527bc317e43069625aa7e585a8e5bc5b5b1935bf049df7",
+    "additional-focus-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "ignores-keyboardless-request.qnt": "be25dfcbf36b318af81074428730abc2353fd6b1fe7a6fb281e3653b54831d52",
+    "ignores-keyboardless-request-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignores-keyboardless-request-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignores-keyboardless-request-rejected.stdout": "abe82c7f369b24d20b9cbcc9aba14bc95a6aae8951fdbdf6604a2a1f14246b42",
+    "ignores-keyboardless-request-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "missing-restored-enter.qnt": "4270d6b7d250730855b970dd938be529f4fb9770870aa2d366012540b87f4730",
+    "missing-restored-enter-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-restored-enter-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-restored-enter-rejected.stdout": "2f8d95c99661a3ffe0ec4a1b928d9df04fe3d018d705cbf841ce03b223a06525",
+    "missing-restored-enter-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "enters-without-device.qnt": "e8120c8b88b0626fe4b0f43155113ac03358393219869a26b794fd5df751ef6d",
+    "enters-without-device-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-without-device-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enters-without-device-rejected.stdout": "1196c5a4294687f4024ecc6f7b3417d898c8de28e9d360d0036f2678aaa5333a",
+    "enters-without-device-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "retains-retired-focus.qnt": "2041f296aa92f611bf376ca1b5d40327b46827647f7e35dfcfe04144f9eb41fa",
+    "retains-retired-focus-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retains-retired-focus-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "retains-retired-focus-rejected.stdout": "1adb625ed4611b78e485ba7743508bd36e0f253c2b7c2344f1a73f19b67749c1",
+    "retains-retired-focus-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "foreign-resource-enters.qnt": "e3ad05bc6ce2a96b392c467894473b6b8dbb4292693a104ad3af74cb3a9c5f98",
+    "foreign-resource-enters-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-resource-enters-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-resource-enters-rejected.stdout": "8ce314bd816d19e552e7efb6be0ac9c75642645d4f058c8770ccf6138121f037",
+    "foreign-resource-enters-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "invented-restoration-key.qnt": "3eb5585f16e1de7167b11c18d6fb28e4498e3394f3b5c8678f3c687fac96b60e",
+    "invented-restoration-key-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-restoration-key-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-restoration-key-rejected.stdout": "526989cb79063e8337010301352df02ac2938dcac80b48f4e42d5029ae5f165c",
+    "invented-restoration-key-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}
