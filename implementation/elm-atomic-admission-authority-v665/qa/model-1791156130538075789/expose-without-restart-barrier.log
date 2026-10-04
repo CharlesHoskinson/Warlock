@@ -1,0 +1,61 @@
+An example execution:
+
+[State 0]
+{
+  charge: 0,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 1]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 1,
+  ready: true,
+  staged: { generation: 3, origins: Set((1, 1, 3)), request: 1, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 2]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 3, origins: Set((1, 1, 3)), request: 1, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 3]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 4]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: true,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[violation] Found an issue (46ms at 22 traces/second).
+Use --verbosity=3 to show executions.
+Use --seed=0x103c7 --backend=rust to reproduce.
+error: Invariant violated

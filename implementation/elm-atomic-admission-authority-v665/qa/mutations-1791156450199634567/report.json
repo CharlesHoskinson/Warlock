@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "controls": [
+    {
+      "case": "skip-generation-domain",
+      "version": "original",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/adapter/authority.py",
+        "skip-generation-domain"
+      ],
+      "exitCode": 0,
+      "specificAssertionFailure": false,
+      "sourceSHA256": "c01ca6a6b5b1e8799ef66eeb9425b1a42d5ba4310aea4524e397da90ea8a4a0f"
+    },
+    {
+      "case": "skip-generation-domain",
+      "version": "mutant",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations-1791156450199634567/skip-generation-domain.py",
+        "skip-generation-domain"
+      ],
+      "exitCode": 1,
+      "specificAssertionFailure": true,
+      "sourceSHA256": "dd68e50022abc4ede3fc58faf1db712159bcd297201a65c108ae1b4f86020310"
+    },
+    {
+      "case": "skip-completion-charge",
+      "version": "original",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/adapter/authority.py",
+        "skip-completion-charge"
+      ],
+      "exitCode": 0,
+      "specificAssertionFailure": false,
+      "sourceSHA256": "c01ca6a6b5b1e8799ef66eeb9425b1a42d5ba4310aea4524e397da90ea8a4a0f"
+    },
+    {
+      "case": "skip-completion-charge",
+      "version": "mutant",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations-1791156450199634567/skip-completion-charge.py",
+        "skip-completion-charge"
+      ],
+      "exitCode": 1,
+      "specificAssertionFailure": true,
+      "sourceSHA256": "cee845c90360e3e85612ba22084fb151e7fb2fe64cefcdab319f911bfafc0c09"
+    },
+    {
+      "case": "skip-cold-authority-barrier",
+      "version": "original",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/adapter/authority.py",
+        "skip-cold-authority-barrier"
+      ],
+      "exitCode": 0,
+      "specificAssertionFailure": false,
+      "sourceSHA256": "c01ca6a6b5b1e8799ef66eeb9425b1a42d5ba4310aea4524e397da90ea8a4a0f"
+    },
+    {
+      "case": "skip-cold-authority-barrier",
+      "version": "mutant",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations.py",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/mutations-1791156450199634567/skip-cold-authority-barrier.py",
+        "skip-cold-authority-barrier"
+      ],
+      "exitCode": 1,
+      "specificAssertionFailure": true,
+      "sourceSHA256": "ec3ee79523a1dd94e4361de5545b2165669ee2dfb336476af64d6124a7244981"
+    }
+  ],
+  "scope": "actual isolated authority implementation mutations; no native"
+}
