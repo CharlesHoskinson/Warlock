@@ -1,0 +1,5 @@
+# Actual Qt surface translation
+
+Before any code change, preserve frozen289 role/command/input/lifecycle behavior. Every current native Wayland QWindow records whether its actual Qt6.11.2 QWaylandWindow handle is available, mapFromWlSurface(0,0), and clientSideMargins from the same handle. Bind measurements to the existing role instance, map generation and wl_surface resource; no default zero translation if unavailable. These toolkit measurements do not establish compositor desktop placement or pixels. Raw Wayland geometry and native real geometry remain independent.
+
+Compile owning private QtWaylandClient headers and libraries with exact dependency/tool/artifact closure. CPU tests must exercise actual Qt Wayland mapping behavior where possible without a GUI; extracted calls or synthetic consumer inputs must be labeled explicitly. No native acceptance or authority capability change. Future native campaign must establish measured mapping, raw/native identities and actual pixels/input, preserving all original Qt01–08 obligations and deadlines.

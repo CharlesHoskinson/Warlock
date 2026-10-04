@@ -1,0 +1,62 @@
+{
+  "original525": {
+    "native.py": "0087eac2522fbed6c6dcd10faf266335f10ae30ccdf2f03f324ef7c9eb4d53b8",
+    "inspection.py": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+    "grab_guard.py": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+    "sampling.py": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+  },
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "fault432": {
+    "fault432-native.py": "c39651d564be43b5284766a747d36558d407d154546cb07fcc5bc05409f86772",
+    "fault432-origin.json": "8d5fc6ac7be158575a90cf14b5fd6841c0408afde115d2c78340cfe46c4b2981",
+    "fault100-native.py": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896"
+  },
+  "helperSources": {
+    "qa/helpers/owned_bus_host.py": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+    "qa/helpers/private_bus.py": "43ab529a0dcd9a5bf4bcbdaa8153b0de4912376e2bc377e5dcc34bb09edd6629",
+    "qa/helpers/activation_import.py": "c02cc84c1faf318133fe561ded6c16c0e85d09ab341d3b99e04d791bef96eae0",
+    "qa/helpers/activation-supervisor.py": "c9817f2cd6469fde567dd19decf1356d70ffec34dc60f9feeac1ff022865ed7d",
+    "qa/helpers/protocol.py": "94335ba47fd10cf9ae57f13cd58a29d8beb17537cd8e8f1927692b0b40f34af5",
+    "qa/helpers/bounded.py": "04f7703fe49865e79979b5441d7cb45e24b8936509d5a67bac3fc802c2ca369c",
+    "qa/helpers/geometry.py": "a8478a4fd05c1ddc56f42841813774d8902e56528cc371251821b1ab89811562",
+    "qa/helpers/scene.py": "2f64e3b12e852399ea704e263162e6f5a72e9aef0c76ab7187833fda3b98b673",
+    "qa/helpers/observer.py": "363b3c26818f00850e7b77b36038b98c5866e6468409d39640febc8b66b8db4e",
+    "qa/helpers/pixels.py": "40e8ce54c5296f42e2c2de78a837ccfd2fd3c25646b5687e0114f0dad4b2b9de",
+    "qa/helpers/parent.py": "f5f4116557a4c5714c27a271c06818aad79b2bf76e8b4deede91c167af73e5a7",
+    "qa/helpers/actor.py": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5",
+    "qa/helpers/journal.py": "0c7a9ab164af2bad8b7980b4eb2b2fb1f07adfd494ddaada643c4ddfa8e46e31"
+  },
+  "runtimeSources": {
+    "runtime/candidate_host.py": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+    "runtime/native-build-report.json": "d3169a8d87b64ccc3412d53ee9f0f11ac1913c19980615d809674bfe85c41fc6",
+    "runtime/aq-tuple.json": "4d4c71943b05bb0453184dccb6caabadb72067445ff980e9359bd427ba4d433e",
+    "runtime/parent-probe-build.json": "0949541d3955605fed2f3a41a7bed41ecfc8929d8da18e338e93b29444c1ae86"
+  },
+  "privateBusParent": {
+    "path": "implementation/elm-gtk-post-bus-retirement-v263/component-manifest.json",
+    "sha256": "35b2f1d4c3080475dc2a2abe876433002e5d806cabe2a119f04f4b1fcd27f27a"
+  },
+  "currentHelperSources": {
+    "qa/helpers/owned_bus_host.py": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+    "qa/helpers/private_bus.py": "121e001cf0b0951a49769d6c70e82bd444dee0181383966c1d0e9d9157dbd67b",
+    "qa/helpers/activation_import.py": "c02cc84c1faf318133fe561ded6c16c0e85d09ab341d3b99e04d791bef96eae0",
+    "qa/helpers/activation-supervisor.py": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba",
+    "qa/helpers/protocol.py": "94335ba47fd10cf9ae57f13cd58a29d8beb17537cd8e8f1927692b0b40f34af5",
+    "qa/helpers/bounded.py": "04f7703fe49865e79979b5441d7cb45e24b8936509d5a67bac3fc802c2ca369c",
+    "qa/helpers/geometry.py": "a8478a4fd05c1ddc56f42841813774d8902e56528cc371251821b1ab89811562",
+    "qa/helpers/scene.py": "2f64e3b12e852399ea704e263162e6f5a72e9aef0c76ab7187833fda3b98b673",
+    "qa/helpers/observer.py": "363b3c26818f00850e7b77b36038b98c5866e6468409d39640febc8b66b8db4e",
+    "qa/helpers/pixels.py": "40e8ce54c5296f42e2c2de78a837ccfd2fd3c25646b5687e0114f0dad4b2b9de",
+    "qa/helpers/parent.py": "f5f4116557a4c5714c27a271c06818aad79b2bf76e8b4deede91c167af73e5a7",
+    "qa/helpers/actor.py": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5",
+    "qa/helpers/journal.py": "0c7a9ab164af2bad8b7980b4eb2b2fb1f07adfd494ddaada643c4ddfa8e46e31",
+    "qa/helpers/cleanup.py": "cf866ba58d2025c3bff1f019cf06d578da5d6283aa8f9ebc828ee43f97e651c2",
+    "qa/helpers/placement.py": "5be683b0864b2b6388b8344bc3e946a67351ebfd8133bd8732474d4d4d5ed6a6"
+  },
+  "currentPrivateBusParent": {
+    "path": "implementation/elm-gtk-native-acquisition-fix-v268/component-manifest.json",
+    "sha256": "8bfcda5de4bd6e0123a56d3a7b571d8d0ec9016a37aeedf467a23c3238bb9a17",
+    "scope": "Source-only current205 rebind. Historical470 diagnostic27 passed but cleanup false retained; successor276 pending."
+  }
+}

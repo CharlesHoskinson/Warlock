@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Independent held308/309 source inventory and actual selected CPU/build evidence; no native transform correspondence",
+  "components": [
+    {
+      "component": "elm-qt6-surface-transform-fixture-v308",
+      "manifestSHA256": "2b1bd8a8f572253773be6bcddc1c04e2c9ed4d00447cb9c755caa519fd72903c",
+      "own": 130,
+      "external": 1203,
+      "selected": 6,
+      "passedReports": 5,
+      "retainedFailures": 1
+    },
+    {
+      "component": "elm-qt6-surface-transform-consumer-v309",
+      "manifestSHA256": "670c778b82d5ffe514ccb677b6e219c3dc21be29d28ce5f196f16b2fcedf9d30",
+      "own": 13,
+      "external": 2823,
+      "selected": 1,
+      "passedReports": 1,
+      "retainedFailures": 0
+    }
+  ],
+  "pinsSHA256": "aac8824691b1bd829342fd8b51e03eee7f09731a6e9aacbc54945fffe00566ce"
+}

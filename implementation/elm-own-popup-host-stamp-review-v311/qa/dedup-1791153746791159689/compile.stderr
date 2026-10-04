@@ -1,0 +1,7 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-host-stamp-review-v311/qa/dedup-1791153746791159689/fixture.c:4:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-host-stamp-review-v311/qa/dedup-1791153746791159689/identity.h:26:17: warning: ‘popup_identity_valid’ defined but not used [-Wunused-function]
+   26 | static gboolean popup_identity_valid(const PopupNativeIdentity *s) {
+      |                 ^~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-host-stamp-review-v311/qa/dedup-1791153746791159689/identity.h:6:17: warning: ‘popup_start_parse’ defined but not used [-Wunused-function]
+    6 | static gboolean popup_start_parse(const char *text,guint64 *result) {
+      |                 ^~~~~~~~~~~~~~~~~

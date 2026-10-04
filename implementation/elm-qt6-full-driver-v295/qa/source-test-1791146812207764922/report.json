@@ -1,0 +1,106 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "checks": [
+    {
+      "name": "original-full-key",
+      "passed": true
+    },
+    {
+      "name": "reject-binding.lifetime-10",
+      "passed": true
+    },
+    {
+      "name": "reject-binding.session-10",
+      "passed": true
+    },
+    {
+      "name": "reject-binding.frontend-10",
+      "passed": true
+    },
+    {
+      "name": "reject-intent.request-10",
+      "passed": true
+    },
+    {
+      "name": "reject-intent.generation-10",
+      "passed": true
+    },
+    {
+      "name": "reject-intent.incarnation-10",
+      "passed": true
+    },
+    {
+      "name": "reject-intent.context.revision-10",
+      "passed": true
+    },
+    {
+      "name": "reject-effectProtocol-True",
+      "passed": true
+    },
+    {
+      "name": "reject-effectProtocol-2",
+      "passed": true
+    },
+    {
+      "name": "reject-status-Unknown",
+      "passed": true
+    },
+    {
+      "name": "reject-status-Refused",
+      "passed": true
+    },
+    {
+      "name": "reject-protocolVersion-True",
+      "passed": true
+    },
+    {
+      "name": "reject-kind-other",
+      "passed": true
+    },
+    {
+      "name": "canonical-request-True",
+      "passed": true
+    },
+    {
+      "name": "canonical-request-1",
+      "passed": true
+    },
+    {
+      "name": "canonical-request-1.0",
+      "passed": true
+    },
+    {
+      "name": "canonical-request-0",
+      "passed": true
+    },
+    {
+      "name": "canonical-request-01",
+      "passed": true
+    },
+    {
+      "name": "canonical-request--1",
+      "passed": true
+    },
+    {
+      "name": "canonical-request-1e0",
+      "passed": true
+    },
+    {
+      "name": "canonical-request-18446744073709551616",
+      "passed": true
+    },
+    {
+      "name": "geometry-exact-full-key",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/driver.py": "11f54951eb23f9f60f7bd07da081212ea3336c77345fc977b76ca0bcd040ec1c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/shell.py": "a9feef51cbfa161db5816e8450369d58ca75f5bf486e65de8bd505abf2e81bf0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/test.py": "fe54fa60a523e4af9fc9676f7ac18fbea8ab3e99e472a9d62f80a776bfc8672b"
+  },
+  "allEightPhasesMaterialized": true,
+  "sourceMutable": true
+}

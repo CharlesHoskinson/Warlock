@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-nine-magenta-samples",
+      "passed": true
+    },
+    {
+      "name": "one-corner-mismatch-not-pass",
+      "passed": true
+    },
+    {
+      "name": "reject-sample-bound-[0, 0]",
+      "passed": true
+    },
+    {
+      "name": "reject-sample-bound-[799, 599]",
+      "passed": true
+    },
+    {
+      "name": "reject-sample-bound-[True, 100]",
+      "passed": true
+    },
+    {
+      "name": "reject-sample-bound-[100.0, 100]",
+      "passed": true
+    },
+    {
+      "name": "actual-modifiers-before-key-order",
+      "passed": true
+    },
+    {
+      "name": "actual-modifiers-after-key-order-no-assumed-release",
+      "passed": true
+    },
+    {
+      "name": "reject-wrong-surface",
+      "passed": true
+    },
+    {
+      "name": "reject-unrelated-key",
+      "passed": true
+    },
+    {
+      "name": "reject-duplicate-key",
+      "passed": true
+    },
+    {
+      "name": "reject-nonshift-mod",
+      "passed": true
+    },
+    {
+      "name": "reject-missing-key",
+      "passed": true
+    },
+    {
+      "name": "Home-on-first-enabled-Minimize-needs-zero-Down",
+      "passed": true
+    },
+    {
+      "name": "Maximize-skips-three-disabled-items-one-Down",
+      "passed": true
+    }
+  ],
+  "sourceSHA256": {
+    "qa/popup.py": "c8b85f0740ac22ec859ad37ebb7c3e40e34a0d6b8f517021bc458bcb41b64edd",
+    "qa/keyboard.py": "9e052d32c453e86f9136fda507f68a51815a9cca2591a7a413abbdec079ccdf4",
+    "qa/shell.py": "266ae3571b7931900ba4e24fee7e03d2586f90604c92f40ae1a85131320d67f4",
+    "qa/helper-test.py": "0774bf6d07704091acdaa6564d9a7cc619c447a435c1b9a18a932919443c86f5"
+  }
+}
