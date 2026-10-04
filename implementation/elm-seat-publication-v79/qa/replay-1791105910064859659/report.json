@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual initSeat body compiled with real Hyprutils shared/weak ownership and typed protocol/event fixtures; no native transport or whole compositor refinement",
+  "commands": [
+    {
+      "name": "original-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/qa/replay-1791105910064859659/original.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/qa/replay-1791105910064859659/original"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "original-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/qa/replay-1791105910064859659/original"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/qa/replay.py": "dc0325494d8d8cdbfe081694b156a40a0e86f1ce2ce205e22863f9b36648b113",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/qa/template.cpp": "35b1d80afe410fe37c5207f3ba07bcb5d3c21974d8d557b3c446a127ebebdf6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-input-status-v30/candidate/src/backend/Wayland.cpp": "1f9d8ddf2912d5c884946a4f00a47350a6590a08ab10c8ba790beff00f2370f9"
+  },
+  "originalViolation": "retired pointer not published",
+  "candidateValidated": false,
+  "artifacts": {
+    "original.cpp": "30183c79717fd0329323b062d8948228898149952778dc8e41bd31e76ae34ef7",
+    "original": "01eec38b07b13ce93be01ced15b14ba11aee9489b5cf63e5125a29ff0b23f8e1",
+    "original-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stderr": "e82af8e3b969d8fdc8d62c1d65450e4d7a37b3c16dd7bd9e47477eecea9002e2"
+  }
+}

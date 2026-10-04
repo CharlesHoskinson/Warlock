@@ -1,0 +1,704 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: true,
+      violations: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: true,
+      violations: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: true,
+      violations: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: true,
+      violations: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: true,
+      violations: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: false,
+      transport: true,
+      violations: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: true,
+      violations: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 0,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      cap: true,
+      core: true,
+      id: 1,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [{ id: 1, owner: 1 }],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      cap: true,
+      core: true,
+      id: 1,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [{ id: 1, owner: 1 }],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      cap: true,
+      core: true,
+      id: 1,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [{ id: 1, owner: 1 }],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      cap: true,
+      core: true,
+      id: 1,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      cap: true,
+      core: true,
+      id: 1,
+      live: true,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      cap: true,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      cap: false,
+      core: true,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 1,
+      live: false,
+      owner: 1,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 2,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 2,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 2,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 3,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 4,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 4,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 4,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 4,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 4,
+      published: [],
+      q: [],
+      ready: true,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 4,
+      published: [],
+      q: [],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 4,
+      published: [],
+      q: [],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 5,
+      published: [],
+      q: [],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 5,
+      published: [],
+      q: [],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 5,
+      published: [],
+      q: [],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 6,
+      published: [],
+      q: [],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      cap: false,
+      core: false,
+      id: 0,
+      live: false,
+      owner: 6,
+      published: [],
+      q: [],
+      ready: false,
+      transport: false,
+      violations: 0
+    }
+}
+
+[ok] No violation found (914ms at 1094 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1349a --backend=typescript to reproduce.

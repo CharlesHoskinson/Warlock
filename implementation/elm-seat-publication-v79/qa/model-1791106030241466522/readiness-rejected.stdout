@@ -1,0 +1,16 @@
+
+  seat
+    1) notReadyRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) notReadyRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/qa/model-1791106030241466522/readiness.qnt:32:84
+        32:   run notReadyRefusedTest = init.then(enable).then(pauseReady).then(idle).then(all{assert(s.published.length()==0),s'=s})
+                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=notReadyRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 readiness.qnt

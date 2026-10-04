@@ -1,0 +1,16 @@
+
+  seat
+    1) replacementOnlyTest failed after 1 test(s)
+
+  1 failed
+
+  1) replacementOnlyTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/qa/model-1791106030241466522/device-id.qnt:27:105
+        27:   run replacementOnlyTest = init.then(enable).then(disable).then(enable).then(idle).then(idle).then(all{assert(s.published==[{owner:1,id:2}]),s'=s})
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=replacementOnlyTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 device-id.qnt

@@ -1,0 +1,5 @@
+hl.config({debug={disable_logs=false,enable_stdout_logs=true},xwayland={enabled=false},animations={enabled=false}})
+hl.monitor({output="WAYLAND-1",mode="800x600@60",position="0x0",scale=1})
+
+-- Crash handoff: X11 is outside this private fixture.
+hl.config({ xwayland = { enabled = false } })
