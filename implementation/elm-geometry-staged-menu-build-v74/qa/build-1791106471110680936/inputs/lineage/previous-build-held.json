@@ -1,0 +1,1674 @@
+{
+  "schema": 1,
+  "passed": true,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-6a44f652154642cfa657c4d79400718e.scope",
+    "coreLimit": 1
+  },
+  "frozenNs": 1791104468792388974,
+  "scope": "Actual combined Main/Popup optimized compilation, 78 original +53 geometry +21 refresh CPU cases, exact C host byte identity/dependencies/libraries; no GUI/native/menu/release acceptance",
+  "nativeAcceptance": false,
+  "geometryMenuNativeAccepted": false,
+  "releaseAccepted": false,
+  "deploymentAccepted": false,
+  "fullRoadmapAccepted": false,
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/report.json",
+  "buildReportSHA256": "3da8390ba6ac03a796dc9d2ac3c862830df8e916f87281d1041218d57769fb35",
+  "buildRoot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777",
+  "binary": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/elm-host",
+  "binarySHA256": "ad155e8f2703b357251b7276fdfd2d92d86078482cf0a2d101d217272528b368",
+  "cpuChecks": {
+    "originalMenu": 78,
+    "geometry": 53,
+    "refresh": 21
+  },
+  "guiAssets": {
+    "assets/adapter.js": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/adapter.js",
+      "sha256": "1a115299d8209e9227bbaef5c0ea71381abad6ee8b95ec54b886debd9cc77b71",
+      "artifactKey": "inputs/assets/adapter.js",
+      "compiled": false
+    },
+    "assets/context.js": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/context.js",
+      "sha256": "914089a09f4c50c53d8161fa653fad74acd10cc25ff018895935ed05eb990f14",
+      "artifactKey": "inputs/assets/context.js",
+      "compiled": false
+    },
+    "assets/elm.js": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/elm.js",
+      "sha256": "70a36ea3636ad1ad5145a04440e86e4b20c8b4a6797b1cdc2e5633880e275289",
+      "artifactKey": "inputs/assets/elm.js",
+      "compiled": true
+    },
+    "assets/index.html": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/index.html",
+      "sha256": "783690ed371ee66cac23004c96bc349d24ea4ccd496928599b0f53358c130347",
+      "artifactKey": "inputs/assets/index.html",
+      "compiled": false
+    },
+    "assets/popup-adapter.js": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/popup-adapter.js",
+      "sha256": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+      "artifactKey": "inputs/assets/popup-adapter.js",
+      "compiled": false
+    },
+    "assets/popup.html": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/popup.html",
+      "sha256": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+      "artifactKey": "inputs/assets/popup.html",
+      "compiled": false
+    },
+    "assets/popup.js": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/popup.js",
+      "sha256": "98d361735c3074095a6760610b9d44df44b5aea6b41fa95eccd40c0e9c86f216",
+      "artifactKey": "inputs/assets/popup.js",
+      "compiled": true
+    },
+    "assets/shell.css": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build-1791104385652764777/inputs/assets/shell.css",
+      "sha256": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+      "artifactKey": "inputs/assets/shell.css",
+      "compiled": false
+    }
+  },
+  "sourceInputs": {
+    "qa/build.py": "a898357e755fd0e53f91851d7e89a8b2329555aa89172c685253d7493c065649",
+    "qa/native-contract.json": "53156740fbf579aac1caebd951b5e8d906822878d13391ca1779108e2518300a",
+    "lineage/previous-build-held.json": "90b3838d01da30e9e99f76290eb7dd96bd49a84499b602e38e6339b4e97d68e3",
+    "lineage/elm-held.json": "27ed7148d101cafb220f3ed21e2d3e14a1df5880f4924d01ff510473dccce450",
+    "lineage/broker-held.json": "3aa379a0c7c694455d32f08c69d047b4ac0dd9200015d30b40e68593938b2161",
+    "lineage/host-held.json": "60e40d823ffcaa2bf1e3d5250d41a57ad5e41630fa62e1bb3a97939bd36e3d7c",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Binding.elm": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Effects.elm": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26",
+    "src/GeometryProjection.elm": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+    "src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/Main.elm": "2cf426183a57be12409e6d5fc8452b471293a6bb27281a7938f8f2515c0f0f58",
+    "src/Menu.elm": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+    "src/MenuBridge.elm": "d0ad7212e6e185bcbc77da3fffe1d8503e3504a0114bef3beefc1cca507dcc57",
+    "src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "src/NativeOutcome.elm": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+    "src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "src/Popup.elm": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+    "src/Presentation.elm": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/Provider.elm": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+    "src/ReceiptRouter.elm": "3f23159a4e3552c38340de14627a314e8b808288eb2c729ae0ca6d713a56f197",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Shell.elm": "b97b0b5d28603496ebbd5c1fb7f5edb0ef03dcc36a6ad05584604b6e27a79275",
+    "src/ShellReplay.elm": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c",
+    "src/Surface.elm": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+    "src/SurfaceController.elm": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327",
+    "src/SurfaceRenderer.elm": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+    "src/SurfaceReplay.elm": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7",
+    "src/TaskbarShellReplay.elm": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "native/context-events.h": "ac6dc3eff335d441b40367db40f6f1813213fb468d8ef3f1ab12160a941212f4",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/context-state.h": "86f5b17ef3d8253f6b40b7be721b1f069851d7d181b0402733dc95ffe54f5e32",
+    "native/host.c": "e94839978c22cd21ada9267aa60a4343e86863068a5be51adc74a60ae263d1fc",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "assets/adapter.js": "1a115299d8209e9227bbaef5c0ea71381abad6ee8b95ec54b886debd9cc77b71",
+    "assets/context.js": "914089a09f4c50c53d8161fa653fad74acd10cc25ff018895935ed05eb990f14",
+    "assets/index.html": "783690ed371ee66cac23004c96bc349d24ea4ccd496928599b0f53358c130347",
+    "assets/popup-adapter.js": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+    "assets/popup.html": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+    "assets/shell.css": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+    "native/geometry-carrier-test.c": "2f220bf2444f34b95b221f34e93834511f214354d011e584197241b355b9b618",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "qa/menu.cjs": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439",
+    "qa/geometry.cjs": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8",
+    "qa/refresh.cjs": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f",
+    "qa/fixtures.json": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b",
+    "qa/geometry-fixtures.json": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699"
+  },
+  "sourceOrigins": {
+    "qa/build.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/build.py",
+    "qa/native-contract.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v66/qa/native-contract.json",
+    "lineage/previous-build-held.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v59/component-manifest.json",
+    "lineage/elm-held.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/held-source-manifest.json",
+    "lineage/broker-held.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/qa/held-source-manifest.json",
+    "lineage/host-held.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/held-source-manifest.json",
+    "src/ActionProjection.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/ActionProjection.elm",
+    "src/Binding.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Binding.elm",
+    "src/Catalog.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Catalog.elm",
+    "src/CatalogReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/CatalogReplay.elm",
+    "src/Desktop.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Desktop.elm",
+    "src/DesktopReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/DesktopReplay.elm",
+    "src/Effects.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Effects.elm",
+    "src/GeometryProjection.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/GeometryProjection.elm",
+    "src/Inspection.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Inspection.elm",
+    "src/Launch.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Launch.elm",
+    "src/LaunchReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/LaunchReplay.elm",
+    "src/Main.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Main.elm",
+    "src/Menu.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Menu.elm",
+    "src/MenuBridge.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/MenuBridge.elm",
+    "src/MenuSurfaceReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/MenuSurfaceReplay.elm",
+    "src/NativeOutcome.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/NativeOutcome.elm",
+    "src/NativeProvider.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/NativeProvider.elm",
+    "src/OutputSurfaceReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/OutputSurfaceReplay.elm",
+    "src/Popup.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Popup.elm",
+    "src/Presentation.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Presentation.elm",
+    "src/PresentationReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/PresentationReplay.elm",
+    "src/Provider.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Provider.elm",
+    "src/ReceiptRouter.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/ReceiptRouter.elm",
+    "src/Replay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Replay.elm",
+    "src/Shell.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Shell.elm",
+    "src/ShellReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/ShellReplay.elm",
+    "src/Surface.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Surface.elm",
+    "src/SurfaceController.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/SurfaceController.elm",
+    "src/SurfaceRenderer.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/SurfaceRenderer.elm",
+    "src/SurfaceReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/SurfaceReplay.elm",
+    "src/Taskbar.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/Taskbar.elm",
+    "src/TaskbarReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/TaskbarReplay.elm",
+    "src/TaskbarShell.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/TaskbarShell.elm",
+    "src/TaskbarShellReplay.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/TaskbarShellReplay.elm",
+    "src/UInt64.elm": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/src/UInt64.elm",
+    "elm.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/elm.json",
+    "native/context-events.h": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/native/context-events.h",
+    "native/context-keys-test.c": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/native/context-keys-test.c",
+    "native/context-keys.h": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/native/context-keys.h",
+    "native/context-state.h": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/native/context-state.h",
+    "native/host.c": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/native/host.c",
+    "native/surface-test.c": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/native/surface-test.c",
+    "native/surface.h": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/native/surface.h",
+    "assets/adapter.js": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/assets/adapter.js",
+    "assets/context.js": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/assets/context.js",
+    "assets/index.html": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/assets/index.html",
+    "assets/popup-adapter.js": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/assets/popup-adapter.js",
+    "assets/popup.html": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/assets/popup.html",
+    "assets/shell.css": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/assets/shell.css",
+    "native/geometry-carrier-test.c": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/native/geometry-carrier-test.c",
+    "adapter/catalog_authority.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/catalog_authority.py",
+    "adapter/catalog_transport.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/catalog_transport.py",
+    "adapter/daemon.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/daemon.py",
+    "adapter/effect_endpoint.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/effect_endpoint.py",
+    "adapter/endpoint.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/endpoint.py",
+    "adapter/geometry_endpoint.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/geometry_endpoint.py",
+    "adapter/taskbar_catalog.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/taskbar_catalog.py",
+    "adapter/taskbar_projection.py": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/adapter/taskbar_projection.py",
+    "qa/menu.cjs": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/menu.cjs",
+    "qa/geometry.cjs": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/geometry.cjs",
+    "qa/refresh.cjs": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/refresh.cjs",
+    "qa/fixtures.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/fixtures.json",
+    "qa/geometry-fixtures.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/geometry-fixtures.json"
+  },
+  "artifacts": {
+    "Main-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Main-compile.stdout": "fd6fddf9bf8d45f4cb00a8bcb2656c44e7201f4f14dd327f144839e76a617a5c",
+    "Popup-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Popup-compile.stdout": "864a63baa9435725d71c60b7166be3f3ea8b4e3b4d65835228ad40f86586ec86",
+    "adapter-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "adapter-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "context-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "context-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "context-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "context-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "context-tests": "332420493e4b3dbfd027fc3cf0e4218e4c6043e9c342671bc0b4763bca174c6f",
+    "context-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "context-tests.stdout": "0efe435998bd0891aa05109c0e9f0c0f6cda61f47c1d7a8e3d1c08950a3239a5",
+    "elm-host": "ad155e8f2703b357251b7276fdfd2d92d86078482cf0a2d101d217272528b368",
+    "geometry-carrier-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-carrier-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-carrier-tests": "99d33a01d912c7abd28f1a36c97a46a0e3b277597baacd62cae763051eeda924",
+    "geometry-carrier-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-carrier-tests.stdout": "d4bc89e2746f5467e9e1b798ed507b2c487c26befef36c7ad772be1d35445b62",
+    "geometry-checks.json": "3c623cc832b7d805fc9465312d4ab3fafdffa8a2dadcc15c3e792881025d64c1",
+    "geometry-checks.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "geometry-checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "host-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "host-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "host-self-test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "host-self-test.stdout": "8eb3c473ef15ac53933f3a14590a39cff43fad7d89dc6f8979e00aa4ec970b22",
+    "host.d": "cb1a812a7c27afe1f79fea6100485678be9ea361f2e3fac2fcf8e80376d2c5d7",
+    "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "inputs/adapter/daemon.py": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0",
+    "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "inputs/assets/adapter.js": "1a115299d8209e9227bbaef5c0ea71381abad6ee8b95ec54b886debd9cc77b71",
+    "inputs/assets/context.js": "914089a09f4c50c53d8161fa653fad74acd10cc25ff018895935ed05eb990f14",
+    "inputs/assets/elm.js": "70a36ea3636ad1ad5145a04440e86e4b20c8b4a6797b1cdc2e5633880e275289",
+    "inputs/assets/index.html": "783690ed371ee66cac23004c96bc349d24ea4ccd496928599b0f53358c130347",
+    "inputs/assets/popup-adapter.js": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+    "inputs/assets/popup.html": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+    "inputs/assets/popup.js": "98d361735c3074095a6760610b9d44df44b5aea6b41fa95eccd40c0e9c86f216",
+    "inputs/assets/shell.css": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+    "inputs/elm-stuff/0.19.2/ActionProjection.elmi": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+    "inputs/elm-stuff/0.19.2/ActionProjection.elmo": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+    "inputs/elm-stuff/0.19.2/Binding.elmi": "0029d1665d1da57c21c6486b5f98107f8c0c12a3df8dfa1a10f6907a9fe31231",
+    "inputs/elm-stuff/0.19.2/Binding.elmo": "8172bb230051c144b068f50242b00ceb4d854d22f9c025f8e2c095d80e7aaa58",
+    "inputs/elm-stuff/0.19.2/Catalog.elmi": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+    "inputs/elm-stuff/0.19.2/Catalog.elmo": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+    "inputs/elm-stuff/0.19.2/Desktop.elmi": "380af62a8f78b350a81b3b3af174f7fedda50dd4f5da8db26cd8dc2e9150206f",
+    "inputs/elm-stuff/0.19.2/Desktop.elmo": "28cf43e59cdf0d77b866a743f7167d11142e905d5145e502f0916d9e6c44fa51",
+    "inputs/elm-stuff/0.19.2/Effects.elmi": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224",
+    "inputs/elm-stuff/0.19.2/Effects.elmo": "2ce3824db649b88638c4e5f75296b6dc39f64200d5e37fc6254122627f563916",
+    "inputs/elm-stuff/0.19.2/GeometryProjection.elmi": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611",
+    "inputs/elm-stuff/0.19.2/GeometryProjection.elmo": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649",
+    "inputs/elm-stuff/0.19.2/Inspection.elmi": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142",
+    "inputs/elm-stuff/0.19.2/Inspection.elmo": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193",
+    "inputs/elm-stuff/0.19.2/Launch.elmi": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+    "inputs/elm-stuff/0.19.2/Launch.elmo": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+    "inputs/elm-stuff/0.19.2/Main.elmi": "6d1d01d9d814fa9e1456cb3ffd114be466439b95c578f45edf7a4436b1c9d207",
+    "inputs/elm-stuff/0.19.2/Main.elmo": "6db78adb5e0233987cf2456ff29e6682b576f4ba8335f17c1209f5653c4f9bc0",
+    "inputs/elm-stuff/0.19.2/Menu.elmi": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24",
+    "inputs/elm-stuff/0.19.2/Menu.elmo": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8",
+    "inputs/elm-stuff/0.19.2/MenuBridge.elmi": "4be079cda8f8f25f3d96db059687e8aed5935c7bca92756f6eb91e42fb45ef88",
+    "inputs/elm-stuff/0.19.2/MenuBridge.elmo": "2c2fd11aca397057d6e5d5a1c67282c77be5dd445147eb87b1ecd0ced802ca0b",
+    "inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi": "22e83636dc32aee7f68327fa371c47f35a7c84a55ffb71745ae9ede3f7f01f48",
+    "inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo": "2b96a3dc73899080e4a426c745d9ae1dbb040955c8b640da2e655737ced039da",
+    "inputs/elm-stuff/0.19.2/NativeOutcome.elmi": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+    "inputs/elm-stuff/0.19.2/NativeOutcome.elmo": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+    "inputs/elm-stuff/0.19.2/NativeProvider.elmi": "9c3b9dadd8a35023eec7a5ed87a0ae168046be1b394e4eb7c1b50866095cd1c6",
+    "inputs/elm-stuff/0.19.2/NativeProvider.elmo": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+    "inputs/elm-stuff/0.19.2/Popup.elmi": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc",
+    "inputs/elm-stuff/0.19.2/Popup.elmo": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf",
+    "inputs/elm-stuff/0.19.2/Presentation.elmi": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+    "inputs/elm-stuff/0.19.2/Presentation.elmo": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86",
+    "inputs/elm-stuff/0.19.2/Provider.elmi": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f",
+    "inputs/elm-stuff/0.19.2/Provider.elmo": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48",
+    "inputs/elm-stuff/0.19.2/ReceiptRouter.elmi": "86a5e70b1e4939c616a1ec416e6d35b185269190c96b791b35afe303a885df62",
+    "inputs/elm-stuff/0.19.2/ReceiptRouter.elmo": "1caa34df8a4c4617edd9e66a5f7391c4482d8a98615964323bfebc7d3c54098c",
+    "inputs/elm-stuff/0.19.2/Shell.elmi": "6d2b58493e1f4f4165809d8b641f3bd09e190f93dd234ef9a98586960552e39a",
+    "inputs/elm-stuff/0.19.2/Shell.elmo": "bbee16ee2c495554f07f395b878c8a41c22946c2addc975d4a8731d25f168d06",
+    "inputs/elm-stuff/0.19.2/Surface.elmi": "0a74f8fd934fc969962e74730b50f0c0eedd1af840bcc37d5f3f2e0a7958b3e3",
+    "inputs/elm-stuff/0.19.2/Surface.elmo": "491ff23367ae8d7c04a9bcf4c1e72d003a64ba32b543d2b3274a95f39cca600b",
+    "inputs/elm-stuff/0.19.2/SurfaceController.elmi": "cb7df8b2389134609f390ddacb5ab807f3961e16e705b952618e945c6df7870d",
+    "inputs/elm-stuff/0.19.2/SurfaceController.elmo": "cd5a5b51f25a1026cbbef847f55c21195161304f9a81685f63da19dda4957c0f",
+    "inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+    "inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+    "inputs/elm-stuff/0.19.2/Taskbar.elmi": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+    "inputs/elm-stuff/0.19.2/Taskbar.elmo": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+    "inputs/elm-stuff/0.19.2/TaskbarShell.elmi": "c3bed1d02f42e3d6e85ac0e1f5e41f6fe1a0e6b0af374e82dff02daaed649976",
+    "inputs/elm-stuff/0.19.2/TaskbarShell.elmo": "04b78f515b612fdbc353784991f54df23ba2594353f79d1f8b9b4fd46ae216dc",
+    "inputs/elm-stuff/0.19.2/UInt64.elmi": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+    "inputs/elm-stuff/0.19.2/UInt64.elmo": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+    "inputs/elm-stuff/0.19.2/d.dat": "a8a20b98a633a4a48c6dc95a04696a0da1e854cd2b9f3d8d064356a2c88a64a1",
+    "inputs/elm-stuff/0.19.2/i.dat": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+    "inputs/elm-stuff/0.19.2/lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "inputs/elm-stuff/0.19.2/o.dat": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+    "inputs/elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "inputs/lineage/broker-held.json": "3aa379a0c7c694455d32f08c69d047b4ac0dd9200015d30b40e68593938b2161",
+    "inputs/lineage/elm-held.json": "27ed7148d101cafb220f3ed21e2d3e14a1df5880f4924d01ff510473dccce450",
+    "inputs/lineage/host-held.json": "60e40d823ffcaa2bf1e3d5250d41a57ad5e41630fa62e1bb3a97939bd36e3d7c",
+    "inputs/lineage/previous-build-held.json": "90b3838d01da30e9e99f76290eb7dd96bd49a84499b602e38e6339b4e97d68e3",
+    "inputs/native/context-events.h": "ac6dc3eff335d441b40367db40f6f1813213fb468d8ef3f1ab12160a941212f4",
+    "inputs/native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "inputs/native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "inputs/native/context-state.h": "86f5b17ef3d8253f6b40b7be721b1f069851d7d181b0402733dc95ffe54f5e32",
+    "inputs/native/geometry-carrier-test.c": "2f220bf2444f34b95b221f34e93834511f214354d011e584197241b355b9b618",
+    "inputs/native/host.c": "e94839978c22cd21ada9267aa60a4343e86863068a5be51adc74a60ae263d1fc",
+    "inputs/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "inputs/native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "inputs/qa/build.py": "a898357e755fd0e53f91851d7e89a8b2329555aa89172c685253d7493c065649",
+    "inputs/qa/fixtures.json": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b",
+    "inputs/qa/geometry-fixtures.json": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699",
+    "inputs/qa/geometry.cjs": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8",
+    "inputs/qa/menu.cjs": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439",
+    "inputs/qa/native-contract.json": "53156740fbf579aac1caebd951b5e8d906822878d13391ca1779108e2518300a",
+    "inputs/qa/refresh.cjs": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f",
+    "inputs/src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "inputs/src/Binding.elm": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a",
+    "inputs/src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "inputs/src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "inputs/src/Desktop.elm": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d",
+    "inputs/src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "inputs/src/Effects.elm": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26",
+    "inputs/src/GeometryProjection.elm": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+    "inputs/src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "inputs/src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "inputs/src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "inputs/src/Main.elm": "2cf426183a57be12409e6d5fc8452b471293a6bb27281a7938f8f2515c0f0f58",
+    "inputs/src/Menu.elm": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+    "inputs/src/MenuBridge.elm": "d0ad7212e6e185bcbc77da3fffe1d8503e3504a0114bef3beefc1cca507dcc57",
+    "inputs/src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "inputs/src/NativeOutcome.elm": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+    "inputs/src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "inputs/src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "inputs/src/Popup.elm": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+    "inputs/src/Presentation.elm": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+    "inputs/src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "inputs/src/Provider.elm": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+    "inputs/src/ReceiptRouter.elm": "3f23159a4e3552c38340de14627a314e8b808288eb2c729ae0ca6d713a56f197",
+    "inputs/src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "inputs/src/Shell.elm": "b97b0b5d28603496ebbd5c1fb7f5edb0ef03dcc36a6ad05584604b6e27a79275",
+    "inputs/src/ShellReplay.elm": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c",
+    "inputs/src/Surface.elm": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+    "inputs/src/SurfaceController.elm": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327",
+    "inputs/src/SurfaceRenderer.elm": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+    "inputs/src/SurfaceReplay.elm": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+    "inputs/src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "inputs/src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "inputs/src/TaskbarShell.elm": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7",
+    "inputs/src/TaskbarShellReplay.elm": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129",
+    "inputs/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "menu-checks.json": "3f5404f9e9afcef5b93954827c30789674f4f3b5899ab199ab51b5c450fd6da4",
+    "menu-checks.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "menu-checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pkg-config.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pkg-config.stdout": "6cc9c1c055cb28056a5ae95d2ad83db1f4d3a203caecc15f680486028dee888c",
+    "popup-adapter-syntax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "popup-adapter-syntax.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "refresh-checks.json": "e96266e9c8e4539d06375a4e4e9ccc4e674f0facbe34ecc7fe9e98d3e56f7cb6",
+    "refresh-checks.stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331",
+    "refresh-checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "replay-compile.stdout": "675bafc0580b97a4a1c05a93553fca1dfe65641af04ac5d4ea79a65e131bdd32",
+    "replay.js": "9704c9fd96b558ee9a571db5b19c23a2d744eb4c15c7b2b2ee6658d3478c297d",
+    "surface-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "surface-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "surface-tests": "9276282ec81bdf86c213458e6ff9573ee510aa6e346fb9a333497a1d870fb5f0",
+    "surface-tests.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "surface-tests.stdout": "b79eb121f198861ced6ffac0fdd49fd3191d16fc055b356dfc23d630c713d68c"
+  },
+  "ancestorComponentManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v59/component-manifest.json",
+  "ancestorComponentManifestSHA256": "90b3838d01da30e9e99f76290eb7dd96bd49a84499b602e38e6339b4e97d68e3",
+  "retainedFailedPreflights": [
+    {
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/build-1791104217504980288/report.json",
+      "sha256": "c75746a90cc864990b4d454702192f416a38e63abb9aa47abf5b5d8a77691185"
+    }
+  ],
+  "retainedFailedPreflightFiles": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/build-1791104217504980288/initial-build.py": "730b9ed11e48bfd4ed5784b2cbbf9fba0e523ebdad77beb5b83b7997cee873b2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/build-1791104217504980288/initial-native-contract.json": "53156740fbf579aac1caebd951b5e8d906822878d13391ca1779108e2518300a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/build-1791104217504980288/inputs/lineage/elm-held.json": "27ed7148d101cafb220f3ed21e2d3e14a1df5880f4924d01ff510473dccce450",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/build-1791104217504980288/inputs/lineage/previous-build-held.json": "90b3838d01da30e9e99f76290eb7dd96bd49a84499b602e38e6339b4e97d68e3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/build-1791104217504980288/report.json": "c75746a90cc864990b4d454702192f416a38e63abb9aa47abf5b5d8a77691185",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/build.py": "730b9ed11e48bfd4ed5784b2cbbf9fba0e523ebdad77beb5b83b7997cee873b2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-integrated-menu-v65/qa/native-contract.json": "53156740fbf579aac1caebd951b5e8d906822878d13391ca1779108e2518300a"
+  },
+  "completedRequirementIds": [],
+  "unsupportedNativeFallbackImplemented": false,
+  "heldContributors": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-observation-refresh-v58/qa/held-source-manifest.json": "27ed7148d101cafb220f3ed21e2d3e14a1df5880f4924d01ff510473dccce450",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-coherent-v64/qa/held-source-manifest.json": "3aa379a0c7c694455d32f08c69d047b4ac0dd9200015d30b40e68593938b2161",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/held-source-manifest.json": "60e40d823ffcaa2bf1e3d5250d41a57ad5e41630fa62e1bb3a97939bd36e3d7c"
+  },
+  "hostDependencyClosure": {
+    "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-host-carrier-v57/qa/build-1791103261154112126/report.json",
+    "buildReportSHA256": "bfe0e3ded0ba0676cc0cc1f585d7f8f2e100488a9ea3af7e28a2a66d000be760",
+    "compilerDependencies": 999,
+    "flags": [
+      "-I/usr/include/webkitgtk-4.1",
+      "-I/usr/include/libsoup-3.0",
+      "-I/usr/include/gtk-layer-shell",
+      "-I/usr/include/gtk-3.0",
+      "-I/usr/include/pango-1.0",
+      "-I/usr/include/cloudproviders",
+      "-I/usr/include/cairo",
+      "-I/usr/include/gdk-pixbuf-2.0",
+      "-I/usr/include/glycin-2",
+      "-I/usr/include/at-spi2-atk/2.0",
+      "-I/usr/include/at-spi-2.0",
+      "-I/usr/include/atk-1.0",
+      "-I/usr/include/dbus-1.0",
+      "-I/usr/lib/dbus-1.0/include",
+      "-I/usr/include/fribidi",
+      "-I/usr/include/pixman-1",
+      "-I/usr/include/harfbuzz",
+      "-I/usr/include/freetype2",
+      "-I/usr/include/libpng16",
+      "-I/usr/include/json-glib-1.0",
+      "-I/usr/include/gio-unix-2.0",
+      "-I/usr/include/glib-2.0",
+      "-I/usr/lib/glib-2.0/include",
+      "-I/usr/include/libmount",
+      "-I/usr/include/blkid",
+      "-I/usr/include/sysprof-6",
+      "-pthread",
+      "-lwebkit2gtk-4.1",
+      "-lsoup-3.0",
+      "-ljavascriptcoregtk-4.1",
+      "-lgtk-layer-shell",
+      "-lgtk-3",
+      "-lgdk-3",
+      "-lpangocairo-1.0",
+      "-lcairo-gobject",
+      "-lgdk_pixbuf-2.0",
+      "-latk-1.0",
+      "-lpango-1.0",
+      "-lcairo",
+      "-lharfbuzz",
+      "-ljson-glib-1.0",
+      "-lgio-2.0",
+      "-lgobject-2.0",
+      "-lgmodule-2.0",
+      "-pthread",
+      "-lglib-2.0",
+      "-lz"
+    ],
+    "binarySHA256": "ad155e8f2703b357251b7276fdfd2d92d86078482cf0a2d101d217272528b368",
+    "linkedLibraries": {
+      "/usr/lib/libwebkit2gtk-4.1.so.0.21.10": "d1e848962aec1eb27416f872a4d2e992f4c216b3cca96f3b3aab1480dddd39ee",
+      "/usr/lib/libsoup-3.0.so.0.7.4": "bf80913f737e7ec8ba78219eda01b269eac840a1d324d5d1d45d0d35c68bd849",
+      "/usr/lib/libjavascriptcoregtk-4.1.so.0.10.14": "4673f1592994fd26a8790e7958e70bc0e5a8345b5a70a86981a44ea40441d5af",
+      "/usr/lib/libgtk-layer-shell.so.0.10.1": "e9c53613a654333e9610dc342e7264f8d30f26f85f1dfa4e6a22f24507c849eb",
+      "/usr/lib/libgtk-3.so.0.2420.32": "c111dd8388e654e9464254e7f5cfce03da83bbbbd8cb0813c88b6600b2b9ee6b",
+      "/usr/lib/libgdk-3.so.0.2420.32": "368c215bd8f3e124ddabc299968b38adfce039d57051741f59dc4fb6f0316873",
+      "/usr/lib/libpangocairo-1.0.so.0.5800.2": "e5e08c1444829436f85dbef91897578b7f3740107ac55a86e24458d55c99af88",
+      "/usr/lib/libcairo-gobject.so.2.11804.4": "d25d40866ae3766a93b3b603cdd90792876acd12596dfde9d453261eff9709c4",
+      "/usr/lib/libgdk_pixbuf-2.0.so.0.4400.7": "95335a5f334e092ea1a3c07ba7eac14adb09e0d3a2bd942bfafbd130139357f0",
+      "/usr/lib/libatk-1.0.so.0.26015.1": "51d0ea9a14a539f8af8a62903b9fe64519ccaea7a786be1fd17ae942dda60179",
+      "/usr/lib/libpango-1.0.so.0.5800.2": "ea03a7e253f59f3876282947e23880e3ac313ec28e5de314c9ccbd124289978d",
+      "/usr/lib/libcairo.so.2.11804.4": "f64d0a970ce4bbc63afad18fe2d6ff18ef0b4d4f88aade037f3dc3e68026d63f",
+      "/usr/lib/libharfbuzz.so.0.61440.0": "ea4f2a4d4593dd5645cf3b5c856b0e22fb72c2b515f331b3243886649e9639a1",
+      "/usr/lib/libjson-glib-1.0.so.0.1000.8": "c4e326f8baad4ad063c31de0668fbca8c4841eb2f4e92ba1f7dbd8e996f54f7f",
+      "/usr/lib/libgio-2.0.so.0.8800.3": "3cc245fc1d3071b164d544cda090a529eed9f6e37ca2fec0373b15a924bb83cc",
+      "/usr/lib/libgobject-2.0.so.0.8800.3": "27bf7b1dbd23e444f8d7a24daeb6b1f094c02860af2ae255f2e6c9b1d4465f49",
+      "/usr/lib/libgmodule-2.0.so.0.8800.3": "9acc4b380b291cbc5f4098d04689c6933879d0a85b039ef62088fde935f65e83",
+      "/usr/lib/libglib-2.0.so.0.8800.3": "a09a06c2e7d70361dff4b7516b18c8493b7eb1e6b2f301cf82072148f143ad92",
+      "/usr/lib/libz.so.1.3.2": "9ba92a0b85dc9b659e8f5e596a69452cec801def6ece0883a8a2c1f032e52397",
+      "/usr/lib/libc.so.6": "e221b10fee9ee4776d8f0f1701253bc06817f7a4dbe6c5292487277d0bf8ffff",
+      "/usr/lib/libepoxy.so.0.0.0": "2f60fd7b9b287b789741a2b438d6b57549bd8a7f76d66c3c1a1399c930ed0f1b",
+      "/usr/lib/libatomic.so.1.2.0": "977b443ea807835dca23aa5f27b6245799c5f452d972d033b88ca768e0b216d1",
+      "/usr/lib/libfreetype.so.6.20.6": "8617439444dda4fc8bb4d53e9c5e888e7338543778d477723a6b69ee1e64c602",
+      "/usr/lib/libfontconfig.so.1.17.0": "9d103ae2234c4a8140250935ec6f8d72b0ce1a389fc1a75e17a485c16adc566b",
+      "/usr/lib/libwebpmux.so.3.1.2": "5ce37ec67249b104a43b9e6ee5b2a59bbb3ca9a7c1d51df091edf8d6bec39a33",
+      "/usr/lib/libexpat.so.1.12.4": "516a880ec607ee15f664d92eeb587deeb609f6ef6d05c947e9bfeb781a9debaf",
+      "/usr/lib/libicui18n.so.78.3": "60d7ad7b3f8e6e1c42895c03379954ee46008948dcdb2e556fa8e4c875742c60",
+      "/usr/lib/libsystemd.so.0.44.0": "2e971237c56af98844a847344edeae0f59ae2e3437de84162b37f308f82c1615",
+      "/usr/lib/libjpeg.so.8.3.2": "d6cd94abf2b7a9aa59a0e056c83bbfdf8900fbf7101bfba8ea0ee1ca45958665",
+      "/usr/lib/libpng16.so.16.58.0": "c13e6aa88f5fe0dae5d5bf3d27edf8dce96ad91d130b4b81239ae72a3be36b8f",
+      "/usr/lib/libicuuc.so.78.3": "c99f0dd0c797c07f9ab64413d36c595393cdded6fa04cc4edd6f6a521fd155ca",
+      "/usr/lib/libxml2.so.16.1.4": "5ff12cee1e6992555ba638190cce88a0aab40acad51d5c826f6487888a0160ab",
+      "/usr/lib/libsqlite3.so.3.53.4": "72aa8cecbe62288fabfa2c1ee1715c0195b0e5bcee20c60c10246710003606e2",
+      "/usr/lib/libxslt.so.1.1.45": "2f174ad42aa0065339c7a6a2dd77952e5ecfaeb9a6273298b57f48203cf2a877",
+      "/usr/lib/liblcms2.so.2.0.19": "64f255d5716940bfa2a2c890abd801019b081dd587ab1af0c921c5741f26ec2b",
+      "/usr/lib/libgcrypt.so.20.8.8": "a0da007396a446f2b289b167a7c828fb58b040b678e8ec11ee44d1dbfb130648",
+      "/usr/lib/libgstallocators-1.0.so.0.2806.0": "794d7692a232fe397b949b0fc636ff5d905c46e986a168e7720ca801e8a1e479",
+      "/usr/lib/libgstapp-1.0.so.0.2806.0": "34b9f1bd263310040ccb436f8f901a2eb1acfb20d203bcc144704c74c4245af4",
+      "/usr/lib/libgstbase-1.0.so.0.2806.0": "d21b1659f4ce6e43ee0a54c3683ddab097bbe20186e29a3a679c683fd40541eb",
+      "/usr/lib/libgstreamer-1.0.so.0.2806.0": "e772fb955a22c738ed8185ceaecbbb9c5982b606dee5664ec56eae8dc8549c6d",
+      "/usr/lib/libgstpbutils-1.0.so.0.2806.0": "c333a722712c9d3ee15340f436c8ca757664494a85ebc280ee108b3d7a19b8cd",
+      "/usr/lib/libgstaudio-1.0.so.0.2806.0": "9672676258958146d962f6851a2df3530409f31ec90998f26caf6386d17965dc",
+      "/usr/lib/libgsttag-1.0.so.0.2806.0": "50211dac5d8d2182797c1c65cb242ac3147a76ef1f327dfbfe11782734d23c1e",
+      "/usr/lib/libgstvideo-1.0.so.0.2806.0": "5d5b356310e195db4d78b281af977c25bd961aef181270b4207aa8638e0484c7",
+      "/usr/lib/libgstgl-1.0.so.0.2806.0": "cb97a3063b2b4b2706c2f1d4ed50359e0d1518e68b5dc55b9f45e42b92a73969",
+      "/usr/lib/libgstfft-1.0.so.0.2806.0": "15b88847819b26f3a4a4e1b403e4e55a4f60a9a8fda39e027ccd8d167335fe1f",
+      "/usr/lib/libwebpdemux.so.2.0.17": "2ad7c92d60ae492b208201f8cf38de00ebf46162549669606aacea3c8c375573",
+      "/usr/lib/libwebp.so.7.2.0": "267dcd6cda1106607130a61a047f3ea28807137d45c56255dd7ca4bf32efcbf2",
+      "/usr/lib/libjxl.so.0.12.0": "e16f4bf9a5afa8192f9219be3c14f039bf3c4d543f7e6d8ed467063b2f932f6a",
+      "/usr/lib/libavif.so.16.4.2": "1d7a6030060bbeba238fcdfc86c4a49d4bfc6389a1dab7498a824c978fa2cef5",
+      "/usr/lib/libharfbuzz-icu.so.0.61440.0": "8a6efc8fd00b4bd3aba24ded16a88c5bcf209945be9165039089c02b03a7e4d6",
+      "/usr/lib/libX11.so.6.4.0": "97736fa2855baf2022d80a8881ffc79cdbecca11c96935e4ca3cfeb47eae1ea4",
+      "/usr/lib/libwayland-server.so.0.26.0": "7e89d8a177a78343a7cf92e3c1c756dc98a437489de4861ff6de907c7e48af89",
+      "/usr/lib/libwayland-client.so.0.26.0": "39c83ae7b73d22f18b4f81da14749c4535c304b7e62910a2f1aae682f279cc9d",
+      "/usr/lib/libm.so.6": "965106704753eefe8c31ae7da6daba3ead3d18c52b19b5fcc41178bcc4aa999d",
+      "/usr/lib/libmanette-0.2.so.0": "65a9c60355ee1259be2fe32a282709f33453e0c9ab3697cd75d74dc4758cfe2c",
+      "/usr/lib/libseccomp.so.2.6.0": "7cb971c30c6e854dedffe8b74f7548ed8f7b0f2e03233cd00f61f76a334dc5c3",
+      "/usr/lib/libenchant-2.so.2.8.21": "3891f48df84092b6cf4782c80910808ec6915bd0b72c69d78d8f8fb08c3aa34f",
+      "/usr/lib/libgbm.so.1.0.0": "9ff0105801e62ed4335e036eee25c4d42421668b4887d77ee35c400db389d8f6",
+      "/usr/lib/libdrm.so.2.134.0": "8b97afc5e15a07442768b302660cf844b0962623f8dcecbaebccadf288c611b1",
+      "/usr/lib/libtasn1.so.6.6.5": "37c55560d3f3a76a039e78e3394e4ab0e17b1d0f68d8a9b9c5916f9842aa4ca1",
+      "/usr/lib/libhyphen.so.0.4.0": "2c4228eb476f92d92bd511773286d257e49f8e18e567c79bb233300cc65f4b78",
+      "/usr/lib/libsecret-1.so.0.0.0": "5040ce6c9b4c85332a1f0f652d67fd82f3a47a4a33ce6ae43adebf06e416478d",
+      "/usr/lib/libstdc++.so.6.0.36": "f5fc7380f2ae46fa4053a64be04e7b98109f1066a4bbfff3c37042488aa0be0e",
+      "/usr/lib/libgcc_s.so.1": "e618cb9c90c2eb3a1dad1cfea5b6c1eebcf2e799ad805976f4ae47bdd61c716a",
+      "/usr/lib/ld-linux-x86-64.so.2": "d011113b7054c641c8ca064f58bcc23804fd2654a3dff2444dad06ddeda61bfb",
+      "/usr/lib/libpsl.so.5.3.5": "b5189c9a4b32b15f0bb1bab989069acd2d0dc89723b990266ad5566cd16f1924",
+      "/usr/lib/libbrotlidec.so.1.2.0": "0883fb05fa42aa6a883722098530ab08551ed317e38a2311f5c96e94dd460979",
+      "/usr/lib/libgssapi_krb5.so.2.2": "db71de39831ad557f7c75fadf772575f1180c4e1e7f83ec7318fabd78e129296",
+      "/usr/lib/libnghttp2.so.14.29.5": "dc9f6c8c911dc14aef9585aed5cadf35ae5037175130753cd058d7eb353fb717",
+      "/usr/lib/libpangoft2-1.0.so.0.5800.2": "e12b401cf24f82e42d8ceff7fd6d0af975f6596e1ff6b413efd551d0f8c41262",
+      "/usr/lib/libfribidi.so.0.4.0": "a469db629fc9f299dec7647cfaeb0bb30cb4ec7a73984313038fc303e721b057",
+      "/usr/lib/libXi.so.6.1.0": "37cf718655c9148050e9feda3e2f02b7a2e1dc8324e1d73577842a1b9fe0114f",
+      "/usr/lib/libatk-bridge-2.0.so.0.0.0": "d059ddadadb2171b115322dd7f4e5eb690a1679775bd9eca6788f26c241cae74",
+      "/usr/lib/libcloudproviders.so.0.4.1": "a4e160e90ac206a11932eac9df2553aaa1c0c5e1f6e60d8e63203bc88c9f12c4",
+      "/usr/lib/libtinysparql-3.0.so.0.1101.0": "664f04aec6f051d188343adae6c13aa2c7d55ecfb9c6a5e1b88cecb22de7c23d",
+      "/usr/lib/libXfixes.so.3.1.0": "81c569776401b91d9fdc8678337b034687e77ef17c359ef98adfef07ed31ab49",
+      "/usr/lib/libxkbcommon.so.0.13.2": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07",
+      "/usr/lib/libwayland-cursor.so.0.26.0": "9bf05b4e53f00d46590c241c501d1d1711e99fb8106eb6f0654084c69072c2e5",
+      "/usr/lib/libwayland-egl.so.1.26.0": "3186e3235d617307bf457ac2da1dc5c52ab984e69135326558f7d33d7aaaee4d",
+      "/usr/lib/libXext.so.6.4.0": "e131bd58bb319d99a19ea280232e4bd982abc70775bb1a7a832c64e5c69f739f",
+      "/usr/lib/libXcursor.so.1.0.2": "2c789c94ecd3a8e7a364c18856de6d713d317eafad6154d7657ab68761089e00",
+      "/usr/lib/libXdamage.so.1.1.0": "37733ba61c9ecdd4c3b20851a2cf59e12ec1b40a292b19ccfcbe7115efd9438d",
+      "/usr/lib/libXcomposite.so.1.0.0": "7dd9df429365f10bb5eb06b6ff031beba2f69df3150efd2d7b3e920c436abb8b",
+      "/usr/lib/libXrandr.so.2.2.0": "7688f3b7a66ed1bea80b91fe036c400eeba4f5be881c6459221647af9639db48",
+      "/usr/lib/libXinerama.so.1.0.0": "d9b2bb9216bf5649e73006d8f1e56673fa75362efbf1979a345f198c81f7d001",
+      "/usr/lib/libglycin-2.so.0": "08d1f1220f42415f2f65680ecab7dfc1a5827f8c8e425a60089c2fe02e2f2898",
+      "/usr/lib/libthai.so.0.3.2": "7a6e4bcfb7bd2ae8c20f0c85f33e829520f12bd7536a5eaf6d2d81129649399b",
+      "/usr/lib/libXrender.so.1.3.0": "de3f96e7c33bef6c69e69558a519385ffa74f321fa0ab8ccbbae196b4c7221c7",
+      "/usr/lib/libxcb.so.1.1.0": "40df5eff95408b67d969e559f2689b3e50e6151251b1f4e03608ce5cd9c9a133",
+      "/usr/lib/libxcb-render.so.0.0.0": "402feded6ecab1d6070a3cd0ce0e2b69efe32d849a90c535cdf93948b34c451f",
+      "/usr/lib/libxcb-shm.so.0.0.0": "e04329f8117411113e6094e3dc354ed50b8b3b10e6cf5f8a21a6b7bec4786eec",
+      "/usr/lib/libpixman-1.so.0.46.4": "97d04f1a534e26e26cf993a350b13ddc33fa4f9741444b08c27bc04582c70fd8",
+      "/usr/lib/libgraphite2.so.3.3.1": "70eebd2fda11b867ebff5a8e3bdf272875acdde0851d258c98b3b046b01b4fc7",
+      "/usr/lib/libmount.so.1.1.0": "7e93ecba2899f4f11cb9442ff5e3aa864c561df0c8f963c9ba947553d990d495",
+      "/usr/lib/libffi.so.8.5.0": "b38bb3a55ba04dfbb5be68e881a72385d6c30010afffb1cf1dfc373b72c2278c",
+      "/usr/lib/libpcre2-8.so.0.16.0": "cb615af32644bbb8f13a582b45dd52a73b0b94fe365f149f94b577c711fb534c",
+      "/usr/lib/libbz2.so.1.0.8": "3265f0647d9157aaa820c5094eba03c5be0f101c49e9ffd21289978b8e1875af",
+      "/usr/lib/libicudata.so.78.3": "d72003b08760852bee4c80cff32c1e6248ae6b1fda5bd313482733a4d5e70dc9",
+      "/usr/lib/libgpg-error.so.0.42.1": "6aae5cd42d86605daa4102a028e7df8f16f33b17c884a9e6649671676918c3a9",
+      "/usr/lib/libunwind.so.8.2.0": "7b6dc90a7732b5633d622ce0b78e1ebee75e3c1dd7b7ce1f56d60c3fc60a22e7",
+      "/usr/lib/libdw-0.196.so": "14a4563f6fce1ce85c449ee79f0d877984ecb16c71b18103b72b2b4f57dc8786",
+      "/usr/lib/liborc-0.4.so.0.43.0": "0b3f6a5057e2218ae87f7a66f165c030cec6fe0080b555a56dc0c50ef28f6f9f",
+      "/usr/lib/libEGL.so.1.1.0": "89d5d0f68f7e42397544db26347c24a893be2e08b81406e8e8714803c29db03b",
+      "/usr/lib/libGLX.so.0.0.0": "4eca76728c640b67b1ed656a22b53d3734c100ba4f992aecd705d2e70bfe743a",
+      "/usr/lib/libX11-xcb.so.1.0.0": "3913178fdde804e000803ff435b79eac731b121f13f719ac1bf2390c86a474be",
+      "/usr/lib/libgudev-1.0.so.0.3.0": "cc7cb00d6eaa44fca055ab0d6b6d7ef7f5494c9ef806a42383adad72e10fc257",
+      "/usr/lib/libsharpyuv.so.0.1.2": "cb3c84af219c532d6e3dad31cce657ae5d087a9dfb3aea491dee6486c2883566",
+      "/usr/lib/libjxl_cms.so.0.12.0": "f67a4a5e51e2b864b1faa966fc01f55ecd8f8dd961d498332bdf1971462ea308",
+      "/usr/lib/libhwy.so.1.4.0": "2d4dbb03cccaeb9157a8214ea94fd291bac3d9ac1d20828f4a86ba4100cb2fca",
+      "/usr/lib/libbrotlienc.so.1.2.0": "8dbc539197d276310ce2750dcb73de5465a1259d46a5d1894e6138fd354bf5c7",
+      "/usr/lib/libyuv.so": "88e6189c67feaeb99967fc874f983a35fbea098ab159cfe26fa49bf39e2a2c78",
+      "/usr/lib/libdav1d.so.7.0.0": "d7c476ec78f16b276af14962fc2d8cea0978b623185655d6d63149ae004ba1d8",
+      "/usr/lib/librav1e.so.0.8.1": "d67c438344071c29416bc3259d9d944ea218dcfb4ca619f80c04f6d5411b626f",
+      "/usr/lib/libSvtAv1Enc.so.4.2.0": "c8f3ae2d4714b0eb312125e283412eb8a6281563e3e1ef5b0c706cf7d30e78db",
+      "/usr/lib/libaom.so.3.15.0": "a3603f0caf4dd42a91d706fdebae5149eae908651fe9ed583b2ff7cf0e0f620e",
+      "/usr/lib/libhidapi-hidraw.so.0.15.0": "8861a9b614bad89b97e7a04cd2e4c5c78465f6635cd19fd579797589691c80a6",
+      "/usr/lib/libevdev.so.2.3.0": "98e2d73830670af85de7612e16d60757d2bed91046bf11e574a58bc2cc783a6a",
+      "/usr/lib/libtss2-esys.so.0.0.1": "624a7dd576a26eff0e7e026bf223608bdf01cc882e76d8dc0656ef247beaefe9",
+      "/usr/lib/libtss2-mu.so.0.0.1": "ed1745af3899af99ff3ab98ef323900d1bb54eb66f8d53b506f37bc48b5f6083",
+      "/usr/lib/libtss2-rc.so.0.0.0": "bdc516e31991125be2cde20e72df9ae123856fd42f5e4a6e08b5890a39d1f36b",
+      "/usr/lib/libtss2-tctildr.so.0.0.0": "b45be572f98e3a734348f01e794c503cc32672281077a036a8295fee8831c457",
+      "/usr/lib/libunistring.so.5.2.1": "ba7a4afb4b6f823d64ebe324416e182cd42a981dba049e3ddcfa1c9af03cb7f3",
+      "/usr/lib/libidn2.so.0.4.0": "9a36fa67dc82ce0e5dc38ef190c76231f532676f7ba13e363fc1df16a9c50a15",
+      "/usr/lib/libbrotlicommon.so.1.2.0": "4f895094b7b6ff9c82909e6516bc9cf212e2ec5af451d39bf1bcbc5e5fa225b2",
+      "/usr/lib/libkrb5.so.3.3": "eb8369680ba30529b30abeaca57429b67f9af42ac43efdd5d95ca1901bb9c44c",
+      "/usr/lib/libk5crypto.so.3.1": "e9ea7950674f25a6951b830036f95a595e1fc112247a69d11bc0003124ab7338",
+      "/usr/lib/libcom_err.so.2.1": "67ed8a11c44542ffdbaa04b3521f48729afddf936568632b6aa9d04c595316cd",
+      "/usr/lib/libkrb5support.so.0.1": "941f17df15bc3ed160b392dee2930bd68565f445b8fe8d87ad522256c972967f",
+      "/usr/lib/libkeyutils.so.1.10": "a82e692581b6215475c03538fa4b25681b5c71e8554c67afa7e34074b968b0d7",
+      "/usr/lib/libresolv.so.2": "ee828b251a61761a9e529a791758ec8a1fbefd85693e2dc23501fedb8cf2f31d",
+      "/usr/lib/libatspi.so.0.0.1": "999a75bb6f7c3d5fb962671936faea7471f0728ed4cf7f0ea81fefc544e7071b",
+      "/usr/lib/libdbus-1.so.3.38.3": "61be5c82b1d494a3690ad38abd756691bc129a51ba3fb7d5b9074016861b7d60",
+      "/usr/lib/libdatrie.so.1.4.1": "ab76b51c7066731c916f3badbba0b84e546adbf2a66419d6988e16a0ac7311ea",
+      "/usr/lib/libXau.so.6.0.0": "3e229dba702d7b56f1c58ac0e004ae691ae2ad5ede7b50968e1cd7d8b2ccdecc",
+      "/usr/lib/libXdmcp.so.6.0.0": "0c572ba75de0f967c9c4d088161d3e435ea721bd99c169aae707aba6870a71b1",
+      "/usr/lib/libblkid.so.1.1.0": "8a7cccd9e1cffecf17e19f68f4ccddcaabea882f56521f5801a3afebcd6f4ee5",
+      "/usr/lib/liblzma.so.5.8.3": "34d6782a6a5ef49f300eeaa740d11cb5900fced2557f0398dbd58699abb73bb3",
+      "/usr/lib/libelf-0.196.so": "13d3e3cb54d6120d87a0569ac67be05c029f8cd2e4bf44e75936b2721c8e08af",
+      "/usr/lib/libzstd.so.1.5.7": "f023d49e85fb22057bfdd21857263d2638b73356c06f3b342f678a75212379f8",
+      "/usr/lib/libGLdispatch.so.0.0.0": "b6d068112d4fd36750b6fedcddea0df7719b707495611cbe6fd92f6887eda467",
+      "/usr/lib/libudev.so.1.7.14": "50a90d73bff7cab00616225384e40f741d7290787a1f8b650ad6156ea47b0ae9",
+      "/usr/lib/libcrypto.so.3": "24882a9ce56d9bf2f4c3722772aa8ce99e53b7165d70072ad06c9dd35cee13e3",
+      "/usr/lib/libtss2-sys.so.1.0.1": "e5e0de25845f25a442826a321810c55a1b42ec723794bf0a1883385cf959199e"
+    },
+    "lddTool": "/usr/bin/ldd",
+    "lddToolSHA256": "94f332c23cf00596d0387d6f54693664f9a53334d65953b2ff308057cc8530b1"
+  },
+  "nativeCoreManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-default-limits-v40/component-manifest.json",
+  "nativeCoreManifestSHA256": "dd924d35c3568b4b0e0434bbc2eb841789e69c4451806a6a62659111180ca712",
+  "nativePairManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-owning-pair-v49/qa/build-pair-manifest.json",
+  "nativePairManifestSHA256": "bd2e92fafa05355a0fb1fb07fadc5ff83f1e42a446dc00aad3ea8c120afbd81b",
+  "files": [
+    {
+      "path": "failure-lineage.json",
+      "size": 513,
+      "mode": 420,
+      "sha256": "6bb460fcefb08a81f12a3c1329bbebe0adb5cd5af9f56fb6417400c1bc87afae"
+    },
+    {
+      "path": "qa/build-1791104385652764777/Main-compile.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/Main-compile.stdout",
+      "size": 683,
+      "mode": 420,
+      "sha256": "fd6fddf9bf8d45f4cb00a8bcb2656c44e7201f4f14dd327f144839e76a617a5c"
+    },
+    {
+      "path": "qa/build-1791104385652764777/Popup-compile.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/Popup-compile.stdout",
+      "size": 110,
+      "mode": 420,
+      "sha256": "864a63baa9435725d71c60b7166be3f3ea8b4e3b4d65835228ad40f86586ec86"
+    },
+    {
+      "path": "qa/build-1791104385652764777/adapter-syntax.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/adapter-syntax.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/context-compile.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/context-compile.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/context-syntax.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/context-syntax.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/context-tests",
+      "size": 16320,
+      "mode": 493,
+      "sha256": "332420493e4b3dbfd027fc3cf0e4218e4c6043e9c342671bc0b4763bca174c6f"
+    },
+    {
+      "path": "qa/build-1791104385652764777/context-tests.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/context-tests.stdout",
+      "size": 688,
+      "mode": 420,
+      "sha256": "0efe435998bd0891aa05109c0e9f0c0f6cda61f47c1d7a8e3d1c08950a3239a5"
+    },
+    {
+      "path": "qa/build-1791104385652764777/elm-host",
+      "size": 98800,
+      "mode": 493,
+      "sha256": "ad155e8f2703b357251b7276fdfd2d92d86078482cf0a2d101d217272528b368"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-carrier-compile.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-carrier-compile.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-carrier-tests",
+      "size": 103424,
+      "mode": 493,
+      "sha256": "99d33a01d912c7abd28f1a36c97a46a0e3b277597baacd62cae763051eeda924"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-carrier-tests.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-carrier-tests.stdout",
+      "size": 28,
+      "mode": 420,
+      "sha256": "d4bc89e2746f5467e9e1b798ed507b2c487c26befef36c7ad772be1d35445b62"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-checks.json",
+      "size": 1639782,
+      "mode": 420,
+      "sha256": "3c623cc832b7d805fc9465312d4ab3fafdffa8a2dadcc15c3e792881025d64c1"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-checks.stderr",
+      "size": 123,
+      "mode": 420,
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+    },
+    {
+      "path": "qa/build-1791104385652764777/geometry-checks.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/host-compile.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/host-compile.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/host-self-test.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/host-self-test.stdout",
+      "size": 634,
+      "mode": 420,
+      "sha256": "8eb3c473ef15ac53933f3a14590a39cff43fad7d89dc6f8979e00aa4ec970b22"
+    },
+    {
+      "path": "qa/build-1791104385652764777/host.d",
+      "size": 39267,
+      "mode": 420,
+      "sha256": "cb1a812a7c27afe1f79fea6100485678be9ea361f2e3fac2fcf8e80376d2c5d7"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/catalog_authority.py",
+      "size": 5008,
+      "mode": 420,
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/catalog_transport.py",
+      "size": 2666,
+      "mode": 420,
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/daemon.py",
+      "size": 6698,
+      "mode": 420,
+      "sha256": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/effect_endpoint.py",
+      "size": 6985,
+      "mode": 420,
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/endpoint.py",
+      "size": 10129,
+      "mode": 420,
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/geometry_endpoint.py",
+      "size": 13106,
+      "mode": 420,
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/taskbar_catalog.py",
+      "size": 8809,
+      "mode": 420,
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/adapter/taskbar_projection.py",
+      "size": 1170,
+      "mode": 420,
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/adapter.js",
+      "size": 2015,
+      "mode": 420,
+      "sha256": "1a115299d8209e9227bbaef5c0ea71381abad6ee8b95ec54b886debd9cc77b71"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/context.js",
+      "size": 4244,
+      "mode": 420,
+      "sha256": "914089a09f4c50c53d8161fa653fad74acd10cc25ff018895935ed05eb990f14"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/elm.js",
+      "size": 385053,
+      "mode": 420,
+      "sha256": "70a36ea3636ad1ad5145a04440e86e4b20c8b4a6797b1cdc2e5633880e275289"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/index.html",
+      "size": 315,
+      "mode": 420,
+      "sha256": "783690ed371ee66cac23004c96bc349d24ea4ccd496928599b0f53358c130347"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/popup-adapter.js",
+      "size": 2274,
+      "mode": 420,
+      "sha256": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/popup.html",
+      "size": 325,
+      "mode": 420,
+      "sha256": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/popup.js",
+      "size": 132068,
+      "mode": 420,
+      "sha256": "98d361735c3074095a6760610b9d44df44b5aea6b41fa95eccd40c0e9c86f216"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/assets/shell.css",
+      "size": 664,
+      "mode": 420,
+      "sha256": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "size": 2096,
+      "mode": 420,
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "size": 12006,
+      "mode": 420,
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "size": 690,
+      "mode": 420,
+      "sha256": "0029d1665d1da57c21c6486b5f98107f8c0c12a3df8dfa1a10f6907a9fe31231"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "size": 3314,
+      "mode": 420,
+      "sha256": "8172bb230051c144b068f50242b00ceb4d854d22f9c025f8e2c095d80e7aaa58"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "size": 1759,
+      "mode": 420,
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "size": 7931,
+      "mode": 420,
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "size": 47327,
+      "mode": 420,
+      "sha256": "380af62a8f78b350a81b3b3af174f7fedda50dd4f5da8db26cd8dc2e9150206f"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "size": 38765,
+      "mode": 420,
+      "sha256": "28cf43e59cdf0d77b866a743f7167d11142e905d5145e502f0916d9e6c44fa51"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "size": 21663,
+      "mode": 420,
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "size": 28669,
+      "mode": 420,
+      "sha256": "2ce3824db649b88638c4e5f75296b6dc39f64200d5e37fc6254122627f563916"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "size": 5360,
+      "mode": 420,
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "size": 25310,
+      "mode": 420,
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "size": 131,
+      "mode": 420,
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "size": 8687,
+      "mode": 420,
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "size": 3424,
+      "mode": 420,
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "size": 16054,
+      "mode": 420,
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Main.elmi",
+      "size": 936,
+      "mode": 420,
+      "sha256": "6d1d01d9d814fa9e1456cb3ffd114be466439b95c578f45edf7a4436b1c9d207"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Main.elmo",
+      "size": 8893,
+      "mode": 420,
+      "sha256": "6db78adb5e0233987cf2456ff29e6682b576f4ba8335f17c1209f5653c4f9bc0"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "size": 8087,
+      "mode": 420,
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "size": 20718,
+      "mode": 420,
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "size": 31433,
+      "mode": 420,
+      "sha256": "4be079cda8f8f25f3d96db059687e8aed5935c7bca92756f6eb91e42fb45ef88"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "size": 20902,
+      "mode": 420,
+      "sha256": "2c2fd11aca397057d6e5d5a1c67282c77be5dd445147eb87b1ecd0ced802ca0b"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "size": 250,
+      "mode": 420,
+      "sha256": "22e83636dc32aee7f68327fa371c47f35a7c84a55ffb71745ae9ede3f7f01f48"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "size": 12970,
+      "mode": 420,
+      "sha256": "2b96a3dc73899080e4a426c745d9ae1dbb040955c8b640da2e655737ced039da"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "size": 149,
+      "mode": 420,
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "size": 7336,
+      "mode": 420,
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "size": 5330,
+      "mode": 420,
+      "sha256": "9c3b9dadd8a35023eec7a5ed87a0ae168046be1b394e4eb7c1b50866095cd1c6"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "size": 8073,
+      "mode": 420,
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "size": 335,
+      "mode": 420,
+      "sha256": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "size": 3427,
+      "mode": 420,
+      "sha256": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "size": 780,
+      "mode": 420,
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "size": 4637,
+      "mode": 420,
+      "sha256": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "size": 10376,
+      "mode": 420,
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "size": 30848,
+      "mode": 420,
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "size": 3554,
+      "mode": 420,
+      "sha256": "86a5e70b1e4939c616a1ec416e6d35b185269190c96b791b35afe303a885df62"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "size": 18602,
+      "mode": 420,
+      "sha256": "1caa34df8a4c4617edd9e66a5f7391c4482d8a98615964323bfebc7d3c54098c"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "size": 44518,
+      "mode": 420,
+      "sha256": "6d2b58493e1f4f4165809d8b641f3bd09e190f93dd234ef9a98586960552e39a"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "size": 37127,
+      "mode": 420,
+      "sha256": "bbee16ee2c495554f07f395b878c8a41c22946c2addc975d4a8731d25f168d06"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "size": 26653,
+      "mode": 420,
+      "sha256": "0a74f8fd934fc969962e74730b50f0c0eedd1af840bcc37d5f3f2e0a7958b3e3"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "size": 29190,
+      "mode": 420,
+      "sha256": "491ff23367ae8d7c04a9bcf4c1e72d003a64ba32b543d2b3274a95f39cca600b"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "size": 14018,
+      "mode": 420,
+      "sha256": "cb7df8b2389134609f390ddacb5ab807f3961e16e705b952618e945c6df7870d"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "size": 8281,
+      "mode": 420,
+      "sha256": "cd5a5b51f25a1026cbbef847f55c21195161304f9a81685f63da19dda4957c0f"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "size": 1849,
+      "mode": 420,
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "size": 12984,
+      "mode": 420,
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "size": 1719,
+      "mode": 420,
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "size": 5495,
+      "mode": 420,
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "size": 21783,
+      "mode": 420,
+      "sha256": "c3bed1d02f42e3d6e85ac0e1f5e41f6fe1a0e6b0af374e82dff02daaed649976"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "size": 10558,
+      "mode": 420,
+      "sha256": "04b78f515b612fdbc353784991f54df23ba2594353f79d1f8b9b4fd46ae216dc"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "size": 530,
+      "mode": 420,
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "size": 3318,
+      "mode": 420,
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/d.dat",
+      "size": 9689,
+      "mode": 420,
+      "sha256": "a8a20b98a633a4a48c6dc95a04696a0da1e854cd2b9f3d8d064356a2c88a64a1"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/i.dat",
+      "size": 105328,
+      "mode": 420,
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/lock",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm-stuff/0.19.2/o.dat",
+      "size": 441107,
+      "mode": 420,
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/elm.json",
+      "size": 306,
+      "mode": 420,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/lineage/broker-held.json",
+      "size": 36631,
+      "mode": 420,
+      "sha256": "3aa379a0c7c694455d32f08c69d047b4ac0dd9200015d30b40e68593938b2161"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/lineage/elm-held.json",
+      "size": 191498,
+      "mode": 420,
+      "sha256": "27ed7148d101cafb220f3ed21e2d3e14a1df5880f4924d01ff510473dccce450"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/lineage/host-held.json",
+      "size": 27420,
+      "mode": 420,
+      "sha256": "60e40d823ffcaa2bf1e3d5250d41a57ad5e41630fa62e1bb3a97939bd36e3d7c"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/lineage/previous-build-held.json",
+      "size": 92477,
+      "mode": 292,
+      "sha256": "90b3838d01da30e9e99f76290eb7dd96bd49a84499b602e38e6339b4e97d68e3"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/context-events.h",
+      "size": 11905,
+      "mode": 420,
+      "sha256": "ac6dc3eff335d441b40367db40f6f1813213fb468d8ef3f1ab12160a941212f4"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/context-keys-test.c",
+      "size": 2959,
+      "mode": 420,
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/context-keys.h",
+      "size": 2623,
+      "mode": 420,
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/context-state.h",
+      "size": 617,
+      "mode": 420,
+      "sha256": "86f5b17ef3d8253f6b40b7be721b1f069851d7d181b0402733dc95ffe54f5e32"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/geometry-carrier-test.c",
+      "size": 4943,
+      "mode": 420,
+      "sha256": "2f220bf2444f34b95b221f34e93834511f214354d011e584197241b355b9b618"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/host.c",
+      "size": 61106,
+      "mode": 420,
+      "sha256": "e94839978c22cd21ada9267aa60a4343e86863068a5be51adc74a60ae263d1fc"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/surface-test.c",
+      "size": 4091,
+      "mode": 420,
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/native/surface.h",
+      "size": 5561,
+      "mode": 420,
+      "sha256": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/qa/build.py",
+      "size": 6098,
+      "mode": 420,
+      "sha256": "a898357e755fd0e53f91851d7e89a8b2329555aa89172c685253d7493c065649"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/qa/fixtures.json",
+      "size": 2495,
+      "mode": 420,
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/qa/geometry-fixtures.json",
+      "size": 4353,
+      "mode": 420,
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/qa/geometry.cjs",
+      "size": 20743,
+      "mode": 420,
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/qa/menu.cjs",
+      "size": 26522,
+      "mode": 420,
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/qa/native-contract.json",
+      "size": 3513,
+      "mode": 420,
+      "sha256": "53156740fbf579aac1caebd951b5e8d906822878d13391ca1779108e2518300a"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/qa/refresh.cjs",
+      "size": 11336,
+      "mode": 420,
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/ActionProjection.elm",
+      "size": 3989,
+      "mode": 420,
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Binding.elm",
+      "size": 1363,
+      "mode": 420,
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Catalog.elm",
+      "size": 2701,
+      "mode": 420,
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/CatalogReplay.elm",
+      "size": 1300,
+      "mode": 420,
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Desktop.elm",
+      "size": 19555,
+      "mode": 420,
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/DesktopReplay.elm",
+      "size": 3077,
+      "mode": 420,
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Effects.elm",
+      "size": 12791,
+      "mode": 420,
+      "sha256": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/GeometryProjection.elm",
+      "size": 9499,
+      "mode": 420,
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Inspection.elm",
+      "size": 3570,
+      "mode": 420,
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Launch.elm",
+      "size": 8353,
+      "mode": 420,
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/LaunchReplay.elm",
+      "size": 4031,
+      "mode": 420,
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Main.elm",
+      "size": 3522,
+      "mode": 420,
+      "sha256": "2cf426183a57be12409e6d5fc8452b471293a6bb27281a7938f8f2515c0f0f58"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Menu.elm",
+      "size": 16453,
+      "mode": 420,
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/MenuBridge.elm",
+      "size": 14103,
+      "mode": 420,
+      "sha256": "d0ad7212e6e185bcbc77da3fffe1d8503e3504a0114bef3beefc1cca507dcc57"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/MenuSurfaceReplay.elm",
+      "size": 5461,
+      "mode": 420,
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/NativeOutcome.elm",
+      "size": 2645,
+      "mode": 420,
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/NativeProvider.elm",
+      "size": 5100,
+      "mode": 420,
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/OutputSurfaceReplay.elm",
+      "size": 3244,
+      "mode": 420,
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Popup.elm",
+      "size": 1296,
+      "mode": 420,
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Presentation.elm",
+      "size": 2006,
+      "mode": 420,
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/PresentationReplay.elm",
+      "size": 1234,
+      "mode": 420,
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Provider.elm",
+      "size": 17561,
+      "mode": 420,
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/ReceiptRouter.elm",
+      "size": 7082,
+      "mode": 420,
+      "sha256": "3f23159a4e3552c38340de14627a314e8b808288eb2c729ae0ca6d713a56f197"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Replay.elm",
+      "size": 1001,
+      "mode": 420,
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Shell.elm",
+      "size": 17591,
+      "mode": 420,
+      "sha256": "b97b0b5d28603496ebbd5c1fb7f5edb0ef03dcc36a6ad05584604b6e27a79275"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/ShellReplay.elm",
+      "size": 1909,
+      "mode": 420,
+      "sha256": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Surface.elm",
+      "size": 13320,
+      "mode": 420,
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/SurfaceController.elm",
+      "size": 3779,
+      "mode": 420,
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/SurfaceRenderer.elm",
+      "size": 5239,
+      "mode": 420,
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/SurfaceReplay.elm",
+      "size": 2651,
+      "mode": 420,
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/Taskbar.elm",
+      "size": 2564,
+      "mode": 420,
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/TaskbarReplay.elm",
+      "size": 1658,
+      "mode": 420,
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/TaskbarShell.elm",
+      "size": 5131,
+      "mode": 420,
+      "sha256": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/TaskbarShellReplay.elm",
+      "size": 2114,
+      "mode": 420,
+      "sha256": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129"
+    },
+    {
+      "path": "qa/build-1791104385652764777/inputs/src/UInt64.elm",
+      "size": 1459,
+      "mode": 420,
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+    },
+    {
+      "path": "qa/build-1791104385652764777/menu-checks.json",
+      "size": 1234379,
+      "mode": 420,
+      "sha256": "3f5404f9e9afcef5b93954827c30789674f4f3b5899ab199ab51b5c450fd6da4"
+    },
+    {
+      "path": "qa/build-1791104385652764777/menu-checks.stderr",
+      "size": 123,
+      "mode": 420,
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+    },
+    {
+      "path": "qa/build-1791104385652764777/menu-checks.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/pkg-config.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/pkg-config.stdout",
+      "size": 935,
+      "mode": 420,
+      "sha256": "6cc9c1c055cb28056a5ae95d2ad83db1f4d3a203caecc15f680486028dee888c"
+    },
+    {
+      "path": "qa/build-1791104385652764777/popup-adapter-syntax.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/popup-adapter-syntax.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/refresh-checks.json",
+      "size": 1437826,
+      "mode": 420,
+      "sha256": "e96266e9c8e4539d06375a4e4e9ccc4e674f0facbe34ecc7fe9e98d3e56f7cb6"
+    },
+    {
+      "path": "qa/build-1791104385652764777/refresh-checks.stderr",
+      "size": 123,
+      "mode": 420,
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+    },
+    {
+      "path": "qa/build-1791104385652764777/refresh-checks.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/replay-compile.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/replay-compile.stdout",
+      "size": 217,
+      "mode": 420,
+      "sha256": "675bafc0580b97a4a1c05a93553fca1dfe65641af04ac5d4ea79a65e131bdd32"
+    },
+    {
+      "path": "qa/build-1791104385652764777/replay.js",
+      "size": 355576,
+      "mode": 420,
+      "sha256": "9704c9fd96b558ee9a571db5b19c23a2d744eb4c15c7b2b2ee6658d3478c297d"
+    },
+    {
+      "path": "qa/build-1791104385652764777/report.json",
+      "size": 4642394,
+      "mode": 420,
+      "sha256": "3da8390ba6ac03a796dc9d2ac3c862830df8e916f87281d1041218d57769fb35"
+    },
+    {
+      "path": "qa/build-1791104385652764777/surface-compile.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/surface-compile.stdout",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/surface-tests",
+      "size": 27408,
+      "mode": 493,
+      "sha256": "9276282ec81bdf86c213458e6ff9573ee510aa6e346fb9a333497a1d870fb5f0"
+    },
+    {
+      "path": "qa/build-1791104385652764777/surface-tests.stderr",
+      "size": 0,
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/build-1791104385652764777/surface-tests.stdout",
+      "size": 254,
+      "mode": 420,
+      "sha256": "b79eb121f198861ced6ffac0fdd49fd3191d16fc055b356dfc23d630c713d68c"
+    },
+    {
+      "path": "qa/build.py",
+      "size": 6098,
+      "mode": 420,
+      "sha256": "a898357e755fd0e53f91851d7e89a8b2329555aa89172c685253d7493c065649"
+    },
+    {
+      "path": "qa/freeze.py",
+      "size": 9247,
+      "mode": 420,
+      "sha256": "7ad28cf768b78967b6cfd64440977b214b4f582610b98bab8641b792031f626e"
+    },
+    {
+      "path": "qa/native-contract.json",
+      "size": 3513,
+      "mode": 420,
+      "sha256": "53156740fbf579aac1caebd951b5e8d906822878d13391ca1779108e2518300a"
+    }
+  ]
+}

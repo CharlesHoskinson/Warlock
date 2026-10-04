@@ -1,0 +1,1610 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "modelLogicAdded": false,
+  "oldOracleCountsClaimed": false,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-102bde40f71d4853bc8fe4891347952f.scope",
+    "coreLimit": 1
+  },
+  "files": {
+    "elm.json": {
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    "upstream.json": {
+      "sha256": "a3e10ae9e7613db7b5af79091bcdc43a6fccc4c2e3b33947616a84333cf93482",
+      "size": 4079
+    },
+    "SPEC.md": {
+      "sha256": "41c06bcff964493d5f285ff2f6c28fa5eb4bb53f236995b7e6f54ac0cc203707",
+      "size": 4526
+    },
+    "src/Effects.elm": {
+      "sha256": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26",
+      "size": 12791
+    },
+    "src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    "src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    "src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    "src/Binding.elm": {
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a",
+      "size": 1363
+    },
+    "src/Shell.elm": {
+      "sha256": "5630325f3f649d6b78e85a84ad70d8a618fb514bb5cc0ca0629fc993bd1e1e00",
+      "size": 17904
+    },
+    "src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    "src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    "src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    "src/TaskbarShell.elm": {
+      "sha256": "53dd141b5f5908f44d5d92db42756504ba147d98295c40e42448dcdb50130631",
+      "size": 5996
+    },
+    "src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    "src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    "src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    "src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    "src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    "src/Desktop.elm": {
+      "sha256": "e5c46a0c03ae564900c7f07eec19cf4a4118cfeb4da99f13d5d90b6b78651cb4",
+      "size": 19768
+    },
+    "src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    "src/Surface.elm": {
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    "src/SurfaceController.elm": {
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327",
+      "size": 3779
+    },
+    "src/SurfaceRenderer.elm": {
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    "src/Popup.elm": {
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    "src/SurfaceReplay.elm": {
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    "src/Presentation.elm": {
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    "src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    "src/Main.elm": {
+      "sha256": "cb57006c169a622a74d41197e6aa9b367c608f8c0f90c18234685fd66c019688",
+      "size": 3743
+    },
+    "src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    "src/Menu.elm": {
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    "src/Provider.elm": {
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    "src/ReceiptRouter.elm": {
+      "sha256": "86cfcb23cdab7624e173be3e14e35e73bf99f493412195a501595ceced19489d",
+      "size": 8870
+    },
+    "src/MenuBridge.elm": {
+      "sha256": "647546f58e7012e46233ab1bdab02181f56d02248eae46aeb99f9eda27cdbe02",
+      "size": 23239
+    },
+    "src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    "src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    "src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    "src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    "src/GeometryProjection.elm": {
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    "qa/compile.py": {
+      "sha256": "537929771cc75717aca500389173fa45af0f2010af52b19e93daed5f1518730d",
+      "size": 1992
+    },
+    "qa/compile-1791105534300325231/Main.stdout": {
+      "sha256": "0ae33f6c4b8e800430423e9454008c0c203fb1040463928de9bf30a6ea807936",
+      "size": 543
+    },
+    "qa/compile-1791105534300325231/Main.stderr": {
+      "sha256": "9ed9a5ff90354f9ac5e99767c93d98f99097549172c355a08a42fdacfda7a991",
+      "size": 1242
+    },
+    "qa/compile-1791105534300325231/report.json": {
+      "sha256": "241eda928a47bbda4247b73f6266c98dc11710046e9161d1ff9e748208bb9d8b",
+      "size": 19504
+    },
+    "qa/compile-1791105560831429494/Main.stdout": {
+      "sha256": "0ae33f6c4b8e800430423e9454008c0c203fb1040463928de9bf30a6ea807936",
+      "size": 543
+    },
+    "qa/compile-1791105560831429494/Main.stderr": {
+      "sha256": "bd814b549e2eb451a7a44a446ccd953f88b70505aece4e1f06a8cbad9a4ccb85",
+      "size": 571
+    },
+    "qa/compile-1791105560831429494/report.json": {
+      "sha256": "5bd7291aa3762a713180414638e99926a34338b467e76ea610b1522359f94d0e",
+      "size": 18130
+    },
+    "qa/compile-1791105606726438163/Main.js": {
+      "sha256": "54d2d200aff821883db95a6512e9f9af7118d0048450e2fc5e97e5a292e10788",
+      "size": 427427
+    },
+    "qa/compile-1791105606726438163/Main.stdout": {
+      "sha256": "27f7edd2fc8332a537ee2fe25f3e30adea1671f5291db06bf7405584ceb4f916",
+      "size": 796
+    },
+    "qa/compile-1791105606726438163/Main.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105606726438163/Popup.js": {
+      "sha256": "05e3176e948d242a76a20cb5ba0701b6966275c7dc9c89504b55fe33863e2bd9",
+      "size": 134703
+    },
+    "qa/compile-1791105606726438163/Popup.stdout": {
+      "sha256": "5a7ebb6ab6c14ae8583f9bd2ffd64f1a85806a0439b9b1c9e7fd36ceaf61f189",
+      "size": 222
+    },
+    "qa/compile-1791105606726438163/Popup.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105606726438163/MenuSurfaceReplay.js": {
+      "sha256": "3e3cf2d83c9c346f71e6977bbe6a766adf214bb3c6b0e7d33200c74645af4f1a",
+      "size": 374225
+    },
+    "qa/compile-1791105606726438163/MenuSurfaceReplay.stdout": {
+      "sha256": "540e6748458442ee1b1b3fb2c48dda4a8e9d7ab7e31dda5de47f8f06c2ee7e6e",
+      "size": 231
+    },
+    "qa/compile-1791105606726438163/MenuSurfaceReplay.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105606726438163/report.json": {
+      "sha256": "d25d52f86c027425b60df8f9c431df2e895a1d97a8a8c60f0dba161cd5888cf5",
+      "size": 19532
+    },
+    "qa/compile-1791105792420432649/Main.js": {
+      "sha256": "3f8863a987aad43bd8762b9c81194b95899c4562288171fca304c51a3482ac5f",
+      "size": 429249
+    },
+    "qa/compile-1791105792420432649/Main.stdout": {
+      "sha256": "daffa4a59de45dbf6659d529771d4549a6a9959d1d8143ca5efd435c2a831168",
+      "size": 796
+    },
+    "qa/compile-1791105792420432649/Main.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105792420432649/Popup.js": {
+      "sha256": "05e3176e948d242a76a20cb5ba0701b6966275c7dc9c89504b55fe33863e2bd9",
+      "size": 134703
+    },
+    "qa/compile-1791105792420432649/Popup.stdout": {
+      "sha256": "858ea1d7be2279c56dd29d848c502ab84901b2fd58edce5dffc2f025cb151680",
+      "size": 222
+    },
+    "qa/compile-1791105792420432649/Popup.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105792420432649/MenuSurfaceReplay.js": {
+      "sha256": "307f5bdde6ae33ae418b38ea92e6e994177925dd462830c6b5fb351d7226b66a",
+      "size": 376047
+    },
+    "qa/compile-1791105792420432649/MenuSurfaceReplay.stdout": {
+      "sha256": "b0d9c086b4995b534ccadbb246a7a853699f088873f32567fd7c9bdba21bad99",
+      "size": 231
+    },
+    "qa/compile-1791105792420432649/MenuSurfaceReplay.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105792420432649/report.json": {
+      "sha256": "6004632eaad5b5c5ab5853d1a8ef141c8acd40ee2711170d827426993d74afe2",
+      "size": 19532
+    },
+    "qa/compile-1791105792420432649/inputs/elm.json": {
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    "qa/compile-1791105792420432649/inputs/upstream.json": {
+      "sha256": "a3e10ae9e7613db7b5af79091bcdc43a6fccc4c2e3b33947616a84333cf93482",
+      "size": 4079
+    },
+    "qa/compile-1791105792420432649/inputs/SPEC.md": {
+      "sha256": "41c06bcff964493d5f285ff2f6c28fa5eb4bb53f236995b7e6f54ac0cc203707",
+      "size": 4526
+    },
+    "qa/compile-1791105792420432649/inputs/src/Effects.elm": {
+      "sha256": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26",
+      "size": 12791
+    },
+    "qa/compile-1791105792420432649/inputs/src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    "qa/compile-1791105792420432649/inputs/src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    "qa/compile-1791105792420432649/inputs/src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    "qa/compile-1791105792420432649/inputs/src/Binding.elm": {
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a",
+      "size": 1363
+    },
+    "qa/compile-1791105792420432649/inputs/src/Shell.elm": {
+      "sha256": "5630325f3f649d6b78e85a84ad70d8a618fb514bb5cc0ca0629fc993bd1e1e00",
+      "size": 17904
+    },
+    "qa/compile-1791105792420432649/inputs/src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    "qa/compile-1791105792420432649/inputs/src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    "qa/compile-1791105792420432649/inputs/src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    "qa/compile-1791105792420432649/inputs/src/TaskbarShell.elm": {
+      "sha256": "53dd141b5f5908f44d5d92db42756504ba147d98295c40e42448dcdb50130631",
+      "size": 5996
+    },
+    "qa/compile-1791105792420432649/inputs/src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    "qa/compile-1791105792420432649/inputs/src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    "qa/compile-1791105792420432649/inputs/src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    "qa/compile-1791105792420432649/inputs/src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    "qa/compile-1791105792420432649/inputs/src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    "qa/compile-1791105792420432649/inputs/src/Desktop.elm": {
+      "sha256": "e5c46a0c03ae564900c7f07eec19cf4a4118cfeb4da99f13d5d90b6b78651cb4",
+      "size": 19768
+    },
+    "qa/compile-1791105792420432649/inputs/src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    "qa/compile-1791105792420432649/inputs/src/Surface.elm": {
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    "qa/compile-1791105792420432649/inputs/src/SurfaceController.elm": {
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327",
+      "size": 3779
+    },
+    "qa/compile-1791105792420432649/inputs/src/SurfaceRenderer.elm": {
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    "qa/compile-1791105792420432649/inputs/src/Popup.elm": {
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    "qa/compile-1791105792420432649/inputs/src/SurfaceReplay.elm": {
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    "qa/compile-1791105792420432649/inputs/src/Presentation.elm": {
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    "qa/compile-1791105792420432649/inputs/src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    "qa/compile-1791105792420432649/inputs/src/Main.elm": {
+      "sha256": "cb57006c169a622a74d41197e6aa9b367c608f8c0f90c18234685fd66c019688",
+      "size": 3743
+    },
+    "qa/compile-1791105792420432649/inputs/src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    "qa/compile-1791105792420432649/inputs/src/Menu.elm": {
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    "qa/compile-1791105792420432649/inputs/src/Provider.elm": {
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    "qa/compile-1791105792420432649/inputs/src/ReceiptRouter.elm": {
+      "sha256": "86cfcb23cdab7624e173be3e14e35e73bf99f493412195a501595ceced19489d",
+      "size": 8870
+    },
+    "qa/compile-1791105792420432649/inputs/src/MenuBridge.elm": {
+      "sha256": "647546f58e7012e46233ab1bdab02181f56d02248eae46aeb99f9eda27cdbe02",
+      "size": 23239
+    },
+    "qa/compile-1791105792420432649/inputs/src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    "qa/compile-1791105792420432649/inputs/src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    "qa/compile-1791105792420432649/inputs/src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    "qa/compile-1791105792420432649/inputs/src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    "qa/compile-1791105792420432649/inputs/src/GeometryProjection.elm": {
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    "qa/compile-1791105792420432649/inputs/qa/compile.py": {
+      "sha256": "537929771cc75717aca500389173fa45af0f2010af52b19e93daed5f1518730d",
+      "size": 1992
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/d.dat": {
+      "sha256": "af647f28cc2fcbd56f4483e9922ccaddb27baf2e841166984d21eb16c8ba0c89",
+      "size": 9796
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/i.dat": {
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/o.dat": {
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/UInt64.elmo": {
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/UInt64.elmi": {
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Binding.elmo": {
+      "sha256": "8172bb230051c144b068f50242b00ceb4d854d22f9c025f8e2c095d80e7aaa58",
+      "size": 3314
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Binding.elmi": {
+      "sha256": "0029d1665d1da57c21c6486b5f98107f8c0c12a3df8dfa1a10f6907a9fe31231",
+      "size": 690
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Catalog.elmo": {
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ActionProjection.elmo": {
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeOutcome.elmo": {
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ActionProjection.elmi": {
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Catalog.elmi": {
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo": {
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+      "size": 12984
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeOutcome.elmi": {
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi": {
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+      "size": 1849
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Menu.elmo": {
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8",
+      "size": 20718
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Launch.elmo": {
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Menu.elmi": {
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24",
+      "size": 8087
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Launch.elmi": {
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/GeometryProjection.elmo": {
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649",
+      "size": 25310
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/GeometryProjection.elmi": {
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611",
+      "size": 5360
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Effects.elmo": {
+      "sha256": "2ce3824db649b88638c4e5f75296b6dc39f64200d5e37fc6254122627f563916",
+      "size": 28669
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Provider.elmo": {
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48",
+      "size": 30848
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Effects.elmi": {
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224",
+      "size": 21663
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Provider.elmi": {
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f",
+      "size": 10376
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Taskbar.elmo": {
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Taskbar.elmi": {
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo": {
+      "sha256": "af25e18214e494537685a3e567032a3f2feabce8313ca705aa1b107b87b196cc",
+      "size": 22618
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi": {
+      "sha256": "f746a2016976e03d2aa4a5b82de94dba924ee247bd5695790150726da5e317c4",
+      "size": 3865
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Shell.elmo": {
+      "sha256": "13ee19de38434aaa9ca4d7bf599b009e3e3fa2068b1f4587d4dc29796ece9333",
+      "size": 37661
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Shell.elmi": {
+      "sha256": "58df4c19809cb2f964da8fe8f4148f447b538775f43f6038564da128cf7276d5",
+      "size": 54714
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeProvider.elmo": {
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/NativeProvider.elmi": {
+      "sha256": "66d9e8a846abf1536ac867ae63798ef9e49fcd879f5e458843276002de3b55cb",
+      "size": 5373
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuBridge.elmo": {
+      "sha256": "255196405585da243510aee0b8736d9e46af15f8b64debf180a70c45608378e9",
+      "size": 40259
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuBridge.elmi": {
+      "sha256": "8c21ef66a04aa06d23f16a094a57248a8ee59a95935eeda834c7da172140d642",
+      "size": 69480
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/TaskbarShell.elmo": {
+      "sha256": "a9579361238529fab99e05e70e41022d7918d3ab7e981e251697f232dab3e0ab",
+      "size": 12059
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/TaskbarShell.elmi": {
+      "sha256": "70d89e3727eabd687d2a5b278e7405f113edb72272be75bde9ae61bcf650830b",
+      "size": 22095
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Desktop.elmo": {
+      "sha256": "cdf5326f2d2adb6d206a979c8ff1647d887859a6ef3a44803425f57c058ccf0f",
+      "size": 39283
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Desktop.elmi": {
+      "sha256": "0f6a421d22609d94655c40eaa7a87900e3d64025239c55e8a9c45b44e1532728",
+      "size": 47628
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Surface.elmo": {
+      "sha256": "491ff23367ae8d7c04a9bcf4c1e72d003a64ba32b543d2b3274a95f39cca600b",
+      "size": 29190
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Surface.elmi": {
+      "sha256": "29c53a5b5c4997c123baac957b925b44685f5f1afc7c17a82230b0c5b970d50f",
+      "size": 26825
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceController.elmo": {
+      "sha256": "cd5a5b51f25a1026cbbef847f55c21195161304f9a81685f63da19dda4957c0f",
+      "size": 8281
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/SurfaceController.elmi": {
+      "sha256": "8f3b906cbcde65708c890939d288f5dcaaedba0d908b35a4361779f66ceb9226",
+      "size": 14104
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Inspection.elmo": {
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193",
+      "size": 8687
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Inspection.elmi": {
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142",
+      "size": 131
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Main.elmo": {
+      "sha256": "bfba2a37c2bd8a69a39fe99e21d743e641e52f467ce48f7582d8f97db1dde42e",
+      "size": 9503
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Main.elmi": {
+      "sha256": "6d1d01d9d814fa9e1456cb3ffd114be466439b95c578f45edf7a4436b1c9d207",
+      "size": 936
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Presentation.elmo": {
+      "sha256": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86",
+      "size": 4637
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Presentation.elmi": {
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+      "size": 780
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Popup.elmo": {
+      "sha256": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf",
+      "size": 3427
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/Popup.elmi": {
+      "sha256": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc",
+      "size": 335
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo": {
+      "sha256": "bbf09e7e65723737514d07d53601382e52c3b12a73a55bdacb2f105ddd193ae8",
+      "size": 13034
+    },
+    "qa/compile-1791105792420432649/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi": {
+      "sha256": "22e83636dc32aee7f68327fa371c47f35a7c84a55ffb71745ae9ede3f7f01f48",
+      "size": 250
+    },
+    "qa/compile-1791105606726438163/inputs/elm.json": {
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    "qa/compile-1791105606726438163/inputs/upstream.json": {
+      "sha256": "a3e10ae9e7613db7b5af79091bcdc43a6fccc4c2e3b33947616a84333cf93482",
+      "size": 4079
+    },
+    "qa/compile-1791105606726438163/inputs/SPEC.md": {
+      "sha256": "41c06bcff964493d5f285ff2f6c28fa5eb4bb53f236995b7e6f54ac0cc203707",
+      "size": 4526
+    },
+    "qa/compile-1791105606726438163/inputs/src/Effects.elm": {
+      "sha256": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26",
+      "size": 12791
+    },
+    "qa/compile-1791105606726438163/inputs/src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    "qa/compile-1791105606726438163/inputs/src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    "qa/compile-1791105606726438163/inputs/src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    "qa/compile-1791105606726438163/inputs/src/Binding.elm": {
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a",
+      "size": 1363
+    },
+    "qa/compile-1791105606726438163/inputs/src/Shell.elm": {
+      "sha256": "5630325f3f649d6b78e85a84ad70d8a618fb514bb5cc0ca0629fc993bd1e1e00",
+      "size": 17904
+    },
+    "qa/compile-1791105606726438163/inputs/src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    "qa/compile-1791105606726438163/inputs/src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    "qa/compile-1791105606726438163/inputs/src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    "qa/compile-1791105606726438163/inputs/src/TaskbarShell.elm": {
+      "sha256": "a1e9e407182219bd5d6a284cf5d10e37ef448316c0ba6eb14619910516ec58d4",
+      "size": 5647
+    },
+    "qa/compile-1791105606726438163/inputs/src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    "qa/compile-1791105606726438163/inputs/src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    "qa/compile-1791105606726438163/inputs/src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    "qa/compile-1791105606726438163/inputs/src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    "qa/compile-1791105606726438163/inputs/src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    "qa/compile-1791105606726438163/inputs/src/Desktop.elm": {
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d",
+      "size": 19555
+    },
+    "qa/compile-1791105606726438163/inputs/src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    "qa/compile-1791105606726438163/inputs/src/Surface.elm": {
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    "qa/compile-1791105606726438163/inputs/src/SurfaceController.elm": {
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327",
+      "size": 3779
+    },
+    "qa/compile-1791105606726438163/inputs/src/SurfaceRenderer.elm": {
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    "qa/compile-1791105606726438163/inputs/src/Popup.elm": {
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    "qa/compile-1791105606726438163/inputs/src/SurfaceReplay.elm": {
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    "qa/compile-1791105606726438163/inputs/src/Presentation.elm": {
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    "qa/compile-1791105606726438163/inputs/src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    "qa/compile-1791105606726438163/inputs/src/Main.elm": {
+      "sha256": "cb57006c169a622a74d41197e6aa9b367c608f8c0f90c18234685fd66c019688",
+      "size": 3743
+    },
+    "qa/compile-1791105606726438163/inputs/src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    "qa/compile-1791105606726438163/inputs/src/Menu.elm": {
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    "qa/compile-1791105606726438163/inputs/src/Provider.elm": {
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    "qa/compile-1791105606726438163/inputs/src/ReceiptRouter.elm": {
+      "sha256": "0c9978ec9559bce6b2115ab96a9636bd247f9d6afe179a5179ab99137e024f8c",
+      "size": 8748
+    },
+    "qa/compile-1791105606726438163/inputs/src/MenuBridge.elm": {
+      "sha256": "f57abe30c38dcb1e36e96ccb59ed3b64be8ac2840ffb4d868a524198eaf953bc",
+      "size": 22877
+    },
+    "qa/compile-1791105606726438163/inputs/src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    "qa/compile-1791105606726438163/inputs/src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    "qa/compile-1791105606726438163/inputs/src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    "qa/compile-1791105606726438163/inputs/src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    "qa/compile-1791105606726438163/inputs/src/GeometryProjection.elm": {
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    "qa/compile-1791105606726438163/inputs/qa/compile.py": {
+      "sha256": "537929771cc75717aca500389173fa45af0f2010af52b19e93daed5f1518730d",
+      "size": 1992
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/d.dat": {
+      "sha256": "5c7cf07619f2ef835cc7771d999cdc6e027cb73af042bd3bcbeec084a4dd9167",
+      "size": 9796
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/i.dat": {
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/o.dat": {
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/UInt64.elmo": {
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/UInt64.elmi": {
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Binding.elmo": {
+      "sha256": "8172bb230051c144b068f50242b00ceb4d854d22f9c025f8e2c095d80e7aaa58",
+      "size": 3314
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Binding.elmi": {
+      "sha256": "0029d1665d1da57c21c6486b5f98107f8c0c12a3df8dfa1a10f6907a9fe31231",
+      "size": 690
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Catalog.elmo": {
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Catalog.elmi": {
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Menu.elmo": {
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8",
+      "size": 20718
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeOutcome.elmo": {
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Menu.elmi": {
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24",
+      "size": 8087
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo": {
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+      "size": 12984
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeOutcome.elmi": {
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ActionProjection.elmo": {
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi": {
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+      "size": 1849
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ActionProjection.elmi": {
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Launch.elmo": {
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Launch.elmi": {
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/GeometryProjection.elmo": {
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649",
+      "size": 25310
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/GeometryProjection.elmi": {
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611",
+      "size": 5360
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Effects.elmo": {
+      "sha256": "2ce3824db649b88638c4e5f75296b6dc39f64200d5e37fc6254122627f563916",
+      "size": 28669
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Provider.elmo": {
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48",
+      "size": 30848
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Effects.elmi": {
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224",
+      "size": 21663
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Provider.elmi": {
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f",
+      "size": 10376
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Taskbar.elmo": {
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Taskbar.elmi": {
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo": {
+      "sha256": "4f452be4e58ab7d0947d2a6ba22c089c493c6597fc2cb83f4030ce2fc9299813",
+      "size": 22257
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi": {
+      "sha256": "f746a2016976e03d2aa4a5b82de94dba924ee247bd5695790150726da5e317c4",
+      "size": 3865
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Shell.elmo": {
+      "sha256": "13ee19de38434aaa9ca4d7bf599b009e3e3fa2068b1f4587d4dc29796ece9333",
+      "size": 37661
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Shell.elmi": {
+      "sha256": "58df4c19809cb2f964da8fe8f4148f447b538775f43f6038564da128cf7276d5",
+      "size": 54714
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeProvider.elmo": {
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/NativeProvider.elmi": {
+      "sha256": "66d9e8a846abf1536ac867ae63798ef9e49fcd879f5e458843276002de3b55cb",
+      "size": 5373
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuBridge.elmo": {
+      "sha256": "6d765be8ab4f0616368636018189602cecde3bc42a34baada9c5d03dfab5a27e",
+      "size": 39574
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuBridge.elmi": {
+      "sha256": "d55c06d72508ed30a0e1fb7ec2f5e90ec137527996b867a722b448e822493077",
+      "size": 59505
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/TaskbarShell.elmo": {
+      "sha256": "48799b97fcd0067649e7383aa9887356b918b3a8e13aa1f7ba929ea82499d551",
+      "size": 11381
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/TaskbarShell.elmi": {
+      "sha256": "62c7860b86b0dd94ec7c10ba0653d77c7b05f9f3a8168554c67c427dab0f8b8a",
+      "size": 22025
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Desktop.elmo": {
+      "sha256": "44ef380defba9fbaede2910bba2c8631a1da712f3fd51a4810b28ef6028dca03",
+      "size": 38765
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Desktop.elmi": {
+      "sha256": "0f6a421d22609d94655c40eaa7a87900e3d64025239c55e8a9c45b44e1532728",
+      "size": 47628
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Surface.elmo": {
+      "sha256": "491ff23367ae8d7c04a9bcf4c1e72d003a64ba32b543d2b3274a95f39cca600b",
+      "size": 29190
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Surface.elmi": {
+      "sha256": "29c53a5b5c4997c123baac957b925b44685f5f1afc7c17a82230b0c5b970d50f",
+      "size": 26825
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceController.elmo": {
+      "sha256": "cd5a5b51f25a1026cbbef847f55c21195161304f9a81685f63da19dda4957c0f",
+      "size": 8281
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/SurfaceController.elmi": {
+      "sha256": "8f3b906cbcde65708c890939d288f5dcaaedba0d908b35a4361779f66ceb9226",
+      "size": 14104
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Inspection.elmo": {
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193",
+      "size": 8687
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Inspection.elmi": {
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142",
+      "size": 131
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Main.elmo": {
+      "sha256": "bfba2a37c2bd8a69a39fe99e21d743e641e52f467ce48f7582d8f97db1dde42e",
+      "size": 9503
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Main.elmi": {
+      "sha256": "6d1d01d9d814fa9e1456cb3ffd114be466439b95c578f45edf7a4436b1c9d207",
+      "size": 936
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Presentation.elmo": {
+      "sha256": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86",
+      "size": 4637
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Presentation.elmi": {
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+      "size": 780
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Popup.elmo": {
+      "sha256": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf",
+      "size": 3427
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/Popup.elmi": {
+      "sha256": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc",
+      "size": 335
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo": {
+      "sha256": "bbf09e7e65723737514d07d53601382e52c3b12a73a55bdacb2f105ddd193ae8",
+      "size": 13034
+    },
+    "qa/compile-1791105606726438163/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi": {
+      "sha256": "22e83636dc32aee7f68327fa371c47f35a7c84a55ffb71745ae9ede3f7f01f48",
+      "size": 250
+    },
+    "qa/compile-1791105560831429494/inputs/elm.json": {
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    "qa/compile-1791105560831429494/inputs/upstream.json": {
+      "sha256": "a3e10ae9e7613db7b5af79091bcdc43a6fccc4c2e3b33947616a84333cf93482",
+      "size": 4079
+    },
+    "qa/compile-1791105560831429494/inputs/SPEC.md": {
+      "sha256": "41c06bcff964493d5f285ff2f6c28fa5eb4bb53f236995b7e6f54ac0cc203707",
+      "size": 4526
+    },
+    "qa/compile-1791105560831429494/inputs/src/Effects.elm": {
+      "sha256": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26",
+      "size": 12791
+    },
+    "qa/compile-1791105560831429494/inputs/src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    "qa/compile-1791105560831429494/inputs/src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    "qa/compile-1791105560831429494/inputs/src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    "qa/compile-1791105560831429494/inputs/src/Binding.elm": {
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a",
+      "size": 1363
+    },
+    "qa/compile-1791105560831429494/inputs/src/Shell.elm": {
+      "sha256": "5630325f3f649d6b78e85a84ad70d8a618fb514bb5cc0ca0629fc993bd1e1e00",
+      "size": 17904
+    },
+    "qa/compile-1791105560831429494/inputs/src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    "qa/compile-1791105560831429494/inputs/src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    "qa/compile-1791105560831429494/inputs/src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    "qa/compile-1791105560831429494/inputs/src/TaskbarShell.elm": {
+      "sha256": "a1e9e407182219bd5d6a284cf5d10e37ef448316c0ba6eb14619910516ec58d4",
+      "size": 5647
+    },
+    "qa/compile-1791105560831429494/inputs/src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    "qa/compile-1791105560831429494/inputs/src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    "qa/compile-1791105560831429494/inputs/src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    "qa/compile-1791105560831429494/inputs/src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    "qa/compile-1791105560831429494/inputs/src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    "qa/compile-1791105560831429494/inputs/src/Desktop.elm": {
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d",
+      "size": 19555
+    },
+    "qa/compile-1791105560831429494/inputs/src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    "qa/compile-1791105560831429494/inputs/src/Surface.elm": {
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    "qa/compile-1791105560831429494/inputs/src/SurfaceController.elm": {
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327",
+      "size": 3779
+    },
+    "qa/compile-1791105560831429494/inputs/src/SurfaceRenderer.elm": {
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    "qa/compile-1791105560831429494/inputs/src/Popup.elm": {
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    "qa/compile-1791105560831429494/inputs/src/SurfaceReplay.elm": {
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    "qa/compile-1791105560831429494/inputs/src/Presentation.elm": {
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    "qa/compile-1791105560831429494/inputs/src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    "qa/compile-1791105560831429494/inputs/src/Main.elm": {
+      "sha256": "cb57006c169a622a74d41197e6aa9b367c608f8c0f90c18234685fd66c019688",
+      "size": 3743
+    },
+    "qa/compile-1791105560831429494/inputs/src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    "qa/compile-1791105560831429494/inputs/src/Menu.elm": {
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    "qa/compile-1791105560831429494/inputs/src/Provider.elm": {
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    "qa/compile-1791105560831429494/inputs/src/ReceiptRouter.elm": {
+      "sha256": "0c9978ec9559bce6b2115ab96a9636bd247f9d6afe179a5179ab99137e024f8c",
+      "size": 8748
+    },
+    "qa/compile-1791105560831429494/inputs/src/MenuBridge.elm": {
+      "sha256": "8438a61de34e6e1effe67299df5312b4fa9cc6aea43c89b2fd8cf2d40d8f48a1",
+      "size": 22783
+    },
+    "qa/compile-1791105560831429494/inputs/src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    "qa/compile-1791105560831429494/inputs/src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    "qa/compile-1791105560831429494/inputs/src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    "qa/compile-1791105560831429494/inputs/src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    "qa/compile-1791105560831429494/inputs/src/GeometryProjection.elm": {
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    "qa/compile-1791105560831429494/inputs/qa/compile.py": {
+      "sha256": "537929771cc75717aca500389173fa45af0f2010af52b19e93daed5f1518730d",
+      "size": 1992
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/i.dat": {
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/o.dat": {
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/d.dat": {
+      "sha256": "feaff22fae19b31cc6ffd094a33c880cc0d4dcd3c1d6e9c36816b2da44b390f8",
+      "size": 5829
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/UInt64.elmo": {
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/UInt64.elmi": {
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Binding.elmo": {
+      "sha256": "8172bb230051c144b068f50242b00ceb4d854d22f9c025f8e2c095d80e7aaa58",
+      "size": 3314
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Binding.elmi": {
+      "sha256": "0029d1665d1da57c21c6486b5f98107f8c0c12a3df8dfa1a10f6907a9fe31231",
+      "size": 690
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Catalog.elmo": {
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Catalog.elmi": {
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Menu.elmo": {
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8",
+      "size": 20718
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ActionProjection.elmo": {
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeOutcome.elmo": {
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeOutcome.elmi": {
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ActionProjection.elmi": {
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Menu.elmi": {
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24",
+      "size": 8087
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo": {
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+      "size": 12984
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Launch.elmo": {
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi": {
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+      "size": 1849
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Launch.elmi": {
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/GeometryProjection.elmo": {
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649",
+      "size": 25310
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/GeometryProjection.elmi": {
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611",
+      "size": 5360
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Effects.elmo": {
+      "sha256": "2ce3824db649b88638c4e5f75296b6dc39f64200d5e37fc6254122627f563916",
+      "size": 28669
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Provider.elmo": {
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48",
+      "size": 30848
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Effects.elmi": {
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224",
+      "size": 21663
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Provider.elmi": {
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f",
+      "size": 10376
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Taskbar.elmo": {
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Taskbar.elmi": {
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo": {
+      "sha256": "4f452be4e58ab7d0947d2a6ba22c089c493c6597fc2cb83f4030ce2fc9299813",
+      "size": 22257
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi": {
+      "sha256": "f746a2016976e03d2aa4a5b82de94dba924ee247bd5695790150726da5e317c4",
+      "size": 3865
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Shell.elmo": {
+      "sha256": "13ee19de38434aaa9ca4d7bf599b009e3e3fa2068b1f4587d4dc29796ece9333",
+      "size": 37661
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/Shell.elmi": {
+      "sha256": "58df4c19809cb2f964da8fe8f4148f447b538775f43f6038564da128cf7276d5",
+      "size": 54714
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeProvider.elmo": {
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    "qa/compile-1791105560831429494/inputs/elm-stuff/0.19.2/NativeProvider.elmi": {
+      "sha256": "66d9e8a846abf1536ac867ae63798ef9e49fcd879f5e458843276002de3b55cb",
+      "size": 5373
+    },
+    "qa/compile-1791105534300325231/inputs/elm.json": {
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    "qa/compile-1791105534300325231/inputs/upstream.json": {
+      "sha256": "a3e10ae9e7613db7b5af79091bcdc43a6fccc4c2e3b33947616a84333cf93482",
+      "size": 4079
+    },
+    "qa/compile-1791105534300325231/inputs/SPEC.md": {
+      "sha256": "41c06bcff964493d5f285ff2f6c28fa5eb4bb53f236995b7e6f54ac0cc203707",
+      "size": 4526
+    },
+    "qa/compile-1791105534300325231/inputs/src/Effects.elm": {
+      "sha256": "64d7f302340d840bcaeb4b874f3ae49b6b679d3e03464ba2a00e8dc424689e26",
+      "size": 12791
+    },
+    "qa/compile-1791105534300325231/inputs/src/UInt64.elm": {
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    "qa/compile-1791105534300325231/inputs/src/ActionProjection.elm": {
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    "qa/compile-1791105534300325231/inputs/src/Replay.elm": {
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    "qa/compile-1791105534300325231/inputs/src/Binding.elm": {
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a",
+      "size": 1363
+    },
+    "qa/compile-1791105534300325231/inputs/src/Shell.elm": {
+      "sha256": "5630325f3f649d6b78e85a84ad70d8a618fb514bb5cc0ca0629fc993bd1e1e00",
+      "size": 17904
+    },
+    "qa/compile-1791105534300325231/inputs/src/ShellReplay.elm": {
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    "qa/compile-1791105534300325231/inputs/src/Taskbar.elm": {
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    "qa/compile-1791105534300325231/inputs/src/TaskbarReplay.elm": {
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    "qa/compile-1791105534300325231/inputs/src/TaskbarShell.elm": {
+      "sha256": "a1e9e407182219bd5d6a284cf5d10e37ef448316c0ba6eb14619910516ec58d4",
+      "size": 5647
+    },
+    "qa/compile-1791105534300325231/inputs/src/TaskbarShellReplay.elm": {
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    "qa/compile-1791105534300325231/inputs/src/Catalog.elm": {
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    "qa/compile-1791105534300325231/inputs/src/Launch.elm": {
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    "qa/compile-1791105534300325231/inputs/src/LaunchReplay.elm": {
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    "qa/compile-1791105534300325231/inputs/src/CatalogReplay.elm": {
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    "qa/compile-1791105534300325231/inputs/src/Desktop.elm": {
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d",
+      "size": 19555
+    },
+    "qa/compile-1791105534300325231/inputs/src/DesktopReplay.elm": {
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    "qa/compile-1791105534300325231/inputs/src/Surface.elm": {
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    "qa/compile-1791105534300325231/inputs/src/SurfaceController.elm": {
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327",
+      "size": 3779
+    },
+    "qa/compile-1791105534300325231/inputs/src/SurfaceRenderer.elm": {
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    "qa/compile-1791105534300325231/inputs/src/Popup.elm": {
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    "qa/compile-1791105534300325231/inputs/src/SurfaceReplay.elm": {
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    "qa/compile-1791105534300325231/inputs/src/Presentation.elm": {
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    "qa/compile-1791105534300325231/inputs/src/PresentationReplay.elm": {
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    "qa/compile-1791105534300325231/inputs/src/Main.elm": {
+      "sha256": "cb57006c169a622a74d41197e6aa9b367c608f8c0f90c18234685fd66c019688",
+      "size": 3743
+    },
+    "qa/compile-1791105534300325231/inputs/src/Inspection.elm": {
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    "qa/compile-1791105534300325231/inputs/src/Menu.elm": {
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef",
+      "size": 16453
+    },
+    "qa/compile-1791105534300325231/inputs/src/Provider.elm": {
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    "qa/compile-1791105534300325231/inputs/src/ReceiptRouter.elm": {
+      "sha256": "0c9978ec9559bce6b2115ab96a9636bd247f9d6afe179a5179ab99137e024f8c",
+      "size": 8748
+    },
+    "qa/compile-1791105534300325231/inputs/src/MenuBridge.elm": {
+      "sha256": "20ac95973e9d3eb96c5df6a700ea840706747ef23c2874c04f426fb3b5d20c70",
+      "size": 22779
+    },
+    "qa/compile-1791105534300325231/inputs/src/NativeProvider.elm": {
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    "qa/compile-1791105534300325231/inputs/src/NativeOutcome.elm": {
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    "qa/compile-1791105534300325231/inputs/src/MenuSurfaceReplay.elm": {
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    "qa/compile-1791105534300325231/inputs/src/OutputSurfaceReplay.elm": {
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    "qa/compile-1791105534300325231/inputs/src/GeometryProjection.elm": {
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    "qa/compile-1791105534300325231/inputs/qa/compile.py": {
+      "sha256": "537929771cc75717aca500389173fa45af0f2010af52b19e93daed5f1518730d",
+      "size": 1992
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/lock": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/o.dat": {
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/i.dat": {
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/d.dat": {
+      "sha256": "8a43faa17127bf01afc31c152b3c9e2825db51fc7258245c0846cc3a60224a8b",
+      "size": 5829
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/UInt64.elmo": {
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/UInt64.elmi": {
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Binding.elmo": {
+      "sha256": "8172bb230051c144b068f50242b00ceb4d854d22f9c025f8e2c095d80e7aaa58",
+      "size": 3314
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Binding.elmi": {
+      "sha256": "0029d1665d1da57c21c6486b5f98107f8c0c12a3df8dfa1a10f6907a9fe31231",
+      "size": 690
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeOutcome.elmo": {
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo": {
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+      "size": 12984
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Catalog.elmo": {
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeOutcome.elmi": {
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Menu.elmo": {
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8",
+      "size": 20718
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi": {
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+      "size": 1849
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ActionProjection.elmo": {
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Catalog.elmi": {
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ActionProjection.elmi": {
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Menu.elmi": {
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24",
+      "size": 8087
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Launch.elmo": {
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/GeometryProjection.elmo": {
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649",
+      "size": 25310
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/GeometryProjection.elmi": {
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611",
+      "size": 5360
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Launch.elmi": {
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Effects.elmo": {
+      "sha256": "2ce3824db649b88638c4e5f75296b6dc39f64200d5e37fc6254122627f563916",
+      "size": 28669
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Effects.elmi": {
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224",
+      "size": 21663
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Provider.elmo": {
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48",
+      "size": 30848
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Taskbar.elmo": {
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Provider.elmi": {
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f",
+      "size": 10376
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Taskbar.elmi": {
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo": {
+      "sha256": "4f452be4e58ab7d0947d2a6ba22c089c493c6597fc2cb83f4030ce2fc9299813",
+      "size": 22257
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi": {
+      "sha256": "f746a2016976e03d2aa4a5b82de94dba924ee247bd5695790150726da5e317c4",
+      "size": 3865
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Shell.elmo": {
+      "sha256": "13ee19de38434aaa9ca4d7bf599b009e3e3fa2068b1f4587d4dc29796ece9333",
+      "size": 37661
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/Shell.elmi": {
+      "sha256": "58df4c19809cb2f964da8fe8f4148f447b538775f43f6038564da128cf7276d5",
+      "size": 54714
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeProvider.elmo": {
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    "qa/compile-1791105534300325231/inputs/elm-stuff/0.19.2/NativeProvider.elmi": {
+      "sha256": "66d9e8a846abf1536ac867ae63798ef9e49fcd879f5e458843276002de3b55cb",
+      "size": 5373
+    }
+  },
+  "compileReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-post-close-selection-v69/qa/compile-1791105792420432649/report.json",
+  "compileReportSHA256": "6004632eaad5b5c5ab5853d1a8ef141c8acd40ee2711170d827426993d74afe2",
+  "prototypeAPI": {
+    "preparedSnapshot": "token, legacyRequest, geometryRequest, legacyReady, geometryReady",
+    "expire": "TaskbarShell.ExpirePrepared Counter",
+    "cancel": "TaskbarShell.CancelPrepared Counter",
+    "timerSeconds": 2
+  }
+}
