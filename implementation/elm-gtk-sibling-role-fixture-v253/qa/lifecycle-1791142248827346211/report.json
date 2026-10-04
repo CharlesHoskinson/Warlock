@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "sourceSHA256": "cdd9ab65a39fbf68fb15fa6005df673199bd0c53b0c7d24d5e57e924d9f60866",
+  "scope": "actual extracted relationship functions with mock GTK; no display, input or native parent qualification",
+  "assertions": 22,
+  "unsafeControls": [
+    {
+      "name": "wrong-parent",
+      "exitCode": -6,
+      "rejected": true
+    },
+    {
+      "name": "retire-unrelated-sibling",
+      "exitCode": -6,
+      "rejected": true
+    }
+  ]
+}

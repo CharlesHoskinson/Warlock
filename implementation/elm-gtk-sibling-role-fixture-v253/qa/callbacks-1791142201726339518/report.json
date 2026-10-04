@@ -1,0 +1,31 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "sourceSHA256": "cdd9ab65a39fbf68fb15fa6005df673199bd0c53b0c7d24d5e57e924d9f60866",
+  "scope": "actual extracted callbacks with mock GTK objects; no GTK display/input/native proof",
+  "extracted": {
+    "current_controller": "3a3bad3741d90e0680b3c7e50fb3ca20b7d8877f6f45adeb4801c98e8e6fb86b",
+    "pressed": "091282b5e0d54ab2841f0a412e5ca66afceb68fc6dcd368adaa929e744459563",
+    "key_pressed": "2249826683a4d4ccbe685ca5c3a60f40f46a387fd88cefdbc8e263c86e4fa5c6",
+    "state_changed": "3b80d6e9c761fbf2dcc61b6081316eb9097f9fd4ac6f7aee00f4284995c8c928",
+    "close_role": "bb9d9888f14acce89de18046e25f0c5ec57a2dab39e775ccdd7b3af06a810b61"
+  },
+  "checks": 19,
+  "mutants": [
+    {
+      "name": "stale-controller",
+      "exit": -6,
+      "rejected": true
+    },
+    {
+      "name": "missing-controller-disconnect",
+      "exit": -6,
+      "rejected": true
+    },
+    {
+      "name": "stale-surface",
+      "exit": -6,
+      "rejected": true
+    }
+  ]
+}
