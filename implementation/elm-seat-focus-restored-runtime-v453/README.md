@@ -1,0 +1,1 @@
+Exact unchanged private host from440, corrected Core450/new owning geometry451/AQ155; parent151 fault module and GUI422 unchanged. Owning450 link/ABI and451 compile evidence gate loading, new native acceptance still required.

@@ -5013,6 +5013,34 @@
       "candidate": "implementation/elm-keyboard-seat-focus-policy-v446",
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    {
+      "manifest": "implementation/elm-seat-focus-bounded-acceptance-v458/qa/slice-manifest.json",
+      "manifestSHA256": "b76584ceca2a713776f231c1ffc1ea6afa0eed94eb8d1c04bed49bd0adc32191",
+      "summary": "Core450 guarded first-keyboard fallback preserves live popup seat focus. Only InputManager archive payload changed;432 payloads/694 public headers/13412 exports retained. Owning geometry451 and observer452 rebuilt; source422/shared host unchanged/runtime453/AQ155. Actual native45489 held-key focus/capability loss and recovered typing,455161 geometry/menu01-10 ACK/pixels/held receipt,45657 physical reconnect pass with normal cleanup on exact same tuple. Frozen4583009files/7reports; failed freezer457 full-contract-flag mistake retained/corrected bounded oracle. Full-contract flags remain false; no requirement/release completion.",
+      "nativeAcceptance": true,
+      "nativeChecks": 307,
+      "nativeReports": 3,
+      "source": "implementation/elm-shared-geometry-carrier-v422",
+      "runtime": "implementation/elm-seat-focus-restored-runtime-v453",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-seat-focus-restoration-v450/build-1791131758410759196/Hyprland",
+          "sha256": "59200d452966c2d8cf35073b8eff54cf1a2f1cbc1f40ecfc0ff5626c54ba0746"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-focus-geometry-pair-v451/qa/build-1791131836506283574/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "boundedSeatFocusCorrectionQualified": true,
+      "fullGeometryCampaignAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   ]
 }
