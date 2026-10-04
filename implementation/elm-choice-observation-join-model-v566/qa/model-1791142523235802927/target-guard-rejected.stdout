@@ -1,0 +1,16 @@
+
+  join
+    1) retiredTargetTest failed after 1 test(s)
+
+  1 failed
+
+  1) retiredTargetTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-observation-join-model-v566/qa/model-1791142523235802927/target-guard.qnt:22:86
+        22:  run retiredTargetTest = init.then(projection).then(retire).then(geometry).then(all {assert(s.effects==0),s'=s})
+                                                                                                 ^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x13d95 --match=retiredTargetTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 target-guard.qnt

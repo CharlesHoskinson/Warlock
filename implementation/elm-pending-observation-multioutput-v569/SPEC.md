@@ -1,0 +1,5 @@
+# Current coherent two-output UI regression
+
+Replay original151 full135-check campaign against production521 optimized build and owning205/206/AQ155 runtime216. No production change. Preserve all original check/wait/click/choose/key call assertions and helper AST and deadlines. Pin the actual build and launch/match its frozen adapter, with a prospective source/ABI preflight. Actual multi-output native evidence is new; old151 results are ancestry only. Scope: nested asymmetric640x480, resize480x320, integer2 buffer scale/transform1, bar reservation/singlehost/singlebroker, popup ownership, keyboard readiness, owner removal/replug nativeview3. No physical, fractional, zero-output, GPU/AT/IME, canonical fullscene or fullrelease acceptance. Current473 primary qualification is not recounted.
+
+Fresh569 qualifies actual567 pending-observation join fix (Desktop only) after563 native keyboard Enter failure,564 compiled captured-state repro,566 architecture model and568 typed cases. Original151 behavioral assertion/helper AST and deadlines remain. Prior521473 is ancestry; affected candidate567 needs native qualification.

@@ -5328,6 +5328,24 @@
       "manifest": "implementation/elm-native-owner-counterfactual-reviewed-v561/qa/slice-manifest.json",
       "manifestSHA256": "69ce75e7b31ca7b537ae49dbaf93ceb5fc005d3ffa07a2618c7cfdbe4b572219",
       "summary": "Controlled real native publication/input counterfactual: old557 ownerupdate8->9 retains originalproof8 and refuses at2433us, fullSurface equal excludingpub/requests/focus empty, original6s failure preserved normalcleanup4checks. Current558 ownerupdate6->6 no commit accepts realproof at2106us, asyncDOMverify and original89 allpass normalcleanup. Separate QA-only Main port/native hook derivatives555/556; production521 coherent307 remains prior531. Actual552 exactevent oracle passes;559 fulltrace/reporthash analyzer passes. Retain543compile/548filteredunknown/553554hiddenrAF failures, earlierfixtures, inheritedmutationarchives.561 frozen2632files18reports; controlledmechanismconfirmed, historical504 exacttriggerunconfirmed, fullrelease unchanged."
+    },
+    {
+      "nativeAcceptance": false,
+      "source": "implementation/elm-pending-observation-join-v567",
+      "diagnosticSource": "implementation/elm-pending-observation-action-trace-v571",
+      "baselineSource": "implementation/elm-stable-surface-publication-v521",
+      "reviewedNativeChecks": 473,
+      "quintNamedScenarios": 10,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 6,
+      "typedCompiledCases": 8,
+      "joinRepairActualNativeBehaviorObserved": true,
+      "candidateQualificationComplete": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-pending-observation-reviewed-v572/qa/slice-manifest.json",
+      "manifestSHA256": "bba863a897917bd70fadf9c3ef3d1411d3af9c5e7dd73e7e811febf771b705bc",
+      "summary": "570 independently verifies222 current521 owning205473 +223 toolkitABIcompile, source/432retainedpayloads/694headers/13412exports.563 original135 campaignfailsTabEnter16reached/cleanuptrue;564 exactcapturedframes actualcompiledrepro confirms projection4 thengeometry5 leaves choice foreverpending.566 Quint10named1000x40/6typedmutants.567 Desktop-only correlatedprojection-or-geometry completion with existingavailable/binding/output/target/cancel/deadline unchanged, optimizedMainBarPopup/nativeC168pass.568 eightactualcompiled order/stale/target/expiry/disconnectcases pass.569 repairednativeTabEnter correcttarget/actualkeyboardrecipient and owner/peer/minimize/restore/Unknown/freshbinding/stalebinding refusal reach75allpassed then freshintentafterreconnectfailsoriginal6s; normalcleanup.571 QA-only action/admission/fullcommittrace compiled.572 frozen663files8reports, nativecampaignoverallacceptancefalse; no closedbaseline requirements."
     }
   ]
 }
