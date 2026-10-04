@@ -1,0 +1,446 @@
+{
+  "passed": true,
+  "inputs": {
+    "src/Effects.elm": "bac8ea4b5b65f8f37fb34035a54cfbc49de7f697d401f3f938efcc0954294a91",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Binding.elm": "ee7c0e7be6767197a8d217d4ba85240723511ffb6c8564d108b553605aed898e",
+    "src/Shell.elm": "1889c9000ef05fb27ff41b29c185cef85d257cbb0761e19c9a45029425e721e7",
+    "src/ShellReplay.elm": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7",
+    "src/TaskbarShellReplay.elm": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Surface.elm": "89d1bb90c266982e808f57a240b6e136d4d5024220cb80c7ab280f1135439c87",
+    "src/SurfaceController.elm": "f8fb201fb2ff7ccb19c447909043e91b7fb17e6d376b841661e9d06a87ec99f9",
+    "src/SurfaceRenderer.elm": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+    "src/Popup.elm": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+    "src/SurfaceReplay.elm": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+    "src/Presentation.elm": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/Main.elm": "372ecb0351c013c1749f29e27c0fd289af51018e86a56dea9b01f792805c53c4",
+    "src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "src/Menu.elm": "27880ef23761f4957064eae529e2a5681de9d68bb163aa7570f6c1049890067c",
+    "src/Provider.elm": "03a0aa86d22b17706ccf4d362121df57c7149226a145f530d6ae1f960df24787",
+    "src/ReceiptRouter.elm": "233eaacb6fba099ebd3d843d6c5f9e7e4424793ebff178dc81f830756878e095",
+    "src/MenuBridge.elm": "5abe4c2fa3b604245f5462d4f839fedbc35333ac1ddb230cf515818c4c596ca5",
+    "src/NativeProvider.elm": "fae652b6fa84577f1e660618bda0285c2b940e67f4f2d35ce581e8e1d6e9073b",
+    "src/NativeOutcome.elm": "b8fe7659f835beb9532a6ea3fbfb2a1bd0181006ac2e10a1c9a17380582801bf",
+    "src/MenuSurfaceReplay.elm": "3ea934df0f10b97d85dc4f2e3a39df42991839bbcaea10b6d7ef3359e6f2c7fc",
+    "src/OutputSurfaceReplay.elm": "24cd6019401272bcff18918a86100d4d4e272e85a4c7d903361a7d190633403e",
+    "native/host.c": "2d4f332326dc3e878d112a3582bba14b755f8fd0033f7715d5cea682e344cc75",
+    "native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/context-state.h": "c68c85b8b237d45ed85c015f1b85ae4af6b28a558fadf3eb4c7ce6d4d69b8194",
+    "native/context-events.h": "ac6dc3eff335d441b40367db40f6f1813213fb468d8ef3f1ab12160a941212f4",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "adapter/daemon.py": "12a6414a208545587871d3352a9623c47aadb7996d3f1d1f9d9712481ea60aae",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "assets/index.html": "783690ed371ee66cac23004c96bc349d24ea4ccd496928599b0f53358c130347",
+    "assets/shell.css": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+    "assets/adapter.js": "6ac4eb49bffa491b4eb357d832c46802e84c226403bfd4800883aa41499378ce",
+    "assets/popup-adapter.js": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+    "assets/popup.html": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+    "assets/context.js": "914089a09f4c50c53d8161fa653fad74acd10cc25ff018895935ed05eb990f14",
+    "qa/build.py": "95f13ec6cbd6f2a892aa348ba85fbb55f8f4ff99153a678cad5d375e20734b29",
+    "qa/replay.cjs": "592d95c610e33e5c09b556eceb6fd0914d6e3a58feab0bcb415f3f1e31b08671",
+    "qa/shell.cjs": "e9fcb34f279d228d8ba67498e988bdad6a6e03c7b83951b99bd9d958c7bef4ac",
+    "qa/surface.cjs": "bed713ace2459086fa07ebbe66762addd997eb845f9ec0f532cbe5e32f1c8f06",
+    "qa/fixtures.json": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b",
+    "qa/replay.py": "7720745968fe07147f004421e58a734534c9bbb99245e66386313d7d3b371a47",
+    "qa/fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "qa/inspection.py": "190909b78137d0eb8b921a0a003ed33abe850acc80403fda2d4dc7d036c86ab2",
+    "qa/grab_guard.py": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+    "qa/regression.py": "cef1996f5c2e45d09aaa3ecf51bf7463e430441197feeba0602ead76afea2cab",
+    "qa/menu.cjs": "fa9c07bcda468380e3cc70719be37439e8466d82460c651263a6f7f469cd2e52",
+    "qa/native.py": "dd95aa2ca3582e9446b2f5a6de82276067ec0d0bc70a0701ab2af15a38220b1d",
+    "qa/run_native.py": "d4e8773f70f404cae58383979f484a940faa379495dc80175187e2dfa44e3028",
+    "qa/output-regression.py": "a4fb60f0a6bc808a191ed1df1d5fd5bb82177e4ba7c145dee5fe2e365f74471e",
+    "qa/output-scenario-oracle.json": "fbf4691d855d204ec58d2331e4c26709be2e13476c7c044ab96f49246b270b9c",
+    "qa/output-surface.cjs": "e4c03b91e7aeab7f93179e60bb80030f65d544045572280f9281b560880eb10b",
+    "qa/presentation.cjs": "5024535b0c18b169dc8b6dfe3ab9f3c977bcf716f35a7c13789d371c10d43b32",
+    "qa/scenario-oracle.json": "a71642b166a08cd782e714da8a2b0bf1f443c97e7ebc9013f63d288e5d2e1054",
+    "qa/menu-native-oracle.json": "32160be5dc1e6e1a18d6e78a85cde92b2a22f73f09f1f5dcbb553b1fcf969641",
+    "qa/freeze.py": "ce7743570d4231851eb9b36b4b0805c1ba067d3743f6cb11668de3ba643e6289",
+    "fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "upstream.json": "9a73506c41d094edc3e0eabba19a65a324516a0fad020137b03662c917759ebe",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "commands": [
+    {
+      "name": "context-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/context.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/popup-adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Popup.elm",
+        "--optimize",
+        "--output=assets/popup.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-checks",
+      "command": [
+        "node",
+        "qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/replay-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/ShellReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/shell.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-checks",
+      "command": [
+        "node",
+        "qa/shell.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/shell.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/shell-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "surface-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/SurfaceReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/surface.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "surface-checks",
+      "command": [
+        "node",
+        "qa/surface.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/surface.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/surface-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "output-surface-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/OutputSurfaceReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/output-surface.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "output-surface-checks",
+      "command": [
+        "node",
+        "qa/output-surface.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/output-surface.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/output-surface-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "presentation-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/PresentationReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/presentation.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "presentation-checks",
+      "command": [
+        "node",
+        "qa/presentation.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/presentation.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/presentation-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "native/host.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/elm-host",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/elm-host",
+        "--self-test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "surface-test-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "native/surface-test.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/surface-tests",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "surface-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/surface-tests"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "context-key-test-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "native/context-keys-test.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/context-key-tests"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "context-key-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-output-v5/qa/build-1791088078843236675/context-key-tests"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "binarySHA256": "01c66e881fa3ba461f41658996f3f4b0e0687811ce9a3658e98ff8e8da7d80a4"
+}

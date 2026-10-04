@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "094bd70e6b2f401c96d364082f4e4796",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T04:22:57.885661+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-menu-output-v5",
+  "nextWork": [
+    "Merge frozen V4 visible menu integration with accepted V118/V119 monitor ownership and popup geometry into a fresh coherent candidate; retain fresh opener-focus barriers, add explicit immutable host-local owner scope, and rerun compiled/native menu and original/output regression oracles."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-menu-surface-v4/qa/implementation-manifest.json",
+      "sha256": "78e50fa46bcc2d322f7f9733e7d41e199582516353cbba0c676f7d17c2756042",
+      "size": 527291
+    },
+    {
+      "path": "implementation/elm-output-padding-qa-v119/qa/slice-manifest.json",
+      "sha256": "46aeb8b974417441ae1ec02df742db206cc51afb015e6c2e8f2773b11569d7b1",
+      "size": 143500
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

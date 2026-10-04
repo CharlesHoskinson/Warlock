@@ -1,0 +1,37 @@
+{
+  "scope": "Frozen V4 complete47-check menu scenario with exact source/deadlines; V5 separate acceptance required",
+  "originalReport": {
+    "path": "implementation/elm-menu-surface-v4/qa/native-1791087420757458406/report.json",
+    "sha256": "cc06f5a6066a70cf34e5773dc113750e05398f18ce67ca91400e013111703a63"
+  },
+  "originalSource": {
+    "path": "implementation/elm-menu-surface-v4/qa/native.py",
+    "sha256": "dd95aa2ca3582e9446b2f5a6de82276067ec0d0bc70a0701ab2af15a38220b1d"
+  },
+  "originalCheckNames": {
+    "actualMenuKeyOpensWithoutEffect": 1,
+    "actualSecondaryReleaseOpensWithoutEffect": 1,
+    "actualShiftF10OpensWithoutEffect": 1,
+    "contextMinimizeNativeState": 1,
+    "contextRestoreNativeStateAndFocus": 1,
+    "disabledMinimizeDispatchesNothing": 1,
+    "disabledRestoreDispatchesNothing": 1,
+    "enterOnDismissNeverActivatesWindowAction": 1,
+    "escapeClosesPopupWithoutNativeEffect": 1,
+    "fixtureNormalExit": 1,
+    "menuKeyUsesExactPhysicallyFocusedNativeRoot": 1,
+    "minimizeHasOneCorrelatedIntentAndReceipt": 1,
+    "minimizedWindowMinimizeDisabledRestoreEnabled": 1,
+    "openWindowRestoreDisabledMinimizeEnabled": 1,
+    "ownedKeyboardNormalExit": 10,
+    "ownedPointerNormalExit": 13,
+    "pendingCommandClosesActualNativePopupBeforeSend": 1,
+    "pendingKeyboardMenuUsesExactNativeRoot": 1,
+    "physicalKeyboardFocusesExactFixtureRoot": 3,
+    "restoreHasOneCorrelatedIntentAndReceipt": 1,
+    "retiredWindowClosesMenuWithoutEffect": 1,
+    "shiftF10UsesExactPhysicallyFocusedNativeRoot": 1,
+    "singleCorrelatedIntentWhileBrokerStopped": 1,
+    "webviewAndBackendNormalExit": 1
+  }
+}
