@@ -1,0 +1,15 @@
+# Joined XDG grab observer review
+
+The initial315 source snapshot is preserved separately. This packet reviews source only; no GUI or native proof.
+
+Blocking initial finding: grab-join.inc calls CPopup::getT1Owner before independently identifying and holding a current root. Owning Popup.cpp384–388 dereferences the layer-owner weak pointer when no live window owner exists. CPopup::inert only returns m_inert, so that check is insufficient to protect this dereference. Catch-all exception handling cannot catch a null dereference. The inherited240 popup observer deliberately locates an exact live owner tree before coordinate/root access. Extend that proof to both mapped Window::m_popupHead and mapped LayerSurface::m_popupHead through public OtherViewState, bounded unique membership and strong owner retention, then require returned root equality.
+
+Other inspected boundaries: the current grab is held once, matched to307 protocol snapshot, and rechecked after census/join; forEachSurface is the owning live registry enumeration, including unmapped surfaces; every accepted member is emitted, unique(client,id) census bounded4096/accepted256; response string fragments bounded60000 before final envelope. Connection ordinals are assigned to actual wl_client pointers and are ephemeral within this response only. They must never become persistent lifetime identities or match trusted host resource IDs without authenticating its particular client connection. No host stamp/full binding/grant or native eligibility override is emitted.
+
+The actual307 report hash/header overlay and exported accessor are pinned by315 build.py. Full307 manifest integrity and315 source/build/header/link closure must be bound by its final freezer/reviewer. Compiling this diagnostic module does not qualify currentGTK own-popup preparation, external-grab rejection, transport authentication, layer-popup mapping or effect admission.
+
+## Final corrected source
+
+Held315 manifest `e89897fcd85478caa182957abf09a8be1f2cd9d661a985111c54aa5c6565c705` resolves the initial blocker. The callback no longer calls getT1Owner or visible. It proves bounded unique membership in a mapped current window/layer popup tree, holds the identified owner strongly, checks the safe public layerOwner association, then derives root resource from the strong owner. The reported field is mapped, not visibility. Every popup/parent/root identity now must appear in the exact complete census registry set as well as its per-query connection table. The same held grab is rechecked before result emission.
+
+Final source/build pin verification passed10735 entries in `review-1791155139030949935/report.json`, binding315 and307 full own/external manifests, exact actual315 compiler inputs/694 headers/link-library/tool closure, binary and strong-symbol resolution. No source blocker remains for this diagnostic module. The original unchecked-owner snapshot and finding remain preserved. This review does not execute the observer callback or establish transport authentication, stable connection lifetimes, host view/lease binding, native eligibility, layer-popup behavior or GTK02 acceptance.

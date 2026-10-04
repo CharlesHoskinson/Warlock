@@ -1,0 +1,238 @@
+{
+  "passed": false,
+  "scope": "Actual QA wrapper with synthetic receipts and CPU subprocess cleanup only; no native execution or rendering acceptance",
+  "inputs": {
+    "qa/wrapper.py": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+    "qa/test.py": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61"
+  },
+  "checks": [
+    {
+      "name": "frozen captured daemon imports exact manifest and artifacts",
+      "passed": true
+    },
+    {
+      "name": "first matching real-shaped receipt retained without send",
+      "passed": true
+    },
+    {
+      "name": "refresh passes while outcome held",
+      "passed": true
+    },
+    {
+      "name": "other incarnation passes unchanged",
+      "passed": true
+    },
+    {
+      "name": "legacy outcome passes unchanged",
+      "passed": true
+    },
+    {
+      "name": "receipt capture immune to source mutation",
+      "passed": true
+    },
+    {
+      "name": "wrong original full binding refused",
+      "passed": true
+    },
+    {
+      "name": "wrong original context refused",
+      "passed": true
+    },
+    {
+      "name": "bool protocol cannot match integer",
+      "passed": true
+    },
+    {
+      "name": "wrong process start refused",
+      "passed": true
+    },
+    {
+      "name": "exact public gate releases original receipt once",
+      "passed": true
+    },
+    {
+      "name": "duplicate explicit release refused",
+      "passed": true
+    },
+    {
+      "name": "normal closed release has no lost receipt",
+      "passed": true
+    },
+    {
+      "name": "bool wire version refuses before delivery",
+      "passed": true
+    },
+    {
+      "name": "extra field refuses before delivery",
+      "passed": true
+    },
+    {
+      "name": "leading-zero request refuses before delivery",
+      "passed": true
+    },
+    {
+      "name": "context binding mismatch refuses before delivery",
+      "passed": true
+    },
+    {
+      "name": "oversized reason refuses before delivery",
+      "passed": true
+    },
+    {
+      "name": "valid Unknown forwards unchanged without countable hold",
+      "passed": true
+    },
+    {
+      "name": "second matching held receipt refused",
+      "passed": true
+    },
+    {
+      "name": "unreleased EOF refuses",
+      "passed": true
+    },
+    {
+      "name": "locked control cannot postpone deadline",
+      "passed": true
+    },
+    {
+      "name": "strict control JSON b'{\"action\":\"hold\",\"action\":\"hol'",
+      "passed": true
+    },
+    {
+      "name": "strict control JSON b'{'",
+      "passed": true
+    },
+    {
+      "name": "strict control JSON b'{\"action\":NaN}'",
+      "passed": true
+    },
+    {
+      "name": "strict control JSON b'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'",
+      "passed": true
+    },
+    {
+      "name": "replaced gate inode refuses",
+      "passed": true
+    },
+    {
+      "name": "nonprivate gate refuses",
+      "passed": true
+    },
+    {
+      "name": "symlink gate refuses",
+      "passed": true
+    },
+    {
+      "name": "timeout cannot exceed five seconds",
+      "passed": true
+    },
+    {
+      "name": "release process and watchdog terminate normally",
+      "passed": true
+    },
+    {
+      "name": "release interleaved refresh remains real send",
+      "passed": true
+    },
+    {
+      "name": "normal release exit0 exact receipt no disconnect",
+      "passed": true
+    },
+    {
+      "name": "timeout process and watchdog terminate normally",
+      "passed": true
+    },
+    {
+      "name": "timeout interleaved refresh remains real send",
+      "passed": true
+    },
+    {
+      "name": "timeout clean unwind exit1 one disconnect no synthetic effect",
+      "passed": true
+    },
+    {
+      "name": "malformed process and watchdog terminate normally",
+      "passed": true
+    },
+    {
+      "name": "malformed interleaved refresh remains real send",
+      "passed": false
+    }
+  ],
+  "processes": [
+    {
+      "mode": "release",
+      "pid": 30674,
+      "start": "12362875",
+      "code": 0
+    },
+    {
+      "mode": "timeout",
+      "pid": 30697,
+      "start": "12362884",
+      "code": 1
+    },
+    {
+      "mode": "malformed",
+      "pid": 30740,
+      "start": "12362921",
+      "code": 1
+    }
+  ],
+  "backend": {
+    "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333",
+    "capturedAdapter": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/build-1791154674626733228/inputs/adapter",
+    "files": {
+      "endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "geometry_endpoint.py": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "daemon.py": "c5a3aea3b57dffced55268bfde08c3dcc100a9dc12e2604ed3576384079e1055",
+      "catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "recovery_store.py": "fa7e852c963bc4602c2066d05e77d47d8535c732775fe04258021accd3cd7be1",
+      "admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+      "retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+      "reconciliation.py": "5f558130f005b722fec187e87a88a8cd69606c786c27beb0decede715c54e5f9",
+      "delivery_ledger.py": "ce1ff3528b454bdca7412389f5693f69023a5c76bc9586541c1091c1cddc5ca4"
+    }
+  },
+  "error": "AssertionError('malformed interleaved refresh remains real send')",
+  "artifacts": {
+    "release.stdout": "942e5fe5145f693d4e90112a5ec370797def23a691a7a9f1d0a8c36af275f5c4",
+    "release.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "timeout.stdout": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+    "timeout.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "malformed.stdout": "c89477240705d063756937aa60e0013bc82062ac04f0f707dc707f1c47e6f441",
+    "malformed.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "control-1/gate.json": "a5be85a5d27085e65c071f0570ad0a7faa1795c037e8b735b653d962475df109",
+    "control-1/held.json": "39ca041ec4ad98b8906c491a925c906cd3b05999cd64ec6abd8cb1eaa51c4a23",
+    "control-2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-3/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-8/held.json": "39ca041ec4ad98b8906c491a925c906cd3b05999cd64ec6abd8cb1eaa51c4a23",
+    "control-9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-9/held.json": "39ca041ec4ad98b8906c491a925c906cd3b05999cd64ec6abd8cb1eaa51c4a23",
+    "control-10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-13/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-14/gate.json": "9c227386d9354fd16733eb761e59b992f3fbed23455c195282e8874e883f6ba1",
+    "control-14/held.json": "2b8d9ed86c1caccf6a62f7b745efd207652ed3a1ab272b30ff7b8a5b358a5ec6",
+    "control-15/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-15/held.json": "7ed52b44051a3b584e6bf7ef3a3e482daad96b81f780e80b197aef995d4f6dfd",
+    "control-16/gate.json": "3f2e597f0bf1bbab40e111b9890fc96ddfaefab8edc49d0d30974e666e23d2d8",
+    "control-16/held.json": "881253817526e7baaa35c20e31f2957414ec6042f14f082b5f77e4b2e2db39f3",
+    "inputs/qa/wrapper.py": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+    "inputs/qa/test.py": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61"
+  }
+}

@@ -1,0 +1,1813 @@
+{
+  "passed": true,
+  "component": "elm-focus-recovery-current-fixture-held-v345",
+  "selectedProduction": "implementation/elm-focus-recovery-integrated-gui-v333",
+  "fixtureChecks": 159,
+  "nativeCurrentAdditionalChecks": 166,
+  "nativeCurrentTotalScopedChecksWith340": 390,
+  "nativeCurrentGeneralGUISubset": 255,
+  "nativeCampaigns": [
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/report.json",
+      "sha256": "ffb9b21d4af44f471cb1b853389e17e0031862194a2dbbfaa9fdedac0f400977",
+      "checks": 83,
+      "passed": true,
+      "normalCleanupPassed": true
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/report.json",
+      "sha256": "1a068ee30f2f85aa10f05b4d0a4aaa79315c95304a9e468f02bde72d924e45ed",
+      "checks": 83,
+      "passed": true,
+      "normalCleanupPassed": true
+    }
+  ],
+  "sameCompiledGUIAndPair": true,
+  "pair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/Hyprland",
+      "sha256": "bda6ce0094961c285673589afa2b61fe2b97321a1d86b248823b482122fec0f5"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-authority-v594/qa/build-1791146293692158705/elm-window-geometry-authority.so",
+      "sha256": "fa43d6b6601e26d1980a01ccfeec818f226bb412c093032c7083337f17df948b"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "references": {
+    "implementation/elm-focus-recovery-integrated-held-v340/acceptance-manifest.json": "86d318a1e44007f3d8ac581cd2f0f364c981f1740fe0a93bdd6fc3d27b367912",
+    "implementation/elm-focus-recovery-current-fixture-v342/component-manifest.json": "18a3c9966f40360721ac2e1e68da71c396c54f597ef01740726a4a05164e8a0c",
+    "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/report.json": "ffb9b21d4af44f471cb1b853389e17e0031862194a2dbbfaa9fdedac0f400977",
+    "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/report.json": "1a068ee30f2f85aa10f05b4d0a4aaa79315c95304a9e468f02bde72d924e45ed"
+  },
+  "ownedRoots": [
+    "implementation/elm-focus-recovery-current-fixture-v341",
+    "implementation/elm-focus-recovery-current-fixture-v342",
+    "implementation/elm-focus-recovery-integrated-capability-v343",
+    "implementation/elm-focus-recovery-integrated-focus-v344",
+    "implementation/elm-focus-recovery-current-fixture-held-v345"
+  ],
+  "files": [
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/SPEC.md",
+      "mode": 420,
+      "sha256": "c3e933e8ade9b2c55980bf503ebdbbd167b4771f5a7f4badf1d2434553c97479",
+      "size": 683
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/parents.json",
+      "mode": 420,
+      "sha256": "d18ddc44ffa31c1b2a10181e38a9add14ac97578846f2673df31c5a46982a8bb",
+      "size": 657
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/qa/binding-1791155524877653472/authority.json",
+      "mode": 384,
+      "sha256": "f2b83f32714dfe8e216aadde1d060ac822ff03c2eaea34658b0969cb5671e4a6",
+      "size": 173
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/qa/binding-1791155524877653472/receipt.json",
+      "mode": 384,
+      "sha256": "6561f736cbeaf8ae5249bafdc56fdef7e08fd49a4d251e3fb37936993e853e78",
+      "size": 408
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/qa/binding-1791155524877653472/report.json",
+      "mode": 420,
+      "sha256": "41ba3d5ea5c16a72ab99a244a4dc45e930c7448e67f9f9835ea0d2c7653d7291",
+      "size": 6481
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/qa/binding.py",
+      "mode": 420,
+      "sha256": "1a1ed2afa3ba39ca69826f359835df73ccd60e1dbc1876ea5122fb3b4156e0f3",
+      "size": 6443
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/parent.json",
+      "mode": 420,
+      "sha256": "8c49fcb89fe822717aa16adeb81804c8fe4915c60b51c04d773a4c673ade2048",
+      "size": 554
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/broker-entrypoint.py",
+      "mode": 420,
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/held-source-manifest.json",
+      "mode": 420,
+      "sha256": "697d876cd746a76ae4ffcccb34666fcb9676663a894dee7cbdeee5ffa712f13f",
+      "size": 1153
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-1/gate.json",
+      "mode": 384,
+      "sha256": "a5be85a5d27085e65c071f0570ad0a7faa1795c037e8b735b653d962475df109",
+      "size": 298
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-1/held.json",
+      "mode": 384,
+      "sha256": "39ca041ec4ad98b8906c491a925c906cd3b05999cd64ec6abd8cb1eaa51c4a23",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-10/gate.json",
+      "mode": 420,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-11/gate.json",
+      "mode": 420,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-12/gate.json",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-12/other"
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-13/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-14/gate.json",
+      "mode": 384,
+      "sha256": "9c227386d9354fd16733eb761e59b992f3fbed23455c195282e8874e883f6ba1",
+      "size": 298
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-14/held.json",
+      "mode": 384,
+      "sha256": "2b8d9ed86c1caccf6a62f7b745efd207652ed3a1ab272b30ff7b8a5b358a5ec6",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-15/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-15/held.json",
+      "mode": 384,
+      "sha256": "7ed52b44051a3b584e6bf7ef3a3e482daad96b81f780e80b197aef995d4f6dfd",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-16/gate.json",
+      "mode": 384,
+      "sha256": "3f2e597f0bf1bbab40e111b9890fc96ddfaefab8edc49d0d30974e666e23d2d8",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-16/held.json",
+      "mode": 384,
+      "sha256": "881253817526e7baaa35c20e31f2957414ec6042f14f082b5f77e4b2e2db39f3",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-2/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-3/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-4/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-5/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-6/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-7/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-8/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-8/held.json",
+      "mode": 384,
+      "sha256": "39ca041ec4ad98b8906c491a925c906cd3b05999cd64ec6abd8cb1eaa51c4a23",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-9/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/control-9/held.json",
+      "mode": 384,
+      "sha256": "39ca041ec4ad98b8906c491a925c906cd3b05999cd64ec6abd8cb1eaa51c4a23",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/inputs/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+      "size": 13904
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/malformed.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/malformed.stdout",
+      "mode": 420,
+      "sha256": "c89477240705d063756937aa60e0013bc82062ac04f0f707dc707f1c47e6f441",
+      "size": 104
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/release.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/release.stdout",
+      "mode": 420,
+      "sha256": "942e5fe5145f693d4e90112a5ec370797def23a691a7a9f1d0a8c36af275f5c4",
+      "size": 453
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/report.json",
+      "mode": 420,
+      "sha256": "97b31f3de5fffb83337e74ac9ec8886d2bc384418c8df494a6d2cc7be465c5b4",
+      "size": 9077
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/timeout.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/hold-1791155524881940481/timeout.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/authority.json",
+      "mode": 384,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control1/gate.json",
+      "mode": 384,
+      "sha256": "bdaaf22137b69906dcd0fce6db63cb6969239ebb1593c687f4df2c2182e067ef",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control1/held.json",
+      "mode": 384,
+      "sha256": "40580d5daef50c921b2d76e8af341b65de4d12389312f061473748f202890651",
+      "size": 666
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control10/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control11/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control12/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control13/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control14/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control15/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control16/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control17/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control18/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control19/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control2/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control20/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control21/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control22/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control23/gate.json",
+      "mode": 384,
+      "sha256": "9eddfa0b7e8bb13ce22013d9837f3c6eb7d5477cedae8ccb8ac2ac72ed29323d",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control23/held.json",
+      "mode": 384,
+      "sha256": "40adc46a9e8be60ddff81e6fe293a43574246ebc32e4d7c3131e13088e658a7a",
+      "size": 666
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control24/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control3/gate.json",
+      "mode": 384,
+      "sha256": "cdb7aa06a3ca6d3462bb4259bef88c5e36fdaac5ea102be362ce3bfc15ec5d4f",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control3/held.json",
+      "mode": 384,
+      "sha256": "7ad623def70949309c54f79af4cda7327e529082aafaec68e21c6b8cf43e7c42",
+      "size": 666
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control4/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control5/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control6/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control7/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control8/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/control9/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/inputs/parent.json",
+      "mode": 420,
+      "sha256": "8c49fcb89fe822717aa16adeb81804c8fe4915c60b51c04d773a4c673ade2048",
+      "size": 554
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/inputs/qa/broker-entrypoint.py",
+      "mode": 420,
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/inputs/qa/selector-test.py",
+      "mode": 420,
+      "sha256": "009ea481535228954f509b9d7d25d0b2e8c51bc6577e504f9bca610a5e872c76",
+      "size": 9402
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/inputs/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+      "size": 13904
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/inputs/upstream.json",
+      "mode": 420,
+      "sha256": "2b121d7735aad049717949e47ff2d0294844d1e425264024b36d9da84df62354",
+      "size": 255
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/report.json",
+      "mode": 420,
+      "sha256": "82c383a9194a8319aad2537324d23fac213bbab215adc853a97d037d57b50b07",
+      "size": 9689
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-1791155524916940086/wrapper.json",
+      "mode": 384,
+      "sha256": "afd3675ccd2e6870a0251b48b7f1a410611c42b9377a6f02d8bacf31a19dc51c",
+      "size": 423
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/selector-test.py",
+      "mode": 420,
+      "sha256": "009ea481535228954f509b9d7d25d0b2e8c51bc6577e504f9bca610a5e872c76",
+      "size": 9402
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/test.py",
+      "mode": 420,
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+      "size": 13904
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/receipt/upstream.json",
+      "mode": 420,
+      "sha256": "2b121d7735aad049717949e47ff2d0294844d1e425264024b36d9da84df62354",
+      "size": 255
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/relay.py",
+      "mode": 420,
+      "sha256": "79f3301b5bb8f3320a37bb975e56e7854d53803faacb1c6d719fed4981db1ef1",
+      "size": 11268
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-1/actor.json",
+      "mode": 384,
+      "sha256": "5b16ed546fbe5939377a2783d8321f355c0ecea143d7f5c256087b143a52701a",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-1/exit.json",
+      "mode": 384,
+      "sha256": "0d5ab39582bdd00a672f97546a3c6d5dadd6fbf285ceaffd5f37e61d4e258e1e",
+      "size": 129
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-1/gate.json",
+      "mode": 384,
+      "sha256": "e2fd61502e680fa0eeea8b5442d63db46cea7da2c4ece38035bdb36986b0e162",
+      "size": 111
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-2/actor.json",
+      "mode": 384,
+      "sha256": "27749f2f24645f4105e25478c1990cb8ecccb8ba54cc006cb068e4a871307b97",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-2/exit.json",
+      "mode": 384,
+      "sha256": "e84d84ad740231e81b016e65cd3ff0e34e70b3f67e29e492f81b6841d3a15cf6",
+      "size": 129
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-2/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-3/actor.json",
+      "mode": 384,
+      "sha256": "9049d0d08c95b8dfcb903603670d0c2b1df99ceb2b0659da6783ad7cf571ec73",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-3/gate.json",
+      "mode": 384,
+      "sha256": "d0152d68f0d14f2567c65709feff0f625ee552500cd7ac3eacca3439b0bb08ce",
+      "size": 104
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-4/actor.json",
+      "mode": 384,
+      "sha256": "a65bbe54e7ca982fba4cfa330755ce701194bc894786ef95a9276c7c13959321",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-4/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-5/actor.json",
+      "mode": 384,
+      "sha256": "9bf8067c1a6c0d39716b852173e5b69f5e85bce077badcbd956dced1a68cb80c",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-5/gate.json",
+      "mode": 384,
+      "sha256": "d8f33b6e868d5c017fbec020ffe8926cbdeda26bdd93f1bb3ccc93e44a6afbaa",
+      "size": 111
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/dir-link",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-5"
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/hardlink.json",
+      "mode": 384,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/inputs/qa/relay.py",
+      "mode": 420,
+      "sha256": "79f3301b5bb8f3320a37bb975e56e7854d53803faacb1c6d719fed4981db1ef1",
+      "size": 11268
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/link.json",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/control-5/actor.json"
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test-1791155524884197675/report.json",
+      "mode": 420,
+      "sha256": "d2d03ba58216c9d905b0e3070a2b09cc6e4eb69c1e38bb4dfb4bd315ccab8629",
+      "size": 3292
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v341/relay/qa/test.py",
+      "mode": 420,
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/SPEC.md",
+      "mode": 420,
+      "sha256": "80295bb1f8a9c63efc7fca826ebcf4c402a3d3a3ec9723b3c0d769b3ad0f85e3",
+      "size": 1151
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/component-manifest.json",
+      "mode": 420,
+      "sha256": "18a3c9966f40360721ac2e1e68da71c396c54f597ef01740726a4a05164e8a0c",
+      "size": 20055
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/parents.json",
+      "mode": 420,
+      "sha256": "a04e20933fcda7d46e8318808fe517cc7096945b900988c9bcfbf6aa2bd6ca8a",
+      "size": 722
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/qa/binding-1791155606846310946/authority.json",
+      "mode": 384,
+      "sha256": "f731487d8a2d55f757affa394de6fe7fdecd9e02710d8556c34c431f9354c28c",
+      "size": 173
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/qa/binding-1791155606846310946/receipt.json",
+      "mode": 384,
+      "sha256": "c8ac27ed3c53bee461d675fa5456afa4fceafcc92fd7c98e72c1d46b85c0a105",
+      "size": 408
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/qa/binding-1791155606846310946/report.json",
+      "mode": 420,
+      "sha256": "f7c960778eeda1ce0e51e23d283408762f3137bbf3ea97dfb753152121ad1f00",
+      "size": 6481
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/qa/binding.py",
+      "mode": 420,
+      "sha256": "46cac95f1b8ca65e1fceaf58f7adf6f3760752c0d9c33e606673c864e5bed3eb",
+      "size": 6443
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/qa/freeze.py",
+      "mode": 420,
+      "sha256": "2b371c52b9910c2ce35ec83f777f85d25c500a0d395423d6bb338896cc5167f5",
+      "size": 3044
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/parent.json",
+      "mode": 420,
+      "sha256": "8c49fcb89fe822717aa16adeb81804c8fe4915c60b51c04d773a4c673ade2048",
+      "size": 554
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/broker-entrypoint.py",
+      "mode": 420,
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/held-source-manifest.json",
+      "mode": 420,
+      "sha256": "aaa2f48a32df349fe69429a640562ba604ce76c126a29d63aaa36cd74d25c407",
+      "size": 1140
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-1/gate.json",
+      "mode": 384,
+      "sha256": "0c0ec69c8fea658511552584392acb0da50dd65b679ad8ae6de9c8114f188ef0",
+      "size": 298
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-1/held.json",
+      "mode": 384,
+      "sha256": "a4d94ab410559258d94cc234ef664192d6ac6365c292a2aca819ce7cf380d034",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-10/gate.json",
+      "mode": 420,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-11/gate.json",
+      "mode": 420,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-12/gate.json",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-12/other"
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-13/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-14/gate.json",
+      "mode": 384,
+      "sha256": "e6663d0024e7613ff53e88ada484dfc6c7198a2328a4c7f273fd0cec9cb72bfb",
+      "size": 298
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-14/held.json",
+      "mode": 384,
+      "sha256": "6fad7bac2cdc47218eee79aade0b0b39de89aff465f6e94844a8fb547c5b3af3",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-15/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-15/held.json",
+      "mode": 384,
+      "sha256": "9d012ede6328578b163844bc7f6239586bdf15298ced63eb628d22434f6c9dc6",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-16/gate.json",
+      "mode": 384,
+      "sha256": "3f2e597f0bf1bbab40e111b9890fc96ddfaefab8edc49d0d30974e666e23d2d8",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-16/held.json",
+      "mode": 384,
+      "sha256": "5f470fc66ae4fb80e8f050fdd2b9c47898b05088e1e448ff3bda13e7c7933cd3",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-17/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-17/held.json",
+      "mode": 384,
+      "sha256": "a996d32895e7147aa6b2fa48314bf25665180ef7a1afccf8643eca55fb8c7b7a",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-18/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-18/held.json",
+      "mode": 384,
+      "sha256": "3dc5b3dfccc428399a1962683e96e201d066b4cf7580b61051145b5d00e2d7b6",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-2/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-3/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-4/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-5/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-6/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-7/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-8/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-8/held.json",
+      "mode": 384,
+      "sha256": "a4d94ab410559258d94cc234ef664192d6ac6365c292a2aca819ce7cf380d034",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-9/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/control-9/held.json",
+      "mode": 384,
+      "sha256": "a4d94ab410559258d94cc234ef664192d6ac6365c292a2aca819ce7cf380d034",
+      "size": 643
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/eof.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/eof.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "ec11f6fcd9e38514d7a22b5c2167a3063389358c2339dfbd9c7014dbdaaa3714",
+      "size": 9312
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/inputs/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+      "size": 13904
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/locked.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/locked.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/malformed.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/malformed.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/release.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/release.stdout",
+      "mode": 420,
+      "sha256": "942e5fe5145f693d4e90112a5ec370797def23a691a7a9f1d0a8c36af275f5c4",
+      "size": 453
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/report.json",
+      "mode": 420,
+      "sha256": "a080bba513e1974054662d0351d5c7f85abb2fc06bc3321a24b1cd9351484ec9",
+      "size": 10644
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/timeout.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/hold-1791155606844571396/timeout.stdout",
+      "mode": 420,
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/authority.json",
+      "mode": 384,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control1/gate.json",
+      "mode": 384,
+      "sha256": "6d04f67e2f58341278217dfaef24b0bcbe7099a3dc0b5b7e33dafc20e6174027",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control1/held.json",
+      "mode": 384,
+      "sha256": "ff54324aaa19734084de89bdbfa0624f17e9aac5e9a2dfe8956ef9740f53acd4",
+      "size": 666
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control10/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control11/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control12/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control13/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control14/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control15/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control16/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control17/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control18/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control19/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control2/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control20/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control21/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control22/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control23/gate.json",
+      "mode": 384,
+      "sha256": "2c158f989f7dffe4e142a36fc32168806136c5877be3ce22eab2b62a32a1a79a",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control23/held.json",
+      "mode": 384,
+      "sha256": "d4751913f69864a7b491e383a19c3a013600a792f89edbe0aa83e7268c4ac560",
+      "size": 666
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control24/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control3/gate.json",
+      "mode": 384,
+      "sha256": "b0cd14e0d5f5e173101674b79cd499bd079b51557740655bac731804eda91c2e",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control3/held.json",
+      "mode": 384,
+      "sha256": "a3c286c826c77100ca001cfd2677fc41ed2ce0eb5c15e88b5db3f409398eae72",
+      "size": 666
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control4/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control5/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control6/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control7/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control8/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/control9/gate.json",
+      "mode": 384,
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/inputs/parent.json",
+      "mode": 420,
+      "sha256": "8c49fcb89fe822717aa16adeb81804c8fe4915c60b51c04d773a4c673ade2048",
+      "size": 554
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/inputs/qa/broker-entrypoint.py",
+      "mode": 420,
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/inputs/qa/selector-test.py",
+      "mode": 420,
+      "sha256": "009ea481535228954f509b9d7d25d0b2e8c51bc6577e504f9bca610a5e872c76",
+      "size": 9402
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "ec11f6fcd9e38514d7a22b5c2167a3063389358c2339dfbd9c7014dbdaaa3714",
+      "size": 9312
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/inputs/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+      "size": 13904
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/inputs/upstream.json",
+      "mode": 420,
+      "sha256": "2b121d7735aad049717949e47ff2d0294844d1e425264024b36d9da84df62354",
+      "size": 255
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/report.json",
+      "mode": 420,
+      "sha256": "4ed6d61853e2b4ca2a637fa40071d5e6ff2fc70435244a9219ca59ba8a82946a",
+      "size": 9689
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-1791155606882535282/wrapper.json",
+      "mode": 384,
+      "sha256": "053c02d2c171a5737842685258ae5700eb5cdca5f03efc13e8daf95cffc2fd01",
+      "size": 423
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/selector-test.py",
+      "mode": 420,
+      "sha256": "009ea481535228954f509b9d7d25d0b2e8c51bc6577e504f9bca610a5e872c76",
+      "size": 9402
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/test.py",
+      "mode": 420,
+      "sha256": "ec11f6fcd9e38514d7a22b5c2167a3063389358c2339dfbd9c7014dbdaaa3714",
+      "size": 9312
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/qa/wrapper.py",
+      "mode": 420,
+      "sha256": "32871f1d664d87ab36ea2380e081375884f085471731ca47eceb560783543be4",
+      "size": 13904
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/receipt/upstream.json",
+      "mode": 420,
+      "sha256": "2b121d7735aad049717949e47ff2d0294844d1e425264024b36d9da84df62354",
+      "size": 255
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/relay.py",
+      "mode": 420,
+      "sha256": "d6ae9a13d630dda9f8474aeb636c7f3a6d0e0e4c7ac174731a7640a5960da96e",
+      "size": 11268
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-1/actor.json",
+      "mode": 384,
+      "sha256": "9bf6b34455ae46852402c1441df9eca19c9c420b5f672158e458623c19413565",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-1/exit.json",
+      "mode": 384,
+      "sha256": "a78a500917e03aee658eccd2086baafbc7eefd01b5dc6e0611fb47856f1129e2",
+      "size": 129
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-1/gate.json",
+      "mode": 384,
+      "sha256": "6c87407e6910ac8ba93a7250f4b41286de7f8916dceeecb0c35400a3a873e34a",
+      "size": 111
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-2/actor.json",
+      "mode": 384,
+      "sha256": "acc224684f56c579cad62837cfb5eb7a2bd07fe8f92fbab66eb15fc8ea9138fb",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-2/exit.json",
+      "mode": 384,
+      "sha256": "2a7f188ee01148299a52c9a68ba3a2be8db50d11f0b2ef7e05c81e58432acd9b",
+      "size": 129
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-2/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-3/actor.json",
+      "mode": 384,
+      "sha256": "85df33c9c8f5a631bf2af6617d68fbf3f4410bc194af5349cbebbe274b303647",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-3/gate.json",
+      "mode": 384,
+      "sha256": "ffed92571165f881f9db2a452da6c8617c2e97f32eac4f292664e7608a66160f",
+      "size": 104
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-4/actor.json",
+      "mode": 384,
+      "sha256": "006b9d2f119fa381d8cb512b47cefc96659e1948d3cd87e9e5a9db8fa1e26327",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-4/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-5/actor.json",
+      "mode": 384,
+      "sha256": "45ef621c6cee8e0b7e9490f558765ce04da1c7a66b62a902be055cc2e674d479",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-5/gate.json",
+      "mode": 384,
+      "sha256": "0a03984eaab9790c931273b7a9248ab7eb5135e24c62e765dc26a4c51cc5e72b",
+      "size": 111
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/dir-link",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-5"
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/hardlink.json",
+      "mode": 384,
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/inputs/qa/relay.py",
+      "mode": 420,
+      "sha256": "d6ae9a13d630dda9f8474aeb636c7f3a6d0e0e4c7ac174731a7640a5960da96e",
+      "size": 11268
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/inputs/qa/test.py",
+      "mode": 420,
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/link.json",
+      "mode": 511,
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-5/actor.json"
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/report.json",
+      "mode": 420,
+      "sha256": "46c3f14fd50efead8d2cdf55047ed88b1586b8080db4f4025b7e704725e5ad25",
+      "size": 3292
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test.py",
+      "mode": 420,
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/SPEC.md",
+      "mode": 420,
+      "sha256": "977fa3dc67dbc66b2df417f3ba6e085d74fe01dd7d9971e8ea3f46ce3fbfe9fb",
+      "size": 401
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/fixture.py",
+      "mode": 420,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/legacy-client-build.json",
+      "mode": 420,
+      "sha256": "add279f7e62becd425d54145c6762e3e6d45c276587f50457384f41302947199",
+      "size": 237
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/loss-case.json",
+      "mode": 420,
+      "sha256": "140f8e1d052ec38d4e8bfeedeae0a6d8374bfff7efc636a36874226dcaf9b4fa",
+      "size": 123
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/observer-build.json",
+      "mode": 420,
+      "sha256": "4ebb3581abaaa3105fe4dd4acd840f05705f9e195d4e5b0bada99e02fe249998",
+      "size": 253
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/grab_guard.py",
+      "mode": 420,
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/inspection.py",
+      "mode": 420,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/interactive-client.py",
+      "mode": 420,
+      "sha256": "ce1c71dff674215d418afb6cf44cfa14718f1042c1445b035ff855777c8501ef",
+      "size": 8920
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "9e488880033b986621a2ace04dc657e0c6fb8ca36f6a67a5c0c00cca6e5a234e",
+      "size": 244
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/elm-webview.log",
+      "mode": 384,
+      "sha256": "dfe6d6d9ef46c746d87c4056b33dbad52da900ea8b2b5b76c473d95cb2f868a7",
+      "size": 446006
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/fixture.log",
+      "mode": 384,
+      "sha256": "4b6a18403759a5208326f4ed78a31d834b152892dfa09e2e7b0144b33cfae412",
+      "size": 598
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "b97d5903e479933bf3a7b756eddfcf9a05adee930095629f870bf38cde26dc46",
+      "size": 216174
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "95a6088db2e95547b2e1a6f6edac4398297e892f9a7c1c1537c291f4bd67724b",
+      "size": 491974
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/initialNativeFixturePixelsAreRed-0.png",
+      "mode": 420,
+      "sha256": "c359382e6099b73baceb5eb18414108acbf137c6f52148bca1ae19d10137da0b",
+      "size": 82548
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/minimizedNativeFixturePixelsDisappear-0.png",
+      "mode": 420,
+      "sha256": "870825d80032fb9b5f941ec650936d88ceaf5af15751916d1c6fb973b14e6ff1",
+      "size": 376205
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "87f3df82b2e8b48e2e134d3809298d42b5e1421e0e860f33b9c90254563b01a4",
+      "size": 5434
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/relay-actor-1/actor.json",
+      "mode": 384,
+      "sha256": "dc0681e966a1d9c3381c797ffc01293e94d07e93dc775a923adefd72fcc13941",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/relay-actor-1/exit.json",
+      "mode": 384,
+      "sha256": "9d6eeecd6f093c3658b991176ea8f9006a52389a672c15d645d7f26fb84036e9",
+      "size": 129
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/relay-actor-1/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/relay-config.json",
+      "mode": 384,
+      "sha256": "8cb106f720828bece7440c0d1a8e90155920770cbbeebf25bb1fa148a55a8e04",
+      "size": 365
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/restoredNativeFixturePixelsReturn-0.png",
+      "mode": 420,
+      "sha256": "dbd19df3ac20edbaab4997faeebf069e1f899cba8f0551114fe5778e40f7f6a8",
+      "size": 82524
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/.flatpak/webkit-47441-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "6d65d552dd19a9fb4786419d7e4e512e0883be6094bb87e4def9084f04ec66f3",
+      "size": 159
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/.flatpak/webkit-47441-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "8cfad9e63e1c88be058bd1a8a03bfed75b96c861cf778d6af6b094f2b7a81130",
+      "size": 192
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155737_981604228/11277332714198665171/ledger-v5.json",
+      "mode": 384,
+      "sha256": "f7ece77607ee6f431e25d628a5a219dfb73e56270d55a264d953751c2ccd8b04",
+      "size": 213
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155737_981604228/11277332714198665171/ledger-v6.json",
+      "mode": 384,
+      "sha256": "28e14219d881b85deee73701d2f4972ea0b5b6bf969eeafc6a93db4f9fd02e85",
+      "size": 1613
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155737_981604228/11277332714198665171/migration-plan.json",
+      "mode": 384,
+      "sha256": "3df43de1c86ae099620b83180265aa4579effc5f839aa314e4319c839b104b4d",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155737_981604228/11277332714198665171/migration.json",
+      "mode": 384,
+      "sha256": "28660371dbf5472674352be4e2c0f11f33f0e7597d66e42145ffa0e9de799c50",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155737_981604228/11277332714198665171/release-deliveries-v1.json",
+      "mode": 384,
+      "sha256": "f6da9169711fb4a5af045bd82a56969355edd543459e26d86e367bd9e84698ed",
+      "size": 64
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791155737_981604228/hyprland.log",
+      "mode": 384,
+      "sha256": "189759da10977481379ed01657ca54bae55dd31e368c46540b358a433baeb464",
+      "size": 25680
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/shared-held-menu-controller.log",
+      "mode": 384,
+      "sha256": "696d37f7d1c547547491ff015854d54ff63887c57146b984e17e1f0df20d4820",
+      "size": 1011
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "4a4033c82d54aa0fc13b646f83bb785deaf52a37bfc67830ced1267bfccc6b58",
+      "size": 5300
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native-1791155736788534260/report.json",
+      "mode": 420,
+      "sha256": "ffb9b21d4af44f471cb1b853389e17e0031862194a2dbbfaa9fdedac0f400977",
+      "size": 354363
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/native.py",
+      "mode": 420,
+      "sha256": "e3aae1364514012ea5cc42c9efb7963f1748c7363b2f951030c7ebc5b6947890",
+      "size": 31249
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/preflight.json",
+      "mode": 420,
+      "sha256": "9a8ab48d523ad4256829341361c4ec8451dc9f8d033028ae54bb15454c47e4c3",
+      "size": 51685
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/preflight.py",
+      "mode": 420,
+      "sha256": "622f835da8066a223c6a62ade69a579567a48c2c7c1fe7d63ac948108d58211e",
+      "size": 5692
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-capability-v343/qa/sampling.py",
+      "mode": 420,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/SPEC.md",
+      "mode": 420,
+      "sha256": "37e3ca0f72ba94a03aba930f57d00281676bb5eb26550c4aa784e86eeee157a0",
+      "size": 396
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/fixture.py",
+      "mode": 420,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/legacy-client-build.json",
+      "mode": 420,
+      "sha256": "add279f7e62becd425d54145c6762e3e6d45c276587f50457384f41302947199",
+      "size": 237
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/loss-case.json",
+      "mode": 420,
+      "sha256": "c9176936763cf0f016e2171d05682696f974a272c0baa883248c6ba63a18fb3f",
+      "size": 118
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/observer-build.json",
+      "mode": 420,
+      "sha256": "4ebb3581abaaa3105fe4dd4acd840f05705f9e195d4e5b0bada99e02fe249998",
+      "size": 253
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/grab_guard.py",
+      "mode": 420,
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/inspection.py",
+      "mode": 420,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/interactive-client.py",
+      "mode": 420,
+      "sha256": "ce1c71dff674215d418afb6cf44cfa14718f1042c1445b035ff855777c8501ef",
+      "size": 8920
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "d9a6febeb5b1704988f1079298a05acadb49b7aa637208c1d31e0761bbf52fd1",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/elm-webview.log",
+      "mode": 384,
+      "sha256": "7e3a243849d741d7a06257eb83f0a298779a6959336dd5ad7baf64ffad485b56",
+      "size": 456445
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/fixture.log",
+      "mode": 384,
+      "sha256": "b50bff5dd1682a4e4b4dced0dc733d98aeba69d1c13a46baf8f4663b5e819659",
+      "size": 588
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "36d510aabf1085f39b4ffa1f86ffde43084f1f6e401d37abadf25b13b265f709",
+      "size": 210754
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "e84240bd0ccbeefd462c7819b036fbd16952f9dd41d52f9fc5c95c495517b9e9",
+      "size": 504579
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/initialNativeFixturePixelsAreRed-0.png",
+      "mode": 420,
+      "sha256": "6667ee84f731026d44b183454298a9e634f09b70e964f1da29efc5d46ebedca1",
+      "size": 63983
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/minimizedNativeFixturePixelsDisappear-0.png",
+      "mode": 420,
+      "sha256": "c1b1dc4a49b3bc2926a286b1f0e56984b5a516b7e3e47d4a1c20b0d7af89eb14",
+      "size": 222920
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "b80d9366236923c05a74dbaca7f7c418e83a67c2888bb5827c96960aad5d32b3",
+      "size": 5434
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/relay-actor-1/actor.json",
+      "mode": 384,
+      "sha256": "a105fbbf459e773b6b9753906f58d21920970c204a5e6b0de5f9f3f5345832d3",
+      "size": 92
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/relay-actor-1/exit.json",
+      "mode": 384,
+      "sha256": "4063d42b2338d8b2b36e8a82c95562b8ea14dce3983e01e6a7c0f3c1a3f184a4",
+      "size": 129
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/relay-actor-1/gate.json",
+      "mode": 384,
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/relay-config.json",
+      "mode": 384,
+      "sha256": "cdde5c5c23b30e5523a0bb956f26e79db7506d93d161f22ca077d3e9cc57560f",
+      "size": 366
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/restoredNativeFixturePixelsReturn-0.png",
+      "mode": 420,
+      "sha256": "268338035acdf55304894bfeb3acd430b619d24eaa99f31b741da8e568f52b38",
+      "size": 63922
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/.flatpak/webkit-51123-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "628ffc38d62a437d16f4d62ed731686c745a40b1b7facf0af73fd01d5f2c0a1a",
+      "size": 159
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/.flatpak/webkit-51123-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "f1ce3b416e8eb1c35e2ae0aed755b054529c202e4bb7e43d01d1a9a4b347ac2d",
+      "size": 192
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155785_1430754213/12284547390543468346/ledger-v5.json",
+      "mode": 384,
+      "sha256": "02f2e4603ebfacb179ddc48b1448bc647c0678e5401f60c4aed1bb8dd47ac55e",
+      "size": 213
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155785_1430754213/12284547390543468346/ledger-v6.json",
+      "mode": 384,
+      "sha256": "662249ed81ac6e733894203f54c1932f80bf7b9b3dea400633caa7a6e38fec91",
+      "size": 1613
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155785_1430754213/12284547390543468346/migration-plan.json",
+      "mode": 384,
+      "sha256": "6bef347526bb359f03f2173b3804011dae2b969f50f8c03b6928a9408d5a3912",
+      "size": 248
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155785_1430754213/12284547390543468346/migration.json",
+      "mode": 384,
+      "sha256": "1f6506ceaf73cd58508c1c98d53f266d3a2a5b3d7b5382679d485c09abaa98f5",
+      "size": 229
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791155785_1430754213/12284547390543468346/release-deliveries-v1.json",
+      "mode": 384,
+      "sha256": "4fad0be78e2de8210042cc94c52b814f2d7199e6ee0dde2b8d28908d4e980895",
+      "size": 64
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791155785_1430754213/hyprland.log",
+      "mode": 384,
+      "sha256": "a2452e89537a84aee3e02b378689f2dceb24153c706185385f28a228d005ed0a",
+      "size": 25623
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/shared-held-menu-controller.log",
+      "mode": 384,
+      "sha256": "09bdaf2a4f84494e9d8f48d17b946b060f1652ff32d9b04cc120a57972fef03a",
+      "size": 1133
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "a33b61467add2f6a58807bd5804e315c99281c3902743df014974f05924b8021",
+      "size": 5368
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native-1791155783734329032/report.json",
+      "mode": 420,
+      "sha256": "1a068ee30f2f85aa10f05b4d0a4aaa79315c95304a9e468f02bde72d924e45ed",
+      "size": 350383
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/native.py",
+      "mode": 420,
+      "sha256": "e3aae1364514012ea5cc42c9efb7963f1748c7363b2f951030c7ebc5b6947890",
+      "size": 31249
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/preflight.json",
+      "mode": 420,
+      "sha256": "757742850a294c17cbeb36ad1f2594f24f877db1ee9d0fd76a8fd8792429284b",
+      "size": 51635
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/preflight.py",
+      "mode": 420,
+      "sha256": "5495e8a0159cec6306d8e45da5127a2eb55ee9cbe38e65ba07d12422c253d93b",
+      "size": 5687
+    },
+    {
+      "path": "implementation/elm-focus-recovery-integrated-focus-v344/qa/sampling.py",
+      "mode": 420,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-held-v345/SPEC.md",
+      "mode": 420,
+      "sha256": "fa492caa8d08f2a93c743e402298e93d88fd850a2d2ca83e62543e14de1d47a6",
+      "size": 608
+    },
+    {
+      "path": "implementation/elm-focus-recovery-current-fixture-held-v345/qa/freeze.py",
+      "mode": 420,
+      "sha256": "7142e6561e8d05381fc9e9df046109027ed9713f1bd43db0c1c5af7b4de9efee",
+      "size": 4510
+    }
+  ],
+  "fullGUI473Accepted": false,
+  "lostReleaseRepeatNativeAccepted": false,
+  "fullReleaseAccepted": false,
+  "next": [
+    "original geometry161 with current333/342 source closure",
+    "original reconnect57 with current333/342 source closure",
+    "actual lost-release/repeated restart",
+    "current narrow/wide render",
+    "fullGTKQt",
+    "capture/restore/motion",
+    "outputs/GPU/ATIME/budgets/user/reversible-release"
+  ]
+}

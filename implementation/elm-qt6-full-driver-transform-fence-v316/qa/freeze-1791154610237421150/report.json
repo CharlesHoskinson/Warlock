@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "error": "AssertionError('/etc/ld.so.cache')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-transform-fence-v316/qa/freeze.py\", line 21, in main\n    for name,data in packet.get(section,{}).items():verify(base/name if base else name,data)\n                                                    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-transform-fence-v316/qa/freeze.py\", line 16, in verify\n    assert path.is_file();assert sha(path)==data['sha256'],str(path)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: /etc/ld.so.cache\n"
+}

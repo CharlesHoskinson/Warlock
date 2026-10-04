@@ -1,0 +1,116 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual strict parser/diagnostic matcher against synthetic hostile native records; no native query/host authentication/operation grant",
+  "mutants": [
+    {
+      "name": "lock-bypass",
+      "exitCode": 1,
+      "killed": true
+    },
+    {
+      "name": "extra-member",
+      "exitCode": 1,
+      "killed": true
+    },
+    {
+      "name": "duplicate-key",
+      "exitCode": 1,
+      "killed": true
+    },
+    {
+      "name": "stale-sequence",
+      "exitCode": 1,
+      "killed": true
+    },
+    {
+      "name": "owner-parent",
+      "exitCode": 1,
+      "killed": true
+    },
+    {
+      "name": "child-ancestry",
+      "exitCode": 1,
+      "killed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-join-decoder-v322/join.py": "c90c1908f293f059714a7e9d98b04ca5e87dfaadbc097febbc90784fad329d27",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-join-decoder-v322/qa/test.py": "620203af1df5aaf1b07fb35aa24c125bf3602b10ba2e01d41a6259cae81eb40c"
+  },
+  "checks": [
+    "layer diagnostic positive never grant",
+    "layer root outside grab positive",
+    "nested child reaches owner positive",
+    "owner exact root parent positive",
+    "owner self parent",
+    "two popup cycle",
+    "child disconnected or self None",
+    "child disconnected or self {'id': 11, 'pid': 456, 'uid': 1000, 'connection': 1}",
+    "child disconnected or self {'id': 13, 'pid': 456, 'uid': 1000, 'connection': 1}",
+    "nonowner two child cycle",
+    "maximum 64 popup ancestry positive",
+    "65 popup bound",
+    "empty native snapshot",
+    "empty no own match",
+    "schema schema True",
+    "schema pid 999",
+    "schema complete False",
+    "schema sequence 01",
+    "schema sequence 1",
+    "schema sequence 18446744073709551616",
+    "schema surfaceCount 4097",
+    "schema surfaceClientCount 3",
+    "schema grabPresent False",
+    "schema xdgGrab False",
+    "schema grabKeyboard 1",
+    "blocked sessionLocked",
+    "blocked exclusiveLayerPresent",
+    "blocked layoutDragPresent",
+    "blocked heldButtons",
+    "missing grabKeyboard",
+    "missing grabPointer",
+    "changed credential surface",
+    "changed credential root",
+    "duplicate member",
+    "duplicate popup",
+    "missing owner",
+    "unmapped popup",
+    "root membership disagreement",
+    "extra samehost surface",
+    "unmapped member",
+    "unjoined parent",
+    "wrong root role",
+    "same PID resource IDs on distinct connections decode",
+    "extra second connection",
+    "stale native sequence",
+    "unknown field",
+    "duplicate JSON key",
+    "invalid UTF8",
+    "nonfinite JSON",
+    "oversize",
+    "boolean requested owner"
+  ],
+  "artifacts": {
+    "join.py": "c90c1908f293f059714a7e9d98b04ca5e87dfaadbc097febbc90784fad329d27",
+    "test.py": "620203af1df5aaf1b07fb35aa24c125bf3602b10ba2e01d41a6259cae81eb40c",
+    "lock-bypass.py": "12b41290e20bfec19cc0d7dc1f831be8e2348e5d1a87dba9d42c5fc96862c6da",
+    "lock-bypass.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lock-bypass.stderr": "c4c0defad1fe76b39ee8376c37effaaeec372a667a695b0b0ed2463c811fc547",
+    "extra-member.py": "cba9a8327a7d02719f222db5593089d4375ec6b9f028656515b0891d9d53891b",
+    "extra-member.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extra-member.stderr": "a6e653c97e260ef3601514181614ff00acf72e9f23ea5c23c0e6a6cc9059b97d",
+    "duplicate-key.py": "ef20bb0ed4afc8428fd827fa90fa867b75847ed2f73dc7daf2185698ff3264e6",
+    "duplicate-key.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate-key.stderr": "ccc38b80c20aee0f5156fd84cb76ceab79e01c04cafcaae654ca507ecb4bd236",
+    "stale-sequence.py": "02ffcab211ecc0d30ec6524d16dbb3edb06f165670636071eb67b0b1ee23cd3e",
+    "stale-sequence.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stale-sequence.stderr": "ce8494a8b552bd3e3b0347611b35924b923cd34e5a787bcf9acf65c6d2cc4e38",
+    "owner-parent.py": "a13ec39152eb3908ef9a28090117f075c0864dfb0cf11d648828b6979620845e",
+    "owner-parent.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-parent.stderr": "e0bcf13accd5c1a4bce8312f32f5b1d87fe31d4c9c4dae9ccda33136c4cb4b27",
+    "child-ancestry.py": "cf71fe03bccb111b68380eb150acf67e74fcc1c336a983415c841f909d521d01",
+    "child-ancestry.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "child-ancestry.stderr": "080187e7fff6c0f60f3d1cd271e5ee981ceb43e79fee137f12368e4194517794"
+  }
+}

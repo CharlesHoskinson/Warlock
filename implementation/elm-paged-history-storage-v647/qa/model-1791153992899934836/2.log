@@ -1,0 +1,568 @@
+An example execution:
+
+[State 0]
+{
+  charge: 0,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 1]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 1,
+  ready: true,
+  staged: Set(2),
+  visible: Set()
+}
+
+[State 2]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 3]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 4]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 5]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 6]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 7]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 8]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 9]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 10]
+{
+  charge: 1,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 11]
+{
+  charge: 2,
+  durable: Set(),
+  exposed: Set(),
+  phase: 1,
+  ready: true,
+  staged: Set(2),
+  visible: Set()
+}
+
+[State 12]
+{
+  charge: 2,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 13]
+{
+  charge: 2,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 14]
+{
+  charge: 2,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 15]
+{
+  charge: 2,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 16]
+{
+  charge: 2,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 17]
+{
+  charge: 2,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 18]
+{
+  charge: 3,
+  durable: Set(),
+  exposed: Set(),
+  phase: 1,
+  ready: true,
+  staged: Set(3),
+  visible: Set()
+}
+
+[State 19]
+{
+  charge: 3,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 20]
+{
+  charge: 3,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 21]
+{
+  charge: 3,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 22]
+{
+  charge: 3,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 23]
+{
+  charge: 3,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 24]
+{
+  charge: 3,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 25]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 1,
+  ready: true,
+  staged: Set(3),
+  visible: Set()
+}
+
+[State 26]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 2,
+  ready: true,
+  staged: Set(3),
+  visible: Set()
+}
+
+[State 27]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 3,
+  ready: true,
+  staged: Set(3),
+  visible: Set()
+}
+
+[State 28]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 29]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 30]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 31]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 32]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 33]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 34]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 35]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 36]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 37]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 38]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 39]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 40]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 41]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 42]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 43]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 44]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 45]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 46]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 47]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 48]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: true,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 49]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[State 50]
+{
+  charge: 4,
+  durable: Set(),
+  exposed: Set(),
+  phase: 0,
+  ready: false,
+  staged: Set(),
+  visible: Set()
+}
+
+[ok] No violation found (131ms at 3817 traces/second).
+Trace length statistics: max=51, min=51, average=51.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x3d024 --backend=rust to reproduce.

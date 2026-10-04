@@ -1,0 +1,15 @@
+# Strict joined-grab diagnostic DTO review
+
+Initial actual322 decoder/matcher capture and protected witness are preserved at witness-1791155791811742013. Both valid layer/nested controls returned authenticated=false and ownBlockerGrantQualified=false. A self-parent popup and a two-popup parent cycle also returned a diagnostic correspondence. Although neither became a grant, these are malformed parent graphs and should refuse correspondence.
+
+Corrected matcher must reject self/cyclic immediate-parent paths and require every nonowner popup to descend the exact selected owner within the64-row bound. The selected owner can have null or the exact layer-root parent. A nonowner with null or direct-root parent is disconnected and must refuse. General parser may still represent foreign raw parent facts; only diagnostic host correspondence applies the closed host graph policy.
+
+Inspected decoder boundaries: exact top/nested fields and bool/int domains, raw UTF8/JSON duplicates/nonfinite constants/large-number/recursion errors,65536-byte cap, canonical nonwrapping counter and supplied previous sequence,4096 surface/256 accepted/64 popup limits, unique native connection/resource IDs, connection credential consistency, matching root acceptance, member coverage and grab/owner consistency. Matcher additionally rejects wrong host IDs, multiple/mixed roots or connections, extra/unmapped accepted surfaces, locks/exclusive layers/drag/held buttons and missing keyboard/pointer grab.
+
+Connection ordinal is per native response, not stable. Core PID/start, current observer lifetime, arrival deadline, frontend/session/output/menu/target and exact authenticated host connection are not established by this DTO. The matcher always returns authenticated=false and ownBlockerGrantQualified=false; repeated diagnostic correspondence cannot allocate effects or qualify303 input. Its Snapshot class is a parsed DTO, not an opaque grant type. No GUI or322 edits were performed.
+
+## Final corrected qualification
+
+Corrected322 manifest b239ccf97fb1028e90fe77cc929a2a3dfdace1974670a8427a87542e7c14fd79 is bound by protected review-1791156335565281820/report.json. Its matcher checks the owner's parent is null/exact root, and traverses every child's parent path with a64-step bound and visited identities. Disconnected/self/cyclic paths refuse before correspondence. The original preserved self-parent and two-popup cycle frames now refuse; original valid-layer and valid-nested controls still return both authentication/grant flags false. All51 current original checks replayed against a captured corrected actual module, and the held source evidence's six killed unsafe controls is separately pinned. The independent binder verified3948 entries.
+
+No remaining scoped source blocker was found. This is synthetic diagnostic decoding/correspondence and source integrity only. It establishes no live native observation, authenticated host/connection/start/menu/target, arrival deadline, own-popup exception or operation permission. No322 edits or GUI were performed.

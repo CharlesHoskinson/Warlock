@@ -1,0 +1,678 @@
+An example execution:
+
+[State 0]
+{
+  charge: 0,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 1]
+{
+  charge: 0,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 2]
+{
+  charge: 0,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 3]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 1,
+  ready: true,
+  staged: { generation: 3, origins: Set((2, 2, 3)), request: 2, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 4]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 2,
+  ready: true,
+  staged: { generation: 3, origins: Set((2, 2, 3)), request: 2, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 5]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 3,
+  ready: true,
+  staged: { generation: 3, origins: Set((2, 2, 3)), request: 2, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 6]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 4,
+  ready: true,
+  staged: { generation: 3, origins: Set((2, 2, 3)), request: 2, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 7]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 8]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 9]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 10]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 11]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 12]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: true,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 13]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: true,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 14]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 15]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 16]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 17]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 18]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 19]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: true,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 20]
+{
+  charge: 4,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: true,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 21]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 1,
+  ready: true,
+  staged: { generation: 2, origins: Set((2, 2, 2)), request: 2, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 22]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 2, origins: Set((2, 2, 2)), request: 2, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 23]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 24]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 25]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 26]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 27]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 28]
+{
+  charge: 8,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: true,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 29]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 1,
+  ready: true,
+  staged: { generation: 1, origins: Set((2, 1, 1)), request: 1, reserved: 3 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 30]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 31]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 32]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 33]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 34]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 35]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 36]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 37]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 38]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 39]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 40]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 41]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 42]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 43]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 44]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 45]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 46]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 47]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 48]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 49]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 50]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 51]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 52]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 53]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 54]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 55]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 56]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 57]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 58]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 59]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: false,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[State 60]
+{
+  charge: 12,
+  durable: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  exposed: false,
+  phase: 0,
+  ready: true,
+  staged: { generation: 0, origins: Set(), request: 0, reserved: 0 },
+  visible: { generation: 0, origins: Set(), request: 0, reserved: 0 }
+}
+
+[ok] No violation found (621ms at 1610 traces/second).
+Trace length statistics: max=61, min=61, average=61.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x91a0b --backend=rust to reproduce.

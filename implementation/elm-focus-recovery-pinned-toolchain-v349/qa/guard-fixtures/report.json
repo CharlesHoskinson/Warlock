@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "valid",
+      "passed": true,
+      "refused": false
+    },
+    {
+      "name": "missing",
+      "passed": true,
+      "refused": true
+    },
+    {
+      "name": "changed",
+      "passed": true,
+      "refused": true
+    },
+    {
+      "name": "added",
+      "passed": true,
+      "refused": true
+    },
+    {
+      "name": "symlink",
+      "passed": true,
+      "refused": true
+    },
+    {
+      "name": "nonempty-lock",
+      "passed": true,
+      "refused": true
+    },
+    {
+      "name": "empty-lock",
+      "passed": true,
+      "refused": false
+    },
+    {
+      "name": "manifest-rewritten",
+      "passed": true,
+      "refused": true
+    }
+  ],
+  "scope": "Synthetic isolated fixtures execute exact provenance guard; no fixture compiler execution or actual held-file mutation"
+}

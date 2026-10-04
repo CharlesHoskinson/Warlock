@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-tuple-plan-v321/qa/fresh-import-test.py\", line 8, in <module>\n    p=subprocess.run(['/usr/bin/python3','-B',str(ROOT/'qa/helpers/activation-supervisor.py'),'--invalid-safe'],capture_output=True,text=True,timeout=6);(out/'supervisor.stdout').write_text(p.stdout);(out/'supervisor.stderr').write_text(p.stderr);assert p.returncode!=0 and 'descriptor/journal required' in p.stderr and not p.stdout\n                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

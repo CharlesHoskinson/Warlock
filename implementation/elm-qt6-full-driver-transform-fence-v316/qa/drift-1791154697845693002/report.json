@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "characterizationOnly": true,
+  "upstreamLiveClosurePassed": false,
+  "nativeAcceptance": false,
+  "verifiedUnchanged": 11952,
+  "drift": [
+    {
+      "path": "/etc/ld.so.cache",
+      "expected": {
+        "sha256": "dee782dafa5acff4eec97790a5e55a4b89601eaad7d2be9b6b137d9b1eb5db77"
+      },
+      "actual": {
+        "sha256": "3ff2a8a8b577bf0c13c6d6d63c58aee62f748f30c2248653c2ee30b16fbdd734",
+        "size": 154043
+      }
+    }
+  ],
+  "ancestorManifestSHA256": "e354eebcb3d44c23bb5a7c025eb74c499abdb6550d594534a9e648236d472565"
+}

@@ -1,0 +1,144 @@
+{
+  "proposal": "V629 schema7 paged archive amendment; existing frozen requirements unchanged",
+  "acceptance": "design/prototype only; full S15 not accepted",
+  "requirements": [
+    {
+      "id": "ARC-001",
+      "earsPattern": "ubiquitous",
+      "contract": "The archive shall conserve the immutable exact full-origin Admission, Unknown, definitive receipt, original Prepared/Released proof and join, delivery attestation and predecessor migration evidence without inferring a terminal outcome from absence.",
+      "openspecScenarioWitnesses": [
+        "unknownReleaseAndDeliveryTest",
+        "immutableMigrationAndCompactionTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-002",
+      "earsPattern": "ubiquitous",
+      "contract": "The archive shall bound live reservations, in-flight mutations, page bytes/entries, cache pages, index depth, cohort records and native queues independently of total retained historical record count.",
+      "openspecScenarioWitnesses": [
+        "historyGrowsHotBoundedTest",
+        "hotExhaustionBeforeEffectTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-003",
+      "earsPattern": "event-driven",
+      "contract": "When a new effect is requested, the paired producer shall verify authoritative independent replay watermarks and retired origin/scope indexes and durably commit exact Admission plus reserved completion capacity before invoking the native effect.",
+      "openspecScenarioWitnesses": [
+        "archivedKeyCannotReadmitTest",
+        "archiveQuotaRefusesBeforeEffectTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-004",
+      "earsPattern": "event-driven",
+      "contract": "When a generation is published, the writer shall synchronize event/index files and all containing directories before synchronizing the manifest and CURRENT/root directory and exposing success.",
+      "openspecScenarioWitnesses": [
+        "pagesBeforeManifestTest",
+        "visibleManifestRestartBarrierTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-005",
+      "earsPattern": "state-driven",
+      "contract": "While a restarted generation has not passed validation and the archive-root synchronization barrier, the system shall keep recovered admissions reserved and refuse effect, unlink, release acknowledgement and historical delivery exposure.",
+      "openspecScenarioWitnesses": [
+        "preparedUnlinkNeedsRestartBarrierTest",
+        "visibleManifestRestartBarrierTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-006",
+      "earsPattern": "event-driven",
+      "contract": "When power loss removes unsynchronized publication or admission removal, recovery shall use validated durable roots and exact remaining admissions without replaying any prior effect or lowering conserved watermarks.",
+      "openspecScenarioWitnesses": [
+        "unsyncedManifestPowerLossTest",
+        "unlinkPowerLossRetainsReservationTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-007",
+      "earsPattern": "event-driven",
+      "contract": "When an exact live Unknown is released, the writer shall commit its Prepared proof/join, unlink and synchronize the exact admission, and commit Released before exposing a release or anchored delivery attestation.",
+      "openspecScenarioWitnesses": [
+        "unknownReleaseAndDeliveryTest",
+        "noReleasedWithoutProofTest",
+        "unanchoredDeliveryRefusedTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-008",
+      "earsPattern": "event-driven",
+      "contract": "When late C admission evidence appears, the paired writer shall remove and synchronize an exact already Released/terminal key after the restart barrier and retain a different retired-scope origin as Unknown until its own qualified disposition.",
+      "openspecScenarioWitnesses": [
+        "lateExactReleasedCAdmissionTest",
+        "lateOtherCRemainsBlockedTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-009",
+      "earsPattern": "event-driven",
+      "contract": "When migrating a prior store, the system shall verify and retain exact predecessor bytes, all full records, releases, sidecar certificates and independent watermarks before durably activating only paired schema7 producers.",
+      "openspecScenarioWitnesses": [
+        "migrateBeforeEffectTest",
+        "immutableMigrationAndCompactionTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-010",
+      "earsPattern": "event-driven",
+      "contract": "When compacting indexes or collecting unreachable temporary/index pages, the system shall preserve all primary evidence and replay maxima and wait for durable replacement-root publication and reader-generation pin release.",
+      "openspecScenarioWitnesses": [
+        "immutableMigrationAndCompactionTest",
+        "historyGrowsHotBoundedTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-011",
+      "earsPattern": "unwanted",
+      "contract": "If ownership, type, size, key, hash, generation, lock, quota, inode, counter, I/O or migration validation fails, the system shall refuse the new operation before effect and preserve uncertain live reservations without evicting historical evidence.",
+      "openspecScenarioWitnesses": [
+        "archiveQuotaRefusesBeforeEffectTest",
+        "lockRefusesMutationTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-012",
+      "earsPattern": "event-driven",
+      "contract": "When a caller pages historical evidence, the system shall deliver bounded cursor batches and conserve original release anchors while correlating any new delivery certificate to its own current proof and accepted read pair.",
+      "openspecScenarioWitnesses": [
+        "unknownReleaseAndDeliveryTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-013",
+      "earsPattern": "ubiquitous",
+      "contract": "The filesystem/native implementation shall preserve a common verified writer/admission lock order and shall not await native bind, request or output while holding storage locks.",
+      "openspecScenarioWitnesses": [
+        "lockRefusesMutationTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    },
+    {
+      "id": "ARC-014",
+      "earsPattern": "optional",
+      "contract": "Where full S15 scaling is claimed, the integrated implementation shall pass sustained same-lifetime archive and migration tests with bounded measured resources and paired filesystem/C/frontend/native acceptance, including independent native grant history and frontend historical-slot limits.",
+      "openspecScenarioWitnesses": [
+        "historyGrowsHotBoundedTest"
+      ],
+      "prototypeCoverage": "symbolic partial; actual filesystem/C/native verification required"
+    }
+  ]
+}

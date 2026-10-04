@@ -1,0 +1,1 @@
+Original89 fullmenu exactoracles/deadlines from631/281 against current640/205594AQ155. 646 additive18lostwire acceptedseparately; old626 scoped473 nottransferred. Native/currentGUI qualification distinctfromfullUIUX/release.

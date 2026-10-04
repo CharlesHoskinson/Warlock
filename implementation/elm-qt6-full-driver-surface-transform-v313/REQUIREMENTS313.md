@@ -1,0 +1,5 @@
+# Measured Qt driver adoption
+
+Preserve all original Qt01–08 role/input/lifetime/deadline/fault-companion requirements. Adopt held308 actual per-role surface→QWindow measurement and held309 inverse geometry; raw/native transforms remain independent. Actual pointer expected QWindow local must map native global→surface via current native real/raw XDG geometry then surface→window using exact current measured map. Popup whole QAction rectangle and click use the same independently measured translation; never use surface coordinates as Qt input locals. Reject missing/stale/inconsistent transform, Q1/bounds/identity failures and retain all raw QWindow versus QWidget recipient intervals. Preserve zero offset behavior only with an actual available measured zero. Keyboard domains/full intent/native authority unchanged.
+
+Compile/source preflight current205/206/AQ155/223/247 and strict typed actual helpers. No GUI; known GTK297 menu-opening blocker keeps native readiness false.303 policy prototype alone is not an authority bypass. Full native pipeline needs a separately reviewed producer correction and actual live toolkit transform/pixels/input qualification.

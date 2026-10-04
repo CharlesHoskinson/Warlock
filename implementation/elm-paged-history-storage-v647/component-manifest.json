@@ -1,0 +1,225 @@
+{
+  "S15Accepted": false,
+  "assertions": 362,
+  "component": "elm-paged-history-storage-v647",
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "5fa6b4cc7762f840c7bcc2a1c076f15ba92eaca2af27a964c7ddd2d3f1a2cbc6",
+      "size": 5685
+    },
+    "adapter/archive.py": {
+      "sha256": "d20d8488889280a0167d0a6f3833a725b5b3e841f73950637d9391d92f8c7608",
+      "size": 19942
+    },
+    "ancestry/ARCHITECTURE.md": {
+      "sha256": "a5f0f92968f486ee46454b3b40b57a2e521e92b9787cf33b4f3b609004c74bab",
+      "size": 12105
+    },
+    "ancestry/OPENSPEC.md": {
+      "sha256": "a19f616314f4745402685e495ce0413653b0076ae4f51323924f4c7161af2633",
+      "size": 10501
+    },
+    "ancestry/PROTOTYPE.md": {
+      "sha256": "4558b0661dbde91cd38f9e1b893a298ea84dcbd98bac3988b7b0f4c10331b439",
+      "size": 4103
+    },
+    "ancestry/archive.qnt": {
+      "sha256": "accd1ef8997525fe3f0acdfa851cb26b547f94350117aef04d98dce1e9f97c6f",
+      "size": 16472
+    },
+    "ancestry/requirements.json": {
+      "sha256": "ee11b2f4ae2f7fbecb20ad955cc4927e8f65685f7ee831487c6b90fc19f26a14",
+      "size": 7731
+    },
+    "qa/freeze.py": {
+      "sha256": "7d0c9732d81ba529368fcd3c97a5ed5326a667049a7885beb4f843d47de74b62",
+      "size": 1780
+    },
+    "qa/model-1791153975277285958/0.log": {
+      "sha256": "0a87d930f82cfe4300643542c5ad2ce40c3c7d51f526ae86ca57e94a85c00306",
+      "size": 1048
+    },
+    "qa/model-1791153975277285958/report.json": {
+      "sha256": "0471419a451bf64f16e1f2eb7eb6dcb2b900e2bee2abb75bc8ce6463e16eb842",
+      "size": 282
+    },
+    "qa/model-1791153982446757972/0.log": {
+      "sha256": "cd7c8a1f0e26078db9f5c6f11cde85f1a35b714d0e6e7ee0bc3f845e7f82b4d7",
+      "size": 1361
+    },
+    "qa/model-1791153982446757972/report.json": {
+      "sha256": "0471419a451bf64f16e1f2eb7eb6dcb2b900e2bee2abb75bc8ce6463e16eb842",
+      "size": 282
+    },
+    "qa/model-1791153992899934836/0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/model-1791153992899934836/1.log": {
+      "sha256": "0a01e158871114da28ad68f65b3a2f79c178d156ccaed7ba05f4e5f3e7441f46",
+      "size": 161
+    },
+    "qa/model-1791153992899934836/2.log": {
+      "sha256": "9a6241de0c07914850dbca5f8e8ef83d13668c4c1e37a70b4c7df13fc956d025",
+      "size": 6731
+    },
+    "qa/model-1791153992899934836/report.json": {
+      "sha256": "57496cd4734f4739ba96e232816229a5bb4c404b9162eb6cd27f4c559fd8f3a9",
+      "size": 929
+    },
+    "qa/model-1791154519801068704/0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/model-1791154519801068704/1.log": {
+      "sha256": "0a01e158871114da28ad68f65b3a2f79c178d156ccaed7ba05f4e5f3e7441f46",
+      "size": 161
+    },
+    "qa/model-1791154519801068704/2.log": {
+      "sha256": "0d8a65b50a512e9dca886a92543a2cd0b213c316fa20923de8d2da70e9bdc012",
+      "size": 6731
+    },
+    "qa/model-1791154519801068704/drop-durable-history-on-restart.log": {
+      "sha256": "65790b2b3596d5e8fb78fe2a0494e14c693a864ab37aaa3dd25c24edf47653f3",
+      "size": 975
+    },
+    "qa/model-1791154519801068704/drop-durable-history-on-restart.qnt": {
+      "sha256": "80181afbbf5a77f6d2b3559f5402ad67499c387d5cfcfaf21aacb3959bc819d3",
+      "size": 2405
+    },
+    "qa/model-1791154519801068704/expose-visible-before-root-barrier.log": {
+      "sha256": "11e508b00c6974117dd55e511e132634acb34397407739b7d546246f282e2489",
+      "size": 6731
+    },
+    "qa/model-1791154519801068704/expose-visible-before-root-barrier.qnt": {
+      "sha256": "6f8c27e37ddcd61cbadd5fa2b728ef2d1248d2d61b1879adfdb32c9fb4dce82d",
+      "size": 2397
+    },
+    "qa/model-1791154519801068704/report.json": {
+      "sha256": "32e14f80337e49d3677346fd802d0669fba55dbb409e42da6c03b1aaa9520dd5",
+      "size": 1316
+    },
+    "qa/model-1791154519801068704/skip-capacity-charge.log": {
+      "sha256": "6c604c4a9de444af9733d4eb52cf90637ffbad99103c343e40eea39bdda773e8",
+      "size": 6518
+    },
+    "qa/model-1791154519801068704/skip-capacity-charge.qnt": {
+      "sha256": "21dd280d3082d2c7daf3a148c8c999120a88f0fe56f4d79341b202b2a06f944f",
+      "size": 2405
+    },
+    "qa/model-1791154554659366036/0.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/model-1791154554659366036/1.log": {
+      "sha256": "91341d19ab7f7ee5e44bbba5a3843e72cb450ad3c7e358f4221229ef35a9fc85",
+      "size": 161
+    },
+    "qa/model-1791154554659366036/2.log": {
+      "sha256": "b47324ba0259b079c95d08ea87f02e3a89fd950cf153d4f39ea3dd896cd29bfe",
+      "size": 6731
+    },
+    "qa/model-1791154554659366036/drop-durable-history-on-restart.log": {
+      "sha256": "193c35c5795899e8d60188eef82ce387ece7f4a9632855592562e31359beaee8",
+      "size": 975
+    },
+    "qa/model-1791154554659366036/drop-durable-history-on-restart.qnt": {
+      "sha256": "80181afbbf5a77f6d2b3559f5402ad67499c387d5cfcfaf21aacb3959bc819d3",
+      "size": 2405
+    },
+    "qa/model-1791154554659366036/expose-visible-before-root-barrier.log": {
+      "sha256": "291cbcad17624f518406c740ab881a9bfb5e779a57eab6eb5b87e99fa50c7dd8",
+      "size": 986
+    },
+    "qa/model-1791154554659366036/expose-visible-before-root-barrier.qnt": {
+      "sha256": "5b76d3603f3c30c936d562f0cc9d0d58b6c68343c368df76c36b639713262e18",
+      "size": 2555
+    },
+    "qa/model-1791154554659366036/report.json": {
+      "sha256": "ae5f08709b678e2e6ba4befd2231ac08237352ecb05c0f23a6ab7e76821ddd2d",
+      "size": 1315
+    },
+    "qa/model-1791154554659366036/skip-capacity-charge.log": {
+      "sha256": "4293a5e054f265750f1d10be3b14c891a83e43965a24ec7e7dfb6dbb25e677ce",
+      "size": 6518
+    },
+    "qa/model-1791154554659366036/skip-capacity-charge.qnt": {
+      "sha256": "21dd280d3082d2c7daf3a148c8c999120a88f0fe56f4d79341b202b2a06f944f",
+      "size": 2405
+    },
+    "qa/model.py": {
+      "sha256": "7c819a9caf1fca2dd48bca36f7ceca166d6eda028e9ca3abf7c7e5d89e21086c",
+      "size": 2798
+    },
+    "qa/test.py": {
+      "sha256": "8060d366febc7dba1ae96aed4259022c623dcbecc8769d83cf0f6f5647af7a6a",
+      "size": 14089
+    },
+    "qa/tests-1791154341145960094/failure.log": {
+      "sha256": "cf0da6f6410a05a29d27579788eb6f39042820b3e37ebb51bb16cac64bfb4cc1",
+      "size": 681
+    },
+    "qa/tests-1791154341145960094/report.json": {
+      "sha256": "b9f21342cbf089c724c1b05e17526c551b8fc2bca9b0d65bd964b53506883a6b",
+      "size": 880
+    },
+    "qa/tests-1791154387765933720/report.json": {
+      "sha256": "d16b89306ffc7b45a8d7375d69d5d618c9dda3470db8d470dac5740ab725a7f4",
+      "size": 13847
+    },
+    "qa/tests-1791154469016044946/report.json": {
+      "sha256": "66a6a4cf11ab08788eddea5919fc7fb859158ea4061ec93f23279a7abc04020a",
+      "size": 14572
+    },
+    "qa/tests-1791154596351024352/report.json": {
+      "sha256": "b22aa33410be9a0804dac11fd8abdbc3389888151d228048f1ee531328b29d48",
+      "size": 14857
+    },
+    "qa/tests-1791154629690682122/report.json": {
+      "sha256": "50448fd29192562df9d66c7da38eaf1987c0ce21cec240b65d2efed158d58191",
+      "size": 14891
+    },
+    "qa/tests-1791154696119822432/report.json": {
+      "sha256": "38f73371e73efeb03321537622ae69505ab58a67461b7aead886afb8e039bb27",
+      "size": 15076
+    },
+    "spec/REFINEMENT.md": {
+      "sha256": "6f9ff53eb1975c0f49a8666d343700f78c11c7f876ac35523d5cbc246f1c4348",
+      "size": 3095
+    },
+    "spec/storage.qnt": {
+      "sha256": "8cd02502a0db2177d8146ef4037a37298c4f85da90c927c769b9e15e5a4acb37",
+      "size": 2407
+    }
+  },
+  "ledgerIntegrated": false,
+  "modelReport": "qa/model-1791154554659366036/report.json",
+  "nativeAcceptance": false,
+  "parent": "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629",
+  "powerLossQualified": false,
+  "report": "qa/tests-1791154696119822432/report.json",
+  "retainedRecords": 1026,
+  "schema": 1,
+  "unchangedFrozen629Inputs": {
+    "ARCHITECTURE.md": {
+      "sha256": "a5f0f92968f486ee46454b3b40b57a2e521e92b9787cf33b4f3b609004c74bab",
+      "size": 12105
+    },
+    "OPENSPEC.md": {
+      "sha256": "a19f616314f4745402685e495ce0413653b0076ae4f51323924f4c7161af2633",
+      "size": 10501
+    },
+    "PROTOTYPE.md": {
+      "sha256": "4558b0661dbde91cd38f9e1b893a298ea84dcbd98bac3988b7b0f4c10331b439",
+      "size": 4103
+    },
+    "archive.qnt": {
+      "sha256": "accd1ef8997525fe3f0acdfa851cb26b547f94350117aef04d98dce1e9f97c6f",
+      "size": 16472
+    },
+    "requirements.json": {
+      "sha256": "ee11b2f4ae2f7fbecb20ad955cc4927e8f65685f7ee831487c6b90fc19f26a14",
+      "size": 7731
+    }
+  }
+}

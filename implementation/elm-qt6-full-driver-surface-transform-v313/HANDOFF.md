@@ -1,0 +1,5 @@
+# Full Qt measured-transform driver
+
+This fresh313 source preserves diagnosed295 complete Qt01–08 phases, strict raw QWindow versus QWidget recipients, keyboard registry/map domains, current lifetime/full intent barriers and absolute6s/3s bounds. Held308 now supplies actual QWaylandWindow surfaceToWindow translation and margins; held309 scene helper inverses it for marker/whole QAction geometry. Native input points independently traverse native global→raw surface→measured QWindow local; exact selected marker locals agree. Toolkit global remains only a Qt observation computed from current QWindow position and local input, never desktop proof.
+
+Qt fixture/consumer compiled and CPU evidence does not establish live decoration/native equivalence. Current owning205/206/AQ155/223/247 closure remains selected. Known borrowed297 shell right-click timeout persists;303 policy prototype is not native own-blocker authority. Native readiness=false and no Qt GUI run. Full profiles and original432 companion remain required. No native effect advertisement or producer policy changed.

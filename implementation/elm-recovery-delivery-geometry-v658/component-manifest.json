@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "component": "elm-recovery-delivery-geometry-v658",
+  "sourceHeld": true,
+  "readyForRootNative": true,
+  "nativeLaunched": false,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "originalScenarioCount": 161,
+  "ancestor": "implementation/elm-responsive-geometry-v288",
+  "ancestorRunnerSHA256": "f8833f9665d08b22562d4a55356ba8043c5fd1070ff83ebb2a9b3090faee3c6f",
+  "selectedProduction": "implementation/elm-recovery-delivery-integrated-gui-v640",
+  "fixtureManifestSHA256": "67a337ab1f629f82f445aaa2da948c85db44e0c7a959afba57590943f4e7869b",
+  "preparedReports": [
+    {
+      "path": "qa/preflight-1791155461900935800/report.json",
+      "sha256": "76911dff455de0d15abd13d0e763e92ffdaeb0a9decad04f22f13d250b2f16c8"
+    },
+    {
+      "path": "qa/identity-1791155476228175368/report.json",
+      "sha256": "b513c4ef908337f96db139c1055698ae615fd7a1407ac59c1eb0d2220b2d9715"
+    }
+  ],
+  "owningPair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/Hyprland",
+      "sha256": "bda6ce0094961c285673589afa2b61fe2b97321a1d86b248823b482122fec0f5"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-authority-v594/qa/build-1791146293692158705/elm-window-geometry-authority.so",
+      "sha256": "fa43d6b6601e26d1980a01ccfeec818f226bb412c093032c7083337f17df948b"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "files": {
+    "IDENTITY-CONTRACT.md": {
+      "sha256": "989837f323e648954f3cca3b058cca738a4b7e9561c9e945d63e36a50c7e1983",
+      "size": 1604
+    },
+    "SPEC.md": {
+      "sha256": "5e907fbbb7eeda35519623a3cab77c8296f50fe16e669043e729f92615f79c82",
+      "size": 1662
+    },
+    "origin.json": {
+      "sha256": "8d5fc6ac7be158575a90cf14b5fd6841c0408afde115d2c78340cfe46c4b2981",
+      "size": 295
+    },
+    "qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/closure.py": {
+      "sha256": "fa20a68d418d0479bbe41b2d1f62bfbdcc6efee4b4ac6c6593182364e0740b80",
+      "size": 4515
+    },
+    "qa/freeze.py": {
+      "sha256": "dd3688d494e4289518a7271c9d2abafe785d18e5b6ede602208437315a122259",
+      "size": 3880
+    },
+    "qa/identity-1791155476228175368/report.json": {
+      "sha256": "b513c4ef908337f96db139c1055698ae615fd7a1407ac59c1eb0d2220b2d9715",
+      "size": 839
+    },
+    "qa/identity-oracle.py": {
+      "sha256": "9b8073ede73d4901d2eb3b13257a066712463c78606eea8354109a0833d6bc71",
+      "size": 2199
+    },
+    "qa/native.py": {
+      "sha256": "9478ee76ba601d3925ff58f9024fe8888f5d6aaba034de728c4c072a4bf7fdf6",
+      "size": 40588
+    },
+    "qa/observer_endpoint.py": {
+      "sha256": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+      "size": 2476
+    },
+    "qa/preflight-1791155461900935800/report.json": {
+      "sha256": "76911dff455de0d15abd13d0e763e92ffdaeb0a9decad04f22f13d250b2f16c8",
+      "size": 470372
+    },
+    "qa/preflight-result.json": {
+      "sha256": "94b1036eea0b105c4c0482a8b0ee6038be90049f8ba983f00c879e2e6b51c5df",
+      "size": 149
+    },
+    "qa/preflight.py": {
+      "sha256": "16e41228750ae72ead1582b1b99d74de7e9f0b7128cfc3b0d50fd7a9906f1189",
+      "size": 3550
+    },
+    "qa/profile-binding/authority.json": {
+      "sha256": "10b0693880a5aa0815b6cb7f811b31319a1668a1d11341c030ab485af2b1525a",
+      "size": 163
+    },
+    "qa/profile-binding/receipt.json": {
+      "sha256": "5115f299438223680501dca9bc448bc44bc86ee125350b0e04444c7939716635",
+      "size": 376
+    },
+    "qa/relay-manifest.json": {
+      "sha256": "5b7a5437e38e278471e2545e479afa67ff820a6980c3072bfe3bb0cb4ace52c3",
+      "size": 2978
+    }
+  },
+  "special": {},
+  "completedRequirementIds": [],
+  "scope": "Prepared runner source/oracle/CPU closure only; native execution belongs to root serial lane"
+}

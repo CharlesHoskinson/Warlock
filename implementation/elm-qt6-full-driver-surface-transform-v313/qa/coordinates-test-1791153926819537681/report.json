@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    "global-to-surface-to-window",
+    "Qt-global-observation-not-desktop-authority",
+    "missing-map",
+    "stale-map",
+    "map-margin-disagreement",
+    "infinite-map",
+    "nan-Qt-global",
+    "bool-width",
+    "hidden",
+    "bool-captured-resource",
+    "Q1-mismatch",
+    "outside-content",
+    "nonfinite-global",
+    "QT01:entire-raw-QWindow-pointer-A",
+    "actual-Driver-pair-measured-desktop-injection",
+    "old-surface-as-Qt-local-refused",
+    "desktop-as-Qt-global-refused",
+    "entire-extra-recipient-refused",
+    "available-zero-transform-retains-input"
+  ],
+  "compiledEventTypes": {
+    "leftButton": 1,
+    "mouseNotSynthesized": 0,
+    "shiftKey": 16777248,
+    "shiftModifier": 33554432,
+    "window-button-press": 2,
+    "window-button-release": 3,
+    "window-key-press": 6,
+    "window-key-release": 7,
+    "windowMaximized": 2
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/coordinates-test.py": "b6cc55326dd451127a5387437b9cd660a2a97b6e7c11c02ac73e11f6b88cae29",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/coordinates.py": "a8720f5b610f7d799683668e15a23b99fe7e22d6ff6488330669e9c04d7b5bd7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/driver.py": "c3cc31a77ece82d8dc8423cff29996d05975d6548092d3a8afd26eb91d48896f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/shell.py": "3a85f8f035ab213a637c4cabd88d1eb58d3676340b6dae1b5e94a3eaf709dd25",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/helpers/geometry.py": "b2de96997c043a1f9a7f6d14403f6bab282385e099d873b28347592dd04d92ee",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/helpers/journal.py": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f"
+  }
+}

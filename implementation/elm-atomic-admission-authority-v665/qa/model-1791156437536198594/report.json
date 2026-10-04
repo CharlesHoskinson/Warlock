@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/spec/admission.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/spec/admission.qnt",
+        "--main=admission",
+        "--match=Test$",
+        "--max-samples=1",
+        "--seed=66501"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/spec/admission.qnt",
+        "--main=admission",
+        "--invariant=safety",
+        "--max-samples=500",
+        "--max-steps=50",
+        "--seed=66502"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "mutations": [
+    {
+      "name": "skip-reservation",
+      "typecheckExit": 0,
+      "counterexampleExit": 1,
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/model-1791156437536198594/skip-reservation.qnt",
+        "--main=admission",
+        "--invariant=safety",
+        "--max-samples=1000",
+        "--max-steps=60",
+        "--seed=66503"
+      ]
+    },
+    {
+      "name": "skip-generation-replay",
+      "typecheckExit": 0,
+      "counterexampleExit": 1,
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/model-1791156437536198594/skip-generation-replay.qnt",
+        "--main=admission",
+        "--match=staleGenerationWitnessTest",
+        "--max-samples=1",
+        "--seed=66503"
+      ]
+    },
+    {
+      "name": "expose-without-restart-barrier",
+      "typecheckExit": 0,
+      "counterexampleExit": 1,
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-atomic-admission-authority-v665/qa/model-1791156437536198594/expose-without-restart-barrier.qnt",
+        "--main=admission",
+        "--invariant=safety",
+        "--max-samples=1000",
+        "--max-steps=60",
+        "--seed=66503"
+      ]
+    }
+  ],
+  "specSHA256": "bfacc35b033556f0e6cc0ddd92b57f53c2067bd2c6ecfebed5efca9a6ea3649f",
+  "nativeAcceptance": false
+}

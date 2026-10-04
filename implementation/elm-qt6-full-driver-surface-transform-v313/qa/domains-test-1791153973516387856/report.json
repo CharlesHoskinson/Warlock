@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "syntheticMapNotNativeSeat": true,
+  "checks": [
+    {
+      "name": "exact-built-binary",
+      "passed": true
+    },
+    {
+      "name": "actual-size-minus-one-file-accepted",
+      "passed": true
+    },
+    {
+      "name": "compiled-QKeyEvent-Shift-XOR-zero-state",
+      "passed": true
+    },
+    {
+      "name": "compiled-QKeyEvent-Shift-XOR-active-state",
+      "passed": true
+    },
+    {
+      "name": "actual-XKB-Shift-native-domain",
+      "passed": true
+    },
+    {
+      "name": "production-wire-order-maps-actual-Qt-events",
+      "passed": true
+    },
+    {
+      "name": "unrelated-seat-rejected",
+      "passed": true
+    },
+    {
+      "name": "keyboard-retirement",
+      "passed": true
+    },
+    {
+      "name": "seat-global-retirement",
+      "passed": true
+    },
+    {
+      "name": "bool-native-domain",
+      "passed": true
+    },
+    {
+      "name": "unknown-mapping-field",
+      "passed": true
+    },
+    {
+      "name": "actual-map-file-reject-embedded-NUL",
+      "passed": true
+    },
+    {
+      "name": "actual-map-file-reject-empty",
+      "passed": true
+    },
+    {
+      "name": "actual-map-file-reject-over-bound",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/domain-test.py": "6ba85781ebe7a5b5e5f313972af20a3bd2d314f11e76ba0f7fc5f044ad2a76bf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qa/keyboard.py": "01122172dfea5ceeb734f14dbb251331e42556bd4979ed5c16fc8574041ef569",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/native/qt-domains.cpp": "74584014aee49cf88ec7f873830414229727a402118252974aa257987d157fe9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-surface-transform-v313/qt-domains-build-report.json": "ce976be89ae7edec38eaa552ddd454c590e87d1a937b054296452fb88e8410e2"
+  }
+}

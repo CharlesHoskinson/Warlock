@@ -1,0 +1,43 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "full-actual-SHM-extent",
+      "passed": true
+    },
+    {
+      "name": "buffer2-divides-only-SHM-physical-extent",
+      "passed": true
+    },
+    {
+      "name": "whole-other-buffer-disjoint",
+      "passed": true
+    },
+    {
+      "name": "surface-origin-shadow-intersection-refuses",
+      "passed": true
+    },
+    {
+      "name": "missing-actual-buffer-refuses",
+      "passed": true
+    },
+    {
+      "name": "unqualified-raster-dimensions-refuse",
+      "passed": true
+    },
+    {
+      "name": "fractional-logical-buffer-refuses",
+      "passed": true
+    },
+    {
+      "name": "destroyed-buffer-cannot-certify-extent",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-v295/qa/capture-scope-test.py": "f6a5cbf32a2542d83ae4ad4bc9f06ed3e0aa543172e4bc445234bb640a511263",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-v295/qa/capture_scope.py": "1689fa322905845ed6bc6de7e101f0bc7f1736173ecff2ad1fd5224c8ae6ac9e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-v295/qa/helpers/protocol.py": "8c5fbbf87a8d918fe75bed35dd879519b8874d9602216ba147b887c268e7112f"
+  }
+}

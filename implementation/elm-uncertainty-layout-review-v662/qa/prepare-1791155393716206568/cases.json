@@ -1,0 +1,397 @@
+[
+  {
+    "name": "ready",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "5",
+      "lease": "0",
+      "mode": "closed",
+      "status": "Connected",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:GTK Application",
+          "domId": "group:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:21:application:GTK Application",
+          "label": "An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ",
+          "ariaLabel": "Minimize An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ",
+          "detail": "1",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "transaction": {
+      "windows": [
+        {
+          "incarnation": "2",
+          "minimized": false
+        }
+      ],
+      "connected": true,
+      "request": "0",
+      "generation": "0",
+      "transaction": null
+    },
+    "effectRequest": "0",
+    "effectGeneration": "0",
+    "wires": []
+  },
+  {
+    "name": "pending",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "6",
+      "lease": "0",
+      "mode": "closed",
+      "status": "Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:GTK Application",
+          "domId": "group:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:21:application:GTK Application",
+          "label": "An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ",
+          "ariaLabel": "Minimize An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "bar:recovery-refresh",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:bar:recovery-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status; read observations without retrying actions",
+          "detail": "Observation only",
+          "enabled": false
+        }
+      ],
+      "popup": []
+    },
+    "transaction": {
+      "windows": [
+        {
+          "incarnation": "2",
+          "minimized": false
+        }
+      ],
+      "connected": true,
+      "request": "1",
+      "generation": "1",
+      "transaction": {
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "13066731177979386763",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "status": "Pending"
+      }
+    },
+    "effectRequest": "1",
+    "effectGeneration": "1",
+    "wires": [
+      {
+        "protocolVersion": 3,
+        "kind": "window-effect",
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "2"
+        },
+        "intent": {
+          "request": "1",
+          "generation": "1",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "13066731177979386763",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "name": "unknown",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "6",
+      "lease": "0",
+      "mode": "closed",
+      "status": "Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:GTK Application",
+          "domId": "group:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:21:application:GTK Application",
+          "label": "An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ",
+          "ariaLabel": "Minimize An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "bar:recovery-refresh",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:bar:recovery-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status; read observations without retrying actions",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "transaction": {
+      "windows": [
+        {
+          "incarnation": "2",
+          "minimized": false
+        }
+      ],
+      "connected": true,
+      "request": "12",
+      "generation": "12",
+      "transaction": {
+        "intent": {
+          "request": "12",
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "13066731177979386763",
+            "epoch": "1",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "status": "Unknown"
+      }
+    },
+    "effectRequest": "12",
+    "effectGeneration": "12",
+    "wires": []
+  },
+  {
+    "name": "unknown-menu",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "8",
+      "lease": "1",
+      "mode": "menu",
+      "status": "Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:GTK Application",
+          "domId": "group:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:21:application:GTK Application",
+          "label": "An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ",
+          "ariaLabel": "Minimize An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "bar:recovery-refresh",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:bar:recovery-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status; read observations without retrying actions",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "control:menu-close",
+          "domId": "menu:1:close",
+          "label": "Close",
+          "ariaLabel": "Close window actions",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "menu:1:0",
+          "domId": "menu:1:0",
+          "label": "Restore",
+          "ariaLabel": "Restore",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "menu:1:1",
+          "domId": "menu:1:1",
+          "label": "Minimize",
+          "ariaLabel": "Minimize",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "menu:1:2",
+          "domId": "menu:1:2",
+          "label": "Maximize",
+          "ariaLabel": "Maximize",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "control:recovery-refresh",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:control:recovery-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status; read observations without retrying actions",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ]
+    },
+    "transaction": {
+      "windows": [
+        {
+          "incarnation": "2",
+          "minimized": false
+        }
+      ],
+      "connected": true,
+      "request": "12",
+      "generation": "12",
+      "transaction": {
+        "intent": {
+          "request": "12",
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "13066731177979386763",
+            "epoch": "1",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "status": "Unknown"
+      }
+    },
+    "effectRequest": "12",
+    "effectGeneration": "12",
+    "wires": []
+  },
+  {
+    "name": "unknown-refresh",
+    "frame": {
+      "surfaceProtocol": 2,
+      "publication": "7",
+      "lease": "0",
+      "mode": "closed",
+      "status": "Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.",
+      "bar": [
+        {
+          "id": "bar:applications",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:control:opener",
+          "label": "Applications",
+          "ariaLabel": "Open applications",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "bar:group:application:GTK Application",
+          "domId": "group:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:21:application:GTK Application",
+          "label": "An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ",
+          "ariaLabel": "Minimize An exceptionally long window title with important document context \u2014 Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e Uncertainty remains visible \u220e ; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "bar:recovery-refresh",
+          "domId": "applications:{\"lifetime\":\"13066731177979386763\",\"session\":\"16592658915108124045\",\"frontend\":\"2\"}:1:bar:recovery-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status; read observations without retrying actions",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "transaction": {
+      "windows": [
+        {
+          "incarnation": "2",
+          "minimized": false
+        }
+      ],
+      "connected": true,
+      "request": "12",
+      "generation": "12",
+      "transaction": {
+        "intent": {
+          "request": "12",
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "context": {
+            "lifetime": "13066731177979386763",
+            "epoch": "1",
+            "output": "1",
+            "revision": "21"
+          }
+        },
+        "status": "Unknown"
+      }
+    },
+    "effectRequest": "12",
+    "effectGeneration": "12",
+    "wires": [
+      {
+        "protocolVersion": 3,
+        "kind": "projection-request",
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "2"
+        },
+        "requestId": "4"
+      },
+      {
+        "protocolVersion": 3,
+        "kind": "geometry-facts-request",
+        "geometryProtocol": 2,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "2"
+        },
+        "requestId": "5",
+        "minimumWatermark": "48"
+      }
+    ]
+  }
+]
