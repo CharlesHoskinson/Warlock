@@ -1,0 +1,94 @@
+{
+  "passed": false,
+  "scope": "Actual QA wrapper with synthetic receipts and CPU subprocess cleanup only; no native execution or rendering acceptance",
+  "inputs": {
+    "qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "qa/test.py": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605"
+  },
+  "checks": [
+    {
+      "name": "frozen captured daemon imports exact manifest and artifacts",
+      "passed": true
+    },
+    {
+      "name": "first matching real-shaped receipt retained without send",
+      "passed": true
+    },
+    {
+      "name": "refresh passes while outcome held",
+      "passed": true
+    },
+    {
+      "name": "other incarnation passes unchanged",
+      "passed": true
+    },
+    {
+      "name": "legacy outcome passes unchanged",
+      "passed": true
+    },
+    {
+      "name": "receipt capture immune to source mutation",
+      "passed": true
+    },
+    {
+      "name": "wrong original full binding refused",
+      "passed": true
+    },
+    {
+      "name": "wrong original context refused",
+      "passed": true
+    },
+    {
+      "name": "bool protocol cannot match integer",
+      "passed": true
+    },
+    {
+      "name": "wrong process start refused",
+      "passed": true
+    },
+    {
+      "name": "exact public gate releases original receipt once",
+      "passed": true
+    },
+    {
+      "name": "duplicate explicit release refused",
+      "passed": true
+    },
+    {
+      "name": "normal closed release has no lost receipt",
+      "passed": true
+    },
+    {
+      "name": "bool wire version refuses before delivery",
+      "passed": true
+    },
+    {
+      "name": "Unknown receipt refuses before delivery",
+      "passed": false
+    }
+  ],
+  "processes": [],
+  "backend": {
+    "manifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-build-v74/component-manifest.json",
+    "sha256": "9678ba49758ba4fd7688d1c0faed2a1fafef4b91e62be3d7dad23e830fb25b5a",
+    "artifacts": {
+      "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "inputs/adapter/daemon.py": "fe7125658428a82bc7cc65949fe0c4170eaa6084e168faa5ff503e213a6f7eb0",
+      "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715"
+    }
+  },
+  "error": "AssertionError('Unknown receipt refuses before delivery')",
+  "artifacts": {
+    "control-1/gate.json": "b822b2d78b434f7afba20708d29d234be7f75641f53fecab074536a83717158b",
+    "control-1/held.json": "410dfc3330f7b79a7314e1689ee08ec6df564e78f1fbd651b9aa3062ba0e6106",
+    "control-2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control-3/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "inputs/qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "inputs/qa/test.py": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605"
+  }
+}

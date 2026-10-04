@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "scope": "QA EOF reconnect runner AST preservation and actual source/owning tuple preflight only; no GUI or reconnect acceptance",
+  "inputs": {
+    "candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "upstream.json": "3a63ff2aab05fe48de2de2fdb1ab9c36fa1c94ef55d6dbc7bf0eb2c3e419bd15",
+    "qa/native.py": "d6b5f58866a7b41a9b5b9c957b872e1f46b9a2b72daacf3c09d62112304332db",
+    "qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "README.md": "62d6606d469752ca41046b484f70f89d942254c2e6546d86c066fd002e1406a2",
+    "qa/freeze.py": "11116153d936be47007f58c6465d72699fe807b2872974e26f81fbe4cb9f7203",
+    "qa/preflight.py": "f8685f2a7efcd767938b92745431a0fe4b3bbca8385a68930f83e06156313903"
+  },
+  "checks": [
+    {
+      "name": "original transition helper exact check",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact wait",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact frames",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact projection",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact incoming",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact effects",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact geometry",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact geometry_row",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact coherent",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact row",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact parent_pointer",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact open_menu",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact action",
+      "passed": true
+    },
+    {
+      "name": "original transition helper exact settle_menu",
+      "passed": true
+    },
+    {
+      "name": "original client ACK/pixel helper byte exact",
+      "passed": true
+    },
+    {
+      "name": "saved MAX lifetime/capability/no effect replay assertion unchanged",
+      "passed": true
+    },
+    {
+      "name": "all operation sequence calls unchanged",
+      "passed": true
+    },
+    {
+      "name": "all original assertion expressions retained",
+      "passed": true
+    },
+    {
+      "name": "no SIGSTOP added",
+      "passed": true
+    },
+    {
+      "name": "actual staged CPU build and fresh pair selected",
+      "passed": true
+    },
+    {
+      "name": "relay strict APIs present",
+      "passed": true
+    },
+    {
+      "name": "source held candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "source held upstream.json",
+      "passed": true
+    },
+    {
+      "name": "source held qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "source held qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "source held README.md",
+      "passed": true
+    },
+    {
+      "name": "source held qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "source held qa/preflight.py",
+      "passed": true
+    }
+  ],
+  "selectedTuple": {
+    "pair": {
+      "core": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/Hyprland",
+        "sha256": "f1430c86174efa5682c40545daa3c7d823e29943ef07f8c992da59a0641617ad"
+      },
+      "plugin": {
+        "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-owning-pair-v75/qa/build-1791106521814701312/elm-window-geometry-authority.so",
+        "sha256": "c0bf07547a943e48d5493bc2df490a27c91c2e8def6060150fb59237ade5e20c"
+      }
+    },
+    "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-build-v74/qa/build-1791106471110680936/report.json",
+    "buildReportSHA256": "aac1bc049dd090789c5c8bb0f43bd9db2e5da90e494804acc487a798159a4acd",
+    "relayManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-broker-eof-deadline-v92/qa/held-source-manifest.json",
+    "relayManifestSHA256": "e99cb1adeebe6603c5d02f90fbb9ed2365947c93a9f821dee65bcb5fcc6adef4"
+  },
+  "artifacts": {
+    "inputs/candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "inputs/upstream.json": "3a63ff2aab05fe48de2de2fdb1ab9c36fa1c94ef55d6dbc7bf0eb2c3e419bd15",
+    "inputs/README.md": "62d6606d469752ca41046b484f70f89d942254c2e6546d86c066fd002e1406a2",
+    "inputs/qa/native.py": "d6b5f58866a7b41a9b5b9c957b872e1f46b9a2b72daacf3c09d62112304332db",
+    "inputs/qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "inputs/qa/freeze.py": "11116153d936be47007f58c6465d72699fe807b2872974e26f81fbe4cb9f7203",
+    "inputs/qa/preflight.py": "f8685f2a7efcd767938b92745431a0fe4b3bbca8385a68930f83e06156313903"
+  }
+}

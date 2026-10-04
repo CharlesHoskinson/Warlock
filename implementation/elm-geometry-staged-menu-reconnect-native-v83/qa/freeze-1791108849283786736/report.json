@@ -1,0 +1,283 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual preflight passed",
+      "passed": true
+    },
+    {
+      "name": "tested source candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "tested source upstream.json",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "tested source README.md",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "tested source qa/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/README.md",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "retained preflight inputs/qa/preflight.py",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor parentHost",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor parentRunner",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor copiedClientHelper",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor originalCoreHost",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor clientHelperParent",
+      "passed": true
+    },
+    {
+      "name": "retained ancestor preservedReconnectFailure",
+      "passed": true
+    },
+    {
+      "name": "selected own host pinned",
+      "passed": true
+    },
+    {
+      "name": "scenario scope preserved",
+      "passed": true
+    },
+    {
+      "name": "reviewed relay pinned",
+      "passed": true
+    },
+    {
+      "name": "relay source held",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108711310887482/failure.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108711310887482/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108711310887482/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/candidate/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/candidate/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/inputs/qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/inputs/qa/unsafe-success-first.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/unsafe-ancestor/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/unsafe-ancestor/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline-1791108738113730686/unsafe-ancestor/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/deadline.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/backlog/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/backlog/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/backlog/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/blocked/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/blocked/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/inputs/qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges-1791108548316685503/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/edges.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/freeze.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-1/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-1/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-1/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-2/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-2/exit.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-2/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-3/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-3/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-4/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-4/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-5/actor.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/control-5/gate.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/hardlink.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/inputs/qa/relay.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/inputs/qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test-1791108738345832488/report.json",
+      "passed": true
+    },
+    {
+      "name": "relay closure qa/test.py",
+      "passed": true
+    },
+    {
+      "name": "relay retained symlink qa/test-1791108738345832488/dir-link",
+      "passed": true
+    },
+    {
+      "name": "relay retained symlink qa/test-1791108738345832488/link.json",
+      "passed": true
+    }
+  ],
+  "scope": "QA reconnect source preservation and owning tuple preflight; no GUI"
+}

@@ -1,0 +1,238 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+Minimize closes publication before exactly one real full intent: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:27:180
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:27:1
+Enter uses selected enabled action exactly once: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:28:154
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:28:1
+duplicate old callback cannot forward: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:29:111
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:29:1
+correlated receipt clears ledger without optimistic observation: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:30:139
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:30:1
+fresh observed facts never resolve Unknown or enable menu retry: TypeError: Cannot read properties of null (reading 'status')
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:51:129
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:51:1
+unrelated target obtains its own engine-generated native intent: AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
++ []
+- [
+-   {
+-     binding: {
+-       frontend: '300',
+-       lifetime: '100',
+-       session: '200'
+-     },
+-     effectProtocol: 1,
+-     intent: {
+-       context: {
+-         epoch: '300',
+-         lifetime: '100',
+-         output: '1',
+-         revision: '2'
+-       },
+-       generation: '2',
+-       incarnation: '20',
+-       operation: 'minimize',
+-       request: '2'
+-     },
+-     kind: 'window-effect',
+-     protocolVersion: 3
+-   }
+- ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:56:107
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:56:1
+B receipt then delayed A receipt reconciles original map only: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:58:233
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:58:1
+original full receipt resolves retained old binding once: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:65:162
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:65:1
+pending engine refuses unrelated new context before approval: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:73:201
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:73:1
+refreshed focus menu sends actual fresh context once: AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+        session: '200'
+      },
++     kind: 'projection-request',
+-     effectProtocol: 1,
+-     intent: {
+-       context: {
+-         epoch: '300',
+-         lifetime: '100',
+-         output: '1',
+-         revision: '2'
+-       },
+-       generation: '1',
+-       incarnation: '10',
+-       operation: 'minimize',
+-       request: '1'
+-     },
+-     kind: 'window-effect',
+      protocolVersion: 3,
++     requestId: '3'
+    }
+  ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:82:133
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:82:1
+topology generation remains separate from registered output identity: AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+        session: '200'
+      },
++     kind: 'projection-request',
+-     effectProtocol: 1,
+-     intent: {
+-       context: {
+-         epoch: '300',
+-         lifetime: '100',
+-         output: '23',
+-         revision: '1'
+-       },
+-       generation: '1',
+-       incarnation: '10',
+-       operation: 'minimize',
+-       request: '1'
+-     },
+-     kind: 'window-effect',
+      protocolVersion: 3,
++     requestId: '2'
+    }
+  ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:101:152
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:101:1
+closed presentation reflow cannot alter pending original operation: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:124:207
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:124:1
+original bound receipt still resolves exactly once after reflow: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:129:168
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:129:1
+fresh authorized post-reflow action dispatches once: AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
++ actual - expected
+
+  [
+    {
+      binding: {
+        frontend: '300',
+        lifetime: '100',
+        session: '200'
+      },
++     kind: 'projection-request',
+-     effectProtocol: 1,
+-     intent: {
+-       context: {
+-         epoch: '300',
+-         lifetime: '100',
+-         output: '1',
+-         revision: '1'
+-       },
+-       generation: '1',
+-       incarnation: '10',
+-       operation: 'minimize',
+-       request: '1'
+-     },
+-     kind: 'window-effect',
+      protocolVersion: 3,
++     requestId: '3'
+    }
+  ]
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:135:143
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:12:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/qa/original/menu.cjs:135:1

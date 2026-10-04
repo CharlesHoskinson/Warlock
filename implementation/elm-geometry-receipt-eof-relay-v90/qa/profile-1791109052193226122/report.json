@@ -1,0 +1,184 @@
+{
+  "passed": true,
+  "scope": "Closed fixed profiles, source pinning and fresh actual V82 configuration parser only; no native or GUI acceptance",
+  "checks": [
+    {
+      "name": "broker fixed captured V74 executable and original authority",
+      "passed": true
+    },
+    {
+      "name": "receipt fixed held V82 entrypoint and original private config",
+      "passed": true
+    },
+    {
+      "name": "unknown refuses before launch",
+      "passed": true
+    },
+    {
+      "name": "arbitrary command refuses before launch",
+      "passed": true
+    },
+    {
+      "name": "arbitrary backend refuses before launch",
+      "passed": true
+    },
+    {
+      "name": "mixed profiles refuses before launch",
+      "passed": true
+    },
+    {
+      "name": "legacy unprofiled refuses before launch",
+      "passed": true
+    },
+    {
+      "name": "receipt extra authority refuses before launch",
+      "passed": true
+    },
+    {
+      "name": "boolean path refuses before launch",
+      "passed": true
+    },
+    {
+      "name": "public receipt config refused",
+      "passed": true
+    },
+    {
+      "name": "receipt config symlink refused",
+      "passed": true
+    },
+    {
+      "name": "receipt config hardlink refused",
+      "passed": true
+    },
+    {
+      "name": "receipt inventory all entries verified",
+      "passed": true
+    },
+    {
+      "name": "actual fresh receipt parser accepts ordinal2",
+      "passed": true
+    },
+    {
+      "name": "actual fresh receipt parser defaults ordinal1",
+      "passed": true
+    },
+    {
+      "name": "actual receipt parser refuses ordinal3",
+      "passed": true
+    },
+    {
+      "name": "actual receipt parser refuses boolean ordinal",
+      "passed": true
+    },
+    {
+      "name": "actual receipt parser refuses legacy operation",
+      "passed": true
+    },
+    {
+      "name": "actual receipt parser refuses backend injection",
+      "passed": true
+    },
+    {
+      "name": "changed held wrapper refused",
+      "passed": true
+    },
+    {
+      "name": "changed held source mode refused",
+      "passed": true
+    },
+    {
+      "name": "changed preserved symlink refused",
+      "passed": true
+    },
+    {
+      "name": "changed parent inventory refused",
+      "passed": true
+    },
+    {
+      "name": "V92 actual pump controls and strict deadlines unchanged",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "receipt.json": "e123c13eb56a0654e481cecece8fa62a283873fb180b450c265e7ba8eeffe35e",
+    "public.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "receipt-copy/upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+    "receipt-copy/parent.json": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+    "receipt-copy/CONTRACT.md": "fe1002efcc24fd3703106c8be8f51afc0df59591d3e6b924b1292bed46b6c09c",
+    "receipt-copy/qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "receipt-copy/qa/test.py": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+    "receipt-copy/qa/staged-test.py": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+    "receipt-copy/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "receipt-copy/qa/selector-test.py": "0b12e347a31808ef49db6ad12e1cf00d1368e885b91720cc32a4899287c70387",
+    "receipt-copy/qa/freeze.py": "c798ced9a5b44ec108dc4ed9c4995bb91001e1c306a21137cf3096c246958450",
+    "receipt-copy/qa/held-source-manifest.json": "16b2a89c7b1cbf8c976b80aefd14ff3bdf889eea1553e3a3e734df8ffca5efcf",
+    "receipt-copy/qa/selector-1791107747994689932/authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "receipt-copy/qa/selector-1791107747994689932/wrapper.json": "393f3502c85e4c26594d6cbf429df63ab2e51f9d2e96a12d9cc9d3063d8a8192",
+    "receipt-copy/qa/selector-1791107747994689932/report.json": "4762e4c7b38be95edaf21102f03d6157240504f34b00a5e867b4a4b38b86f050",
+    "receipt-copy/qa/staged-1791107748248104178/authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "receipt-copy/qa/staged-1791107748248104178/wrapper.json": "611354008f99014b02b8f20a5776656264704c5d2a389291089118b384e095ef",
+    "receipt-copy/qa/staged-1791107748248104178/report.json": "dfbaba1938830f8f28dad885466e7ce2524b23b3f73684cbdc276e019e4d1d66",
+    "receipt-copy/qa/hold-1791107748473303162/report.json": "f182066211b2199bf10c4620556fac17c36f7dcf126db5dca1b28dd4430bb5a0",
+    "receipt-copy/qa/hold-1791107748473303162/control-1/gate.json": "b822b2d78b434f7afba20708d29d234be7f75641f53fecab074536a83717158b",
+    "receipt-copy/qa/hold-1791107748473303162/control-1/held.json": "410dfc3330f7b79a7314e1689ee08ec6df564e78f1fbd651b9aa3062ba0e6106",
+    "receipt-copy/qa/hold-1791107748473303162/control-2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/hold-1791107748473303162/control-3/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/hold-1791107748473303162/inputs/qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "receipt-copy/qa/hold-1791107748473303162/inputs/qa/test.py": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+    "receipt-copy/qa/staged-1791107748248104178/inputs/upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+    "receipt-copy/qa/staged-1791107748248104178/control1/gate.json": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+    "receipt-copy/qa/staged-1791107748248104178/control1/held.json": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+    "receipt-copy/qa/staged-1791107748248104178/control2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control3/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/staged-1791107748248104178/control12/gate.json": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+    "receipt-copy/qa/staged-1791107748248104178/control12/held.json": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+    "receipt-copy/qa/staged-1791107748248104178/inputs/qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "receipt-copy/qa/staged-1791107748248104178/inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "receipt-copy/qa/staged-1791107748248104178/inputs/qa/staged-test.py": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+    "receipt-copy/qa/selector-1791107747994689932/inputs/parent.json": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+    "receipt-copy/qa/selector-1791107747994689932/inputs/upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+    "receipt-copy/qa/selector-1791107747994689932/control1/gate.json": "c7c82bc3987055e1d399e73b654bfd96f5a9a95dadef5f2965b260bb98d83230",
+    "receipt-copy/qa/selector-1791107747994689932/control1/held.json": "b5020a50c5ce4291add6304810785ada3dc53b29020386f7b23b05bf934763cd",
+    "receipt-copy/qa/selector-1791107747994689932/control2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control3/gate.json": "c5f406a54359388b2734d72985436c4586ef52be3b2490d198e174950df20fb2",
+    "receipt-copy/qa/selector-1791107747994689932/control3/held.json": "1b326de5b1d7fae8538adb702f9d51459ca50153e75c2c7c3188163c52f0b634",
+    "receipt-copy/qa/selector-1791107747994689932/control4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control12/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control13/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control14/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control15/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control16/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control17/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control18/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control19/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control20/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control21/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control22/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/control23/gate.json": "34768bb0dc4b9d7d6c3eea527b1278cd4f81100dddb05ac022eb748f099f970f",
+    "receipt-copy/qa/selector-1791107747994689932/control23/held.json": "5a99bde93bedf822b73b8f98faca0b8ee1372b64265332999c858155215ae800",
+    "receipt-copy/qa/selector-1791107747994689932/control24/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "receipt-copy/qa/selector-1791107747994689932/inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "receipt-copy/qa/selector-1791107747994689932/inputs/qa/selector-test.py": "0b12e347a31808ef49db6ad12e1cf00d1368e885b91720cc32a4899287c70387",
+    "receipt-copy/qa/selector-1791107747994689932/inputs/qa/staged-test.py": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+    "receipt-copy/qa/selector-1791107747994689932/inputs/qa/test.py": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+    "receipt-copy/qa/selector-1791107747994689932/inputs/qa/wrapper.py": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+    "inputs/qa/profile-test.py": "b1d120c8a3e2fe35f6bd8a837421ac1938a3d9dccc57aeaa2a8441dab9eb6474",
+    "inputs/qa/relay.py": "35ca96922f6160fd4d67c0c5740519309775e61a7e8e6b9f18e66780dc4d9168"
+  }
+}

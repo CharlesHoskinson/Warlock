@@ -1,0 +1,74 @@
+{
+  "schema": 1,
+  "scope": "Exact V87 staged family barrier Elm, unchanged V64 broker/V57 carrier/V8 assets CPU production build; owning V73/V75/V30 native pair separately qualified only for original native96/pixel7.",
+  "sourceLanes": {
+    "elm": "implementation/elm-menu-staged-family-barrier-v87",
+    "broker": "implementation/elm-geometry-broker-coherent-v64",
+    "host": "implementation/elm-geometry-host-carrier-v57",
+    "assets": "implementation/elm-menu-native-pair-v8",
+    "nativePair": "implementation/elm-geometry-monitor-owning-pair-v75",
+    "client": "implementation/elm-geometry-client-suspend-v53"
+  },
+  "transitionDeadlineSeconds": 6,
+  "transportDeadlineSeconds": 3,
+  "requires": [
+    "protected serialized private parent-seat native QA",
+    "actual compiled Main and Popup plus actual compiled host",
+    "exact source/ABI/dependency preflight before GUI",
+    "popup closed before effect dispatch",
+    "real configure ACK and independently sampled buffer RGB",
+    "full binding+intent+effect protocol receipt correlation",
+    "normal client exit then plugin unload then child and parent cleanup"
+  ],
+  "scenarios": [
+    {
+      "id": "GEOMETRY-MENU-01",
+      "oracle": "Authenticated hello followed by explicit negotiation, actual capabilities and separately correlated legacy and geometry facts."
+    },
+    {
+      "id": "GEOMETRY-MENU-02",
+      "oracle": "Physical right-click on ordinary unconstrained floating fixture offers enabled Maximize and disabled Restore geometry."
+    },
+    {
+      "id": "GEOMETRY-MENU-03",
+      "oracle": "Physical Maximize selection closes popup before dispatch, sends exactly one protocol2 intent; Pending then definitive receipt; actual MAX configure/ACK/serial RGB and refreshed menu agree."
+    },
+    {
+      "id": "GEOMETRY-MENU-04",
+      "oracle": "Minimize maximized fixture via protocol1; real new SUSPENDED buffer/input prohibition; geometry origin survives."
+    },
+    {
+      "id": "GEOMETRY-MENU-05",
+      "oracle": "Restore minimized fixture via protocol1; new nonsuspended MAX buffer; original geometry stays saved."
+    },
+    {
+      "id": "GEOMETRY-MENU-06",
+      "oracle": "Restore geometry via protocol2; ordinary configure and exact saved position/size/serial RGB; origin retired."
+    },
+    {
+      "id": "GEOMETRY-MENU-07",
+      "oracle": "External native state change triggers bounded coalesced dual observations; no effect replay; menu capabilities update."
+    },
+    {
+      "id": "GEOMETRY-MENU-08",
+      "oracle": "Reconnect obtains new frontend binding and negotiates again; old requests never settle unrelated current effects; saved MAX origin survives."
+    },
+    {
+      "id": "GEOMETRY-MENU-09",
+      "oracle": "Held/delayed receipt keeps effect Pending and popup closed; notifications defer without duplicate intent."
+    },
+    {
+      "id": "GEOMETRY-MENU-10",
+      "oracle": "Target retirement makes open menu unusable; no accidental operation on replacement window."
+    }
+  ],
+  "acceptance": {
+    "native": false,
+    "release": false,
+    "allRoadmapGates": false
+  },
+  "remainingCompatibilityGate": "The V64 broker and V8 JS relay remain unchanged; strict reconnect relay and held-receipt profile require a later coherent native tuple. Build acceptance is CPU only.",
+  "sourceLineageParent": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-staged-menu-build-v74",
+  "sourceLineageParentManifestSHA256": "9678ba49758ba4fd7688d1c0faed2a1fafef4b91e62be3d7dad23e830fb25b5a",
+  "qaLane": "implementation/elm-menu-staged-family-barrier-v87"
+}
