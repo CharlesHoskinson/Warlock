@@ -1,0 +1,118 @@
+{
+  "passed": true,
+  "assertions": 25,
+  "checks": [
+    {
+      "name": "original627 wait AST and deadlines retained",
+      "passed": true
+    },
+    {
+      "name": "original627 click AST and deadlines retained",
+      "passed": true
+    },
+    {
+      "name": "unchanged actual624 C producer compiles",
+      "passed": true
+    },
+    {
+      "name": "actual C durable Pending admission",
+      "passed": true
+    },
+    {
+      "name": "observation frames pass through unchanged",
+      "passed": true
+    },
+    {
+      "name": "first real-shaped release suppressed after durable certificate",
+      "passed": true
+    },
+    {
+      "name": "single-use marker private singlelink and exact anchor",
+      "passed": true
+    },
+    {
+      "name": "fresh wrapper startup never rearms consumed marker",
+      "passed": true
+    },
+    {
+      "name": "wrapper does not alter original archive or sidecar",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects absent-certificate",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms absent-certificate",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects wrong-current",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms wrong-current",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects wrong-anchor",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms wrong-anchor",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects symlink-marker",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms symlink-marker",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects public-marker",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms public-marker",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects wrong-campaign",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms wrong-campaign",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects marker-write-zero",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms marker-write-zero",
+      "passed": true
+    },
+    {
+      "name": "fault control rejects marker-fsync",
+      "passed": true
+    },
+    {
+      "name": "fault refusal never forwards or rearms marker-fsync",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "nativeLaunched": false,
+  "targetGUIReviewed": false,
+  "claim": "Actual copied624 C/filesystem archive+certificate, synthetic typedproof/read fixture for QA wrapper; runner AST/sixseconddeadline controls only",
+  "sources": {
+    "qa/inspection.py": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+    "qa/fault_backend.py": "50481b3a9f59e16dba275f9ddeca5ae4ae192bd851b642c170e7f8e5ea948b9c",
+    "qa/runner.py": "c8ee4c551d03f1138b1d410a0e22f382f3162a7a3ae6493055d6bc1c07d826d4",
+    "qa/preflight.py": "8454fd27625b02862f521c306794e6d3f6f0d212051b9ab6b744ff6507fb99df",
+    "qa/controls.py": "8220941d8e46b01a5ee05596dd5c830ad4023041b3f114659e761f31223edb58",
+    "qa/closure.py": "3285406edc4ed68ef0bc0a1a9cd50afafc2fcc613f7059539dac3b96e7f8d1c4"
+  }
+}

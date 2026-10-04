@@ -1,0 +1,84 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fixtureComponentManifestSHA256": "18a3c9966f40360721ac2e1e68da71c396c54f597ef01740726a4a05164e8a0c",
+  "files": {
+    "qa/relay.py": {
+      "sha256": "d6ae9a13d630dda9f8474aeb636c7f3a6d0e0e4c7ac174731a7640a5960da96e",
+      "size": 11268
+    },
+    "qa/test-1791155606853066307/control-1/actor.json": {
+      "sha256": "9bf6b34455ae46852402c1441df9eca19c9c420b5f672158e458623c19413565",
+      "size": 92
+    },
+    "qa/test-1791155606853066307/control-1/exit.json": {
+      "sha256": "a78a500917e03aee658eccd2086baafbc7eefd01b5dc6e0611fb47856f1129e2",
+      "size": 129
+    },
+    "qa/test-1791155606853066307/control-1/gate.json": {
+      "sha256": "6c87407e6910ac8ba93a7250f4b41286de7f8916dceeecb0c35400a3a873e34a",
+      "size": 111
+    },
+    "qa/test-1791155606853066307/control-2/actor.json": {
+      "sha256": "acc224684f56c579cad62837cfb5eb7a2bd07fe8f92fbab66eb15fc8ea9138fb",
+      "size": 92
+    },
+    "qa/test-1791155606853066307/control-2/exit.json": {
+      "sha256": "2a7f188ee01148299a52c9a68ba3a2be8db50d11f0b2ef7e05c81e58432acd9b",
+      "size": 129
+    },
+    "qa/test-1791155606853066307/control-2/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    "qa/test-1791155606853066307/control-3/actor.json": {
+      "sha256": "85df33c9c8f5a631bf2af6617d68fbf3f4410bc194af5349cbebbe274b303647",
+      "size": 92
+    },
+    "qa/test-1791155606853066307/control-3/gate.json": {
+      "sha256": "ffed92571165f881f9db2a452da6c8617c2e97f32eac4f292664e7608a66160f",
+      "size": 104
+    },
+    "qa/test-1791155606853066307/control-4/actor.json": {
+      "sha256": "006b9d2f119fa381d8cb512b47cefc96659e1948d3cd87e9e5a9db8fa1e26327",
+      "size": 92
+    },
+    "qa/test-1791155606853066307/control-4/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20
+    },
+    "qa/test-1791155606853066307/control-5/actor.json": {
+      "sha256": "45ef621c6cee8e0b7e9490f558765ce04da1c7a66b62a902be055cc2e674d479",
+      "size": 92
+    },
+    "qa/test-1791155606853066307/control-5/gate.json": {
+      "sha256": "0a03984eaab9790c931273b7a9248ab7eb5135e24c62e765dc26a4c51cc5e72b",
+      "size": 111
+    },
+    "qa/test-1791155606853066307/hardlink.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2
+    },
+    "qa/test-1791155606853066307/inputs/qa/relay.py": {
+      "sha256": "d6ae9a13d630dda9f8474aeb636c7f3a6d0e0e4c7ac174731a7640a5960da96e",
+      "size": 11268
+    },
+    "qa/test-1791155606853066307/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    },
+    "qa/test-1791155606853066307/report.json": {
+      "sha256": "46c3f14fd50efead8d2cdf55047ed88b1586b8080db4f4025b7e704725e5ad25",
+      "size": 3292
+    },
+    "qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768
+    }
+  },
+  "symlinks": {
+    "qa/test-1791155606853066307/link.json": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-current-fixture-v342/relay/qa/test-1791155606853066307/control-5/actor.json"
+  },
+  "scope": "Projection of exact frozen342 relay inventory; no native acceptance"
+}
