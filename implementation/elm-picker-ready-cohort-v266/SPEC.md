@@ -1,0 +1,1 @@
+Use exact existing184 cohort user-manager transport binding, restoring private XDG_RUNTIME_DIR and DBUS_SESSION_BUS_ADDRESS before launching actual182 supervisor. Runtime remains exact231/205. Preserve263 bootstrap failure. No production state-machine changes or weakened recovery assertions.

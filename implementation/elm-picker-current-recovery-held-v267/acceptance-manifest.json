@@ -1,0 +1,451 @@
+{
+  "passed": true,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": true,
+  "acceptedGuiNativeCheckCount": 473,
+  "acceptedCurrentRecoveryNativeCheckCount": 40,
+  "currentNativeRecoveryUIAccepted": true,
+  "historical168ExitCampaignAccepted": false,
+  "pendingUnknownReconciliationAccepted": false,
+  "serverOldGrantRetirementAccepted": false,
+  "fullRoadmapAccepted": false,
+  "fullReleaseAccepted": false,
+  "parentManifest": "implementation/elm-picker-ready-acceptance-v261/acceptance-manifest.json",
+  "parentManifestSHA256": "686b1a2e231e8110de1703a004d49209cf7c900128c1c81671feab4d75e698ad",
+  "nativePair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/Hyprland",
+      "sha256": "bda6ce0094961c285673589afa2b61fe2b97321a1d86b248823b482122fec0f5"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-owning-pair-v206/qa/build-1791139221325157864/elm-window-geometry-authority.so",
+      "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "reports": [
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/report.json",
+      "sha256": "4ab1082a0d884185fe0ffeff97f8ffc0e627a50cd4f62b30f944f88af88e7dcb",
+      "passed": false,
+      "checks": 1,
+      "cleanupPassed": true
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/report.json",
+      "sha256": "89c4dd6caa0e60a304c0caa2383ba92f13ba98e94338ae9ee486249d0d53301a",
+      "passed": true,
+      "checks": 40,
+      "cleanupPassed": true
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/elm-current-recovery-contract-v262/SPEC.md",
+      "mode": 420,
+      "sha256": "3f8a8d1807f1e2c7bbeed5ea2154d1ba868485eb2ec829d95c7cea6ff84064de",
+      "size": 724
+    },
+    {
+      "path": "implementation/elm-current-recovery-contract-v262/witness.json",
+      "mode": 420,
+      "sha256": "8913a439e892e7351d369499f197ca08e13bfc8f9e0e3ce4e3e07514d02f2389",
+      "size": 672
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/SPEC.md",
+      "mode": 420,
+      "sha256": "2a29040136d5fa93f79595f903a55c3296c5c45951ef9694cb788e55642e79f0",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/fixture.py",
+      "mode": 420,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/lineage.json",
+      "mode": 420,
+      "sha256": "2d5156e9323e8f2a7fb0cb3bbeeb689d687044e9bedd5dd0cf33e7d6a1c7d1bc",
+      "size": 211
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/inspection.py",
+      "mode": 420,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "a8bd63b1bf35915fa59b949027b094fc87cfc5a8078ce3c38de1b6b7792ad441",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/elm-supervisor.log",
+      "mode": 384,
+      "sha256": "e2c04677dae80cf7d8606337fe62eac82f1964a580f0c32dd2b39ef67f69623e",
+      "size": 116
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/fixture.log",
+      "mode": 384,
+      "sha256": "008ca7eede3ff68f060c42abd086c8992e1296f475dc4dde759aaca537d526c2",
+      "size": 558254
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "ee08b32f12eb0f163d7bd070d0c09c8461ce8bbf2f4da9a07562e65e2caabbba",
+      "size": 212515
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "81f80a824aeea7a2ba25fa926e66d97a2190b3b02ead2a528ed619d923fc143f",
+      "size": 441077
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "aae9d565bb072e1a69e63578ed77ddf557518984d0fd8e50ab8772ed919c7725",
+      "size": 4607
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791145309_1360735924/hyprland.log",
+      "mode": 384,
+      "sha256": "fae46758f858072e2dfa03478e50eae8bf1361bcd83f66dea20c61643dfdea05",
+      "size": 25623
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "84a197d289a78ed214f428f876ca6caab5c28a8bdc8b9716548f441bf15bc739",
+      "size": 3775
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native-1791145307860292627/report.json",
+      "mode": 420,
+      "sha256": "4ab1082a0d884185fe0ffeff97f8ffc0e627a50cd4f62b30f944f88af88e7dcb",
+      "size": 218857
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/native.py",
+      "mode": 420,
+      "sha256": "1641a52122710c46ed1dcbaee182baa3faf52ad26c7631097180c1e4225018a6",
+      "size": 19247
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/preflight.json",
+      "mode": 420,
+      "sha256": "c169ab2c34b8747b4dd26bc463f5f8ea63d1579047df154217239a5190740ba6",
+      "size": 985713
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/preflight.py",
+      "mode": 420,
+      "sha256": "e1966d2b545b5ae487f4f7b0a89ad4fea6c5e44b0f8763e62e3e6e5bb93abd52",
+      "size": 4149
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v263/qa/sampling.py",
+      "mode": 420,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v264/SPEC.md",
+      "mode": 420,
+      "sha256": "fbac8c69c6366956978199c27834a6cbe7735e5ab3e465173cd730a174388975",
+      "size": 162
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v264/cohort.py",
+      "mode": 420,
+      "sha256": "87b4293aa64700d53f6fa64bc7963fffd4716341fc7a20b99fc4aa3648704aa5",
+      "size": 6550
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v264/package.py",
+      "mode": 420,
+      "sha256": "ba6bc0ba301ff02ee7459ed8cde20bea71e7c77ba4a15da1d6092f7abf2982c4",
+      "size": 1538
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v264/runtime-manifest.json",
+      "mode": 420,
+      "sha256": "76f0aaabbd563073bcd0404d2085d92d3784cbba263b85c48ef06b4be3cf681c",
+      "size": 6186
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v264/supervisor.py",
+      "mode": 420,
+      "sha256": "9fe72b8c2621bb1ca80e9a20181e3bff9c7248715564812716d72ad31f5613eb",
+      "size": 8325
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/SPEC.md",
+      "mode": 420,
+      "sha256": "2a29040136d5fa93f79595f903a55c3296c5c45951ef9694cb788e55642e79f0",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/fixture.py",
+      "mode": 420,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/lineage.json",
+      "mode": 420,
+      "sha256": "2d5156e9323e8f2a7fb0cb3bbeeb689d687044e9bedd5dd0cf33e7d6a1c7d1bc",
+      "size": 211
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/inspection.py",
+      "mode": 420,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "3610208e957650bd21aecd814415941fbe67ae933494fc25843ecd4b2abd446e",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/elm-supervisor.log",
+      "mode": 384,
+      "sha256": "9dc7786cff61886ec0a66485e99535c7a17c2dcc626a2084ea8b95d6da719884",
+      "size": 1004
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/fixture-control.events.jsonl",
+      "mode": 420,
+      "sha256": "ff3e72f4b422e287cdb4ee7775ae7500650a467065fdee01c559a6158fa02195",
+      "size": 316
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/fixture.log",
+      "mode": 384,
+      "sha256": "0fa4e49c108eb46318e814efe20e615ac91f7f2088100129a6b2e7332854a814",
+      "size": 923975
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/generation-1.log",
+      "mode": 384,
+      "sha256": "6a8563ab5a2857a06bd7f5b7bea92212732654562b9049390ae99f8c00e63755",
+      "size": 126559
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/generation-2.log",
+      "mode": 384,
+      "sha256": "591526cbd4faa4b19a915a861373eddaff3d21ab5b0d15fbc0d09fac2a5c4123",
+      "size": 99116
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "a733862eb9a8643b8621b124c78ad14b98697cae3d71a26bfabec5f7edd29b29",
+      "size": 215416
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "5945baa85926d3764c8581a3432196254b56304fb2b866f11485b9d43768e00b",
+      "size": 425915
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/native-recovery.png",
+      "mode": 420,
+      "sha256": "bc4e99f13ace412143b71552f8704b38c5022a70485bd21c8b99b69430e3606d",
+      "size": 19294
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "f11977b1c9e93d2d586e986bc7bf1fb8c92bc7f71bdace90d37356816a5bcb45",
+      "size": 6533
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/.flatpak/webkit-3453151-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "fa8ce2272d621dc6787fb81e7d2d71987b1b92ab56db80fcb193e97a2bb32539",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/.flatpak/webkit-3453151-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "84f22ae68125c45ba1ef88f6e1db2fa616254de46121dbf82aaa14eb949f103b",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/.flatpak/webkit-3453610-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "3f625891dc7b69a8757e0b4102e3ae154b5ee1b846659b881bab0a000d284e87",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/.flatpak/webkit-3453610-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "266dcc18ee4062affa7734923746e54e4c0fc16d7a880f7451ef93eb73240e89",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791145399_931672038/15854332989613388349/ledger-v5.json",
+      "mode": 384,
+      "sha256": "dc28ed9ee5c31727a8eae1123a21ad39935874d3c0e05f7407ffec8a3c9b2e95",
+      "size": 1089
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791145399_931672038/15854332989613388349/migration-plan.json",
+      "mode": 384,
+      "sha256": "fbe782523c83e779762e468c8745b4d40b38b7e0e5ad5b0e74a7f8dbf65bf5f2",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791145399_931672038/15854332989613388349/migration.json",
+      "mode": 384,
+      "sha256": "18464df990040c71089b8d677b301df3db079b1b0cf0cf01580071f01b09d7b3",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791145399_931672038/hyprland.log",
+      "mode": 384,
+      "sha256": "be048f9205b0563fbeb22a19c7b14188ec75d3f4755c0773dcdfcc2d78eb4888",
+      "size": 25622
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "2113542af70ce59babf4a702c98b2364de9493f24c7d251d7e4542c54678cc0a",
+      "size": 3775
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native-1791145398467009446/report.json",
+      "mode": 420,
+      "sha256": "89c4dd6caa0e60a304c0caa2383ba92f13ba98e94338ae9ee486249d0d53301a",
+      "size": 257557
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/native.py",
+      "mode": 420,
+      "sha256": "9c96b29bda9dbdc92a5539df340397fafd666bcdc55217c025996e7859edc245",
+      "size": 19247
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/preflight.json",
+      "mode": 420,
+      "sha256": "bb9b2d9d528413b41e94906c0e54e744671cb6b2c90cef7c936ab6b61b3e12b9",
+      "size": 985713
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/preflight.py",
+      "mode": 420,
+      "sha256": "e8940da8d145941a086a3ca19f9aefe5dbe87116774c7f1fb1e267196014702c",
+      "size": 4149
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-native-v265/qa/sampling.py",
+      "mode": 420,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v266/SPEC.md",
+      "mode": 420,
+      "sha256": "e490ada31892db11fd538a444e95b47bc942d0e7a6a7f6c23e3d1bbeaf7cfbd5",
+      "size": 293
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v266/cohort.py",
+      "mode": 420,
+      "sha256": "5fda7b19744ce9cce8bbd105a4441b24d7c0b45223707a87d7f62d90af0ec486",
+      "size": 7409
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v266/package.py",
+      "mode": 420,
+      "sha256": "ba6bc0ba301ff02ee7459ed8cde20bea71e7c77ba4a15da1d6092f7abf2982c4",
+      "size": 1538
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v266/runtime-manifest.json",
+      "mode": 420,
+      "sha256": "76f0aaabbd563073bcd0404d2085d92d3784cbba263b85c48ef06b4be3cf681c",
+      "size": 6186
+    },
+    {
+      "path": "implementation/elm-picker-ready-cohort-v266/supervisor.py",
+      "mode": 420,
+      "sha256": "9fe72b8c2621bb1ca80e9a20181e3bff9c7248715564812716d72ad31f5613eb",
+      "size": 8325
+    },
+    {
+      "path": "implementation/elm-picker-current-recovery-held-v267/SPEC.md",
+      "mode": 420,
+      "sha256": "1e61e1f7595dcaad15c2488b2f3b99ce4d13e0b0c914d5b174279f879fc5d5e7",
+      "size": 732
+    },
+    {
+      "path": "implementation/elm-picker-current-recovery-held-v267/qa/freeze.py",
+      "mode": 420,
+      "sha256": "f27f9738302716f878d34e60b98446f329de9a9e2ea8ed9659b7bb2b312a7298",
+      "size": 3061
+    }
+  ],
+  "scope": "Bounded original183 native recovery UI/cohort/replacement/cancellation acceptance on actual231 current205 tuple; old-packet refusal proves local endpoint binding only, broader recovery/roadmap/release separate"
+}
