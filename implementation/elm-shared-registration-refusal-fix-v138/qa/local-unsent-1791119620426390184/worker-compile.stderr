@@ -1,0 +1,12 @@
+-- UNEXPECTED EQUALS ---------------------------------- src/OutputController.elm
+
+I was not expecting to see this equals sign:
+
+214|                                                     (recovered,recoveryEffects) = if canRecover then apply (Controller.Interaction (Desktop.Window (TaskbarShell.Native (Shell.RegistrationAvailable True)))) settled else (settled,[])
+                                                                                     ^
+Maybe you want == instead? To check if two values are equal?
+
+Note: I may be getting confused by your indentation. I need all definitions to
+be indented exactly the same amount, so if this is meant to be a new definition,
+it may have too many spaces in front of it.
+

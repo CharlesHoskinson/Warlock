@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "scope": "Actual C host teardown blocks with deterministic time/drain API doubles; no GUI or native process claim",
+  "checks": [
+    {
+      "name": "ancestor actual block compiles",
+      "passed": true
+    },
+    {
+      "name": "owning ancestor two-second budget prematurely forces legal native request",
+      "passed": true
+    },
+    {
+      "name": "owning ancestor removed reader before bounded completion",
+      "passed": true
+    },
+    {
+      "name": "candidate actual block compiles",
+      "passed": true
+    },
+    {
+      "name": "candidate allows existing native3 deadline completion",
+      "passed": true
+    },
+    {
+      "name": "candidate drains while awaiting normal completion",
+      "passed": true
+    },
+    {
+      "name": "one global shutdown bound including write-close stays below original five-second fixture cap",
+      "passed": true
+    },
+    {
+      "name": "receipt withheld beyond shutdown is forced uncertainty not normal completion",
+      "passed": true
+    }
+  ],
+  "artifacts": {
+    "test.py": "9d5b4480927028a91926d45e193cff272866eed2726abe84ad3cea5f4e9b3ad7",
+    "ancestor-host.c": "3abe445636fdbb428deeb749514768604dd4795001a320b3ea8cc0b8a67e7e65",
+    "ancestor.c": "8dd6361e4dd321310d19c6cdab7a449d6a07db0d3f4a5ead2a850f8bb23977b9",
+    "ancestor": "a4ccc7f325508c57d793def263f21ecb75cccb038e2cd78280273f3876d53c12",
+    "ancestor.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ancestor.stdout": "0cc85a4c349bf4376797b9ded7ef1011c10ded5f876691fd3ecf7ec91e24d3b2",
+    "candidate-host.c": "cc4f31ae7b3361f7a298f7d808d4abdb782bcdfa481a6d8f1a78459553b89042",
+    "candidate.c": "d90844d2b9b83bfa5f427b2c2ef34fc21bc8ac886c6cb1c2d3943a85644ba89c",
+    "candidate": "41b99c14abba8b7d1d041fedf5c8f0285facf6d38604ac13d8ed433b65c91b25",
+    "candidate.compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate.stdout": "f13556034a0a3841cf036bfe3762a1711241c1d9739d83eb9b236b9bf3d0d020"
+  }
+}

@@ -1,0 +1,15 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-registration-refusal-fix-v138/qa/review-1791120241370938964/inputs/qa/registration.cjs:60
+ const twoBase=baseline.map((e,i)=>i===2?native(twoP):i===5?native(twoG):e),ready=await last(twoBase),opened=[...twoBase,menuOpen(ready,'actor-b')],menu=await last(opened),chosen=[...opened,select(menu,'Restore')],prepared=await last(chosen);
+                                                                            ^
+
+SyntaxError: Identifier 'ready' has already been declared
+    at wrapSafe (node:internal/modules/cjs/loader:1888:18)
+    at Module._compile (node:internal/modules/cjs/loader:1930:20)
+    at Object..js (node:internal/modules/cjs/loader:2096:10)
+    at Module.load (node:internal/modules/cjs/loader:1678:32)
+    at Module._load (node:internal/modules/cjs/loader:1470:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:33:47
+
+Node.js v26.10.0
