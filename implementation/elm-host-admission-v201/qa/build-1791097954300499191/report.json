@@ -1,0 +1,362 @@
+{
+  "passed": true,
+  "inputs": {
+    "src/Effects.elm": "3254a6c60a0bc18fc61840806ef38c290ec3ebc82593cf3020fae5bf397e271d",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Binding.elm": "b59741af61d833c8bdb06a11f80b414904300561a2d931dedbaf9cd0a30d94e2",
+    "src/Shell.elm": "6010ff9857601d1ef61c071026b5438b6745773e4bff1c57453d14944537523c",
+    "src/ShellReplay.elm": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "9d5e8167e9902c25cabdb5a9a5f670373ae1f86ba72a95ca25ca4b81f1e7e335",
+    "src/TaskbarShellReplay.elm": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "666f4bd9f6fe0330f2c31e98f38eb4126fab790558e7ab1cbbea3fb0727b8395",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Surface.elm": "2da14393e096869aadf35e554690bec115257f416a6e93c1366ca116fdc93fe7",
+    "src/SurfaceController.elm": "ac423369f34990ca13e15f0f832bbb3c7e946822aefa24062dfcc7b50e3e8ab2",
+    "src/SurfaceRenderer.elm": "129421e01ad93aed742ee94b6786d10ace66c05df03205a195f54b3397004f65",
+    "src/Popup.elm": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+    "src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "src/Presentation.elm": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/Main.elm": "8640e6ea0da834587cb551d5c209941ea4af70fb75946bd84681fedd6992a5af",
+    "src/Inspection.elm": "cd7a4ba44a6ed60d610413f37c7e8110b447c3255f9c3367f8161c778678ae8c",
+    "src/OutputController.elm": "be0ba68793c50af8c03a9b6c7a9ced317f4f7913795691c40bdbaa73c987569d",
+    "src/OutputReplay.elm": "ccd108bde04c181a28b72f993986485e8818fe525c422f62c2004bdfe79813a1",
+    "src/Bar.elm": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+    "native/host.c": "3e2f39ba98d4ffe0ba787600f5b251c2561465c2cf46241a70564be5fef7b73d",
+    "native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/shared-host.c": "b76cd6bbd1e10189120dce7c9e9641290164a2a1407a3048ba3252eddb8584fd",
+    "native/host-journal.h": "831e091513e72bf4f7eec24c07a62a7175d4690fd16ffd2cbfbf07f26a0c3b5f",
+    "adapter/daemon.py": "ef57b56f276b0ff3e017f951436a884b3cf65ad2aca19dd20b922bcb81a93ac8",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/recovery_journal.py": "2f81483112d928644b7d2ac89b6b7c46775302ab3b872ce80f730a84200c5654",
+    "adapter/recovery_fault.py": "e0a0256756338b71d613f4ddf22411d94e0e03e33dfface883d95f13cd91757b",
+    "assets/index.html": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+    "assets/shell.css": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+    "assets/adapter.js": "35ddb6520444553153c5d876469b937af59fd8576d18e07f5ceb32a3b299c8bc",
+    "assets/popup-adapter.js": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+    "assets/popup.html": "e7f22f6695e01a896e039a1bc00d40709aeb472338f422cacad0a4f6f01bd043",
+    "assets/bar.html": "0bc7db4109ba9ac6a2ee62a63dc9d475287e95b086e1e7363c7807d332b1275e",
+    "assets/bar-adapter.js": "dfaa8b65e2e4550a24b3dd1e8feb75284b154d4a2f051eb676c5804627c0f69c",
+    "qa/build.py": "5e835cd75c3bb1e8c6dae302c252aa0838e7d3c655f8ed6daf9feadd1089eced",
+    "qa/check.py": "87d54980c01dc95a32cf850e2a300586314caefdede8e0ec10add1c960eaebf2",
+    "qa/model.py": "bb0ba0b2627074f42bb3bc9c510323a2e46cb1c2f1d6d4ae6b67e6f255ca28ad",
+    "qa/replay.cjs": "592d95c610e33e5c09b556eceb6fd0914d6e3a58feab0bcb415f3f1e31b08671",
+    "qa/shell.cjs": "e9fcb34f279d228d8ba67498e988bdad6a6e03c7b83951b99bd9d958c7bef4ac",
+    "qa/presentation.cjs": "5024535b0c18b169dc8b6dfe3ab9f3c977bcf716f35a7c13789d371c10d43b32",
+    "qa/surface.cjs": "adedeca7c96974f78b8ccc1cbc773322e05304c4f4b6dfda0ad8e196fb6634b0",
+    "qa/output_model.py": "4880026abf790ecc44ce15e45238a16294f10b9518eec81202f3392ca0162e47",
+    "qa/outputs.cjs": "3b5d53022c40b90bc9d4bee784b00de0168b4f49f82932e6b1d2d5ff3e25f05a",
+    "qa/outputs.py": "ad2ae51cd4bca31e09e6fa65de47a257f3c8e1bc01d98d3438c17f14bea369eb",
+    "qa/component-manifest.json": "2b29148dd40604b78cfeb75f90af05c3a2f6c62a30f20a080ce910c6c0167074",
+    "qa/recovery.cjs": "c57990536175cab448f1afe16fd3c77a3584cdabcdd880ce783666fa752d7ed9",
+    "qa/journal.py": "6560a71568e94782bbab0af41692bf564daf7e8c261f7236c60375cb44794609",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "scope": "Build only; GUI, GPU and complete native qualification separate",
+  "commands": [
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/popup-adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Popup.elm",
+        "--optimize",
+        "--output=assets/popup.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "bar-adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/bar-adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "bar-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Bar.elm",
+        "--optimize",
+        "--output=assets/bar.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay-checks",
+      "command": [
+        "node",
+        "qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/replay-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/ShellReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/shell.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell-checks",
+      "command": [
+        "node",
+        "qa/shell.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/shell.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/shell-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "recovery-checks",
+      "command": [
+        "node",
+        "qa/recovery.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/shell.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/recovery-report.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "flags",
+      "command": [
+        "pkg-config",
+        "--cflags",
+        "--libs",
+        "gtk+-3.0",
+        "webkit2gtk-4.1",
+        "gtk-layer-shell-0",
+        "json-glib-1.0",
+        "gio-unix-2.0"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-deprecated-declarations",
+        "native/shared-host.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/elm-host",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "host-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/elm-host",
+        "--self-test"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "surface-test-build",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "native/surface-test.c",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/surface-tests",
+        "-I/usr/include/webkitgtk-4.1",
+        "-I/usr/include/libsoup-3.0",
+        "-I/usr/include/gtk-layer-shell",
+        "-I/usr/include/gtk-3.0",
+        "-I/usr/include/pango-1.0",
+        "-I/usr/include/cloudproviders",
+        "-I/usr/include/cairo",
+        "-I/usr/include/gdk-pixbuf-2.0",
+        "-I/usr/include/glycin-2",
+        "-I/usr/include/at-spi2-atk/2.0",
+        "-I/usr/include/at-spi-2.0",
+        "-I/usr/include/atk-1.0",
+        "-I/usr/include/dbus-1.0",
+        "-I/usr/lib/dbus-1.0/include",
+        "-I/usr/include/fribidi",
+        "-I/usr/include/pixman-1",
+        "-I/usr/include/harfbuzz",
+        "-I/usr/include/freetype2",
+        "-I/usr/include/libpng16",
+        "-I/usr/include/json-glib-1.0",
+        "-I/usr/include/gio-unix-2.0",
+        "-I/usr/include/glib-2.0",
+        "-I/usr/lib/glib-2.0/include",
+        "-I/usr/include/libmount",
+        "-I/usr/include/blkid",
+        "-I/usr/include/sysprof-6",
+        "-pthread",
+        "-lwebkit2gtk-4.1",
+        "-lsoup-3.0",
+        "-ljavascriptcoregtk-4.1",
+        "-lgtk-layer-shell",
+        "-lgtk-3",
+        "-lgdk-3",
+        "-lpangocairo-1.0",
+        "-lcairo-gobject",
+        "-lgdk_pixbuf-2.0",
+        "-latk-1.0",
+        "-lpango-1.0",
+        "-lcairo",
+        "-lharfbuzz",
+        "-ljson-glib-1.0",
+        "-lgio-2.0",
+        "-lgobject-2.0",
+        "-lgmodule-2.0",
+        "-pthread",
+        "-lglib-2.0",
+        "-lz"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "surface-tests",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-v201/qa/build-1791097954300499191/surface-tests"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "binarySHA256": "40a7b700afa80e3443ba6418054771597f38f4257a7685e2ea7d31332ceff264"
+}

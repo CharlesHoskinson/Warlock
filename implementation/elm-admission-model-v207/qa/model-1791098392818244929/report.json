@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Host admission/publication and correlated broker settlement contract; abstract model, not automatic C/filesystem/Elm refinement.",
+  "sourceSHA256": "c291fd05f6d441e556dae9f0fb73f273511540cb412b2af2bfc0394a8af3e09f",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(unreadAdmissionRecoversUnknownTest|durableAdmissionBeforePublicationTest|matchingSettlementResolvesAdmissionTest|olderCommitCannotResolveNewAdmissionTest|staleBindingCannotAdmitTest|noReplayAfterReplacementTest|freshExplicitIntentCanProceedTest|wrongReceiptCannotResolveTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "c291fd05f6d441e556dae9f0fb73f273511540cb412b2af2bfc0394a8af3e09f",
+    "model.py": "2b45a4d517d974777771d3849bae4caecead589726bf3cad19a81ffbe8bbead2",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-unreadAdmissionRecoversUnknownTest-0.itf.json": "45389ce83a74b18402a1fbbc25e2e449af3664aba3d8b3ea3f6ed302b9d1ac86",
+    "named-durableAdmissionBeforePublicationTest-1.itf.json": "860f1f8ee04c1358a17b2794e909632f740998fbc1f691c01da4b6f134206661",
+    "named-matchingSettlementResolvesAdmissionTest-2.itf.json": "e3ec2139601a42b4730685af751122153736d711689d6d9beb90e74018bf9a58",
+    "named-olderCommitCannotResolveNewAdmissionTest-3.itf.json": "ec5ba4a4d4d82c5fda7497dceca9cb17adb3cb5f86ae9b6be01031b5844622ec",
+    "named-staleBindingCannotAdmitTest-4.itf.json": "9fe5d7706948bd3d36a2807a4f8ecb2d0350cab4ab1991bc2a17e0bc1b8d5edb",
+    "named-noReplayAfterReplacementTest-5.itf.json": "16e3ab5dc772753bdb2b095b71416d64bd25710d7318307a44db9b7837f7481b",
+    "named-freshExplicitIntentCanProceedTest-6.itf.json": "111a3bb92d78de25b60f4436f79687e2cfa0decbbf85d87964046bdbdcc4594f",
+    "named-wrongReceiptCannotResolveTest-7.itf.json": "6d5237dcc21c149d8c1cefd130c4d44c65a75b377fac241be57eb531c1b0d215",
+    "named.stdout": "bac521263727cceec2f1dff19df425d7081cfe41beac7cdd330dc3dddb1c5eca",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "27c9f493349c63d3c19dfb902fdfa71969fade739957e08132facd585747a661",
+    "invariants.stdout": "fa3ab83df0e7b65ff3e6c185e77c1889591113a19040b35a5ce75beeb1172b57",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

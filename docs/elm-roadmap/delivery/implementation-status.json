@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-authenticated-recovery-native-v200",
-  "status": "Actual lost native receipt/replacement Unknown DOM/no automatic replay and same original authenticated sender rehandshake refusal pass52/55 native checks;19 filesystem and30+20+27 compiled checks per candidate. Frontend durable admission/global revocation/full release open.",
+  "activeSlice": "implementation/elm-admission-settled-native-v214",
+  "status": "Bound host durable admission before publication/broker read passes57 unread and43 settled native checks;22 real C/filesystem/correlation,19 journal,30+20+27 compiled and Quint8/1000 pass. Full requirements/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1204,10 +1204,37 @@
         "Same original PID rehandshake refusal proved; global revocation of a live former broker by another process not established",
         "Interrupted minimize/restore variants and full coherent GPU/menu/core/AT/release gates remain open"
       ]
+    },
+    "durableHostAdmissionV214": {
+      "passed": true,
+      "scope": "Actual durable bound host admission before Pending publication/broker read; unread replacement Unknown/no replay and exact settled commit suppression; full release open",
+      "nativeUnreadChecks": 57,
+      "nativeSettledChecks": 43,
+      "actualCAdmissionFilesystemChecks": 22,
+      "actualJournalChecks": 19,
+      "compiledRecoveryChecks": 30,
+      "compiledInheritedReducerChecksRerun": 20,
+      "compiledInheritedShellChecksRerun": 27,
+      "namedQuintScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "frontendDurableAdmissionAcceptance": true,
+      "singleInflightIntentOnly": true,
+      "storageErrorUXAccepted": false,
+      "journalInstanceMigrationAccepted": false,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "sealedRuntimeFiles": 20,
+      "evidence": "implementation/elm-admission-settled-native-v214/qa/slice-manifest.json",
+      "limitations": [
+        "Only single admitted window intent; storage-error UX and compositor-instance namespace/migration remain open",
+        "Interrupted minimize/restore, global former-live-broker revocation and full original91/coherent release tuple still require qualification",
+        "Quint8/1000 is abstract admission/settlement policy, not automatic C/filesystem/Elm refinement"
+      ]
     }
   },
   "next": [
-    "Close durable frontend admission before broker read; qualify interrupted minimize/restore and global former-live-broker revocation, then integrate new core/menu/GPU tuple with remaining AT/hotplug/full native operations.",
+    "Qualify interrupted minimize/restore on durable host tuple; address storage-error UX and compositor-instance journal namespace/migration, then global former-live-broker revocation and integrated new core/menu/GPU original regressions.",
     "Measure and freeze workload/resource/input-presentation budgets on the shared host; qualify GPU context loss/recovery and keep WebGPU unavailability explicit.",
     "Integrate reviewed menu/new native buffer/viewport tuple with shared scope/controller host; preserve old accepted source/ABI evidence and rerun original campaigns.",
     "Continue actual AT/IME, physical output/device and human UX, full scene/window operations, zero-output recovery, C00 and release."

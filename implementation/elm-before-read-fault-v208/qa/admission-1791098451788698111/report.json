@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "actualCAdmissionWritesBeforeBrokerExists",
+      "passed": true
+    },
+    {
+      "name": "hostRecordHasExactIntentAndPendingState",
+      "passed": true
+    },
+    {
+      "name": "unreadBrokerRecoversHostUncertainty",
+      "passed": true
+    },
+    {
+      "name": "olderBrokerCommitDoesNotResolveNewAdmission",
+      "passed": true
+    },
+    {
+      "name": "exactDurableCommitResolvesHostAdmission",
+      "passed": true
+    },
+    {
+      "name": "newHostActionCanBeAdmittedWhileBrokerLockHeld",
+      "passed": true
+    },
+    {
+      "name": "priorSettlementCannotResolveLaterHostIntent",
+      "passed": true
+    },
+    {
+      "name": "correlatedDurableRefusalIsKnown",
+      "passed": true
+    },
+    {
+      "name": "missingBackendBindingRefused",
+      "passed": true
+    },
+    {
+      "name": "retiredBackendBindingRefused",
+      "passed": true
+    },
+    {
+      "name": "twoEffectBatchRefusedBeforePersistence",
+      "passed": true
+    },
+    {
+      "name": "refusedBatchesPreserveLastAdmission",
+      "passed": true
+    },
+    {
+      "name": "unsupportedOperationRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchedNativeEpochRefused",
+      "passed": true
+    },
+    {
+      "name": "zeroRequestRefused",
+      "passed": true
+    },
+    {
+      "name": "protocolBooleanRefused",
+      "passed": true
+    },
+    {
+      "name": "publicAdmissionTargetRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkAdmissionTargetRefused",
+      "passed": true
+    },
+    {
+      "name": "competingHostWriterRefused",
+      "passed": true
+    },
+    {
+      "name": "forgedHostSettlementRefused",
+      "passed": true
+    },
+    {
+      "name": "publicAuthorityConfigRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkConfigAncestryRefused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-before-read-fault-v208/qa/admission.py": "7eebe6e03fdf235c8c544dd5df60e917b05399c7423914098b616d46e4039093",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-before-read-fault-v208/native/admission-test.c": "199293181acb8fd150e3349924a946e9242dd2cc0b191df41a9c2094bf48040a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-before-read-fault-v208/native/host-journal.h": "7ca45dd1bebfcc16bfbbd53925aacc5bf1f688efae64fc8ff2775f1785a64771",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-before-read-fault-v208/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-before-read-fault-v208/adapter/recovery_journal.py": "3d2bba25334a108d7d7bd5dc32b54b312334725130f52b574c5d6fa88f37d672",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-before-read-fault-v208/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  },
+  "binarySHA256": "c3c980ff6f8f9dafe6b72e7ce8e51738f2f6b65b03ec9d18814270c66d6063cf",
+  "runs": [
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":1,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":1,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"42\",\"generation\":\"44\",\"incarnation\":\"7\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
