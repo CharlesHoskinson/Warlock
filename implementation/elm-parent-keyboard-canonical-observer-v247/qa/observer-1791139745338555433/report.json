@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "commands": [
+    {
+      "name": "scanner-server-header",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "server-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated/parent-input-server.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scanner-private-code",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated/parent-input-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-observer-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated/parent-input-protocol.c",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/actual-observer"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-observer",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/actual-observer"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "missing-uniqueness-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated/parent-input-protocol.c",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/missing-uniqueness"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "missing-revision-bound-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/generated/parent-input-protocol.c",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-1791139745338555433/missing-revision-bound"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-test.py": "55c3c6f38d63153ec5571b291d6a7b764f2a8d9cb3fba17cc05cb0db671e82ff",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/observer-test.c": "abdc638fca93d502f176bc14c83f13974e21704ecf944eb679609c96a1053c37",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/parent-input-module.c": "35501eea56d198569b7c24783efec4daeced63e559dda35be3ae9c04fbf4e9eb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989"
+  },
+  "actualChecks": 32,
+  "mockScope": "Actual production private header/struct and actual owning ABI compile; wl_resource credentials/view selection and coordinate API are explicit CPU stubs, no native geometry observations.",
+  "unsafeControls": [
+    {
+      "name": "missing-uniqueness",
+      "rejected": true,
+      "exitCode": -6
+    },
+    {
+      "name": "missing-revision-bound",
+      "rejected": true,
+      "exitCode": -6
+    }
+  ],
+  "artifacts": {
+    "scanner-server-header.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-server-header.stderr": "0d6c4a9bd10d7db8249c005fe178c32cd281cdf812fd8403242491103afae02d",
+    "scanner-private-code.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-private-code.stderr": "0d6c4a9bd10d7db8249c005fe178c32cd281cdf812fd8403242491103afae02d",
+    "actual-observer": "66e50ab606df692a663a5ab9485ef62a1df3eb8fc5bb223dc6ef63045cc62ad8",
+    "actual-observer-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-observer-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-observer.stdout": "45cc231852cc3d13806e36fed5ab3154c7cbf730fdd9b00e6991429221d9f0ed",
+    "actual-observer.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness": "47d15b0e9919f9764a96887a6634de4bd2abeaa6a1bfb9c50ffe8be7fd6feda9",
+    "missing-uniqueness-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness.stderr": "642d8468107969598f6b40706b5536c7614337c751b05169fac9199b1185d55c",
+    "missing-revision-bound": "6629776f9f64bfc0805b829a5dbc987bdee5b0bd5395d537452f6105290f02c6",
+    "missing-revision-bound-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-revision-bound-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-revision-bound.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-revision-bound.stderr": "a4d8e09179634030c43129e0f59b0834ef4609929196ef12ca333081d457135c",
+    "generated/parent-input-server.h": "2698de83efbbbad0bdc26bbdcfc1a9e8c2cf4a0951b6a8e5bdc41a95a77fdbc6",
+    "generated/parent-input-protocol.c": "83f2e28bc26341d69cc61a6534460db63837f554e6e3ca2f28244d331b724305",
+    "generated/probe-struct.h": "822e7123e54476a614b9ad8b501c67c7932ffef086ec69fcf399942e27c714a5",
+    "generated/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69"
+  }
+}

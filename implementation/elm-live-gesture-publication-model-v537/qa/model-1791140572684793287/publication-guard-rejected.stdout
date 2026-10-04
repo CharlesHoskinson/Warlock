@@ -1,0 +1,16 @@
+
+  pipeline
+    1) newDomCannotRebaseProofTest failed after 1 test(s)
+
+  1 failed
+
+  1) newDomCannotRebaseProofTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-live-gesture-publication-model-v537/qa/model-1791140572684793287/publication-guard.qnt:25:140
+        25:  run newDomCannotRebaseProofTest = init.then(press).then(release).then(redundantCommit).then(render).then(callback).then(finish).then(all {assert(s.forwards==0),s'=s})
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=newDomCannotRebaseProofTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 publication-guard.qnt

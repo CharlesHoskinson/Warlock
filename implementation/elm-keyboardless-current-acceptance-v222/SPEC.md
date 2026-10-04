@@ -1,0 +1,5 @@
+# Coherent current GUI and keyboardless focus adoption
+
+Adopt held GUI521/current broker528 and Core205/plugin206/AQ155/observer207 without changing their source. New native217/218/219/220/221 retain every original actual check call, deadline, native input recipient, receipt, effect, pixel oracle and cleanup obligation. Qualify this composition separately from213 GUI507 and531 Core470. Bounds215 remain a standalone controlled XDG/Core205 proof, not GUI521 bounds or GTK01-08 acceptance.
+
+Source/model gate204, Core205's432 unchanged payloads/694 headers/13412 exports, current GUI model519/typed522/compiled controls527 and owning broker528 closure remain retained ancestry. Rebuild byte-identical canonical toolkit observer246 as223 against Core205; compiled ownership alone does not establish GTK conformance. Preserve all failure history. Full S01–S16/C00–C06, original pointer504 causal reproduction, GTK/Qt/Xwayland journeys, AT/IME, GPU/hardware, users, budgets and reversible release remain open.

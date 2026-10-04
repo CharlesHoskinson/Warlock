@@ -1,0 +1,3 @@
+# Live-gesture publication pipeline model
+
+Fresh derivative of535. All nine named sequences and six typed mutation controls remain. Random safety exploration now begins after a physical gesture press/release, with an available proof, so callbacks and completion are reachable. One gesture only, one view, abstract counters and logical age; no native input, production C implementation, UInt64 rollover, or complete compositor proof. Genuine view, epoch, publication and expiry changes invalidate the old proof. An effectless coalesced update preserves it. The pending/availability invariant and at-most-once forwarding apply across 1,000 traces of up to40 steps. The old535 trace campaign is retained as a weaker idle-state campaign.

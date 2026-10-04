@@ -1,0 +1,226 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual source preservation and compiled client correlation with explicit request/dispatch stubs; no socket or GUI",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/test.py": "0f1adea2600d363407edd9a98c6110e048c271233a51a5b93b24ea2a3fe88464",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-test.c": "1ef79e35e01996d8c504d01a096115732f4f0cca7294daee6f68e2a360e9df06",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/parent-input-client.c": "690b781b457f3c2daa9dfa4d945370537f9768d2d642bb96b7bd56d95e81a606",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/parent-input-module.c": "35501eea56d198569b7c24783efec4daeced63e559dda35be3ae9c04fbf4e9eb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/private-runtime.h": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/native/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/original151/parent-input-client.c": "7702e81d1def00cd5f0d1efe145ef56dcd341d30e4fc0da37ceaaf1ed6c2bf63",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/original151/parent-input-module.c": "4348ac16f8d5a0be603233abd79c2aa53d227e2b3acae7cbbd49550c5ca937cb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/original151/parent-input.xml": "8982cc1f1db9af5923b3c5f4122149ed2eaa705d554e507eb400938d7f99fb2b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/original225/parent-input-client.c": "fbc26ba3529e6a2994df7025be734f1dbc03b14afd06ad664a1821b72d66a88c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/original225/parent-input-module.c": "f0bd1982a702769eb0d61eea41b0660b88d3852cd140cdecf7832ab22954162b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/original225/parent-input.xml": "7f28f00de0002b84b27bc021f4b19bbe2fe8444300a94eec01688b8864d5edbe"
+  },
+  "checks": [
+    {
+      "name": "legacy-byteexact:clock_now",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:focused_pid",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:held_key_mask",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:release_keys",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:release_all",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:resource_destroyed",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:destroy_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:valid_point",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:motion_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:button_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:pointer_capability_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:pointer_burst_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:same_start",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_held_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:key_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:disconnect_held_key_child_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:keyboard_capability_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:keyboard_focus_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:bind_probe",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:seat_destroyed",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:done",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_request",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_capability",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_keyboard_capability",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_keyboard_focus",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_burst",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_held_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_key_disconnect",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:send_key",
+      "passed": true
+    },
+    {
+      "name": "legacy-byteexact:number",
+      "passed": true
+    },
+    {
+      "name": "intentional-private-socket-guard-change",
+      "passed": true
+    },
+    {
+      "name": "legacy-XML-v7-exact",
+      "passed": true
+    },
+    {
+      "name": "observer-XML-v1-exact",
+      "passed": true
+    },
+    {
+      "name": "actual225header-exact",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "scanner-client-header",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "client-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/generated/parent-input-client.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scanner-private-code",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/generated/parent-input-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-client-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-D_GNU_SOURCE",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/generated",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/client-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/generated/parent-input-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/actual-client"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(('actual-client-compile', b'In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/client-test.c:19:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/parent-input-client.c:4:9: error: \\xe2\\x80\\x98_POSIX_C_SOURCE\\xe2\\x80\\x99 redefined [-Werror]\\n    4 | #define _POSIX_C_SOURCE 200809L\\n      |         ^~~~~~~~~~~~~~~\\nIn file included from /usr/include/bits/libc-header-start.h:33,\\n                 from /usr/include/stdint.h:26,\\n                 from /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h:11,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/generated/parent-input-client.h:6,\\n                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/client-test.c:2:\\n/usr/include/features.h:319:10: note: this is the location of the previous definition\\n  319 | # define _POSIX_C_SOURCE        202405L\\n      |          ^~~~~~~~~~~~~~~\\ncc1: all warnings being treated as errors\\n'))",
+  "artifacts": {
+    "scanner-client-header.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-client-header.stderr": "77c6862f21931fd3744f2e82083600ec77aeeb5d2833d15a06e33cf74dca1e6a",
+    "scanner-private-code.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-private-code.stderr": "77c6862f21931fd3744f2e82083600ec77aeeb5d2833d15a06e33cf74dca1e6a",
+    "actual-client-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-client-compile.stderr": "4a55e7eb2aab2c213c8173fb56a3aa1803319adc0c52aa4e7fcd28150748dd4c",
+    "generated/parent-input-client.h": "cd683cceca1c7026d8195dae8a52db4d79353eda4acf234d5a64a0938a892b81",
+    "generated/parent-input-protocol.c": "83f2e28bc26341d69cc61a6534460db63837f554e6e3ca2f28244d331b724305",
+    "inputs/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "inputs/parent-input-module.c": "35501eea56d198569b7c24783efec4daeced63e559dda35be3ae9c04fbf4e9eb",
+    "inputs/parent-input-client.c": "690b781b457f3c2daa9dfa4d945370537f9768d2d642bb96b7bd56d95e81a606",
+    "inputs/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "inputs/private-runtime.h": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2",
+    "inputs/client-test.c": "1ef79e35e01996d8c504d01a096115732f4f0cca7294daee6f68e2a360e9df06"
+  }
+}

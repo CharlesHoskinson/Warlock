@@ -1,0 +1,185 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "parent-input-module.c:clock_now",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:focused_pid",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:held_key_mask",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:release_keys",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:release_all",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:resource_destroyed",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:destroy_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:valid_point",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:motion_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:button_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:pointer_capability_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:pointer_burst_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:same_start",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:disconnect_child_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:disconnect_held_child_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:key_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:disconnect_held_key_child_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:keyboard_capability_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:keyboard_focus_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:bind_probe",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:seat_destroyed",
+      "passed": true
+    },
+    {
+      "name": "parent-input-module.c:compositor_destroyed",
+      "passed": true
+    },
+    {
+      "name": "module-entry-guard-only",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:done",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:observation",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:global",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:removed",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_request",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_capability",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_keyboard_capability",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_keyboard_focus",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_burst",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_disconnect",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_held_disconnect",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_key_disconnect",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_key",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:send_observe",
+      "passed": true
+    },
+    {
+      "name": "parent-input-client.c:number",
+      "passed": true
+    },
+    {
+      "name": "client-main-exact",
+      "passed": true
+    },
+    {
+      "name": "239-exact:parent-input.xml",
+      "passed": true
+    },
+    {
+      "name": "239-exact:surface-observer.h",
+      "passed": true
+    },
+    {
+      "name": "225-actual-header-exact",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "original239/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "original239/parent-input-module.c": "ae6c05a98befc85078a6e58d7c1d2456a6b1335a1a9f7f5fc68fb7899a858abd",
+    "original239/parent-input-client.c": "05038f58c1e1996b9843dce4cac800f2e4e71257d3c7c41aa73da495735308fc",
+    "original239/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "native/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "native/parent-input-module.c": "35501eea56d198569b7c24783efec4daeced63e559dda35be3ae9c04fbf4e9eb",
+    "native/parent-input-client.c": "f17938da3c0e1ac017035bdd003da6e3ba081a32c73c97821b04a67f8ce95689",
+    "native/parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "native/private-runtime.h": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2"
+  }
+}

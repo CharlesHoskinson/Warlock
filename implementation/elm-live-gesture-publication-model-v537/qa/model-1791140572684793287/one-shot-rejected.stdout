@@ -1,0 +1,16 @@
+
+  pipeline
+    1) duplicateCallbackInertTest failed after 1 test(s)
+
+  1 failed
+
+  1) duplicateCallbackInertTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-live-gesture-publication-model-v537/qa/model-1791140572684793287/one-shot.qnt:26:132
+        26:  run duplicateCallbackInertTest = init.then(press).then(release).then(callback).then(finish).then(callback).then(finish).then(all {assert(s.forwards==1),s'=s})
+                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=duplicateCallbackInertTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 one-shot.qnt

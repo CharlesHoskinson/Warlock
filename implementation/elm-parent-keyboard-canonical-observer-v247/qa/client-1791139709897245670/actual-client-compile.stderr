@@ -1,0 +1,13 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/client-test.c:19:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/parent-input-client.c:4:9: error: ‘_POSIX_C_SOURCE’ redefined [-Werror]
+    4 | #define _POSIX_C_SOURCE 200809L
+      |         ^~~~~~~~~~~~~~~
+In file included from /usr/include/bits/libc-header-start.h:33,
+                 from /usr/include/stdint.h:26,
+                 from /usr/lib/gcc/x86_64-pc-linux-gnu/16/include/stdint.h:11,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/generated/parent-input-client.h:6,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/client-1791139709897245670/inputs/client-test.c:2:
+/usr/include/features.h:319:10: note: this is the location of the previous definition
+  319 | # define _POSIX_C_SOURCE        202405L
+      |          ^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors

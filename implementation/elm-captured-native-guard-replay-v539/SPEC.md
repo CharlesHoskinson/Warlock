@@ -1,0 +1,3 @@
+# Cross-language counterfactual native guard replay
+
+Consume the full before/after packets emitted by the compiled507 and521 Elm controllers in538. Compile the unmodified521 production native host and call its real packet validator, context admission, consume, and completion guards with synthetic WebKit identities and a synthetic physical release proof. Verify obsolete507 publication rejects the original callback, while521 coalescing preserves it. Retain view, input epoch, lease, expiry, disabled target, once-only consumption, DOM verification and publication-during-verification guards. No actual GTK delivery, DOM evaluation, output change or compositor run occurs. This proves a mechanism under a controlled replay; it does not reproduce or close504.
