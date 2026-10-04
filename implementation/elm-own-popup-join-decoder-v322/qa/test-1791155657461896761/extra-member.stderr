@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-join-decoder-v322/qa/test-1791155657461896761/test.py", line 48, in <module>
+    print(json.dumps(exercise(Path(sys.argv[2]))));raise SystemExit(0)
+                     ~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-join-decoder-v322/qa/test-1791155657461896761/test.py", line 34, in exercise
+    o=copy.deepcopy(base);o['surfaceCount']=3;o['members'].append({'surface':s(13),'mapped':True});reject('extra samehost surface',lambda:matched(o))
+                                                                                                   ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-join-decoder-v322/qa/test-1791155657461896761/test.py", line 17, in reject
+    raise AssertionError('unsafe acceptance: '+name)
+AssertionError: unsafe acceptance: extra samehost surface

@@ -1,0 +1,77 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual strict parser/diagnostic matcher against synthetic hostile native records; no native query/host authentication/operation grant",
+  "mutants": [
+    {
+      "name": "lock-bypass",
+      "exitCode": 1,
+      "killed": true
+    },
+    {
+      "name": "extra-member",
+      "exitCode": 1,
+      "killed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-join-decoder-v322/join.py": "596b934cf700bb89356e66669cbff129fa2f96153072db26d6c6c7211c882629",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-join-decoder-v322/qa/test.py": "db7f6d39860dc45d306ea49725f48241d115c7d0a68d0db005f9ca2900dbb599"
+  },
+  "checks": [
+    "layer diagnostic positive never grant",
+    "empty native snapshot",
+    "empty no own match",
+    "schema schema True",
+    "schema pid 999",
+    "schema complete False",
+    "schema sequence 01",
+    "schema sequence 1",
+    "schema sequence 18446744073709551616",
+    "schema surfaceCount 4097",
+    "schema surfaceClientCount 3",
+    "schema grabPresent False",
+    "schema xdgGrab False",
+    "schema grabKeyboard 1",
+    "blocked sessionLocked",
+    "blocked exclusiveLayerPresent",
+    "blocked layoutDragPresent",
+    "blocked heldButtons",
+    "missing grabKeyboard",
+    "missing grabPointer",
+    "changed credential surface",
+    "changed credential root",
+    "duplicate member",
+    "duplicate popup",
+    "missing owner",
+    "unmapped popup",
+    "root membership disagreement",
+    "extra samehost surface",
+    "unmapped member",
+    "unjoined parent",
+    "wrong root role",
+    "same PID resource IDs on distinct connections decode",
+    "extra second connection",
+    "stale native sequence",
+    "unknown field",
+    "duplicate JSON key",
+    "invalid UTF8",
+    "nonfinite JSON",
+    "oversize",
+    "boolean requested owner"
+  ],
+  "error": "AssertionError(('duplicate-key', b''))",
+  "artifacts": {
+    "join.py": "596b934cf700bb89356e66669cbff129fa2f96153072db26d6c6c7211c882629",
+    "test.py": "db7f6d39860dc45d306ea49725f48241d115c7d0a68d0db005f9ca2900dbb599",
+    "lock-bypass.py": "de7de9ab3d138cf58345a22d8cbcfb0b74912b8e019e5001f737a6895d330504",
+    "lock-bypass.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "lock-bypass.stderr": "c78d00172af8ef56dd835e957f990f0e4dc2de2020fd4e4e517d639809a03368",
+    "extra-member.py": "7bd6fde62f59ec4614203681dcaca2c49d1d464def390cc6df73b4beacc3e016",
+    "extra-member.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extra-member.stderr": "255e6dfc2d4e19090cd994af8ba362b6ac8945f11731c668fa4cd9fa3b9228ad",
+    "duplicate-key.py": "10459b15b2544721584b56192e1725cd68f71a6df753122c9df2a281f1433abd",
+    "duplicate-key.stdout": "b22eccc5f084dcd0a4f698749925069214db6a8a10de82f7b7458ded6af2cdde",
+    "duplicate-key.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

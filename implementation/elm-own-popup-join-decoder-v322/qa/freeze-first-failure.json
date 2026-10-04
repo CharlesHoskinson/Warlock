@@ -1,0 +1,10 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "exitCode": 1,
+  "scope": "First protected freezer attempt; incorrect assumed upstream manifest field",
+  "unit": "qa-harness-7ac219536e954b35b7eec628dbba29b8.scope",
+  "invocationId": "f38292f66279454bb90b1e0746bf49f6",
+  "error": "KeyError: 'externalFiles'",
+  "correction": "Use actual315 external mapping of absolute paths to SHA256 strings; no upstream changes."
+}
