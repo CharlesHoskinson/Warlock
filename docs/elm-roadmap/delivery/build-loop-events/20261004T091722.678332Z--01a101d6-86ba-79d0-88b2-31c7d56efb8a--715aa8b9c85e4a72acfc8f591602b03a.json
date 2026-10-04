@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "715aa8b9c85e4a72acfc8f591602b03a",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T09:17:22.678332+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-geometry-recovery-acceptance-v284",
+  "nextWork": [
+    "Fix reproduced cold loss of earlier Unknown after unrelated commit with bounded durable multi-intent recovery, strict legacy migration and per-operation host/broker correlation; then coherent native host geometry/context recovery integration and full release gates"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-geometry-recovery-acceptance-v284/qa/slice-manifest.json",
+      "sha256": "d240ebde75ae20a61065a8a340cabb9042d343936bf80ea85df4146d4f08de3a",
+      "size": 73539
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

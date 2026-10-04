@@ -1,0 +1,30 @@
+{
+  "passed": false,
+  "checks": [
+    {
+      "name": "AUnknownDurable",
+      "passed": true
+    },
+    {
+      "name": "AUncertaintyInitiallyRecoverable",
+      "passed": true
+    },
+    {
+      "name": "BCommitDurable",
+      "passed": true
+    },
+    {
+      "name": "AUnknownMustSurviveUnrelatedBCommitAndColdRestart",
+      "passed": false
+    }
+  ],
+  "scope": "Actual durable journal reproduction; no native mutation or GUI acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-unresolved-recovery-repro-v283/qa/repro.py": "2cf0edefadc0c33e092487a988f8146556a9b28ff5d5dda8361d85292950672d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-recovery-broker-v280/adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-recovery-broker-v280/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+  },
+  "observedRecovery": null,
+  "error": "AssertionError('AUnknownMustSurviveUnrelatedBCommitAndColdRestart')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-unresolved-recovery-repro-v283/qa/repro.py\", line 24, in <module>\n    check('AUnknownMustSurviveUnrelatedBCommitAndColdRestart',recovered is not None and recovered['intent']==a)\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-unresolved-recovery-repro-v283/qa/repro.py\", line 9, in check\n    def check(name,value):report['checks'].append({'name':name,'passed':bool(value)});assert value,name\n                                                                                             ^^^^^\nAssertionError: AUnknownMustSurviveUnrelatedBCommitAndColdRestart\n"
+}

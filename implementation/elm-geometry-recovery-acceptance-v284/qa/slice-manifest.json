@@ -1,0 +1,1628 @@
+{
+  "schema": 1,
+  "scope": "Broker journal and compiled shared Elm recovery progress; cold multi-Unknown preservation failed, integrated native release open",
+  "componentChecksPassed": true,
+  "files": [
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/catalog_authority.py",
+      "size": 5008,
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/catalog_transport.py",
+      "size": 2666,
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/daemon.py",
+      "size": 7426,
+      "sha256": "8d3945c42a8a4ae3ac4f319c35557ca8f16098fc108111eb2e50a2c1774b0408"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/effect_endpoint.py",
+      "size": 6985,
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/endpoint.py",
+      "size": 10129,
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/geometry_endpoint.py",
+      "size": 13106,
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/recovery_fault.py",
+      "size": 2017,
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/recovery_journal.py",
+      "size": 10989,
+      "sha256": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/taskbar_catalog.py",
+      "size": 8809,
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/adapter/taskbar_projection.py",
+      "size": 1170,
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/parents.json",
+      "size": 302,
+      "sha256": "23421d846805cd362cd05bd24ba9f9b65bc5ab61cdb8ad764715485be219136b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/catalog_authority.py",
+      "size": 5008,
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/catalog_transport.py",
+      "size": 2666,
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/daemon.py",
+      "size": 7426,
+      "sha256": "8d3945c42a8a4ae3ac4f319c35557ca8f16098fc108111eb2e50a2c1774b0408"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/effect_endpoint.py",
+      "size": 6985,
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/endpoint.py",
+      "size": 10129,
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/geometry_endpoint.py",
+      "size": 13106,
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/recovery_fault.py",
+      "size": 2017,
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/recovery_journal.py",
+      "size": 10989,
+      "sha256": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/taskbar_catalog.py",
+      "size": 8809,
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/adapter/taskbar_projection.py",
+      "size": 1170,
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/qa/framing.py",
+      "size": 3379,
+      "sha256": "35134023087d84356870301865982403fa0acfb8e65c2219212a6a0c19cc2c35"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/inputs/upstream.json",
+      "size": 1014,
+      "sha256": "2cff2c660ad2fe707e75d767a097fbcf07ae2c204ccb018c61d11a7699ca7388"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/report.json",
+      "size": 90486,
+      "sha256": "291563979c19349db8f5f27f4faf21f40de6ee723a6f53bf37b2ca4e5cc960b8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing.py",
+      "size": 3379,
+      "sha256": "35134023087d84356870301865982403fa0acfb8e65c2219212a6a0c19cc2c35"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/recovery-1791104943158385705/report.json",
+      "size": 26237,
+      "sha256": "e265768a75b61adc422ee13d9655d7320929db66d4cde69987c4ebd6563a64c0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/recovery.py",
+      "size": 7044,
+      "sha256": "200a49ed56c5e5dd954f9078056ebf42f5014b766ec2e2fa41e57b7a5a78584f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/transport.py",
+      "size": 3462,
+      "sha256": "3b33c00228433d6cc06a0e8f30e85e0bb988980baf19bcded98ef8a30e192961"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/upstream.json",
+      "size": 1014,
+      "sha256": "2cff2c660ad2fe707e75d767a097fbcf07ae2c204ccb018c61d11a7699ca7388"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/elm.json",
+      "size": 306,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/Main.stderr",
+      "size": 859,
+      "sha256": "d176f68265d115a5a16ddf8e33cd2ec7be58073c684bf2856b23e56ede46423a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/Main.stdout",
+      "size": 513,
+      "sha256": "6f2fa68a47d2447642d133577a206e3bb74eec132076f153fe990186759768d7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "size": 2096,
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "size": 12006,
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "size": 690,
+      "sha256": "0029d1665d1da57c21c6486b5f98107f8c0c12a3df8dfa1a10f6907a9fe31231"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "size": 3314,
+      "sha256": "8172bb230051c144b068f50242b00ceb4d854d22f9c025f8e2c095d80e7aaa58"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "size": 1759,
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "size": 7931,
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "size": 21663,
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "size": 30379,
+      "sha256": "a519cbe59c32e34b88f3bb4f50b0713ae59eb8285a230e110b5ba03c6dfddb55"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "size": 5360,
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "size": 25310,
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "size": 3424,
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "size": 16054,
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "size": 8087,
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "size": 20718,
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "size": 149,
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "size": 7336,
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "size": 10376,
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "size": 30848,
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "size": 3554,
+      "sha256": "86a5e70b1e4939c616a1ec416e6d35b185269190c96b791b35afe303a885df62"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "size": 18602,
+      "sha256": "1caa34df8a4c4617edd9e66a5f7391c4482d8a98615964323bfebc7d3c54098c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "size": 1849,
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "size": 12984,
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "size": 1719,
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "size": 5495,
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "size": 530,
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "size": 3318,
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/d.dat",
+      "size": 5001,
+      "sha256": "64ba73fe370d828af8340a36f8ba4b3ef188a4766c2f0b7fde0bf32eba50e506"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/i.dat",
+      "size": 105328,
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/lock",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm-stuff/0.19.2/o.dat",
+      "size": 441107,
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/elm.json",
+      "size": 306,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/qa/build.py",
+      "size": 2211,
+      "sha256": "92819091b44ea5826072b818b36d9f0e2ccd121279e38903690172af691b8e18"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/qa/fixtures.json",
+      "size": 2495,
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/qa/geometry-fixtures.json",
+      "size": 4353,
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/qa/geometry.cjs",
+      "size": 20743,
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/qa/menu.cjs",
+      "size": 26522,
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/qa/recovery.cjs",
+      "size": 6149,
+      "sha256": "27e8c50f87850d8837fded49e38c9c608dd13c2b8343181deae206e690980df0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/qa/refresh.cjs",
+      "size": 11336,
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/ActionProjection.elm",
+      "size": 3989,
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Binding.elm",
+      "size": 1363,
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Catalog.elm",
+      "size": 2701,
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/CatalogReplay.elm",
+      "size": 1300,
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Desktop.elm",
+      "size": 19555,
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/DesktopReplay.elm",
+      "size": 3077,
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Effects.elm",
+      "size": 13785,
+      "sha256": "d958c1deab027ea4a1f60c460eef00860db6987ba2d9dd30f6fc2f28ea58e880"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/GeometryProjection.elm",
+      "size": 9499,
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Inspection.elm",
+      "size": 3570,
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Launch.elm",
+      "size": 8353,
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/LaunchReplay.elm",
+      "size": 4031,
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Main.elm",
+      "size": 3522,
+      "sha256": "2cf426183a57be12409e6d5fc8452b471293a6bb27281a7938f8f2515c0f0f58"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Menu.elm",
+      "size": 16453,
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/MenuBridge.elm",
+      "size": 14103,
+      "sha256": "d0ad7212e6e185bcbc77da3fffe1d8503e3504a0114bef3beefc1cca507dcc57"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/MenuSurfaceReplay.elm",
+      "size": 5461,
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/NativeOutcome.elm",
+      "size": 2645,
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/NativeProvider.elm",
+      "size": 5100,
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/OutputSurfaceReplay.elm",
+      "size": 3244,
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Popup.elm",
+      "size": 1296,
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Presentation.elm",
+      "size": 2006,
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/PresentationReplay.elm",
+      "size": 1234,
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Provider.elm",
+      "size": 17561,
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/ReceiptRouter.elm",
+      "size": 7082,
+      "sha256": "3f23159a4e3552c38340de14627a314e8b808288eb2c729ae0ca6d713a56f197"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Replay.elm",
+      "size": 1001,
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Shell.elm",
+      "size": 20597,
+      "sha256": "bf2381bec9288600023e261e92c6014a8d1b7032a92658dc332461a70658c44b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/ShellReplay.elm",
+      "size": 1909,
+      "sha256": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Surface.elm",
+      "size": 13320,
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/SurfaceController.elm",
+      "size": 3779,
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/SurfaceRenderer.elm",
+      "size": 5239,
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/SurfaceReplay.elm",
+      "size": 2651,
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/Taskbar.elm",
+      "size": 2564,
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/TaskbarReplay.elm",
+      "size": 1658,
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/TaskbarShell.elm",
+      "size": 5131,
+      "sha256": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/TaskbarShellReplay.elm",
+      "size": 2114,
+      "sha256": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/inputs/src/UInt64.elm",
+      "size": 1459,
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/report.json",
+      "size": 14064,
+      "sha256": "bea95931d995b7088f578826d861cf6e5ecceb3b46af5688ca4da0eaf96f8401"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build.py",
+      "size": 2211,
+      "sha256": "92819091b44ea5826072b818b36d9f0e2ccd121279e38903690172af691b8e18"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/fixtures.json",
+      "size": 2495,
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/geometry-fixtures.json",
+      "size": 4353,
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/geometry.cjs",
+      "size": 20743,
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/menu.cjs",
+      "size": 26522,
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/recovery.cjs",
+      "size": 6149,
+      "sha256": "27e8c50f87850d8837fded49e38c9c608dd13c2b8343181deae206e690980df0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/refresh.cjs",
+      "size": 11336,
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/ActionProjection.elm",
+      "size": 3989,
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Binding.elm",
+      "size": 1363,
+      "sha256": "5638b7a6899516442ead3444fa38f5666014277baebe1b1e647fc5ffa72f200a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Catalog.elm",
+      "size": 2701,
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/CatalogReplay.elm",
+      "size": 1300,
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Desktop.elm",
+      "size": 19555,
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/DesktopReplay.elm",
+      "size": 3077,
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Effects.elm",
+      "size": 13785,
+      "sha256": "d958c1deab027ea4a1f60c460eef00860db6987ba2d9dd30f6fc2f28ea58e880"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/GeometryProjection.elm",
+      "size": 9499,
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Inspection.elm",
+      "size": 3570,
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Launch.elm",
+      "size": 8353,
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/LaunchReplay.elm",
+      "size": 4031,
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Main.elm",
+      "size": 3522,
+      "sha256": "2cf426183a57be12409e6d5fc8452b471293a6bb27281a7938f8f2515c0f0f58"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Menu.elm",
+      "size": 16453,
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/MenuBridge.elm",
+      "size": 14103,
+      "sha256": "d0ad7212e6e185bcbc77da3fffe1d8503e3504a0114bef3beefc1cca507dcc57"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/MenuSurfaceReplay.elm",
+      "size": 5461,
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/NativeOutcome.elm",
+      "size": 2645,
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/NativeProvider.elm",
+      "size": 5100,
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/OutputSurfaceReplay.elm",
+      "size": 3244,
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Popup.elm",
+      "size": 1296,
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Presentation.elm",
+      "size": 2006,
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/PresentationReplay.elm",
+      "size": 1234,
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Provider.elm",
+      "size": 17561,
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/ReceiptRouter.elm",
+      "size": 7082,
+      "sha256": "3f23159a4e3552c38340de14627a314e8b808288eb2c729ae0ca6d713a56f197"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Replay.elm",
+      "size": 1001,
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Shell.elm",
+      "size": 20597,
+      "sha256": "bf2381bec9288600023e261e92c6014a8d1b7032a92658dc332461a70658c44b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/ShellReplay.elm",
+      "size": 1909,
+      "sha256": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Surface.elm",
+      "size": 13320,
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/SurfaceController.elm",
+      "size": 3779,
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/SurfaceRenderer.elm",
+      "size": 5239,
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/SurfaceReplay.elm",
+      "size": 2651,
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/Taskbar.elm",
+      "size": 2564,
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/TaskbarReplay.elm",
+      "size": 1658,
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/TaskbarShell.elm",
+      "size": 5131,
+      "sha256": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/TaskbarShellReplay.elm",
+      "size": 2114,
+      "sha256": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/src/UInt64.elm",
+      "size": 1459,
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/elm.json",
+      "size": 306,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/Main.js",
+      "size": 392676,
+      "sha256": "e8e96f8f097a4a0ffc0cc3a4db301590887b502d8a22e51b4990978289a1e0f1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/Main.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/Main.stdout",
+      "size": 767,
+      "sha256": "750c319bce8a921978a38deeb7bf56b63dab91ba22b585e885a51b93ba0b9171"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/MenuSurfaceReplay.js",
+      "size": 341088,
+      "sha256": "6045bb691724c54965c240247f625712b51dd43d9d907f5ceaec9da2c41df46c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/MenuSurfaceReplay.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/MenuSurfaceReplay.stdout",
+      "size": 231,
+      "sha256": "7ff50fa9fc6812afe8ca202ef4ff3077574cbbfdd70daa7c3a3f1e1533a4a23c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/Popup.js",
+      "size": 132068,
+      "sha256": "98d361735c3074095a6760610b9d44df44b5aea6b41fa95eccd40c0e9c86f216"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/Popup.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/Popup.stdout",
+      "size": 222,
+      "sha256": "920faf08404ed8af7c99cad8f98636e69f45d595936dbdef88881906d3737952"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/geometry-checks.json",
+      "size": 1681718,
+      "sha256": "751635dc668975413f9bc5951c761ee6fc31aa292fc1deda5d0ef539c1c095fd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/geometry.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/geometry.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "size": 2096,
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "size": 12006,
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "size": 798,
+      "sha256": "8352e66cee2ad9138a85362353d80bfb83cf136666ed12bb54d26c5903495e5f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "size": 3465,
+      "sha256": "1a2bf3901ca9e1fac8515e7bf098fd4aff465e4101989bc30e01e5da5296f153"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "size": 1759,
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "size": 7931,
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "size": 47873,
+      "sha256": "1f9f44055d466767649e5ded356ebda5b2570c190aa35dedeac4db4840e37006"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "size": 38765,
+      "sha256": "28cf43e59cdf0d77b866a743f7167d11142e905d5145e502f0916d9e6c44fa51"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "size": 21663,
+      "sha256": "ebd5e8350481a1eb5fdbfb2424281733c6ec611de61c588595a2bf85ad0f7224"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "size": 30379,
+      "sha256": "a519cbe59c32e34b88f3bb4f50b0713ae59eb8285a230e110b5ba03c6dfddb55"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "size": 5360,
+      "sha256": "27c79fa9844bc8d393bdc0307098daac4ced3db850169918bd35ecd25a49c611"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "size": 25310,
+      "sha256": "1c3057d55d8ba7a96b2a18510a259fcb9492b1c55d7f550210a4b7f9281cb649"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "size": 131,
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "size": 8687,
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "size": 3424,
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "size": 16054,
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Main.elmi",
+      "size": 936,
+      "sha256": "6d1d01d9d814fa9e1456cb3ffd114be466439b95c578f45edf7a4436b1c9d207"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Main.elmo",
+      "size": 8893,
+      "sha256": "6db78adb5e0233987cf2456ff29e6682b576f4ba8335f17c1209f5653c4f9bc0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "size": 8087,
+      "sha256": "0a9a18eb89bf67438f7ce24668430965aead9870deb2e83b9aa23b26546f1f24"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "size": 20718,
+      "sha256": "8818e4c62ea6812d03168191972adfe949aec21fc118621092c15df5fa9ef5d8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "size": 31901,
+      "sha256": "450828aaf8762ee7b47ccdd67db9e6dc86cadf2c612576421c70e2eb4b5dfe91"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "size": 20902,
+      "sha256": "2c2fd11aca397057d6e5d5a1c67282c77be5dd445147eb87b1ecd0ced802ca0b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmi",
+      "size": 250,
+      "sha256": "22e83636dc32aee7f68327fa371c47f35a7c84a55ffb71745ae9ede3f7f01f48"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/MenuSurfaceReplay.elmo",
+      "size": 12970,
+      "sha256": "2b96a3dc73899080e4a426c745d9ae1dbb040955c8b640da2e655737ced039da"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "size": 149,
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "size": 7336,
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "size": 5408,
+      "sha256": "cee7563512e3c875cd77618efc3cc0af7b42058133b8999c0171c8c6980a1048"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "size": 8073,
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "size": 335,
+      "sha256": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "size": 3427,
+      "sha256": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "size": 780,
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "size": 4637,
+      "sha256": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "size": 10376,
+      "sha256": "6e082c0d111c3b80086070c1deebe35289aa7ce98b2b68a9afefe8f2d6690e4f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "size": 30848,
+      "sha256": "30669bfb6879ad703653171d7a420a22da04b6bb2df7d21da365a6af9e62ac48"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "size": 3554,
+      "sha256": "86a5e70b1e4939c616a1ec416e6d35b185269190c96b791b35afe303a885df62"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "size": 18602,
+      "sha256": "1caa34df8a4c4617edd9e66a5f7391c4482d8a98615964323bfebc7d3c54098c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "size": 45427,
+      "sha256": "2581da48e03f3cc42607ff27787a75cdb422ad9564fe37b44bb180e3d835e82b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "size": 43230,
+      "sha256": "0b59c06a9bf73948a9a645d69f37b6927b90a91b83f654a3115587164ef814b1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "size": 26965,
+      "sha256": "f6f16beb4093d436c461f6966f4b4b101fda7736876871b5a630b063e67c13ee"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "size": 29190,
+      "sha256": "491ff23367ae8d7c04a9bcf4c1e72d003a64ba32b543d2b3274a95f39cca600b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "size": 14174,
+      "sha256": "b8db9eca104503d09a0af4a911af20d6d5dfd7f2482b6d26ad2b74ac33fbfc77"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "size": 8281,
+      "sha256": "cd5a5b51f25a1026cbbef847f55c21195161304f9a81685f63da19dda4957c0f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "size": 1849,
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "size": 12984,
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "size": 1719,
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "size": 5495,
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "size": 22095,
+      "sha256": "3a089fb20cd936d6939c1d255a119e21195779e5c3a72cbfe7ad6cb342270747"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "size": 10558,
+      "sha256": "04b78f515b612fdbc353784991f54df23ba2594353f79d1f8b9b4fd46ae216dc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "size": 530,
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "size": 3318,
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/d.dat",
+      "size": 9764,
+      "sha256": "979ede342cc8ef2c3f70b662d5852af65f8d3b8b6d32b0cb946e9bcbbd4869f8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/i.dat",
+      "size": 105328,
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/lock",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm-stuff/0.19.2/o.dat",
+      "size": 441107,
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/elm.json",
+      "size": 306,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/qa/build.py",
+      "size": 2211,
+      "sha256": "92819091b44ea5826072b818b36d9f0e2ccd121279e38903690172af691b8e18"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/qa/fixtures.json",
+      "size": 2495,
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/qa/geometry-fixtures.json",
+      "size": 4353,
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/qa/geometry.cjs",
+      "size": 20743,
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/qa/menu.cjs",
+      "size": 26522,
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/qa/recovery.cjs",
+      "size": 6149,
+      "sha256": "27e8c50f87850d8837fded49e38c9c608dd13c2b8343181deae206e690980df0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/qa/refresh.cjs",
+      "size": 11336,
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/ActionProjection.elm",
+      "size": 3989,
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Binding.elm",
+      "size": 1480,
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Catalog.elm",
+      "size": 2701,
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/CatalogReplay.elm",
+      "size": 1300,
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Desktop.elm",
+      "size": 19555,
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/DesktopReplay.elm",
+      "size": 3077,
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Effects.elm",
+      "size": 13785,
+      "sha256": "d958c1deab027ea4a1f60c460eef00860db6987ba2d9dd30f6fc2f28ea58e880"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/GeometryProjection.elm",
+      "size": 9499,
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Inspection.elm",
+      "size": 3570,
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Launch.elm",
+      "size": 8353,
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/LaunchReplay.elm",
+      "size": 4031,
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Main.elm",
+      "size": 3522,
+      "sha256": "2cf426183a57be12409e6d5fc8452b471293a6bb27281a7938f8f2515c0f0f58"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Menu.elm",
+      "size": 16453,
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/MenuBridge.elm",
+      "size": 14103,
+      "sha256": "d0ad7212e6e185bcbc77da3fffe1d8503e3504a0114bef3beefc1cca507dcc57"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/MenuSurfaceReplay.elm",
+      "size": 5461,
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/NativeOutcome.elm",
+      "size": 2645,
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/NativeProvider.elm",
+      "size": 5100,
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/OutputSurfaceReplay.elm",
+      "size": 3244,
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Popup.elm",
+      "size": 1296,
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Presentation.elm",
+      "size": 2006,
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/PresentationReplay.elm",
+      "size": 1234,
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Provider.elm",
+      "size": 17561,
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/ReceiptRouter.elm",
+      "size": 7082,
+      "sha256": "3f23159a4e3552c38340de14627a314e8b808288eb2c729ae0ca6d713a56f197"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Replay.elm",
+      "size": 1001,
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Shell.elm",
+      "size": 20597,
+      "sha256": "bf2381bec9288600023e261e92c6014a8d1b7032a92658dc332461a70658c44b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/ShellReplay.elm",
+      "size": 1909,
+      "sha256": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Surface.elm",
+      "size": 13320,
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/SurfaceController.elm",
+      "size": 3779,
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/SurfaceRenderer.elm",
+      "size": 5239,
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/SurfaceReplay.elm",
+      "size": 2651,
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/Taskbar.elm",
+      "size": 2564,
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/TaskbarReplay.elm",
+      "size": 1658,
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/TaskbarShell.elm",
+      "size": 5131,
+      "sha256": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/TaskbarShellReplay.elm",
+      "size": 2114,
+      "sha256": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/inputs/src/UInt64.elm",
+      "size": 1459,
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/menu-checks.json",
+      "size": 1272052,
+      "sha256": "3fc63f2fce43bbde0e1524456ad516250d727dfd470e84de8836e8879c9a94cc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/menu.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/menu.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/recovery-checks.json",
+      "size": 344030,
+      "sha256": "91c842a5186d68f1332bd344593f750490fd5a997bad2825a55205e53f9a2dd1"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/recovery.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/recovery.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/refresh-checks.json",
+      "size": 1468272,
+      "sha256": "5a8f2ce70455462757ee0aa1e13812da8997768d0d375cff23085a07fb7d949b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/refresh.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/refresh.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/report.json",
+      "size": 19918,
+      "sha256": "1994c458a95240384833dfb60cd86e7d6035e0eb9889400a4248e58efe7c17fd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build.py",
+      "size": 2211,
+      "sha256": "92819091b44ea5826072b818b36d9f0e2ccd121279e38903690172af691b8e18"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/fixtures.json",
+      "size": 2495,
+      "sha256": "31dafaf90e0a5a17205282f4b646ecb7966e4eb0ac74e6a45f6deba1c862ce3b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/geometry-fixtures.json",
+      "size": 4353,
+      "sha256": "f7fd8fbcf377ce404975bfc0d41a4d427e8fb773717b3afa97796f5f1039d699"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/geometry.cjs",
+      "size": 20743,
+      "sha256": "2308f1879bbc7a23fefa4119184b3cc3e9c0bcc635c325e6717fcd4fcf0e13f8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/menu.cjs",
+      "size": 26522,
+      "sha256": "eedfd2f56d19c225ab80580f5751f3a271ce7e1c8fbd3da516c83c61d72f7439"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/recovery.cjs",
+      "size": 6149,
+      "sha256": "27e8c50f87850d8837fded49e38c9c608dd13c2b8343181deae206e690980df0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/refresh.cjs",
+      "size": 11336,
+      "sha256": "ecdce94f27a2689aa5d1317f4ec79bf03dc25080b072a96876427a573809846f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/ActionProjection.elm",
+      "size": 3989,
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Binding.elm",
+      "size": 1480,
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Catalog.elm",
+      "size": 2701,
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/CatalogReplay.elm",
+      "size": 1300,
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Desktop.elm",
+      "size": 19555,
+      "sha256": "85c68217aa59942ae26e24e3fc8a0ccef8703cecc977a080d8e0e1e91b9ecd8d"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/DesktopReplay.elm",
+      "size": 3077,
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Effects.elm",
+      "size": 13785,
+      "sha256": "d958c1deab027ea4a1f60c460eef00860db6987ba2d9dd30f6fc2f28ea58e880"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/GeometryProjection.elm",
+      "size": 9499,
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Inspection.elm",
+      "size": 3570,
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Launch.elm",
+      "size": 8353,
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/LaunchReplay.elm",
+      "size": 4031,
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Main.elm",
+      "size": 3522,
+      "sha256": "2cf426183a57be12409e6d5fc8452b471293a6bb27281a7938f8f2515c0f0f58"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Menu.elm",
+      "size": 16453,
+      "sha256": "107e672a371bc971fd7e0bc8d5640ee1ae40fd9fb90cc57308e965637de801ef"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/MenuBridge.elm",
+      "size": 14103,
+      "sha256": "d0ad7212e6e185bcbc77da3fffe1d8503e3504a0114bef3beefc1cca507dcc57"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/MenuSurfaceReplay.elm",
+      "size": 5461,
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/NativeOutcome.elm",
+      "size": 2645,
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/NativeProvider.elm",
+      "size": 5100,
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/OutputSurfaceReplay.elm",
+      "size": 3244,
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Popup.elm",
+      "size": 1296,
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Presentation.elm",
+      "size": 2006,
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/PresentationReplay.elm",
+      "size": 1234,
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Provider.elm",
+      "size": 17561,
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/ReceiptRouter.elm",
+      "size": 7082,
+      "sha256": "3f23159a4e3552c38340de14627a314e8b808288eb2c729ae0ca6d713a56f197"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Replay.elm",
+      "size": 1001,
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Shell.elm",
+      "size": 20597,
+      "sha256": "bf2381bec9288600023e261e92c6014a8d1b7032a92658dc332461a70658c44b"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/ShellReplay.elm",
+      "size": 1909,
+      "sha256": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Surface.elm",
+      "size": 13320,
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/SurfaceController.elm",
+      "size": 3779,
+      "sha256": "06a8baa004f7a3c91727a7b474c6d52320ef5ae2cb84479d2191e0df9282e327"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/SurfaceRenderer.elm",
+      "size": 5239,
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/SurfaceReplay.elm",
+      "size": 2651,
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/Taskbar.elm",
+      "size": 2564,
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/TaskbarReplay.elm",
+      "size": 1658,
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/TaskbarShell.elm",
+      "size": 5131,
+      "sha256": "4ae341e71ac9937df7d2bec508978f838ec8d0c47a3ad1c9193f7cba806219d7"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/TaskbarShellReplay.elm",
+      "size": 2114,
+      "sha256": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/src/UInt64.elm",
+      "size": 1459,
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa"
+    },
+    {
+      "path": "implementation/elm-unresolved-recovery-repro-v283/qa/repro-1791105305850643468/report.json",
+      "size": 1944,
+      "sha256": "a3de1fd788413fe45252c7fa8728aa099262cc04ecba373a2604c3e477d88c0e"
+    },
+    {
+      "path": "implementation/elm-unresolved-recovery-repro-v283/qa/repro.py",
+      "size": 2265,
+      "sha256": "2cf0edefadc0c33e092487a988f8146556a9b28ff5d5dda8361d85292950672d"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-acceptance-v284/HANDOFF.md",
+      "size": 3987,
+      "sha256": "269fb58c28977007a3d084fa8d5b606600c70e1988348f8bedb684cf087e552c"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-acceptance-v284/UI-UX-NAVIGATION-REVIEW.md",
+      "size": 2297,
+      "sha256": "eef519449d432a959cd6fce04abe11e8864085571c0183c270ddb66d9bd857b3"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-acceptance-v284/qa/freeze.py",
+      "size": 1758,
+      "sha256": "7071c8080556f318d8809cd282595438fa3ef1e015c86ca439fc4db7ca772fda"
+    }
+  ],
+  "reports": [
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/recovery-1791104943158385705/report.json",
+      "passed": true,
+      "checks": 193,
+      "sha256": "e265768a75b61adc422ee13d9655d7320929db66d4cde69987c4ebd6563a64c0"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-broker-v280/qa/framing-1791104993343532744/report.json",
+      "passed": true,
+      "checks": 1011,
+      "sha256": "291563979c19349db8f5f27f4faf21f40de6ee723a6f53bf37b2ca4e5cc960b8"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-v281/qa/build-1791105153636317753/report.json",
+      "passed": false,
+      "checks": 0,
+      "sha256": "bea95931d995b7088f578826d861cf6e5ecceb3b46af5688ca4da0eaf96f8401"
+    },
+    {
+      "path": "implementation/elm-geometry-recovery-ui-fixed-v282/qa/build-1791105194408030124/report.json",
+      "passed": true,
+      "checks": 0,
+      "sha256": "1994c458a95240384833dfb60cd86e7d6035e0eb9889400a4248e58efe7c17fd"
+    },
+    {
+      "path": "implementation/elm-unresolved-recovery-repro-v283/qa/repro-1791105305850643468/report.json",
+      "passed": false,
+      "checks": 4,
+      "sha256": "a3de1fd788413fe45252c7fa8728aa099262cc04ecba373a2604c3e477d88c0e"
+    }
+  ],
+  "brokerRecoveryChecks": 193,
+  "framingChecks": 1011,
+  "inheritedCompiledElmChecks": [
+    78,
+    53,
+    21
+  ],
+  "compiledElmRecoveryChecks": 34,
+  "geometryBrokerJournalIntegrated": true,
+  "compiledElmGeometryRecovery": true,
+  "multiUnknownColdRecoveryAccepted": false,
+  "integratedNativeHostAccepted": false,
+  "nativeRun": false,
+  "completedRequirementIds": []
+}

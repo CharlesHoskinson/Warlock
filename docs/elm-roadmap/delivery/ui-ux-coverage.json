@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T09:04:50.402024+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T09:17:22.632932+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7479,6 +7479,31 @@
         "Geometry broker and strict typed Elm recovery remain to integrate with shared allocator and storage UX",
         "Preserved original native tuple not superseded; release requires coherent native pixel/input and fault matrix",
         "Physical/human GPU/AT/IME/performance/storage/provisioning/old-broker revocation/C00 gates remain open"
+      ]
+    },
+    {
+      "passed": false,
+      "componentChecksPassed": true,
+      "scope": "Broker journal + actual compiled shared-controller geometry recovery; reproduced cold loss of earlier Unknown after unrelated commit",
+      "brokerRecoveryChecks": 193,
+      "framingChecks": 1011,
+      "inheritedCompiledElmChecks": [
+        78,
+        53,
+        21
+      ],
+      "compiledElmRecoveryChecks": 34,
+      "geometryBrokerJournalIntegrated": true,
+      "compiledElmGeometryRecovery": true,
+      "multiUnknownColdRecoveryAccepted": false,
+      "integratedNativeHostAccepted": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-geometry-recovery-acceptance-v284/qa/slice-manifest.json",
+      "limitations": [
+        "V283 original AUnknown preservation assertion fails after unrelated BCommit and cold restart; implement bounded multi-intent durable ledger before native integration",
+        "Retained V281 missing lifetime-helper compiler failure; corrected V282 optimized Main/Popup/shared-controller tests pass",
+        "Actual merged native recovery+geometry/context host, source/ABI closure, pixel/input/fault and broad release gates remain open"
       ]
     }
   ]

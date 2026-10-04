@@ -1,0 +1,17 @@
+-- NAMING ERROR -------------------------------------------------- src/Shell.elm
+
+I cannot find a `Binding.sameLifetime` variable:
+
+167|                             if model.binding/=Just binding || model.phase/=Reconciling || (D.decodeValue (D.at ["context","lifetime"] positive) intent |> Result.map (\life -> Binding.sameLifetime life binding))/=Ok True then (model,[]) else
+                                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^
+The `Binding` module does not expose a `sameLifetime` variable. These names seem
+close though:
+
+    Binding.decoder
+    Binding.encode
+    Binding.replaces
+    Binding.matchesContext
+
+Hint: Read <https://elm-lang.org/0.19.2/imports> to see how `import`
+declarations work in Elm.
+

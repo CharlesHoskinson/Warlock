@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-recovery-protocol-acceptance-v279",
+  "activeSlice": "implementation/elm-geometry-recovery-acceptance-v284",
   "status": "Host binding failures preserve verified instance context for explicit retry. Actual C/native22+22 and original137 qualification pass; next integrate durable recovery with reviewed geometry/menu before coherent release acceptance.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -1556,12 +1556,37 @@
         "Preserved original native tuple not superseded; release requires coherent native pixel/input and fault matrix",
         "Physical/human GPU/AT/IME/performance/storage/provisioning/old-broker revocation/C00 gates remain open"
       ]
+    },
+    "geometryRecoveryV284": {
+      "passed": false,
+      "componentChecksPassed": true,
+      "scope": "Broker journal + actual compiled shared-controller geometry recovery; reproduced cold loss of earlier Unknown after unrelated commit",
+      "brokerRecoveryChecks": 193,
+      "framingChecks": 1011,
+      "inheritedCompiledElmChecks": [
+        78,
+        53,
+        21
+      ],
+      "compiledElmRecoveryChecks": 34,
+      "geometryBrokerJournalIntegrated": true,
+      "compiledElmGeometryRecovery": true,
+      "multiUnknownColdRecoveryAccepted": false,
+      "integratedNativeHostAccepted": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-geometry-recovery-acceptance-v284/qa/slice-manifest.json",
+      "limitations": [
+        "V283 original AUnknown preservation assertion fails after unrelated BCommit and cold restart; implement bounded multi-intent durable ledger before native integration",
+        "Retained V281 missing lifetime-helper compiler failure; corrected V282 optimized Main/Popup/shared-controller tests pass",
+        "Actual merged native recovery+geometry/context host, source/ABI closure, pixel/input/fault and broad release gates remain open"
+      ]
     }
   },
   "next": [
-    "Compose reviewed geometry broker with guarded durable begin/settle for both protocols; strict typed geometry Unknown recovery in one Elm model/allocator, typed storage UX and stale-action guard ordering.",
-    "Run original regression and per-operation fault/pixel/input cases on one coherent frozen source/ABI tuple; preserve newer menu/core workers source paths and pairs.",
-    "Execute remaining comprehensive UI/UX gates: restore38/recovery34/drag52, physical GPU/output/AT/IME/human, numeric budgets/soak, native full/readonly/later-fsync/provisioning/global revocation, C00 and release."
+    "Implement bounded durable multi-intent recovery preserving every Pending/Unknown across unrelated effects and cold restarts; strict schema1/schema2 migration and host/broker correlation, shared IDs and capacity refusal before submission. Replay original V283 oracle unchanged on fresh source.",
+    "Emit strictly typed informational recovery for each unresolved operation; no automatic replay or snapshot-as-settlement. Compose reviewed recovery host with geometry/context carrier only after the durability defect is closed.",
+    "Freeze and qualify one actual host/broker/core/plugin/Elm tuple with original regression and failure/pixel/input gates; continue restore timing, native storage/provisioning/global revocation, GPU/WebGPU/AT/IME/physical/human/budgets/C00/rollback/release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
@@ -1578,6 +1603,12 @@
       "status": "resolved for ordinary and nine-document default-size captures; broader reflow acceptance open",
       "description": "Spacing, bounded captions, reachable Close and exact Tab reveal pass in default800x420/16px configuration. Text enlargement, small outputs and full focus/AT metrics remain unqualified.",
       "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
+    },
+    {
+      "id": "DURABLE-UNKNOWN-001",
+      "status": "open",
+      "description": "Single-latest journal loses durable AUnknown when unrelated BCommitted overwrites it; cold reader emits no A uncertainty. Elm unresolved state allows unrelated actions. Preserve every unresolved operation durably before native adoption.",
+      "evidence": "implementation/elm-unresolved-recovery-repro-v283/qa/repro-1791105305850643468/report.json"
     }
   ],
   "resolvedBoundedFindings": [

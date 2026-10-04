@@ -1,0 +1,944 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "attached after journal acquisition 1:minimize:Committed",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:Committed",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:minimize:Committed",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:minimize:Committed",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:minimize:Committed",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:Committed",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:Committed",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:minimize:Refused",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:Refused",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:minimize:Refused",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:minimize:Refused",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:minimize:Refused",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:Refused",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:Refused",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:minimize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:minimize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:minimize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:minimize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:restore:Committed",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:restore:Committed",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:restore:Committed",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:restore:Committed",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:restore:Committed",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:restore:Committed",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:restore:Committed",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:restore:Refused",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:restore:Refused",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:restore:Refused",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:restore:Refused",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:restore:Refused",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:restore:Refused",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:restore:Refused",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:restore:Unknown",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:restore:Unknown",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:restore:Unknown",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:restore:Unknown",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:restore:Unknown",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:restore:Unknown",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:restore:Unknown",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:activate:Committed",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:activate:Committed",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:activate:Committed",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:activate:Committed",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:activate:Committed",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:activate:Committed",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:activate:Committed",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:activate:Refused",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:activate:Refused",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:activate:Refused",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:activate:Refused",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:activate:Refused",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:activate:Refused",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:activate:Refused",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:activate:Unknown",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:activate:Unknown",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 1:activate:Unknown",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 1:activate:Unknown",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 1:activate:Unknown",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:activate:Unknown",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:activate:Unknown",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:Committed",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:Refused",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:Unknown",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:restore-geometry:Committed",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:restore-geometry:Refused",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "published correlated terminal 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "terminal durable before frontend 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "normal EOF exit 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:restore-geometry:Unknown",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:minimize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 1:minimize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 1:minimize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "failed terminal remains Pending 1:minimize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:minimize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 1:minimize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 1:minimize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "failed terminal remains Pending 1:minimize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "typed storage failure 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "failed terminal remains Pending 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:minimize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "typed storage failure 1:minimize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 1:minimize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 1:minimize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 1:minimize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 1:minimize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "typed storage failure 1:minimize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 1:minimize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 1:minimize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 1:minimize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 1:minimize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "failed terminal remains Pending 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:transport-failure",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "failed terminal remains Pending 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:wrong-receipt",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "typed storage failure 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "failed terminal remains Pending 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:settlement-read-failure",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "typed storage failure 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:full-before-submit",
+      "passed": true
+    },
+    {
+      "name": "attached after journal acquisition 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "geometry negotiation 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "strict geometry attach 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "typed storage failure 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "no invented receipt on failure 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "recorded failure exit 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "one submit or pre-submit refusal 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "actual durable Pending at submit 2:maximize:directory-fsync-failure",
+      "passed": true
+    },
+    {
+      "name": "new broker attached",
+      "passed": true
+    },
+    {
+      "name": "geometry Unknown informational startup",
+      "passed": true
+    },
+    {
+      "name": "negotiation after uncertainty",
+      "passed": true
+    },
+    {
+      "name": "recovery broker normal EOF",
+      "passed": true
+    },
+    {
+      "name": "startup never replays native effect",
+      "passed": true
+    }
+  ],
+  "scope": "Actual broker subprocess/stdio/filesystem and strict endpoint decoders with synthetic native transport; no native process authentication, geometry mutation, pixels or Elm integration acceptance",
+  "inputs": {
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "8d3945c42a8a4ae3ac4f319c35557ca8f16098fc108111eb2e50a2c1774b0408",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "qa/recovery.py": "200a49ed56c5e5dd954f9078056ebf42f5014b766ec2e2fa41e57b7a5a78584f",
+    "qa/transport.py": "3b33c00228433d6cc06a0e8f30e85e0bb988980baf19bcded98ef8a30e192961"
+  },
+  "runs": [
+    {
+      "case": "1:minimize:Committed",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:minimize:Refused",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:minimize:Unknown",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:restore:Committed",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:restore:Refused",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:restore:Unknown",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:activate:Committed",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:activate:Refused",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:activate:Unknown",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "2:maximize:Committed",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "2:maximize:Refused",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "2:maximize:Unknown",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "2:restore-geometry:Committed",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "2:restore-geometry:Refused",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "2:restore-geometry:Unknown",
+      "exitCode": 0,
+      "submitted": 1,
+      "stderr": ""
+    },
+    {
+      "case": "1:minimize:transport-failure",
+      "exitCode": 1,
+      "submitted": 1,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:55:handle_request,effect_endpoint.py:76:effect,transport.py:27:request\nAuthority backend stopped: Synthetic transport interrupted\n"
+    },
+    {
+      "case": "1:minimize:wrong-receipt",
+      "exitCode": 1,
+      "submitted": 1,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:55:handle_request,effect_endpoint.py:78:effect\nAuthority backend stopped: Effect outcome correlation\n"
+    },
+    {
+      "case": "1:minimize:settlement-read-failure",
+      "exitCode": 1,
+      "submitted": 1,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:57:handle_request,recovery_journal.py:20:guarded\nAuthority backend stopped: unverified\n"
+    },
+    {
+      "case": "1:minimize:full-before-submit",
+      "exitCode": 1,
+      "submitted": 0,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:54:handle_request,recovery_journal.py:20:guarded\nAuthority backend stopped: full\n"
+    },
+    {
+      "case": "1:minimize:directory-fsync-failure",
+      "exitCode": 1,
+      "submitted": 0,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:54:handle_request,recovery_journal.py:20:guarded\nAuthority backend stopped: unavailable\n"
+    },
+    {
+      "case": "2:maximize:transport-failure",
+      "exitCode": 1,
+      "submitted": 1,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:55:handle_request,geometry_endpoint.py:198:geometry_effect,transport.py:27:request\nAuthority backend stopped: Synthetic transport interrupted\n"
+    },
+    {
+      "case": "2:maximize:wrong-receipt",
+      "exitCode": 1,
+      "submitted": 1,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:55:handle_request,geometry_endpoint.py:205:geometry_effect\nAuthority backend stopped: Geometry effect outcome correlation\n"
+    },
+    {
+      "case": "2:maximize:settlement-read-failure",
+      "exitCode": 1,
+      "submitted": 1,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:57:handle_request,recovery_journal.py:20:guarded\nAuthority backend stopped: unverified\n"
+    },
+    {
+      "case": "2:maximize:full-before-submit",
+      "exitCode": 1,
+      "submitted": 0,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:54:handle_request,recovery_journal.py:20:guarded\nAuthority backend stopped: full\n"
+    },
+    {
+      "case": "2:maximize:directory-fsync-failure",
+      "exitCode": 1,
+      "submitted": 0,
+      "stderr": "Backend failure locations: daemon.py:122:run,daemon.py:108:main,daemon.py:54:handle_request,recovery_journal.py:20:guarded\nAuthority backend stopped: unavailable\n"
+    }
+  ]
+}
