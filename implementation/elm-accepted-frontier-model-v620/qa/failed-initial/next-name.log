@@ -1,0 +1,9 @@
+Running as unit: qa-harness-58743f9f90234250a92b67ff2fe64d6a.scope; invocation ID: 36a795b6abc8475ca5aa2749eff89ec6
+
+ Error [QNT101]: Built-in name 'next' is redefined in module 'frontier'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/frontier.qnt:19:8
+  19:    val next=if(admitted and r.kind==1 and st.pendingA and r.id==st.expectedA) {...st,acceptedA:r,pendingA:false} else if(admitted and r.kind==2 and st.pendingG and r.id==st.expectedG) {...st,acceptedG:r,pendingG:false} else st
+             ^^^^
+
+error: parsing failed

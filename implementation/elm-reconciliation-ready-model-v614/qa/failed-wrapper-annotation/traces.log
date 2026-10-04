@@ -1,0 +1,16 @@
+[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:49:22
+  49:  action raw(ev:Event)=all {q'=q,fire(ev)}
+                           ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:50:2
+  50:  action rawEstablish=raw(NativeRetire).then(raw(Proof({kind:1,key:1,epoch:1,barrier:1}))).then(raw(RequestReads)).then(raw(Observe({kind:1,request:11,epoch:1,seq:2}))).then(raw(Observe({kind:2,request:12,epoch:1,seq:2})))
+       ^^^^^^
+
+error: parsing failed

@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "silentActualUnixPeerOnly": true,
+  "refused": "Refused('bounded private bus transport: g-io-error-quark: Operation was cancelled (19)')",
+  "elapsed": 0.20153791600023396,
+  "deadlineBudget": 0.2,
+  "helperExitCode": -15,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/bus-deadline-test.py": "0cc27db569aa4d9c76e5a0c884503a14134018759f9b568a0bd6567df36c7b62",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/private_bus.py": "9b69d4abeb7ff9b197d64e86d3fab62c1c8529ecda946ca9f41906075d438f93",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-supervisor.py": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85"
+  }
+}

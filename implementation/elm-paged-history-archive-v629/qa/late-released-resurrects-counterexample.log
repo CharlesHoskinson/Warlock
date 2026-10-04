@@ -1,0 +1,17 @@
+
+  archive
+    1) lateExactReleasedCAdmissionTest failed after 1 test(s)
+
+  1 failed
+
+  1) lateExactReleasedCAdmissionTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/late-released-resurrects/archive.qnt:65:105
+        65:  run lateExactReleasedCAdmissionTest=init.then(bootstrap).then(release2).then(fire(LateC(2))).then(all {assert(not(s.files.contains(2)) and not(s.durableFiles.contains(2)) and safety),fire(Noop)})
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf5b7 --match=lateExactReleasedCAdmissionTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/late-released-resurrects/archive.qnt
+error: Tests failed

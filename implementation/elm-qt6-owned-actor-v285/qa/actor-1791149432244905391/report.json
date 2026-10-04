@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fakeJournalRealSubprocessOnly": true,
+  "checks": [
+    {
+      "name": "normal",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/normal/evidence/actor.json"
+    },
+    {
+      "name": "default-profile",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/default-profile/evidence/actor.json"
+    },
+    {
+      "name": "partial-terminal",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/partial-terminal/evidence/actor.json"
+    },
+    {
+      "name": "after-exit",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/after-exit/evidence/actor.json"
+    },
+    {
+      "name": "repeat-exit",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/repeat-exit/evidence/actor.json"
+    },
+    {
+      "name": "nonzero",
+      "passed": true,
+      "actualExit": 3,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/nonzero/evidence/actor.json"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-test.py": "7f1dcc2d807030d2724cd1fb2968769a41137b4f9fbe6f84a54c6c48677865eb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor.py": "a1bbf2578837b9a5daadf56214ad2e1a8130e6c48bba97448a15189d3adca3ed",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/journal.py": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f"
+  }
+}

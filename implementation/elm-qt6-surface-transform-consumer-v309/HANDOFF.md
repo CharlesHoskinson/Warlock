@@ -1,0 +1,5 @@
+# Measured inverse coordinate consumer
+
+The current measured Qt map is surface→window. This derivative inverts it: surface = window − surfaceToWindow; global = nativeReal.origin + surface − rawXdgGeometry.origin. Marker and whole QAction rectangles retain independent window, surface and native global fields. Availability, exact resource and map-versus-margins agreement are mandatory. Missing legacy296 measurements refuse; no default zero. Q1, finite bounded numbers and current role/map/resource checks remain.
+
+CPU19 checks cover asymmetric decorations, native/raw geometry origins, unchanged QWindow input locals, actual measured zero, stale resources/roles, malformed numeric fields, snapshot margin changes and popup action inversion. They use synthetic measured inputs and do not establish toolkit/native correspondence. Actual GUI, pixels, keyboard/pointer delivery and full Qt01–08 remain mandatory. The borrowed295 shell opening blocker remains separate; this consumer does not authorize effects or weaken full intent barriers.

@@ -1,0 +1,17 @@
+
+  archive
+    1) archiveQuotaRefusesBeforeEffectTest failed after 1 test(s)
+
+  1 failed
+
+  1) archiveQuotaRefusesBeforeEffectTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-quota/archive.qnt:72:138
+        72:  run archiveQuotaRefusesBeforeEffectTest=init.then(bootstrap).then(fire(Exhaust)).then(persistFact(2,0)).then(fire(Effect(2))).then(all {assert(not(has(s,2,0)) and not(s.effects.contains(2)) and safety),fire(Noop)})
+                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf5b7 --match=archiveQuotaRefusesBeforeEffectTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-quota/archive.qnt
+error: Tests failed

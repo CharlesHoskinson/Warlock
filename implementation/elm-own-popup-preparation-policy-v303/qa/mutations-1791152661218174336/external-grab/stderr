@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/qa/mutations-1791152661218174336/external-grab/qa/test.py", line 13, in <module>
+    r=subprocess.run([node,str(runner)],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=3);(OUT/'stdout').write_bytes(r.stdout);(OUT/'stderr').write_bytes(r.stderr);assert r.returncode==0
+                                                                                                                                                                                  ^^^^^^^^^^^^^^^
+AssertionError

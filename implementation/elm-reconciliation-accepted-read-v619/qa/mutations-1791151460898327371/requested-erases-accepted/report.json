@@ -1,0 +1,40 @@
+{
+  "name": "requested-erases-accepted",
+  "detected": true,
+  "scenario": "dirty-final-geometry",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/mutations-1791151460898327371/requested-erases-accepted/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/mutations-1791151460898327371/requested-erases-accepted",
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/mutations-1791151460898327371/requested-erases-accepted/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/mutations-1791151460898327371/requested-erases-accepted/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/mutations-1791151460898327371/requested-erases-accepted/rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/mutations-1791151460898327371/requested-erases-accepted",
+      "exitCode": 0
+    }
+  ],
+  "mutatedSourceSHA256": "f51ac74202c9398568657d0cfd771deed5ff4f014c3cce16fff2f4acdfbe6f3f",
+  "counterexample": {
+    "events": "events.json",
+    "rows": "rows.json",
+    "expected": "valid release keeps historical Unknown, clears exact live/menu only, ready ack precedes requested reads; rejected release remains blocked"
+  }
+}

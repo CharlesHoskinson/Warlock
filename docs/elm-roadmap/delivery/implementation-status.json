@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-durable-release-reviewed-v609",
-  "status": "Active: durable reservation storage248 CPU, decoder162 compiled and corrected visible/durable Quint36; nativefrontend recovery wiring and full GUI acceptance remain open.",
+  "activeSlice": "implementation/elm-reconciliation-scoped-general-reviewed-v648",
+  "status": "Active: current626 original135 andscoped473 nativepassed; corrected640 deliveryfault native andfullUIUX/scaling/release remainopen.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -2146,11 +2146,85 @@
       "fullReleaseAccepted": false,
       "completedRequirementIds": [],
       "summary": "599 strict immutable authenticatedproof endpoint625checks/9 actual596 wires;601 pure typeddecoder162compiled/5mutants.600119\u2192603158\u2192604228\u2192606234 intermediate source+reviews retained.608248actualfilesystem/unchangedC admissions verifiesprepared/history/crossset/marker/V5conservation/normalizedPending/crash&precallfault/restartrootbeforeunlink/cleanup+absence-fsyncpoison/idempotentimmutablehistory/capacity/lateexactreadmission/nooldreplay.6106actualPythonmutantsdetected.60231Quint2000x80/15controls butrestart-visiblegap preserved;60536Quint2000x80/9controls separatesvisible/durable publication androotbarrier beforePreparedunlink/ReleasedACK.609holds4998files+6links. Nativefrontendcoordinator/Effects+MenuBridgeintegration/full135/473/fullsprints remainopen; no deployment."
+    },
+    "reconciliationV625": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-integrated-reviewed-v625/component-manifest.json",
+      "manifestSHA256": "c3ae21924ca40b0539458c0ec0b51a58229b1dcf11faae5e838cc9bf39fb0266",
+      "productionWired": true,
+      "reconciliationElmCompiledChecks": 51,
+      "reconciliationElmMutantsDetected": 13,
+      "backendCoordinatorCPUChecks": 54,
+      "backendIndependentControls": 102,
+      "startupActualCChecks": 22,
+      "readyModelNamedScenarios": 55,
+      "acceptedFrontierNamedScenarios": 16,
+      "acceptedFrontierSamples": 1000,
+      "acceptedFrontierMaxSteps": 40,
+      "acceptedFrontierMutantsRejected": 9,
+      "deliveryAttestationCPUChecks": 194,
+      "originalNativeJourneyChecks": 135,
+      "durableReconciliationNativeAccepted": true,
+      "nativeAcceptanceScope": "Original135 current frontend/native retirement correlated normal path on626/205594AQ155; isolated session only",
+      "releaseDeliveryLossNativeAccepted": false,
+      "scalableHistoryAccepted": false,
+      "full473NewTupleAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "619 accepted-read frontend51/13mutants;614 readiness55/2000x80/7typedmutants and620 accepted-frontier16/1000x40/9typedmutants explicitFIFO.622 authenticated coordinator54/617102 controls;616 optimized/MainBarPopup/C/public51 passed but618 initial6s startup timeout preserved normalcleanup.626 stages host-locked recovery beforeattached,22actualCstartup/51compiled/build/sourceclosure;627 original135 allPASS normalexits/cleanup unchangedoracles.624194delivery sidecar+inherited248CPU immutableanchor/certificate history, notproductionlostdeliverynative.625 independentholds10625files. No requirement or fullrelease completion; no installed changes."
+    },
+    "reconciliationMenuV638": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-regression-reviewed-v638/component-manifest.json",
+      "manifestSHA256": "2bb21110d05bb2c4d4e9faefd6f5b36c71b888c32d07052d7c85c4ac41bd6427",
+      "originalNativeMenuChecks": 89,
+      "original135AlreadyQualified": true,
+      "capabilityFocusNativeLaunched": false,
+      "full473NewTupleAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "631 original89 fullmenu actualnative ALLPASS normalcleanup oncurrent626/205594AQ155; original135627 qualified625 remains separate.632633sourcepreflightrefused wrongdirectdaemon expectation, no native launched; newcurrent626 relay/receipt634 needed before83+83+161+57 remaining473 families.637reviewfreezer failed str/Path conversion retained;638 verifiedoriginal89AST/deadlines/inputartifactclosure and holdsallsource/failure evidence. No fullrelease/requirement completion."
+    },
+    "reconciliationProgressV645": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-progress-reviewed-v645/component-manifest.json",
+      "manifestSHA256": "209fc5f8dee5e3542472d6fb942a60b52a887d00f8ae9ff0bbe68afce2e47fa6",
+      "originalNative135AlreadyQualified": true,
+      "currentScopedGeneralNativeChecks": 255,
+      "full473NewTupleAccepted": false,
+      "currentFixtureCPUChecks": 159,
+      "deliveryIntegrationCPUChecks": 36,
+      "deliveryRepeatHistoryDefectConfirmed": "RECOVERY-639-001",
+      "releaseDeliveryLossNativeAccepted": false,
+      "scalableHistoryAccepted": false,
+      "symbolicPagedArchiveNamedScenarios": 32,
+      "symbolicPagedArchiveSamples": 1500,
+      "symbolicPagedArchiveMaxSteps": 70,
+      "symbolicPagedArchiveTypedMutantsRejected": 10,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "Current626/205594AQ155/actual626fixture634 sourceclosure159CPU;63583cap+63683focus nativeallPASS normalcleanup andoriginaloracles. Prior135627+89menu631 preserved625638; currentgeneral255/473 notfull473.63036actualC/Python+held619sameview compiled recovery plus51public, immutable624freshcertificate but63912actualcontrols confirm alreadyreleasedA proofserialdeadlocks laterlostB;642 correction mandatory beforecoherent640/native641 acceptance.62914 proposedEARS/OpenSpec boundedpages/COW/pagedreplay architecture32symbolicQuint1500x70/10typedmutants noactualFS/C/S15 acceptance.645review inventory holdsnewcomponents/source/reports, nofullrelease."
+    },
+    "reconciliationGeneralV648": {
+      "source": "implementation/elm-reconciliation-startup-order-v626",
+      "manifest": "implementation/elm-reconciliation-scoped-general-reviewed-v648/component-manifest.json",
+      "manifestSHA256": "bcd53d5abc424cae817372b715084837b8eaa2d37a69d27adad95c24ee7e1b99",
+      "currentScopedGeneralNativeChecks": 473,
+      "currentScopedGeneral473Passed": true,
+      "original135NativeChecksAlreadyQualified": 135,
+      "legacyGeometryFullContractAccepted": false,
+      "releaseDeliveryLossNativeAccepted": false,
+      "scalableHistoryAccepted": false,
+      "fullUIUXAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "648 independent verifiescurrent626/205594AQ155 actualsource/compiler/ABI/artifact/originalASThelpers/deadlines/634profile closure allfive473 checks:63189+63583+63683+643161+64457 nativeallPASS normalcleanup. 643 legacywholegeometrynativeAcceptance/allContract false preserved; nofullUX inferred.64125CPU faultwrapper/nativeprep heldnotlaunched/targetpreflightpending. Revieweroriginalnormalexit-name assumption failure heldthen correctedwithoutchangingnative evidence. Sourceholds12340files.640642649newdeliveryfix outside648; current626 full473 nottransferred. Allfullproject/hardware/user/release/scaling gates remainactive."
     }
   },
   "next": [
-    "Native594 monotonic grant retirement now qualified59642 with normalcleanup: liveoldpeer revoked, allfour interfaces denyoldgrant, reattachnewIDneverrevivesold/futureproofsrefuse. Implement600 durable Unknownhistory vs reservation/admission retirement consuming strict599proof after samecurrentbinding frontend-requested projection+geometry observations; persist/fullkey/fsync/unlink/absence beforefrontend release, no forged terminal outcome/no oldclick replay.601 pure decoder retainsoldbindings and explicit independent acceptedread contexts/IDs; integrate in592/independent231geometryguards after verified storage failure/restart tests.",
-    "591 current521-derived graphics14native checks pass own205/206/AQ155 with actualIntel engine attribution/displayedshader/secondoutput/normalcleanup; browserWebGPU unavailable, noWGSL/hardwarebrowser acceptance.59235compiled honest pertargetrecovery/contextualfeedback builds; nativekeyboard/ATIME/fullbounds/full135/473 pending. GenericGTK263/260/Qtroles/rendererRecovery267 independent lanes continue; fullS01-S16/C00/layering/restore/motion/hybridphysicalGPU/outputs/devicefailure/approvedbudgets/humanjourneys/coherentrelease/rollback remainactive."
+    "Current626 original135+scoped473 nativeALLPASS normalcleanup held648; fullgeometrycontract flags stayfalse. 642 corrects639 repeatedhistoricalscope deadlock; actual640 coherentbuild/public51/drain21 pass, targeted20/6mutants verification and649 independentpre-nativeclosure then646 privateactual641 lost-release campaign. Old626 native473 doesnotqualify640.",
+    "Implement647 actualpagedarchiveprimitive against629 14EARS/OpenSpec/32Quint symbolic architecture, thenactualC/ledger/frontend/native history/replay scaling beforeS15; no historyeviction or quota-raising substitute. Currenthistory64 lifetimeeffect limit remainsopen.",
+    "Continue fullcurrent640 general/bounds/newfaults/GTKQt compatibility/UIUX keyboard/motion/ATIME/physicaloutputs/hardwareGPU/WebGPUdevicefailure/numericalbudgets/humanjourneys/fullS01-S16/C00/reversible release. No main desktop actions or completed requirements."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
@@ -2193,6 +2267,12 @@
       "status": "open; later512 pass has no causal repair evidence",
       "description": "Actual right-button press/release then native publication95/lease9 commit precede DOM callback origin-or-proof refusal; original six-second held-restore menu-open deadline expires. Native cleanup passes. Preserve strict proof guards and deterministically refine lifecycle before claiming resolution.",
       "evidence": "implementation/elm-pointer-publication-race-diagnostic-v515/witness.json"
+    },
+    {
+      "id": "RECOVERY-639-001",
+      "status": "confirmed in actual630 coordinator with compiled619 frontend;642 correction underway",
+      "description": "Already locally released archive origin A rejects informational retirement proof, leaving backend readyfalse and later retainedUnknown B blocked behind serial history delivery. No wrongterminaloutcome inferred.",
+      "evidence": "implementation/elm-delivery-recovery-review-v639/component-manifest.json"
     }
   ],
   "resolvedBoundedFindings": [
@@ -2264,6 +2344,12 @@
       "status": "resolved for established identical full packet with empty Desktop effects; initial publication/visible updates retained",
       "evidence": "implementation/elm-stable-publication-qualified-v526/qa/slice-manifest.json",
       "scope": "Compiled public Elm transitions and native89 bounded regression; does not causally close504"
+    },
+    {
+      "id": "RECONCILIATION-STARTUP-LOCK-626",
+      "status": "Resolved for deterministic actualC22 and original135 native627; full release open",
+      "failedEvidence": "implementation/elm-reconciliation-native-journey-v618/qa/native-1791151961114203912/report.json",
+      "evidence": "implementation/elm-reconciliation-integrated-reviewed-v625/component-manifest.json"
     }
   ]
 }

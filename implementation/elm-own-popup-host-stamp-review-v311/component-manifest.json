@@ -1,0 +1,63 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "sourceReviewPassed": true,
+  "nativeAcceptance": false,
+  "ownBlockerGrantQualified": false,
+  "ownerManifestSHA256": "6e292615cf0edf1cb9b86dd39bfa7e66478c1b65c1f041832bd0581a26229776",
+  "files": {
+    "REVIEW.md": {
+      "sha256": "152d98482ad53ea43f08c9e39648f3e4c48be2dadb86f90119f0f15d1d8f8480",
+      "size": 1753
+    },
+    "qa/dedup-witness.py": {
+      "sha256": "9dfebb74cc84fab364804c2c193565638a332c57c9567a299b24b4aa53f5fffc",
+      "size": 2964
+    },
+    "qa/verify.py": {
+      "sha256": "ade851cfb01528d1b233384b9f6a1435070e439c76c03e645fc851181b116085",
+      "size": 2343
+    },
+    "qa/preliminary/popup-native-stamp.h": {
+      "sha256": "d4851af8fe109bda1998ae17914c0f869b7d27055048f43852376314c0cef1e0",
+      "size": 5115
+    },
+    "qa/preliminary/first-build-popup-native-stamp.h": {
+      "sha256": "e5931b20454ecc2897bbabf946725763b248dd05907f0325cad4d22aa1dc4187",
+      "size": 5091
+    },
+    "qa/preliminary/first-build-popup-native-identity.h": {
+      "sha256": "1e17098c990ea6713298a749ba99033ab0c8b053ad93916ffcfc985fbfc3e679",
+      "size": 1377
+    },
+    "qa/dedup-1791153746791159689/fixture.c": {
+      "sha256": "6347f72dd7c55903527156531f2d456cc605249a9f5e3de0917c9e5551145a13",
+      "size": 1780
+    },
+    "qa/dedup-1791153746791159689/identity.h": {
+      "sha256": "1e17098c990ea6713298a749ba99033ab0c8b053ad93916ffcfc985fbfc3e679",
+      "size": 1377
+    },
+    "qa/dedup-1791153746791159689/witness": {
+      "sha256": "d9a8d804a90e91996bb1023a02600a409777013cb21cdd5af2bc4cbe2b4a90be",
+      "size": 17536
+    },
+    "qa/dedup-1791153746791159689/compile.stderr": {
+      "sha256": "891afef7e5424e00bd37c20be70140b3a142703eaa2cd184af57d8db9a85b089",
+      "size": 823
+    },
+    "qa/dedup-1791153746791159689/witness.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "qa/dedup-1791153746791159689/report.json": {
+      "sha256": "63e7819786b5ad155540e275104c472752cd019f3918ee44fefdfa463b26af0b",
+      "size": 353
+    },
+    "qa/verify-1791153851129967834/report.json": {
+      "sha256": "b9cd45b795233e24c381724cb02e2c046027271a841929a5342bff06fedbb26c",
+      "size": 366
+    }
+  },
+  "verificationReport": "qa/verify-1791153851129967834/report.json"
+}

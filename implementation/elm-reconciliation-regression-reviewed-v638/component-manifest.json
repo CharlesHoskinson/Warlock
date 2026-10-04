@@ -1,0 +1,252 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "parent": "implementation/elm-reconciliation-integrated-reviewed-v625/component-manifest.json",
+  "parentSHA256": "c3ae21924ca40b0539458c0ec0b51a58229b1dcf11faae5e838cc9bf39fb0266",
+  "nativeMenu89Passed": true,
+  "nativeMenuReport": "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/report.json",
+  "capabilityFocusPreflightFailed": true,
+  "capabilityFocusNativeLaunched": false,
+  "full473NewTupleAccepted": false,
+  "fullReleaseAccepted": false,
+  "completedRequirementIds": [],
+  "files": {
+    "implementation/elm-reconciliation-full-menu-v631/SPEC.md": {
+      "sha256": "0494b2d08ae2a427389b5db6b309fc2c3af679d6ac3b7347ffdbdac1d48c421d",
+      "size": 311
+    },
+    "implementation/elm-reconciliation-full-menu-v631/fixture.py": {
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    "implementation/elm-reconciliation-full-menu-v631/observer-build.json": {
+      "sha256": "4ebb3581abaaa3105fe4dd4acd840f05705f9e195d4e5b0bada99e02fe249998",
+      "size": 253
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/grab_guard.py": {
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/inspection.py": {
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/interactive-client.py": {
+      "sha256": "a88b87dbaf4c0ca709279b703e9037e5c8510f43acd5b116855a206b0ebf128b",
+      "size": 8917
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/authority-config.json": {
+      "sha256": "5f584aa2323cd5378c28b0e846462f385a7c3a937060f597a1bd223963e51b3e",
+      "size": 247
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/dmabuf-probe.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/dmabuf-probe.stdout": {
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/elm-webview.log": {
+      "sha256": "7b9ec9d110399e42b94bb17a865a763fb010fd11e666963fbd7322c968acea79",
+      "size": 570290
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/fixture.log": {
+      "sha256": "339f9f94f2e7e0c12c45fbcfcf58eedfbbef9f58b59808c264ef15c893421007",
+      "size": 947951
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/host-evidence.json": {
+      "sha256": "9fa03c1afecf8e92fd73fe7b5135577c0709b00fca281ab4f30f3420cb531f63",
+      "size": 216435
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/hyprland.log": {
+      "sha256": "d8d0d44942ab7c89c2836506d16035b93b8441ceaf764b4e07814c0e31783505",
+      "size": 484924
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/initialNativeFixturePixelsAreRed-0.png": {
+      "sha256": "56fa550bd44ebf58eaaeb78ca34b13eceaaf132d93a286e81d99dc5b584d22a3",
+      "size": 82050
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/minimizedNativeFixturePixelsDisappear-0.png": {
+      "sha256": "b203d9f6f3f8604ebb4882f9b6c4dfb9d790667b5a631024c8e4e041d3d14a3b",
+      "size": 375588
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/parent-input-interactive.log": {
+      "sha256": "7ea161a750f994dbc853ad2ae3700370867b20e1388b7781f92422241dece010",
+      "size": 1377
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/privateBus.log": {
+      "sha256": "4e29f8ae261317d80626025ca28a1e931c9d9502e7634f8b876bb7396e4dfae3",
+      "size": 5570
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/replacement-fixture.log": {
+      "sha256": "e7943f5f09dbe8d574c584bdeb70b2974f854cd2779dec06babf1959068cc85d",
+      "size": 384248
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/restoredNativeFixturePixelsReturn-0.png": {
+      "sha256": "1f13fd09d5098963dfbc67efce412a2920b97db2d73608bfc25f00127438c76c",
+      "size": 81989
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/.flatpak/webkit-3984468-16/bwrapinfo.json": {
+      "sha256": "5a374994dce81875b2fa25fd989e28d624dfaeead018f77bfb652407e0c3adcf",
+      "size": 161
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/.flatpak/webkit-3984468-4/bwrapinfo.json": {
+      "sha256": "fccebc9d3af708b3fe455e9387d0adf3d0c07e498f5088c8fbd4aabbec180bf7",
+      "size": 194
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791152529_1680054442/9809612098793678921/ledger-v5.json": {
+      "sha256": "c3c0704599f1d535028c8477701f6e97334425118393fd56cb803fc15a1bde2c",
+      "size": 212
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791152529_1680054442/9809612098793678921/ledger-v6.json": {
+      "sha256": "8de76e333e184fbb46b81cfe7f0c17acf2d38864e88f707306b0ed7c67ba1bb1",
+      "size": 2223
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791152529_1680054442/9809612098793678921/migration-plan.json": {
+      "sha256": "e1d59f168dcbc402dcfb75ae870da7f0bd8c70a3a1a2479fefb86d49bdc224b7",
+      "size": 247
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791152529_1680054442/9809612098793678921/migration.json": {
+      "sha256": "c9ff901d5578a7a606636ca5c8e026c3cd7d9d55ef399b315c3d731ef8242547",
+      "size": 228
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791152529_1680054442/hyprland.log": {
+      "sha256": "1d47dc082334d3d39ea5a46ce83939b0fd7edfa4a26a2216ecc6b5df05295903",
+      "size": 24397
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/runtime-archive/hyprland.lua": {
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/weston-renderer.log": {
+      "sha256": "83ba71967349daae943ae54f82ec9102ae639372d61de27730edc0231dbc68a6",
+      "size": 5545
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/native-evidence/weston.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native-1791152528506709531/report.json": {
+      "sha256": "078fe1bed704aa7e9390a7bac3ccdae3f70671c7ae1a1f1ce7ef23d0136ebf0c",
+      "size": 316580
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/native.py": {
+      "sha256": "48b864717eec4321d9f179fb6d378e412c0afab2706c9aec5c2959c918fb5e11",
+      "size": 31705
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/preflight.json": {
+      "sha256": "37ecdab03fae0f102e790ba0e8cd3f609afb7238571105975542955109b564c2",
+      "size": 27136
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/preflight.py": {
+      "sha256": "9e5a3816026d9c4ea2f235e2cbf2b985ccad403f74ddce45a3d05c28a004eee7",
+      "size": 4820
+    },
+    "implementation/elm-reconciliation-full-menu-v631/qa/sampling.py": {
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    "implementation/elm-reconciliation-capability-v632/SPEC.md": {
+      "sha256": "097caeacadd75c0c5d9890950a6f3a0601ab39f0b7d420877d8c916631419710",
+      "size": 228
+    },
+    "implementation/elm-reconciliation-capability-v632/fixture.py": {
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    "implementation/elm-reconciliation-capability-v632/observer-build.json": {
+      "sha256": "4ebb3581abaaa3105fe4dd4acd840f05705f9e195d4e5b0bada99e02fe249998",
+      "size": 253
+    },
+    "implementation/elm-reconciliation-capability-v632/qa/failure.json": {
+      "sha256": "b142e822bd683d70045ae62ae4a6967f73271eaae9bc2cc4c4bcb185cfba33bf",
+      "size": 447
+    },
+    "implementation/elm-reconciliation-capability-v632/qa/grab_guard.py": {
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    "implementation/elm-reconciliation-capability-v632/qa/inspection.py": {
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    "implementation/elm-reconciliation-capability-v632/qa/interactive-client.py": {
+      "sha256": "ce1c71dff674215d418afb6cf44cfa14718f1042c1445b035ff855777c8501ef",
+      "size": 8920
+    },
+    "implementation/elm-reconciliation-capability-v632/qa/native.py": {
+      "sha256": "5ed95f53a59fb0b00ce07a65198d3fa63e363b4f5ad619606132435768c88073",
+      "size": 31245
+    },
+    "implementation/elm-reconciliation-capability-v632/qa/preflight.py": {
+      "sha256": "aeffbfba56fee0d1ed289ab703f3841fb81bb56e8d8e22bdfa322a8473cd6f4c",
+      "size": 4821
+    },
+    "implementation/elm-reconciliation-capability-v632/qa/sampling.py": {
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    "implementation/elm-reconciliation-focus-v633/SPEC.md": {
+      "sha256": "f166fe106474fe355d803e47a3acff9a9b00e463414e3f639dc5ca428a185bfd",
+      "size": 223
+    },
+    "implementation/elm-reconciliation-focus-v633/fixture.py": {
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    "implementation/elm-reconciliation-focus-v633/observer-build.json": {
+      "sha256": "4ebb3581abaaa3105fe4dd4acd840f05705f9e195d4e5b0bada99e02fe249998",
+      "size": 253
+    },
+    "implementation/elm-reconciliation-focus-v633/qa/failure.json": {
+      "sha256": "f1e5a5a2c29ce9c7134542139c826db4078d9df2a988fcec19d43f2283ab771f",
+      "size": 447
+    },
+    "implementation/elm-reconciliation-focus-v633/qa/grab_guard.py": {
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    "implementation/elm-reconciliation-focus-v633/qa/inspection.py": {
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    "implementation/elm-reconciliation-focus-v633/qa/interactive-client.py": {
+      "sha256": "ce1c71dff674215d418afb6cf44cfa14718f1042c1445b035ff855777c8501ef",
+      "size": 8920
+    },
+    "implementation/elm-reconciliation-focus-v633/qa/native.py": {
+      "sha256": "5ed95f53a59fb0b00ce07a65198d3fa63e363b4f5ad619606132435768c88073",
+      "size": 31245
+    },
+    "implementation/elm-reconciliation-focus-v633/qa/preflight.py": {
+      "sha256": "500d89b93314409b97ccbafc1948c3fdb15084ae184a96b29e795f2804c59b22",
+      "size": 4816
+    },
+    "implementation/elm-reconciliation-focus-v633/qa/sampling.py": {
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    "implementation/elm-reconciliation-regression-reviewed-v637/SPEC.md": {
+      "sha256": "3c676dffdbf018ac8f3cdeabdc1cc3233dd243ff5239bc5a79fce9a9fa6bc557",
+      "size": 334
+    },
+    "implementation/elm-reconciliation-regression-reviewed-v637/qa/failure.json": {
+      "sha256": "6c510925131cc86a126bd6fd517c6d486b86b003f2ddc1986371858c78a67b00",
+      "size": 250
+    },
+    "implementation/elm-reconciliation-regression-reviewed-v637/qa/freeze.py": {
+      "sha256": "00fd2ff875c139dafcf031ad4c2291a5b97c9242a3d95c1d0d2d0551f0cc4a73",
+      "size": 2461
+    },
+    "implementation/elm-reconciliation-regression-reviewed-v638/SPEC.md": {
+      "sha256": "3c676dffdbf018ac8f3cdeabdc1cc3233dd243ff5239bc5a79fce9a9fa6bc557",
+      "size": 334
+    },
+    "implementation/elm-reconciliation-regression-reviewed-v638/qa/freeze.py": {
+      "sha256": "76a5b1248b27352bf1ec1bab483bcf12aa7ff640d0accbd622bdbd1322414ef8",
+      "size": 2533
+    }
+  },
+  "symlinks": {}
+}

@@ -1,0 +1,419 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "scope": "QA-only source acquisition rebind to exact521 shared broker; inherited hold/pump behavior and actual CPU controls only. Ancestor test names remain preserved labels, not native acceptance.",
+  "files": {
+    "parent.json": {
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631,
+      "mode": 420
+    },
+    "qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/control-1/gate.json": {
+      "sha256": "6508018d64ea211d8f749ce2b022da836454e2ed2e5ae17e95786db2b3b89f32",
+      "size": 300,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-1/held.json": {
+      "sha256": "0abf6115e0de75ca0491c3b1aa2ec49e12e2e2e57248559360c11337f13603bc",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-10/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/control-11/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/control-13/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-14/gate.json": {
+      "sha256": "2e710367b827127ab16260f7b51d520c418dc9334d7dd2d9ad43bdaad1badc89",
+      "size": 300,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-14/held.json": {
+      "sha256": "ba73f6fd2aa5a7e7d0e8a61c065b266d150be119def804951615cf161b73945a",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-15/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-15/held.json": {
+      "sha256": "dfafb91904c40c4ae5ca04456cc60d18e9a87c7a48024ea6e14d3b8d398db97d",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-16/gate.json": {
+      "sha256": "3f2e597f0bf1bbab40e111b9890fc96ddfaefab8edc49d0d30974e666e23d2d8",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-16/held.json": {
+      "sha256": "8a36793b238c762d71e311a6788d50cf3f21c609524b2429d6a2b17401041dd2",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-17/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-17/held.json": {
+      "sha256": "aa40226e393e40c55014266152a38bc60882a884d3728ed7f3fa6cb5d5f31f0b",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-18/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-18/held.json": {
+      "sha256": "3767fefeff7289aebfc63ab1e793f77389b19aabb86d62f27c47736bbe12908e",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-3/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-4/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-5/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-6/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-7/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-8/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-8/held.json": {
+      "sha256": "0abf6115e0de75ca0491c3b1aa2ec49e12e2e2e57248559360c11337f13603bc",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-9/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/control-9/held.json": {
+      "sha256": "0abf6115e0de75ca0491c3b1aa2ec49e12e2e2e57248559360c11337f13603bc",
+      "size": 645,
+      "mode": 384
+    },
+    "qa/hold-1791147764315180548/eof.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/eof.stdout": {
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/inputs/qa/test.py": {
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/inputs/qa/wrapper.py": {
+      "sha256": "f295e86639b06c0d3535e7cf536b94a8c41cc9d7e2095a2a9e437bc188f441e3",
+      "size": 13297,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/locked.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/locked.stdout": {
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/malformed.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/malformed.stdout": {
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/release.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/release.stdout": {
+      "sha256": "942e5fe5145f693d4e90112a5ec370797def23a691a7a9f1d0a8c36af275f5c4",
+      "size": 453,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/report.json": {
+      "sha256": "1913312b6d599858c2fc359079896481bae466faf83e2c31b0e5479be51bc08b",
+      "size": 10264,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/timeout.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/hold-1791147764315180548/timeout.stdout": {
+      "sha256": "5af6102c1803b6303f120a1a726eb4902a037a1393289000d150875bab0adbe2",
+      "size": 148,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/authority.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control1/gate.json": {
+      "sha256": "c5318869b5c64dbd5da3d2719cdcd4a5cb2031f6cf4bdfec61648113717e9fe1",
+      "size": 308,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control1/held.json": {
+      "sha256": "5d2aa68177d2b5f5625ba4e7d22cfe58d2980500071673a381e1fe5ec1308d37",
+      "size": 668,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control10/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control11/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control12/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control13/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control14/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control15/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control16/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control17/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control18/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control19/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control20/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control21/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control22/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control23/gate.json": {
+      "sha256": "aabab580f9822ed81d9614ff6ce2f55f35a67067d3c9ca5f837fa3b080c012fd",
+      "size": 308,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control23/held.json": {
+      "sha256": "5fef4feb80f62f85668c2f8da0a0985540ed3553607f867606d02aeaf07a3541",
+      "size": 668,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control24/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control3/gate.json": {
+      "sha256": "ef68ef49de3b375d972483f88e08b29336a9e7bee21f6372f17927b3ef896bdc",
+      "size": 308,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control3/held.json": {
+      "sha256": "86a36f6811ef95d1cfc133ef7f33bf95280ff729dfcd93ab715d20d4d46b1481",
+      "size": 668,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control4/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control5/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control6/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control7/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control8/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/control9/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/selector-1791147734795440439/inputs/parent.json": {
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/inputs/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/inputs/qa/selector-test.py": {
+      "sha256": "b7cdb63c6bc59fc150801bf2e1ce06b365abfbc4bf6f1f47966c2b71136a66b2",
+      "size": 9403,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/inputs/qa/test.py": {
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/inputs/qa/wrapper.py": {
+      "sha256": "f295e86639b06c0d3535e7cf536b94a8c41cc9d7e2095a2a9e437bc188f441e3",
+      "size": 13297,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/inputs/upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/report.json": {
+      "sha256": "02075685a9422cabad836fccd5af2c6d0bb36288cd8824e489be21e032001301",
+      "size": 9690,
+      "mode": 420
+    },
+    "qa/selector-1791147734795440439/wrapper.json": {
+      "sha256": "8137ca3f142ed3dd03edb85aa78eec09b0a0411274d2cb930dee466ef2a9e69e",
+      "size": 393,
+      "mode": 384
+    },
+    "qa/selector-test.py": {
+      "sha256": "b7cdb63c6bc59fc150801bf2e1ce06b365abfbc4bf6f1f47966c2b71136a66b2",
+      "size": 9403,
+      "mode": 420
+    },
+    "qa/test.py": {
+      "sha256": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+      "size": 9187,
+      "mode": 420
+    },
+    "qa/wrapper.py": {
+      "sha256": "f295e86639b06c0d3535e7cf536b94a8c41cc9d7e2095a2a9e437bc188f441e3",
+      "size": 13297,
+      "mode": 420
+    },
+    "upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    }
+  },
+  "reports": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/receipt/qa/selector-1791147734795440439/report.json": {
+      "sha256": "02075685a9422cabad836fccd5af2c6d0bb36288cd8824e489be21e032001301",
+      "checks": 52
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/receipt/qa/hold-1791147764315180548/report.json": {
+      "sha256": "1913312b6d599858c2fc359079896481bae466faf83e2c31b0e5479be51bc08b",
+      "checks": 45
+    }
+  }
+}

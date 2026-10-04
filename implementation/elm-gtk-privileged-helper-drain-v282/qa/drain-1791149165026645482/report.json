@@ -1,0 +1,164 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "credentialPolicyInjected": true,
+  "checks": [
+    {
+      "name": "privileged-wait",
+      "passed": true,
+      "elapsed": 1.0168911549990298,
+      "actualHelperExitCode": 0,
+      "helperSignalled": false,
+      "terminal": {
+        "sequence": 10,
+        "kind": "terminal",
+        "monotonic": 113432.044637833,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3729710,
+              "start": "11726877",
+              "pgid": 3729701,
+              "ppid": 3729701,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          },
+          {
+            "identity": {
+              "pid": 3729718,
+              "start": "11726877",
+              "pgid": 3729701,
+              "ppid": 3729710,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      }
+    },
+    {
+      "name": "privileged-timeout",
+      "passed": true,
+      "elapsed": 2.6210193520091707,
+      "positiveCleanup": false,
+      "helperSignalledBySupervisor": false,
+      "externalControlCleanup": "actual unprivileged owned toy SIGTERM",
+      "terminal": {
+        "sequence": 10,
+        "kind": "terminal",
+        "monotonic": 113434.771639973,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3729864,
+              "start": "11726989",
+              "pgid": 3729860,
+              "ppid": 3729860,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [
+          {
+            "pid": 3729865,
+            "start": "11726990",
+            "pgid": 3729860,
+            "ppid": 3729864,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          }
+        ],
+        "error": "RuntimeError('bounded activation drain expired')"
+      }
+    },
+    {
+      "name": "repeated-signal-error",
+      "passed": true,
+      "elapsed": 1.0167802700016182,
+      "actualHelperExitCode": 0,
+      "helperSignalled": false,
+      "terminal": {
+        "sequence": 12,
+        "kind": "terminal",
+        "monotonic": 113435.900454269,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3730071,
+              "start": "11727263",
+              "pgid": 3730070,
+              "ppid": 3730070,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          },
+          {
+            "identity": {
+              "pid": 3730072,
+              "start": "11727263",
+              "pgid": 3730070,
+              "ppid": 3730071,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": "signal: RuntimeError(\"owned signal errors: RuntimeError('injected repeated signal acquisition failure')\")"
+      }
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/drain-test.py": "f94ddac8aa1729d43cc12bd3766071b91711f60891af280667c61b80081d86c6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-supervisor.py": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/credentials.py": "969432e3c6d74228a167c5788dddbeeef795815e81df0ce5963bead7072bb8d8"
+  }
+}

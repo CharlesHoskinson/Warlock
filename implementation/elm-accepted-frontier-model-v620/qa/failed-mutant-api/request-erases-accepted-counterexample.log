@@ -1,0 +1,17 @@
+
+  frontier
+    1) pendingRequestRetainsAcceptedTest failed after 1 test(s)
+
+  1 failed
+
+  1) pendingRequestRetainsAcceptedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/request-erases-accepted/frontier.qnt:46:103
+        46:  run pendingRequestRetainsAcceptedTest=init.then(proof).then(pair).then(fire(RequestBatch)).then(all {assert(s.acceptedA==A1 and s.acceptedG==G2 and s.pendingA and s.pendingG),fire(SyncRelease)}).then(fire(Release(OLD))).then(assertReleased)
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf233 --match=pendingRequestRetainsAcceptedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/request-erases-accepted/frontier.qnt
+error: Tests failed

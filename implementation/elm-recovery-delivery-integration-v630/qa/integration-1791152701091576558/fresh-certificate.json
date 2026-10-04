@@ -1,0 +1,61 @@
+{
+  "anchorId": "ded6d120ee83dd062ce699c91648bb9b47f1303573e65cfa956eb7a878740a1d",
+  "id": "26d0b9f8ece07e4f9097faa6026957f6858e62e2f914ff9b7b14e951c3c3b125",
+  "observation": {
+    "actionContext": {
+      "epoch": "3",
+      "lifetime": "13066731177979386763",
+      "output": "1",
+      "revision": "21"
+    },
+    "actionRequestId": "9",
+    "geometryContext": {
+      "epoch": "3",
+      "lifetime": "13066731177979386763",
+      "output": "1",
+      "revision": "21"
+    },
+    "geometryRequestId": "10"
+  },
+  "proof": {
+    "binding": {
+      "frontend": "3",
+      "lifetime": "13066731177979386763",
+      "session": "16592658915108124045"
+    },
+    "grantState": "Retired",
+    "kind": "binding-retirement",
+    "operation": "retire",
+    "protocolVersion": 3,
+    "queriedBinding": {
+      "frontend": "1",
+      "lifetime": "13066731177979386763",
+      "session": "16592658915108124045"
+    },
+    "requestId": "1",
+    "retirementProtocol": 1,
+    "sequence": "201"
+  },
+  "record": {
+    "binding": {
+      "frontend": "1",
+      "lifetime": "13066731177979386763",
+      "session": "16592658915108124045"
+    },
+    "effectProtocol": 1,
+    "intent": {
+      "context": {
+        "epoch": "1",
+        "lifetime": "13066731177979386763",
+        "output": "1",
+        "revision": "21"
+      },
+      "generation": "12",
+      "incarnation": "2",
+      "operation": "minimize",
+      "request": "12"
+    },
+    "schema": 2,
+    "status": "Unknown"
+  }
+}

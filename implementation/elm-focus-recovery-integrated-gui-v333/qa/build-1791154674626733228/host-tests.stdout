@@ -1,0 +1,21 @@
+TAP version 14
+# random seed: R02S20c50e5355729a69d183ea9b389dfb88
+1..11
+# Start of host tests
+ok 1 /host/assets
+ok 2 /host/request-schema
+ok 3 /host/qa-report-control-bounds
+ok 4 /host/surface-atomic-preflight
+# surface-refused: popup-origin-or-stale
+# surface-refused: preflight-unsent
+# surface-refused: popup-origin-or-stale
+ok 5 /host/surface-manager-isolation
+# surface-presentation-applied: publication=11 lease=3
+# surface-focus-applied: publication=11 lease=3
+ok 6 /host/surface-acknowledgements
+ok 7 /host/monitor-index-boundaries
+ok 8 /host/popup-logical-dimensions
+ok 9 /host/shared-view-capabilities
+ok 10 /host/shared-projection-capabilities
+ok 11 /host/shared-duplicate-fields
+# End of host tests

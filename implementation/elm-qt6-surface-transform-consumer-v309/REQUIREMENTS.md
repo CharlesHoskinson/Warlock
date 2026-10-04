@@ -1,0 +1,3 @@
+# Measured Qt coordinate consumer
+
+Derive frozen296 unchanged except replacing unproven surface=window assumption with inverse measured Qt surface-to-window translation from fresh308 current-role journal. Refuse unavailable/nonfinite/mismatched actual measurement, inconsistent margin translation, stale identity or bounds. Compute surface=window−mapFromWlSurface(0,0), then global=nativeReal.origin+surface−rawXdgGeometry.origin. Apply the same transform to independently measured popup marker and QAction rectangles. No Qt globalPosition desktop authority; no guessed CSD offsets; retain Q1 and whole-buffer attribution. CPU controls are not native evidence.

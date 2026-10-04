@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "fullReleaseAccepted": false,
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-held-v329/qa/freeze.py\", line 40, in <module>\n    assert sha(ancestor)=='c30e3a6c9a86860bd882897c644b8d14a21e0459eae67d4e578440b01a8f48d8'\n           ~~~^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-held-v329/qa/freeze.py\", line 5, in sha\n    def sha(p):return hashlib.sha256(Path(p).read_bytes()).hexdigest()\n                                     ~~~~~~~~~~~~~~~~~~^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 777, in read_bytes\n    with self.open(mode='rb', buffering=0) as f:\n         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.14/pathlib/__init__.py\", line 771, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-context-feedback-v592/qa/slice-manifest.json'\n"
+}

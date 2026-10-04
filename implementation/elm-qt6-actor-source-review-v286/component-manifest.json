@@ -1,0 +1,138 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "scope": "Independent actual Qt actor boundary/deadline review only",
+  "files": {
+    "REQUIREMENTS.md": {
+      "sha256": "b69e2d9ad2a0b34102d035e3059f9facdc4576401406b0f2353cb10806028841",
+      "size": 470,
+      "mode": "0o644"
+    },
+    "REVIEW.md": {
+      "sha256": "1414564a8825168c239067d0dc4f77501f540cceed19e24fc5678501b38e40e0",
+      "size": 2001,
+      "mode": "0o644"
+    },
+    "qa/captured/actor.py": {
+      "sha256": "128e6226a7b76968336504f2966d246e989256c822db8b3a2e6163896a8a9bbb",
+      "size": 6518,
+      "mode": "0o644"
+    },
+    "qa/captured/journal.py": {
+      "sha256": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f",
+      "size": 7810,
+      "mode": "0o644"
+    },
+    "qa/corrected-actor.py": {
+      "sha256": "a1bbf2578837b9a5daadf56214ad2e1a8130e6c48bba97448a15189d3adca3ed",
+      "size": 6630,
+      "mode": "0o644"
+    },
+    "qa/corrected-journal.py": {
+      "sha256": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f",
+      "size": 7810,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149388419479975/close-final-persist.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149388419479975/close-final-read.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149388419479975/quit-final-persist.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149388419479975/receipt-final-persist.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149388419479975/report.json": {
+      "sha256": "effb2c1bcf68431f0ee4d96c07ba6ef067280b9b76c59d7ab1dd377a689f2351",
+      "size": 1917,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149457090482189/close-final-persist.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149457090482189/close-final-read.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149457090482189/quit-final-persist.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149457090482189/receipt-final-persist.jsonl": {
+      "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+      "size": 3,
+      "mode": "0o644"
+    },
+    "qa/deadline-1791149457090482189/report.json": {
+      "sha256": "b949f6f4e818b676de2cc159c33920cbb4288ac14c5a82d0ff3e1a818b7f5b27",
+      "size": 2248,
+      "mode": "0o644"
+    },
+    "qa/deadline-test.py": {
+      "sha256": "c63c825369d27676664d7ee84aee7c1adcc0000a02b50898165e647bf08b03c5",
+      "size": 2993,
+      "mode": "0o644"
+    },
+    "qa/freeze-failure.json": {
+      "sha256": "2f2505a4301fd7fc8c3f1653e06bf463e3b096627790988f620c9933d2b94a97",
+      "size": 171,
+      "mode": "0o644"
+    },
+    "qa/freeze-final.py": {
+      "sha256": "7574422bea5c9221ae2c5b2f4c65bd6a2a55365dd9fe181a866ac6202e728ecb",
+      "size": 1955,
+      "mode": "0o644"
+    },
+    "qa/freeze.py": {
+      "sha256": "18e01f55afcc24cc7448678c99e510d27b7b9a15e3c77cf513acf6d950c684bc",
+      "size": 1878,
+      "mode": "0o644"
+    }
+  },
+  "externalFiles": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor.py": {
+      "sha256": "a1bbf2578837b9a5daadf56214ad2e1a8130e6c48bba97448a15189d3adca3ed",
+      "size": 6630,
+      "mode": "0o644"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/journal.py": {
+      "sha256": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f",
+      "size": 7810,
+      "mode": "0o644"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/REQUIREMENTS.md": {
+      "sha256": "aec75f5e555446b036284eeb5faf8fc330161a3544bf0d822983075edf80376b",
+      "size": 1256,
+      "mode": "0o644"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/report.json": {
+      "sha256": "71ab016653afd058805a502da496e7fd5e14dcc4fe8aac3705b47c39c7b055a9",
+      "size": 2100,
+      "mode": "0o644"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791149432655542921/report.json": {
+      "sha256": "4553ea694626c6fd7d9f7b6aca6e75f95cc3afb64f7af009a789a60ab450c31e",
+      "size": 27744,
+      "mode": "0o644"
+    }
+  },
+  "oldDeadlineWitness": "qa/deadline-1791149388419479975/report.json",
+  "correctedDeadlineEvidence": "qa/deadline-1791149457090482189/report.json"
+}

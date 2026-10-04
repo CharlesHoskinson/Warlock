@@ -1,0 +1,386 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "files": {
+    "qa/deadline-1791147824109111550/candidate/actor.json": {
+      "sha256": "9834909376c78730e3d56a2575abac9dcf98c4db74cca95373ec0623f3817fbe",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/deadline-1791147824109111550/candidate/gate.json": {
+      "sha256": "c9d2f59ec4f789cfe2b98d398be1981a3eb1c0fbca4a978c25e1cbddbeec0416",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/deadline-1791147824109111550/inputs/qa/deadline.py": {
+      "sha256": "257145edeb49ea07080609032d93c0ade1b8b6ebb6e5034b62dddf28301713e9",
+      "size": 3742,
+      "mode": 420
+    },
+    "qa/deadline-1791147824109111550/inputs/qa/relay.py": {
+      "sha256": "e1de5e72429994418672f2cb9e282c667f03397e7bf38d17fdf61cab2ca34ee5",
+      "size": 11037,
+      "mode": 420
+    },
+    "qa/deadline-1791147824109111550/inputs/qa/unsafe-success-first.py": {
+      "sha256": "52b120fa4f01f29805ebe299247179ec31f18a90e0faf3371d21ed77a61c7ef3",
+      "size": 8951,
+      "mode": 420
+    },
+    "qa/deadline-1791147824109111550/report.json": {
+      "sha256": "fb68f2f679a526f49cde805131f7196a1d148df5093b24a9938db9f8642e3518",
+      "size": 2674,
+      "mode": 420
+    },
+    "qa/deadline-1791147824109111550/unsafe-ancestor/actor.json": {
+      "sha256": "9acf9707c2335e14a94b0bb93d231191cf257eb6d148245608a7e38b5243e58c",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/deadline-1791147824109111550/unsafe-ancestor/exit.json": {
+      "sha256": "65e402778682a84873825a22694647f4b226c3efdd1c4347492576114f62b88e",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/deadline-1791147824109111550/unsafe-ancestor/gate.json": {
+      "sha256": "e07ca81635f08b5eef591c363da0af8e6a285299c7a5250f92a80a62a30db33f",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/deadline.py": {
+      "sha256": "257145edeb49ea07080609032d93c0ade1b8b6ebb6e5034b62dddf28301713e9",
+      "size": 3742,
+      "mode": 420
+    },
+    "qa/edges-1791147824107928411/backlog/actor.json": {
+      "sha256": "dbc8eb0c18077c0410cb60c930ac642fc8e553d15ee61d78b70799cb6491ad1c",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/edges-1791147824107928411/backlog/exit.json": {
+      "sha256": "d8b63af538090b65ff2a685ec8257f1d58624bce632b1d296d580a3cc4c2573f",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/edges-1791147824107928411/backlog/gate.json": {
+      "sha256": "8eb92c164ce06c24a70921334367cdd17df0a1d5fafd21e822d72f13e26a7202",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/edges-1791147824107928411/blocked/actor.json": {
+      "sha256": "69c9a3c0c74ee88c0e7d89c5199d0a778f69f7c2941078ec00eff42b88c2a45f",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/edges-1791147824107928411/blocked/gate.json": {
+      "sha256": "7d6a87c56c295e8b6ec07fe387dcb84e06cfa2fa2a35e6db3ab9a399f769e2fb",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/edges-1791147824107928411/inputs/qa/edges.py": {
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448,
+      "mode": 420
+    },
+    "qa/edges-1791147824107928411/inputs/qa/relay.py": {
+      "sha256": "e1de5e72429994418672f2cb9e282c667f03397e7bf38d17fdf61cab2ca34ee5",
+      "size": 11037,
+      "mode": 420
+    },
+    "qa/edges-1791147824107928411/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    },
+    "qa/edges-1791147824107928411/report.json": {
+      "sha256": "559622f20950fb9e032002d72da296125452c6d62f0ddc28cd7057d2c0f1509e",
+      "size": 1549,
+      "mode": 420
+    },
+    "qa/edges.py": {
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448,
+      "mode": 420
+    },
+    "qa/relay.py": {
+      "sha256": "59854774bd639dea4b3e615fd7701af2a37044e12ef8701beadd4fa85ab2c3e5",
+      "size": 11049,
+      "mode": 420
+    },
+    "qa/test-1791147764313011171/control-1/actor.json": {
+      "sha256": "1307230e8af5cd49f047dd564e70f587e1d89f43ac50ce4e9d08f2837ad18938",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-1/exit.json": {
+      "sha256": "5d2e3ab0d8dda128086e2c85e34a6d50b7b21f0606cd2e39f64cdf3c02cc6491",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-1/gate.json": {
+      "sha256": "22d6e6461a461132773b32f06b617bce8b4266eaccbe4823b626bb9615f8f7fa",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-2/actor.json": {
+      "sha256": "9ad4b691ae3b1395799ea1b78e8fd3c92a74a63b48d359e792a513e59a7ac81b",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-2/exit.json": {
+      "sha256": "e4652b50ee7d78aa044522557c57a22606a3d6cd58070a31cf33981366b481f8",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-2/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-3/actor.json": {
+      "sha256": "12237844be47e2938af0d86d52275231cab99049351d5d777d57c95a51907933",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-3/gate.json": {
+      "sha256": "7436b38e63e027622969a63f479cffb423444e6460c7ebdad18388bfd5d61c0d",
+      "size": 108,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-4/actor.json": {
+      "sha256": "bd9db8ff2f2e097cb65a3bafa254bfb6db578e65172cfbc872f3f1c1e7f511a5",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-4/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-5/actor.json": {
+      "sha256": "b2d2f9755f3fb52cb82f672228738377c8fa1b11f64fb5ceb67d5992cd5230c3",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/control-5/gate.json": {
+      "sha256": "03b0afc8e9f51f2d2f355c290eb9e73530db07f509215b71365f3df1eb5c1f7a",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/dir-link": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/relay/qa/test-1791147764313011171/control-5"
+    },
+    "qa/test-1791147764313011171/hardlink.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/test-1791147764313011171/inputs/qa/relay.py": {
+      "sha256": "e1de5e72429994418672f2cb9e282c667f03397e7bf38d17fdf61cab2ca34ee5",
+      "size": 11037,
+      "mode": 420
+    },
+    "qa/test-1791147764313011171/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    },
+    "qa/test-1791147764313011171/link.json": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/relay/qa/test-1791147764313011171/control-5/actor.json"
+    },
+    "qa/test-1791147764313011171/report.json": {
+      "sha256": "0bc4406e1dc6c1919cd3a267648dec4e047fba2aa7f38f40c55ff8c29fd66b4d",
+      "size": 3292,
+      "mode": 420
+    },
+    "qa/test-1791148032889304893/control-1/actor.json": {
+      "sha256": "0b9c5e319403d21d293c7317faece546933f1ed2028fd3397b6ef072b79d58b4",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-1/exit.json": {
+      "sha256": "cf89f04279724667b31047640fd5465c79d6a7afbdf52636d633549983a3de0d",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-1/gate.json": {
+      "sha256": "721bedbd8751013ba83fbd4f64b9c1574788f495c4466dbab61789112aa9c201",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-2/actor.json": {
+      "sha256": "aba436438a1a4817fecc853736afab9566c3bfb82d003423fbf6dbff747813b6",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-2/exit.json": {
+      "sha256": "6f7ea20a7d0ec028d28c246bebe8f26432b43ef8e1c1dddfc01642eac70268a6",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-2/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-3/actor.json": {
+      "sha256": "1c27ef5655216a84c66dd51cb58c6b76802f4bbee352186b76d9e3c46bb75bb8",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-3/gate.json": {
+      "sha256": "96e11e96781601e2a1e20fd95be9abefe2364ea9c0c07dbfb6db2a6250ceabea",
+      "size": 108,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-4/actor.json": {
+      "sha256": "bd038a339cf958a568509f863d58448c082d61038fdc946a65c0dfbe4ba41cd3",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-4/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-5/actor.json": {
+      "sha256": "52b11f47c873929d19bc2e595942e7cb7140ce808175c437789728e565be3b16",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/control-5/gate.json": {
+      "sha256": "2fffde6b89700af60033be217ce703ae2181fdbbbfa6e771d172b4e91cfa2055",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/dir-link": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/relay/qa/test-1791148032889304893/control-5"
+    },
+    "qa/test-1791148032889304893/hardlink.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/test-1791148032889304893/inputs/qa/relay.py": {
+      "sha256": "b6a96f357b62024dcf2ea04534907b4bd390ec0cccc13c176510dd234cf170cc",
+      "size": 11037,
+      "mode": 420
+    },
+    "qa/test-1791148032889304893/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    },
+    "qa/test-1791148032889304893/link.json": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/relay/qa/test-1791148032889304893/control-5/actor.json"
+    },
+    "qa/test-1791148032889304893/report.json": {
+      "sha256": "f4d08a3fbe854f5ab9998f9a6d06b7b21d373c4fa9628a90c5624dd68517485f",
+      "size": 3292,
+      "mode": 420
+    },
+    "qa/test-1791148508725794751/control-1/actor.json": {
+      "sha256": "e7716e118bb09dfcfabe0c291acbef5ec19d3ed819f3a11a7af7888dc50768e2",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-1/exit.json": {
+      "sha256": "5af5ee618cd50cf546341ee3a683d66ad113f214e87f96da602e8a7f38f2d496",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-1/gate.json": {
+      "sha256": "626cee8ef8a7e3ce789261e9f2578c5b3c2a47e88b299a7ed78807563668f2a5",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-2/actor.json": {
+      "sha256": "b0ff03cd24f50496d89709ef000b5edb337bbfcc16c8d6736ccf627c089cdf98",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-2/exit.json": {
+      "sha256": "44adca84c24fd413fa8c9e599ff0280eb1e0ab85fccdb53f54685320d97a92c1",
+      "size": 133,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-2/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-3/actor.json": {
+      "sha256": "4bae380253e747e8173ef9906f74c7ea7cde6bf7cdd46ae001d537380c18dbc9",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-3/gate.json": {
+      "sha256": "98fbcaf753d14a1b47191f7cd43042c854a6fbe0ad590b15445e9907948043cc",
+      "size": 108,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-4/actor.json": {
+      "sha256": "61a20f14c0bcd23a159430e9bac4a903289395cebccd62dd2ca3a04db3af64f3",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-4/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-5/actor.json": {
+      "sha256": "bf9fbd801e527fbe6e2e0af2133259fd07370c8209fa6827c2651c1b91d5573e",
+      "size": 96,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/control-5/gate.json": {
+      "sha256": "115e577ea33569683ccc3288937f34e1391e21afc5c483ded329658a6b55bab0",
+      "size": 115,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/dir-link": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/relay-final/qa/test-1791148508725794751/control-5"
+    },
+    "qa/test-1791148508725794751/hardlink.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/test-1791148508725794751/inputs/qa/relay.py": {
+      "sha256": "59854774bd639dea4b3e615fd7701af2a37044e12ef8701beadd4fa85ab2c3e5",
+      "size": 11049,
+      "mode": 420
+    },
+    "qa/test-1791148508725794751/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    },
+    "qa/test-1791148508725794751/link.json": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/relay-final/qa/test-1791148508725794751/control-5/actor.json"
+    },
+    "qa/test-1791148508725794751/report.json": {
+      "sha256": "3b253ec49414f4f63e429961fd032c1439319bc5ba73b5317db57c2c267953b1",
+      "size": 3292,
+      "mode": 420
+    },
+    "qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    }
+  },
+  "scope": "Explicit symlink inventories; actual final closed-profile8+relay19 CPU and byte-preserved ancestral pump7+7. First rejected inventory retained; no native08/09 qualification.",
+  "reports": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/relay-final/qa/test-1791148508725794751/report.json": {
+      "sha256": "3b253ec49414f4f63e429961fd032c1439319bc5ba73b5317db57c2c267953b1",
+      "checks": 19
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/acquisition-test-1791148508710084498/report.json": {
+      "sha256": "8821406b8b062f7c30d1f2cd6f27925b3240dfdc9fcd80fc050f9e8164fe025a",
+      "checks": 8
+    }
+  }
+}

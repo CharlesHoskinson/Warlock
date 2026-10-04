@@ -1,0 +1,179 @@
+{
+  "passed": false,
+  "inputs": {
+    "src/Effects.elm": "2ebb154fa7e6b18e904161ab09b90e5d750aaeef2a823ffd529d34445df2b0d6",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "src/Shell.elm": "6da69e05723640436147b2974f1d6e11fc8d13dc8a2ca34142d172ceca33e3eb",
+    "src/ShellReplay.elm": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+    "src/TaskbarShellReplay.elm": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+    "src/Catalog.elm": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+    "src/Launch.elm": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+    "src/LaunchReplay.elm": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+    "src/CatalogReplay.elm": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+    "src/Desktop.elm": "73e20c10c5d5862650bb871643d5a7aca218be3934f84b5decb528846ecd36ee",
+    "src/DesktopReplay.elm": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+    "src/Surface.elm": "decb0b9f698631562bb0a1a1a5a606d7f8ac46027aa35519aff5490baac4d286",
+    "src/SurfaceController.elm": "877f4b0ed9d189f80809eb30c071eeb631a2cde584a554f690454f3d7aba7d67",
+    "src/SurfaceRenderer.elm": "63f4523a449c42092fef32ebcf1f2e3cd73c8dd5d573e81791ad477777d2f771",
+    "src/Popup.elm": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+    "src/SurfaceReplay.elm": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+    "src/Presentation.elm": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+    "src/PresentationReplay.elm": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+    "src/Main.elm": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+    "src/Inspection.elm": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+    "src/OutputController.elm": "7436175f8a41d576ba093fa1983ce35d0bcc4b5d02da5a15a875bbe5344d976c",
+    "src/OutputReplay.elm": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+    "src/Bar.elm": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+    "src/GeometryProjection.elm": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+    "src/NativeOutcome.elm": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+    "src/SharedRecoveryReplay.elm": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+    "src/Menu.elm": "c40fcfa24bf9d48044ccbe2c08df0abb7d8b94ee04111776234ecd88792ff4f0",
+    "src/Provider.elm": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+    "src/ReceiptRouter.elm": "ffcf85cf38de5665b35b3e2b6eb5a9f261360ec4b226b2fcefc0723cece1a011",
+    "src/MenuBridge.elm": "c8b83efc426e83d5b1ebde79aaa78b44e9c0150849d68d77477793c0e344ebe2",
+    "src/NativeProvider.elm": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+    "src/MenuSurfaceReplay.elm": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+    "src/OutputSurfaceReplay.elm": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+    "src/BatchReplay.elm": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+    "src/UnsentOperation.elm": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+    "src/GeometrySizePolicy.elm": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+    "src/ReconciliationFrame.elm": "b72ccb317751848506841c020f83c68e3d93eba3b6fb1c1a9b3d84283fec6676",
+    "src/ReconciliationTracking.elm": "2974908cbbe9591d6102b2071be81b60d8623baac3ec324bde49073a513f717c",
+    "native/host.c": "288bbb556f77d7138acd8109960c62fd59cafedd08c88cbcb042a416dd789115",
+    "native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/shared-host.c": "854ee839f2017a902520da2feb115c4426fe213085efa302403f8467975e9261",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/geometry_endpoint.py": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+    "adapter/daemon.py": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "adapter/geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "assets/index.html": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+    "assets/shell.css": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+    "assets/adapter.js": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+    "assets/popup-adapter.js": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+    "assets/popup.html": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+    "assets/bar.html": "9fe2e84a6ed6904c8a6da3e6281579ca76b2c43c38b2afc5a41442dabf28c200",
+    "assets/bar-adapter.js": "dfaa8b65e2e4550a24b3dd1e8feb75284b154d4a2f051eb676c5804627c0f69c",
+    "assets/context.js": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2",
+    "assets/elm.js": "11ab663b724c4069ac57b5cbd18b1fea536a582fd8c0f7316af0b0086b9ac401",
+    "assets/bar.js": "34892e1fed8ad524d8988206da7960832c063ecd7fa1d2b2e58a2d2f913f850c",
+    "assets/popup.js": "8cf5d55802eeb2ca0afdce7f5d5bef6c2ee2aafbacf4e47dd3b8bedebf643c76",
+    "qa/build.py": "b9f5fe5453d536518b44358804e70b304bed2d427811730bf6232cd0af31030a",
+    "qa/probe.cjs": "1eb9b1b83a65052fbd0f8d90790d34c27ba8102a42e68d8f5a852be1cd156b15",
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+  },
+  "scope": "Actual shared-controller Elm and admission C host compilation only; native, GPU and recovery replay qualification separate",
+  "error": "RuntimeError('-- SHADOWING ----------------------------------------- src/SurfaceController.elm\\n\\nThe name `desktop` is first defined here:\\n\\n25| desktop (Model model) = model.desktop\\n    ^^^^^^^\\nBut then it is defined AGAIN over here:\\n\\n86|         clearChoices desktop =\\n                         ^^^^^^^\\nThink of a more helpful name for one of them and you should be all set!\\n\\nNote: Linters advise against shadowing, so Elm makes \u201cbest practices\u201d the\\ndefault. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this\\nchoice.\\n\\n')",
+  "commands": [
+    {
+      "name": "context-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/context.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/popup-adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "popup-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Popup.elm",
+        "--optimize",
+        "--output=assets/popup.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "bar-adapter-syntax",
+      "command": [
+        "node",
+        "--check",
+        "assets/bar-adapter.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "bar-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Bar.elm",
+        "--optimize",
+        "--output=assets/bar.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "elm-build",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--optimize",
+        "--output=assets/elm.js"
+      ],
+      "exitCode": 1
+    }
+  ]
+}

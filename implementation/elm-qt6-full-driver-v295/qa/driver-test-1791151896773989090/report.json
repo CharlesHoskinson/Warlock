@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-hidden-fact-read-without-visible-binding",
+      "passed": true
+    },
+    {
+      "name": "replacement-native-incarnation-refused",
+      "passed": true
+    },
+    {
+      "name": "replacement-QObject-refused",
+      "passed": true
+    },
+    {
+      "name": "retired-QObject-refused",
+      "passed": true
+    },
+    {
+      "name": "replacement-address-refused",
+      "passed": true
+    },
+    {
+      "name": "all-eight-concrete-Qt-phase-methods",
+      "passed": true
+    },
+    {
+      "name": "final-close-stays-under-original-deadline",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-v295/qa/driver-test.py": "4e830f87f3472353d3eebbdd5fe1ef69f6a4fa3c8ebbf51067951614ce48997f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-v295/qa/driver.py": "2b7c9fc62ac723ac815eee5de15691fb8d9b50dce6b98451a8a0525397298399"
+  }
+}

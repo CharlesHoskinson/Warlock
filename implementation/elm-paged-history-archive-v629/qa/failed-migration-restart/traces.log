@@ -1,0 +1,816 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 24,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(),
+      effects: Set(),
+      files: Set(),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 0,
+      visibleMigration: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 0,
+      migration: false,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(10, 12),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      acks: Set(),
+      archive: Set(),
+      conserved: Set(),
+      delivery: Set(),
+      durableFiles: Set(1),
+      effects: Set(),
+      files: Set(1),
+      locked: true,
+      manifestSynced: false,
+      manifestWritten: false,
+      mark: 1,
+      migration: true,
+      old: Set(10, 12),
+      pageDirSynced: false,
+      pagesSynced: false,
+      pagesWritten: false,
+      published: false,
+      quota: 0,
+      rootReady: true,
+      staged: Set(),
+      visible: Set(),
+      visibleMark: 1,
+      visibleMigration: true
+    }
+}
+
+[violation] Found an issue (81ms at 160 traces/second).
+Use --verbosity=3 to show executions.
+Use --seed=0xf8fe --backend=typescript to reproduce.
+error: Invariant violated

@@ -1,0 +1,484 @@
+{
+  "nativeAccepted": false,
+  "output": "WAYLAND-1",
+  "expectedExtent": [
+    800,
+    600
+  ],
+  "startedMonotonic": 115574.603704702,
+  "selected": {
+    "binding": {
+      "gtk": {
+        "schema": 1,
+        "sequence": 53,
+        "pid": 3894384,
+        "processStarted": 11940680,
+        "monotonicUs": 115574451661,
+        "requestSequence": 9,
+        "event": "inspect",
+        "profile": "independent-groups",
+        "role": "C",
+        "instance": 2,
+        "mapGeneration": 1,
+        "surfaceId": 71,
+        "mapped": true,
+        "surfaceClass": "GdkWaylandToplevel",
+        "observedState": 65472,
+        "observedMaximized": false,
+        "observedFullscreen": false,
+        "observedMinimized": false,
+        "allocatedWidth": 320,
+        "allocatedHeight": 180,
+        "surfaceWidth": 320,
+        "surfaceHeight": 180,
+        "surfaceScale": 1,
+        "draftUTF8": "ELM-ROLE-DRAFT",
+        "draftBytes": 14,
+        "landmarkBoundsAvailable": true,
+        "landmarkNativeX": 0.0,
+        "landmarkNativeY": 0.0,
+        "landmarkWidth": 320.0,
+        "landmarkHeight": 60.0,
+        "nativeSurfaceTransformX": 0.0,
+        "nativeSurfaceTransformY": 0.0,
+        "observedWindowGroup": "independent",
+        "hasExplicitWindowGroup": true,
+        "requestedModal": false,
+        "transientSurfaceId": 0
+      },
+      "native": {
+        "address": "0x560933000950",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          60,
+          110
+        ],
+        "size": [
+          320,
+          180
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "GTK Application",
+        "title": "ELM-GTK4-C-3894384",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-GTK4-C-3894384",
+        "pid": 3894384,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000001"
+      },
+      "wire": {
+        "toplevelId": 107,
+        "xdgSurfaceId": 106,
+        "wlSurfaceId": 71,
+        "surfaceEpoch": 1,
+        "parentToplevel": null,
+        "windowGeometry": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "configure": {
+          "index": 5819,
+          "serial": 25
+        },
+        "ack": {
+          "index": 5820,
+          "serial": 25
+        },
+        "lastCommitIndex": 6127,
+        "bufferId": 111,
+        "presentationProved": false
+      },
+      "identity": {
+        "role": "C",
+        "instance": 2,
+        "mapGeneration": 1,
+        "surfaceId": 71
+      },
+      "marker": {
+        "widget": [
+          8.0,
+          8.0
+        ],
+        "surface": [
+          8.0,
+          8.0
+        ],
+        "global": [
+          68,
+          118
+        ],
+        "nativeReal": [
+          60,
+          110,
+          320,
+          180
+        ],
+        "windowGeometry": [
+          0,
+          0,
+          320,
+          180
+        ],
+        "identity": {
+          "role": "C",
+          "instance": 2,
+          "mapGeneration": 1,
+          "surfaceId": 71
+        }
+      }
+    },
+    "census": [
+      {
+        "address": "0x560932fec260",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          40,
+          90
+        ],
+        "size": [
+          320,
+          180
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "GTK Application",
+        "title": "ELM-GTK4-A-3894384",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-GTK4-A-3894384",
+        "pid": 3894384,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 1,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000000"
+      },
+      {
+        "address": "0x560933000950",
+        "mapped": true,
+        "hidden": false,
+        "visible": true,
+        "acceptsInput": true,
+        "at": [
+          60,
+          110
+        ],
+        "size": [
+          320,
+          180
+        ],
+        "workspace": {
+          "id": 1,
+          "name": "1"
+        },
+        "floating": true,
+        "monitor": 0,
+        "class": "GTK Application",
+        "title": "ELM-GTK4-C-3894384",
+        "initialClass": "GTK Application",
+        "initialTitle": "ELM-GTK4-C-3894384",
+        "pid": 3894384,
+        "xwayland": false,
+        "pinned": false,
+        "pinFullscreened": false,
+        "fullscreen": 0,
+        "fullscreenClient": 0,
+        "fullscreenHandler": "default",
+        "allowedOverFullscreen": true,
+        "grouped": [],
+        "tags": [],
+        "swallowing": "0x0",
+        "focusHistoryID": 0,
+        "inhibitingIdle": false,
+        "xdgTag": "",
+        "xdgDescription": "",
+        "contentType": "none",
+        "tearingHint": false,
+        "stableId": "18000001"
+      }
+    ],
+    "popup": {
+      "schema": 1,
+      "pid": 3893991,
+      "grabPresent": false,
+      "grabKeyboard": false,
+      "grabPointer": false,
+      "keyboardFocus": {
+        "id": 71,
+        "pid": 3894384,
+        "uid": 1000
+      },
+      "pointerFocus": {
+        "id": 71,
+        "pid": 3894384,
+        "uid": 1000
+      },
+      "popups": []
+    },
+    "otherBindings": {},
+    "exclusions": []
+  },
+  "helpers": [
+    {
+      "argv": [
+        "/usr/bin/grim",
+        "-o",
+        "WAYLAND-1",
+        "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png"
+      ],
+      "stdout": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/grim.stdout",
+      "stderr": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/grim.stderr",
+      "registered": true,
+      "pid": 3894871,
+      "process": {
+        "pid": 3894871,
+        "name": "gtk-capture-grim",
+        "command": [
+          "/usr/bin/grim",
+          "-o",
+          "WAYLAND-1",
+          "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/grim.stderr",
+        "start": "11941237",
+        "pgid": 3894871
+      },
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/magick",
+        "identify",
+        "-format",
+        "%w %h",
+        "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png"
+      ],
+      "stdout": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/extent.stdout",
+      "stderr": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/extent.stderr",
+      "registered": true,
+      "pid": 3894890,
+      "process": {
+        "pid": 3894890,
+        "name": "gtk-capture-extent",
+        "command": [
+          "/usr/bin/magick",
+          "identify",
+          "-format",
+          "%w %h",
+          "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/extent.stderr",
+        "start": "11941280",
+        "pgid": 3894890
+      },
+      "exitCode": 0
+    },
+    {
+      "argv": [
+        "/usr/bin/magick",
+        "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png",
+        "-alpha",
+        "off",
+        "-depth",
+        "8",
+        "rgb:/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.rgb"
+      ],
+      "stdout": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/decode.stdout",
+      "stderr": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/decode.stderr",
+      "registered": true,
+      "pid": 3894892,
+      "process": {
+        "pid": 3894892,
+        "name": "gtk-capture-decode",
+        "command": [
+          "/usr/bin/magick",
+          "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png",
+          "-alpha",
+          "off",
+          "-depth",
+          "8",
+          "rgb:/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.rgb"
+        ],
+        "log": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/decode.stderr",
+        "start": "11941286",
+        "pgid": 3894892
+      },
+      "exitCode": 0
+    }
+  ],
+  "grimArgv": [
+    "/usr/bin/grim",
+    "-o",
+    "WAYLAND-1",
+    "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png"
+  ],
+  "grimExitCode": 0,
+  "extentArgv": [
+    "/usr/bin/magick",
+    "identify",
+    "-format",
+    "%w %h",
+    "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png"
+  ],
+  "extentExitCode": 0,
+  "decodeArgv": [
+    "/usr/bin/magick",
+    "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.png",
+    "-alpha",
+    "off",
+    "-depth",
+    "8",
+    "rgb:/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/full-driver/GTK01-C-1791151308667865672/capture.rgb"
+  ],
+  "decodeExitCode": 0,
+  "completedMonotonic": 115575.161906015,
+  "pngSHA256": "37bdabd9d7050bcba9dd915256ab23a5c9e808019d486fbb0c49511be21fa288",
+  "rgbSHA256": "4055808d77644c7b59fa2a3a04a58da1fe6a46dd13b1a37ec8dd8c48f26c72e0",
+  "markerSamples": {
+    "passed": true,
+    "samples": [
+      {
+        "point": [
+          67,
+          117
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          68,
+          117
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          69,
+          117
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          67,
+          118
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          68,
+          118
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          69,
+          118
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          67,
+          119
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          68,
+          119
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          69,
+          119
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      }
+    ]
+  }
+}

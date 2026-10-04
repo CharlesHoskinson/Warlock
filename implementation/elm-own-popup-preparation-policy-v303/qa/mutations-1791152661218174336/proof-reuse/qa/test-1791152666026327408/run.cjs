@@ -1,0 +1,1 @@
+const {Elm}=require('./replay.js');Elm.Replay.init({flags:null}).ports.report.subscribe(rows=>{process.stdout.write(JSON.stringify(rows)+'\n');process.exit(rows.every(x=>x.passed)?0:1)});setTimeout(()=>process.exit(2),2000);

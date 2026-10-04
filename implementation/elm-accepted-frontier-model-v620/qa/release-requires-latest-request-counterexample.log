@@ -1,0 +1,17 @@
+
+  frontier
+    1) finalGeometryDrainQueuedReleaseTest failed after 1 test(s)
+
+  1 failed
+
+  1) finalGeometryDrainQueuedReleaseTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/release-requires-latest-request/frontier.qnt:44:29
+        44:  action assertReleased=all {assert(not(s.reserved) and s.history==0 and s.effects==0 and safety),fire(Noop)}
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf233 --match=finalGeometryDrainQueuedReleaseTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/release-requires-latest-request/frontier.qnt
+error: Tests failed

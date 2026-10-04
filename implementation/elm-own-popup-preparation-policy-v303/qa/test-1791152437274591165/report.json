@@ -1,0 +1,197 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullAcceptance": false,
+  "authenticatedTransportImplemented": false,
+  "checks": [
+    {
+      "name": "own popup retains only planning capability",
+      "passed": true
+    },
+    {
+      "name": "external grab does not retain",
+      "passed": true
+    },
+    {
+      "name": "wrong host surface refused",
+      "passed": true
+    },
+    {
+      "name": "wrong lease refused",
+      "passed": true
+    },
+    {
+      "name": "wrong native binding refused",
+      "passed": true
+    },
+    {
+      "name": "session lock refused",
+      "passed": true
+    },
+    {
+      "name": "exclusive layer refused",
+      "passed": true
+    },
+    {
+      "name": "drag refused",
+      "passed": true
+    },
+    {
+      "name": "modal refused",
+      "passed": true
+    },
+    {
+      "name": "changed target refused",
+      "passed": true
+    },
+    {
+      "name": "changed output refused",
+      "passed": true
+    },
+    {
+      "name": "changed workarea refused",
+      "passed": true
+    },
+    {
+      "name": "changed structural limits refused",
+      "passed": true
+    },
+    {
+      "name": "changed action refused",
+      "passed": true
+    },
+    {
+      "name": "preexisting ineligible refused",
+      "passed": true
+    },
+    {
+      "name": "selection only closes exact popup",
+      "passed": true
+    },
+    {
+      "name": "duplicate selection never reserves",
+      "passed": true
+    },
+    {
+      "name": "reply before close fence cannot dispatch",
+      "passed": true
+    },
+    {
+      "name": "no fence cancels without dispatch",
+      "passed": true
+    },
+    {
+      "name": "wrong close lease cancels",
+      "passed": true
+    },
+    {
+      "name": "equal read IDs cancel",
+      "passed": true
+    },
+    {
+      "name": "old legacy read ID refused",
+      "passed": true
+    },
+    {
+      "name": "old geometry read ID refused",
+      "passed": true
+    },
+    {
+      "name": "close allocates observations only",
+      "passed": true
+    },
+    {
+      "name": "wrong read ID ignored",
+      "passed": true
+    },
+    {
+      "name": "wrong token ignored",
+      "passed": true
+    },
+    {
+      "name": "one response never dispatches",
+      "passed": true
+    },
+    {
+      "name": "own popup still blocks effect eligibility",
+      "passed": true
+    },
+    {
+      "name": "applicable native action required after fence",
+      "passed": true
+    },
+    {
+      "name": "snapshot read correlation differs",
+      "passed": true
+    },
+    {
+      "name": "changed workarea after fence cancels",
+      "passed": true
+    },
+    {
+      "name": "legacy revision regression cancels",
+      "passed": true
+    },
+    {
+      "name": "geometry revision regression cancels",
+      "passed": true
+    },
+    {
+      "name": "legacy and geometry revisions stay separate namespaces",
+      "passed": true
+    },
+    {
+      "name": "both fresh replies dispatch exactly once",
+      "passed": true
+    },
+    {
+      "name": "late duplicate cannot dispatch",
+      "passed": true
+    },
+    {
+      "name": "fresh inverse order dispatches once",
+      "passed": true
+    },
+    {
+      "name": "deadline exact boundary cancels",
+      "passed": true
+    },
+    {
+      "name": "stale expiry cannot cancel",
+      "passed": true
+    },
+    {
+      "name": "original timer cancels",
+      "passed": true
+    },
+    {
+      "name": "consumed proof cannot reenter after dispatch",
+      "passed": true
+    },
+    {
+      "name": "cancelled proof cannot reenter",
+      "passed": true
+    },
+    {
+      "name": "cancel before reply never replays",
+      "passed": true
+    }
+  ],
+  "compileCommand": [
+    "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/@elm_binaries/linux_x64/elm",
+    "make",
+    "src/Replay.elm",
+    "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/qa/test-1791152437274591165/replay.js"
+  ],
+  "sourceInputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/OwnPopupPreparation.elm": "ca30993ebb944d25ed88ab0f8cc6266663cd84ac73879c00fc706ea660f10faf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/Replay.elm": "05b01a31202ec8cd448e021ac0db07750e04fc183cacc63c47bad64faef7a421"
+  },
+  "tools": {
+    "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/@elm_binaries/linux_x64/elm": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "/home/hoskinson/.local/share/mise/installs/node/26.10.0/bin/node": "ab9c8eecf9f82d6693cdc3accced17034065c8d96213b0aa76a7e803d20ae1da"
+  },
+  "binarySHA256": "e31b1864151a4c84453f2e77b97c08f90a3e50e285eafea891b6f808386e68d1"
+}

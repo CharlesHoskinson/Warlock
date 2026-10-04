@@ -1,0 +1,8 @@
+{
+  "compilationPassed": true,
+  "nativeDeploymentQualified": false,
+  "report": "qa/build-1791152233700905163/report.json",
+  "reason": "Copied qa/current-build.json was a captured source input pointing at v616. Publishing a new pointer would invalidate its recorded hash.",
+  "resolution": "Remove only the owned stale pointer, rerun unchanged build driver without that generated input, then publish the final report pointer.",
+  "productionChangedAfterFirstBuild": false
+}

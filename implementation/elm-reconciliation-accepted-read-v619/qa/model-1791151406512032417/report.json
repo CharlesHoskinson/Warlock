@@ -1,0 +1,195 @@
+{
+  "passed": false,
+  "named": 9,
+  "executed": [],
+  "sampledTraces": 500,
+  "maxSteps": 25,
+  "mutants": 4,
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "quint",
+        "--version"
+      ],
+      "exitCode": 0,
+      "expected": 0,
+      "passed": true,
+      "outputSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/accepted.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0,
+      "passed": false,
+      "outputSHA256": "3b9473a0131f4455187db28ea6dd47d7d916e430415750524fb5898319b8ce56"
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/accepted.qnt",
+        "--main=accepted",
+        "--match=^(noProofTest|missingGeometryTest|completedPairTest|pendingBatchTest|finalGeometryDrainTest|finalActionDrainTest|acceptedNewActionTest|acceptedNewGeometryTest|latestPairTest)$",
+        "--seed=61901",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/accepted_{test}_{seq}.itf.json"
+      ],
+      "exitCode": 1,
+      "expected": 0,
+      "passed": false,
+      "outputSHA256": "3b9473a0131f4455187db28ea6dd47d7d916e430415750524fb5898319b8ce56"
+    },
+    {
+      "name": "traces",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/accepted.qnt",
+        "--main=accepted",
+        "--invariant=safety",
+        "--seed=61902",
+        "--max-samples=500",
+        "--max-steps=25",
+        "--backend=typescript"
+      ],
+      "exitCode": 1,
+      "expected": 0,
+      "passed": false,
+      "outputSHA256": "3b9473a0131f4455187db28ea6dd47d7d916e430415750524fb5898319b8ce56"
+    },
+    {
+      "name": "request-erases-acceptance-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/request-erases-acceptance/accepted.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0,
+      "passed": false,
+      "outputSHA256": "06c4995a64a677936d4a30632071d3607dec5eb7a8d78f2cadfefaf1d23d1c39"
+    },
+    {
+      "name": "request-erases-acceptance-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/request-erases-acceptance/accepted.qnt",
+        "--main=accepted",
+        "--match=^finalGeometryDrainTest$",
+        "--seed=61903",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/request-erases-acceptance/counterexample_{test}_{seq}.itf.json"
+      ],
+      "exitCode": 1,
+      "expected": 1,
+      "passed": true,
+      "outputSHA256": "06c4995a64a677936d4a30632071d3607dec5eb7a8d78f2cadfefaf1d23d1c39",
+      "assertionFailure": false
+    },
+    {
+      "name": "phase-hides-valid-release-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/phase-hides-valid-release/accepted.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0,
+      "passed": false,
+      "outputSHA256": "979b31c896e76351841c5ecfcd844f7db113541c93c047cd1d8b28e644606060"
+    },
+    {
+      "name": "phase-hides-valid-release-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/phase-hides-valid-release/accepted.qnt",
+        "--main=accepted",
+        "--match=^finalActionDrainTest$",
+        "--seed=61903",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/phase-hides-valid-release/counterexample_{test}_{seq}.itf.json"
+      ],
+      "exitCode": 1,
+      "expected": 1,
+      "passed": true,
+      "outputSHA256": "979b31c896e76351841c5ecfcd844f7db113541c93c047cd1d8b28e644606060",
+      "assertionFailure": false
+    },
+    {
+      "name": "obsolete-release-accepted-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/obsolete-release-accepted/accepted.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0,
+      "passed": false,
+      "outputSHA256": "38faace46f83a9cfe66e9d1b9d8b6e3df811b029d1b21d92f4c31ba7f91bc176"
+    },
+    {
+      "name": "obsolete-release-accepted-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/obsolete-release-accepted/accepted.qnt",
+        "--main=accepted",
+        "--match=^acceptedNewActionTest$",
+        "--seed=61903",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/obsolete-release-accepted/counterexample_{test}_{seq}.itf.json"
+      ],
+      "exitCode": 1,
+      "expected": 1,
+      "passed": true,
+      "outputSHA256": "38faace46f83a9cfe66e9d1b9d8b6e3df811b029d1b21d92f4c31ba7f91bc176",
+      "assertionFailure": false
+    },
+    {
+      "name": "history-invented-committed-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/history-invented-committed/accepted.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0,
+      "passed": false,
+      "outputSHA256": "507b880c4b18f878c88ef4f37849ba3d61aa35a9383dc6fcc7c26fdc9809bd02"
+    },
+    {
+      "name": "history-invented-committed-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/history-invented-committed/accepted.qnt",
+        "--main=accepted",
+        "--match=^completedPairTest$",
+        "--seed=61903",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/history-invented-committed/counterexample_{test}_{seq}.itf.json"
+      ],
+      "exitCode": 1,
+      "expected": 1,
+      "passed": true,
+      "outputSHA256": "507b880c4b18f878c88ef4f37849ba3d61aa35a9383dc6fcc7c26fdc9809bd02",
+      "assertionFailure": false
+    }
+  ],
+  "sourceSHA256": "4f4567a0ad79608487670636c98a912ecb3f766a6bc16f1db0e6b5f3b2d4bf48",
+  "scope": "Abstract immutable frontend accepted-read reducer only; no native binding/authentication/transport/storage or effect replay proof"
+}

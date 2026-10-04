@@ -1,0 +1,17 @@
+
+  archive
+    1) pagesBeforeManifestTest failed after 1 test(s)
+
+  1 failed
+
+  1) pagesBeforeManifestTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-page-fsync/archive.qnt:63:210
+        63:  run pagesBeforeManifestTest=init.then(bootstrap).then(fire(Stage({key:2,kind:0}))).then(fire(WritePages)).then(fire(WriteManifest)).then(fire(SyncManifest)).then(fire(Publish)).then(fire(RootSync)).then(all {assert(not(has(s,2,0)) and safety),fire(Noop)})
+                                                                                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf5b7 --match=pagesBeforeManifestTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-page-fsync/archive.qnt
+error: Tests failed

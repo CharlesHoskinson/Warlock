@@ -1,0 +1,23 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullCampaign": false,
+  "checks": [
+    {
+      "name": "window exact process role/native/passive epoch join",
+      "passed": true
+    }
+  ],
+  "sourceInputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/journal.py": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/protocol.py": "8c5fbbf87a8d918fe75bed35dd879519b8874d9602216ba147b887c268e7112f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/geometry.py": "92fcfe498dee230a3aa0c5887f2137aef69740642fc97e5e67e44a10a58aa762",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/observer.py": "363b3c26818f00850e7b77b36038b98c5866e6468409d39640febc8b66b8db4e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/scene.py": "ca3dc007641666c5f02a164611726b065f8f58159b08d6f166275507af34d6a6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/test.py": "b93e264b8059d0e7460dc649fe98a7df091076d7bb090e15fe7ee91979a87cee",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/mutations.py": "eee3c32c15fbc7132f625628819238214e2baa2abf1b6754b589b88d0f7c6267",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/freeze.py": "03776956670ad69fc577f20a7015591ba4cc7f6087f61b43d45c85e5e3fc4951"
+  },
+  "error": "AssertionError(([170, 130], [85, 65]))",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/test.py\", line 30, in <module>\n    yes('origin subtracted once no device scale multiplication',lambda:equal(b['marker']['global'],[85,65]))\n    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/test.py\", line 13, in yes\n    fn();checks.append({'name':name,'passed':True})\n    ~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/test.py\", line 30, in <lambda>\n    yes('origin subtracted once no device scale multiplication',lambda:equal(b['marker']['global'],[85,65]))\n                                                                       ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791151085363490806/wrong-scale-multiply/qa/test.py\", line 14, in equal\n    def equal(a,b):assert a==b,(a,b)\n                          ^^^^\nAssertionError: ([170, 130], [85, 65])\n"
+}

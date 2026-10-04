@@ -1,0 +1,112 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual compiled old converter rejects exact valid callback file bytes",
+      "passed": true,
+      "exitCode": 3,
+      "fileSHA256": "942a5520bb6adde6a146dae4d7e817a031d507b466d025ce7fc8431775ab0ad0",
+      "size": 35571
+    },
+    {
+      "name": "same actual map plus NUL converts using actual Qt installed code",
+      "passed": true,
+      "exitCode": 0,
+      "mapping": {
+        "constants": {
+          "leftButton": 1,
+          "mouseNotSynthesized": 0,
+          "shiftKey": 16777248,
+          "shiftModifier": 33554432,
+          "window-button-press": 2,
+          "window-button-release": 3,
+          "window-key-press": 6,
+          "window-key-release": 7,
+          "windowMaximized": 2
+        },
+        "mapping": {
+          "0": {
+            "nativeModifiers": 0,
+            "nativeScanCode": 50,
+            "nativeVirtualKey": 65505,
+            "qtKey": 16777248,
+            "qtModifiers": 33554432
+          },
+          "1": {
+            "nativeModifiers": 1,
+            "nativeScanCode": 50,
+            "nativeVirtualKey": 65505,
+            "qtKey": 16777248,
+            "qtModifiers": 0
+          }
+        },
+        "qtVersion": "6.11.2",
+        "xkbShiftMask": 1
+      }
+    },
+    {
+      "name": "predecessor accepts selected keyboard on uncorrelated registry seat99",
+      "passed": true,
+      "accepted": [
+        {
+          "nativeModifiers": 0,
+          "nativeScanCode": 50,
+          "nativeVirtualKey": 65505,
+          "qtKey": 16777248,
+          "qtModifiers": 33554432,
+          "keyboardResource": 9,
+          "key": 42,
+          "state": 1,
+          "time": 10,
+          "wireIndex": 4,
+          "serial": 3
+        },
+        {
+          "nativeModifiers": 0,
+          "nativeScanCode": 50,
+          "nativeVirtualKey": 65505,
+          "qtKey": 16777248,
+          "qtModifiers": 33554432,
+          "keyboardResource": 9,
+          "key": 42,
+          "state": 0,
+          "time": 11,
+          "wireIndex": 5,
+          "serial": 4
+        }
+      ],
+      "scope": "synthetic valid-domain helper witness; no native seat acquisition claim"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qt-domains-build-report.json": "3210c21e27642a54ee51c71e0da70fae752d0d9636f54ae1ea3fb15c387e3dac",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qa/keyboard.py": "30052b9b90e666481e74ed0e4629f02334b1b688ca92770e4a37fb22a57c7e42",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qa/driver.py": "305aa02f7d273e504a76402597f7f9e6160afa039e08a3b0ecae706f9b899962",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qa/native.py": "683dd7bec6e009e56247b7860089674cf1a8962a12bd60941e22646d513de849",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qa/build-domains-fixed.py": "6bce3d6a42ed119f9e3b13d98bbaac32e65cc2767cbe9b6c20400bfddd3bf57f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/native/qt-domains.cpp": "c3a3a261be6fb129b44c3dcbb032a4f68eb1a8ede18e6b85bc1a33b5602b8694",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/native/keymap.c": "e929b248c5c9a04cea9d7eef6808356aae984898a22dfe1bb49cde31fc7b78da",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qa/owning-qt-source/qevent.cpp": "b4372aee702fcf746399f9e4a4d638d3fd14b885562113a84c5d65b59b0268f4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qa/owning-qt-source/qwaylandinputdevice.cpp": "b7d69a34cdd41fc037485feb2a8a636431eb663f22218d0f06f8119e5122d36c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-key-domain-review-v301/inputs/qa/owning-qt-source/qxkbcommon.cpp": "1db1ca8f2f687025cb7813f41a4a4b3981039a123113fc32bc8ebdc1dbfe9e8a"
+  },
+  "binary": {
+    "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-v295/qa/domains-build-1791150785091134466/report.json",
+    "sha256": "52665c724e6dd7ce724555615ec21aed295627c070520e6d1b5a2a9f7dabdea7",
+    "binary": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-full-driver-v295/qa/domains-build-1791150785091134466/qt-domains",
+    "binarySHA256": "3252d14e5d4ed38de875599de1bbe32891a68166fce68d30fc8ac4a578d680f0",
+    "constants": {
+      "leftButton": 1,
+      "mouseNotSynthesized": 0,
+      "shiftKey": 16777248,
+      "shiftModifier": 33554432,
+      "window-button-press": 2,
+      "window-button-release": 3,
+      "window-key-press": 6,
+      "window-key-release": 7,
+      "windowMaximized": 2
+    }
+  },
+  "xkbLibrarySHA256": "e475adbf5abd181b1bdfdeba70ad4d501cb296bbf05b13e8649fd71b3989ee07"
+}

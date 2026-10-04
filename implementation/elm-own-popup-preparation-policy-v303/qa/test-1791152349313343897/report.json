@@ -1,0 +1,181 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fullAcceptance": false,
+  "authenticatedTransportImplemented": false,
+  "checks": [
+    {
+      "name": "own popup retains only planning capability",
+      "passed": true
+    },
+    {
+      "name": "external grab does not retain",
+      "passed": true
+    },
+    {
+      "name": "wrong host surface refused",
+      "passed": true
+    },
+    {
+      "name": "wrong lease refused",
+      "passed": true
+    },
+    {
+      "name": "wrong native binding refused",
+      "passed": true
+    },
+    {
+      "name": "session lock refused",
+      "passed": true
+    },
+    {
+      "name": "exclusive layer refused",
+      "passed": true
+    },
+    {
+      "name": "drag refused",
+      "passed": true
+    },
+    {
+      "name": "modal refused",
+      "passed": true
+    },
+    {
+      "name": "changed target refused",
+      "passed": true
+    },
+    {
+      "name": "changed output refused",
+      "passed": true
+    },
+    {
+      "name": "changed workarea refused",
+      "passed": true
+    },
+    {
+      "name": "changed structural limits refused",
+      "passed": true
+    },
+    {
+      "name": "changed action refused",
+      "passed": true
+    },
+    {
+      "name": "preexisting ineligible refused",
+      "passed": true
+    },
+    {
+      "name": "selection only closes exact popup",
+      "passed": true
+    },
+    {
+      "name": "duplicate selection never reserves",
+      "passed": true
+    },
+    {
+      "name": "reply before close fence cannot dispatch",
+      "passed": true
+    },
+    {
+      "name": "no fence cancels without dispatch",
+      "passed": true
+    },
+    {
+      "name": "wrong close lease cancels",
+      "passed": true
+    },
+    {
+      "name": "equal read IDs cancel",
+      "passed": true
+    },
+    {
+      "name": "close allocates observations only",
+      "passed": true
+    },
+    {
+      "name": "wrong read ID ignored",
+      "passed": true
+    },
+    {
+      "name": "wrong token ignored",
+      "passed": true
+    },
+    {
+      "name": "one response never dispatches",
+      "passed": true
+    },
+    {
+      "name": "own popup still blocks effect eligibility",
+      "passed": true
+    },
+    {
+      "name": "changed workarea after fence cancels",
+      "passed": true
+    },
+    {
+      "name": "legacy revision regression cancels",
+      "passed": true
+    },
+    {
+      "name": "geometry revision regression cancels",
+      "passed": true
+    },
+    {
+      "name": "legacy and geometry revisions stay separate namespaces",
+      "passed": true
+    },
+    {
+      "name": "both fresh replies dispatch exactly once",
+      "passed": true
+    },
+    {
+      "name": "late duplicate cannot dispatch",
+      "passed": true
+    },
+    {
+      "name": "fresh inverse order dispatches once",
+      "passed": true
+    },
+    {
+      "name": "deadline exact boundary cancels",
+      "passed": true
+    },
+    {
+      "name": "stale expiry cannot cancel",
+      "passed": true
+    },
+    {
+      "name": "original timer cancels",
+      "passed": true
+    },
+    {
+      "name": "consumed proof cannot reenter after dispatch",
+      "passed": true
+    },
+    {
+      "name": "cancelled proof cannot reenter",
+      "passed": true
+    },
+    {
+      "name": "cancel before reply never replays",
+      "passed": true
+    }
+  ],
+  "compileCommand": [
+    "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/@elm_binaries/linux_x64/elm",
+    "make",
+    "src/Replay.elm",
+    "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/qa/test-1791152349313343897/replay.js"
+  ],
+  "sourceInputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/OwnPopupPreparation.elm": "af93cb7bd749dde3d787b6d7f68b638d84145ce211103fbc068ce8773d6f7f9b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/Replay.elm": "993e797234c519addee42c4a9894a5503c23ffc9030a505c31d8453c1e9980c5"
+  },
+  "tools": {
+    "/home/hoskinson/.npm/_npx/84e76f4d63d5907c/node_modules/@elm_binaries/linux_x64/elm": "c4db5a7ef59fc582a1df29c16383520015e9cefb0802e6eb49955e49211d7948",
+    "/home/hoskinson/.local/share/mise/installs/node/26.10.0/bin/node": "ab9c8eecf9f82d6693cdc3accced17034065c8d96213b0aa76a7e803d20ae1da"
+  },
+  "binarySHA256": "1c72571112a90c8819296758b074fe0bde5e99c84e8e862d781ba69013391a51"
+}

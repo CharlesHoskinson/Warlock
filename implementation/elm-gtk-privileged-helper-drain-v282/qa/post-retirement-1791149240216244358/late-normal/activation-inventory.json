@@ -1,0 +1,23 @@
+{
+  "services": [
+    {
+      "name": "org.elm.LateActivation",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/post-retirement-1791149240216244358/late-normal/service.py",
+      "sourceSHA256": "0ab4de33c34a0b9c34c0c2c18de3fbd7a2e550c4a97df62e8151387815b4f338",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/post-retirement-1791149240216244358/late-normal/service.py"
+      ],
+      "binarySHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "descriptor": "/run/user/1000/wqa/b37c/activations/org.elm.LateActivation.json",
+      "descriptorSHA256": "000149056c61ec73015a90b9e2a943df86fb50638251208c6728940d584013c0",
+      "descriptorCapture": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/post-retirement-1791149240216244358/late-normal/activation-descriptors/org.elm.LateActivation.json",
+      "journalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/post-retirement-1791149240216244358/late-normal/activation-journals/org.elm.LateActivation"
+    }
+  ],
+  "supervisorSHA256": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85",
+  "configurationSource": "/usr/share/dbus-1/session.conf",
+  "configurationSourceSHA256": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1",
+  "configurationSHA256": "adcf7a7c9ce1817e36208dbd5e3152379500843b59d4f62a5929e47e78946950"
+}

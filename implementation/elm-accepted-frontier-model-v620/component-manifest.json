@@ -1,0 +1,567 @@
+{
+  "passed": true,
+  "sourceHeld": true,
+  "nativeAcceptance": false,
+  "scope": "CPU accepted frontier and ordered reply/release queue; durability is an assumed prerequisite",
+  "namedCount": 16,
+  "sampledTraces": 1000,
+  "maxTransitions": 40,
+  "typedMutants": 9,
+  "files": [
+    {
+      "path": "REVIEW.md",
+      "sha256": "0072624246a269d5302e655637bab6dc0b43844a73bdc89636bda60bb51c6ef3",
+      "size": 5242
+    },
+    {
+      "path": "frontier.qnt",
+      "sha256": "ec1299f6d0054caf66700070929de374d6513524ce54b92f42f75fb1c86d941b",
+      "size": 7162
+    },
+    {
+      "path": "qa/accepted_actualAcceptedActionInvalidatesTest_4.itf.json",
+      "sha256": "2fc1d377e4b7464c4df42c1182edb7740a156e4016dfe417e9691a1b1f4f5d43",
+      "size": 6099
+    },
+    {
+      "path": "qa/accepted_actualAcceptedGeometryInvalidatesTest_5.itf.json",
+      "sha256": "f9ba66c0fad40ee3ee0024fcb41482e6b1f5ff0aa1e4dae94d820c3201ec088c",
+      "size": 6099
+    },
+    {
+      "path": "qa/accepted_changedContextSameIdRefusedTest_8.itf.json",
+      "sha256": "bdc3e0157f97982fe9180aad3065e37e1a0d2dd57db29daa694a337b8dfbe8f6",
+      "size": 4829
+    },
+    {
+      "path": "qa/accepted_completedPairTest_0.itf.json",
+      "sha256": "415de628b744ce0800f9af47f1a06e8a408bff1647b59b05b90058123454737a",
+      "size": 4831
+    },
+    {
+      "path": "qa/accepted_duplicateProofRetainsFrontierTest_11.itf.json",
+      "sha256": "dd2891866280f1782b8e56e4c3b11687de9db09f32b202cd24f07ae6876d1004",
+      "size": 5469
+    },
+    {
+      "path": "qa/accepted_fifoReleaseBeforeNewReplyTest_15.itf.json",
+      "sha256": "ea4fda9aaae5f5ce57f6c30b6685974eaa86d7d0b9015d93201d7b0d274eaf56",
+      "size": 10318
+    },
+    {
+      "path": "qa/accepted_finalActionDrainQueuedReleaseTest_3.itf.json",
+      "sha256": "29971c901e6d66dc69a55eff07de24e6d7b0b6662b0895134fa45aef746cfb4d",
+      "size": 7645
+    },
+    {
+      "path": "qa/accepted_finalGeometryDrainQueuedReleaseTest_2.itf.json",
+      "sha256": "24aa69e07f5c252ee7e9a856c8be4cef50c7c6794417b103d84c5799a1c618e3",
+      "size": 8919
+    },
+    {
+      "path": "qa/accepted_latestAcceptedPairTest_6.itf.json",
+      "sha256": "4ccb3497b5d75c5c29b4397aab3d6a26671cb063feddfc997317a53efd660d6f",
+      "size": 6742
+    },
+    {
+      "path": "qa/accepted_missingGeometryRefusedTest_13.itf.json",
+      "sha256": "e5381ff9d298845f47263d3974d0d456205802405dfbb80fff5ef7861dd29ac3",
+      "size": 4185
+    },
+    {
+      "path": "qa/accepted_nextProofClearsFrontierTest_10.itf.json",
+      "sha256": "1def98bbcde1ea2a8ef7bcfa82009f5171a730cfa4fcaa36e35a122488c4f71f",
+      "size": 5451
+    },
+    {
+      "path": "qa/accepted_noAutomaticEffectAfterReleaseTest_14.itf.json",
+      "sha256": "2e1a5cdc25532a3bf0a56d04a649f75f9fa1d41ca653e3fbad9b53fa1ecad575",
+      "size": 6105
+    },
+    {
+      "path": "qa/accepted_nondurableReleaseRefusedTest_12.itf.json",
+      "sha256": "82e8806a25ffff0cfadae0eb52e7d12b97b899ae1ce4ea94e75fee0d35b656ba",
+      "size": 4194
+    },
+    {
+      "path": "qa/accepted_outputMismatchRefusedTest_9.itf.json",
+      "sha256": "2800cbebd12cf097eeff9d67ff333bc110b45219358e312d9546e6ed3bf58d64",
+      "size": 4829
+    },
+    {
+      "path": "qa/accepted_pendingRequestRetainsAcceptedTest_1.itf.json",
+      "sha256": "17c0a8ec525981418c4d47783213ec02da3463258dde3dacaa435b2400973ef1",
+      "size": 5461
+    },
+    {
+      "path": "qa/accepted_staleReplyNotAcceptedTest_7.itf.json",
+      "sha256": "f7c071f2c92b94fa971cc738c281763ceadccee0b836616ef418b2bd37c3feab",
+      "size": 6097
+    },
+    {
+      "path": "qa/ancestor614/component-manifest.json",
+      "sha256": "28d824000cac1891e3b5cc06d850f702b515b6b302a9a61385386c6a94908c58",
+      "size": 57294
+    },
+    {
+      "path": "qa/ancestor614/protocol.qnt",
+      "sha256": "2150b0558c7a913a03bb91002006c2484dc9cbb74f59922bf788fe464c9b61a7",
+      "size": 6931
+    },
+    {
+      "path": "qa/ancestor619/ReconciliationTracking.elm",
+      "sha256": "fd6194829ad01f50a339ba69bcd3dd6f0cf8bba1eea130c3ec9d2ea3a9577eca",
+      "size": 6767
+    },
+    {
+      "path": "qa/ancestor619/SPEC.md",
+      "sha256": "82daea97907900f7dbec2d402e6c5b79df9694fd16b08dee02796ef9d8c31d64",
+      "size": 5502
+    },
+    {
+      "path": "qa/ancestor619/accepted.qnt",
+      "sha256": "f8ea4d5109a136c35bc15f89f7db15eebe8c63cf5f05d206da1bcbde515a93ba",
+      "size": 3652
+    },
+    {
+      "path": "qa/ancestor619/component-manifest.json",
+      "sha256": "93988ff68b03b8a2331c9719a9ce684d928f0ab8ec254557016b8511a932ad74",
+      "size": 348029
+    },
+    {
+      "path": "qa/context-ignored-counterexample.log",
+      "sha256": "dfd1b1d80108cc4086fda370648622c9db998295550524f90e70d05989fb43d7",
+      "size": 768
+    },
+    {
+      "path": "qa/context-ignored-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-initial/frontier.qnt",
+      "sha256": "b7324663f57cfa0e4739e4899a7a5467aa71754f37493f073d74fab04baa7f3e",
+      "size": 7204
+    },
+    {
+      "path": "qa/failed-initial/next-name.log",
+      "sha256": "e0ffdf49471da3a3b00b35e1f7f65e81fce1d5ccd145088f1cca753631184e37",
+      "size": 574
+    },
+    {
+      "path": "qa/failed-initial/next-name.qnt",
+      "sha256": "566df641427506534639f56f43b2caaa52a741ce8f3610e1361daa16f68a8691",
+      "size": 7108
+    },
+    {
+      "path": "qa/failed-initial/preflight.log",
+      "sha256": "03c8a02a67addd8db01b6c95ea3d9fc9464781e378cb85f3dacc39612da7641e",
+      "size": 767
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_actualAcceptedActionInvalidatesTest_4.itf.json",
+      "sha256": "3955a39459d9d7b9cf6386e1a662f74541ee6c6d656d9ba437501d0d0f927e14",
+      "size": 6099
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_actualAcceptedGeometryInvalidatesTest_5.itf.json",
+      "sha256": "6fa33ac65419013fc267ad75c96809a8f992dee7993fbb6977d3367ee4073929",
+      "size": 6099
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_changedContextSameIdRefusedTest_8.itf.json",
+      "sha256": "8318214675d4a9615b1717eb3bc7c48df5164c252a90806c6e5015a5863dceae",
+      "size": 4829
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_completedPairTest_0.itf.json",
+      "sha256": "168aee2455eac9a08d3f77ecbb0d5ba1fc4c999e8598c8b12038d904e7b1aabc",
+      "size": 4831
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_duplicateProofRetainsFrontierTest_11.itf.json",
+      "sha256": "16cdc7b2ef6072ed1e3cacd3b138ca549e906fae9533a96deca0e0cbf47ba885",
+      "size": 5469
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_fifoReleaseBeforeNewReplyTest_15.itf.json",
+      "sha256": "f4729d7f4afb76975ab6e99dc0c7acbcc6a5cd749a1b5c9348b07af1b1ff2b74",
+      "size": 10318
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_finalActionDrainQueuedReleaseTest_3.itf.json",
+      "sha256": "a0bf651925ac41708feaa12a4f2b457ed247b38d19d0326ce58a6b68c428aa00",
+      "size": 7645
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_finalGeometryDrainQueuedReleaseTest_2.itf.json",
+      "sha256": "d3606675680dbf2e35358f921d43567fe1b24a7ee1a23d7d53b20582ce1750c7",
+      "size": 8919
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_latestAcceptedPairTest_6.itf.json",
+      "sha256": "3a910e58e4aaee675b8066edd9abafc45d69a748d2475dc13e9b47aa89adf9e6",
+      "size": 6742
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_missingGeometryRefusedTest_13.itf.json",
+      "sha256": "92a0bc87c207a2a884df99d2995298e7df8eb8441e4b94022078fcf6b11d12e1",
+      "size": 4185
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_nextProofClearsFrontierTest_10.itf.json",
+      "sha256": "5b1a8698c7c163e57e71e5a73bd8df582316a3f9414b82b4a489858f79e24e3f",
+      "size": 5451
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_noAutomaticEffectAfterReleaseTest_14.itf.json",
+      "sha256": "ed6a597b4288e6cf070652632e2d80d64162561d58e8b802c31c7bc8700c7f56",
+      "size": 6105
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_nondurableReleaseRefusedTest_12.itf.json",
+      "sha256": "418565bcf6b6293dafb9c1eda3273e3adb4026c2b5a69095e650dbee7ddec25c",
+      "size": 4194
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_outputMismatchRefusedTest_9.itf.json",
+      "sha256": "f50710fa4c820d70fefb973c80bf73deb3d8d761f3ae6451e101bc6e7606e73d",
+      "size": 4829
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_pendingRequestRetainsAcceptedTest_1.itf.json",
+      "sha256": "1c3575b2c563a7600e3e3f7d061189ec6ecd5d916c25edf576355814d7ee7b34",
+      "size": 5461
+    },
+    {
+      "path": "qa/failed-mutant-api/accepted_staleReplyNotAcceptedTest_7.itf.json",
+      "sha256": "f61e2ee11d55790e8d74d47471b045c62deede59a11ed4c37e0a750fc46a0ba9",
+      "size": 6097
+    },
+    {
+      "path": "qa/failed-mutant-api/context-ignored-counterexample.log",
+      "sha256": "dfd1b1d80108cc4086fda370648622c9db998295550524f90e70d05989fb43d7",
+      "size": 768
+    },
+    {
+      "path": "qa/failed-mutant-api/context-ignored-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/fifo-reversed-counterexample.log",
+      "sha256": "81cbe54474c5e8af1c42088f0be88003b3b02b1da5167ab8e3b8c324a79a1269",
+      "size": 480
+    },
+    {
+      "path": "qa/failed-mutant-api/fifo-reversed-typecheck.log",
+      "sha256": "81cbe54474c5e8af1c42088f0be88003b3b02b1da5167ab8e3b8c324a79a1269",
+      "size": 480
+    },
+    {
+      "path": "qa/failed-mutant-api/frontier.qnt",
+      "sha256": "ec1299f6d0054caf66700070929de374d6513524ce54b92f42f75fb1c86d941b",
+      "size": 7162
+    },
+    {
+      "path": "qa/failed-mutant-api/ignore-new-accepted-action-counterexample.log",
+      "sha256": "98f9debee50878b8347972e06584ecf789efe2a5cd99836d5265470b6f08310a",
+      "size": 802
+    },
+    {
+      "path": "qa/failed-mutant-api/ignore-new-accepted-action-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/ignore-new-accepted-geometry-counterexample.log",
+      "sha256": "fba01ad9d142a93232adb64ab22e8415bf078fac7fa8c65d228f17f30e2c8f21",
+      "size": 812
+    },
+    {
+      "path": "qa/failed-mutant-api/ignore-new-accepted-geometry-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/context-ignored/frontier.qnt",
+      "sha256": "4cc389b3912c79979d1316c11e85ee73c97c4bf583ecec6727e83a09716fd224",
+      "size": 7174
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/fifo-reversed/frontier.qnt",
+      "sha256": "bb8786336b525b7eaa4e552258e63fdc2117e21261f8441eea4ff699e8c89ce8",
+      "size": 7162
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/ignore-new-accepted-action/frontier.qnt",
+      "sha256": "abf4be644cf9c7efce7817809934400320b5396409112f367f3974a417317b7b",
+      "size": 7202
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/ignore-new-accepted-geometry/frontier.qnt",
+      "sha256": "bf5ef820b2317c62188b38fabaf94a60b4411012a018091827654b91a0889744",
+      "size": 7202
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/pending-allows-explicit/frontier.qnt",
+      "sha256": "8f97659dd131352af41f1436df25c61afdf29657381ab8d32fd400afd846dbaf",
+      "size": 7129
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/release-emits-effect/frontier.qnt",
+      "sha256": "35686b57bf1603e2b72bb8bb22ba5933ca8e47711e830a75bee19276bf619c07",
+      "size": 7183
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/release-requires-latest-request/frontier.qnt",
+      "sha256": "b27927a23cab26ef570fb1016192cbe2d725378a33e1c0bb838a1f7da6f095eb",
+      "size": 7212
+    },
+    {
+      "path": "qa/failed-mutant-api/mutants/request-erases-accepted/frontier.qnt",
+      "sha256": "0c2421f2c5c2811621b9d22ce062e12c98bf7401d7ab474ecee555f1cb64139a",
+      "size": 7192
+    },
+    {
+      "path": "qa/failed-mutant-api/named.log",
+      "sha256": "7b2592903f1d9e5d096e5023c6bdcf7b5865d7ac9adfcd445e40b32a7bb66936",
+      "size": 902
+    },
+    {
+      "path": "qa/failed-mutant-api/pending-allows-explicit-counterexample.log",
+      "sha256": "25ea1bf140556fc19715a257a6afb3da314f367338de9808cb30086adda5a447",
+      "size": 1474
+    },
+    {
+      "path": "qa/failed-mutant-api/pending-allows-explicit-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/protected-campaign.log",
+      "sha256": "83fc1102d0966cd322d9d7748cf36125e46675d0eee1419231cb3e6e4b7ff500",
+      "size": 177
+    },
+    {
+      "path": "qa/failed-mutant-api/release-emits-effect-counterexample.log",
+      "sha256": "54dac3608de4f9548a59a61631f1b4cf964e2457113989536e20b514c319b954",
+      "size": 864
+    },
+    {
+      "path": "qa/failed-mutant-api/release-emits-effect-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/release-requires-latest-request-counterexample.log",
+      "sha256": "31945a4b90fe807d0e4383f346014b209e0b04a9e09ae2fd4d311b4af3b4ee2b",
+      "size": 892
+    },
+    {
+      "path": "qa/failed-mutant-api/release-requires-latest-request-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/report.json",
+      "sha256": "a84d01b610801ccdafa3fe0de9175c6eeea25223f6d9863faedbf42067c00dc7",
+      "size": 12271
+    },
+    {
+      "path": "qa/failed-mutant-api/request-erases-accepted-counterexample.log",
+      "sha256": "dfc734eaf0624b9b633e2d631beea640b2e610c2198b140cd11f7a14e8058ec9",
+      "size": 1083
+    },
+    {
+      "path": "qa/failed-mutant-api/request-erases-accepted-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/run.py",
+      "sha256": "fdccd2f234dd6853bb3c27f2c465c9d34971ac8eac53d29f2f285f6e04f0f92a",
+      "size": 3932
+    },
+    {
+      "path": "qa/failed-mutant-api/traces.log",
+      "sha256": "d3165f11f37692c4b84b58598d2c0c64107c35e288f226822c088fdf341e118a",
+      "size": 43389
+    },
+    {
+      "path": "qa/failed-mutant-api/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/failed-mutant-api/version.log",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "size": 7
+    },
+    {
+      "path": "qa/fifo-reversed-counterexample.log",
+      "sha256": "68204f1f43f68f2ba58a318263c187135db60d70ada06d8e017af8ae60834d73",
+      "size": 838
+    },
+    {
+      "path": "qa/fifo-reversed-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/freeze.py",
+      "sha256": "5bdba36875b313748236e2cd26af31b35c5b8dc9a1b1fcf7a6dcf2fb63531358",
+      "size": 1827
+    },
+    {
+      "path": "qa/ignore-new-accepted-action-counterexample.log",
+      "sha256": "98f9debee50878b8347972e06584ecf789efe2a5cd99836d5265470b6f08310a",
+      "size": 802
+    },
+    {
+      "path": "qa/ignore-new-accepted-action-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/ignore-new-accepted-geometry-counterexample.log",
+      "sha256": "fba01ad9d142a93232adb64ab22e8415bf078fac7fa8c65d228f17f30e2c8f21",
+      "size": 812
+    },
+    {
+      "path": "qa/ignore-new-accepted-geometry-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/mutants/context-ignored/frontier.qnt",
+      "sha256": "4cc389b3912c79979d1316c11e85ee73c97c4bf583ecec6727e83a09716fd224",
+      "size": 7174
+    },
+    {
+      "path": "qa/mutants/fifo-reversed/frontier.qnt",
+      "sha256": "5ed0d807d0bf9b1d3c1807fa6ff4a826575afd53dc3ca8fe6fe39ea974ff0bff",
+      "size": 7179
+    },
+    {
+      "path": "qa/mutants/ignore-new-accepted-action/frontier.qnt",
+      "sha256": "abf4be644cf9c7efce7817809934400320b5396409112f367f3974a417317b7b",
+      "size": 7202
+    },
+    {
+      "path": "qa/mutants/ignore-new-accepted-geometry/frontier.qnt",
+      "sha256": "bf5ef820b2317c62188b38fabaf94a60b4411012a018091827654b91a0889744",
+      "size": 7202
+    },
+    {
+      "path": "qa/mutants/pending-allows-explicit/frontier.qnt",
+      "sha256": "8f97659dd131352af41f1436df25c61afdf29657381ab8d32fd400afd846dbaf",
+      "size": 7129
+    },
+    {
+      "path": "qa/mutants/phase-hides-accepted-final-reply/frontier.qnt",
+      "sha256": "0b3605d785da0577c5efeb18a61afe8b6d5def429338babc9d0756dbd9c64f7b",
+      "size": 7151
+    },
+    {
+      "path": "qa/mutants/release-emits-effect/frontier.qnt",
+      "sha256": "35686b57bf1603e2b72bb8bb22ba5933ca8e47711e830a75bee19276bf619c07",
+      "size": 7183
+    },
+    {
+      "path": "qa/mutants/release-requires-latest-request/frontier.qnt",
+      "sha256": "b27927a23cab26ef570fb1016192cbe2d725378a33e1c0bb838a1f7da6f095eb",
+      "size": 7212
+    },
+    {
+      "path": "qa/mutants/request-erases-accepted/frontier.qnt",
+      "sha256": "0c2421f2c5c2811621b9d22ce062e12c98bf7401d7ab474ecee555f1cb64139a",
+      "size": 7192
+    },
+    {
+      "path": "qa/named.log",
+      "sha256": "7b2592903f1d9e5d096e5023c6bdcf7b5865d7ac9adfcd445e40b32a7bb66936",
+      "size": 902
+    },
+    {
+      "path": "qa/pending-allows-explicit-counterexample.log",
+      "sha256": "25ea1bf140556fc19715a257a6afb3da314f367338de9808cb30086adda5a447",
+      "size": 1474
+    },
+    {
+      "path": "qa/pending-allows-explicit-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/phase-hides-accepted-final-reply-counterexample.log",
+      "sha256": "a40e5cf111892d272c7795cb889f293a36cdda9558721dcd49d03b042c84a43f",
+      "size": 1383
+    },
+    {
+      "path": "qa/phase-hides-accepted-final-reply-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/protected-campaign.log",
+      "sha256": "a19471c3133ea73c4fedeca81a4d3a233003b470887ec68aed31a662e26c8888",
+      "size": 176
+    },
+    {
+      "path": "qa/release-emits-effect-counterexample.log",
+      "sha256": "54dac3608de4f9548a59a61631f1b4cf964e2457113989536e20b514c319b954",
+      "size": 864
+    },
+    {
+      "path": "qa/release-emits-effect-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/release-requires-latest-request-counterexample.log",
+      "sha256": "31945a4b90fe807d0e4383f346014b209e0b04a9e09ae2fd4d311b4af3b4ee2b",
+      "size": 892
+    },
+    {
+      "path": "qa/release-requires-latest-request-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/report.json",
+      "sha256": "a3306adb87c42a8d2d2ff9175acee00d3ccb78e5e29915fb1138310eec3995e6",
+      "size": 13349
+    },
+    {
+      "path": "qa/request-erases-accepted-counterexample.log",
+      "sha256": "dfc734eaf0624b9b633e2d631beea640b2e610c2198b140cd11f7a14e8058ec9",
+      "size": 1083
+    },
+    {
+      "path": "qa/request-erases-accepted-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/run.py",
+      "sha256": "c27ff370535ca9cfd53f60c33c3f29644a3a1ffba71d1d60a9b2c49ce404b378",
+      "size": 3955
+    },
+    {
+      "path": "qa/traces.log",
+      "sha256": "f2977994e4f21b790c90e83acafb75d682777cbf9de8f9d87a6fb25124023fe4",
+      "size": 43389
+    },
+    {
+      "path": "qa/typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/version.log",
+      "sha256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+      "size": 7
+    }
+  ]
+}

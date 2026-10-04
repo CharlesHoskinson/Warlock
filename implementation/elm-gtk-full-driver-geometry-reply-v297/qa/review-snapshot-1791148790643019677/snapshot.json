@@ -1,0 +1,213 @@
+{
+  "sourceStableDuringReview": true,
+  "sourceHeld": false,
+  "nativeAcceptance": false,
+  "reviewRequired": true,
+  "files": {
+    "qa/acquisition-test.py": {
+      "sha256": "f71311612c21e910f63c7d5d9d40c97abccc14dce7482459eb38ad9032c27dbf",
+      "size": 3543
+    },
+    "qa/build-keymap.py": {
+      "sha256": "b8146ed28923ee3694e16dc1a267b9d6144085b0ba8a0034720b86957071c49a",
+      "size": 3244
+    },
+    "qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "qa/driver.py": {
+      "sha256": "50548a36ea4411aa35b1b5d451319f41303d7a21c96f610d8bd6d8cdcdc1b7d4",
+      "size": 21717
+    },
+    "qa/fault-native.py": {
+      "sha256": "96b2000d53e108df45355f91bee150de4f5dea6547104a978be7320f75be6843",
+      "size": 41929
+    },
+    "qa/freeze-fixtures.py": {
+      "sha256": "c656db767468c7b12288d2a41d0fa918d3557fbfa578a7ce8140768fd671cbea",
+      "size": 2570
+    },
+    "qa/freeze-relay.py": {
+      "sha256": "a468f8c81b160c06fd79c32e25b897f5dc34828db46f291ab280231867d7b555",
+      "size": 2055
+    },
+    "qa/helper-test.py": {
+      "sha256": "0774bf6d07704091acdaa6564d9a7cc619c447a435c1b9a18a932919443c86f5",
+      "size": 4809
+    },
+    "qa/keyboard.py": {
+      "sha256": "9e052d32c453e86f9136fda507f68a51815a9cca2591a7a413abbdec079ccdf4",
+      "size": 2152
+    },
+    "qa/keymap-test.py": {
+      "sha256": "25dd3a30ada68c02eac84c105802e76f65242d8d4fd943947fe78e62b51c25c7",
+      "size": 2120
+    },
+    "qa/native.py": {
+      "sha256": "b2015de1ac217784b43d9f19af310cf365ed41c3d0b86d4b4f1811d5126246e7",
+      "size": 10059
+    },
+    "qa/observer_endpoint.py": {
+      "sha256": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+      "size": 2476
+    },
+    "qa/popup.py": {
+      "sha256": "c8b85f0740ac22ec859ad37ebb7c3e40e34a0d6b8f517021bc458bcb41b64edd",
+      "size": 3660
+    },
+    "qa/preflight.py": {
+      "sha256": "a1c4423d53fffdbe2e8a4e1e33f58c2d5a2e91dcf94c817acb827a932008b7ed",
+      "size": 6113
+    },
+    "qa/seal-final-receipt.py": {
+      "sha256": "8405b128c9e458db8dd1d5ab7e61ead3bb85b0a29600a6ecb9f978de7b146bd3",
+      "size": 1315
+    },
+    "qa/seal-final-relay.py": {
+      "sha256": "9f91fe22c0a189ce80a16c8dafbed29bd3b76a94d4ab29db6d7ea956910485e8",
+      "size": 1671
+    },
+    "qa/shell.py": {
+      "sha256": "266ae3571b7931900ba4e24fee7e03d2586f90604c92f40ae1a85131320d67f4",
+      "size": 22325
+    },
+    "qa/test.py": {
+      "sha256": "fe54fa60a523e4af9fc9676f7ac18fbea8ab3e99e472a9d62f80a776bfc8672b",
+      "size": 3390
+    },
+    "qa/helpers/activation-supervisor.py": {
+      "sha256": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba",
+      "size": 7450
+    },
+    "qa/helpers/activation_import.py": {
+      "sha256": "c02cc84c1faf318133fe561ded6c16c0e85d09ab341d3b99e04d791bef96eae0",
+      "size": 294
+    },
+    "qa/helpers/actor.py": {
+      "sha256": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5",
+      "size": 6026
+    },
+    "qa/helpers/bounded.py": {
+      "sha256": "04f7703fe49865e79979b5441d7cb45e24b8936509d5a67bac3fc802c2ca369c",
+      "size": 1835
+    },
+    "qa/helpers/cleanup.py": {
+      "sha256": "cf866ba58d2025c3bff1f019cf06d578da5d6283aa8f9ebc828ee43f97e651c2",
+      "size": 539
+    },
+    "qa/helpers/geometry.py": {
+      "sha256": "a8478a4fd05c1ddc56f42841813774d8902e56528cc371251821b1ab89811562",
+      "size": 3501
+    },
+    "qa/helpers/journal.py": {
+      "sha256": "0c7a9ab164af2bad8b7980b4eb2b2fb1f07adfd494ddaada643c4ddfa8e46e31",
+      "size": 10885
+    },
+    "qa/helpers/observer.py": {
+      "sha256": "363b3c26818f00850e7b77b36038b98c5866e6468409d39640febc8b66b8db4e",
+      "size": 2090
+    },
+    "qa/helpers/owned_bus_host.py": {
+      "sha256": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+      "size": 3714
+    },
+    "qa/helpers/parent.py": {
+      "sha256": "f5f4116557a4c5714c27a271c06818aad79b2bf76e8b4deede91c167af73e5a7",
+      "size": 7311
+    },
+    "qa/helpers/pixels.py": {
+      "sha256": "40e8ce54c5296f42e2c2de78a837ccfd2fd3c25646b5687e0114f0dad4b2b9de",
+      "size": 3370
+    },
+    "qa/helpers/placement.py": {
+      "sha256": "5be683b0864b2b6388b8344bc3e946a67351ebfd8133bd8732474d4d4d5ed6a6",
+      "size": 1967
+    },
+    "qa/helpers/private_bus.py": {
+      "sha256": "121e001cf0b0951a49769d6c70e82bd444dee0181383966c1d0e9d9157dbd67b",
+      "size": 16101
+    },
+    "qa/helpers/protocol.py": {
+      "sha256": "94335ba47fd10cf9ae57f13cd58a29d8beb17537cd8e8f1927692b0b40f34af5",
+      "size": 7026
+    },
+    "qa/helpers/scene.py": {
+      "sha256": "2f64e3b12e852399ea704e263162e6f5a72e9aef0c76ab7187833fda3b98b673",
+      "size": 1989
+    },
+    "native/keymap-test.c": {
+      "sha256": "450a70e7ab2e5a454e88b0c75aaa879f0b9bd8f47cb447c2fb2a410b516a00aa",
+      "size": 2046
+    },
+    "native/keymap.c": {
+      "sha256": "e929b248c5c9a04cea9d7eef6808356aae984898a22dfe1bb49cde31fc7b78da",
+      "size": 4386
+    },
+    "native/private-runtime.h": {
+      "sha256": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2",
+      "size": 1257
+    },
+    "runtime/candidate_host.py": {
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    "runtime/aq-tuple.json": {
+      "sha256": "4d4c71943b05bb0453184dccb6caabadb72067445ff980e9359bd427ba4d433e",
+      "size": 667
+    },
+    "runtime/native-build-report.json": {
+      "sha256": "d3169a8d87b64ccc3412d53ee9f0f11ac1913c19980615d809674bfe85c41fc6",
+      "size": 1820
+    },
+    "runtime/parent-probe-build.json": {
+      "sha256": "0949541d3955605fed2f3a41a7bed41ecfc8929d8da18e338e93b29444c1ae86",
+      "size": 978
+    },
+    "runtime/qa/build-pair-manifest.json": {
+      "sha256": "f45b35b3135adf547628f204e263399e91a74cac057ddbf88278c9d76002692a",
+      "size": 2299
+    },
+    "pins.json": {
+      "sha256": "f77c07bc0bacd6d86078d9987584c6f01684179ba5083184e9df54f206deb47d",
+      "size": 1734
+    },
+    "origin.json": {
+      "sha256": "ebc4c2626f1fc604bbabe372723d9ba0817a1fb95fe3c6360e8a3e78ec2e89d2",
+      "size": 4553
+    },
+    "REQUIREMENTS.md": {
+      "sha256": "f040d2dcf6ef78e3a3751ef670beb8cde70387d2f06db77cf3a0364efff23161",
+      "size": 2704
+    },
+    "COMPANION.md": {
+      "sha256": "b5453f8103260c483e7fa57b45e079656e5de112172a5f3bae186baa67f9dc18",
+      "size": 1358
+    },
+    "keymap-build-report.json": {
+      "sha256": "cb2fe0998ab6cd7df9865a49625eb39c9c14f49f83e4749810042e790c86d1c9",
+      "size": 624
+    },
+    "receipt-final/qa/wrapper.py": {
+      "sha256": "f295e86639b06c0d3535e7cf536b94a8c41cc9d7e2095a2a9e437bc188f441e3",
+      "size": 13297
+    },
+    "receipt-final/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396
+    },
+    "receipt-final/qa/held-source-manifest.json": {
+      "sha256": "63678469f0fe517ac7fce2bc7eca9863b0735b59387175a030a4be34d92cbd6c",
+      "size": 15404
+    },
+    "relay-final/qa/relay.py": {
+      "sha256": "59854774bd639dea4b3e615fd7701af2a37044e12ef8701beadd4fa85ab2c3e5",
+      "size": 11049
+    },
+    "relay-final/qa/held-source-manifest.json": {
+      "sha256": "d29a5235bfa30c5bc471fb9b26cb481a90a80018f1a5b5e02fc72a822013a3ed",
+      "size": 14850
+    }
+  },
+  "readinessPrerequisite": "Qualified successor to actual268/276 activation cleanup failure; no adoption/GUI permitted from this snapshot."
+}

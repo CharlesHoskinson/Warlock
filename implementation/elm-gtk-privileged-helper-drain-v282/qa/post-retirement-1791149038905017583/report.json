@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualPrivateBusOnly": true,
+  "checks": [
+    {
+      "name": "late-normal",
+      "passed": true,
+      "provisionalCount": 0,
+      "finalCount": 1,
+      "busExitCode": 0,
+      "case": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/post-retirement-1791149038905017583/late-normal",
+      "actualWrapper": {
+        "pid": 3720497,
+        "start": "11714264",
+        "pgid": 3720497,
+        "ppid": 3720495,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      }
+    },
+    {
+      "name": "late-fallback",
+      "passed": true,
+      "provisionalCount": 0,
+      "finalCount": 1,
+      "busExitCode": 0,
+      "case": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/post-retirement-1791149038905017583/late-fallback",
+      "actualWrapper": {
+        "pid": 3720567,
+        "start": "11714324",
+        "pgid": 3720567,
+        "ppid": 3720566,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      }
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/post-retirement-test.py": "445d360453f849d1074ed6f627d122f0672f686b155b1e58dbe66ef3fec4c4ab",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/private_bus.py": "6f876b208576a84cb55a6854e279053248a6d6715b6c0c64b404526e2e7058b1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-supervisor.py": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/owned_bus_host.py": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7"
+  }
+}

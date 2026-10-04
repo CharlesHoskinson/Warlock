@@ -1,0 +1,16 @@
+-- SHADOWING ----------------------------------------------------- src/Probe.elm
+
+The name `menu` is first defined here:
+
+40|      menu=MenuBridge.menuSnapshot (C.desktop next).windows.menus
+         ^^^^
+But then it is defined AGAIN over here:
+
+33|        "menu-minimize" -> (MenuBridge.menuSnapshot desktop.windows.menus).menu |> Maybe.andThen (\menu -> List.indexedMap Tuple.pair menu.items |> List.filter (\(_,item) -> item.action==Menu.Minimize) |> List.head |> Maybe.map (\(index,_) -> C.Interaction (Desktop.Window (TaskbarShell.MenuEvent (Menu.Activate menu.id menu.binding index)))))
+                                                                                                      ^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

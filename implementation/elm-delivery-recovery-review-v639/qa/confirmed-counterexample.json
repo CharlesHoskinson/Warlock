@@ -1,0 +1,91 @@
+{
+  "finding": "RECOVERY-639-001",
+  "activeProof": {
+    "protocolVersion": 3,
+    "kind": "binding-retirement",
+    "retirementProtocol": 1,
+    "operation": "retire",
+    "binding": {
+      "lifetime": "13066731177979386763",
+      "session": "16592658915108124045",
+      "frontend": "4"
+    },
+    "queriedBinding": {
+      "lifetime": "13066731177979386763",
+      "session": "16592658915108124045",
+      "frontend": "1"
+    },
+    "requestId": "1",
+    "sequence": "1001",
+    "grantState": "Retired"
+  },
+  "pendingOrigins": [
+    {
+      "binding": {
+        "frontend": "1",
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045"
+      },
+      "effectProtocol": 1,
+      "intent": {
+        "context": {
+          "epoch": "1",
+          "lifetime": "13066731177979386763",
+          "output": "1",
+          "revision": "21"
+        },
+        "generation": "12",
+        "incarnation": "2",
+        "operation": "minimize",
+        "request": "12"
+      },
+      "schema": 2,
+      "status": "Unknown"
+    },
+    {
+      "binding": {
+        "frontend": "1",
+        "lifetime": "13066731177979386763",
+        "session": "999"
+      },
+      "effectProtocol": 1,
+      "intent": {
+        "context": {
+          "epoch": "1",
+          "lifetime": "13066731177979386763",
+          "output": "1",
+          "revision": "21"
+        },
+        "generation": "15",
+        "incarnation": "1",
+        "operation": "minimize",
+        "request": "13"
+      },
+      "schema": 2,
+      "status": "Unknown"
+    }
+  ],
+  "frontendWires": [],
+  "frontendHistory": [
+    {
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "999",
+        "frontend": "1"
+      },
+      "status": "Unknown",
+      "released": false
+    },
+    {
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "1"
+      },
+      "status": "Unknown",
+      "released": true
+    }
+  ],
+  "unresolved": 1,
+  "fixtureScope": "actual frozen630 coordinator and held compiled619 public reducer, synthetic validated-shape historical snapshot and typed proof transport; no filesystem/native acceptance"
+}

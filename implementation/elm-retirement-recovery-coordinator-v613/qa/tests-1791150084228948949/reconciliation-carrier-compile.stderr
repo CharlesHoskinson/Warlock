@@ -1,0 +1,9 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v613/native/host.c:14,
+                 from /home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v613/native/reconciliation-carrier-test.c:2:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v613/native/host-journal.h:44:17: error: ‘admission_open’ defined but not used [-Werror=unused-function]
+   44 | static gboolean admission_open(const char *config) {
+      |                 ^~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v613/native/host-journal.h:28:13: error: ‘admission_close’ defined but not used [-Werror=unused-function]
+   28 | static void admission_close(void) {
+      |             ^~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors

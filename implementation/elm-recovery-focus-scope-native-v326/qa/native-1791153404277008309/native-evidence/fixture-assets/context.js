@@ -1,0 +1,83 @@
+'use strict';
+(() => {
+  let pressed = null;
+  const owner = element => element?.closest('.surface-bar,.surface-popup');
+  const control = element => element?.closest('[data-surface-control]');
+  const stamp = node => node && ({publication:node.dataset.publication,lease:node.dataset.lease});
+  const same = (a,b) => a && b && a.publication===b.publication && a.lease===b.lease;
+  const post = value => window.webkit.messageHandlers.native.postMessage(JSON.stringify(value));
+  const diagnostic=(phase,event)=>{if(window.elmHostQA)post({kind:'context-input-report',phase,button:event.button,buttons:event.buttons,trusted:event.isTrusted,id:control(event.target)?.dataset.surfaceControl||null});};
+  const invoke = (item,node,trigger,x,y) => post({surfaceProtocol:2,kind:'surface-context',
+    surface:node.classList.contains('surface-popup')?'popup':'bar',...stamp(node),
+    id:item.dataset.surfaceControl,trigger,x,y});
+  // Keyboard menu activation uses the native proof route. WebKit's implicit
+  // zero-detail button click must not also invoke Elm's pointer-click handler.
+  document.addEventListener('click',event => {
+    const node=owner(control(event.target));
+    if(node?.dataset.mode==='menu' && event.detail===0 && control(event.target)?.dataset.surfaceControl!=='control:recovery-refresh'){event.preventDefault();event.stopImmediatePropagation();}
+  },true);
+  document.addEventListener('contextmenu',event => { if(owner(event.target)) event.preventDefault(); });
+  document.addEventListener('mousedown',event => {
+    diagnostic('press',event);
+    pressed=null;
+    if(!event.isTrusted || event.button!==2 || event.buttons!==2) return;
+    const item=control(event.target),node=owner(item);
+    if(!item || !node || item.disabled) return;
+    pressed={item,node,shown:stamp(node),x:event.clientX,y:event.clientY};
+  },true);
+  document.addEventListener('mousemove',event => {
+    if(pressed && ((event.clientX-pressed.x)**2+(event.clientY-pressed.y)**2>25 || event.buttons!==2)) pressed=null;
+  },true);
+  document.addEventListener('mouseup',event => {
+    diagnostic('release',event);
+    const pending=pressed;pressed=null;
+    if(!event.isTrusted || event.button!==2 || event.buttons!==0 || !pending) return;
+    const item=control(event.target),node=owner(item);
+    if(item!==pending.item || node!==pending.node || !same(pending.shown,stamp(node)) || item.disabled) return;
+    if((event.clientX-pending.x)**2+(event.clientY-pending.y)**2>25) return;
+    event.preventDefault();invoke(item,node,'pointer',Math.round(event.clientX),Math.round(event.clientY));
+  },true);
+  window.addEventListener('blur',()=>{pressed=null;});
+  for(const name of ['scroll','dragstart']) document.addEventListener(name,()=>{pressed=null;},true);
+  document.addEventListener('keydown',event => {
+    if(!event.isTrusted || event.repeat || event.isComposing || event.defaultPrevented || event.ctrlKey || event.altKey || event.metaKey) return;
+    const menu=document.querySelector('.surface-popup[data-mode="menu"]');
+    // Dismissal belongs to the live popup, including when a disabled row blurs focus.
+    if(event.key==='Escape' && menu){
+      event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(menu),key:'Escape'});return;
+    }
+    // Keep the live menu scope even when a disabled row blurred DOM focus.
+    // WebKitGTK can expose shifted Tab as Unidentified with physical code Tab.
+    const tab=event.key==='Tab' || (event.key==='Unidentified' && event.shiftKey && event.code==='Tab');
+    if(menu && tab){
+      event.preventDefault();
+      const selected=menu.querySelector('[aria-current="true"]'),close=menu.querySelector('[data-surface-control="control:menu-close"]'),recovery=menu.querySelector('[data-surface-control="control:recovery-refresh"]');
+      const targets=[close,selected,recovery].filter((target,index,all)=>target && !target.disabled && all.indexOf(target)===index);
+      const position=targets.indexOf(control(document.activeElement)),step=event.shiftKey?-1:1;
+      const next=position<0?(event.shiftKey?targets.length-1:0):(position+step+targets.length)%targets.length;
+      if(targets.length) targets[next].focus();return;
+    }
+    const item=control(document.activeElement),node=owner(item);
+    if(!item || !node) return;
+    if(event.key==='ContextMenu' || (event.key==='F10' && event.shiftKey)) {
+      if(item.disabled) return;
+      event.preventDefault();invoke(item,node,'keyboard',0,0);return;
+    }
+    if(node.dataset.mode==='menu') {
+      // Observation-only recovery keeps normal button Enter/Space activation;
+      // the renderer and native gate still validate enabled/publication/lease.
+      if(item.dataset.surfaceControl==='control:recovery-refresh' && !item.disabled && (event.key==='Enter' || event.key===' ')) return;
+      if(event.key==='Enter' && item.dataset.surfaceControl==='control:menu-close'){
+        event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:'Close'});return;
+      }
+      if(['Escape','ArrowUp','ArrowDown','Home','End','Enter'].includes(event.key)) {
+        event.preventDefault();post({surfaceProtocol:2,kind:'surface-menu-navigation',surface:'popup',...stamp(node),key:event.key});
+      }
+    }
+  },true);
+  new MutationObserver(() => {
+    const node=document.querySelector('.surface-popup[data-mode="menu"]');
+    const selected=node?.querySelector('[aria-current="true"]');
+    if(selected && !selected.disabled && document.activeElement!==selected) selected.focus();
+  }).observe(document.body,{subtree:true,childList:true,attributes:true});
+})();

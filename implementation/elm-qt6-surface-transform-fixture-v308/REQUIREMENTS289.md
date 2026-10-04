@@ -1,0 +1,9 @@
+# Real QMenu popup landmark and action region
+
+Fresh held250 derivative for mandatory288 QT06; no source/model/ABI/GUI changes outside fixture. Preserve commands/profiles, real QMenu parent/window flags/action and native grab behavior, actual250 event domains and existing lifetime/resource/input guards.
+
+A QMenu subclass calls base paint then paints opaque magenta8×8 at menu-local(4,4), only for the exact live P widget/instance. The menu itself is the measured popup landmark: landmarkWindow is its mapTo-owning-widget offset and measured extent, with explicit popup marker rectangle fields. Do not infer colors or offsets from themes. Journal separately measures the actual current QAction actionGeometry in QMenu-local coordinates plus enabled/visible state and bounds availability. Actionable region is not the marker.
+
+Store the selected QAction as a QPointer. Actual triggered callback must require current P widget+instance and exact current action pointer/member, enabled/visible. Retirement clears the action/landmark before deferred destruction; late paints or action callbacks from obsolete/replaced widgets/actions emit no record. Preserve real QMenu's standard hide-on-trigger behavior; action callback alone is not native popup retirement.
+
+CPU tests must compile actual Qt6 fixture/header/link closure and execute extracted production paint/trigger admission with bounded lifetime/retired/replaced/foreign-action controls. Mocked paint calls are not pixels. Native QT06 still needs actual xdg parent/grab/configure ACK/current popup root/native membership, scene-attributed magenta capture, unfiltered raw pointer+key intervals and measured QAction callback, followed by actual grab release/resource retirement and opener-close behavior. Original6s/3s caps/fullQT01–08 and controlled432 fault companion remain mandatory.

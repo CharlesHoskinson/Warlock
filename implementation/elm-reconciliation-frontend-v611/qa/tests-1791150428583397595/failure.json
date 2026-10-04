@@ -1,0 +1,413 @@
+{
+  "passed": false,
+  "error": "AssertionError('history-capacity-fails-closed-without-eviction')",
+  "checks": [
+    {
+      "name": "full-origin-Unknown-blocks-before-release",
+      "passed": true
+    },
+    {
+      "name": "ready-ack-precedes-both-frontend-read-requests",
+      "passed": true
+    },
+    {
+      "name": "proof-and-current-reads-do-not-release",
+      "passed": true
+    },
+    {
+      "name": "full-correlated-release-removes-live-reservation",
+      "passed": true
+    },
+    {
+      "name": "original-old-binding-and-Unknown-history-retained",
+      "passed": true
+    },
+    {
+      "name": "historical-Unknown-transaction-kept",
+      "passed": true
+    },
+    {
+      "name": "release-does-not-consume-any-counter",
+      "passed": true
+    },
+    {
+      "name": "release-emits-no-effect-or-refresh",
+      "passed": true
+    },
+    {
+      "name": "only-new-explicit-intent-can-send",
+      "passed": true
+    },
+    {
+      "name": "foreign-current-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "foreign-old-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "stale-proof-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "changed-proof-sequence-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "stale-action-id-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "stale-geometry-id-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "stale-own-geometry-revision-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "foreign-action-output-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "bool-id-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "overflow-id-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "invented-committed-keeps-live-reservation-and-counters",
+      "passed": true
+    },
+    {
+      "name": "no-proof-cannot-release",
+      "passed": true
+    },
+    {
+      "name": "no-geometry-cannot-release",
+      "passed": true
+    },
+    {
+      "name": "pre-proof-reads-cannot-release",
+      "passed": true
+    },
+    {
+      "name": "legacy-origin-cannot-release",
+      "passed": true
+    },
+    {
+      "name": "retry-pending-invalidates-prior-read-qualification",
+      "passed": true
+    },
+    {
+      "name": "latest-both-accepted-retries-can-release",
+      "passed": true
+    },
+    {
+      "name": "duplicate-proof-has-no-automatic-read-replay",
+      "passed": true
+    },
+    {
+      "name": "only-matched-target-reservation-removed",
+      "passed": true
+    },
+    {
+      "name": "independent-history-and-counters-kept",
+      "passed": true
+    },
+    {
+      "name": "detached-full-record-cannot-import-or-advance",
+      "passed": true
+    },
+    {
+      "name": "history-capacity-fails-closed-without-eviction",
+      "passed": false
+    }
+  ],
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/inputs",
+      "exitCode": 0
+    },
+    {
+      "name": "valid",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/valid-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/valid-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "foreign-current",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/foreign-current-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/foreign-current-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "foreign-old",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/foreign-old-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/foreign-old-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "stale-proof",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-proof-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-proof-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "changed-proof-sequence",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/changed-proof-sequence-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/changed-proof-sequence-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "stale-action-id",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-action-id-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-action-id-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "stale-geometry-id",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-geometry-id-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-geometry-id-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "stale-own-geometry-revision",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-own-geometry-revision-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/stale-own-geometry-revision-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "foreign-action-output",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/foreign-action-output-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/foreign-action-output-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "bool-id",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/bool-id-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/bool-id-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "overflow-id",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/overflow-id-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/overflow-id-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "invented-committed",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/invented-committed-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/invented-committed-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "no-proof",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/no-proof-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/no-proof-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "no-geometry",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/no-geometry-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/no-geometry-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "pre-proof-reads",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/pre-proof-reads-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/pre-proof-reads-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "legacy-origin",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/legacy-origin-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/legacy-origin-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "retry-pending",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/retry-pending-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/retry-pending-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "retry-complete",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/retry-complete-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/retry-complete-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "duplicate-proof",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/duplicate-proof-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/duplicate-proof-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "independent",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/independent-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/independent-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "detached-unknown",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/detached-unknown-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/detached-unknown-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    },
+    {
+      "name": "history-capacity",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/history-capacity-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611/qa/tests-1791150428583397595/history-capacity-rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-frontend-v611",
+      "exitCode": 0
+    }
+  ]
+}

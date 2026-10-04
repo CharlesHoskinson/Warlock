@@ -1,0 +1,438 @@
+{
+  "passed": false,
+  "selected": {
+    "tests": [
+      "normalReleaseTest",
+      "preparedCrashStaysBlockedTest",
+      "unlinkBeforePrepareRefusedTest",
+      "ackBeforeFinalSyncRefusedTest",
+      "unlinkCrashRestoresExactReservationTest",
+      "durableUnlinkCrashStillBlockedTest",
+      "releasedCrashNeverResurrectsTest",
+      "historyUnknownNotCommitTest",
+      "registeredProofRefusedTest",
+      "foreignProofRefusedTest",
+      "staleProofRefusedTest",
+      "futureProofRefusedTest",
+      "oneReadCannotPrepareTest",
+      "crossedRequestsRefusedTest",
+      "staleObservationRefusedTest",
+      "historyFullBlocksNewTest",
+      "releasedStageCannotRegressTest",
+      "futureObservationRefusedTest",
+      "boundedHistoryNoOverwriteTest",
+      "crashAfterWriteProofTest",
+      "crashAfterSyncProofTest",
+      "crashAfterSyncProofDirTest",
+      "crashAfterWritePreparedTest",
+      "crashAfterSyncPreparedTest",
+      "crashAfterSyncPreparedDirTest",
+      "crashAfterUnlinkTest",
+      "crashAfterSyncUnlinkDirTest",
+      "crashAfterWriteReleasedTest",
+      "crashAfterSyncReleasedTest",
+      "oldReadAfterCrashRefusedTest",
+      "epochExhaustionRefusesReadsTest",
+      "visiblePreparedRestartNeedsRootSyncTest",
+      "visibleReleasedRestartNeedsRootSyncTest",
+      "durableReleasedRestartNeedsBarrierTest",
+      "preparedRenameLostOnPowerLossTest",
+      "releasedRenameLostOnPowerLossTest"
+    ],
+    "protocol_tests": [
+      "freshReadyRelease64Test",
+      "queuedBeforeAnnouncementTest",
+      "queuedAfterProofBeforeAckTest",
+      "ackEnqueuedNotProcessedTest",
+      "freshEnqueueBeforeAckProcessingTest",
+      "foreignReadyTest",
+      "wrongProofReadyTest",
+      "wrongOldReadyTest",
+      "wrongVersionReadyTest",
+      "proofNotDeliveredReadyTest",
+      "duplicateReadyRetainsReadsTest",
+      "nextScopeClearsAcceptedTest",
+      "retryLatestActionInvalidatesTest",
+      "differentOutputBlocksTest",
+      "separateDomainsRequiredTest",
+      "unannouncedScopeCannotReleaseTest",
+      "finalFsyncBeforeProtocolReleaseTest",
+      "restartInvalidatesProtocolTest",
+      "scopeCap16Test"
+    ]
+  },
+  "executed": {
+    "tests": [
+      "normalReleaseTest",
+      "preparedCrashStaysBlockedTest",
+      "unlinkBeforePrepareRefusedTest",
+      "ackBeforeFinalSyncRefusedTest",
+      "unlinkCrashRestoresExactReservationTest",
+      "durableUnlinkCrashStillBlockedTest",
+      "releasedCrashNeverResurrectsTest",
+      "historyUnknownNotCommitTest",
+      "registeredProofRefusedTest",
+      "foreignProofRefusedTest",
+      "staleProofRefusedTest",
+      "futureProofRefusedTest",
+      "oneReadCannotPrepareTest",
+      "crossedRequestsRefusedTest",
+      "staleObservationRefusedTest",
+      "historyFullBlocksNewTest",
+      "releasedStageCannotRegressTest",
+      "futureObservationRefusedTest",
+      "boundedHistoryNoOverwriteTest",
+      "crashAfterWriteProofTest",
+      "crashAfterSyncProofTest",
+      "crashAfterSyncProofDirTest",
+      "crashAfterWritePreparedTest",
+      "crashAfterSyncPreparedTest",
+      "crashAfterSyncPreparedDirTest",
+      "crashAfterUnlinkTest",
+      "crashAfterSyncUnlinkDirTest",
+      "crashAfterWriteReleasedTest",
+      "crashAfterSyncReleasedTest",
+      "oldReadAfterCrashRefusedTest",
+      "epochExhaustionRefusesReadsTest",
+      "visiblePreparedRestartNeedsRootSyncTest",
+      "visibleReleasedRestartNeedsRootSyncTest",
+      "durableReleasedRestartNeedsBarrierTest",
+      "preparedRenameLostOnPowerLossTest",
+      "releasedRenameLostOnPowerLossTest"
+    ],
+    "protocol_tests": [
+      "queuedBeforeAnnouncementTest",
+      "queuedAfterProofBeforeAckTest",
+      "ackEnqueuedNotProcessedTest",
+      "freshEnqueueBeforeAckProcessingTest",
+      "foreignReadyTest",
+      "wrongProofReadyTest",
+      "wrongOldReadyTest",
+      "wrongVersionReadyTest",
+      "proofNotDeliveredReadyTest",
+      "duplicateReadyRetainsReadsTest",
+      "nextScopeClearsAcceptedTest",
+      "retryLatestActionInvalidatesTest",
+      "differentOutputBlocksTest",
+      "separateDomainsRequiredTest",
+      "restartInvalidatesProtocolTest",
+      "scopeCap16Test"
+    ]
+  },
+  "namedCount": 55,
+  "sampledTraces": 2000,
+  "maxTransitions": 80,
+  "typedMutants": 7,
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "quint",
+        "--version"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+    },
+    {
+      "name": "tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "tests-named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/tests.qnt",
+        "--main=tests",
+        "--match=^(normalReleaseTest|preparedCrashStaysBlockedTest|unlinkBeforePrepareRefusedTest|ackBeforeFinalSyncRefusedTest|unlinkCrashRestoresExactReservationTest|durableUnlinkCrashStillBlockedTest|releasedCrashNeverResurrectsTest|historyUnknownNotCommitTest|registeredProofRefusedTest|foreignProofRefusedTest|staleProofRefusedTest|futureProofRefusedTest|oneReadCannotPrepareTest|crossedRequestsRefusedTest|staleObservationRefusedTest|historyFullBlocksNewTest|releasedStageCannotRegressTest|futureObservationRefusedTest|boundedHistoryNoOverwriteTest|crashAfterWriteProofTest|crashAfterSyncProofTest|crashAfterSyncProofDirTest|crashAfterWritePreparedTest|crashAfterSyncPreparedTest|crashAfterSyncPreparedDirTest|crashAfterUnlinkTest|crashAfterSyncUnlinkDirTest|crashAfterWriteReleasedTest|crashAfterSyncReleasedTest|oldReadAfterCrashRefusedTest|epochExhaustionRefusesReadsTest|visiblePreparedRestartNeedsRootSyncTest|visibleReleasedRestartNeedsRootSyncTest|durableReleasedRestartNeedsBarrierTest|preparedRenameLostOnPowerLossTest|releasedRenameLostOnPowerLossTest)$",
+        "--seed=61401",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/accepted_tests_{test}_{seq}.itf.json"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "b097ef1a6223552062875351e5e572db6af9bd822289755ddfed634e76b8c2ef"
+    },
+    {
+      "name": "protocol_tests-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "protocol_tests-named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^(freshReadyRelease64Test|queuedBeforeAnnouncementTest|queuedAfterProofBeforeAckTest|ackEnqueuedNotProcessedTest|freshEnqueueBeforeAckProcessingTest|foreignReadyTest|wrongProofReadyTest|wrongOldReadyTest|wrongVersionReadyTest|proofNotDeliveredReadyTest|duplicateReadyRetainsReadsTest|nextScopeClearsAcceptedTest|retryLatestActionInvalidatesTest|differentOutputBlocksTest|separateDomainsRequiredTest|unannouncedScopeCannotReleaseTest|finalFsyncBeforeProtocolReleaseTest|restartInvalidatesProtocolTest|scopeCap16Test)$",
+        "--seed=61401",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/accepted_protocol_tests_{test}_{seq}.itf.json"
+      ],
+      "exit": 1,
+      "expected": 0,
+      "ok": false,
+      "outputSHA256": "b1629e6a0ba986210c4593474c297f148f06c2e94f37b94c7871bcfae5281c02"
+    },
+    {
+      "name": "traces",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt",
+        "--main=protocol",
+        "--init=start",
+        "--step=tick",
+        "--invariant=protocolProps",
+        "--seed=61402",
+        "--max-samples=2000",
+        "--max-steps=80",
+        "--backend=typescript"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "bbc68652faf2def5f41dde5a6c077e297803d5ba256cb6c385f4db9d1611eb9f"
+    },
+    {
+      "name": "skipping-ready-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skipping-ready/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "skipping-ready-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skipping-ready/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^ackEnqueuedNotProcessedTest$",
+        "--seed=61403",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "a085d10566843e8425b1f538295528a05d62c9ef2c9e7739863808dcd6c0b48a",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "not-resetting-next-scope-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/not-resetting-next-scope/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "not-resetting-next-scope-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/not-resetting-next-scope/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^nextScopeClearsAcceptedTest$",
+        "--seed=61403",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "b0f68115d76a915303d3195ed6442f2a0fc543325e171d23c80f66f4a1d6d75b",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "qualifying-preack-queued-read-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/qualifying-preack-queued-read/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "qualifying-preack-queued-read-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/qualifying-preack-queued-read/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^queuedAfterProofBeforeAckTest$",
+        "--seed=61403",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "a17b7c9a4ed908ca7688063db4f279f5797b6b60f3944951db079a397188cb16",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "release-unannounced-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/release-unannounced/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "release-unannounced-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/release-unannounced/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^unannouncedScopeCannotReleaseTest$",
+        "--seed=61403",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "1e912c364f83a88e4a5fc6bb33f5b1879acb915fd7ffa05bc0e9ee0ace420164",
+      "actualAssertionFailure": false
+    },
+    {
+      "name": "duplicate-ready-resets-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/duplicate-ready-resets/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "duplicate-ready-resets-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/duplicate-ready-resets/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^duplicateReadyRetainsReadsTest$",
+        "--seed=61403",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "9f1a263235d028c74a3226fbf2c7bed6186f4e29117c380228b3e2c878fb8875",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "retry-keeps-old-accept-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/retry-keeps-old-accept/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "retry-keeps-old-accept-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/retry-keeps-old-accept/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^retryLatestActionInvalidatesTest$",
+        "--seed=61403",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "dd1dc61073ca73cf6d95b8fd5373a8ebf4fc89b17508aeea4cdae97346f17fcf",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "skip-output-join-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "skip-output-join-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/skip-output-join/protocol_tests.qnt",
+        "--main=protocol_tests",
+        "--match=^differentOutputBlocksTest$",
+        "--seed=61403",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "1a37a69ff140265c54129c3c42f8e44e6021bfc890ff0315ce74aa2147659532",
+      "actualAssertionFailure": true
+    }
+  ],
+  "sourceHashes": {
+    "release.qnt": "898b11eb72eb257513d078917e73a0c627ec59920cfcf01506cb3a53df7f4160",
+    "tests.qnt": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+    "protocol.qnt": "52d9074ba6483d07d7af33bb08f2216bf0a2cdca60c33f919a697d877bd97b50",
+    "protocol_tests.qnt": "a9c43429ebea556bf9b1a32c851836dce79c02e34b0ac666318afd0b6706423b",
+    "qa/run.py": "f7aa6bbbbd13e8c2415ac3df6bee3c8545077be02bdff66f51042418f1bdf52f"
+  },
+  "nativeAcceptance": false,
+  "scope": "CPU bounded abstract ready enqueue/processing protocol composed with V605 durability"
+}

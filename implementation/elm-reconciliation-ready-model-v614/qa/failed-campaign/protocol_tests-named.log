@@ -1,0 +1,48 @@
+
+  protocol_tests
+    1) freshReadyRelease64Test failed after 1 test(s)
+    ok queuedBeforeAnnouncementTest passed 1 test(s)
+    ok queuedAfterProofBeforeAckTest passed 1 test(s)
+    ok ackEnqueuedNotProcessedTest passed 1 test(s)
+    ok freshEnqueueBeforeAckProcessingTest passed 1 test(s)
+    ok foreignReadyTest passed 1 test(s)
+    ok wrongProofReadyTest passed 1 test(s)
+    ok wrongOldReadyTest passed 1 test(s)
+    ok wrongVersionReadyTest passed 1 test(s)
+    ok proofNotDeliveredReadyTest passed 1 test(s)
+    ok duplicateReadyRetainsReadsTest passed 1 test(s)
+    ok nextScopeClearsAcceptedTest passed 1 test(s)
+    ok retryLatestActionInvalidatesTest passed 1 test(s)
+    ok differentOutputBlocksTest passed 1 test(s)
+    ok separateDomainsRequiredTest passed 1 test(s)
+    2) unannouncedScopeCannotReleaseTest failed after 1 test(s)
+    3) finalFsyncBeforeProtocolReleaseTest failed after 1 test(s)
+    ok restartInvalidatesProtocolTest passed 1 test(s)
+    ok scopeCap16Test passed 1 test(s)
+
+  16 passing (65ms)
+  3 failed
+
+  1) freshReadyRelease64Test:
+       Error [QNT502]: Variable q not set
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:49:313
+        49:  action durableRelease=send(Durable(NativeRetire)).then(send(Durable(Proof({kind:1,key:1,epoch:1,barrier:1})))).then(send(Durable(RequestReads))).then(send(Durable(Observe({kind:1,request:11,epoch:1,seq:2})))).then(send(Durable(Observe({kind:2,request:12,epoch:1,seq:2})))).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(send(Durable(Ack)))
+                                                                                                                                                                                                                                                                                                                                    ^
+    Use --seed=0xefd9 --match=freshReadyRelease64Test to repeat.
+  2) unannouncedScopeCannotReleaseTest:
+       Error [QNT502]: Variable q not set
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:86
+        19:  run unannouncedScopeCannotReleaseTest=start.then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(all {q'=q,fire(Ack)}).then(send(ReleaseRecords(1))).then(all {assert(q.released==0 and protocolProps),send(DeliverProof)})
+                                                                                                 ^
+    Use --seed=0xefd9 --match=unannouncedScopeCannotReleaseTest to repeat.
+  3) finalFsyncBeforeProtocolReleaseTest:
+       Error [QNT502]: Variable q not set
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:20:136
+        20:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                   ^
+    Use --seed=0xefd9 --match=finalFsyncBeforeProtocolReleaseTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt
+error: Tests failed

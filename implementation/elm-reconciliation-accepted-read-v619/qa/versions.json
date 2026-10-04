@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "npm",
+      "exec",
+      "--yes",
+      "--package=elm@0.19.2-0",
+      "--",
+      "elm",
+      "--version"
+    ],
+    "exitCode": 0,
+    "stdout": "0.19.2\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "--version"
+    ],
+    "exitCode": 0,
+    "stdout": "v26.10.0\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "quint",
+      "--version"
+    ],
+    "exitCode": 0,
+    "stdout": "0.33.0\n",
+    "stderr": ""
+  }
+]

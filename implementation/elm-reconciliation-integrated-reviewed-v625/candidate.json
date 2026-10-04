@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "path": "implementation/elm-retirement-recovery-coordinator-v612"
+    },
+    {
+      "path": "implementation/elm-retirement-recovery-coordinator-v613"
+    },
+    {
+      "path": "implementation/elm-retirement-recovery-coordinator-v615"
+    },
+    {
+      "path": "implementation/elm-retirement-recovery-coordinator-v622"
+    },
+    {
+      "path": "implementation/elm-reconciliation-frontend-v611",
+      "manifestSHA256": "5d9499dcd07e861dc367462938d750636fd5ec52dab3f3e639297b1e04192970"
+    },
+    {
+      "path": "implementation/elm-reconciliation-ready-model-v614",
+      "manifestSHA256": "28d824000cac1891e3b5cc06d850f702b515b6b302a9a61385386c6a94908c58"
+    },
+    {
+      "path": "implementation/elm-reconciliation-coordinator-controls-v617",
+      "manifestSHA256": "964b5c02d0618929824a95e781dfc5fe00e8ca12911c9054c66f4f567504d08b"
+    },
+    {
+      "path": "implementation/elm-reconciliation-accepted-read-v619",
+      "manifestSHA256": "93988ff68b03b8a2331c9719a9ce684d928f0ab8ec254557016b8511a932ad74"
+    },
+    {
+      "path": "implementation/elm-accepted-frontier-model-v620",
+      "manifestSHA256": "9c008fece44d156ba50a57625bbf2a8e1b7a1dd0db35c258131c12b665832ceb"
+    },
+    {
+      "path": "implementation/elm-release-delivery-attestation-v624",
+      "manifestSHA256": "c1c8eed93928ef176595762db8db8f9b47a618b7e766e2042e17361034a44d27"
+    },
+    {
+      "path": "implementation/elm-reconciliation-integrated-gui-v616"
+    },
+    {
+      "path": "implementation/elm-reconciliation-native-journey-v618"
+    },
+    {
+      "path": "implementation/elm-reconciliation-startup-order-v626",
+      "manifestSHA256": "b0889b29e3b37a1dba678717d93db63e8b1604fdd33b2f0fe39a9806279703f2",
+      "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-startup-order-v626/qa/build-1791152350322111319/report.json"
+    },
+    {
+      "path": "implementation/elm-reconciliation-native-journey-v627"
+    }
+  ],
+  "nativeReports": [
+    {
+      "path": "implementation/elm-reconciliation-native-journey-v618/qa/native-1791151961114203912/report.json",
+      "expectedPassed": false
+    },
+    {
+      "path": "implementation/elm-reconciliation-native-journey-v627/qa/native-1791152401585427501/report.json",
+      "expectedPassed": true
+    }
+  ]
+}

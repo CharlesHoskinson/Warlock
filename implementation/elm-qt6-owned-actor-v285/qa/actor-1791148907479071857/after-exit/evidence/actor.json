@@ -1,0 +1,50 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791148907479071857/after-exit/fake-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "inspect",
+      "role": null,
+      "payload": "1 inspect\n",
+      "startedMonotonic": 113173.557467412,
+      "bytesWritten": 10,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 2,
+      "operation": "quit",
+      "role": null,
+      "payload": "2 quit\n",
+      "startedMonotonic": 113173.578522402,
+      "bytesWritten": 7,
+      "written": true
+    }
+  ],
+  "process": {
+    "pid": 3710936,
+    "start": "11701130",
+    "name": "qt6-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791148907479071857/after-exit/fake-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791148907479071857/after-exit/evidence/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "11701130",
+  "stdoutBytes": 911,
+  "stdoutCapturedBytes": 911,
+  "stdoutPrefixSHA256": "d9307ec0d0321598cf18bf8608f49eb48de60bae4ac36e25f78ea261b2d24cb4",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "closeError": "Refused('closed Qt producer event vocabulary')",
+  "exitCode": 0
+}

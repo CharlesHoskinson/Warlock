@@ -1,0 +1,1 @@
+Review verifier incorrectly rejected inherited system tool /usr/bin/python3 symlink before hash validation; this is a reviewer harness failure, not candidate failure. Preserve system tool byte/size/mode checks as inherited closure.

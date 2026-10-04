@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "error": "AssertionError('qa/test-1791147764313011171/link.json')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/fault-native.py\", line 328, in <module>\n    build,pair,pointer,fixture=preflight();result.update(passed=True,pair=pair['nativePair'],client=fixture['client'])\n                               ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/fault-native.py\", line 78, in preflight\n    assert callable(load_receipt().write_release);relay=load_relay();assert all(callable(getattr(relay,n)) for n in ['close_stdin','actor_status','exit_status'])\n                                                        ~~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/fault-native.py\", line 36, in load_relay\n    else:assert not path.is_symlink() and path.resolve().is_relative_to(RELAY.resolve()) and host.digest(path)==row['sha256'],relative\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: qa/test-1791147764313011171/link.json\n"
+}

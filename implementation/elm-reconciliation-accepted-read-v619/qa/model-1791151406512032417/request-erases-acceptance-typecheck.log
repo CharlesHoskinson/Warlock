@@ -1,0 +1,8 @@
+
+ Error [QNT000]: mismatched input ',' expecting {'->', '=>', ')'}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151406512032417/request-erases-acceptance/accepted.qnt:3:84
+  3:  type Event = Proof | ActionReply | GeometryReply | Dirty | NextBatch | Release(int,int) | Noop
+                                                                                        ^
+
+error: parsing failed

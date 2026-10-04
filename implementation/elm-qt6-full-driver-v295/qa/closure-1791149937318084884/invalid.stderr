@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-cleanup-adoption-v290/qa/helpers/activation-supervisor.py", line 132, in <module>
+    if __name__=='__main__':sys.exit(main())
+                                     ~~~~^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-cleanup-adoption-v290/qa/helpers/activation-supervisor.py", line 15, in main
+    require_qa_scope();runtime=verify_runtime(Path(os.environ['XDG_RUNTIME_DIR']))
+                               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/window-integration-qa/qa_launch.py", line 62, in verify_runtime
+    check_private_directory(path)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/home/hoskinson/window-integration-qa/qa_launch.py", line 38, in check_private_directory
+    raise RuntimeError('Runtime must be an owned, nonsymlink 0700 directory: ' + str(path))
+RuntimeError: Runtime must be an owned, nonsymlink 0700 directory: /tmp

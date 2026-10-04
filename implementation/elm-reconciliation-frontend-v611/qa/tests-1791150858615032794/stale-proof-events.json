@@ -1,0 +1,493 @@
+[
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "attached",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "compositor": {
+        "pid": 3310266,
+        "instance": "efb50993780079460b0cbed1363e2166a2de1d9f_1791143277_872630886",
+        "coreHash": "efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6"
+      },
+      "capabilities": {
+        "observe": true,
+        "effects": true,
+        "minimizedState": true,
+        "effectProtocol": 1,
+        "operations": [
+          "minimize",
+          "restore",
+          "activate"
+        ],
+        "canonicalScene": false,
+        "taskbarProjectionProtocol": 1,
+        "effectInvalidationProtocol": 1
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "action-projection",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "1",
+      "context": {
+        "lifetime": "13066731177979386763",
+        "epoch": "2",
+        "output": "1",
+        "revision": "21"
+      },
+      "scene": {
+        "revision": "21",
+        "focused": "2",
+        "windows": [
+          {
+            "incarnation": "2",
+            "application": "GTK Application",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": false,
+            "owner": null,
+            "available": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-geometry-negotiate"
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "geometry-attached",
+      "geometryProtocol": 2,
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "2",
+      "capabilities": {
+        "observe": true,
+        "effects": true,
+        "effectProtocol": 2,
+        "operations": [
+          "maximize",
+          "restore-geometry"
+        ],
+        "placementCapacity": 256,
+        "canonicalScene": false
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "geometry-facts",
+      "geometryProtocol": 2,
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "3",
+      "sequence": "48",
+      "revision": "21",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "2",
+        "inputBlocked": false,
+        "windows": [
+          {
+            "incarnation": "2",
+            "owner": null,
+            "workspace": "1",
+            "workspaceGeneration": "1",
+            "monitor": "0",
+            "outputOwnershipGeneration": "1",
+            "workAreaRevision": "1",
+            "workArea": [
+              0,
+              48,
+              800,
+              552
+            ],
+            "logicalGeometry": [
+              20,
+              68,
+              760,
+              512
+            ],
+            "visualGeometry": [
+              21,
+              69,
+              758,
+              510
+            ],
+            "nativeMode": "ordinary",
+            "clientMode": "ordinary",
+            "minimized": false,
+            "floating": false,
+            "grouped": false,
+            "fixedSize": false,
+            "constrainedSize": true,
+            "geometryEligible": false,
+            "ordinaryPlacementKnown": false,
+            "sizePolicy": {
+              "inputs": {
+                "profile": "wayland-zero-origin-v1",
+                "rawMinimum": [
+                  108,
+                  42
+                ],
+                "rawMaximum": [
+                  0,
+                  0
+                ],
+                "layoutMinimum": [
+                  108,
+                  42
+                ],
+                "layoutMaximum": [
+                  1.7976931348623157e+308,
+                  1.7976931348623157e+308
+                ],
+                "geometryOrigin": [
+                  0,
+                  0
+                ],
+                "reservedTopLeft": [
+                  1,
+                  1
+                ],
+                "reservedBottomRight": [
+                  1,
+                  1
+                ],
+                "monitorScale": 1
+              },
+              "maximize": {
+                "logical": [
+                  0,
+                  48,
+                  800,
+                  552
+                ],
+                "visual": null,
+                "real": [
+                  1,
+                  49,
+                  798,
+                  550
+                ],
+                "configure": [
+                  798,
+                  550
+                ]
+              },
+              "restoreGeometry": null
+            },
+            "capabilities": {
+              "maximize": false,
+              "restoreGeometry": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-unknown",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "request": "12"
+        },
+        "status": "Unknown"
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "retire",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "queriedBinding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "1"
+      },
+      "requestId": "31",
+      "sequence": "777",
+      "grantState": "Retired"
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "action-projection",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "4",
+      "context": {
+        "lifetime": "13066731177979386763",
+        "epoch": "2",
+        "output": "1",
+        "revision": "21"
+      },
+      "scene": {
+        "revision": "21",
+        "focused": "2",
+        "windows": [
+          {
+            "incarnation": "2",
+            "application": "GTK Application",
+            "label": "ELM-AUTHORITY-FIXTURE",
+            "minimized": false,
+            "owner": null,
+            "available": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "geometry-facts",
+      "geometryProtocol": 2,
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "requestId": "5",
+      "sequence": "50",
+      "revision": "31",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "2",
+        "inputBlocked": false,
+        "windows": [
+          {
+            "incarnation": "2",
+            "owner": null,
+            "workspace": "1",
+            "workspaceGeneration": "1",
+            "monitor": "0",
+            "outputOwnershipGeneration": "1",
+            "workAreaRevision": "1",
+            "workArea": [
+              0,
+              48,
+              800,
+              552
+            ],
+            "logicalGeometry": [
+              20,
+              68,
+              760,
+              512
+            ],
+            "visualGeometry": [
+              21,
+              69,
+              758,
+              510
+            ],
+            "nativeMode": "ordinary",
+            "clientMode": "ordinary",
+            "minimized": false,
+            "floating": false,
+            "grouped": false,
+            "fixedSize": false,
+            "constrainedSize": true,
+            "geometryEligible": false,
+            "ordinaryPlacementKnown": false,
+            "sizePolicy": {
+              "inputs": {
+                "profile": "wayland-zero-origin-v1",
+                "rawMinimum": [
+                  108,
+                  42
+                ],
+                "rawMaximum": [
+                  0,
+                  0
+                ],
+                "layoutMinimum": [
+                  108,
+                  42
+                ],
+                "layoutMaximum": [
+                  1.7976931348623157e+308,
+                  1.7976931348623157e+308
+                ],
+                "geometryOrigin": [
+                  0,
+                  0
+                ],
+                "reservedTopLeft": [
+                  1,
+                  1
+                ],
+                "reservedBottomRight": [
+                  1,
+                  1
+                ],
+                "monitorScale": 1
+              },
+              "maximize": {
+                "logical": [
+                  0,
+                  48,
+                  800,
+                  552
+                ],
+                "visual": null,
+                "real": [
+                  1,
+                  49,
+                  798,
+                  550
+                ],
+                "configure": [
+                  798,
+                  550
+                ]
+              },
+              "restoreGeometry": null
+            },
+            "capabilities": {
+              "maximize": false,
+              "restoreGeometry": false
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "kind": "native",
+    "frame": {
+      "protocolVersion": 3,
+      "kind": "host-reservation-released",
+      "binding": {
+        "lifetime": "13066731177979386763",
+        "session": "16592658915108124045",
+        "frontend": "2"
+      },
+      "record": {
+        "schema": 2,
+        "effectProtocol": 1,
+        "binding": {
+          "lifetime": "13066731177979386763",
+          "session": "16592658915108124045",
+          "frontend": "1"
+        },
+        "intent": {
+          "context": {
+            "epoch": "1",
+            "lifetime": "13066731177979386763",
+            "output": "1",
+            "revision": "21"
+          },
+          "generation": "12",
+          "incarnation": "2",
+          "operation": "minimize",
+          "request": "12"
+        },
+        "status": "Unknown"
+      },
+      "release": {
+        "id": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+        "proof": {
+          "protocolVersion": 3,
+          "kind": "binding-retirement",
+          "retirementProtocol": 1,
+          "operation": "retire",
+          "binding": {
+            "lifetime": "13066731177979386763",
+            "session": "16592658915108124045",
+            "frontend": "2"
+          },
+          "queriedBinding": {
+            "lifetime": "13066731177979386763",
+            "session": "16592658915108124045",
+            "frontend": "1"
+          },
+          "requestId": "30",
+          "sequence": "777",
+          "grantState": "Retired"
+        },
+        "observation": {
+          "actionRequestId": "4",
+          "geometryRequestId": "5",
+          "actionContext": {
+            "lifetime": "13066731177979386763",
+            "epoch": "2",
+            "output": "1",
+            "revision": "21"
+          },
+          "geometryContext": {
+            "lifetime": "13066731177979386763",
+            "epoch": "2",
+            "output": "1",
+            "revision": "31"
+          }
+        }
+      }
+    }
+  }
+]

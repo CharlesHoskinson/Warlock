@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "stage": "manifest preparation before publication",
+  "error": "KeyError: inherited608Assertions",
+  "cause": "The initial freezer selected lexicographically newest tests report, which belongs to the nested inherited608 driver rather than the sidecar driver.",
+  "manifestCreated": false,
+  "correction": "The fresh freezer run explicitly selects qa/tests-1791151811583372012/report.json, matching HANDOFF.md and the accepted sidecar source hashes.",
+  "productionSourceChanged": false
+}

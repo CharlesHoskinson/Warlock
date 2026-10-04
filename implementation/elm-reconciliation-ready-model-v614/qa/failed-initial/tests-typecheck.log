@@ -1,0 +1,170 @@
+Running as unit: qa-harness-26de1f8218a447a7b901143c2ffa2a69.scope; invocation ID: 683b1fe433664dae8f56ec9c9346dde3
+
+ Error [QNT404]: Name 'NativeRetire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:16:181
+  16:  run differentOutputBlocksTest=start.then(ready).then(actionRead).then(send(EnqueueRead({id:2,kind:2,output:2}))).then(send(ProcessRead(2))).then(send(Reply(2))).then(send(Durable(NativeRetire))).then(all {assert(not(joined(q)) and not(s.nativeRetired) and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                          ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:16:237
+  16:  run differentOutputBlocksTest=start.then(ready).then(actionRead).then(send(EnqueueRead({id:2,kind:2,output:2}))).then(send(ProcessRead(2))).then(send(Reply(2))).then(send(Durable(NativeRetire))).then(all {assert(not(joined(q)) and not(s.nativeRetired) and protocolProps),send(ReleaseRecords(64))})
+                                                                                                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:18:61
+  18:  run unannouncedScopeCannotReleaseTest=start.then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(all {q'=q,fire(Ack)}).then(send(ReleaseRecords(1))).then(all {assert(q.released==0 and protocolProps),send(DeliverProof)})
+                                                                  ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:18:88
+  18:  run unannouncedScopeCannotReleaseTest=start.then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(all {q'=q,fire(Ack)}).then(send(ReleaseRecords(1))).then(all {assert(q.released==0 and protocolProps),send(DeliverProof)})
+                                                                                             ^^^^^^^
+
+
+ Error [QNT404]: Name 'finish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:18:113
+  18:  run unannouncedScopeCannotReleaseTest=start.then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(all {q'=q,fire(Ack)}).then(send(ReleaseRecords(1))).then(all {assert(q.released==0 and protocolProps),send(DeliverProof)})
+                                                                                                                      ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:18:137
+  18:  run unannouncedScopeCannotReleaseTest=start.then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(all {q'=q,fire(Ack)}).then(send(ReleaseRecords(1))).then(all {assert(q.released==0 and protocolProps),send(DeliverProof)})
+                                                                                                                                              ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:18:142
+  18:  run unannouncedScopeCannotReleaseTest=start.then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,finish}).then(all {q'=q,fire(Ack)}).then(send(ReleaseRecords(1))).then(all {assert(q.released==0 and protocolProps),send(DeliverProof)})
+                                                                                                                                                   ^^^
+
+
+ Error [QNT404]: Name 'establish' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:111
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                    ^^^^^^^^^
+
+
+ Error [QNT404]: Name 'prepare' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:138
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                               ^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:163
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                        ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Unlink' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:168
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                             ^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:181
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SyncUnlinkDir' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:186
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                               ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:207
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'WriteReleased' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:212
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                         ^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:233
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'SyncReleasedFile' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:238
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                   ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'fire' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:262
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'RenameReleased' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:267
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                ^^^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:304
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                     ^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:381
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                                                                                                  ^
+
+
+ Error [QNT404]: Name 'SyncReleased' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:420
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                                                                                                                                         ^^^^^^^^^^^^
+
+
+ Error [QNT404]: Name 'Ack' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:19:455
+  19:  run finalFsyncBeforeProtocolReleaseTest=start.then(ready).then(actionRead).then(geometryRead).then(all {q'=q,establish}).then(all {q'=q,prepare}).then(all {q'=q,fire(Unlink).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==0 and not(s.ack) and protocolProps),send(Durable(SyncReleased))}).then(send(Durable(Ack))).then(send(ReleaseRecords(64))).then(all {assert(q.released==64 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ^^^
+
+
+ Error [QNT404]: Name 's' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol_tests.qnt:20:243
+  20:  run restartInvalidatesProtocolTest=start.then(ready).then(actionRead).then(geometryRead).then(send(Restart)).then(send(Reply(1))).then(send(Reply(2))).then(all {assert(not(joined(q)) and q.actionAccepted==0 and q.geometryAccepted==0 and not(s.rootReady) and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                        ^
+
+error: parsing failed

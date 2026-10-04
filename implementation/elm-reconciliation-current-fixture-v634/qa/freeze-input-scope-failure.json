@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "scope": "freeze utility only; no test/native failure",
+  "error": "FileNotFoundError ROOT/qa/wrapper.py; receipt report input paths are receipt-root relative",
+  "correction": "resolve receipt report inputs under ROOT/receipt; retain original failure",
+  "sourceSHA256": "a0212a4ca7c231e8c8de4f8d98c8441aa211cd61fd0f35341660b1e5049949ec"
+}

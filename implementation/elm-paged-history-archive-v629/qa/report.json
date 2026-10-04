@@ -1,0 +1,442 @@
+{
+  "passed": true,
+  "selected": [
+    "migrateBeforeEffectTest",
+    "historyGrowsHotBoundedTest",
+    "hotExhaustionBeforeEffectTest",
+    "visibleManifestRestartBarrierTest",
+    "unsyncedManifestPowerLossTest",
+    "pagesBeforeManifestTest",
+    "unknownReleaseAndDeliveryTest",
+    "lateExactReleasedCAdmissionTest",
+    "lateOtherCRemainsBlockedTest",
+    "preparedUnlinkNeedsRestartBarrierTest",
+    "unlinkPowerLossRetainsReservationTest",
+    "immutableMigrationAndCompactionTest",
+    "archivedKeyCannotReadmitTest",
+    "lockRefusesMutationTest",
+    "archiveQuotaRefusesBeforeEffectTest",
+    "unanchoredDeliveryRefusedTest",
+    "noReleasedWithoutProofTest",
+    "stagedMigrationRestartCannotActivateTest",
+    "processcrashBoundary1Test",
+    "powerlossBoundary1Test",
+    "processcrashBoundary2Test",
+    "powerlossBoundary2Test",
+    "processcrashBoundary3Test",
+    "powerlossBoundary3Test",
+    "processcrashBoundary4Test",
+    "powerlossBoundary4Test",
+    "processcrashBoundary5Test",
+    "powerlossBoundary5Test",
+    "processcrashBoundary6Test",
+    "powerlossBoundary6Test",
+    "processcrashBoundary7Test",
+    "powerlossBoundary7Test"
+  ],
+  "executed": [
+    "migrateBeforeEffectTest",
+    "historyGrowsHotBoundedTest",
+    "hotExhaustionBeforeEffectTest",
+    "visibleManifestRestartBarrierTest",
+    "unsyncedManifestPowerLossTest",
+    "pagesBeforeManifestTest",
+    "unknownReleaseAndDeliveryTest",
+    "lateExactReleasedCAdmissionTest",
+    "lateOtherCRemainsBlockedTest",
+    "preparedUnlinkNeedsRestartBarrierTest",
+    "unlinkPowerLossRetainsReservationTest",
+    "immutableMigrationAndCompactionTest",
+    "archivedKeyCannotReadmitTest",
+    "lockRefusesMutationTest",
+    "archiveQuotaRefusesBeforeEffectTest",
+    "unanchoredDeliveryRefusedTest",
+    "noReleasedWithoutProofTest",
+    "stagedMigrationRestartCannotActivateTest",
+    "processcrashBoundary1Test",
+    "powerlossBoundary1Test",
+    "processcrashBoundary2Test",
+    "powerlossBoundary2Test",
+    "processcrashBoundary3Test",
+    "powerlossBoundary3Test",
+    "processcrashBoundary4Test",
+    "powerlossBoundary4Test",
+    "processcrashBoundary5Test",
+    "powerlossBoundary5Test",
+    "processcrashBoundary6Test",
+    "powerlossBoundary6Test",
+    "processcrashBoundary7Test",
+    "powerlossBoundary7Test"
+  ],
+  "namedCount": 32,
+  "sampledTraces": 1500,
+  "maxTransitions": 70,
+  "typedMutants": 10,
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "quint",
+        "--version"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/archive.qnt",
+        "--main=archive",
+        "--match=^(migrateBeforeEffectTest|historyGrowsHotBoundedTest|hotExhaustionBeforeEffectTest|visibleManifestRestartBarrierTest|unsyncedManifestPowerLossTest|pagesBeforeManifestTest|unknownReleaseAndDeliveryTest|lateExactReleasedCAdmissionTest|lateOtherCRemainsBlockedTest|preparedUnlinkNeedsRestartBarrierTest|unlinkPowerLossRetainsReservationTest|immutableMigrationAndCompactionTest|archivedKeyCannotReadmitTest|lockRefusesMutationTest|archiveQuotaRefusesBeforeEffectTest|unanchoredDeliveryRefusedTest|noReleasedWithoutProofTest|stagedMigrationRestartCannotActivateTest|processcrashBoundary1Test|powerlossBoundary1Test|processcrashBoundary2Test|powerlossBoundary2Test|processcrashBoundary3Test|powerlossBoundary3Test|processcrashBoundary4Test|powerlossBoundary4Test|processcrashBoundary5Test|powerlossBoundary5Test|processcrashBoundary6Test|powerlossBoundary6Test|processcrashBoundary7Test|powerlossBoundary7Test)$",
+        "--seed=62901",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/accepted_{test}_{seq}.itf.json"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "89f58abb299101a9c783d82c4a0484e9cf3ca954f80c4f2c92ed3560c201fec5"
+    },
+    {
+      "name": "traces",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/archive.qnt",
+        "--main=archive",
+        "--invariant=safety",
+        "--seed=62902",
+        "--max-samples=1500",
+        "--max-steps=70",
+        "--backend=typescript"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "244c2932ade072e5494f560c60260e016d328f7e878c85f5b5789fd4900f14b8"
+    },
+    {
+      "name": "effect-before-root-sync-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/effect-before-root-sync/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "effect-before-root-sync-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/effect-before-root-sync/archive.qnt",
+        "--main=archive",
+        "--match=^visibleManifestRestartBarrierTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "136613058d84e0c0fd6ace7f3f19a67a83c565e01fa360a1f0928a8ef82be288",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "powerloss-keeps-visible-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/powerloss-keeps-visible/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "powerloss-keeps-visible-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/powerloss-keeps-visible/archive.qnt",
+        "--main=archive",
+        "--match=^unsyncedManifestPowerLossTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "3987ff083d40268957c47e527563322bac01491ec6571f09af7a04acd9ad96b3",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "skip-page-fsync-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-page-fsync/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "skip-page-fsync-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-page-fsync/archive.qnt",
+        "--main=archive",
+        "--match=^pagesBeforeManifestTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "51ce801c1d2bdf0e589d36213dc866d46067b1798d0856b9d43c2d7b7a09b6c4",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "erase-on-compaction-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/erase-on-compaction/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "erase-on-compaction-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/erase-on-compaction/archive.qnt",
+        "--main=archive",
+        "--match=^immutableMigrationAndCompactionTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "fc0ec783ea92f29d9723e8393ff7e14bc9f984e22ffdc86c67b8b8c97ead554b",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "unbounded-hot-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unbounded-hot/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "unbounded-hot-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unbounded-hot/archive.qnt",
+        "--main=archive",
+        "--match=^hotExhaustionBeforeEffectTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "4d08d25b632718971cbbc43d7b452bba8e9f72bab2db450b92b5953441998b01",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "skip-quota-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-quota/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "skip-quota-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/skip-quota/archive.qnt",
+        "--main=archive",
+        "--match=^archiveQuotaRefusesBeforeEffectTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "1ca6435146784d2e0d7d836f119fafe5653eabff3c9b774377d15d40c35536f6",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "late-released-resurrects-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/late-released-resurrects/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "late-released-resurrects-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/late-released-resurrects/archive.qnt",
+        "--main=archive",
+        "--match=^lateExactReleasedCAdmissionTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "42b5eb54e5791f1e192316ddaa70652f23e40d6be614e9684101ef439c96ea15",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "unlink-skips-restart-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unlink-skips-restart/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "unlink-skips-restart-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unlink-skips-restart/archive.qnt",
+        "--main=archive",
+        "--match=^preparedUnlinkNeedsRestartBarrierTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "e01116ef299e2106e4914c929893249be9a2c725a490a6a5b754b7f221d583f5",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "released-without-admission-fsync-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/released-without-admission-fsync/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "released-without-admission-fsync-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/released-without-admission-fsync/archive.qnt",
+        "--main=archive",
+        "--match=^unlinkPowerLossRetainsReservationTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "a9d5602baba52f3a9adcbd47c82254e4df179cb60141008d6435853d9de4c6ad",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "unanchored-certificate-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unanchored-certificate/archive.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "unanchored-certificate-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unanchored-certificate/archive.qnt",
+        "--main=archive",
+        "--match=^unanchoredDeliveryRefusedTest$",
+        "--seed=62903",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "7e7a3c940e0f7b52895b6fa8580118bca5a358c5f7ffae15b6047d0a37a29f6e",
+      "actualAssertionFailure": true
+    }
+  ],
+  "sourceHashes": {
+    "archive.qnt": "accd1ef8997525fe3f0acdfa851cb26b547f94350117aef04d98dce1e9f97c6f",
+    "qa/run.py": "c0b283257f233b5ccf5d8e4211c66475225fd98224436589c1bdc7568fe34dc6"
+  },
+  "nativeAcceptance": false,
+  "scope": "CPU symbolic paged archive commit ordering/conservation; not filesystem/C/native scalability"
+}

@@ -1,0 +1,14 @@
+-- LET PROBLEM -------------------------------------------------- src/Replay.elm
+
+I was partway through parsing a `let` expression, but I got stuck here:
+
+74|  , ("each stream may carry other cached original revision",let gf={fresh|legacyRevision=original.legacyRevision,legacyRead=original.legacyRead}
+75|                                                          lf={fresh|geometryRevision=original.geometryRevision,geometryRead=original.geometryRead}
+                                                             ^
+Based on the indentation, I was expecting to see the in keyword next. Is there a
+typo?
+
+Note: This can also happen if you are trying to define another value within the
+`let` but it is not indented enough. Make sure each definition has exactly the
+same amount of spaces before it. They should line up exactly!
+

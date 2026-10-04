@@ -1,0 +1,131 @@
+{
+  "passed": true,
+  "assertions": 22,
+  "checks": [
+    {
+      "name": "flags",
+      "passed": true
+    },
+    {
+      "name": "compiled-actual-C-bind",
+      "passed": true
+    },
+    {
+      "name": "actual C attached bind refuses broker-held host lock",
+      "passed": true
+    },
+    {
+      "name": "same actual C bind succeeds after short lock releases",
+      "passed": true
+    },
+    {
+      "name": "actual C bind succeeds at attached publication empty",
+      "passed": true
+    },
+    {
+      "name": "zero broker host-lock acquisitions after attached startup empty",
+      "passed": true
+    },
+    {
+      "name": "published startup order unchanged empty",
+      "passed": true
+    },
+    {
+      "name": "all full Unknown records before active proof empty",
+      "passed": true
+    },
+    {
+      "name": "live callback restored before frontend requests empty",
+      "passed": true
+    },
+    {
+      "name": "serial-admit-2",
+      "passed": true
+    },
+    {
+      "name": "serial-admit-3",
+      "passed": true
+    },
+    {
+      "name": "actual C bind succeeds at attached publication serial",
+      "passed": true
+    },
+    {
+      "name": "zero broker host-lock acquisitions after attached startup serial",
+      "passed": true
+    },
+    {
+      "name": "published startup order unchanged serial",
+      "passed": true
+    },
+    {
+      "name": "all full Unknown records before active proof serial",
+      "passed": true
+    },
+    {
+      "name": "live callback restored before frontend requests serial",
+      "passed": true
+    },
+    {
+      "name": "strict599 proofs acquired before wire publication",
+      "passed": true
+    },
+    {
+      "name": "next scope proof uses live wire callback",
+      "passed": true
+    },
+    {
+      "name": "serial scopes still require independent ready/read release",
+      "passed": true
+    },
+    {
+      "name": "bad-proof-admit-2",
+      "passed": true
+    },
+    {
+      "name": "failed staged proof cannot publish attached or partial startup",
+      "passed": true
+    },
+    {
+      "name": "staged failure retains full Unknown",
+      "passed": true
+    }
+  ],
+  "nativeAcceptance": false,
+  "nativeAuthentication": false,
+  "claim": "Actual compiled C admission bind/nonblocking locks and unchanged608 real store; synthetic strictly decoded599 proof fixtures; actual daemon startup helper ordering, no GUI",
+  "sourceSHA256": {
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/geometry_endpoint.py": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+    "adapter/daemon.py": "c5a3aea3b57dffced55268bfde08c3dcc100a9dc12e2604ed3576384079e1055",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/recovery_store.py": "35351b0c5ae5257c230cb6fd87117b1dc239a9ba82cc6f7bafb9a42a39c24b75",
+    "adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "adapter/geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "adapter/grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "adapter/retirement_ledger.py": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+    "adapter/reconciliation.py": "8637281b215f30558149ab0f3cdc6decca5413ddf09fbcd1acca19ea8bc2cd5a",
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/surface.h": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/host.c": "a9e858e404867412723c2973db58e60b09a7b623192efc0bb9ca40c1f7f3336e",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/shared-host.c": "854ee839f2017a902520da2feb115c4426fe213085efa302403f8467975e9261",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/geometry-carrier-test.c": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+    "native/context-keys.h": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+    "native/context-keys-test.c": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+    "native/shared-context.h": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+    "native/shared-context-test.c": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+    "native/recovery-presentation-test.c": "812bbab1640e12269bc195979cd319a96a505157ba8f5c637eebfd5561bc8e67",
+    "native/reconciliation-carrier-test.c": "38210317eff28d8a436e640e971f91df71ffcc3b17e82c27a60ee34f57d9f73d"
+  }
+}

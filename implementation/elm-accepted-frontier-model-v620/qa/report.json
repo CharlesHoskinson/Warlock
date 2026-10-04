@@ -1,0 +1,380 @@
+{
+  "passed": true,
+  "selected": [
+    "completedPairTest",
+    "pendingRequestRetainsAcceptedTest",
+    "finalGeometryDrainQueuedReleaseTest",
+    "finalActionDrainQueuedReleaseTest",
+    "actualAcceptedActionInvalidatesTest",
+    "actualAcceptedGeometryInvalidatesTest",
+    "latestAcceptedPairTest",
+    "staleReplyNotAcceptedTest",
+    "changedContextSameIdRefusedTest",
+    "outputMismatchRefusedTest",
+    "nextProofClearsFrontierTest",
+    "duplicateProofRetainsFrontierTest",
+    "nondurableReleaseRefusedTest",
+    "missingGeometryRefusedTest",
+    "noAutomaticEffectAfterReleaseTest",
+    "fifoReleaseBeforeNewReplyTest"
+  ],
+  "executed": [
+    "completedPairTest",
+    "pendingRequestRetainsAcceptedTest",
+    "finalGeometryDrainQueuedReleaseTest",
+    "finalActionDrainQueuedReleaseTest",
+    "actualAcceptedActionInvalidatesTest",
+    "actualAcceptedGeometryInvalidatesTest",
+    "latestAcceptedPairTest",
+    "staleReplyNotAcceptedTest",
+    "changedContextSameIdRefusedTest",
+    "outputMismatchRefusedTest",
+    "nextProofClearsFrontierTest",
+    "duplicateProofRetainsFrontierTest",
+    "nondurableReleaseRefusedTest",
+    "missingGeometryRefusedTest",
+    "noAutomaticEffectAfterReleaseTest",
+    "fifoReleaseBeforeNewReplyTest"
+  ],
+  "namedCount": 16,
+  "sampledTraces": 1000,
+  "maxTransitions": 40,
+  "typedMutants": 9,
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "quint",
+        "--version"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/frontier.qnt",
+        "--main=frontier",
+        "--match=^(completedPairTest|pendingRequestRetainsAcceptedTest|finalGeometryDrainQueuedReleaseTest|finalActionDrainQueuedReleaseTest|actualAcceptedActionInvalidatesTest|actualAcceptedGeometryInvalidatesTest|latestAcceptedPairTest|staleReplyNotAcceptedTest|changedContextSameIdRefusedTest|outputMismatchRefusedTest|nextProofClearsFrontierTest|duplicateProofRetainsFrontierTest|nondurableReleaseRefusedTest|missingGeometryRefusedTest|noAutomaticEffectAfterReleaseTest|fifoReleaseBeforeNewReplyTest)$",
+        "--seed=62001",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/accepted_{test}_{seq}.itf.json"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "7b2592903f1d9e5d096e5023c6bdcf7b5865d7ac9adfcd445e40b32a7bb66936"
+    },
+    {
+      "name": "traces",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/frontier.qnt",
+        "--main=frontier",
+        "--invariant=safety",
+        "--seed=62002",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--backend=typescript"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "f2977994e4f21b790c90e83acafb75d682777cbf9de8f9d87a6fb25124023fe4"
+    },
+    {
+      "name": "request-erases-accepted-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/request-erases-accepted/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "request-erases-accepted-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/request-erases-accepted/frontier.qnt",
+        "--main=frontier",
+        "--match=^pendingRequestRetainsAcceptedTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "dfc734eaf0624b9b633e2d631beea640b2e610c2198b140cd11f7a14e8058ec9",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "release-requires-latest-request-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/release-requires-latest-request/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "release-requires-latest-request-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/release-requires-latest-request/frontier.qnt",
+        "--main=frontier",
+        "--match=^finalGeometryDrainQueuedReleaseTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "31945a4b90fe807d0e4383f346014b209e0b04a9e09ae2fd4d311b4af3b4ee2b",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "phase-hides-accepted-final-reply-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/phase-hides-accepted-final-reply/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "phase-hides-accepted-final-reply-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/phase-hides-accepted-final-reply/frontier.qnt",
+        "--main=frontier",
+        "--match=^finalGeometryDrainQueuedReleaseTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "a40e5cf111892d272c7795cb889f293a36cdda9558721dcd49d03b042c84a43f",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "ignore-new-accepted-action-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/ignore-new-accepted-action/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ignore-new-accepted-action-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/ignore-new-accepted-action/frontier.qnt",
+        "--main=frontier",
+        "--match=^actualAcceptedActionInvalidatesTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "98f9debee50878b8347972e06584ecf789efe2a5cd99836d5265470b6f08310a",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "ignore-new-accepted-geometry-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/ignore-new-accepted-geometry/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "ignore-new-accepted-geometry-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/ignore-new-accepted-geometry/frontier.qnt",
+        "--main=frontier",
+        "--match=^actualAcceptedGeometryInvalidatesTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "fba01ad9d142a93232adb64ab22e8415bf078fac7fa8c65d228f17f30e2c8f21",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "release-emits-effect-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/release-emits-effect/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "release-emits-effect-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/release-emits-effect/frontier.qnt",
+        "--main=frontier",
+        "--match=^noAutomaticEffectAfterReleaseTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "54dac3608de4f9548a59a61631f1b4cf964e2457113989536e20b514c319b954",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "pending-allows-explicit-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/pending-allows-explicit/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "pending-allows-explicit-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/pending-allows-explicit/frontier.qnt",
+        "--main=frontier",
+        "--match=^finalGeometryDrainQueuedReleaseTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "25ea1bf140556fc19715a257a6afb3da314f367338de9808cb30086adda5a447",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "context-ignored-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/context-ignored/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "context-ignored-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/context-ignored/frontier.qnt",
+        "--main=frontier",
+        "--match=^changedContextSameIdRefusedTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "dfd1b1d80108cc4086fda370648622c9db998295550524f90e70d05989fb43d7",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "fifo-reversed-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/fifo-reversed/frontier.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "fifo-reversed-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-accepted-frontier-model-v620/qa/mutants/fifo-reversed/frontier.qnt",
+        "--main=frontier",
+        "--match=^fifoReleaseBeforeNewReplyTest$",
+        "--seed=62003",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "68204f1f43f68f2ba58a318263c187135db60d70ada06d8e017af8ae60834d73",
+      "actualAssertionFailure": true
+    }
+  ],
+  "sourceHashes": {
+    "frontier.qnt": "ec1299f6d0054caf66700070929de374d6513524ce54b92f42f75fb1c86d941b",
+    "qa/run.py": "c27ff370535ca9cfd53f60c33c3f29644a3a1ffba71d1d60a9b2c49ce404b378"
+  },
+  "nativeAcceptance": false,
+  "scope": "CPU accepted frontier and ordered reply/release queue; durability is an assumed prerequisite"
+}

@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": 9,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/native/keymap.c": "e929b248c5c9a04cea9d7eef6808356aae984898a22dfe1bb49cde31fc7b78da",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/native/keymap-test.c": "450a70e7ab2e5a454e88b0c75aaa879f0b9bd8f47cb447c2fb2a410b516a00aa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/native/private-runtime.h": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2"
+  },
+  "argv": [
+    "/usr/bin/cc",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/keymap-test-1791147891508549340/inputs/keymap-test.c",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/keymap-test-1791147891508549340/test",
+    "-lwayland-client",
+    "-lm",
+    "-lxkbcommon"
+  ],
+  "binarySHA256": "a29b9afd9e63bcf3c526d2101f4715e3f5ddb88377c53ac764ceeb92981e1029",
+  "scope": "Actual production keymap callback nine fd/size/NUL/format/duplicate/file-collision controls, real xkbcommon default-map parsing only; no actual compositor or focus."
+}

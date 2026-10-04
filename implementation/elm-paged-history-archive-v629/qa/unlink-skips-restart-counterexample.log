@@ -1,0 +1,17 @@
+
+  archive
+    1) preparedUnlinkNeedsRestartBarrierTest failed after 1 test(s)
+
+  1 failed
+
+  1) preparedUnlinkNeedsRestartBarrierTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unlink-skips-restart/archive.qnt:67:213
+        67:  run preparedUnlinkNeedsRestartBarrierTest=init.then(bootstrap).then(persistFact(2,0)).then(fire(Effect(2))).then(persistFact(2,1)).then(persistFact(2,3)).then(fire(ProcessCrash)).then(fire(Unlink(2))).then(all {assert(s.files.contains(2) and not(s.rootReady) and safety),fire(RestartSync)}).then(fire(Unlink(2))).then(all {assert(not(s.files.contains(2)) and safety),fire(Noop)})
+                                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf5b7 --match=preparedUnlinkNeedsRestartBarrierTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/unlink-skips-restart/archive.qnt
+error: Tests failed

@@ -1,0 +1,17 @@
+
+  accepted
+    1) acceptedNewActionTest failed after 1 test(s)
+
+  1 failed
+
+  1) acceptedNewActionTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151436001993997/obsolete-release-accepted/accepted.qnt:24:29
+        24:  action checkBlocked = all {assert(s.reserved and safety),fire(Noop)}
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf1cf --match=acceptedNewActionTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-accepted-read-v619/qa/model-1791151436001993997/obsolete-release-accepted/accepted.qnt
+error: Tests failed

@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "7ef6b814fc614fb78af4aba1470a5ae7",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T22:27:34.557114+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-recovery-keyboard-replay-diagnostic-v317",
+  "nextWork": [
+    "301 separates long-title and confirmation detail/full popup status; build19/reducer35 pass. New native303/305/307 failures preserved;307 actual narrow pixels and disabled controls pass until original170 key allowlist.308/311 add private Tab/Enter/Space only, exact owning Weston.310 bounded recovery Tab/ShiftTab and Enter/Space context fix compiles19;314 fourteen inert adapter controls pass, old301 recovery counterexamples fail while normal controls pass.312/315 actual trusted Tab reaches or transiently reaches Refresh then focus loss;315 strict screenshot guard aborts, normal host/backend/Core/Weston/bus cleanup passes.317 diagnostic-only native replay trace building;318 passive pointerup/focusout sequence. Next319 reviewed actual diagnostic then source correction and preserved six-second native qualification. Primary latest626 startup/admission loop and toolkit303 own-popup eligibility remain separate live lanes. Full roadmap still active; no full native Unknown/AT/IME/hardware/release claims or installed changes."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-recovery-keyboard-gui-v310/qa/build-1791152309629442777/report.json",
+      "sha256": "1c96ce9b15f3e562cdc19d4864a7e080cec6c373982846630e1e96edcc321e49",
+      "size": 278139
+    },
+    {
+      "path": "implementation/elm-recovery-keyboard-context-qa-v314/qa/checks-1791152527034637969/report.json",
+      "sha256": "49210ed9685eebd9383335cdc731b25f08a98aa508e23bf7ee8307670195f6b5",
+      "size": 5408
+    },
+    {
+      "path": "implementation/elm-recovery-keyboard-diagnostic-v315/qa/native-1791152629987803661/report.json",
+      "sha256": "dba8143e80c553a43f148e34b40b2c3a21393da1a8ef42139c685c3c4ed00bb5",
+      "size": 1606374
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

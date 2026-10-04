@@ -1,0 +1,11 @@
+"use strict";
+(()=>{
+const post=v=>window.webkit.messageHandlers.native.postMessage(JSON.stringify(v));let last="";
+function geometry(node){if(!node)return null;const r=node.getBoundingClientRect();const range=document.createRange();range.selectNodeContents(node);const t=range.getBoundingClientRect();return {text:node.textContent,rect:[r.x,r.y,r.width,r.height],textRect:[t.x,t.y,t.width,t.height],clientWidth:node.clientWidth,scrollWidth:node.scrollWidth,clientHeight:node.clientHeight,scrollHeight:node.scrollHeight,color:getComputedStyle(node).color,display:getComputedStyle(node).display}}
+function inspect(){requestAnimationFrame(()=>{
+ const surface=document.querySelector(".surface-bar,.surface-popup");if(!surface)return;
+ const body={publication:surface.dataset.publication,lease:surface.dataset.lease,viewport:[innerWidth,innerHeight],scroll:[surface.scrollLeft,surface.scrollTop],focus:document.activeElement?.id||"",controls:[...surface.querySelectorAll("button")].map(node=>({id:node.id,disabled:node.disabled,ariaLabel:node.getAttribute("aria-label"),title:node.title,box:geometry(node),label:geometry(node.querySelector(".control-label")),detail:geometry(node.querySelector(".control-detail"))})),status:geometry(surface.querySelector("[role=status]"))};
+ const encoded=JSON.stringify(body);if(encoded!==last){last=encoded;post({kind:"surface-report",body})}
+})}
+new MutationObserver(inspect).observe(document.body,{subtree:true,childList:true,attributes:true});document.addEventListener("scroll",inspect,true);document.addEventListener("focusin",inspect);document.addEventListener("focusout",inspect);document.addEventListener("keydown",event=>{post({kind:"surface-report",body:{event:"fixture-key",key:event.key,trusted:event.isTrusted,prevented:event.defaultPrevented,focus:document.activeElement?.id||""}});inspect()},true);inspect();
+})();

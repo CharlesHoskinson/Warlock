@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Exact official owning method body with real Qt QPointF/QMargins value objects; mock margin supplier, no display/QWaylandWindow construction.",
+  "owningSourceSHA256": "d1cc3816f86e1cb7b2671a035d0943b3826c30de176e3f29766da3b0c87fe58c",
+  "methodSHA256": "974a79cb1cf0727efc85839d2ea5dc01d62689e2c4589296eccd196c3c755018",
+  "actualValueCases": 16,
+  "compiledControls": {
+    "actual": {
+      "returncode": 0,
+      "sha256": "e5f5ba03dd5ab12264f45054a83c3a312213de21f1d4b4f5c31647820d34c7b1"
+    },
+    "unsafe-zero": {
+      "returncode": -6,
+      "sha256": "f00a30ddb1bb9f15dce207dc964b3f6845921c7d9cf24bf0a2cef3c8112a03af"
+    },
+    "unsafe-wrong-sign": {
+      "returncode": -6,
+      "sha256": "e787fafc2bfb7cd5ac4c4aac559b888c35d9d79e2c58c09885063cffaee9a6df"
+    }
+  }
+}

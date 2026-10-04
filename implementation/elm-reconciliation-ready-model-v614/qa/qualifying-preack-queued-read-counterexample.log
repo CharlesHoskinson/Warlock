@@ -1,0 +1,17 @@
+
+  protocol_tests
+    1) queuedAfterProofBeforeAckTest failed after 1 test(s)
+
+  1 failed
+
+  1) queuedAfterProofBeforeAckTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/qualifying-preack-queued-read/protocol_tests.qnt:6:259
+        6:  run queuedAfterProofBeforeAckTest=start.then(send(Announce(1))).then(send(DeliverProof)).then(send(EnqueueRead({id:1,kind:1,output:1}))).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(ProcessRead(1))).then(send(Reply(1))).then(all {assert(q.actionAccepted==0 and q.ordinary==1 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xefdb --match=queuedAfterProofBeforeAckTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/qualifying-preack-queued-read/protocol_tests.qnt
+error: Tests failed

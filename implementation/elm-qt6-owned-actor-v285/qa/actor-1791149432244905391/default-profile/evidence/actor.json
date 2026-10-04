@@ -1,0 +1,50 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/default-profile/fake-client",
+    "--run-application-modal"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "inspect",
+      "role": null,
+      "payload": "1 inspect\n",
+      "startedMonotonic": 113698.248587607,
+      "bytesWritten": 10,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 2,
+      "operation": "quit",
+      "role": null,
+      "payload": "2 quit\n",
+      "startedMonotonic": 113698.26947861,
+      "bytesWritten": 7,
+      "written": true
+    }
+  ],
+  "process": {
+    "pid": 3750987,
+    "start": "11753600",
+    "name": "qt6-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/default-profile/fake-client",
+      "--run-application-modal"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791149432244905391/default-profile/evidence/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "11753600",
+  "stdoutBytes": 746,
+  "stdoutCapturedBytes": 746,
+  "stdoutPrefixSHA256": "1f66eac5527e2e3592166d7e25516c51c47b45632f4f5e3417a98b078ef2e75c",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "normalExit": true,
+  "exitCode": 0
+}

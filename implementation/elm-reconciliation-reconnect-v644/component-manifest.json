@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "component": "elm-reconciliation-reconnect-v644",
+  "sourceHeld": true,
+  "readyForRootNative": true,
+  "nativeLaunched": false,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "originalScenarioCount": 57,
+  "ancestor": "implementation/elm-responsive-reconnect-v293",
+  "ancestorRunnerSHA256": "2e5c8b72b74875aa713fd28ef37ae1fbcdb193f63147e36f6e2687913eadc382",
+  "selectedProduction": "implementation/elm-reconciliation-startup-order-v626",
+  "fixtureManifestSHA256": "110ec5b2cd0ee927d0808a9c8c6afd1371bdcc5a4cd3550eb0e1589226a23434",
+  "preparedReports": [
+    {
+      "path": "qa/preflight.json",
+      "sha256": "808a0fc2f96882d5ee1a63b217faa39deaac4c2eef9afab72eb0e31c649b2174"
+    }
+  ],
+  "owningPair": {
+    "core": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/Hyprland",
+      "sha256": "bda6ce0094961c285673589afa2b61fe2b97321a1d86b248823b482122fec0f5"
+    },
+    "plugin": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-authority-v594/qa/build-1791146293692158705/elm-window-geometry-authority.so",
+      "sha256": "fa43d6b6601e26d1980a01ccfeec818f226bb412c093032c7083337f17df948b"
+    },
+    "aquamarine": {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+      "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+    }
+  },
+  "files": {
+    "SPEC.md": {
+      "sha256": "ee30c75c4232d6f621a5fcb589531c667e95852d87d4c633920ec913cc2e2d3a",
+      "size": 1511
+    },
+    "fixture.py": {
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    "qa/closure.py": {
+      "sha256": "cee7c5e5356a97415324012fc11ef7e459165e677dde7158ead1ee1605edfd21",
+      "size": 4501
+    },
+    "qa/freeze.py": {
+      "sha256": "6343794e1d6a80f00e3d83bdc810d6be1bf1aed76cf7c3d4c7c84f6fbcf634b6",
+      "size": 3869
+    },
+    "qa/grab_guard.py": {
+      "sha256": "a1714ba4298967555af5d417ee2a1e926fbe19035dfa014546a75ff4a5d42770",
+      "size": 443
+    },
+    "qa/inspection.py": {
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    "qa/native.py": {
+      "sha256": "b84e2c2302c3ef2d3cd70274ec41b3ae3c90f2583c7efc4711b7a49bd29c6788",
+      "size": 22522
+    },
+    "qa/preflight.json": {
+      "sha256": "808a0fc2f96882d5ee1a63b217faa39deaac4c2eef9afab72eb0e31c649b2174",
+      "size": 474368
+    },
+    "qa/preflight.py": {
+      "sha256": "d8c32e68b82848bcadc33ac5663eb6db61219828ee42d1742000bd6450429f64",
+      "size": 2443
+    },
+    "qa/profile-binding/authority.json": {
+      "sha256": "4ea0c065bdf203a1ca0e4b28e4eddd5b1fb4c1c98f273d50ebee3827540bc0c3",
+      "size": 161
+    },
+    "qa/profile-binding/receipt.json": {
+      "sha256": "d2f0705ec683cf066e031959f81c66aaa789dde84d017b75e5f7d2073c093bd6",
+      "size": 372
+    },
+    "qa/sampling.py": {
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    }
+  },
+  "special": {},
+  "completedRequirementIds": [],
+  "scope": "Prepared runner source/oracle/CPU closure only; native execution belongs to root serial lane"
+}

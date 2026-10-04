@@ -1,0 +1,83 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualPrivateBusNoGUI": true,
+  "checks": [
+    {
+      "name": "real private daemon activated unchanged pinned command; authenticated connection PID/start/UID",
+      "passed": true,
+      "proof": {
+        "name": "org.elm.CPUActivation",
+        "owner": ":1.1",
+        "identity": {
+          "pid": 3720511,
+          "start": "11714273",
+          "pgid": 3720485,
+          "ppid": 3720485,
+          "uid": 1000,
+          "realUid": 1000,
+          "effectiveUid": 1000,
+          "savedUid": 1000,
+          "filesystemUid": 1000,
+          "procOwnerUid": 1000,
+          "privilegedCredentials": false
+        },
+        "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/private-bus-1791149038908484894/activation-journals/org.elm.CPUActivation/3720485-1791149039026131252.jsonl"
+      }
+    },
+    {
+      "name": "bus owner is not an activation child",
+      "passed": true
+    },
+    {
+      "name": "real SIGTERM handler exits0 and supervisor reaps actual wait status, cancellation remains explicit",
+      "passed": true,
+      "cleanup": [
+        {
+          "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/private-bus-1791149038908484894/activation-journals/org.elm.CPUActivation/3720485-1791149039026131252.jsonl",
+          "terminal": {
+            "sequence": 6,
+            "kind": "terminal",
+            "monotonic": 113305.244800516,
+            "childExitCode": 0,
+            "cancelled": true,
+            "fallback": false,
+            "allWaitStatuses": [
+              {
+                "identity": {
+                  "pid": 3720511,
+                  "start": "11714273",
+                  "pgid": 3720485,
+                  "ppid": 3720485,
+                  "uid": 1000,
+                  "realUid": 1000,
+                  "effectiveUid": 1000,
+                  "savedUid": 1000,
+                  "filesystemUid": 1000,
+                  "procOwnerUid": 1000,
+                  "privilegedCredentials": false
+                },
+                "exitCode": 0
+              }
+            ],
+            "liveDescendants": [],
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "owned private bus normal shutdown exit0",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/private-bus-test.py": "5e23cb9ca19685d30d725e09961da5266f662244c5489f1a572b38d597299df9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/private_bus.py": "6f876b208576a84cb55a6854e279053248a6d6715b6c0c64b404526e2e7058b1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-supervisor.py": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation_import.py": "29d2d48aab1658b7e567b78f77269e968f137bb28eead7786551d46a014ab405",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/usr/share/dbus-1/session.conf": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1"
+  }
+}

@@ -1,0 +1,23 @@
+
+  protocol_tests
+    ok freshReadyRelease64Test passed 1 test(s)
+    ok queuedBeforeAnnouncementTest passed 1 test(s)
+    ok queuedAfterProofBeforeAckTest passed 1 test(s)
+    ok ackEnqueuedNotProcessedTest passed 1 test(s)
+    ok freshEnqueueBeforeAckProcessingTest passed 1 test(s)
+    ok foreignReadyTest passed 1 test(s)
+    ok wrongProofReadyTest passed 1 test(s)
+    ok wrongOldReadyTest passed 1 test(s)
+    ok wrongVersionReadyTest passed 1 test(s)
+    ok proofNotDeliveredReadyTest passed 1 test(s)
+    ok duplicateReadyRetainsReadsTest passed 1 test(s)
+    ok nextScopeClearsAcceptedTest passed 1 test(s)
+    ok retryLatestActionInvalidatesTest passed 1 test(s)
+    ok differentOutputBlocksTest passed 1 test(s)
+    ok separateDomainsRequiredTest passed 1 test(s)
+    ok unannouncedScopeCannotReleaseTest passed 1 test(s)
+    ok finalFsyncBeforeProtocolReleaseTest passed 1 test(s)
+    ok restartInvalidatesProtocolTest passed 1 test(s)
+    ok scopeCap16Test passed 1 test(s)
+
+  19 passing (71ms)

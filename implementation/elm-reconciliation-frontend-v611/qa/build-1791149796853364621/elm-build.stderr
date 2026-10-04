@@ -1,0 +1,16 @@
+-- SHADOWING ----------------------------------------- src/SurfaceController.elm
+
+The name `desktop` is first defined here:
+
+25| desktop (Model model) = model.desktop
+    ^^^^^^^
+But then it is defined AGAIN over here:
+
+86|         clearChoices desktop =
+                         ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

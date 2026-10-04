@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "sourceInputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/Binding.elm": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/OwnPopupPreparation.elm": "258f115b936207641ab7dcc60cf249148d747759cf2680aafabfaa462e93d161",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/src/Replay.elm": "2d62a2cd13a78558d71de196a80b848e1613399e986c6d27d04d1741a05a71e1"
+  },
+  "mutants": [
+    {
+      "name": "external-grab",
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/qa/mutations-1791152661218174336/external-grab/qa/test-1791152661249387918/report.json",
+      "compiledUnsafeBody": true,
+      "failures": [
+        {
+          "name": "external grab does not retain",
+          "passed": false
+        }
+      ],
+      "sourceSHA256": "a2a9b5c696791f3e36f219021d25dfb101eace3875c062139b65c233c5ec0cfd"
+    },
+    {
+      "name": "missing-close-fence",
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/qa/mutations-1791152661218174336/missing-close-fence/qa/test-1791152662922145107/report.json",
+      "compiledUnsafeBody": true,
+      "failures": [
+        {
+          "name": "no fence cancels without dispatch",
+          "passed": false
+        }
+      ],
+      "sourceSHA256": "39964aaeebe6f0436326947b1ae8be43e84817dd3a829d6c6a075a77c07c4363"
+    },
+    {
+      "name": "native-ineligible",
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/qa/mutations-1791152661218174336/native-ineligible/qa/test-1791152664589487078/report.json",
+      "compiledUnsafeBody": true,
+      "failures": [
+        {
+          "name": "own popup still blocks effect eligibility",
+          "passed": false
+        }
+      ],
+      "sourceSHA256": "ea99b3bb73d8bc0dd4c6c469960212a7e358b645b1876b9f24a00735e173bf39"
+    },
+    {
+      "name": "proof-reuse",
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-preparation-policy-v303/qa/mutations-1791152661218174336/proof-reuse/qa/test-1791152666026327408/report.json",
+      "compiledUnsafeBody": true,
+      "failures": [
+        {
+          "name": "consumed proof cannot reenter after dispatch",
+          "passed": false
+        },
+        {
+          "name": "cancelled proof cannot reenter",
+          "passed": false
+        }
+      ],
+      "sourceSHA256": "31240805b45a384094333fe77aaa771d0bad272ed7ef735fee67c02f8e2b5585"
+    }
+  ]
+}

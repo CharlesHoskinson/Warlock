@@ -1,0 +1,43 @@
+Running as unit: qa-harness-02dd8cf696ab454a8589e056e614a766.scope; invocation ID: cbb458723bfa4418b02acc7764bbaae2
+
+ Error [QNT000]: Couldn't unify rec and set
+Trying to unify { id: int, kind: int, scope: int, domain: int, output: int, fresh: bool } and Set[Read]
+Trying to unify (Set[_t846], Set[_t846]) => Set[_t846] and (Set[Read], Read) => _t847
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:29:86
+  29:    all {q'=if(eligible.size()==1) {val r=eligible.oneOf();if(r.kind==1) {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),actionExpected:r.id,actionAccepted:0} else {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),geometryExpected:r.id,geometryAccepted:0}} else if(rs.size()==1) {val r=rs.oneOf();{...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r))}} else q,fire(Remember(3))}
+                                                                                           ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT000]: Couldn't unify rec and set
+Trying to unify { id: int, kind: int, scope: int, domain: int, output: int, fresh: bool } and Set[_t859]
+Trying to unify (Set[_t859], Set[_t859]) => Set[_t859] and (_t858, Read) => _t860
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:29:198
+  29:    all {q'=if(eligible.size()==1) {val r=eligible.oneOf();if(r.kind==1) {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),actionExpected:r.id,actionAccepted:0} else {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),geometryExpected:r.id,geometryAccepted:0}} else if(rs.size()==1) {val r=rs.oneOf();{...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r))}} else q,fire(Remember(3))}
+                                                                                                                                                                                                           ^^^^^^^^^^^^^^^^^^^
+
+
+ Error [QNT203]: 'oneOf' must be used inside a nondet definition
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:29:42
+  29:    all {q'=if(eligible.size()==1) {val r=eligible.oneOf();if(r.kind==1) {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),actionExpected:r.id,actionAccepted:0} else {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),geometryExpected:r.id,geometryAccepted:0}} else if(rs.size()==1) {val r=rs.oneOf();{...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r))}} else q,fire(Remember(3))}
+                                               ^^^^^^^^^^^^^^^^
+
+
+ Error [QNT203]: 'oneOf' must be used inside a nondet definition
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:29:326
+  29:    all {q'=if(eligible.size()==1) {val r=eligible.oneOf();if(r.kind==1) {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),actionExpected:r.id,actionAccepted:0} else {...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r)),geometryExpected:r.id,geometryAccepted:0}} else if(rs.size()==1) {val r=rs.oneOf();{...q,queued:q.queued.exclude(r),processed:q.processed.union(Set(r))}} else q,fire(Remember(3))}
+                                                                                                                                                                                                                                                                                                                                           ^^^^^^^^^^
+
+
+ Error [QNT203]: 'oneOf' must be used inside a nondet definition
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/protocol.qnt:33:36
+  33:    all {q'=if(rs.size()==1) {val r=rs.oneOf();if(r.fresh and q.ready and r.scope==q.active and r.domain==q.domain and q.announced.contains(r.scope)) {if(r.kind==1 and r.id==q.actionExpected) {...q,actionAccepted:r.id,actionOutput:r.output,ordinary:q.ordinary+1} else if(r.kind==2 and r.id==q.geometryExpected) {...q,geometryAccepted:r.id,geometryOutput:r.output,ordinary:q.ordinary+1} else {...q,ordinary:q.ordinary+1}} else {...q,ordinary:q.ordinary+1}} else q,fire(Remember(3))}
+                                         ^^^^^^^^^^
+
+error: typechecking failed

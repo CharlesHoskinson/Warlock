@@ -1,0 +1,12 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v612/native/admission-test.c:9:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v612/native/host-journal.h:197:17: error: ‘admission_retire’ defined but not used [-Werror=unused-function]
+  197 | static gboolean admission_retire(JsonNode *terminal) {
+      |                 ^~~~~~~~~~~~~~~~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v612/native/admission-test.c:8:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v612/native/surface.h:54:17: error: ‘surface_action’ defined but not used [-Werror=unused-function]
+   54 | static gboolean surface_action(SurfaceGate *gate,JsonNode *node,JsonNode *frame,gboolean popup) {
+      |                 ^~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-retirement-recovery-coordinator-v612/native/surface.h:51:17: error: ‘surface_admit’ defined but not used [-Werror=unused-function]
+   51 | static gboolean surface_admit(SurfaceGate *gate,JsonNode *frame,guint64 *pub,guint64 *lease,gboolean *open) {
+      |                 ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors

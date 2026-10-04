@@ -1,0 +1,261 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualCPUProcessesOnly": true,
+  "checks": [
+    {
+      "name": "normal",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3736118,
+            "start": "11734393",
+            "pgid": 3736045,
+            "ppid": 3736045,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/normal.jsonl"
+    },
+    {
+      "name": "nonzero",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3736292,
+            "start": "11734448",
+            "pgid": 3736226,
+            "ppid": 3736226,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 7
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/nonzero.jsonl"
+    },
+    {
+      "name": "term",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3736363,
+            "start": "11734495",
+            "pgid": 3736357,
+            "ppid": 3736357,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": -15
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/term.jsonl"
+    },
+    {
+      "name": "kill",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3736415,
+            "start": "11734533",
+            "pgid": 3736395,
+            "ppid": 3736395,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": -9
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/kill.jsonl"
+    },
+    {
+      "name": "live-orphan",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3736880,
+            "start": "11734632",
+            "pgid": 3736863,
+            "ppid": 3736863,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3736884,
+            "start": "11734635",
+            "pgid": 3736863,
+            "ppid": 3736863,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/live-orphan.jsonl"
+    },
+    {
+      "name": "orphan",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3737065,
+            "start": "11734673",
+            "pgid": 3737036,
+            "ppid": 3737036,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3737095,
+            "start": "11734677",
+            "pgid": 3737036,
+            "ppid": 3737065,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/orphan.jsonl"
+    },
+    {
+      "name": "setsid",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3737286,
+            "start": "11734719",
+            "pgid": 3737275,
+            "ppid": 3737275,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3737289,
+            "start": "11734724",
+            "pgid": 3737289,
+            "ppid": 3737286,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/setsid.jsonl"
+    },
+    {
+      "name": "latefork",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3737464,
+            "start": "11734766",
+            "pgid": 3737410,
+            "ppid": 3737410,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": -9
+        },
+        {
+          "identity": {
+            "pid": 3737514,
+            "start": "11734777",
+            "pgid": 3737514,
+            "ppid": 3737464,
+            "uid": 1000,
+            "realUid": 1000,
+            "effectiveUid": 1000,
+            "savedUid": 1000,
+            "filesystemUid": 1000,
+            "procOwnerUid": 1000,
+            "privilegedCredentials": false
+          },
+          "exitCode": -15
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-1791149240096585639/latefork.jsonl"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-test.py": "f80e205d1a426314ff76f8a6f6f7cfdf604b2b5d29b3b17f551758cc87269bd3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-supervisor.py": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  }
+}

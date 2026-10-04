@@ -1,0 +1,6 @@
+Running as unit: qa-harness-6fa2b06e0e2349a3aadff2d31e20e23d.scope; invocation ID: c15023e6c5b64909888a1ae8c9ea0fee
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/run.py", line 22, in <module>
+    d=OUT/'mutants'/label;d.mkdir(parents=True,exist_ok=True);s=(ROOT/'archive.qnt').read_text();assert s.count(old)==1,(label,s.count(old));(d/'archive.qnt').write_text(s.replace(old,new));run(label+'-typecheck',['typecheck',str(d/'archive.qnt')]);p=run(label+'-counterexample',['test',str(d/'archive.qnt'),'--main=archive','--match=^'+name+'$','--seed=62903','--max-samples=1','--backend=typescript'],1);rows[-1]['actualAssertionFailure']='Assertion failed' in p.stdout
+                                                                                                        ^^^^^^^^^^^^^^^
+AssertionError: ('powerloss-keeps-visible', 2)

@@ -1,0 +1,1 @@
+Original83 exactchecks/deadlines from elm-responsive-capability-v283 on626/205594AQ155 coherenttuple. Actualisolatednativeacceptance separate; no installeddesktopchanges. Original135627 qualification not transferfullUX/release.

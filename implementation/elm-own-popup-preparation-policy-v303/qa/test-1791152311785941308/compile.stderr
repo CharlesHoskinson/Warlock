@@ -1,0 +1,10 @@
+-- BAD FLAGS ---------------------------------------------------- src/Replay.elm
+
+Your `main` program wants an unspecified type from JavaScript.
+
+77| main = Platform.worker {init=\_ -> ((),report (E.list (\(name,value)->E.object [("name",E.string name),("passed",E.bool value)]) cases)),update=\_ model -> (model,Cmd.none),subscriptions=\_ -> Sub.none}
+    ^^^^
+But type variables like `flags` cannot be given as flags. I need to know exactly
+what type of data I am getting, so I can guarantee that unexpected data cannot
+sneak in and crash the Elm program.
+

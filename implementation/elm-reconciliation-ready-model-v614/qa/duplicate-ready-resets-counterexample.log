@@ -1,0 +1,17 @@
+
+  protocol_tests
+    1) duplicateReadyRetainsReadsTest failed after 1 test(s)
+
+  1 failed
+
+  1) duplicateReadyRetainsReadsTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/duplicate-ready-resets/protocol_tests.qnt:14:187
+        14:  run duplicateReadyRetainsReadsTest=start.then(ready).then(actionRead).then(geometryRead).then(send(EnqueueReady(GOOD))).then(send(ProcessReady(GOOD))).then(send(Announce(1))).then(all {assert(joined(q) and q.actionAccepted==1 and q.geometryAccepted==2 and protocolProps),send(DeliverProof)})
+                                                                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xefdb --match=duplicateReadyRetainsReadsTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-reconciliation-ready-model-v614/qa/mutants/duplicate-ready-resets/protocol_tests.qnt
+error: Tests failed

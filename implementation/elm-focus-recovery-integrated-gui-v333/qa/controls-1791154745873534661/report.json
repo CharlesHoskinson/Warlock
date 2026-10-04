@@ -1,0 +1,386 @@
+{
+  "passed": true,
+  "assertions": 20,
+  "checks": [
+    {
+      "name": "foreign-current-cannot-emit-another-ready-read-turn",
+      "passed": true
+    },
+    {
+      "name": "foreign-current-keeps-A-released-B-reserved-and-Unknown",
+      "passed": true
+    },
+    {
+      "name": "current-queried-cannot-emit-another-ready-read-turn",
+      "passed": true
+    },
+    {
+      "name": "current-queried-keeps-A-released-B-reserved-and-Unknown",
+      "passed": true
+    },
+    {
+      "name": "future-grant-cannot-emit-another-ready-read-turn",
+      "passed": true
+    },
+    {
+      "name": "future-grant-keeps-A-released-B-reserved-and-Unknown",
+      "passed": true
+    },
+    {
+      "name": "foreign-lifetime-cannot-emit-another-ready-read-turn",
+      "passed": true
+    },
+    {
+      "name": "foreign-lifetime-keeps-A-released-B-reserved-and-Unknown",
+      "passed": true
+    },
+    {
+      "name": "duplicate-info-proof-cannot-emit-another-ready-read-turn",
+      "passed": true
+    },
+    {
+      "name": "duplicate-info-proof-keeps-A-released-B-reserved-and-Unknown",
+      "passed": true
+    },
+    {
+      "name": "new-scope-before-informational-release-cannot-emit-another-ready-read-turn",
+      "passed": true
+    },
+    {
+      "name": "new-scope-before-informational-release-keeps-A-released-B-reserved-and-Unknown",
+      "passed": true
+    },
+    {
+      "name": "info-retry-ready-before-fresh-read-pair",
+      "passed": true
+    },
+    {
+      "name": "info-retry-keeps-A-released-B-reserved-and-Unknown",
+      "passed": true
+    },
+    {
+      "name": "released-not-eligible-compiled-behavioral-control-detected",
+      "passed": true
+    },
+    {
+      "name": "informational-read-ignored-compiled-behavioral-control-detected",
+      "passed": true
+    },
+    {
+      "name": "informational-release-not-stored-compiled-behavioral-control-detected",
+      "passed": true
+    },
+    {
+      "name": "informational-scope-unchecked-compiled-behavioral-control-detected",
+      "passed": true
+    },
+    {
+      "name": "future-info-proof-admitted-compiled-behavioral-control-detected",
+      "passed": true
+    },
+    {
+      "name": "informational-retry-no-ready-compiled-behavioral-control-detected",
+      "passed": true
+    }
+  ],
+  "compiledControls": [
+    {
+      "name": "released-not-eligible",
+      "scenario": "mixed-announced",
+      "detected": true,
+      "mutatedSourceSHA256": "31858dfcbe8b5bc83b8bf39150945c250e28f2022305581195c34cba92280b89"
+    },
+    {
+      "name": "informational-read-ignored",
+      "scenario": "mixed-after-turn1",
+      "detected": true,
+      "mutatedSourceSHA256": "9fb074583c13ba4d82b7bacf6fcf690cd7c026ffb4579513488a8e4b15372f7d"
+    },
+    {
+      "name": "informational-release-not-stored",
+      "scenario": "mixed-after-turn1",
+      "detected": true,
+      "mutatedSourceSHA256": "2130a8a8321a85d300316056938f5c19d298091ad978287b7431472b07279f0b"
+    },
+    {
+      "name": "informational-scope-unchecked",
+      "scenario": "new-scope-before-informational-release",
+      "detected": true,
+      "mutatedSourceSHA256": "9489fc8c125aa99d96cc05ccf94e70ae1a582a62c85b84d28965a888e4321290"
+    },
+    {
+      "name": "future-info-proof-admitted",
+      "scenario": "future-grant",
+      "detected": true,
+      "mutatedSourceSHA256": "c0fb9a056ecbb633b8e60797e69804fd8ada0838defeeddefffab9296adb77de"
+    },
+    {
+      "name": "informational-retry-no-ready",
+      "scenario": "info-retry",
+      "detected": true,
+      "mutatedSourceSHA256": "90031d62d265ba1afa8d9adf95ffeaa87dd2ecb9147e949f65ad8799fd9780be"
+    }
+  ],
+  "commands": [
+    {
+      "name": "foreign-current",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/tests-1791154674631575841/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/foreign-current-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/foreign-current-rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "current-queried",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/tests-1791154674631575841/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/current-queried-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/current-queried-rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "future-grant",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/tests-1791154674631575841/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/future-grant-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/future-grant-rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "foreign-lifetime",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/tests-1791154674631575841/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/foreign-lifetime-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/foreign-lifetime-rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "duplicate-info-proof",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/tests-1791154674631575841/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/duplicate-info-proof-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/duplicate-info-proof-rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "new-scope-before-informational-release",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/tests-1791154674631575841/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/new-scope-before-informational-release-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/new-scope-before-informational-release-rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "info-retry",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/tests-1791154674631575841/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/info-retry-events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/info-retry-rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "released-not-eligible-compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/released-not-eligible/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/released-not-eligible",
+      "exit": 0
+    },
+    {
+      "name": "released-not-eligible-probe",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/released-not-eligible/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/released-not-eligible/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/released-not-eligible/rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "informational-read-ignored-compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-read-ignored/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-read-ignored",
+      "exit": 0
+    },
+    {
+      "name": "informational-read-ignored-probe",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-read-ignored/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-read-ignored/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-read-ignored/rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "informational-release-not-stored-compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-release-not-stored/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-release-not-stored",
+      "exit": 0
+    },
+    {
+      "name": "informational-release-not-stored-probe",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-release-not-stored/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-release-not-stored/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-release-not-stored/rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "informational-scope-unchecked-compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-scope-unchecked/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-scope-unchecked",
+      "exit": 0
+    },
+    {
+      "name": "informational-scope-unchecked-probe",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-scope-unchecked/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-scope-unchecked/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-scope-unchecked/rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "future-info-proof-admitted-compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/future-info-proof-admitted/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/future-info-proof-admitted",
+      "exit": 0
+    },
+    {
+      "name": "future-info-proof-admitted-probe",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/future-info-proof-admitted/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/future-info-proof-admitted/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/future-info-proof-admitted/rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    },
+    {
+      "name": "informational-retry-no-ready-compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-retry-no-ready/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-retry-no-ready",
+      "exit": 0
+    },
+    {
+      "name": "informational-retry-no-ready-probe",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-retry-no-ready/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-retry-no-ready/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-gui-v333/qa/controls-1791154745873534661/informational-retry-no-ready/rows.json"
+      ],
+      "cwd": "None",
+      "exit": 0
+    }
+  ],
+  "nativeAcceptance": false,
+  "scope": "Compiled informational-history proof/read/strict-release controls; synthetic protocol trajectories"
+}
