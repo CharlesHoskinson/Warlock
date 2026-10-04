@@ -1,0 +1,174 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "actualCAdmissionWritesBeforeBrokerExists",
+      "passed": true
+    },
+    {
+      "name": "hostRecordHasExactIntentAndPendingState",
+      "passed": true
+    },
+    {
+      "name": "unreadBrokerRecoversHostUncertainty",
+      "passed": true
+    },
+    {
+      "name": "olderBrokerCommitDoesNotResolveNewAdmission",
+      "passed": true
+    },
+    {
+      "name": "exactDurableCommitResolvesHostAdmission",
+      "passed": true
+    },
+    {
+      "name": "newHostActionCanBeAdmittedWhileBrokerLockHeld",
+      "passed": true
+    },
+    {
+      "name": "priorSettlementCannotResolveLaterHostIntent",
+      "passed": true
+    },
+    {
+      "name": "correlatedDurableRefusalIsKnown",
+      "passed": true
+    },
+    {
+      "name": "missingBackendBindingRefused",
+      "passed": true
+    },
+    {
+      "name": "retiredBackendBindingRefused",
+      "passed": true
+    },
+    {
+      "name": "twoEffectBatchRefusedBeforePersistence",
+      "passed": true
+    },
+    {
+      "name": "refusedBatchesPreserveLastAdmission",
+      "passed": true
+    },
+    {
+      "name": "unsupportedOperationRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchedNativeEpochRefused",
+      "passed": true
+    },
+    {
+      "name": "zeroRequestRefused",
+      "passed": true
+    },
+    {
+      "name": "protocolBooleanRefused",
+      "passed": true
+    },
+    {
+      "name": "publicAdmissionTargetRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkAdmissionTargetRefused",
+      "passed": true
+    },
+    {
+      "name": "competingHostWriterRefused",
+      "passed": true
+    },
+    {
+      "name": "forgedHostSettlementRefused",
+      "passed": true
+    },
+    {
+      "name": "publicAuthorityConfigRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkConfigAncestryRefused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/qa/admission.py": "860159df2a28da1b1dd884cced16aa1ce8b4492f3e4d66fe7a5dc95741c6dc63",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/native/host-journal.h": "1b4cba0f62b26a2522bf2d05cd79ce20d69173c7748e358c372008946281ffbb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/adapter/recovery_journal.py": "a54a7ae078e925f1c2efd94463abff97682f91a4c32981819a232d24bc030eac",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  },
+  "binarySHA256": "1b74e31bcd8fbf1fb1482f006701d6eac963e89e0bdd4b3c88771bd554e06d04",
+  "runs": [
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":1,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":1,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"42\",\"generation\":\"44\",\"incarnation\":\"7\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

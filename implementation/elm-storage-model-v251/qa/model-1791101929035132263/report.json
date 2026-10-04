@@ -1,0 +1,73 @@
+{
+  "passed": true,
+  "scope": "Typed recovery failure, explicit reconnect and no automatic window replay contract; abstract model, not automatic C/filesystem/Elm refinement.",
+  "sourceSHA256": "498675bb65f0cdd87473f71ff7d093b5dbf77b81c685e8d441a735b6cd6bd5a0",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(storageDisablesEffectsTest|pendingBecomesUnknownTest|disconnectKeepsExplanationTest|correctionDoesNotRetryTest|explicitRetryOnlyOnceTest|newSnapshotDoesNotReplayTest|malformedReasonIgnoredTest|staleReceiptCannotClearUnknownTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170020",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170021",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 8,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "498675bb65f0cdd87473f71ff7d093b5dbf77b81c685e8d441a735b6cd6bd5a0",
+    "model.py": "30f2e586dda425796941e2f4be360f02ba45e629005b05ea84d63343588c1986",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-storageDisablesEffectsTest-0.itf.json": "e70ea3d99acb16aa4096b166131cd93537846ce02597ed75d0caafab7024c09e",
+    "named-pendingBecomesUnknownTest-1.itf.json": "9d8879b6db2c2f260a0d2e156826ecbb3626888d9f140cd01b16aaa05ce12267",
+    "named-disconnectKeepsExplanationTest-2.itf.json": "a4109ea4160b80b9d6a222a913fb0caebef24dafe70b9f4406e500c4cb8c75d0",
+    "named-correctionDoesNotRetryTest-3.itf.json": "9938e1b49d5843236fe44da3681c666a0f77140ba6849ccf1885ad7de5187409",
+    "named-explicitRetryOnlyOnceTest-4.itf.json": "d06b44a54cbeb5282136392e251d3490426cd12eb1fdc6bf075b05bfbc73016e",
+    "named-newSnapshotDoesNotReplayTest-5.itf.json": "c71c61da256fd093572405ec1fd13742fa5db6a3a76ab397890a2ebaf6161a64",
+    "named-malformedReasonIgnoredTest-6.itf.json": "1c64624ec11aae8d8799b7d6b758b4bce639c91302f2778222591f20b32e3c2f",
+    "named-staleReceiptCannotClearUnknownTest-7.itf.json": "43c9ad871fa5bc0e1961f6cd2a74e1b37dbdebdac9590d116c48053560ede726",
+    "named.stdout": "0ed4111035379cccf292cfb46b1d24716e7287174f24b8fd387d77f67d7183ac",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "b50c7591827c4b1a3dd7962c4d6a2c29e79d39864b17bcf170dbff4dffd3d47e",
+    "invariants.stdout": "02dcd99b7d734c39935b7fb6d252472a0ddef371a73e0bb30b7a24df50ba2f79",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

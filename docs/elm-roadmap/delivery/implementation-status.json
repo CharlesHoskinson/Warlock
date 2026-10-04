@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-namespace-recovery-v247",
-  "status": "Coherent four-case interrupted minimize/restore plus normally settled activation recovery qualified on namespaced V238 host/broker build. Typed storage/migration failure UX, original full regressions and release remain open.",
+  "activeSlice": "implementation/elm-storage-acceptance-v254",
+  "status": "Typed recovery storage messages and explicit correction/reconnect qualified in compiled/CPU/Quint checks and two actual native corrupt/admission cases. Additional stages/classes, stale-input presentation, updated regressions and full release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1399,6 +1399,41 @@
       "storageErrorUXAccepted": false,
       "legacyOwnershipProvisioningAccepted": false,
       "evidence": "implementation/elm-namespace-recovery-v247/qa/slice-manifest.json"
+    },
+    "storageUXV254": {
+      "passed": true,
+      "scope": "Typed bounded storage explanations, preserved uncertain state, explicit recovery with two actual native filesystem refusal/correction cases",
+      "compiledStorageUXChecks": 55,
+      "cpuStorageChecks": 21,
+      "compiledAdmissionChecks": 22,
+      "cpuNamespaceChecks": 42,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeCheckCounts": [
+        23,
+        22
+      ],
+      "selectedNativeWorkloads": 2,
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "nativeStorageReasonsQualified": [
+        "unverified",
+        "unavailable"
+      ],
+      "diskFullNativeAccepted": false,
+      "legacyOwnerNativeAccepted": false,
+      "busyNativeAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "fullOriginalNativeRegressionAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-acceptance-v254/qa/slice-manifest.json"
     }
   },
   "next": [

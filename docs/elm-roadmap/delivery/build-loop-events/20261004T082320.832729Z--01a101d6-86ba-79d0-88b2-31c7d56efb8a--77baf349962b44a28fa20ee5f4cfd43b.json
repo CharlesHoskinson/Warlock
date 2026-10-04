@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "77baf349962b44a28fa20ee5f4cfd43b",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T08:23:20.832729+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-storage-acceptance-v254",
+  "nextWork": [
+    "Stale scoped actions must retain failure explanation; actual busy/legacy/bind/settlement storage correction; legacy provisioning, updated recovery/regression, old-live-broker revocation and full release"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-storage-acceptance-v254/qa/slice-manifest.json",
+      "sha256": "4ab2927d25bf83f00a0ecdf8dcf7cda6d3cf9066b9d18495673fbbfe1f82b981",
+      "size": 59182
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

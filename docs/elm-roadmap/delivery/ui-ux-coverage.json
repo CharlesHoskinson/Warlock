@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T08:12:15.415901+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T08:23:20.778739+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7302,6 +7302,46 @@
         "Five selected native workloads are not distinct baseline scenario totals or full parity",
         "Actual normally settled activation recovery does not prove global old-live-broker revocation",
         "Storage/migration failure UX, legacy provisioning, integrated updated release tuple and full requirements remain open"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Typed bounded storage explanations, preserved uncertain state, explicit recovery with two actual native filesystem refusal/correction cases",
+      "compiledStorageUXChecks": 55,
+      "cpuStorageChecks": 21,
+      "compiledAdmissionChecks": 22,
+      "cpuNamespaceChecks": 42,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeCheckCounts": [
+        23,
+        22
+      ],
+      "selectedNativeWorkloads": 2,
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "nativeStorageReasonsQualified": [
+        "unverified",
+        "unavailable"
+      ],
+      "diskFullNativeAccepted": false,
+      "legacyOwnerNativeAccepted": false,
+      "busyNativeAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "fullOriginalNativeRegressionAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-acceptance-v254/qa/slice-manifest.json",
+      "limitations": [
+        "Actual unverified broker record and unavailable host admission only; busy/full/legacy-owner have CPU/compiled evidence",
+        "Injected errno failures are not actual native disk exhaustion",
+        "Failure text stale-input preservation, live settlement/host-bind failures, updated recovery/regression and full release remain open"
       ]
     }
   ]

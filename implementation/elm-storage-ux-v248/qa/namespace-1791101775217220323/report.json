@@ -1,0 +1,179 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "sameLifetimeOtherInstanceIsEmpty",
+      "passed": true
+    },
+    {
+      "name": "sameInstanceOtherLifetimeIsEmpty",
+      "passed": true
+    },
+    {
+      "name": "threeConcurrentNamespacesRemainIndependent",
+      "passed": true
+    },
+    {
+      "name": "sameNamespaceWriterRefused",
+      "passed": true
+    },
+    {
+      "name": "foreignLifetimeWriteRefused",
+      "passed": true
+    },
+    {
+      "name": "foreignWritePreservesOwnRecord",
+      "passed": true
+    },
+    {
+      "name": "namespaceDirectoryPrivate",
+      "passed": true
+    },
+    {
+      "name": "metadataFilesPrivate",
+      "passed": true
+    },
+    {
+      "name": "invalidInstanceRefused:'../alpha'",
+      "passed": true
+    },
+    {
+      "name": "invalidInstanceRefused:'alpha/beta'",
+      "passed": true
+    },
+    {
+      "name": "invalidInstanceRefused:''",
+      "passed": true
+    },
+    {
+      "name": "invalidInstanceRefused:'a-b'",
+      "passed": true
+    },
+    {
+      "name": "invalidInstanceRefused:'\u00e9'",
+      "passed": true
+    },
+    {
+      "name": "invalidLifetimeRefused:'0'",
+      "passed": true
+    },
+    {
+      "name": "invalidLifetimeRefused:'071'",
+      "passed": true
+    },
+    {
+      "name": "invalidLifetimeRefused:'../71'",
+      "passed": true
+    },
+    {
+      "name": "invalidLifetimeRefused:71",
+      "passed": true
+    },
+    {
+      "name": "invalidLifetimeRefused:'18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "matchingLegacyPendingImported",
+      "passed": true
+    },
+    {
+      "name": "matchingLegacyPendingRemainsInformationalUnknown",
+      "passed": true
+    },
+    {
+      "name": "migrationMarkerHashesDurablePlan",
+      "passed": true
+    },
+    {
+      "name": "legacySourceHashesRecorded",
+      "passed": true
+    },
+    {
+      "name": "newSettlementSuppressesUnknown",
+      "passed": true
+    },
+    {
+      "name": "legacyRecordsNeverModified",
+      "passed": true
+    },
+    {
+      "name": "completedMigrationNeverResurrectsChangedLegacy",
+      "passed": true
+    },
+    {
+      "name": "otherInstanceCannotImportOwnedLegacy",
+      "passed": true
+    },
+    {
+      "name": "matchingUnownedLegacyRefused",
+      "passed": true
+    },
+    {
+      "name": "ambiguousLegacyPreserved",
+      "passed": true
+    },
+    {
+      "name": "foreignLifetimeLegacyExcludedWithoutOwnershipGuess",
+      "passed": true
+    },
+    {
+      "name": "exactLegacySettlementSuppressesUnknown",
+      "passed": true
+    },
+    {
+      "name": "olderLegacySettlementCannotClearLatestAdmission",
+      "passed": true
+    },
+    {
+      "name": "interruptedCopiesResumeFromStablePlan",
+      "passed": true
+    },
+    {
+      "name": "resumedMigrationPublishesCompletionMarker",
+      "passed": true
+    },
+    {
+      "name": "wrongPlanHashRefused",
+      "passed": true
+    },
+    {
+      "name": "BooleanSchemaMarkerRefused",
+      "passed": true
+    },
+    {
+      "name": "foreignPlanTargetRefused",
+      "passed": true
+    },
+    {
+      "name": "activeLegacyWriterPreventsMigration",
+      "passed": true
+    },
+    {
+      "name": "refusedMigrationPublishesNoCompletion",
+      "passed": true
+    },
+    {
+      "name": "migrationSucceedsAfterLegacyWriterQuiesces",
+      "passed": true
+    },
+    {
+      "name": "unsafeLegacyRefused:public",
+      "passed": true
+    },
+    {
+      "name": "unsafeLegacyRefused:symlink",
+      "passed": true
+    },
+    {
+      "name": "unsafeLegacyRefused:malformed",
+      "passed": true
+    }
+  ],
+  "scope": "CPU filesystem/migration evidence; native GUI acceptance separate",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/qa/namespace.py": "7da482bb4f69edd55b3b61773804bdeca42d2771d3c4aac29fdef95e097f1a85",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/adapter/recovery_journal.py": "a54a7ae078e925f1c2efd94463abff97682f91a4c32981819a232d24bc030eac",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  }
+}

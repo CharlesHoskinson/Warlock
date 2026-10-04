@@ -1,0 +1,95 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "actualHeldWriterClassifiedBusy",
+      "passed": true
+    },
+    {
+      "name": "actualMalformedRecordClassifiedUnverified",
+      "passed": true
+    },
+    {
+      "name": "actualPublicRecordClassifiedUnverified",
+      "passed": true
+    },
+    {
+      "name": "injectedDurabilityErrnoClassified:28",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWritePreservesOldIntent:28",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWriteLeavesNoTemporaryFiles:28",
+      "passed": true
+    },
+    {
+      "name": "injectedDurabilityErrnoClassified:122",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWritePreservesOldIntent:122",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWriteLeavesNoTemporaryFiles:122",
+      "passed": true
+    },
+    {
+      "name": "injectedDurabilityErrnoClassified:30",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWritePreservesOldIntent:30",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWriteLeavesNoTemporaryFiles:30",
+      "passed": true
+    },
+    {
+      "name": "injectedDurabilityErrnoClassified:13",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWritePreservesOldIntent:13",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWriteLeavesNoTemporaryFiles:13",
+      "passed": true
+    },
+    {
+      "name": "injectedDurabilityErrnoClassified:5",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWritePreservesOldIntent:5",
+      "passed": true
+    },
+    {
+      "name": "injectedFailedWriteLeavesNoTemporaryFiles:5",
+      "passed": true
+    },
+    {
+      "name": "correctionAllowsExplicitSettlement",
+      "passed": true
+    },
+    {
+      "name": "actualAmbiguousLegacyClassifiedOwnerFailure",
+      "passed": true
+    },
+    {
+      "name": "legacyFailureDoesNotEraseEvidence",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/qa/storage.py": "5a48d38f3efa6f5da55bd969ff5068411f5c04cd2f0cca704e0a0914743e485e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/adapter/recovery_journal.py": "a54a7ae078e925f1c2efd94463abff97682f91a4c32981819a232d24bc030eac",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-storage-ux-v248/adapter/daemon.py": "0451c3be222b43e18edc4ffb0deebb78fe2379e536792b09ef10be876b369f99"
+  },
+  "scope": "CPU actual filesystem refusals plus explicitly injected errno failures; native GUI proof separate"
+}
