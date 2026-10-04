@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-shared-gpu-qa-v157",
-  "status": "Shared-host native142 passes with actual shader readback/display and Mesa Intel renderer diagnostics. Secure origin has no navigator.gpu. Full performance/GPU/AT/IME/menu/release gates remain open.",
+  "activeSlice": "implementation/elm-shared-measure-v160",
+  "status": "Shared-host calibration26 passes: 20 popup cycles/31 resource snapshots; warm idle CPU and helper-to-DOM timing measured with tracing. Numeric budgets, native presentation, soak/AT/IME/menu/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -909,6 +909,83 @@
       "performanceBudgetsAccepted": false,
       "cleanupPassed": true,
       "scope": "Bounded shared-host shader execution/display and native hardware diagnostics. Full GPU/host-selection/performance/hybrid/device-loss/release gates remain open."
+    },
+    "sharedHostCalibrationV160": {
+      "nativeChecks": 26,
+      "popupCycles": 20,
+      "resourceSampleCount": 31,
+      "metrics": {
+        "idleCpuPercentOneCore": 0.39073202890525754,
+        "processCount": {
+          "count": 6,
+          "p50": 21,
+          "p95": 21,
+          "p99": 21
+        },
+        "helperToDOMReceiptMs": {
+          "samples": [
+            86.020759,
+            87.134907,
+            89.884379,
+            92.049962,
+            94.040765,
+            94.515298,
+            92.617996,
+            97.892725,
+            95.034075,
+            99.378226,
+            100.874967,
+            98.457956,
+            104.103511,
+            57.520285,
+            107.673699,
+            61.396335,
+            108.802364,
+            59.783529,
+            63.470271,
+            65.652371
+          ],
+          "count": 20,
+          "p50": 92.617996,
+          "p95": 107.673699,
+          "p99": 108.802364,
+          "definition": "Python monotonic before pointer helper spawn to exact-publication focused DOM receipt; includes helper/poll/log parsing overhead, not native presentation latency"
+        },
+        "initialPssKiB": 305238,
+        "finalPssKiB": 332913,
+        "initialPrivateKiB": 228600,
+        "finalPrivateKiB": 245756,
+        "allSamples": {
+          "elapsedSeconds": 17.700854673,
+          "survivingIdentityCpuPercentOneCore": 5.084500249430414,
+          "endpointIdentitySetsMatch": true,
+          "wholeIntervalCpuCoverageComplete": false,
+          "rssKiB": {
+            "count": 31,
+            "p50": 795244,
+            "p95": 799372,
+            "p99": 799700
+          },
+          "processCount": {
+            "count": 31,
+            "p50": 21,
+            "p95": 21,
+            "p99": 21
+          },
+          "rssGrowthKiB": 50344,
+          "pssComplete": true
+        }
+      },
+      "limitations": [
+        "QA DOM and Wayland protocol tracing enabled; overhead unmeasured",
+        "Helper-to-DOM time includes spawning/polling/parsing and is not native presentation latency",
+        "PPID process tree excludes detached/reparented workers and fixture/compositor; RSS double counts shared pages",
+        "Endpoint CPU identity equality cannot exclude transient workers between samples",
+        "20 cycles, one warm output and 2 controlled application windows; no cold/dense/hardware-display/long-soak acceptance"
+      ],
+      "performanceBudgetsAccepted": false,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-shared-measure-v160/qa/slice-manifest.json"
     }
   },
   "next": [

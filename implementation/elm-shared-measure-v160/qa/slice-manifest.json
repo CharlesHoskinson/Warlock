@@ -1,0 +1,152 @@
+{
+  "passed": true,
+  "scope": "Instrumented private one-output shared host calibration: process-tree CPU/RSS and helper-to-DOM receipt samples, not approved budgets/native presentation/long soak/full performance acceptance",
+  "nativeChecks": 26,
+  "popupCycles": 20,
+  "resourceSampleCount": 31,
+  "metrics": {
+    "idleCpuPercentOneCore": 0.39073202890525754,
+    "processCount": {
+      "count": 6,
+      "p50": 21,
+      "p95": 21,
+      "p99": 21
+    },
+    "helperToDOMReceiptMs": {
+      "samples": [
+        86.020759,
+        87.134907,
+        89.884379,
+        92.049962,
+        94.040765,
+        94.515298,
+        92.617996,
+        97.892725,
+        95.034075,
+        99.378226,
+        100.874967,
+        98.457956,
+        104.103511,
+        57.520285,
+        107.673699,
+        61.396335,
+        108.802364,
+        59.783529,
+        63.470271,
+        65.652371
+      ],
+      "count": 20,
+      "p50": 92.617996,
+      "p95": 107.673699,
+      "p99": 108.802364,
+      "definition": "Python monotonic before pointer helper spawn to exact-publication focused DOM receipt; includes helper/poll/log parsing overhead, not native presentation latency"
+    },
+    "initialPssKiB": 305238,
+    "finalPssKiB": 332913,
+    "initialPrivateKiB": 228600,
+    "finalPrivateKiB": 245756,
+    "allSamples": {
+      "elapsedSeconds": 17.700854673,
+      "survivingIdentityCpuPercentOneCore": 5.084500249430414,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 31,
+        "p50": 795244,
+        "p95": 799372,
+        "p99": 799700
+      },
+      "processCount": {
+        "count": 31,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": 50344,
+      "pssComplete": true
+    }
+  },
+  "limitations": [
+    "QA DOM and Wayland protocol tracing enabled; overhead unmeasured",
+    "Helper-to-DOM time includes spawning/polling/parsing and is not native presentation latency",
+    "PPID process tree excludes detached/reparented workers and fixture/compositor; RSS double counts shared pages",
+    "Endpoint CPU identity equality cannot exclude transient workers between samples",
+    "20 cycles, one warm output and 2 controlled application windows; no cold/dense/hardware-display/long-soak acceptance"
+  ],
+  "performanceBudgetsAccepted": false,
+  "completedRequirementIds": [],
+  "cleanupPassed": true,
+  "evidence": {
+    "native": {
+      "path": "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/report.json",
+      "sha256": "23558d5868865800447b688b0c6828e53b52e1d5d4e7b96431c6eabbe0d1208e"
+    },
+    "functional": {
+      "path": "implementation/elm-output-shared-qa-v151/qa/slice-manifest.json",
+      "sha256": "91eb054e7bdba6b5a34d692d199d281d639dcf4455e3a7eac8f879902128c68b",
+      "retainedNotRerun": true
+    },
+    "graphics": {
+      "path": "implementation/elm-shared-gpu-qa-v157/qa/slice-manifest.json",
+      "sha256": "8e91b23e55ca77ba476949f1440352ce447cee7b25def8f3db3598e2ed058534",
+      "retainedNotRerun": true
+    }
+  },
+  "files": {
+    "implementation/elm-shared-measure-v158/fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "implementation/elm-shared-measure-v158/qa/failure.json": "2884e16d474262db120be3d6607a3b19b0d54b35fc9251bc5ada214a2113968a",
+    "implementation/elm-shared-measure-v158/qa/inspection.py": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+    "implementation/elm-shared-measure-v158/qa/native.py": "39be2d5c693ea599c865a29d8eebfb2e3656aa26afd5b6c1cced3ceeeedacca9",
+    "implementation/elm-shared-measure-v158/qa/sampling.py": "2ccf99f769adccedf66910c252b624ae27317335d335db7df333982c7a6ec2c5",
+    "implementation/elm-shared-measure-v159/fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "implementation/elm-shared-measure-v159/qa/inspection.py": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/authority-config.json": "1b096e8386fff225c6c07a77f4726ee3ccbc2bf6711eb5697b5746a5f319211d",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/elm-webview.log": "0764b179686a0a4a2cdaa050fc3495cb2caceb5ab65ba16dc6f5c51a194e573c",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/fixture.log": "a2b0fb1f591123e273db6ef862408c6d85da708275ef1fc8cf9cfa0938d2133a",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/host-evidence.json": "2c82c316d6bb6a935dcbb22e9a5cf7ef16108f74481ef02e6b06fa375067a091",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/hyprland.log": "19f980b6ddf1339f28119acd1daa5aea3d2eb13c28f3a12303389d2d84cd081e",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/privateBus.log": "0d8ff93bae23588d0ff32ac11b26f300f621cfd9340ff8a8b81dfb4b0c4c6dcd",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/.flatpak/webkit-4069804-27/bwrapinfo.json": "5e24040b8259a9f853d74aaf48ad159b9957f15d646ca850504660a63c6cfa58",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/.flatpak/webkit-4069804-31/bwrapinfo.json": "38880800b0a810f7566867788239f9510188d813205873ae50a9ae6269c1b23d",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/.flatpak/webkit-4069804-35/bwrapinfo.json": "8872e9e04b45909fd849efe7eafcd8e41b8367fd56bdaf3d6f6de972b2f2b10a",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/.flatpak/webkit-4069804-4/bwrapinfo.json": "84eab9c8dfa4b3612e2dcef47b288092703bae2aea8152b05761b0620990618d",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/.flatpak/webkit-4069804-5/bwrapinfo.json": "2fadb1816ad3a764b468e45110a2b0249797a048a514cc5fd21fe02ffbf4bd69",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/.flatpak/webkit-4069804-6/bwrapinfo.json": "de017b397f08118de85255b5ed5bd206da40ed4da7f0984e657aa3e857245004",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791092398_888696401/hyprland.log": "1ebb59ddc3b4fd2ab81b6a4a0f55b820e6d41adc9b1f97822d2c6a9d94ac4ca0",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/weston-renderer.log": "2ff696af3b19a0004eefe013f996e02c5006d207aaea79e7d36f2afab3f63482",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/report.json": "06eee5af323ea1da477d7b1ad23011b439612d0a80950c306f8d5978048de8be",
+    "implementation/elm-shared-measure-v159/qa/native-1791092397678498452/samples.jsonl": "9278e152a1cc7cb3e03491356f717a62473b43c1da6e07dc544a6992de80d3d7",
+    "implementation/elm-shared-measure-v159/qa/native.py": "0a95b4fb1abe0dbaa8fb37872b95b5b295cf690f184067f66cb2f8ad61e1420c",
+    "implementation/elm-shared-measure-v159/qa/sampling.py": "2ccf99f769adccedf66910c252b624ae27317335d335db7df333982c7a6ec2c5",
+    "implementation/elm-shared-measure-v160/HANDOFF.md": "d158eec52ef692f146f1602eba071aef08db61e68a0d028b4d08ab0657a25d56",
+    "implementation/elm-shared-measure-v160/fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "implementation/elm-shared-measure-v160/qa/freeze.py": "00c4f9d50c74f7690967ca7f751ef9f1ee398be4ca093ff73f84c6240a3bb41c",
+    "implementation/elm-shared-measure-v160/qa/inspection.py": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/authority-config.json": "fecd2c73cc4ba275cf7a785cccea3ea9fb57eccd9be821cd502b30b22d43fc6a",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/elm-webview.log": "64d9a1464b2e6477d22d7feb6ada6778b38266b4017144ad9c521ef073271dae",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/fixture.log": "6033e12771e93f2a96bf412372deb2676a018aeb819485140173e5897207ad1a",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/host-evidence.json": "2ba233e79bf5dd24afe65c4de286cfe708681a31c60e9eb4085a9d8dd7fce46d",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/hyprland.log": "2d9b596989a10d72f07c87c928e9ab3281ec660dd5441662d3e643a9b1eacb25",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/privateBus.log": "50e557b6e79bfa72593b87cb4516249be158b38c0670bdffe3d37e4489cfa84b",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/.flatpak/webkit-4073934-27/bwrapinfo.json": "46c4060512c7ba392cbeb1ce43aeb50f75d6377e01fd664ac2f07ed8afebdbfb",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/.flatpak/webkit-4073934-31/bwrapinfo.json": "8dcfbf2f585731da269c03d08a0d495b0a205159ef8a08e4dc2f94e8cff1ef5a",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/.flatpak/webkit-4073934-35/bwrapinfo.json": "04a346057201236314368b5fa580818407021bd6f1d9b5a1ebf4c905c93b548d",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/.flatpak/webkit-4073934-4/bwrapinfo.json": "d4b115f0e228a42339da1d8016b750636a8c5841dd05b1deb72364d41a70cad0",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/.flatpak/webkit-4073934-5/bwrapinfo.json": "1e728e96fed64eb92da0b24b254b48d3b675462a5c0cbfff81f03ca87a93bffa",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/.flatpak/webkit-4073934-6/bwrapinfo.json": "e87ce2418913dd9ea5eff8463941ff7b3fb3fab5e1f4b41495962b03a89e4037",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791092449_1491658584/hyprland.log": "97bb02108cdd8926fa4b9d06e6e7d0340329b11b214f609af4dc9da538f7dcb2",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/weston-renderer.log": "c291e640103fb05bbfbb9f9c6c2740110df0991f095fa6bbc2352395410ca820",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/report.json": "23558d5868865800447b688b0c6828e53b52e1d5d4e7b96431c6eabbe0d1208e",
+    "implementation/elm-shared-measure-v160/qa/native-1791092448672748213/samples.jsonl": "a90916c2e6e6269aa0c3c9a60a6454d9fa9f7eb66c7f50ef8e1753c22a0dd27f",
+    "implementation/elm-shared-measure-v160/qa/native.py": "35633f4e7ea1d83f5b95a85b0d6d07bfa2d837824b145af1ee62a96abe6e8692",
+    "implementation/elm-shared-measure-v160/qa/sampling.py": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+  }
+}

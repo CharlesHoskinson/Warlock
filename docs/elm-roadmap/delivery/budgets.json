@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "status": "calibration-only; evaluation blocked by missing comparative baselines and approved numeric thresholds",
+  "requirements": [
+    "ELM-QA-021",
+    "ELM-QA-022",
+    "ELM-QA-023"
+  ],
+  "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+  "candidateCalibration": {
+    "evidence": "implementation/elm-shared-measure-v160/qa/slice-manifest.json",
+    "workload": "1 private 800x600 output; 2 controlled windows; 20 popup cycles; warm; DOM/Wayland tracing enabled",
+    "hardwareEvidence": "implementation/elm-shared-gpu-qa-v157/qa/slice-manifest.json",
+    "instrumentationOverhead": null,
+    "idleCpuPercentOneCoreSurvivingIdentities": 0.39073202890525754,
+    "helperToDOMReceiptMs": {
+      "samples": [
+        86.020759,
+        87.134907,
+        89.884379,
+        92.049962,
+        94.040765,
+        94.515298,
+        92.617996,
+        97.892725,
+        95.034075,
+        99.378226,
+        100.874967,
+        98.457956,
+        104.103511,
+        57.520285,
+        107.673699,
+        61.396335,
+        108.802364,
+        59.783529,
+        63.470271,
+        65.652371
+      ],
+      "count": 20,
+      "p50": 92.617996,
+      "p95": 107.673699,
+      "p99": 108.802364,
+      "definition": "Python monotonic before pointer helper spawn to exact-publication focused DOM receipt; includes helper/poll/log parsing overhead, not native presentation latency"
+    },
+    "initialPssKiB": 305238,
+    "finalPssKiB": 332913,
+    "initialPrivateKiB": 228600,
+    "finalPrivateKiB": 245756
+  },
+  "currentShellBaseline": null,
+  "approvedThresholds": null,
+  "performanceBudgetsAccepted": false,
+  "missing": [
+    "Identical current-shell and candidate workloads",
+    "Cold/warm representative and dense distributions",
+    "Production/instrumented overhead",
+    "Input-to-native-presentation receipts",
+    "Complete process-group lifetime accounting",
+    "Numeric absolute and regression limits frozen before evaluation",
+    "Long soak/resource plateau and hardware cadence"
+  ]
+}

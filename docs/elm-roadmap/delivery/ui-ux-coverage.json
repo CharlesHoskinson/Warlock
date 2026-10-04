@@ -6922,6 +6922,29 @@
       "performanceBudgetsAccepted": false,
       "cleanupPassed": true,
       "scope": "Bounded shared-host shader execution/display and native hardware diagnostics. Full GPU/host-selection/performance/hybrid/device-loss/release gates remain open."
+    },
+    {
+      "evidence": "implementation/elm-shared-measure-v160/qa/slice-manifest.json",
+      "nativeChecks": 26,
+      "popupCycles": 20,
+      "resourceSampleCount": 31,
+      "warmIdleCpuPercentOneCoreSurvivingIdentities": 0.39073202890525754,
+      "helperToDOMReceiptMs": {
+        "count": 20,
+        "p50": 92.617996,
+        "p95": 107.673699,
+        "p99": 108.802364
+      },
+      "performanceBudgetsAccepted": false,
+      "cleanupPassed": true,
+      "scope": "Instrumented private one-output shared host calibration: process-tree CPU/RSS and helper-to-DOM receipt samples, not approved budgets/native presentation/long soak/full performance acceptance",
+      "limitations": [
+        "QA DOM and Wayland protocol tracing enabled; overhead unmeasured",
+        "Helper-to-DOM time includes spawning/polling/parsing and is not native presentation latency",
+        "PPID process tree excludes detached/reparented workers and fixture/compositor; RSS double counts shared pages",
+        "Endpoint CPU identity equality cannot exclude transient workers between samples",
+        "20 cycles, one warm output and 2 controlled application windows; no cold/dense/hardware-display/long-soak acceptance"
+      ]
     }
   ]
 }

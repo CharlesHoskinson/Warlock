@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "370b4f2af6844d03881d533176858040",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T05:39:57.472089+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-shared-measure-v159",
+  "nextWork": [
+    "Protected short shared-host process-tree and helper-to-DOM calibration; preserve failed V158 and keep full performance acceptance open"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-shared-measure-v159/qa/native.py",
+      "sha256": "0a95b4fb1abe0dbaa8fb37872b95b5b295cf690f184067f66cb2f8ad61e1420c",
+      "size": 9500
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
