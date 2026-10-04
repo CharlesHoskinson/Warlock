@@ -1,0 +1,105 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:19:1: error: ‘uint64_t’ does not name a type
+   19 | uint64_t outputGeneration=1;
+      | ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:13:1: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+   12 | #include <vector>
+  +++ |+#include <cstdint>
+   13 | struct Object{};
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:25:33: error: ‘uint64_t’ does not name a type [-Wtemplate-body]
+   25 |     struct Entry { Weak object; uint64_t generation; };
+      |                                 ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:25:33: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:27:5: error: ‘uint64_t’ does not name a type [-Wtemplate-body]
+   27 |     uint64_t next=0;
+      |     ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:27:5: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:28:5: error: ‘uint64_t’ does not name a type [-Wtemplate-body]
+   28 |     uint64_t bind(const Strong& object) {
+      |     ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:28:5: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:35:15: error: ‘uint64_t’ has not been declared [-Wtemplate-body]
+   35 |     bool live(uint64_t generation) const {
+      |               ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:35:15: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:41:23: error: ‘uint64_t’ does not name a type
+   41 | struct GeometryArea { uint64_t workspace, revision; std::string fingerprint; };
+      |                       ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:41:23: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:43:1: error: ‘uint64_t’ does not name a type
+   43 | uint64_t geometryAreaRevision=0, geometrySequence=0, geometryRevision=0;
+      | ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:43:1: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:64:1: error: ‘uint64_t’ does not name a type
+   64 | uint64_t geometryWorkAreaRevision(uint64_t workspace,uint64_t output,const std::string& rectangle) {
+      | ^~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:64:1: note: ‘uint64_t’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:79:54: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   79 |  auto a=std::make_shared<Object>();auto first=owners.bind(a);
+      |                                                      ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:80:30: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   80 |  if(!verify(first!=0&&owners.bind(a)==first&&owners.live(first),"same owner stable generation"))return 1;
+      |                              ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:82:55: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   82 |  a=std::make_shared<Object>();auto replacement=owners.bind(a);
+      |                                                       ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp: In lambda function:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:84:31: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   84 |  if(!verify(throws([&]{owners.bind({});}),"null owner refused"))return 1;
+      |                               ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:85:9: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘next’
+   85 |  owners.next=UINT64_MAX;
+      |         ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:85:14: error: ‘UINT64_MAX’ was not declared in this scope
+   85 |  owners.next=UINT64_MAX;
+      |              ^~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:85:14: note: ‘UINT64_MAX’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:86:20: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   86 |  if(!verify(owners.bind(a)==replacement,"existing owner still readable at generation bound"))return 1;
+      |                    ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp: In lambda function:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:87:31: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   87 |  if(!verify(throws([&]{owners.bind(std::make_shared<Object>());}),"owner generation overflow refused"))return 1;
+      |                               ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:89:92: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   89 |  for(unsigned i=0;i<256;++i){held.push_back(std::make_shared<Object>());if(!verify(bounded.bind(held.back())==i+1,"bounded owner allocation"))return 1;}
+      |                                                                                            ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp: In lambda function:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:90:32: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   90 |  if(!verify(throws([&]{bounded.bind(std::make_shared<Object>());}),"257th live owner refused"))return 1;
+      |                                ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:91:19: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   91 |  auto old=bounded.bind(held.front());held.front().reset();auto fresh=std::make_shared<Object>();auto next=bounded.bind(fresh);
+      |                   ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:91:115: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   91 |  auto old=bounded.bind(held.front());held.front().reset();auto fresh=std::make_shared<Object>();auto next=bounded.bind(fresh);
+      |                                                                                                                   ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:93:71: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   93 |  auto workspace=std::make_shared<Object>();auto wg=geometryWorkspaces.bind(workspace);
+      |                                                                       ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:94:65: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+   94 |  auto output=std::make_shared<Object>();auto og=geometryOutputs.bind(output);
+      |                                                                 ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:95:12: error: ‘geometryWorkAreaRevision’ was not declared in this scope
+   95 |  auto area=geometryWorkAreaRevision(wg,og,"[0,0,800,600]");
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:99:4: error: ‘outputGeneration’ was not declared in this scope
+   99 |  ++outputGeneration;auto config=geometryWorkAreaRevision(wg,og,"[0,20,800,580]");
+      |    ^~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:101:67: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+  101 |  auto output2=std::make_shared<Object>();auto og2=geometryOutputs.bind(output2);
+      |                                                                   ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:104:85: error: ‘struct GeometryOwners<std::weak_ptr<Object> >’ has no member named ‘bind’
+  104 |  workspace.reset();workspace=std::make_shared<Object>();auto wg2=geometryWorkspaces.bind(workspace);
+      |                                                                                     ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:107:2: error: ‘geometryAreaRevision’ was not declared in this scope; did you mean ‘geometryAreas’?
+  107 |  geometryAreaRevision=UINT64_MAX;
+      |  ^~~~~~~~~~~~~~~~~~~~
+      |  geometryAreas
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:123:22: error: ‘INT32_MAX’ was not declared in this scope
+  123 |  for(int value:{-1,3,INT32_MAX})if(!verify(throws([&]{geometryMode(static_cast<Fullscreen::eFullscreenMode>(value));}),"unknown mode refused"))return 1;
+      |                      ^~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-1791099483262522101/actual.cpp:123:22: note: ‘INT32_MAX’ is defined in header ‘<cstdint>’; this is probably fixable by adding ‘#include <cstdint>’

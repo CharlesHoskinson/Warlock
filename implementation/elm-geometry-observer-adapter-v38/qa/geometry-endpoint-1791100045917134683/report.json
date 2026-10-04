@@ -1,0 +1,547 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "effectsImplemented": false,
+  "scope": "Actual captured geometry decoder, legacy wire, applied unsafe mutants and deterministic transport CPU tests; no native authority/GUI",
+  "inputs": {
+    "qa/geometry-endpoint-test.py": "c51e5ad10e10a3f58baa20651e45d1d7d58adf75ea6b6b184023a19f14a56cfd",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "af542ec41ddcb7bc73b15723e7d8d9b340870901e5e9d0a4883b3babb876cc87",
+    "adapter/geometry_endpoint.py": "1e7a5fd2ea22f954e92b0d032c0a8ae6452153a14357f49f18ddf926df941912",
+    "adapter/inherited/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/inherited/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/legacy-upstream.json": "2f23a2c7de5593e896b6c4cc79809c264f09148ea233cd3fe3655057f724fb0b",
+    "adapter/geometry-upstream.json": "2fa90f1f25c24b65de9f1a91f16646fb949fcaadae8454900fb8879972f60f63"
+  },
+  "checks": [
+    {
+      "name": "ObserveOnlyAttachAndActualFieldRoundtrip",
+      "passed": true
+    },
+    {
+      "name": "CanonicalZeroMonitorIsAnIdentityNotMissingOutput",
+      "passed": true
+    },
+    {
+      "name": "FactsRequireSeparateGeometryAttach",
+      "passed": true
+    },
+    {
+      "name": "FreshFrontendRequiresNewGeometryAttach",
+      "passed": true
+    },
+    {
+      "name": "ExactSeparateNegotiationAndWatermarkedRequests",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:effects:True",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:operations:['maximize']",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:operations:['activate']",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:operations:['maximize', 'maximize']",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:effectProtocol:True",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:placementCapacity:255",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:canonicalScene:True",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCapability:observe:False",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCorrelation:requestId",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCorrelation:binding",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCorrelation:geometryProtocol",
+      "passed": true
+    },
+    {
+      "name": "RejectAttachCorrelation:protocolVersion",
+      "passed": true
+    },
+    {
+      "name": "RejectFactsCorrelationCounter:requestId",
+      "passed": true
+    },
+    {
+      "name": "RejectFactsCorrelationCounter:binding",
+      "passed": true
+    },
+    {
+      "name": "RejectFactsCorrelationCounter:sequence",
+      "passed": true
+    },
+    {
+      "name": "RejectFactsCorrelationCounter:revision",
+      "passed": true
+    },
+    {
+      "name": "RejectFactsCorrelationCounter:outputGeneration",
+      "passed": true
+    },
+    {
+      "name": "RejectFactsCorrelationCounter:geometryProtocol",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:workspaceGeneration:0",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:workspaceGeneration:01",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:workspaceGeneration:18446744073709551616",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:outputOwnershipGeneration:0",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:outputOwnershipGeneration:01",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:outputOwnershipGeneration:18446744073709551616",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:workAreaRevision:0",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:workAreaRevision:01",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:workAreaRevision:18446744073709551616",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:incarnation:0",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:incarnation:01",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowCounter:incarnation:18446744073709551616",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:workspace:'-9223372036854775809'",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:workspace:'+1'",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:workspace:'-0'",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:workspaceGeneration:None",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:monitor:None",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:workArea:None",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:nativeMode:'MAXIMIZED'",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:clientMode:1",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:minimized:0",
+      "passed": true
+    },
+    {
+      "name": "RejectWindowStateOrPair:fixedSize:1",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:logicalGeometry:[0, 0, 0, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:logicalGeometry:[0, 0, -1, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:logicalGeometry:[0, 0, nan, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:logicalGeometry:[True, 0, 1, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:logicalGeometry:[1e+308, 0, 1e+308, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:logicalGeometry:[0, 0, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:logicalGeometry:[0, 0, 1, inf]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:visualGeometry:[0, 0, 0, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:visualGeometry:[0, 0, -1, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:visualGeometry:[0, 0, nan, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:visualGeometry:[True, 0, 1, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:visualGeometry:[1e+308, 0, 1e+308, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:visualGeometry:[0, 0, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:visualGeometry:[0, 0, 1, inf]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:workArea:[0, 0, 0, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:workArea:[0, 0, -1, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:workArea:[0, 0, nan, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:workArea:[True, 0, 1, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:workArea:[1e+308, 0, 1e+308, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:workArea:[0, 0, 1]",
+      "passed": true
+    },
+    {
+      "name": "RejectRectangle:workArea:[0, 0, 1, inf]",
+      "passed": true
+    },
+    {
+      "name": "AdmitClosedNativeMode:ordinary",
+      "passed": true
+    },
+    {
+      "name": "AdmitClosedNativeMode:maximized",
+      "passed": true
+    },
+    {
+      "name": "AdmitClosedNativeMode:fullscreen",
+      "passed": true
+    },
+    {
+      "name": "AdmitWhollyAbsentPlacementGroups",
+      "passed": true
+    },
+    {
+      "name": "SignedWorkspaceMinimumAccepted",
+      "passed": true
+    },
+    {
+      "name": "FullUInt64RevisionPreservedAsString",
+      "passed": true
+    },
+    {
+      "name": "RejectContradictoryGeometryEligibility:floating",
+      "passed": true
+    },
+    {
+      "name": "RejectContradictoryGeometryEligibility:grouped",
+      "passed": true
+    },
+    {
+      "name": "RejectContradictoryGeometryEligibility:constrainedSize",
+      "passed": true
+    },
+    {
+      "name": "RejectContradictoryGeometryEligibility:minimized",
+      "passed": true
+    },
+    {
+      "name": "RejectContradictoryGeometryEligibility:nativeMode",
+      "passed": true
+    },
+    {
+      "name": "RejectContradictoryGeometryEligibility:clientMode",
+      "passed": true
+    },
+    {
+      "name": "InputBlockedCannotClaimGeometryEligibility",
+      "passed": true
+    },
+    {
+      "name": "AbsentWorkspaceCannotMixWithKnownOutputOwner",
+      "passed": true
+    },
+    {
+      "name": "GenerationCannotContradictItsKnownOwner:workspace",
+      "passed": true
+    },
+    {
+      "name": "GenerationCannotContradictItsKnownOwner:monitor",
+      "passed": true
+    },
+    {
+      "name": "GenerationCannotContradictItsKnownOwner:workAreaRevision",
+      "passed": true
+    },
+    {
+      "name": "GenerationCannotContradictItsKnownOwner:workArea",
+      "passed": true
+    },
+    {
+      "name": "SamePeerIdsWithDifferentNativeGenerationsRemainDistinct",
+      "passed": true
+    },
+    {
+      "name": "SameOutputOwnerTwoWorkspaceAreasAccepted",
+      "passed": true
+    },
+    {
+      "name": "RejectConflictingNativeOwner:monitor",
+      "passed": true
+    },
+    {
+      "name": "RejectConflictingNativeOwner:workspace",
+      "passed": true
+    },
+    {
+      "name": "RejectSameWorkspaceOwnerConflictingArea:outputOwnershipGeneration",
+      "passed": true
+    },
+    {
+      "name": "RejectSameWorkspaceOwnerConflictingArea:workAreaRevision",
+      "passed": true
+    },
+    {
+      "name": "RejectSameWorkspaceOwnerConflictingArea:workArea",
+      "passed": true
+    },
+    {
+      "name": "AppliedOriginalOutputScopeMutantCaughtByPositiveOracle",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:unknown-focus",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:unknown-owner",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:self-cycle",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:two-cycle",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:duplicate",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:extra-field",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:missing-field",
+      "passed": true
+    },
+    {
+      "name": "RejectGraphSchemaCapability:cap-exceeds-negotiation",
+      "passed": true
+    },
+    {
+      "name": "Actual256WindowBudgetAccepted",
+      "passed": true
+    },
+    {
+      "name": "257thWindowRefusedWithoutTruncation",
+      "passed": true
+    },
+    {
+      "name": "FutureClosedNegotiatedSubsetCanBeDecodedWithoutExecution",
+      "passed": true
+    },
+    {
+      "name": "LegacyHelloAndRestoreUnminimizeWireUnchanged",
+      "passed": true
+    },
+    {
+      "name": "ActualTransportAcceptsCompleteEofWithinSingleBudget",
+      "passed": true
+    },
+    {
+      "name": "ActualTransportRefusesEofArrivingAfterAbsoluteDeadline",
+      "passed": true
+    },
+    {
+      "name": "ConnectAndSendCannotEachResetDeadline",
+      "passed": true
+    },
+    {
+      "name": "FinalJsonParseMustFinishInsideOriginalDeadline",
+      "passed": true
+    },
+    {
+      "name": "TransportRejectsDuplicateJsonKeys",
+      "passed": true
+    },
+    {
+      "name": "TransportRejectsRawNonfiniteJson",
+      "passed": true
+    },
+    {
+      "name": "ActualOwnedUnixSocketPeerCompleteEofRoundtrip",
+      "passed": true
+    },
+    {
+      "name": "AppliedHistoricalLateEofMutantCaughtByRefusalOracle",
+      "passed": true
+    },
+    {
+      "name": "AppliedCapabilityBypassMutantCaughtByNegotiationOracle",
+      "passed": true
+    },
+    {
+      "name": "InheritedSourcePreserved:endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "InheritedSourcePreserved:effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "EffectEndpointLegacySourceByteUnchanged",
+      "passed": true
+    },
+    {
+      "name": "BaseEndpointAstOnlyAbsoluteTransportMethodChanged",
+      "passed": true
+    },
+    {
+      "name": "Accepted117ParentReportPreserved",
+      "passed": true
+    },
+    {
+      "name": "AcceptedParentSourcePreserved:adapter/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "AcceptedParentSourcePreserved:adapter/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "AcceptedParentSourcePreserved:adapter/geometry_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "AcceptedParentSourcePreserved:adapter/inherited/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "AcceptedParentSourcePreserved:adapter/inherited/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "AcceptedParentSourcePreserved:adapter/legacy-upstream.json",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:qa/geometry-endpoint-test.py",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:adapter/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:adapter/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:adapter/geometry_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:adapter/inherited/effect_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:adapter/inherited/endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:adapter/legacy-upstream.json",
+      "passed": true
+    },
+    {
+      "name": "CapturedAndOriginalInputPreserved:adapter/geometry-upstream.json",
+      "passed": true
+    }
+  ],
+  "checkCount": 132
+}

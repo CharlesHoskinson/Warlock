@@ -1,0 +1,82 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual extracted owner/workarea/number/rectangle/mode helper behavior; no native geometry eligibility/effect/menu acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/native/geometry.inc": "404b73265b2f0f85f4818fccd23dcd5edc796a3567be7ef2de6c1c2d812fc7b4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-authority-v35/qa/native-helper-test.py": "eec3ab5263ecf1b754dd7119b37d9b81a2223181ab368c5f473b73247fd1e23e"
+  },
+  "checks": [
+    {
+      "name": "actual",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "checks 297\n",
+      "stderr": ""
+    },
+    {
+      "name": "unsafe-owner-rebind",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL same owner stable generation\n"
+    },
+    {
+      "name": "unsafe-workarea-omits-rectangle",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL reserved-area-only change advances revision\n"
+    },
+    {
+      "name": "unsafe-workarea-omits-output-generation",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL same box output configuration change advances revision\n"
+    },
+    {
+      "name": "unsafe-nonfinite-number",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL nonfinite number refused\n"
+    },
+    {
+      "name": "unsafe-zero-rectangle",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL invalid rectangle refused\n"
+    }
+  ],
+  "artifacts": {
+    "geometry.inc": "404b73265b2f0f85f4818fccd23dcd5edc796a3567be7ef2de6c1c2d812fc7b4",
+    "native-helper-test.py": "eec3ab5263ecf1b754dd7119b37d9b81a2223181ab368c5f473b73247fd1e23e",
+    "report.json": "aa67be0ff36ed427f1cb59aa079afefae3864f9b6f158ebfdba260a0437aa449",
+    "actual.cpp": "cd64732af0d733a52e90a8a0a20810968d10afe5b869598baa929375d24b5644",
+    "actual": "9aa5cd445baa5bb08764c99b3b323d3c09b533429447b2ad12cc71188e461849",
+    "actual-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-run.log": "be08866dfb46ff69dc59ba3b89a3e735ec6d4dd52543e0d2e7d564a986f07df5",
+    "unsafe-owner-rebind.cpp": "e803c891e270f911f997ee600274678f7335175f3b2da85fe3dce22e6ea6cc6f",
+    "unsafe-owner-rebind": "5e7083c8ad939b02d58d28a1b829a5c77bbe12bb66611c23d541e91f9acd6ac3",
+    "unsafe-owner-rebind-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-owner-rebind-run.log": "f2182459c6d5c6fe1c3977b26f4209cd5469f6770c82c0ef309a3046c92f5107",
+    "unsafe-workarea-omits-rectangle.cpp": "1775fe17dddfcec8935ffac0f8ffb8c5e02d9dd11e828f5a2c39af2c20b488e4",
+    "unsafe-workarea-omits-rectangle": "b73f51f9050d988506d343187aaa088556622d3939cba2b00cba31b5ce89cc10",
+    "unsafe-workarea-omits-rectangle-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-workarea-omits-rectangle-run.log": "ca4e2309f909b3d0f15304adf72fb7126dc6a377ef1913654416cee54f6c0e4b",
+    "unsafe-workarea-omits-output-generation.cpp": "3161f4196e3968814015d5318f98ac35d62004fae415efd3c2f012ad67f2542d",
+    "unsafe-workarea-omits-output-generation": "9c2e6891da8e676d4374c0f9d47d12d82e3dfbf13105048f87afd041fef5dd5e",
+    "unsafe-workarea-omits-output-generation-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-workarea-omits-output-generation-run.log": "a9d38ca52f55d031a6d016f2b4168161f3d2043c5943bf14a7bb60f884de8a77",
+    "unsafe-nonfinite-number.cpp": "e0371f45eaa6000577f4f86898aa7c8d5ff091e00be75173d1692048d85977d4",
+    "unsafe-nonfinite-number": "bc86d37a768207c9c37308499ad02031131f9309e0556a083bc2408d51985b64",
+    "unsafe-nonfinite-number-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-nonfinite-number-run.log": "1a6b7fee7acea22fd894c8b9a27e66499e9e3b5550fbde59105bafbe85e7cdd3",
+    "unsafe-zero-rectangle.cpp": "745cbf7a4ca1557af5ae38234cc9e2e39b300c1267f465d66d5e2f836a5290d8",
+    "unsafe-zero-rectangle": "4e429aac0a73f218d21f98f0d706ee3a5c9b960a61787080e3a3ef434cf43a3a",
+    "unsafe-zero-rectangle-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-zero-rectangle-run.log": "1344f5f6598864f1b5f47e43c00ca37b280bb9e433c74a9d6e5c5789d45f7f57"
+  }
+}
