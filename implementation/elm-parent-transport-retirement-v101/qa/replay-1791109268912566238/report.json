@@ -1,0 +1,177 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual dispatch/poll/output destroy/destructor/frame-idle bodies with real Hyprutils weak/shared ownership; typed transport/core protocol fixtures; native transport and full refinement separate",
+  "commands": [
+    {
+      "name": "original-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/original.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/original"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "original-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/original"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/candidate.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "devices-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/devices.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/devices"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "devices-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/devices"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "descriptor-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/descriptor.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/descriptor"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "descriptor-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/descriptor"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "focus-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/focus.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/focus"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "focus-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay-1791109268912566238/focus"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/replay.py": "1a627d5329fe38a268153b6e13347c334aeabcc0a15b3411e0e7650858cdf58b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/template.cpp": "0889c19de1013460423ab7e2f87a0aa6c5e156fff1ca062c66772cccc1beb12b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-seat-publication-v79/candidate/src/backend/Wayland.cpp": "a3e4e82cbc1a98f890bd33e6fb0e89c2b5eec25678f0c675ba2e671186c7daa8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/candidate/src/backend/Wayland.cpp": "d0eef0e91cd7dd25eff243fd157030b8a7c6b9315830906b14a0824da2a33bde"
+  },
+  "candidateChecks": 60,
+  "error": "AssertionError()",
+  "artifacts": {
+    "original.cpp": "c5da767ae11988a119551baebb3f22242aed4b474b6e30047612805ceeb087ce",
+    "original": "a746d4e6f56bf0c5dd11a4e61e2752602b45415456053c56776b62232c99723b",
+    "original-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "original-run.stderr": "5fb6d4c16d14a2f32f18100de17e77de1ce6b02f3285ec3bb956d50d8caf8182",
+    "candidate.cpp": "635bbd8958dfe4bd749564e874f555ebf66acdd9b232d49cd74353dc57ddd51b",
+    "candidate": "bc379b656dcae10e7d37adcf22783ff5cf2517ab0e3835cb858cc62560e71463",
+    "candidate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-run.stdout": "6787d4851260252398d546529b7425fea4ecd4f877baf1971a85070f32c06dff",
+    "candidate-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices.cpp": "8333674526111942b504032134fcd3a6ef74f9499cc684dccc9e12c5edccfa2a",
+    "devices": "c45355617ea2e14fe356ec4c50df169e01b73bccff91cdd2849c228934bb8072",
+    "devices-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "devices-run.stderr": "5fb6d4c16d14a2f32f18100de17e77de1ce6b02f3285ec3bb956d50d8caf8182",
+    "descriptor.cpp": "51aa3799b9c13399bf94a1964f086def2e31b056201611aef1e8952b4466e3ab",
+    "descriptor": "05a6c4b78a3aa8bfd8bf9133385d7223200830f98490a56ce410508655a44b2f",
+    "descriptor-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "descriptor-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "descriptor-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "descriptor-run.stderr": "efdfc0cda99f10834ddab6f1b0b1e48d08a38d17fd5a17a05148b9124dcda0b0",
+    "focus.cpp": "92cba068442435b8c866f1c3f42aa0c04fa6b8b28f847662dcbe4bb0b23c5664",
+    "focus": "40926a7ca1e9313bdd292f831d3e774ed0956ceb6a86654ebd2ab81c440b1cf9",
+    "focus-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-run.stderr": "59cffa96f22c54d978600df13873f1eb06e7d4e8e1e825eac90582c2650874cb"
+  }
+}

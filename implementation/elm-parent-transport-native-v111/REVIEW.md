@@ -1,0 +1,1 @@
+V104 observes actual device/output retirement and kernel withdrawal, then its informational readlink fails because the removed event-source descriptor is already closed. Fresh V111 retains every behavioral assertion, adds a guarded closed-descriptor observation and completes stale-recipient/one-shot/normal-exit oracles. V104 retained with normal cleanup.

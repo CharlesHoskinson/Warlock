@@ -1,0 +1,16 @@
+
+  transport
+    1) lateCapabilityRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) lateCapabilityRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/qa/model-1791109921626959317/late-enable.qnt:32:98
+        32:   run lateCapabilityRefusedTest = init.then(loseConnection).then(dispatch).then(enable).then(all{assert(s.pointers==0 and s.keyboards==0),s'=s})
+                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=lateCapabilityRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 late-enable.qnt

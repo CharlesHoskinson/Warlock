@@ -1,0 +1,16 @@
+
+  transport
+    1) devicesRetiredTest failed after 1 test(s)
+
+  1 failed
+
+  1) devicesRetiredTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/qa/model-1791109921626959317/devices.qnt:25:78
+        25:   run devicesRetiredTest = init.then(loseConnection).then(dispatch).then(all{assert(s.pointers==0 and s.keyboards==0),s'=s})
+                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=devicesRetiredTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 devices.qnt

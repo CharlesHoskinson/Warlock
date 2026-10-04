@@ -1,0 +1,16 @@
+
+  transport
+    1) deferredDescriptorNotificationTest failed after 1 test(s)
+
+  1 failed
+
+  1) deferredDescriptorNotificationTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v102/qa/model-1791109471448396935/synchronous-notification.qnt:29:94
+        29:   run deferredDescriptorNotificationTest = init.then(loseConnection).then(dispatch).then(all{assert(s.notifyQueued and s.notifications==0),s'=s}).then(consumerIdle).then(all{assert(s.notifications==1 and not(s.notifyQueued)),s'=s})
+                                                                                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=deferredDescriptorNotificationTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 synchronous-notification.qnt

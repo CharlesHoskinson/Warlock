@@ -1,0 +1,16 @@
+
+  transport
+    1) pendingPublicationDiscardedTest failed after 1 test(s)
+
+  1 failed
+
+  1) pendingPublicationDiscardedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v101/qa/model-1791109377521919996/queue.qnt:27:91
+        27:   run pendingPublicationDiscardedTest = init.then(loseConnection).then(dispatch).then(all{assert(s.queued==0 and s.publications==0),s'=s})
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=pendingPublicationDiscardedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 queue.qnt

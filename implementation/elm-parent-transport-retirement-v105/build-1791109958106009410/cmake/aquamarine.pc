@@ -1,0 +1,10 @@
+prefix=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/prefix
+includedir=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/prefix/include
+libdir=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/build-1791109958106009410/prefix/lib
+
+Name: aquamarine
+URL: https://github.com/hyprwm/aquamarine
+Description: A very light linux rendering backend library
+Version: 0.15.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -laquamarine

@@ -1,0 +1,16 @@
+
+  transport
+    1) repeatedLossOneShotTest failed after 1 test(s)
+
+  1 failed
+
+  1) repeatedLossOneShotTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v105/qa/model-1791109921626959317/one-shot.qnt:30:151
+        30:   run repeatedLossOneShotTest = init.then(loseConnection).then(dispatch).then(dispatch).then(consumerIdle).then(dispatch).then(consumerIdle).then(all{assert(s.logs==1 and s.notifications==1),s'=s})
+                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=repeatedLossOneShotTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 one-shot.qnt

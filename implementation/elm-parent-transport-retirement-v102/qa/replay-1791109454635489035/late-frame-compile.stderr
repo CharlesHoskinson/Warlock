@@ -1,0 +1,5 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v102/qa/replay-1791109454635489035/late-frame.cpp: In member function ‘void Aquamarine::CWaylandOutput::scheduleFrame(scheduleFrameReason)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v102/qa/replay-1791109454635489035/late-frame.cpp:204:16: error: variable ‘lifecycle’ set but not used [-Werror=unused-but-set-variable=]
+  204 |     const auto lifecycle = outputLifecycle.find(this);
+      |                ^~~~~~~~~
+cc1plus: all warnings being treated as errors

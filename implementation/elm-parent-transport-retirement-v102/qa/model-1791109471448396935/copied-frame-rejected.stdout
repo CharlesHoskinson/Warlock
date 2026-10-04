@@ -1,0 +1,16 @@
+
+  transport
+    1) copiedFrameAfterRetirementTest failed after 1 test(s)
+
+  1 failed
+
+  1) copiedFrameAfterRetirementTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-retirement-v102/qa/model-1791109471448396935/copied-frame.qnt:31:108
+        31:   run copiedFrameAfterRetirementTest = init.then(loseConnection).then(dispatch).then(copiedFrame).then(all{assert(s.frames==0),s'=s})
+                                                                                                                       ^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=copiedFrameAfterRetirementTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 copied-frame.qnt

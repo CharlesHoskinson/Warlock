@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "b5e10f6e041e4f55a260b0f38449f173",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T10:29:18.072138+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-parent-transport-retirement-v103",
+  "nextWork": [
+    "V100 native exact-focused-child disconnect reproduced stale pointer/keyboard and HUP spin with normal cleanup; source V103 one-shot retirement, deferred poll notification, copied/late-frame fences under qualification. CPU63/7 mutants and Quint10/1000x40/8 mutants in V102 passed; V102 full library compiled but strict weak-template export audit failed, retained. V103 constructor no-inline export preservation under fresh proof/build; next owning native fault, kernel epoll withdrawal and normal input/output/geometry regressions. Other shared and staged integration owners preserved; full release remains open."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-transport-native-v100/qa/native-1791108974116577979/report.json",
+      "sha256": "9a3d65e92a039effb213024ba2950fb5aedba069afa24bb087fa579eb2cf96a8",
+      "size": 241587
+    },
+    {
+      "path": "implementation/elm-parent-transport-retirement-v102/build-1791109533273668446/report.json",
+      "sha256": "75d252cdf3ba8cc2c2d04840a1a81b69214ed92e9b356bbc6045bf7d0783f5df",
+      "size": 93992
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

@@ -1,0 +1,15 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c: In function ‘same_start’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:147:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  147 |     if (!bounded || !count) return false; info[count] = 0;
+      |     ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:147:43: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  147 |     if (!bounded || !count) return false; info[count] = 0;
+      |                                           ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:151:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  151 |     if (!token) return false; errno = 0; end = NULL;
+      |     ^~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:9:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:151:31: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  151 |     if (!token) return false; errno = 0; end = NULL;
+      |                               ^~~~~
+cc1: all warnings being treated as errors

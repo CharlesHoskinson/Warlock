@@ -1,0 +1,909 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      fd: true,
+      focus: true,
+      frameCopy: true,
+      frames: 0,
+      keyboards: 1,
+      logs: 0,
+      notifications: 0,
+      notifyQueued: false,
+      outputs: 1,
+      pointers: 1,
+      publications: 0,
+      queued: 1,
+      ready: true,
+      retired: false,
+      transport: true
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      fd: true,
+      focus: true,
+      frameCopy: true,
+      frames: 0,
+      keyboards: 1,
+      logs: 0,
+      notifications: 0,
+      notifyQueued: false,
+      outputs: 1,
+      pointers: 1,
+      publications: 0,
+      queued: 1,
+      ready: true,
+      retired: false,
+      transport: true
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      fd: true,
+      focus: true,
+      frameCopy: true,
+      frames: 0,
+      keyboards: 1,
+      logs: 0,
+      notifications: 0,
+      notifyQueued: false,
+      outputs: 1,
+      pointers: 1,
+      publications: 0,
+      queued: 1,
+      ready: true,
+      retired: false,
+      transport: true
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      fd: true,
+      focus: true,
+      frameCopy: true,
+      frames: 0,
+      keyboards: 1,
+      logs: 0,
+      notifications: 0,
+      notifyQueued: false,
+      outputs: 1,
+      pointers: 1,
+      publications: 0,
+      queued: 1,
+      ready: true,
+      retired: false,
+      transport: true
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      fd: true,
+      focus: true,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 1,
+      logs: 0,
+      notifications: 0,
+      notifyQueued: false,
+      outputs: 1,
+      pointers: 1,
+      publications: 0,
+      queued: 1,
+      ready: true,
+      retired: false,
+      transport: true
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      fd: true,
+      focus: true,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 1,
+      logs: 0,
+      notifications: 0,
+      notifyQueued: false,
+      outputs: 1,
+      pointers: 1,
+      publications: 0,
+      queued: 1,
+      ready: true,
+      retired: false,
+      transport: false
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 0,
+      notifyQueued: true,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 0,
+      notifyQueued: true,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 0,
+      notifyQueued: true,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      fd: false,
+      focus: false,
+      frameCopy: false,
+      frames: 1,
+      keyboards: 0,
+      logs: 1,
+      notifications: 1,
+      notifyQueued: false,
+      outputs: 0,
+      pointers: 0,
+      publications: 0,
+      queued: 0,
+      ready: false,
+      retired: true,
+      transport: false
+    }
+}
+
+[ok] No violation found (571ms at 1751 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x1349a --backend=typescript to reproduce.

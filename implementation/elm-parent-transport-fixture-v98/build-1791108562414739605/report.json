@@ -1,0 +1,113 @@
+{
+  "passed": false,
+  "installed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual private Weston parent input module/client compile; no GUI or recipient delivery acceptance",
+  "commands": [
+    {
+      "name": "protocol-server-header",
+      "command": [
+        "/usr/bin/wayland-scanner",
+        "server-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/generated/parent-input-server.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "protocol-client-header",
+      "command": [
+        "/usr/bin/wayland-scanner",
+        "client-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/generated/parent-input-client.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "protocol-private-code",
+      "command": [
+        "/usr/bin/wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/generated/parent-input-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "server-flags",
+      "command": [
+        "/usr/bin/pkg-config",
+        "--cflags",
+        "--libs",
+        "wayland-server",
+        "pixman-1",
+        "xkbcommon"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "client-flags",
+      "command": [
+        "/usr/bin/pkg-config",
+        "--cflags",
+        "--libs",
+        "wayland-client"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "module-build",
+      "command": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/generated",
+        "-fPIC",
+        "-shared",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/generated/parent-input-protocol.c",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-Wl,-z,defs",
+        "-Wl,--dependency-file=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/module-link.d",
+        "-MMD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/module.d",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/parent-input.so"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "inputs": {
+    "build.py": "778ef2cf0caa45fd8862739efad658dc2eaed8e89ad3996fb5c5a976b69a8e35",
+    "fixture.py": "2db8ac2d1d75bf622f1c01749c35c0fe3958a36ec1de1d887274ccf1deb20a3d",
+    "qa/fixture-inspection.py": "9b01ed56aed909abaad94758cd526ff74069517b2fb18a07efd8687a73a72291",
+    "native/SOURCE-API.md": "914aa16dd1322656f3604f6dd54e1814b8f9cc0abfe9adc526b72164e20c09c9",
+    "native/parent-input-client.c": "aad6bbed452d946a74ce5b0af8caee9ae16649500d99869f1d0f45a5be69bb20",
+    "native/parent-input-module.c": "6677a38c183e3176d95eb71fcdc513c3c12d504a00972c7689a7b06007df2926",
+    "native/parent-input.xml": "31687223873c7f3944b37b8bd6eadba741e83e80cfd6786a1519fee6e58f8271"
+  },
+  "owningFiles": {
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/libweston/backend.h": "485871602e378ee595d6378b7b839583553e11c10862205d260fd114a4144d92",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/libweston/libweston-internal.h": "81c0f9de369068ff22dac30baa8c2f93c8b4f5d852ffc7c1868d6c273947d8f2",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/libweston/input.c": "7da43fb58c68b0d801326b42f4317c43cec4f4dcac9dba5c01b1fb13a8810d97",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/frontend/main.c": "9abaf6dfda706fa07dd932a1abc9532d35d9335b5f6fcc9a4fe55eb277803a15",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/libweston/backend-headless/headless.c": "1d531f896c0d39cba5998895e5b551aaba17cef708cf2ce259448c2202d4b8c4",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0.0.1": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston": "92eb1efcb198121871916f6de2899fc7671bfe4f6b72a89c05c904ba26306ae3",
+    "/usr/bin/wayland-scanner": "ce267015aacab2108ac8a76f273ef5431161603e1b63c7d976847b3f467bef51"
+  },
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c: In function \u2018same_start\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:147:5: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\\n  147 |     if (!bounded || !count) return false; info[count] = 0;\\n      |     ^~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:147:43: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\\n  147 |     if (!bounded || !count) return false; info[count] = 0;\\n      |                                           ^~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:151:5: error: this \u2018if\u2019 clause does not guard... [-Werror=misleading-indentation]\\n  151 |     if (!token) return false; errno = 0; end = NULL;\\n      |     ^~\\nIn file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:9:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-transport-fixture-v98/build-1791108562414739605/inputs/native/parent-input-module.c:151:31: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the \u2018if\u2019\\n  151 |     if (!token) return false; errno = 0; end = NULL;\\n      |                               ^~~~~\\ncc1: all warnings being treated as errors\\n')"
+}
