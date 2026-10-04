@@ -1,0 +1,16 @@
+
+  hit
+    1) ownerReplacementFencesTaskTest failed after 1 test(s)
+
+  1 failed
+
+  1) ownerReplacementFencesTaskTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-hit-test-model-v73/qa/model-1791104517432393468/owner-reused.qnt:41:123
+        41:   run ownerReplacementFencesTaskTest = init.then(pointerLayout).then(windowLayout).then(replaceOwner).then(idle).then(all{assert(s.repicks==0),s'=s})
+                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xd73f --match=ownerReplacementFencesTaskTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 owner-reused.qnt

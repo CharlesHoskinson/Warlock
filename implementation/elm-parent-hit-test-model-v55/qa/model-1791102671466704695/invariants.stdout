@@ -1,0 +1,827 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: true,
+      focusGen: 1,
+      inBus: false,
+      live: true,
+      monitorGen: 1,
+      owner: 1,
+      parentFocus: true,
+      pointerGen: 1,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: true,
+      focusGen: 1,
+      inBus: false,
+      live: true,
+      monitorGen: 1,
+      owner: 1,
+      parentFocus: true,
+      pointerGen: 1,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: true,
+      focusGen: 0,
+      inBus: true,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: true,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: true,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: true,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: true,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: false,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: false,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: false,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: false,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: false,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: true,
+      monitorGen: 2,
+      owner: 1,
+      parentFocus: false,
+      pointerGen: 2,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: true,
+      live: true,
+      monitorGen: 3,
+      owner: 1,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: true,
+      live: true,
+      monitorGen: 3,
+      owner: 2,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: true,
+      live: false,
+      monitorGen: 3,
+      owner: 2,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: true,
+      live: false,
+      monitorGen: 3,
+      owner: 2,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 2
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 2,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 3,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 3,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 3,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      anchor: true,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: true,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 4,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 5,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 5,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 5,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      anchor: false,
+      deviceAlive: false,
+      focusGen: 0,
+      inBus: false,
+      live: false,
+      monitorGen: 3,
+      owner: 6,
+      parentFocus: false,
+      pointerGen: 3,
+      queued: false,
+      queuedOwner: 1,
+      repicks: 0,
+      windowGen: 3
+    }
+}
+
+[ok] No violation found (671ms at 1490 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0xd6da --backend=typescript to reproduce.

@@ -1,0 +1,16 @@
+
+  hit
+    1) ordinaryCommitPreservesProgrammaticFocusTest failed after 1 test(s)
+
+  1 failed
+
+  1) ordinaryCommitPreservesProgrammaticFocusTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-hit-test-model-v73/qa/model-1791104517432393468/ordinary-commit-steals-focus.qnt:44:123
+        44:   run ordinaryCommitPreservesProgrammaticFocusTest = init.then(programmaticFocus).then(surfaceCommit).then(idle).then(all{assert(s.repicks==0 and s.focusOwner==2),s'=s})
+                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xd741 --match=ordinaryCommitPreservesProgrammaticFocusTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ordinary-commit-steals-focus.qnt

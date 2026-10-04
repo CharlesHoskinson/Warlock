@@ -1,0 +1,215 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Sampled serialized bus/idle ordering abstraction; models separate layout/surface generations and excludes coordinates, native transport and rendering",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "hit.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "hit.qnt",
+        "--backend=typescript",
+        "--match=^(listenerOrderRepairedTest|noIdleDuringDispatchTest|latestLayoutCoalescesTest|supersedingMotionFencesTaskTest|parentFocusLossFencesTaskTest|deviceRetirementFencesTaskTest|ownerReplacementFencesTaskTest|shutdownFencesTaskTest|delayedCommitRepairsEmptyFocusTest|supersededCommitDoesNotQueueTest)$",
+        "--max-samples=1",
+        "--seed=55001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "hit.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=55002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "during-bus.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "during-bus.qnt",
+        "--backend=typescript",
+        "--match=^noIdleDuringDispatchTest$",
+        "--max-samples=1",
+        "--seed=55100"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "superseded.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "superseded.qnt",
+        "--backend=typescript",
+        "--match=^supersedingMotionFencesTaskTest$",
+        "--max-samples=1",
+        "--seed=55101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "focus-loss.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "focus-loss.qnt",
+        "--backend=typescript",
+        "--match=^parentFocusLossFencesTaskTest$",
+        "--max-samples=1",
+        "--seed=55102"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "owner-reused.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "owner-reused.qnt",
+        "--backend=typescript",
+        "--match=^ownerReplacementFencesTaskTest$",
+        "--max-samples=1",
+        "--seed=55103"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "missing-commit-refresh.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "missing-commit-refresh.qnt",
+        "--backend=typescript",
+        "--match=^delayedCommitRepairsEmptyFocusTest$",
+        "--max-samples=1",
+        "--seed=55104"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "listenerOrderRepairedTest",
+    "noIdleDuringDispatchTest",
+    "latestLayoutCoalescesTest",
+    "supersedingMotionFencesTaskTest",
+    "parentFocusLossFencesTaskTest",
+    "deviceRetirementFencesTaskTest",
+    "ownerReplacementFencesTaskTest",
+    "shutdownFencesTaskTest",
+    "delayedCommitRepairsEmptyFocusTest",
+    "supersededCommitDoesNotQueueTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 5,
+  "sourceSHA256": "25cd958ea303b677084aa5fe6b253c6bb70b013f5bc0105b9c2b340995dfc140",
+  "artifacts": {
+    "hit.qnt": "25cd958ea303b677084aa5fe6b253c6bb70b013f5bc0105b9c2b340995dfc140",
+    "model.py": "4637b25be6795a7a361278a909b3eadab467d30ec79094729b92971be874e108",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-listenerOrderRepairedTest-0.itf.json": "d70ae75f1984182cc753c2c9b53f6abacaa4972079ad1b21011910e126d61f88",
+    "named-noIdleDuringDispatchTest-1.itf.json": "23662f8c1691e52e110fa9f42d5bbbde34f44c84dd40c806cddc3e7792930a10",
+    "named-latestLayoutCoalescesTest-2.itf.json": "e30333bf6ac67787c6fc8532ca53b1b8a7a63d6b2a7d92c67d438251f33f425c",
+    "named-supersedingMotionFencesTaskTest-3.itf.json": "b95616c5bfb0d0d97350dc597984ae8f1d8da33f40e166a65021a10e9d0e691e",
+    "named-parentFocusLossFencesTaskTest-4.itf.json": "d9e63a16f7d7a3cf14b87362d0749f93cc51169be2beeb0ab823e2fb35cd9c30",
+    "named-deviceRetirementFencesTaskTest-5.itf.json": "e886b4269f6b4b6fe5761adb1b221ff9dd20489a76e3e7674d56c6b064127108",
+    "named-ownerReplacementFencesTaskTest-6.itf.json": "2d9ead27406503e3be7c5522a927b289ef3e986b61752cd68e87d3a3b2f6fa9f",
+    "named-delayedCommitRepairsEmptyFocusTest-7.itf.json": "8745a638b238d53013234a2022c25de37dda98003db00a800f6fa6f8a584e494",
+    "named-supersededCommitDoesNotQueueTest-8.itf.json": "6243fb64b42d4cac0ba190d2237c7f1c383c2326edb9c4657e414d4ee8158c9d",
+    "named-shutdownFencesTaskTest-9.itf.json": "63409833de4e6a6837a50630c8aebe36c51209d84b78240b5ba505b2f8298f49",
+    "named.stdout": "913cc057fd5fdadad1d62d75b1dcd7f77733c484316646123be7ff502fbe67a4",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "b10152b4c73ed4f98efe7a093164d617e5873b98d8c52c629ec800c9e4ed7d18",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "during-bus.qnt": "7d748223db4910e5dd4fc310bc694cfcab81cdeb0518ee819725e8be233d4a94",
+    "during-bus-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "during-bus-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "during-bus-rejected.stdout": "aab0bc9e8d406f9b5b75ff17ca65d5210ba11d7bca84349990cf877098a9b386",
+    "during-bus-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "superseded.qnt": "62234d36716102f108148b8e36fb3e3e4fe58178046b02dd345587012790dcdf",
+    "superseded-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseded-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseded-rejected.stdout": "a0c01bf6002a1f6a801cf5ac71e1829887f077793f8e442e729aefb6780d7dcc",
+    "superseded-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "focus-loss.qnt": "67230ca12c7ba9df47c26b05c598e47710019eae883a76a9a1c345c37e376630",
+    "focus-loss-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-loss-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-loss-rejected.stdout": "12b3cde227db346307ab94ff543343702a88d0d47a2bd624dbae9f55d241b86b",
+    "focus-loss-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "owner-reused.qnt": "edc49bb34be4080590f89dd3356153c76d56a1e286ea0c332ca09766b255616f",
+    "owner-reused-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-reused-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-reused-rejected.stdout": "5cc3f8ef6a307cb5862aa43b97ec1215cff2981e632b874c2fd2d65997a615b9",
+    "owner-reused-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "missing-commit-refresh.qnt": "a5093662065a0d4ec257c835b7b6fdab939ad5f24c7edad0893dbb292c65c6b8",
+    "missing-commit-refresh-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-commit-refresh-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-commit-refresh-rejected.stdout": "e2a0266ec93f1b3c5611b96c5f92b22740fdc7a7c53b3a6f8431b937f8eecd6f",
+    "missing-commit-refresh-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

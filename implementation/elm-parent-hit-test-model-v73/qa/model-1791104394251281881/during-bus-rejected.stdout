@@ -1,0 +1,16 @@
+
+  hit
+    1) noIdleDuringDispatchTest failed after 1 test(s)
+
+  1 failed
+
+  1) noIdleDuringDispatchTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-hit-test-model-v73/qa/model-1791104394251281881/during-bus.qnt:36:79
+        36:   run noIdleDuringDispatchTest = init.then(pointerLayout).then(idle).then(all{assert(s.queued and s.repicks==0 and s.focusGen==0),s'=s}).then(windowLayout).then(surfaceCommit).then(idle).then(all{assert(s.focusGen==2),s'=s})
+                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xd73c --match=noIdleDuringDispatchTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 during-bus.qnt

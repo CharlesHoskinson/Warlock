@@ -1,0 +1,421 @@
+{
+  "schema": 1,
+  "passed": true,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "scope": "Owning deferred parent hit-test core compile and bounded model/helper proof only",
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v66/build-1791103506110689405/report.json",
+  "buildReportSHA256": "805e63bebffd29548f400d1bf9e0cb0ffcc84cbf6224be53fb89730b7330fa53",
+  "files": [
+    {
+      "path": "archive.py",
+      "sha256": "baa4d8e16e5050dcfc3063da931552f5bfda66dee53e079908c8b850b4259087",
+      "size": 1242
+    },
+    {
+      "path": "build-1791103506110689405/Hyprland",
+      "sha256": "ecef185b528714e9f6a8c805f1dd85cf1b788a1ac39896dfa0b6bf8123962d4b",
+      "size": 19622664
+    },
+    {
+      "path": "build-1791103506110689405/PointerManager.cpp.d",
+      "sha256": "b55a444112f1f74b3998495e1c8a4bd0b149500dbf78eb0318733afb0498dbf9",
+      "size": 35150
+    },
+    {
+      "path": "build-1791103506110689405/PointerManager.cpp.o",
+      "sha256": "0373e74a5cb3ef5b0dbc7919a78d3c93a47e1419b5f95377abce711ca78502b9",
+      "size": 694456
+    },
+    {
+      "path": "build-1791103506110689405/Window.cpp.d",
+      "sha256": "29c5b87fd271b91ea12a2363109126f11028ce70dd35358e4e3d530db26021fd",
+      "size": 39799
+    },
+    {
+      "path": "build-1791103506110689405/Window.cpp.o",
+      "sha256": "a9f4c32316dfa9441515a015a925a4148d16a1a5bc99118c06643c435b8d3ef5",
+      "size": 1052856
+    },
+    {
+      "path": "build-1791103506110689405/ancestor-archive-payloads.json",
+      "sha256": "7fb24720d2ebf4d92be7892c60ec3ab335f0b849f449fcd9e2db13bcfb9ca929",
+      "size": 63214
+    },
+    {
+      "path": "build-1791103506110689405/archive.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791103506110689405/archive.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791103506110689405/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791103506110689405/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791103506110689405/inputs/archive.py",
+      "sha256": "baa4d8e16e5050dcfc3063da931552f5bfda66dee53e079908c8b850b4259087",
+      "size": 1242
+    },
+    {
+      "path": "build-1791103506110689405/inputs/build.py",
+      "sha256": "77fe8ea3e15030702b84c3a9457716206c71d579924e8a6161cd049cee3f3d85",
+      "size": 8606
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/SceneModal.hpp",
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+      "size": 2863
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/SceneTrace.hpp",
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+      "size": 1303
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/WindowPolicy.hpp",
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+      "size": 311
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/src/desktop/view/Window.cpp",
+      "sha256": "963762b564dfc3ab8abbce91f9a9f64c37802de7b4e6c20ba4b6b642c4bad0f8",
+      "size": 124612
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/src/pointer/CursorBufferExtent.hpp",
+      "sha256": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+      "size": 1687
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/src/pointer/ParentNormalizedPosition.hpp",
+      "sha256": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112",
+      "size": 987
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/src/pointer/ParentPointerFocus.hpp",
+      "sha256": "b4a0fe2b3e56d17b6be81cab101eea315c9260275c50298fb06799704f95dc86",
+      "size": 146
+    },
+    {
+      "path": "build-1791103506110689405/inputs/candidate/src/pointer/PointerManager.cpp",
+      "sha256": "48210acbd9dff396d34bf9a7fdefa5ed3e7dc454786f447911b9e7a88dedb1d4",
+      "size": 51856
+    },
+    {
+      "path": "build-1791103506110689405/inputs/qa/template.cpp",
+      "sha256": "ae90fb5f217ba3f0d401070ff89b9986b7a62f9267134e7f637c2a9c1188498a",
+      "size": 6051
+    },
+    {
+      "path": "build-1791103506110689405/inputs/qa/template2.cpp",
+      "sha256": "476dcd546fcc67de90466d25320b50ca3d27d6a736a5891d67b25cbb5951b09c",
+      "size": 6085
+    },
+    {
+      "path": "build-1791103506110689405/inputs/qa/test.py",
+      "sha256": "19eac1c470d74f440f5e3872d4f5c0d741d87b52ff6665486c9c733f5f0c376c",
+      "size": 3470
+    },
+    {
+      "path": "build-1791103506110689405/inputs/qa/test2.py",
+      "sha256": "5e8b51dc828517a8758a966e652af1516c1b3ccf96d107cfa2e9e8702a35f7fe",
+      "size": 3510
+    },
+    {
+      "path": "build-1791103506110689405/libhyprland_lib.a",
+      "sha256": "cd34ca714e4a95319a4993f56504335259a8b11180d2b2ae3efc270b73971edf",
+      "size": 91299280
+    },
+    {
+      "path": "build-1791103506110689405/link.d",
+      "sha256": "c0ff57a20f771b542e46d61ac8d094673f636dc47243f57ef9106e3fa7950122",
+      "size": 16967
+    },
+    {
+      "path": "build-1791103506110689405/link.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791103506110689405/link.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791103506110689405/new-archive-payloads.json",
+      "sha256": "36077d4c3e8860354eff4759b2a54d29c4eaf0b50557d61fdd26f028f817d391",
+      "size": 63214
+    },
+    {
+      "path": "build-1791103506110689405/original-PointerManager.cpp",
+      "sha256": "83c69d93f09088f1e2383a9c85a54cf3f55718d9506a1121058afef77911223a",
+      "size": 44638
+    },
+    {
+      "path": "build-1791103506110689405/original-Window.cpp",
+      "sha256": "d735d454cc4b7983f19626514d310669047da46780c509ffae68ccf072211ded",
+      "size": 124226
+    },
+    {
+      "path": "build-1791103506110689405/report.json",
+      "sha256": "805e63bebffd29548f400d1bf9e0cb0ffcc84cbf6224be53fb89730b7330fa53",
+      "size": 100715
+    },
+    {
+      "path": "build-1791103506110689405/window-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791103506110689405/window-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build.py",
+      "sha256": "77fe8ea3e15030702b84c3a9457716206c71d579924e8a6161cd049cee3f3d85",
+      "size": 8606
+    },
+    {
+      "path": "candidate/SceneModal.hpp",
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+      "size": 2863
+    },
+    {
+      "path": "candidate/SceneTrace.hpp",
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+      "size": 1303
+    },
+    {
+      "path": "candidate/WindowPolicy.hpp",
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+      "size": 311
+    },
+    {
+      "path": "candidate/src/desktop/view/Window.cpp",
+      "sha256": "963762b564dfc3ab8abbce91f9a9f64c37802de7b4e6c20ba4b6b642c4bad0f8",
+      "size": 124612
+    },
+    {
+      "path": "candidate/src/pointer/CursorBufferExtent.hpp",
+      "sha256": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+      "size": 1687
+    },
+    {
+      "path": "candidate/src/pointer/ParentNormalizedPosition.hpp",
+      "sha256": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112",
+      "size": 987
+    },
+    {
+      "path": "candidate/src/pointer/ParentPointerFocus.hpp",
+      "sha256": "b4a0fe2b3e56d17b6be81cab101eea315c9260275c50298fb06799704f95dc86",
+      "size": 146
+    },
+    {
+      "path": "candidate/src/pointer/PointerManager.cpp",
+      "sha256": "48210acbd9dff396d34bf9a7fdefa5ed3e7dc454786f447911b9e7a88dedb1d4",
+      "size": 51856
+    },
+    {
+      "path": "freeze.py",
+      "sha256": "058986ec4b18aa7a20941330538a073ada74914e9fb3b8902cf00373fb4c1673",
+      "size": 1297
+    },
+    {
+      "path": "qa/template.cpp",
+      "sha256": "ae90fb5f217ba3f0d401070ff89b9986b7a62f9267134e7f637c2a9c1188498a",
+      "size": 6051
+    },
+    {
+      "path": "qa/template2.cpp",
+      "sha256": "476dcd546fcc67de90466d25320b50ca3d27d6a736a5891d67b25cbb5951b09c",
+      "size": 6085
+    },
+    {
+      "path": "qa/test-1791103487114370575/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/extracted-helper.cpp",
+      "sha256": "688935f3e1517369f19ebcb3c667684f47bce5d61775337293da6396bfab5958",
+      "size": 1757
+    },
+    {
+      "path": "qa/test-1791103487114370575/geometry",
+      "sha256": "21448a96700d91ea14bf34c9dfe7b23ca7ff1d2690f1810d650194931a0457e9",
+      "size": 48784
+    },
+    {
+      "path": "qa/test-1791103487114370575/geometry-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/geometry-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/geometry-rejected.stderr",
+      "sha256": "00cccb6b0b6907133c748f73281537d20f8eba9607c4e73a4ea7f2b6f073893d",
+      "size": 10
+    },
+    {
+      "path": "qa/test-1791103487114370575/geometry-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/geometry.cpp",
+      "sha256": "deadfa038b2de8f3f6a73489f050d05e72147cf0907b8c1ffada5990084d8b96",
+      "size": 7991
+    },
+    {
+      "path": "qa/test-1791103487114370575/ownership",
+      "sha256": "b6b1031206738b773bcdc0b5fa50df79c4ce0c8b2d6d5d9ee49cedbb02f40d51",
+      "size": 48784
+    },
+    {
+      "path": "qa/test-1791103487114370575/ownership-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/ownership-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/ownership-rejected.stderr",
+      "sha256": "66badc9e4c583ebc1d2bb2d3d1fbc56b037fc6157989b06c92775de3efedcb7d",
+      "size": 10
+    },
+    {
+      "path": "qa/test-1791103487114370575/ownership-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/ownership.cpp",
+      "sha256": "12ca9aa4c0c384df5d457b955de727097e61fa1528756a341784bf3a2451a150",
+      "size": 7995
+    },
+    {
+      "path": "qa/test-1791103487114370575/readiness",
+      "sha256": "dd726c4da4be8a43f15eab889a74f4e2eed7b09bf107f1e8fc61e5351ae04891",
+      "size": 48728
+    },
+    {
+      "path": "qa/test-1791103487114370575/readiness-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/readiness-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/readiness-rejected.stderr",
+      "sha256": "a97ba1e35d6cbef881e75356999223604d15b7f540d1ee93d3d4cfc1b118c13f",
+      "size": 9
+    },
+    {
+      "path": "qa/test-1791103487114370575/readiness-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/readiness.cpp",
+      "sha256": "3911c7758f750a61bc5516970db59b898639a24032c41cbdef8dcf46c56702a6",
+      "size": 7961
+    },
+    {
+      "path": "qa/test-1791103487114370575/report.json",
+      "sha256": "6f51bc1b4cf77e9dfdd1181a81212ca24124294103732528ed7a8865be8127d3",
+      "size": 8288
+    },
+    {
+      "path": "qa/test-1791103487114370575/superseding",
+      "sha256": "35227a5176be9a6e2d4f1cdd30b11c747d20b9619b4aed9f03dbb4dd4f13c28a",
+      "size": 48784
+    },
+    {
+      "path": "qa/test-1791103487114370575/superseding-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/superseding-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/superseding-rejected.stderr",
+      "sha256": "c404b4048910d1bd72165bf143ceedd697b0b90b2a1d7e87cacefbd1c0610072",
+      "size": 9
+    },
+    {
+      "path": "qa/test-1791103487114370575/superseding-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/superseding.cpp",
+      "sha256": "b08feb886ec9b8100d91ecc39553c43945995238bdd583d825d04eeb7d10fd8d",
+      "size": 8012
+    },
+    {
+      "path": "qa/test-1791103487114370575/test",
+      "sha256": "f4b6b37d56708c1fc16f8677c1796aa028741dcd1c46d019455c0cd8f15f1ce2",
+      "size": 48776
+    },
+    {
+      "path": "qa/test-1791103487114370575/test.cpp",
+      "sha256": "b4b435a91de4c3b7b57dd12e605671c1ee261a9513e2c7d21e5055a0445df8d7",
+      "size": 8043
+    },
+    {
+      "path": "qa/test-1791103487114370575/test.py",
+      "sha256": "5e8b51dc828517a8758a966e652af1516c1b3ccf96d107cfa2e9e8702a35f7fe",
+      "size": 3510
+    },
+    {
+      "path": "qa/test-1791103487114370575/test.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791103487114370575/test.stdout",
+      "sha256": "70ac142b513797a5923fb6c355ff3fcefc28edd34d14b3731a6154a87fbccf84",
+      "size": 11
+    },
+    {
+      "path": "qa/test.py",
+      "sha256": "19eac1c470d74f440f5e3872d4f5c0d741d87b52ff6665486c9c733f5f0c376c",
+      "size": 3470
+    },
+    {
+      "path": "qa/test2.py",
+      "sha256": "5e8b51dc828517a8758a966e652af1516c1b3ccf96d107cfa2e9e8702a35f7fe",
+      "size": 3510
+    }
+  ]
+}

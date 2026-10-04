@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "c0f15de4563640a2836350e2465768cb",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T09:11:52.569827+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-parent-hit-test-acceptance-v78",
+  "nextWork": [
+    "V72 pending-layout/deferred hit testing plus hovered-window commit refresh preserves restored-window focus; exactV74 core/plugin with unchangedV30 AQ passes new two-child-output51, original focus/capability159, cursor/stationary195 and Elm menu68 with normalcleanup. V73 Quint13/1000 samples/6 mutants; extracted29/5 mutants; two changed archive objects/431 unchanged; V78 freezes3135files/11 failed reports. Next integrate changes into latest geometry/shared-shell source (preserve newer Window.cpp), qualify coherent tuple, native AQ configure-generation/queued publication retirement and hardware/AT/IME/budgets/full S01-S16 release gates."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-hit-test-acceptance-v78/acceptance-manifest.json",
+      "sha256": "08802e5ba9cdf1531bcb9843b6025734f1e2e78b46cabdc9f97a411f4e6a8259",
+      "size": 742359
+    },
+    {
+      "path": "docs/elm-roadmap/delivery/PARENT-HIT-TEST-V78-ACCEPTANCE.md",
+      "sha256": "8a77836bd3b781cd86f43af489041332b0a1425215266531725052e85a64a437",
+      "size": 8784
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

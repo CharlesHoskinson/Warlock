@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "97ccf03fc8ee4fa8b91c835f0e41d272",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T08:45:47.129832+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-core-parent-hit-test-v66",
+  "nextWork": [
+    "Actual V53 two-output/nonzero-origin case exposed empty child pointer focus after layout despite correct cursor; V56 real multi-pixel motion restores delivery. V57 deferred repick fixes moved origin but V59 reverse resize needs asynchronous visible surface commit refresh. V63 Quint10/1000 samples/5 mutants and V66 extracted24/4 mutants pass; build preserves actual V13 Window minimized-input guard. Next exact pair V64 then original multioutput51, focus159, cursor195, menu68 native oracles; integration with latest geometry/shared-shell and full release gates remain open."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-hit-test-model-v63/qa/model-1791103227852833622/report.json",
+      "sha256": "647e6e88db1aaee2f1cadf95a9fd0c995ae0ef5be6b233d379eb8ee8e0326b8c",
+      "size": 9635
+    },
+    {
+      "path": "implementation/elm-core-parent-hit-test-v66/qa/test-1791103487114370575/report.json",
+      "sha256": "6f51bc1b4cf77e9dfdd1181a81212ca24124294103732528ed7a8865be8127d3",
+      "size": 8288
+    },
+    {
+      "path": "implementation/elm-parent-multioutput-fixed-v59/qa/native-1791103068611529186/report.json",
+      "sha256": "828a7b4374ef98e6ae39d8b75392b5e73a985512c31add5a44391c3d6b99a0e1",
+      "size": 365830
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

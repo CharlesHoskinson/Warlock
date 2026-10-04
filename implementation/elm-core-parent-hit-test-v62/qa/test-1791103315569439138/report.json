@@ -1,0 +1,37 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual deferred hit-test helper with typed weak ownership, event-loop, monitor/query and InputManager mocks; native routing excluded",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/candidate/src/pointer/PointerManager.cpp": "48210acbd9dff396d34bf9a7fdefa5ed3e7dc454786f447911b9e7a88dedb1d4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/template.cpp": "ae90fb5f217ba3f0d401070ff89b9986b7a62f9267134e7f637c2a9c1188498a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test.py": "19eac1c470d74f440f5e3872d4f5c0d741d87b52ff6665486c9c733f5f0c376c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/candidate/src/desktop/view/Window.cpp": "b616d7bc1f50647399f368397782ffbcd0682e5b384bd977c5cacc07b4d1d5f1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/candidate/src/pointer/ParentPointerFocus.hpp": "b4a0fe2b3e56d17b6be81cab101eea315c9260275c50298fb06799704f95dc86"
+  },
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:102:36: error: \u2018void Pointer::refreshParentHitTest()\u2019 should have been declared inside \u2018Pointer\u2019\\n  102 | void Pointer::refreshParentHitTest() {\\n      |                                    ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp: In function \u2018int main()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:146:38: error: \u2018refreshParentHitTest\u2019 is not a member of \u2018Pointer\u2019; did you mean \u2018Pointer::refreshParentHitTest\u2019?\\n  146 |     input.windowsMoved=true;Pointer::refreshParentHitTest();Pointer::refreshParentHitTest();check(loop.tasks.size()==1);\\n      |                                      ^~~~~~~~~~~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:102:6: note: \u2018Pointer::refreshParentHitTest\u2019 declared here\\n  102 | void Pointer::refreshParentHitTest() {\\n      |      ^~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:146:70: error: \u2018refreshParentHitTest\u2019 is not a member of \u2018Pointer\u2019; did you mean \u2018Pointer::refreshParentHitTest\u2019?\\n  146 |     input.windowsMoved=true;Pointer::refreshParentHitTest();Pointer::refreshParentHitTest();check(loop.tasks.size()==1);\\n      |                                                                      ^~~~~~~~~~~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:102:6: note: \u2018Pointer::refreshParentHitTest\u2019 declared here\\n  102 | void Pointer::refreshParentHitTest() {\\n      |      ^~~~~~~\\n')",
+  "artifacts": {
+    "test.py": "19eac1c470d74f440f5e3872d4f5c0d741d87b52ff6665486c9c733f5f0c376c",
+    "extracted-helper.cpp": "688935f3e1517369f19ebcb3c667684f47bce5d61775337293da6396bfab5958",
+    "test.cpp": "92c95d66939f4e6df02eacda54e5156e1b496deab8fa9412d4d6487f9d5eb20d",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "b158bdd82d48451df6f38824ac320f45394c76de8e1c4664fd07a1f38faf36ae"
+  }
+}

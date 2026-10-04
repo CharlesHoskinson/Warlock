@@ -1,0 +1,16 @@
+
+  hit
+    1) supersedingMotionFencesTaskTest failed after 1 test(s)
+
+  1 failed
+
+  1) supersedingMotionFencesTaskTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-hit-test-model-v63/qa/model-1791103227852833622/superseded.qnt:36:121
+        36:   run supersedingMotionFencesTaskTest = init.then(pointerLayout).then(windowLayout).then(supersede).then(idle).then(all{assert(s.repicks==0 and not(s.queued)),s'=s})
+                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xd73d --match=supersedingMotionFencesTaskTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 superseded.qnt

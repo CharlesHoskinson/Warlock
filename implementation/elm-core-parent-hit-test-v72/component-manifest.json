@@ -1,0 +1,491 @@
+{
+  "schema": 1,
+  "passed": true,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "scope": "Owning deferred parent hit-test core compile and bounded model/helper proof only",
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/build-1791104632059591332/report.json",
+  "buildReportSHA256": "789e408803fde3037b6ef2daa6911865188d9a5d5544f622c054f7033e61d94e",
+  "files": [
+    {
+      "path": "archive.py",
+      "sha256": "baa4d8e16e5050dcfc3063da931552f5bfda66dee53e079908c8b850b4259087",
+      "size": 1242
+    },
+    {
+      "path": "build-1791104632059591332/Hyprland",
+      "sha256": "1f29b73e2abb902b8c5680d15c2661c4b8c4cf776fa06d6a532e5bc971160378",
+      "size": 19623664
+    },
+    {
+      "path": "build-1791104632059591332/PointerManager.cpp.d",
+      "sha256": "55553b9b4211e15a6605bdfdf99de1250de4ad86b2662eb6e8925ecb8485314b",
+      "size": 35291
+    },
+    {
+      "path": "build-1791104632059591332/PointerManager.cpp.o",
+      "sha256": "318f10db66fb602cf7ef99e693ccbc8c33c3d81916b1f42146ecca8690de84af",
+      "size": 701680
+    },
+    {
+      "path": "build-1791104632059591332/Window.cpp.d",
+      "sha256": "492a6fef0c1ad51ebd6e360ace00b4b722eba5e5ef7d95951806f65b7aabb4d7",
+      "size": 39799
+    },
+    {
+      "path": "build-1791104632059591332/Window.cpp.o",
+      "sha256": "d660587ec7d6154286797c25eb62b7583ec93f0bac5efd448614df6102e4d806",
+      "size": 1053264
+    },
+    {
+      "path": "build-1791104632059591332/ancestor-archive-payloads.json",
+      "sha256": "7fb24720d2ebf4d92be7892c60ec3ab335f0b849f449fcd9e2db13bcfb9ca929",
+      "size": 63214
+    },
+    {
+      "path": "build-1791104632059591332/archive.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791104632059591332/archive.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791104632059591332/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791104632059591332/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791104632059591332/inputs/archive.py",
+      "sha256": "baa4d8e16e5050dcfc3063da931552f5bfda66dee53e079908c8b850b4259087",
+      "size": 1242
+    },
+    {
+      "path": "build-1791104632059591332/inputs/build.py",
+      "sha256": "6bb8d800e4d7ba1b5ca9d3d58aece875077d4f190362106c810d46ddbedf88e8",
+      "size": 8638
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/SceneModal.hpp",
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+      "size": 2863
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/SceneTrace.hpp",
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+      "size": 1303
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/WindowPolicy.hpp",
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+      "size": 311
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/src/desktop/view/Window.cpp",
+      "sha256": "4c60f62738d80fbe028d4a5d48987d8df6680f19ed914b907639c62877a5a0b0",
+      "size": 124625
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/src/pointer/CursorBufferExtent.hpp",
+      "sha256": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+      "size": 1687
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/src/pointer/ParentNormalizedPosition.hpp",
+      "sha256": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112",
+      "size": 987
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/src/pointer/ParentPointerFocus.hpp",
+      "sha256": "6dac8387e71b0b8bb8c002e30f770c82718791319cf5be0aff637b8e3ffceaf2",
+      "size": 220
+    },
+    {
+      "path": "build-1791104632059591332/inputs/candidate/src/pointer/PointerManager.cpp",
+      "sha256": "93f64fac640b7be73832db66e05417013c36d1d542550fedb8fbe8a124f86c25",
+      "size": 52969
+    },
+    {
+      "path": "build-1791104632059591332/inputs/qa/template.cpp",
+      "sha256": "ae90fb5f217ba3f0d401070ff89b9986b7a62f9267134e7f637c2a9c1188498a",
+      "size": 6051
+    },
+    {
+      "path": "build-1791104632059591332/inputs/qa/template2.cpp",
+      "sha256": "8c2c10c0c358f9e90619cc7c5e07d39ab580ecb7847636d54005eec35c715882",
+      "size": 7876
+    },
+    {
+      "path": "build-1791104632059591332/inputs/qa/test.py",
+      "sha256": "19eac1c470d74f440f5e3872d4f5c0d741d87b52ff6665486c9c733f5f0c376c",
+      "size": 3470
+    },
+    {
+      "path": "build-1791104632059591332/inputs/qa/test2.py",
+      "sha256": "e66ecae4653e5deeade0087c46f4650a3ae16217d7c89ec47c193060e887a628",
+      "size": 3703
+    },
+    {
+      "path": "build-1791104632059591332/inputs/qa/test3.py",
+      "sha256": "8b5fdef2bfdc183bea679d230947d4c19141c8cde8d1d84e5008433279bdef99",
+      "size": 3707
+    },
+    {
+      "path": "build-1791104632059591332/libhyprland_lib.a",
+      "sha256": "95ffb4bb782e8a8c891b431907fa87c32381b5a876aa4bed5d373d28c9dfafb8",
+      "size": 91307342
+    },
+    {
+      "path": "build-1791104632059591332/link.d",
+      "sha256": "b0822717549fc5b2581e869f1403b3341d86c78335f68e582585b231207ca8a8",
+      "size": 16967
+    },
+    {
+      "path": "build-1791104632059591332/link.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791104632059591332/link.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791104632059591332/new-archive-payloads.json",
+      "sha256": "f0a250fff21d536cea2f0fe7b64b203787735a80ce4b624dd87ce60cbd36442d",
+      "size": 63214
+    },
+    {
+      "path": "build-1791104632059591332/original-PointerManager.cpp",
+      "sha256": "83c69d93f09088f1e2383a9c85a54cf3f55718d9506a1121058afef77911223a",
+      "size": 44638
+    },
+    {
+      "path": "build-1791104632059591332/original-Window.cpp",
+      "sha256": "d735d454cc4b7983f19626514d310669047da46780c509ffae68ccf072211ded",
+      "size": 124226
+    },
+    {
+      "path": "build-1791104632059591332/report.json",
+      "sha256": "789e408803fde3037b6ef2daa6911865188d9a5d5544f622c054f7033e61d94e",
+      "size": 100802
+    },
+    {
+      "path": "build-1791104632059591332/window-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791104632059591332/window-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build.py",
+      "sha256": "6bb8d800e4d7ba1b5ca9d3d58aece875077d4f190362106c810d46ddbedf88e8",
+      "size": 8638
+    },
+    {
+      "path": "candidate/SceneModal.hpp",
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+      "size": 2863
+    },
+    {
+      "path": "candidate/SceneTrace.hpp",
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+      "size": 1303
+    },
+    {
+      "path": "candidate/WindowPolicy.hpp",
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+      "size": 311
+    },
+    {
+      "path": "candidate/src/desktop/view/Window.cpp",
+      "sha256": "4c60f62738d80fbe028d4a5d48987d8df6680f19ed914b907639c62877a5a0b0",
+      "size": 124625
+    },
+    {
+      "path": "candidate/src/pointer/CursorBufferExtent.hpp",
+      "sha256": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+      "size": 1687
+    },
+    {
+      "path": "candidate/src/pointer/ParentNormalizedPosition.hpp",
+      "sha256": "29be1203c351b77bcc6e9f102f59caf88c53af8f513d93197f6cd3bb1cca0112",
+      "size": 987
+    },
+    {
+      "path": "candidate/src/pointer/ParentPointerFocus.hpp",
+      "sha256": "6dac8387e71b0b8bb8c002e30f770c82718791319cf5be0aff637b8e3ffceaf2",
+      "size": 220
+    },
+    {
+      "path": "candidate/src/pointer/PointerManager.cpp",
+      "sha256": "93f64fac640b7be73832db66e05417013c36d1d542550fedb8fbe8a124f86c25",
+      "size": 52969
+    },
+    {
+      "path": "freeze.py",
+      "sha256": "058986ec4b18aa7a20941330538a073ada74914e9fb3b8902cf00373fb4c1673",
+      "size": 1297
+    },
+    {
+      "path": "qa/template.cpp",
+      "sha256": "ae90fb5f217ba3f0d401070ff89b9986b7a62f9267134e7f637c2a9c1188498a",
+      "size": 6051
+    },
+    {
+      "path": "qa/template2.cpp",
+      "sha256": "8c2c10c0c358f9e90619cc7c5e07d39ab580ecb7847636d54005eec35c715882",
+      "size": 7876
+    },
+    {
+      "path": "qa/test-1791104564743526883/compile.stderr",
+      "sha256": "01abf172a38c489e02725ad6b4974f07bf48707ad626d897a77064910ef82055",
+      "size": 2903
+    },
+    {
+      "path": "qa/test-1791104564743526883/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104564743526883/extracted-helper.cpp",
+      "sha256": "a965ff82eda545e225ab0d680127df15d6b251cf1e25562cc2ea7976424a943b",
+      "size": 98
+    },
+    {
+      "path": "qa/test-1791104564743526883/report.json",
+      "sha256": "084f5a69855785990ae5fb40d49a81267bf644cbdb29207b3e619d6e7eb40f81",
+      "size": 5315
+    },
+    {
+      "path": "qa/test-1791104564743526883/test.cpp",
+      "sha256": "9a8913a82cb6edeab1c288db4c2c9519851e8bef21ea5480d803e5be5b8e856f",
+      "size": 8223
+    },
+    {
+      "path": "qa/test-1791104564743526883/test.py",
+      "sha256": "e66ecae4653e5deeade0087c46f4650a3ae16217d7c89ec47c193060e887a628",
+      "size": 3703
+    },
+    {
+      "path": "qa/test-1791104594536336320/compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/extracted-helper.cpp",
+      "sha256": "7641c32cf95d0f870d18a56f5ffda62f4d9245d7ab8408bb606e8d156a08e3f4",
+      "size": 2494
+    },
+    {
+      "path": "qa/test-1791104594536336320/geometry",
+      "sha256": "90807865499f835784d9bf5bc7d40248d57bc0bea02183bdbc08712fe73c1798",
+      "size": 60992
+    },
+    {
+      "path": "qa/test-1791104594536336320/geometry-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/geometry-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/geometry-rejected.stderr",
+      "sha256": "00cccb6b0b6907133c748f73281537d20f8eba9607c4e73a4ea7f2b6f073893d",
+      "size": 10
+    },
+    {
+      "path": "qa/test-1791104594536336320/geometry-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/geometry.cpp",
+      "sha256": "988ef0d5605153d461aaea589e142f9ea759270d3628442bcdf3b2f744ff2f16",
+      "size": 10567
+    },
+    {
+      "path": "qa/test-1791104594536336320/ordinary-commit",
+      "sha256": "03abc05543d7da9b2afa15c792cc5ade45773c40c5bab64e72ca1a9b8c0b7c86",
+      "size": 61000
+    },
+    {
+      "path": "qa/test-1791104594536336320/ordinary-commit-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/ordinary-commit-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/ordinary-commit-rejected.stderr",
+      "sha256": "5529e148e68b5e60b078f0f6a24688e1e16d2d6622ef961a30921a33fcd77add",
+      "size": 10
+    },
+    {
+      "path": "qa/test-1791104594536336320/ordinary-commit-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/ordinary-commit.cpp",
+      "sha256": "c74138679a046c0f9407bdd09b61383478bfb23e2dd8b7187b00ed8138054702",
+      "size": 10547
+    },
+    {
+      "path": "qa/test-1791104594536336320/ownership",
+      "sha256": "5f3310389d51604caa2ed86a2e6cc5ee4771923ed6047a0d2a463fe6a7153b34",
+      "size": 56896
+    },
+    {
+      "path": "qa/test-1791104594536336320/ownership-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/ownership-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/ownership-rejected.stderr",
+      "sha256": "66badc9e4c583ebc1d2bb2d3d1fbc56b037fc6157989b06c92775de3efedcb7d",
+      "size": 10
+    },
+    {
+      "path": "qa/test-1791104594536336320/ownership-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/ownership.cpp",
+      "sha256": "e1bb4e7dcaea416457a2f402a4e11b157b38c59d9a78eaef780aa9b0137a55dd",
+      "size": 10571
+    },
+    {
+      "path": "qa/test-1791104594536336320/readiness",
+      "sha256": "790591f590f8880189cb1f98b7266323f37baa9baa09dfc701128e425d332743",
+      "size": 60936
+    },
+    {
+      "path": "qa/test-1791104594536336320/readiness-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/readiness-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/readiness-rejected.stderr",
+      "sha256": "a97ba1e35d6cbef881e75356999223604d15b7f540d1ee93d3d4cfc1b118c13f",
+      "size": 9
+    },
+    {
+      "path": "qa/test-1791104594536336320/readiness-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/readiness.cpp",
+      "sha256": "f97acd87722e8d2554ad20e5b1f6282ba3f2c483a37f648cb771b3c344ce6cf2",
+      "size": 10537
+    },
+    {
+      "path": "qa/test-1791104594536336320/report.json",
+      "sha256": "afa7a6533b76606f2d192e577b19439ad6d259a9c011c391f2f12a48d397f33d",
+      "size": 9719
+    },
+    {
+      "path": "qa/test-1791104594536336320/superseding",
+      "sha256": "d5596cac498fba3510e5d8b1f32dd84eeba387620d1dc917d1b0f1bff03e61e6",
+      "size": 60992
+    },
+    {
+      "path": "qa/test-1791104594536336320/superseding-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/superseding-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/superseding-rejected.stderr",
+      "sha256": "c404b4048910d1bd72165bf143ceedd697b0b90b2a1d7e87cacefbd1c0610072",
+      "size": 9
+    },
+    {
+      "path": "qa/test-1791104594536336320/superseding-rejected.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/superseding.cpp",
+      "sha256": "addc45b34ab8ef71405435ea1866ed10d15363254ecfecf181a1ed6f25a9fd47",
+      "size": 10588
+    },
+    {
+      "path": "qa/test-1791104594536336320/test",
+      "sha256": "131281145e3da8092560e97c1a504a5765874efd058eec3b66e3be484bb174e1",
+      "size": 60992
+    },
+    {
+      "path": "qa/test-1791104594536336320/test.cpp",
+      "sha256": "70b17b0c9f53080347723d360a38b2a2912c1e0cfaabc613a3ac31e6d1c83c07",
+      "size": 10619
+    },
+    {
+      "path": "qa/test-1791104594536336320/test.py",
+      "sha256": "8b5fdef2bfdc183bea679d230947d4c19141c8cde8d1d84e5008433279bdef99",
+      "size": 3707
+    },
+    {
+      "path": "qa/test-1791104594536336320/test.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "qa/test-1791104594536336320/test.stdout",
+      "sha256": "db6b3826f8d08ba5bb3f7d361262bb3034c1aeda333eaa1b291bc2bcb21d5b2c",
+      "size": 11
+    },
+    {
+      "path": "qa/test.py",
+      "sha256": "19eac1c470d74f440f5e3872d4f5c0d741d87b52ff6665486c9c733f5f0c376c",
+      "size": 3470
+    },
+    {
+      "path": "qa/test2.py",
+      "sha256": "e66ecae4653e5deeade0087c46f4650a3ae16217d7c89ec47c193060e887a628",
+      "size": 3703
+    },
+    {
+      "path": "qa/test3.py",
+      "sha256": "8b5fdef2bfdc183bea679d230947d4c19141c8cde8d1d84e5008433279bdef99",
+      "size": 3707
+    }
+  ]
+}

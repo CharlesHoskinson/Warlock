@@ -1,0 +1,16 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:102:36: error: ‘void Pointer::refreshParentHitTest()’ should have been declared inside ‘Pointer’
+  102 | void Pointer::refreshParentHitTest() {
+      |                                    ^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:146:38: error: ‘refreshParentHitTest’ is not a member of ‘Pointer’; did you mean ‘Pointer::refreshParentHitTest’?
+  146 |     input.windowsMoved=true;Pointer::refreshParentHitTest();Pointer::refreshParentHitTest();check(loop.tasks.size()==1);
+      |                                      ^~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:102:6: note: ‘Pointer::refreshParentHitTest’ declared here
+  102 | void Pointer::refreshParentHitTest() {
+      |      ^~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:146:70: error: ‘refreshParentHitTest’ is not a member of ‘Pointer’; did you mean ‘Pointer::refreshParentHitTest’?
+  146 |     input.windowsMoved=true;Pointer::refreshParentHitTest();Pointer::refreshParentHitTest();check(loop.tasks.size()==1);
+      |                                                                      ^~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v62/qa/test-1791103315569439138/test.cpp:102:6: note: ‘Pointer::refreshParentHitTest’ declared here
+  102 | void Pointer::refreshParentHitTest() {
+      |      ^~~~~~~

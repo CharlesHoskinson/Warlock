@@ -1,0 +1,184 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Sampled serialized bus/idle ordering abstraction; excludes coordinates, transport, surfaces and rendering",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "hit.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "hit.qnt",
+        "--backend=typescript",
+        "--match=^(listenerOrderRepairedTest|noIdleDuringDispatchTest|latestLayoutCoalescesTest|supersedingMotionFencesTaskTest|parentFocusLossFencesTaskTest|deviceRetirementFencesTaskTest|ownerReplacementFencesTaskTest|shutdownFencesTaskTest)$",
+        "--max-samples=1",
+        "--seed=55001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "hit.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=55002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "during-bus.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "during-bus.qnt",
+        "--backend=typescript",
+        "--match=^noIdleDuringDispatchTest$",
+        "--max-samples=1",
+        "--seed=55100"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "superseded.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "superseded.qnt",
+        "--backend=typescript",
+        "--match=^supersedingMotionFencesTaskTest$",
+        "--max-samples=1",
+        "--seed=55101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "focus-loss.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "focus-loss.qnt",
+        "--backend=typescript",
+        "--match=^parentFocusLossFencesTaskTest$",
+        "--max-samples=1",
+        "--seed=55102"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "owner-reused.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "owner-reused.qnt",
+        "--backend=typescript",
+        "--match=^ownerReplacementFencesTaskTest$",
+        "--max-samples=1",
+        "--seed=55103"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "listenerOrderRepairedTest",
+    "noIdleDuringDispatchTest",
+    "latestLayoutCoalescesTest",
+    "supersedingMotionFencesTaskTest",
+    "parentFocusLossFencesTaskTest",
+    "deviceRetirementFencesTaskTest",
+    "ownerReplacementFencesTaskTest",
+    "shutdownFencesTaskTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 4,
+  "sourceSHA256": "d4c182bb262346e58704a21130f78a8f7a3ff2d39dca20846a3c0a616f437b17",
+  "artifacts": {
+    "hit.qnt": "d4c182bb262346e58704a21130f78a8f7a3ff2d39dca20846a3c0a616f437b17",
+    "model.py": "703153d7f6063780bd95094b83bff202d297ebf286e9ca2178bd5917e8bab762",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-listenerOrderRepairedTest-0.itf.json": "a5b0c237b83a82ddd29fb9c574e9c56d2acf811e0d0e3d4cd35fdadc47537fd2",
+    "named-noIdleDuringDispatchTest-1.itf.json": "621052859eae4dee86616cc7ce6b05d8302e1130a5d6b8c2ee55ee6ca3bdc527",
+    "named-latestLayoutCoalescesTest-2.itf.json": "702cd56ff6603b5a9e4d6b9c979cdd4ec081a4b182b7bb400414b03478781d58",
+    "named-supersedingMotionFencesTaskTest-3.itf.json": "a8ef54c774e915b54be49e6c1ef6908d83e51eb093c06aa0900fe0debc23f06f",
+    "named-parentFocusLossFencesTaskTest-4.itf.json": "5c3f9e1bf34d42a05cfd97033377c9f2726ec6da9d20f02a100bb74e3ddba24d",
+    "named-deviceRetirementFencesTaskTest-5.itf.json": "c5cb3ad66998f21f03304236747e7f0380c76558849c0ec0be25c1b582e70d61",
+    "named-ownerReplacementFencesTaskTest-6.itf.json": "da82ab011c4a3a8ddf350f4bc4648885f95736ea221ce58ee265a1c8dfb1214f",
+    "named-shutdownFencesTaskTest-7.itf.json": "67ab3f726621f53cade8a65f20c929df54ee673e1bc6add16b1b893f3b60cba1",
+    "named.stdout": "2f170975de5ea72688a3237df0773d6620bd5800a1c1abcfae0354527d879e8c",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "15b5705f36f338bab9c2e47e872d7420a8c7611eaf4c561fbd84782c4032617b",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "during-bus.qnt": "09586370107ca0cb4c49c230c79102aec078f352f9c881245b2445be1074a7cc",
+    "during-bus-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "during-bus-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "during-bus-rejected.stdout": "b7e2adaa9bcb07bd7537e4d34eee516bd035369904d7f118d442fff214b7c040",
+    "during-bus-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "superseded.qnt": "69d46894e095f09bd1afe4d625227fbe3a0286f0e33e78fb72dd3d88dea59a28",
+    "superseded-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseded-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "superseded-rejected.stdout": "5bb44255fcade4ca0197b9ded0aeb86cea07baec1c5ce573dbb6553eddc44046",
+    "superseded-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "focus-loss.qnt": "ef7c077badf2a00a381d05e6742513aa17f8f4675c2ff9df45e9cf03dfd9a262",
+    "focus-loss-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-loss-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-loss-rejected.stdout": "a7438e965fa14dcff3b068394b49af8f2504cdbefd2b770dd43e073769967c7f",
+    "focus-loss-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "owner-reused.qnt": "252b6b2907f6c02db6d3f7639b421c94d96959bb8aab88a478976a752444d352",
+    "owner-reused-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-reused-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "owner-reused-rejected.stdout": "b0f97c01b3a97872c05eb47bf8140e97607fecf3493a75cb0743e6c1f65e7f5e",
+    "owner-reused-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

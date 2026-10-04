@@ -1,0 +1,16 @@
+
+  hit
+    1) delayedCommitRepairsEmptyFocusTest failed after 1 test(s)
+
+  1 failed
+
+  1) delayedCommitRepairsEmptyFocusTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-parent-hit-test-model-v73/qa/model-1791104517432393468/missing-commit-refresh.qnt:42:194
+        42:   run delayedCommitRepairsEmptyFocusTest = init.then(pointerLayout).then(windowLayout).then(idle).then(all{assert(s.focusGen==0 and s.repicks==1),s'=s}).then(surfaceCommit).then(idle).then(all{assert(s.focusGen==2 and s.repicks==2),s'=s})
+                                                                                                                                                                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xd740 --match=delayedCommitRepairsEmptyFocusTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 missing-commit-refresh.qnt

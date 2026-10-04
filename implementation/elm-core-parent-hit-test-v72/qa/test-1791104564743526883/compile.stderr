@@ -1,0 +1,28 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:93:1: error: expected ‘,’ or ‘...’ before ‘void’
+   93 | void Pointer::refreshParentHitTest(const SP<Desktop::View::CWindow>& window) {
+      | ^~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:100:20: error: expected ‘)’ before ‘;’ token
+  100 | static int checks=0;
+      |                    ^
+      |                    )
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:92:27: note: to match this ‘(’
+   92 | void scheduleParentHitTest(CPointerManager* manager, const SP<Desktop::View::CWindow>& window = {}
+      |                           ^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp: In function ‘void check(bool)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:101:35: error: ‘checks’ was not declared in this scope; did you mean ‘check’?
+  101 | static void check(bool value) { ++checks;if(!value){std::cerr<<"failed "<<checks<<'\n';std::exit(1);} }
+      |                                   ^~~~~~
+      |                                   check
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp: In function ‘int main()’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:147:28: error: ‘checks’ was not declared in this scope; did you mean ‘check’?
+  147 |     std::cout<<"checks: "<<checks<<'\n';
+      |                            ^~~~~~
+      |                            check
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp: At global scope:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:73:14: error: ‘auto* State::monitorState()’ defined but not used [-Werror=unused-function]
+   73 | static auto* monitorState() { return &singleton; }
+      |              ^~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:37:26: error: ‘Aquamarine::ParentInputStatus Aquamarine::parentPointerInputStatus(const IPointer*, const IOutput*)’ defined but not used [-Werror=unused-function]
+   37 | static ParentInputStatus parentPointerInputStatus(const IPointer*, const IOutput*) { return ready ? ParentInputStatus::Ready : ParentInputStatus::Inactive; }
+      |                          ^~~~~~~~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors

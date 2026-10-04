@@ -1,0 +1,38 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Actual deferred hit-test helper with typed weak ownership, event-loop, monitor/query and InputManager mocks; native routing excluded",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/candidate/src/pointer/PointerManager.cpp": "93f64fac640b7be73832db66e05417013c36d1d542550fedb8fbe8a124f86c25",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/template2.cpp": "8c2c10c0c358f9e90619cc7c5e07d39ab580ecb7847636d54005eec35c715882",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test2.py": "e66ecae4653e5deeade0087c46f4650a3ae16217d7c89ec47c193060e887a628",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/candidate/src/desktop/view/Window.cpp": "4c60f62738d80fbe028d4a5d48987d8df6680f19ed914b907639c62877a5a0b0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/candidate/src/pointer/ParentPointerFocus.hpp": "6dac8387e71b0b8bb8c002e30f770c82718791319cf5be0aff637b8e3ffceaf2"
+  },
+  "commands": [
+    {
+      "command": [
+        "c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/candidate/src/pointer",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError('/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:93:1: error: expected \u2018,\u2019 or \u2018...\u2019 before \u2018void\u2019\\n   93 | void Pointer::refreshParentHitTest(const SP<Desktop::View::CWindow>& window) {\\n      | ^~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:100:20: error: expected \u2018)\u2019 before \u2018;\u2019 token\\n  100 | static int checks=0;\\n      |                    ^\\n      |                    )\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:92:27: note: to match this \u2018(\u2019\\n   92 | void scheduleParentHitTest(CPointerManager* manager, const SP<Desktop::View::CWindow>& window = {}\\n      |                           ^\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp: In function \u2018void check(bool)\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:101:35: error: \u2018checks\u2019 was not declared in this scope; did you mean \u2018check\u2019?\\n  101 | static void check(bool value) { ++checks;if(!value){std::cerr<<\"failed \"<<checks<<\\'\\\\n\\';std::exit(1);} }\\n      |                                   ^~~~~~\\n      |                                   check\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp: In function \u2018int main()\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:147:28: error: \u2018checks\u2019 was not declared in this scope; did you mean \u2018check\u2019?\\n  147 |     std::cout<<\"checks: \"<<checks<<\\'\\\\n\\';\\n      |                            ^~~~~~\\n      |                            check\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp: At global scope:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:73:14: error: \u2018auto* State::monitorState()\u2019 defined but not used [-Werror=unused-function]\\n   73 | static auto* monitorState() { return &singleton; }\\n      |              ^~~~~~~~~~~~\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-hit-test-v72/qa/test-1791104564743526883/test.cpp:37:26: error: \u2018Aquamarine::ParentInputStatus Aquamarine::parentPointerInputStatus(const IPointer*, const IOutput*)\u2019 defined but not used [-Werror=unused-function]\\n   37 | static ParentInputStatus parentPointerInputStatus(const IPointer*, const IOutput*) { return ready ? ParentInputStatus::Ready : ParentInputStatus::Inactive; }\\n      |                          ^~~~~~~~~~~~~~~~~~~~~~~~\\ncc1plus: all warnings being treated as errors\\n')",
+  "artifacts": {
+    "test.py": "e66ecae4653e5deeade0087c46f4650a3ae16217d7c89ec47c193060e887a628",
+    "extracted-helper.cpp": "a965ff82eda545e225ab0d680127df15d6b251cf1e25562cc2ea7976424a943b",
+    "test.cpp": "9a8913a82cb6edeab1c288db4c2c9519851e8bef21ea5480d803e5be5b8e856f",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "01abf172a38c489e02725ad6b4974f07bf48707ad626d897a77064910ef82055"
+  }
+}

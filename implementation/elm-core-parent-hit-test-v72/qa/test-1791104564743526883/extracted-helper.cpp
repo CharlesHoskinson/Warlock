@@ -1,0 +1,1 @@
+void scheduleParentHitTest(CPointerManager* manager, const SP<Desktop::View::CWindow>& window = {}
