@@ -1,0 +1,40 @@
+{
+  "name": "accepted-new-action-ignored",
+  "detected": true,
+  "scenario": "actual-new-action-obsoletes-pair",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Probe.elm",
+        "--optimize",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/mutations-1791153465712762849/accepted-new-action-ignored/worker.js"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/mutations-1791153465712762849/accepted-new-action-ignored",
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/probe.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/mutations-1791153465712762849/accepted-new-action-ignored/worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/mutations-1791153465712762849/accepted-new-action-ignored/events.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/mutations-1791153465712762849/accepted-new-action-ignored/rows.json"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/mutations-1791153465712762849/accepted-new-action-ignored",
+      "exitCode": 0
+    }
+  ],
+  "mutatedSourceSHA256": "784b09166b08f409a6d01d3a9334f6b26577fca3221b357aa33c1e484ce99af9",
+  "counterexample": {
+    "events": "events.json",
+    "rows": "rows.json",
+    "expected": "valid release keeps historical Unknown, clears exact live/menu only, ready ack precedes requested reads; rejected release remains blocked"
+  }
+}

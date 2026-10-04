@@ -1,0 +1,12 @@
+Running as unit: qa-harness-5f7b9007066d48169a25ef1daf4573c8.scope; invocation ID: 379315cb5a0b41c4ab3c9bcc8b202809
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-pre-native-source-review-v649/qa/review.py", line 26, in <module>
+    pin(buildpath.parent/'inputs'/n,h)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-pre-native-source-review-v649/qa/review.py", line 10, in pin
+    def pin(p,h=None):p=pathlib.Path(p);d=sha(p);check('pin:'+str(p),h is None or d==h);pins[str(p)]={'sha256':d,'size':p.stat().st_size};return d
+                                                 ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-pre-native-source-review-v649/qa/review.py", line 9, in check
+    def check(n,b):checks.append({'name':n,'passed':bool(b)});assert b,n
+                                                                     ^
+AssertionError: pin:/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-delivery-integrated-gui-v640/qa/build-1791153819143987946/inputs/assets/elm.js

@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-reconciliation-scoped-general-reviewed-v648",
-  "status": "Active: current626 original135 andscoped473 nativepassed; corrected640 deliveryfault native andfullUIUX/scaling/release remainopen.",
+  "activeSlice": "implementation/elm-recovery-delivery-reviewed-v650",
+  "status": "Active: current640 native lost-release18 andoriginal135 passed; full473/currentbounds, scalablehistory andcompleteUIUX/release gates open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -2219,12 +2219,35 @@
       "fullReleaseAccepted": false,
       "completedRequirementIds": [],
       "summary": "648 independent verifiescurrent626/205594AQ155 actualsource/compiler/ABI/artifact/originalASThelpers/deadlines/634profile closure allfive473 checks:63189+63583+63683+643161+64457 nativeallPASS normalcleanup. 643 legacywholegeometrynativeAcceptance/allContract false preserved; nofullUX inferred.64125CPU faultwrapper/nativeprep heldnotlaunched/targetpreflightpending. Revieweroriginalnormalexit-name assumption failure heldthen correctedwithoutchangingnative evidence. Sourceholds12340files.640642649newdeliveryfix outside648; current626 full473 nottransferred. Allfullproject/hardware/user/release/scaling gates remainactive."
+    },
+    "recoveryDeliveryV650": {
+      "source": "implementation/elm-recovery-delivery-integrated-gui-v640",
+      "manifest": "implementation/elm-recovery-delivery-reviewed-v650/component-manifest.json",
+      "manifestSHA256": "6e2adfe16cbd3edee5d28d350a49842d1ea6039dfe84ff116450e0fcb0ec2536",
+      "productionWired": true,
+      "publicElmCompiledChecks": 51,
+      "coordinatorFilesystemElmIntegrationChecks": 21,
+      "targetedCompiledGuardChecks": 20,
+      "targetedCompiledMutantsDetected": 6,
+      "priorFrontend642CompiledMutantsDetected": 19,
+      "releaseDeliveryLossNativeChecks": 18,
+      "releaseDeliveryLossNativeAccepted": true,
+      "releaseDeliveryLossNativeScope": "Single originalUnknown retained in same Elm view, real first durable certificate outputlost, second explicit reconnect with fresh nativeproof/readpair/certificate; no inferredoutcome/no replay/newexplicitaction only",
+      "currentOriginalNativeJourneyChecks": 135,
+      "durableReconciliationNativeAccepted": true,
+      "multiOriginNativeRecoveryAccepted": false,
+      "currentScopedGeneral473Passed": false,
+      "scalableHistoryAccepted": false,
+      "fullUIUXAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "summary": "642 informationalalreadyreleasedscope drain corrects639 confirmedserialhead-blocker, actual640 compiled51+real630/624store21+targeted20/6mutants.6498425checks/6499pins independentlysources/ABI/library/compiledclosure and64125CPU wrapperverified.646 actualnative18ALLPASS lost-real-wire afterdurablecert, SAMEElm renderer survives, seconduserReconnect freshproof/reads/anchoredcert clearsliveUnknown only, immutablehistory/counters/one-shotmarker/oldgrantdeny/newexplicitaction, normalcleanup.652current640original135ALLPASSnormalcleanup.650holds16122source/build/report files. Existing626473 doesnotqualify640; 640compilerinventorylimitation retained, separately651producerfinishing. Wholeproject/473640/bounds/multioriginhardware/scaling/fullrelease remainopen."
     }
   },
   "next": [
-    "Current626 original135+scoped473 nativeALLPASS normalcleanup held648; fullgeometrycontract flags stayfalse. 642 corrects639 repeatedhistoricalscope deadlock; actual640 coherentbuild/public51/drain21 pass, targeted20/6mutants verification and649 independentpre-nativeclosure then646 privateactual641 lost-release campaign. Old626 native473 doesnotqualify640.",
-    "Implement647 actualpagedarchiveprimitive against629 14EARS/OpenSpec/32Quint symbolic architecture, thenactualC/ledger/frontend/native history/replay scaling beforeS15; no historyeviction or quota-raising substitute. Currenthistory64 lifetimeeffect limit remainsopen.",
-    "Continue fullcurrent640 general/bounds/newfaults/GTKQt compatibility/UIUX keyboard/motion/ATIME/physicaloutputs/hardwareGPU/WebGPUdevicefailure/numericalbudgets/humanjourneys/fullS01-S16/C00/reversible release. No main desktop actions or completed requirements."
+    "Current640 lost-real-release sameElmview native64618 andoriginal135652 passed/normalcleanup; finish current473 using65389menu passed,65583cap live/65783focus prepared and658161geometry/65957reconnect viaactual640fixture660 sourcebinding, no older626473 transfer. Hold650currentpacket/651sameprogramtoolchain/647archiveprototype/654failedfixture/660ready separately656 afteractualoutcomes.",
+    "651 explicitElm ELF/npm and7dependency/cache sets frozen freshMainBarPopup/C/public51/8guardcontrols generated3JS+host BYTEIDENTICAL640; independenttoolchainreceipt doesnotrewrite640historicalmissingcompilerinventory.647 actualpagedstorage1026records/362FS/3Quint500x50/3typedmutants isprimitiveonly;661 integration/replay/fullkey/migration/C/quotas/cohort/frontend review next.",
+    "662actualcompiledBar/Popup uncertainty-longtitle fixture prep and663sourcefix ifcontrolledrenderedproof; completecurrentbounds/ATIME/motion/output/device/performance/GPU/WebGPU/human/GTKQt/fullS01-S16/C00/reversible release. No main desktop actions or completed requirements."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
@@ -2270,9 +2293,10 @@
     },
     {
       "id": "RECOVERY-639-001",
-      "status": "confirmed in actual630 coordinator with compiled619 frontend;642 correction underway",
+      "status": "Resolved in boundedactual640compiled51/21/20and6controls; single-origin lostwire native18 passes, multi-origin native notqualified",
       "description": "Already locally released archive origin A rejects informational retirement proof, leaving backend readyfalse and later retainedUnknown B blocked behind serial history delivery. No wrongterminaloutcome inferred.",
-      "evidence": "implementation/elm-delivery-recovery-review-v639/component-manifest.json"
+      "evidence": "implementation/elm-delivery-recovery-review-v639/component-manifest.json",
+      "resolutionEvidence": "implementation/elm-recovery-delivery-reviewed-v650/component-manifest.json"
     }
   ],
   "resolvedBoundedFindings": [

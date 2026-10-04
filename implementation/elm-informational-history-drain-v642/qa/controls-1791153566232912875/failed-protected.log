@@ -1,0 +1,9 @@
+Running as unit: qa-harness-4fd24df504204a7da61093beb6b34f86.scope; invocation ID: f7f1c849f51e4ac4aa47b222a4d6519d
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/controls.py", line 19, in <module>
+    if n=='info-retry':check(n+'-ready-before-fresh-read-pair',[w['kind'] for w in rows[-1]['wires']]==['reconciliation-ready','projection-request','geometry-facts-request'])
+                       ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-informational-history-drain-v642/qa/controls.py", line 7, in check
+    def check(n,b):checks.append({'name':n,'passed':bool(b)});assert b,n
+                                                                     ^
+AssertionError: info-retry-ready-before-fresh-read-pair
