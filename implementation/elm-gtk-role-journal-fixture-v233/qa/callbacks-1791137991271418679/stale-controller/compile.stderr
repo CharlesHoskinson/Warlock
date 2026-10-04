@@ -1,0 +1,4 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-journal-fixture-v233/qa/callbacks-1791137991271418679/stale-controller/test.c:18:18: error: ‘gtk_event_controller_get_widget’ defined but not used [-Werror=unused-function]
+   18 | static GtkWidget*gtk_event_controller_get_widget(GtkEventController*c){return c->widget;}
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
