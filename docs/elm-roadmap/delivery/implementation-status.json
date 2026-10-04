@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-journal-native-v193",
-  "status": "Durable single window-intent journal candidate:19 real filesystem/subprocess,30 compiled recovery, inherited20+27 rerun, native42 and Quint6/1000 pass. Actual interrupted native effect/replacement Unknown UI remains open.",
+  "activeSlice": "implementation/elm-authenticated-recovery-native-v200",
+  "status": "Actual lost native receipt/replacement Unknown DOM/no automatic replay and same original authenticated sender rehandshake refusal pass52/55 native checks;19 filesystem and30+20+27 compiled checks per candidate. Frontend durable admission/global revocation/full release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1179,10 +1179,35 @@
         "Frontend-to-broker journal admission gap remains open",
         "Quint is abstract policy evidence, not automatic filesystem/C/Elm refinement"
       ]
+    },
+    "lostReceiptAndOriginalSenderV200": {
+      "passed": true,
+      "scope": "Actual native committed action/lost receipt and same-sender rehandshake refusal; existing/replacement actual Unknown DOM, no automatic replay and fresh explicit action; frontend admission/global revocation/full release open",
+      "nativeLostReceiptChecks": 52,
+      "nativeOriginalSenderChecks": 55,
+      "filesystemSubprocessChecksPerCandidate": 19,
+      "compiledRecoveryChecksPerCandidate": 30,
+      "compiledInheritedReducerChecksRerunPerCandidate": 20,
+      "compiledInheritedShellChecksRerunPerCandidate": 27,
+      "nativeInterruptedEffectAcceptance": true,
+      "sameAuthenticatedSenderRehandshakeReplayRefused": true,
+      "formerLiveSenderGlobalRevocationAcceptance": false,
+      "frontendDurableAdmissionAcceptance": false,
+      "sealedRuntimeFilesPerCandidate": 20,
+      "noAutomaticResubmissionObservedMilliseconds": 500,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "evidence": "implementation/elm-authenticated-recovery-native-v200/qa/slice-manifest.json",
+      "limitations": [
+        "Frontend-to-broker durable admission gap remains open",
+        "Same original PID rehandshake refusal proved; global revocation of a live former broker by another process not established",
+        "Interrupted minimize/restore variants and full coherent GPU/menu/core/AT/release gates remain open"
+      ]
     }
   },
   "next": [
-    "Qualify actual native effect interruption and replacement Unknown UI without automatic replay; test former authenticated sender binding invalidation and close frontend-to-broker durable admission gap.",
+    "Close durable frontend admission before broker read; qualify interrupted minimize/restore and global former-live-broker revocation, then integrate new core/menu/GPU tuple with remaining AT/hotplug/full native operations.",
     "Measure and freeze workload/resource/input-presentation budgets on the shared host; qualify GPU context loss/recovery and keep WebGPU unavailability explicit.",
     "Integrate reviewed menu/new native buffer/viewport tuple with shared scope/controller host; preserve old accepted source/ABI evidence and rerun original campaigns.",
     "Continue actual AT/IME, physical output/device and human UX, full scene/window operations, zero-output recovery, C00 and release."

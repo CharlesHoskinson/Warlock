@@ -7073,6 +7073,31 @@
         "Frontend-to-broker journal admission gap remains open",
         "Quint is abstract policy evidence, not automatic filesystem/C/Elm refinement"
       ]
+    },
+    {
+      "passed": true,
+      "scope": "Actual native committed action/lost receipt and same-sender rehandshake refusal; existing/replacement actual Unknown DOM, no automatic replay and fresh explicit action; frontend admission/global revocation/full release open",
+      "nativeLostReceiptChecks": 52,
+      "nativeOriginalSenderChecks": 55,
+      "filesystemSubprocessChecksPerCandidate": 19,
+      "compiledRecoveryChecksPerCandidate": 30,
+      "compiledInheritedReducerChecksRerunPerCandidate": 20,
+      "compiledInheritedShellChecksRerunPerCandidate": 27,
+      "nativeInterruptedEffectAcceptance": true,
+      "sameAuthenticatedSenderRehandshakeReplayRefused": true,
+      "formerLiveSenderGlobalRevocationAcceptance": false,
+      "frontendDurableAdmissionAcceptance": false,
+      "sealedRuntimeFilesPerCandidate": 20,
+      "noAutomaticResubmissionObservedMilliseconds": 500,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "cleanupPassed": true,
+      "performanceBudgetsAccepted": false,
+      "evidence": "implementation/elm-authenticated-recovery-native-v200/qa/slice-manifest.json",
+      "limitations": [
+        "Frontend-to-broker durable admission gap remains open",
+        "Same original PID rehandshake refusal proved; global revocation of a live former broker by another process not established",
+        "Interrupted minimize/restore variants and full coherent GPU/menu/core/AT/release gates remain open"
+      ]
     }
   ]
 }

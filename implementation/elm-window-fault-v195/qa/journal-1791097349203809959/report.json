@@ -1,0 +1,86 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "emptyJournalHasNoRecovery",
+      "passed": true
+    },
+    {
+      "name": "concurrentWriterRefused",
+      "passed": true
+    },
+    {
+      "name": "pendingDurablyRoundTrips",
+      "passed": true
+    },
+    {
+      "name": "freshBindingRecoversOnlyUncertainIntent",
+      "passed": true
+    },
+    {
+      "name": "foreignCompositorRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchedReceiptRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchDoesNotClearPending",
+      "passed": true
+    },
+    {
+      "name": "durableCommitIsNotUnknown",
+      "passed": true
+    },
+    {
+      "name": "duplicateTerminalReceiptRefused",
+      "passed": true
+    },
+    {
+      "name": "writerConfirmsDurableSubmission",
+      "passed": true
+    },
+    {
+      "name": "abruptWriterExitIsRecorded",
+      "passed": true
+    },
+    {
+      "name": "freshWriterReadsUnknownAfterActualDeath",
+      "passed": true
+    },
+    {
+      "name": "duplicateJSONRefused",
+      "passed": true
+    },
+    {
+      "name": "publicRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "oversizeRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkRecordRefused",
+      "passed": true
+    },
+    {
+      "name": "unsupportedOperationRefusedBeforeWrite",
+      "passed": true
+    },
+    {
+      "name": "rejectedWritePreservesRecord",
+      "passed": true
+    },
+    {
+      "name": "publicRecoveryDirectoryRefused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-fault-v195/qa/journal.py": "6560a71568e94782bbab0af41692bf564daf7e8c261f7236c60375cb44794609",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-fault-v195/adapter/recovery_journal.py": "eaa166597ca1a24f75cbb30f3955c08e99d4793393a679e8128877a79b9a4658",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-fault-v195/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  }
+}
