@@ -1,0 +1,8 @@
+
+ Error [QNT101]: Built-in name 'select' is redefined in module 'recovery'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-model-v304/qa/model-1791109223535878855/recovery.qnt:6:9
+  6:  action select(scope:int):bool=s'=if(s.menu==scope and s.owner==scope and s.views.contains(scope)){...s,menu:0,prepared:scope,legacy:false,geometry:false,canceled:false} else s
+             ^^^^^^
+
+error: parsing failed

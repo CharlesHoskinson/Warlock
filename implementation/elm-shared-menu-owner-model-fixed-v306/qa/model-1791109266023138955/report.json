@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "scope": "Bounded two-view menu ownership, prepared cancellation, paired post-close observation, notification deferral and no stale dispatch. Abstract scope IDs stand for full view ID/generation pairs; production decoder/Elm/C/native proofs remain separate. No automatic implementation refinement.",
+  "sourceSHA256": "a8a358ee2312dc71e97bfbd5f225341a02f06f008f823ae5a519915498d73e90",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(distinctOwnerTest|wrongViewCannotSelectTest|closeBeforeObservationTest|pairedObservationOnceTest|singleStreamNeverDispatchesTest|relocationCancelsPreparedTest|retiringPreparedOwnerTest|zeroOutputsCancelTest|nonownerRemovalPreservesTest|stalePairCannotChooseNewOwnerTest|notificationsDoNotRetargetTest|retiredViewCannotReopenTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 12,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "a8a358ee2312dc71e97bfbd5f225341a02f06f008f823ae5a519915498d73e90",
+    "model.py": "6c9163e6bf74aea610af140115c125000f31bf141399a306f53ecd1960b50a14",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-distinctOwnerTest-0.itf.json": "2b4901122cbd64d9527fd7b37155e8fb6233f1525cc7c5a31b39fc7332ad895e",
+    "named-wrongViewCannotSelectTest-1.itf.json": "c305651b2f434433aa7176e1a15fb33b04196b83de46590c63380274baf6752c",
+    "named-closeBeforeObservationTest-2.itf.json": "70a6f481a43ccc82210c66e307a51f2dee909742e9b6b1b58d4030cf2d1ebfe7",
+    "named-pairedObservationOnceTest-3.itf.json": "f93d10db2cddebbe44433fdbe4760ff76ff24d924399bc43f2cffa33a15e5848",
+    "named-singleStreamNeverDispatchesTest-4.itf.json": "eb336a868d5bd4bfaeaec9e44104026099f2249421d9d85b791f876871f5e650",
+    "named-relocationCancelsPreparedTest-5.itf.json": "c3fd76a8a813b0eb559176f1ff9fb063a3c110a30a33f7c0ac7b3315291d00e0",
+    "named-retiringPreparedOwnerTest-6.itf.json": "2efb668a3cae6529ca5732ee2618af65e05f9a8e4bbe8c48b331072bfcbb19ee",
+    "named-zeroOutputsCancelTest-7.itf.json": "f74576d36de4bc7c72153e37eabe45a6f6cf55922788863a32462345baf192b8",
+    "named-nonownerRemovalPreservesTest-8.itf.json": "c4069e6e5e063252badec531b75587f0c85659de1718f1220cf4d96c6f4e6c46",
+    "named-stalePairCannotChooseNewOwnerTest-9.itf.json": "b768820911921acf7544c86846409166e0686cbfd12739105150dea4002c5e7c",
+    "named-notificationsDoNotRetargetTest-10.itf.json": "ff21aa60e9117c11cd1069e77def9cde1e02b237cbbb2d23f4474c2269dc4ee1",
+    "named-retiredViewCannotReopenTest-11.itf.json": "145cc07eba9ed4a284e8b311451f02b6b5014766ff0d1ab1e6f0d95abfdd8be8",
+    "named.stdout": "5748850bb0428dda4caddacc752398a83d690963f4f708e1542408232e2d4fa0",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "0c25626477c823e74550d8674e45adbeeead4a986d0fc067d291171dab560dfb",
+    "invariants.stdout": "39763b3fccd2e209d39423f9361c455164e4cb4d8a54e6f68f8399c3c6505408",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

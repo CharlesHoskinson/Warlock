@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Bounded two-view menu ownership, prepared cancellation, paired post-close observation, notification deferral and no stale dispatch. Abstract scope IDs stand for full view ID/generation pairs; production decoder/Elm/C/native proofs remain separate. No automatic implementation refinement.",
+  "sourceSHA256": "437d772debfe1d8c3cc29ad719cb52afa49120fbea23c5a532b5174c24ed56df",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT101]: Built-in name 'select' is redefined in module 'recovery'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-model-v304/qa/model-1791109223535878855/recovery.qnt:6:9\\n  6:  action select(scope:int):bool=s'=if(s.menu==scope and s.owner==scope and s.views.contains(scope)){...s,menu:0,prepared:scope,legacy:false,geometry:false,canceled:false} else s\\n             ^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "recovery.qnt": "437d772debfe1d8c3cc29ad719cb52afa49120fbea23c5a532b5174c24ed56df",
+    "model.py": "6c9163e6bf74aea610af140115c125000f31bf141399a306f53ecd1960b50a14",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "c319e6dacc25e74cc0fff64d93f864d69e67442e92b7924ad6f33795ff5badf5"
+  }
+}

@@ -1,0 +1,58 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+retired output cancels closed prepared selection AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'1' !== null
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:25:94
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:13:77)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:25:2
+old observation pair after output retirement cannot dispatch AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:26:123
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:13:77)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:26:2
+zero outputs cancels prepared selection without effects AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'1' !== null
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:27:122
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:13:77)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:27:2
+replacement view generation cancels prepared selection AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'1' !== null
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:28:148
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:13:77)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:28:2
+admitted other-view action cancels original prepared authority AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+'1' !== null
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:30:108
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:13:77)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:30:2
+stale old selection after owner change cannot dispatch AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 0
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:31:159
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:13:77)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-owner-mutations-v307/qa/mutations-1791109346305048177/omit-prepared-owner-cancellation/inputs/qa/shared-menu.cjs:31:2

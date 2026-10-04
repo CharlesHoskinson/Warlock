@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T10:12:21.529999+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T10:25:08.841127+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7554,6 +7554,31 @@
         "No GTK/compositor pixel/input or GPU run on this tuple",
         "Geometry/context menu presentation and newest owning compositor/plugin integration pending",
         "Native storage/global revocation, original restore timing, AT/IME/physical/human/budgets/C00/release remain open"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Compiled actual shared Elm menu/recovery/output ownership and C geometry carrier; native context input and release open",
+      "compiledSharedOutputChecks": 37,
+      "compiledSharedRecoveryChecks": 49,
+      "compiledSharedMenuOwnershipChecks": 13,
+      "compiledStagedMenuChecks": 78,
+      "compiledStagedGeometryChecks": 53,
+      "compiledStagedRefreshChecks": 21,
+      "compiledPostCloseChecks": 59,
+      "geometryCarrierChecks": 34,
+      "compiledUnsafeMutantsDetected": 3,
+      "quintNamedScenarios": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeRun": false,
+      "nativeContextRouteIntegrated": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-shared-staged-menu-acceptance-v308/qa/slice-manifest.json",
+      "limitations": [
+        "Original byte-exact menu64/78, refresh18/21 and old geometry setup fatal retained separately; staged semantic passes are not substituted as original passes",
+        "Shared C context/navigation proof must be bound to real per-output source before native menu usability can qualify",
+        "Newest owning core/plugin/AQ runtime integration, full release/GPU/AT/IME/physical/human/budgets/C00/rollback remain open"
       ]
     }
   ]
