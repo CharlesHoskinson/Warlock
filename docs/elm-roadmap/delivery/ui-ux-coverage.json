@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T08:07:02.933234+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T08:12:15.415901+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7228,6 +7228,80 @@
         "One actual unread-minimize case on changed V238 build; other three prepared native cases not executed",
         "Abstract Quint contract is not an automated implementation refinement proof",
         "Legacy ownership provisioning, storage-error UX, global old-live-broker revocation and full release remain open"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Four interrupted minimize/restore native cases and normally settled activation recovery on one namespaced host/broker/core tuple",
+      "cases": [
+        {
+          "case": "minimizeUnread",
+          "operation": "minimize",
+          "faultBoundary": "unread",
+          "nativeChecks": 59,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": true
+        },
+        {
+          "case": "restoreUnread",
+          "operation": "restore",
+          "faultBoundary": "unread",
+          "nativeChecks": 61,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "minimizeLost",
+          "operation": "minimize",
+          "faultBoundary": "lost",
+          "nativeChecks": 59,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "restoreLost",
+          "operation": "restore",
+          "faultBoundary": "lost",
+          "nativeChecks": 61,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "settled",
+          "operation": null,
+          "faultBoundary": null,
+          "nativeChecks": 43,
+          "actualPixelStages": 0,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        }
+      ],
+      "selectedNativeWorkloads": 5,
+      "newNativeWorkloads": 4,
+      "nativeCheckCounts": [
+        59,
+        61,
+        59,
+        61,
+        43
+      ],
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "completedRequirementIds": [],
+      "fullOriginalNativeRegressionAccepted": false,
+      "storageErrorUXAccepted": false,
+      "legacyOwnershipProvisioningAccepted": false,
+      "evidence": "implementation/elm-namespace-recovery-v247/qa/slice-manifest.json",
+      "limitations": [
+        "Five selected native workloads are not distinct baseline scenario totals or full parity",
+        "Actual normally settled activation recovery does not prove global old-live-broker revocation",
+        "Storage/migration failure UX, legacy provisioning, integrated updated release tuple and full requirements remain open"
       ]
     }
   ]

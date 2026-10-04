@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-namespace-acceptance-v245",
-  "status": "Instance/lifetime recovery isolation and explicit ownership-qualified migration qualified in CPU/compiled/Quint checks and one real unread-minimize case. Remaining prepared native cases, legacy provisioning/storage UX and full release remain open.",
+  "activeSlice": "implementation/elm-namespace-recovery-v247",
+  "status": "Coherent four-case interrupted minimize/restore plus normally settled activation recovery qualified on namespaced V238 host/broker build. Typed storage/migration failure UX, original full regressions and release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1330,6 +1330,75 @@
       "legacyOwnershipProvisioningAccepted": false,
       "storageErrorUXAccepted": false,
       "evidence": "implementation/elm-namespace-acceptance-v245/qa/slice-manifest.json"
+    },
+    "namespaceRecoveryV247": {
+      "passed": true,
+      "scope": "Four interrupted minimize/restore native cases and normally settled activation recovery on one namespaced host/broker/core tuple",
+      "cases": [
+        {
+          "case": "minimizeUnread",
+          "operation": "minimize",
+          "faultBoundary": "unread",
+          "nativeChecks": 59,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": true
+        },
+        {
+          "case": "restoreUnread",
+          "operation": "restore",
+          "faultBoundary": "unread",
+          "nativeChecks": 61,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "minimizeLost",
+          "operation": "minimize",
+          "faultBoundary": "lost",
+          "nativeChecks": 59,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "restoreLost",
+          "operation": "restore",
+          "faultBoundary": "lost",
+          "nativeChecks": 61,
+          "actualPixelStages": 6,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        },
+        {
+          "case": "settled",
+          "operation": null,
+          "faultBoundary": null,
+          "nativeChecks": 43,
+          "actualPixelStages": 0,
+          "cleanupPassed": true,
+          "retainedNotRerun": false
+        }
+      ],
+      "selectedNativeWorkloads": 5,
+      "newNativeWorkloads": 4,
+      "nativeCheckCounts": [
+        59,
+        61,
+        59,
+        61,
+        43
+      ],
+      "sameRuntimeAndCoreTuple": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "originalHelpersAndDeadlinesUnchanged": true,
+      "completedRequirementIds": [],
+      "fullOriginalNativeRegressionAccepted": false,
+      "storageErrorUXAccepted": false,
+      "legacyOwnershipProvisioningAccepted": false,
+      "evidence": "implementation/elm-namespace-recovery-v247/qa/slice-manifest.json"
     }
   },
   "next": [
