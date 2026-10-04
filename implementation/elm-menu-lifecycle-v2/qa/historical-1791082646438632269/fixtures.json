@@ -1,0 +1,225 @@
+{
+  "traces": [
+    {
+      "id": "actual-native-minimize-restore-frames",
+      "steps": [
+        {
+          "op": "open",
+          "provider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "370328706280839005",
+              "session": "13662763052788250658",
+              "frontend": "1",
+              "revision": "1",
+              "outputId": "1",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "370328706280839005",
+              "session": "13662763052788250658",
+              "incarnation": "1"
+            },
+            "title": "ELM-AUTHORITY-FIXTURE",
+            "capabilities": [
+              "restore",
+              "minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": false,
+                "action": {
+                  "kind": "restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": true,
+                "action": {
+                  "kind": "minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 1,
+          "command": {
+            "protocolVersion": 3,
+            "kind": "window-effect",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "370328706280839005",
+              "session": "13662763052788250658",
+              "frontend": "1"
+            },
+            "intent": {
+              "request": "1",
+              "generation": "1",
+              "incarnation": "1",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "370328706280839005",
+                "epoch": "1",
+                "output": "1",
+                "revision": "1"
+              }
+            }
+          }
+        },
+        {
+          "op": "receipt",
+          "frame": "{\"protocolVersion\": 3, \"kind\": \"effect-outcome\", \"effectProtocol\": 1, \"binding\": {\"lifetime\": \"370328706280839005\", \"session\": \"13662763052788250658\", \"frontend\": \"1\"}, \"intent\": {\"request\": \"1\", \"generation\": \"1\", \"incarnation\": \"1\", \"operation\": \"minimize\", \"context\": {\"lifetime\": \"370328706280839005\", \"epoch\": \"1\", \"output\": \"1\", \"revision\": \"1\"}}, \"status\": \"Committed\", \"reason\": \"applied\", \"revision\": \"2\", \"outputGeneration\": \"1\"}"
+        },
+        {
+          "op": "open",
+          "provider": {
+            "protocolVersion": 1,
+            "providerId": "1",
+            "capabilityGeneration": "1",
+            "binding": {
+              "lifetime": "370328706280839005",
+              "session": "13662763052788250658",
+              "frontend": "1",
+              "revision": "2",
+              "outputId": "1",
+              "outputGeneration": "1"
+            },
+            "target": {
+              "lifetime": "370328706280839005",
+              "session": "13662763052788250658",
+              "incarnation": "1"
+            },
+            "title": "ELM-AUTHORITY-FIXTURE",
+            "capabilities": [
+              "restore",
+              "minimize"
+            ],
+            "items": [
+              {
+                "id": "1",
+                "label": "Restore",
+                "enabled": true,
+                "action": {
+                  "kind": "restore"
+                }
+              },
+              {
+                "id": "2",
+                "label": "Minimize",
+                "enabled": false,
+                "action": {
+                  "kind": "minimize"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "op": "activate",
+          "index": 0,
+          "command": {
+            "protocolVersion": 3,
+            "kind": "window-effect",
+            "effectProtocol": 1,
+            "binding": {
+              "lifetime": "370328706280839005",
+              "session": "13662763052788250658",
+              "frontend": "1"
+            },
+            "intent": {
+              "request": "2",
+              "generation": "2",
+              "incarnation": "1",
+              "operation": "restore",
+              "context": {
+                "lifetime": "370328706280839005",
+                "epoch": "1",
+                "output": "1",
+                "revision": "2"
+              }
+            }
+          }
+        },
+        {
+          "op": "receipt",
+          "frame": "{\"protocolVersion\": 3, \"kind\": \"effect-outcome\", \"effectProtocol\": 1, \"binding\": {\"lifetime\": \"370328706280839005\", \"session\": \"13662763052788250658\", \"frontend\": \"1\"}, \"intent\": {\"request\": \"2\", \"generation\": \"2\", \"incarnation\": \"1\", \"operation\": \"restore\", \"context\": {\"lifetime\": \"370328706280839005\", \"epoch\": \"1\", \"output\": \"1\", \"revision\": \"2\"}}, \"status\": \"Committed\", \"reason\": \"applied\", \"revision\": \"3\", \"outputGeneration\": \"1\"}"
+        }
+      ],
+      "expect": [
+        {
+          "at": 0,
+          "value": {
+            "registry": 0,
+            "outstanding": 0,
+            "error": null,
+            "menu": {
+              "status": "ready"
+            }
+          }
+        },
+        {
+          "at": 1,
+          "value": {
+            "registry": 1,
+            "outstanding": 1,
+            "commands": 1,
+            "error": null,
+            "menu": {
+              "status": "pending"
+            }
+          }
+        },
+        {
+          "at": 2,
+          "value": {
+            "registry": 0,
+            "outstanding": 0,
+            "commands": 1,
+            "error": null,
+            "menu": null
+          }
+        },
+        {
+          "at": 3,
+          "value": {
+            "registry": 0,
+            "outstanding": 0,
+            "error": null,
+            "menu": {
+              "status": "ready"
+            }
+          }
+        },
+        {
+          "at": 4,
+          "value": {
+            "registry": 1,
+            "outstanding": 1,
+            "commands": 2,
+            "error": null,
+            "menu": {
+              "status": "pending"
+            }
+          }
+        },
+        {
+          "at": 5,
+          "value": {
+            "registry": 0,
+            "outstanding": 0,
+            "commands": 2,
+            "error": null,
+            "menu": null
+          }
+        }
+      ]
+    }
+  ]
+}

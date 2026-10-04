@@ -1,0 +1,896 @@
+An example execution:
+
+[State 0]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated: Set(),
+          nextMenu: 1,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "init",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated: Set(),
+      nextMenu: 1,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 1]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated: Set(),
+          nextMenu: 1,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "activation-rejected",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated: Set(),
+      nextMenu: 1,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 2]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated: Set(),
+          nextMenu: 1,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "retire",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 1,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 3]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 1,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "open",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view:
+        Visible({
+          binding:
+            {
+              capabilities: 1,
+              frontend: 1,
+              output: 1,
+              outputGeneration: 1,
+              provider: 1,
+              revision: 1,
+              target: { incarnation: 2, lifetime: 1, session: 1 }
+            },
+          enabled: Set(0, 2),
+          id: 1,
+          selected: 0
+        })
+    }
+}
+
+[State 4]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 2,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view:
+            Visible({
+              binding:
+                {
+                  capabilities: 1,
+                  frontend: 1,
+                  output: 1,
+                  outputGeneration: 1,
+                  provider: 1,
+                  revision: 1,
+                  target: { incarnation: 2, lifetime: 1, session: 1 }
+                },
+              enabled: Set(0, 2),
+              id: 1,
+              selected: 0
+            })
+        },
+      beforeCount: 0,
+      event: "activation-rejected",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view:
+        Visible({
+          binding:
+            {
+              capabilities: 1,
+              frontend: 1,
+              output: 1,
+              outputGeneration: 1,
+              provider: 1,
+              revision: 1,
+              target: { incarnation: 2, lifetime: 1, session: 1 }
+            },
+          enabled: Set(0, 2),
+          id: 1,
+          selected: 0
+        })
+    }
+}
+
+[State 5]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 2,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view:
+            Visible({
+              binding:
+                {
+                  capabilities: 1,
+                  frontend: 1,
+                  output: 1,
+                  outputGeneration: 1,
+                  provider: 1,
+                  revision: 1,
+                  target: { incarnation: 2, lifetime: 1, session: 1 }
+                },
+              enabled: Set(0, 2),
+              id: 1,
+              selected: 0
+            })
+        },
+      beforeCount: 0,
+      event: "retire",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 2, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 6]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 2, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 2,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "retire",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 2, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 2,
+            frontend: 2,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 2,
+            target: { incarnation: 1, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 7]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 2, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 2,
+                frontend: 2,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 2,
+                target: { incarnation: 1, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 2,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "activation-rejected",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 2, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 2,
+            frontend: 2,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 2,
+            target: { incarnation: 1, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 8]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 2, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 2,
+                frontend: 2,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 2,
+                target: { incarnation: 1, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 2,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "retire-duplicate",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: false,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 2, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 2,
+            frontend: 2,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 2,
+            target: { incarnation: 1, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 9]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: false,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 2, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 2,
+                frontend: 2,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 2,
+                target: { incarnation: 1, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 2,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "exhaust",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: true,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 2, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 2,
+            frontend: 2,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 2,
+            target: { incarnation: 1, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[State 10]
+{
+  monitor:
+    {
+      before:
+        {
+          exhausted: true,
+          invalidated:
+            Set(
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 2, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 1,
+                frontend: 1,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 1,
+                target: { incarnation: 3, lifetime: 1, session: 1 }
+              },
+              {
+                capabilities: 2,
+                frontend: 2,
+                output: 1,
+                outputGeneration: 1,
+                provider: 1,
+                revision: 2,
+                target: { incarnation: 1, lifetime: 1, session: 1 }
+              }
+            ),
+          nextMenu: 2,
+          nextOperation: 1,
+          operations: [],
+          retiredOutputs: Set(),
+          view: Closed
+        },
+      beforeCount: 0,
+      event: "activation-rejected",
+      intents: [],
+      receiptBinding:
+        {
+          capabilities: 1,
+          frontend: 1,
+          output: 1,
+          outputGeneration: 1,
+          provider: 1,
+          revision: 1,
+          target: { incarnation: 1, lifetime: 1, session: 1 }
+        },
+      receiptId: 0,
+      receiptOutcome: Pending
+    },
+  state:
+    {
+      exhausted: true,
+      invalidated:
+        Set(
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 2, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 1,
+            frontend: 1,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 1,
+            target: { incarnation: 3, lifetime: 1, session: 1 }
+          },
+          {
+            capabilities: 2,
+            frontend: 2,
+            output: 1,
+            outputGeneration: 1,
+            provider: 1,
+            revision: 2,
+            target: { incarnation: 1, lifetime: 1, session: 1 }
+          }
+        ),
+      nextMenu: 2,
+      nextOperation: 1,
+      operations: [],
+      retiredOutputs: Set(),
+      view: Closed
+    }
+}
+
+[ok] No violation found (36ms at 278 traces/second).
+Trace length statistics: max=11, min=11, average=11.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.
+Use --seed=0x45629 --backend=typescript to reproduce.

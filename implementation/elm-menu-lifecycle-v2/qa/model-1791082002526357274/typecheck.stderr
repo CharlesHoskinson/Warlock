@@ -1,0 +1,15 @@
+
+ Error [QNT000]: missing '}' at 'action'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082002526357274/spec/menu.qnt:21:61
+  21:   type Emission = { id: int, menuId: int, binding: Binding, action: int }
+                                                                  ^^^^^^
+
+
+ Error [QNT000]: extraneous input 'type' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082002526357274/spec/menu.qnt:22:3
+  22:   type Monitor = { event: str, before: State, intents: List[Emission],
+        ^^^^
+
+error: parsing failed

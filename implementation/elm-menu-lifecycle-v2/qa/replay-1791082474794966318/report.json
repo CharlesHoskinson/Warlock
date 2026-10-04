@@ -1,0 +1,1299 @@
+{
+  "passed": true,
+  "scope": "Compiled pure Elm context-menu CPU behavior; no native GUI acceptance",
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Binding.elm": "ee7c0e7be6767197a8d217d4ba85240723511ffb6c8564d108b553605aed898e",
+    "src/Menu.elm": "82307dc5fbbeadbe5ba16fb9d9829a3f4b3771850ebb606d618c5fa9e9dd1148",
+    "src/Provider.elm": "76db65a92f727733e5c4dd5056b98aa16c02fe394c5dc8bba2992c2cc1e30d25",
+    "src/ReceiptRouter.elm": "2251a9fd40b089bc8347110f79d46875fa2d6b65fd407b9eb4c1f91d847def52",
+    "src/Replay.elm": "3cec7dd3fefc09b211663045ad896dd5bad5fad824ab2ce2a127e32d3c4a9bcd",
+    "src/RouterReplay.elm": "c7794ae0ac548b5282b15538d5077be239302c5967bc29dae22ed4c78023cf4b",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/replay.cjs": "6723cbcb1f58a588372a828454076460b871b6fab00ed4e898a6b3d66888e8fc",
+    "qa/fixtures.json": "e907f27e31511e9fae1505a75a775ccdbeebd3e3dc3fbcaf704a09264b4e0140",
+    "qa/replay.py": "c21b560735248ce15526e9b21126a84e42e47cb5ff83998555dccc4cd9267298",
+    "qa/mutations.py": "b0adb8218a1928ad7736cfae482d723f147e5c21c6bcfc4bb8f116d564e2b8fa",
+    "qa/router.cjs": "b1501708e593b7ace893c33504641cbbb7e7469fba86edfbf3f74c11c44fd1fd",
+    "qa/router-fixtures.json": "cf5624ad2960368e11ea74a727e18bf0f9c2540e9af94cf3179ee1e19f8a5862"
+  },
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/inputs/qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/inputs/qa/fixtures.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/checks.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/RouterReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/router.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/inputs/qa/router.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/router.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/inputs/qa/router-fixtures.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791082474794966318/router-checks.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "routerChecks": 45,
+  "routerTraces": 11,
+  "routerNamedChecks": [
+    {
+      "id": "native-full-correlation-delayed-A-after-B-commits:1",
+      "passed": true
+    },
+    {
+      "id": "native-full-correlation-delayed-A-after-B-commits:4",
+      "passed": true
+    },
+    {
+      "id": "native-full-correlation-delayed-A-after-B-commits:5",
+      "passed": true
+    },
+    {
+      "id": "native-full-correlation-delayed-A-after-B-commits:6",
+      "passed": true
+    },
+    {
+      "id": "native-full-correlation-delayed-A-after-B-commits:7",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:2",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:3",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:4",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:5",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:6",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:7",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:8",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:9",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:10",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:11",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:12",
+      "passed": true
+    },
+    {
+      "id": "native-wrong-key-cannot-touch-pending-mapping:13",
+      "passed": true
+    },
+    {
+      "id": "native-Unknown-rebound-same-target-only-original-key-receipt-releases:2",
+      "passed": true
+    },
+    {
+      "id": "native-Unknown-rebound-same-target-only-original-key-receipt-releases:5",
+      "passed": true
+    },
+    {
+      "id": "native-Unknown-rebound-same-target-only-original-key-receipt-releases:6",
+      "passed": true
+    },
+    {
+      "id": "native-Unknown-rebound-same-target-only-original-key-receipt-releases:7",
+      "passed": true
+    },
+    {
+      "id": "native-Unknown-rebound-same-target-only-original-key-receipt-releases:9",
+      "passed": true
+    },
+    {
+      "id": "native-Unknown-rebound-same-target-only-original-key-receipt-releases:10",
+      "passed": true
+    },
+    {
+      "id": "native-Unknown-rebound-same-target-only-original-key-receipt-releases:11",
+      "passed": true
+    },
+    {
+      "id": "native-duplicate-registration-and-pending-activation-no-resend:2",
+      "passed": true
+    },
+    {
+      "id": "native-duplicate-registration-and-pending-activation-no-resend:3",
+      "passed": true
+    },
+    {
+      "id": "native-registration-refuses-mismatched-binding:1",
+      "passed": true
+    },
+    {
+      "id": "native-registration-refuses-mismatched-operation:1",
+      "passed": true
+    },
+    {
+      "id": "native-registration-refuses-mismatched-context:1",
+      "passed": true
+    },
+    {
+      "id": "native-registration-refuses-mismatched-incarnation:1",
+      "passed": true
+    },
+    {
+      "id": "native-registration-refuses-unsupported-close:1",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:2",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:3",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:4",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:5",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:6",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:7",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:8",
+      "passed": true
+    },
+    {
+      "id": "native-frame-schema-refuses-malformed-preserving-registry:9",
+      "passed": true
+    },
+    {
+      "id": "native-registry64-independent-guard-adversarial-local-desync-no-eviction:191",
+      "passed": true
+    },
+    {
+      "id": "native-registry64-independent-guard-adversarial-local-desync-no-eviction:193",
+      "passed": true
+    },
+    {
+      "id": "native-registry64-independent-guard-adversarial-local-desync-no-eviction:194",
+      "passed": true
+    },
+    {
+      "id": "native-registry64-independent-guard-adversarial-local-desync-no-eviction:195",
+      "passed": true
+    },
+    {
+      "id": "native-registry64-independent-guard-adversarial-local-desync-no-eviction:196",
+      "passed": true
+    },
+    {
+      "id": "native-registry64-independent-guard-adversarial-local-desync-no-eviction:197",
+      "passed": true
+    }
+  ],
+  "checks": 260,
+  "namedChecks": [
+    {
+      "id": "opening-and-navigation-do-not-dispatch:0",
+      "passed": true
+    },
+    {
+      "id": "opening-and-navigation-do-not-dispatch:1",
+      "passed": true
+    },
+    {
+      "id": "opening-and-navigation-do-not-dispatch:2",
+      "passed": true
+    },
+    {
+      "id": "opening-and-navigation-do-not-dispatch:3",
+      "passed": true
+    },
+    {
+      "id": "opening-and-navigation-do-not-dispatch:4",
+      "passed": true
+    },
+    {
+      "id": "opening-and-navigation-do-not-dispatch:5",
+      "passed": true
+    },
+    {
+      "id": "all-disabled-stays-unselected:0",
+      "passed": true
+    },
+    {
+      "id": "all-disabled-stays-unselected:1",
+      "passed": true
+    },
+    {
+      "id": "all-disabled-stays-unselected:2",
+      "passed": true
+    },
+    {
+      "id": "all-disabled-stays-unselected:3",
+      "passed": true
+    },
+    {
+      "id": "all-disabled-stays-unselected:4",
+      "passed": true
+    },
+    {
+      "id": "disabled-selection-and-activation:1",
+      "passed": true
+    },
+    {
+      "id": "disabled-selection-and-activation:2",
+      "passed": true
+    },
+    {
+      "id": "single-dispatch-pending-blocks-duplicates:1",
+      "passed": true
+    },
+    {
+      "id": "single-dispatch-pending-blocks-duplicates:2",
+      "passed": true
+    },
+    {
+      "id": "single-dispatch-pending-blocks-duplicates:3",
+      "passed": true
+    },
+    {
+      "id": "single-dispatch-pending-blocks-duplicates:4",
+      "passed": true
+    },
+    {
+      "id": "single-dispatch-pending-blocks-duplicates:5",
+      "passed": true
+    },
+    {
+      "id": "refusal-and-explicit-retry:2",
+      "passed": true
+    },
+    {
+      "id": "refusal-and-explicit-retry:3",
+      "passed": true
+    },
+    {
+      "id": "refusal-and-explicit-retry:4",
+      "passed": true
+    },
+    {
+      "id": "uncertain-no-retry-until-late-receipt:2",
+      "passed": true
+    },
+    {
+      "id": "uncertain-no-retry-until-late-receipt:3",
+      "passed": true
+    },
+    {
+      "id": "uncertain-no-retry-until-late-receipt:4",
+      "passed": true
+    },
+    {
+      "id": "unknown-ledger-survives-dismiss-reopen:3",
+      "passed": true
+    },
+    {
+      "id": "unknown-ledger-survives-dismiss-reopen:4",
+      "passed": true
+    },
+    {
+      "id": "unknown-ledger-survives-dismiss-reopen:5",
+      "passed": true
+    },
+    {
+      "id": "unknown-ledger-survives-dismiss-reopen:6",
+      "passed": true
+    },
+    {
+      "id": "wrong-binding-cannot-select-or-dispatch:1",
+      "passed": true
+    },
+    {
+      "id": "wrong-binding-cannot-select-or-dispatch:2",
+      "passed": true
+    },
+    {
+      "id": "old-menu-cannot-affect-new-menu:2",
+      "passed": true
+    },
+    {
+      "id": "old-menu-cannot-affect-new-menu:3",
+      "passed": true
+    },
+    {
+      "id": "old-menu-cannot-affect-new-menu:4",
+      "passed": true
+    },
+    {
+      "id": "target-retired-dismisses-and-blocks-stale:1",
+      "passed": true
+    },
+    {
+      "id": "target-retired-dismisses-and-blocks-stale:2",
+      "passed": true
+    },
+    {
+      "id": "output-other-generation-not-retired:1",
+      "passed": true
+    },
+    {
+      "id": "output-other-generation-not-retired:2",
+      "passed": true
+    },
+    {
+      "id": "output-other-generation-not-retired:3",
+      "passed": true
+    },
+    {
+      "id": "explicit-cancellation-is-retryable:2",
+      "passed": true
+    },
+    {
+      "id": "explicit-cancellation-is-retryable:3",
+      "passed": true
+    },
+    {
+      "id": "dismiss-does-not-dispatch-restoration:1",
+      "passed": true
+    },
+    {
+      "id": "late-receipt-does-not-close-different-menu:3",
+      "passed": true
+    },
+    {
+      "id": "uncertain-identity-ledger-survives-revision-change:4",
+      "passed": true
+    },
+    {
+      "id": "uncertain-identity-ledger-survives-revision-change:5",
+      "passed": true
+    },
+    {
+      "id": "uncertain-identity-ledger-survives-revision-change:6",
+      "passed": true
+    },
+    {
+      "id": "uncertain-identity-ledger-survives-revision-change:7",
+      "passed": true
+    },
+    {
+      "id": "retirement-prevents-reopening-old-generation:2",
+      "passed": true
+    },
+    {
+      "id": "retirement-prevents-reopening-old-generation:3",
+      "passed": true
+    },
+    {
+      "id": "invalidated-target-cannot-reopen-same-binding:2",
+      "passed": true
+    },
+    {
+      "id": "invalidated-target-cannot-reopen-same-binding:3",
+      "passed": true
+    },
+    {
+      "id": "row-out-of-bounds-never-dispatches:1",
+      "passed": true
+    },
+    {
+      "id": "row-out-of-bounds-never-dispatches:2",
+      "passed": true
+    },
+    {
+      "id": "row-out-of-bounds-never-dispatches:3",
+      "passed": true
+    },
+    {
+      "id": "empty-menu-remains-inert:0",
+      "passed": true
+    },
+    {
+      "id": "empty-menu-remains-inert:1",
+      "passed": true
+    },
+    {
+      "id": "empty-menu-remains-inert:2",
+      "passed": true
+    },
+    {
+      "id": "duplicate-receipt-cannot-corrupt-new-pending:4",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-receipt-does-not-change-committed-B:1",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-receipt-does-not-change-committed-B:4",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-receipt-does-not-change-committed-B:5",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-receipt-does-not-change-committed-B:6",
+      "passed": true
+    },
+    {
+      "id": "delayed-A-receipt-does-not-change-committed-B:7",
+      "passed": true
+    },
+    {
+      "id": "wrong-original-binding-receipt-cannot-clear-pending:2",
+      "passed": true
+    },
+    {
+      "id": "wrong-original-binding-receipt-cannot-clear-pending:3",
+      "passed": true
+    },
+    {
+      "id": "unknown-rebound-window-only-original-definitive-receipt-frees-once:4",
+      "passed": true
+    },
+    {
+      "id": "unknown-rebound-window-only-original-definitive-receipt-frees-once:5",
+      "passed": true
+    },
+    {
+      "id": "unknown-rebound-window-only-original-definitive-receipt-frees-once:6",
+      "passed": true
+    },
+    {
+      "id": "unknown-rebound-window-only-original-definitive-receipt-frees-once:7",
+      "passed": true
+    },
+    {
+      "id": "unknown-rebound-window-only-original-definitive-receipt-frees-once:9",
+      "passed": true
+    },
+    {
+      "id": "unknown-rebound-window-only-original-definitive-receipt-frees-once:10",
+      "passed": true
+    },
+    {
+      "id": "64-ledger-budget-keeps-all-unknown-and-definitive-one-frees-slot:191",
+      "passed": true
+    },
+    {
+      "id": "64-ledger-budget-keeps-all-unknown-and-definitive-one-frees-slot:193",
+      "passed": true
+    },
+    {
+      "id": "64-ledger-budget-keeps-all-unknown-and-definitive-one-frees-slot:194",
+      "passed": true
+    },
+    {
+      "id": "64-ledger-budget-keeps-all-unknown-and-definitive-one-frees-slot:195",
+      "passed": true
+    },
+    {
+      "id": "64-ledger-budget-keeps-all-unknown-and-definitive-one-frees-slot:196",
+      "passed": true
+    },
+    {
+      "id": "128-tombstones-dedup-safe-129th-exhausts-retaining-late-receipt:130",
+      "passed": true
+    },
+    {
+      "id": "128-tombstones-dedup-safe-129th-exhausts-retaining-late-receipt:131",
+      "passed": true
+    },
+    {
+      "id": "128-tombstones-dedup-safe-129th-exhausts-retaining-late-receipt:132",
+      "passed": true
+    },
+    {
+      "id": "128-tombstones-dedup-safe-129th-exhausts-retaining-late-receipt:133",
+      "passed": true
+    },
+    {
+      "id": "128-tombstones-dedup-safe-129th-exhausts-retaining-late-receipt:134",
+      "passed": true
+    },
+    {
+      "id": "128-tombstones-dedup-safe-129th-exhausts-retaining-late-receipt:135",
+      "passed": true
+    },
+    {
+      "id": "combined-output-and-binding-tombstones-share-one-bound:127",
+      "passed": true
+    },
+    {
+      "id": "combined-output-and-binding-tombstones-share-one-bound:128",
+      "passed": true
+    },
+    {
+      "id": "combined-output-and-binding-tombstones-share-one-bound:129",
+      "passed": true
+    },
+    {
+      "id": "combined-output-and-binding-tombstones-share-one-bound:130",
+      "passed": true
+    },
+    {
+      "id": "core-row-budget-64-valid-65-refused-preserves-valid-view:0",
+      "passed": true
+    },
+    {
+      "id": "core-row-budget-64-valid-65-refused-preserves-valid-view:1",
+      "passed": true
+    },
+    {
+      "id": "core-empty-overlong-and-duplicate-action-rows-preserve-view:1",
+      "passed": true
+    },
+    {
+      "id": "core-empty-overlong-and-duplicate-action-rows-preserve-view:2",
+      "passed": true
+    },
+    {
+      "id": "core-empty-overlong-and-duplicate-action-rows-preserve-view:3",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:0",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:1",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:2",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:3",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:4",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:5",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:6",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:7",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:8",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:9",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:10",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:11",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:12",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:13",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:14",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:15",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:16",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:17",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:18",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:19",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:20",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:21",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:22",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:23",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:24",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:25",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:26",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:27",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:28",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:29",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:30",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:31",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:32",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:33",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:34",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:35",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:36",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:37",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:38",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:39",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:40",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:41",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:42",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:43",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:44",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:45",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:46",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:47",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:48",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:49",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:50",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:51",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:52",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:53",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:54",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:55",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:56",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:57",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:58",
+      "passed": true
+    },
+    {
+      "id": "invalid-provider-keeps-preceding-valid-context:59",
+      "passed": true
+    },
+    {
+      "id": "refusal-feedback-bound-ascii:2",
+      "passed": true
+    },
+    {
+      "id": "refusal-feedback-bound-avoid-split-surrogate:2",
+      "passed": true
+    },
+    {
+      "id": "refusal-feedback-bound-retain-whole-emoji:2",
+      "passed": true
+    },
+    {
+      "id": "provider-duplicate-action-aliases-preserve-view:1",
+      "passed": true
+    },
+    {
+      "id": "valid-counter-0",
+      "passed": true
+    },
+    {
+      "id": "valid-counter-1",
+      "passed": true
+    },
+    {
+      "id": "valid-counter-9007199254740993",
+      "passed": true
+    },
+    {
+      "id": "valid-counter-18446744073709551615",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-0",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-1",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-2",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-3",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-4",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-5",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-6",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-7",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-8",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-9",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-10",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-11",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-12",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-13",
+      "passed": true
+    },
+    {
+      "id": "bad-counter-14",
+      "passed": true
+    },
+    {
+      "id": "valid-exact-binding",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-lifetime-0",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-lifetime-1",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-lifetime-01",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-lifetime-None",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-session-0",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-session-1",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-session-01",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-session-None",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-frontend-0",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-frontend-1",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-frontend-01",
+      "passed": true
+    },
+    {
+      "id": "bad-binding-frontend-None",
+      "passed": true
+    },
+    {
+      "id": "binding-extra-field",
+      "passed": true
+    },
+    {
+      "id": "binding-missing-field",
+      "passed": true
+    },
+    {
+      "id": "provider-valid",
+      "passed": true
+    },
+    {
+      "id": "provider-64-duplicate-action-aliases-refused",
+      "passed": true
+    },
+    {
+      "id": "provider-65-over-capacity",
+      "passed": true
+    },
+    {
+      "id": "provider-unicode-256-utf16-units",
+      "passed": true
+    },
+    {
+      "id": "provider-unicode-257-utf16-units",
+      "passed": true
+    },
+    {
+      "id": "provider-raw-utf8-exact-16KiB",
+      "passed": true
+    },
+    {
+      "id": "provider-raw-utf8-over-16KiB-small-character-count",
+      "passed": true
+    },
+    {
+      "id": "provider-canonical-encoded-16KiB-bound",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-protocolVersion",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-providerId",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-capabilityGeneration",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-binding",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-target",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-title",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-capabilities",
+      "passed": true
+    },
+    {
+      "id": "provider-missing-items",
+      "passed": true
+    },
+    {
+      "id": "provider-extra-field-None",
+      "passed": true
+    },
+    {
+      "id": "provider-extra-field-binding",
+      "passed": true
+    },
+    {
+      "id": "provider-extra-field-target",
+      "passed": true
+    },
+    {
+      "id": "provider-extra-field-item",
+      "passed": true
+    },
+    {
+      "id": "provider-extra-field-action",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-protocol-0",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-protocol-2",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-protocol-1",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-protocol-None",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-providerId-0",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-providerId-01",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-providerId-18446744073709551616",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-providerId-1",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-capabilityGeneration-0",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-capabilityGeneration-01",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-capabilityGeneration-18446744073709551616",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-capabilityGeneration-1",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-outputId-0",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-outputId-01",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-outputId-18446744073709551616",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-outputId-1",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-revision-0",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-revision-01",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-revision-18446744073709551616",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-revision-1",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-incarnation-0",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-incarnation-01",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-incarnation-18446744073709551616",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-incarnation-1",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-itemId-0",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-itemId-01",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-itemId-18446744073709551616",
+      "passed": true
+    },
+    {
+      "id": "provider-bad-counter-itemId-1",
+      "passed": true
+    },
+    {
+      "id": "provider-identity-coherence-binding",
+      "passed": true
+    },
+    {
+      "id": "provider-identity-coherence-target",
+      "passed": true
+    },
+    {
+      "id": "provider-duplicate-item-id",
+      "passed": true
+    },
+    {
+      "id": "provider-duplicate-capability",
+      "passed": true
+    },
+    {
+      "id": "provider-enabled-without-capability",
+      "passed": true
+    },
+    {
+      "id": "provider-arbitrary-command-action-denied",
+      "passed": true
+    },
+    {
+      "id": "provider-unknown-capability",
+      "passed": true
+    },
+    {
+      "id": "provider-enabled-type",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-text-''",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-text-'  '",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-text-'a\\nlabel'",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-text-'x\\x7f'",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-text-'x\\x85'",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-text-'\\ud800'",
+      "passed": true
+    },
+    {
+      "id": "provider-declared-checked-action",
+      "passed": true
+    },
+    {
+      "id": "provider-checked-action-type",
+      "passed": true
+    },
+    {
+      "id": "provider-max-uint64-lossless",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-Unicode-orphan-low",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-Unicode-high-before-ascii",
+      "passed": true
+    },
+    {
+      "id": "provider-invalid-Unicode-two-high",
+      "passed": true
+    },
+    {
+      "id": "provider-adversarial-unknown-cycle",
+      "passed": true
+    },
+    {
+      "id": "provider-adversarial-cyclic-title",
+      "passed": true
+    },
+    {
+      "id": "provider-adversarial-deep-unknown-field",
+      "passed": true
+    }
+  ],
+  "traces": 33,
+  "decoderCases": 103
+}

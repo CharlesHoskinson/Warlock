@@ -1,0 +1,38 @@
+{
+  "passed": false,
+  "checks": 6,
+  "namedChecks": [
+    {
+      "id": "actual-native-minimize-restore-frames:0",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: actual-native-minimize-restore-frames[0].error\n+ actual - expected\n\n+ 'Provider field capabilities: Provider index 0: Unsupported window action'\n- null\n"
+    },
+    {
+      "id": "actual-native-minimize-restore-frames:1",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: actual-native-minimize-restore-frames[1].registry\n\n0 !== 1\n"
+    },
+    {
+      "id": "actual-native-minimize-restore-frames:2",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: actual-native-minimize-restore-frames[2].commands\n\n0 !== 1\n"
+    },
+    {
+      "id": "actual-native-minimize-restore-frames:3",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: actual-native-minimize-restore-frames[3].error\n+ actual - expected\n\n+ 'Provider field capabilities: Provider index 0: Unsupported window action'\n- null\n"
+    },
+    {
+      "id": "actual-native-minimize-restore-frames:4",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: actual-native-minimize-restore-frames[4].registry\n\n0 !== 1\n"
+    },
+    {
+      "id": "actual-native-minimize-restore-frames:5",
+      "passed": false,
+      "error": "AssertionError [ERR_ASSERTION]: actual-native-minimize-restore-frames[5].commands\n\n0 !== 2\n"
+    }
+  ],
+  "traces": 1,
+  "decoderCases": 0
+}

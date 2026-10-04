@@ -1,0 +1,40 @@
+{
+  "passed": false,
+  "stage": "smoke",
+  "scope": "Sampled single-actor bounded abstract lifecycle; not native acceptance or implementation equivalence",
+  "inputs": {
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "9f4b731b37f015a18043d68ec42d477d631359d414e3772d66240bd055f73e53",
+    "qa/model.py": "04ddf22e5a000a428d42534b27a928ab021809e5e21c7c50011c960827b216a9"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: Couldn't unify set and list\\nTrying to unify Set[_t51] and List[Operation]\\nTrying to unify (Set[_t51], (_t51) => bool) => bool and (List[Operation], ({ binding: { target: Target | tail__t47 } | tail__t46 }) => bool) => _t52\\n\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082077218092484/spec/menu.qnt:44:57\\n  44:   pure def sameTargetBusy(s: State, b: Binding): bool = s.operations.exists(op => op.binding.target == b.target)\\n                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: typechecking failed\\n\")",
+  "artifacts": {
+    "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "775023cd51c720522bf548320f68b59e94cbcd3fa47256581f2a1326aa9274ba",
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "9f4b731b37f015a18043d68ec42d477d631359d414e3772d66240bd055f73e53",
+    "qa/model.py": "04ddf22e5a000a428d42534b27a928ab021809e5e21c7c50011c960827b216a9"
+  }
+}

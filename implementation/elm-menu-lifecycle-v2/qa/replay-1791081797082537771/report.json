@@ -1,0 +1,42 @@
+{
+  "passed": false,
+  "scope": "Compiled pure Elm context-menu CPU behavior; no native GUI acceptance",
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/Binding.elm": "ee7c0e7be6767197a8d217d4ba85240723511ffb6c8564d108b553605aed898e",
+    "src/Menu.elm": "92e3c8b7ed214beee7e84913dc0c40281a099071d755c90e9b3b6039284d07d7",
+    "src/Provider.elm": "5c69a59d9d276f92a9b3ccc6c1783effbe6ec32e0a4063dbbccef2cfb8deb8ac",
+    "src/Replay.elm": "9af3819c17f1d5f07e06ae8e7b5a6ddfe7e672cd3d5033ec41855c5dc876c3f5",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/replay.cjs": "73f6d2b2ccb71cb8fa873148cf2895beb256f8fe24e8faf7d9cc62e708d2395a",
+    "qa/fixtures.json": "148c8eeabd15ddca517f6134a1d8292f61a7f4f96258757f20b79984b5bf86c1",
+    "qa/replay.py": "0e7f254ee3807449658c5c91d31151142e27c8a97a3f47f2d2215d702ba033f8"
+  },
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/inputs/qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/inputs/qa/fixtures.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/checks.json"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.\\nAssertionError [ERR_ASSERTION]: invalid-provider-keeps-preceding-valid-context[58].providerAccepted\\n\\ntrue !== false\\n\\n    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/inputs/qa/replay.cjs:15:17)\\n    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/inputs/qa/replay.cjs:14:58)\\n    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/replay-1791081797082537771/inputs/qa/replay.cjs:23:7\\n    at runNextTicks (node:internal/process/task_queues:65:5)\\n    at listOnTimeout (node:internal/timers:644:9)\\n    at process.processTimers (node:internal/timers:618:7)\\n')"
+}

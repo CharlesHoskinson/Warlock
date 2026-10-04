@@ -1,0 +1,144 @@
+{
+  "passed": false,
+  "stage": "final",
+  "scope": "Sampled single-actor bounded abstract lifecycle; not native acceptance or implementation equivalence",
+  "inputs": {
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "6818027b0de32851c1786c928cdeb76cba070b4d5f54fb67330037d628142459",
+    "spec/menu_test.qnt": "3cb5eadbb2314fab2dce1d5e40eedea95098f0166538d1c487f20168516efcca",
+    "qa/model.py": "1109b26c078c4db302ffb1914284aba47680fce1556b809c59388d9a1eeb765e"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--max-samples=10",
+        "--max-steps=10",
+        "--seed=284201",
+        "--invariants=safety"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "menu_test.qnt",
+        "--backend=typescript",
+        "--match=^(concreteAbstractionBudgetsTest|openNonmutatingTest|navigationNonmutatingTest|allDisabledNavigationTest|disabledActivationTest|exactDispatchTest|pendingDuplicateTest|unknownDuplicateTest|independentTargetsTest|capacityRefusalTest|receiptFreesOneCapacityTest|unknownRebindNoRetryTest|reboundReceiptBindingRefusedTest|lateAReceiptAfterBTest|definitiveReceiptDoesNotRetryTest|cancelledReceiptDoesNotRetryTest|committedReceiptDoesNotObserveTest|duplicateReceiptNoMutationTest|oldReceiptNewPendingTest|wrongReceiptEveryBindingFieldTest|staleMenuIdTest|retiredBindingRejectsOpenTest|duplicateRetirementDeduplicatedTest|combinedTombstoneCapacityTest|duplicateOutputAtCapacityTest|outputOverflowExhaustionTest|exhaustedReceiptStillAcceptedTest|retiredOutputOriginalReceiptTest|dismissalPreservesUnknownTest)$",
+        "--max-samples=1",
+        "--seed=284202",
+        "--out-itf=../named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=284203",
+        "--invariants=safety",
+        "--witnesses",
+        "opened",
+        "activated",
+        "received",
+        "rejectedReceipt",
+        "dismissed",
+        "navigated",
+        "capacityReached",
+        "capacityRefused",
+        "capacityFreed",
+        "retired",
+        "duplicateRetired",
+        "exhaustedReached",
+        "exhaustedReceipt",
+        "unknownRebound",
+        "rejectedActivation",
+        "--out-itf=../sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "error": "AssertionError({'opened': 788, 'activated': 225, 'received': 225, 'rejectedReceipt': 995, 'dismissed': 291, 'navigated': 559, 'capacityReached': 5, 'capacityRefused': 0, 'capacityFreed': 5, 'retired': 1000, 'duplicateRetired': 996, 'exhaustedReached': 990, 'exhaustedReceipt': 49, 'unknownRebound': 1, 'rejectedActivation': 1000})",
+  "artifacts": {
+    "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "smoke.stdout": "1ca798fdd841680e8ddec1610866b5bc42d4b70edaf8cfe805ae5296fed05c78",
+    "smoke.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-concreteAbstractionBudgetsTest-0.itf.json": "53766393f3c09b46e4d2d933b1a2bd801713c2c11c72ff6182bfc3a950e134fd",
+    "named-openNonmutatingTest-1.itf.json": "4dc79db87b9a8d72445d76dcd8f04a53fb8c3ced9d61608464d63663ce29b0fa",
+    "named-navigationNonmutatingTest-2.itf.json": "a19ae3d47dc14d8d39d2c29bf8bd93885821d50d4627c51ec77e6a2d09975869",
+    "named-allDisabledNavigationTest-3.itf.json": "4eae502f421693cbdadbaf58c5402fb9240ec85ccef137179d9a1555f31db34e",
+    "named-disabledActivationTest-4.itf.json": "4ce3e79a157a2f7b67a84cbf1cb5e68613309db1282b97d19dd32071ffa5f6d9",
+    "named-exactDispatchTest-5.itf.json": "ea168c3a2ec7b26ca9ae320bb4b43a5bd767c7323f8682a781e726dbcc1589e9",
+    "named-pendingDuplicateTest-6.itf.json": "5c53ed13d2f8d1c8a6c085da0cc1ca86c729dc3b3b066002b4bd92f7ad5c85ea",
+    "named-unknownDuplicateTest-7.itf.json": "b599b34f210d4d861f0216bf2fec25b12b9c4c4b667da2f1cd75b70c4b3a95d1",
+    "named-independentTargetsTest-8.itf.json": "3dea83a6cbd901d19bd841577c6edde28be8fb7a5e191609c139180df00e5da1",
+    "named-capacityRefusalTest-9.itf.json": "71dbb7db88a965eaa07766e8387ceaab8717a54263078a9055db8613522dbe2e",
+    "named-receiptFreesOneCapacityTest-10.itf.json": "2fff8cd94e515acaf784d775a9868c7175cc6b245622c1f3eb396d9a603d8a18",
+    "named-unknownRebindNoRetryTest-11.itf.json": "d7d040ebcb4e6a875749c4a6cc5702d03560ade828d04945aa7b391a639295bd",
+    "named-reboundReceiptBindingRefusedTest-12.itf.json": "2c9e1c3e4839d2b6ae838fbea88f6da14bdca47854aea372431a7b8c1aaa0935",
+    "named-lateAReceiptAfterBTest-13.itf.json": "9e44df262b7c27f7ebd1c328b5216cb450796bad049b38a574449ff338621849",
+    "named-definitiveReceiptDoesNotRetryTest-14.itf.json": "dfb4149440765ab0ea0c742025a6a8003e4bca48f102f3476d6dbd34c22c65e2",
+    "named-cancelledReceiptDoesNotRetryTest-15.itf.json": "6eb87434cc1b14b7b5a71facfc6efce219baf23c97648f76030af088fe316bdb",
+    "named-committedReceiptDoesNotObserveTest-16.itf.json": "eb1f6ccd30a6de446c5e9e8e43505f702973df7b440cfc7626be5fae1c1b08e3",
+    "named-duplicateReceiptNoMutationTest-17.itf.json": "c1298c541cb0646beca71c671b2855993c65ef8379628a36080d8e8ef444acb4",
+    "named-oldReceiptNewPendingTest-18.itf.json": "e9a60443afc58a02a6e46d55c875d7bd19e19cdd90ca1ed8856fcf8029be07a6",
+    "named-wrongReceiptEveryBindingFieldTest-19.itf.json": "a7fee76809b65b8ae2513a85e190f52226e69ad906beacccbf8c237be8b09a2b",
+    "named-staleMenuIdTest-20.itf.json": "1e84ec00c62027e7d1026db0f9027d8088b1f5ed3f05194638bf2a31061a5eb4",
+    "named-retiredBindingRejectsOpenTest-21.itf.json": "49d9a9980ebce8ba0fa029564ba5f8cf45daf5a3e3b93bffba9719dd3aaefbd0",
+    "named-duplicateRetirementDeduplicatedTest-22.itf.json": "e8b28b2d7c71628b8b212729b77327593dbc6dbc925de2f4a75dd37770f3f259",
+    "named-combinedTombstoneCapacityTest-23.itf.json": "24259dbae3ace1efb7d738e4e46f8aea35082a7e695af93fc70577e7e824102d",
+    "named-duplicateOutputAtCapacityTest-24.itf.json": "6980823c7b534cad6851294e7205c7bf67f9dfd0034248abafb7a8828e3b1984",
+    "named-outputOverflowExhaustionTest-25.itf.json": "6c6ad15824c6dc9b53bb450d88889fe3c942c9deef0d03003da3c200a7102d6c",
+    "named-exhaustedReceiptStillAcceptedTest-26.itf.json": "4039897670f95c69c607b6bc49a152178916835d4615b14eede613bc96dc2ac3",
+    "named-retiredOutputOriginalReceiptTest-27.itf.json": "3042107e3871f7923fe56c3afc3fc5fdf3c1a6932e302bfa51df2336684d7212",
+    "named-dismissalPreservesUnknownTest-28.itf.json": "e0ffb9109a9edef0164925c2a93f341c45115f86cf6629d920ebb63a522b990b",
+    "named.stdout": "3a271a6ab9e5c1a51648d242a9547a96b64c401b3d02b8f6014a03eb8708ec66",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "3144f056f6d7990322095ad056dde8646eb69fd0d512c893bf45c5b1cd958b82",
+    "sampled.stdout": "8695d85001b326283376df26b30447575680803b75503849a761f9bcebb07b3a",
+    "sampled.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "6818027b0de32851c1786c928cdeb76cba070b4d5f54fb67330037d628142459",
+    "spec/menu_test.qnt": "3cb5eadbb2314fab2dce1d5e40eedea95098f0166538d1c487f20168516efcca",
+    "qa/model.py": "1109b26c078c4db302ffb1914284aba47680fce1556b809c59388d9a1eeb765e"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "stage": "smoke",
+  "scope": "Sampled single-actor bounded abstract lifecycle; not native acceptance or implementation equivalence",
+  "inputs": {
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "9bf8a94f036fe8d451856ee3f622a4b0e8a85f0348f32ad1a7b1759c424a4417",
+    "spec/menu_test.qnt": "3cb5eadbb2314fab2dce1d5e40eedea95098f0166538d1c487f20168516efcca",
+    "qa/model.py": "1109b26c078c4db302ffb1914284aba47680fce1556b809c59388d9a1eeb765e"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--max-samples=10",
+        "--max-steps=10",
+        "--seed=284201",
+        "--invariants=safety"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "artifacts": {
+    "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "smoke.stdout": "5e842b40baaed82fe24396106ce99ce7d0be0b307a1ac20bf9601cc5b68373cd",
+    "smoke.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "9bf8a94f036fe8d451856ee3f622a4b0e8a85f0348f32ad1a7b1759c424a4417",
+    "spec/menu_test.qnt": "3cb5eadbb2314fab2dce1d5e40eedea95098f0166538d1c487f20168516efcca",
+    "qa/model.py": "1109b26c078c4db302ffb1914284aba47680fce1556b809c59388d9a1eeb765e"
+  }
+}

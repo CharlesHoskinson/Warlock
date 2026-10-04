@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "scope": "Previously accepted native frames replayed through current compiled Elm; no new native GUI acceptance",
+  "checks": 8,
+  "nativeCommands": 2,
+  "nativeReceipts": 2,
+  "sourceLogSHA256": "ad76d0273ebe25ef521b1ec76aa65e43c1091deb51869e61ee6d225b9b987f06",
+  "buildReportSHA256": "6caa26e29c4501d18877c120ed218abcfed6de5b1108c6522561ecbdf78ecbab",
+  "buildReport": "qa/replay-1791082719169766540/report.json",
+  "command": [
+    "node",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/historical-1791082974572663897/router.cjs",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/historical-1791082974572663897/router.js",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/historical-1791082974572663897/fixtures.json",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/historical-1791082974572663897/checks.json"
+  ],
+  "exitCode": 0,
+  "artifacts": {
+    "native.log": "ad76d0273ebe25ef521b1ec76aa65e43c1091deb51869e61ee6d225b9b987f06",
+    "router.js": "a99d264e65d480b35d9d075f6c8fcf7a2cf5f712a818ef9b6ce3c415d0eae3c8",
+    "router.cjs": "b91448bc67e9186f8f0726579857b30668a2399ad93b8a654e7c6545d780a720",
+    "historical.py": "b03d5476fa353b12bfbdc75c9a990f70e5644e49ddc4d93c9f1cc8baafaa5dd8",
+    "fixtures.json": "d4a178096a7610e1aa1af05f8e7a5a39969223d71bfc2737de06b8543a18d311",
+    "checks.json": "664f5628fd1aeb33881f7bff2035943b6bbcc26ed12c1fdc64a047f14c100c07",
+    "stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stderr": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+  }
+}

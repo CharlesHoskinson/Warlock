@@ -1,0 +1,40 @@
+{
+  "passed": false,
+  "stage": "smoke",
+  "scope": "Sampled single-actor bounded abstract lifecycle; not native acceptance or implementation equivalence",
+  "inputs": {
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "ee24f4c5f87ce8b51ad98ae9d71d9e8a632ca58bde03534f170be2d35218ce6d",
+    "qa/model.py": "04ddf22e5a000a428d42534b27a928ab021809e5e21c7c50011c960827b216a9"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: missing '}' at 'action'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082002526357274/spec/menu.qnt:21:61\\n  21:   type Emission = { id: int, menuId: int, binding: Binding, action: int }\\n                                                                  ^^^^^^\\n\\n\\n Error [QNT000]: extraneous input 'type' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082002526357274/spec/menu.qnt:22:3\\n  22:   type Monitor = { event: str, before: State, intents: List[Emission],\\n        ^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "8baaf7f0ad45a5721917bb809974da2b56ae9fd1f27d242ac5af41b1b9116aaa",
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "ee24f4c5f87ce8b51ad98ae9d71d9e8a632ca58bde03534f170be2d35218ce6d",
+    "qa/model.py": "04ddf22e5a000a428d42534b27a928ab021809e5e21c7c50011c960827b216a9"
+  }
+}

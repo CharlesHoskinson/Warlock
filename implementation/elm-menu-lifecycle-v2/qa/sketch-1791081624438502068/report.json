@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "inputs": {
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/INTAKE.md": "7724fade69992d126fc8c9e67c726683c023d9191c15ff3c11b6434081f3a8d1",
+    "qa/sketch.py": "2c852a9d13ee2659e6e079a10c54bb85d146a7c1565a5afa0ff458803bc5a1ec"
+  },
+  "command": [
+    "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+    "typecheck",
+    "menu-sketch.qnt"
+  ],
+  "exitCode": 0,
+  "scope": "Types only; proposed model awaits approval"
+}

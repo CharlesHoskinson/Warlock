@@ -1,0 +1,13 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+64-ledger-budget-keeps-all-unknown-and-definitive-one-frees-slot:193: AssertionError [ERR_ASSERTION]: 64-ledger-budget-keeps-all-unknown-and-definitive-one-frees-slot[193].outstanding
+
+63 !== 64
+
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/mutations-1791082755631851542/evict-unresolved-at-capacity/qa/replay.cjs:15:17)
+    at subset (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/mutations-1791082755631851542/evict-unresolved-at-capacity/qa/replay.cjs:14:58)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/mutations-1791082755631851542/evict-unresolved-at-capacity/qa/replay.cjs:28:9
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/mutations-1791082755631851542/evict-unresolved-at-capacity/qa/replay.cjs:20:11)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/mutations-1791082755631851542/evict-unresolved-at-capacity/qa/replay.cjs:27:7
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)

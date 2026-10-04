@@ -1,0 +1,40 @@
+{
+  "passed": false,
+  "stage": "smoke",
+  "scope": "Sampled single-actor bounded abstract lifecycle; not native acceptance or implementation equivalence",
+  "inputs": {
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "60bbc53f3ca3527377c2b6fdae2785d3cf0d2ccb8ecd1b8b0bd652b2a4f0f82a",
+    "qa/model.py": "04ddf22e5a000a428d42534b27a928ab021809e5e21c7c50011c960827b216a9"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\\n\\n Error [QNT000]: mismatched input \\'=\\' expecting \\':\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082017185404913/spec/menu.qnt:46:47\\n  46:   action openMenu(b: Binding, rows: Set[int]) = all {\\n                                                    ^\\n\\n\\n Error [QNT000]: extraneous input \\'val\\' expecting {<EOF>, \\'module\\', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082017185404913/spec/menu.qnt:50:3\\n  50:   val opened = monitor.event == \"open\"\\n        ^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "5059efce604b76930ef95d7f310e3125a77b46f35bfd2e87fe29458d1156d1db",
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "60bbc53f3ca3527377c2b6fdae2785d3cf0d2ccb8ecd1b8b0bd652b2a4f0f82a",
+    "qa/model.py": "04ddf22e5a000a428d42534b27a928ab021809e5e21c7c50011c960827b216a9"
+  }
+}

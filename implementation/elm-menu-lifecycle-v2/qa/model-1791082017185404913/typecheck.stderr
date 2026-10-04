@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082017185404913/spec/menu.qnt:46:47
+  46:   action openMenu(b: Binding, rows: Set[int]) = all {
+                                                    ^
+
+
+ Error [QNT000]: extraneous input 'val' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082017185404913/spec/menu.qnt:50:3
+  50:   val opened = monitor.event == "open"
+        ^^^
+
+error: parsing failed

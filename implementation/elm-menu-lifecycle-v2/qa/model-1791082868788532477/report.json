@@ -1,0 +1,251 @@
+{
+  "passed": true,
+  "stage": "final",
+  "scope": "Sampled single-actor bounded abstract lifecycle; not native acceptance or implementation equivalence",
+  "inputs": {
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "9bf8a94f036fe8d451856ee3f622a4b0e8a85f0348f32ad1a7b1759c424a4417",
+    "spec/menu_test.qnt": "3cb5eadbb2314fab2dce1d5e40eedea95098f0166538d1c487f20168516efcca",
+    "qa/model.py": "2cb5fa2e56ddd384de439c77ff0f4e247ca2d859dd4e06547e897d0c66d39575"
+  },
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu-types.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--max-samples=10",
+        "--max-steps=10",
+        "--seed=284201",
+        "--invariants=safety"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "menu_test.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "menu_test.qnt",
+        "--backend=typescript",
+        "--match=^(concreteAbstractionBudgetsTest|openNonmutatingTest|navigationNonmutatingTest|allDisabledNavigationTest|disabledActivationTest|exactDispatchTest|pendingDuplicateTest|unknownDuplicateTest|independentTargetsTest|capacityRefusalTest|receiptFreesOneCapacityTest|unknownRebindNoRetryTest|reboundReceiptBindingRefusedTest|lateAReceiptAfterBTest|definitiveReceiptDoesNotRetryTest|cancelledReceiptDoesNotRetryTest|committedReceiptDoesNotObserveTest|duplicateReceiptNoMutationTest|oldReceiptNewPendingTest|wrongReceiptEveryBindingFieldTest|staleMenuIdTest|retiredBindingRejectsOpenTest|duplicateRetirementDeduplicatedTest|combinedTombstoneCapacityTest|duplicateOutputAtCapacityTest|outputOverflowExhaustionTest|exhaustedReceiptStillAcceptedTest|retiredOutputOriginalReceiptTest|dismissalPreservesUnknownTest)$",
+        "--max-samples=1",
+        "--seed=284202",
+        "--out-itf=../named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=284203",
+        "--invariants=safety",
+        "--witnesses",
+        "opened",
+        "activated",
+        "received",
+        "rejectedReceipt",
+        "dismissed",
+        "navigated",
+        "capacityReached",
+        "capacityRefused",
+        "capacityFreed",
+        "retired",
+        "duplicateRetired",
+        "exhaustedReached",
+        "exhaustedReceipt",
+        "unknownRebound",
+        "rejectedActivation",
+        "--out-itf=../sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "menu.qnt",
+        "--backend=typescript",
+        "--step=capacityStep",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=284204",
+        "--invariants=safety",
+        "--witnesses",
+        "capacityReached",
+        "capacityRefused",
+        "capacityFreed",
+        "unknownRebound",
+        "--out-itf=../targeted-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "../mutant-wrong-receipt/menu.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "../mutant-wrong-receipt/menu.qnt",
+        "--backend=typescript",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=284205",
+        "--invariants=safety",
+        "--out-itf=../mutant-counterexample.itf.json"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "namedScenarios": 29,
+  "invariantSamples": 2000,
+  "maxSteps": 40,
+  "witnesses": {
+    "opened": 772,
+    "activated": 218,
+    "received": 218,
+    "rejectedReceipt": 995,
+    "dismissed": 299,
+    "navigated": 515,
+    "capacityReached": 331,
+    "capacityRefused": 25,
+    "capacityFreed": 284,
+    "retired": 1000,
+    "duplicateRetired": 997,
+    "exhaustedReached": 991,
+    "exhaustedReceipt": 45,
+    "unknownRebound": 168,
+    "rejectedActivation": 1000
+  },
+  "sampledProfiles": [
+    {
+      "step": "step",
+      "samples": 1000,
+      "witnesses": {
+        "opened": 772,
+        "activated": 218,
+        "received": 218,
+        "rejectedReceipt": 995,
+        "dismissed": 299,
+        "navigated": 515,
+        "capacityReached": 6,
+        "capacityRefused": 0,
+        "capacityFreed": 6,
+        "retired": 1000,
+        "duplicateRetired": 997,
+        "exhaustedReached": 991,
+        "exhaustedReceipt": 45,
+        "unknownRebound": 0,
+        "rejectedActivation": 1000
+      }
+    },
+    {
+      "step": "capacityStep",
+      "samples": 1000,
+      "witnesses": {
+        "capacityReached": 325,
+        "capacityRefused": 25,
+        "capacityFreed": 278,
+        "unknownRebound": 168
+      }
+    }
+  ],
+  "unsafeGuardMutationDetected": true,
+  "artifacts": {
+    "types.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "types.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "smoke.stdout": "c56a04fe8c98dd0618f35c049196e1a91e10648b5760658cb0a4172f5b7c3b58",
+    "smoke.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "test-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-concreteAbstractionBudgetsTest-0.itf.json": "f0aa16d0ac080beb02c18cbfc4a93dece0c10edfeb905d08fd1aea11f6e7ae69",
+    "named-openNonmutatingTest-1.itf.json": "48a5b65066340e4eeec4bbb7677705c8db6a3999aa9145b567b89249795885db",
+    "named-navigationNonmutatingTest-2.itf.json": "7b82bd9c8e7d6607d555be3cc6366a5c2ce0820e2a8acf0ad975d093ebc8e72c",
+    "named-allDisabledNavigationTest-3.itf.json": "41e84ce575377ae816e13fa7434309af1577af39e007000a888c4587db571718",
+    "named-disabledActivationTest-4.itf.json": "df972acf9aee9ff0d5c7df2ddd2d0e6ff8ec37522f65adcf8d1aca59281086bf",
+    "named-exactDispatchTest-5.itf.json": "ec9647215c015308ba446e6147a8090a3b147344bd719d8e4b1eaff44e8301e3",
+    "named-pendingDuplicateTest-6.itf.json": "2e82c2fa22072de97a37a6993c2b4386bff3eb0e3b93fd8b22b34756e6d6b745",
+    "named-unknownDuplicateTest-7.itf.json": "ec02cbd627cd823d9ded71382a5012f614148de0b65e3d04448aceafdabf9c73",
+    "named-independentTargetsTest-8.itf.json": "edf32b6b8658480fcd61f4096a121712fda5b2e8b9b476009978990e00dfed43",
+    "named-capacityRefusalTest-9.itf.json": "efed159ffb05d41073e6d19fe1d533ddd80d0bfb1df2aabc627d8e94e51e5583",
+    "named-receiptFreesOneCapacityTest-10.itf.json": "e75d0fbc69e3c59a0c40ffd9acbfa7ae5df9286466485078345dacdc9a1d4774",
+    "named-unknownRebindNoRetryTest-11.itf.json": "b966b0abd8f85867c78b03ca03aaae29454385342d3972f2c096504dc2015634",
+    "named-reboundReceiptBindingRefusedTest-12.itf.json": "d7354b7e7d4ede978523da15d4cababf9f611272cebf376193c13ec4c5ffcfec",
+    "named-lateAReceiptAfterBTest-13.itf.json": "cd28e57b9280321268427f5c861cb3a842233c86ffffebf96a342b0f75209ae5",
+    "named-definitiveReceiptDoesNotRetryTest-14.itf.json": "407b15d9f955cdbee1a2282eafa24e935c7eb7a98b60833b4624b59354fb39e6",
+    "named-cancelledReceiptDoesNotRetryTest-15.itf.json": "cb8b7047b4a3be73ac6ac544d9d4d529635511af851923fa3aef8a774ba07e73",
+    "named-committedReceiptDoesNotObserveTest-16.itf.json": "0166cd7f47efe7213e4b91d2bdfad20703d7e03b74e4f12decbd702fb5697e65",
+    "named-duplicateReceiptNoMutationTest-17.itf.json": "547126a5eaca7c70c3b80317a947ce335f80c75398f0accc45d6bf766b184c87",
+    "named-oldReceiptNewPendingTest-18.itf.json": "00732d2a3ac98f6bf4b41ad7cf70daa32a89cff2b2b1ee474ed1beb4b1cd3336",
+    "named-wrongReceiptEveryBindingFieldTest-19.itf.json": "5ea8e8663551296397d522a7289e4bf01795f5cde18fcd6d9e28c020b4e1e497",
+    "named-staleMenuIdTest-20.itf.json": "8a44741ae228e379c191393a52daed0133437bcbd4df1fa3892918d2e2de03de",
+    "named-retiredBindingRejectsOpenTest-21.itf.json": "fde5d05226d85ae787ae02865a06b339eb9b28cb0487bd2468813c2431ad1c88",
+    "named-duplicateRetirementDeduplicatedTest-22.itf.json": "75dc92e3a6dd539ebf0774574c09ae6943ea3a4374693da4dc817b6bad677345",
+    "named-combinedTombstoneCapacityTest-23.itf.json": "3e90addf4fba347830dd4ed2a2a016fc92e5bb0cbdebf8534d29bc205df7f3aa",
+    "named-duplicateOutputAtCapacityTest-24.itf.json": "148387326ada16686273554341cd0356b5f147c4057616a25879600a1a88ad69",
+    "named-outputOverflowExhaustionTest-25.itf.json": "dca5b9baec10ae0d214d35455d3ba04624abbf9b471a2de9e110ab72c2b3fc0b",
+    "named-exhaustedReceiptStillAcceptedTest-26.itf.json": "e386c3638469a734c102160335f3b0acf71262cda5c2e96b5bd406e2c53dd7fe",
+    "named-retiredOutputOriginalReceiptTest-27.itf.json": "aa82de2545172841b78b50dd845cdf9f0b2a2cc043a211b36ec0983d65cdb8b7",
+    "named-dismissalPreservesUnknownTest-28.itf.json": "8475b6315a17461efc36fdf0d3915dda5de4b13f557d499f6f4884863d89716b",
+    "named.stdout": "816b0c2ffd8049fc973524da9f299fe61cce3a52547faf254a451abd985fa660",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "d20721b2f19084a9a2d8515f9470101aff9c35fc2497a3d849e08b064153d8f5",
+    "sampled.stdout": "f6eeb9f952db36626ddbbcb4d8aa906309892a456df5a39d581c02105b609d32",
+    "sampled.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "targeted-0.itf.json": "4ca6f8a9abdc682d045bf003f4d0c02b718669fc5f01f9e981075fdd9a1ce11a",
+    "targeted.stdout": "feb411bc3b0f911bffcb4e7c88630720f3b4ff2667ba2d76b873c3acca90bfe8",
+    "targeted.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-counterexample.itf.json": "530610ae51a9ab2ba6b415573cf8c5fe965094f1e041544db6397d21d4ad90e9",
+    "mutant-invariant.stdout": "0a924c345c6d61fd28a5319370ae826bb03adaa5bdbab62e1f76fc9bfb10e39f",
+    "mutant-invariant.stderr": "493103dd2270fdc5b0b1614575cfa015216b7e4ed1f5b57eef9f877789242b9e",
+    "spec/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "spec/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "spec/menu.qnt": "9bf8a94f036fe8d451856ee3f622a4b0e8a85f0348f32ad1a7b1759c424a4417",
+    "spec/menu_test.qnt": "3cb5eadbb2314fab2dce1d5e40eedea95098f0166538d1c487f20168516efcca",
+    "qa/model.py": "2cb5fa2e56ddd384de439c77ff0f4e247ca2d859dd4e06547e897d0c66d39575",
+    "mutant-wrong-receipt/menu-sketch.qnt": "5f07b6cbfbdfc96a772f5e298d43fda70e58d1f40390b63bf8fad261aa2026eb",
+    "mutant-wrong-receipt/menu-types.qnt": "511ac61cd2259783b19380001158cf68f05abfd0311660eec683809a2d1586eb",
+    "mutant-wrong-receipt/menu.qnt": "369518ed0540e30d34443747d5d1a166fc8a7981b3c945824a3a52c5b09943b1",
+    "mutant-wrong-receipt/menu_test.qnt": "3cb5eadbb2314fab2dce1d5e40eedea95098f0166538d1c487f20168516efcca"
+  }
+}

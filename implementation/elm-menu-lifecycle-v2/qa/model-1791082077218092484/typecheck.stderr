@@ -1,0 +1,11 @@
+
+ Error [QNT000]: Couldn't unify set and list
+Trying to unify Set[_t51] and List[Operation]
+Trying to unify (Set[_t51], (_t51) => bool) => bool and (List[Operation], ({ binding: { target: Target | tail__t47 } | tail__t46 }) => bool) => _t52
+
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-menu-lifecycle-v2/qa/model-1791082077218092484/spec/menu.qnt:44:57
+  44:   pure def sameTargetBusy(s: State, b: Binding): bool = s.operations.exists(op => op.binding.target == b.target)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: typechecking failed
