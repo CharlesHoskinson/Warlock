@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-surface-recovery-qa-v81",
-  "status": "Native GTK popup-window candidate passes actual layer-parent xdg_popup/grab/default geometry/bar48 and native19 lifecycle/input checks. V64 failed grab bookkeeping preserved; V65 unmap retirement accepted within experiment. Final Elm bar/presentation-only popup, stale epochs, outputs/IME/AT/full scene/hardware/release open.",
+  "activeSlice": "implementation/elm-surface-regression-qa-v93",
+  "status": "Dual-view native window regression accepted within private scope: original91 plus focused grab refusal; full replacement acceptance remains open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -721,9 +721,27 @@
       "newQuintRun": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-surface-recovery-qa-v81/qa/slice-manifest.json"
+    },
+    "dualViewRegressionV93": {
+      "evidence": "implementation/elm-surface-regression-qa-v93/qa/slice-manifest.json",
+      "nativeChecks": 92,
+      "originalNativeChecks": 91,
+      "addedFocusedGrabRefusalChecks": 1,
+      "compiledControllerChecks": 49,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 17,
+      "quintInvariantSamples": 2000,
+      "cleanupPassed": true,
+      "originalCheckAndWaitASTPreserved": true,
+      "scope": "Private dual-view Elm/native regression only; complete requirements/sprints/release remain open",
+      "failedLineage": "V83 optimized Main shadowing; V86 stale post-close dependency; V88 blanket seat-grab refusal; V90 source preflight; V91 request reuse; V92 same-PID binding replacement; V94 Quint syntax. All preserved."
     }
   },
-  "next": "Prepare primary-only stamped QA inspection matched to actual DOM and native bar/popup geometry; execute original91 window regression with preserved identities/oracles/deadlines. Continue pending Unknown recovery, real GTK/WebKit faults, gesture provenance, outputs/reflow/keyboard/AT/IME/hardware and release.",
+  "next": [
+    "Add pending-choice timeout and explicit feedback without automatic effect replay.",
+    "Qualify per-output roles/workarea/geometry/fullscreen/lock and integrate reviewed menu bridge into single controller.",
+    "Complete native AT/IME, hardware/performance, full scene, compositor feasibility and coherent release gates."
+  ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

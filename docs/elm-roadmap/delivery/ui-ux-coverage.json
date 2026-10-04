@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T03:01:08.937445+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T03:25:00.581811+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6734,6 +6734,20 @@
       "slice": "implementation/elm-surface-recovery-qa-v81",
       "level": "actual idle backend recovery and required DOM accessible names with retained popup/default launch",
       "acceptance": "Idle SIGTERM fault and current names only; actual screen reader, pending Unknown, original91 full window regression, outputs/human/hardware/release remain open."
+    },
+    {
+      "evidence": "implementation/elm-surface-regression-qa-v93/qa/slice-manifest.json",
+      "nativeChecks": 92,
+      "originalNativeChecks": 91,
+      "addedFocusedGrabRefusalChecks": 1,
+      "compiledControllerChecks": 49,
+      "compiledPresenterChecks": 12,
+      "quintNamedScenarios": 17,
+      "quintInvariantSamples": 2000,
+      "cleanupPassed": true,
+      "originalCheckAndWaitASTPreserved": true,
+      "scope": "Private dual-view Elm/native regression only; complete requirements/sprints/release remain open",
+      "failedLineage": "V83 optimized Main shadowing; V86 stale post-close dependency; V88 blanket seat-grab refusal; V90 source preflight; V91 request reuse; V92 same-PID binding replacement; V94 Quint syntax. All preserved."
     }
   ]
 }

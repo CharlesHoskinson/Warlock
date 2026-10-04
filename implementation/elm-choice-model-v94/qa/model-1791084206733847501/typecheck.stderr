@@ -1,0 +1,29 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:6:22
+  6:  action reply(id:int)=s'=if(s.pending and id==s.expected and s.connected and s.available) {
+                          ^
+
+
+ Error [QNT000]: no viable alternative at input '.application{'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:8:3
+  8:   {...s,pending:false,expected:0,dispatches:s.dispatches+(if(admit)1 else 0),dispatchedRevision:if(admit)s.revision else s.dispatchedRevision,authorized:s.authorized or admit}
+       ^
+
+
+ Error [QNT000]: extraneous input '{' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:8:3
+  8:   {...s,pending:false,expected:0,dispatches:s.dispatches+(if(admit)1 else 0),dispatchedRevision:if(admit)s.revision else s.dispatchedRevision,authorized:s.authorized or admit}
+       ^
+
+
+ Error [QNT000]: extraneous input '}' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:9:2
+  9:  } else s
+      ^
+
+error: parsing failed

@@ -1,0 +1,16 @@
+-- SHADOWING ------------------------------------------------ src/Inspection.elm
+
+The name `picker` is first defined here:
+
+20|         picker current =
+            ^^^^^^
+But then it is defined AGAIN over here:
+
+19|         group item = E.object [("key",E.string item.key),("domId",E.string ("group:" ++ stamp ++ ":" ++ item.key)),("title",E.string (item.families |> List.head |> Maybe.map .label |> Maybe.withDefault "Windows")),("active",E.bool (List.any .active item.families)),("expanded",E.bool (model.picker |> Maybe.map (\picker -> picker.key==item.key) |> Maybe.withDefault False))]
+                                                                                                                                                                                                                                                                                                                             ^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

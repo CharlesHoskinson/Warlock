@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Deferred first choice after close: matching fresh projection, binding/output/root/application checks, cancellation and at-most-once dispatch. Abstract model; compiled Elm and native regression provide separate evidence.",
+  "sourceSHA256": "6eb59636b6cb24a35319514658547423e4f6059cd94c12f36bc8492b1f8d6401",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "surfaces.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:6:22\\n  6:  action reply(id:int)=s'=if(s.pending and id==s.expected and s.connected and s.available) {\\n                          ^\\n\\n\\n Error [QNT000]: no viable alternative at input '.application{'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:8:3\\n  8:   {...s,pending:false,expected:0,dispatches:s.dispatches+(if(admit)1 else 0),dispatchedRevision:if(admit)s.revision else s.dispatchedRevision,authorized:s.authorized or admit}\\n       ^\\n\\n\\n Error [QNT000]: extraneous input '{' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:8:3\\n  8:   {...s,pending:false,expected:0,dispatches:s.dispatches+(if(admit)1 else 0),dispatchedRevision:if(admit)s.revision else s.dispatchedRevision,authorized:s.authorized or admit}\\n       ^\\n\\n\\n Error [QNT000]: extraneous input '}' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-model-v94/qa/model-1791084206733847501/surfaces.qnt:9:2\\n  9:  } else s\\n      ^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "surfaces.qnt": "6eb59636b6cb24a35319514658547423e4f6059cd94c12f36bc8492b1f8d6401",
+    "model.py": "0d08fad222ceee276f223d06e5e675256731e099244686afa6fffae239b3b29a",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "806fe0a37f8ac72429b41e9b3daefad89e8b7733ec0153d109b68e1cbf82804d"
+  }
+}

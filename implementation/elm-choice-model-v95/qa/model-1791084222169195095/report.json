@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "scope": "Deferred first choice after close: matching fresh projection, binding/output/root/application checks, cancellation and at-most-once dispatch. Abstract model; compiled Elm and native regression provide separate evidence.",
+  "sourceSHA256": "ac109a91fd680ca3cfdaa79bb5afc1458b9a20d0eb88fb31749c2d96bca0f632",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "surfaces.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--match=^(closeBeforeDispatchTest|freshRevisionTest|duplicateTest|staleTest|retiredRootTest|changedApplicationTest|changedOutputTest|blockedTest|disconnectedTest|reboundTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 10,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "surfaces.qnt": "ac109a91fd680ca3cfdaa79bb5afc1458b9a20d0eb88fb31749c2d96bca0f632",
+    "model.py": "0d08fad222ceee276f223d06e5e675256731e099244686afa6fffae239b3b29a",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-closeBeforeDispatchTest-0.itf.json": "0edc326d302471c30b190032e9b9567eacc9f9b7e5d23cd2764e26bd06f3c4f6",
+    "named-freshRevisionTest-1.itf.json": "1afee8dad30cf9ef8b9c7d4c98b6367f5eb598e2479aba527da23277b7c3ba9a",
+    "named-duplicateTest-2.itf.json": "4e44362741047640caf932273f576b4991f1c084ef257731ca79d10832afab30",
+    "named-staleTest-3.itf.json": "8d7125c8e3b36b54da341c9ca815b47bdfd3a62b2d3644ef02366c9bf4f30677",
+    "named-retiredRootTest-4.itf.json": "52517c91911d4fa2f7f2d702a4579001dbb5c1af93b1294b499d532d638a3702",
+    "named-changedApplicationTest-5.itf.json": "6ca18e843b5de65f267f4915b443aca579336c07360a1c5828e088d3d7fb2bf5",
+    "named-changedOutputTest-6.itf.json": "5594860b5b0a04fa188db1f53ad666faf36f3ed3a89bf88240d965ed2e648e70",
+    "named-blockedTest-7.itf.json": "690ae6ababe4046607f2ccd8b053dd3ccdb7811eda9534d575b622d798277219",
+    "named-disconnectedTest-8.itf.json": "aa8aa4b3a4a7df69ca7d7e2d34159f5a9ca5dcf5ce65c79afb6708a4ac44fb55",
+    "named-reboundTest-9.itf.json": "4524fd1f288d85e62b82010d08ac8aab1b28d4e8ffe34cb00b132f4da6832c90",
+    "named.stdout": "2b200bc2c42057620d67b066522d68d26d6123f99dd3142e3bab216eea74484e",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "46918a1fc511756309bb14eedc0e1ec37d2a029ec2199d769fa1b07390c4f4e4",
+    "invariants.stdout": "c15781a323cbdfd3c0d6b98f1c6056e7a82f67a991f50be1c4f13a342c6b145a",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

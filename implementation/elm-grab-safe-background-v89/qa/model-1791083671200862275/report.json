@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "scope": "Foreign-client unfocused minimize under a grab; lock/exclusive/focus-changing/same-client refusals and preservation. Abstract admission model, not automatic native refinement.",
+  "sourceSHA256": "6909e59c559dbea06666cf1d6e9175f934c8a7bd7daa2092689a4d04654710ea",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "surfaces.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--match=^(foreignBackgroundTest|ownGrabTest|focusedTargetTest|restoreTest|activateTest|lockedTest|exclusiveTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "surfaces.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 7,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "surfaces.qnt": "6909e59c559dbea06666cf1d6e9175f934c8a7bd7daa2092689a4d04654710ea",
+    "model.py": "d8f1a5d1dd728258799f1fbaa2cfbf98032b0cfb233970fb9b381298114cfe9a",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-foreignBackgroundTest-0.itf.json": "78126e9bb764886dd0f1b0e2b1aca57e9e2873094f127a672c72f27492603f8e",
+    "named-ownGrabTest-1.itf.json": "2e7473a1463e95c59a3538a5e314482cc14bb34177e6cbb8b01818f9a86eaf5b",
+    "named-focusedTargetTest-2.itf.json": "a16784c89bee1b3eaf51df4a96ca342e7605922b8758ccb0724121b3b449b628",
+    "named-restoreTest-3.itf.json": "ad7922bc5587fce88756a90d8317f2379a3e660e36165d7b67c084feb2443d76",
+    "named-activateTest-4.itf.json": "eeb0f097aa384b88e752ffc18eb5b326fff3fe51ae1198fa324ad73f8406b178",
+    "named-lockedTest-5.itf.json": "368ed1fa263e2c92e65f11a38125b0bfcabfbc19782d3fe1a9df781b18500fbc",
+    "named-exclusiveTest-6.itf.json": "951d0d8d1815b7e41f9b69b40b35d2a878354d60a27403fd648ed99613bd1db4",
+    "named.stdout": "7b28cef130e73eaeab7a2ac660569c6312d32bcf8e481a44f57684656578fef9",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "c811cdd2bf9dccd26abcb4ddda8552a9e70ccebcf08a2e4c218e75202e4d0cf4",
+    "invariants.stdout": "4e56a144d0f90292b86c5e2019af748a1db975efd7945aaf90f9427931eab1b6",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

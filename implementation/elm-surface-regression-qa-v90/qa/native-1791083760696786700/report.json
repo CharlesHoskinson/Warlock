@@ -1,0 +1,11 @@
+{
+  "passed": false,
+  "scope": "Private real pointer/Elm/effect/DOM path plus stopped broker pending interruption and explicit fresh-binding recovery; no renderer/compositor restart, full scene, GPU, AT, IME, UX or release acceptance",
+  "checks": [],
+  "mainDesktopActions": false,
+  "error": "AssertionError('qa/check.py')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-regression-qa-v90/qa/regression.py\", line 27, in <module>\n    for relative,digest in build['inputs'].items():assert host.digest(GUI/relative)==digest,relative\n                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: qa/check.py\n",
+  "privateHost": null,
+  "cleanupPassed": false,
+  "artifacts": {}
+}
