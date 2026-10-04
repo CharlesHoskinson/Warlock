@@ -1,0 +1,9 @@
+# Explicit-domain reachable-axis experiment
+
+Requirements were written before code. ReachableAxis.hpp uses two monotone binary searches to find the first and last admitted integer rounded target dimensions in a caller-provided consecutive domain. It computes actual double n-reserved and floor(real), with separate raw-configure and layout-real predicates. Empty and singleton configure domains are distinguished; the solver itself returns a singleton rather than silently deciding product policy.
+
+Protected qa/test-1791126990057984076/report.json PASS: 3840 bounded combinations compared against actual owning402 ProspectiveGeometry::project enumeration, both MAX/ordinary and both axes; seven targeted singleton/IEEE-cancellation/INTMAX+1/invalid cases. Compiler dependency hashes and paired Hyprutils header/library identities are captured. Earlier one-axis and both-axis successful runs retain their exact recovered source inputs verified against originally recorded hashes. No old report changed. No nativeframes were fabricated.
+
+The algorithm requires caller-established domain reachability. It does not infer which dimensions exist for a fixed output, native position, logical versus nonempty visual source, decorations or origin. MAX can receive a selected visual rounded dimension INTMAX+1 while final real isINTMAX; ordinary logical post-round validity differs. The solver permits that explicit endpoint but enforces final capacity. Position validity and source selection remain outside this one-axis API.
+
+No current producer, consumer, formal model or desktop installation changed. Independent177 review is pending. NativeGTK configure/ACK/pixels, nonzero-origin support, full original08/09/10 and S01-S16/release remain open. This experiment provides a candidate exact IEEE search building block; it does not replace pending policy/model/integration acceptance.

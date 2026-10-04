@@ -1,0 +1,16 @@
+
+  held
+    1) focusLeaveCancelsWithoutRetirementTest failed after 1 test(s)
+
+  1 failed
+
+  1) focusLeaveCancelsWithoutRetirementTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/model-1791127764943579193/focus-cancel-refused.qnt:35:106
+        35:   run focusLeaveCancelsWithoutRetirementTest = init.then(press(1)).then(focusLost).then(cancel).then(all{assert(s.keyboardLive and not(s.retired) and not(s.focused) and s.released==1 and s.held.size()==0),s'=s})
+                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=focusLeaveCancelsWithoutRetirementTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 focus-cancel-refused.qnt

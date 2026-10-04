@@ -1,0 +1,205 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual cancellation helper and pointer destructor with real Hyprutils ownership and typed signals; native recipient/core state acceptance separate",
+  "commands": [
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/candidate.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-cancel-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/missing-cancel.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/missing-cancel"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-cancel-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/missing-cancel"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "invented-press-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/invented-press.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/invented-press"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invented-press-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/invented-press"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "not-precleared-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/not-precleared.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/not-precleared"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "not-precleared-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/not-precleared"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-frame-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/missing-frame.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/missing-frame"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-frame-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/missing-frame"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "wrong-button-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/wrong-button.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/wrong-button"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "wrong-button-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-1791128483681672305/wrong-button"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel.py": "5df4ba073160154fb187ed3469139d96399520f76451298395ec24edf428d49f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend/Wayland.cpp": "9ef8d6fe94388879bcfb716c26d5f148e87e0b33a582db76fa629bcfa13b6fa0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/cancel-template.cpp": "9b109d9e5e2dd52651645d836495a825f4d517333f9fdcb3cd78970359c663cd"
+  },
+  "candidateChecks": 152,
+  "candidateValidated": true,
+  "mutantsRejected": 5,
+  "helperSHA256": "d88d3d8a6ed8848057ac999be8609ddc7a09970f3db80e7a2814a476996c40c2",
+  "destructorSHA256": "4d2b1ddb536cb737e79fd6423375c9c64cfd3f7aa5cdb091345b5ced7ec66dd3",
+  "artifacts": {
+    "candidate.cpp": "7ab70d0169fc7a81a29f6f8fcdf7f1dea7dc947db598e4dee2e81d2e7157f859",
+    "candidate": "64923e0c835dfaacfa7a7bcb326d1fca604424f69634af4077aa9708ae11b1eb",
+    "candidate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-run.stdout": "42445b0fb750053afcd530d32b2908f8ad085f057fbf10971eee3b0644d4a7f1",
+    "candidate-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-cancel.cpp": "b9fd74d189ae9fb437a5fb3f44545fafd61b471aa46bab04737c4ea497a572c1",
+    "missing-cancel": "ca7dfd8db698dc17cf23830ea452c2ab25b8fa1849e5920ef373270298a06209",
+    "missing-cancel-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-cancel-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-cancel-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-cancel-run.stderr": "a5bbc2683fb3d038cec6c138fa9567b9e1af7efc6dbd11d6c1c91e677d5fd3c7",
+    "invented-press.cpp": "fe288f207600a92745705e6a11c6f46828b11e5e7f39e264c0c290654d657335",
+    "invented-press": "f0451c3fd71cfbff183e4f083cd1f1690b60b89908b74c4e78e9d5cd9d3f45f1",
+    "invented-press-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-press-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-press-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-press-run.stderr": "9994c7e1fe97676784c0d26544c95d9ba6a4c2f827606905a056a4afe58cc260",
+    "not-precleared.cpp": "1fb50a7f38c0f4228285f56d27cd7fc151ef71f84773f88b2db91b812c66775d",
+    "not-precleared": "6ad27240cdd229a4a8ff79734e266483a4ff33045e267ce919dd608ff0589256",
+    "not-precleared-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "not-precleared-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "not-precleared-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "not-precleared-run.stderr": "62a919770cedb4fd2ce20edb4a9756931e3dc51b3bb93917fe58a4f5b628e430",
+    "missing-frame.cpp": "2450427bbdc098f086ab935a764d9b083d46f8effd4c8d6706a9d774938067ee",
+    "missing-frame": "c3193a9dd8a422d8e1949f81f16f4bf55e1008a6e93219606cdb573a94c443fc",
+    "missing-frame-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-frame-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-frame-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-frame-run.stderr": "0aa10dfb25519f4d6c4edeff359d46449b4cb0a1ab222340a64f2d20b399267f",
+    "wrong-button.cpp": "ecda0631ec8b1e6ee7ed456ff7370c8b53d7505f4a75b137950c31bee0598d93",
+    "wrong-button": "72de84ab05bd133b5425ab6a71ee562ad5e255396cab777246d05999748826ac",
+    "wrong-button-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-button-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-button-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-button-run.stderr": "a5bbc2683fb3d038cec6c138fa9567b9e1af7efc6dbd11d6c1c91e677d5fd3c7"
+  }
+}

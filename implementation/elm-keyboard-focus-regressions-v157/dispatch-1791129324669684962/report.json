@@ -1,0 +1,115 @@
+{
+  "passed": false,
+  "scope": "Serial reviewed native dispatch; individual report/cleanup/ABI evidence required",
+  "cases": [
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/parent-loss",
+      "runnerSHA256": "6d7a489a3be5f4701202bc25433369f87619c9bb60a5491d46acdb99fc296829",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/parent-loss/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/parent-loss/qa/native-1791129324876718094/report.json",
+          "sha256": "8b3ab868cdc2ee4546c12c1d11c563be87bac16d72c871d20972163bc6218d5b"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-1",
+      "runnerSHA256": "de0a956bca306ad1ae50a454f12dbbac5490098a936dbf1374a28054d6c40908",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-1/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-1/qa/native-1791129329385822249/report.json",
+          "sha256": "118e1cd66119bab3bdbd4a2da8dd0f276748d9f3fe2e21faa1f1873730e29735"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-2",
+      "runnerSHA256": "de0a956bca306ad1ae50a454f12dbbac5490098a936dbf1374a28054d6c40908",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-2/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-2/qa/native-1791129334019423887/report.json",
+          "sha256": "94015d061b337ab192d24065234eb9af67b128f3d315e26bf6c8242bb701bad6"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-3",
+      "runnerSHA256": "de0a956bca306ad1ae50a454f12dbbac5490098a936dbf1374a28054d6c40908",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-3/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/mask-3/qa/native-1791129338916263042/report.json",
+          "sha256": "03aef2b74125a6c09bdd30e4eb2ec88ba5dd9083f0f26ed1ed11c3835e6f2318"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/input",
+      "runnerSHA256": "0472b0f5a6fe19718146610a7da5048a280f5622f8fa7458516ef18f9adfc4b3",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/input/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/input/qa/native-1791129343609882618/report.json",
+          "sha256": "040419f7c3a62fb085fd92f642e4184af5316c306663917a4c2d71637c16e5cc"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/geometry",
+      "runnerSHA256": "9b6aabb5f4e3ea752df421b220cb1274f56a4d15069839545f83b1fc0615e4e1",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-regressions-v157/geometry/qa/native.py"
+      ],
+      "exitCode": 1,
+      "reports": []
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+no input before parent ACK
+no preflight before ACK
+stage does not acknowledge
+first ACK accepted
+ACK publishes exact parent logical dimensions
+ACK alone does not admit input
+oversized child accepted with viewport
+viewport missing rejected
+stale buffer rejected
+invalid format rejected
+explicit null buffer rejected
+mode-only valid pending state accepted
+invalid mode rejected
+current commit queued
+queued mapping admits input
+scaled mapping is distinct from identity
+staged geometry fences old committed input
+staged unACKed configure fences old queued callback
+ACKed dimensions remain immutable while staging
+second ACK accepted
+old generation cannot queue after new ACK
+new ACK alone cannot restore input
+new exact commit queues
+identity mapping restores input
+zero axis reuses last ACKed dimension
+zero axis ignores earlier unACKed pending size
+third ACK accepted
+invalid commit dimensions rejected
+current commit replaces previous mapping
+same-size ACK still requires new commit
+destroy is terminal
+last generation can commit
+counter exhaustion rejected
+counter exhaustion cannot recover
+negative configure fences input
+negative configure is terminal
+malformed configure cannot recover silently
+fenced press denied
+unmatched release denied
+ready press admitted
+duplicate press denied
+paired release survives fence
+reused release denied
+32 held buttons admitted
+overflow cannot evict held buttons
+one release frees one slot
+invalid button denied
+checks: 47

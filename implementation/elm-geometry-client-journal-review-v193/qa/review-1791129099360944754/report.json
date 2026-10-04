@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "Independent source/contract review and frozen byte/evidence integrity;19 original synthetic checks verified, no behavior rerun. Gaps documented, not full validator/native acceptance.",
+  "filesVerified": 12,
+  "findings": [
+    "per-buffer64MiB bound omitted",
+    "ACK/commit/current-generation modes not correlated",
+    "wrap oracle stale terminal header",
+    "exponent overflow can evade global nonfinite guarantee",
+    "pointer/landmark fields unvalidated",
+    "buffer/barrier ledger not reconstructed"
+  ],
+  "nativeAcceptance": false,
+  "behavioralRerun": false,
+  "owningSourceSHA256": "b404ce1ec2b3226731692b9e2fd70bd055743d72b150c1f6e0a8e7ae9fdff5a1"
+}

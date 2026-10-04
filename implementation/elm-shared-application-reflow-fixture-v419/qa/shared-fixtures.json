@@ -1,0 +1,117 @@
+{
+  "scope": "Synthetic admitted native facts; output identity explicitly supplied by V4 production scope",
+  "binding": {
+    "lifetime": "100",
+    "session": "200",
+    "frontend": "300"
+  },
+  "attached": {
+    "protocolVersion": 3,
+    "kind": "attached",
+    "binding": {
+      "lifetime": "100",
+      "session": "200",
+      "frontend": "300"
+    }
+  },
+  "projection": {
+    "protocolVersion": 3,
+    "kind": "action-projection",
+    "binding": {
+      "lifetime": "100",
+      "session": "200",
+      "frontend": "300"
+    },
+    "requestId": "1",
+    "context": {
+      "lifetime": "100",
+      "epoch": "300",
+      "output": "1",
+      "revision": "1"
+    },
+    "scene": {
+      "revision": "1",
+      "focused": null,
+      "windows": [
+        {
+          "incarnation": "10",
+          "label": "Window A",
+          "minimized": false,
+          "owner": null,
+          "application": "org.a",
+          "available": true
+        },
+        {
+          "incarnation": "11",
+          "label": "Transient A",
+          "minimized": false,
+          "owner": "10",
+          "application": "org.a",
+          "available": true
+        },
+        {
+          "incarnation": "20",
+          "label": "Window B",
+          "minimized": false,
+          "owner": null,
+          "application": "org.b",
+          "available": true
+        }
+      ]
+    }
+  },
+  "committed": {
+    "protocolVersion": 3,
+    "kind": "effect-outcome",
+    "effectProtocol": 1,
+    "binding": {
+      "lifetime": "100",
+      "session": "200",
+      "frontend": "300"
+    },
+    "intent": {
+      "request": "1",
+      "generation": "1",
+      "incarnation": "10",
+      "operation": "minimize",
+      "context": {
+        "lifetime": "100",
+        "epoch": "300",
+        "output": "1",
+        "revision": "1"
+      }
+    },
+    "status": "Committed",
+    "reason": "",
+    "revision": "999",
+    "outputGeneration": "888"
+  },
+  "firstCommand": {
+    "protocolVersion": 3,
+    "kind": "window-effect",
+    "effectProtocol": 1,
+    "binding": {
+      "lifetime": "100",
+      "session": "200",
+      "frontend": "300"
+    },
+    "intent": {
+      "request": "1",
+      "generation": "1",
+      "incarnation": "10",
+      "operation": "minimize",
+      "context": {
+        "lifetime": "100",
+        "epoch": "300",
+        "output": "1",
+        "revision": "1"
+      }
+    }
+  },
+  "owner": {
+    "surfaceProtocol": 2,
+    "kind": "surface-owner",
+    "outputId": "1",
+    "providerId": "1"
+  }
+}

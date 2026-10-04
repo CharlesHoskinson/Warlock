@@ -1,0 +1,9 @@
+
+        m_window->setBox(m_box.logicalBox);
+
+        if (CONFIGURECLIENT)
+            m_window->sendWindowSize();
+        m_window->updateWindowDecos();
+
+        return;
+    

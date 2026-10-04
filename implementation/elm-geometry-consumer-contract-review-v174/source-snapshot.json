@@ -1,0 +1,146 @@
+{
+  "schema": 1,
+  "capturedUTC": "2026-10-04T15:18:38.182583+00:00",
+  "nativeAcceptance": false,
+  "behavioralAcceptance": false,
+  "sources": {
+    "docs/elm-roadmap/delivery/loop-state.json": {
+      "sha256": "9ae07bcaa15815b6297016f7a96c31ca12ca51f2d02b8fb2f4f519d997f5d564",
+      "size": 2084,
+      "capture": "inputs/docs/elm-roadmap/delivery/loop-state.json",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-geometry-effective-policy-evidence-v172/HANDOFF.md": {
+      "sha256": "27090831e757be34a12146223176aef49d2dfaab9b04e0c4ba9b4b1b7d377f4b",
+      "size": 2956,
+      "capture": "inputs/implementation/elm-geometry-effective-policy-evidence-v172/HANDOFF.md",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-geometry-coordinate-authority-held-v408/HANDOFF.md": {
+      "sha256": "69dc3542208a25910c3ff775204a0dfd1ac550c13f64626adbbe47a7dfb0b45d",
+      "size": 2725,
+      "capture": "inputs/implementation/elm-geometry-coordinate-authority-held-v408/HANDOFF.md",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-geometry-size-policy-wire-characterization-v170/README.md": {
+      "sha256": "e26e233bc13e17db3a91762b8d4056f08517e740835abc9807486442f9dae34b",
+      "size": 2449,
+      "capture": "inputs/implementation/elm-geometry-size-policy-wire-characterization-v170/README.md",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-geometry-reachable-axis-characterization-v173/HANDOFF.md": {
+      "sha256": "eb83a8f14283597e2d03065e06a2cd0634490b73f0296d47203a1e4fdee200b1",
+      "size": 3990,
+      "capture": "inputs/implementation/elm-geometry-reachable-axis-characterization-v173/HANDOFF.md",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-geometry-reachable-axis-prototype-v176/qa/test-1791126990057984076/report.json": {
+      "sha256": "55fc429f538db807afad83aa0a778a56d5415f3d5517428f4785291d6c15e8a8",
+      "size": 35531,
+      "capture": "inputs/implementation/elm-geometry-reachable-axis-prototype-v176/qa/test-1791126990057984076/report.json",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-shared-registration-shutdown-merge-v380/adapter/geometry_endpoint.py": {
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106,
+      "capture": "inputs/implementation/elm-shared-registration-shutdown-merge-v380/adapter/geometry_endpoint.py",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-shared-registration-shutdown-merge-v380/src/GeometryProjection.elm": {
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499,
+      "capture": "inputs/implementation/elm-shared-registration-shutdown-merge-v380/src/GeometryProjection.elm",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-shared-registration-shutdown-merge-v380/src/Shell.elm": {
+      "sha256": "ce352b58faaa53153312c7d762e7b5e450bd5862d20e93ea193c6f6f1b570f4a",
+      "size": 28562,
+      "capture": "inputs/implementation/elm-shared-registration-shutdown-merge-v380/src/Shell.elm",
+      "status": "evidence read-only snapshot"
+    },
+    "implementation/elm-geometry-coordinate-authority-v409/SPEC.md": {
+      "sha256": "de68f27e7bb6d5f969220bb38076ea454fe9dbf324fb88720f8f3bcccb519547",
+      "size": 2498,
+      "capture": "inputs/implementation/elm-geometry-coordinate-authority-v409/SPEC.md",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-geometry-coordinate-authority-v409/candidate/ProspectiveGeometry.hpp": {
+      "sha256": "0102d62ed9e1db22902ab0ab1e071cfbe96153b146a5ad3ecc1174c9eaec548b",
+      "size": 3878,
+      "capture": "inputs/implementation/elm-geometry-coordinate-authority-v409/candidate/ProspectiveGeometry.hpp",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-geometry-coordinate-authority-v409/native/geometry.inc": {
+      "sha256": "75d1d99e1297c61d541254f9b6f5c606709afd684b79275e77d701b4d88f1947",
+      "size": 10663,
+      "capture": "inputs/implementation/elm-geometry-coordinate-authority-v409/native/geometry.inc",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-geometry-coordinate-authority-v409/native/geometry-policy.inc": {
+      "sha256": "3199de75489bf2ecd3fab19200c11e87668d602ec2fefdbd99c148cfc90ed404",
+      "size": 4283,
+      "capture": "inputs/implementation/elm-geometry-coordinate-authority-v409/native/geometry-policy.inc",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/adapter/geometry_endpoint.py",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/adapter/geometry_size_policy.py",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/daemon.py": {
+      "sha256": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+      "size": 9925,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/adapter/daemon.py",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/src/GeometrySizePolicy.elm": {
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "size": 6205,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/src/GeometrySizePolicy.elm",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/src/GeometryProjection.elm": {
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "size": 10573,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/src/GeometryProjection.elm",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/src/Shell.elm": {
+      "sha256": "ad23ad9f3e1694a5d2874d062cd4d8cf7989b1fb155c9869f2a985c750c6fcc3",
+      "size": 28562,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/src/Shell.elm",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/src/Effects.elm": {
+      "sha256": "5fb87f2cbeafe899e083882084c0c223f99a6b83bc9815d44493962cbd485c20",
+      "size": 15287,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/src/Effects.elm",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/src/Provider.elm": {
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "size": 17531,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/src/Provider.elm",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/src/MenuBridge.elm": {
+      "sha256": "5d308bfc33e15cfab6de84ba7b3726d70ac3d0ab005ca3f564f078927f82c393",
+      "size": 25403,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/src/MenuBridge.elm",
+      "status": "in-progress read-only snapshot"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/src/ReceiptRouter.elm": {
+      "sha256": "dd2eed98bb4db4ed485cb38da6c1febe85b9499c0738d1b3c06d08ce6b21d4d5",
+      "size": 9566,
+      "capture": "inputs/implementation/elm-shared-geometry-bounds-v410/src/ReceiptRouter.elm",
+      "status": "in-progress read-only snapshot"
+    }
+  }
+}

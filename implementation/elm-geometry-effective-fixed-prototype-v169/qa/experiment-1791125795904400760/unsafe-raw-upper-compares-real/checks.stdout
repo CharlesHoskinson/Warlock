@@ -1,0 +1,35 @@
+PASS SB004 cross-source rawlower/layoutupper singleton width rejected
+PASS SB004 reverse-source layoutlower/rawupper singleton width rejected
+PASS either-axis cross-source fixed height rejected
+PASS reverse-source fixed height rejected
+PASS cross-source empty interval rejected
+PASS two-value127..128 interval retains width128
+PASS reverse two-value128..129 interval retains width128
+FAIL fractional layoutlower real129.75/configure129 fits128..129
+FAIL raw upper129 must not constrain real129.75 directly
+PASS fractional layoutupper real129.75 permits128..129
+PASS real dimension still independently respects layoutupper
+PASS ceil fractional rawlower129 creates singleton with layoutupper129
+PASS floor fractional rawupper129 creates singleton with layoutlower129
+PASS tiny rawmax1/default configuremin1 is fixed
+PASS tiny rawmax2/default configuremin1 remains variable
+PASS tiny rawmax3 remains bounded variable
+PASS tiny rawmax4 remains bounded variable
+PASS raw source fixed exclusion retained
+PASS layout source fixed exclusion retained
+PASS invalid raw source exclusion retained
+PASS invalid layout source exclusion retained
+PASS invalid raw source exclusion retained
+PASS invalid layout source exclusion retained
+PASS invalid raw source exclusion retained
+PASS invalid layout source exclusion retained
+PASS GTK108x42 lowerbound/unlimited keeps variable future intervals
+PASS decorated MAX unchanged real788x536 fits retained separate limits
+PASS ordinary restore does not repeat MAX reserve subtraction
+PASS restore also rejects cross-source fixed axis
+PASS signed-int boundary with two values remains representable
+PASS signed-int ceiling singleton rejected
+PASS huge finite lower rejected without integer conversion overflow
+PASS fractional layoutupper with configureonly1 is fixed
+PASS fractional layoutupper allows configure1and2
+TOTAL 34 FAILED 2

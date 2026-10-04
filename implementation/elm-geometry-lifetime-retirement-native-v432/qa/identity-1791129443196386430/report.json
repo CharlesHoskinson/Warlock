@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "scope": "Actual432 retirement assertion evaluated with independent lifetime/replay/mode mutants; no native acceptance",
+  "checks": [
+    {
+      "name": "same address new actual lifetime accepted",
+      "passed": true
+    },
+    {
+      "name": "old PID rejected",
+      "passed": true
+    },
+    {
+      "name": "old stableId rejected",
+      "passed": true
+    },
+    {
+      "name": "old incarnation rejected",
+      "passed": true
+    },
+    {
+      "name": "native maximize rejected",
+      "passed": true
+    },
+    {
+      "name": "client maximize rejected",
+      "passed": true
+    },
+    {
+      "name": "minimized rejected",
+      "passed": true
+    },
+    {
+      "name": "effect replay rejected",
+      "passed": true
+    },
+    {
+      "name": "stale menu rejected",
+      "passed": true
+    }
+  ]
+}

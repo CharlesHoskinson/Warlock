@@ -1,0 +1,21 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+node:internal/process/promises:324
+    triggerUncaughtException(err, true /* fromPromise */);
+    ^
+
+AssertionError [ERR_ASSERTION]: '1' == '2'
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-application-publication-v418/qa/checks-1791127291496371688/inputs/qa/surface.cjs:62:167
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-application-publication-v418/qa/checks-1791127291496371688/inputs/qa/surface.cjs:8:100)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-application-publication-v418/qa/checks-1791127291496371688/inputs/qa/surface.cjs:62:1 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: '1',
+  expected: '2',
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v26.10.0

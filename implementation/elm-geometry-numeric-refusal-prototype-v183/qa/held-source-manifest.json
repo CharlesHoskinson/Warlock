@@ -1,0 +1,463 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "productionAdoption": false,
+  "scope": "Isolated numeric typed-refusal prototype;190 actual copied-decoder CPU cases and original/finite-bypass controls. Synthetic received-envelope boundary, no transport/model/GUI.",
+  "files": {
+    "HANDOFF.md": {
+      "sha256": "67b60eeb2b6f440db5964d9f056e3e728b0fec7fd0c033abc316d1c3ff18ef89",
+      "size": 2047,
+      "mode": "0o644"
+    },
+    "REQUIREMENTS.md": {
+      "sha256": "587b434259375f937583b58589f93777fd39300987a4d37e70ba2b385f248093",
+      "size": 2094,
+      "mode": "0o644"
+    },
+    "candidate/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214,
+      "mode": "0o644"
+    },
+    "candidate/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": "0o644"
+    },
+    "candidate/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": "0o644"
+    },
+    "candidate/adapter/daemon.py": {
+      "sha256": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+      "size": 9925,
+      "mode": "0o644"
+    },
+    "candidate/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986,
+      "mode": "0o644"
+    },
+    "candidate/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": "0o644"
+    },
+    "candidate/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "mode": "0o644"
+    },
+    "candidate/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255,
+      "mode": "0o644"
+    },
+    "candidate/adapter/geometry_size_policy.py": {
+      "sha256": "7c465b66847040377ebcc7e85dfc6683ac2ecc05d7be3627ebbcb1a78b7f3984",
+      "size": 5381,
+      "mode": "0o644"
+    },
+    "candidate/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017,
+      "mode": "0o644"
+    },
+    "candidate/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003,
+      "mode": "0o644"
+    },
+    "candidate/adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643,
+      "mode": "0o644"
+    },
+    "candidate/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": "0o644"
+    },
+    "candidate/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": "0o644"
+    },
+    "original/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214,
+      "mode": "0o644"
+    },
+    "original/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": "0o644"
+    },
+    "original/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": "0o644"
+    },
+    "original/adapter/daemon.py": {
+      "sha256": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+      "size": 9925,
+      "mode": "0o644"
+    },
+    "original/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986,
+      "mode": "0o644"
+    },
+    "original/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": "0o644"
+    },
+    "original/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "mode": "0o644"
+    },
+    "original/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255,
+      "mode": "0o644"
+    },
+    "original/adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287,
+      "mode": "0o644"
+    },
+    "original/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017,
+      "mode": "0o644"
+    },
+    "original/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003,
+      "mode": "0o644"
+    },
+    "original/adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643,
+      "mode": "0o644"
+    },
+    "original/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": "0o644"
+    },
+    "original/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": "0o644"
+    },
+    "qa/freeze.py": {
+      "sha256": "1d853b28d6d2e44aca491ac41d204bda6847eda3271225858f15d308f72cc9aa",
+      "size": 2735,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/candidate.json": {
+      "sha256": "b1de4834fb3051c7ed3b50b3889f0efa93ab668f3afecb8c585567bd861fc2de",
+      "size": 44122,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/candidate.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/candidate.stdout": {
+      "sha256": "c4550e0ce6fbb5b7157c0ed5900b5d91e863b195b525a9cfd7faae3c24ca60d5",
+      "size": 31572,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/REQUIREMENTS.md": {
+      "sha256": "587b434259375f937583b58589f93777fd39300987a4d37e70ba2b385f248093",
+      "size": 2094,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/daemon.py": {
+      "sha256": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+      "size": 9925,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/geometry_size_policy.py": {
+      "sha256": "7c465b66847040377ebcc7e85dfc6683ac2ecc05d7be3627ebbcb1a78b7f3984",
+      "size": 5381,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/candidate/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/daemon.py": {
+      "sha256": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+      "size": 9925,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/original/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/qa/samples.json": {
+      "sha256": "bf6cdef42f320c23d8d498b969e9c0490e669575909b0f68350ddc23e12c4c51",
+      "size": 194752,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/qa/test.py": {
+      "sha256": "d584c794ba413a69081ebf4e5806d48513865030bcf959894c58f7f480eb3d94",
+      "size": 7842,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/daemon.py": {
+      "sha256": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+      "size": 9925,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/geometry_size_policy.py": {
+      "sha256": "11e53be93223b9854b8f9a7e039ef643394f93da697ca91cd8e83429f17c0a8f",
+      "size": 5356,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/unsafe-finite-bypass/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/inputs/upstream.json": {
+      "sha256": "7b48c1f0de487ddd44c124f96d88acd81df66faa99cf37cd5d2da6cf5b3224dc",
+      "size": 5049,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/original.json": {
+      "sha256": "83d1363f4b1a0845d23bd4cf0096140e2ca86837b4aa4309dcf98789f54b7db6",
+      "size": 44175,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/original.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/original.stdout": {
+      "sha256": "f04bcdf54e336d99c3dc007e08cad3b1030f3b9ac522237ff8438a56a4e5d6bf",
+      "size": 31625,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/report.json": {
+      "sha256": "329f8c019054fcc0007228a9e60da1ba8fd65c9db4051cb58b6b3cd35d6d00d8",
+      "size": 8409,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/unsafe-finite-bypass.json": {
+      "sha256": "e3e44ca5443a1c40573f4e2049d551c29081d8fe3a52100871ebd27ec491de14",
+      "size": 44109,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/unsafe-finite-bypass.stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": "0o644"
+    },
+    "qa/numeric-1791127799736899141/unsafe-finite-bypass.stdout": {
+      "sha256": "7a330c4b4fb35eab76c644862035e0ce7d48c7c2e1c9e4633a9cd8ce81d733df",
+      "size": 31559,
+      "mode": "0o644"
+    },
+    "qa/samples.json": {
+      "sha256": "bf6cdef42f320c23d8d498b969e9c0490e669575909b0f68350ddc23e12c4c51",
+      "size": 194752,
+      "mode": "0o644"
+    },
+    "qa/test.py": {
+      "sha256": "d584c794ba413a69081ebf4e5806d48513865030bcf959894c58f7f480eb3d94",
+      "size": 7842,
+      "mode": "0o644"
+    },
+    "upstream.json": {
+      "sha256": "7b48c1f0de487ddd44c124f96d88acd81df66faa99cf37cd5d2da6cf5b3224dc",
+      "size": 5049,
+      "mode": "0o644"
+    }
+  },
+  "selectedReport": "qa/numeric-1791127799736899141/report.json",
+  "selectedReportSHA256": "329f8c019054fcc0007228a9e60da1ba8fd65c9db4051cb58b6b3cd35d6d00d8",
+  "owningAncestorManifestSHA256": "bfcd59585f1bb58175e387f8a5e8d92b772e973424be825a339c61f6cbbc1534"
+}

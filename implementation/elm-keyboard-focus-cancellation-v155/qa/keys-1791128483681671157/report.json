@@ -1,0 +1,259 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual private key admission/cancellation helper and keyboard destructor; real Hyprutils ownership/typed signals; native callback wiring and Core ledgers separate",
+  "commands": [
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/candidate.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-release-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/missing-release.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/missing-release"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-release-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/missing-release"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "invented-press-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/invented-press.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/invented-press"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invented-press-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/invented-press"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "not-precleared-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/not-precleared.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/not-precleared"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "not-precleared-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/not-precleared"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "missing-modifiers-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/missing-modifiers.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/missing-modifiers"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-modifiers-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/missing-modifiers"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "wrong-key-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/wrong-key.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/wrong-key"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "wrong-key-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/wrong-key"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "duplicate-admission-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/duplicate-admission.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/duplicate-admission"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "duplicate-admission-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/duplicate-admission"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "modifier-only-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/modifier-only.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/modifier-only"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "modifier-only-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-1791128483681671157/modifier-only"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys.py": "590287aa00a396c6598923d4ea1749de5363dc3a8bec189770d1ed3ecc977b93",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/candidate/src/backend/Wayland.cpp": "9ef8d6fe94388879bcfb716c26d5f148e87e0b33a582db76fa629bcfa13b6fa0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/keys-template.cpp": "03cf1fa652095c6ddb8b08dd609e27a54b4a1e17658e53535a74a77406632941"
+  },
+  "candidateChecks": 2737,
+  "candidateValidated": true,
+  "mutantsRejected": 7,
+  "helperSHA256": "215f90ab0dc8e8285c00bdd330ad8397a074326b7a976c1d449a0cb090bb6833",
+  "destructorSHA256": "70cf5e6e09f20ed37dce79cca246807ccae052322860d1ccb6ecc7a62d6a473a",
+  "artifacts": {
+    "candidate.cpp": "2993322ee925905cc3539fed45aa5b2fa3e81051910018680b777d8f3b39bf68",
+    "candidate": "260d750f8f3604f1d39cf02102c8ee0ed8c4d031f381e100cbdd6871c334bf52",
+    "candidate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-run.stdout": "d184dbdca7a5eec02767c59c92e2c23307786495ea8be0b718a098a6c895b1fa",
+    "candidate-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release.cpp": "1c39150fe6b9729760663b81f15ebb85a4ce60f685a77fdc884530f2576ee01b",
+    "missing-release": "b4398f16564a30e41fe0697b12a83368df42c4429a86f663994072a54dd7dc97",
+    "missing-release-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-release-run.stderr": "0418f098e7bc51d5b1708a0304688ea28f9aeb8b84d5719d96b83e965b30d679",
+    "invented-press.cpp": "bca359889298b4eb42370e5f4575e9a3fd2c2fccb568274136c334b9f115b80f",
+    "invented-press": "753fcab5f9bd40c64464cf036e39405b5e0ee86cad20baf2174a2a2640d44db8",
+    "invented-press-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-press-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-press-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-press-run.stderr": "458a534a634101a7a269c1103ce62db93bf604f7fc7a757c490c729ffd4b7301",
+    "not-precleared.cpp": "8688772d702c832f6dd4ff9aa3a99ae0353ffab436513b28160ed4a061514ea8",
+    "not-precleared": "0f76820fda9e3c08a0d2779b7510bf08623d64083c65411c376c7f59114961be",
+    "not-precleared-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "not-precleared-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "not-precleared-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "not-precleared-run.stderr": "62a919770cedb4fd2ce20edb4a9756931e3dc51b3bb93917fe58a4f5b628e430",
+    "missing-modifiers.cpp": "1029c2bfc5b638351d28cad287e9f3d4fa304b8055212f229d5eb64189ae44f4",
+    "missing-modifiers": "50fbc2b76cd80b59b7c3b98d9909309b71aa4019ffa1da58b170ee88b76aea54",
+    "missing-modifiers-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-modifiers-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-modifiers-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-modifiers-run.stderr": "9dc3202ab59799bc67b1230c21599823d219e43cc2dd90075556936b3713106f",
+    "wrong-key.cpp": "83e3b4871e2fe754441ab9a632e1543b5b25dd076d97cfb59486afda3ff21192",
+    "wrong-key": "99b42bab40d482d6f4fa85a1e11ddcd0fab151fe5935c37b22c8baf4840ea879",
+    "wrong-key-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-key-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-key-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "wrong-key-run.stderr": "0418f098e7bc51d5b1708a0304688ea28f9aeb8b84d5719d96b83e965b30d679",
+    "duplicate-admission.cpp": "165c03aea82ca8cad78c5bef206e1704b652c0d4fbc85ef0bf4941c1e64a14ed",
+    "duplicate-admission": "5d57b874fe58bdd1a87ecadb6341bb1d585702ddcff270267b5ab76682b0d69c",
+    "duplicate-admission-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate-admission-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate-admission-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "duplicate-admission-run.stderr": "a61721dc55f34ae5b1897f4a36e09a9cf5debf8704c50843155a5985eaf58c98",
+    "modifier-only.cpp": "15c918877e0746c572a06c7fd56555f088291f87978614be9958c30c4bd98f7d",
+    "modifier-only": "b437a1b57e56d638effda68a8251964dbda2001094ae7a4b58d3c237d4841d52",
+    "modifier-only-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modifier-only-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modifier-only-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modifier-only-run.stderr": "be92c19256f19e24f0436c28d16687db1b15ea74932eb3dd039553685e86d5eb"
+  }
+}

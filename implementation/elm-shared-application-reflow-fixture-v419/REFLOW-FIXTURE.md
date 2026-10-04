@@ -1,0 +1,1 @@
+The original58-case surface script exercises reflow, but inherited worker418 lacked its reflow event dispatch and consequently failed original reflow-case62. Fresh419 adds only the QA event mapping to the actual Controller.NativeReflow operation. Production modules, all case assertions and deadlines stay unchanged. Failed418 evidence is preserved.

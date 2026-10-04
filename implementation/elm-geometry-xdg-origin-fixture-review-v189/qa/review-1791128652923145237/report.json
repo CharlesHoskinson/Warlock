@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "passed": true,
+  "kind": "independent-source-evidence-integrity-review",
+  "filesVerified": 275,
+  "sourceSHA256": "fee17bd9680bd2c236a624fddc80acfff25d83f275180e4db22b4fa5f04de626",
+  "files": {
+    "REVIEW.md": {
+      "sha256": "4881e9520ec88831e0f996a5d157da85c6120bde8f2dda8f39e8915cf478f79f",
+      "size": 5597
+    },
+    "inputs/REQUIREMENTS.md": {
+      "sha256": "7c296395f419ba904119c571d5f4015861656eced65a1ad45521467742c80a33",
+      "size": 4619
+    },
+    "inputs/native/xdg-origin-client.c": {
+      "sha256": "fee17bd9680bd2c236a624fddc80acfff25d83f275180e4db22b4fa5f04de626",
+      "size": 25321
+    },
+    "inputs/qa/build.py": {
+      "sha256": "acf417473c832f9c5c745dfbca8f9760707c190ae36f505316c765992fe0568f",
+      "size": 5156
+    },
+    "inputs/qa/client-build-1791128443207969331/report.json": {
+      "sha256": "7e9e0edf7d0db527e44a2e9f7384ece4c9350140f45ba178dcdbe01d1ec6bc53",
+      "size": 24080
+    },
+    "inputs/qa/helper-test.c": {
+      "sha256": "966f25409f1a2abe5295ae190d2986d86eab086ad827aa16e3132229a3dbc678",
+      "size": 5709
+    },
+    "inputs/qa/test-1791128172404075843/report.json": {
+      "sha256": "d23e4b47ceaa36ed8d05f69e39305f43e3ed68ade1897706d3e5f16bb8acb6ca",
+      "size": 10386
+    },
+    "inputs/qa/test-1791128474911399590/report.json": {
+      "sha256": "212e08a0ea7966d6d27f57ca836407fd6f9321aecec31ad05e67a84710600b25",
+      "size": 30584
+    },
+    "inputs/qa/test-held.py": {
+      "sha256": "8147c2faee913a94f1140d71780ccb0865cb499e4ebda8cd6d54543212ee8f23",
+      "size": 4724
+    },
+    "inputs/xdg-shell.xml": {
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df",
+      "size": 63846
+    },
+    "qa/verify.py": {
+      "sha256": "c44cdf8376cab280c77a366c026c9a1b5f35afbf380a9a806ca139d99ee66b5b",
+      "size": 2876
+    },
+    "snapshot.json": {
+      "sha256": "b67eb0098550cbe680316922ee1312604e54e1b771e1febeb9f1f22be7dad867",
+      "size": 2870
+    }
+  },
+  "sourceBlockerFound": false,
+  "nativeAcceptance": false,
+  "scope": "Exact final-owner-stable source, actual build/dependency/library/artifact lineage and existing50+25+3 CPU evidence; no behavior rerun or GUI."
+}

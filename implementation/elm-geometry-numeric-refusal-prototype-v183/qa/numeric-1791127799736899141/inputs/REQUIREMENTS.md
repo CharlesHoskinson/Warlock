@@ -1,0 +1,10 @@
+# Numeric refusal prototype requirements
+
+Before implementation: derive only from exact Python adapter bytes captured by410 build1791125993387778780 and held by415. Preserve owning frozen files and source hashes. This isolated prototype changes only geometry_size_policy monitorScale validation.
+
+1. All monitorScale values outside finite positive exact int/float domain, including bool and oversized positive/negative integer, must raise existing endpoint.Refused deterministically. Do not accept infinity or weaken range/shape/version/binding/operation guards. Valid integer and float scales retain prior behavior; no scale multiplication is introduced.
+2. Oversized integers fit within the existing 4096-byte envelope bound; checking only the transport bound cannot fix this conversion failure. Python math.isfinite can overflow while converting a sufficiently large integer to double. Record actual original failure as OverflowError, not as native failure or successful refusal.
+3. Execute the copied production GeometryEndpoint.geometry_facts plus the copied geometry_size_policy validation. Use a synthetic already-received response solely to isolate decoder behavior; no native process/socket/authentication claim. Wrong binding, request, observation version and capability remain refused. Native effect allocator, full keys, Unknown ledger and retry semantics are unchanged byte-for-byte.
+4. Check same hostile integer/nonfinite/bool classes in vectors, rectangles and projected numeric fields. Existing typed refusal there must remain intact; do not refactor unrelated logic without actual evidence of a gap.
+5. Preserve all68 held412 producer/synthetic samples with exact expected outcomes. Bound meaningful unsafe controls to the actual copied module, including the unchanged overflow guard and a finite-check bypass; successful candidate tests must detect their behavioral defects.
+6. Snapshot source/test/report provenance and preserve failures. CPU-only prototype; no production adoption, model change, native dispatch, GUI or completion of full receipt/menu/native requirements.

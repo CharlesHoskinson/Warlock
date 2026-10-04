@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Zero-origin pure prospective conversion with owning math library; no native or wire integration",
+  "inputs": {
+    "candidate/ProspectiveGeometry.hpp": "0102d62ed9e1db22902ab0ab1e071cfbe96153b146a5ad3ecc1174c9eaec548b",
+    "qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "qa/policy-test.py": "2896a941f4a631569786544f97310adacb7af4a1c97f739500e0f6fbf5ec73a5",
+    "spec/REQUIREMENTS.md": "60683a2ac30ec7910e6d30a793ebffbc48b7c3b5d246f8d519362f8b0d06954d"
+  },
+  "commands": [
+    {
+      "name": "compile",
+      "exitCode": 0
+    },
+    {
+      "name": "checks",
+      "exitCode": 0
+    }
+  ],
+  "owningBuildReport": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json",
+    "sha256": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f"
+  },
+  "owningLibrary": {
+    "path": "/usr/lib/libhyprutils.so.0.14.2",
+    "sha256": "c33f3d8d6fbe66b0c308bcd9782cde55e142777f9e61398d3e2624f2a63a7811"
+  },
+  "checks": 1715,
+  "owningMathHeaders": {
+    "/usr/include/hyprutils/math/Box.hpp": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+    "/usr/include/hyprutils/math/Vector2D.hpp": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+    "/usr/include/hyprutils/memory/Casts.hpp": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+    "/usr/include/hyprutils/math/Misc.hpp": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f"
+  },
+  "controls": [
+    {
+      "name": "combined-fixed-ignored",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "double-max-reserves",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "restore-subtracts-reserves",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "raw-checks-real-not-integer",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "configure-multiplies-scale",
+      "exitCode": 1,
+      "detected": true
+    },
+    {
+      "name": "nonzero-origin-guessed",
+      "exitCode": 1,
+      "detected": true
+    }
+  ],
+  "artifacts": {
+    "dependencies.d": "92a522e6936fab5dde221aaebc068bec5ace6d2a00b7c52334e093636be6f585",
+    "projection-test": "51bc2424382a4ea5ab84a1bb109097b2507caacb7c24f1f7e7fb7a0492bcd47c",
+    "compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "checks.stdout": "9fd9e00b3af93a1ce337c23a36347fd7a2bc4de3f0828ff02e864f33a7f7495c",
+    "checks.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/combined-fixed-ignored/projection-test": "3695da554da8dd1769130d41c7c3498d120d7d727cd8ea4d612408c377faea22",
+    "controls/combined-fixed-ignored/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/combined-fixed-ignored/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/combined-fixed-ignored/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/combined-fixed-ignored/checks.stderr": "3801d7b0e09b8a7c7ac9ac8c350789c5210e0aa483686a6c00742d381cdc0c63",
+    "controls/double-max-reserves/projection-test": "7307a97e23c17bcde1d74b9fd1d84624aedd5163e832b6365ece798af5f0dcea",
+    "controls/double-max-reserves/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/double-max-reserves/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/double-max-reserves/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/double-max-reserves/checks.stderr": "e4f12f1d975d4caa34ede338d0f32e1af88b474aeb1905eb64a5d4c3bbddb901",
+    "controls/restore-subtracts-reserves/projection-test": "d3f5ae5f3e3e9f8da390caf4cf8657494a306744a2a700337ab114f5803225b6",
+    "controls/restore-subtracts-reserves/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/restore-subtracts-reserves/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/restore-subtracts-reserves/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/restore-subtracts-reserves/checks.stderr": "16c07ae87a6f6b9fcc91ae94ab1422116cad146e9940f1a47892797b6ea6fc25",
+    "controls/raw-checks-real-not-integer/projection-test": "432fed8d734e0704a73319e70cd98a38eb7a38f6753f7f216f50375e7f5ff128",
+    "controls/raw-checks-real-not-integer/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/raw-checks-real-not-integer/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/raw-checks-real-not-integer/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/raw-checks-real-not-integer/checks.stderr": "639c944f75a7de4278673cce978227dd34377e11b704b36e2876bfbeefb43fd1",
+    "controls/configure-multiplies-scale/projection-test": "ee830b2d5d45a4b2016b4842c5516c32e8138eb7bcca70b8a7569cc286a3eddc",
+    "controls/configure-multiplies-scale/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/configure-multiplies-scale/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/configure-multiplies-scale/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/configure-multiplies-scale/checks.stderr": "f4d55110f50d0294e7a4edd8a2b23431f723d29574f6eeb80e629cc69c9a1913",
+    "controls/nonzero-origin-guessed/projection-test": "516a40896705c2d6264059c0c10993dd99dc481378b9840f361e6dc3d5480fc6",
+    "controls/nonzero-origin-guessed/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/nonzero-origin-guessed/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/nonzero-origin-guessed/checks.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "controls/nonzero-origin-guessed/checks.stderr": "af0d504764560aaa95753510d803ebee2d2cf9c7e4ff3809ad2d8fa467adfcc7",
+    "controls/nonzero-origin-guessed/candidate/ProspectiveGeometry.hpp": "64d03f776d6b393e4cb0d223bf740981da666dd310829c37ea582d55a62b284e",
+    "controls/nonzero-origin-guessed/qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "controls/configure-multiplies-scale/candidate/ProspectiveGeometry.hpp": "778deb7752aa1ce170980253e5b13bf821957107255072471453b2b593e70657",
+    "controls/configure-multiplies-scale/qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "controls/raw-checks-real-not-integer/candidate/ProspectiveGeometry.hpp": "771264d9d82f04952fdbb6d5a87b2f3c1301c0aab48567039dce5107a2209b63",
+    "controls/raw-checks-real-not-integer/qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "controls/restore-subtracts-reserves/candidate/ProspectiveGeometry.hpp": "cccb034763f4700959ec03e976f8c0b819ac3a85458c5ec3552e6782592c4d46",
+    "controls/restore-subtracts-reserves/qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "controls/double-max-reserves/candidate/ProspectiveGeometry.hpp": "5944af04546d66db7a3775f3254a493c18dc0860567c7cdd523ac63582c31936",
+    "controls/double-max-reserves/qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "controls/combined-fixed-ignored/candidate/ProspectiveGeometry.hpp": "0609d2ebde21451f9936a39c5576c1ef0fba66c1efbef966adfcab819c5473f2",
+    "controls/combined-fixed-ignored/qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "owning-headers/hyprutils/math/Box.hpp": "3996224213a91f7fb471e6af53ebb2dad10091c32d1d896e0d4f01b87f4cd4df",
+    "owning-headers/hyprutils/math/Vector2D.hpp": "967bd9d7e12efb8f68694760f6d28b8b3c4810055b966b8c61e2ecebb6de2ddb",
+    "owning-headers/hyprutils/math/Misc.hpp": "726abd8a2ef2e17412f85cc618a76944e908fe59f1246c1c2716af09e1fb325f",
+    "owning-headers/hyprutils/memory/Casts.hpp": "9a296d419ff1ca011c81ab3c8267a18684328ed54f58df84cec535d1d8b17da7",
+    "inputs/candidate/ProspectiveGeometry.hpp": "0102d62ed9e1db22902ab0ab1e071cfbe96153b146a5ad3ecc1174c9eaec548b",
+    "inputs/qa/projection-test.cpp": "6af3755fcb8b0c2f24670b2f16fd36637aa30d2e5f1d1ea1257d61c305658f42",
+    "inputs/qa/policy-test.py": "2896a941f4a631569786544f97310adacb7af4a1c97f739500e0f6fbf5ec73a5",
+    "inputs/spec/REQUIREMENTS.md": "60683a2ac30ec7910e6d30a793ebffbc48b7c3b5d246f8d519362f8b0d06954d"
+  }
+}

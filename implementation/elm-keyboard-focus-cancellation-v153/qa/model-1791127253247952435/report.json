@@ -1,0 +1,74 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Bounded held-key transport/capability/focus-loss and restoration abstraction; actual C++ callback lifetime and native recipient/core state separate",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "held.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "held.qnt",
+        "--backend=typescript",
+        "--match=^(oneHeldCancelledTest|allHeldCancelledTest|unheldLossSilentTest|duplicatePressRefusedTest|alreadyReleasedExcludedTest|repeatCancellationSilentTest|cancellationBeforeRetirementTest|latePressRefusedTest|lostPhysicalReleaseCannotBalanceTest|staleCancellationAfterRetirementTest|focusLeaveCancelsWithoutRetirementTest|physicalReleaseWhileUnfocusedIgnoredTest|newPressWhileUnfocusedRefusedTest|reenterCannotInventHeldKeyTest|capabilityRestoreAllowsFreshKeysTest|retirementBeforeCancellationRefusedTest)$",
+        "--max-samples=1",
+        "--seed=79001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "held.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(('missing-cancel', 0))",
+  "artifacts": {
+    "held.qnt": "54c174a8b33cdbad55fe16a58357960fddcd52a8dee6b2b751d23c40d40971d5",
+    "model.py": "fbf948c6250da10ad8f6494cc152aafcb9e33a8f3f3ba47259963b9b7d7dc46e",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-oneHeldCancelledTest-0.itf.json": "a405fa9ea12135ad206ba50de601fdac4d242a15f99bfde302e7d6b316f8447c",
+    "named-allHeldCancelledTest-1.itf.json": "2cada85d2f8679d3981b44fad1baaca3b273d37fcd608a5fef75804f5c80cc6c",
+    "named-unheldLossSilentTest-2.itf.json": "2b115804dbefe9b9055b394ced161880f9911fbb803c4922d990f4694cb88917",
+    "named-duplicatePressRefusedTest-3.itf.json": "f32a11769fde7e78a05e8672ba1a0071316ef49acc5b236230f6584eaaeca52e",
+    "named-alreadyReleasedExcludedTest-4.itf.json": "476692a0e2cc937639098be920db97912e6e6d3606ed7bdc0d0bd271715fe8d2",
+    "named-repeatCancellationSilentTest-5.itf.json": "218944871db1a8c073229c34d4f0c869decf2f0842ffa87965146cfeb3a75a3a",
+    "named-cancellationBeforeRetirementTest-6.itf.json": "45d34b5e1f57f0d438c8c6220cb782b975685387f1c41926946a2ce5297b2aab",
+    "named-latePressRefusedTest-7.itf.json": "2073bd5565315f553e302284e956ad39f28b4429f42ef725d2733ba2b17c1fa5",
+    "named-lostPhysicalReleaseCannotBalanceTest-8.itf.json": "3b8f04e6975da4c9afae283db98a24f2a37f88ea963cb20370e92568cb1f6e6d",
+    "named-staleCancellationAfterRetirementTest-9.itf.json": "16db989577828fe70a61db93fde5d4ef3a1806d9e37419c53fcd5878fe964f9c",
+    "named-focusLeaveCancelsWithoutRetirementTest-10.itf.json": "3a6d615c71b5b4da4b8c297efa31266310d8a87a883c816a458567f5df5cd5c0",
+    "named-physicalReleaseWhileUnfocusedIgnoredTest-11.itf.json": "d03c8437bca385375a816bf6a3bff8df66a14b0c411268d7fcbb105afb2ab28e",
+    "named-newPressWhileUnfocusedRefusedTest-12.itf.json": "d03c8437bca385375a816bf6a3bff8df66a14b0c411268d7fcbb105afb2ab28e",
+    "named-reenterCannotInventHeldKeyTest-13.itf.json": "7ab1cbd84d48589382c72f929ddd67f5ae32172bf0b2cf68b6eed9db98eb8ade",
+    "named-capabilityRestoreAllowsFreshKeysTest-14.itf.json": "e3c09e2035c511cfac58c909ab2b9d544678186ac47db417e20ce2838be61d95",
+    "named-retirementBeforeCancellationRefusedTest-15.itf.json": "f58bde3bb9225874e4c28d1ceb928d84dfc59b9adb61620f741781928c7700dc",
+    "named.stdout": "05a1b836a851b45d8cd3369ba9dbd320be4d706dc3e358102fc3e4288b906537",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "aeb41eb53e7dcb78f889210a03c11ebeba91cb152a17519b602bbbb562ebdc2c",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

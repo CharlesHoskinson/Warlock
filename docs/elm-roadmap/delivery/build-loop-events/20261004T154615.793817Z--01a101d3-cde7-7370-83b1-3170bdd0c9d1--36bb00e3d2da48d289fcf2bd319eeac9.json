@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "36bb00e3d2da48d289fcf2bd319eeac9",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T15:46:15.793817+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-geometry-client-journal-v192",
+  "nextWork": [
+    "Frozen184 controlled XDG client build/50helper/25CLI/3unsafecontrols passed;530 own files independently rechecked.192 bounded journal reader19syntheticcases PASS;193review requested;189 finalclient snapshot review and190 protected native runner assembly pending. NoGUI/native acceptance; profile/pixels/physicalinput, roundedsingleton178, original08/09/10/fullS01-S16/release remain open"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-geometry-client-journal-v192/component-manifest.json",
+      "sha256": "c1af56cebc3eca038d96a134a115239da8c98371333ba284a8ca2455af584c9d",
+      "size": 943
+    },
+    {
+      "path": "implementation/elm-geometry-xdg-origin-fixture-v184/component-manifest.json",
+      "sha256": "50aae9ec53dab7e8df54da9b1cef249e6e2d3eec440f9024bd0dce45888f536e",
+      "size": 130053
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

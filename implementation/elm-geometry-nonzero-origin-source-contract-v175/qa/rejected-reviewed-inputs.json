@@ -1,0 +1,278 @@
+{
+  "scope": "Read-only source contract; no native/model/policy acceptance",
+  "files": {
+    "implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/inputs/candidate/src/desktop/view/Window.cpp": {
+      "sha256": "ef8e7fc7f2bd9ffa8f0b99b486ca9ea3bc80f8906aa214277ab7b16faf0b445d",
+      "size": 124737,
+      "capture": "inputs/Window.cpp",
+      "sourceStatus": "immutable owning core89 compile capture",
+      "lineAnchors": [
+        [
+          236,
+          245
+        ],
+        [
+          1688,
+          1701
+        ],
+        [
+          1735,
+          1758
+        ],
+        [
+          2892,
+          2928
+        ]
+      ]
+    },
+    "implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/inputs/candidate/src/protocols/XDGShell.cpp": {
+      "sha256": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b",
+      "size": 35489,
+      "capture": "inputs/XDGShell.cpp",
+      "sourceStatus": "immutable owning core89 compile capture",
+      "lineAnchors": [
+        [
+          354,
+          360
+        ],
+        [
+          443,
+          462
+        ],
+        [
+          467,
+          482
+        ],
+        [
+          519,
+          548
+        ],
+        [
+          605,
+          609
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/layout/target/WindowTarget.cpp": {
+      "sha256": "8bcaf37000cf55e1d2084bf732f0589b4ab49d36c778d8d4efa98949dd14734d",
+      "size": 16614,
+      "capture": "inputs/WindowTarget.cpp",
+      "sourceStatus": "owning source trace, compile-body characterization in166",
+      "lineAnchors": [
+        [
+          69,
+          81
+        ],
+        [
+          94,
+          108
+        ],
+        [
+          307,
+          355
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/layout/target/Target.cpp": {
+      "sha256": "49323833c6bc327656e6d02245ebbccf7643fc94f4fbee3cebbae035bbd4ca06",
+      "size": 3064,
+      "capture": "inputs/Target.cpp",
+      "sourceStatus": "owning source trace",
+      "lineAnchors": [
+        [
+          10,
+          17
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/managers/fullscreen/handler/FullscreenHandler.cpp": {
+      "sha256": "5bfed3aa05f2e6f013e7776efaa754e3e107aa7688eb5d523bdbdfa87f51bc85",
+      "size": 14456,
+      "capture": "inputs/FullscreenHandler.cpp",
+      "sourceStatus": "owning source trace",
+      "lineAnchors": [
+        [
+          190,
+          200
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/desktop/view/types/GeometricMovableAnimated.cpp": {
+      "sha256": "649f1a8d01d28e20e23380db65c5aeb35846d7ef48c8aada9b84ff0e4a1a207d",
+      "size": 1576,
+      "capture": "inputs/GeometricMovableAnimated.cpp",
+      "sourceStatus": "owning source trace",
+      "lineAnchors": [
+        [
+          13,
+          47
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/render/Renderer.cpp": {
+      "sha256": "e07c4f2a5b2f41fe8c2a2cfd231d06de0a022a382e169669c828af1adc7e7337",
+      "size": 143891,
+      "capture": "inputs/Renderer.cpp",
+      "sourceStatus": "owning source trace; renderer source/object provenance remains a gate",
+      "lineAnchors": [
+        [
+          575,
+          585
+        ],
+        [
+          765,
+          773
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/render/ElementRenderer.cpp": {
+      "sha256": "32f79c359a5ae6a265f7b2feee5c190d643371dd984d2bdda6a4ef203ccec828",
+      "size": 29586,
+      "capture": "inputs/ElementRenderer.cpp",
+      "sourceStatus": "owning source trace; renderer source/object provenance remains a gate",
+      "lineAnchors": [
+        [
+          34,
+          52
+        ],
+        [
+          94,
+          114
+        ],
+        [
+          125,
+          146
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/render/pass/SurfacePassElement.cpp": {
+      "sha256": "ea559690633f8f2e0da7709cb3c00f12b54bc20fbe631437633744676eff24f8",
+      "size": 7495,
+      "capture": "inputs/SurfacePassElement.cpp",
+      "sourceStatus": "owning source trace",
+      "lineAnchors": [
+        [
+          20,
+          75
+        ]
+      ]
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/desktop/view/WLSurface.cpp": {
+      "sha256": "ac33b908ea8e4e01c9d25f09b6c54b3ab0ac3f3c19479872076eb55a2cef43ea",
+      "size": 6865,
+      "capture": "inputs/WLSurface.cpp",
+      "sourceStatus": "owning source trace",
+      "lineAnchors": [
+        [
+          43,
+          83
+        ],
+        [
+          180,
+          185
+        ]
+      ]
+    },
+    "implementation/elm-input-region-fix-v23/build-1791066782908412177/inputs/src/desktop/state/ViewHitTester.cpp": {
+      "sha256": "01a3130fde8028d8872930383ba6cae610c690b38a3c39159cf75f2246afc2fa",
+      "size": 16544,
+      "capture": "inputs/ViewHitTester.cpp",
+      "sourceStatus": "immutable v23 compile capture; inherited origin method",
+      "lineAnchors": [
+        [
+          297,
+          324
+        ]
+      ]
+    },
+    "implementation/elm-geometry-coordinate-policy-v402/candidate/ProspectiveGeometry.hpp": {
+      "sha256": "7c765028040d5a1ae7d8279f8f92ab0d4e06c124ba8576976c7d8fc83d0334a7",
+      "size": 3188,
+      "capture": "inputs/ProspectiveGeometry.hpp",
+      "sourceStatus": "profile402 source reviewed only",
+      "lineAnchors": [
+        [
+          12,
+          23
+        ],
+        [
+          44,
+          70
+        ]
+      ]
+    },
+    "implementation/elm-geometry-coordinate-authority-v407/native/geometry-policy.inc": {
+      "sha256": "3199de75489bf2ecd3fab19200c11e87668d602ec2fefdbd99c148cfc90ed404",
+      "size": 4283,
+      "capture": "inputs/geometry-policy.inc",
+      "sourceStatus": "producer407 source reviewed only",
+      "lineAnchors": [
+        [
+          1,
+          26
+        ],
+        [
+          31,
+          43
+        ],
+        [
+          54,
+          62
+        ]
+      ]
+    },
+    "implementation/elm-geometry-coordinate-authority-v407/native/geometry-effects.inc": {
+      "sha256": "4555382a628a301b6e44b3617fa002dc861b8dc1de02cd759fb5c0254419e7af",
+      "size": 13113,
+      "capture": "inputs/geometry-effects.inc",
+      "sourceStatus": "producer407 source reviewed only",
+      "lineAnchors": [
+        [
+          26,
+          33
+        ],
+        [
+          98,
+          133
+        ]
+      ]
+    },
+    "implementation/elm-geometry-constraint-coordinate-review-v155/reviewed-inputs.json": {
+      "sha256": "4264a3cc192db2ffdcbc6ea921ac950ddecfd5f96331951bff91f8bac0900d52",
+      "size": 2638,
+      "sourceStatus": "external immutable evidence reference"
+    },
+    "implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/new-archive-payloads.json": {
+      "sha256": "980c41429d391b98bcea9889a9e3a59d4d83d685479559601bea47d4759674d2",
+      "size": 63214,
+      "sourceStatus": "external immutable evidence reference"
+    },
+    "implementation/elm-core-parent-first-anchor-v89/component-manifest.json": {
+      "sha256": "4f10f5f3fba7f3186e7c9fdb13e45ad7bc2b08614755d081f8e620986f34d5fb",
+      "size": 170550,
+      "sourceStatus": "external immutable evidence reference"
+    },
+    "implementation/elm-geometry-conversion-edge-characterization-v166/component-manifest.json": {
+      "sha256": "2a24176b9c4e3b1e07b8c424d69bd14be0beb8e09800d01aecbf267f638f5341",
+      "size": 79916,
+      "sourceStatus": "external immutable evidence reference"
+    },
+    "implementation/elm-parent-first-anchor-pair-v90/qa/build-1791107369559431070/report.json": {
+      "sha256": "f5ad81eda09c3db12881a57c1052f5241099b77e759f864aa2b1f40327bb460f",
+      "size": 398590,
+      "sourceStatus": "external immutable evidence reference"
+    },
+    "implementation/maximized-stack-v1/native-core-v2/src/desktop/view/Window.hpp": {
+      "sha256": "1f60b8ff0bc6b5a48af5c03cb2cac1108db677efc70b4424b56ef6f1f2d1cc81",
+      "size": 23988,
+      "capture": "inputs/Window.hpp",
+      "sourceStatus": "owning source/header trace; current-main-surface definition",
+      "lineAnchors": [
+        [
+          433,
+          436
+        ]
+      ]
+    }
+  }
+}

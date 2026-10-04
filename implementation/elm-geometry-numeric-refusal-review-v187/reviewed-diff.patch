@@ -1,0 +1,15 @@
+--- original/geometry_size_policy.py
++++ candidate/geometry_size_policy.py
+@@ -58,7 +58,11 @@
+         vector(inputs[field])
+     vector(inputs['geometryOrigin'], False)
+     scale = inputs['monitorScale']
+-    if type(scale) not in (int, float) or not math.isfinite(scale) or scale <= 0:
++    try:
++        valid_scale = type(scale) in (int, float) and math.isfinite(scale) and scale > 0
++    except OverflowError:
++        valid_scale = False
++    if not valid_scale:
+         raise Refused('Geometry scale')
+     if not valid_interval(inputs['rawMinimum'], inputs['rawMaximum'], True) or not valid_interval(inputs['layoutMinimum'], inputs['layoutMaximum'], False):
+         raise Refused('Invalid size intervals')

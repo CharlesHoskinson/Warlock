@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "scope": "Post-run actual GTK protocol configure/ACK/window-geometry/commit evidence; no MAX RGB or original full geometry campaign acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-carrier-shared-native-v424/qa/native-1791127869741674715/report.json": "dfc2de5db60fdcd1d01fb930b330638c90b49fad4826a402d06952dad1ef0292",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-client-ack-proof-v426/test.py": "2343c58ae34457f44d406dff2fae997279e3db27d4854f205b5060898af4b115",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-carrier-shared-native-v424/qa/native-1791127869741674715/native-evidence/fixture.log": "a110964588a634730c515bdb1dafdeabc6b2acfdee2e4f5de12f20f51e2bfba1"
+  },
+  "maximize": {
+    "toplevel": "#75",
+    "xdgSurface": "#74",
+    "wlSurface": "#42",
+    "size": [
+      798,
+      550
+    ],
+    "serial": "266",
+    "configureLine": 8521,
+    "surfaceConfigureLine": 8522,
+    "ackLine": 8523,
+    "geometryLine": 8840,
+    "commitLine": 8865
+  },
+  "restore": {
+    "toplevel": "#75",
+    "xdgSurface": "#74",
+    "wlSurface": "#42",
+    "size": [
+      800,
+      600
+    ],
+    "serial": "308",
+    "configureLine": 9390,
+    "surfaceConfigureLine": 9391,
+    "ackLine": 9392,
+    "geometryLine": 9709,
+    "commitLine": 9734
+  },
+  "controls": [
+    {
+      "name": "missing-max-ack",
+      "detected": true
+    },
+    {
+      "name": "missing-restore-ack",
+      "detected": true
+    }
+  ],
+  "boundedNativeClientACKQualified": true,
+  "fullGeometryCampaignAccepted": false
+}

@@ -1,0 +1,1 @@
+const auto sizePolicy=protocol==2 ? ",\"sizePolicy\":{\"inputs\":"+geometryPolicyInputs(window)+",\"maximize\":"+geometryProjected(maximizeProjection)+",\"restoreGeometry\":"+geometryProjected(restoreProjection)+"}" : "";

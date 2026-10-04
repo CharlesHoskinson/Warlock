@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "heldManifest": "implementation/elm-geometry-bounds-held-v415/qa/slice-manifest.json",
+  "heldManifestSHA256": "bfcd59585f1bb58175e387f8a5e8d92b772e973424be825a339c61f6cbbc1534",
+  "files": {
+    "implementation/elm-shared-geometry-bounds-v410/adapter/admission_ledger.py": {
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/admission_ledger.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/catalog_authority.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/catalog_transport.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/daemon.py": {
+      "sha256": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+      "size": 9925,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/daemon.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/durable_ledger.py": {
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/durable_ledger.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/effect_endpoint.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/endpoint.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/geometry_endpoint.py": {
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/geometry_endpoint.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/geometry_size_policy.py": {
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/geometry_size_policy.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/recovery_fault.py": {
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/recovery_fault.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/recovery_journal.py": {
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/recovery_journal.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/recovery_store.py": {
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/recovery_store.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/taskbar_catalog.py"
+    },
+    "implementation/elm-shared-geometry-bounds-v410/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "owningCapture": "implementation/elm-shared-geometry-bounds-v410/qa/build-1791125993387778780/inputs/adapter/taskbar_projection.py"
+    }
+  },
+  "sampleSource": "implementation/elm-geometry-bounds-consumer-qa-v412/checks-1791126321935256810/samples.json",
+  "sampleSHA256": "bf6cdef42f320c23d8d498b969e9c0490e669575909b0f68350ddc23e12c4c51",
+  "nativeAcceptance": false
+}

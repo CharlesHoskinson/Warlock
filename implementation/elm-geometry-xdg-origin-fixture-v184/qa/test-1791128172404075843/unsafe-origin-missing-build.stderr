@@ -1,0 +1,6 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-fixture-v184/qa/test-1791128172404075843/unsafe-origin-missing/helper-test.c:2:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-fixture-v184/qa/test-1791128172404075843/unsafe-origin-missing/xdg-origin-client.c: In function ‘color’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-origin-fixture-v184/qa/test-1791128172404075843/unsafe-origin-missing/xdg-origin-client.c:55:45: error: unused parameter ‘p’ [-Werror=unused-parameter]
+   55 | static uint32_t color(const struct profile *p,int width,int height,int lx,int ly,uint32_t serial) {
+      |                       ~~~~~~~~~~~~~~~~~~~~~~^
+cc1: all warnings being treated as errors

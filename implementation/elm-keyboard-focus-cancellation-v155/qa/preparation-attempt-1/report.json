@@ -1,0 +1,14 @@
+{
+  "passed": false,
+  "scope": "Source preparation only; no155 files existed and no native launch occurred",
+  "observedError": "SyntaxError: unmatched parenthesis in preparation script",
+  "observedDependentExits": {
+    "hooks": 2,
+    "keys": 2,
+    "cancel": 2,
+    "transport": 2,
+    "model": 2
+  },
+  "rawStderrPreserved": false,
+  "correction": "Corrected preparer token, compiled preparer before execution, then created155 source; failed154 source/build remains unchanged."
+}

@@ -1,0 +1,299 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual extracted keyboard constructor callbacks/private helpers/destructor; typed protocol adapter and real Hyprutils ownership/signals; actual capability callback retaining backend and native Core/GTK behavior separate",
+  "commands": [
+    {
+      "name": "candidate-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/candidate.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "candidate-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/candidate"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-leave-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/missing-leave.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/missing-leave"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "missing-leave-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/missing-leave"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "focus-not-cleared-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/focus-not-cleared.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/focus-not-cleared"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "focus-not-cleared-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/focus-not-cleared"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "enter-not-admitted-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/enter-not-admitted.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/enter-not-admitted"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "enter-not-admitted-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/enter-not-admitted"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "invented-enter-press-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/invented-enter-press.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/invented-enter-press"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invented-enter-press-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/invented-enter-press"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "late-key-admitted-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/late-key-admitted.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/late-key-admitted"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "late-key-admitted-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/late-key-admitted"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "key-not-retained-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/key-not-retained.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/key-not-retained"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "key-not-retained-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/key-not-retained"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "modifier-not-retained-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/modifier-not-retained.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/modifier-not-retained"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "modifier-not-retained-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/modifier-not-retained"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "early-capability-retirement-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-std=c++23",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-parameter",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/early-capability-retirement.cpp",
+        "-lhyprutils",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/early-capability-retirement"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "early-capability-retirement-run",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-1791127764939754465/early-capability-retirement"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks.py": "85bdb02df4a1df67a07361b7487fc70ce5a46e73fe3194d6e998d2673e2c02e7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/candidate/src/backend/Wayland.cpp": "8522b4498f4a32f3d01b811ceae1b187a10b871a2874f390a303067c8118fcf8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/hooks-template.cpp": "d76b91e486977bf237b41e0d313ee4497b3e4e39860975c30fcd1635f5bc7b66"
+  },
+  "candidateChecks": 28,
+  "candidateValidated": true,
+  "mutantsRejected": 8,
+  "helperSHA256": "215f90ab0dc8e8285c00bdd330ad8397a074326b7a976c1d449a0cb090bb6833",
+  "constructorSHA256": "455260cf606bbb7f259929e0521d3f60bdcc31c4a3661c51f5595bf205f98605",
+  "destructorSHA256": "70cf5e6e09f20ed37dce79cca246807ccae052322860d1ccb6ecc7a62d6a473a",
+  "artifacts": {
+    "candidate.cpp": "70015b94c22f63ca807b82f81964457fd43553f3d3cdd650204555a86f38528e",
+    "candidate": "01a543e248906accc094925242f35fe64e361a37594dfaf4a77142471bf032f0",
+    "candidate-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate-run.stdout": "059e1a2998b8812cfb2021aeb6d2dfb034f32f147043c874a2e776cba68ef7e5",
+    "candidate-run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-leave.cpp": "f63e1ff41eac11f00afaaa27c5c47ef0ec14eebcfa4b5cc732a8bb2a73573fda",
+    "missing-leave": "73de0b2095092d7ddb9b8d341069bc873b197b2e21ed81719fcd11f02b30c531",
+    "missing-leave-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-leave-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-leave-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-leave-run.stderr": "05c4cd1a8e385b76e4a5643f47326179caa18b71f28c889e88408176e7f57e44",
+    "focus-not-cleared.cpp": "359c31c0984334244e56fea20320f75af5a5d2d5c9b06d2ef294808c3bb7d7d6",
+    "focus-not-cleared": "90d3c9c524b14b550e778d60196875c295e543c9eb3f41736eba072a94d7b63f",
+    "focus-not-cleared-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-not-cleared-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-not-cleared-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "focus-not-cleared-run.stderr": "5ce850a4615a6f048a81977c6f686bfb37313ae051cbc127cc02c1b0bab90298",
+    "enter-not-admitted.cpp": "8b50cd6e7e4fa197565a9f304da99fa7f61c75be38e256fc5ff17a3199ea2732",
+    "enter-not-admitted": "ddff55fdb28641367dd76c7d4200300ebb867d651f60e6df634653d3a59b19c6",
+    "enter-not-admitted-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enter-not-admitted-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enter-not-admitted-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "enter-not-admitted-run.stderr": "9afddef1fa74ced11ab7e6e7375a3a0349b3b8ed7c8a6010ec1911688f21335f",
+    "invented-enter-press.cpp": "530ca956042f3a4cfc29fb0cb436d8ae4e81f8ca10a57d3747f957cf25fb7e47",
+    "invented-enter-press": "8c9aacebf58b2c1f3ee1650dc721036c3f89fdfc4b6250b8ede13bc5118beffb",
+    "invented-enter-press-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-enter-press-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-enter-press-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invented-enter-press-run.stderr": "9afddef1fa74ced11ab7e6e7375a3a0349b3b8ed7c8a6010ec1911688f21335f",
+    "late-key-admitted.cpp": "7499ef94b8a5523d1f0b1947c486f65a6bd87532e2268685a71b21cd52cfe58d",
+    "late-key-admitted": "20181eb655619045570976701dae8c184c298edaddc2c4f5a90492e10dcb8925",
+    "late-key-admitted-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "late-key-admitted-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "late-key-admitted-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "late-key-admitted-run.stderr": "2500edc1cdff961e68dac2978dcbf28edd9ceb54a5fa899add65768ed5126fc5",
+    "key-not-retained.cpp": "cb83ec5162a7f74ad98a98507152bf346a7f02df637e8ea35fff99bd42d78e65",
+    "key-not-retained": "e704da253d96d78fdfa0eff94eb326c8939de9166eab8869909c7b3778e85547",
+    "key-not-retained-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "key-not-retained-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "key-not-retained-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "key-not-retained-run.stderr": "b0f2ea570c9925b4fc9295230b3ab9e79f1fcb7afb171833f9b1a4fe027baec7",
+    "modifier-not-retained.cpp": "4f18d09aa22745e6a4092b568d9da1daa99f4306cb9df818f25a294208418238",
+    "modifier-not-retained": "1b59b590308180c1067a9b2856eaea892c1de816693e1481117e027cf4a3263b",
+    "modifier-not-retained-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modifier-not-retained-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modifier-not-retained-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "modifier-not-retained-run.stderr": "8a8e44d3a5c8593eef206b42cb117e6498cd9cb19d318be5e622e31c8b292cbf",
+    "early-capability-retirement.cpp": "4663ef0bda7963b99b6e32ed3558a2ec0ed98ba2aabd00b0983f87a2435de0cb",
+    "early-capability-retirement": "713cd852c50244800451d71faf91742e569921cf8005bb627f0bc71045ffbb75",
+    "early-capability-retirement-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "early-capability-retirement-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "early-capability-retirement-run.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "early-capability-retirement-run.stderr": "2cdb0216225d70f006b263a8c1f070e7bccebd015fe5815c5b0428acb76534da"
+  }
+}

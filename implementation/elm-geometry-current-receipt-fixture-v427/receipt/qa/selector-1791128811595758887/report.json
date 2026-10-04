@@ -1,0 +1,265 @@
+{
+  "passed": true,
+  "inputs": {
+    "qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "qa/selector-test.py": "b7cdb63c6bc59fc150801bf2e1ce06b365abfbc4bf6f1f47966c2b71136a66b2",
+    "qa/test.py": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+    "qa/wrapper.py": "d39c5732175d3ae6d59686b03a3220ee11eff633da0ca447d09373372dfcb36e",
+    "parent.json": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+    "upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1"
+  },
+  "checks": [
+    {
+      "name": "exact held shared380 backend still imports",
+      "passed": true
+    },
+    {
+      "name": "ordinal2 first distinct fullkey committed passes unchanged and starts no timer",
+      "passed": true
+    },
+    {
+      "name": "outer receipt metadata does not change full native key or advance count",
+      "passed": true
+    },
+    {
+      "name": "Unknown passes unchanged without ordinal increment",
+      "passed": true
+    },
+    {
+      "name": "Refused passes unchanged without ordinal increment",
+      "passed": true
+    },
+    {
+      "name": "target mismatch passes unchanged without counting",
+      "passed": true
+    },
+    {
+      "name": "protocol mismatch passes unchanged without counting",
+      "passed": true
+    },
+    {
+      "name": "operation mismatch passes unchanged without counting",
+      "passed": true
+    },
+    {
+      "name": "second distinct fullkey across reconnect is held exactly without delivery",
+      "passed": true
+    },
+    {
+      "name": "held file records full original second binding intent and receipt",
+      "passed": true
+    },
+    {
+      "name": "duplicate selected fullkey refuses instead of bypassing receipt hold",
+      "passed": true
+    },
+    {
+      "name": "after selecting one hold unrelated further key passes without unbounded metadata",
+      "passed": true
+    },
+    {
+      "name": "selected ordinal2 original receipt releases exactly once",
+      "passed": true
+    },
+    {
+      "name": "retired actorA ordinal2 forwards06 while fresh actorB ordinal1 holds09",
+      "passed": true
+    },
+    {
+      "name": "fresh actor exact09 releases once without retargeting old holder",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal1 Unknown never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal1 Refused never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal2 Unknown never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "uniform ordinal2 Refused never counts or fabricatesCommitted",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value True",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value False",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value 0",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value 3",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value -1",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value 1.0",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value '2'",
+      "passed": true
+    },
+    {
+      "name": "closed ordinal type/value None",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal bindingzero",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal requestzero",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal generationBool",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal generationOverflow",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal contextMismatch",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal extraIntent",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal extraEnvelope",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal invalidStatus",
+      "passed": true
+    },
+    {
+      "name": "malformed selected candidate does not consume ordinal badReason",
+      "passed": true
+    },
+    {
+      "name": "watchdog starts at selected original receipt and has original5sec bound",
+      "passed": true
+    },
+    {
+      "name": "deadline not extended by locked or unchanged gate",
+      "passed": true
+    },
+    {
+      "name": "late release cannot bypass deadline",
+      "passed": true
+    },
+    {
+      "name": "exact config optional ordinal None",
+      "passed": true
+    },
+    {
+      "name": "entrypoint forwards explicit ordinal None",
+      "passed": true
+    },
+    {
+      "name": "exact config optional ordinal 1",
+      "passed": true
+    },
+    {
+      "name": "entrypoint forwards explicit ordinal 1",
+      "passed": true
+    },
+    {
+      "name": "exact config optional ordinal 2",
+      "passed": true
+    },
+    {
+      "name": "entrypoint forwards explicit ordinal 2",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal True",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal 0",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal 3",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal '2'",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal 2.0",
+      "passed": true
+    },
+    {
+      "name": "private config rejects wrong ordinal None",
+      "passed": true
+    },
+    {
+      "name": "frozen V78 ancestor manifest exact",
+      "passed": true
+    }
+  ],
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-7a63d59d7fd445dda773a5c367a14776.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "scope": "Actual wrapper/controller with synthetic native receipt objects, filesystem gate and actual held backend import. Distinct selector CPU only; no native execution.",
+  "artifacts": {
+    "authority.json": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "wrapper.json": "9c6fbf91657469b186e9f623d3fdbe3e23bb0706c3c94497f21cabecba21ef6d",
+    "inputs/parent.json": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+    "inputs/upstream.json": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+    "control1/gate.json": "a31686ae21773f7c38f8f208058640ee7b15b17dc7f6e7d77bdca596d1201fa1",
+    "control1/held.json": "71923805546936e113756b37496fdc609de137266d0dd21f10db87d91e7a90cc",
+    "control2/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control3/gate.json": "ade348f78ca72f65b83db1c8479532c7a32f9bbbb45290de1fa517e6a2404806",
+    "control3/held.json": "b9a94ac470ff45b0c347b1b65e622ca5fa2bc56899fa051e602c204eeec862c4",
+    "control4/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control5/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control6/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control7/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control8/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control9/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control10/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control11/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control12/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control13/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control14/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control15/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control16/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control17/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control18/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control19/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control20/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control21/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control22/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "control23/gate.json": "ed82a7f1e7c7f1f3c8b3694ad0f286631bf05c91512b69fc12c137415de2eab1",
+    "control23/held.json": "63cc739a30a56e9ee52b99b6b0f554b84d39607173d15a81f694c83b6f5a862d",
+    "control24/gate.json": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+    "inputs/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "inputs/qa/selector-test.py": "b7cdb63c6bc59fc150801bf2e1ce06b365abfbc4bf6f1f47966c2b71136a66b2",
+    "inputs/qa/test.py": "a97def34ef025844f61347d455c46ed9e5cff7d876d77a3a28c5e63825eece61",
+    "inputs/qa/wrapper.py": "d39c5732175d3ae6d59686b03a3220ee11eff633da0ca447d09373372dfcb36e"
+  }
+}
