@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "Rendered cursor extent sizing CPU and incremental owning core build only",
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "pluginPairQualified": false,
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-cursor-extent-v22/build-1791096768428792872/report.json",
+  "buildReportSHA256": "2b196d003104245ade693742e2be44e640c7c6d88dad37b4668eb930e0cba916",
+  "files": [
+    {
+      "path": "build-1791096768428792872/Hyprland",
+      "sha256": "479a6b7be250595d42a01a013f0616a4a710298ee9cb552f77e484b61c33c5fb",
+      "size": 19585936
+    },
+    {
+      "path": "build-1791096768428792872/PointerManager.cpp.d",
+      "sha256": "faf07edc0725fa838dd48ba0d4d93445a10a09b40347445f5544cf0f5d02424f",
+      "size": 33513
+    },
+    {
+      "path": "build-1791096768428792872/PointerManager.cpp.o",
+      "sha256": "1e27544220cf5b3a87b0a8cc0daea26672e2e7129e564be6a7c020ed100e0268",
+      "size": 641912
+    },
+    {
+      "path": "build-1791096768428792872/ancestor-archive-payloads.json",
+      "sha256": "0cd17575cdb4a0baa5d5f03eef81cb9957047fcf686d3cd1d887c8b7612f0971",
+      "size": 63214
+    },
+    {
+      "path": "build-1791096768428792872/archive-members.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/archive-members.stdout",
+      "sha256": "4c5b9aff65c018ca0ed7de98e5e3f3fa352e3956bb5be93bd75f5cbc0b628597",
+      "size": 9309
+    },
+    {
+      "path": "build-1791096768428792872/archive.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/archive.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/cursor-extent",
+      "sha256": "768fb8d86db3d13a8fa3864f832cc92f3604f930a743e9b70b9ce2451bfe91a6",
+      "size": 20952
+    },
+    {
+      "path": "build-1791096768428792872/cursor-extent-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/cursor-extent-tests.stdout",
+      "sha256": "994122794cc02554fa73470cc5de41c1d6414b97692e342dd4b69bfad553ba3e",
+      "size": 14
+    },
+    {
+      "path": "build-1791096768428792872/cursor-extent-unsafe",
+      "sha256": "cf27759aae6eeff8db26ba905a1b012113671cc2e9c5a6b83b63d2aa7708f17f",
+      "size": 16584
+    },
+    {
+      "path": "build-1791096768428792872/inputs/build.py",
+      "sha256": "b96ea2a6474f7d3d56fc36cfe252936381908e0a04b54bead634e1fc94d87e81",
+      "size": 7553
+    },
+    {
+      "path": "build-1791096768428792872/inputs/candidate/SceneModal.hpp",
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+      "size": 2863
+    },
+    {
+      "path": "build-1791096768428792872/inputs/candidate/SceneTrace.hpp",
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+      "size": 1303
+    },
+    {
+      "path": "build-1791096768428792872/inputs/candidate/WindowPolicy.hpp",
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+      "size": 311
+    },
+    {
+      "path": "build-1791096768428792872/inputs/candidate/src/pointer/CursorBufferExtent.hpp",
+      "sha256": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+      "size": 1687
+    },
+    {
+      "path": "build-1791096768428792872/inputs/candidate/src/pointer/PointerManager.cpp",
+      "sha256": "31fa33dafde5e9601a421a839c33b180d806223b0268b7d48e07d24fddbf448c",
+      "size": 44644
+    },
+    {
+      "path": "build-1791096768428792872/inputs/original-PointerManager.cpp",
+      "sha256": "83c69d93f09088f1e2383a9c85a54cf3f55718d9506a1121058afef77911223a",
+      "size": 44638
+    },
+    {
+      "path": "build-1791096768428792872/inputs/qa/cursor-extent.cpp",
+      "sha256": "4f617510b2e514c0d9d03bf70b6286ac777b74f05afb10793780f56a5547f556",
+      "size": 2126
+    },
+    {
+      "path": "build-1791096768428792872/libhyprland_lib.a",
+      "sha256": "c8d5ba63e6a44f4bf378f468920846449aa0da48f552f8c2ab7222107e72fe66",
+      "size": 91241760
+    },
+    {
+      "path": "build-1791096768428792872/link.d",
+      "sha256": "bea437ecb1b8cd4d81579810b36623c50096be5518c3323aa1615e0418905318",
+      "size": 16733
+    },
+    {
+      "path": "build-1791096768428792872/link.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/link.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/mutant/CursorBufferExtent.hpp",
+      "sha256": "ec238e5244281de95f672a3f484bb4f24850a9243f7405870e0a10f9721b1e42",
+      "size": 1696
+    },
+    {
+      "path": "build-1791096768428792872/mutation-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/mutation-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/new-archive-members.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/new-archive-members.stdout",
+      "sha256": "4c5b9aff65c018ca0ed7de98e5e3f3fa352e3956bb5be93bd75f5cbc0b628597",
+      "size": 9309
+    },
+    {
+      "path": "build-1791096768428792872/new-archive-payloads.json",
+      "sha256": "fcd38a954151fa565f72de31748bb117ce6976721c28072a94a369bba8fa4859",
+      "size": 63214
+    },
+    {
+      "path": "build-1791096768428792872/old-pointer-object.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/old-pointer-object.stdout",
+      "sha256": "06083838ea857e189818fde10d2f58edf487a3c6735aa25f0126a9b7a55878f2",
+      "size": 640216
+    },
+    {
+      "path": "build-1791096768428792872/pointer-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/pointer-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/raw-size-mutation.stderr",
+      "sha256": "e4f12f1d975d4caa34ede338d0f32e1af88b474aeb1905eb64a5d4c3bbddb901",
+      "size": 15
+    },
+    {
+      "path": "build-1791096768428792872/raw-size-mutation.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/report.json",
+      "sha256": "2b196d003104245ade693742e2be44e640c7c6d88dad37b4668eb930e0cba916",
+      "size": 77878
+    },
+    {
+      "path": "build-1791096768428792872/test-compile.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build-1791096768428792872/test-compile.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "build.py",
+      "sha256": "b96ea2a6474f7d3d56fc36cfe252936381908e0a04b54bead634e1fc94d87e81",
+      "size": 7553
+    },
+    {
+      "path": "candidate/SceneModal.hpp",
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+      "size": 2863
+    },
+    {
+      "path": "candidate/SceneTrace.hpp",
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+      "size": 1303
+    },
+    {
+      "path": "candidate/WindowPolicy.hpp",
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+      "size": 311
+    },
+    {
+      "path": "candidate/src/pointer/CursorBufferExtent.hpp",
+      "sha256": "d5bd661bedcc711b9136ab8c678be51f79a41886ab82a207daeabe8da6f6d1c0",
+      "size": 1687
+    },
+    {
+      "path": "candidate/src/pointer/PointerManager.cpp",
+      "sha256": "31fa33dafde5e9601a421a839c33b180d806223b0268b7d48e07d24fddbf448c",
+      "size": 44644
+    },
+    {
+      "path": "freeze.py",
+      "sha256": "4f7fc879a05dae739ce81604d2139129ab9f21bc8fdd5fe2050df252ba6c2c7f",
+      "size": 1533
+    },
+    {
+      "path": "qa/cursor-extent.cpp",
+      "sha256": "4f617510b2e514c0d9d03bf70b6286ac777b74f05afb10793780f56a5547f556",
+      "size": 2126
+    }
+  ]
+}

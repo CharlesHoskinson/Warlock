@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "4bc58379507a4959aef98095f213a3b2",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:48:21.595832+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-cursor-oracle-v21",
+  "nextWork": [
+    "Tighten cursor oracle to one solid magenta connected component with its cyan patch; replay retained pixels and rerun same source tuple. Owning core allocates unlimited hardware plane from raw cursor pixels while renderer draws scaled logical extent, which can clip scale-only cursor; fresh core/plugin pair will follow confirmed failure."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-cursor-oracle-v21/pixels.py",
+      "sha256": "2f89c93827e4d3a5d331857548ace7d9b0b66edd1f58c587f13313f545f1d68c",
+      "size": 1861
+    },
+    {
+      "path": "implementation/elm-parent-cursor-scale-v20/qa/slice-manifest.json",
+      "sha256": "e64588bb789afef620f688b2441cbeca5510e182a50c8d55c8aea92e1d791f9a",
+      "size": 7718
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

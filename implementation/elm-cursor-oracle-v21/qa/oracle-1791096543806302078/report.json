@@ -1,0 +1,1523 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "isolatedBackgroundCyanDoesNotMoveCursorBounds",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          80,
+          60
+        ],
+        "components": [
+          {
+            "bounds": [
+              10,
+              10,
+              34,
+              30
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          10,
+          10,
+          34,
+          30
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 17
+      }
+    },
+    {
+      "name": "duplicateVisibleCursorRefusesSingleInstance",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          80,
+          60
+        ],
+        "components": [
+          {
+            "bounds": [
+              2,
+              2,
+              26,
+              22
+            ],
+            "magenta": 464,
+            "cyan": 16
+          },
+          {
+            "bounds": [
+              45,
+              35,
+              69,
+              55
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 928,
+        "rawCyan": 32
+      }
+    },
+    {
+      "name": "hiddenCursorIgnoresIsolatedWallpaperPixel",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          80,
+          60
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 1
+      }
+    },
+    {
+      "name": "nativeClippingRemainsVisibleToExtentOracle",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          80,
+          60
+        ],
+        "components": [
+          {
+            "bounds": [
+              10,
+              10,
+              34,
+              30
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          10,
+          10,
+          34,
+          30
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16
+      }
+    },
+    {
+      "name": "elm-parent-cursor-v18:original800x600-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "461948c9be99cc8677dcbfa23daf099dbf371d379f73d764b619435e14725292"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:original800x600-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "dc0f0fdbeb79a368b83d7aa458b3e8e2706c1104b2214cb9f08a574b844b8885"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:original800x600:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "ba80c984c7efc00f168a4db87122ea95abe28feefc50db95a515a017d17f0dd5"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-v18:original800x600-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              310,
+              233,
+              334,
+              253
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          310,
+          233,
+          334,
+          253
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "4e5c91119c62093f068c762d0253c1027e05e0d6f1391a3c17dcf5b437b448bd"
+      },
+      "expectedBounds": [
+        310.0,
+        233.0,
+        334.0,
+        253.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:shrunk640x480-stationary-after-mode:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              309,
+              232,
+              338,
+              256
+            ],
+            "magenta": 660,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          309,
+          232,
+          338,
+          256
+        ],
+        "magenta": 660,
+        "cyan": 16,
+        "rawMagenta": 660,
+        "rawCyan": 16,
+        "sha256": "7088750f78f84eabf94acd9c7f81f8b534c2766cd487d4401cd2420155b63452"
+      },
+      "expectedBounds": [
+        308.25,
+        231.75,
+        338.25,
+        256.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:shrunk640x480-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              203,
+              296,
+              227
+            ],
+            "magenta": 666,
+            "cyan": 20
+          }
+        ],
+        "bounds": [
+          267,
+          203,
+          296,
+          227
+        ],
+        "magenta": 666,
+        "cyan": 20,
+        "rawMagenta": 666,
+        "rawCyan": 20,
+        "sha256": "784a31dd926e360a3c24ed950b6b2b671c7b25859405ae5e90099dee4cae4b4d"
+      },
+      "expectedBounds": [
+        266.25,
+        202.75,
+        296.25,
+        227.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:shrunk640x480-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              203,
+              296,
+              227
+            ],
+            "magenta": 666,
+            "cyan": 20
+          }
+        ],
+        "bounds": [
+          267,
+          203,
+          296,
+          227
+        ],
+        "magenta": 666,
+        "cyan": 20,
+        "rawMagenta": 666,
+        "rawCyan": 20,
+        "sha256": "21d81396dd89479f7160557fede308bce64fd24add35b6ea782271a56a774576"
+      },
+      "expectedBounds": [
+        266.25,
+        202.75,
+        296.25,
+        227.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:shrunk640x480:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "e224caec8f06d297655d9d941e30a46ba6088cdd674bac4fcab8a60c1aad53aa"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-v18:shrunk640x480-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              309,
+              234,
+              338,
+              258
+            ],
+            "magenta": 666,
+            "cyan": 20
+          }
+        ],
+        "bounds": [
+          309,
+          234,
+          338,
+          258
+        ],
+        "magenta": 666,
+        "cyan": 20,
+        "rawMagenta": 666,
+        "rawCyan": 20,
+        "sha256": "323ee480e5e1858c07a25a1901fd0f40a27c68e18e4775577693838bc08efad7"
+      },
+      "expectedBounds": [
+        309.25,
+        233.75,
+        339.25,
+        258.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:scaled960x640-stationary-after-mode:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              307,
+              231,
+              346,
+              268
+            ],
+            "magenta": 1373,
+            "cyan": 30
+          }
+        ],
+        "bounds": [
+          307,
+          231,
+          346,
+          268
+        ],
+        "magenta": 1373,
+        "cyan": 30,
+        "rawMagenta": 1373,
+        "rawCyan": 30,
+        "sha256": "b5eff0959f23b228f6c24653780b0054a7acca196c6e186fef1b7fd8054399b2"
+      },
+      "expectedBounds": [
+        306.3333333333333,
+        230.625,
+        346.3333333333333,
+        268.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:scaled960x640-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              204,
+              306,
+              241
+            ],
+            "magenta": 1373,
+            "cyan": 25
+          }
+        ],
+        "bounds": [
+          267,
+          204,
+          306,
+          241
+        ],
+        "magenta": 1373,
+        "cyan": 25,
+        "rawMagenta": 1373,
+        "rawCyan": 25,
+        "sha256": "0bde701b08ffc0c8402e7a358c88aa3705223d3a76ceec39b80bd3efd8e051bc"
+      },
+      "expectedBounds": [
+        266.3333333333333,
+        203.625,
+        306.3333333333333,
+        241.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:scaled960x640-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              204,
+              306,
+              241
+            ],
+            "magenta": 1381,
+            "cyan": 42
+          }
+        ],
+        "bounds": [
+          267,
+          204,
+          306,
+          241
+        ],
+        "magenta": 1381,
+        "cyan": 42,
+        "rawMagenta": 1381,
+        "rawCyan": 42,
+        "sha256": "36769c3779359d0b6ec09168a73aa55449e65c9a2ab0ecf934bdee34b83827d4"
+      },
+      "expectedBounds": [
+        266.3333333333333,
+        203.625,
+        306.3333333333333,
+        241.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:scaled960x640:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "a24d44700a322b70580dde9a4bfc2869bf28b2f90ff7442aabd69d35377a54ae"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-v18:scaled960x640-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              309,
+              235,
+              349,
+              272
+            ],
+            "magenta": 1418,
+            "cyan": 42
+          }
+        ],
+        "bounds": [
+          309,
+          235,
+          349,
+          272
+        ],
+        "magenta": 1418,
+        "cyan": 42,
+        "rawMagenta": 1418,
+        "rawCyan": 42,
+        "sha256": "12ffa1a6a24d5320f02fa0881f6cc73028e76c352add174064fa1f0a6844fddb"
+      },
+      "expectedBounds": [
+        309.3333333333333,
+        234.625,
+        349.3333333333333,
+        272.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:restored800x600-stationary-after-mode:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              314,
+              239,
+              338,
+              259
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          314,
+          239,
+          338,
+          259
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "ca8d572ef67b35cdde9e8579d58fe8fee3df583e2e2f5fcd4796b98453ea078a"
+      },
+      "expectedBounds": [
+        314.0,
+        239.0,
+        338.0,
+        259.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:restored800x600-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "6823489b3a1aa0b6be8fb8d8fec87bd329bb8f7989a1ed9522da8d4f8fc84c49"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:restored800x600-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "b28784c26955d251527ce6ac7be8d27298ea7e30edb13723152b29dce940007e"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:restored800x600:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "f3dc18442401ba13e99ff178aa808b251799d9891d1948f5f53b1b753543a01a"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-v18:restored800x600-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              310,
+              233,
+              334,
+              253
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          310,
+          233,
+          334,
+          253
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "7655b168e1ca4988705f136a01edc9a0e257a3a80d6b41a9bbb12946539e8dde"
+      },
+      "expectedBounds": [
+        310.0,
+        233.0,
+        334.0,
+        253.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-v18:retainedSnapshotsReplayed",
+      "passed": true,
+      "count": 19
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:original800x600-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "588476b13447006cc0d28f56e7be559c28cacdca67e523235e69d4262b064dc8"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:original800x600-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "07f74ac70636b82fa40d6ed609f27e25569f96734cef70508be3fbb680ba3c93"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:original800x600:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "607e3cd380e0fe0b61b4f928fadef2d3ef61442d2f4e5f1729a7095a4e9461f9"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:original800x600-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              310,
+              233,
+              334,
+              253
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          310,
+          233,
+          334,
+          253
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "1d7fb212e6f5a8ab2bfcae08a096e64cb6529342576a828fbb2af308f0b4196c"
+      },
+      "expectedBounds": [
+        310.0,
+        233.0,
+        334.0,
+        253.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:shrunk640x480-stationary-after-mode:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              309,
+              232,
+              338,
+              256
+            ],
+            "magenta": 660,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          309,
+          232,
+          338,
+          256
+        ],
+        "magenta": 660,
+        "cyan": 16,
+        "rawMagenta": 660,
+        "rawCyan": 16,
+        "sha256": "27b743aef140c5493db11b8589c43c42ea3f51238050bca9be0c13ad974bb47e"
+      },
+      "expectedBounds": [
+        308.25,
+        231.75,
+        338.25,
+        256.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:shrunk640x480-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              203,
+              296,
+              227
+            ],
+            "magenta": 666,
+            "cyan": 20
+          }
+        ],
+        "bounds": [
+          267,
+          203,
+          296,
+          227
+        ],
+        "magenta": 666,
+        "cyan": 20,
+        "rawMagenta": 666,
+        "rawCyan": 20,
+        "sha256": "1a37de3042eb7dbe8fb7e8346125af0dcd97fbb5e563d0b3231848d6325264e1"
+      },
+      "expectedBounds": [
+        266.25,
+        202.75,
+        296.25,
+        227.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:shrunk640x480-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              203,
+              296,
+              227
+            ],
+            "magenta": 666,
+            "cyan": 20
+          }
+        ],
+        "bounds": [
+          267,
+          203,
+          296,
+          227
+        ],
+        "magenta": 666,
+        "cyan": 20,
+        "rawMagenta": 666,
+        "rawCyan": 20,
+        "sha256": "810f46c3acdc6700c524424a3ff67fe8bf5ae109fea0f43420edec1c13bd64ea"
+      },
+      "expectedBounds": [
+        266.25,
+        202.75,
+        296.25,
+        227.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:shrunk640x480:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "eee3a43e90d5794af247fbc0e468dd80e47148b57c667476e7ea75d5129c8e75"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:shrunk640x480-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              309,
+              234,
+              338,
+              258
+            ],
+            "magenta": 666,
+            "cyan": 20
+          }
+        ],
+        "bounds": [
+          309,
+          234,
+          338,
+          258
+        ],
+        "magenta": 666,
+        "cyan": 20,
+        "rawMagenta": 666,
+        "rawCyan": 20,
+        "sha256": "cfb43fc79c64015c5d39efa6a429358c906e657f9a9af21bbef0c4b58b808a6c"
+      },
+      "expectedBounds": [
+        309.25,
+        233.75,
+        339.25,
+        258.75
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:scaled960x640-stationary-after-mode:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              307,
+              231,
+              346,
+              268
+            ],
+            "magenta": 1373,
+            "cyan": 30
+          }
+        ],
+        "bounds": [
+          307,
+          231,
+          346,
+          268
+        ],
+        "magenta": 1373,
+        "cyan": 30,
+        "rawMagenta": 1373,
+        "rawCyan": 30,
+        "sha256": "d419ee24fd2c5daa2baaf3f8243aaf1fd6985d2151fe260d99e5f6f856b4dfff"
+      },
+      "expectedBounds": [
+        306.3333333333333,
+        230.625,
+        346.3333333333333,
+        268.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:scaled960x640-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              204,
+              306,
+              241
+            ],
+            "magenta": 1373,
+            "cyan": 25
+          }
+        ],
+        "bounds": [
+          267,
+          204,
+          306,
+          241
+        ],
+        "magenta": 1373,
+        "cyan": 25,
+        "rawMagenta": 1373,
+        "rawCyan": 25,
+        "sha256": "207e603627edfc457c0397a2209f2522ad1c7e98941d4f9b8bdbff308bb2de3f"
+      },
+      "expectedBounds": [
+        266.3333333333333,
+        203.625,
+        306.3333333333333,
+        241.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:scaled960x640-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              204,
+              306,
+              241
+            ],
+            "magenta": 1381,
+            "cyan": 42
+          }
+        ],
+        "bounds": [
+          267,
+          204,
+          306,
+          241
+        ],
+        "magenta": 1381,
+        "cyan": 42,
+        "rawMagenta": 1381,
+        "rawCyan": 42,
+        "sha256": "643de1533c13aff5c5db5b33d388df135a2d34a157cfdc5489ce25da150bf514"
+      },
+      "expectedBounds": [
+        266.3333333333333,
+        203.625,
+        306.3333333333333,
+        241.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:scaled960x640:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "8bf39a0251ee2aba341b42c3e273f06401f44ea8cb89f36c029afb8df0c784a0"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:scaled960x640-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              309,
+              235,
+              349,
+              272
+            ],
+            "magenta": 1418,
+            "cyan": 42
+          }
+        ],
+        "bounds": [
+          309,
+          235,
+          349,
+          272
+        ],
+        "magenta": 1418,
+        "cyan": 42,
+        "rawMagenta": 1418,
+        "rawCyan": 42,
+        "sha256": "dca22b9e13026818ff44151f11c927883c676b400d75e6f2992ef442f7159ab0"
+      },
+      "expectedBounds": [
+        309.3333333333333,
+        234.625,
+        349.3333333333333,
+        272.125
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:restored800x600-stationary-after-mode:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              314,
+              239,
+              338,
+              259
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          314,
+          239,
+          338,
+          259
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "c7615b16a8bc55f316c61fd5dc793f9e3c9d9785b77cefbcd9ca045731c5626e"
+      },
+      "expectedBounds": [
+        314.0,
+        239.0,
+        338.0,
+        259.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:restored800x600-existing-after-input:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "c5f111e4ac53074f1aad9da2c5514bb395166ab5662e22e195235baf7f85bd6a"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:restored800x600-replacement:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              267,
+              202,
+              291,
+              222
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          267,
+          202,
+          291,
+          222
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "502ba587fc34ddf7a2ce604642833212524eb28cbfe97167313ccdff92626ebf"
+      },
+      "expectedBounds": [
+        267.0,
+        202.0,
+        291.0,
+        222.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:restored800x600:cursorActuallyHidden",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [],
+        "bounds": null,
+        "magenta": 0,
+        "cyan": 0,
+        "rawMagenta": 0,
+        "rawCyan": 0,
+        "sha256": "a4ff93325c6a913bb972aacfb707c4d2be847a1ae75067852f6104c8b7c4a16e"
+      }
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:restored800x600-moved:parentCursorHotspot",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              310,
+              233,
+              334,
+              253
+            ],
+            "magenta": 464,
+            "cyan": 16
+          }
+        ],
+        "bounds": [
+          310,
+          233,
+          334,
+          253
+        ],
+        "magenta": 464,
+        "cyan": 16,
+        "rawMagenta": 464,
+        "rawCyan": 16,
+        "sha256": "cd9b336184344794d1019260fe29b5e2994a1970808a78154032cfd70cc09805"
+      },
+      "expectedBounds": [
+        310.0,
+        233.0,
+        334.0,
+        253.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:scaleOnly800x600-stationary-after-mode:parentCursorHotspot:retainedFailure",
+      "passed": true,
+      "image": {
+        "dimensions": [
+          800,
+          600
+        ],
+        "components": [
+          {
+            "bounds": [
+              303,
+              228,
+              327,
+              248
+            ],
+            "magenta": 384,
+            "cyan": 36
+          }
+        ],
+        "bounds": [
+          303,
+          228,
+          327,
+          248
+        ],
+        "magenta": 384,
+        "cyan": 36,
+        "rawMagenta": 384,
+        "rawCyan": 37,
+        "sha256": "cfebd735c8f5a14b40cd0c672b39c17f2c4ee494afc81e1a8073f109fc7f886d"
+      },
+      "expectedBounds": [
+        303.0,
+        228.0,
+        351.0,
+        268.0
+      ]
+    },
+    {
+      "name": "elm-parent-cursor-scale-v20:retainedSnapshotsReplayed",
+      "passed": true,
+      "count": 20
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-cursor-oracle-v21/qa/oracle.py": "261636a31d4dad458d706cde8a76591ebc84a9495dbb78f98716015600e9a394",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-cursor-oracle-v21/pixels.py": "2f89c93827e4d3a5d331857548ace7d9b0b66edd1f58c587f13313f545f1d68c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/report.json": "8001b4a1b44eac61ebb62496ed0339c16cfdd6b89e4792998ccc437b0fcd190c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-original800x600-existing-after-input-custom/wayland-screenshot-2026-10-04_00-40-08.png": "461948c9be99cc8677dcbfa23daf099dbf371d379f73d764b619435e14725292",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-original800x600-replacement-custom/wayland-screenshot-2026-10-04_00-40-09.png": "dc0f0fdbeb79a368b83d7aa458b3e8e2706c1104b2214cb9f08a574b844b8885",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-original800x600-blank/wayland-screenshot-2026-10-04_00-40-09.png": "ba80c984c7efc00f168a4db87122ea95abe28feefc50db95a515a017d17f0dd5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-original800x600-moved-custom/wayland-screenshot-2026-10-04_00-40-10.png": "4e5c91119c62093f068c762d0253c1027e05e0d6f1391a3c17dcf5b437b448bd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-shrunk640x480-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-40-10.png": "7088750f78f84eabf94acd9c7f81f8b534c2766cd487d4401cd2420155b63452",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-shrunk640x480-existing-after-input-custom/wayland-screenshot-2026-10-04_00-40-10.png": "784a31dd926e360a3c24ed950b6b2b671c7b25859405ae5e90099dee4cae4b4d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-shrunk640x480-replacement-custom/wayland-screenshot-2026-10-04_00-40-11.png": "21d81396dd89479f7160557fede308bce64fd24add35b6ea782271a56a774576",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-shrunk640x480-blank/wayland-screenshot-2026-10-04_00-40-11.png": "e224caec8f06d297655d9d941e30a46ba6088cdd674bac4fcab8a60c1aad53aa",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-shrunk640x480-moved-custom/wayland-screenshot-2026-10-04_00-40-11.png": "323ee480e5e1858c07a25a1901fd0f40a27c68e18e4775577693838bc08efad7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-scaled960x640-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-40-12.png": "b5eff0959f23b228f6c24653780b0054a7acca196c6e186fef1b7fd8054399b2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-scaled960x640-existing-after-input-custom/wayland-screenshot-2026-10-04_00-40-12.png": "0bde701b08ffc0c8402e7a358c88aa3705223d3a76ceec39b80bd3efd8e051bc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-scaled960x640-replacement-custom/wayland-screenshot-2026-10-04_00-40-12.png": "36769c3779359d0b6ec09168a73aa55449e65c9a2ab0ecf934bdee34b83827d4",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-scaled960x640-blank/wayland-screenshot-2026-10-04_00-40-13.png": "a24d44700a322b70580dde9a4bfc2869bf28b2f90ff7442aabd69d35377a54ae",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-scaled960x640-moved-custom/wayland-screenshot-2026-10-04_00-40-13.png": "12ffa1a6a24d5320f02fa0881f6cc73028e76c352add174064fa1f0a6844fddb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-restored800x600-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-40-14.png": "ca8d572ef67b35cdde9e8579d58fe8fee3df583e2e2f5fcd4796b98453ea078a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-restored800x600-existing-after-input-custom/wayland-screenshot-2026-10-04_00-40-14.png": "6823489b3a1aa0b6be8fb8d8fec87bd329bb8f7989a1ed9522da8d4f8fc84c49",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-restored800x600-replacement-custom/wayland-screenshot-2026-10-04_00-40-14.png": "b28784c26955d251527ce6ac7be8d27298ea7e30edb13723152b29dce940007e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-restored800x600-blank/wayland-screenshot-2026-10-04_00-40-15.png": "f3dc18442401ba13e99ff178aa808b251799d9891d1948f5f53b1b753543a01a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-v18/qa/native-1791096006064024389/native-evidence/capture-restored800x600-moved-custom/wayland-screenshot-2026-10-04_00-40-15.png": "7655b168e1ca4988705f136a01edc9a0e257a3a80d6b41a9bbb12946539e8dde",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/report.json": "1934294453262dd11c49053cc53a43288056dc451f5e82a06653539bbb2c1af5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-original800x600-existing-after-input-custom/wayland-screenshot-2026-10-04_00-43-14.png": "588476b13447006cc0d28f56e7be559c28cacdca67e523235e69d4262b064dc8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-original800x600-replacement-custom/wayland-screenshot-2026-10-04_00-43-15.png": "07f74ac70636b82fa40d6ed609f27e25569f96734cef70508be3fbb680ba3c93",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-original800x600-blank/wayland-screenshot-2026-10-04_00-43-15.png": "607e3cd380e0fe0b61b4f928fadef2d3ef61442d2f4e5f1729a7095a4e9461f9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-original800x600-moved-custom/wayland-screenshot-2026-10-04_00-43-15.png": "1d7fb212e6f5a8ab2bfcae08a096e64cb6529342576a828fbb2af308f0b4196c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-shrunk640x480-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-43-16.png": "27b743aef140c5493db11b8589c43c42ea3f51238050bca9be0c13ad974bb47e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-shrunk640x480-existing-after-input-custom/wayland-screenshot-2026-10-04_00-43-16.png": "1a37de3042eb7dbe8fb7e8346125af0dcd97fbb5e563d0b3231848d6325264e1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-shrunk640x480-replacement-custom/wayland-screenshot-2026-10-04_00-43-16.png": "810f46c3acdc6700c524424a3ff67fe8bf5ae109fea0f43420edec1c13bd64ea",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-shrunk640x480-blank/wayland-screenshot-2026-10-04_00-43-17.png": "eee3a43e90d5794af247fbc0e468dd80e47148b57c667476e7ea75d5129c8e75",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-shrunk640x480-moved-custom/wayland-screenshot-2026-10-04_00-43-17.png": "cfb43fc79c64015c5d39efa6a429358c906e657f9a9af21bbef0c4b58b808a6c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-scaled960x640-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-43-18.png": "d419ee24fd2c5daa2baaf3f8243aaf1fd6985d2151fe260d99e5f6f856b4dfff",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-scaled960x640-existing-after-input-custom/wayland-screenshot-2026-10-04_00-43-18.png": "207e603627edfc457c0397a2209f2522ad1c7e98941d4f9b8bdbff308bb2de3f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-scaled960x640-replacement-custom/wayland-screenshot-2026-10-04_00-43-18.png": "643de1533c13aff5c5db5b33d388df135a2d34a157cfdc5489ce25da150bf514",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-scaled960x640-blank/wayland-screenshot-2026-10-04_00-43-18.png": "8bf39a0251ee2aba341b42c3e273f06401f44ea8cb89f36c029afb8df0c784a0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-scaled960x640-moved-custom/wayland-screenshot-2026-10-04_00-43-19.png": "dca22b9e13026818ff44151f11c927883c676b400d75e6f2992ef442f7159ab0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-restored800x600-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-43-19.png": "c7615b16a8bc55f316c61fd5dc793f9e3c9d9785b77cefbcd9ca045731c5626e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-restored800x600-existing-after-input-custom/wayland-screenshot-2026-10-04_00-43-20.png": "c5f111e4ac53074f1aad9da2c5514bb395166ab5662e22e195235baf7f85bd6a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-restored800x600-replacement-custom/wayland-screenshot-2026-10-04_00-43-20.png": "502ba587fc34ddf7a2ce604642833212524eb28cbfe97167313ccdff92626ebf",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-restored800x600-blank/wayland-screenshot-2026-10-04_00-43-20.png": "a4ff93325c6a913bb972aacfb707c4d2be847a1ae75067852f6104c8b7c4a16e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-restored800x600-moved-custom/wayland-screenshot-2026-10-04_00-43-21.png": "cd9b336184344794d1019260fe29b5e2994a1970808a78154032cfd70cc09805",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-cursor-scale-v20/qa/native-1791096191973440672/native-evidence/capture-scaleOnly800x600-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-43-21.png": "cfebd735c8f5a14b40cd0c672b39c17f2c4ee494afc81e1a8073f109fc7f886d"
+  }
+}

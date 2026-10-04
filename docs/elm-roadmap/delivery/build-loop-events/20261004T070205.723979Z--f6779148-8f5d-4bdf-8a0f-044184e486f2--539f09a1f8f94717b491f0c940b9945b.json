@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "eventId": "539f09a1f8f94717b491f0c940b9945b",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T07:02:05.723979+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-parent-stationary-click-v26",
+  "nextWork": [
+    "V22 scaled cursor allocation fix accepted on exact V23 core/plugin: CPU54462 and raw-size mutant rejection; V24 native180, original menu68, V25 original held105 pass. V21 tighter oracle retains old clipping failure. V26 stationary clicks pass pixel-mode transitions but fail same-pixel scale-only: GTK296,217 versus expected137.5,98 with correct visible parent cursor. Next fresh owning pointer derivative must preserve normalized parent point/output through logical layout changes and update actual input recipient before a stationary press; then original campaigns/shared-shell integration/remaining full roadmap."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-core-cursor-extent-v22/component-manifest.json",
+      "sha256": "d0086cdd5b1bc26d5bef0b75d75f42420ee49a5f3498fc291a8179dd937bb065",
+      "size": 8831
+    },
+    {
+      "path": "implementation/elm-cursor-authority-pair-v23/qa/build-pair-manifest.json",
+      "sha256": "81aac9afcb36d7a0d78244a671ffd88dc8672d52158daed33c8914a4727effbd",
+      "size": 111405
+    },
+    {
+      "path": "implementation/elm-parent-cursor-v24/qa/slice-manifest.json",
+      "sha256": "e3d33e4b25cd032166958de2727c1f67ea200fec89836902a3c1588a5cdd8608",
+      "size": 14050
+    },
+    {
+      "path": "implementation/elm-parent-button-cursor-v25/qa/slice-manifest.json",
+      "sha256": "825ff6806b1f095a8bf998a796912e9d6c668c9e8c2153afea65354df83e320f",
+      "size": 8061
+    },
+    {
+      "path": "implementation/elm-parent-stationary-click-v26/qa/slice-manifest.json",
+      "sha256": "8a6203529cdd4ce0f520a7122e6eeaf7e213b46c10f1dc80024178080565cc6a",
+      "size": 7949
+    },
+    {
+      "path": "docs/elm-roadmap/delivery/CURSOR-EXTENT-V24-ACCEPTANCE.md",
+      "sha256": "9eb66dad432cde857df72d236a73802a404a66d86012ae1b7c5e1e2bd7698610",
+      "size": 3804
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

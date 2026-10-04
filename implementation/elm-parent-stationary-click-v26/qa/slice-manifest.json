@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "passed": false,
+  "normalCleanup": true,
+  "source": {
+    "fixture.py": "139c4f55e6a3429d625a5d912528e351d6186b9646c2ff0691c67966807c6329",
+    "pixels.py": "2f89c93827e4d3a5d331857548ace7d9b0b66edd1f58c587f13313f545f1d68c",
+    "qa/native.py": "f635656426d1d1768489faddcce99b1eb31f72f9c9385c773d4965041f0bfe21"
+  },
+  "reports": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-stationary-click-v26/qa/native-1791097090711114043/report.json",
+      "sha256": "397053e43426036a93e6450e86f8cad6bff2c3ebb8e556f315440de998531b8f",
+      "passed": false,
+      "checks": 126,
+      "native": true,
+      "cleanupPassed": true,
+      "error": "TimeoutError('Unchanged six-second observation deadline')"
+    }
+  ],
+  "aqManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-pointer-rebase-v17/component-manifest.json",
+  "aqManifestSHA256": "ca33582fd12075ed0d052e7abd6d7c591fba1117ee1a0d3d0438cf1083cd9840",
+  "pairManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-cursor-authority-pair-v23/qa/build-pair-manifest.json",
+  "pairManifestSHA256": "81aac9afcb36d7a0d78244a671ffd88dc8672d52158daed33c8914a4727effbd",
+  "mainDesktopActions": false,
+  "releaseAcceptance": false,
+  "scope": "Retained diagnostic/failure evidence",
+  "remaining": [
+    "Stationary click after scale-only logical layout change",
+    "Native parent configure/generation and capability-loss fencing",
+    "Multiple outputs/rotation, shared-shell integration, physical devices, AT/IME, budgets and full release"
+  ],
+  "artifacts": {
+    "fixture.py": "139c4f55e6a3429d625a5d912528e351d6186b9646c2ff0691c67966807c6329",
+    "pixels.py": "2f89c93827e4d3a5d331857548ace7d9b0b66edd1f58c587f13313f545f1d68c",
+    "qa/native.py": "f635656426d1d1768489faddcce99b1eb31f72f9c9385c773d4965041f0bfe21",
+    "qa/native-1791097090711114043/native.py": "f635656426d1d1768489faddcce99b1eb31f72f9c9385c773d4965041f0bfe21",
+    "qa/native-1791097090711114043/fixture-source.py": "139c4f55e6a3429d625a5d912528e351d6186b9646c2ff0691c67966807c6329",
+    "qa/native-1791097090711114043/report.json": "397053e43426036a93e6450e86f8cad6bff2c3ebb8e556f315440de998531b8f",
+    "qa/native-1791097090711114043/native-evidence/privateBus.log": "be9657b190b81945a5200475f9891ad9493927be16a9bfe74f8200d3ca215c59",
+    "qa/native-1791097090711114043/native-evidence/weston.log": "e8ab3941cba0d8eae5ac87ac34bcbc3391d04c35540e3c821c2ee0e4117b3f12",
+    "qa/native-1791097090711114043/native-evidence/weston-renderer.log": "ef77db1d0a8ec1e112cacb9226c34e6798e68112005256f6a8908281cd8420ea",
+    "qa/native-1791097090711114043/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "qa/native-1791097090711114043/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/native-1791097090711114043/native-evidence/hyprland.log": "bb1ba1f1d483af65e637a1678517da0b2ba97b47f80fb5e0c5bc5a0cd8742b62",
+    "qa/native-1791097090711114043/native-evidence/fixture.log": "8b40e790c57969047e200af3c2cd43c72890c9bab32fe4ead22afa1eaa4160a8",
+    "qa/native-1791097090711114043/native-evidence/fixture-events.jsonl": "a1e3e5e58536a23a5f1bdfb365fda05f9de4da5cf1a9887c03cec8d3a3910a21",
+    "qa/native-1791097090711114043/native-evidence/host-evidence.json": "3bce545cf62e0616e80d6c6922478825c662d33802ddb81549d7f314af329742",
+    "qa/native-1791097090711114043/native-evidence/capture-original800x600-existing-after-input-custom/wayland-screenshot-2026-10-04_00-58-13.png": "12fd38282cf9ddd732552a4d5d2459a5c828b72bbd1fbe44b476b4689324766b",
+    "qa/native-1791097090711114043/native-evidence/capture-original800x600-replacement-custom/wayland-screenshot-2026-10-04_00-58-13.png": "1b670b9d9924a2ebb76b0037a37ba626f537c058ce05ade8226da174f99eaf74",
+    "qa/native-1791097090711114043/native-evidence/capture-original800x600-blank/wayland-screenshot-2026-10-04_00-58-13.png": "04bdfc4172ac6e7d1153a237b87ae9aa4463ddff2e6845823999e8f786885f1e",
+    "qa/native-1791097090711114043/native-evidence/capture-original800x600-moved-custom/wayland-screenshot-2026-10-04_00-58-14.png": "a48ba67b5d2c4f5d00206dfc81f7213d2832d47b100a386d25b837727a9f8d60",
+    "qa/native-1791097090711114043/native-evidence/capture-shrunk640x480-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-58-14.png": "91280ec756f8b24e011b28db7cbe84592a023f0ee6f76cd56875211fe24e0dad",
+    "qa/native-1791097090711114043/native-evidence/capture-shrunk640x480-existing-after-input-custom/wayland-screenshot-2026-10-04_00-58-15.png": "a706f4bed305f9f38811ffe1cd293c2cdc69c98c3e30cd23f26c478f71e27451",
+    "qa/native-1791097090711114043/native-evidence/capture-shrunk640x480-replacement-custom/wayland-screenshot-2026-10-04_00-58-15.png": "980edc4ace08b60e06fec22eb63be477fdc6700508ec8cc339c4eeec0251ffc0",
+    "qa/native-1791097090711114043/native-evidence/capture-shrunk640x480-blank/wayland-screenshot-2026-10-04_00-58-15.png": "7bac0b6bdb5e18da77264dcb9b64f205ab07252b037770cb92dbec9311a4161e",
+    "qa/native-1791097090711114043/native-evidence/capture-shrunk640x480-moved-custom/wayland-screenshot-2026-10-04_00-58-16.png": "0e582fcf1fffa72d046aa3991ba268e82572e49093f51dd5a80eadde30ecb0a6",
+    "qa/native-1791097090711114043/native-evidence/capture-scaled960x640-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-58-16.png": "78af1bb0a99648826bbde9788619f31dcabda376902915abf8599c3cf6cd6a7a",
+    "qa/native-1791097090711114043/native-evidence/capture-scaled960x640-existing-after-input-custom/wayland-screenshot-2026-10-04_00-58-16.png": "ecd68aa86a11611bab26d7ebc75abbddccd5a28c1c10269073abfbd5a545f5df",
+    "qa/native-1791097090711114043/native-evidence/capture-scaled960x640-replacement-custom/wayland-screenshot-2026-10-04_00-58-17.png": "ef148819b3da2a69b97089f494fee69606f5105b4fea5563b2690dfd02b098e3",
+    "qa/native-1791097090711114043/native-evidence/capture-scaled960x640-blank/wayland-screenshot-2026-10-04_00-58-17.png": "7e5fe8f6951cb628b32b78685ca76d8db436a0ea9d499581e229e211542d73a2",
+    "qa/native-1791097090711114043/native-evidence/capture-scaled960x640-moved-custom/wayland-screenshot-2026-10-04_00-58-18.png": "625860ab1938d86282c4e545b5bcd4ae8ab89681577857cd31353e54b83b33b5",
+    "qa/native-1791097090711114043/native-evidence/capture-restored800x600-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-58-18.png": "f7ad8112970b75d02509a67c91702ccb8a5a2d87b197f5487bc7cecb8ba0c108",
+    "qa/native-1791097090711114043/native-evidence/capture-restored800x600-existing-after-input-custom/wayland-screenshot-2026-10-04_00-58-18.png": "99f054997120d3b5bef1050cbdc375f7008a38485cb792dea86a8c7159ec1c74",
+    "qa/native-1791097090711114043/native-evidence/capture-restored800x600-replacement-custom/wayland-screenshot-2026-10-04_00-58-19.png": "65d6977ef3800bb7923bd12cce56a144a878c983e45bf54a6d2ef19551ee46d3",
+    "qa/native-1791097090711114043/native-evidence/capture-restored800x600-blank/wayland-screenshot-2026-10-04_00-58-19.png": "72cc667995ae48a6cd365d35308983191f90837d31bfe9e37938e7d1c4b5b662",
+    "qa/native-1791097090711114043/native-evidence/capture-restored800x600-moved-custom/wayland-screenshot-2026-10-04_00-58-20.png": "66c91879cac67c648bb11e0e4c022f1eb7d99938911d41ec1679e96c8e1e9e5c",
+    "qa/native-1791097090711114043/native-evidence/capture-scaleOnly800x600-stationary-after-mode-custom/wayland-screenshot-2026-10-04_00-58-20.png": "a87717dfceb8288e6f7ef0afc5a14b65e00dedc14961de7ab7681212331552a4",
+    "qa/native-1791097090711114043/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "qa/native-1791097090711114043/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791097091_398698/hyprland.log": "58bc9e5125de2053354247e5d8fed694f3a3faa3b4b01fe48085d38eb4b4a61e"
+  }
+}

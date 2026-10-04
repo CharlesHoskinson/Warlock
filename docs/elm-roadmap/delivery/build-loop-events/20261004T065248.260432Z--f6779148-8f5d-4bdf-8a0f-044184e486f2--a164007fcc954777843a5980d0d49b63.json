@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "a164007fcc954777843a5980d0d49b63",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:52:48.260432+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-core-cursor-extent-v22",
+  "nextWork": [
+    "Build scaled/rotated cursor plane extent fix in fresh owning core: replace only PointerManager object in frozen V7 archive and verify all other ordered payloads. CPU scaled extent/cap/invalid input properties plus raw-size mutant rejection, then exact plugin rebuild and original+scale-only cursor campaign."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-core-cursor-extent-v22/candidate/src/pointer/PointerManager.cpp",
+      "sha256": "31fa33dafde5e9601a421a839c33b180d806223b0268b7d48e07d24fddbf448c",
+      "size": 44644
+    },
+    {
+      "path": "implementation/elm-core-cursor-extent-v22/qa/cursor-extent.cpp",
+      "sha256": "4f617510b2e514c0d9d03bf70b6286ac777b74f05afb10793780f56a5547f556",
+      "size": 2126
+    },
+    {
+      "path": "implementation/elm-cursor-oracle-v21/qa/native-1791096552440949941/report.json",
+      "sha256": "b9a831b21a64241948acd3e2cb988399ce2ed9bc80ffd86eebe4747df577835b",
+      "size": 408697
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
