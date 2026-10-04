@@ -1,0 +1,80 @@
+-- SHADOWING ------------------------------------------ src/OutputController.elm
+
+The name `selected` is first defined here:
+
+85|                             selected = if survives then model.selected else List.head table.scopes
+                                ^^^^^^^^
+But then it is defined AGAIN over here:
+
+84|                         let survives = model.selected |> Maybe.map (\selected -> List.member selected table.scopes) |> Maybe.withDefault False
+                                                                         ^^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+-- SHADOWING ------------------------------------------ src/OutputController.elm
+
+The name `generation` is first defined here:
+
+41| generation (Scope _ value) = value
+    ^^^^^^^^^^
+But then it is defined AGAIN over here:
+
+35| encodeScope (Scope identity generation) = E.object [("id",E.string (UInt64.string identity)),("generation",E.string (UInt64.string generation))]
+                                ^^^^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+-- SHADOWING ------------------------------------------ src/OutputController.elm
+
+The name `identity` is first defined here:
+
+38| identity (Scope value _) = value
+    ^^^^^^^^
+But then it is defined AGAIN over here:
+
+35| encodeScope (Scope identity generation) = E.object [("id",E.string (UInt64.string identity)),("generation",E.string (UInt64.string generation))]
+                       ^^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+-- SHADOWING ------------------------------------------ src/OutputController.elm
+
+The name `generation` is first defined here:
+
+41| generation (Scope _ value) = value
+    ^^^^^^^^^^
+But then it is defined AGAIN over here:
+
+32|     |> D.andThen (\((Scope identity generation) as scope) -> if identity==UInt64.zero || generation==UInt64.zero then D.fail "Zero view scope" else D.succeed scope)
+                                        ^^^^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
+-- SHADOWING ------------------------------------------ src/OutputController.elm
+
+The name `identity` is first defined here:
+
+38| identity (Scope value _) = value
+    ^^^^^^^^
+But then it is defined AGAIN over here:
+
+32|     |> D.andThen (\((Scope identity generation) as scope) -> if identity==UInt64.zero || generation==UInt64.zero then D.fail "Zero view scope" else D.succeed scope)
+                               ^^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

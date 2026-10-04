@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-output-production-qa-v140",
-  "status": "Native127 passes: live output resize with fresh popup lease, scale2/transform1, scoped native keyboard focus, reservation, Escape/reopen and owner removal; final global Elm controller and full release open.",
+  "activeSlice": "implementation/elm-output-controller-v145",
+  "status": "Shared Elm controller component passes37+58+12 and Quint10/1000; native shared-host wiring pending. Accepted production V132/V140 native127 is retained, no release completion.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -840,12 +840,23 @@
       "cleanupPassed": true,
       "scope": "Private component acceptance; final shared Elm controller, physical displays, AT/IME, hardware budgets and release remain open",
       "failedLineage": "V120 mapped geometry stale; V122 in-place GTK reposition ineffective; V124 reused retired lease; V130 native focus race. V133/V135/V137 rotation blocked after parent fullscreen geometry violation; V138 read-only rule diagnostic and V139 larger parent establish transform1. V140 unchanged production plugin passes127 without geometry protocol error."
+    },
+    "sharedOutputControllerV145": {
+      "evidence": "implementation/elm-output-controller-v145/qa/component-manifest.json",
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "nativeAcceptance": false,
+      "launchableSharedHost": false,
+      "scope": "One pure Elm controller, read-only per-output Bar, monotonic native-issued capabilities, popup/focus owner, removed/replaced scope rejection. Native multi-view host remains pending."
     }
   },
   "next": [
-    "Integrate V125/V132 fresh reflow leases and native keyboard focus with reviewed menu-output lane; retain current menu, choice, recovery and owner-scope policies.",
-    "Implement final single authoritative Elm controller across all output presentation views; qualify connector/replug, fractional scale, all transforms and arbitrary workarea.",
-    "Continue full scene, fullscreen/lock, actual AT/IME/human UX, hardware/performance/WebGPU, C00 and coherent release."
+    "Implement native one-backend multi-view host: immutable widget/manager scopes, all-output bars, popup anchoring/focus destination, hotplug and zero-output suspension.",
+    "Integrate reviewed menu-reflow lane without replacing output generation, fresh reflow lease, choice/recovery or owner-scope guards.",
+    "Qualify original native/output campaigns and full scene/AT/IME/hardware/performance/usability/C00/release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

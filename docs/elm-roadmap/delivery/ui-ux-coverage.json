@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T04:38:09.112663+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T04:52:46.894400+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6853,6 +6853,17 @@
       "cleanupPassed": true,
       "scope": "Private component acceptance; final shared Elm controller, physical displays, AT/IME, hardware budgets and release remain open",
       "failedLineage": "V120 mapped geometry stale; V122 in-place GTK reposition ineffective; V124 reused retired lease; V130 native focus race. V133/V135/V137 rotation blocked after parent fullscreen geometry violation; V138 read-only rule diagnostic and V139 larger parent establish transform1. V140 unchanged production plugin passes127 without geometry protocol error."
+    },
+    {
+      "evidence": "implementation/elm-output-controller-v145/qa/component-manifest.json",
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "nativeAcceptance": false,
+      "launchableSharedHost": false,
+      "scope": "One pure Elm controller, read-only per-output Bar, monotonic native-issued capabilities, popup/focus owner, removed/replaced scope rejection. Native multi-view host remains pending."
     }
   ]
 }

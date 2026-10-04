@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "scope": "Single controller routes capability-scoped display views; removed/replaced scopes and old publications cannot issue effects. Abstract model, not automatic Elm/C refinement.",
+  "sourceSHA256": "3d955ee36938952b21904a59c7da204018a09aa42b30418db9e5a4b624bf62d6",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "views.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "views.qnt",
+        "--backend=typescript",
+        "--match=^(sharedOwnerTest|relocateTest|wrongPopupOwnerTest|duplicateLaunchTest|ownerRemovalTest|replacementTest|oldIdReplugTest|freshIdReplugTest|staleReflowTest|duplicateIdsTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170016",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "views.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170017",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 10,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "views.qnt": "3d955ee36938952b21904a59c7da204018a09aa42b30418db9e5a4b624bf62d6",
+    "model.py": "4ff48d17375cec4c778b205aedc34bc3e0b215805a3470b3ddfa6ef4f7c009b5",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-sharedOwnerTest-0.itf.json": "0b09b0badb1c2e8eab95698c50914ad1693ed39ca8119dbe7c4c06e9fcd8574d",
+    "named-relocateTest-1.itf.json": "c17f50ef7cb23e497bec51e4528f07bc510144a4b0d58187abbd09afbfc1786c",
+    "named-wrongPopupOwnerTest-2.itf.json": "b815cd98b1819981aca11392740aa20f32c22ef0536105ac5d23ea2d7d9e46a9",
+    "named-duplicateLaunchTest-3.itf.json": "d412c57a5ecd6f21b3e10dbf00497f0d0fbf9a80c8e212738fac118316cdf44b",
+    "named-ownerRemovalTest-4.itf.json": "0eeca8f456ce99c04f4b22401b898e18b8634e9eb13662bfb94c0eb0f5ee7df8",
+    "named-replacementTest-5.itf.json": "152ae9bb3f410547078310b3159a7032938f0ed8adc8c72811cf0ef0068ac744",
+    "named-oldIdReplugTest-6.itf.json": "66d8d32893a8907a1607d9dc2c3215169557a992de26fba9cafec852ad9ce36a",
+    "named-freshIdReplugTest-7.itf.json": "be0163bff85fcdc3801e8362649be0d84dcd9b391f003c7930a06d71e5bc89ad",
+    "named-staleReflowTest-8.itf.json": "6980152320f7ca0e343cc3bf340877add309f6bf15155959c440336761b077a5",
+    "named-duplicateIdsTest-9.itf.json": "5e533d43d1ca3261655c875a9b281ef6be5d8c43028004802d028b99690e5a3d",
+    "named.stdout": "20534ca46ecb59c417df18a2e8da4ef413d0299d916375d70d38c64a6563a89c",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "e38d90ef4bce28181e302b2ba147476f009df88ee52ef66d755f39ea80c1545c",
+    "invariants.stdout": "4bec349dd6c28caef69dcabffe81046c6c13ccae4e034e3673fb199d8027ff4e",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
