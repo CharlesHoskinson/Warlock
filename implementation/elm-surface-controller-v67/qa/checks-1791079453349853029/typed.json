@@ -1,0 +1,3107 @@
+{
+  "passed": true,
+  "checks": 19,
+  "scope": "Compiled single interaction controller/presentation DTO/action/lease component; native dual-view integration not qualified",
+  "cases": [
+    {
+      "name": "current projection admitted by presentation decoder",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "namespaced app identity remains distinct from close",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "renderer current choice reaches native ID intent",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9007199254740993",
+                "generation": "1",
+                "entry": "close"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "closing for launch emits no automatic opener focus",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9007199254740993",
+                "generation": "1",
+                "entry": "close"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "stale native dismissal cannot retire new lease",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "5",
+            "lease": "2",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "5",
+            "lease": "2",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "native dismissal retires current popup",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "refresh keeps same logical native popup lease",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "5",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "stale publication cannot launch after refresh",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "2"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "5",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "5",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:5:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "duplicate callback cannot resubmit",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "application-launch",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "intent": {
+                "request": "1",
+                "lifetime": "9007199254740993",
+                "generation": "1",
+                "entry": "close"
+              }
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "invalid renderer action old lease",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "invalid renderer action numeric publication",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "invalid renderer action wrong protocol",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "invalid renderer action arbitrary entry",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "invalid renderer action extra Exec",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "invalid renderer action wrong kind",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "disconnected renderer action cannot submit",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "4",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": false
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:4:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "frame contains presentation only",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "popup origin cannot act on bar control",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    },
+    {
+      "name": "bar origin cannot act on popup control",
+      "rows": [
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "1",
+            "lease": "0",
+            "mode": "closed",
+            "status": "Updating window information…",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:1:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": []
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "2",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:2:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": [
+            {
+              "protocolVersion": 3,
+              "kind": "catalog-request",
+              "binding": {
+                "lifetime": "1",
+                "session": "2",
+                "frontend": "3"
+              },
+              "requestId": "1"
+            }
+          ]
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        },
+        {
+          "frame": {
+            "surfaceProtocol": 1,
+            "publication": "3",
+            "lease": "1",
+            "mode": "applications",
+            "status": "Idle",
+            "bar": [
+              {
+                "id": "bar:applications",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:opener",
+                "label": "Applications",
+                "detail": "",
+                "enabled": true
+              }
+            ],
+            "popup": [
+              {
+                "id": "control:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:close",
+                "label": "Windows",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "control:refresh",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:control:refresh",
+                "label": "Refresh",
+                "detail": "",
+                "enabled": true
+              },
+              {
+                "id": "entry:close",
+                "domId": "applications:{\"lifetime\":\"1\",\"session\":\"2\",\"frontend\":\"3\"}:3:entry:close",
+                "label": "Open Close app",
+                "detail": "",
+                "enabled": true
+              }
+            ]
+          },
+          "rendererAdmitted": true,
+          "requests": []
+        }
+      ]
+    }
+  ]
+}

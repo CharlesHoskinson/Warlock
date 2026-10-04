@@ -1,0 +1,990 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 0,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 0,
+      lease: 0,
+      open: false,
+      publication: 1,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 0,
+      shownLease: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 0,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 0,
+      lease: 0,
+      open: false,
+      publication: 1,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 0,
+      shownLease: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 0,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 0,
+      lease: 0,
+      open: false,
+      publication: 2,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 0,
+      shownLease: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 2,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 0,
+      lease: 0,
+      open: false,
+      publication: 2,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 0,
+      shownLease: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 2,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 0,
+      lease: 0,
+      open: false,
+      publication: 3,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 0,
+      shownLease: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 2,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 0,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 0,
+      shownLease: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 2,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 2,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 2,
+      shownLease: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 0,
+      frameOpen: false,
+      framePublication: 2,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 2,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 2,
+      shownLease: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 2,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 2,
+      shownLease: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 2,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 0,
+      savedOpen: false,
+      savedPublication: 0,
+      shown: 2,
+      shownLease: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 2,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 2,
+      shownLease: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 0,
+      hostOpen: false,
+      hostPublication: 2,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 2,
+      shownLease: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 1,
+      hostOpen: true,
+      hostPublication: 4,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      attempts: 0,
+      barrier: 0,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 1,
+      hostOpen: true,
+      hostPublication: 4,
+      lease: 1,
+      open: true,
+      publication: 4,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: true,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 1,
+      open: false,
+      publication: 5,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 1,
+      open: false,
+      publication: 6,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: true,
+      framePublication: 4,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 1,
+      open: false,
+      publication: 6,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 1,
+      open: false,
+      publication: 6,
+      savedLease: 1,
+      savedOpen: true,
+      savedPublication: 4,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 1,
+      open: false,
+      publication: 6,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 1,
+      open: false,
+      publication: 6,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 1,
+      open: false,
+      publication: 6,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 2,
+      frameOpen: true,
+      framePublication: 7,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 2,
+      frameOpen: true,
+      framePublication: 7,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 2,
+      frameOpen: true,
+      framePublication: 7,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 2,
+      frameOpen: true,
+      framePublication: 7,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 4,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 4,
+      shownLease: 1
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      attempts: 1,
+      barrier: 1,
+      emitted: false,
+      frameLease: 1,
+      frameOpen: false,
+      framePublication: 6,
+      hostLease: 1,
+      hostOpen: false,
+      hostPublication: 6,
+      lease: 2,
+      open: true,
+      publication: 7,
+      savedLease: 1,
+      savedOpen: false,
+      savedPublication: 6,
+      shown: 6,
+      shownLease: 1
+    }
+}
+
+[ok] No violation found (1475ms at 678 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

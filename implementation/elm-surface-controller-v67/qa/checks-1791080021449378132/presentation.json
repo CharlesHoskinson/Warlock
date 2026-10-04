@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "checks": 12,
+  "cases": [
+    {
+      "name": "lossless admitted callback",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": {
+            "surface": "popup",
+            "surfaceProtocol": 1,
+            "kind": "surface-action",
+            "publication": "9007199254740993",
+            "lease": "4",
+            "id": "entry:app"
+          }
+        }
+      ]
+    },
+    {
+      "name": "malformed frame retires controls",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": null,
+          "action": null
+        },
+        {
+          "publication": null,
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "malformed frame cannot reset publication watermark",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": null,
+          "action": null
+        },
+        {
+          "publication": null,
+          "action": null
+        },
+        {
+          "publication": null,
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "new frame recovers after malformed",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": null,
+          "action": null
+        },
+        {
+          "publication": "9007199254740994",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "older lease rejected despite newer publication",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "retired callback suppressed after new presentation",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740994",
+          "action": null
+        },
+        {
+          "publication": "9007199254740994",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "callback rejected wrong surface",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "callback rejected extra Exec",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "callback rejected arbitrary id",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "callback rejected numeric counter",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "callback rejected zero lease",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": null
+        }
+      ]
+    },
+    {
+      "name": "disabled item cannot emit callback",
+      "rows": [
+        {
+          "publication": "9007199254740993",
+          "action": null
+        },
+        {
+          "publication": "9007199254740993",
+          "action": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T01:53:55.321977+00:00",
+  "observedUTC": "2026-10-04T02:20:07.618876+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-native-popup-lifetime-qa-v66",
+  "currentSlice": "implementation/elm-surface-controller-v67",
   "nextWork": [
-    "Integrate Elm-rendered bar controls with a single typed logical Elm controller and presentation-only popup view; host owns approved xdg_popup position/grab/dismissal. Model and test stale native unmap/grab/reopen epochs and IME-consumed Escape before production acceptance.",
+    "Integrate the primary Elm bar and presentation-only popup with one controller, native manager origin enforcement, monotonic publication and closed-lease barriers, scoped popup lifetimes and atomic close-before-submit; qualify native regression and comprehensive UI/UX gates.",
     "Complete per-output taskbar/transient/workarea, exact margins/scale/transform, fullscreen/lock, full window/launcher regression; launcher search/ranking/localization and qualified catalog/window matching/pins/icons, activation/terminal/actions/URI/DBus/application readiness.",
     "Continue reflow/native AT/IME/human UX, Unknown reconciliation, canonical scene, original deadlines, devices/hardware/GPU/WebGPU, separate C00 feasibility and release gates."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: V63 native popup window proves actual xdg_popup/layer-parent/seatgrab configure50,48,700,420 and bar48, but V64 native popup_done exposes lost host grab bookkeeping. V65 unmap lifecycle retirement fixes it; V66 native19 pass, application pointer/keys after dismiss, same-engine binding reopen/Escape, normal private cleanup. Exact protocol geometry audited; raw native opener/Escape remain prototype scaffolding.",
+  "lastWorkClassification": "progress: shared opaque Elm controller and presentation-only popup; compiled31+12 and Quint9/1000 pass. Native ordering/barrier are planned contracts, no dual-view GUI acceptance.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

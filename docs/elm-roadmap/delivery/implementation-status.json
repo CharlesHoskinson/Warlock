@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-native-popup-lifetime-qa-v66",
+  "activeSlice": "implementation/elm-surface-controller-v67",
   "status": "Native GTK popup-window candidate passes actual layer-parent xdg_popup/grab/default geometry/bar48 and native19 lifecycle/input checks. V64 failed grab bookkeeping preserved; V65 unmap retirement accepted within experiment. Final Elm bar/presentation-only popup, stale epochs, outputs/IME/AT/full scene/hardware/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -617,9 +617,21 @@
       "nativeATIMEAccepted": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-native-popup-lifetime-qa-v66/qa/slice-manifest.json"
+    },
+    "sharedSurfaceControllerV67": {
+      "compiledControllerChecks": 31,
+      "compiledPresentationChecks": 12,
+      "optimizedPopupCompile": true,
+      "quintNamedRuns": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeDualViewAccepted": false,
+      "nativeCloseBarrierImplemented": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-controller-v67/qa/slice-manifest.json"
     }
   },
-  "next": "Qualify text enlargement and small-output picker/keyboard focus metrics; continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews. Complete scene/hardware/GPU/WebGPU/AT/IME/human UX and release gates.",
+  "next": "Integrate the primary Elm bar and presentation-only popup with one controller, native manager origin enforcement, monotonic publication and closed-lease barriers, scoped popup lifetimes and atomic close-before-submit; qualify native regression and comprehensive UI/UX gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",

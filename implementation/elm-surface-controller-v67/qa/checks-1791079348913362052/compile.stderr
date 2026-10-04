@@ -1,0 +1,16 @@
+-- SHADOWING --------------------------------------------------- src/Surface.elm
+
+The name `decoder` is first defined here:
+
+68|         decoder = strict (D.map5 (\version kind shown scoped identity -> {version=version,kind=kind,shown=shown,scoped=scoped,identity=identity}) (D.field "surfaceProtocol" D.int) (D.field "kind" D.string) (D.field "publication" UInt64.decoder) (D.field "lease" UInt64.decoder) (D.field "id" D.string))
+            ^^^^^^^
+But then it is defined AGAIN over here:
+
+67|         strict decoder = D.keyValuePairs D.value |> D.andThen (\pairs -> if List.sort (List.map Tuple.first pairs)==["id","kind","lease","publication","surfaceProtocol"] then decoder else D.fail "Surface action fields")
+                   ^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+
