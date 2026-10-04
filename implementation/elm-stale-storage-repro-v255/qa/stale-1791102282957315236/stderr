@@ -1,0 +1,11 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+AssertionError [ERR_ASSERTION]: stale action preserves unavailable explanation
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-stale-storage-repro-v255/qa/stale.cjs:7:63)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-stale-storage-repro-v255/qa/stale.cjs:11:3 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

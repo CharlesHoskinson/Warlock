@@ -1,0 +1,465 @@
+{
+  "passed": true,
+  "checks": 30,
+  "rows": [
+    {
+      "model": {
+        "phase": "Reconciling",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Updating window information…",
+        "recoveryFailure": null
+      },
+      "commands": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "2"
+          },
+          "requestId": "1"
+        }
+      ]
+    },
+    {
+      "model": {
+        "phase": "Reconciling",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "41",
+          "generation": "43",
+          "transaction": {
+            "intent": {
+              "request": "41",
+              "generation": "43",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "1",
+                "output": "3",
+                "revision": "4"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "status": "The previous window change could not be confirmed. The last request could not be confirmed.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "7",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "41",
+          "generation": "43",
+          "transaction": {
+            "intent": {
+              "request": "41",
+              "generation": "43",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "1",
+                "output": "3",
+                "revision": "4"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "status": "Connected The last request could not be confirmed.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "7",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "41",
+          "generation": "43",
+          "transaction": {
+            "intent": {
+              "request": "41",
+              "generation": "43",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "1",
+                "output": "3",
+                "revision": "4"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "status": "Connected The last request could not be confirmed.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "7",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "42",
+          "generation": "44",
+          "transaction": {
+            "intent": {
+              "request": "42",
+              "generation": "44",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "2",
+                "output": "3",
+                "revision": "5"
+              }
+            },
+            "status": "Pending"
+          }
+        },
+        "status": "Applying window change…",
+        "recoveryFailure": null
+      },
+      "commands": [
+        {
+          "protocolVersion": 3,
+          "kind": "window-effect",
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "2"
+          },
+          "intent": {
+            "request": "42",
+            "generation": "44",
+            "incarnation": "7",
+            "operation": "minimize",
+            "context": {
+              "lifetime": "9007199254740993",
+              "epoch": "2",
+              "output": "3",
+              "revision": "5"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "dup": [
+    {
+      "model": {
+        "phase": "Reconciling",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Updating window information…",
+        "recoveryFailure": null
+      },
+      "commands": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "2"
+          },
+          "requestId": "1"
+        }
+      ]
+    },
+    {
+      "model": {
+        "phase": "Reconciling",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "41",
+          "generation": "43",
+          "transaction": {
+            "intent": {
+              "request": "41",
+              "generation": "43",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "1",
+                "output": "3",
+                "revision": "4"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "status": "The previous window change could not be confirmed. The last request could not be confirmed.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Reconciling",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "41",
+          "generation": "43",
+          "transaction": {
+            "intent": {
+              "request": "41",
+              "generation": "43",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "1",
+                "output": "3",
+                "revision": "4"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "status": "The previous window change could not be confirmed. The last request could not be confirmed.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "7",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "41",
+          "generation": "43",
+          "transaction": {
+            "intent": {
+              "request": "41",
+              "generation": "43",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "1",
+                "output": "3",
+                "revision": "4"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "status": "Connected The last request could not be confirmed.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "7",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "41",
+          "generation": "43",
+          "transaction": {
+            "intent": {
+              "request": "41",
+              "generation": "43",
+              "incarnation": "7",
+              "operation": "minimize",
+              "context": {
+                "lifetime": "9007199254740993",
+                "epoch": "1",
+                "output": "3",
+                "revision": "4"
+              }
+            },
+            "status": "Unknown"
+          }
+        },
+        "status": "Connected The last request could not be confirmed.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    }
+  ],
+  "early": [
+    {
+      "model": {
+        "phase": "Detached",
+        "request": "0",
+        "available": false,
+        "reconnecting": true,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Connecting…",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Reconciling",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Updating window information…",
+        "recoveryFailure": null
+      },
+      "commands": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "9007199254740993",
+            "session": "9",
+            "frontend": "2"
+          },
+          "requestId": "1"
+        }
+      ]
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "7",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Connected",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "7",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Connected",
+        "recoveryFailure": null
+      },
+      "commands": []
+    }
+  ]
+}

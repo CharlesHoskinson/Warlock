@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-storage-acceptance-v254",
-  "status": "Typed recovery storage messages and explicit correction/reconnect qualified in compiled/CPU/Quint checks and two actual native corrupt/admission cases. Additional stages/classes, stale-input presentation, updated regressions and full release remain open.",
+  "activeSlice": "implementation/elm-storage-qualified-v262",
+  "status": "Stale disabled actions preserve recovery explanation; actual busy/legacy-owner correction and original full137 GUI regression qualified on V256/V89. Additional settlement/host-bind/full storage, newer integration and full release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1434,6 +1434,40 @@
       "fullOriginalNativeRegressionAccepted": false,
       "completedRequirementIds": [],
       "evidence": "implementation/elm-storage-acceptance-v254/qa/slice-manifest.json"
+    },
+    "storageQualifiedV262": {
+      "passed": true,
+      "scope": "Pure Elm stale failure-text preservation, actual busy/unowned legacy correction, original unchanged137 workload on V256/V89",
+      "compiledStaleChecks": 47,
+      "compiledStorageUXChecks": 55,
+      "compiledInheritedElmChecks": [
+        20,
+        27,
+        30
+      ],
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "newNativeStorageCheckCounts": [
+        22,
+        23
+      ],
+      "originalNativeRegressionChecks": 137,
+      "originalNativeBaselineChecks": 91,
+      "originalCheckWaitCallsAndHelperASTUnchanged": true,
+      "sameGUIBuildCorePair": true,
+      "cleanupPassed": true,
+      "sealedRuntimeFiles": 20,
+      "newNativeStorageReasonsQualified": [
+        "busy",
+        "legacy-owner"
+      ],
+      "legacyMetadataRuleNativeAccepted": true,
+      "productionLegacyProvisioningAccepted": false,
+      "allRecoveryStagesAccepted": false,
+      "newerGeometryMenuGPUReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-storage-qualified-v262/qa/slice-manifest.json"
     }
   },
   "next": [

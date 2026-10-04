@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "scope": "Typed recovery failure, explicit reconnect and no automatic window replay contract; abstract model, not automatic C/filesystem/Elm refinement.",
+  "sourceSHA256": "d1db279141d3885aebb4a7c59d24226adf543c34e8876aedb5f7f564168ec0b1",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(storageDisablesEffectsTest|pendingBecomesUnknownTest|disconnectKeepsExplanationTest|correctionDoesNotRetryTest|explicitRetryOnlyOnceTest|newSnapshotDoesNotReplayTest|malformedReasonIgnoredTest|staleReceiptCannotClearUnknownTest|staleFailureNoticeTest|connectedStaleNoticeTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170022",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170023",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 10,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "d1db279141d3885aebb4a7c59d24226adf543c34e8876aedb5f7f564168ec0b1",
+    "model.py": "4a9668a8e7fca03a84607714ac7261204e2edf3b93e5ea1fd1a443a1bac00172",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-storageDisablesEffectsTest-0.itf.json": "f596c0dcae33cafd7d92c4cae817ad5a146682930ae51b508e931898e5b87f6e",
+    "named-pendingBecomesUnknownTest-1.itf.json": "92a23bed954a62a57c681e6ef38982a941015390238155a296398ef1f0113412",
+    "named-disconnectKeepsExplanationTest-2.itf.json": "1ecfdb30f2fa50e6c7672f0d6de3ce754f10c17bb40c9dc53d8bf4bb56abe959",
+    "named-correctionDoesNotRetryTest-3.itf.json": "af26531c691187e560d21aab7a389f53615a9cc955ba9f6724234f78f8c7d6cf",
+    "named-explicitRetryOnlyOnceTest-4.itf.json": "f9531fe6a44337563e9c1b18fc45cd10eefdb307034c33901d5c5617eb73c122",
+    "named-newSnapshotDoesNotReplayTest-5.itf.json": "5ceb9f9cb5c445b704787c6a9a6f61eeed9a38299310eb62091ad111b05f1b47",
+    "named-malformedReasonIgnoredTest-6.itf.json": "30267c6e8a2b895ee0e14585127ba4c58b43e16df1e9de9596502acb3e2e3a4b",
+    "named-staleReceiptCannotClearUnknownTest-7.itf.json": "fee38c5268d882a209751c790480c6c01ec68c162adeda221a4889b506c03aca",
+    "named-staleFailureNoticeTest-8.itf.json": "cd37c846961f7d9d4cfafca791563f654984b1754e754162f3cd47337e7d8fd1",
+    "named-connectedStaleNoticeTest-9.itf.json": "b1031bb460d7750ed9e526e5d8eef52801ed254ef37dcf961be9acf9da37e8d1",
+    "named.stdout": "9cf610da8d5433edfc95c404ebde656d6874bcb4a801b949f3407782ebe4b841",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "837e39fee91bc1cd06863e53fb29a38ef9c3d8bd1e6f994500108f3a63a4a7c4",
+    "invariants.stdout": "1d355ffa9c33f1f02c17e6e5d0157da097580c469cd6a8a745d83bfb6ce5f3ba",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

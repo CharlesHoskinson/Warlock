@@ -1,0 +1,1583 @@
+{
+  "passed": true,
+  "checks": 47,
+  "transcripts": [
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data is unavailable. Restore access, then reconnect.",
+          "recoveryFailure": "Window recovery data is unavailable. Restore access, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data is unavailable. Restore access, then reconnect.",
+          "recoveryFailure": "Window recovery data is unavailable. Restore access, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data is unavailable. Restore access, then reconnect.",
+          "recoveryFailure": "Window recovery data is unavailable. Restore access, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data is unavailable. Restore access, then reconnect.",
+          "recoveryFailure": "Window recovery data is unavailable. Restore access, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data is unavailable. Restore access, then reconnect.",
+          "recoveryFailure": "Window recovery data is unavailable. Restore access, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data is unavailable. Restore access, then reconnect.",
+          "recoveryFailure": "Window recovery data is unavailable. Restore access, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery storage is full. Free space, then reconnect.",
+          "recoveryFailure": "Window recovery storage is full. Free space, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery storage is full. Free space, then reconnect.",
+          "recoveryFailure": "Window recovery storage is full. Free space, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery storage is full. Free space, then reconnect.",
+          "recoveryFailure": "Window recovery storage is full. Free space, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery storage is full. Free space, then reconnect.",
+          "recoveryFailure": "Window recovery storage is full. Free space, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery storage is full. Free space, then reconnect.",
+          "recoveryFailure": "Window recovery storage is full. Free space, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery storage is full. Free space, then reconnect.",
+          "recoveryFailure": "Window recovery storage is full. Free space, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Another shell is using window recovery data. Close it, then reconnect.",
+          "recoveryFailure": "Another shell is using window recovery data. Close it, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Another shell is using window recovery data. Close it, then reconnect.",
+          "recoveryFailure": "Another shell is using window recovery data. Close it, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Another shell is using window recovery data. Close it, then reconnect.",
+          "recoveryFailure": "Another shell is using window recovery data. Close it, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Another shell is using window recovery data. Close it, then reconnect.",
+          "recoveryFailure": "Another shell is using window recovery data. Close it, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Another shell is using window recovery data. Close it, then reconnect.",
+          "recoveryFailure": "Another shell is using window recovery data. Close it, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Another shell is using window recovery data. Close it, then reconnect.",
+          "recoveryFailure": "Another shell is using window recovery data. Close it, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data could not be verified. Repair it, then reconnect.",
+          "recoveryFailure": "Window recovery data could not be verified. Repair it, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data could not be verified. Repair it, then reconnect.",
+          "recoveryFailure": "Window recovery data could not be verified. Repair it, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data could not be verified. Repair it, then reconnect.",
+          "recoveryFailure": "Window recovery data could not be verified. Repair it, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data could not be verified. Repair it, then reconnect.",
+          "recoveryFailure": "Window recovery data could not be verified. Repair it, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data could not be verified. Repair it, then reconnect.",
+          "recoveryFailure": "Window recovery data could not be verified. Repair it, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Window recovery data could not be verified. Repair it, then reconnect.",
+          "recoveryFailure": "Window recovery data could not be verified. Repair it, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Previous window recovery data has no verified owner. Complete migration, then reconnect.",
+          "recoveryFailure": "Previous window recovery data has no verified owner. Complete migration, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Previous window recovery data has no verified owner. Complete migration, then reconnect.",
+          "recoveryFailure": "Previous window recovery data has no verified owner. Complete migration, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Previous window recovery data has no verified owner. Complete migration, then reconnect.",
+          "recoveryFailure": "Previous window recovery data has no verified owner. Complete migration, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Previous window recovery data has no verified owner. Complete migration, then reconnect.",
+          "recoveryFailure": "Previous window recovery data has no verified owner. Complete migration, then reconnect."
+        },
+        "commands": []
+      }
+    ],
+    [
+      {
+        "model": {
+          "phase": "Reconciling",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": null,
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Updating window information…",
+          "recoveryFailure": null
+        },
+        "commands": [
+          {
+            "protocolVersion": 3,
+            "kind": "projection-request",
+            "binding": {
+              "lifetime": "71",
+              "session": "2",
+              "frontend": "3"
+            },
+            "requestId": "1"
+          }
+        ]
+      },
+      {
+        "model": {
+          "phase": "Ready",
+          "request": "1",
+          "available": true,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": true,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Connected",
+          "recoveryFailure": null
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Previous window recovery data has no verified owner. Complete migration, then reconnect.",
+          "recoveryFailure": "Previous window recovery data has no verified owner. Complete migration, then reconnect."
+        },
+        "commands": []
+      },
+      {
+        "model": {
+          "phase": "Detached",
+          "request": "1",
+          "available": false,
+          "reconnecting": false,
+          "effects": {
+            "windows": [
+              {
+                "incarnation": "4",
+                "minimized": false
+              }
+            ],
+            "connected": false,
+            "request": "0",
+            "generation": "0",
+            "transaction": null
+          },
+          "status": "Previous window recovery data has no verified owner. Complete migration, then reconnect.",
+          "recoveryFailure": "Previous window recovery data has no verified owner. Complete migration, then reconnect."
+        },
+        "commands": []
+      }
+    ]
+  ],
+  "ready": [
+    {
+      "model": {
+        "phase": "Reconciling",
+        "request": "1",
+        "available": false,
+        "reconnecting": false,
+        "effects": {
+          "windows": null,
+          "connected": false,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Updating window information…",
+        "recoveryFailure": null
+      },
+      "commands": [
+        {
+          "protocolVersion": 3,
+          "kind": "projection-request",
+          "binding": {
+            "lifetime": "71",
+            "session": "2",
+            "frontend": "3"
+          },
+          "requestId": "1"
+        }
+      ]
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "4",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Connected",
+        "recoveryFailure": null
+      },
+      "commands": []
+    },
+    {
+      "model": {
+        "phase": "Ready",
+        "request": "1",
+        "available": true,
+        "reconnecting": false,
+        "effects": {
+          "windows": [
+            {
+              "incarnation": "4",
+              "minimized": false
+            }
+          ],
+          "connected": true,
+          "request": "0",
+          "generation": "0",
+          "transaction": null
+        },
+        "status": "Window list changed. Choose again.",
+        "recoveryFailure": null
+      },
+      "commands": []
+    }
+  ]
+}
