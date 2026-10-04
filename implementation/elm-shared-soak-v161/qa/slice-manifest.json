@@ -1,0 +1,595 @@
+{
+  "passed": true,
+  "scope": "Instrumented private shared host post-warmup repetition: process-tree CPU/RSS and helper-to-DOM receipt samples, not approved budgets/native presentation/long soak/full performance acceptance",
+  "nativeChecks": 111,
+  "popupCycles": 105,
+  "measuredCycles": 100,
+  "resourceSampleCount": 115,
+  "postWarmupGrowthKiB": {
+    "rssKiB": 9788,
+    "knownPssKiB": 10122,
+    "knownPrivateKiB": 10116
+  },
+  "sampledIdentitySetsStable": true,
+  "perProcessGrowthKiB": [
+    {
+      "pid": 4135674,
+      "start": "6078394",
+      "name": "elm-host",
+      "rssKiB": 816,
+      "pssKiB": 1249,
+      "privateKiB": 1336
+    },
+    {
+      "pid": 4135692,
+      "start": "6078420",
+      "name": "WebKitNetworkPr",
+      "rssKiB": -836,
+      "pssKiB": -345,
+      "privateKiB": -180
+    },
+    {
+      "pid": 4135710,
+      "start": "6078448",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135711,
+      "start": "6078448",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135712,
+      "start": "6078449",
+      "name": "xdg-dbus-proxy",
+      "rssKiB": 148,
+      "pssKiB": -13,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135716,
+      "start": "6078450",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135719,
+      "start": "6078450",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135720,
+      "start": "6078451",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135721,
+      "start": "6078451",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135722,
+      "start": "6078452",
+      "name": "WebKitWebProces",
+      "rssKiB": 1468,
+      "pssKiB": 1348,
+      "privateKiB": 1172
+    },
+    {
+      "pid": 4135723,
+      "start": "6078452",
+      "name": "xdg-dbus-proxy",
+      "rssKiB": 148,
+      "pssKiB": -12,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135726,
+      "start": "6078453",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135727,
+      "start": "6078454",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135728,
+      "start": "6078454",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135729,
+      "start": "6078454",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135730,
+      "start": "6078455",
+      "name": "xdg-dbus-proxy",
+      "rssKiB": 148,
+      "pssKiB": -13,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135731,
+      "start": "6078455",
+      "name": "WebKitWebProces",
+      "rssKiB": 2992,
+      "pssKiB": 2983,
+      "privateKiB": 2904
+    },
+    {
+      "pid": 4135734,
+      "start": "6078456",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135735,
+      "start": "6078456",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4135738,
+      "start": "6078457",
+      "name": "WebKitWebProces",
+      "rssKiB": 4880,
+      "pssKiB": 4901,
+      "privateKiB": 4860
+    },
+    {
+      "pid": 4135832,
+      "start": "6078502",
+      "name": "python3",
+      "rssKiB": 24,
+      "pssKiB": 24,
+      "privateKiB": 24
+    }
+  ],
+  "batches": [
+    {
+      "elapsedSeconds": 4.076397689,
+      "survivingIdentityCpuPercentOneCore": 32.87216072209877,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 743456,
+        "p95": 747996,
+        "p99": 747996
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": 6808,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.557396176,
+      "survivingIdentityCpuPercentOneCore": 30.719295534863324,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 747552,
+        "p95": 766860,
+        "p99": 766860
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": 4440,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 5.005188332,
+      "survivingIdentityCpuPercentOneCore": 26.372634003814742,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 754344,
+        "p95": 769280,
+        "p99": 769280
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": 16844,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.794568977,
+      "survivingIdentityCpuPercentOneCore": 19.1883776083591,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 755844,
+        "p95": 769280,
+        "p99": 769280
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": -11372,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.511931058,
+      "survivingIdentityCpuPercentOneCore": 14.18461389974545,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 756612,
+        "p95": 758664,
+        "p99": 758664
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": 756,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 5.078244485,
+      "survivingIdentityCpuPercentOneCore": 19.10108902525594,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 753144,
+        "p95": 758664,
+        "p99": 758664
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": -4184,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.837042174,
+      "survivingIdentityCpuPercentOneCore": 11.577323080003396,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 752996,
+        "p95": 754620,
+        "p99": 754620
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": -1564,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.921095065,
+      "survivingIdentityCpuPercentOneCore": 12.39561503980009,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 752608,
+        "p95": 769992,
+        "p99": 769992
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": 9308,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 5.695242545,
+      "survivingIdentityCpuPercentOneCore": 10.7106939727358,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 755200,
+        "p95": 762224,
+        "p99": 762224
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": -7432,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 6.603557848,
+      "survivingIdentityCpuPercentOneCore": 12.417548522700546,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 754512,
+        "p95": 756628,
+        "p99": 756628
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": -3492,
+      "pssComplete": true
+    }
+  ],
+  "postWarmup": {
+    "elapsedSeconds": 55.345923181,
+    "survivingIdentityCpuPercentOneCore": 16.65886025579059,
+    "endpointIdentitySetsMatch": true,
+    "wholeIntervalCpuCoverageComplete": false,
+    "rssKiB": {
+      "count": 106,
+      "p50": 753508,
+      "p95": 758032,
+      "p99": 769280
+    },
+    "processCount": {
+      "count": 106,
+      "p50": 21,
+      "p95": 21,
+      "p99": 21
+    },
+    "rssGrowthKiB": 9788,
+    "pssComplete": true
+  },
+  "metrics": {
+    "helperToDOMReceiptMs": {
+      "samples": [
+        96.439779,
+        104.362026,
+        112.448113,
+        68.237056,
+        67.660984,
+        79.800625,
+        130.220142,
+        77.947518,
+        74.546436,
+        136.556694,
+        101.649226,
+        104.938861,
+        122.882991,
+        101.259152,
+        90.512605,
+        104.16679,
+        90.791788,
+        86.632699,
+        134.228819,
+        136.058044,
+        160.551776,
+        124.2155,
+        174.223947,
+        188.302024,
+        159.867684,
+        123.401986,
+        179.861467,
+        97.883496,
+        90.073112,
+        107.716906,
+        106.092565,
+        108.890715,
+        125.265404,
+        110.604753,
+        162.345306,
+        123.100611,
+        155.80195,
+        166.47545,
+        137.00428,
+        139.522347,
+        131.338531,
+        127.698093,
+        120.00557,
+        117.013732,
+        111.698968,
+        120.276557,
+        126.849345,
+        120.165977,
+        115.859316,
+        132.507531,
+        135.648661,
+        134.08853,
+        150.223682,
+        160.318175,
+        121.259816,
+        138.89347,
+        203.290609,
+        179.339762,
+        132.643514,
+        143.607817,
+        156.657678,
+        151.568098,
+        130.628651,
+        128.043827,
+        129.18398,
+        130.050229,
+        139.207663,
+        142.510884,
+        149.594898,
+        166.932846,
+        171.734351,
+        151.412571,
+        164.586301,
+        153.637217,
+        190.503622,
+        126.237807,
+        139.801512,
+        126.846546,
+        132.552126,
+        132.357605,
+        205.78539,
+        200.567484,
+        138.167421,
+        148.739829,
+        145.830118,
+        159.929045,
+        238.829195,
+        213.517612,
+        353.873902,
+        218.685068,
+        255.837546,
+        244.560407,
+        225.302647,
+        142.709011,
+        236.141712,
+        248.733204,
+        259.143059,
+        262.687017,
+        257.650951,
+        338.210608
+      ],
+      "count": 100,
+      "p50": 135.648661,
+      "p95": 255.837546,
+      "p99": 338.210608,
+      "definition": "Python helper-spawn to exact-publication focused DOM receipt; tracing/poll/log parsing overhead included; not native presentation latency"
+    },
+    "initialPssKiB": 253158,
+    "finalPssKiB": 293830,
+    "initialPrivateKiB": 171796,
+    "finalPrivateKiB": 202412,
+    "allSamples": {
+      "elapsedSeconds": 60.550071223,
+      "survivingIdentityCpuPercentOneCore": 17.027230177862677,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 115,
+        "p50": 753144,
+        "p95": 758032,
+        "p99": 769280
+      },
+      "processCount": {
+        "count": 115,
+        "p50": 21,
+        "p95": 21,
+        "p99": 21
+      },
+      "rssGrowthKiB": 61680,
+      "pssComplete": true
+    }
+  },
+  "limitations": [
+    "QA DOM and Wayland protocol tracing enabled; overhead unmeasured",
+    "Helper-to-DOM time includes spawning/polling/parsing and is not native presentation latency",
+    "PPID process tree excludes detached/reparented workers and fixture/compositor; RSS double counts shared pages",
+    "Endpoint CPU identity equality cannot exclude transient workers between samples",
+    "5 warm-up plus100 measured cycles, one warm output and 2 controlled application windows; no cold/dense/hardware-display/long-soak acceptance"
+  ],
+  "performanceBudgetsAccepted": false,
+  "completedRequirementIds": [],
+  "cleanupPassed": true,
+  "evidence": {
+    "native": {
+      "path": "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/report.json",
+      "sha256": "1a41620d63e03d538d2df9916670f7a837f74760330a4d43a3e55e6c40bef553"
+    },
+    "functional": {
+      "path": "implementation/elm-output-shared-qa-v151/qa/slice-manifest.json",
+      "sha256": "91eb054e7bdba6b5a34d692d199d281d639dcf4455e3a7eac8f879902128c68b",
+      "retainedNotRerun": true
+    },
+    "graphics": {
+      "path": "implementation/elm-shared-gpu-qa-v157/qa/slice-manifest.json",
+      "sha256": "8e91b23e55ca77ba476949f1440352ce447cee7b25def8f3db3598e2ed058534",
+      "retainedNotRerun": true
+    }
+  },
+  "files": {
+    "implementation/elm-shared-soak-v161/HANDOFF.md": "c0f8c682812243d3667e88c366d9e2d2f8f975bd3b0556f5c6c0dc0abcc7a8f8",
+    "implementation/elm-shared-soak-v161/fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "implementation/elm-shared-soak-v161/qa/freeze.py": "b51140988a77098d57d2008df5fd1a365552c0dbc2ef7ed275892b4fe0ce89b9",
+    "implementation/elm-shared-soak-v161/qa/inspection.py": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/authority-config.json": "d48a16246e7f6135dd5d604ea4659586491c31f89e6350343b68b08daac9d55b",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/elm-webview.log": "499f18dee9f16d7ffad78a3f30ed8d1b25e43406d9118a16b23ee4cbe6718674",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/fixture.log": "4dcff9a094f507ab06a38b3cf84b067f83274a25183f15dad807a6c9d7f47921",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/host-evidence.json": "cbf5b3069601f98b1287e8011b2ba448f0204618b3270d0f93ed6dca8274b257",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/hyprland.log": "ebd347ae3137f499a27389807f70d763dd4d89cccbc0fafa6312f66ffdbd85e9",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/privateBus.log": "43d52b0121078f2a59026af0cc5830d18cd303fe2afffd937f4d8dbdc20d9370",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/.flatpak/webkit-4135674-27/bwrapinfo.json": "bacdaa3998dba36d85d25ad68297a5c0aead1211c751a2dadc2d77db9e9da088",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/.flatpak/webkit-4135674-31/bwrapinfo.json": "2dfbc07a6d0177dc862292c216ad23bcd6b55a09ecbe433d6d35ab56ad3fbbd9",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/.flatpak/webkit-4135674-35/bwrapinfo.json": "1d93481f8c49ab59b5d2576f368d4f823f301972dbbbad0fecd3bb3bb4ba71ae",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/.flatpak/webkit-4135674-4/bwrapinfo.json": "d3d2e1b15b2474ee60731a779d93e35c56ad82f4c3031118fbb90533d4b90787",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/.flatpak/webkit-4135674-5/bwrapinfo.json": "4b455b6203151deaab89cc453824d4806d62496496cf6c9589b0323e60a35a74",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/.flatpak/webkit-4135674-6/bwrapinfo.json": "794a1faec069a10a4388abac8a5b2719a7302cfbc7ed3db2370cc4880dd3a6f9",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791092673_1205621644/hyprland.log": "e209bd783be84fba4c96b0b93a2471a4bd8d2db1a86651395119022d10f4d1b8",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/weston-renderer.log": "75a73150948c164a387b2b5a80272f5164f6c45bbac6c88730d9c1bcde2b16fe",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/report.json": "1a41620d63e03d538d2df9916670f7a837f74760330a4d43a3e55e6c40bef553",
+    "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/samples.jsonl": "854ae51a7b6f2980f2021e193599493af254a76393bbd6130f515be178f292c0",
+    "implementation/elm-shared-soak-v161/qa/native.py": "d465271574e61b930662826d69490ecb78a39751c2d595d06c2d36f89eafa219",
+    "implementation/elm-shared-soak-v161/qa/sampling.py": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+  }
+}

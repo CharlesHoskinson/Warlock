@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "637fa997a0914014866aadcb2f3258a8",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T05:52:49.659146+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-related-soak-v164",
+  "nextWork": [
+    "Qualify actual shader/display on related-view host; exercise correlated renderer failure/recovery; integrate reviewed corrected menu/source tuple and complete performance/AT/IME/scene/C00/release gates"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-related-qa-v163/qa/slice-manifest.json",
+      "sha256": "854d28936ad134105e8dbe42d253efde001c5d0d7ea3954efa1d1da2914432ab",
+      "size": 38818
+    },
+    {
+      "path": "implementation/elm-related-soak-v164/qa/slice-manifest.json",
+      "sha256": "e46c31a94c1a5d6ddba4b58d658b6bc150086bccb51299fa9a5001eff061ac8b",
+      "size": 15408
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

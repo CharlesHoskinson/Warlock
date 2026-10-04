@@ -1,0 +1,501 @@
+{
+  "passed": true,
+  "scope": "Instrumented private related-view shared host post-warmup repetition: process-tree CPU/RSS and helper-to-DOM receipt samples, not approved budgets/native presentation/long soak/full performance acceptance",
+  "nativeChecks": 111,
+  "popupCycles": 105,
+  "measuredCycles": 100,
+  "resourceSampleCount": 115,
+  "postWarmupGrowthKiB": {
+    "rssKiB": 11864,
+    "knownPssKiB": 10821,
+    "knownPrivateKiB": 10332
+  },
+  "sampledIdentitySetsStable": true,
+  "perProcessGrowthKiB": [
+    {
+      "pid": 4169165,
+      "start": "6107730",
+      "name": "elm-host",
+      "rssKiB": 4144,
+      "pssKiB": 3850,
+      "privateKiB": 3624
+    },
+    {
+      "pid": 4169194,
+      "start": "6107738",
+      "name": "WebKitNetworkPr",
+      "rssKiB": 192,
+      "pssKiB": -17,
+      "privateKiB": -52
+    },
+    {
+      "pid": 4169211,
+      "start": "6107744",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4169212,
+      "start": "6107744",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4169213,
+      "start": "6107745",
+      "name": "xdg-dbus-proxy",
+      "rssKiB": 192,
+      "pssKiB": 2,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4169216,
+      "start": "6107745",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4169217,
+      "start": "6107745",
+      "name": "bwrap",
+      "rssKiB": 0,
+      "pssKiB": 0,
+      "privateKiB": 0
+    },
+    {
+      "pid": 4169220,
+      "start": "6107746",
+      "name": "WebKitWebProces",
+      "rssKiB": 7304,
+      "pssKiB": 6954,
+      "privateKiB": 6728
+    },
+    {
+      "pid": 4169272,
+      "start": "6107759",
+      "name": "python3",
+      "rssKiB": 32,
+      "pssKiB": 32,
+      "privateKiB": 32
+    }
+  ],
+  "batches": [
+    {
+      "elapsedSeconds": 3.736003283,
+      "survivingIdentityCpuPercentOneCore": 10.706628707210372,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 441252,
+        "p95": 445468,
+        "p99": 445468
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 8304,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 3.835260832,
+      "survivingIdentityCpuPercentOneCore": 8.343630694685436,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 444376,
+        "p95": 459504,
+        "p99": 459504
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 7240,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 3.763949137,
+      "survivingIdentityCpuPercentOneCore": 8.501708932630564,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 447932,
+        "p95": 460560,
+        "p99": 460560
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 7852,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 3.732642239,
+      "survivingIdentityCpuPercentOneCore": 7.501388616204855,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 447120,
+        "p95": 460560,
+        "p99": 460560
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": -13936,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 3.888344628,
+      "survivingIdentityCpuPercentOneCore": 6.686650101118557,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 446440,
+        "p95": 447904,
+        "p99": 447904
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 280,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.185311952,
+      "survivingIdentityCpuPercentOneCore": 7.4068552966968895,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 446852,
+        "p95": 449216,
+        "p99": 449216
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 2068,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.564288233,
+      "survivingIdentityCpuPercentOneCore": 7.230042958595074,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 449208,
+        "p95": 449752,
+        "p99": 449752
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 280,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 5.248658531,
+      "survivingIdentityCpuPercentOneCore": 8.764144157656958,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 449444,
+        "p95": 459020,
+        "p99": 459020
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 716,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.800166771,
+      "survivingIdentityCpuPercentOneCore": 7.083087238845436,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 449368,
+        "p95": 449968,
+        "p99": 449968
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": -808,
+      "pssComplete": true
+    },
+    {
+      "elapsedSeconds": 4.361474442,
+      "survivingIdentityCpuPercentOneCore": 5.044165750037428,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 11,
+        "p50": 450684,
+        "p95": 450924,
+        "p99": 450924
+      },
+      "processCount": {
+        "count": 11,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 1596,
+      "pssComplete": true
+    }
+  ],
+  "postWarmup": {
+    "elapsedSeconds": 47.187131014,
+    "survivingIdentityCpuPercentOneCore": 6.908663294305363,
+    "endpointIdentitySetsMatch": true,
+    "wholeIntervalCpuCoverageComplete": false,
+    "rssKiB": {
+      "count": 106,
+      "p50": 448972,
+      "p95": 452460,
+      "p99": 459504
+    },
+    "processCount": {
+      "count": 106,
+      "p50": 9,
+      "p95": 9,
+      "p99": 9
+    },
+    "rssGrowthKiB": 11864,
+    "pssComplete": true
+  },
+  "metrics": {
+    "helperToDOMReceiptMs": {
+      "samples": [
+        92.178061,
+        95.729966,
+        97.601538,
+        101.383188,
+        97.143749,
+        103.1251,
+        98.66246,
+        99.13827,
+        100.124188,
+        102.329968,
+        101.707733,
+        103.372171,
+        104.079168,
+        104.930542,
+        106.67679,
+        111.845716,
+        110.392539,
+        109.339009,
+        109.567619,
+        110.919318,
+        112.349854,
+        113.602954,
+        62.305945,
+        115.747515,
+        63.469877,
+        65.410219,
+        127.061218,
+        73.581448,
+        132.237061,
+        77.595851,
+        80.364697,
+        80.286427,
+        76.503881,
+        79.73495,
+        79.24666,
+        79.418236,
+        83.241808,
+        83.142593,
+        84.024733,
+        83.936617,
+        88.477221,
+        92.057679,
+        98.257386,
+        86.739239,
+        85.824283,
+        86.32325,
+        87.822996,
+        88.180601,
+        89.19323,
+        97.532072,
+        90.434859,
+        91.227499,
+        97.769043,
+        112.059694,
+        109.316422,
+        109.448563,
+        125.811969,
+        120.321697,
+        114.261277,
+        113.446049,
+        118.283002,
+        117.619124,
+        121.010971,
+        123.78602,
+        119.506211,
+        125.864307,
+        129.379753,
+        174.88491,
+        155.991524,
+        132.774307,
+        135.356592,
+        259.479227,
+        148.310761,
+        182.511584,
+        179.810564,
+        184.946833,
+        178.443534,
+        191.859598,
+        157.012963,
+        160.757337,
+        148.806448,
+        179.204261,
+        170.531435,
+        137.230151,
+        134.787017,
+        143.743652,
+        149.43176,
+        139.822725,
+        142.180472,
+        132.266862,
+        129.527989,
+        118.823185,
+        115.460111,
+        117.157107,
+        132.708179,
+        132.475142,
+        116.354117,
+        124.639021,
+        125.052542,
+        122.57241
+      ],
+      "count": 100,
+      "p50": 111.845716,
+      "p95": 179.204261,
+      "p99": 191.859598,
+      "definition": "Python helper-spawn to exact-publication focused DOM receipt; tracing/poll/log parsing overhead included; not native presentation latency"
+    },
+    "initialPssKiB": 231473,
+    "finalPssKiB": 258498,
+    "initialPrivateKiB": 184260,
+    "finalPrivateKiB": 210676,
+    "allSamples": {
+      "elapsedSeconds": 52.062777212,
+      "survivingIdentityCpuPercentOneCore": 6.818691184191682,
+      "endpointIdentitySetsMatch": true,
+      "wholeIntervalCpuCoverageComplete": false,
+      "rssKiB": {
+        "count": 115,
+        "p50": 447904,
+        "p95": 452460,
+        "p99": 459504
+      },
+      "processCount": {
+        "count": 115,
+        "p50": 9,
+        "p95": 9,
+        "p99": 9
+      },
+      "rssGrowthKiB": 28248,
+      "pssComplete": true
+    }
+  },
+  "limitations": [
+    "QA DOM and Wayland protocol tracing enabled; overhead unmeasured",
+    "Helper-to-DOM time includes spawning/polling/parsing and is not native presentation latency",
+    "PPID process tree excludes detached/reparented workers and fixture/compositor; RSS double counts shared pages",
+    "Endpoint CPU identity equality cannot exclude transient workers between samples",
+    "5 warm-up plus100 measured cycles, one warm output and 2 controlled application windows; no cold/dense/hardware-display/long-soak acceptance"
+  ],
+  "performanceBudgetsAccepted": false,
+  "completedRequirementIds": [],
+  "cleanupPassed": true,
+  "evidence": {
+    "native": {
+      "path": "implementation/elm-related-soak-v164/qa/native-1791092969651719919/report.json",
+      "sha256": "d0109499fb3cb2650d18f9151c348ff1a2244d37380c1db255b643cde28050dd"
+    },
+    "functional": {
+      "path": "implementation/elm-related-qa-v163/qa/slice-manifest.json",
+      "sha256": "854d28936ad134105e8dbe42d253efde001c5d0d7ea3954efa1d1da2914432ab",
+      "retainedNotRerun": true
+    },
+    "comparison": {
+      "path": "implementation/elm-shared-soak-v161/qa/slice-manifest.json",
+      "sha256": "df1aad9de191b31752a8a0edc45ad4550a18ab512ec22ba45f778f376c5c593f",
+      "retainedNotRerun": true
+    },
+    "graphics": {
+      "path": "implementation/elm-shared-gpu-qa-v157/qa/slice-manifest.json",
+      "sha256": "8e91b23e55ca77ba476949f1440352ce447cee7b25def8f3db3598e2ed058534",
+      "retainedNotRerun": true
+    }
+  },
+  "files": {
+    "implementation/elm-related-soak-v164/HANDOFF.md": "e3bb61e906a5c70d84cf7bdac908fd465036611070615f96be269771a85b2210",
+    "implementation/elm-related-soak-v164/comparison.json": "9f03ad88f0f807670aa7864ceb38c3236162fea0b29b925622c7c4697760df3b",
+    "implementation/elm-related-soak-v164/fixture.py": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+    "implementation/elm-related-soak-v164/qa/freeze.py": "e0b7b8be6890498c6bf74126a5793fe3facf3b3e1d02b974481dd658e018ac7a",
+    "implementation/elm-related-soak-v164/qa/inspection.py": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/authority-config.json": "3223061093caeb5fac4067820c89304e01bacc05a72c53cba3be774a89e1a78f",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/elm-webview.log": "083b3f2c7d56a56db39f2917ea2cf3eb2b61782ec28878ee2b840b323f58fa69",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/fixture.log": "d6764c9bcb30f3dd76e66e0ca824f6f2cce90606cba747c17e293c1472c0c159",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/host-evidence.json": "3e8c9898a838aa443c6070003a596aa536d4fa3080b6ae5bf7656f54c7a0083e",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/hyprland.log": "05ab917661be816dc8362c05aec91995b96d2385cd99b8322fc9c8ce897fbc56",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/privateBus.log": "b735d10cacf3c4b393321543af34849944d955285a78718f3b09b8400f78952d",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/runtime-archive/.flatpak/webkit-4169165-16/bwrapinfo.json": "f03f9ebc65b90e7de030b5bb54cdc3c3b858908fb6c3fe21de0bfea85ee1e811",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/runtime-archive/.flatpak/webkit-4169165-4/bwrapinfo.json": "7304c819a8e18ae53085f27b1c8cb6ab8a996986edd902eb8c2809276ccff26c",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791092970_1498537330/hyprland.log": "676a41348c018b0aba1f84504aaa947d4dd3f466fee002b3a83a4b32a2b84b70",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/weston-renderer.log": "8098a225f5d429310fbd8f4f7cb640d12b4734de4913127c6267d0bf9ec9b285",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/report.json": "d0109499fb3cb2650d18f9151c348ff1a2244d37380c1db255b643cde28050dd",
+    "implementation/elm-related-soak-v164/qa/native-1791092969651719919/samples.jsonl": "cebc43c3164d983e6e6655e96c106c0ec58cb46af2de546b146958eb020b0dc8",
+    "implementation/elm-related-soak-v164/qa/native.py": "3f8b73b98656ae276d43014e76d3014bcf3b1eec0da0959c55909242c844098b",
+    "implementation/elm-related-soak-v164/qa/sampling.py": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a"
+  }
+}

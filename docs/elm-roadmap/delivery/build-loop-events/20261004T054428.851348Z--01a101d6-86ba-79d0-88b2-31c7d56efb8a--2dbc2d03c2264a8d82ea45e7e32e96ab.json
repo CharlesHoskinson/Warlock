@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "2dbc2d03c2264a8d82ea45e7e32e96ab",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T05:44:28.851348+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-shared-soak-v161",
+  "nextWork": [
+    "Protected five-warmup/100-popup repeated resource measurement; compare per-process PSS/private growth after warm-up, no complete long-soak acceptance"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-shared-soak-v161/qa/native.py",
+      "sha256": "d465271574e61b930662826d69490ecb78a39751c2d595d06c2d36f89eafa219",
+      "size": 10965
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

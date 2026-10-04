@@ -6945,6 +6945,38 @@
         "Endpoint CPU identity equality cannot exclude transient workers between samples",
         "20 cycles, one warm output and 2 controlled application windows; no cold/dense/hardware-display/long-soak acceptance"
       ]
+    },
+    {
+      "evidence": "implementation/elm-shared-soak-v161/qa/slice-manifest.json",
+      "nativeChecks": 111,
+      "popupCycles": 105,
+      "measuredCycles": 100,
+      "scope": "Post-warmup traced resource repetition; no original91 rerun or full long soak",
+      "performanceBudgetsAccepted": false
+    },
+    {
+      "evidence": "implementation/elm-related-qa-v163/qa/slice-manifest.json",
+      "nativeChecks": 137,
+      "originalNativeChecks": 91,
+      "observedRendererProcesses": 1,
+      "singleOutputProcessCount": 9,
+      "dualOutputProcessCount": 9,
+      "cleanupPassed": true,
+      "scope": "Related-view single renderer with distinct managers, scoped multiple-output popup/keyboard/reflow/hotplug and original window regression; correlated renderer failure/graphics/budget/AT/IME/menu/release remain open"
+    },
+    {
+      "evidence": "implementation/elm-related-soak-v164/qa/slice-manifest.json",
+      "nativeChecks": 111,
+      "popupCycles": 105,
+      "measuredCycles": 100,
+      "postWarmupGrowthKiB": {
+        "rssKiB": 11864,
+        "knownPssKiB": 10821,
+        "knownPrivateKiB": 10332
+      },
+      "comparison": "implementation/elm-related-soak-v164/comparison.json",
+      "performanceBudgetsAccepted": false,
+      "scope": "Instrumented private related-view shared host post-warmup repetition: process-tree CPU/RSS and helper-to-DOM receipt samples, not approved budgets/native presentation/long soak/full performance acceptance"
     }
   ]
 }

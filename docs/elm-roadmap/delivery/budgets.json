@@ -58,5 +58,52 @@
     "Complete process-group lifetime accounting",
     "Numeric absolute and regression limits frozen before evaluation",
     "Long soak/resource plateau and hardware cadence"
-  ]
+  ],
+  "relatedViewComparison": {
+    "evidence": "implementation/elm-related-soak-v164/qa/slice-manifest.json",
+    "rawComparison": "implementation/elm-related-soak-v164/comparison.json",
+    "result": "Renderer/process overhead reduced; private memory growth similar. One instrumented run per candidate; no native presentation/budget acceptance.",
+    "observations": {
+      "elm-shared-soak-v161": {
+        "report": "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/report.json",
+        "processCount": 21,
+        "baselinePssKiB": 283708,
+        "finalPssKiB": 293830,
+        "baselinePrivateKiB": 192296,
+        "finalPrivateKiB": 202412,
+        "postWarmupGrowthKiB": {
+          "rssKiB": 9788,
+          "knownPssKiB": 10122,
+          "knownPrivateKiB": 10116
+        },
+        "helperToDOMReceiptMs": {
+          "count": 100,
+          "p50": 135.648661,
+          "p95": 255.837546,
+          "p99": 338.210608
+        },
+        "postWarmupElapsedSeconds": 55.345923181
+      },
+      "elm-related-soak-v164": {
+        "report": "implementation/elm-related-soak-v164/qa/native-1791092969651719919/report.json",
+        "processCount": 9,
+        "baselinePssKiB": 247677,
+        "finalPssKiB": 258498,
+        "baselinePrivateKiB": 200344,
+        "finalPrivateKiB": 210676,
+        "postWarmupGrowthKiB": {
+          "rssKiB": 11864,
+          "knownPssKiB": 10821,
+          "knownPrivateKiB": 10332
+        },
+        "helperToDOMReceiptMs": {
+          "count": 100,
+          "p50": 111.845716,
+          "p95": 179.204261,
+          "p99": 191.859598
+        },
+        "postWarmupElapsedSeconds": 47.187131014
+      }
+    }
+  }
 }

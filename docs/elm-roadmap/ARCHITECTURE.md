@@ -315,3 +315,19 @@ P0 freezes interaction policy, original case mappings, deadlines and numeric bud
 ## Outstanding decisions
 
 The selected toolkit/engine, production wire schema field names and numeric bounds, exact native preview import backend, measured budget values and optional compositor substrate remain gated design decisions. They have explicit experiments and refusal/fallback paths; none is silently treated as implemented. Fullscreen/pin precedence is frozen against inherited predicates, while the [interaction contract](INTERACTION.md) freezes user-visible MRU/workspace/focus behavior. Any change to those policies requires updated requirements, model fixtures and native scenarios before implementation acceptance.
+
+## Observed renderer-sharing prototype (2026-10-04)
+
+V162 uses WebKit related-view construction for popup/output views while retaining
+a distinct message manager per view. V163 preserves the original91 native cases
+and scoped output campaign (137 total): one actual renderer serves one/two outputs,
+with nine observed descendant processes. All Elm modules match frozen V145;
+authenticated authority, one controller/backend and per-view capability routing
+remain unchanged. See [bounded implementation](../../implementation/elm-related-soak-v164/HANDOFF.md).
+
+This changes the renderer failure domain: renderer termination affects all related
+views, so failure/recovery must be tested before host selection. Identical traced
+100-cycle workloads show fewer processes and lower final proportional memory,
+while private-memory growth remains similar. This is not a budget, leak-free,
+hardware-rendering, accessibility or release claim. Numeric performance limits,
+current-shell comparison, production overhead and long-soak acceptance stay open.

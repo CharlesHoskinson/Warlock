@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "eventId": "3829ab9ac49e4fb2a0547c3a91ea6641",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T05:49:29.468305+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-related-soak-v164",
+  "nextWork": [
+    "Same five-warmup/100-popup workload on V162 renderer-sharing host after original91/shared-output137 passed; compare process/PSS/private growth without general budget acceptance"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-related-qa-v163/qa/native-1791092882163402355/report.json",
+      "sha256": "f0d47030f7546feb6bfe8f4d269fe2cda815ed7894fdb6bb964f4978a7c7a4fe",
+      "size": 405038
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-shared-measure-v160",
-  "status": "Shared-host calibration26 passes: 20 popup cycles/31 resource snapshots; warm idle CPU and helper-to-DOM timing measured with tracing. Numeric budgets, native presentation, soak/AT/IME/menu/release remain open.",
+  "activeSlice": "implementation/elm-related-soak-v164",
+  "status": "Related-view prototype native137 retains original91/shared-output behavior with one renderer and nine processes; identical100-cycle traced workload111 passes. Private growth persists; correlated failure/GPU/current-shell/AT/IME/menu/release gates open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -986,6 +986,86 @@
       "performanceBudgetsAccepted": false,
       "cleanupPassed": true,
       "evidence": "implementation/elm-shared-measure-v160/qa/slice-manifest.json"
+    },
+    "sharedHostWarmupV161": {
+      "evidence": "implementation/elm-shared-soak-v161/qa/slice-manifest.json",
+      "nativeChecks": 111,
+      "popupCycles": 105,
+      "measuredCycles": 100,
+      "resourceSamples": 115,
+      "privateGrowthKiB": 10116,
+      "performanceBudgetsAccepted": false
+    },
+    "relatedViewV163": {
+      "nativeChecks": 137,
+      "originalNativeChecks": 91,
+      "observedBackendProcesses": 1,
+      "observedRendererProcesses": 1,
+      "singleOutputProcessCount": 9,
+      "dualOutputProcessCount": 9,
+      "cleanupPassed": true,
+      "evidence": "implementation/elm-related-qa-v163/qa/slice-manifest.json"
+    },
+    "relatedViewV164": {
+      "evidence": "implementation/elm-related-soak-v164/qa/slice-manifest.json",
+      "nativeChecks": 111,
+      "popupCycles": 105,
+      "measuredCycles": 100,
+      "resourceSamples": 115,
+      "comparison": {
+        "status": "descriptive two-run instrumented comparison; no approved performance-budget acceptance",
+        "workload": "five warm-up cycles/three idle seconds/100 measured popup cycles/five final idle seconds; one800x600 output/two controlled application windows",
+        "metrics": {
+          "elm-shared-soak-v161": {
+            "report": "implementation/elm-shared-soak-v161/qa/native-1791092669085834129/report.json",
+            "processCount": 21,
+            "baselinePssKiB": 283708,
+            "finalPssKiB": 293830,
+            "baselinePrivateKiB": 192296,
+            "finalPrivateKiB": 202412,
+            "postWarmupGrowthKiB": {
+              "rssKiB": 9788,
+              "knownPssKiB": 10122,
+              "knownPrivateKiB": 10116
+            },
+            "helperToDOMReceiptMs": {
+              "count": 100,
+              "p50": 135.648661,
+              "p95": 255.837546,
+              "p99": 338.210608
+            },
+            "postWarmupElapsedSeconds": 55.345923181
+          },
+          "elm-related-soak-v164": {
+            "report": "implementation/elm-related-soak-v164/qa/native-1791092969651719919/report.json",
+            "processCount": 9,
+            "baselinePssKiB": 247677,
+            "finalPssKiB": 258498,
+            "baselinePrivateKiB": 200344,
+            "finalPrivateKiB": 210676,
+            "postWarmupGrowthKiB": {
+              "rssKiB": 11864,
+              "knownPssKiB": 10821,
+              "knownPrivateKiB": 10332
+            },
+            "helperToDOMReceiptMs": {
+              "count": 100,
+              "p50": 111.845716,
+              "p95": 179.204261,
+              "p99": 191.859598
+            },
+            "postWarmupElapsedSeconds": 47.187131014
+          }
+        },
+        "limitations": [
+          "Single run per candidate; timings include increasing trace-log parse overhead",
+          "Run durations differ; timing is helper-to-DOM, not native presentation",
+          "Private memory growth similar; process sharing does not establish boundedness",
+          "Existing current-shell comparison, production instrumentation overhead and long-soak gates stay open"
+        ],
+        "performanceBudgetsAccepted": false
+      },
+      "performanceBudgetsAccepted": false
     }
   },
   "next": [
