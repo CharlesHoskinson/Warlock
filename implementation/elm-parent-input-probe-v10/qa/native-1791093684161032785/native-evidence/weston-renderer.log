@@ -1,0 +1,66 @@
+Date: 2026-10-04 MDT
+[00:01:24.397] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[00:01:24.397] Command line: /home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston --backend=headless --renderer=gl --shell=kiosk-shell.so --fake-seat --no-config --socket=weston-host --width=800 --height=600 --scale=1 --idle-time=0 --log=/home/hoskinson/window-integration-qa/elm-parent-input-1791093684161116560/weston-renderer.log --modules=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791093677369981312/parent-input.so
+[00:01:24.397] OS: Linux, 7.2.7-1-omarchy, #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000, x86_64
+[00:01:24.397] Flight recorder: enabled, scopes subscribed: log
+[00:01:24.397] Starting with no config file.
+[00:01:24.397] Output repaint window is 7 ms maximum.
+[00:01:24.397] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/headless-backend.so'
+[00:01:24.402] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/gl-renderer.so'
+[00:01:24.421] Using rendering device: /dev/dri/renderD129
+[00:01:24.424] EGL version: 1.5
+[00:01:24.424] EGL vendor: Mesa Project
+[00:01:24.424] EGL client APIs: OpenGL OpenGL_ES 
+[00:01:24.424] EGL features:
+               EGL Wayland extension: no
+               context priority: yes
+               buffer age: no
+               partial update: yes
+               swap buffers with damage: no
+               configless context: yes
+               surfaceless context: yes
+               dmabuf support: modifiers
+               fence sync: yes (native, wait)
+[00:01:24.426] GL version: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+[00:01:24.426] GLSL version: OpenGL ES GLSL ES 3.20
+[00:01:24.426] GL vendor: Intel
+[00:01:24.426] GL renderer: Mesa Intel(R) Graphics (ARL)
+[00:01:24.433] GL ES 3.2 - renderer features:
+               read-back format: ARGB8888
+               glReadPixels supports y-flip: yes
+               glReadPixels supports PBO: yes
+               wl_shm 10 bpc formats: yes
+               wl_shm 16 bpc formats: yes
+               wl_shm half-float formats: yes
+               internal R and RG formats: yes
+               OES_EGL_image_external: yes
+               GPU timeline: yes
+               Texture immutability: yes
+               Required precision: yes
+[00:01:24.433] Using GL renderer
+[00:01:24.433] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[00:01:24.433] Color manager: no-op
+                 protocol support: no
+[00:01:24.433] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[00:01:24.433] Output 'headless' using color profile: stock sRGB color profile
+[00:01:24.433] Output 'headless' enabled with head(s) headless
+[00:01:24.433] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: yes
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: yes
+               color operations: yes
+               color representation: yes
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[00:01:24.433] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/kiosk-shell.so'
+[00:01:24.434] Loading module '/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791093677369981312/parent-input.so'
+[00:01:26.347] elm-parent-input motion 400,300 actual 400.00,300.00 focus=0x55c0247da8e0 pid=38183
+[00:01:26.348] elm-parent-input button 272 state=1 focus=0x55c0247da8e0 pid=38183
+[00:01:26.348] elm-parent-input button 272 state=0 focus=0x55c0247da8e0 pid=38183
+[00:01:32.523] caught signal 15

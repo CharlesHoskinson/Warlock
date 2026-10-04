@@ -1,0 +1,153 @@
+{
+  "schema": 1,
+  "passed": true,
+  "scope": "Private parent Weston input to one nested child and exact GTK widget at original, smaller, scale-2, and restored modes. Native pointer recipient and coordinates only; no rotation, multiple outputs, cursor pixels, full menu, or release acceptance.",
+  "owningTuple": {
+    "corePluginManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-buffer-authority-pair-v8/qa/build-pair-manifest.json",
+    "corePluginSHA256": "7ae1d5245a1cb3290f50204e8e81f1e058bff2a9667b3741475cdc784ae7d3cc",
+    "aquamarineManifest": "/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-viewport-v8/component-manifest.json",
+    "aquamarineSHA256": "4e46b4e198ef9ef5d92005806ab1ecb3108319ea6eb906a55910bd40e77b3101"
+  },
+  "source": {
+    "fixture.py": "b6976b523b551a495771fc2421d0a56253ffd02937bf5419770e54dc274e361c",
+    "native/SOURCE-API.md": "0513ad1e65bad8daa9bbae4945e76c32136aaebe96270fe86ff77f85d3ff15db",
+    "native/parent-input-client.c": "6509725f95d4ede610bf46a6183b0067b21a23e5c7880526119bf32f3f2f441a",
+    "native/parent-input-module.c": "08c7304345e16fcac804f5546e0785c43541d6cd46807401e025fe617065867e",
+    "native/parent-input.xml": "2bc2813657f436772f90eec36d8c064f5680270f8e884e8465b878372ba2ed6b",
+    "qa/build.py": "3579dd395ec31489b07b5b27b55ef50584ebbfeb24752de50d8c0e17d250ed5d",
+    "qa/fixture-inspection.py": "6338ad3e151734323728886feb3bb427d3eb2a4f1e77797dfb609a055f3f03f3",
+    "qa/native.py": "825eef515649141c109444ee219c63a6bb647f36b6824e4c77a6d87d6e8c1cb1"
+  },
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094093536727838/report.json",
+  "buildReportSHA256": "3ef645f42152987df9e32cd8101ba52855cafe52c5f7c62489887bfd7937ee33",
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791094099568473380/report.json",
+  "nativeReportSHA256": "cc50ff3361acf69310989c647fae2e4cf229a565ec5c22b4f2b936cd4bbf4ede",
+  "nativeChecks": 48,
+  "normalCleanup": true,
+  "modes": [
+    {
+      "name": "original800x600:exactGtkRecipient",
+      "widgetPoint": [
+        252.66666666666666,
+        186.0
+      ],
+      "parentPoint": [
+        273.66666666666663,
+        207.0
+      ],
+      "press": [
+        253.0,
+        186.0
+      ],
+      "release": [
+        253.0,
+        186.0
+      ]
+    },
+    {
+      "name": "shrunk640x480:exactGtkRecipient",
+      "widgetPoint": [
+        199.33333333333334,
+        146.0
+      ],
+      "parentPoint": [
+        275.4166666666667,
+        208.75
+      ],
+      "press": [
+        199.0,
+        146.19921875
+      ],
+      "release": [
+        199.0,
+        146.19921875
+      ]
+    },
+    {
+      "name": "scaled960x640:exactGtkRecipient",
+      "widgetPoint": [
+        146.0,
+        92.66666666666667
+      ],
+      "parentPoint": [
+        278.3333333333333,
+        213.125
+      ],
+      "press": [
+        145.80078125,
+        92.6015625
+      ],
+      "release": [
+        145.80078125,
+        92.6015625
+      ]
+    },
+    {
+      "name": "restored800x600:exactGtkRecipient",
+      "widgetPoint": [
+        252.66666666666666,
+        186.0
+      ],
+      "parentPoint": [
+        273.66666666666663,
+        207.0
+      ],
+      "press": [
+        253.0,
+        186.0
+      ],
+      "release": [
+        253.0,
+        186.0
+      ]
+    }
+  ],
+  "priorRuns": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791093618792321875/report.json": {
+      "sha256": "370618e07937743df86baeb230eb163b68f79d6b8eb042a0d16fffd86ca35e95",
+      "passed": false
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791093684161032785/report.json": {
+      "sha256": "b07e7f894ddc7bcee0a81afef8d4a7f19348a7c22a4e332a5513d1161bf3d9e4",
+      "passed": false
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791093790512268093/report.json": {
+      "sha256": "8e695984d03e8b5809ab8a1b7eeebdf2a2a64672bb3e52d75192943817543e93",
+      "passed": false
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791093844165377540/report.json": {
+      "sha256": "10ed6a99b41c10e239a20a6aeede6efbb9d7418bd84c17f39fc4c817273eb02b",
+      "passed": false
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791093894111700147/report.json": {
+      "sha256": "f8d5978a4ebfa3b1c24cd02bc2a1f494169721b8d9b55f640be5059843f19833",
+      "passed": false
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791093949873514527/report.json": {
+      "sha256": "56104abd536d123e36aeec812bf3c7595b4d9fdeac513f88114369e2541832f9",
+      "passed": false
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791093987171278200/report.json": {
+      "sha256": "464e03fbc1a02405c3bb3553e644bd3484be057c28e2a4b42b9cdd1dd2dbe651",
+      "passed": false
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/native-1791094021480640720/report.json": {
+      "sha256": "f8846bf2d2b0c05c590cedc1b75615aad08f1a02eb59ee9afa9eea04030c5262",
+      "passed": true
+    }
+  },
+  "nativeArtifacts": {
+    "native.py": "825eef515649141c109444ee219c63a6bb647f36b6824e4c77a6d87d6e8c1cb1",
+    "native-evidence/privateBus.log": "0bbceb782af50cb9fa956507d9ea58b2ef103d9738be4b31ce36a5487439426e",
+    "native-evidence/weston.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-evidence/weston-renderer.log": "7bfae791ef9f3dcda80e139780707f9756fb8a90fb43e6410493004212a8368e",
+    "native-evidence/dmabuf-probe.stdout": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+    "native-evidence/dmabuf-probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-evidence/hyprland.log": "08a1667e03704d8ecbff5073348087490b212b3787b829e599a191e26d02198f",
+    "native-evidence/fixture.log": "4c724271b45b9e893c6ce4f198c0d2a5b10860a75f636c75dabfb23f10592164",
+    "native-evidence/fixture-events.jsonl": "c39d7bcbfd3bf7c09cf3065ed0f08e2b80ddf302bba654fc506d2f78cd0723c1",
+    "native-evidence/host-evidence.json": "c0c3aa9aabe4398daea755e08bbe6268d3dd7586259bf83f8253aa9bb7f09907",
+    "native-evidence/runtime-archive/hyprland.lua": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+    "native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791094100_888178730/hyprland.log": "0c74ecd8e7935fcc3fb903d30ac0840edfcf739ac877e202699bc671ec6f52a2"
+  }
+}

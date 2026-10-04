@@ -1,0 +1,101 @@
+{
+  "passed": true,
+  "scope": "Exact private Weston parent injection build; no delivery claim",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input.xml": "2bc2813657f436772f90eec36d8c064f5680270f8e884e8465b878372ba2ed6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input-module.c": "08c7304345e16fcac804f5546e0785c43541d6cd46807401e025fe617065867e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input-client.c": "6509725f95d4ede610bf46a6183b0067b21a23e5c7880526119bf32f3f2f441a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/SOURCE-API.md": "3dbb1495edd020a5d91f29230708f952d6c5470d00ef0538b5d6feb47a42f103",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/fixture.py": "b6976b523b551a495771fc2421d0a56253ffd02937bf5419770e54dc274e361c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/fixture-inspection.py": "6338ad3e151734323728886feb3bb427d3eb2a4f1e77797dfb609a055f3f03f3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build.py": "3579dd395ec31489b07b5b27b55ef50584ebbfeb24752de50d8c0e17d250ed5d",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/host-stage-report.json": "08bc911b36ac6f9910b12513333a3d1d0d7149b12d56776b5ff57703e4fe3900",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/weston_host.py": "0bb343488eb4c04ef53af2550f01a35cc737888bfec797208431f799a28c5d27",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15/libweston/libweston.h": "0617ab52ae75427e05db7ec421d215f1c6ad0bb03b92ae90e107c499913a49bb",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1/libweston/backend.h": "485871602e378ee595d6378b7b839583553e11c10862205d260fd114a4144d92",
+    "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15.so.0.0.1": "4f69699a64ef12138ead0bb24a1a19ecd5b87a0d723e3bc06a5d0af9177aa300"
+  },
+  "steps": [
+    {
+      "name": "server-header",
+      "command": [
+        "wayland-scanner",
+        "server-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/generated/parent-input-server.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "client-header",
+      "command": [
+        "wayland-scanner",
+        "client-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/generated/parent-input-client.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "protocol-code",
+      "command": [
+        "wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/generated/parent-input-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "module",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-fPIC",
+        "-shared",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input-module.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/generated/parent-input-protocol.c",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/generated",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/parent-input.so"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "client",
+      "command": [
+        "cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/native/parent-input-client.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/generated/parent-input-protocol.c",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/generated",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-input-probe-v10/qa/build-1791094016843987353/parent-input-client"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "binaries": {
+    "parent-input.so": "3db9a508329df297be58cb3a30d45fcf503e65dabb7278b73ed754ec289114ff",
+    "parent-input-client": "307d623700077c6311c75d2d40f7c32def203f9c2fef05769e64b69d05c2e61e"
+  }
+}
