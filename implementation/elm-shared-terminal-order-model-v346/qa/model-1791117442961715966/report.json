@@ -1,0 +1,79 @@
+{
+  "passed": true,
+  "scope": "Abstract ordered native press/release versus asynchronous WebKit message, exact once terminal dispatch, no synthetic release, repeat/deadline/retirement refusal. Valid scope summarizes engine/view/generation/publication/lease/epoch; no automatic refinement or native timing proof.",
+  "sourceSHA256": "ea072607d7aabe254256605891889c1eae8fd9ec906eaf2c00a8f4e758bd32e6",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(pressNeverClosesTest|releaseOnceTest|secondEscapeTest|forgedReleaseTest|retirementKeepsHeldTest|scopeChangeRefusesTest|deadlineNeverRenewedTest|repeatNeverClosesTest|replayPreservesOriginalTest|earlyReleaseTest|earlyReleaseOnceTest|expiredEarlyReleaseTest|changedEarlyReleaseTest|webWithoutNativePressTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 14,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "ea072607d7aabe254256605891889c1eae8fd9ec906eaf2c00a8f4e758bd32e6",
+    "model.py": "fc9651da72b5544d93b09ae21f972ad2ecc8178cae90d29645aa6c8def58b746",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-pressNeverClosesTest-0.itf.json": "d51a8d28e5cb7a5ea40da2f05743f0957f9d97d4786e76160a5c85d78497b95d",
+    "named-releaseOnceTest-1.itf.json": "372a745cb1ad2fa01b4688a5257ff3cce77642f989b4b489de1542449e1f17b4",
+    "named-secondEscapeTest-2.itf.json": "c66279ec4eb6fdfe551b27dafb5b4463ba5e93868e69c5f0c92041df50c2b8bd",
+    "named-forgedReleaseTest-3.itf.json": "fec2160ac34985bcde13afa2e3b15550ca8265cbcf06ba0b07aecf723f11fbd2",
+    "named-retirementKeepsHeldTest-4.itf.json": "1902844a2e4d6a602e489b6efd86c2440225f19fa1f8328b931a51be8b04ea03",
+    "named-scopeChangeRefusesTest-5.itf.json": "8eb18ebf8fb9b0be249bbd3da9703f1e1852e48015c3c98617f2de55bccd2292",
+    "named-deadlineNeverRenewedTest-6.itf.json": "df1a6c0ed5089a53f4ad7fedb1b71e7c48052edace5d8e3d0242dec76179f35b",
+    "named-repeatNeverClosesTest-7.itf.json": "294cf121c4b278a000fd69d72aaafc60ac6efe9bd283f335e21af646780a1e3e",
+    "named-replayPreservesOriginalTest-8.itf.json": "8825e3affdd26dc98f99a373606b66c1ca2a58b8de36a8e2653f912bc5dea7bb",
+    "named-earlyReleaseTest-9.itf.json": "288a55771e712a7c92c1faca734d23196e46a672219df35eccbddd745609decd",
+    "named-earlyReleaseOnceTest-10.itf.json": "8a5f8100f5b7063f94c820b89587c5d8830d7d91fb3abe47d59e380439e999c4",
+    "named-expiredEarlyReleaseTest-11.itf.json": "fbea7035a07e5670ecd74a531e1323d9b15a391863efa9edf18f3811a9820f3d",
+    "named-changedEarlyReleaseTest-12.itf.json": "d0a9a1096272e1b540436ef5aa7f9fe63d25f818f8b449703ad4b7d6638a3055",
+    "named-webWithoutNativePressTest-13.itf.json": "2b9d4785020284d5df7dd4c6ceb0dab80ad27bb09489519910fea249e152a550",
+    "named.stdout": "08d9fa710bb289b9d0ba1923adbbbe7bbbf317f26b01cd1dd34e601b79b4f655",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "8b86a36654bdb7040911ba8c9b7f4a2ad9af446d935a8bd3357b159f4344bd1f",
+    "invariants.stdout": "e21b134cffd11b2ac515f894e492a3bafa821cf804e202ceb32c82f5cdcf13e1",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

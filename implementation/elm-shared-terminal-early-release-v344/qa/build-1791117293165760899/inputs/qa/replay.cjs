@@ -1,0 +1,30 @@
+const fs=require('fs'),assert=require('assert');
+const {Elm}=require(process.argv[2]);
+const c={lifetime:'18446744073709551615',epoch:'2',output:'3',revision:'4'};
+const snapshot=(revision,minimized)=>({kind:'snapshot',context:{...c,revision},scene:{revision,focused:null,windows:[{owner:null,application:'owned.app',available:true,incarnation:'9007199254740993',label:'Owned window',minimized}]}});
+const intent={request:'1',generation:'1',incarnation:'9007199254740993',operation:'minimize',context:c};
+const begin={kind:'begin',operation:'minimize',incarnation:intent.incarnation};
+const receipt=status=>({kind:'receipt',intent,status});
+const messages=[snapshot('4',false),begin,receipt('Committed'),snapshot('5',true),receipt('Unknown'),{kind:'begin',operation:'restore',incarnation:intent.incarnation},{kind:'disconnect'},receipt('Committed'),snapshot('5',true),{kind:'begin',operation:'restore',incarnation:intent.incarnation}];
+const app=Elm.Replay.init({flags:null});
+const deadline=setTimeout(()=>{throw new Error('Compiled replay did not publish every result');},3000);
+app.ports.outgoing.subscribe(rows=>{
+ let checks=0;const check=(value)=>{assert(value);checks++;};
+ check(rows[0].model.connected);check(rows[1].model.transaction.status==='Pending');
+ check(rows[1].effect.intent.incarnation===intent.incarnation);check(rows[1].effect.intent.context.lifetime===c.lifetime);
+ check(rows[1].model.windows[0].minimized===false);check(rows[2].model.transaction.status==='Committed');
+ check(rows[2].model.windows[0].minimized===false);check(rows[3].model.windows[0].minimized===true);
+ check(rows[4].error!==null);check(rows[4].model.transaction.status==='Committed');
+ check(rows[5].model.transaction.status==='Pending');check(rows[6].model.transaction.status==='Unknown');
+ check(!rows[6].model.connected);check(rows[7].error!==null);check(rows[8].model.connected);
+ check(rows[9].effect.intent.request==='3');
+ const second=Elm.Replay.init({flags:null});
+ second.ports.outgoing.subscribe(unknownRows=>{
+  check(unknownRows[2].model.transaction.status==='Unknown');check(unknownRows[2].model.windows[0].minimized===false);
+  check(unknownRows[3].error!==null);check(unknownRows[3].model.transaction.status==='Unknown');
+  fs.writeFileSync(process.argv[3],JSON.stringify({passed:true,checks,rows,unknownRows},null,2)+'\n');
+  clearTimeout(deadline);
+ });
+ setTimeout(()=>second.ports.incoming.send([snapshot('4',false),begin,receipt('Unknown'),receipt('Committed')]),0);
+});
+app.ports.incoming.send(messages);
