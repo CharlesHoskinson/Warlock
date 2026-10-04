@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "checks": [
+    "exact unsent attach while Pending retires old attach ID without replaying or deleting original operation",
+    "definitive original operation receipt resumes required geometry attach under fresh ID",
+    "remaining legacy read completion drains dirty bit into required fresh attach rather than stale geometry facts"
+  ],
+  "nativeAcceptance": false
+}

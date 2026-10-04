@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-probe-v131/assets/adapter.js": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/qa/wire-1791118687067932823/0-adapter.js",
+      "sha256": "35ddb6520444553153c5d876469b937af59fd8576d18e07f5ceb32a3b299c8bc"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/assets/adapter.js": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/qa/wire-1791118687067932823/1-adapter.js",
+      "sha256": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/qa/wire-test.cjs": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/qa/wire-1791118687067932823/2-wire-test.cjs",
+      "sha256": "c650cf15f117602ea9e5096684cce293674f98f15c87b1f568917b7425e83053"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/src/Main.elm": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/qa/wire-1791118687067932823/3-Main.elm",
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405"
+    }
+  },
+  "exitCode": 0,
+  "checks": [
+    "previous actual browser asset lacks native disposition callback",
+    "new actual browser asset forwards identical literal certificate exactly once to declared Elm port"
+  ]
+}

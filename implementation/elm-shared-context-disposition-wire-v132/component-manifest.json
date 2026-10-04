@@ -1,0 +1,416 @@
+{
+  "scope": "Compiled integrated shared context/disposition source, browser wiring and prepared original native harness; native acceptance still pending",
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "combinedDispositionChecks": 65,
+  "browserWiringChecks": 2,
+  "ownProduction": [
+    {
+      "path": "src/ActionProjection.elm",
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "src/Bar.elm",
+      "sha256": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+      "size": 899
+    },
+    {
+      "path": "src/BatchReplay.elm",
+      "sha256": "11790df9e7ca49187037050eede855db4fb3550ba5f7692ca60af1f15855cb3f",
+      "size": 8579
+    },
+    {
+      "path": "src/Binding.elm",
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "src/Catalog.elm",
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "src/CatalogReplay.elm",
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "src/Desktop.elm",
+      "sha256": "7b05fff000f8e2d6c2c900bfc3cd0ae3be3db14eddadd93f326452cf8148ef5d",
+      "size": 20341
+    },
+    {
+      "path": "src/DesktopReplay.elm",
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "src/Effects.elm",
+      "sha256": "aafb8736dc3ff670202886419f6c3753cb83435765e6b56c00eba55b09408569",
+      "size": 15313
+    },
+    {
+      "path": "src/GeometryProjection.elm",
+      "sha256": "9818b852c5faa6b30344ebda81a3c847e906373724e92c5d5df9300a795b5311",
+      "size": 9499
+    },
+    {
+      "path": "src/Inspection.elm",
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "src/Launch.elm",
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "src/LaunchReplay.elm",
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "src/Main.elm",
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "src/Menu.elm",
+      "sha256": "db9a60d1bf61a5b2dae6f75f1063c66056fcad463a4ccffd0996307dd24bae59",
+      "size": 17453
+    },
+    {
+      "path": "src/MenuBridge.elm",
+      "sha256": "5d308bfc33e15cfab6de84ba7b3726d70ac3d0ab005ca3f564f078927f82c393",
+      "size": 25403
+    },
+    {
+      "path": "src/MenuSurfaceReplay.elm",
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "src/NativeOutcome.elm",
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "src/NativeProvider.elm",
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "src/OutputController.elm",
+      "sha256": "a51c7bdc81a20b9224e64f12b1c566e7ae6ac30afd0537e4a88e82d2cca78d4e",
+      "size": 16667
+    },
+    {
+      "path": "src/OutputReplay.elm",
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "src/OutputSurfaceReplay.elm",
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "src/Popup.elm",
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    {
+      "path": "src/Presentation.elm",
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    {
+      "path": "src/PresentationReplay.elm",
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "src/Provider.elm",
+      "sha256": "9b7268e3bac71cd1c96824a99a34b54389d34035e92b44e1f083c40fb921410a",
+      "size": 17561
+    },
+    {
+      "path": "src/ReceiptRouter.elm",
+      "sha256": "dd2eed98bb4db4ed485cb38da6c1febe85b9499c0738d1b3c06d08ce6b21d4d5",
+      "size": 9566
+    },
+    {
+      "path": "src/Replay.elm",
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "src/SharedRecoveryReplay.elm",
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "src/Shell.elm",
+      "sha256": "f521f18581e5310f505a4dbb8ce6d1e30f42c096f0783a748e718c0529ba2736",
+      "size": 25975
+    },
+    {
+      "path": "src/ShellReplay.elm",
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "src/Surface.elm",
+      "sha256": "f39e856dcd2852ceb0a98aaacf73a581cee0809735fa38adfc509164c1f0b0c7",
+      "size": 13320
+    },
+    {
+      "path": "src/SurfaceController.elm",
+      "sha256": "601641fefbc7b45ce2932a22f9f7c1d554e2de486e625de8a726fdad00cbca77",
+      "size": 4229
+    },
+    {
+      "path": "src/SurfaceRenderer.elm",
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    {
+      "path": "src/SurfaceReplay.elm",
+      "sha256": "d8479209b1d0ad4e2bcb84d9ec63b2a6ed93925e64af009a42fb31d18fa2c6fd",
+      "size": 2651
+    },
+    {
+      "path": "src/Taskbar.elm",
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "src/TaskbarReplay.elm",
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "src/TaskbarShell.elm",
+      "sha256": "6649e62bf9c7bf53eb51f7249591a800e4d953f66b7854ebf75a7b18a9ebd92b",
+      "size": 6195
+    },
+    {
+      "path": "src/TaskbarShellReplay.elm",
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "src/UInt64.elm",
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "src/UnsentOperation.elm",
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "size": 1426
+    },
+    {
+      "path": "native/admission-test.c",
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    {
+      "path": "native/context-keys-test.c",
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    {
+      "path": "native/context-keys.h",
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    {
+      "path": "native/geometry-carrier-test.c",
+      "sha256": "feed727a7ad21272b740232ba7caeab7b695179da484987ce0d46d82638de2cd",
+      "size": 5075
+    },
+    {
+      "path": "native/handoff-test.c",
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    {
+      "path": "native/host-fault.h",
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    {
+      "path": "native/host-journal.h",
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    {
+      "path": "native/host.c",
+      "sha256": "3abe445636fdbb428deeb749514768604dd4795001a320b3ea8cc0b8a67e7e65",
+      "size": 61372
+    },
+    {
+      "path": "native/shared-context-test.c",
+      "sha256": "1eec5fc73ae42a57aa0e92c75bc65506b664dc7563d9061ce1e2ea2fb794d5db",
+      "size": 12060
+    },
+    {
+      "path": "native/shared-context.h",
+      "sha256": "f23787870ecc1641d2f8b71644f76b313b17eaba1b5d3ffdfc9d7fc07fd1f5ed",
+      "size": 18519
+    },
+    {
+      "path": "native/shared-host.c",
+      "sha256": "f950ebfb9d1f69efe012cad81cfb4d9c042111b1d9fcad933072622f2409dd06",
+      "size": 36020
+    },
+    {
+      "path": "native/surface-test.c",
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    {
+      "path": "native/surface.h",
+      "sha256": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+      "size": 5561
+    },
+    {
+      "path": "adapter/admission_ledger.py",
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    {
+      "path": "adapter/catalog_authority.py",
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "adapter/catalog_transport.py",
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "adapter/daemon.py",
+      "sha256": "ca8cd61f3d663a3cbc10dcb51b25f1b639a201432d8f4f3813c8727ddae71844",
+      "size": 7903
+    },
+    {
+      "path": "adapter/durable_ledger.py",
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    {
+      "path": "adapter/effect_endpoint.py",
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    {
+      "path": "adapter/endpoint.py",
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "adapter/geometry_endpoint.py",
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106
+    },
+    {
+      "path": "adapter/recovery_fault.py",
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    {
+      "path": "adapter/recovery_journal.py",
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    {
+      "path": "adapter/recovery_store.py",
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643
+    },
+    {
+      "path": "adapter/taskbar_catalog.py",
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "adapter/taskbar_projection.py",
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "assets/adapter.js",
+      "sha256": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+      "size": 2101
+    },
+    {
+      "path": "assets/bar-adapter.js",
+      "sha256": "dfaa8b65e2e4550a24b3dd1e8feb75284b154d4a2f051eb676c5804627c0f69c",
+      "size": 2266
+    },
+    {
+      "path": "assets/bar.html",
+      "sha256": "9fe2e84a6ed6904c8a6da3e6281579ca76b2c43c38b2afc5a41442dabf28c200",
+      "size": 319
+    },
+    {
+      "path": "assets/context.js",
+      "sha256": "914089a09f4c50c53d8161fa653fad74acd10cc25ff018895935ed05eb990f14",
+      "size": 4244
+    },
+    {
+      "path": "assets/index.html",
+      "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+      "size": 281
+    },
+    {
+      "path": "assets/popup-adapter.js",
+      "sha256": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+      "size": 2274
+    },
+    {
+      "path": "assets/popup.html",
+      "sha256": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+      "size": 325
+    },
+    {
+      "path": "assets/shell.css",
+      "sha256": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e",
+      "size": 664
+    }
+  ],
+  "evidence": [
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-integration-v129/qa/build-1791118356146931732/report.json",
+      "sha256": "b3d92603bf08ace949a56f4d2b46d3b43f474f5d96e2a1e9e6f6196b76edc13d",
+      "size": 21438
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-probe-v131/qa/local-unsent-1791118519188687112/report.json",
+      "sha256": "f16c7910d73cf15fd608a1e8deced2d52912759321d51f19897bad9a13e0ab38",
+      "size": 151325
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/qa/build-1791118687066716170/report.json",
+      "sha256": "8f5dda3076e50856c371196a419d7a13419df0095a0cb5375859908aa9584f5e",
+      "size": 22219
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-wire-v132/qa/wire-1791118687067932823/report.json",
+      "sha256": "9dbacd879cf93d63421604df52bfe35aedcb7a06c55d6cd30bbc1abbec617cce",
+      "size": 1751
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-review-v129/REVIEW.md",
+      "sha256": "62a5dc5b1f97a3fc67a2adf0116d55dce09d00417dcd2b83a44cbba21a71edc2",
+      "size": 4112
+    },
+    {
+      "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-disposition-native-v133/qa/preflight.json",
+      "sha256": "4fc7479cc78614eefc203c133538aa19533d12cc8f5c2de476ba4d18b92f8044",
+      "size": 30812
+    }
+  ]
+}

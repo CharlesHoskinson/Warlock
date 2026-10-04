@@ -1,0 +1,9 @@
+# Shared context/disposition integration ready for native QA
+
+V129 merges accepted source344 early/normal terminal-release native proof with V128 local operation refusal, observation/topology recovery and central attach correction using common source305. All conflict packets and explicit three C resolutions are retained. Actual Main/Bar/Popup/native host compile and native context73/key20/geometry34/selftests pass. Independent C/source review finds no blocker.
+
+V130 and V131 retain production bytes while repairing the standalone helper fixture to include/reference actual ContextKeySource primitives without suppressing warnings. Both fixture failures remain frozen. Integrated compiled worker/C helper operation62 and deferred attach3 pass on V131.
+
+V132 supplies the exact V104 receiveBatchDisposition browser callback omitted by those prior CPU-only prototypes. An actual adapter VM test proves the prior asset lacks the callback and the new asset forwards the identical literal certificate once into the declared Main port. Final source/build passes the complete compile/selftest campaign. No physical input or native acceptance transfers from ancestor344.
+
+V133 preserves the entire original V345 zero-dwell native39 campaign AST after only GUI/build path rebinding, including all six-second deadlines, actual receipts, pixels, protected owning core89/plugin90/AQ105 facade and normal cleanup. Protected source/runtime preflight passes; independent harness review and root serialized actual launch remain next. Runtime must establish coherent input/effect/pixel behavior, then original retirement/EOF/deadline/recovery fault gates. Full S01–S16/UIUX/restore/drag/workspaces/monitors/AT/IME/hardware/budgets/release/deployment/rollback/user-flow acceptance remains open. No installed changes.

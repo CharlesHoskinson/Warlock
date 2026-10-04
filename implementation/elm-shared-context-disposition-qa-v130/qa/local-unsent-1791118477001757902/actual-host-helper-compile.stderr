@@ -1,0 +1,5 @@
+In file included from qa/disposition-probe.c:5:
+qa/../native/context-keys.h:33:12: error: ‘context_keys_admit’ defined but not used [-Werror=unused-function]
+   33 | static int context_keys_admit(ContextKeySource *source, const ContextKeySignature *signature) {
+      |            ^~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
