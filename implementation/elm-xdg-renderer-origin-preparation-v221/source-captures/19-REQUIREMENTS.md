@@ -1,0 +1,7 @@
+# Renderer origin preparation and provenance
+
+Record requirements before implementation preparation: no production, capability, native/model or installed changes. Bind actual current435/core89 archive renderer payloads to captured sources/commands/dependency manifests wherever provable. A byte-identical object in an older build proves object identity; a current mutable source next to a historical object does not prove historical source identity. Preserve gaps explicitly and require fresh owning source/dependency/header capture for any rebuilt renderer.
+
+Use measured212/217/218 nonzero landmark translation only as actual historical435 evidence. Complement held465 affine mapping design; do not duplicate model or renderer changes already owned468/469/450. Proposed mapping preserves native real R, configure C and normalized constraints, but positions/sizes the FULL main surface relative to committed XDG geometry, retaining viewport UVs and padding/shadows. Do not uncomment obsolete crop logic solely to satisfy marker samples.
+
+Plan qualification against accepted newest coherent core/plugin/header/AQ tuple, never silently mix historical435 with in-flight450/451. Pixel and physical input coordinate consistency, committed geometry generation, popup/subsurface/damage/opaque/animation effects remain separate gates. No current source enables nonzero geometry capability. Root sole native launcher; this packet runs only protected read-only CPU integrity/object inspection.
