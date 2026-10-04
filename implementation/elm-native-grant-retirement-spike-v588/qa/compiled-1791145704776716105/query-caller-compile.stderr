@@ -1,0 +1,6 @@
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/test.cpp:1:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/grant-registry.hpp: In member function ‘Elm::GrantRetirement::RetirementState Elm::GrantRetirement::Registry::retirementState(Elm::GrantRetirement::Peer, Elm::GrantRetirement::Binding, Elm::GrantRetirement::Binding) const’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/grant-registry.hpp:69:19: error: suggest parentheses around ‘&&’ within ‘||’ [-Werror=parentheses]
+   69 |         if (false && !callerMatches(peer, callerBinding) || targetBinding.lifetime != lifetime_ || !targetBinding.session || !targetBinding.frontend)
+      |             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1plus: all warnings being treated as errors

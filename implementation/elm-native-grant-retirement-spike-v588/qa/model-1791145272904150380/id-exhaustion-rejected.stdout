@@ -1,0 +1,16 @@
+
+  registry
+    1) allocatorExhaustionTest failed after 1 test(s)
+
+  1 failed
+
+  1) allocatorExhaustionTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/model-1791145272904150380/id-exhaustion.qnt:31:186
+        31:   run allocatorExhaustionTest = init.then(hello(1)).then(detach(1)).then(hello(1)).then(detach(1)).then(hello(1)).then(detach(1)).then(hello(1)).then(detach(1)).then(hello(1)).then(all{assert(s.last == 4 and s.a == 0),s'=s})
+                                                                                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xe5b3 --match=allocatorExhaustionTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 id-exhaustion.qnt

@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualCPUProcessesOnly": true,
+  "checks": [
+    {
+      "name": "normal",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3519808,
+            "start": "11447228",
+            "pgid": 3519799,
+            "ppid": 3519799,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/normal.jsonl"
+    },
+    {
+      "name": "nonzero",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3519891,
+            "start": "11447258",
+            "pgid": 3519871,
+            "ppid": 3519871,
+            "uid": 1000
+          },
+          "exitCode": 7
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/nonzero.jsonl"
+    },
+    {
+      "name": "term",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3519939,
+            "start": "11447282",
+            "pgid": 3519937,
+            "ppid": 3519937,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/term.jsonl"
+    },
+    {
+      "name": "kill",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3519991,
+            "start": "11447304",
+            "pgid": 3519973,
+            "ppid": 3519973,
+            "uid": 1000
+          },
+          "exitCode": -9
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/kill.jsonl"
+    },
+    {
+      "name": "live-orphan",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3520130,
+            "start": "11447379",
+            "pgid": 3520123,
+            "ppid": 3520123,
+            "uid": 1000
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3520136,
+            "start": "11447380",
+            "pgid": 3520123,
+            "ppid": 3520123,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/live-orphan.jsonl"
+    },
+    {
+      "name": "orphan",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3520165,
+            "start": "11447411",
+            "pgid": 3520162,
+            "ppid": 3520162,
+            "uid": 1000
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3520166,
+            "start": "11447412",
+            "pgid": 3520162,
+            "ppid": 3520165,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/orphan.jsonl"
+    },
+    {
+      "name": "setsid",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3520172,
+            "start": "11447443",
+            "pgid": 3520171,
+            "ppid": 3520171,
+            "uid": 1000
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3520174,
+            "start": "11447444",
+            "pgid": 3520174,
+            "ppid": 3520172,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/setsid.jsonl"
+    },
+    {
+      "name": "latefork",
+      "passed": true,
+      "actualWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3520180,
+            "start": "11447474",
+            "pgid": 3520175,
+            "ppid": 3520175,
+            "uid": 1000
+          },
+          "exitCode": -9
+        },
+        {
+          "identity": {
+            "pid": 3520196,
+            "start": "11447482",
+            "pgid": 3520196,
+            "ppid": 3520180,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-1791146368501734902/latefork.jsonl"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-test.py": "f80e205d1a426314ff76f8a6f6f7cfdf604b2b5d29b3b17f551758cc87269bd3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-supervisor.py": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-cli-valid-0",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-1",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-2",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-3",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-4",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-5",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-6",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-7",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-8",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-9",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-10",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-11",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-12",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-13",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-14",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-15",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-16",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-17",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-18",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-19",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-0",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-2",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-3",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-4",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-5",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-6",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-7",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-8",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-9",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-10",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-11",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-12",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-13",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-14",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-15",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-16",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-17",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-18",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-19",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-20",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-21",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-22",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-23",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-24",
+      "passed": true
+    },
+    {
+      "name": "describe-before-display",
+      "passed": true
+    },
+    {
+      "name": "reject-unowned-runtime-before-gtk",
+      "passed": true
+    },
+    {
+      "name": "actual-header-contract-table",
+      "passed": true
+    },
+    {
+      "name": "unsafe-overflow-int64-behaviorally-rejected",
+      "passed": true,
+      "exit": 35
+    },
+    {
+      "name": "unsafe-unknown-operation-behaviorally-rejected",
+      "passed": true,
+      "exit": 37
+    },
+    {
+      "name": "unsafe-leading-zero-behaviorally-rejected",
+      "passed": true,
+      "exit": 30
+    }
+  ],
+  "sourceInputs": {
+    "client-build-report.json": {
+      "sha256": "ed8d6e94d4b4b596d9d97347caabc24d5efcaee9c7eb5c5881e16d163bf58e46"
+    },
+    "native/commands.h": {
+      "sha256": "1a151c43895c9ed4edb676939c18bd9ddb488f1908914e5cb11edc60b98894fd"
+    },
+    "native/gtk-role-client.c": {
+      "sha256": "b741d18c878dc3afaf727b62104ef9a38dd845e4f6e2764a25609772fc3d2d60"
+    },
+    "qa/test.py": {
+      "sha256": "841c0dd4c28a5622196a52f3282129c81d3787bcbc9899fb6b0a0c2271d9f90a"
+    }
+  },
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-popup-landmark-fixture-v272/client-build-report.json",
+  "buildReportSHA256": "ed8d6e94d4b4b596d9d97347caabc24d5efcaee9c7eb5c5881e16d163bf58e46"
+}

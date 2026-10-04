@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "version": "UI589",
+  "status": "compiled component only; native original bounds requalification pending",
+  "surfaceProtocol": 2,
+  "barControlBound": {
+    "original": 257,
+    "current": 259,
+    "reason": "256 groups + Applications + timeout refresh + observation-only recovery refresh"
+  },
+  "popupControlBoundUnchanged": 2051,
+  "changes": [
+    {
+      "path": "src/Surface.elm",
+      "baselineSHA256": "a639b18fb0302b74eeedf92ac1481291694d7b4fa9c3ae0ad9ac1f0d20a5d547",
+      "currentSHA256": "46a6d074c08b2ec57846ec9aa5ee75c66aa2ab379464cd45a7ee5a912b633ecd"
+    },
+    {
+      "path": "src/SurfaceRenderer.elm",
+      "baselineSHA256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "currentSHA256": "63f4523a449c42092fef32ebcf1f2e3cd73c8dd5d573e81791ad477777d2f771"
+    },
+    {
+      "path": "src/MenuBridge.elm",
+      "baselineSHA256": "5d308bfc33e15cfab6de84ba7b3726d70ac3d0ab005ca3f564f078927f82c393",
+      "currentSHA256": "19586f6eb026af5f601008db9fa60b17015250961174c7ad34c576bf19978768"
+    },
+    {
+      "path": "native/surface.h",
+      "baselineSHA256": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+      "currentSHA256": "2bdf2d9b3b34fa7193da90e58ac378e7a640ae91e7b02d46987e33c559209f0b"
+    }
+  ],
+  "unchangedAuthorityModules": [
+    "Effects.elm",
+    "Shell.elm",
+    "Desktop.elm",
+    "TaskbarShell.elm",
+    "Taskbar.elm",
+    "OutputController.elm",
+    "SurfaceController.elm"
+  ],
+  "nativeKeyboardATIMEAccepted": false
+}

@@ -1,0 +1,6 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 107222.663203808, "identity": {"pid": 3287554, "start": "11106040", "pgid": 3287554, "ppid": 3287553, "uid": 1000}, "argv": ["/usr/bin/python3", "-B", "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791142956686246291/actual-service.py"]}
+{"sequence": 2, "kind": "owned-child", "monotonic": 107222.679152866, "identity": {"pid": 3287555, "start": "11106043", "pgid": 3287554, "ppid": 3287554, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 107281.422694101}
+{"sequence": 4, "kind": "signal", "monotonic": 107281.422823119, "identity": {"pid": 3287555, "start": "11106043", "pgid": 3287554, "ppid": 3287554, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "child-exit", "monotonic": 107281.45230885, "identity": {"pid": 3287555, "start": "11106043", "pgid": 3287554, "ppid": 3287554, "uid": 1000}, "waitStatus": 256, "exitCode": 1}
+{"sequence": 6, "kind": "terminal", "monotonic": 107281.452360206, "childExitCode": 1, "cancelled": true, "fallback": false, "allWaitStatuses": {"3287555": 1}, "liveDescendants": []}

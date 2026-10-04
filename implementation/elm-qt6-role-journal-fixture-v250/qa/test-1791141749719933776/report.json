@@ -1,0 +1,185 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-cli-valid-0",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-1",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-2",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-3",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-4",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-5",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-6",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-7",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-8",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-9",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-10",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-11",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-12",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-13",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-14",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-valid-15",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-0",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-1",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-2",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-3",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-4",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-5",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-6",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-7",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-8",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-9",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-10",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-11",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-12",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-13",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-14",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-15",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-16",
+      "passed": true
+    },
+    {
+      "name": "actual-cli-invalid-17",
+      "passed": true
+    },
+    {
+      "name": "describe-before-display",
+      "passed": true
+    },
+    {
+      "name": "reject-unowned-runtime-before-gtk",
+      "passed": true
+    },
+    {
+      "name": "actual-header-contract-table",
+      "passed": true
+    },
+    {
+      "name": "unsafe-overflow-int64-behaviorally-rejected",
+      "passed": true,
+      "exit": 24
+    },
+    {
+      "name": "unsafe-unknown-operation-behaviorally-rejected",
+      "passed": true,
+      "exit": 26
+    },
+    {
+      "name": "unsafe-leading-zero-behaviorally-rejected",
+      "passed": true,
+      "exit": 19
+    }
+  ],
+  "sourceInputs": {
+    "client-build-report.json": {
+      "sha256": "36a657f9bb59da2fa57b5c3aab81ce0491e3cb37b902001d0103d56c2777154a"
+    },
+    "native/commands.hpp": {
+      "sha256": "d749c8f8824a2c594a1d2eda3ec73b91b3b7c8927e8db9efdaa85d66c4943cdd"
+    },
+    "native/qt-role-client.cpp": {
+      "sha256": "54f35bfcc32e001fc5f7576e2bb526b90ae0dc0ccf2f68ba5aaeb2b40e84eaac"
+    },
+    "qa/test.py": {
+      "sha256": "baf8e47b1a7de8b67f9ebd50511a3abaff6999032fd65c81e0a95a745d0a623c"
+    }
+  },
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/client-build-report.json",
+  "buildReportSHA256": "36a657f9bb59da2fa57b5c3aab81ce0491e3cb37b902001d0103d56c2777154a"
+}

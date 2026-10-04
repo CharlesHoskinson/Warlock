@@ -1,0 +1,16 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/build-1791141584418063717/inputs/native/qt-role-client.cpp: In function ‘bool currentRole(int, quint64, const QWidget*)’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/build-1791141584418063717/inputs/native/qt-role-client.cpp:64:161: error: ‘w’ was not declared in this scope
+   64 | static bool currentRole(int index,quint64 instance,const QWidget*widget){return index>=0&&index<5&&instance!=0&&roles[index].widget&&currentRole(index,instance,w)idget;}
+      |                                                                                                                                                                 ^
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/build-1791141584418063717/inputs/native/qt-role-client.cpp:64:163: error: expected ‘;’ before ‘idget’
+   64 | static bool currentRole(int index,quint64 instance,const QWidget*widget){return index>=0&&index<5&&instance!=0&&roles[index].widget&&currentRole(index,instance,w)idget;}
+      |                                                                                                                                                                   ^~~~~
+      |                                                                                                                                                                   ;
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/build-1791141584418063717/inputs/native/qt-role-client.cpp:64:163: error: ‘idget’ was not declared in this scope; did you mean ‘widget’?
+   64 | static bool currentRole(int index,quint64 instance,const QWidget*widget){return index>=0&&index<5&&instance!=0&&roles[index].widget&&currentRole(index,instance,w)idget;}
+      |                                                                                                                                                                   ^~~~~
+      |                                                                                                                                                                   widget
+/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/qa/build-1791141584418063717/inputs/native/qt-role-client.cpp:64:66: error: unused parameter ‘widget’ [-Werror=unused-parameter]
+   64 | static bool currentRole(int index,quint64 instance,const QWidget*widget){return index>=0&&index<5&&instance!=0&&roles[index].widget&&currentRole(index,instance,w)idget;}
+      |                                                    ~~~~~~~~~~~~~~^~~~~~
+cc1plus: all warnings being treated as errors

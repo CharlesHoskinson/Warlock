@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "gtk02Accepted": false,
+  "checks": [
+    {
+      "name": "elm-gtk-sibling-role-fixture-v253:held",
+      "passed": true
+    },
+    {
+      "name": "native/gtk-role-client.c:actual-held-source",
+      "passed": true
+    },
+    {
+      "name": "native/commands.h:actual-held-source",
+      "passed": true
+    },
+    {
+      "name": "elm-gtk-sibling-consumer-v257:held",
+      "passed": true
+    },
+    {
+      "name": "qa/actor.py:actual-held-source",
+      "passed": true
+    },
+    {
+      "name": "actual-four-operations-both-owners-and-refusal",
+      "passed": true
+    }
+  ]
+}

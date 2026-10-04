@@ -1,0 +1,7 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 110422.867235176, "identity": {"pid": 3505669, "start": "11426061", "pgid": 3505669, "ppid": 3505644, "uid": 1000}, "argv": ["/usr/bin/python3", "-c", "import signal,time;signal.signal(signal.SIGTERM,signal.SIG_IGN);time.sleep(30)"], "descriptor": "/run/user/1000/wqa/0afc/kill.json", "descriptorSHA256": "19b2df54bfaa9d6129f568a5189c3e985633c965f95a48dfbc48a93111292310"}
+{"sequence": 2, "kind": "owned-child", "monotonic": 110422.867768262, "identity": {"pid": 3505670, "start": "11426064", "pgid": 3505669, "ppid": 3505669, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 110422.928286554}
+{"sequence": 4, "kind": "signal", "monotonic": 110422.928337932, "identity": {"pid": 3505670, "start": "11426064", "pgid": 3505669, "ppid": 3505669, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "signal", "monotonic": 110423.429649111, "identity": {"pid": 3505670, "start": "11426064", "pgid": 3505669, "ppid": 3505669, "uid": 1000}, "signal": 9}
+{"sequence": 6, "kind": "child-exit", "monotonic": 110423.449896775, "identity": {"pid": 3505670, "start": "11426064", "pgid": 3505669, "ppid": 3505669, "uid": 1000}, "waitStatus": 9, "exitCode": -9}
+{"sequence": 7, "kind": "terminal", "monotonic": 110423.460017628, "childExitCode": -9, "cancelled": true, "fallback": true, "allWaitStatuses": [{"identity": {"pid": 3505670, "start": "11426064", "pgid": 3505669, "ppid": 3505669, "uid": 1000}, "exitCode": -9}], "liveDescendants": [], "error": null}

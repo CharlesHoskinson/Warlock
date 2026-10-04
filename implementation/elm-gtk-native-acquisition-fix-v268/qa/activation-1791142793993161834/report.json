@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualCPUProcessesOnly": true,
+  "checks": [
+    {
+      "name": "normal",
+      "passed": true,
+      "actualWaitStatuses": {
+        "3276037": 0
+      },
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791142793993161834/normal.jsonl"
+    },
+    {
+      "name": "nonzero",
+      "passed": true,
+      "actualWaitStatuses": {
+        "3276040": 7
+      },
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791142793993161834/nonzero.jsonl"
+    },
+    {
+      "name": "term",
+      "passed": true,
+      "actualWaitStatuses": {
+        "3276088": -15
+      },
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791142793993161834/term.jsonl"
+    },
+    {
+      "name": "kill",
+      "passed": true,
+      "actualWaitStatuses": {
+        "3276118": -9
+      },
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791142793993161834/kill.jsonl"
+    },
+    {
+      "name": "orphan",
+      "passed": true,
+      "actualWaitStatuses": {
+        "3276212": 0,
+        "3276218": 0
+      },
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-1791142793993161834/orphan.jsonl"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-test.py": "853630c06dbee144c030ab07d85094f4ae1d5a48209618740a0fd42af1ade234",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-supervisor.py": "80f36a0666f4fc6d24630cdbbcc3b1f4083edfb738eda18221637c46aaa614cb",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/home/hoskinson/window-integration-qa/qa_launch.py": "6ef35104e4082249cfbabb747425210b1ca6fe988f675880a2afc059e13b5b23"
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "passed": false,
+  "commands": [
+    {
+      "label": "accepted-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "-fsanitize=undefined",
+        "-fno-sanitize-recover=all",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/accepted/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/accepted/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "accepted-run",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/accepted/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "caller-bypass-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/caller-bypass/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/caller-bypass/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "caller-bypass-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/caller-bypass/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "lifetime-bypass-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/lifetime-bypass/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/lifetime-bypass/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "lifetime-bypass-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/lifetime-bypass/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "self-retire-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/self-retire/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/self-retire/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "self-retire-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/self-retire/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "target-frontend-bypass-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/target-frontend-bypass/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/target-frontend-bypass/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "target-frontend-bypass-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/target-frontend-bypass/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "id-exhaustion-bypass-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/id-exhaustion-bypass/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/id-exhaustion-bypass/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "id-exhaustion-bypass-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/id-exhaustion-bypass/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "frontend-exhaustion-bypass-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/frontend-exhaustion-bypass/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/frontend-exhaustion-bypass/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "frontend-exhaustion-bypass-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/frontend-exhaustion-bypass/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "detach-reset-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/detach-reset/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/detach-reset/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "detach-reset-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/detach-reset/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "query-future-id-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-future-id/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-future-id/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "query-future-id-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-future-id/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "query-future-frontend-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-future-frontend/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-future-frontend/test"
+      ],
+      "exit": 0
+    },
+    {
+      "label": "query-future-frontend-rejected",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-future-frontend/test"
+      ],
+      "exit": 1
+    },
+    {
+      "label": "query-caller-compile",
+      "argv": [
+        "g++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-pedantic",
+        "-O1",
+        "-g",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/test"
+      ],
+      "exit": 1
+    }
+  ],
+  "scope": "Standalone actual C++ helper; no compositor or kernel authentication claim",
+  "compiledResult": {
+    "passed": true,
+    "checks": 2069
+  },
+  "error": "AssertionError(('query-caller-compile', '', 'archy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/test.cpp:1:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/grant-registry.hpp: In member function \u2018Elm::GrantRetirement::RetirementState Elm::GrantRetirement::Registry::retirementState(Elm::GrantRetirement::Peer, Elm::GrantRetirement::Binding, Elm::GrantRetirement::Binding) const\u2019:\\n/home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/compiled-1791145704776716105/query-caller/grant-registry.hpp:69:19: error: suggest parentheses around \u2018&&\u2019 within \u2018||\u2019 [-Werror=parentheses]\\n   69 |         if (false && !callerMatches(peer, callerBinding) || targetBinding.lifetime != lifetime_ || !targetBinding.session || !targetBinding.frontend)\\n      |             ~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\\ncc1plus: all warnings being treated as errors\\n'))"
+}

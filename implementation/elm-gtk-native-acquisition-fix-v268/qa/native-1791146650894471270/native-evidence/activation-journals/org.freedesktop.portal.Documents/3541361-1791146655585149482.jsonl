@@ -1,0 +1,7 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 110921.52141145, "identity": {"pid": 3541361, "start": "11475925", "pgid": 3541361, "ppid": 3541360, "uid": 1000}, "argv": ["/usr/lib/xdg-document-portal"], "descriptor": "/run/user/1000/wqa/2fea/activations/org.freedesktop.portal.Documents.json", "descriptorSHA256": "4fe1dead3d24f44a2522b0932053aa4b50713693391a8e337cc58bcbfa367933"}
+{"sequence": 2, "kind": "owned-child", "monotonic": 110921.52172215, "identity": {"pid": 3541362, "start": "11475929", "pgid": 3541361, "ppid": 3541361, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 110923.914334263}
+{"sequence": 4, "kind": "signal", "monotonic": 110923.914454776, "identity": {"pid": 3541362, "start": "11475929", "pgid": 3541361, "ppid": 3541361, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "child-exit", "monotonic": 110923.952363048, "identity": {"pid": 3541362, "start": "11475929", "pgid": 3541361, "ppid": 3541361, "uid": 1000}, "waitStatus": 0, "exitCode": 0}
+{"sequence": 6, "kind": "supervisor-failure", "monotonic": 110923.952473294, "error": "RuntimeError('foreign UID')"}
+{"sequence": 7, "kind": "terminal", "monotonic": 110923.97803925, "childExitCode": 0, "cancelled": true, "fallback": false, "allWaitStatuses": [{"identity": {"pid": 3541362, "start": "11475929", "pgid": 3541361, "ppid": 3541361, "uid": 1000}, "exitCode": 0}], "liveDescendants": [], "error": "RuntimeError('foreign UID')"}

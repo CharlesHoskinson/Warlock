@@ -1,0 +1,16 @@
+
+  registry
+    1) foreignLifetimeTest failed after 1 test(s)
+
+  1 failed
+
+  1) foreignLifetimeTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/model-1791145272904150380/lifetime-bypass.qnt:28:111
+        28:   run foreignLifetimeTest = init.then(hello(1)).then(hello(2)).then(retire(s.a,s.af,s.b,s.bf,false)).then(all{assert(s.b == 2),s'=s})
+                                                                                                                          ^^^^^^^^^^^^^^^^
+    Use --seed=0xe5b3 --match=foreignLifetimeTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 lifetime-bypass.qnt

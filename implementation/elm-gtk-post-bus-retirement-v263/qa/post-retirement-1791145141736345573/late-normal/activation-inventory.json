@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "name": "org.elm.LateActivation",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-1791145141736345573/late-normal/service.py",
+      "sourceSHA256": "0ab4de33c34a0b9c34c0c2c18de3fbd7a2e550c4a97df62e8151387815b4f338",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-1791145141736345573/late-normal/service.py"
+      ],
+      "binarySHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "descriptor": "/run/user/1000/wqa/ed68/activations/org.elm.LateActivation.json",
+      "descriptorSHA256": "bcb3c8c85b4b82393c50fe6859b5f20b83c6910a5c4fff3d2103c19003198b1b",
+      "journalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-1791145141736345573/late-normal/activation-journals/org.elm.LateActivation"
+    }
+  ],
+  "supervisorSHA256": "c9817f2cd6469fde567dd19decf1356d70ffec34dc60f9feeac1ff022865ed7d",
+  "configurationSource": "/usr/share/dbus-1/session.conf",
+  "configurationSourceSHA256": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1",
+  "configurationSHA256": "51c5702211f721d48426b67a4c10d2a3330639c04d3bd1e2bdd4d6b99c2da144"
+}

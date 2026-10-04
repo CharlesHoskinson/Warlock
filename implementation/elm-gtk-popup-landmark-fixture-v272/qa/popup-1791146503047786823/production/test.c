@@ -1,0 +1,35 @@
+
+#include <assert.h>
+#include <stddef.h>
+#include <string.h>
+typedef struct Widget{struct Widget*ancestor;}GtkWidget;
+typedef GtkWidget GtkButton;typedef GtkWidget GtkDrawingArea;typedef void* gpointer;
+typedef struct{GtkWidget*widget,*landmark,*button;}Role;
+typedef struct{int unused;}cairo_t;typedef struct{int unused;}JsonBuilder;
+#define GTK_WIDGET(x) ((GtkWidget*)(x))
+#define GTK_TYPE_POPOVER 1
+static int emitted,closed,painted,filled,rectangles;
+static double rgb[3],rect[4];static JsonBuilder builder;
+static GtkWidget*gtk_widget_get_ancestor(GtkWidget*w,int type){assert(type==GTK_TYPE_POPOVER);return w->ancestor;}
+static void cairo_set_source_rgb(cairo_t*c,double r,double g,double b){(void)c;rgb[0]=r;rgb[1]=g;rgb[2]=b;}
+static void cairo_paint(cairo_t*c){(void)c;assert(rgb[0]==.1&&rgb[1]==.1&&rgb[2]==.1);painted++;}
+static void cairo_rectangle(cairo_t*c,double x,double y,double w,double h){(void)c;rect[0]=x;rect[1]=y;rect[2]=w;rect[3]=h;rectangles++;}
+static void cairo_fill(cairo_t*c){(void)c;assert(rgb[0]==1&&rgb[1]==0&&rgb[2]==1);assert(rect[0]==4&&rect[1]==4&&rect[2]==8&&rect[3]==8);filled++;}
+static JsonBuilder*record(const char*name,Role*r){assert(r->widget);assert(!strcmp(name,"draw-queued")||!strcmp(name,"popover-button-clicked"));return &builder;}
+static void integer(JsonBuilder*b,const char*k,int value){(void)b;assert((!strcmp(k,"drawWidth")&&value==64)||(!strcmp(k,"drawHeight")&&value==40));}
+static void emit(JsonBuilder*b){assert(b==&builder);emitted++;}
+static void close_role(Role*r){closed++;r->widget=NULL;r->landmark=NULL;r->button=NULL;}
+static void draw_popup(GtkDrawingArea*area,cairo_t*cr,int width,int height,gpointer data){Role*r=data;if(!r->widget || GTK_WIDGET(area)!=r->landmark || gtk_widget_get_ancestor(GTK_WIDGET(area),GTK_TYPE_POPOVER)!=r->widget)return;cairo_set_source_rgb(cr,0.1,0.1,0.1);cairo_paint(cr);cairo_set_source_rgb(cr,1,0,1);cairo_rectangle(cr,4,4,8,8);cairo_fill(cr);JsonBuilder*b=record("draw-queued",r);integer(b,"drawWidth",width);integer(b,"drawHeight",height);emit(b);}
+static void popover_clicked(GtkButton*button,gpointer data){Role*r=data;if(r->widget && GTK_WIDGET(button)==r->button && gtk_widget_get_ancestor(GTK_WIDGET(button),GTK_TYPE_POPOVER)==r->widget){emit(record("popover-button-clicked",r));close_role(r);}}
+int main(void){
+ GtkWidget popup={NULL},foreign={NULL},area={&popup},staleArea={&popup},button={&popup},staleButton={&popup};cairo_t cr={0};Role r={&popup,&area,&button};
+ draw_popup(&staleArea,&cr,64,40,&r);assert(emitted==0&&painted==0);
+ area.ancestor=&foreign;draw_popup(&area,&cr,64,40,&r);assert(emitted==0&&painted==0);area.ancestor=&popup;
+ r.widget=NULL;draw_popup(&area,&cr,64,40,&r);assert(emitted==0&&painted==0);r.widget=&popup;
+ draw_popup(&area,&cr,64,40,&r);assert(emitted==1&&painted==1&&filled==1&&rectangles==1);
+ popover_clicked(&staleButton,&r);assert(emitted==1&&closed==0&&r.widget==&popup);
+ button.ancestor=&foreign;popover_clicked(&button,&r);assert(emitted==1&&closed==0);button.ancestor=&popup;
+ popover_clicked(&button,&r);assert(emitted==2&&closed==1&&!r.widget&&!r.landmark&&!r.button);
+ draw_popup(&area,&cr,64,40,&r);popover_clicked(&button,&r);assert(emitted==2&&closed==1&&painted==1);
+ r.widget=&foreign;r.landmark=&staleArea;r.button=&staleButton;draw_popup(&area,&cr,64,40,&r);popover_clicked(&button,&r);assert(emitted==2&&closed==1&&painted==1);
+ return 0;}

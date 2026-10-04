@@ -1,0 +1,37 @@
+#include "commands.hpp"
+int main(void){Command c;
+if(parseCommand("1 create-owners",&c) != true)return 1;
+if(parseCommand("1 open-modal",&c) != true)return 2;
+if(parseCommand("1 close-modal",&c) != true)return 3;
+if(parseCommand("1 close-owner",&c) != true)return 4;
+if(parseCommand("1 create-family",&c) != true)return 5;
+if(parseCommand("2 open-nested",&c) != true)return 6;
+if(parseCommand("3 close-nested",&c) != true)return 7;
+if(parseCommand("4 open-popup",&c) != true)return 8;
+if(parseCommand("5 close-popup",&c) != true)return 9;
+if(parseCommand("6 inspect",&c) != true)return 10;
+if(parseCommand("7 quit",&c) != true)return 11;
+if(parseCommand("8 minimize A",&c) != true)return 12;
+if(parseCommand("9 restore C",&c) != true)return 13;
+if(parseCommand("10 maximize A",&c) != true)return 14;
+if(parseCommand("11 unmaximize C",&c) != true)return 15;
+if(parseCommand("9223372036854775807 inspect",&c) != true)return 16;
+if(parseCommand("",&c) != false)return 17;
+if(parseCommand("0 inspect",&c) != false)return 18;
+if(parseCommand("01 inspect",&c) != false)return 19;
+if(parseCommand("-1 inspect",&c) != false)return 20;
+if(parseCommand("+1 inspect",&c) != false)return 21;
+if(parseCommand("1.0 inspect",&c) != false)return 22;
+if(parseCommand("true inspect",&c) != false)return 23;
+if(parseCommand("9223372036854775808 inspect",&c) != false)return 24;
+if(parseCommand("99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 inspect",&c) != false)return 25;
+if(parseCommand("1 unknown",&c) != false)return 26;
+if(parseCommand("1 minimize",&c) != false)return 27;
+if(parseCommand("1 minimize B",&c) != false)return 28;
+if(parseCommand("1 minimize AA",&c) != false)return 29;
+if(parseCommand("1 inspect A",&c) != false)return 30;
+if(parseCommand("1 quit extra extra",&c) != false)return 31;
+if(parseCommand("1 inspect extra",&c) != false)return 32;
+if(parseCommand("1 maximize C extra",&c) != false)return 33;
+if(parseCommand("11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111",&c) != false)return 34;
+return 0;}

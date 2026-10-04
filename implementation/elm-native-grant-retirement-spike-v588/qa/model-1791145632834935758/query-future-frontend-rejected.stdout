@@ -1,0 +1,16 @@
+
+  registry
+    1) queryFutureFrontendTest failed after 1 test(s)
+
+  1 failed
+
+  1) queryFutureFrontendTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/model-1791145632834935758/query-future-frontend.qnt:35:77
+        35:   run queryFutureFrontendTest = init.then(hello(1)).then(hello(2)).then(all{assert(stateOf(s,s.a,s.af,s.b,2,true)==2 and stateOf(s,s.a,s.af,s.a,2,true)==2),s'=s})
+                                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xe5b3 --match=queryFutureFrontendTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 query-future-frontend.qnt

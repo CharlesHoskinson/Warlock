@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "gtk02Accepted": false,
+  "checks": [
+    {
+      "name": "elm-gtk-sibling-role-fixture-v253:held",
+      "passed": true
+    },
+    {
+      "name": "native/gtk-role-client.c:actual-held-source",
+      "passed": true
+    },
+    {
+      "name": "native/commands.h:actual-held-source",
+      "passed": true
+    },
+    {
+      "name": "elm-gtk-sibling-consumer-v257:held",
+      "passed": true
+    },
+    {
+      "name": "qa/actor.py:actual-held-source",
+      "passed": true
+    },
+    {
+      "name": "actual-four-operations-both-owners-and-refusal",
+      "passed": true
+    },
+    {
+      "name": "applied-wrong-max-api-rejected",
+      "passed": true,
+      "exit": -6
+    },
+    {
+      "name": "applied-wrong-owner-rejected",
+      "passed": true,
+      "exit": -6
+    }
+  ],
+  "sourceSHA256": "1289004c2557fd2f34effcce0f49536d513c5679a657221c79417e3592d1859e",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-role-fixture-v253/native/gtk-role-client.c": "cdd9ab65a39fbf68fb15fa6005df673199bd0c53b0c7d24d5e57e924d9f60866",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-role-fixture-v253/native/commands.h": "1a151c43895c9ed4edb676939c18bd9ddb488f1908914e5cb11edc60b98894fd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor.py": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5"
+  },
+  "compilerSHA256": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287"
+}

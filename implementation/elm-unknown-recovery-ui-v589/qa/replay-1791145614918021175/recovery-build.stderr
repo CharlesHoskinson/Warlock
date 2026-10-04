@@ -1,0 +1,13 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-recovery-ui-v589/native/recovery-presentation-test.c: In function ‘main’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-recovery-ui-v589/native/recovery-presentation-test.c:9:2: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+    9 |  if(argc!=2)return 2;JsonParser *parser=json_parser_new();if(!json_parser_load_from_file(parser,argv[1],NULL))return 2;JsonNode *frame=json_parser_get_root(parser);guint64 p=0,l=0;gboolean open=FALSE;
+      |  ^~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-recovery-ui-v589/native/recovery-presentation-test.c:9:22: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+    9 |  if(argc!=2)return 2;JsonParser *parser=json_parser_new();if(!json_parser_load_from_file(parser,argv[1],NULL))return 2;JsonNode *frame=json_parser_get_root(parser);guint64 p=0,l=0;gboolean open=FALSE;
+      |                      ^~~~~~~~~~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-recovery-ui-v589/native/recovery-presentation-test.c:4:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-recovery-ui-v589/native/surface.h: At top level:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-recovery-ui-v589/native/surface.h:51:17: error: ‘surface_admit’ defined but not used [-Werror=unused-function]
+   51 | static gboolean surface_admit(SurfaceGate *gate,JsonNode *frame,guint64 *pub,guint64 *lease,gboolean *open) {
+      |                 ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors

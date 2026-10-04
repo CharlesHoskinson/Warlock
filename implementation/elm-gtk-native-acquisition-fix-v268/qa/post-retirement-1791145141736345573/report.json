@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualPrivateBusOnly": true,
+  "checks": [
+    {
+      "name": "late-normal",
+      "passed": true,
+      "provisionalCount": 0,
+      "finalCount": 1,
+      "busExitCode": 0,
+      "case": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-1791145141736345573/late-normal",
+      "actualWrapper": {
+        "pid": 3434505,
+        "start": "11324548",
+        "pgid": 3434505,
+        "ppid": 3434504,
+        "uid": 1000
+      }
+    },
+    {
+      "name": "late-fallback",
+      "passed": true,
+      "provisionalCount": 0,
+      "finalCount": 1,
+      "busExitCode": 0,
+      "case": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-1791145141736345573/late-fallback",
+      "actualWrapper": {
+        "pid": 3434662,
+        "start": "11324590",
+        "pgid": 3434662,
+        "ppid": 3434660,
+        "uid": 1000
+      }
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/post-retirement-test.py": "ddb64c8e3ea81ac11f422fe53aebc7b75e9c4268f0e298ed01cba3097349a888",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/private_bus.py": "43ab529a0dcd9a5bf4bcbdaa8153b0de4912376e2bc377e5dcc34bb09edd6629",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/activation-supervisor.py": "c9817f2cd6469fde567dd19decf1356d70ffec34dc60f9feeac1ff022865ed7d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/owned_bus_host.py": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7"
+  }
+}

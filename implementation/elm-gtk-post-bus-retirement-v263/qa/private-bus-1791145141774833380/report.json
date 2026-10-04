@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualPrivateBusNoGUI": true,
+  "checks": [
+    {
+      "name": "real private daemon activated unchanged pinned command; authenticated connection PID/start/UID",
+      "passed": true,
+      "proof": {
+        "name": "org.elm.CPUActivation",
+        "owner": ":1.1",
+        "identity": {
+          "pid": 3434529,
+          "start": "11324558",
+          "pgid": 3434520,
+          "ppid": 3434520,
+          "uid": 1000
+        },
+        "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/private-bus-1791145141774833380/activation-journals/org.elm.CPUActivation/3434520-1791145141874916189.jsonl"
+      }
+    },
+    {
+      "name": "bus owner is not an activation child",
+      "passed": true
+    },
+    {
+      "name": "real SIGTERM handler exits0 and supervisor reaps actual wait status, cancellation remains explicit",
+      "passed": true,
+      "cleanup": [
+        {
+          "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/private-bus-1791145141774833380/activation-journals/org.elm.CPUActivation/3434520-1791145141874916189.jsonl",
+          "terminal": {
+            "sequence": 6,
+            "kind": "terminal",
+            "monotonic": 109408.066623419,
+            "childExitCode": 0,
+            "cancelled": true,
+            "fallback": false,
+            "allWaitStatuses": [
+              {
+                "identity": {
+                  "pid": 3434529,
+                  "start": "11324558",
+                  "pgid": 3434520,
+                  "ppid": 3434520,
+                  "uid": 1000
+                },
+                "exitCode": 0
+              }
+            ],
+            "liveDescendants": [],
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "owned private bus normal shutdown exit0",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/private-bus-test.py": "5e23cb9ca19685d30d725e09961da5266f662244c5489f1a572b38d597299df9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/private_bus.py": "43ab529a0dcd9a5bf4bcbdaa8153b0de4912376e2bc377e5dcc34bb09edd6629",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/activation-supervisor.py": "c9817f2cd6469fde567dd19decf1356d70ffec34dc60f9feeac1ff022865ed7d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/activation_import.py": "c02cc84c1faf318133fe561ded6c16c0e85d09ab341d3b99e04d791bef96eae0",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/usr/share/dbus-1/session.conf": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1"
+  }
+}

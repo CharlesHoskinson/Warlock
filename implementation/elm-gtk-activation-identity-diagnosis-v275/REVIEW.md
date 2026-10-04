@@ -1,0 +1,9 @@
+# Actual activation identity failure
+
+All 27 recorded native diagnostic checks passed, including unchanged-lastCommit A/C pixel capture and fixture/client/plugin retirement. The attempt remains failed because final activation cleanup rejected truthful evidence.
+
+Documents' primary exited0; its supervisor then raised foreign UID. The exact failing child PID/start/UID and executable were not journaled, so this packet cannot attribute it to fusermount. The installed fusermount3 is root-owned4755, a plausible privileged-helper explanation only. The initial actual same-UID nondumpable hypothesis did not reproduce a directory-owner mismatch and its failed assertion is preserved. A separate owned fusermount3 --version control examines kernel pending-exit credentials before exact reap; it does not establish the identity of Documents' omitted child. Actual credential-sensitive acquisition must preserve real/effective/saved/filesystem UID distinctions and fail safely on unavailable identity; it must never blanket permit root helpers or skip cross-UID checks.
+
+Two separate systemd1 activation descriptors invoke /bin/false and exited1. GVfs' secondary child received SIGTERM then exited with normal status15, distinct from a signal termination -15. These are further current-policy cleanup failures, even after Documents is corrected. Exact installed producer/descriptor, causal shutdown and actual wait statuses need explicit requirements and independently tested classification before any bounded exception; no arbitrary service/status whitelist is proposed.
+
+The final snapshot stopped at Documents, but every raw journal is independently enumerated here. Empty remaining census/runtimeGone establishes teardown only. Full GTK01–08 and current-tuple adoption remain open. No GUI or source correction is performed.

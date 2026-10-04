@@ -1,0 +1,72 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualPrivateBusNoGUI": true,
+  "checks": [
+    {
+      "name": "real private daemon activated unchanged pinned command; authenticated connection PID/start/UID",
+      "passed": true,
+      "proof": {
+        "name": "org.elm.CPUActivation",
+        "owner": ":1.1",
+        "identity": {
+          "pid": 3318889,
+          "start": "11152093",
+          "pgid": 3318888,
+          "ppid": 3318888,
+          "uid": 1000
+        },
+        "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791143417182666305/activation-journals/org.elm.CPUActivation/3318888-1791143417222593845.jsonl"
+      }
+    },
+    {
+      "name": "bus owner is not an activation child",
+      "passed": true
+    },
+    {
+      "name": "real SIGTERM handler exits0 and supervisor reaps actual wait status, cancellation remains explicit",
+      "passed": true,
+      "cleanup": [
+        {
+          "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791143417182666305/activation-journals/org.elm.CPUActivation/3318888-1791143417222593845.jsonl",
+          "terminal": {
+            "sequence": 6,
+            "kind": "terminal",
+            "monotonic": 107683.238615407,
+            "childExitCode": 0,
+            "cancelled": true,
+            "fallback": false,
+            "allWaitStatuses": [
+              {
+                "identity": {
+                  "pid": 3318889,
+                  "start": "11152093",
+                  "pgid": 3318888,
+                  "ppid": 3318888,
+                  "uid": 1000
+                },
+                "exitCode": 0
+              }
+            ],
+            "liveDescendants": [],
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "owned private bus normal shutdown exit0",
+      "passed": true
+    }
+  ],
+  "cleanupError": "GLib.Error('The connection is closed', 'g-io-error-quark', 18)",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-test.py": "17d528dd54204f005407e3b39ee06179cbfde402c5050ced02f8d690cd3869a0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private_bus.py": "af4f1877cddf9c598336db1a9a6a9a182208d336352095bbf53f76fe5c5c7ada",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation-supervisor.py": "77c4ad156fd5104553fec8b49e4acc299335c36866e59d4de2578b49522972b0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/activation_import.py": "c02cc84c1faf318133fe561ded6c16c0e85d09ab341d3b99e04d791bef96eae0",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/usr/share/dbus-1/session.conf": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1"
+  }
+}

@@ -1,0 +1,8 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 109706.948069509, "identity": {"pid": 3455918, "start": "11354468", "pgid": 3455918, "ppid": 3455917, "uid": 1000}, "argv": ["/usr/lib/xdg-document-portal"], "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.portal.Documents.json", "descriptorSHA256": "4fe1dead3d24f44a2522b0932053aa4b50713693391a8e337cc58bcbfa367933"}
+{"sequence": 2, "kind": "owned-child", "monotonic": 109706.94849091, "identity": {"pid": 3455919, "start": "11354472", "pgid": 3455918, "ppid": 3455918, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 109707.955493877}
+{"sequence": 4, "kind": "signal", "monotonic": 109707.955578563, "identity": {"pid": 3455919, "start": "11354472", "pgid": 3455918, "ppid": 3455918, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "child-exit", "monotonic": 109707.990028252, "identity": {"pid": 3455919, "start": "11354472", "pgid": 3455918, "ppid": 3455918, "uid": 1000}, "waitStatus": 0, "exitCode": 0}
+{"sequence": 6, "kind": "unobserved-child-exit", "monotonic": 109707.990074501, "pid": 3455925, "status": 0}
+{"sequence": 7, "kind": "supervisor-failure", "monotonic": 109707.990090486, "error": "RuntimeError('missing unique PID/start before reap')"}
+{"sequence": 8, "kind": "terminal", "monotonic": 109708.010763438, "childExitCode": 0, "cancelled": true, "fallback": false, "allWaitStatuses": [{"identity": {"pid": 3455919, "start": "11354472", "pgid": 3455918, "ppid": 3455918, "uid": 1000}, "exitCode": 0}], "liveDescendants": [], "error": "RuntimeError('missing unique PID/start before reap')"}

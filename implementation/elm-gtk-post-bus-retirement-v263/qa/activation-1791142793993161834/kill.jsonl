@@ -1,0 +1,7 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 107060.591059449, "identity": {"pid": 3276117, "start": "11089831", "pgid": 3276117, "ppid": 3276016, "uid": 1000}, "argv": ["/usr/bin/python3", "-c", "import signal,time;signal.signal(signal.SIGTERM,signal.SIG_IGN);time.sleep(30)"]}
+{"sequence": 2, "kind": "owned-child", "monotonic": 107060.619155642, "identity": {"pid": 3276118, "start": "11089836", "pgid": 3276117, "ppid": 3276117, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 107060.682710869}
+{"sequence": 4, "kind": "signal", "monotonic": 107060.682896083, "identity": {"pid": 3276118, "start": "11089836", "pgid": 3276117, "ppid": 3276117, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "signal", "monotonic": 107061.224554148, "identity": {"pid": 3276118, "start": "11089836", "pgid": 3276117, "ppid": 3276117, "uid": 1000}, "signal": 9}
+{"sequence": 6, "kind": "child-exit", "monotonic": 107061.273025225, "identity": {"pid": 3276118, "start": "11089836", "pgid": 3276117, "ppid": 3276117, "uid": 1000}, "waitStatus": 9, "exitCode": -9}
+{"sequence": 7, "kind": "terminal", "monotonic": 107061.273111071, "childExitCode": -9, "cancelled": true, "fallback": true, "allWaitStatuses": {"3276118": -9}, "liveDescendants": []}

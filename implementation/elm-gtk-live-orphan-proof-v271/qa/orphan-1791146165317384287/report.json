@@ -1,0 +1,906 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "sourceSHA256": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba",
+  "observedSource": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-supervisor.py",
+  "cases": [
+    {
+      "case": 0,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110431.419973566,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506285,
+              "start": "11426905",
+              "pgid": 3506284,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506286,
+              "start": "11426907",
+              "pgid": 3506284,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506287,
+              "start": "11426907",
+              "pgid": 3506287,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506288,
+              "start": "11426907",
+              "pgid": 3506284,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506289,
+              "start": "11426907",
+              "pgid": 3506289,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506290,
+              "start": "11426907",
+              "pgid": 3506284,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506291,
+              "start": "11426907",
+              "pgid": 3506291,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506292,
+              "start": "11426907",
+              "pgid": 3506284,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506293,
+              "start": "11426907",
+              "pgid": 3506293,
+              "ppid": 3506284,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    },
+    {
+      "case": 1,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110431.64947717,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506296,
+              "start": "11426927",
+              "pgid": 3506295,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506297,
+              "start": "11426928",
+              "pgid": 3506295,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506298,
+              "start": "11426928",
+              "pgid": 3506298,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506299,
+              "start": "11426928",
+              "pgid": 3506295,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506300,
+              "start": "11426929",
+              "pgid": 3506300,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506301,
+              "start": "11426929",
+              "pgid": 3506295,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506302,
+              "start": "11426929",
+              "pgid": 3506302,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506303,
+              "start": "11426929",
+              "pgid": 3506295,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506304,
+              "start": "11426929",
+              "pgid": 3506304,
+              "ppid": 3506295,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    },
+    {
+      "case": 2,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110431.846662181,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506307,
+              "start": "11426949",
+              "pgid": 3506306,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506308,
+              "start": "11426951",
+              "pgid": 3506306,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506309,
+              "start": "11426951",
+              "pgid": 3506309,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506310,
+              "start": "11426951",
+              "pgid": 3506306,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506311,
+              "start": "11426951",
+              "pgid": 3506311,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506312,
+              "start": "11426951",
+              "pgid": 3506306,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506313,
+              "start": "11426951",
+              "pgid": 3506313,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506314,
+              "start": "11426951",
+              "pgid": 3506306,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506315,
+              "start": "11426951",
+              "pgid": 3506315,
+              "ppid": 3506306,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    },
+    {
+      "case": 3,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110432.070496063,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506319,
+              "start": "11426970",
+              "pgid": 3506316,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506320,
+              "start": "11426972",
+              "pgid": 3506316,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506321,
+              "start": "11426972",
+              "pgid": 3506321,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506322,
+              "start": "11426972",
+              "pgid": 3506316,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506323,
+              "start": "11426972",
+              "pgid": 3506323,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506324,
+              "start": "11426972",
+              "pgid": 3506316,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506325,
+              "start": "11426973",
+              "pgid": 3506325,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506326,
+              "start": "11426973",
+              "pgid": 3506316,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506327,
+              "start": "11426973",
+              "pgid": 3506327,
+              "ppid": 3506316,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    },
+    {
+      "case": 4,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110432.292020849,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506329,
+              "start": "11426992",
+              "pgid": 3506328,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506330,
+              "start": "11426993",
+              "pgid": 3506328,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506331,
+              "start": "11426993",
+              "pgid": 3506331,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506332,
+              "start": "11426993",
+              "pgid": 3506328,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506333,
+              "start": "11426993",
+              "pgid": 3506333,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506334,
+              "start": "11426993",
+              "pgid": 3506328,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506335,
+              "start": "11426994",
+              "pgid": 3506335,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506336,
+              "start": "11426994",
+              "pgid": 3506328,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506337,
+              "start": "11426994",
+              "pgid": 3506337,
+              "ppid": 3506328,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    },
+    {
+      "case": 5,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110432.508170089,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506339,
+              "start": "11427013",
+              "pgid": 3506338,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506340,
+              "start": "11427015",
+              "pgid": 3506338,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506341,
+              "start": "11427015",
+              "pgid": 3506341,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506342,
+              "start": "11427015",
+              "pgid": 3506338,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506343,
+              "start": "11427015",
+              "pgid": 3506343,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506344,
+              "start": "11427015",
+              "pgid": 3506338,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506345,
+              "start": "11427016",
+              "pgid": 3506345,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506346,
+              "start": "11427016",
+              "pgid": 3506338,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506347,
+              "start": "11427016",
+              "pgid": 3506347,
+              "ppid": 3506338,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    },
+    {
+      "case": 6,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110432.742718846,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506360,
+              "start": "11427035",
+              "pgid": 3506359,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506361,
+              "start": "11427037",
+              "pgid": 3506359,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506362,
+              "start": "11427037",
+              "pgid": 3506362,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506363,
+              "start": "11427037",
+              "pgid": 3506359,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506364,
+              "start": "11427037",
+              "pgid": 3506364,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506365,
+              "start": "11427038",
+              "pgid": 3506359,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506367,
+              "start": "11427038",
+              "pgid": 3506367,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506368,
+              "start": "11427038",
+              "pgid": 3506359,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506369,
+              "start": "11427038",
+              "pgid": 3506369,
+              "ppid": 3506359,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    },
+    {
+      "case": 7,
+      "passed": true,
+      "cleanupSignals": [],
+      "supervisorExitCode": 0,
+      "terminal": {
+        "sequence": 20,
+        "kind": "terminal",
+        "monotonic": 110432.965396876,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3506380,
+              "start": "11427057",
+              "pgid": 3506371,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506382,
+              "start": "11427059",
+              "pgid": 3506371,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506383,
+              "start": "11427059",
+              "pgid": 3506383,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506384,
+              "start": "11427060",
+              "pgid": 3506371,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506385,
+              "start": "11427060",
+              "pgid": 3506385,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506386,
+              "start": "11427060",
+              "pgid": 3506371,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506387,
+              "start": "11427060",
+              "pgid": 3506387,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506388,
+              "start": "11427060",
+              "pgid": 3506371,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3506389,
+              "start": "11427060",
+              "pgid": 3506389,
+              "ppid": 3506371,
+              "uid": 1000
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "recordedOrphans": 8,
+      "normalCompletionMarkers": 8,
+      "liveOrphans": [],
+      "runtimeGone": true
+    }
+  ],
+  "currentSourceUnchanged": true,
+  "actualOrphanExitRecords": 64
+}

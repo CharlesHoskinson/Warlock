@@ -1,0 +1,7 @@
+dbus-daemon[3304408]: [session uid=1000 pid=3304408 pidfd=4] Activating service name='org.elm.CPUActivation' requested by ':1.0' (uid=1000 pid=3304390 comm="python3 -B /home/hoskinson/omarchy-windows-parity/")
+dbus-daemon[3304408]: [session uid=1000 pid=3304408 pidfd=4] Successfully activated service 'org.elm.CPUActivation'
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791143187719862900/actual-service.py", line 8, in <module>
+    bus.close_sync(None)
+    ~~~~~~~~~~~~~~^^^^^^
+gi.repository.GLib.GError: g-io-error-quark: The connection is closed (18)

@@ -1,0 +1,22 @@
+{
+  "services": [
+    {
+      "name": "org.elm.CPUActivation",
+      "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791142956686246291/actual-service.py",
+      "sourceSHA256": "69feea8addf7878234d52622a12dc61676ac7a6c323afaba8e5d6efa5bc4c325",
+      "argv": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791142956686246291/actual-service.py"
+      ],
+      "binarySHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "descriptor": "/run/user/1000/wqa/6934/activations/org.elm.CPUActivation.json",
+      "descriptorSHA256": "b04d5b08464d203bce673c2c769fc064aff989bdc6a07f72ea5f93c15dd0d4bc",
+      "journalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/private-bus-1791142956686246291/activation-journals/org.elm.CPUActivation"
+    }
+  ],
+  "supervisorSHA256": "a151660a6a4c8e0c9c3d9618688e8237503fcd9237b0466042c4a8e050abb9e7",
+  "configurationSource": "/usr/share/dbus-1/session.conf",
+  "configurationSourceSHA256": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1",
+  "configurationSHA256": "e0f0e05a8fc91e05fda60968dccb1368e0c46e6308d8c5d11a7adbc2b2ba03d2"
+}

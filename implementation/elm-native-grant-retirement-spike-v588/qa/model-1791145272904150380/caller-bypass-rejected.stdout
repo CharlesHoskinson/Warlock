@@ -1,0 +1,16 @@
+
+  registry
+    1) foreignCallerTest failed after 1 test(s)
+
+  1 failed
+
+  1) foreignCallerTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-grant-retirement-spike-v588/qa/model-1791145272904150380/caller-bypass.qnt:27:103
+        27:   run foreignCallerTest = init.then(hello(1)).then(hello(2)).then(retire(0,0,s.b,s.bf,true)).then(all{assert(s.b == 2),s'=s})
+                                                                                                                  ^^^^^^^^^^^^^^^^
+    Use --seed=0xe5b3 --match=foreignCallerTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 caller-bypass.qnt

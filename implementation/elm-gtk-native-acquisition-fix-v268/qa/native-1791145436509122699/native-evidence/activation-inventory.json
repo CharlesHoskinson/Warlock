@@ -1,0 +1,440 @@
+{
+  "services": [
+    {
+      "name": "ca.desrt.dconf",
+      "source": "/usr/share/dbus-1/services/ca.desrt.dconf.service",
+      "sourceSHA256": "513246fc29f901c79aec6a9b269169e4a2787ea06031b09fb85223c681c5fc21",
+      "argv": [
+        "/usr/lib/dconf-service"
+      ],
+      "binarySHA256": "39edf9901121e60b013f89b4507a5e1558812c70ded6f2d0ee1c92ac79ae174f",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/ca.desrt.dconf.json",
+      "descriptorSHA256": "eb849c8f7e178bfc7ae65ace76d89f7970bd25e73c7aab38ceda077e19bc9c09",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/ca.desrt.dconf"
+    },
+    {
+      "name": "org.a11y.Bus",
+      "source": "/usr/share/dbus-1/services/org.a11y.Bus.service",
+      "sourceSHA256": "bf4179e447da6e1e3de9c351a16e0f82a8fc40524136b2c0c4b1f973fae5620b",
+      "argv": [
+        "/usr/lib/at-spi-bus-launcher"
+      ],
+      "binarySHA256": "6d6d3a93ecebf75f9233a872b4a5ef80d919048cc75623fd1b9737db06661e6f",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.a11y.Bus.json",
+      "descriptorSHA256": "259be3d073abbb2a3c43e0699be8ba15e2b0fc797e64f419320c888d582322be",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.a11y.Bus"
+    },
+    {
+      "name": "org.fcitx.Fcitx5",
+      "source": "/usr/share/dbus-1/services/org.fcitx.Fcitx5.service",
+      "sourceSHA256": "726f3c4085fcde413cce16bf6c345e8b61a096afb78070f26f1817b11c155ffd",
+      "argv": [
+        "/usr/bin/fcitx5"
+      ],
+      "binarySHA256": "2fee902f79e2277d89e6b71ac371f760d74fd946b712958e17333449608757bc",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.fcitx.Fcitx5.json",
+      "descriptorSHA256": "f48e8364965e8f10f16f0b1f3e06c8f57a3a500149bfa51a3b92f1461da56f44",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.fcitx.Fcitx5"
+    },
+    {
+      "name": "org.fedoraproject.Config.Printing",
+      "source": "/usr/share/dbus-1/services/org.fedoraproject.Config.Printing.service",
+      "sourceSHA256": "54d3d4d8abd7bcb186996bfb79dc4f05280be8d5d8b9912a5a9b15dde53c0dce",
+      "argv": [
+        "/usr/bin/scp-dbus-service"
+      ],
+      "binarySHA256": "7a48cba47432dafe807f1927b519fa60de383d2faa3b6d67c30ffd7cb695dfeb",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.fedoraproject.Config.Printing.json",
+      "descriptorSHA256": "89df8217d3c4959b2f89dc9c13a04335d7318fffcde49abd214972cc7e287032",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.fedoraproject.Config.Printing"
+    },
+    {
+      "name": "org.freedesktop.FileManager1",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.FileManager1.service",
+      "sourceSHA256": "e83ecf9832482c7788c874b645310445f042f0f3a62846890b3da5719640b043",
+      "argv": [
+        "/usr/bin/nautilus",
+        "--gapplication-service"
+      ],
+      "binarySHA256": "d91c63aed2a98ee39d6c404f5f5555211039ef4c68f06c98bb47451479fe54dc",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.FileManager1.json",
+      "descriptorSHA256": "4fe4b3ffb2a988f2208b730c712b6d50eea5b9b9e9588e0813e71c9691191d5e",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.FileManager1"
+    },
+    {
+      "name": "org.freedesktop.LocalSearch3",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.LocalSearch3.service",
+      "sourceSHA256": "f83641f2b58b35edf4552c43d293dc71136f3c8ed877f42852426b1d76d05c69",
+      "argv": [
+        "/usr/lib/localsearch-3"
+      ],
+      "binarySHA256": "f109ab1f8683dd8260598c10111c62e3459f00e2767080f1c417d98cf9ac9bc0",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.LocalSearch3.json",
+      "descriptorSHA256": "071566734dec3ee7bf7081992ac9b8cee915ced1c5bdc0eaa2c0c44194ed1494",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.LocalSearch3"
+    },
+    {
+      "name": "org.freedesktop.LocalSearch3.Control",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.LocalSearch3.Control.service",
+      "sourceSHA256": "4d2aee7442fd51655a33dff2d5f1a1ec6c4bf2be9cf8fe08f8370b401a906589",
+      "argv": [
+        "/usr/lib/localsearch-control-3"
+      ],
+      "binarySHA256": "214be378ca264133793b2273f7f6183d5f6e94a3784f4150b90a149165136a84",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.LocalSearch3.Control.json",
+      "descriptorSHA256": "d9a1d532cb5188130361dfb7ff61316f4e08ea4085efea98fe617b38b94840da",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.LocalSearch3.Control"
+    },
+    {
+      "name": "org.freedesktop.LocalSearch3.Writeback",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.LocalSearch3.Writeback.service",
+      "sourceSHA256": "e9c8633c0bfe9b78cee8596e16c9f287ff39e1aa57adf0b5410918a1c17e83ed",
+      "argv": [
+        "/usr/lib/localsearch-writeback-3"
+      ],
+      "binarySHA256": "5b3433001142447d9aeb38ce46b6bf07ee325109c78f898a093a1a6cdd65d19e",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.LocalSearch3.Writeback.json",
+      "descriptorSHA256": "9ef4eabead70460edd7484d71f1b1c2e97f717f0622dede22c841383c56d2631",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.LocalSearch3.Writeback"
+    },
+    {
+      "name": "org.freedesktop.Tracker3.Miner.Files",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.Tracker3.Miner.Files.service",
+      "sourceSHA256": "8332194dfc8d846b271d5d69e3c1ac0b3fd6c665f01757f80ed0af90f9fc40ec",
+      "argv": [
+        "/usr/lib/localsearch-3"
+      ],
+      "binarySHA256": "f109ab1f8683dd8260598c10111c62e3459f00e2767080f1c417d98cf9ac9bc0",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.Tracker3.Miner.Files.json",
+      "descriptorSHA256": "071566734dec3ee7bf7081992ac9b8cee915ced1c5bdc0eaa2c0c44194ed1494",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.Tracker3.Miner.Files"
+    },
+    {
+      "name": "org.freedesktop.Tracker3.Miner.Files.Control",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.Tracker3.Miner.Files.Control.service",
+      "sourceSHA256": "65b53ea7b4148f1832297fc19ce6acdf0bbea4186b295181c679025fbeff955e",
+      "argv": [
+        "/usr/lib/localsearch-control-3"
+      ],
+      "binarySHA256": "214be378ca264133793b2273f7f6183d5f6e94a3784f4150b90a149165136a84",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.Tracker3.Miner.Files.Control.json",
+      "descriptorSHA256": "d9a1d532cb5188130361dfb7ff61316f4e08ea4085efea98fe617b38b94840da",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.Tracker3.Miner.Files.Control"
+    },
+    {
+      "name": "org.freedesktop.Tracker3.Writeback",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.Tracker3.Writeback.service",
+      "sourceSHA256": "313b694d754ba3b60555653da909a37bf56edd96e223f449630693ab066d3c36",
+      "argv": [
+        "/usr/lib/localsearch-writeback-3"
+      ],
+      "binarySHA256": "5b3433001142447d9aeb38ce46b6bf07ee325109c78f898a093a1a6cdd65d19e",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.Tracker3.Writeback.json",
+      "descriptorSHA256": "9ef4eabead70460edd7484d71f1b1c2e97f717f0622dede22c841383c56d2631",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.Tracker3.Writeback"
+    },
+    {
+      "name": "org.freedesktop.impl.portal.PermissionStore",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.impl.portal.PermissionStore.service",
+      "sourceSHA256": "5060e4115876d5fbbf4916ab28bc85e3c4b0524726efe3464ed3dbd7ef219a77",
+      "argv": [
+        "/usr/lib/xdg-permission-store"
+      ],
+      "binarySHA256": "da7b1448633832d8f6950413830156cdf9c141d3c4305f64f7d6bb99c85f8f05",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.impl.portal.PermissionStore.json",
+      "descriptorSHA256": "7ac3f0d1fbb4b616b52824eab69bfa869f3d3ae309648c3338cbcddee2ec21eb",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.impl.portal.PermissionStore"
+    },
+    {
+      "name": "org.freedesktop.impl.portal.Secret",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.impl.portal.Secret.service",
+      "sourceSHA256": "efba819b0727e835cbe8820533b68ff0e80149a0c70195a0138802a0e2ee8233",
+      "argv": [
+        "/usr/bin/gnome-keyring-daemon",
+        "--start",
+        "--foreground",
+        "--components=secrets"
+      ],
+      "binarySHA256": "fea5b23bf3e9922599ecb3cd26a4084f334dbca6dad42f335ad1e1e2208f874b",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.impl.portal.Secret.json",
+      "descriptorSHA256": "3818410070dd0c6458972bff2db5d9079651e53f14d17bf31bc3d25956c69e7c",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.impl.portal.Secret"
+    },
+    {
+      "name": "org.freedesktop.impl.portal.desktop.gtk",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.impl.portal.desktop.gtk.service",
+      "sourceSHA256": "0d09b9b9bf1495c336ad86d371a05004485246c8822c0260f3b5492ca6d201ac",
+      "argv": [
+        "/usr/lib/xdg-desktop-portal-gtk"
+      ],
+      "binarySHA256": "c83d323976af51277028ec06c54534534a080b5b01079cd9b03dc4f3043023a5",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.impl.portal.desktop.gtk.json",
+      "descriptorSHA256": "379c0f82926072f8fc8d66ed6d45f5f1ac44564ff5975a1997b321489aaaaaf5",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.impl.portal.desktop.gtk"
+    },
+    {
+      "name": "org.freedesktop.impl.portal.desktop.hyprland",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service",
+      "sourceSHA256": "3a76efd5fbb51ff8e92bfdaf187ad210b51cf011702cd116cd00b95ecde98d10",
+      "argv": [
+        "/usr/lib/xdg-desktop-portal-hyprland"
+      ],
+      "binarySHA256": "8ac95938a64ffe4a1924f52819475311eeda8aa1684f466d67a8602f635bd1bf",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.impl.portal.desktop.hyprland.json",
+      "descriptorSHA256": "da5a24cbdebd4d28538f3bb495d5e9cc0a93b3b01dee780070458cf49e06a81b",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.impl.portal.desktop.hyprland"
+    },
+    {
+      "name": "org.freedesktop.import1",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.import1.service",
+      "sourceSHA256": "266dce7606d9a1de898c1797ce2d5e23df07cd44c13fe3a43e0f8c31ff566916",
+      "argv": [
+        "/bin/false"
+      ],
+      "binarySHA256": "193f3dd1f3e79ccc77ce0d8a316431d04ae5c37ac36c1fc3a0f8baef38ebdaed",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.import1.json",
+      "descriptorSHA256": "61420104557b115c5296b4712e753e178a3936ef54daa1bf3a07c8bb4a1e9e4a",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.import1"
+    },
+    {
+      "name": "org.freedesktop.machine1",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.machine1.service",
+      "sourceSHA256": "df0c57ffa8e4456267d72b283f380fa8118a115dd9ee4a620bca6854db8b795f",
+      "argv": [
+        "/bin/false"
+      ],
+      "binarySHA256": "193f3dd1f3e79ccc77ce0d8a316431d04ae5c37ac36c1fc3a0f8baef38ebdaed",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.machine1.json",
+      "descriptorSHA256": "61420104557b115c5296b4712e753e178a3936ef54daa1bf3a07c8bb4a1e9e4a",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.machine1"
+    },
+    {
+      "name": "org.freedesktop.portable1",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.portable1.service",
+      "sourceSHA256": "6ca0984f33b9af55d85d662dcd107f86d2c1835c23df1fbd8c53b78f514d6780",
+      "argv": [
+        "/bin/false"
+      ],
+      "binarySHA256": "193f3dd1f3e79ccc77ce0d8a316431d04ae5c37ac36c1fc3a0f8baef38ebdaed",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.portable1.json",
+      "descriptorSHA256": "61420104557b115c5296b4712e753e178a3936ef54daa1bf3a07c8bb4a1e9e4a",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.portable1"
+    },
+    {
+      "name": "org.freedesktop.portal.Desktop",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.portal.Desktop.service",
+      "sourceSHA256": "14638c2f8c9b42e6d1d1556c390bbc8c1f85bdea8000ba5d90a6d05f59efb399",
+      "argv": [
+        "/usr/lib/xdg-desktop-portal"
+      ],
+      "binarySHA256": "e1429fbe1bf6c2203ba07f478b9e92e9221437b13a92eebafb0982748583a4f8",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.portal.Desktop.json",
+      "descriptorSHA256": "79655e2ac30ba97fb6cffe36f322342a40a3e71649bb1dabd7f3b7ca72b7d6bb",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.portal.Desktop"
+    },
+    {
+      "name": "org.freedesktop.portal.Documents",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.portal.Documents.service",
+      "sourceSHA256": "5be03b6510e8cd64a152fdadb250fd54061a1a82abf094b66d3ac48347308802",
+      "argv": [
+        "/usr/lib/xdg-document-portal"
+      ],
+      "binarySHA256": "2c34fb80339790bf5a23f56b268aaf009544f130879788023c913835a7cd2c87",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.portal.Documents.json",
+      "descriptorSHA256": "4fe1dead3d24f44a2522b0932053aa4b50713693391a8e337cc58bcbfa367933",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.portal.Documents"
+    },
+    {
+      "name": "org.freedesktop.portal.Tracker",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.portal.Tracker.service",
+      "sourceSHA256": "2f32974a54c3682c12fa291f02d8e14771d3cfd1fa0b76627f4029031b6600e2",
+      "argv": [
+        "/usr/lib/tinysparql-xdg-portal-3"
+      ],
+      "binarySHA256": "dc21e8627aadcd8572d2392f589beb13fe38acaf666db4a785f00a0946c45d6d",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.portal.Tracker.json",
+      "descriptorSHA256": "dfb5a1b4b8be2c183f69e319949d5ca7050a2ec874dabd28ec367f3e1073e781",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.portal.Tracker"
+    },
+    {
+      "name": "org.freedesktop.secrets",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.secrets.service",
+      "sourceSHA256": "4bdec486c779c615f16b8b68b7fc42ab84c85543978c979844a49895bf626743",
+      "argv": [
+        "/usr/bin/gnome-keyring-daemon",
+        "--start",
+        "--foreground",
+        "--components=secrets"
+      ],
+      "binarySHA256": "fea5b23bf3e9922599ecb3cd26a4084f334dbca6dad42f335ad1e1e2208f874b",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.secrets.json",
+      "descriptorSHA256": "3818410070dd0c6458972bff2db5d9079651e53f14d17bf31bc3d25956c69e7c",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.secrets"
+    },
+    {
+      "name": "org.freedesktop.systemd1",
+      "source": "/usr/share/dbus-1/services/org.freedesktop.systemd1.service",
+      "sourceSHA256": "eac6205bbfde5563ebdd74f9d420db2d19b1fd2fadc7bc47ae8d55845a8bb82d",
+      "argv": [
+        "/bin/false"
+      ],
+      "binarySHA256": "193f3dd1f3e79ccc77ce0d8a316431d04ae5c37ac36c1fc3a0f8baef38ebdaed",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.systemd1.json",
+      "descriptorSHA256": "61420104557b115c5296b4712e753e178a3936ef54daa1bf3a07c8bb4a1e9e4a",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.systemd1"
+    },
+    {
+      "name": "org.gnome.DiskUtility",
+      "source": "/usr/share/dbus-1/services/org.gnome.DiskUtility.service",
+      "sourceSHA256": "3c123451d82b82a26c6080c063e0ee1aebf2915ff1223b34ab80f63518ec0fc4",
+      "argv": [
+        "/usr/bin/gnome-disks",
+        "--gapplication-service"
+      ],
+      "binarySHA256": "15e438c19719bed9e26854dd1de31ed0aea0d57383b41df1f39abede2dd53ce8",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gnome.DiskUtility.json",
+      "descriptorSHA256": "7697a957d5e3f7c87fea2e68a4cdd027466afd6436e62113f520346de601776c",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gnome.DiskUtility"
+    },
+    {
+      "name": "org.gnome.Nautilus",
+      "source": "/usr/share/dbus-1/services/org.gnome.Nautilus.service",
+      "sourceSHA256": "92a30be3827fa4bbca82f353fbaf550e96c63a738fa1206ff507eba238df4f06",
+      "argv": [
+        "/usr/bin/nautilus",
+        "--gapplication-service"
+      ],
+      "binarySHA256": "d91c63aed2a98ee39d6c404f5f5555211039ef4c68f06c98bb47451479fe54dc",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gnome.Nautilus.json",
+      "descriptorSHA256": "4fe4b3ffb2a988f2208b730c712b6d50eea5b9b9e9588e0813e71c9691191d5e",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gnome.Nautilus"
+    },
+    {
+      "name": "org.gnome.NautilusPreviewer",
+      "source": "/usr/share/dbus-1/services/org.gnome.NautilusPreviewer.service",
+      "sourceSHA256": "a6c833fc5cf5c183a2269ed304e603bfa67aae40b96fb78f3b3bfc4f02c0ed4a",
+      "argv": [
+        "/usr/lib/org.gnome.NautilusPreviewer"
+      ],
+      "binarySHA256": "d416a51b2b94e1f734e45ec6de5f74e21e72ca6a211e4e73bd26517a0dfd2da6",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gnome.NautilusPreviewer.json",
+      "descriptorSHA256": "d857a9c17d234211267f3b5f77cc464f485aee274f5cb4d52df49ae455f1a00b",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gnome.NautilusPreviewer"
+    },
+    {
+      "name": "org.gnome.evince.Daemon",
+      "source": "/usr/share/dbus-1/services/org.gnome.evince.Daemon.service",
+      "sourceSHA256": "bc1bc54c6e9131e65818d54679142cd03327b7213a04d05af43fbd4d02804d6e",
+      "argv": [
+        "/usr/lib/evinced"
+      ],
+      "binarySHA256": "fffd6bf5ea5bfb77e5ee1459bf9cc68c444c139a679b86ff42d201d26c82c136",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gnome.evince.Daemon.json",
+      "descriptorSHA256": "4abaca0f15f19725a1b019f124369e31cdbdf81d213251ccb9f89398cd668970",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gnome.evince.Daemon"
+    },
+    {
+      "name": "org.gnome.keyring",
+      "source": "/usr/share/dbus-1/services/org.gnome.keyring.service",
+      "sourceSHA256": "9968790532b1b1acc9300ee11f164fe89bf8d6265026497ebd16409583316470",
+      "argv": [
+        "/usr/bin/gnome-keyring-daemon",
+        "--start",
+        "--foreground",
+        "--components=secrets"
+      ],
+      "binarySHA256": "fea5b23bf3e9922599ecb3cd26a4084f334dbca6dad42f335ad1e1e2208f874b",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gnome.keyring.json",
+      "descriptorSHA256": "3818410070dd0c6458972bff2db5d9079651e53f14d17bf31bc3d25956c69e7c",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gnome.keyring"
+    },
+    {
+      "name": "org.gnome.keyring.PrivatePrompter",
+      "source": "/usr/share/dbus-1/services/org.gnome.keyring.PrivatePrompter.service",
+      "sourceSHA256": "dafec20692e4c960b28f613eade35c5cdd66f35d9fe24d07c512b5aaa5bafa7f",
+      "argv": [
+        "/usr/lib/gcr-prompter"
+      ],
+      "binarySHA256": "eab26fca1bcc34f059504b41570b958f95f1e4455f2df53a967e6e5f466062db",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gnome.keyring.PrivatePrompter.json",
+      "descriptorSHA256": "41d47caf11129383112da68835619349e899db2e2e1cdbcb80d05bd374ada350",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gnome.keyring.PrivatePrompter"
+    },
+    {
+      "name": "org.gnome.keyring.SystemPrompter",
+      "source": "/usr/share/dbus-1/services/org.gnome.keyring.SystemPrompter.service",
+      "sourceSHA256": "9c8fd63e469882c93f977c2b4a2ccb6e1b83d30c45364c0166596edfe65a2833",
+      "argv": [
+        "/usr/lib/gcr-prompter"
+      ],
+      "binarySHA256": "eab26fca1bcc34f059504b41570b958f95f1e4455f2df53a967e6e5f466062db",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gnome.keyring.SystemPrompter.json",
+      "descriptorSHA256": "41d47caf11129383112da68835619349e899db2e2e1cdbcb80d05bd374ada350",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gnome.keyring.SystemPrompter"
+    },
+    {
+      "name": "org.gtk.GLib.PACRunner",
+      "source": "/usr/share/dbus-1/services/org.gtk.GLib.PACRunner.service",
+      "sourceSHA256": "1eb60a8399a757ac7e85bb65d9eaef9559cdbb5952784271aea73330fa8dccd3",
+      "argv": [
+        "/usr/lib/glib-pacrunner"
+      ],
+      "binarySHA256": "48cdd4f2fa74c4781839e02952bd40e7d008fc772a6ddd25854d4e17045b0490",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gtk.GLib.PACRunner.json",
+      "descriptorSHA256": "896c9bafdd302f6d0dc74ceb0fbfbffeaf3b0ab853816e68417377b04f470b3b",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gtk.GLib.PACRunner"
+    },
+    {
+      "name": "org.gtk.vfs.Daemon",
+      "source": "/usr/share/dbus-1/services/org.gtk.vfs.Daemon.service",
+      "sourceSHA256": "04b7b23e4f6b7681f99f92c5ff97e93ad963fad56e5e05ecfafd7d8e724804d4",
+      "argv": [
+        "/usr/lib/gvfsd"
+      ],
+      "binarySHA256": "7542d6dbcaef963f8012c8a8aa76982da708b626c74401f04490f93498617733",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gtk.vfs.Daemon.json",
+      "descriptorSHA256": "517a8fff7f3dd64cd051d7b788211f4fc9d42bcb91fc2e19e92b5871de015cac",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gtk.vfs.Daemon"
+    },
+    {
+      "name": "org.gtk.vfs.MTPVolumeMonitor",
+      "source": "/usr/share/dbus-1/services/org.gtk.vfs.MTPVolumeMonitor.service",
+      "sourceSHA256": "72f8bc64521e400039eaaeaed338a5eaf9b8f617fc6c44834e78d5d8a76beb99",
+      "argv": [
+        "/usr/lib/gvfs-mtp-volume-monitor"
+      ],
+      "binarySHA256": "f45c8127e9adf8dc07738f238bfcfe598c48466f42c460d239796f7be0925ae7",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gtk.vfs.MTPVolumeMonitor.json",
+      "descriptorSHA256": "c1dccfaa2472e4dc43fa9217aa2aac39dd609a242cf77ac62ea73f5769fc8953",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gtk.vfs.MTPVolumeMonitor"
+    },
+    {
+      "name": "org.gtk.vfs.Metadata",
+      "source": "/usr/share/dbus-1/services/org.gtk.vfs.Metadata.service",
+      "sourceSHA256": "913da7a8f4a665d3483607d07f34afd04d6435fe73525c24e8b17d715ef8758f",
+      "argv": [
+        "/usr/lib/gvfsd-metadata"
+      ],
+      "binarySHA256": "cd84dbefc579c17e7adaa5ce64dc5291b30717c8f54e5a6f0f454c26198ea5d7",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gtk.vfs.Metadata.json",
+      "descriptorSHA256": "86d762b76f0799159aa85253ac2aab17dc362fdb131b522b9536f9b93badf6c5",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gtk.vfs.Metadata"
+    },
+    {
+      "name": "org.gtk.vfs.UDisks2VolumeMonitor",
+      "source": "/usr/share/dbus-1/services/org.gtk.vfs.UDisks2VolumeMonitor.service",
+      "sourceSHA256": "24720e095207179b40e63a9a27724651ca0a182dd450f528c58be23974428757",
+      "argv": [
+        "/usr/lib/gvfs-udisks2-volume-monitor"
+      ],
+      "binarySHA256": "c0b28e9c646cb3b5ae3af63d41e65ad7ffc50d004e1c2c9d3c44af6f0a77be91",
+      "descriptor": "/run/user/1000/wqa/04d7/activations/org.gtk.vfs.UDisks2VolumeMonitor.json",
+      "descriptorSHA256": "ea983b97befd0eed444a029ec594c5229248731b55aa2322e8c52c79efa24ef7",
+      "journalDirectory": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gtk.vfs.UDisks2VolumeMonitor"
+    }
+  ],
+  "supervisorSHA256": "c9817f2cd6469fde567dd19decf1356d70ffec34dc60f9feeac1ff022865ed7d",
+  "configurationSource": "/usr/share/dbus-1/session.conf",
+  "configurationSourceSHA256": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1",
+  "configurationSHA256": "5d21e4ff75da2642bc81bd421231329146f19592582c5386147a1ee07bc5788d"
+}

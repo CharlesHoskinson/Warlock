@@ -1,0 +1,71 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualPrivateBusNoGUI": true,
+  "checks": [
+    {
+      "name": "real private daemon activated unchanged pinned command; authenticated connection PID/start/UID",
+      "passed": true,
+      "proof": {
+        "name": "org.elm.CPUActivation",
+        "owner": ":1.1",
+        "identity": {
+          "pid": 3519853,
+          "start": "11447246",
+          "pgid": 3519849,
+          "ppid": 3519849,
+          "uid": 1000
+        },
+        "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/private-bus-1791146368683119987/activation-journals/org.elm.CPUActivation/3519849-1791146368752430720.jsonl"
+      }
+    },
+    {
+      "name": "bus owner is not an activation child",
+      "passed": true
+    },
+    {
+      "name": "real SIGTERM handler exits0 and supervisor reaps actual wait status, cancellation remains explicit",
+      "passed": true,
+      "cleanup": [
+        {
+          "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/private-bus-1791146368683119987/activation-journals/org.elm.CPUActivation/3519849-1791146368752430720.jsonl",
+          "terminal": {
+            "sequence": 6,
+            "kind": "terminal",
+            "monotonic": 110634.872665552,
+            "childExitCode": 0,
+            "cancelled": true,
+            "fallback": false,
+            "allWaitStatuses": [
+              {
+                "identity": {
+                  "pid": 3519853,
+                  "start": "11447246",
+                  "pgid": 3519849,
+                  "ppid": 3519849,
+                  "uid": 1000
+                },
+                "exitCode": 0
+              }
+            ],
+            "liveDescendants": [],
+            "error": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "owned private bus normal shutdown exit0",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/private-bus-test.py": "5e23cb9ca19685d30d725e09961da5266f662244c5489f1a572b38d597299df9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/private_bus.py": "121e001cf0b0951a49769d6c70e82bd444dee0181383966c1d0e9d9157dbd67b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation-supervisor.py": "746628152ad3659a226cc1c043b1566e237ecf00fe93ea5f523af77b2f0ca8ba",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-native-acquisition-fix-v268/qa/activation_import.py": "c02cc84c1faf318133fe561ded6c16c0e85d09ab341d3b99e04d791bef96eae0",
+    "/usr/bin/dbus-daemon": "e9ffeaea83965fa53077f716e352d3038794200bacb8eee043fe55117ce2c7d7",
+    "/usr/bin/python3": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+    "/usr/share/dbus-1/session.conf": "206f009ddcf909422f3651c687b4623a5780fb7486c6d650e5332f57c00d6be1"
+  }
+}

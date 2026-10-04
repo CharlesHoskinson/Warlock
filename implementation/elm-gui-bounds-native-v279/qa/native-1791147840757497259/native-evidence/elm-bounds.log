@@ -1,0 +1,1061 @@
+[21:04:04.703489] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#2)
+[21:04:04.703524] {Default Queue}  -> wl_display#1.sync(new id wl_callback#3)
+[21:04:04.703702] {Display Queue} wl_display#1.delete_id(3)
+[21:04:04.703709] {Default Queue} wl_registry#2.global(1, "wl_seat", 9)
+[21:04:04.703715] {Default Queue} wl_registry#2.global(2, "wl_data_device_manager", 3)
+[21:04:04.703720] {Default Queue}  -> wl_registry#2.bind(2, "wl_data_device_manager", 3, new id [unknown]#4)
+[21:04:04.703724] {Default Queue} wl_registry#2.global(3, "wl_compositor", 6)
+[21:04:04.703728] {Default Queue}  -> wl_registry#2.bind(3, "wl_compositor", 3, new id [unknown]#5)
+[21:04:04.703732] {Default Queue} wl_registry#2.global(4, "wl_subcompositor", 1)
+[21:04:04.703735] {Default Queue}  -> wl_registry#2.bind(4, "wl_subcompositor", 1, new id [unknown]#6)
+[21:04:04.703739] {Default Queue} wl_registry#2.global(5, "wl_shm", 2)
+[21:04:04.703742] {Default Queue}  -> wl_registry#2.bind(5, "wl_shm", 1, new id [unknown]#7)
+[21:04:04.703745] {Default Queue} wl_registry#2.global(6, "wp_viewporter", 1)
+[21:04:04.703749] {Default Queue} wl_registry#2.global(7, "wp_tearing_control_manager_v1", 1)
+[21:04:04.703752] {Default Queue} wl_registry#2.global(8, "wp_fractional_scale_manager_v1", 1)
+[21:04:04.703756] {Default Queue} wl_registry#2.global(9, "zxdg_output_manager_v1", 3)
+[21:04:04.703759] {Default Queue}  -> wl_registry#2.bind(9, "zxdg_output_manager_v1", 3, new id [unknown]#8)
+[21:04:04.703763] {Default Queue}  -> wl_display#1.sync(new id wl_callback#9)
+[21:04:04.703766] {Default Queue} wl_registry#2.global(10, "wp_cursor_shape_manager_v1", 2)
+[21:04:04.703770] {Default Queue}  -> wl_registry#2.bind(10, "wp_cursor_shape_manager_v1", 1, new id [unknown]#10)
+[21:04:04.703773] {Default Queue} wl_registry#2.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[21:04:04.703776] {Default Queue} wl_registry#2.global(12, "zwp_relative_pointer_manager_v1", 1)
+[21:04:04.703779] {Default Queue} wl_registry#2.global(13, "zxdg_decoration_manager_v1", 2)
+[21:04:04.703782] {Default Queue} wl_registry#2.global(14, "wp_alpha_modifier_v1", 1)
+[21:04:04.703785] {Default Queue} wl_registry#2.global(15, "zwlr_gamma_control_manager_v1", 1)
+[21:04:04.703788] {Default Queue} wl_registry#2.global(16, "ext_foreign_toplevel_list_v1", 1)
+[21:04:04.703794] {Default Queue} wl_registry#2.global(17, "zwp_pointer_gestures_v1", 3)
+[21:04:04.703798] {Default Queue}  -> wl_registry#2.bind(17, "zwp_pointer_gestures_v1", 1, new id [unknown]#11)
+[21:04:04.703801] {Default Queue} wl_registry#2.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[21:04:04.703804] {Default Queue} wl_registry#2.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[21:04:04.703808] {Default Queue}  -> wl_registry#2.bind(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1, new id [unknown]#12)
+[21:04:04.703813] {Default Queue} wl_registry#2.global(20, "zwp_text_input_manager_v1", 1)
+[21:04:04.703816] {Default Queue} wl_registry#2.global(21, "zwp_text_input_manager_v3", 1)
+[21:04:04.703819] {Default Queue} wl_registry#2.global(22, "zwp_pointer_constraints_v1", 1)
+[21:04:04.703822] {Default Queue} wl_registry#2.global(23, "zwlr_output_power_manager_v1", 1)
+[21:04:04.703825] {Default Queue} wl_registry#2.global(24, "xdg_activation_v1", 1)
+[21:04:04.703828] {Default Queue}  -> wl_registry#2.bind(24, "xdg_activation_v1", 1, new id [unknown]#13)
+[21:04:04.703832] {Default Queue} wl_registry#2.global(25, "ext_idle_notifier_v1", 2)
+[21:04:04.703835] {Default Queue} wl_registry#2.global(26, "hyprland_lock_notifier_v1", 1)
+[21:04:04.703838] {Default Queue} wl_registry#2.global(27, "ext_session_lock_manager_v1", 1)
+[21:04:04.703841] {Default Queue} wl_registry#2.global(28, "zwp_input_method_manager_v2", 1)
+[21:04:04.703845] {Default Queue} wl_registry#2.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[21:04:04.703848] {Default Queue} wl_registry#2.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[21:04:04.703852] {Default Queue} wl_registry#2.global(31, "zwlr_output_manager_v1", 4)
+[21:04:04.703856] {Default Queue} wl_registry#2.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[21:04:04.703865] {Default Queue}  -> wl_registry#2.bind(32, "org_kde_kwin_server_decoration_manager", 1, new id [unknown]#14)
+[21:04:04.703874] {Default Queue} wl_registry#2.global(33, "hyprland_focus_grab_manager_v1", 1)
+[21:04:04.703877] {Default Queue} wl_registry#2.global(34, "zwp_tablet_manager_v2", 1)
+[21:04:04.703881] {Default Queue}  -> wl_registry#2.bind(34, "zwp_tablet_manager_v2", 1, new id [unknown]#15)
+[21:04:04.703884] {Default Queue} wl_registry#2.global(35, "zwlr_layer_shell_v1", 5)
+[21:04:04.703887] {Default Queue} wl_registry#2.global(36, "wp_presentation", 2)
+[21:04:04.703890] {Default Queue} wl_registry#2.global(37, "xdg_wm_base", 7)
+[21:04:04.703893] {Default Queue} wl_registry#2.global(38, "zwlr_data_control_manager_v1", 2)
+[21:04:04.703896] {Default Queue} wl_registry#2.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[21:04:04.703899] {Default Queue}  -> wl_registry#2.bind(39, "zwp_primary_selection_device_manager_v1", 1, new id [unknown]#16)
+[21:04:04.703901] {Default Queue} wl_registry#2.global(40, "xwayland_shell_v1", 1)
+[21:04:04.703905] {Default Queue} wl_registry#2.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[21:04:04.703908] {Default Queue} wl_registry#2.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[21:04:04.703911] {Default Queue} wl_registry#2.global(43, "xdg_wm_dialog_v1", 1)
+[21:04:04.703914] {Default Queue} wl_registry#2.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[21:04:04.703917] {Default Queue} wl_registry#2.global(45, "wp_security_context_manager_v1", 1)
+[21:04:04.703920] {Default Queue} wl_registry#2.global(46, "hyprland_ctm_control_manager_v1", 2)
+[21:04:04.703923] {Default Queue} wl_registry#2.global(47, "hyprland_input_capture_manager_v1", 1)
+[21:04:04.703926] {Default Queue} wl_registry#2.global(48, "hyprland_surface_manager_v1", 2)
+[21:04:04.703929] {Default Queue} wl_registry#2.global(49, "wp_content_type_manager_v1", 1)
+[21:04:04.703933] {Default Queue} wl_registry#2.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[21:04:04.703936] {Default Queue} wl_registry#2.global(51, "xdg_system_bell_v1", 1)
+[21:04:04.703939] {Default Queue} wl_registry#2.global(52, "vicinae_hotkey_manager_v1", 1)
+[21:04:04.703942] {Default Queue} wl_registry#2.global(53, "ext_workspace_manager_v1", 1)
+[21:04:04.703945] {Default Queue} wl_registry#2.global(54, "ext_data_control_manager_v1", 1)
+[21:04:04.703948] {Default Queue} wl_registry#2.global(55, "wp_pointer_warp_v1", 1)
+[21:04:04.703951] {Default Queue} wl_registry#2.global(56, "wp_fifo_manager_v1", 1)
+[21:04:04.703954] {Default Queue} wl_registry#2.global(57, "zxdg_exporter_v2", 1)
+[21:04:04.703957] {Default Queue}  -> wl_registry#2.bind(57, "zxdg_exporter_v2", 1, new id [unknown]#17)
+[21:04:04.703959] {Default Queue} wl_registry#2.global(58, "zxdg_importer_v2", 1)
+[21:04:04.703962] {Default Queue}  -> wl_registry#2.bind(58, "zxdg_importer_v2", 1, new id [unknown]#18)
+[21:04:04.703967] {Default Queue} wl_registry#2.global(59, "ext_background_effect_manager_v1", 1)
+[21:04:04.703971] {Default Queue} wl_registry#2.global(60, "wp_commit_timing_manager_v1", 1)
+[21:04:04.703975] {Default Queue} wl_registry#2.global(61, "zwlr_screencopy_manager_v1", 3)
+[21:04:04.703979] {Default Queue} wl_registry#2.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[21:04:04.703982] {Default Queue} wl_registry#2.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[21:04:04.703985] {Default Queue} wl_registry#2.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[21:04:04.703989] {Default Queue} wl_registry#2.global(65, "ext_image_copy_capture_manager_v1", 1)
+[21:04:04.703992] {Default Queue} wl_registry#2.global(66, "wp_color_manager_v1", 3)
+[21:04:04.703995] {Default Queue} wl_registry#2.global(67, "wl_drm", 2)
+[21:04:04.703998] {Default Queue} wl_registry#2.global(68, "zwp_linux_dmabuf_v1", 5)
+[21:04:04.704001] {Default Queue} wl_registry#2.global(69, "wl_output", 4)
+[21:04:04.704005] {Default Queue}  -> wl_registry#2.bind(69, "wl_output", 2, new id [unknown]#19)
+[21:04:04.704045] {Default Queue}  -> zxdg_output_manager_v1#8.get_xdg_output(new id zxdg_output_v1#20, wl_output#19)
+[21:04:04.704052] {Default Queue}  -> wl_display#1.sync(new id wl_callback#21)
+[21:04:04.704056] {Default Queue} wl_callback#3.done(0)
+[21:04:04.704094] {Default Queue}  -> wl_shm#7.create_pool(new id wl_shm_pool#3, fd 11, 2304)
+[21:04:04.704178] {Default Queue}  -> wl_shm_pool#3.resize(6912)
+[21:04:04.704229] {Default Queue}  -> wl_shm_pool#3.resize(16128)
+[21:04:04.704323] {Default Queue}  -> wl_shm_pool#3.resize(34560)
+[21:04:04.704478] {Default Queue}  -> wl_shm_pool#3.resize(71424)
+[21:04:04.704765] {Default Queue}  -> wl_shm_pool#3.resize(145152)
+[21:04:04.705818] {Default Queue}  -> wl_shm_pool#3.resize(292608)
+[21:04:04.706984] {Default Queue}  -> wl_shm_pool#3.resize(587520)
+[21:04:04.711555] {Default Queue}  -> wl_registry#2.bind(1, "wl_seat", 5, new id [unknown]#22)
+[21:04:04.713306] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#23)
+[21:04:04.713324] {Default Queue}  -> zwp_primary_selection_device_manager_v1#16.get_device(new id zwp_primary_selection_device_v1#24, wl_seat#22)
+[21:04:04.713333] {Default Queue}  -> wl_data_device_manager#4.get_data_device(new id wl_data_device#25, wl_seat#22)
+[21:04:04.713382] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#26)
+[21:04:04.713388] {Default Queue}  -> zwp_tablet_manager_v2#15.get_tablet_seat(new id zwp_tablet_seat_v2#27, wl_seat#22)
+[21:04:04.713393] {Default Queue}  -> wl_display#1.sync(new id wl_callback#28)
+[21:04:04.713842] {Display Queue} wl_display#1.delete_id(9)
+[21:04:04.713850] {Display Queue} wl_display#1.delete_id(21)
+[21:04:04.713854] {Display Queue} wl_display#1.delete_id(28)
+[21:04:04.713858] {Default Queue} wl_shm#7.format(0)
+[21:04:04.713862] {Default Queue} wl_shm#7.format(1)
+[21:04:04.713865] {Default Queue} wl_shm#7.format(875709016)
+[21:04:04.713869] {Default Queue} wl_shm#7.format(875708993)
+[21:04:04.713872] {Default Queue} wl_shm#7.format(808669784)
+[21:04:04.713876] {Default Queue} wl_shm#7.format(808669761)
+[21:04:04.713879] {Default Queue} wl_shm#7.format(808665688)
+[21:04:04.713883] {Default Queue} wl_shm#7.format(808665665)
+[21:04:04.713886] {Default Queue} wl_callback#9.done(0)
+[21:04:04.713891] {Default Queue} org_kde_kwin_server_decoration_manager#14.default_mode(2)
+[21:04:04.713897] {Default Queue} wl_output#19.scale(2)
+[21:04:04.713903] {Default Queue} wl_output#19.mode(1, 800, 600, 60000)
+[21:04:04.713908] {Default Queue} wl_output#19.geometry(0, 0, 0, 0, 1, "", "", 0)
+[21:04:04.713916] {Default Queue} wl_output#19.done()
+[21:04:04.713926] {Default Queue} zxdg_output_v1#20.name("WAYLAND-1")
+[21:04:04.713931] {Default Queue} zxdg_output_v1#20.logical_position(0, 0)
+[21:04:04.713935] {Default Queue} zxdg_output_v1#20.logical_size(400, 300)
+[21:04:04.713938] {Default Queue} wl_output#19.done()
+[21:04:04.713942] {Default Queue} wl_callback#21.done(0)
+[21:04:04.713945] {Default Queue} wl_seat#22.name("Hyprland")
+[21:04:04.713948] {Default Queue} wl_seat#22.capabilities(3)
+[21:04:04.713952] {Default Queue}  -> wl_seat#22.get_pointer(new id wl_pointer#21)
+[21:04:04.713959] {Default Queue}  -> zwp_pointer_gestures_v1#11.get_swipe_gesture(new id zwp_pointer_gesture_swipe_v1#9, wl_pointer#21)
+[21:04:04.713966] {Default Queue}  -> zwp_pointer_gestures_v1#11.get_pinch_gesture(new id zwp_pointer_gesture_pinch_v1#29, wl_pointer#21)
+[21:04:04.713970] {Default Queue}  -> wp_cursor_shape_manager_v1#10.get_pointer(new id wp_cursor_shape_device_v1#30, wl_pointer#21)
+[21:04:04.713977] {Default Queue}  -> wl_seat#22.get_keyboard(new id wl_keyboard#31)
+[21:04:04.713984] {Default Queue} wl_callback#28.done(0)
+[21:04:04.713989] {Default Queue}  -> wl_registry#2.bind(37, "xdg_wm_base", 6, new id [unknown]#28)
+[21:04:04.731612] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#32)
+[21:04:04.731631] {Default Queue}  -> wl_display#1.sync(new id wl_callback#33)
+[21:04:04.731856] {Display Queue} wl_display#1.delete_id(33)
+[21:04:04.731863] {Default Queue} wl_keyboard#31.keymap(1, fd 4, 35572)
+[21:04:04.733063] {Default Queue} wl_keyboard#31.repeat_info(25, 600)
+[21:04:04.733084] {Default Queue} wl_registry#32.global(1, "wl_seat", 9)
+[21:04:04.733094] {Default Queue} wl_registry#32.global(2, "wl_data_device_manager", 3)
+[21:04:04.733098] {Default Queue} wl_registry#32.global(3, "wl_compositor", 6)
+[21:04:04.733101] {Default Queue} wl_registry#32.global(4, "wl_subcompositor", 1)
+[21:04:04.733105] {Default Queue} wl_registry#32.global(5, "wl_shm", 2)
+[21:04:04.733108] {Default Queue} wl_registry#32.global(6, "wp_viewporter", 1)
+[21:04:04.733111] {Default Queue} wl_registry#32.global(7, "wp_tearing_control_manager_v1", 1)
+[21:04:04.733114] {Default Queue} wl_registry#32.global(8, "wp_fractional_scale_manager_v1", 1)
+[21:04:04.733117] {Default Queue} wl_registry#32.global(9, "zxdg_output_manager_v1", 3)
+[21:04:04.733121] {Default Queue} wl_registry#32.global(10, "wp_cursor_shape_manager_v1", 2)
+[21:04:04.733124] {Default Queue} wl_registry#32.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[21:04:04.733127] {Default Queue} wl_registry#32.global(12, "zwp_relative_pointer_manager_v1", 1)
+[21:04:04.733131] {Default Queue} wl_registry#32.global(13, "zxdg_decoration_manager_v1", 2)
+[21:04:04.733134] {Default Queue} wl_registry#32.global(14, "wp_alpha_modifier_v1", 1)
+[21:04:04.733137] {Default Queue} wl_registry#32.global(15, "zwlr_gamma_control_manager_v1", 1)
+[21:04:04.733140] {Default Queue} wl_registry#32.global(16, "ext_foreign_toplevel_list_v1", 1)
+[21:04:04.733143] {Default Queue} wl_registry#32.global(17, "zwp_pointer_gestures_v1", 3)
+[21:04:04.733146] {Default Queue} wl_registry#32.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[21:04:04.733149] {Default Queue} wl_registry#32.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[21:04:04.733152] {Default Queue} wl_registry#32.global(20, "zwp_text_input_manager_v1", 1)
+[21:04:04.733155] {Default Queue} wl_registry#32.global(21, "zwp_text_input_manager_v3", 1)
+[21:04:04.733158] {Default Queue} wl_registry#32.global(22, "zwp_pointer_constraints_v1", 1)
+[21:04:04.733161] {Default Queue} wl_registry#32.global(23, "zwlr_output_power_manager_v1", 1)
+[21:04:04.733164] {Default Queue} wl_registry#32.global(24, "xdg_activation_v1", 1)
+[21:04:04.733168] {Default Queue} wl_registry#32.global(25, "ext_idle_notifier_v1", 2)
+[21:04:04.733171] {Default Queue} wl_registry#32.global(26, "hyprland_lock_notifier_v1", 1)
+[21:04:04.733175] {Default Queue} wl_registry#32.global(27, "ext_session_lock_manager_v1", 1)
+[21:04:04.733178] {Default Queue} wl_registry#32.global(28, "zwp_input_method_manager_v2", 1)
+[21:04:04.733181] {Default Queue} wl_registry#32.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[21:04:04.733184] {Default Queue} wl_registry#32.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[21:04:04.733187] {Default Queue} wl_registry#32.global(31, "zwlr_output_manager_v1", 4)
+[21:04:04.733191] {Default Queue} wl_registry#32.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[21:04:04.733194] {Default Queue} wl_registry#32.global(33, "hyprland_focus_grab_manager_v1", 1)
+[21:04:04.733196] {Default Queue} wl_registry#32.global(34, "zwp_tablet_manager_v2", 1)
+[21:04:04.733199] {Default Queue} wl_registry#32.global(35, "zwlr_layer_shell_v1", 5)
+[21:04:04.733203] {Default Queue}  -> wl_registry#32.bind(35, "zwlr_layer_shell_v1", 4, new id [unknown]#34)
+[21:04:04.733207] {Default Queue} wl_registry#32.global(36, "wp_presentation", 2)
+[21:04:04.733211] {Default Queue} wl_registry#32.global(37, "xdg_wm_base", 7)
+[21:04:04.733214] {Default Queue}  -> wl_registry#32.bind(37, "xdg_wm_base", 7, new id [unknown]#35)
+[21:04:04.733217] {Default Queue} wl_registry#32.global(38, "zwlr_data_control_manager_v1", 2)
+[21:04:04.733220] {Default Queue} wl_registry#32.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[21:04:04.733223] {Default Queue} wl_registry#32.global(40, "xwayland_shell_v1", 1)
+[21:04:04.733226] {Default Queue} wl_registry#32.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[21:04:04.733229] {Default Queue} wl_registry#32.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[21:04:04.733238] {Default Queue} wl_registry#32.global(43, "xdg_wm_dialog_v1", 1)
+[21:04:04.733243] {Default Queue} wl_registry#32.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[21:04:04.733246] {Default Queue} wl_registry#32.global(45, "wp_security_context_manager_v1", 1)
+[21:04:04.733253] {Default Queue} wl_registry#32.global(46, "hyprland_ctm_control_manager_v1", 2)
+[21:04:04.733256] {Default Queue} wl_registry#32.global(47, "hyprland_input_capture_manager_v1", 1)
+[21:04:04.733258] {Default Queue} wl_registry#32.global(48, "hyprland_surface_manager_v1", 2)
+[21:04:04.733261] {Default Queue} wl_registry#32.global(49, "wp_content_type_manager_v1", 1)
+[21:04:04.733264] {Default Queue} wl_registry#32.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[21:04:04.733267] {Default Queue} wl_registry#32.global(51, "xdg_system_bell_v1", 1)
+[21:04:04.733270] {Default Queue} wl_registry#32.global(52, "vicinae_hotkey_manager_v1", 1)
+[21:04:04.733274] {Default Queue} wl_registry#32.global(53, "ext_workspace_manager_v1", 1)
+[21:04:04.733277] {Default Queue} wl_registry#32.global(54, "ext_data_control_manager_v1", 1)
+[21:04:04.733280] {Default Queue} wl_registry#32.global(55, "wp_pointer_warp_v1", 1)
+[21:04:04.733283] {Default Queue} wl_registry#32.global(56, "wp_fifo_manager_v1", 1)
+[21:04:04.733286] {Default Queue} wl_registry#32.global(57, "zxdg_exporter_v2", 1)
+[21:04:04.733289] {Default Queue} wl_registry#32.global(58, "zxdg_importer_v2", 1)
+[21:04:04.733292] {Default Queue} wl_registry#32.global(59, "ext_background_effect_manager_v1", 1)
+[21:04:04.733295] {Default Queue} wl_registry#32.global(60, "wp_commit_timing_manager_v1", 1)
+[21:04:04.733298] {Default Queue} wl_registry#32.global(61, "zwlr_screencopy_manager_v1", 3)
+[21:04:04.733301] {Default Queue} wl_registry#32.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[21:04:04.733304] {Default Queue} wl_registry#32.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[21:04:04.733308] {Default Queue} wl_registry#32.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[21:04:04.733311] {Default Queue} wl_registry#32.global(65, "ext_image_copy_capture_manager_v1", 1)
+[21:04:04.733314] {Default Queue} wl_registry#32.global(66, "wp_color_manager_v1", 3)
+[21:04:04.733317] {Default Queue} wl_registry#32.global(67, "wl_drm", 2)
+[21:04:04.733320] {Default Queue} wl_registry#32.global(68, "zwp_linux_dmabuf_v1", 5)
+[21:04:04.733323] {Default Queue} wl_registry#32.global(69, "wl_output", 4)
+[21:04:04.733326] {Default Queue} wl_callback#33.done(0)
+[21:04:04.765155] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#33)
+[21:04:04.765590] {mesa egl display queue}  -> wl_display#1.get_registry(new id wl_registry#36)
+[21:04:04.765606] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#37)
+[21:04:04.765890] {Display Queue} wl_display#1.delete_id(37)
+[21:04:04.765906] {mesa egl display queue} wl_registry#36.global(1, "wl_seat", 9)
+[21:04:04.765913] {mesa egl display queue} wl_registry#36.global(2, "wl_data_device_manager", 3)
+[21:04:04.765916] {mesa egl display queue} wl_registry#36.global(3, "wl_compositor", 6)
+[21:04:04.765920] {mesa egl display queue} wl_registry#36.global(4, "wl_subcompositor", 1)
+[21:04:04.765924] {mesa egl display queue} wl_registry#36.global(5, "wl_shm", 2)
+[21:04:04.765928] {mesa egl display queue} wl_registry#36.global(6, "wp_viewporter", 1)
+[21:04:04.765931] {mesa egl display queue} wl_registry#36.global(7, "wp_tearing_control_manager_v1", 1)
+[21:04:04.765934] {mesa egl display queue} wl_registry#36.global(8, "wp_fractional_scale_manager_v1", 1)
+[21:04:04.765937] {mesa egl display queue} wl_registry#36.global(9, "zxdg_output_manager_v1", 3)
+[21:04:04.765941] {mesa egl display queue} wl_registry#36.global(10, "wp_cursor_shape_manager_v1", 2)
+[21:04:04.765944] {mesa egl display queue} wl_registry#36.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[21:04:04.765947] {mesa egl display queue} wl_registry#36.global(12, "zwp_relative_pointer_manager_v1", 1)
+[21:04:04.765950] {mesa egl display queue} wl_registry#36.global(13, "zxdg_decoration_manager_v1", 2)
+[21:04:04.765960] {mesa egl display queue} wl_registry#36.global(14, "wp_alpha_modifier_v1", 1)
+[21:04:04.765974] {mesa egl display queue} wl_registry#36.global(15, "zwlr_gamma_control_manager_v1", 1)
+[21:04:04.765978] {mesa egl display queue} wl_registry#36.global(16, "ext_foreign_toplevel_list_v1", 1)
+[21:04:04.765981] {mesa egl display queue} wl_registry#36.global(17, "zwp_pointer_gestures_v1", 3)
+[21:04:04.765984] {mesa egl display queue} wl_registry#36.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[21:04:04.765987] {mesa egl display queue} wl_registry#36.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[21:04:04.765990] {mesa egl display queue} wl_registry#36.global(20, "zwp_text_input_manager_v1", 1)
+[21:04:04.765994] {mesa egl display queue} wl_registry#36.global(21, "zwp_text_input_manager_v3", 1)
+[21:04:04.765998] {mesa egl display queue} wl_registry#36.global(22, "zwp_pointer_constraints_v1", 1)
+[21:04:04.766001] {mesa egl display queue} wl_registry#36.global(23, "zwlr_output_power_manager_v1", 1)
+[21:04:04.766004] {mesa egl display queue} wl_registry#36.global(24, "xdg_activation_v1", 1)
+[21:04:04.766007] {mesa egl display queue} wl_registry#36.global(25, "ext_idle_notifier_v1", 2)
+[21:04:04.766011] {mesa egl display queue} wl_registry#36.global(26, "hyprland_lock_notifier_v1", 1)
+[21:04:04.766014] {mesa egl display queue} wl_registry#36.global(27, "ext_session_lock_manager_v1", 1)
+[21:04:04.766017] {mesa egl display queue} wl_registry#36.global(28, "zwp_input_method_manager_v2", 1)
+[21:04:04.766020] {mesa egl display queue} wl_registry#36.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[21:04:04.766023] {mesa egl display queue} wl_registry#36.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[21:04:04.766026] {mesa egl display queue} wl_registry#36.global(31, "zwlr_output_manager_v1", 4)
+[21:04:04.766029] {mesa egl display queue} wl_registry#36.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[21:04:04.766033] {mesa egl display queue} wl_registry#36.global(33, "hyprland_focus_grab_manager_v1", 1)
+[21:04:04.766036] {mesa egl display queue} wl_registry#36.global(34, "zwp_tablet_manager_v2", 1)
+[21:04:04.766039] {mesa egl display queue} wl_registry#36.global(35, "zwlr_layer_shell_v1", 5)
+[21:04:04.766042] {mesa egl display queue} wl_registry#36.global(36, "wp_presentation", 2)
+[21:04:04.766046] {mesa egl display queue}  -> wl_registry#36.bind(36, "wp_presentation", 1, new id [unknown]#38)
+[21:04:04.766050] {mesa egl display queue} wl_registry#36.global(37, "xdg_wm_base", 7)
+[21:04:04.766054] {mesa egl display queue} wl_registry#36.global(38, "zwlr_data_control_manager_v1", 2)
+[21:04:04.766057] {mesa egl display queue} wl_registry#36.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[21:04:04.766060] {mesa egl display queue} wl_registry#36.global(40, "xwayland_shell_v1", 1)
+[21:04:04.766064] {mesa egl display queue} wl_registry#36.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[21:04:04.766067] {mesa egl display queue} wl_registry#36.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[21:04:04.766070] {mesa egl display queue} wl_registry#36.global(43, "xdg_wm_dialog_v1", 1)
+[21:04:04.766073] {mesa egl display queue} wl_registry#36.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[21:04:04.766076] {mesa egl display queue} wl_registry#36.global(45, "wp_security_context_manager_v1", 1)
+[21:04:04.766079] {mesa egl display queue} wl_registry#36.global(46, "hyprland_ctm_control_manager_v1", 2)
+[21:04:04.766082] {mesa egl display queue} wl_registry#36.global(47, "hyprland_input_capture_manager_v1", 1)
+[21:04:04.766085] {mesa egl display queue} wl_registry#36.global(48, "hyprland_surface_manager_v1", 2)
+[21:04:04.766088] {mesa egl display queue} wl_registry#36.global(49, "wp_content_type_manager_v1", 1)
+[21:04:04.766092] {mesa egl display queue} wl_registry#36.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[21:04:04.766095] {mesa egl display queue} wl_registry#36.global(51, "xdg_system_bell_v1", 1)
+[21:04:04.766102] {mesa egl display queue} wl_registry#36.global(52, "vicinae_hotkey_manager_v1", 1)
+[21:04:04.766107] {mesa egl display queue} wl_registry#36.global(53, "ext_workspace_manager_v1", 1)
+[21:04:04.766111] {mesa egl display queue} wl_registry#36.global(54, "ext_data_control_manager_v1", 1)
+[21:04:04.766114] {mesa egl display queue} wl_registry#36.global(55, "wp_pointer_warp_v1", 1)
+[21:04:04.766117] {mesa egl display queue} wl_registry#36.global(56, "wp_fifo_manager_v1", 1)
+[21:04:04.766120] {mesa egl display queue} wl_registry#36.global(57, "zxdg_exporter_v2", 1)
+[21:04:04.766124] {mesa egl display queue} wl_registry#36.global(58, "zxdg_importer_v2", 1)
+[21:04:04.766127] {mesa egl display queue} wl_registry#36.global(59, "ext_background_effect_manager_v1", 1)
+[21:04:04.766130] {mesa egl display queue} wl_registry#36.global(60, "wp_commit_timing_manager_v1", 1)
+[21:04:04.766133] {mesa egl display queue} wl_registry#36.global(61, "zwlr_screencopy_manager_v1", 3)
+[21:04:04.766136] {mesa egl display queue} wl_registry#36.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[21:04:04.766139] {mesa egl display queue} wl_registry#36.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[21:04:04.766143] {mesa egl display queue} wl_registry#36.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[21:04:04.766146] {mesa egl display queue} wl_registry#36.global(65, "ext_image_copy_capture_manager_v1", 1)
+[21:04:04.766149] {mesa egl display queue} wl_registry#36.global(66, "wp_color_manager_v1", 3)
+[21:04:04.766152] {mesa egl display queue} wl_registry#36.global(67, "wl_drm", 2)
+[21:04:04.766155] {mesa egl display queue} wl_registry#36.global(68, "zwp_linux_dmabuf_v1", 5)
+[21:04:04.766158] {mesa egl display queue}  -> wl_registry#36.bind(68, "zwp_linux_dmabuf_v1", 4, new id [unknown]#39)
+[21:04:04.766161] {mesa egl display queue} wl_registry#36.global(69, "wl_output", 4)
+[21:04:04.766165] {mesa egl display queue} wl_callback#37.done(0)
+[21:04:04.766169] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.get_default_feedback(new id zwp_linux_dmabuf_feedback_v1#37)
+[21:04:04.766176] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#40)
+[21:04:04.766259] {Display Queue} wl_display#1.delete_id(40)
+[21:04:04.766279] {mesa egl display queue} wp_presentation#38.clock_id(1)
+[21:04:04.766284] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.format_table(fd 12, 2960)
+[21:04:04.766301] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.main_device(array[8])
+[21:04:04.766681] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_target_device(array[8])
+[21:04:04.766688] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_flags(0)
+[21:04:04.766692] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_formats(array[370])
+[21:04:04.766702] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.tranche_done()
+[21:04:04.766706] {mesa egl display queue} zwp_linux_dmabuf_feedback_v1#37.done()
+[21:04:04.766709] {mesa egl display queue} wl_callback#40.done(0)
+[21:04:04.766713] {mesa egl display queue}  -> zwp_linux_dmabuf_feedback_v1#37.destroy()
+[21:04:04.781306] {Default Queue}  -> wl_surface#33.destroy()
+[21:04:04.781460] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#40)
+[21:04:04.784781] {Default Queue}  -> wl_surface#40.destroy()
+view-process-policy: related=1 distinct-manager=1
+view-process-policy: related=1 distinct-manager=1
+[21:04:04.798851] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#41)
+[21:04:04.799471] {Default Queue}  -> wl_display#1.get_registry(new id wl_registry#42)
+[21:04:04.799577] {Default Queue}  -> wl_surface#41.attach(nil, 0, 0)
+[21:04:04.799588] {Default Queue}  -> zwlr_layer_shell_v1#34.get_layer_surface(new id zwlr_layer_surface_v1#43, wl_surface#41, wl_output#19, 2, "elm-shell-recovery-v17")
+[21:04:04.799597] {Default Queue}  -> zwlr_layer_surface_v1#43.set_keyboard_interactivity(0)
+[21:04:04.799600] {Default Queue}  -> zwlr_layer_surface_v1#43.set_exclusive_zone(48)
+[21:04:04.799611] {Default Queue}  -> zwlr_layer_surface_v1#43.set_anchor(13)
+[21:04:04.799626] {Default Queue}  -> zwlr_layer_surface_v1#43.set_margin(0, 0, 0, 0)
+[21:04:04.799629] {Default Queue}  -> zwlr_layer_surface_v1#43.set_size(0, 48)
+[21:04:04.799634] {Default Queue}  -> wl_surface#41.commit()
+[21:04:04.799639] {Default Queue}  -> wl_display#1.sync(new id wl_callback#44)
+[21:04:04.799863] {Display Queue} wl_display#1.delete_id(37)
+[21:04:04.799870] {Display Queue} wl_display#1.delete_id(33)
+[21:04:04.799873] {Display Queue} wl_display#1.delete_id(40)
+[21:04:04.799876] {Display Queue} wl_display#1.delete_id(44)
+[21:04:04.799879] {Default Queue} wl_registry#42.global(1, "wl_seat", 9)
+[21:04:04.799884] {Default Queue} wl_registry#42.global(2, "wl_data_device_manager", 3)
+[21:04:04.799887] {Default Queue} wl_registry#42.global(3, "wl_compositor", 6)
+[21:04:04.799890] {Default Queue} wl_registry#42.global(4, "wl_subcompositor", 1)
+[21:04:04.799893] {Default Queue} wl_registry#42.global(5, "wl_shm", 2)
+[21:04:04.799896] {Default Queue} wl_registry#42.global(6, "wp_viewporter", 1)
+[21:04:04.799900] {Default Queue} wl_registry#42.global(7, "wp_tearing_control_manager_v1", 1)
+[21:04:04.799903] {Default Queue} wl_registry#42.global(8, "wp_fractional_scale_manager_v1", 1)
+[21:04:04.799906] {Default Queue} wl_registry#42.global(9, "zxdg_output_manager_v1", 3)
+[21:04:04.799909] {Default Queue} wl_registry#42.global(10, "wp_cursor_shape_manager_v1", 2)
+[21:04:04.799913] {Default Queue} wl_registry#42.global(11, "zwp_idle_inhibit_manager_v1", 1)
+[21:04:04.799916] {Default Queue} wl_registry#42.global(12, "zwp_relative_pointer_manager_v1", 1)
+[21:04:04.799919] {Default Queue} wl_registry#42.global(13, "zxdg_decoration_manager_v1", 2)
+[21:04:04.799922] {Default Queue} wl_registry#42.global(14, "wp_alpha_modifier_v1", 1)
+[21:04:04.799925] {Default Queue} wl_registry#42.global(15, "zwlr_gamma_control_manager_v1", 1)
+[21:04:04.799929] {Default Queue} wl_registry#42.global(16, "ext_foreign_toplevel_list_v1", 1)
+[21:04:04.799932] {Default Queue} wl_registry#42.global(17, "zwp_pointer_gestures_v1", 3)
+[21:04:04.799935] {Default Queue} wl_registry#42.global(18, "zwlr_foreign_toplevel_manager_v1", 3)
+[21:04:04.799938] {Default Queue} wl_registry#42.global(19, "zwp_keyboard_shortcuts_inhibit_manager_v1", 1)
+[21:04:04.799941] {Default Queue} wl_registry#42.global(20, "zwp_text_input_manager_v1", 1)
+[21:04:04.799944] {Default Queue} wl_registry#42.global(21, "zwp_text_input_manager_v3", 1)
+[21:04:04.799948] {Default Queue}  -> wl_registry#42.bind(21, "zwp_text_input_manager_v3", 1, new id [unknown]#40)
+[21:04:04.799952] {Default Queue}  -> zwp_text_input_manager_v3#40.get_text_input(new id zwp_text_input_v3#33, wl_seat#22)
+[21:04:04.799956] {Default Queue} wl_registry#42.global(22, "zwp_pointer_constraints_v1", 1)
+[21:04:04.799959] {Default Queue} wl_registry#42.global(23, "zwlr_output_power_manager_v1", 1)
+[21:04:04.799963] {Default Queue} wl_registry#42.global(24, "xdg_activation_v1", 1)
+[21:04:04.799966] {Default Queue} wl_registry#42.global(25, "ext_idle_notifier_v1", 2)
+[21:04:04.799969] {Default Queue} wl_registry#42.global(26, "hyprland_lock_notifier_v1", 1)
+[21:04:04.799973] {Default Queue} wl_registry#42.global(27, "ext_session_lock_manager_v1", 1)
+[21:04:04.799976] {Default Queue} wl_registry#42.global(28, "zwp_input_method_manager_v2", 1)
+[21:04:04.799979] {Default Queue} wl_registry#42.global(29, "zwp_virtual_keyboard_manager_v1", 1)
+[21:04:04.799982] {Default Queue} wl_registry#42.global(30, "zwlr_virtual_pointer_manager_v1", 2)
+[21:04:04.799985] {Default Queue} wl_registry#42.global(31, "zwlr_output_manager_v1", 4)
+[21:04:04.799988] {Default Queue} wl_registry#42.global(32, "org_kde_kwin_server_decoration_manager", 1)
+[21:04:04.799991] {Default Queue} wl_registry#42.global(33, "hyprland_focus_grab_manager_v1", 1)
+[21:04:04.799994] {Default Queue} wl_registry#42.global(34, "zwp_tablet_manager_v2", 1)
+[21:04:04.799997] {Default Queue} wl_registry#42.global(35, "zwlr_layer_shell_v1", 5)
+[21:04:04.800000] {Default Queue} wl_registry#42.global(36, "wp_presentation", 2)
+[21:04:04.800007] {Default Queue} wl_registry#42.global(37, "xdg_wm_base", 7)
+[21:04:04.800015] {Default Queue} wl_registry#42.global(38, "zwlr_data_control_manager_v1", 2)
+[21:04:04.800019] {Default Queue} wl_registry#42.global(39, "zwp_primary_selection_device_manager_v1", 1)
+[21:04:04.800022] {Default Queue} wl_registry#42.global(40, "xwayland_shell_v1", 1)
+[21:04:04.800025] {Default Queue} wl_registry#42.global(41, "hyprland_toplevel_mapping_manager_v1", 1)
+[21:04:04.800028] {Default Queue} wl_registry#42.global(42, "hyprland_global_shortcuts_manager_v1", 1)
+[21:04:04.800031] {Default Queue} wl_registry#42.global(43, "xdg_wm_dialog_v1", 1)
+[21:04:04.800034] {Default Queue} wl_registry#42.global(44, "wp_single_pixel_buffer_manager_v1", 1)
+[21:04:04.800037] {Default Queue} wl_registry#42.global(45, "wp_security_context_manager_v1", 1)
+[21:04:04.800040] {Default Queue} wl_registry#42.global(46, "hyprland_ctm_control_manager_v1", 2)
+[21:04:04.800043] {Default Queue} wl_registry#42.global(47, "hyprland_input_capture_manager_v1", 1)
+[21:04:04.800047] {Default Queue} wl_registry#42.global(48, "hyprland_surface_manager_v1", 2)
+[21:04:04.800050] {Default Queue} wl_registry#42.global(49, "wp_content_type_manager_v1", 1)
+[21:04:04.800053] {Default Queue} wl_registry#42.global(50, "xdg_toplevel_tag_manager_v1", 1)
+[21:04:04.800056] {Default Queue} wl_registry#42.global(51, "xdg_system_bell_v1", 1)
+[21:04:04.800059] {Default Queue} wl_registry#42.global(52, "vicinae_hotkey_manager_v1", 1)
+[21:04:04.800062] {Default Queue} wl_registry#42.global(53, "ext_workspace_manager_v1", 1)
+[21:04:04.800066] {Default Queue} wl_registry#42.global(54, "ext_data_control_manager_v1", 1)
+[21:04:04.800068] {Default Queue} wl_registry#42.global(55, "wp_pointer_warp_v1", 1)
+[21:04:04.800072] {Default Queue} wl_registry#42.global(56, "wp_fifo_manager_v1", 1)
+[21:04:04.800075] {Default Queue} wl_registry#42.global(57, "zxdg_exporter_v2", 1)
+[21:04:04.800078] {Default Queue} wl_registry#42.global(58, "zxdg_importer_v2", 1)
+[21:04:04.800081] {Default Queue} wl_registry#42.global(59, "ext_background_effect_manager_v1", 1)
+[21:04:04.800084] {Default Queue} wl_registry#42.global(60, "wp_commit_timing_manager_v1", 1)
+[21:04:04.800087] {Default Queue} wl_registry#42.global(61, "zwlr_screencopy_manager_v1", 3)
+[21:04:04.800090] {Default Queue} wl_registry#42.global(62, "hyprland_toplevel_export_manager_v1", 2)
+[21:04:04.800093] {Default Queue} wl_registry#42.global(63, "ext_output_image_capture_source_manager_v1", 1)
+[21:04:04.800096] {Default Queue} wl_registry#42.global(64, "ext_foreign_toplevel_image_capture_source_manager_v1", 1)
+[21:04:04.800099] {Default Queue} wl_registry#42.global(65, "ext_image_copy_capture_manager_v1", 1)
+[21:04:04.800102] {Default Queue} wl_registry#42.global(66, "wp_color_manager_v1", 3)
+[21:04:04.800105] {Default Queue} wl_registry#42.global(67, "wl_drm", 2)
+[21:04:04.800108] {Default Queue} wl_registry#42.global(68, "zwp_linux_dmabuf_v1", 5)
+[21:04:04.800111] {Default Queue} wl_registry#42.global(69, "wl_output", 4)
+[21:04:04.800113] {Default Queue} zwlr_layer_surface_v1#43.configure(1, 400, 48)
+[21:04:04.800117] {Default Queue}  -> zwlr_layer_surface_v1#43.ack_configure(1)
+[21:04:04.800121] {Default Queue} wl_callback#44.done(1)
+[21:04:04.800179] {Default Queue}  -> wl_surface#41.commit()
+view-added: id=1 geometry=0,0,400,300
+shared-host-start: views=1 controllers=1 backend-clients=1 sandbox=1
+[21:04:04.800634] {Default Queue} zwlr_layer_surface_v1#43.configure(2, 400, 48)
+[21:04:04.800644] {Default Queue}  -> zwlr_layer_surface_v1#43.ack_configure(2)
+[21:04:04.805017] {Default Queue}  -> wl_surface#41.set_buffer_scale(2)
+[21:04:04.805123] {Default Queue}  -> wl_shm#7.create_pool(new id wl_shm_pool#44, fd 24, 307200)
+[21:04:04.805136] {Default Queue}  -> wl_shm_pool#44.create_buffer(new id wl_buffer#37, 0, 800, 96, 3200, 0)
+[21:04:04.805339] {Default Queue}  -> wl_surface#41.attach(wl_buffer#37, 0, 0)
+[21:04:04.805346] {Default Queue}  -> wl_surface#41.set_buffer_scale(2)
+[21:04:04.805350] {Default Queue}  -> wl_surface#41.damage(0, 0, 400, 48)
+[21:04:04.805360] {Default Queue}  -> wl_compositor#5.create_region(new id wl_region#45)
+[21:04:04.805372] {Default Queue}  -> wl_region#45.add(0, 0, 400, 48)
+[21:04:04.805376] {Default Queue}  -> wl_surface#41.set_opaque_region(wl_region#45)
+[21:04:04.805379] {Default Queue}  -> wl_region#45.destroy()
+[21:04:04.805383] {Default Queue}  -> wl_surface#41.set_input_region(nil)
+[21:04:04.805390] {Default Queue}  -> wl_surface#41.frame(new id wl_callback#46)
+[21:04:04.805395] {Default Queue}  -> wl_surface#41.commit()
+[21:04:04.805843] {Display Queue} wl_display#1.delete_id(45)
+[21:04:04.805850] {Display Queue} wl_display#1.delete_id(46)
+[21:04:04.805853] {Default Queue} wl_callback#46.done(112110741)
+[21:04:04.805857] {Default Queue} wl_surface#41.enter(wl_output#19)
+[21:04:04.805861] {Default Queue} wl_buffer#37.release()
+
+** (process:2): WARNING **: 15:04:04.847: Can't connect to a11y bus: Could not connect: No such file or directory
+[21:04:04.924992] {Default Queue}  -> wl_surface#41.set_buffer_scale(2)
+[21:04:04.925026] {mesa egl surface queue}  -> zwp_linux_dmabuf_v1#39.get_surface_feedback(new id zwp_linux_dmabuf_feedback_v1#46, wl_surface#41)
+[21:04:04.925039] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#45)
+[21:04:04.925095] {Display Queue} wl_display#1.delete_id(45)
+[21:04:04.925103] {mesa egl display queue} wl_callback#45.done(2)
+[21:04:04.925115] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.format_table(fd 32, 2960)
+[21:04:04.925127] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.main_device(array[8])
+[21:04:04.925131] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_target_device(array[8])
+[21:04:04.925134] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_flags(0)
+[21:04:04.925137] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_formats(array[370])
+[21:04:04.925143] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.tranche_done()
+[21:04:04.925147] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#46.done()
+[21:04:04.929053] {Default Queue}  -> wl_surface#41.attach(wl_buffer#37, 0, 0)
+[21:04:04.929074] {Default Queue}  -> wl_surface#41.set_buffer_scale(2)
+[21:04:04.929080] {Default Queue}  -> wl_surface#41.damage(0, 0, 400, 48)
+[21:04:04.929098] {Default Queue}  -> wl_surface#41.frame(new id wl_callback#45)
+[21:04:04.929104] {Default Queue}  -> wl_surface#41.commit()
+[21:04:04.930730] {Default Queue} wl_buffer#37.release()
+view-topology: {"viewProtocol":1,"kind":"view-topology","revision":"1","views":[{"id":"1","generation":"1"}]}
+[21:04:04.941431] {Display Queue} wl_display#1.delete_id(45)
+[21:04:04.941449] {Default Queue} wl_callback#45.done(112110875)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":null,"lease":null,"buttons":[],"focus":"","text":""}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":null,"lease":null,"buttons":[],"focus":"","text":""}}
+surface-commit: publication=1 lease=0 open=0
+view-commit: popup=0 focus=1 publication=1
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"1","lease":"0","body":{"phase":"Detached","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:detached:2:control:opener","reconnectId":"reconnect"}}
+[21:04:04.962941] {Default Queue}  -> wl_buffer#37.destroy()
+[21:04:04.962968] {Default Queue}  -> wl_shm_pool#44.destroy()
+[21:04:04.969198] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#45)
+[21:04:04.969234] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.add(fd 29, 0, 0, 3584, 16777216, 15)
+[21:04:04.969244] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.add(fd 31, 1, 344064, 448, 16777216, 15)
+[21:04:04.969255] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.add(fd 40, 2, 348160, 64, 16777216, 15)
+[21:04:04.969260] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.create_immed(new id wl_buffer#47, 800, 96, 875713089, 0)
+[21:04:04.969287] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#45.destroy()
+[21:04:04.969292] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#47, 0, 0)
+[21:04:04.969297] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:04.969301] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:04.969305] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#48)
+[21:04:04.969684] discarded [unknown]#37.[event 0](0 fd, 8 byte)
+[21:04:04.969696] {Display Queue} wl_display#1.delete_id(37)
+[21:04:04.969702] {Display Queue} wl_display#1.delete_id(44)
+[21:04:04.969705] {Display Queue} wl_display#1.delete_id(45)
+[21:04:04.969708] {Display Queue} wl_display#1.delete_id(48)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"1","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":true,"x":3,"y":6,"width":102.5,"height":36}],"focus":"","text":"Reconnect\nConnecting…"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"1","lease":"0","buttons":[{"id":"reconnect","label":"Reconnect","accessibleName":"Reconnect to the window system","disabled":true,"x":3,"y":6,"width":102.5,"height":36}],"focus":"","text":"Reconnect\nConnecting…"}}
+[21:04:04.987328] {mesa egl surface queue} wl_callback#48.done(2)
+[21:04:04.987773] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#48)
+[21:04:04.987793] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.add(fd 29, 0, 0, 3584, 16777216, 15)
+[21:04:04.987801] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.add(fd 31, 1, 344064, 448, 16777216, 15)
+[21:04:04.987806] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.add(fd 40, 2, 348160, 64, 16777216, 15)
+[21:04:04.987810] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.create_immed(new id wl_buffer#45, 800, 96, 875713089, 0)
+[21:04:04.987816] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#48.destroy()
+[21:04:04.987820] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[21:04:04.987824] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:04.987828] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:04.987831] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#44)
+[21:04:04.988010] {Display Queue} wl_display#1.delete_id(48)
+[21:04:04.988016] {Display Queue} wl_display#1.delete_id(44)
+backend-frame: {"protocolVersion":3,"kind":"attached","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"compositor":{"pid":3635718,"instance":"efb50993780079460b0cbed1363e2166a2de1d9f_1791147842_430136263","coreHash":"efb50993780079460b0cbed1363e2166a2de1d9f_aq_0.15_hu_0.14_hg_0.5_hc_0.1_hlg_0.6"},"capabilities":{"observe":true,"effects":true,"minimizedState":true,"effectProtocol":1,"operations":["minimize","restore","activate"],"canonicalScene":false,"taskbarProjectionProtocol":1,"effectInvalidationProtocol":1}}
+backend-frame: {"protocolVersion":3,"kind":"host-recovery-watermarks","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"request":"0","generation":"0"}
+backend-frame: {"protocolVersion":3,"kind":"host-geometry-negotiate"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"1"}
+surface-commit: publication=2 lease=0 open=0
+view-commit: popup=0 focus=1 publication=2
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"2","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"1","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"1"},"scene":{"revision":"1","focused":null,"windows":[]}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"2","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+frontend-request: {"protocolVersion":3,"kind":"geometry-attach","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"2"}
+surface-commit: publication=3 lease=0 open=0
+view-commit: popup=0 focus=1 publication=3
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"3","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"3","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-attached","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"2","capabilities":{"observe":true,"effects":true,"effectProtocol":2,"operations":["maximize","restore-geometry"],"placementCapacity":256,"canonicalScene":false}}
+surface-commit: publication=4 lease=0 open=0
+view-commit: popup=0 focus=1 publication=4
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"4","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"4","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"3","minimumWatermark":"0"}
+surface-commit: publication=5 lease=0 open=0
+view-commit: popup=0 focus=1 publication=5
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"5","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"3","sequence":"1","revision":"1","outputGeneration":"1","facts":{"focused":null,"inputBlocked":false,"windows":[]}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"5","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"5","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"5","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36}],"focus":"","text":"Applications\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"5","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36}],"focus":"","text":"Applications\nConnected"}}
+[21:04:05.071962] {mesa egl surface queue} wl_buffer#47.release()
+[21:04:05.071977] {mesa egl surface queue}  -> wl_buffer#47.destroy()
+[21:04:05.071983] {mesa egl surface queue} wl_callback#44.done(2)
+[21:04:05.072428] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#44)
+[21:04:05.072448] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.add(fd 42, 0, 0, 3584, 16777216, 15)
+[21:04:05.072455] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.add(fd 43, 1, 344064, 448, 16777216, 15)
+[21:04:05.072460] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.add(fd 44, 2, 348160, 64, 16777216, 15)
+[21:04:05.072464] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.create_immed(new id wl_buffer#48, 800, 96, 875713089, 0)
+[21:04:05.072470] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#44.destroy()
+[21:04:05.072474] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#48, 0, 0)
+[21:04:05.072478] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.072481] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.072484] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#37)
+[21:04:05.072668] discarded [unknown]#47.[event 0](0 fd, 8 byte)
+[21:04:05.072673] discarded [unknown]#47.[event 0](0 fd, 8 byte)
+[21:04:05.072680] {Display Queue} wl_display#1.delete_id(47)
+[21:04:05.072685] {Display Queue} wl_display#1.delete_id(44)
+[21:04:05.072687] {Display Queue} wl_display#1.delete_id(37)
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"4"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"5","minimumWatermark":"1"}
+surface-commit: publication=6 lease=0 open=0
+view-commit: popup=0 focus=1 publication=6
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"6","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"6","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"4","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"2"},"scene":{"revision":"2","focused":"1","windows":[{"incarnation":"1","application":"elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-3636009","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"5","sequence":"2","revision":"2","outputGeneration":"1","facts":{"focused":"1","inputBlocked":false,"windows":[{"incarnation":"1","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,400,252],"logicalGeometry":[20,68,360,212],"visualGeometry":[21,69,358,210],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":false,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[640,480],"rawMaximum":[0,0],"layoutMinimum":[640,480],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":2},"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-commit: publication=7 lease=0 open=0
+view-commit: popup=0 focus=1 publication=7
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"7","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=8 lease=0 open=0
+view-commit: popup=0 focus=1 publication=8
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"8","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.105014] {mesa egl surface queue} wl_buffer#45.release()
+[21:04:05.105046] {mesa egl surface queue} wl_callback#37.done(2)
+[21:04:05.105267] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[21:04:05.105274] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.105278] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.105281] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#37)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"8","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"8","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"6"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"7","minimumWatermark":"2"}
+surface-commit: publication=9 lease=0 open=0
+view-commit: popup=0 focus=1 publication=9
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"9","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"9","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.257138] {Display Queue} wl_display#1.delete_id(37)
+[21:04:05.257159] {mesa egl surface queue} wl_callback#37.done(4)
+[21:04:05.257172] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#37)
+[21:04:05.257190] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#37.add(fd 42, 0, 0, 3584, 16777216, 15)
+[21:04:05.257197] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#37.add(fd 43, 1, 344064, 448, 16777216, 15)
+[21:04:05.257202] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#37.add(fd 44, 2, 348160, 64, 16777216, 15)
+[21:04:05.257206] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#37.create_immed(new id wl_buffer#44, 800, 96, 875713089, 0)
+[21:04:05.257212] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#37.destroy()
+[21:04:05.257216] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#44, 0, 0)
+[21:04:05.257220] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.257224] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.257234] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"9","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":true,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"9","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":true,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+[21:04:05.257528] {Display Queue} wl_display#1.delete_id(37)
+[21:04:05.257534] {Display Queue} wl_display#1.delete_id(47)
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"6","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"2"},"scene":{"revision":"2","focused":"1","windows":[{"incarnation":"1","application":"elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-3636009","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"7","sequence":"3","revision":"2","outputGeneration":"1","facts":{"focused":"1","inputBlocked":false,"windows":[{"incarnation":"1","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,400,252],"logicalGeometry":[20,68,360,212],"visualGeometry":[21,69,358,210],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":false,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[640,480],"rawMaximum":[0,0],"layoutMinimum":[640,480],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":2},"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"9","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=10 lease=0 open=0
+view-commit: popup=0 focus=1 publication=10
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"10","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"8"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"9","minimumWatermark":"3"}
+surface-commit: publication=11 lease=0 open=0
+view-commit: popup=0 focus=1 publication=11
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"11","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.263922] {mesa egl surface queue} wl_buffer#45.release()
+[21:04:05.263932] {mesa egl surface queue} wl_callback#47.done(4)
+[21:04:05.263937] {mesa egl surface queue} wl_buffer#48.release()
+[21:04:05.264165] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[21:04:05.264176] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.264180] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.264184] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"11","lease":"0","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:2:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.264393] {Display Queue} wl_display#1.delete_id(47)
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"8","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"3"},"scene":{"revision":"3","focused":"1","windows":[{"incarnation":"1","application":"elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-3636009","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"9","sequence":"4","revision":"3","outputGeneration":"1","facts":{"focused":"1","inputBlocked":false,"windows":[{"incarnation":"1","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,400,252],"logicalGeometry":[-241,-181,640,480],"visualGeometry":[-241,-181,640,480],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[640,480],"rawMaximum":[0,0],"layoutMinimum":[640,480],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":2},"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-commit: publication=12 lease=0 open=0
+view-commit: popup=0 focus=1 publication=12
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"12","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=13 lease=0 open=0
+view-commit: popup=0 focus=1 publication=13
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"13","lease":"0","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"13","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"13","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+[21:04:05.364598] {Default Queue} wl_pointer#21.enter(6, wl_surface#41, 241.50000000, 24.00000000)
+[21:04:05.364624] {Default Queue} wl_pointer#21.frame()
+[21:04:05.364673] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(6, 1)
+[21:04:05.364680] {Default Queue} wl_pointer#21.motion(112111299, 241.50000000, 24.00000000)
+[21:04:05.364683] {Default Queue} wl_pointer#21.frame()
+[21:04:05.364688] {Default Queue} wl_pointer#21.button(7, 112111300, 273, 1)
+[21:04:05.364690] {Default Queue} wl_pointer#21.frame()
+[21:04:05.365230] {Default Queue} wl_pointer#21.button(8, 112111300, 273, 0)
+[21:04:05.365242] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"press","button":2,"buttons":2,"trusted":true,"id":"bar:group:application:elm-xdg-origin-probe"}
+context-input-report: {"kind":"context-input-report","phase":"release","button":2,"buttons":0,"trusted":true,"id":"bar:group:application:elm-xdg-origin-probe"}
+surface-context-admitted: view=1 generation=1 origin=bar trigger=pointer publication=13 lease=0
+[21:04:05.382892] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#37)
+[21:04:05.383165] {Default Queue}  -> wl_surface#37.attach(nil, 0, 0)
+[21:04:05.383178] {Default Queue}  -> xdg_wm_base#35.create_positioner(new id xdg_positioner#49)
+[21:04:05.383185] {Default Queue}  -> xdg_positioner#49.set_size(392, 248)
+[21:04:05.383190] {Default Queue}  -> xdg_positioner#49.set_anchor_rect(241, 24, 1, 1)
+[21:04:05.383195] {Default Queue}  -> xdg_positioner#49.set_offset(0, 0)
+[21:04:05.383199] {Default Queue}  -> xdg_positioner#49.set_anchor(6)
+[21:04:05.383203] {Default Queue}  -> xdg_positioner#49.set_gravity(8)
+[21:04:05.383207] {Default Queue}  -> xdg_positioner#49.set_constraint_adjustment(11)
+[21:04:05.383211] {Default Queue}  -> xdg_wm_base#35.get_xdg_surface(new id xdg_surface#50, wl_surface#37)
+[21:04:05.383216] {Default Queue}  -> xdg_surface#50.get_popup(new id xdg_popup#51, nil, xdg_positioner#49)
+[21:04:05.383222] {Default Queue}  -> zwlr_layer_surface_v1#43.get_popup(xdg_popup#51)
+[21:04:05.383226] {Default Queue}  -> xdg_positioner#49.destroy()
+[21:04:05.383237] {Default Queue}  -> xdg_popup#51.grab(wl_seat#22, 7)
+[21:04:05.383243] {Default Queue}  -> wl_surface#37.commit()
+[21:04:05.383257] {Default Queue}  -> wl_display#1.sync(new id wl_callback#52)
+[21:04:05.383730] {Display Queue} wl_display#1.delete_id(49)
+[21:04:05.383746] {Display Queue} wl_display#1.delete_id(52)
+[21:04:05.383750] {Default Queue} xdg_popup#51.configure(4, 25, 392, 248)
+surface-configured: lease=1 rectKnown=0 gdkWidth=392 gdkHeight=248
+[21:04:05.383771] {Default Queue} wl_keyboard#31.enter(10, wl_surface#37, array[0])
+[21:04:05.383782] {Default Queue} wl_keyboard#31.modifiers(11, 0, 0, 0, 0)
+[21:04:05.383795] {Default Queue} wl_data_device#25.selection(nil)
+[21:04:05.383804] {Default Queue} wl_pointer#21.leave(12, wl_surface#41)
+[21:04:05.383809] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(6, 1)
+[21:04:05.383814] {Default Queue} wl_pointer#21.enter(13, wl_surface#37, -0.00781250, -0.00781250)
+[21:04:05.383822] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(13, 1)
+[21:04:05.383826] {Default Queue} wl_pointer#21.frame()
+[21:04:05.383830] {Default Queue} wl_callback#52.done(13)
+[21:04:05.383834] {Default Queue} xdg_surface#50.configure(9)
+[21:04:05.383837] {Default Queue}  -> xdg_surface#50.ack_configure(9)
+[21:04:05.383885] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(13, 1)
+surface-popup-open: lease=1
+surface-commit: publication=14 lease=1 open=1
+view-commit: popup=1 focus=1 publication=14
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"14","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":{"id":1,"closeId":"menu:1:close","incarnation":"1","title":"ELM-XDG-ORIGIN-PROBE-3636009","selected":1,"actions":[{"domId":"menu:1:0","label":"Restore","enabled":false},{"domId":"menu:1:1","label":"Minimize","enabled":true},{"domId":"menu:1:2","label":"Maximize","enabled":false}]},"mode":"menu","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-native-keyboard-focus: lease=1 in=1
+[21:04:05.384273] {Default Queue}  -> xdg_surface#50.set_window_geometry(0, 0, 392, 248)
+[21:04:05.384318] {Default Queue}  -> wl_shm#7.create_pool(new id wl_shm_pool#52, fd 42, 1555456)
+[21:04:05.384337] {Default Queue}  -> wl_shm_pool#52.create_buffer(new id wl_buffer#49, 0, 784, 496, 3136, 0)
+[21:04:05.385004] {Default Queue}  -> wl_surface#37.attach(wl_buffer#49, 0, 0)
+[21:04:05.385012] {Default Queue}  -> wl_surface#37.set_buffer_scale(2)
+[21:04:05.385017] {Default Queue}  -> wl_surface#37.damage(0, 0, 392, 248)
+[21:04:05.385020] {Default Queue}  -> wl_compositor#5.create_region(new id wl_region#53)
+[21:04:05.385023] {Default Queue}  -> wl_region#53.add(0, 0, 392, 248)
+[21:04:05.385026] {Default Queue}  -> wl_surface#37.set_opaque_region(wl_region#53)
+[21:04:05.385029] {Default Queue}  -> wl_region#53.destroy()
+[21:04:05.385032] {Default Queue}  -> wl_surface#37.set_input_region(nil)
+[21:04:05.385038] {Default Queue}  -> wl_surface#37.frame(new id wl_callback#54)
+[21:04:05.385042] {Default Queue}  -> wl_surface#37.commit()
+[21:04:05.385801] {Display Queue} wl_display#1.delete_id(53)
+[21:04:05.385814] {Display Queue} wl_display#1.delete_id(54)
+[21:04:05.385817] {Default Queue} wl_callback#54.done(112111321)
+[21:04:05.385821] {Default Queue} wl_pointer#21.motion(112111321, 237.50000000, -1.00000000)
+[21:04:05.385826] {Default Queue} wl_surface#37.enter(wl_output#19)
+[21:04:05.385830] {Default Queue} wl_buffer#49.release()
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"13","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"13","lease":"0","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+surface-report: origin=popup {"kind":"surface-report","body":{"publication":null,"lease":null,"buttons":[],"focus":"","text":""}}
+[21:04:05.402369] {Default Queue}  -> wl_surface#37.set_buffer_scale(2)
+[21:04:05.402392] {mesa egl surface queue}  -> zwp_linux_dmabuf_v1#39.get_surface_feedback(new id zwp_linux_dmabuf_feedback_v1#54, wl_surface#37)
+[21:04:05.402405] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#53)
+[21:04:05.402904] {Display Queue} wl_display#1.delete_id(53)
+[21:04:05.402910] {mesa egl display queue} wl_callback#53.done(13)
+[21:04:05.402927] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#54.format_table(fd 47, 2960)
+[21:04:05.402941] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#54.main_device(array[8])
+[21:04:05.402944] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#54.tranche_target_device(array[8])
+[21:04:05.402946] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#54.tranche_flags(0)
+[21:04:05.402952] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#54.tranche_formats(array[370])
+[21:04:05.402961] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#54.tranche_done()
+[21:04:05.402964] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#54.done()
+[21:04:05.410271] {Default Queue}  -> wl_surface#37.attach(wl_buffer#49, 0, 0)
+[21:04:05.410291] {Default Queue}  -> wl_surface#37.set_buffer_scale(2)
+[21:04:05.410296] {Default Queue}  -> wl_surface#37.damage(0, 0, 392, 248)
+[21:04:05.410316] {Default Queue}  -> wl_surface#37.frame(new id wl_callback#53)
+[21:04:05.410321] {Default Queue}  -> wl_surface#37.commit()
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"14","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nWindow actions"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"14","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nWindow actions"}}
+[21:04:05.410536] {mesa egl surface queue} wl_buffer#44.release()
+[21:04:05.410542] {mesa egl surface queue} wl_callback#47.done(5)
+[21:04:05.410815] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#44, 0, 0)
+[21:04:05.410821] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.410825] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.410828] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.410854] {Default Queue} wl_buffer#49.release()
+[21:04:05.410887] {Display Queue} wl_display#1.delete_id(47)
+surface-report: origin=popup {"kind":"surface-report","body":{"publication":"14","lease":"1","buttons":[{"id":"menu:1:close","label":"Close","accessibleName":"Close window actions","disabled":false,"x":11,"y":60,"width":370,"height":36},{"id":"menu:1:0","label":"Restore","accessibleName":"Restore","disabled":true,"x":11,"y":99,"width":370,"height":36},{"id":"menu:1:1","label":"MinimizeSelected","accessibleName":"Minimize","disabled":false,"x":11,"y":138,"width":370,"height":36},{"id":"menu:1:2","label":"Maximize","accessibleName":"Maximize","disabled":true,"x":11,"y":177,"width":370,"height":36}],"focus":"menu:1:1","text":"Window actions\nWindow actions\nClose\nRestore\nMinimizeSelected\nMaximize"}}
+surface-presentation-applied: publication=14 lease=1
+[21:04:05.417188] {Display Queue} wl_display#1.delete_id(53)
+[21:04:05.417196] {Default Queue} wl_callback#53.done(112111352)
+[21:04:05.417242] {Default Queue}  -> wl_buffer#49.destroy()
+[21:04:05.417246] {Default Queue}  -> wl_shm_pool#52.destroy()
+[21:04:05.418483] {mesa egl display queue}  -> zwp_linux_dmabuf_v1#39.create_params(new id zwp_linux_buffer_params_v1#53)
+[21:04:05.418510] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#53.add(fd 48, 0, 0, 3584, 16777216, 15)
+[21:04:05.418524] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#53.add(fd 49, 1, 1835008, 448, 16777216, 15)
+[21:04:05.418529] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#53.add(fd 50, 2, 1843200, 64, 16777216, 15)
+[21:04:05.418532] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#53.create_immed(new id wl_buffer#55, 784, 496, 875713089, 0)
+[21:04:05.418538] {mesa egl surface queue}  -> zwp_linux_buffer_params_v1#53.destroy()
+[21:04:05.418542] {mesa egl surface queue}  -> wl_surface#37.attach(wl_buffer#55, 0, 0)
+[21:04:05.418545] {mesa egl surface queue}  -> wl_surface#37.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.418549] {mesa egl surface queue}  -> wl_surface#37.commit()
+[21:04:05.418552] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#56)
+[21:04:05.418890] discarded [unknown]#49.[event 0](0 fd, 8 byte)
+[21:04:05.418899] {Display Queue} wl_display#1.delete_id(49)
+[21:04:05.418904] {Display Queue} wl_display#1.delete_id(52)
+[21:04:05.418906] {Display Queue} wl_display#1.delete_id(53)
+[21:04:05.418909] {Display Queue} wl_display#1.delete_id(56)
+[21:04:05.453718] {Default Queue} wl_pointer#21.motion(112111389, 196.00000000, 195.00000000)
+[21:04:05.453742] {Default Queue} wl_pointer#21.frame()
+[21:04:05.453980] {Default Queue} wl_pointer#21.button(14, 112111389, 272, 1)
+[21:04:05.453985] {Default Queue} wl_pointer#21.motion(112111389, 196.00000000, 195.00000000)
+[21:04:05.453990] {Default Queue} wl_pointer#21.frame()
+[21:04:05.453994] {Default Queue} wl_pointer#21.button(15, 112111389, 272, 0)
+[21:04:05.453997] {Default Queue} wl_pointer#21.frame()
+[21:04:05.463764] {Default Queue} wl_pointer#21.motion(112111399, 196.00000000, 78.00000000)
+[21:04:05.463779] {Default Queue} wl_pointer#21.frame()
+[21:04:05.463788] {Default Queue} wl_pointer#21.button(16, 112111399, 272, 1)
+[21:04:05.463791] {Default Queue} wl_pointer#21.motion(112111399, 196.00000000, 78.00000000)
+[21:04:05.463796] {Default Queue} wl_pointer#21.frame()
+[21:04:05.463799] {Default Queue} wl_pointer#21.button(17, 112111399, 272, 0)
+[21:04:05.463802] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"press","button":0,"buttons":1,"trusted":true,"id":"control:menu-close"}
+context-input-report: {"kind":"context-input-report","phase":"release","button":0,"buttons":0,"trusted":true,"id":"control:menu-close"}
+[21:04:05.467243] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(13, 1)
+[21:04:05.467341] {Default Queue}  -> xdg_popup#51.destroy()
+[21:04:05.467346] {Default Queue}  -> xdg_surface#50.destroy()
+[21:04:05.467362] {Default Queue}  -> wl_surface#37.destroy()
+[21:04:05.467380] {mesa egl surface queue}  -> wl_buffer#55.destroy()
+[21:04:05.467386] {mesa egl surface queue}  -> zwp_linux_dmabuf_feedback_v1#54.destroy()
+[21:04:05.467923] {Default Queue}  -> wl_display#1.sync(new id wl_callback#56)
+[21:04:05.468340] discarded [unknown]#51.[event 1](0 fd, 8 byte)
+[21:04:05.468344] discarded [unknown]#55.[event 0](0 fd, 8 byte)
+[21:04:05.468347] {Display Queue} wl_display#1.delete_id(51)
+[21:04:05.468351] {Display Queue} wl_display#1.delete_id(50)
+[21:04:05.468353] {Display Queue} wl_display#1.delete_id(54)
+[21:04:05.468355] {Display Queue} wl_display#1.delete_id(56)
+[21:04:05.468357] {Default Queue} wl_keyboard#31.modifiers(18, 0, 0, 0, 0)
+[21:04:05.468368] {Default Queue} wl_keyboard#31.leave(19, nil)
+[21:04:05.468372] {Default Queue} wl_pointer#21.leave(20, nil)
+[21:04:05.468375] {Default Queue} wl_pointer#21.frame()
+[21:04:05.468377] {Default Queue} wl_callback#56.done(21)
+surface-popup-closed: lease=1
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"10"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"11","minimumWatermark":"4"}
+surface-commit: publication=15 lease=1 open=0
+view-commit: popup=0 focus=1 publication=15
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"15","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"15","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"10","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"3"},"scene":{"revision":"3","focused":"1","windows":[{"incarnation":"1","application":"elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-3636009","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"11","sequence":"7","revision":"5","outputGeneration":"1","facts":{"focused":"1","inputBlocked":false,"windows":[{"incarnation":"1","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,400,252],"logicalGeometry":[-241,-181,640,480],"visualGeometry":[-241,-181,640,480],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[640,480],"rawMaximum":[0,0],"layoutMinimum":[640,480],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":2},"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"15","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=16 lease=1 open=0
+view-commit: popup=0 focus=1 publication=16
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"16","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.484427] discarded [unknown]#55.[event 0](0 fd, 8 byte)
+[21:04:05.484456] discarded [unknown]#55.[event 0](0 fd, 8 byte)
+[21:04:05.484468] {Display Queue} wl_display#1.delete_id(37)
+[21:04:05.484476] {Display Queue} wl_display#1.delete_id(55)
+[21:04:05.485434] {mesa egl surface queue} wl_callback#47.done(13)
+[21:04:05.485439] {mesa egl surface queue} wl_buffer#45.release()
+[21:04:05.485644] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[21:04:05.485650] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.485653] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.485664] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.485884] {Display Queue} wl_display#1.delete_id(47)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"16","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"16","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+[21:04:05.502463] {mesa egl surface queue} wl_callback#47.done(21)
+[21:04:05.502504] {mesa egl surface queue} wl_buffer#44.release()
+[21:04:05.502744] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#44, 0, 0)
+[21:04:05.502750] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.502753] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.502756] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.502811] {Display Queue} wl_display#1.delete_id(47)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"16","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"16","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360091","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636009","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360091\nConnected"}}
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"12"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"13","minimumWatermark":"7"}
+surface-commit: publication=17 lease=1 open=0
+view-commit: popup=0 focus=1 publication=17
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"17","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"17","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:3:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636009","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"12","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"4"},"scene":{"revision":"4","focused":null,"windows":[]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"13","sequence":"8","revision":"6","outputGeneration":"1","facts":{"focused":null,"inputBlocked":false,"windows":[]}}
+surface-commit: publication=18 lease=1 open=0
+view-commit: popup=0 focus=1 publication=18
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"18","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"18","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.521299] {mesa egl surface queue} wl_callback#47.done(21)
+[21:04:05.521331] {mesa egl surface queue} wl_buffer#45.release()
+[21:04:05.521537] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[21:04:05.521543] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.521546] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.521550] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.521822] {Display Queue} wl_display#1.delete_id(47)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"18","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36}],"focus":"","text":"Applications\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"18","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36}],"focus":"","text":"Applications\nConnected"}}
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"14"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"15","minimumWatermark":"8"}
+surface-commit: publication=19 lease=1 open=0
+view-commit: popup=0 focus=1 publication=19
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"19","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"19","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"14","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"5"},"scene":{"revision":"5","focused":"2","windows":[{"incarnation":"2","application":"elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-3636042","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"15","sequence":"9","revision":"7","outputGeneration":"1","facts":{"focused":"2","inputBlocked":false,"windows":[{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,400,252],"logicalGeometry":[20,68,360,212],"visualGeometry":[21,69,358,210],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":false,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":false,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[640,480],"rawMaximum":[0,0],"layoutMinimum":[640,480],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":2},"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-commit: publication=20 lease=1 open=0
+view-commit: popup=0 focus=1 publication=20
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"20","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:5:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=21 lease=1 open=0
+view-commit: popup=0 focus=1 publication=21
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"21","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:5:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.571282] {mesa egl surface queue} wl_callback#47.done(21)
+[21:04:05.571297] {mesa egl surface queue} wl_buffer#44.release()
+[21:04:05.571508] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#44, 0, 0)
+[21:04:05.571516] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.571521] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.571524] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.571581] {Display Queue} wl_display#1.delete_id(47)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"21","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:5:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"21","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:5:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"16"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"17","minimumWatermark":"9"}
+surface-commit: publication=22 lease=1 open=0
+view-commit: popup=0 focus=1 publication=22
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"22","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:5:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"22","lease":"1","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:5:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"16","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"6"},"scene":{"revision":"6","focused":"2","windows":[{"incarnation":"2","application":"elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-3636042","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"17","sequence":"10","revision":"8","outputGeneration":"1","facts":{"focused":"2","inputBlocked":false,"windows":[{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,400,252],"logicalGeometry":[-241,-181,640,480],"visualGeometry":[-241,-181,640,480],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[640,480],"rawMaximum":[0,0],"layoutMinimum":[640,480],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":2},"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-commit: publication=23 lease=1 open=0
+view-commit: popup=0 focus=1 publication=23
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"23","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=24 lease=1 open=0
+view-commit: popup=0 focus=1 publication=24
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"24","lease":"1","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"24","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"24","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+[21:04:05.638702] {Default Queue} wl_pointer#21.enter(25, wl_surface#41, 241.50000000, 24.00000000)
+[21:04:05.638728] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(25, 1)
+[21:04:05.638734] {Default Queue} wl_pointer#21.frame()
+[21:04:05.638763] {Default Queue} wl_pointer#21.motion(112111573, 241.50000000, 24.00000000)
+[21:04:05.638768] {Default Queue} wl_pointer#21.frame()
+[21:04:05.638774] {Default Queue} wl_pointer#21.button(26, 112111574, 273, 1)
+[21:04:05.638778] {Default Queue} wl_pointer#21.frame()
+[21:04:05.638784] {Default Queue} wl_pointer#21.button(27, 112111574, 273, 0)
+[21:04:05.638787] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"press","button":2,"buttons":2,"trusted":true,"id":"bar:group:application:elm-xdg-origin-probe"}
+context-input-report: {"kind":"context-input-report","phase":"release","button":2,"buttons":0,"trusted":true,"id":"bar:group:application:elm-xdg-origin-probe"}
+surface-context-admitted: view=1 generation=1 origin=bar trigger=pointer publication=24 lease=1
+[21:04:05.652638] {Default Queue}  -> wl_compositor#5.create_surface(new id wl_surface#55)
+[21:04:05.652804] {Default Queue}  -> wl_surface#55.attach(nil, 0, 0)
+[21:04:05.652822] {Default Queue}  -> xdg_wm_base#35.create_positioner(new id xdg_positioner#37)
+[21:04:05.652830] {Default Queue}  -> xdg_positioner#37.set_size(392, 248)
+[21:04:05.652837] {Default Queue}  -> xdg_positioner#37.set_anchor_rect(241, 24, 1, 1)
+[21:04:05.652843] {Default Queue}  -> xdg_positioner#37.set_offset(0, 0)
+[21:04:05.652849] {Default Queue}  -> xdg_positioner#37.set_anchor(6)
+[21:04:05.652854] {Default Queue}  -> xdg_positioner#37.set_gravity(8)
+[21:04:05.652859] {Default Queue}  -> xdg_positioner#37.set_constraint_adjustment(11)
+[21:04:05.652866] {Default Queue}  -> xdg_wm_base#35.get_xdg_surface(new id xdg_surface#56, wl_surface#55)
+[21:04:05.652873] {Default Queue}  -> xdg_surface#56.get_popup(new id xdg_popup#54, nil, xdg_positioner#37)
+[21:04:05.652880] {Default Queue}  -> zwlr_layer_surface_v1#43.get_popup(xdg_popup#54)
+[21:04:05.652897] {Default Queue}  -> xdg_positioner#37.destroy()
+[21:04:05.652922] {Default Queue}  -> xdg_popup#54.grab(wl_seat#22, 26)
+[21:04:05.652930] {Default Queue}  -> wl_surface#55.commit()
+[21:04:05.652937] {Default Queue}  -> wl_display#1.sync(new id wl_callback#50)
+[21:04:05.653203] {Display Queue} wl_display#1.delete_id(37)
+[21:04:05.653212] {Display Queue} wl_display#1.delete_id(50)
+[21:04:05.653216] {Default Queue} xdg_popup#54.configure(4, 25, 392, 248)
+surface-configured: lease=2 rectKnown=0 gdkWidth=392 gdkHeight=248
+[21:04:05.653230] {Default Queue} wl_keyboard#31.enter(29, wl_surface#55, array[0])
+[21:04:05.653237] {Default Queue} wl_keyboard#31.modifiers(30, 0, 0, 0, 0)
+[21:04:05.653251] {Default Queue} wl_data_device#25.selection(nil)
+[21:04:05.653264] {Default Queue} wl_pointer#21.leave(31, wl_surface#41)
+[21:04:05.653270] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(25, 1)
+[21:04:05.653273] {Default Queue} wl_pointer#21.enter(32, wl_surface#55, -0.00781250, -0.00781250)
+[21:04:05.653281] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(32, 1)
+[21:04:05.653285] {Default Queue} wl_pointer#21.frame()
+[21:04:05.653288] {Default Queue} wl_callback#50.done(32)
+[21:04:05.653291] {Default Queue} xdg_surface#56.configure(28)
+[21:04:05.653294] {Default Queue}  -> xdg_surface#56.ack_configure(28)
+[21:04:05.653340] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(32, 1)
+surface-popup-open: lease=2
+surface-commit: publication=25 lease=2 open=1
+view-commit: popup=1 focus=1 publication=25
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"25","lease":"2","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":{"id":2,"closeId":"menu:2:close","incarnation":"2","title":"ELM-XDG-ORIGIN-PROBE-3636042","selected":1,"actions":[{"domId":"menu:2:0","label":"Restore","enabled":false},{"domId":"menu:2:1","label":"Minimize","enabled":true},{"domId":"menu:2:2","label":"Maximize","enabled":false}]},"mode":"menu","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-native-keyboard-focus: lease=2 in=1
+[21:04:05.653680] {Default Queue}  -> xdg_surface#56.set_window_geometry(0, 0, 392, 248)
+[21:04:05.653724] {Default Queue}  -> wl_shm#7.create_pool(new id wl_shm_pool#50, fd 48, 1555456)
+[21:04:05.653733] {Default Queue}  -> wl_shm_pool#50.create_buffer(new id wl_buffer#37, 0, 784, 496, 3136, 0)
+[21:04:05.654357] {Default Queue}  -> wl_surface#55.attach(wl_buffer#37, 0, 0)
+[21:04:05.654366] {Default Queue}  -> wl_surface#55.set_buffer_scale(2)
+[21:04:05.654369] {Default Queue}  -> wl_surface#55.damage(0, 0, 392, 248)
+[21:04:05.654373] {Default Queue}  -> wl_compositor#5.create_region(new id wl_region#51)
+[21:04:05.654376] {Default Queue}  -> wl_region#51.add(0, 0, 392, 248)
+[21:04:05.654379] {Default Queue}  -> wl_surface#55.set_opaque_region(wl_region#51)
+[21:04:05.654382] {Default Queue}  -> wl_region#51.destroy()
+[21:04:05.654385] {Default Queue}  -> wl_surface#55.set_input_region(nil)
+[21:04:05.654391] {Default Queue}  -> wl_surface#55.frame(new id wl_callback#53)
+[21:04:05.654395] {Default Queue}  -> wl_surface#55.commit()
+surface-report: origin=popup {"kind":"surface-report","body":{"publication":"14","lease":"1","buttons":[{"id":"menu:1:close","label":"Close","accessibleName":"Close window actions","disabled":false,"x":11,"y":60,"width":370,"height":36},{"id":"menu:1:0","label":"Restore","accessibleName":"Restore","disabled":true,"x":11,"y":99,"width":370,"height":36},{"id":"menu:1:1","label":"MinimizeSelected","accessibleName":"Minimize","disabled":false,"x":11,"y":138,"width":370,"height":36},{"id":"menu:1:2","label":"Maximize","accessibleName":"Maximize","disabled":true,"x":11,"y":177,"width":370,"height":36}],"focus":"menu:1:close","text":"Window actions\nWindow actions\nClose\nRestore\nMinimizeSelected\nMaximize"}}
+[21:04:05.654869] {Display Queue} wl_display#1.delete_id(51)
+[21:04:05.654895] {Display Queue} wl_display#1.delete_id(53)
+[21:04:05.654900] {Default Queue} wl_callback#53.done(112111590)
+[21:04:05.654905] {Default Queue} wl_pointer#21.motion(112111590, 237.50000000, -1.00000000)
+[21:04:05.654911] {Default Queue} wl_surface#55.enter(wl_output#19)
+[21:04:05.654916] {Default Queue} wl_buffer#37.release()
+[21:04:05.663322] {Default Queue}  -> wl_surface#55.set_buffer_scale(2)
+[21:04:05.663363] {mesa egl surface queue}  -> zwp_linux_dmabuf_v1#39.get_surface_feedback(new id zwp_linux_dmabuf_feedback_v1#53, wl_surface#55)
+[21:04:05.663373] {mesa egl display queue}  -> wl_display#1.sync(new id wl_callback#51)
+[21:04:05.663655] {Display Queue} wl_display#1.delete_id(51)
+[21:04:05.663668] {mesa egl display queue} wl_callback#51.done(32)
+[21:04:05.663683] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.format_table(fd 47, 2960)
+[21:04:05.663697] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.main_device(array[8])
+[21:04:05.663701] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_target_device(array[8])
+[21:04:05.663704] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_flags(0)
+[21:04:05.663707] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_formats(array[370])
+[21:04:05.663714] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.tranche_done()
+[21:04:05.663718] {mesa egl surface queue} zwp_linux_dmabuf_feedback_v1#53.done()
+[21:04:05.664886] {Default Queue}  -> wl_surface#55.attach(wl_buffer#37, 0, 0)
+[21:04:05.664900] {Default Queue}  -> wl_surface#55.set_buffer_scale(2)
+[21:04:05.664905] {Default Queue}  -> wl_surface#55.damage(0, 0, 392, 248)
+[21:04:05.664921] {Default Queue}  -> wl_surface#55.frame(new id wl_callback#51)
+[21:04:05.664925] {Default Queue}  -> wl_surface#55.commit()
+surface-report: origin=popup {"kind":"surface-report","body":{"publication":"25","lease":"2","buttons":[{"id":"menu:2:close","label":"Close","accessibleName":"Close window actions","disabled":false,"x":11,"y":60,"width":370,"height":36},{"id":"menu:2:0","label":"Restore","accessibleName":"Restore","disabled":true,"x":11,"y":99,"width":370,"height":36},{"id":"menu:2:1","label":"MinimizeSelected","accessibleName":"Minimize","disabled":false,"x":11,"y":138,"width":370,"height":36},{"id":"menu:2:2","label":"Maximize","accessibleName":"Maximize","disabled":true,"x":11,"y":177,"width":370,"height":36}],"focus":"menu:2:1","text":"Window actions\nWindow actions\nClose\nRestore\nMinimizeSelected\nMaximize"}}
+surface-presentation-applied: publication=25 lease=2
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"24","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"24","lease":"1","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+[21:04:05.665236] {Default Queue} wl_buffer#37.release()
+[21:04:05.667426] {Display Queue} wl_display#1.delete_id(51)
+[21:04:05.667456] {Default Queue} wl_callback#51.done(112111602)
+[21:04:05.672871] {mesa egl surface queue} wl_callback#47.done(23)
+[21:04:05.672892] {mesa egl surface queue} wl_buffer#45.release()
+[21:04:05.673096] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[21:04:05.673102] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.673105] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.673108] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.673344] {Display Queue} wl_display#1.delete_id(47)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"25","lease":"2","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nWindow actions"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"25","lease":"2","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nWindow actions"}}
+[21:04:05.687005] {Default Queue} wl_pointer#21.motion(112111622, 196.00000000, 195.00000000)
+[21:04:05.687026] {Default Queue} wl_pointer#21.frame()
+[21:04:05.687050] {Default Queue} wl_pointer#21.button(33, 112111622, 272, 1)
+[21:04:05.687056] {Default Queue} wl_pointer#21.motion(112111622, 196.00000000, 195.00000000)
+[21:04:05.687062] {Default Queue} wl_pointer#21.frame()
+[21:04:05.687066] {Default Queue} wl_pointer#21.button(34, 112111622, 272, 0)
+[21:04:05.687071] {Default Queue} wl_pointer#21.frame()
+[21:04:05.698471] {Default Queue} wl_pointer#21.motion(112111634, 196.00000000, 78.00000000)
+[21:04:05.698498] {Default Queue} wl_pointer#21.frame()
+[21:04:05.698529] {Default Queue} wl_pointer#21.button(35, 112111634, 272, 1)
+[21:04:05.698535] {Default Queue} wl_pointer#21.motion(112111634, 196.00000000, 78.00000000)
+[21:04:05.698542] {Default Queue} wl_pointer#21.frame()
+[21:04:05.698547] {Default Queue} wl_pointer#21.button(36, 112111634, 272, 0)
+[21:04:05.698551] {Default Queue} wl_pointer#21.frame()
+context-input-report: {"kind":"context-input-report","phase":"press","button":0,"buttons":1,"trusted":true,"id":"control:menu-close"}
+context-input-report: {"kind":"context-input-report","phase":"release","button":0,"buttons":0,"trusted":true,"id":"control:menu-close"}
+[21:04:05.700798] {Default Queue}  -> wp_cursor_shape_device_v1#30.set_shape(32, 1)
+[21:04:05.700901] {Default Queue}  -> xdg_popup#54.destroy()
+[21:04:05.700907] {Default Queue}  -> xdg_surface#56.destroy()
+[21:04:05.700922] {mesa egl surface queue}  -> zwp_linux_dmabuf_feedback_v1#53.destroy()
+[21:04:05.701151] {Default Queue}  -> wl_surface#55.destroy()
+[21:04:05.701157] {Default Queue}  -> wl_buffer#37.destroy()
+[21:04:05.701160] {Default Queue}  -> wl_shm_pool#50.destroy()
+[21:04:05.701880] {Default Queue}  -> wl_display#1.sync(new id wl_callback#51)
+[21:04:05.702348] discarded [unknown]#54.[event 1](0 fd, 8 byte)
+[21:04:05.702354] discarded [unknown]#37.[event 0](0 fd, 8 byte)
+[21:04:05.702357] {Display Queue} wl_display#1.delete_id(54)
+[21:04:05.702362] {Display Queue} wl_display#1.delete_id(56)
+[21:04:05.702364] {Display Queue} wl_display#1.delete_id(53)
+[21:04:05.702367] {Display Queue} wl_display#1.delete_id(37)
+[21:04:05.702369] {Display Queue} wl_display#1.delete_id(50)
+[21:04:05.702372] {Display Queue} wl_display#1.delete_id(51)
+[21:04:05.702374] {Default Queue} wl_keyboard#31.modifiers(37, 0, 0, 0, 0)
+[21:04:05.702386] {Default Queue} wl_keyboard#31.leave(38, nil)
+[21:04:05.702392] {Default Queue} wl_pointer#21.leave(39, nil)
+[21:04:05.702395] {Default Queue} wl_pointer#21.frame()
+[21:04:05.702398] {Default Queue} wl_callback#51.done(40)
+surface-popup-closed: lease=2
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"18"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"19","minimumWatermark":"10"}
+surface-commit: publication=26 lease=2 open=0
+view-commit: popup=0 focus=1 publication=26
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"26","lease":"2","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"26","lease":"2","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"18","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"6"},"scene":{"revision":"6","focused":"2","windows":[{"incarnation":"2","application":"elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-3636042","minimized":false,"owner":null,"available":true}]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"19","sequence":"13","revision":"10","outputGeneration":"1","facts":{"focused":"2","inputBlocked":false,"windows":[{"incarnation":"2","owner":null,"workspace":"1","workspaceGeneration":"1","monitor":"0","outputOwnershipGeneration":"1","workAreaRevision":"1","workArea":[0,48,400,252],"logicalGeometry":[-241,-181,640,480],"visualGeometry":[-241,-181,640,480],"nativeMode":"ordinary","clientMode":"ordinary","minimized":false,"floating":true,"grouped":false,"fixedSize":false,"constrainedSize":true,"geometryEligible":true,"ordinaryPlacementKnown":false,"sizePolicy":{"inputs":{"profile":"wayland-zero-origin-v1","rawMinimum":[640,480],"rawMaximum":[0,0],"layoutMinimum":[640,480],"layoutMaximum":[1.7976931348623157e+308,1.7976931348623157e+308],"geometryOrigin":[0,0],"reservedTopLeft":[1,1],"reservedBottomRight":[1,1],"monitorScale":2},"maximize":null,"restoreGeometry":null},"capabilities":{"maximize":false,"restoreGeometry":false}}]}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"26","lease":"2","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-commit: publication=27 lease=2 open=0
+view-commit: popup=0 focus=1 publication=27
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"27","lease":"2","body":{"phase":"Coherent","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.719650] {mesa egl surface queue} wl_callback#47.done(32)
+[21:04:05.719669] {mesa egl surface queue} wl_buffer#44.release()
+[21:04:05.719902] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#44, 0, 0)
+[21:04:05.719912] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.719916] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.719919] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.719981] {Display Queue} wl_display#1.delete_id(55)
+[21:04:05.719986] {Display Queue} wl_display#1.delete_id(47)
+surface-report: origin=bar {"kind":"surface-report","body":{"publication":"27","lease":"2","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+view-report: id=1 x=0 y=0 {"kind":"surface-report","body":{"publication":"27","lease":"2","buttons":[{"id":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","label":"Applications","accessibleName":"Open applications","disabled":false,"x":3,"y":6,"width":112.28125,"height":36},{"id":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","label":"ELM-XDG-ORIGIN-PROBE-36360421","accessibleName":"Minimize ELM-XDG-ORIGIN-PROBE-3636042","disabled":false,"x":121.28125,"y":6,"width":240,"height":36}],"focus":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","text":"Applications\nELM-XDG-ORIGIN-PROBE-36360421\nConnected"}}
+backend-frame: {"protocolVersion":3,"kind":"host-refresh"}
+frontend-request: {"protocolVersion":3,"kind":"projection-request","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"20"}
+frontend-request: {"protocolVersion":3,"kind":"geometry-facts-request","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"21","minimumWatermark":"13"}
+surface-commit: publication=28 lease=2 open=0
+view-commit: popup=0 focus=1 publication=28
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"28","lease":"2","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"28","lease":"2","body":{"phase":"Awaiting","transaction":"Idle","groups":[{"key":"application:elm-xdg-origin-probe","domId":"group:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:1:6:application:elm-xdg-origin-probe","title":"ELM-XDG-ORIGIN-PROBE-3636042","active":true,"expanded":false}],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+backend-frame: {"protocolVersion":3,"kind":"action-projection","binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"20","context":{"lifetime":"18424596108594103312","epoch":"1","output":"1","revision":"7"},"scene":{"revision":"7","focused":null,"windows":[]}}
+backend-frame: {"protocolVersion":3,"kind":"geometry-facts","geometryProtocol":2,"binding":{"lifetime":"18424596108594103312","session":"6006712416560038424","frontend":"1"},"requestId":"21","sequence":"14","revision":"11","outputGeneration":"1","facts":{"focused":null,"inputBlocked":false,"windows":[]}}
+surface-commit: publication=29 lease=2 open=0
+view-commit: popup=0 focus=1 publication=29
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"29","lease":"2","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+surface-inspection: {"surfaceProtocol":2,"kind":"surface-inspection","publication":"29","lease":"2","body":{"phase":"Coherent","transaction":"Idle","groups":[],"menu":null,"mode":"closed","outstanding":0,"registry":0,"picker":null,"openerId":"applications:{\"lifetime\":\"18424596108594103312\",\"session\":\"6006712416560038424\",\"frontend\":\"1\"}:3:control:opener","reconnectId":"reconnect"}}
+[21:04:05.760113] {Default Queue}  -> wl_display#1.sync(new id wl_callback#55)
+[21:04:05.761017] {Display Queue} wl_display#1.delete_id(55)
+[21:04:05.761035] {Default Queue} wl_callback#55.done(40)
+[21:04:05.762218] {mesa egl surface queue} wl_callback#47.done(40)
+[21:04:05.762239] {mesa egl surface queue} wl_buffer#45.release()
+[21:04:05.762448] {mesa egl surface queue}  -> wl_surface#41.attach(wl_buffer#45, 0, 0)
+[21:04:05.762458] {mesa egl surface queue}  -> wl_surface#41.damage(0, 0, 2147483647, 2147483647)
+[21:04:05.762462] {mesa egl surface queue}  -> wl_surface#41.commit()
+[21:04:05.762465] {mesa egl surface queue}  -> wl_display#1.sync(new id wl_callback#47)
+[21:04:05.763572] {Display Queue} wl_display#1.delete_id(47)
+backend-exit: waited=1 normal=1 code=0
+[21:04:05.771227] {Default Queue}  -> zwlr_layer_surface_v1#43.destroy()
+[21:04:05.771289] {Default Queue}  -> wl_surface#41.destroy()
+[21:04:05.771312] {mesa egl surface queue}  -> wl_buffer#44.destroy()
+[21:04:05.771330] {mesa egl surface queue}  -> wl_buffer#45.destroy()
+[21:04:05.771334] {mesa egl surface queue}  -> wl_buffer#48.destroy()
+[21:04:05.771344] {mesa egl surface queue}  -> zwp_linux_dmabuf_feedback_v1#46.destroy()
+view-retired: id=1
+[21:04:05.779124] discarded [unknown]#44.[event 0](0 fd, 8 byte)
+[21:04:05.779139] discarded [unknown]#44.[event 0](0 fd, 8 byte)
+[21:04:05.779142] discarded [unknown]#45.[event 0](0 fd, 8 byte)
+[21:04:05.779144] discarded [unknown]#48.[event 0](0 fd, 8 byte)
+[21:04:05.779146] discarded [unknown]#48.[event 0](0 fd, 8 byte)
+[21:04:05.779156] {Display Queue} wl_display#1.delete_id(43)
+[21:04:05.779165] {Display Queue} wl_display#1.delete_id(44)
+[21:04:05.779177] {Display Queue} wl_display#1.delete_id(48)
+[21:04:05.779181] {Display Queue} wl_display#1.delete_id(46)
+[21:04:05.792886] discarded [unknown]#45.[event 0](0 fd, 8 byte)
+[21:04:05.792906] discarded [unknown]#45.[event 0](0 fd, 8 byte)
+[21:04:05.792914] {Display Queue} wl_display#1.delete_id(41)
+[21:04:05.792921] {Display Queue} wl_display#1.delete_id(45)
+shared-host-exit: failure=0 rendered=1
