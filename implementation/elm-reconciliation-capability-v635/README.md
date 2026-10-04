@@ -1,0 +1,1 @@
+Fresh392 real-pointer/menu/minimize/restore and normal relay EOF campaign; only coherent422/runtime420/427 pointers and stronger owning409 dependency preflight changed. Original inputs/assertions/deadlines/normal cleanup retained. Not original geometry08/09/10 acceptance.

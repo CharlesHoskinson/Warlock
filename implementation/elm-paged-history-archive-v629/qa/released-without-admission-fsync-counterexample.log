@@ -1,0 +1,17 @@
+
+  archive
+    1) unlinkPowerLossRetainsReservationTest failed after 1 test(s)
+
+  1 failed
+
+  1) unlinkPowerLossRetainsReservationTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/released-without-admission-fsync/archive.qnt:68:257
+        68:  run unlinkPowerLossRetainsReservationTest=init.then(bootstrap).then(persistFact(2,0)).then(fire(Effect(2))).then(persistFact(2,1)).then(persistFact(2,3)).then(fire(Unlink(2))).then(fire(PowerLoss)).then(fire(RestartSync)).then(persistFact(2,4)).then(all {assert(s.files.contains(2) and not(has(s,2,4)) and safety),fire(Noop)})
+                                                                                                                                                                                                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf5b7 --match=unlinkPowerLossRetainsReservationTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/released-without-admission-fsync/archive.qnt
+error: Tests failed

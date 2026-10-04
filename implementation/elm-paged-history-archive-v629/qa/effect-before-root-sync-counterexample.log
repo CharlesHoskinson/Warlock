@@ -1,0 +1,17 @@
+
+  archive
+    1) visibleManifestRestartBarrierTest failed after 1 test(s)
+
+  1 failed
+
+  1) visibleManifestRestartBarrierTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/effect-before-root-sync/archive.qnt:61:292
+        61:  run visibleManifestRestartBarrierTest=init.then(bootstrap).then(fire(Stage({key:2,kind:0}))).then(fire(WritePages)).then(fire(SyncPages)).then(fire(SyncPageDir)).then(fire(WriteManifest)).then(fire(SyncManifest)).then(fire(Publish)).then(fire(ProcessCrash)).then(fire(Effect(2))).then(all {assert(s.visible.contains(20) and not(has(s,2,0)) and not(s.effects.contains(2)) and not(s.rootReady) and safety),fire(RestartSync)}).then(fire(Effect(2))).then(all {assert(s.effects.contains(2) and safety),fire(Noop)})
+                                                                                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf5b7 --match=visibleManifestRestartBarrierTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/effect-before-root-sync/archive.qnt
+error: Tests failed

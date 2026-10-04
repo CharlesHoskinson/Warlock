@@ -1,0 +1,9 @@
+Running as unit: qa-harness-9dbf70e271874fa3a3b4c1b399ce4b74.scope; invocation ID: 684a658463a94ed49267f783114befba
+
+ Error [QNT101]: Built-in name 'append' is redefined in module 'archive'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/archive.qnt:55:9
+  55:  action append(k:int,t:int):bool=fire(Stage({key:k,kind:t})).then(commit)
+              ^^^^^^
+
+error: parsing failed

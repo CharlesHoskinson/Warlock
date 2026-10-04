@@ -1,0 +1,17 @@
+
+  archive
+    1) immutableMigrationAndCompactionTest failed after 1 test(s)
+
+  1 failed
+
+  1) immutableMigrationAndCompactionTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/erase-on-compaction/archive.qnt:69:197
+        69:  run immutableMigrationAndCompactionTest=init.then(bootstrap).then(release2).then(fire(Compact)).then(fire(ProcessCrash)).then(fire(Collect)).then(fire(RestartSync)).then(fire(Collect)).then(all {assert(s.old.subseteq(s.archive) and has(s,2,1) and has(s,2,4) and safety),fire(Noop)})
+                                                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xf5b7 --match=immutableMigrationAndCompactionTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-paged-history-archive-v629/qa/mutants/erase-on-compaction/archive.qnt
+error: Tests failed
