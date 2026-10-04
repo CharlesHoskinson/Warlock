@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "scope": "Serial reviewed native dispatch; individual report/cleanup/ABI evidence required",
+  "cases": [
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-geometry-v159",
+      "runnerSHA256": "9b6aabb5f4e3ea752df421b220cb1274f56a4d15069839545f83b1fc0615e4e1",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-geometry-v159/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-geometry-v159/qa/native-1791129422996085671/report.json",
+          "sha256": "f1ad9e318ea6d7d885d024f53810a6edf901a040221ecae8fe736dff46fd3ea2"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-unheld-v160",
+      "runnerSHA256": "eec5edff190a4fa939134e967d42a1dbd9d17f52f14fd2d9ef0192f0fcbab72c",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-unheld-v160/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-unheld-v160/qa/native-1791129428585285996/report.json",
+          "sha256": "e1b3fec1422d5310209159891a26e801d9062ec572c58c22a4f23751d3c3e73e"
+        }
+      ]
+    },
+    {
+      "root": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-pointer-v161",
+      "runnerSHA256": "0441fa19f79ab8a3825aace42de728072e723d5a3805c7d79806da30ff34d6b4",
+      "command": [
+        "/usr/bin/python3",
+        "-B",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-build-loop-v1/loop.py",
+        "native",
+        "--runner",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-pointer-v161/qa/native.py"
+      ],
+      "exitCode": 0,
+      "reports": [
+        {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-pointer-v161/qa/native-1791129432011865221/report.json",
+          "sha256": "7c9244a7f52106fe7d017ef0816443e4eb2d577497d35997d58a423fafd51fe4"
+        }
+      ]
+    }
+  ]
+}

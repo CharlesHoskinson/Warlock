@@ -1,0 +1,16 @@
+
+  held
+    1) duplicatePressRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) duplicatePressRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/qa/model-1791128483684004319/duplicate-press.qnt:28:103
+        28:   run duplicatePressRefusedTest = init.then(press(1)).then(press(1)).then(lose).then(cancel).then(all{assert(s.pressed==1 and s.released==1),s'=s})
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=duplicatePressRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 duplicate-press.qnt

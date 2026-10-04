@@ -1,0 +1,16 @@
+
+  held
+    1) retirementBeforeCancellationRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) retirementBeforeCancellationRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/model-1791127764943579193/early-retirement.qnt:40:112
+        40:   run retirementBeforeCancellationRefusedTest = init.then(press(1)).then(capabilityLost).then(retire).then(all{assert(s.keyboardLive and not(s.retired) and s.held==Set(1)),s'=s})
+                                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=retirementBeforeCancellationRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 early-retirement.qnt

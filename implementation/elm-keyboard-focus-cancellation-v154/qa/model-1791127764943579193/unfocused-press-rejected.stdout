@@ -1,0 +1,16 @@
+
+  held
+    1) newPressWhileUnfocusedRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) newPressWhileUnfocusedRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/qa/model-1791127764943579193/unfocused-press.qnt:37:103
+        37:   run newPressWhileUnfocusedRefusedTest = init.then(press(1)).then(focusLost).then(press(2)).then(all{assert(s.held==Set(1) and s.pressed==1),s'=s})
+                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=newPressWhileUnfocusedRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 unfocused-press.qnt

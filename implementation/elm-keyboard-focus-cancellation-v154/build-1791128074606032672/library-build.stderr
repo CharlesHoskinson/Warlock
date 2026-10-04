@@ -1,0 +1,34 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/build-1791128074606032672/inputs/candidate/src/backend/Wayland.cpp: In instantiation of ‘Aquamarine::CWaylandKeyboard::CWaylandKeyboard(Hyprutils::Memory::CSharedPointer<CCWlKeyboard>, Hyprutils::Memory::CWeakPointer<Aquamarine::CWaylandBackend>)::<lambda(CCWlKeyboard*, uint32_t, wl_proxy*, wl_array*)>::<lambda(const auto:17&)> [with auto:17 = Hyprutils::Memory::CSharedPointer<Aquamarine::CWaylandOutput>]’:
+/usr/include/c++/16/type_traits:3854:7:   required from ‘constexpr const bool std::is_invocable_v<Aquamarine::CWaylandKeyboard::CWaylandKeyboard(Hyprutils::Memory::CSharedPointer<CCWlKeyboard>, Hyprutils::Memory::CWeakPointer<Aquamarine::CWaylandBackend>)::<lambda(CCWlKeyboard*, uint32_t, wl_proxy*, wl_array*)>::<lambda(const auto:17&)>&, Hyprutils::Memory::CSharedPointer<Aquamarine::CWaylandOutput>&>’
+ 3854 |     = __is_invocable(_Fn, _Args...);
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/c++/16/concepts:383:25:   required by substitution of ‘template<class _Range, class _Proj, class _Pred>  requires (input_range<_Range>) && (indirect_unary_predicate<_Pred, typename std::__detail::__projected<decltype(std::ranges::__access::__begin((declval<_Container&>)())), _Proj>::__type>) constexpr bool std::ranges::__any_of_fn::operator()(_Range&&, _Pred, _Proj) const [with _Range = std::vector<Hyprutils::Memory::CSharedPointer<Aquamarine::CWaylandOutput> >&; _Proj = std::identity; _Pred = Aquamarine::CWaylandKeyboard::CWaylandKeyboard(Hyprutils::Memory::CSharedPointer<CCWlKeyboard>, Hyprutils::Memory::CWeakPointer<Aquamarine::CWaylandBackend>)::<lambda(CCWlKeyboard*, uint32_t, wl_proxy*, wl_array*)>::<lambda(const auto:17&)>]’
+  383 |     concept invocable = is_invocable_v<_Fn, _Args...>;
+      |                         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/build-1791128074606032672/inputs/candidate/src/backend/Wayland.cpp:443:47:   required from here
+  443 |         const bool owned = std::ranges::any_of(parent->outputs, [surface](const auto& output) {
+      |                            ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  444 |             return output && output->waylandState.surface &&
+      |             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  445 |                 static_cast<wl_proxy*>(output->waylandState.surface->resource()) == surface;
+      |                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  446 |         });
+      |         ~~                                     
+/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/build-1791128074606032672/inputs/candidate/src/backend/Wayland.cpp:444:38: error: ‘Aquamarine::CWaylandOutput::<unnamed struct> Aquamarine::CWaylandOutput::waylandState’ is private within this context
+  444 |             return output && output->waylandState.surface &&
+      |                              ~~~~~~~~^~~~~~~~~~~~
+In file included from /home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/build-1791128074606032672/inputs/candidate/src/backend/Wayland.cpp:9:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/build-1791128074606032672/inputs/candidate/./include/aquamarine/backend/Wayland.hpp:93:11: note: declared private here
+   93 |         } waylandState;
+      |           ^~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/build-1791128074606032672/inputs/candidate/src/backend/Wayland.cpp:445:48: error: ‘Aquamarine::CWaylandOutput::<unnamed struct> Aquamarine::CWaylandOutput::waylandState’ is private within this context
+  445 |                 static_cast<wl_proxy*>(output->waylandState.surface->resource()) == surface;
+      |                                        ~~~~~~~~^~~~~~~~~~~~
+/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v154/build-1791128074606032672/inputs/candidate/./include/aquamarine/backend/Wayland.hpp:93:11: note: declared private here
+   93 |         } waylandState;
+      |           ^~~~~~~~~~~~
+make[3]: *** [CMakeFiles/aquamarine.dir/build.make:247: CMakeFiles/aquamarine.dir/src/backend/Wayland.cpp.o] Error 1
+make[3]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/Makefile2:1024: CMakeFiles/aquamarine.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:1031: CMakeFiles/aquamarine.dir/rule] Error 2
+make: *** [Makefile:544: aquamarine] Error 2
