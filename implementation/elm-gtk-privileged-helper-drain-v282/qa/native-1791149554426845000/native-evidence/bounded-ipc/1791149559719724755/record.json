@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "/usr/bin/hyprctl",
+    "-i",
+    "efb50993780079460b0cbed1363e2166a2de1d9f_1791149555_1827886848",
+    "eval",
+    "local r=hl.dispatch(hl.dsp.window.move({x=40,y=70,relative=false,window=\"address:0x5638b5c9fd20\"})); if type(r)~=\"table\" or r.ok~=true then error(\"placement refused\") end"
+  ],
+  "deadline": 113831.541638031,
+  "startedMonotonic": 113825.655524434,
+  "exitCode": 0
+}

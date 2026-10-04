@@ -1,0 +1,114 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "credentialPolicyInjected": true,
+  "checks": [
+    {
+      "name": "privileged-wait",
+      "passed": true,
+      "elapsed": 1.0668964729993604,
+      "actualHelperExitCode": 0,
+      "helperSignalled": false,
+      "terminal": {
+        "sequence": 10,
+        "kind": "terminal",
+        "monotonic": 113175.306044009,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3710958,
+              "start": "11701196",
+              "pgid": 3710956,
+              "ppid": 3710956,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          },
+          {
+            "identity": {
+              "pid": 3710961,
+              "start": "11701197",
+              "pgid": 3710956,
+              "ppid": 3710958,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      }
+    },
+    {
+      "name": "repeated-signal-error",
+      "passed": true,
+      "elapsed": 0.965912675994332,
+      "actualHelperExitCode": 0,
+      "helperSignalled": false,
+      "terminal": {
+        "sequence": 10,
+        "kind": "terminal",
+        "monotonic": 113176.430134981,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3711081,
+              "start": "11701317",
+              "pgid": 3711056,
+              "ppid": 3711056,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          },
+          {
+            "identity": {
+              "pid": 3711083,
+              "start": "11701318",
+              "pgid": 3711056,
+              "ppid": 3711081,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": "signal: RuntimeError('injected repeated signal acquisition failure')"
+      }
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/drain-test.py": "efd3bad2595b66c50fcda8f064355ca162fc3eccc9aa66b24dfcc96e59f1c3ef",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-supervisor.py": "a991401d619bd059f9e73b34744e9cce2ef7d7141caa74d3ef4482073d2a1014",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/credentials.py": "969432e3c6d74228a167c5788dddbeeef795815e81df0ce5963bead7072bb8d8"
+  }
+}

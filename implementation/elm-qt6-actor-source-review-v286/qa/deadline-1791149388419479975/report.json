@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-actor-source-review-v286/qa/captured/actor.py",
+  "sourceSHA256": "128e6226a7b76968336504f2966d246e989256c822db8b3a2e6163896a8a9bbb",
+  "cases": [
+    {
+      "name": "receipt-final-persist",
+      "returnedAfterDeadline": true,
+      "typedRefusal": false,
+      "elapsed": 7,
+      "normalExitQualified": false,
+      "record": {
+        "commands": [
+          {
+            "sequence": 1,
+            "operation": "inspect",
+            "role": null,
+            "payload": "1 inspect\n",
+            "startedMonotonic": 0.0,
+            "bytesWritten": 10,
+            "written": true,
+            "requestObserved": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "quit-final-persist",
+      "returnedAfterDeadline": true,
+      "typedRefusal": false,
+      "elapsed": 7,
+      "normalExitQualified": false,
+      "record": {
+        "commands": [
+          {
+            "sequence": 1,
+            "operation": "quit",
+            "role": null,
+            "payload": "1 quit\n",
+            "startedMonotonic": 0.0,
+            "bytesWritten": 7,
+            "written": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "close-final-read",
+      "returnedAfterDeadline": true,
+      "typedRefusal": false,
+      "elapsed": 7,
+      "normalExitQualified": true,
+      "record": {
+        "commands": [],
+        "normalExit": true,
+        "exitCode": 0
+      }
+    },
+    {
+      "name": "close-final-persist",
+      "returnedAfterDeadline": true,
+      "typedRefusal": false,
+      "elapsed": 7,
+      "normalExitQualified": true,
+      "record": {
+        "commands": [],
+        "normalExit": true,
+        "exitCode": 0
+      }
+    }
+  ],
+  "correctionAccepted": false,
+  "testSHA256": "c63c825369d27676664d7ee84aee7c1adcc0000a02b50898165e647bf08b03c5"
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+import json,os,sys,time
+assert os.environ['ELM_QT_ROLE_QA']=='1' and os.environ['QT_QPA_PLATFORM']=='wayland' and os.environ['WAYLAND_DEBUG']=='client'
+seq=0;request=0
+start=int(open('/proc/self/stat').read().rsplit(')',1)[1].split()[19])
+profile='application-modal' if '--run-application-modal' in sys.argv else 'window-modal'
+def emit(event,**fields):
+ global seq
+ seq+=1
+ row=dict(schema=1,pid=os.getpid(),processStarted=start,sequence=seq,monotonicUs=int(time.monotonic()*1000000),requestSequence=request,event=event,profile=profile)
+ row.update(fields);print(json.dumps(row),flush=True)
+emit('ready')
+for text in sys.stdin:
+ words=text.split();request=int(words[0]);emit('request',command=words[1],**({'requestedRole':words[2]} if len(words)>2 else {}))
+ if words[1]=='quit':
+  emit('normalexit')
+  pass
+  break

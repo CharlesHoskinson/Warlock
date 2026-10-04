@@ -1,0 +1,80 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor.py",
+  "sourceSHA256": "a1bbf2578837b9a5daadf56214ad2e1a8130e6c48bba97448a15189d3adca3ed",
+  "cases": [
+    {
+      "name": "receipt-final-persist",
+      "returnedAfterDeadline": false,
+      "typedRefusal": true,
+      "elapsed": 7,
+      "normalExitQualified": false,
+      "record": {
+        "commands": [
+          {
+            "sequence": 1,
+            "operation": "inspect",
+            "role": null,
+            "payload": "1 inspect\n",
+            "startedMonotonic": 0.0,
+            "bytesWritten": 10,
+            "written": true,
+            "requestObserved": true,
+            "error": "Refused('Original absolute six-second stage deadline')"
+          }
+        ]
+      }
+    },
+    {
+      "name": "quit-final-persist",
+      "returnedAfterDeadline": false,
+      "typedRefusal": true,
+      "elapsed": 7,
+      "normalExitQualified": false,
+      "record": {
+        "commands": [
+          {
+            "sequence": 1,
+            "operation": "quit",
+            "role": null,
+            "payload": "1 quit\n",
+            "startedMonotonic": 0.0,
+            "bytesWritten": 7,
+            "written": true,
+            "error": "Refused('Original absolute six-second stage deadline')"
+          }
+        ]
+      }
+    },
+    {
+      "name": "close-final-read",
+      "returnedAfterDeadline": false,
+      "typedRefusal": true,
+      "elapsed": 7,
+      "normalExitQualified": false,
+      "record": {
+        "commands": [],
+        "normalExit": false,
+        "closeError": "Refused('Original absolute six-second stage deadline')",
+        "aborted": true
+      }
+    },
+    {
+      "name": "close-final-persist",
+      "returnedAfterDeadline": false,
+      "typedRefusal": true,
+      "elapsed": 7,
+      "normalExitQualified": false,
+      "record": {
+        "commands": [],
+        "normalExit": false,
+        "exitCode": 0,
+        "closeError": "Refused('Original absolute six-second stage deadline')",
+        "aborted": true
+      }
+    }
+  ],
+  "correctionAccepted": true,
+  "testSHA256": "c63c825369d27676664d7ee84aee7c1adcc0000a02b50898165e647bf08b03c5"
+}

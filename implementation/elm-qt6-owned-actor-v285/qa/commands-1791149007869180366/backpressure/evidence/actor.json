@@ -1,0 +1,39 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791149007869180366/backpressure/fake-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "inspect",
+      "role": null,
+      "payload": "1 inspect\n",
+      "startedMonotonic": 113274.137712026,
+      "error": "Refused('Original absolute six-second stage deadline')"
+    }
+  ],
+  "process": {
+    "pid": 3718194,
+    "start": "11711189",
+    "name": "qt6-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791149007869180366/backpressure/fake-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791149007869180366/backpressure/evidence/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "11711189",
+  "stdoutBytes": 169,
+  "stdoutCapturedBytes": 169,
+  "stdoutPrefixSHA256": "35fa368956a4a78235c9e2eec990638340b9cd63d24d42ca9c8ac0221c34302c",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "failureCleanupTerminate": true,
+  "exitCode": -15
+}

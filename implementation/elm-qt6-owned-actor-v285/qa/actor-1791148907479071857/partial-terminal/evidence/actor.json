@@ -1,0 +1,50 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791148907479071857/partial-terminal/fake-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "inspect",
+      "role": null,
+      "payload": "1 inspect\n",
+      "startedMonotonic": 113173.510411302,
+      "bytesWritten": 10,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 2,
+      "operation": "quit",
+      "role": null,
+      "payload": "2 quit\n",
+      "startedMonotonic": 113173.531495924,
+      "bytesWritten": 7,
+      "written": true
+    }
+  ],
+  "process": {
+    "pid": 3710934,
+    "start": "11701126",
+    "name": "qt6-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791148907479071857/partial-terminal/fake-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-1791148907479071857/partial-terminal/evidence/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "11701126",
+  "stdoutBytes": 727,
+  "stdoutCapturedBytes": 727,
+  "stdoutPrefixSHA256": "52f2520bd0fe4347b50648576fac8dd896c741cfc4f17261723a01aecdaf530b",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "closeError": "Refused('complete terminal journal with final unique normalexit required')",
+  "exitCode": 0
+}

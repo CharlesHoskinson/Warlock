@@ -1,0 +1,100 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791148964983680826/ordered-commands/fake-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "open-owner",
+      "role": null,
+      "payload": "1 open-owner\n",
+      "startedMonotonic": 113231.404424,
+      "bytesWritten": 13,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 2,
+      "operation": "reparent-modal",
+      "role": "C",
+      "payload": "2 reparent-modal C\n",
+      "startedMonotonic": 113231.405190962,
+      "bytesWritten": 19,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 3,
+      "operation": "maximize",
+      "role": "C",
+      "payload": "3 maximize C\n",
+      "startedMonotonic": 113231.405854968,
+      "bytesWritten": 13,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 4,
+      "operation": "unmaximize",
+      "role": "C",
+      "payload": "4 unmaximize C\n",
+      "startedMonotonic": 113231.406490506,
+      "bytesWritten": 15,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 5,
+      "operation": "open-popup",
+      "role": null,
+      "payload": "5 open-popup\n",
+      "startedMonotonic": 113231.407105165,
+      "bytesWritten": 13,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 6,
+      "operation": "close-popup",
+      "role": null,
+      "payload": "6 close-popup\n",
+      "startedMonotonic": 113231.407699854,
+      "bytesWritten": 14,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 8,
+      "operation": "quit",
+      "role": null,
+      "payload": "8 quit\n",
+      "startedMonotonic": 113231.408313555,
+      "bytesWritten": 7,
+      "written": true
+    }
+  ],
+  "process": {
+    "pid": 3715129,
+    "start": "11706913",
+    "name": "qt6-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791148964983680826/ordered-commands/fake-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791148964983680826/ordered-commands/evidence/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "11706913",
+  "stdoutBytes": 1778,
+  "stdoutCapturedBytes": 1778,
+  "stdoutPrefixSHA256": "95c34787e70bdeb90a03060c9c9ba5d496914ed27569a4628a185e48c9f7cd89",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "normalExit": true,
+  "exitCode": 0
+}

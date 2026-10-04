@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fakeJournalRealSubprocessOnly": true,
+  "checks": [
+    {
+      "name": "actual-C++-grammar-all-22-generated-commands",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-0",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-2",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-3",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-4",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-5",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-6",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-7",
+      "passed": true
+    },
+    {
+      "name": "invalid-command-8",
+      "passed": true
+    },
+    {
+      "name": "invalid-target-not-written",
+      "passed": true
+    },
+    {
+      "name": "no-invalid-attempt-recorded",
+      "passed": true
+    },
+    {
+      "name": "complete-ordered-receipts-and-real-normal-exit",
+      "passed": true
+    },
+    {
+      "name": "full-pipe-absolute-deadline-refused",
+      "passed": true
+    },
+    {
+      "name": "full-pipe-no-write-no-replay",
+      "passed": true
+    },
+    {
+      "name": "backpressure-child-reaped-with-recorded-failure-cleanup",
+      "passed": true
+    }
+  ],
+  "compilerSHA256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+  "grammarSourceSHA256": "9d6c55e22579ffb5a2625f790c8903c5312cb80104031d2e1dd271ffb16ad6d3",
+  "grammarBinarySHA256": "6b3d8c21c2f4c9dda2bbdece201fa35374e123848a4514cc9340cc60e0ffa5f4",
+  "owningCommandsSHA256": "a849c9dff86a51f1dd93975e50c880d4b86cd2029916bb952c8222bcdd8b95ec",
+  "compileCommand": [
+    "/usr/bin/c++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791148964983680826/grammar.cpp",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/commands-1791148964983680826/grammar"
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/command-test.py": "4779f8e2dce6c1e64d752bcd1f4917d994f719eb7e52f58337a18f11b7c589dd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor.py": "128e6226a7b76968336504f2966d246e989256c822db8b3a2e6163896a8a9bbb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/journal.py": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-owned-actor-v285/qa/actor-test.py": "7f1dcc2d807030d2724cd1fb2968769a41137b4f9fbe6f84a54c6c48677865eb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/native/commands.hpp": "a849c9dff86a51f1dd93975e50c880d4b86cd2029916bb952c8222bcdd8b95ec",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-role-journal-fixture-v250/component-manifest.json": "c65966d9a136418a4b371278a554d3d830890f0d74b76950984857c0e4097983"
+  }
+}

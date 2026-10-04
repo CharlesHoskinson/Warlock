@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-installed-false-expected-unavailable",
+      "passed": true,
+      "accepted": true,
+      "classification": {
+        "serviceOutcome": "expected-unavailable",
+        "exitClasses": {
+          "3736068:11734385": "expected-unavailable"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "name": "actual-descriptor-capture-after-runtime-removal",
+      "passed": true,
+      "accepted": true,
+      "classification": {
+        "serviceOutcome": "expected-unavailable",
+        "exitClasses": {
+          "3736068:11734385": "expected-unavailable"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "name": "wrong-name",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-source",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-hash",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-argv",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "unavailable-cancelled-refused",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-life-ledger-refused",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-status-ledger-refused",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "synthetic-exact-gvfs-handler-cancellation",
+      "passed": true,
+      "accepted": true,
+      "classification": {
+        "serviceOutcome": "cancelled",
+        "exitClasses": {
+          "3735906:11734336": "SIGTERM-handler-exit15"
+        },
+        "normalServiceOperation": false
+      }
+    },
+    {
+      "name": "unsignalled15",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "signal-after-exit",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-signal-start",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-signal-uid",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "kill-fallback",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "uncancelled15",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "wrong-waitstatus",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "duplicate-ledger",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    },
+    {
+      "name": "other-service15",
+      "passed": true,
+      "accepted": false,
+      "classification": null
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/outcome-test.py": "fee47038dd88c0b6fdb15422c8596f511e047d31fffab45f7563f0310100a5e9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/outcomes.py": "428a639129c9b289ff0732e6ce85124cbcb8da39e5187a6407c2b1e02ff6a619",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/credentials.py": "969432e3c6d74228a167c5788dddbeeef795815e81df0ce5963bead7072bb8d8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-privileged-helper-drain-v282/qa/activation-supervisor.py": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85",
+    "/usr/share/dbus-1/services/org.freedesktop.systemd1.service": "eac6205bbfde5563ebdd74f9d420db2d19b1fd2fadc7bc47ae8d55845a8bb82d",
+    "/bin/false": "193f3dd1f3e79ccc77ce0d8a316431d04ae5c37ac36c1fc3a0f8baef38ebdaed",
+    "/usr/share/dbus-1/services/org.gtk.vfs.Daemon.service": "04b7b23e4f6b7681f99f92c5ff97e93ad963fad56e5e05ecfafd7d8e724804d4",
+    "/usr/lib/gvfsd": "7542d6dbcaef963f8012c8a8aa76982da708b626c74401f04490f93498617733"
+  }
+}
