@@ -1,0 +1,32 @@
+-- TYPE MISMATCH -------------------------------------- src/OutputController.elm
+
+The 2nd argument to `list` is not what I expect:
+
+150|         packet = E.object [("viewProtocol",E.int 1),("kind",E.string "view-commit"),("projection",frame current),("requests",E.list identity requests),("focus",E.list identity focus)]
+                                                                                                                                                  ^^^^^^^^
+This `requests` value is a:
+
+    List D.Value
+
+But `list` needs the 2nd argument to be:
+
+    List Scope
+
+Hint: I always figure out the argument types from left to right. If an argument
+is acceptable, I assume it is “correct” and move on. So the problem may actually
+be in one of the previous arguments!
+
+-- TYPE MISMATCH -------------------------------------- src/OutputController.elm
+
+The 1st argument to `list` is not what I expect:
+
+150|         packet = E.object [("viewProtocol",E.int 1),("kind",E.string "view-commit"),("projection",frame current),("requests",E.list identity requests),("focus",E.list identity focus)]
+                                                                                                                                         ^^^^^^^^
+This `identity` value is a:
+
+    Scope -> Counter
+
+But `list` needs the 1st argument to be:
+
+    Scope -> E.Value
+

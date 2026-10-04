@@ -1,0 +1,49 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ {
++   focus: [],
++   kind: 'view-commit',
++   projection: {
++     focusOwner: null,
++     frame: {
++       bar: [
++         {
++           ariaLabel: 'Open applications',
++           detail: '',
++           domId: 'applications:{"lifetime":"12037388133217397494","session":"11368147789958501132","frontend":"1"}:1:control:opener',
++           enabled: true,
++           id: 'bar:applications',
++           label: 'Applications'
++         },
++         {
++           ariaLabel: 'Minimize ELM-MAXIMIZE-PROBE',
++           detail: '1',
++           domId: 'group:{"lifetime":"12037388133217397494","session":"11368147789958501132","frontend":"1"}:1:12:application:elm-maximize-probe',
++           enabled: true,
++           id: 'bar:group:application:elm-maximize-probe',
++           label: 'ELM-MAXIMIZE-PROBE'
++         }
++       ],
++       lease: '0',
++       mode: 'closed',
++       popup: [],
++       publication: '5',
++       status: 'Connected',
++       surfaceProtocol: 2
++     },
++     kind: 'view-frame',
++     popupOwner: null,
++     revision: '0',
++     viewProtocol: 1,
++     views: []
++   },
++   requests: [],
++   viewProtocol: 1
++ }
+- null
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104/qa/disposition-1791111143808278087/inputs/qa/disposition.cjs:52:118
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104/qa/disposition-1791111143808278087/inputs/qa/disposition.cjs:7:76)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104/qa/disposition-1791111143808278087/inputs/qa/disposition.cjs:52:2

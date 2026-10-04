@@ -1,0 +1,16 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+**
+ERROR:qa/disposition-probe.c:27:main: assertion failed (surface_receive(primary_manager,wire,legacy) == SURFACE_PREFLIGHT_UNSENT): (0 == 1)
+Error: Command failed: /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104/qa/disposition-1791110964867335179/probe /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104/qa/disposition-1791110964867335179/probe-input.json
+**
+ERROR:qa/disposition-probe.c:27:main: assertion failed (surface_receive(primary_manager,wire,legacy) == SURFACE_PREFLIGHT_UNSENT): (0 == 1)
+
+    at genericNodeError (node:internal/errors:999:15)
+    at wrappedFn (node:internal/errors:544:14)
+    at checkExecSyncError (node:child_process:943:11)
+    at Object.execFileSync (node:child_process:979:15)
+    at certificate (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104/qa/disposition-1791110964867335179/inputs/qa/disposition.cjs:10:16)
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-batch-disposition-v104/qa/disposition-1791110964867335179/inputs/qa/disposition.cjs:20:13
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
