@@ -1,0 +1,166 @@
+{
+  "passed": true,
+  "scope": "Read-only exact failed-identity audit; preservation and coverage-gap evidence only",
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "fullOriginalRegressionQualified": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-post-close-tests-v71/qa/replay-1791106215786245435/menu-original-checks.json": "2654d565e5911636c5509a836ea2520c9515997af4764f73b855cebdeebb8c11",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-post-close-tests-v71/qa/replay-1791106215786245435/refresh-original-checks.json": "df92afe0ae928c9516bb4df888f1b720185601eaceec342facfdace7a508a1c2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-post-close-tests-v71/qa/replay-1791106215786245435/post-close-checks.json": "2d61269b2ad49a7cab2c3df32975fc192966d53f3d0e02b68b20dcd8fc572cbd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-post-close-tests-v71/qa/replay-1791106215786245435/report.json": "d96fd4648af20fe9cb0b21f4e3427a52225eb9cb16c97f2145d3c01c1e7f04dc"
+  },
+  "counts": {
+    "menu-original-checks.json": {
+      "total": 78,
+      "originalPassed": 64,
+      "originalFailed": 14
+    },
+    "refresh-original-checks.json": {
+      "total": 21,
+      "originalPassed": 18,
+      "originalFailed": 3
+    }
+  },
+  "newPostClosePassed": 59,
+  "newCasesAreNotAutomaticSubstitutes": true,
+  "openObligations": [
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "Minimize closes publication before exactly one real full intent",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "Enter uses selected enabled action exactly once",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "duplicate old callback cannot forward",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "correlated receipt clears ledger without optimistic observation",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "fresh observed facts never resolve Unknown or enable menu retry",
+      "originalResult": "failed",
+      "originalDiagnostic": "TypeError: Cannot read properties of null (reading 'status')",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "unrelated target obtains its own engine-generated native intent",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   {\n-     binding: {\n-       frontend: '300',\n-       lifetime: '100',\n-       session: '200'\n-     },\n-     effectProtocol: 1,\n-     intent: {\n-       context: {\n-         epoch: '300',\n-         lifetime: '100',\n-         output: '1',\n-         revision: '2'\n-       },\n-       generation: '2',\n-       incarnation: '20',\n-       operation: 'minimize',\n-       request: '2'\n-     },\n-     kind: 'window-effect',\n-     protocolVersion: 3\n-   }\n- ]\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "B receipt then delayed A receipt reconciles original map only",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "original full receipt resolves retained old binding once",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "pending engine refuses unrelated new context before approval",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "refreshed focus menu sends actual fresh context once",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n      binding: {\n        frontend: '300',\n        lifetime: '100',\n        session: '200'\n      },\n+     kind: 'projection-request',\n-     effectProtocol: 1,\n-     intent: {\n-       context: {\n-         epoch: '300',\n-         lifetime: '100',\n-         output: '1',\n-         revision: '2'\n-       },\n-       generation: '1',\n-       incarnation: '10',\n-       operation: 'minimize',\n-       request: '1'\n-     },\n-     kind: 'window-effect',\n      protocolVersion: 3,\n+     requestId: '3'\n    }\n  ]\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "topology generation remains separate from registered output identity",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n      binding: {\n        frontend: '300',\n        lifetime: '100',\n        session: '200'\n      },\n+     kind: 'projection-request',\n-     effectProtocol: 1,\n-     intent: {\n-       context: {\n-         epoch: '300',\n-         lifetime: '100',\n-         output: '23',\n-         revision: '1'\n-       },\n-       generation: '1',\n-       incarnation: '10',\n-       operation: 'minimize',\n-       request: '1'\n-     },\n-     kind: 'window-effect',\n      protocolVersion: 3,\n+     requestId: '2'\n    }\n  ]\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "closed presentation reflow cannot alter pending original operation",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 1\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "original bound receipt still resolves exactly once after reflow",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n1 !== 0\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "menu-original-checks.json",
+      "originalIdentity": "fresh authorized post-reflow action dispatches once",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    {\n      binding: {\n        frontend: '300',\n        lifetime: '100',\n        session: '200'\n      },\n+     kind: 'projection-request',\n-     effectProtocol: 1,\n-     intent: {\n-       context: {\n-         epoch: '300',\n-         lifetime: '100',\n-         output: '1',\n-         revision: '1'\n-       },\n-       generation: '1',\n-       incarnation: '10',\n-       operation: 'minimize',\n-       request: '1'\n-     },\n-     kind: 'window-effect',\n      protocolVersion: 3,\n+     requestId: '3'\n    }\n  ]\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "refresh-original-checks.json",
+      "originalIdentity": "notifications during Pending defer without observation or effect allocation",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'5' !== '3'\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "refresh-original-checks.json",
+      "originalIdentity": "receipt drains queued notification with fresh observations not replayed effect",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n+ []\n- [\n-   [\n-     'projection-request',\n-     '4'\n-   ],\n-   [\n-     'geometry-facts-request',\n-     '5'\n-   ]\n- ]\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    },
+    {
+      "suite": "refresh-original-checks.json",
+      "originalIdentity": "Unknown receipt also refreshes while retaining native barrier",
+      "originalResult": "failed",
+      "originalDiagnostic": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n0 !== 2\n",
+      "stagedEquivalentQualified": false,
+      "requiredEvidence": "Fresh staged two-observation trace retaining the original final action, receipt/ledger/ownership assertion and identity; original fixture remains frozen."
+    }
+  ],
+  "geometryOriginal": "Setup aborts at immediate-dispatch assumption; all original geometry identities still require a staged equivalent or original-compatible proof."
+}
