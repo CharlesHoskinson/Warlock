@@ -1,0 +1,1 @@
+Read-only QA diagnostic derivative of held source359. Only refusal logging in native/shared-host.c changes. No admission, deadlines, scope, key/release, policies or request routes change. Native diagnostic campaign pending.
