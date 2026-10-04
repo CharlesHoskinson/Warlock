@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-external-state-gui-v44",
-  "status": "External unfocused native effects now invalidate frontend projections through a versioned native hint; stale picker retirement and explicit restore passed GUI71. Picker label/state spacing fixed. Original native100/131 regressions, compiled78+20 and Quint8/1000 pass; long-label/overflow and complete production UX/release remain open.",
+  "activeSlice": "implementation/elm-picker-parent-native-v54",
+  "status": "Nine-document long-caption picker passes exact native keyboard reveal/Close/final activation plus original GUI behavior. QA-report admission separated from4KiB actions; viewport-bounded list and two-line visible names preserve full accessible labels/tooltips. Text enlargement, small-output/focus-indicator/AT metrics and production taskbar/popup/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -449,9 +449,49 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-invalidation-native-v45/qa/slice-manifest.json"
+    },
+    "pickerViewportV53": {
+      "optimizedMainHostCompiled": true,
+      "hostSelfTestGroups": 3,
+      "qaControlBoundAssertions": 8,
+      "productionControlBoundBytes": 4096,
+      "qaReportBoundBytes": 1048576,
+      "compiledChecksInheritedByExactInputs": 78,
+      "pickerChecksInheritedByExactInputs": 20,
+      "visibleCaptionLines": 2,
+      "fullAccessibleNameAndTooltipInSource": true,
+      "definiteParentHeight": true,
+      "newQuintRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-picker-parent-height-v53/qa/slice-manifest.json"
+    },
+    "pickerOverflowNativeV54": {
+      "nativeChecks": 91,
+      "retainedOriginalGUIChecks": 71,
+      "documentRoots": 9,
+      "longTitleExtraRoots": 8,
+      "keyboardRevealReceipts": 8,
+      "exactClipBoundsPassed": true,
+      "closeReachable": true,
+      "lastLongDocumentActualKeyboardRecipient": true,
+      "originalDeadlinePreserved": true,
+      "geometryToleranceAdded": false,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "hostViewport": [
+        800,
+        420
+      ],
+      "defaultTextPixels": 16,
+      "textEnlargementAccepted": false,
+      "smallOutputAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
     }
   },
-  "next": "Qualify long labels/many-entry overflow, keyboard reveal and reachable close at supported viewport/text sizes. Continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews; complete scene/output/device/GPU/WebGPU/AT/IME/human UX/release gates.",
+  "next": "Qualify text enlargement and small-output picker/keyboard focus metrics; continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews. Complete scene/hardware/GPU/WebGPU/AT/IME/human UX and release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
@@ -464,9 +504,9 @@
   "blockingCandidateDefects": [
     {
       "id": "UX-PICKER-001",
-      "status": "spacing resolved for ordinary two-document capture; long-label/reflow acceptance open",
-      "description": "Name/state separation is visible in V44 capture. Many entries, long labels, text enlargement and small-output reflow remain unqualified.",
-      "evidence": "implementation/elm-external-state-gui-v44/qa/native-1791073305054985875/native-evidence/elm-family-picker.png"
+      "status": "resolved for ordinary and nine-document default-size captures; broader reflow acceptance open",
+      "description": "Spacing, bounded captions, reachable Close and exact Tab reveal pass in default800x420/16px configuration. Text enlargement, small outputs and full focus/AT metrics remain unqualified.",
+      "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
     }
   ],
   "resolvedBoundedFindings": [
@@ -500,6 +540,16 @@
       "status": "External unfocused minimize notification missing in V41; V43 publishes invalidation and V44 automatically reconciles without frontend replay",
       "failedEvidence": "implementation/elm-external-unfocused-probe-v41/qa/slice-manifest.json",
       "evidence": "implementation/elm-external-state-gui-v44/qa/slice-manifest.json"
+    },
+    {
+      "id": "QA-REPORT-CAP-001",
+      "status": "V46 full-caption QA report rejected by4KiB control gate; separate bounded QA report admission in V47+ preserves4KiB controls",
+      "evidence": "implementation/elm-picker-parent-height-v53/qa/slice-manifest.json"
+    },
+    {
+      "id": "PICKER-REVEAL-001",
+      "status": "Oversized captions and fractional clip failures preserved V48/V50/V52; V53 definite parent height and bounded captions pass V54 exact bounds",
+      "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json"
     }
   ]
 }

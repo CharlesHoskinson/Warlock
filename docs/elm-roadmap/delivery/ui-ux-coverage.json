@@ -6438,6 +6438,52 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-invalidation-native-v45/qa/slice-manifest.json",
       "acceptance": "Exact original ordinary/diagnostic assertions plus abstract event/coalescing/race/recovery semantics. Model is not IPC queue/Unknown native refinement or complete UX/release proof."
+    },
+    {
+      "slice": "implementation/elm-picker-parent-height-v53",
+      "level": "compiled viewport/caption/QA-bound implementation; pure checks inherited by exact inputs",
+      "optimizedMainHostCompiled": true,
+      "hostSelfTestGroups": 3,
+      "qaControlBoundAssertions": 8,
+      "productionControlBoundBytes": 4096,
+      "qaReportBoundBytes": 1048576,
+      "compiledChecksInheritedByExactInputs": 78,
+      "pickerChecksInheritedByExactInputs": 20,
+      "visibleCaptionLines": 2,
+      "fullAccessibleNameAndTooltipInSource": true,
+      "definiteParentHeight": true,
+      "newQuintRun": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-picker-parent-height-v53/qa/slice-manifest.json",
+      "acceptance": "Compiled layout and bounded diagnostic channel only; native overflow acceptance separate. Native AT/full focus relationships and enlarged/small-output metrics open."
+    },
+    {
+      "slice": "implementation/elm-picker-parent-native-v54",
+      "level": "actual native nine-document keyboard/scroll/picker regression",
+      "nativeChecks": 91,
+      "retainedOriginalGUIChecks": 71,
+      "documentRoots": 9,
+      "longTitleExtraRoots": 8,
+      "keyboardRevealReceipts": 8,
+      "exactClipBoundsPassed": true,
+      "closeReachable": true,
+      "lastLongDocumentActualKeyboardRecipient": true,
+      "originalDeadlinePreserved": true,
+      "geometryToleranceAdded": false,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "hostViewport": [
+        800,
+        420
+      ],
+      "defaultTextPixels": 16,
+      "textEnlargementAccepted": false,
+      "smallOutputAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-picker-parent-native-v54/qa/slice-manifest.json",
+      "acceptance": "Default800x420/16px nine-document exact clip bounds, Close and final recipient only. No full supported reflow matrix, native AT, production bar/popup or complete UX/release acceptance."
     }
   ]
 }

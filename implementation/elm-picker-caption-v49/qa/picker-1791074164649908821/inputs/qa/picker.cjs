@@ -1,0 +1,33 @@
+const fs=require('fs'),assert=require('assert'),{Elm}=require(process.argv[2]);
+const b={lifetime:'9007199254740993',session:'8',frontend:'1'},scope={binding:b,revision:'4',output:'3'};
+const w=(id,min=false,owner=null)=>({incarnation:id,label:'Document '+id,application:'owned',available:true,owner,minimized:min});
+const attached={protocolVersion:3,kind:'attached',binding:b};
+const scene=(windows=[w('7'),w('8')],focused='7',revision='4',requestId='1')=>({protocolVersion:3,kind:'action-projection',binding:b,requestId,context:{lifetime:b.lifetime,epoch:b.frontend,revision,output:'3'},scene:{revision,focused,windows}});
+const primary={kind:'primary',key:'application:owned'},choose=(root,generation='1')=>({kind:'choose',root,generation}),close={kind:'close',generation:'1'};
+const app=Elm.TaskbarShellReplay.init({flags:null}),deadline=setTimeout(()=>{throw Error('Picker replay deadline');},4000);
+function replay(messages){return new Promise(resolve=>{const cb=rows=>{app.ports.outgoing.unsubscribe(cb);resolve(rows);};app.ports.outgoing.subscribe(cb);app.ports.incoming.send(messages);});}
+(async()=>{let cases=[];
+ async function check(name,messages,op=null,root=null,picker=null){const rows=await replay(messages),last=rows.at(-1);assert.equal(last.commands.length,op?1:0,name);if(op){assert.equal(last.commands[0].intent.operation,op);assert.equal(last.commands[0].intent.incarnation,root);}if(picker!==null)assert.equal(last.picker!==null,picker,name);cases.push({name,rows});}
+ const base=[attached,scene()],open=[...base,primary];
+ await check('multiple families open picker without effect',open,null,null,true);
+ await check('active family selection activates', [...open,choose('7')],'activate','7',false);
+ await check('inactive family selection activates', [...open,choose('8')],'activate','8',false);
+ await check('minimized family selection restores',[attached,scene([w('7'),w('8',true)]),primary,choose('8')],'restore','8',false);
+ await check('single active root primary minimizes',[attached,scene([w('7')]),primary],'minimize','7',false);
+ await check('single inactive root primary activates',[attached,scene([w('7')],null),primary],'activate','7',false);
+ await check('single minimized root primary restores',[attached,scene([w('7',true)],null),primary],'restore','7',false);
+ await check('modal child collapses into one active root',[attached,scene([w('7'),w('9',false,'7')],'9'),primary],'minimize','7',false);
+ await check('selection after close ignored',[...open,close,choose('7')],null,null,false);
+ await check('selection from previous picker generation ignored',[...open,close,primary,choose('7')],null,null,true);
+ await check('old close cannot retire reopened picker',[...open,close,primary,close],null,null,true);
+ await check('fresh picker selection works after reopen',[...open,close,primary,choose('8','2')],'activate','8',false);
+ await check('refresh closes picker before replacement',[...open,{kind:'refresh'},choose('7')],null,null,false);
+ await check('focus revision change closes stale picker',[...open,{kind:'refresh'},scene([w('7'),w('8')],'8','5','2'),choose('7')],null,null,false);
+ await check('disconnect closes picker and blocks old selection',[...open,{kind:'host-disconnected'},choose('7')],null,null,false);
+ await check('unknown family not selectable',[...open,choose('99')],null,null,true);
+ await check('unavailable family emits no effect',[attached,scene([w('7'),{...w('8'),available:false}]),primary,choose('8')],null,null,true);
+ await check('duplicate selection while Pending emits no replay',[...open,choose('7'),choose('7')],null,null,false);
+ await check('stale primary revision emits no effect',[...base,{...primary,scope:{...scope,revision:'3'}}],null,null,false);
+ await check('malformed explicit scope does not upgrade to current',[...base,{...primary,scope:null}],null,null,false);
+ fs.writeFileSync(process.argv[3],JSON.stringify({passed:true,checks:cases.length,scope:'Actual TaskbarShell controller compiled replay; native pointer and accessibility separate',cases},null,2)+'\n');clearTimeout(deadline);
+})();

@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "checks": 17,
+  "cases": [
+    {
+      "name": "visible-activation-is-typed-pending",
+      "passed": true
+    },
+    {
+      "name": "minimized-activation-refused-without-restore",
+      "passed": true
+    },
+    {
+      "name": "activation-receipt-preserves-observed-state",
+      "passed": true
+    },
+    {
+      "name": "activation-terminal-Refused",
+      "passed": true
+    },
+    {
+      "name": "activation-terminal-Cancelled",
+      "passed": true
+    },
+    {
+      "name": "activation-terminal-Unknown",
+      "passed": true
+    },
+    {
+      "name": "different-operation-receipt-refused",
+      "passed": true
+    },
+    {
+      "name": "pending-activation-not-overwritten",
+      "passed": true
+    },
+    {
+      "name": "activation-disconnect-is-unknown",
+      "passed": true
+    },
+    {
+      "name": "reconnection-does-not-replay-activation",
+      "passed": true
+    },
+    {
+      "name": "already-terminal-activation-receipt-refused",
+      "passed": true
+    },
+    {
+      "name": "unmapped-activation-refused",
+      "passed": true
+    },
+    {
+      "name": "invalid-operation-\"Activate\"",
+      "passed": true
+    },
+    {
+      "name": "invalid-operation-\"activate \"",
+      "passed": true
+    },
+    {
+      "name": "invalid-operation-\"focus\"",
+      "passed": true
+    },
+    {
+      "name": "invalid-operation-null",
+      "passed": true
+    },
+    {
+      "name": "invalid-operation-3",
+      "passed": true
+    }
+  ],
+  "scope": "Compiled pure typed activation transaction behavior; native focus/pixels/GUI are separate"
+}
