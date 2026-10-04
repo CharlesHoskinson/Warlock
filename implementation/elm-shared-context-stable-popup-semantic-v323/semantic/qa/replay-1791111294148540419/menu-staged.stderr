@@ -1,0 +1,11 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+registered non1 scope remains exact through fresh capability revision: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 2
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-stable-popup-semantic-v323/semantic/qa/replay-1791111294148540419/inputs/qa/staged/menu.cjs:115:186
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-stable-popup-semantic-v323/semantic/qa/replay-1791111294148540419/inputs/qa/staged/menu.cjs:13:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-stable-popup-semantic-v323/semantic/qa/replay-1791111294148540419/inputs/qa/staged/menu.cjs:115:1

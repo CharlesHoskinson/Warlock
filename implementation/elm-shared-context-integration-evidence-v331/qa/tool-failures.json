@@ -1,0 +1,11 @@
+{
+  "failures": [
+    {
+      "source": "implementation/elm-shared-menu-refresh-model-v326/qa/model.py",
+      "exitCode": 1,
+      "stage": "Python parse before model run",
+      "error": "SyntaxError: unterminated string literal (detected at line 15)",
+      "correction": "Fresh V327 restores the omitted quote; V326 remains unchanged."
+    }
+  ]
+}

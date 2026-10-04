@@ -1,0 +1,76 @@
+{
+  "passed": true,
+  "scope": "Abstract menu refresh pairing, stable popup lease, publication freshness and paired unblocked post-close dispatch. Boolean same-facts summarizes full production identity/geometry checks; no automatic implementation refinement or native timing proof.",
+  "sourceSHA256": "7547be00f65123f35037606b90ce70085f20bb645ba92fbc78ea13afb03ed822",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(legacyFirstInertTest|geometryFirstInertTest|stablePopupTest|oppositeOrderTest|changedGeometryTest|changedLegacyTest|stalePublicationTest|postCloseOnceTest|postCloseBlockedTest|postCloseSingleStreamTest|retirementTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 11,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "7547be00f65123f35037606b90ce70085f20bb645ba92fbc78ea13afb03ed822",
+    "model.py": "5e7e34d5ed45e4583bbd5700b6d98b2ddebd19a87a223d7ba26de14db9487f2a",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-legacyFirstInertTest-0.itf.json": "d6bdf36c86c8d742bb141c698e4c8dce6f151dd54481b32e931074ceda15bc0b",
+    "named-geometryFirstInertTest-1.itf.json": "de1fe9d1a5277285cf5f7ba7048edda6d3442c07c63f525875c7762b5aabffdd",
+    "named-stablePopupTest-2.itf.json": "c120a333a446a792c4206e94ca31e76b5afbf2141360134b5c27b2c6484118b4",
+    "named-oppositeOrderTest-3.itf.json": "459665299a80d33e4d2dff100a5993d9ce542136109266cb6b731a9633741f44",
+    "named-changedGeometryTest-4.itf.json": "75adbb1a87dd9d04ea386b05a0e312f8d61d937d6fd7eb6dc469b614584c73d2",
+    "named-changedLegacyTest-5.itf.json": "93bab003bf56b7cc8a9b811a8c0e45369b61335524f17866959f71cbc106dbc5",
+    "named-stalePublicationTest-6.itf.json": "557874622170a520eedc7f7c801549153cbfd8622d5441038f80d2d2cf33922e",
+    "named-postCloseOnceTest-7.itf.json": "b0bcab6bbdb13cdf92e0081163c9c7f7cdb2d6d4efcf10529a80a77589bc6733",
+    "named-postCloseBlockedTest-8.itf.json": "a91a875b942819366a28635465df7a21557cf16a7bc9cd591eb29ad0fc659928",
+    "named-postCloseSingleStreamTest-9.itf.json": "85408da4983596d559a4a3e8b70a39fea2cbeec603ac5cadcb9239972b1669b6",
+    "named-retirementTest-10.itf.json": "bcc32ca534ff7abdd7fdb222424e0e790951b654cf840533deec8470714effde",
+    "named.stdout": "04536a8769e781d93f9d2ee3458299a1c839bae01ccc1d7634d41acbb50d8f79",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "b589c56599698013027641be063ac683d43334232dbed01efd28efeb9dceeab8",
+    "invariants.stdout": "a10a40e49b707619e6f99ae1a4cc66ac4b1909076548f9366f3b8a9136df0617",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

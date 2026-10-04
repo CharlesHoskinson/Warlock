@@ -1,0 +1,16 @@
+-- NAMING ERROR --------------------------------------------------- src/Menu.elm
+
+I cannot find a `valid` variable:
+
+561|                 || current.items/=items || not (valid fresh) || not (validItems items)
+                                                     ^^^^^
+These names seem close though:
+
+    appId
+    asin
+    id
+    abs
+
+Hint: Read <https://elm-lang.org/0.19.2/imports> to see how `import`
+declarations work in Elm.
+

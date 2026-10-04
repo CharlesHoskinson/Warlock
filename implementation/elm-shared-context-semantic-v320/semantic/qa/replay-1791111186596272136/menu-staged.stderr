@@ -1,0 +1,27 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+focus-only native revision refreshes provider with new menu ID and lease: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 2
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/menu.cjs:80:156
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/menu.cjs:13:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/menu.cjs:80:1
+pre-focus old menu action remains retired: AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+1 !== 2
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/menu.cjs:81:117
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/menu.cjs:13:107)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/menu.cjs:81:1
+AssertionError [ERR_ASSERTION]: valid selected action must reserve a preparation
+    at stage (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/stage.cjs:8:2)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-context-semantic-v320/semantic/qa/replay-1791111186596272136/inputs/qa/staged/menu.cjs:83:68

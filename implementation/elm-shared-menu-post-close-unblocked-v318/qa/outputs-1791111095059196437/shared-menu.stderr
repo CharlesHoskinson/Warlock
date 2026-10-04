@@ -1,0 +1,11 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+renewed menu selection still closes and freshly revalidates once AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-post-close-unblocked-v318/qa/outputs-1791111095059196437/inputs/qa/shared-menu.cjs:49:148
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-post-close-unblocked-v318/qa/outputs-1791111095059196437/inputs/qa/shared-menu.cjs:13:77)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-shared-menu-post-close-unblocked-v318/qa/outputs-1791111095059196437/inputs/qa/shared-menu.cjs:49:2

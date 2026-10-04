@@ -1,0 +1,744 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 1,
+      held: false,
+      live: Set(1, 2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 0,
+      proofScope: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 1,
+      held: false,
+      live: Set(1, 2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 0,
+      proofScope: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 1,
+      held: false,
+      live: Set(1, 2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 0,
+      proofScope: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 2,
+      held: false,
+      live: Set(2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 0,
+      proofScope: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 2,
+      held: false,
+      live: Set(2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 0,
+      proofScope: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      age: 0,
+      available: true,
+      deliveries: 0,
+      epoch: 3,
+      held: true,
+      live: Set(2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      age: 0,
+      available: true,
+      deliveries: 0,
+      epoch: 3,
+      held: true,
+      live: Set(2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      age: 0,
+      available: true,
+      deliveries: 0,
+      epoch: 3,
+      held: true,
+      live: Set(2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      age: 0,
+      available: true,
+      deliveries: 0,
+      epoch: 3,
+      held: true,
+      live: Set(2),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 4,
+      held: true,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 4,
+      held: true,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: true,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 5,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      age: 0,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 6,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      age: 1,
+      available: false,
+      deliveries: 0,
+      epoch: 7,
+      held: false,
+      live: Set(),
+      pending: false,
+      pendingEpoch: 0,
+      pendingScope: 0,
+      proofEpoch: 3,
+      proofScope: 2
+    }
+}
+
+[ok] No violation found (900ms at 1111 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

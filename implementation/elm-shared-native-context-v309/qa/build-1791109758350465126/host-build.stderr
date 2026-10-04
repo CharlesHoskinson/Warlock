@@ -1,0 +1,5 @@
+In file included from native/shared-host.c:48:
+native/shared-context.h: In function ‘shared_context_receive’:
+native/shared-context.h:167:135: error: assignment to ‘GObject *’ {aka ‘struct _GObject *’} from incompatible pointer type ‘GtkWidget *’ {aka ‘struct _GtkWidget *’} [-Wincompatible-pointer-types]
+  167 |     ContextCheck *check=g_new0(ContextCheck,1);check->message=json_node_copy(root);check->proof=proof;check->popup=popup;check->engine=g_object_ref(proof.source);
+      |                                                                                                                                       ^

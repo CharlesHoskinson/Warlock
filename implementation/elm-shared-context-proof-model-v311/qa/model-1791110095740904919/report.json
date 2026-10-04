@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "scope": "Bounded shared native proof consumption, actual-source and DOM-result gate, asynchronous retirement, deadline, held-key retention and replay suppression. Abstract scopes represent full view ID/generation tuples; ticks model a bounded 500ms age predicate, not measured native time. No automatic implementation refinement or native GUI acceptance.",
+  "sourceSHA256": "ef71d00d17db11045271db351cfa1c7226beaf21f35028f17421bba0475b75a4",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(exactEngineSingleUseTest|foreignEngineCannotConsumeTest|foreignAsyncEngineRefusesTest|domVerificationRequiredTest|retirementInvalidatesAsyncTest|epochChangeInvalidatesAsyncTest|closeKeepsHeldSuppressionTest|physicalReleasePermitsNewInputTest|replayDoesNotReplaceNewProofTest|expiredNativeProofRefusesTest|asynchronousDeadlinePreservedTest|laterPhysicalInputRetiresOldCallbackTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 12,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "ef71d00d17db11045271db351cfa1c7226beaf21f35028f17421bba0475b75a4",
+    "model.py": "381c2a88c13d010864a9018920404b58d5212f8f2be5350cff60d657997bef84",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-exactEngineSingleUseTest-0.itf.json": "6edae5178443311887f0b64bdaec38018eb38b457700e59602dfe4d97f0864b9",
+    "named-foreignEngineCannotConsumeTest-1.itf.json": "d79d34d2981947cbcbfb44ed60169bd70551765db52ab55f737fbc4e38f3c127",
+    "named-foreignAsyncEngineRefusesTest-2.itf.json": "c328ba0639af00f6ce0d664b7f0af5b35eb51c2926dc58c663e5d95fc42bae85",
+    "named-domVerificationRequiredTest-3.itf.json": "dd1080a5b7e28693e30d5c96d43b001d699cfceccfb73979017f6f5cb3582e6a",
+    "named-retirementInvalidatesAsyncTest-4.itf.json": "5d9b535e11504412737c93b18447a4739e2cf20b181735bc74e200c9e6e70327",
+    "named-epochChangeInvalidatesAsyncTest-5.itf.json": "a11d8716c71ba06495693ab5648a69be4d1dbd8c078d0f535f5891bfebf5d40d",
+    "named-closeKeepsHeldSuppressionTest-6.itf.json": "2172b2ce5b3987730d5e0f7c937b60215c3ef9b22d7f8d2776b149995c32ac67",
+    "named-physicalReleasePermitsNewInputTest-7.itf.json": "5b6295d8a210d6f4145afd98c22932237471df38c3cce8b2e9a036fe3327240d",
+    "named-replayDoesNotReplaceNewProofTest-8.itf.json": "70e88a886cffad3b4e5b575673796c0026c9c3c6a85f2b99d6a4887550cfe227",
+    "named-expiredNativeProofRefusesTest-9.itf.json": "19f9528af7c39c40bc23e449f1356f231794ed9ebac55746500783a98d514aa5",
+    "named-asynchronousDeadlinePreservedTest-10.itf.json": "5dbe3c7a7d6b0e5fb6ed58938b95b611dc5ea0a0e3d3e0ec2716c40eea60ce23",
+    "named-laterPhysicalInputRetiresOldCallbackTest-11.itf.json": "05fd6d54546b6352f0f02fc71f3a5dc21dfe7c9c1f4dc3d1b3ee931a72bea617",
+    "named.stdout": "569b114070c498f522e496f7183754859c6dc90a4aaa5ad24872b2dc21ee2579",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "e9143e7ef7cd2c5ab01f6c49edb96117e5d1f05610e94014270fbddc035886f3",
+    "invariants.stdout": "66ccd756013a1e9368ce9e075743b0f05d6bcddee42d4f03ca56f0150d8e9772",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
