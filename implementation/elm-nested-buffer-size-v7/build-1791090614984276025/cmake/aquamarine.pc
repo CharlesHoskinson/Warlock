@@ -1,0 +1,10 @@
+prefix=/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-buffer-size-v7/build-1791090614984276025/prefix
+includedir=/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-buffer-size-v7/build-1791090614984276025/prefix/include
+libdir=/home/hoskinson/omarchy-windows-parity/implementation/elm-nested-buffer-size-v7/build-1791090614984276025/prefix/lib
+
+Name: aquamarine
+URL: https://github.com/hyprwm/aquamarine
+Description: A very light linux rendering backend library
+Version: 0.15.0
+Cflags: -I${includedir}
+Libs: -L${libdir} -laquamarine

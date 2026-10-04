@@ -1,0 +1,22 @@
+{
+  "reviewer": "menu_tests",
+  "mode": "Read-only source review, no GUI",
+  "sources": {
+    "candidate/src/backend/Wayland.cpp": "df7a23af90ef77217ef2c84d8f59cb285f28eda61a0a4914ae3975ed2f61f296",
+    "candidate/src/backend/BufferDimensions.hpp": "8b3925fc2fc86c8e7c2c5a05581f8578a680805eb50619dc22bdbe354fb467dc",
+    "test-dimensions.cpp": "8efafd5a12bc319d72740b308f5102c7eab460046ad9e42a3702e765da0c5711"
+  },
+  "productionFindings": [
+    "No new production blocker identified",
+    "Guard precedes swapchain reconfigure, buffer import, release flags, attachment, frame mutation and state consumption",
+    "Lifecycle gate stays first, public headers unchanged"
+  ],
+  "evidenceCorrection": "Fresh build captures test source and all production inputs before compilation and rechecks source hashes after build; old build retained",
+  "remaining": [
+    "Unconditional AQ test preflight",
+    "Acknowledged parent geometry and viewport mapping",
+    "Native presentation, recovery and original V6 campaign",
+    "Multioutput input routing, cursor policy, touch and relative pointer support"
+  ],
+  "nativeAcceptance": false
+}

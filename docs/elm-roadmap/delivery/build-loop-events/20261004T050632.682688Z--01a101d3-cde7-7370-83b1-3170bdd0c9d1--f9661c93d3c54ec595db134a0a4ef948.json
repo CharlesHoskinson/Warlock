@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "f9661c93d3c54ec595db134a0a4ef948",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T05:06:32.682688+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-nested-buffer-size-v7",
+  "nextWork": [
+    "Build and review AQ/core buffer-size guards, then explicit acknowledged-parent viewport/input mapping and exact new plugin ABI tuple; retain failed V6 oversized campaign"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-nested-buffer-size-v7/upstream.json",
+      "sha256": "f0aad526d2f781f442c421e8d0578115ae707d83f2b47064bf8745fdcf54a5f7",
+      "size": 9058
+    },
+    {
+      "path": "implementation/elm-menu-reflow-v6/qa/native-1791089500194235014/report.json",
+      "sha256": "8f8f3cae3e365adce77d0a61fa1da64402cd1bf4e7713164a39098bd6cbf899f",
+      "size": 296293
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

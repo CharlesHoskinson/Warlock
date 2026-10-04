@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "266e73028d1e4999a879c1e53bfcbc26",
+  "thread": "01a101d3-cde7-7370-83b1-3170bdd0c9d1",
+  "observedUTC": "2026-10-04T05:11:14.466199+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-nested-buffer-size-v7",
+  "nextWork": [
+    "Rebuild authority plugin on corrected owning core; implement shared AQ test/commit preflight and acknowledged parent viewport mapping with committed input coordinates; rerun original V6 failure on exact tuple"
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-nested-buffer-size-v7/component-manifest.json",
+      "sha256": "3bb377b80e823bad14f9ee9a7ee11393d97ea9d0f3992f760c50efa19af1b70b",
+      "size": 187272
+    },
+    {
+      "path": "implementation/elm-native-buffer-size-v7/build-1791090562611157328/report.json",
+      "sha256": "18e342077f726144584e3f5e92f49998b068e6ed2356d837be7e630174b5c35f",
+      "size": 109117
+    },
+    {
+      "path": "implementation/elm-menu-reflow-v6/qa/native-1791089500194235014/report.json",
+      "sha256": "8f8f3cae3e365adce77d0a61fa1da64402cd1bf4e7713164a39098bd6cbf899f",
+      "size": 296293
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
