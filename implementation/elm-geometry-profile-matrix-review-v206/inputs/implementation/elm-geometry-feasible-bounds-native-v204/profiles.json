@@ -1,0 +1,1391 @@
+{
+  "scope": "Proposed native profiles, CPUCLI checked only; actual workarea/reserves and native outcomes must be verified",
+  "retainedBaselineCount": 8,
+  "profiles": [
+    {
+      "id": "zero-scale1",
+      "retainedBaseline": true,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "origin-scale1",
+      "retainedBaseline": true,
+      "origin": [
+        16,
+        24
+      ],
+      "pads": [
+        16,
+        24
+      ],
+      "bufferScale": 1,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "16",
+        "--origin-y",
+        "24",
+        "--right-pad",
+        "16",
+        "--bottom-pad",
+        "24",
+        "--scale",
+        "1",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "finite-scale1",
+      "retainedBaseline": true,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        400,
+        300
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "400",
+        "--max-height",
+        "300"
+      ]
+    },
+    {
+      "id": "fixed-scale1",
+      "retainedBaseline": true,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        320,
+        180
+      ],
+      "maximum": [
+        320,
+        180
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "320",
+        "--min-height",
+        "180",
+        "--max-width",
+        "320",
+        "--max-height",
+        "180"
+      ]
+    },
+    {
+      "id": "zero-scale2",
+      "retainedBaseline": true,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "origin-scale2",
+      "retainedBaseline": true,
+      "origin": [
+        16,
+        24
+      ],
+      "pads": [
+        16,
+        24
+      ],
+      "bufferScale": 2,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "16",
+        "--origin-y",
+        "24",
+        "--right-pad",
+        "16",
+        "--bottom-pad",
+        "24",
+        "--scale",
+        "2",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "finite-scale2",
+      "retainedBaseline": true,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        400,
+        300
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "400",
+        "--max-height",
+        "300"
+      ]
+    },
+    {
+      "id": "fixed-scale2",
+      "retainedBaseline": true,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        320,
+        180
+      ],
+      "maximum": [
+        320,
+        180
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "320",
+        "--min-height",
+        "180",
+        "--max-width",
+        "320",
+        "--max-height",
+        "180"
+      ]
+    },
+    {
+      "id": "feasible-finite-monitor1-buffer1",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        900,
+        700
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "900",
+        "--max-height",
+        "700"
+      ]
+    },
+    {
+      "id": "feasible-high-min-monitor1-buffer1",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        640,
+        480
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        700,
+        500
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "700",
+        "--height",
+        "500",
+        "--min-width",
+        "640",
+        "--min-height",
+        "480",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "minimum-above-workarea-monitor1-buffer1",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        810,
+        610
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        850,
+        650
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "850",
+        "--height",
+        "650",
+        "--min-width",
+        "810",
+        "--min-height",
+        "610",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "feasible-finite-monitor1-buffer2",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        900,
+        700
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "900",
+        "--max-height",
+        "700"
+      ]
+    },
+    {
+      "id": "feasible-high-min-monitor1-buffer2",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        640,
+        480
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        700,
+        500
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "700",
+        "--height",
+        "500",
+        "--min-width",
+        "640",
+        "--min-height",
+        "480",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "minimum-above-workarea-monitor1-buffer2",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 1,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        810,
+        610
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        850,
+        650
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "850",
+        "--height",
+        "650",
+        "--min-width",
+        "810",
+        "--min-height",
+        "610",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "feasible-finite-monitor2-buffer1",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 2,
+      "physicalMode": [
+        1600,
+        1200
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        900,
+        700
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "900",
+        "--max-height",
+        "700"
+      ]
+    },
+    {
+      "id": "feasible-high-min-monitor2-buffer1",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 2,
+      "physicalMode": [
+        1600,
+        1200
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        640,
+        480
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        700,
+        500
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "700",
+        "--height",
+        "500",
+        "--min-width",
+        "640",
+        "--min-height",
+        "480",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "minimum-above-workarea-monitor2-buffer1",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 2,
+      "physicalMode": [
+        1600,
+        1200
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        810,
+        610
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        850,
+        650
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "850",
+        "--height",
+        "650",
+        "--min-width",
+        "810",
+        "--min-height",
+        "610",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "feasible-finite-monitor2-buffer2",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 2,
+      "physicalMode": [
+        1600,
+        1200
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        108,
+        42
+      ],
+      "maximum": [
+        900,
+        700
+      ],
+      "preferred": [
+        320,
+        180
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "320",
+        "--height",
+        "180",
+        "--min-width",
+        "108",
+        "--min-height",
+        "42",
+        "--max-width",
+        "900",
+        "--max-height",
+        "700"
+      ]
+    },
+    {
+      "id": "feasible-high-min-monitor2-buffer2",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 2,
+      "physicalMode": [
+        1600,
+        1200
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        640,
+        480
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        700,
+        500
+      ],
+      "expectedMAX": true,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "700",
+        "--height",
+        "500",
+        "--min-width",
+        "640",
+        "--min-height",
+        "480",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "minimum-above-workarea-monitor2-buffer2",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 2,
+      "physicalMode": [
+        1600,
+        1200
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "minimum": [
+        810,
+        610
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        850,
+        650
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "850",
+        "--height",
+        "650",
+        "--min-width",
+        "810",
+        "--min-height",
+        "610",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "high-min-small-logical-monitor2-buffer1",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 1,
+      "monitorScale": 2,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        400,
+        300
+      ],
+      "minimum": [
+        640,
+        480
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        700,
+        500
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "1",
+        "--width",
+        "700",
+        "--height",
+        "500",
+        "--min-width",
+        "640",
+        "--min-height",
+        "480",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    },
+    {
+      "id": "high-min-small-logical-monitor2-buffer2",
+      "retainedBaseline": false,
+      "origin": [
+        0,
+        0
+      ],
+      "pads": [
+        0,
+        0
+      ],
+      "bufferScale": 2,
+      "monitorScale": 2,
+      "physicalMode": [
+        800,
+        600
+      ],
+      "expectedLogicalWorkarea": [
+        0,
+        0,
+        400,
+        300
+      ],
+      "minimum": [
+        640,
+        480
+      ],
+      "maximum": [
+        0,
+        0
+      ],
+      "preferred": [
+        700,
+        500
+      ],
+      "expectedMAX": false,
+      "cpuValidate": true,
+      "arguments": [
+        "--origin-x",
+        "0",
+        "--origin-y",
+        "0",
+        "--right-pad",
+        "0",
+        "--bottom-pad",
+        "0",
+        "--scale",
+        "2",
+        "--width",
+        "700",
+        "--height",
+        "500",
+        "--min-width",
+        "640",
+        "--min-height",
+        "480",
+        "--max-width",
+        "0",
+        "--max-height",
+        "0"
+      ]
+    }
+  ],
+  "conditionalNativeRuleCase": {
+    "id": "contradictory-raw-layout",
+    "rawMinimum": [
+      640,
+      480
+    ],
+    "rawMaximum": [
+      0,
+      0
+    ],
+    "layoutMinimum": [
+      1,
+      1
+    ],
+    "layoutMaximum": [
+      630,
+      470
+    ],
+    "expectedMAX": false,
+    "nativeProducerFixtureQualified": false
+  }
+}
