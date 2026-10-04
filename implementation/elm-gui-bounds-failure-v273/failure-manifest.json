@@ -1,0 +1,1242 @@
+{
+  "passed": true,
+  "failureEvidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fullRoadmapAccepted": false,
+  "fullReleaseAccepted": false,
+  "reports": [
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/report.json",
+      "sha256": "2f62870b17930eb48ce59665bca02df71b6486726f41be011415bc72af2d9a4a",
+      "passed": false,
+      "checks": 545,
+      "profiles": 14,
+      "cleanupPassed": false,
+      "error": "RuntimeError('private host cleanup invariant failed')"
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/report.json",
+      "sha256": "50dbf4c3d189953707eff7a630833c1278d24aef87c6fe93a4eb6363f1196e67",
+      "passed": true,
+      "checks": 547,
+      "profiles": 14,
+      "cleanupPassed": true,
+      "error": null
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/report.json",
+      "sha256": "a8323a7a6cb81c7c9cf031cc992183c3ca3a1a72fa851debfd3adbf7bb4fcb89",
+      "passed": true,
+      "checks": 287,
+      "profiles": 6,
+      "cleanupPassed": true,
+      "error": null
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/report.json",
+      "sha256": "c64673b9e47924732f36eb16c78fb0cace070cc00ff65fdceb03aa414d95312d",
+      "passed": false,
+      "checks": 23,
+      "profiles": 1,
+      "cleanupPassed": true,
+      "error": "AssertionError('GUI control clipped')"
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/elm-gui-bounds-contract-v268/SPEC.md",
+      "mode": 420,
+      "sha256": "31060901250307dff657aa3b0d6dd49bf043cbf7bbd347f3c7136e922943f505",
+      "size": 2321
+    },
+    {
+      "path": "implementation/elm-gui-bounds-contract-v268/lineage.json",
+      "mode": 420,
+      "sha256": "696b4744c8c547a9ba4c4c0d4f40a5d1c2ca16b8666367f0edcb20a31c4e259e",
+      "size": 608
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/REQUIREMENTS.md",
+      "mode": 420,
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/SPEC.md",
+      "mode": 420,
+      "sha256": "31060901250307dff657aa3b0d6dd49bf043cbf7bbd347f3c7136e922943f505",
+      "size": 2321
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/origin.json",
+      "mode": 420,
+      "sha256": "14003f721bd073a612703250fb918d66e8cb5163a92d288274fe3c0db3e26db2",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/pins.json",
+      "mode": 420,
+      "sha256": "a6da070a7a1e1f16647a757775ebbc810036cac263ab0540afd2c96ca2943938",
+      "size": 5106
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/profiles.json",
+      "mode": 420,
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/qa/gui.py",
+      "mode": 420,
+      "sha256": "51fad01fe3fe06890884c2d2bd18e2bafbb4fcca5865746b01e270dd5bc320bf",
+      "size": 6732
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/qa/inspection.py",
+      "mode": 420,
+      "sha256": "6b89e8a432c0cc328bd28a34bd3e130ee55069da52fac28effdfd04cf7e5dff7",
+      "size": 3082
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/qa/native.py",
+      "mode": 420,
+      "sha256": "46f5b6c4b1972ac758d975aaa78a483892e7ed9bd1545eb53e752839eb71f16c",
+      "size": 30680
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/qa/review-failure.json",
+      "mode": 420,
+      "sha256": "9fe097631c00755f779b1be3c17e1f345ca0367c3e5a7f8cb4017160d90be721",
+      "size": 382
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v269/qa/review.py",
+      "mode": 420,
+      "sha256": "1eb38eb78c1341969e329bfe1c0bd177dcf86b720d3f67eabd1d791f6eb53125",
+      "size": 2815
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/REQUIREMENTS.md",
+      "mode": 420,
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/SPEC.md",
+      "mode": 420,
+      "sha256": "628b3349cdff82c94d681a80047d7d736f57c017c0934e6474d678954ec55ac8",
+      "size": 2569
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/origin.json",
+      "mode": 420,
+      "sha256": "14003f721bd073a612703250fb918d66e8cb5163a92d288274fe3c0db3e26db2",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/pins.json",
+      "mode": 420,
+      "sha256": "a6da070a7a1e1f16647a757775ebbc810036cac263ab0540afd2c96ca2943938",
+      "size": 5106
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/profiles.json",
+      "mode": 420,
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/gui.py",
+      "mode": 420,
+      "sha256": "51fad01fe3fe06890884c2d2bd18e2bafbb4fcca5865746b01e270dd5bc320bf",
+      "size": 6732
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/inspection.py",
+      "mode": 420,
+      "sha256": "6b89e8a432c0cc328bd28a34bd3e130ee55069da52fac28effdfd04cf7e5dff7",
+      "size": 3082
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/inputs.json",
+      "mode": 420,
+      "sha256": "49bcb858bb5977666183830dc9d2a86183015de16ee7acb75c75b5addf20efc7",
+      "size": 1173142
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "33a7eafc45421cb3513b64bdb42aaf08aef98c1cccb81732f6714286ea47c5b3",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "7107a6ed30b97e52c2b248329ba3fb5d065ac9bf743813f4ec24bcc1fd6717e2",
+      "size": 1023273
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-finite-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "4c9ca9eeef111e0f38b2bf9dcc12a0ced577d25cb9fbd62e87adf49b89f9d736",
+      "size": 13624
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-finite-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "2c28f37c38266705f15337c7fddfccd89479ae5fc7a6e49ba1ae987d73ff27a2",
+      "size": 13597
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-finite-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "22a82fe4db8c913122ec4264e39f214ea7b468f3c9235f28b6acc6e4bbf8eb32",
+      "size": 12347
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-finite-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "a2bdcd5a2b1c9f45edbb70b2d7ebfc542cfed6e341449bd7ef75551d1e8e044b",
+      "size": 13752
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-finite-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "6ef1b2416bb8cca89dbcc8f0c14dc82686edf1f4e8fc86ad6c3a7f050b43e23f",
+      "size": 13726
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-finite-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "7187b90fe92444c40e66d0d086e54d94ae11c224962c21a8d26133a62cc36356",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-high-min-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "34919b9c5229d9eddea70033a3ab2ede60aa75887bfe313a5b098d04ba29fff2",
+      "size": 13398
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-high-min-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "1ce278ce60ffd9f0b41c1041fc064439f749df75d6ae18a895c1b265ecfb023c",
+      "size": 13371
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-high-min-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "fb5284b18f2d128b1c1f470c624b8c4278327df3b143a6562a0ca3235b133894",
+      "size": 12347
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-high-min-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "21586a28b70730d1e015416c4d7cd0f17dc644b5cddb2d2e562b8e5497e491f6",
+      "size": 13829
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-high-min-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "648efaeb8f3b27e8b2bf96a3fbb69a173105a50cbac1c58bee0af452943a6f95",
+      "size": 13798
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/feasible-high-min-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "422b5c54048d69b909ae8b31dc7eeea9c4785280d49014df15913e9981b0e3e0",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/finite-scale1.jsonl",
+      "mode": 384,
+      "sha256": "4095a4ed326fa5545fd27c074c6dcaabc320a409f59bd9ca5c98c8b380d93c71",
+      "size": 6165
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/finite-scale2.jsonl",
+      "mode": 384,
+      "sha256": "bedcca2cca484f15906a5bfc86e8c361626c4a7303279479b1489ab3e9f0f1b7",
+      "size": 6227
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/fixed-scale1.jsonl",
+      "mode": 384,
+      "sha256": "4a842bd335a0e04a1f1c09b815048b90ca84806b8279a57b54f0bb701b84060c",
+      "size": 6173
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/fixed-scale2.jsonl",
+      "mode": 384,
+      "sha256": "c26b035959d291b6ee10e322e754530032e5fcf76e0450be8463ec2f48e2130e",
+      "size": 6217
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "e56b9228e3ea4f11252c3e1594732429bd00d188e5fb777d16a48b3e0bb9e741",
+      "size": 215881
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "6c79ae45d75ca28eb7bc5c48cbc2419a9cc01224c38dfb73fa4f5367f1be2db8",
+      "size": 522684
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/minimum-above-workarea-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "d9c1f0bf4797609c77a55c2cbbcc66f05e61a75db660754ae11419459768a9d9",
+      "size": 6908
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/minimum-above-workarea-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "ca68a76a5c7e7dc7b40730f4ddad30339a340a602fe36513331ac8984c2cef33",
+      "size": 6920
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/origin-scale1.jsonl",
+      "mode": 384,
+      "sha256": "1f15716578abba8ff43ab2af8a60a38e040dde3217ad7608dc4737c6b5e46863",
+      "size": 6862
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/origin-scale2.jsonl",
+      "mode": 384,
+      "sha256": "c21d28d041870c1a6106f4df2e196c67d4a57331ffdd8ba328aae44c24bd2db2",
+      "size": 6938
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "ad5089be5078f9f6b6e2a62ce9ee44f524ae317b395ba87f8f592f4e08822f92",
+      "size": 5591
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/runtime-archive/.flatpak/webkit-3532744-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "db3abdc922085892f97eaaeee4ab8562857cafc50eec2432958ad9abaaa10831",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/runtime-archive/.flatpak/webkit-3532744-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "d4de0c6efea5f7afd71a93f118d455b2b2dbf8443076c8379744df4c8e52c258",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791146535_1474957375/16560065758942188894/ledger-v5.json",
+      "mode": 384,
+      "sha256": "cdb173fcbd786411a31844ac116ec9fc053e108d1a6ca9507b3dda1428f82782",
+      "size": 988
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791146535_1474957375/16560065758942188894/migration-plan.json",
+      "mode": 384,
+      "sha256": "20a9b55b64be343db85b0946f01bfa0d2e54ea796942bd1a8526a614a197e0b8",
+      "size": 248
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791146535_1474957375/16560065758942188894/migration.json",
+      "mode": 384,
+      "sha256": "97d8ab5e9fc6b763ae4cd242a2695ded0a0fcb646928d0223f9f712e0ff4cf0d",
+      "size": 229
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791146535_1474957375/hyprland.log",
+      "mode": 384,
+      "sha256": "3f4454a0a66253d7d21b02fba5abff1275e5ac1115e637b20b487e1ce45988a5",
+      "size": 24339
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "756820256c746c101621869e38b4354a7113f6c77f7fee7b4778049a688067fc",
+      "size": 19856
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/zero-scale1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "b402e93a36b7c2e21f550dbce9fe05f34c9843e4092b379d9b62903f8eda475a",
+      "size": 13980
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/zero-scale1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "6e7e83aa3a032940252ffbd292eacb144fbadfe90dbe19ff22c00ddc7c2c3ae9",
+      "size": 13951
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/zero-scale1.jsonl",
+      "mode": 384,
+      "sha256": "ea294b1617008dfbe028234d711ce0e6fefb3a5ca0915fd3c554c893d567d806",
+      "size": 12181
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/zero-scale2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "60257edecfa69ce758ee7712ee38341dc17811753fb061f8eadb008e2f9d1209",
+      "size": 13553
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/zero-scale2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "dfa466bcb18d9ae916d2856fe91a04d50c2130c403fddc316685583f2cb17a6d",
+      "size": 13523
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native-evidence/zero-scale2.jsonl",
+      "mode": 384,
+      "sha256": "ff6ea04450ded4c9a45b3f02e3a53767cc1141f2a78045d46f0fc07de132a5f9",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/native.py",
+      "mode": 420,
+      "sha256": "4360a5be1029046ca0805a5d7e6a66cef750426c8cb80b58a2c9704fe88e4d90",
+      "size": 31080
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native-1791146533941884014/report.json",
+      "mode": 420,
+      "sha256": "2f62870b17930eb48ce59665bca02df71b6486726f41be011415bc72af2d9a4a",
+      "size": 2095950
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/native.py",
+      "mode": 420,
+      "sha256": "4360a5be1029046ca0805a5d7e6a66cef750426c8cb80b58a2c9704fe88e4d90",
+      "size": 31080
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/preflight.json",
+      "mode": 420,
+      "sha256": "2f48d2c1d5f7855e3f3477f895398cb94e91984b760fd2c4a363698f1f136b57",
+      "size": 1184238
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v270/qa/review.py",
+      "mode": 420,
+      "sha256": "1eb38eb78c1341969e329bfe1c0bd177dcf86b720d3f67eabd1d791f6eb53125",
+      "size": 2815
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/REQUIREMENTS.md",
+      "mode": 420,
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/SPEC.md",
+      "mode": 420,
+      "sha256": "180c1d3215c46ce97cb7fc55edfa49da855da5268f283a5a3878752f2e6a7f4e",
+      "size": 3146
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/origin.json",
+      "mode": 420,
+      "sha256": "14003f721bd073a612703250fb918d66e8cb5163a92d288274fe3c0db3e26db2",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/pins.json",
+      "mode": 420,
+      "sha256": "a6da070a7a1e1f16647a757775ebbc810036cac263ab0540afd2c96ca2943938",
+      "size": 5106
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/profiles.json",
+      "mode": 420,
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/bus-1791146894663400686/bus.conf",
+      "mode": 384,
+      "sha256": "5dfa2dff4cff12b3e3cc15d9876af021ef73a6958d7e0472bbfdf69bd8e5a103",
+      "size": 373
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/bus-1791146894663400686/daemon.stderr",
+      "mode": 420,
+      "sha256": "8e92ffae0b8361461f34eea8f74b034a9770473d77b295b6a54a9fd44c3409a6",
+      "size": 73
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/bus-1791146894663400686/daemon.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/bus-1791146894663400686/report.json",
+      "mode": 420,
+      "sha256": "36b936391985cd8520ff88091ecee1f08ee1f35cbcd3674cf38d0a0fc94561c0",
+      "size": 698
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/bus_policy.py",
+      "mode": 420,
+      "sha256": "bf1c53c38a2a7bd74a8762c1bb7767bca543d47d8a642ded74c494366cf73949",
+      "size": 1681
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/bus_test.py",
+      "mode": 420,
+      "sha256": "185bda9bf591acfe604a9fb620dd11780f25ed3798e4ab28d844fd32a236dd18",
+      "size": 2691
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/gui.py",
+      "mode": 420,
+      "sha256": "51fad01fe3fe06890884c2d2bd18e2bafbb4fcca5865746b01e270dd5bc320bf",
+      "size": 6732
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/inspection.py",
+      "mode": 420,
+      "sha256": "6b89e8a432c0cc328bd28a34bd3e130ee55069da52fac28effdfd04cf7e5dff7",
+      "size": 3082
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/native.py",
+      "mode": 420,
+      "sha256": "10ebb9a90bed687210b6eb1d4265311bb45289610f5fde64eb3fef4460101023",
+      "size": 31283
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/preflight.json",
+      "mode": 420,
+      "sha256": "7e94053d3d3ebebe4f100a2f05fcf6cf6403eeb31dbe8249893a14f7d9c8d99c",
+      "size": 1184411
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v271/qa/review.py",
+      "mode": 420,
+      "sha256": "1eb38eb78c1341969e329bfe1c0bd177dcf86b720d3f67eabd1d791f6eb53125",
+      "size": 2815
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/REQUIREMENTS.md",
+      "mode": 420,
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/SPEC.md",
+      "mode": 420,
+      "sha256": "45504a0b6b67fac954408519c85da09b80ad470c1c0426ecd47c81d53c00ebac",
+      "size": 3469
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/origin.json",
+      "mode": 420,
+      "sha256": "14003f721bd073a612703250fb918d66e8cb5163a92d288274fe3c0db3e26db2",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/pins.json",
+      "mode": 420,
+      "sha256": "a6da070a7a1e1f16647a757775ebbc810036cac263ab0540afd2c96ca2943938",
+      "size": 5106
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/profiles.json",
+      "mode": 420,
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/bus-1791146957045683792/bus.conf",
+      "mode": 384,
+      "sha256": "85e6a2b2dfd944162613d97f8d5063e8b9a4aaa81e9c2d85966d2a317d1d8d1a",
+      "size": 294
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/bus-1791146957045683792/daemon.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/bus-1791146957045683792/daemon.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/bus-1791146957045683792/report.json",
+      "mode": 420,
+      "sha256": "ce0841c8832a78d7ded8ef162c1023851a9df64b106e988c7d12feed62258690",
+      "size": 782
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/bus_policy.py",
+      "mode": 420,
+      "sha256": "bf1c53c38a2a7bd74a8762c1bb7767bca543d47d8a642ded74c494366cf73949",
+      "size": 1681
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/bus_test.py",
+      "mode": 420,
+      "sha256": "0531efff842bda8e518aa476d5f89f0522a22f02dadf0c4e5eb3dbaee63d6c21",
+      "size": 2929
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/gui.py",
+      "mode": 420,
+      "sha256": "51fad01fe3fe06890884c2d2bd18e2bafbb4fcca5865746b01e270dd5bc320bf",
+      "size": 6732
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/inspection.py",
+      "mode": 420,
+      "sha256": "6b89e8a432c0cc328bd28a34bd3e130ee55069da52fac28effdfd04cf7e5dff7",
+      "size": 3082
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/inputs.json",
+      "mode": 420,
+      "sha256": "82d4c385ce9af1138a8f4a58a33b13b25c3da77ce7ab9a4eebec076f65ccf583",
+      "size": 1174255
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "1c6013dbbbb17eada70128737390e24a11142bb142bf649081a2f6d7c4ada58c",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "adc0bbc79844cf05efa9be18cd252f67323ad89e01ed3dcba5ba2daa0c7a2190",
+      "size": 1036988
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-finite-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "5e90a4549eab7066a8eb1caa260683dee44644eab7d6760b91de06f7376d017a",
+      "size": 13835
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-finite-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "6a89c8f18b5cc8aaea9abfd5ec6bb6fa8c3a64a625cf8628b3f5d6303f1d5d81",
+      "size": 13805
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-finite-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "9aa24ad05aef882c5d83a66c4fafbc7b6e2151e245bbf0304b79977a684582ef",
+      "size": 12347
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-finite-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "02c2c3e998391f7bcc587f86b8766487aae803bbf9c38b013ba52518515c2a56",
+      "size": 13897
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-finite-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "3d3f2e6ef93e619737f3fb2c59eca178f5426245a66306aacf1bb991157414c2",
+      "size": 13867
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-finite-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "25f184126f34623815c52277ae1bde160cd9039c7d6c47a7431466e043926fb6",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-high-min-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "4693bc5921eb7af52cc7bfc3368abd293b745d09f65e1a38eb6da2a05646abc2",
+      "size": 13919
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-high-min-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "0137836948bc0e31fdb0e122f9130a3f2c327e45cf70a674ace37600f77d6266",
+      "size": 13889
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-high-min-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "5634abbdae79b6338532ce757d651c3b521ec2ced6e260d4be60f4430f3c0ceb",
+      "size": 12347
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-high-min-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "1cc9ba4187fd815ee9ec9d20f2bcf5bb0a0abd8fd09694767942025586b8440f",
+      "size": 13774
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-high-min-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "4f8833a9a365c6e9f251429adda33ae4dbf78ad7b2edfe26dc886e433294388d",
+      "size": 13746
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/feasible-high-min-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "594fef07bccca977e497f14091632326278ade42bfab05cb6c63aa264c927385",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/finite-scale1.jsonl",
+      "mode": 384,
+      "sha256": "ee28d4be13c912c2c25e294abbf6cc1627c6e419b32da53a19efb763e33853b6",
+      "size": 6165
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/finite-scale2.jsonl",
+      "mode": 384,
+      "sha256": "a206fd0e5116a7071aab77488abd74fa6e1e290038aad0303c833caa19a4d6d4",
+      "size": 6227
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/fixed-scale1.jsonl",
+      "mode": 384,
+      "sha256": "6b20b868611366a714d37ca3a5eba9a069ce4ad109be085d7f232249f6574c38",
+      "size": 6173
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/fixed-scale2.jsonl",
+      "mode": 384,
+      "sha256": "465d1072e8d9a224dcb05d1f435ce852b2c752975852873690a877fa2016355f",
+      "size": 6217
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "1d581152938e4a3bf5f8b486f4ca2482fb6cc23f419ab3bbf05a9406aa37335a",
+      "size": 214110
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "ef4ea90fbe97e2e01d259d07f8299ba314c801baca0d9735af70528a5c56d61a",
+      "size": 517503
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/minimum-above-workarea-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "ba7de451e2871b954c11809ffad5befb636f34e4500bb12a68bf7391414bdf97",
+      "size": 6908
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/minimum-above-workarea-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "133e5422d6f4286730619bb1981144841fa04ff7f9fd0b78fa350fde1f051431",
+      "size": 6920
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/origin-scale1.jsonl",
+      "mode": 384,
+      "sha256": "b419e570547585587e9b4818c80c3d7d0cb2224282f95a89fb557e18d656b669",
+      "size": 6862
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/origin-scale2.jsonl",
+      "mode": 384,
+      "sha256": "c2c585266fe37b6c0d6996e8ac8822c143c1c23dd8e366eb0a16bfd0b58405aa",
+      "size": 6938
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/runtime-archive/.flatpak/webkit-3592194-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "59bc43f8179f16ed0d9d5c2136b33b659cfb6b3fbd9dc1a656237725deea9ba1",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/runtime-archive/.flatpak/webkit-3592194-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "ab64dd1922d05b187231a3f8ff1365be0ae21b95d047e60b5550f5a98dbce761",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147345_519170687/15783265428654527308/ledger-v5.json",
+      "mode": 384,
+      "sha256": "bacaf2ac2b9e46d0e7f9b00d7129939e3da36281e30d0ff36beefc3d9699ca72",
+      "size": 988
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147345_519170687/15783265428654527308/migration-plan.json",
+      "mode": 384,
+      "sha256": "1bf119be6baf701e9474c08828b4464f4c94d7aa3812905ba030087a698faf57",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147345_519170687/15783265428654527308/migration.json",
+      "mode": 384,
+      "sha256": "5f326a560e3717a7e90023ac6c73a2526f9231ad0827c40371654384860a6080",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791147345_519170687/hyprland.log",
+      "mode": 384,
+      "sha256": "48b4ad1f9e6cd4882a16f591b43a92fd0b3722c0ed411ea99974663667532b42",
+      "size": 24338
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "7a71dc498c7e767c6d6b4345ac6c55614061074427a875f4a65c40b86be9a69d",
+      "size": 19856
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/zero-scale1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "a10d52d734844df29e134a64d803ba17569df454d8e0f017c27f4ce91c0e8770",
+      "size": 13576
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/zero-scale1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "c8271817491e03dc24e2eee415f596f4cb221aea7f5c5fb6cdadeaa57a1a200c",
+      "size": 13545
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/zero-scale1.jsonl",
+      "mode": 384,
+      "sha256": "b42473d6ce750ec845a641b954de1fc477e6700fd187066b778a10c5da4c045e",
+      "size": 12181
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/zero-scale2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "7856eeeb4a77272dbb355b08d28eeeef729f8475f61aa367f2a2bcefb41868b6",
+      "size": 13779
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/zero-scale2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "edc8a48cc2b55ce7c03cb8e54158dee7fc85f363cd2ebe119c5d724b730e7579",
+      "size": 13753
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native-evidence/zero-scale2.jsonl",
+      "mode": 384,
+      "sha256": "73276277a528913eec1b6bfc1ea1c75c031d3aa1564ed7ec03194cd34f8cd5bf",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/native.py",
+      "mode": 420,
+      "sha256": "10ebb9a90bed687210b6eb1d4265311bb45289610f5fde64eb3fef4460101023",
+      "size": 31283
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147344321742866/report.json",
+      "mode": 420,
+      "sha256": "50dbf4c3d189953707eff7a630833c1278d24aef87c6fe93a4eb6363f1196e67",
+      "size": 2093536
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/inputs.json",
+      "mode": 420,
+      "sha256": "82d4c385ce9af1138a8f4a58a33b13b25c3da77ce7ab9a4eebec076f65ccf583",
+      "size": 1174255
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "2bbf1f250a2c61110430d4f30623fc6a891b0d12b2277cedf3df916aeb0c8854",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "2977fc7d0e1c6c60897e0fd57144ba3c8a6be2c7fc2d8bcbd000595174556f23",
+      "size": 573541
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-finite-monitor2-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "7fb2ce9d21485fedff2b7af190ed3abd3741d3a7d9b594a3428a2675ae72fbf0",
+      "size": 31912
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-finite-monitor2-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "f418b3e03420f418a195b98cf5bfb2aa485661732ed28c8a75e5112680e7dcf7",
+      "size": 31733
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-finite-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "73602b7ccc9f56f0e8896786c8fdbab3bdf62705f5064b4a0aba3e386e80778b",
+      "size": 12181
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-finite-monitor2-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "5b34f6abc7805f80d488b52691b9eb47864c996358b931babff013f118b9d158",
+      "size": 31246
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-finite-monitor2-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "ce10f2095d60ddfc83eed4e9df4cd567cb407b19168a310357c62580d3300992",
+      "size": 31194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-finite-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "89e23cf1fa0248c9da219e0e2194813e4d9805a1b3443c3a8d87d2a4dc1ac6b6",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-high-min-monitor2-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "222c94d09821c4fca7cba791caeaffffaf5cf84e4a66f7b39aa3312ac0643368",
+      "size": 31693
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-high-min-monitor2-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "fddaea1af2a0afa1a1138e25f35bf7ca6c95102bec1dad0813329b83336ecd65",
+      "size": 31526
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-high-min-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "7533cc5b29756bf5ecff2c923f3b96ea1cffe31ef84c77307b0d616e09cc9300",
+      "size": 12260
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-high-min-monitor2-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "5c3c22268216af4abd72e3a556d85202ba5d1d5cd5c00209d3ec43cc028ff8b0",
+      "size": 31255
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-high-min-monitor2-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "a7ba64ac3d09b493780d95061c32f5284af3dab5a908a17970621f5905599451",
+      "size": 31203
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/feasible-high-min-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "b15640a2b5c7890d2f17aba2a2fcafe07bcdc5cbb0b48d03e17c9d1894b9c240",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "584cabaeadc1bc70130717f05e97f5f4df7fc2aab1c1a50b5db2ced75fb0ea94",
+      "size": 213945
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "e9e1d2d67090ee3099b1f1e68fbc55d0825c0b1d7e3bc2e190f1e3c16d722c81",
+      "size": 349024
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/minimum-above-workarea-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "50f80e7e12bf8521629e68ba03e1f5135d685d6860f275faca893e6ec6732cc7",
+      "size": 6908
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/minimum-above-workarea-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "b9219c3c6f729112fbfd35929a2b55eab6999393323de737d4fd220177905d20",
+      "size": 6920
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/runtime-archive/.flatpak/webkit-3593465-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "3da5e20748ccd3eee1c9b5173ddce15a864c8b35e2cc6ddea5a018357a4298d2",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/runtime-archive/.flatpak/webkit-3593465-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "e14ee185c82d7e3a5d4791fdb89b87da98c1ca95e1c7c583b8695194925df081",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147357_258500362/12120219439461636020/ledger-v5.json",
+      "mode": 384,
+      "sha256": "92af0008d71895d1fca70eaa1ba97db37bfd5d272aee79f710f45445769dd041",
+      "size": 980
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147357_258500362/12120219439461636020/migration-plan.json",
+      "mode": 384,
+      "sha256": "2b7a2600bf6f478024d2fad057c1f2b2b4ea06146784cf94e1df30f5b3f6f96b",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147357_258500362/12120219439461636020/migration.json",
+      "mode": 384,
+      "sha256": "2fd6d7802c040f8b8f39306af12d18ddd3aaff7d325b8f118cf8b177c9d4d90c",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791147357_258500362/hyprland.log",
+      "mode": 384,
+      "sha256": "d2239500d9a3e8d4031efc0dff675c4dce71b8a93b5fc5a24f76209ee314a708",
+      "size": 24350
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "60fad1e6e6785fac747409c3ffaff3992f6712925473728b82984e0904ef1ca1",
+      "size": 243
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "0da9828ece90dcd6db996e8319d377186ed974eb64a32e8b779485781089872b",
+      "size": 11812
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/native.py",
+      "mode": 420,
+      "sha256": "10ebb9a90bed687210b6eb1d4265311bb45289610f5fde64eb3fef4460101023",
+      "size": 31283
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147356390567365/report.json",
+      "mode": 420,
+      "sha256": "a8323a7a6cb81c7c9cf031cc992183c3ca3a1a72fa851debfd3adbf7bb4fcb89",
+      "size": 1843866
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/inputs.json",
+      "mode": 420,
+      "sha256": "82d4c385ce9af1138a8f4a58a33b13b25c3da77ce7ab9a4eebec076f65ccf583",
+      "size": 1174255
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "7c211d9bc70b2fec40f34fb7e7d25f09abbdf3a67a4695b74bcb86245b30aea9",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "5d5e113ab71131172940b3d7545487e372432e5e8cde92c46ac12d39dddda833",
+      "size": 72553
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/high-min-small-logical-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "a084afb3eb52444dc325fc92d7f985e13ce90a60cedeeaa77e7016b5c2dc86c4",
+      "size": 5179
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "c3c848f17685f0d9faba9be614b0f620dc8f8319349f5acd2aad00fa46c59e2d",
+      "size": 213953
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "f341d79faa016c0b4b0f0cbe4aac3a9fe80fc76d9809efbc655334b512c31497",
+      "size": 129138
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/runtime-archive/.flatpak/webkit-3594559-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "b9e68ee13b51003715c49062537d6f07939dae94fa36ff91e64b08862fde957f",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/runtime-archive/.flatpak/webkit-3594559-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "77c125f68104d0982c03d474ae2bfee95b976fb304296e645a591dc1443ac34e",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147366_1500926338/12227440099736469142/ledger-v5.json",
+      "mode": 384,
+      "sha256": "593763aefef0f8c1848f8071ee4c8546dbc278003d189763de72382fe4ff3c4c",
+      "size": 213
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147366_1500926338/12227440099736469142/migration-plan.json",
+      "mode": 384,
+      "sha256": "47925c8b049679fc17462c252f6daac94528610247ab2799746249bdf87640a5",
+      "size": 248
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147366_1500926338/12227440099736469142/migration.json",
+      "mode": 384,
+      "sha256": "30b6efc506945377c498db333ff570f8e89e3164f29df03b47c3d0f92288d70f",
+      "size": 229
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791147366_1500926338/hyprland.log",
+      "mode": 384,
+      "sha256": "b326268f837f46ee56859d9c0839991d4d2e785d489a60b094e272a081570271",
+      "size": 24339
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "e8ea01321b08bab43c36659cbd45d7fa9da755f4b457002e90d444a48d205c2f",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "82ab2c1adcfff857a7e2adf060523a078ce775a0db05af8a73e83f2c01e1768f",
+      "size": 3768
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/native.py",
+      "mode": 420,
+      "sha256": "10ebb9a90bed687210b6eb1d4265311bb45289610f5fde64eb3fef4460101023",
+      "size": 31283
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native-1791147365365378803/report.json",
+      "mode": 420,
+      "sha256": "c64673b9e47924732f36eb16c78fb0cace070cc00ff65fdceb03aa414d95312d",
+      "size": 1558548
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/native.py",
+      "mode": 420,
+      "sha256": "10ebb9a90bed687210b6eb1d4265311bb45289610f5fde64eb3fef4460101023",
+      "size": 31283
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/preflight.json",
+      "mode": 420,
+      "sha256": "7b1e4e87e26112039781473f11201123559a2f50c1e1ae70ead1c7a45d507f71",
+      "size": 1185363
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v272/qa/review.py",
+      "mode": 420,
+      "sha256": "e2489c65ab3a7e60477e1b9406f67e8a319a51ebea3faf9ff9f1134259392afd",
+      "size": 3560
+    },
+    {
+      "path": "implementation/elm-gui-bounds-failure-v273/SPEC.md",
+      "mode": 420,
+      "sha256": "1b58ed11a69721ac3023df16b55c7eda1671e5b8b1a9ce2ea7999cd3f16e39f1",
+      "size": 474
+    },
+    {
+      "path": "implementation/elm-gui-bounds-failure-v273/qa/freeze.py",
+      "mode": 420,
+      "sha256": "15b7512f869ec3547fd16176fc464a91eff3aca294bbb0da06bab992220d0cb5",
+      "size": 2262
+    }
+  ],
+  "next": "Correct actual SurfaceRenderer bar CSS selector and constrain long labels in a fresh derivative; retain whole-control visibility,22 profile contracts and all original deadlines. Standard portal/AT lifecycle remains separate."
+}

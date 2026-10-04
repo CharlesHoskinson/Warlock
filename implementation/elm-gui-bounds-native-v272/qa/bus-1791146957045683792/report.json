@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    "no service directory or includes",
+    "actual socket credential and owned daemon",
+    "org.a11y.Bus actual unavailable without child activation",
+    "org.freedesktop.portal.Desktop actual unavailable without child activation",
+    "org.freedesktop.portal.Documents actual unavailable without child activation",
+    "owned daemon has no activated children",
+    "normal daemon termination"
+  ],
+  "privateBusRuntimeGone": true,
+  "artifacts": {
+    "bus.conf": "85e6a2b2dfd944162613d97f8d5063e8b9a4aaa81e9c2d85966d2a317d1d8d1a",
+    "daemon.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "daemon.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

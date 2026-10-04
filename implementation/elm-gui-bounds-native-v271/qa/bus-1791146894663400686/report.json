@@ -1,0 +1,14 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "checks": [
+    "no service directory or includes"
+  ],
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-gui-bounds-native-v271/qa/bus_test.py\", line 15, in <module>\n    assert p.poll() is None;time.sleep(.01)\n           ^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "artifacts": {
+    "bus.conf": "5dfa2dff4cff12b3e3cc15d9876af021ef73a6958d7e0472bbfdf69bd8e5a103",
+    "daemon.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "daemon.stderr": "8e92ffae0b8361461f34eea8f74b034a9770473d77b295b6a54a9fd44c3409a6"
+  }
+}

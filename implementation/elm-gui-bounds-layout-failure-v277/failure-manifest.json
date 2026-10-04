@@ -1,0 +1,2325 @@
+{
+  "passed": true,
+  "failureEvidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fullRoadmapAccepted": false,
+  "fullReleaseAccepted": false,
+  "reports": [
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/report.json",
+      "sha256": "2740406d93929ee37803275e8864884b75ad445ab9e89a26102326dfc10993e8",
+      "passed": true,
+      "checks": 547,
+      "profiles": 14,
+      "cleanupPassed": true,
+      "error": null
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/report.json",
+      "sha256": "f2078b539baea1d71d85890c8e8607cfaf8e9de1d929a42fe1deefa0cf26d82e",
+      "passed": true,
+      "checks": 287,
+      "profiles": 6,
+      "cleanupPassed": true,
+      "error": null
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/report.json",
+      "sha256": "2092a6c50578d276bb96ab07e1170c3e91388601430c958cd7692b5b99b7c140",
+      "passed": false,
+      "checks": 26,
+      "profiles": 1,
+      "cleanupPassed": true,
+      "error": "AssertionError('GUI control clipped')"
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/SPEC.md",
+      "mode": 420,
+      "sha256": "72ecebc60103ba9c900ad802f62fc81f16b8df334d04d2c137c62c12d02e4f90",
+      "size": 666
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/admission_ledger.py",
+      "mode": 420,
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/catalog_authority.py",
+      "mode": 420,
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/catalog_transport.py",
+      "mode": 420,
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/daemon.py",
+      "mode": 420,
+      "sha256": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+      "size": 10016
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/durable_ledger.py",
+      "mode": 420,
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/effect_endpoint.py",
+      "mode": 420,
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/endpoint.py",
+      "mode": 420,
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/geometry_endpoint.py",
+      "mode": 420,
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/geometry_size_policy.py",
+      "mode": 420,
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/recovery_fault.py",
+      "mode": 420,
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/recovery_journal.py",
+      "mode": 420,
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/recovery_store.py",
+      "mode": 420,
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/taskbar_catalog.py",
+      "mode": 420,
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/adapter/taskbar_projection.py",
+      "mode": 420,
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/adapter.js",
+      "mode": 420,
+      "sha256": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+      "size": 2101
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/bar-adapter.js",
+      "mode": 420,
+      "sha256": "dfaa8b65e2e4550a24b3dd1e8feb75284b154d4a2f051eb676c5804627c0f69c",
+      "size": 2266
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/bar.html",
+      "mode": 420,
+      "sha256": "9fe2e84a6ed6904c8a6da3e6281579ca76b2c43c38b2afc5a41442dabf28c200",
+      "size": 319
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/context.js",
+      "mode": 420,
+      "sha256": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2",
+      "size": 4615
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/index.html",
+      "mode": 420,
+      "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+      "size": 281
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/popup-adapter.js",
+      "mode": 420,
+      "sha256": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+      "size": 2274
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/popup.html",
+      "mode": 420,
+      "sha256": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+      "size": 325
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/assets/shell.css",
+      "mode": 420,
+      "sha256": "becc0d5fc7260e0e40a6d4111f1a49561791bd256c55173f3b2af58317d21a40",
+      "size": 818
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/elm.json",
+      "mode": 420,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/lineage.json",
+      "mode": 420,
+      "sha256": "a72bef85cfb2bf641c3416a49244583ea283706a2fb07016311e1ecb455df918",
+      "size": 300
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/admission-test.c",
+      "mode": 420,
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/context-keys-test.c",
+      "mode": 420,
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/context-keys.h",
+      "mode": 420,
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/geometry-carrier-test.c",
+      "mode": 420,
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/handoff-test.c",
+      "mode": 420,
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/host-fault.h",
+      "mode": 420,
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/host-journal.h",
+      "mode": 420,
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/host.c",
+      "mode": 420,
+      "sha256": "288bbb556f77d7138acd8109960c62fd59cafedd08c88cbcb042a416dd789115",
+      "size": 61893
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/shared-context-test.c",
+      "mode": 420,
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/shared-context.h",
+      "mode": 420,
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/shared-host.c",
+      "mode": 420,
+      "sha256": "854ee839f2017a902520da2feb115c4426fe213085efa302403f8467975e9261",
+      "size": 36776
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/surface-test.c",
+      "mode": 420,
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/native/surface.h",
+      "mode": 420,
+      "sha256": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+      "size": 5561
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/adapter-syntax.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/adapter-syntax.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/bar-adapter-syntax.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/bar-adapter-syntax.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/bar-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/bar-build.stdout",
+      "mode": 420,
+      "sha256": "e163c4577b923fc06f329fd180a6ede86278bd5efcc21d5d2c38246b5f084072",
+      "size": 91
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-guard-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-guard-build.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-guard-tests",
+      "mode": 493,
+      "sha256": "a71dd6d5d524a813e96f7c4a2e2565b59f2ee4b712a8970b1f9be8f0e64178c9",
+      "size": 166816
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-guard-tests.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-guard-tests.stdout",
+      "mode": 420,
+      "sha256": "76b0df9c2185a11964fb8fb0980b5a8e6874f25c404c064f08f980758f47811a",
+      "size": 27
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-key-tests",
+      "mode": 493,
+      "sha256": "332420493e4b3dbfd027fc3cf0e4218e4c6043e9c342671bc0b4763bca174c6f",
+      "size": 16320
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-keys-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-keys-build.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-keys-tests.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-keys-tests.stdout",
+      "mode": 420,
+      "sha256": "0efe435998bd0891aa05109c0e9f0c0f6cda61f47c1d7a8e3d1c08950a3239a5",
+      "size": 688
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-syntax.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/context-syntax.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/elm-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/elm-build.stdout",
+      "mode": 420,
+      "sha256": "c78ec69bf0c799768418475c9f27cc48870e9c34cafaf3dff502f8ea6b483326",
+      "size": 416
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/elm-host",
+      "mode": 493,
+      "sha256": "e3316423f629f17b2d74939d2047759a1c2b63b64bba5914f52b8836e1248d2f",
+      "size": 149704
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/flags.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/flags.stdout",
+      "mode": 420,
+      "sha256": "6cc9c1c055cb28056a5ae95d2ad83db1f4d3a203caecc15f680486028dee888c",
+      "size": 935
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/geometry-carrier-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/geometry-carrier-build.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/geometry-carrier-tests",
+      "mode": 493,
+      "sha256": "0f9ea7925ad153c6f736582b0727c18580f56768c8b49ee5b4a4c3b085ea6e6b",
+      "size": 108776
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/geometry-carrier-tests.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/geometry-carrier-tests.stdout",
+      "mode": 420,
+      "sha256": "98e14afac10c4d54e23008dfda907d8b3835af0ba689b6f9141503b40a8d5116",
+      "size": 28
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/host-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/host-build.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/host-tests.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/host-tests.stdout",
+      "mode": 420,
+      "sha256": "5ec75823e11c9aef91609c9207fd1f54c20a3772a50598e5406e71e6d7c3af15",
+      "size": 712
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/host.d",
+      "mode": 420,
+      "sha256": "83a7f2d8d5a4d5ab8275e9eb7a483907b8db83938a449ff55fcc9119e4c116d1",
+      "size": 45463
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/admission_ledger.py",
+      "mode": 420,
+      "sha256": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+      "size": 11214
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/catalog_authority.py",
+      "mode": 420,
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/catalog_transport.py",
+      "mode": 420,
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/daemon.py",
+      "mode": 420,
+      "sha256": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+      "size": 10016
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/durable_ledger.py",
+      "mode": 420,
+      "sha256": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+      "size": 10986
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/effect_endpoint.py",
+      "mode": 420,
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/endpoint.py",
+      "mode": 420,
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/geometry_endpoint.py",
+      "mode": 420,
+      "sha256": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+      "size": 14255
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/geometry_size_policy.py",
+      "mode": 420,
+      "sha256": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+      "size": 5287
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/recovery_fault.py",
+      "mode": 420,
+      "sha256": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+      "size": 2017
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/recovery_journal.py",
+      "mode": 420,
+      "sha256": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+      "size": 11003
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/recovery_store.py",
+      "mode": 420,
+      "sha256": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+      "size": 2643
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/taskbar_catalog.py",
+      "mode": 420,
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/adapter/taskbar_projection.py",
+      "mode": 420,
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/adapter.js",
+      "mode": 420,
+      "sha256": "4569cbf9bcfdcca94f639fd913a6301b858420213adecb723dd591fab4ac98e8",
+      "size": 2101
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/bar-adapter.js",
+      "mode": 420,
+      "sha256": "dfaa8b65e2e4550a24b3dd1e8feb75284b154d4a2f051eb676c5804627c0f69c",
+      "size": 2266
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/bar.html",
+      "mode": 420,
+      "sha256": "9fe2e84a6ed6904c8a6da3e6281579ca76b2c43c38b2afc5a41442dabf28c200",
+      "size": 319
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/bar.js",
+      "mode": 420,
+      "sha256": "88d184f759f0a886b6e96cc0d9ab571f395e8e5ab370d355c32b09bd143f8112",
+      "size": 130801
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/context.js",
+      "mode": 420,
+      "sha256": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2",
+      "size": 4615
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/elm.js",
+      "mode": 420,
+      "sha256": "b481728b84e75319210a3e9f787edfb596f9297254ceb2b884cdd175a0df2071",
+      "size": 475617
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/index.html",
+      "mode": 420,
+      "sha256": "ba09087a0dda2fbc4a912d2d5d8f8adb90ae553a8027963fdb6b74a7afaa5d1b",
+      "size": 281
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/popup-adapter.js",
+      "mode": 420,
+      "sha256": "b4e0ec2443a0ca6b0907a1737ed277554a92e58123d7b3dd0795f3cba1b1567d",
+      "size": 2274
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/popup.html",
+      "mode": 420,
+      "sha256": "2016dd3144489cef443d9961e67f62bf70ac38a05badb320bab976416f397bfc",
+      "size": 325
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/popup.js",
+      "mode": 420,
+      "sha256": "98d361735c3074095a6760610b9d44df44b5aea6b41fa95eccd40c0e9c86f216",
+      "size": 132068
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/assets/shell.css",
+      "mode": 420,
+      "sha256": "becc0d5fc7260e0e40a6d4111f1a49561791bd256c55173f3b2af58317d21a40",
+      "size": 818
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/ActionProjection.elmi",
+      "mode": 420,
+      "sha256": "367d8af3316f1f761aa53ded4006f91d030a9ece5deaf90b783daa8d8974bd93",
+      "size": 2096
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/ActionProjection.elmo",
+      "mode": 420,
+      "sha256": "69c45304fb315bb1e7a6433b2bc6a730dea84334a48d4a29e04867fcf39cb6c0",
+      "size": 12006
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Bar.elmi",
+      "mode": 420,
+      "sha256": "1e117f6469afe3c04e86fcb8c1baa04d7b83d3d7e945df235148e3c102b1f1da",
+      "size": 333
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Bar.elmo",
+      "mode": 420,
+      "sha256": "902f905aafda940d47c031723639368ff2396825815c9bf2d31291d4935750dd",
+      "size": 1989
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Binding.elmi",
+      "mode": 420,
+      "sha256": "8352e66cee2ad9138a85362353d80bfb83cf136666ed12bb54d26c5903495e5f",
+      "size": 798
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Binding.elmo",
+      "mode": 420,
+      "sha256": "1a2bf3901ca9e1fac8515e7bf098fd4aff465e4101989bc30e01e5da5296f153",
+      "size": 3465
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Catalog.elmi",
+      "mode": 420,
+      "sha256": "d962e4144704d6b5db230df002bf985707ddd3e06780ab685ae33a159f0c6aeb",
+      "size": 1759
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Catalog.elmo",
+      "mode": 420,
+      "sha256": "70d59b93bb81b39d57bc7b8c767ec2624ab7e4964fc048d4303336758b1a0b37",
+      "size": 7931
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Desktop.elmi",
+      "mode": 420,
+      "sha256": "d9e374e42c7f6cb7ddfad07ed973c1ff0cdbb1be42fd82e5207b344938776256",
+      "size": 67094
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Desktop.elmo",
+      "mode": 420,
+      "sha256": "57da805d490d964fe5f60ac936e11a52e85cf87a1e5b0fa5984c9e20d13d09f1",
+      "size": 42174
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Effects.elmi",
+      "mode": 420,
+      "sha256": "7fda840ec628ca4bc2419e874e15a6bfeed28af20f97fdd456c3a48ccc6b9ae7",
+      "size": 30580
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Effects.elmo",
+      "mode": 420,
+      "sha256": "9befc6458069ce5d93e133a110a6ae53337ad3ba4ed38b70085b9051df4bf559",
+      "size": 33083
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/GeometryProjection.elmi",
+      "mode": 420,
+      "sha256": "d2c9486aa4bf10237346f81d131b309a38920d33855d5d9e04aebc710c12fa6e",
+      "size": 16054
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/GeometryProjection.elmo",
+      "mode": 420,
+      "sha256": "037bec2c938b5f38c12b151b129234bc787b0526d04fa77e55996e9fcefe0317",
+      "size": 28365
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/GeometrySizePolicy.elmi",
+      "mode": 420,
+      "sha256": "ad93e36ff56e8aac456b7a8b9f1f441624cb7e31e7c5837e0d0b3ad325d75678",
+      "size": 9436
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/GeometrySizePolicy.elmo",
+      "mode": 420,
+      "sha256": "b5c859d53aea05d96e9b9616c13ea7f51dcca9fdb12a902b0a997951b3cabcbe",
+      "size": 19961
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Inspection.elmi",
+      "mode": 420,
+      "sha256": "e1476b8c5b50866403d6da3c41c4f1d4f5aed5ace5caf4fedb3b927491c38142",
+      "size": 131
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Inspection.elmo",
+      "mode": 420,
+      "sha256": "2072ba207606473b664db6346fa38ac6b02c7aa42fc21b9af1d29a01337a5193",
+      "size": 8687
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Launch.elmi",
+      "mode": 420,
+      "sha256": "9ad834959319931175d6215dc30028475211a0d2b014a52c5f228d0ac50c2b98",
+      "size": 3424
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Launch.elmo",
+      "mode": 420,
+      "sha256": "b53f3186f30ed908dbd21a378d4c8295f375f313bb6cee02ecab157a183886bc",
+      "size": 16054
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Main.elmi",
+      "mode": 420,
+      "sha256": "51689692f6843b357016f6a73993845a657156176c8d5310f2b5f28ea22c5e50",
+      "size": 1038
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Main.elmo",
+      "mode": 420,
+      "sha256": "44c46b88a16f21fbf2095298781ca690ba1d2493eb175cfce3f9072c97978d0b",
+      "size": 7474
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Menu.elmi",
+      "mode": 420,
+      "sha256": "92eeca265df8234795aef6e7907655193e6ffb7cccc5e3aedb0946a3f2b281d8",
+      "size": 8418
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Menu.elmo",
+      "mode": 420,
+      "sha256": "ac906555dfec37cfd683d4dd25a6b4371e82c3996413487f68d63d9727e5b595",
+      "size": 22481
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/MenuBridge.elmi",
+      "mode": 420,
+      "sha256": "4077eb3c88462a9b7ec15bc9d24845cdb2caee27c81a5848a75c9f37779f9a21",
+      "size": 106018
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/MenuBridge.elmo",
+      "mode": 420,
+      "sha256": "88aba041df5b2a26ae2f6e6b8a168e3fe659d8bfdea42316ca72908858fb73c3",
+      "size": 43851
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/NativeOutcome.elmi",
+      "mode": 420,
+      "sha256": "790b0470dfaaeed986af162123c1c3bd62d21c40c05496e291b70ec160f0299a",
+      "size": 149
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/NativeOutcome.elmo",
+      "mode": 420,
+      "sha256": "ef49932dc61030fa50cd6d27e8c61f49ade2eb8a70300e056c6288dbf05339a0",
+      "size": 7336
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/NativeProvider.elmi",
+      "mode": 420,
+      "sha256": "2d75630eb525f76577997e107106a3ea63e0ba3a999710d809fca3ce678a601b",
+      "size": 8131
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/NativeProvider.elmo",
+      "mode": 420,
+      "sha256": "bb0db8f1abd833d2a1eef51e15c36c6cd627f1f0c19a209fc25ee732a2e4bd34",
+      "size": 8073
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/OutputController.elmi",
+      "mode": 420,
+      "sha256": "b4844372acfadb97d314e808e8a2dcd51dd4c1aea0a545ae4ccc394e4564a7d8",
+      "size": 4347
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/OutputController.elmo",
+      "mode": 420,
+      "sha256": "306b75ecf3479b41f4d259c8576ded1e380cd1e70e986a2005df304cf97310d2",
+      "size": 41683
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Popup.elmi",
+      "mode": 420,
+      "sha256": "c3c571ae88d091f7deb04ff7e9683611a6c5c6f45206b03a5b9a05277fd40dbc",
+      "size": 335
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Popup.elmo",
+      "mode": 420,
+      "sha256": "d31b9db218aef7c2ad89fc4fa27c2cefc9b2078c1e2f96e04930d9c51a387edf",
+      "size": 3427
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Presentation.elmi",
+      "mode": 420,
+      "sha256": "debfd4c822aaa4f2614754fb6d0db1d9696c8d81b4fc428bb61ce1fbdbe32399",
+      "size": 780
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Presentation.elmo",
+      "mode": 420,
+      "sha256": "6dc6e04785049b7af09d8f95ed75bb6380fa10f84e76efef4a2826cfc24f4e86",
+      "size": 4637
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Provider.elmi",
+      "mode": 420,
+      "sha256": "1ecea6b8f83c19895953a1486dc340e0d3930bf5e1ecb1ba20d0bcafadd094c8",
+      "size": 18044
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Provider.elmo",
+      "mode": 420,
+      "sha256": "55b48cd80f71fdc273368aca8705f02486ecb2adc2436c71efd8fd3435019f32",
+      "size": 30739
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/ReceiptRouter.elmi",
+      "mode": 420,
+      "sha256": "4d6f73de835103306a95e5427de74d1ec5687eaf6afb0e0f2450f2ee5ae7d175",
+      "size": 4604
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/ReceiptRouter.elmo",
+      "mode": 420,
+      "sha256": "136eb76d7cad5829caacc0fe2ad5aab7bc0834190619967ceffd58ce0c7a2c4b",
+      "size": 23991
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Shell.elmi",
+      "mode": 420,
+      "sha256": "38098573fab974661675c8a8e11bd9974715f8149df25a721500a780a003ba69",
+      "size": 102804
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Shell.elmo",
+      "mode": 420,
+      "sha256": "e42b55dc3550ca9dcf582c2febaab35185f69331d9f5f2ba7de670355fc740c7",
+      "size": 59874
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Surface.elmi",
+      "mode": 420,
+      "sha256": "d83a499e94f151c91d0403c42385522d99b2aac4b4b9b8ee43e8e122a9c32c97",
+      "size": 37857
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Surface.elmo",
+      "mode": 420,
+      "sha256": "7e5141aa885c928f0793264f639ad150cb63424ffdde3a2495a4e48311fb0d0e",
+      "size": 29269
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/SurfaceController.elmi",
+      "mode": 420,
+      "sha256": "03c8b897f0bec25c2ff9cf4fcbda1a20bf24979f9816fb816ffe70400ac0a161",
+      "size": 19659
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/SurfaceController.elmo",
+      "mode": 420,
+      "sha256": "9b0d1dfe13470d8bff56ed1416cbf1c55176c46f1b377b8335347c6f6c3d8718",
+      "size": 10795
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmi",
+      "mode": 420,
+      "sha256": "3d8a22501020e05fc08aa1b2763d10408525d4f9313bb5a92003f86a19aae0d4",
+      "size": 1849
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/SurfaceRenderer.elmo",
+      "mode": 420,
+      "sha256": "00bf28f3b95535a89eb15c0efc7188b73d4812e1b7228e860d50ab0d62c35d7d",
+      "size": 12984
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Taskbar.elmi",
+      "mode": 420,
+      "sha256": "b0fd361aa1b074b02663d9658b3679d41a42b722130d2d799605585b0b713c61",
+      "size": 1719
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/Taskbar.elmo",
+      "mode": 420,
+      "sha256": "f21c6e5b786bbf946c11b4574b43d027323d61449899194053b479ab8a8d2cb1",
+      "size": 5495
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/TaskbarShell.elmi",
+      "mode": 420,
+      "sha256": "6b75da23bb8a65bde316bdecc97c54d90f7be4935e6769827496e667534c1e18",
+      "size": 33127
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/TaskbarShell.elmo",
+      "mode": 420,
+      "sha256": "c593e0b14e25503ce5ac46ef260a0c4bc0a214591b0311434eb2d367f3574a79",
+      "size": 12786
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/UInt64.elmi",
+      "mode": 420,
+      "sha256": "633cc78b3dd5fa14a5005c3dceef13f66737a32e0d4876476cdf8c54c086aec1",
+      "size": 530
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/UInt64.elmo",
+      "mode": 420,
+      "sha256": "a01a2537c09010d8dfec6caf3180fcb0780e4ac614952aee0ee71cfce292a611",
+      "size": 3318
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/UnsentOperation.elmi",
+      "mode": 420,
+      "sha256": "2b4293dfd84d06abeec1440c4337c3d58d3d91abd453f3951202608e77a26a71",
+      "size": 1883
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/UnsentOperation.elmo",
+      "mode": 420,
+      "sha256": "1d65cdfa7ea737c78b595fabda34b4e74f35d951727c8f4b12f2f93191478e0c",
+      "size": 3326
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/d.dat",
+      "mode": 420,
+      "sha256": "0b68c9e9f893b67f593c40054569c47a9f23a1023ac6cf8a5c463048e1b9288f",
+      "size": 10639
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/i.dat",
+      "mode": 420,
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23",
+      "size": 105328
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/lock",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm-stuff/0.19.2/o.dat",
+      "mode": 420,
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5",
+      "size": 441107
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/elm.json",
+      "mode": 420,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+      "size": 306
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/admission-test.c",
+      "mode": 420,
+      "sha256": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+      "size": 805
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/context-keys-test.c",
+      "mode": 420,
+      "sha256": "7b6b6b5ff7f3f9c6c608e8f1f1d916328792ece455dc3ec7c37d1e3a90b850c9",
+      "size": 2959
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/context-keys.h",
+      "mode": 420,
+      "sha256": "2620c6e2b039c248b7a5f5306e9916a5b1dccc98cbdd4a896d903d834850c05f",
+      "size": 2623
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/geometry-carrier-test.c",
+      "mode": 420,
+      "sha256": "770835580c7a4a2e21e49a9c3da586ee3ae59e66a92320dd7bb12fa8e516d921",
+      "size": 5425
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/handoff-test.c",
+      "mode": 420,
+      "sha256": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+      "size": 1054
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/host-fault.h",
+      "mode": 420,
+      "sha256": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+      "size": 2495
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/host-journal.h",
+      "mode": 420,
+      "sha256": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+      "size": 16541
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/host.c",
+      "mode": 420,
+      "sha256": "288bbb556f77d7138acd8109960c62fd59cafedd08c88cbcb042a416dd789115",
+      "size": 61893
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/shared-context-test.c",
+      "mode": 420,
+      "sha256": "ed50c8ed6b0fee3db3818e2f38c8bb57985b388b26ee09a5624d32f1bfa258ee",
+      "size": 20901
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/shared-context.h",
+      "mode": 420,
+      "sha256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+      "size": 22281
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/shared-host.c",
+      "mode": 420,
+      "sha256": "854ee839f2017a902520da2feb115c4426fe213085efa302403f8467975e9261",
+      "size": 36776
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/surface-test.c",
+      "mode": 420,
+      "sha256": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+      "size": 4091
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/native/surface.h",
+      "mode": 420,
+      "sha256": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+      "size": 5561
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/qa/build.py",
+      "mode": 420,
+      "sha256": "b9f5fe5453d536518b44358804e70b304bed2d427811730bf6232cd0af31030a",
+      "size": 4951
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/ActionProjection.elm",
+      "mode": 420,
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Bar.elm",
+      "mode": 420,
+      "sha256": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+      "size": 899
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/BatchReplay.elm",
+      "mode": 420,
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "size": 8901
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Binding.elm",
+      "mode": 420,
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Catalog.elm",
+      "mode": 420,
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/CatalogReplay.elm",
+      "mode": 420,
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Desktop.elm",
+      "mode": 420,
+      "sha256": "b7add5eaef405b1b0a75431711f983fcbfa9e17262211e276434e731115d9fdc",
+      "size": 21465
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/DesktopReplay.elm",
+      "mode": 420,
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Effects.elm",
+      "mode": 420,
+      "sha256": "5fb87f2cbeafe899e083882084c0c223f99a6b83bc9815d44493962cbd485c20",
+      "size": 15287
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/GeometryProjection.elm",
+      "mode": 420,
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "size": 10573
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/GeometrySizePolicy.elm",
+      "mode": 420,
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "size": 6205
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Inspection.elm",
+      "mode": 420,
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Launch.elm",
+      "mode": 420,
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/LaunchReplay.elm",
+      "mode": 420,
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Main.elm",
+      "mode": 420,
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Menu.elm",
+      "mode": 420,
+      "sha256": "db9a60d1bf61a5b2dae6f75f1063c66056fcad463a4ccffd0996307dd24bae59",
+      "size": 17453
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/MenuBridge.elm",
+      "mode": 420,
+      "sha256": "5d308bfc33e15cfab6de84ba7b3726d70ac3d0ab005ca3f564f078927f82c393",
+      "size": 25403
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/MenuSurfaceReplay.elm",
+      "mode": 420,
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/NativeOutcome.elm",
+      "mode": 420,
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/NativeProvider.elm",
+      "mode": 420,
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/OutputController.elm",
+      "mode": 420,
+      "sha256": "7436175f8a41d576ba093fa1983ce35d0bcc4b5d02da5a15a875bbe5344d976c",
+      "size": 18703
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/OutputReplay.elm",
+      "mode": 420,
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/OutputSurfaceReplay.elm",
+      "mode": 420,
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Popup.elm",
+      "mode": 420,
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Presentation.elm",
+      "mode": 420,
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/PresentationReplay.elm",
+      "mode": 420,
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Provider.elm",
+      "mode": 420,
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "size": 17531
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/ReceiptRouter.elm",
+      "mode": 420,
+      "sha256": "dd2eed98bb4db4ed485cb38da6c1febe85b9499c0738d1b3c06d08ce6b21d4d5",
+      "size": 9566
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Replay.elm",
+      "mode": 420,
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/SharedRecoveryReplay.elm",
+      "mode": 420,
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Shell.elm",
+      "mode": 420,
+      "sha256": "b915b239ce47a38e36212ac2b85ec27891a247e68a27c13a93b8762599abd13d",
+      "size": 30084
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/ShellReplay.elm",
+      "mode": 420,
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Surface.elm",
+      "mode": 420,
+      "sha256": "a639b18fb0302b74eeedf92ac1481291694d7b4fa9c3ae0ad9ac1f0d20a5d547",
+      "size": 13379
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/SurfaceController.elm",
+      "mode": 420,
+      "sha256": "3829adddfd4eea2064c0124fd2a266ef94acac84cc5bf5e274e264b668768fe2",
+      "size": 4944
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/SurfaceRenderer.elm",
+      "mode": 420,
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/SurfaceReplay.elm",
+      "mode": 420,
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "size": 2781
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/Taskbar.elm",
+      "mode": 420,
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/TaskbarReplay.elm",
+      "mode": 420,
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/TaskbarShell.elm",
+      "mode": 420,
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "size": 6429
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/TaskbarShellReplay.elm",
+      "mode": 420,
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/UInt64.elm",
+      "mode": 420,
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/inputs/src/UnsentOperation.elm",
+      "mode": 420,
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "size": 1426
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/linked-libraries.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/linked-libraries.stdout",
+      "mode": 420,
+      "sha256": "86e3ed7ce20a3aedabe68fa1c0f5dbb69d6337b77dc79ca06b65edddf2c82395",
+      "size": 9741
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/popup-adapter-syntax.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/popup-adapter-syntax.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/popup-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/popup-build.stdout",
+      "mode": 420,
+      "sha256": "3b4c53ddb0368bfc57a70659b24542a9f62eb9bc8095ec92cc91678419bd5741",
+      "size": 420
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/report.json",
+      "mode": 420,
+      "sha256": "a63db35163c67e0042e5625a95be2fc4fa40e96f35d7684d17be44f5ff29a281",
+      "size": 277420
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/surface-test-build.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/surface-test-build.stdout",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/surface-tests",
+      "mode": 493,
+      "sha256": "9276282ec81bdf86c213458e6ff9573ee510aa6e346fb9a333497a1d870fb5f0",
+      "size": 27408
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/surface-tests.stderr",
+      "mode": 420,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build-1791147530172296542/surface-tests.stdout",
+      "mode": 420,
+      "sha256": "05cc1801083f3b06353998b47bd021c0853d8769863cfdfcf982055cc364dad5",
+      "size": 254
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/qa/build.py",
+      "mode": 420,
+      "sha256": "b9f5fe5453d536518b44358804e70b304bed2d427811730bf6232cd0af31030a",
+      "size": 4951
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/ActionProjection.elm",
+      "mode": 420,
+      "sha256": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+      "size": 3989
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Bar.elm",
+      "mode": 420,
+      "sha256": "72f69c7aaeac213b5d3894e17c7c7f66ca38f1d8d5faad3c42af1872e271250d",
+      "size": 899
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/BatchReplay.elm",
+      "mode": 420,
+      "sha256": "6300d3c2e617de14b2fd70a40606ea8c94db435a93f0ae30bd19765f5cdce852",
+      "size": 8901
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Binding.elm",
+      "mode": 420,
+      "sha256": "0cc99c46ec41da3433304cb14d8e0b324e71f476c8ca6b4a7fec79d359fab36b",
+      "size": 1480
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Catalog.elm",
+      "mode": 420,
+      "sha256": "6024405182ac1aa98ff1e916c3f2fe6015fc87e6c543fa2492a364111eef2659",
+      "size": 2701
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/CatalogReplay.elm",
+      "mode": 420,
+      "sha256": "1d91c20e53eb9c533650e4233d103e4b04ae03ed609514e6d47e9d34dd80b1a9",
+      "size": 1300
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Desktop.elm",
+      "mode": 420,
+      "sha256": "b7add5eaef405b1b0a75431711f983fcbfa9e17262211e276434e731115d9fdc",
+      "size": 21465
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/DesktopReplay.elm",
+      "mode": 420,
+      "sha256": "e46edeaf7f572a75d74e2a7323927fd39a8414351d3922a2252c22c0f3678bbd",
+      "size": 3077
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Effects.elm",
+      "mode": 420,
+      "sha256": "5fb87f2cbeafe899e083882084c0c223f99a6b83bc9815d44493962cbd485c20",
+      "size": 15287
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/GeometryProjection.elm",
+      "mode": 420,
+      "sha256": "4aee2448599d3b94d3dd4762aa8d0c223b77e9d1a61898e70d6870151194d1d9",
+      "size": 10573
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/GeometrySizePolicy.elm",
+      "mode": 420,
+      "sha256": "46dda2de43642cd33997382e90813c8eeccde80745d79b7d5cd5fd425b062c43",
+      "size": 6205
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Inspection.elm",
+      "mode": 420,
+      "sha256": "02b5772b88f35fa994a4489d9a3c24485a83b37a2a03390d9b046554c08fa9dc",
+      "size": 3570
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Launch.elm",
+      "mode": 420,
+      "sha256": "063a09acf2b3b4a8677f54d74d7dcb42eff6f3f304f1ea87e33f7bb276a7a8a6",
+      "size": 8353
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/LaunchReplay.elm",
+      "mode": 420,
+      "sha256": "8700efe8e41f99da4a0b830a884b4f0af212aab1463a6ee2d62567e7ed515b97",
+      "size": 4031
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Main.elm",
+      "mode": 420,
+      "sha256": "2e9c042c5b2b068dbe582680ed37e6fa766b636d6d1a422297f843d135fb5405",
+      "size": 2976
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Menu.elm",
+      "mode": 420,
+      "sha256": "db9a60d1bf61a5b2dae6f75f1063c66056fcad463a4ccffd0996307dd24bae59",
+      "size": 17453
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/MenuBridge.elm",
+      "mode": 420,
+      "sha256": "5d308bfc33e15cfab6de84ba7b3726d70ac3d0ab005ca3f564f078927f82c393",
+      "size": 25403
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/MenuSurfaceReplay.elm",
+      "mode": 420,
+      "sha256": "7a539b81beddacaf61e85562e9ef2a9346f4d001feb311abe3d41d99129e6c39",
+      "size": 5461
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/NativeOutcome.elm",
+      "mode": 420,
+      "sha256": "fc9e824d315e0316b850fd36760c9f4ab4239eb97d1c4b3cc752144b70f98d89",
+      "size": 2645
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/NativeProvider.elm",
+      "mode": 420,
+      "sha256": "18aa48711825c7bfd3621fe8566d65f84387805434669591f43d1edaf4766ed9",
+      "size": 5100
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/OutputController.elm",
+      "mode": 420,
+      "sha256": "7436175f8a41d576ba093fa1983ce35d0bcc4b5d02da5a15a875bbe5344d976c",
+      "size": 18703
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/OutputReplay.elm",
+      "mode": 420,
+      "sha256": "44f156b65f816400b75d928371fe5bdba675545eba805fee4793422d5b3f73ff",
+      "size": 2289
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/OutputSurfaceReplay.elm",
+      "mode": 420,
+      "sha256": "c5b41a03a57830f9fefbc35d67e05b9a438aa7e8aee3be6367e7365fcbf70c26",
+      "size": 3244
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Popup.elm",
+      "mode": 420,
+      "sha256": "4224b222d32c4ae0aa192812980f52532eedbb5e0b6aad5a6b90ae69b72d6fd5",
+      "size": 1296
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Presentation.elm",
+      "mode": 420,
+      "sha256": "96a397804e81383aec0fe48c01bd759942f78e8f256aad74e8044f3634e5b98a",
+      "size": 2006
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/PresentationReplay.elm",
+      "mode": 420,
+      "sha256": "d0ea9946a99feb9929eb973cb8af006b6a89d91457d27a79c20019c5e311221c",
+      "size": 1234
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Provider.elm",
+      "mode": 420,
+      "sha256": "328d8fd6349eb4151fe448081e8a418f98e7d31bbe467e4cd60d12ed23ae71d0",
+      "size": 17531
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/ReceiptRouter.elm",
+      "mode": 420,
+      "sha256": "dd2eed98bb4db4ed485cb38da6c1febe85b9499c0738d1b3c06d08ce6b21d4d5",
+      "size": 9566
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Replay.elm",
+      "mode": 420,
+      "sha256": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+      "size": 1001
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/SharedRecoveryReplay.elm",
+      "mode": 420,
+      "sha256": "f44d52432e1c6c876207c273d8a013fd446b186b85a23d7bf5474943ef26ff8b",
+      "size": 3457
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Shell.elm",
+      "mode": 420,
+      "sha256": "b915b239ce47a38e36212ac2b85ec27891a247e68a27c13a93b8762599abd13d",
+      "size": 30084
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/ShellReplay.elm",
+      "mode": 420,
+      "sha256": "be85fbef5dda8dd07093b578c4be204d8d92772147e1ffacf80368216b5ba8ca",
+      "size": 2054
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Surface.elm",
+      "mode": 420,
+      "sha256": "a639b18fb0302b74eeedf92ac1481291694d7b4fa9c3ae0ad9ac1f0d20a5d547",
+      "size": 13379
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/SurfaceController.elm",
+      "mode": 420,
+      "sha256": "3829adddfd4eea2064c0124fd2a266ef94acac84cc5bf5e274e264b668768fe2",
+      "size": 4944
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/SurfaceRenderer.elm",
+      "mode": 420,
+      "sha256": "909f62cf9d7c3e012b9c59844e07008e58a8db19394d737aecbe97de9f950310",
+      "size": 5239
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/SurfaceReplay.elm",
+      "mode": 420,
+      "sha256": "476f94f33d9225035a479bd8ae8eb755ae8ac914c29ca533f62913fb378a603a",
+      "size": 2781
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/Taskbar.elm",
+      "mode": 420,
+      "sha256": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+      "size": 2564
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/TaskbarReplay.elm",
+      "mode": 420,
+      "sha256": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+      "size": 1658
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/TaskbarShell.elm",
+      "mode": 420,
+      "sha256": "eeb91d15cab97c94bf12ef3d1e25f513ac6c037774bef5150867eb01c6f86c26",
+      "size": 6429
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/TaskbarShellReplay.elm",
+      "mode": 420,
+      "sha256": "72ca534bb5adc6d0a02fd68ff9f287cb1815fcb0f68313ce7d0b3033d4ebf130",
+      "size": 2239
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/UInt64.elm",
+      "mode": 420,
+      "sha256": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+      "size": 1459
+    },
+    {
+      "path": "implementation/elm-responsive-bar-gui-v274/src/UnsentOperation.elm",
+      "mode": 420,
+      "sha256": "46e315cc739e097805af3c9358f9ca27a807ef1119c733aa296687342c8238ea",
+      "size": 1426
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/REQUIREMENTS.md",
+      "mode": 420,
+      "sha256": "1103cb51cbc66367f72ebdfc47a0f41fd2b012ebc1b157c071b68e11f89089b7",
+      "size": 2086
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/SPEC.md",
+      "mode": 420,
+      "sha256": "5f12a8315a232b938733aecf2434b9e596a6c260ad8bdeea27e60a9d22869cc0",
+      "size": 3840
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/origin.json",
+      "mode": 420,
+      "sha256": "14003f721bd073a612703250fb918d66e8cb5163a92d288274fe3c0db3e26db2",
+      "size": 367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/pins.json",
+      "mode": 420,
+      "sha256": "a6da070a7a1e1f16647a757775ebbc810036cac263ab0540afd2c96ca2943938",
+      "size": 5106
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/profiles.json",
+      "mode": 420,
+      "sha256": "460c451fcfa234d435b293cdd780631e83b84e412770daac0c48bd588973ae9a",
+      "size": 22898
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/bus_policy.py",
+      "mode": 420,
+      "sha256": "bf1c53c38a2a7bd74a8762c1bb7767bca543d47d8a642ded74c494366cf73949",
+      "size": 1681
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/bus_test.py",
+      "mode": 420,
+      "sha256": "0531efff842bda8e518aa476d5f89f0522a22f02dadf0c4e5eb3dbaee63d6c21",
+      "size": 2929
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/gui.py",
+      "mode": 420,
+      "sha256": "51fad01fe3fe06890884c2d2bd18e2bafbb4fcca5865746b01e270dd5bc320bf",
+      "size": 6732
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/inspection.py",
+      "mode": 420,
+      "sha256": "6b89e8a432c0cc328bd28a34bd3e130ee55069da52fac28effdfd04cf7e5dff7",
+      "size": 3082
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/inputs.json",
+      "mode": 420,
+      "sha256": "0cddbca28387ed2858a0c47e073a06c1a31960805ff31ca3366a77f98d0038e2",
+      "size": 1206222
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "c113e47d50cf053c767af37e0cf93f6fa7a4b557e182b11d0fd6c0116ff7364c",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "afe573fb5db6cf69928a9a3249654d5c7f2c0fd5ebae883edc605a19bfb275ee",
+      "size": 1034249
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-finite-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "3b8b9db4072b4d8d86019f8dc041fd259ce1887cb122821b52eda1f46176071c",
+      "size": 11974
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-finite-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "e039476ebb990d7a833ffabdfb59ec93809633e6b6982bf86d8e0939c8c3dc85",
+      "size": 11945
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-finite-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "a57d8e43c3e07750ccddc5323493464823d077c6a852c2708b1e46b1ae634a34",
+      "size": 12347
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-finite-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "8d82e5cf81774a935d94f1a06560b7a5dcb2b948b67ed12a982b265add24b535",
+      "size": 11971
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-finite-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "e37533c9a4233ef9844f159f132a12de5dbb7b5c494e0090d882b0162defac85",
+      "size": 11942
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-finite-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "e14942a773b30c533f4e343933ed3eb0b13e9e6181cf6bd6fe9bae6f3e341fc3",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-high-min-monitor1-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "745a5b547d711144af143376eb061e951b0332aa586fdeb3bd78ddf04bffb5c7",
+      "size": 11976
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-high-min-monitor1-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "bfe1871d9c25c3c32b0567558b6721d95d15f6e2bff4b9fd1227cfeee96e1cc3",
+      "size": 11945
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-high-min-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "05608065db49adbeb14644e7f6226737db50acb4d6c6c7536f5c409e085511b0",
+      "size": 12347
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-high-min-monitor1-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "af89fd1c1f3a45682f7fdf9d2471737be72f8d39ca293e45828daef209c76c4b",
+      "size": 11974
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-high-min-monitor1-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "28d67e0600c6ec2b76035b04be60e0bb2ff6c67442d890033469da77e53bf6ce",
+      "size": 11944
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/feasible-high-min-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "18a2c07f7f225c1d944ca6ddc9e5687224473d93898da77ae57b690fec88f060",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/finite-scale1.jsonl",
+      "mode": 384,
+      "sha256": "bc0400ca72a5db17e97310a560b8efdf2835b25d920960b4aa7f103e915e757d",
+      "size": 6165
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/finite-scale2.jsonl",
+      "mode": 384,
+      "sha256": "d86ac7b0e75146e613b529e5bf9ad9f1397beb0415ad092fd93ad631c3aa4d4b",
+      "size": 6227
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/fixed-scale1.jsonl",
+      "mode": 384,
+      "sha256": "1e4b94ad17083dfb57a235d92b523d957123016e7d7ec861f54f8040a23c4b9d",
+      "size": 6173
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/fixed-scale2.jsonl",
+      "mode": 384,
+      "sha256": "683157ce3289f73fc8f20de9813416f38b092469532aab843dc3f5ebb7ba429e",
+      "size": 6217
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "15413c375e2b53612cf62f208fbbd1b27b2eaf9a270c796896aeb69a088fa7e4",
+      "size": 213909
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "a590ce9dc91899fc184ad877e7ab70d84554592652c736cb4cd58615abb680bc",
+      "size": 573004
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/minimum-above-workarea-monitor1-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "f67dd2c531525b8e07862d09269469f04feb2e2223190df7c51a4fffe45c0018",
+      "size": 6908
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/minimum-above-workarea-monitor1-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "aa7a1b2811cc8d8b90745e383f0a8eb8d5cfc263cce44112427f79230fcfcd54",
+      "size": 6920
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/origin-scale1.jsonl",
+      "mode": 384,
+      "sha256": "454404efd4c513909748c9eedef8a483c4f93de691d6909eade3a993be4ffd82",
+      "size": 6862
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/origin-scale2.jsonl",
+      "mode": 384,
+      "sha256": "4f296cbfb120c9531fa91a993b0f0da206019d552e57b89148c5362c1c410732",
+      "size": 6938
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/runtime-archive/.flatpak/webkit-3614380-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "ea1cd7833f6bb43203f97a485518ad0e02deeaa2fef7c67b4e4cd624df8a6ec0",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/runtime-archive/.flatpak/webkit-3614380-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "2ecb93edb8249bf70c188ec47843ccb9a672ac56fa5b2d3fea583e22f34e2685",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147612_1103121293/10322313077237027131/ledger-v5.json",
+      "mode": 384,
+      "sha256": "c4995ef5e8e81b490f1c9d8dbe75058107fe6f91be1723e5b720a2ae747de8ca",
+      "size": 988
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147612_1103121293/10322313077237027131/migration-plan.json",
+      "mode": 384,
+      "sha256": "e56e1bd9da80cfc3976c1553ae3f6ae290aec35a1b03fd7721417c2534a1cc4a",
+      "size": 248
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147612_1103121293/10322313077237027131/migration.json",
+      "mode": 384,
+      "sha256": "930c7157636c2b17137594e7e0f97433593be09717f2ea85feb4e45e83f15797",
+      "size": 229
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791147612_1103121293/hyprland.log",
+      "mode": 384,
+      "sha256": "d751b6377d4264197f15a2bbef8dc1e9fc88edcfffecc0c535fe4ac88b3d33de",
+      "size": 24339
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "c9a2d4424b4090d6aa3cfd3066181da252b9995f7ce60c740b26e557f951b4ff",
+      "size": 19856
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/zero-scale1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "02af550694808082b08be3dfe5e39e3d29f78a99bb4ce3b083f12cbabe50c14d",
+      "size": 11977
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/zero-scale1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "d1134c5f438d7685746468fdf1ef0c2954ec22e02864e977c52d644bb1ffc509",
+      "size": 11944
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/zero-scale1.jsonl",
+      "mode": 384,
+      "sha256": "4cfbf3a620237b4b607fa1e951719efe2369b1e32998c10ca3a71f7e3f11495c",
+      "size": 12181
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/zero-scale2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "4346f22eaa7c99401fce5e182f28c683de88c9d34df2fcc821b43016b80a7c0b",
+      "size": 11974
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/zero-scale2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "645c19ebbf4f6d267f7f7ae6a2be2c80b89beb27a44b4cbbbfddddc0967e115c",
+      "size": 11944
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native-evidence/zero-scale2.jsonl",
+      "mode": 384,
+      "sha256": "9d2307c7f59e9368fc7ddc01bbd59c29d12b9b75ad5af106a659a1741498a70f",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/native.py",
+      "mode": 420,
+      "sha256": "2283a5801f36039b28419c33ab2023c15823e3261ab096ac63cf5ba5ee0b9099",
+      "size": 31285
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147610893550869/report.json",
+      "mode": 420,
+      "sha256": "2740406d93929ee37803275e8864884b75ad445ab9e89a26102326dfc10993e8",
+      "size": 2125813
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/inputs.json",
+      "mode": 420,
+      "sha256": "0cddbca28387ed2858a0c47e073a06c1a31960805ff31ca3366a77f98d0038e2",
+      "size": 1206222
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "14bb8a53d9503caf72d879e024a2095d122293f499302ca9cf1af4852277887b",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "8c12faee151f6f6f46fd6b69d607276a587d8771f0672b1a5533fcf3aec7cff7",
+      "size": 576612
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-finite-monitor2-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "6aa9e0dee2b70a99ac0a5e4a3fcccf3854fd5532986503606b4eca33666d3073",
+      "size": 27620
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-finite-monitor2-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "d16eb270694dc3617833babeb23c737234750e21523a4b5ec5fd24e885c4dcec",
+      "size": 27438
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-finite-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "9ea4ba321ac4e1b3b4168438435c6e59e22d92371b82968587f50f9fe426227e",
+      "size": 12181
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-finite-monitor2-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "e98b598308c6035e439f9fcec39128ce64aad9cee90bfe025f1bfdda361ca28a",
+      "size": 27268
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-finite-monitor2-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "cfe91def73d4ebe9dc547f6f987b6433adef02c017ae10529d80e1e8a344b4d0",
+      "size": 27222
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-finite-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "1260fb1552b448f1795b3e9918eddcbe7460b40f667f5ac4f379c620c975e5e9",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-high-min-monitor2-buffer1-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "8d6993e2167a66b53f71ebbc9278242b9e3ff8f029c4c8f3d8c5866f802d51cc",
+      "size": 27605
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-high-min-monitor2-buffer1-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "92b99579a0b88d46f5a0100ad4402a84a27fb0a463e2295cb1dcdbc1f0161b37",
+      "size": 27440
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-high-min-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "6b2599cb34fe879e19ab91d40360889fbe17a743e293add3e47650b61ec3ccb0",
+      "size": 12261
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-high-min-monitor2-buffer2-max-pixels-0.png",
+      "mode": 420,
+      "sha256": "8729e45a4d2e9ac8d9a58fb746cb923ae71576e1be789e6ae6ff7a67d3ec0362",
+      "size": 27275
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-high-min-monitor2-buffer2-restore-pixels-0.png",
+      "mode": 420,
+      "sha256": "27d806f470e678563fb4ce31c67b806aa451b08aaab21ec25ef18e85bc1fa967",
+      "size": 27223
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/feasible-high-min-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "aa7cb2c4ac076f5415c3d8bcc77784b9297a3a0264ba149e8d87bd1e95f4ffae",
+      "size": 12367
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "b0a8014895ef3952cc8627fbed82508a90edb285e182a5c52769a1db5bf3746a",
+      "size": 212979
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "843e7bc84db796d0cbbe9e91be19a9755085cce090e0e2c918f0bfd6a055cf76",
+      "size": 377296
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/minimum-above-workarea-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "5566e991f30d5a2e6db1469bec2f9fdf1d11a432fe6b61da4c36466b706479c9",
+      "size": 6908
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/minimum-above-workarea-monitor2-buffer2.jsonl",
+      "mode": 384,
+      "sha256": "d860666067f1e1deb3658234f994d7ba467476fc584e9ec8ae9692d2ac9ea6f5",
+      "size": 6920
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/runtime-archive/.flatpak/webkit-3616014-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "5ab94951f6f38d1473bc5b1da4acb061207049594af396fb46fc9e1520a87eb0",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/runtime-archive/.flatpak/webkit-3616014-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "c907ecd2f7f6937485da28aaf4db452f36b1d4a58eceab671d82c6b96d197510",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147626_933317540/17205355676088490248/ledger-v5.json",
+      "mode": 384,
+      "sha256": "b3ea7634c4d5d41457029cb1448005c5e426116e44f1e20c33e8eb84d81513c4",
+      "size": 977
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147626_933317540/17205355676088490248/migration-plan.json",
+      "mode": 384,
+      "sha256": "2ef6e46b538e206a7f248ca965a87292ff6dd476c40b992ef76dfa78d431eb96",
+      "size": 247
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147626_933317540/17205355676088490248/migration.json",
+      "mode": 384,
+      "sha256": "a080e6bf9c4a407349dbf213f75e312ca04a6f1f6ac23f3462ee200ebf6072b6",
+      "size": 228
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791147626_933317540/hyprland.log",
+      "mode": 384,
+      "sha256": "0e142b27e6e59c56e606c78d862177067faa59d8d45daf4c86b29cf177749f13",
+      "size": 24350
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "60fad1e6e6785fac747409c3ffaff3992f6712925473728b82984e0904ef1ca1",
+      "size": 243
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "5c154d161cdc1b016271b030cd252b388bbdb4c6670e3b6bb36c44f15da7415b",
+      "size": 11812
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/native.py",
+      "mode": 420,
+      "sha256": "2283a5801f36039b28419c33ab2023c15823e3261ab096ac63cf5ba5ee0b9099",
+      "size": 31285
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147624797934755/report.json",
+      "mode": 420,
+      "sha256": "f2078b539baea1d71d85890c8e8607cfaf8e9de1d929a42fe1deefa0cf26d82e",
+      "size": 1874921
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/inputs.json",
+      "mode": 420,
+      "sha256": "0cddbca28387ed2858a0c47e073a06c1a31960805ff31ca3366a77f98d0038e2",
+      "size": 1206222
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "985a4f21eb9dd310fd044f69a3e5636c256bd53f361e47f3e87cd1fee4535e9f",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/elm-bounds.log",
+      "mode": 384,
+      "sha256": "290f38e3319774a13678bf60c7b279a74546c71fdc9c8265e075dee6e3fa706e",
+      "size": 96363
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/high-min-small-logical-monitor2-buffer1.jsonl",
+      "mode": 384,
+      "sha256": "f708fbbda43a0e739697d4ac24149087e4ac2c020ebb5e9817bbc8f86838d067",
+      "size": 5179
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "2f99b04f294cc3fb27cacdc5a8ae89b21de7e8eae677473f1ed0e106564262b7",
+      "size": 212895
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "35fb800c3fefa3540ce29534df057abc3e617c66d4b56fec7dda53d3120fe8a7",
+      "size": 179525
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/runtime-archive/.flatpak/webkit-3617488-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "a44d75c01a8eb7474a737b20cc5f99d5fd060277ed13d5e9d36a85d18f474e8d",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/runtime-archive/.flatpak/webkit-3617488-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "c0b12438aa9f5810c38ffd0a93582a33630a14f3714cf13b7eb36a409d9e8744",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147636_53401397/4185923833702457192/ledger-v5.json",
+      "mode": 384,
+      "sha256": "4f4f0e1931e69067f1f2eafb8f0e8cf5a22bcaa8eb36bb5f762aa1a4a8bc23a5",
+      "size": 212
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147636_53401397/4185923833702457192/migration-plan.json",
+      "mode": 384,
+      "sha256": "d0b658f23a4c93837242b0f9f6e339185c27d371d71cf3a5022b554905c0796d",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791147636_53401397/4185923833702457192/migration.json",
+      "mode": 384,
+      "sha256": "f7304926916fe4abeea05e64eb08c52e69d27f2f376311798855e28fccf534f7",
+      "size": 226
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791147636_53401397/hyprland.log",
+      "mode": 384,
+      "sha256": "526a1554c8acda4c737d1122fb3ada8a9cb2d604ec84db10adbc66647c87bb96",
+      "size": 24337
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "e8ea01321b08bab43c36659cbd45d7fa9da755f4b457002e90d444a48d205c2f",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "76b37c3c257326410bc5b128bab4ecd042f2c5bd2c9754a62afedc7c07c060a6",
+      "size": 4035
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/native.py",
+      "mode": 420,
+      "sha256": "2283a5801f36039b28419c33ab2023c15823e3261ab096ac63cf5ba5ee0b9099",
+      "size": 31285
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native-1791147634891314873/report.json",
+      "mode": 420,
+      "sha256": "2092a6c50578d276bb96ab07e1170c3e91388601430c958cd7692b5b99b7c140",
+      "size": 1596135
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/native.py",
+      "mode": 420,
+      "sha256": "2283a5801f36039b28419c33ab2023c15823e3261ab096ac63cf5ba5ee0b9099",
+      "size": 31285
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/preflight.json",
+      "mode": 420,
+      "sha256": "9fe28e144c118fbb6658106e91032405318fa036748f3dfdeaa38b49dd30593b",
+      "size": 1217660
+    },
+    {
+      "path": "implementation/elm-gui-bounds-native-v275/qa/review.py",
+      "mode": 420,
+      "sha256": "577e1015adf92648540d451f3f7fdfd4f943feaa8891df27e83a7fcf073bebf9",
+      "size": 5025
+    },
+    {
+      "path": "implementation/elm-gui-bounds-held-v276/qa/freeze.py",
+      "mode": 420,
+      "sha256": "b8673d7014e5eb8aec42edc36116dfe5c5c44d849bd4d112a525f687cd69731a",
+      "size": 4693
+    },
+    {
+      "path": "implementation/elm-gui-bounds-layout-failure-v277/SPEC.md",
+      "mode": 420,
+      "sha256": "cfd5c9dd801131aa06006d5dbea6bde8aa11db5573080cb734b0db15ec599260",
+      "size": 519
+    },
+    {
+      "path": "implementation/elm-gui-bounds-layout-failure-v277/qa/freeze.py",
+      "mode": 420,
+      "sha256": "a40d5a0a0314fcd4c2cf552d4b1a79bd68a6932b16bf63a0e28fba23adc2c33d",
+      "size": 2269
+    }
+  ],
+  "next": "Correct actual SurfaceRenderer popup CSS selector and compact heading/status on small surfaces in a fresh derivative; retain whole-control visibility,22 profile contracts and all original deadlines. Standard portal/AT lifecycle remains separate."
+}
