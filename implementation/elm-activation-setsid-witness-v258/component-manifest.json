@@ -1,0 +1,129 @@
+{
+  "sourceHeld": true,
+  "unsafeWitnessConfirmed": true,
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "scope": "actual pre-fix supervisor CPU setsid failure, no GUI",
+  "files": {
+    "REQUIREMENTS.md": {
+      "sha256": "98093a855585ee57299fba05a1324238b3befb050ef256e519b6d22fc08c2010",
+      "size": 758,
+      "mode": 420
+    },
+    "origin.json": {
+      "sha256": "9c037fae3ef085e7ce91209b5c4aec83e05ad2c24cb5ab944addc6803e3ab5df",
+      "size": 237,
+      "mode": 420
+    },
+    "original/activation-supervisor.py": {
+      "sha256": "a151660a6a4c8e0c9c3d9618688e8237503fcd9237b0466042c4a8e050abb9e7",
+      "size": 4396,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "2fc5308c55166ed86f8e8aba72ac5c699a57e61cee75446d4f6a6bd6388ff45a",
+      "size": 1241,
+      "mode": 420
+    },
+    "qa/test.py": {
+      "sha256": "1c13e098c29d2d87ee17c0aaa084ebd8735b249790f18fddfd99939a72cc5710",
+      "size": 3461,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/ordinary-exit/descriptor.json": {
+      "sha256": "a845c3fa092abf9955df797277160df959b250dd0cdb6aab25a1b67951550677",
+      "size": 151,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/ordinary-exit/events.jsonl": {
+      "sha256": "7fc48e76c09409de6f2af255ff1d3ba3ac9b5b9e9b4e00216300582a0c27f03f",
+      "size": 791,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/ordinary-exit/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/ordinary-exit/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/report.json": {
+      "sha256": "81cc92dcf029ea5da1408203c90bf08ae074937e188163c31fbbb79aeb42fa8c",
+      "size": 708,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/setsid-grandchild/descriptor.json": {
+      "sha256": "f3970c731270833a3a906abbb86e7c043c67bf6e66a0496ae6f69d62db98409f",
+      "size": 218,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/setsid-grandchild/events.jsonl": {
+      "sha256": "cc02f64ece7355af332f9afed2655e46aa358644ee0cac7ca9a18f7f86a8a678",
+      "size": 783,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/setsid-grandchild/stderr": {
+      "sha256": "39d7ffb1928c9ae53f8afc8b98569d22b081bf86d19d1627ae9fce7970b30109",
+      "size": 955,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/setsid-grandchild/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791143090745456289/test.py": {
+      "sha256": "b28032665488e2cb4469207606b144d365e7cdec497f2ee88a1919e97a4762fd",
+      "size": 2642,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/ordinary-exit/descriptor.json": {
+      "sha256": "a845c3fa092abf9955df797277160df959b250dd0cdb6aab25a1b67951550677",
+      "size": 151,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/ordinary-exit/events.jsonl": {
+      "sha256": "7d3c83578405b0c7770f3019c666a2ff8559fea17977ced0c8f0b0a35417eac5",
+      "size": 791,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/ordinary-exit/stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/ordinary-exit/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/report.json": {
+      "sha256": "d9ee6162035d17c957adba97b4a94da5d208e15299276c8a43349828586a0dd9",
+      "size": 778,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/setsid-grandchild/descriptor.json": {
+      "sha256": "f3970c731270833a3a906abbb86e7c043c67bf6e66a0496ae6f69d62db98409f",
+      "size": 218,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/setsid-grandchild/events.jsonl": {
+      "sha256": "a3777f106d97994b9b188b50aa156a8498fc37b9dfcb35c9930ec1046b71fbfa",
+      "size": 783,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/setsid-grandchild/stderr": {
+      "sha256": "39d7ffb1928c9ae53f8afc8b98569d22b081bf86d19d1627ae9fce7970b30109",
+      "size": 955,
+      "mode": 420
+    },
+    "qa/witness-1791143159542714586/setsid-grandchild/stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0,
+      "mode": 420
+    }
+  }
+}

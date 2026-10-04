@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "syntheticJournalOnly": true,
+  "checks": [
+    {
+      "name": "exact-reparent-B-with-live-inspections",
+      "passed": true
+    },
+    {
+      "name": "toolkit-evidence-never-native-parent-proof",
+      "passed": true
+    },
+    {
+      "name": "wrong-command",
+      "passed": true
+    },
+    {
+      "name": "wrong-parent-target",
+      "passed": true
+    },
+    {
+      "name": "wrong-child-intent",
+      "passed": true
+    },
+    {
+      "name": "wrong-parent-resource",
+      "passed": true
+    },
+    {
+      "name": "bool-parent-resource",
+      "passed": true
+    },
+    {
+      "name": "nonmodal-intent",
+      "passed": true
+    },
+    {
+      "name": "stale-parent-instance",
+      "passed": true
+    },
+    {
+      "name": "stale-child-map",
+      "passed": true
+    },
+    {
+      "name": "wrong-final-parent",
+      "passed": true
+    },
+    {
+      "name": "unmapped-final-child",
+      "passed": true
+    },
+    {
+      "name": "unknown-role",
+      "passed": true
+    },
+    {
+      "name": "missing-parent-inspection",
+      "passed": true
+    },
+    {
+      "name": "missing-child-inspection",
+      "passed": true
+    },
+    {
+      "name": "missing-intent",
+      "passed": true
+    },
+    {
+      "name": "missing-request",
+      "passed": true
+    },
+    {
+      "name": "late-child-retire",
+      "passed": true
+    },
+    {
+      "name": "late-parent-unmap",
+      "passed": true
+    },
+    {
+      "name": "late-child-replacement",
+      "passed": true
+    },
+    {
+      "name": "duplicate-parent-intent",
+      "passed": true
+    },
+    {
+      "name": "aliased-parent-child-resource",
+      "passed": true
+    },
+    {
+      "name": "closed-open-sibling-None",
+      "passed": true
+    },
+    {
+      "name": "closed-close-sibling-None",
+      "passed": true
+    },
+    {
+      "name": "closed-reparent-sibling-A",
+      "passed": true
+    },
+    {
+      "name": "closed-reparent-sibling-B",
+      "passed": true
+    },
+    {
+      "name": "reject-parent-C",
+      "passed": true
+    },
+    {
+      "name": "reject-parent-D",
+      "passed": true
+    },
+    {
+      "name": "reject-parent-E",
+      "passed": true
+    },
+    {
+      "name": "reject-parent-P",
+      "passed": true
+    },
+    {
+      "name": "reject-parent-None",
+      "passed": true
+    },
+    {
+      "name": "reject-parent-AB",
+      "passed": true
+    },
+    {
+      "name": "reject-parent-True",
+      "passed": true
+    },
+    {
+      "name": "role-on-plain-sibling-command",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/sibling-test.py": "b784657f9fb8c258068d69c8ef2836f5e8209f3073adbbe59a491e0c2fe45208",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/journal.py": "0c7a9ab164af2bad8b7980b4eb2b2fb1f07adfd494ddaada643c4ddfa8e46e31",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor.py": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5"
+  }
+}

@@ -1,0 +1,9 @@
+# Held sibling consumer review
+
+V257 appends toolkit-only E transient-parent consistency checking to the held238 consumer. Actor lifecycle and existing decoder remain unchanged apart from admitting role E and the closed sibling vocabulary. No native acceptance is inferred from intent or inspected toolkit flags.
+
+The new relation requires an exact caller request number and A/B target, one subsequent E parent-intent record, positive distinct child/parent instance/map/resource identities, actual transient resource and modal flag, post-intent inspection of both live roles, and unchanged latest identity/relationship records. Closed/latest-unmapped/recreated/resource aliases fail. Boolean/float resource IDs and noncanonical identities fail through strict integer validation. The actual frozen253 producer records GTK transient resource and modal flag; actual Wayland parent, native ownership, focus, held-input retirement and GTK05 interval obligations remain separate.
+
+Caller preconditions: rows come from the owned Actor's complete parsed prefix; callers bind identity arguments to actual selected live roles and own the request/baseline. This predicate does not authenticate arbitrary Python lists, independently validate native parenthood, or establish atomicity across GTK and native observations. An inspection may be under a later inspect command; the helper does not require a particular inspect request number. It certifies current toolkit consistency, not a historical no-intermediate-change assertion.
+
+The protected review separately exercises exact positives and malformed/stale/retired/alias boundaries against byte-captured actual V257 modules, and verifies every held V257 inventory row and origin manifests. It launches no GUI or new actor process. Existing53+5+34+2 CPU reports retain their explicit synthetic/fake-process scopes. Source mutable prelaunch logger/bus issues belong to the actual native runner and remain unchanged here.

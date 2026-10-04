@@ -1,0 +1,75 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-sibling-1791142891341503704/independent-groups/fake-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "open-sibling",
+      "role": null,
+      "payload": "1 open-sibling\n",
+      "startedMonotonic": 107157.299429187,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 2,
+      "operation": "reparent-sibling",
+      "role": "B",
+      "payload": "2 reparent-sibling B\n",
+      "startedMonotonic": 107157.320210762,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 4,
+      "operation": "reparent-sibling",
+      "role": "A",
+      "payload": "4 reparent-sibling A\n",
+      "startedMonotonic": 107157.341073664,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 5,
+      "operation": "close-sibling",
+      "role": null,
+      "payload": "5 close-sibling\n",
+      "startedMonotonic": 107157.362081217,
+      "written": true,
+      "requestObserved": true
+    },
+    {
+      "sequence": 6,
+      "operation": "quit",
+      "role": null,
+      "payload": "6 quit\n",
+      "startedMonotonic": 107157.362608877,
+      "written": true
+    }
+  ],
+  "process": {
+    "pid": 3283739,
+    "start": "11099505",
+    "name": "gtk-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-sibling-1791142891341503704/independent-groups/fake-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-sibling-1791142891341503704/independent-groups/evidence/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "11099505",
+  "stdoutBytes": 1420,
+  "stdoutCapturedBytes": 1420,
+  "stdoutPrefixSHA256": "e40c576ce0aa496d06547a79fb8ff1e9871725e938aaa17faddbc13a7055a0ce",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "normalExit": true,
+  "exitCode": 0
+}

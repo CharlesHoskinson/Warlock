@@ -1,0 +1,4 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 107425.529303963, "identity": {"pid": 3302509, "start": "11126325", "pgid": 3302509, "ppid": 3302415, "uid": 1000}, "argv": ["/usr/bin/python3", "-c", "import time;time.sleep(.08)"]}
+{"sequence": 2, "kind": "owned-child", "monotonic": 107425.560581522, "identity": {"pid": 3302516, "start": "11126330", "pgid": 3302509, "ppid": 3302509, "uid": 1000}}
+{"sequence": 3, "kind": "child-exit", "monotonic": 107425.631375468, "identity": {"pid": 3302516, "start": "11126330", "pgid": 3302509, "ppid": 3302509, "uid": 1000}, "waitStatus": 0, "exitCode": 0}
+{"sequence": 4, "kind": "terminal", "monotonic": 107425.631446022, "childExitCode": 0, "cancelled": false, "fallback": false, "allWaitStatuses": {"3302516": 0}, "liveDescendants": []}

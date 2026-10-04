@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "sourceReviewPassed": true,
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "files": {
+    "REQUIREMENTS.md": {
+      "sha256": "b612d1e00c096f8c174c0d75078c14604f4d707baff0888f8e529faf0d8398b3",
+      "size": 399
+    },
+    "REVIEW.md": {
+      "sha256": "351fd1c78e8a41da533a68895e86c71c08c4efb8b6fef3222db7e65531aa6cb1",
+      "size": 2133
+    },
+    "qa/failed-row-shape/report.json": {
+      "sha256": "9945ccdf17c716c677d19220a8bf081a3ab39a695f7328dd861e61bc2865fffa",
+      "size": 208
+    },
+    "qa/failed-row-shape/verify.py": {
+      "sha256": "35d6da1073ee131fbd7c217a07c2418f46e7c5ab7e783d8e986bf649499839ad",
+      "size": 3018
+    },
+    "qa/verify-1791142561918542480/report.json": {
+      "sha256": "53893d8940ecaf8a033e8042cb4c1c32baa3942cf39899f66af77a20b5a32bfc",
+      "size": 1484
+    },
+    "qa/verify.py": {
+      "sha256": "02ce5ebdf1b65c2cc5b0f311a0b4e1ff23fd7b116f24855b5ce6fe790b10f384",
+      "size": 3119
+    }
+  },
+  "ownerManifestSHA256": "32f0cc1aff70793ef9cc2d1bc76508806500a5be34df386696d5db4aa5cc4758",
+  "verificationReport": "qa/verify-1791142561918542480/report.json"
+}

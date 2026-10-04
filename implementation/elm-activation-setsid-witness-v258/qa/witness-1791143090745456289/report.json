@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "unsafeWitnessConfirmed": true,
+  "nativeAcceptance": false,
+  "cases": [
+    {
+      "name": "ordinary-exit",
+      "expectedNormalSuccess": true,
+      "runtime": "/run/user/1000/wqa/1ed7",
+      "pid": 3297870,
+      "start": "11119445",
+      "exitCode": 0,
+      "passed": true
+    },
+    {
+      "name": "setsid-grandchild",
+      "expectedNormalSuccess": false,
+      "runtime": "/run/user/1000/wqa/bc7c",
+      "pid": 3297872,
+      "start": "11119462",
+      "exitCode": 1,
+      "passed": true
+    }
+  ],
+  "sourceSHA256": "a151660a6a4c8e0c9c3d9618688e8237503fcd9237b0466042c4a8e050abb9e7",
+  "testSHA256": "b28032665488e2cb4469207606b144d365e7cdec497f2ee88a1919e97a4762fd"
+}

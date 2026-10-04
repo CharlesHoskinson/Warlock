@@ -1,0 +1,326 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "exact-A-independent-groups",
+      "passed": true
+    },
+    {
+      "name": "exact-A-default-group",
+      "passed": true
+    },
+    {
+      "name": "exact-B-independent-groups",
+      "passed": true
+    },
+    {
+      "name": "exact-B-default-group",
+      "passed": true
+    },
+    {
+      "name": "hostile-0-requestedRole-'A'",
+      "passed": true
+    },
+    {
+      "name": "hostile-0-command-'open-sibling'",
+      "passed": true
+    },
+    {
+      "name": "hostile-0-requestSequence-True",
+      "passed": true
+    },
+    {
+      "name": "hostile-1-role-'D'",
+      "passed": true
+    },
+    {
+      "name": "hostile-1-mapped-False",
+      "passed": true
+    },
+    {
+      "name": "hostile-1-requestedModal-1",
+      "passed": true
+    },
+    {
+      "name": "hostile-1-transientSurfaceId-20.0",
+      "passed": true
+    },
+    {
+      "name": "hostile-1-transientSurfaceId-True",
+      "passed": true
+    },
+    {
+      "name": "hostile-3-instance-3",
+      "passed": true
+    },
+    {
+      "name": "hostile-3-surfaceId-21",
+      "passed": true
+    },
+    {
+      "name": "hostile-3-mapped-False",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-mapGeneration-3",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-surfaceId-56",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-mapped-False",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-requestedModal-False",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-transientSurfaceId-21",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-profile-'default-group'",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-sequence-7",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-monotonicUs-0",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-processStarted-78",
+      "passed": true
+    },
+    {
+      "name": "hostile-4-role-'F'",
+      "passed": true
+    },
+    {
+      "name": "latest-retired-B-unmap",
+      "passed": true
+    },
+    {
+      "name": "latest-retired-E-unmap",
+      "passed": true
+    },
+    {
+      "name": "latest-retired-B-destroy-request",
+      "passed": true
+    },
+    {
+      "name": "latest-retired-E-destroy-request",
+      "passed": true
+    },
+    {
+      "name": "latest-retired-B-local-destroy",
+      "passed": true
+    },
+    {
+      "name": "latest-retired-E-local-destroy",
+      "passed": true
+    },
+    {
+      "name": "latest-child-instance",
+      "passed": true
+    },
+    {
+      "name": "latest-child-mapGeneration",
+      "passed": true
+    },
+    {
+      "name": "latest-child-surfaceId",
+      "passed": true
+    },
+    {
+      "name": "latest-child-transientSurfaceId",
+      "passed": true
+    },
+    {
+      "name": "latest-child-requestedModal",
+      "passed": true
+    },
+    {
+      "name": "closed-parent-None",
+      "passed": true
+    },
+    {
+      "name": "closed-parent-C",
+      "passed": true
+    },
+    {
+      "name": "closed-parent-D",
+      "passed": true
+    },
+    {
+      "name": "closed-parent-E",
+      "passed": true
+    },
+    {
+      "name": "closed-parent-P",
+      "passed": true
+    },
+    {
+      "name": "closed-parent-AB",
+      "passed": true
+    },
+    {
+      "name": "closed-parent-False",
+      "passed": true
+    },
+    {
+      "name": "identity-bound-{'instance': 2, 'mapGeneration': 3, 'surfaceId': 55}",
+      "passed": true
+    },
+    {
+      "name": "identity-bound-{'instance': 5, 'mapGeneration': 3, 'surfaceId': 20}",
+      "passed": true
+    },
+    {
+      "name": "identity-bound-{'instance': 2, 'mapGeneration': True, 'surfaceId': 20}",
+      "passed": true
+    },
+    {
+      "name": "identity-bound-{'instance': 2, 'mapGeneration': 3, 'surfaceId': 20.0}",
+      "passed": true
+    },
+    {
+      "name": "identity-bound-{'instance': 2, 'mapGeneration': 3, 'surfaceId': 20, 'extra': 1}",
+      "passed": true
+    },
+    {
+      "name": "identity-bound-{}",
+      "passed": true
+    },
+    {
+      "name": "identity-bound-None",
+      "passed": true
+    },
+    {
+      "name": "baseline-True",
+      "passed": true
+    },
+    {
+      "name": "baseline--1",
+      "passed": true
+    },
+    {
+      "name": "baseline-1.0",
+      "passed": true
+    },
+    {
+      "name": "baseline-5",
+      "passed": true
+    },
+    {
+      "name": "request-True",
+      "passed": true
+    },
+    {
+      "name": "request-0",
+      "passed": true
+    },
+    {
+      "name": "request-1.0",
+      "passed": true
+    },
+    {
+      "name": "request-2",
+      "passed": true
+    },
+    {
+      "name": "missing-required-0",
+      "passed": true
+    },
+    {
+      "name": "missing-required-1",
+      "passed": true
+    },
+    {
+      "name": "missing-required-3",
+      "passed": true
+    },
+    {
+      "name": "missing-required-4",
+      "passed": true
+    },
+    {
+      "name": "duplicate-parent-intent",
+      "passed": true
+    },
+    {
+      "name": "actor-closed-reparent-None",
+      "passed": true
+    },
+    {
+      "name": "actor-closed-reparent-C",
+      "passed": true
+    },
+    {
+      "name": "actor-closed-reparent-D",
+      "passed": true
+    },
+    {
+      "name": "actor-closed-reparent-E",
+      "passed": true
+    },
+    {
+      "name": "actor-closed-reparent-P",
+      "passed": true
+    },
+    {
+      "name": "actor-closed-reparent-AB",
+      "passed": true
+    },
+    {
+      "name": "actor-closed-reparent-True",
+      "passed": true
+    },
+    {
+      "name": "actor-canonical-reparent-A",
+      "passed": true
+    },
+    {
+      "name": "actor-canonical-reparent-B",
+      "passed": true
+    },
+    {
+      "name": "actor-canonical-open-sibling",
+      "passed": true
+    },
+    {
+      "name": "actor-canonical-close-sibling",
+      "passed": true
+    },
+    {
+      "name": "actor-sequence-0",
+      "passed": true
+    },
+    {
+      "name": "actor-sequence--1",
+      "passed": true
+    },
+    {
+      "name": "actor-sequence-True",
+      "passed": true
+    },
+    {
+      "name": "actor-sequence-1.0",
+      "passed": true
+    },
+    {
+      "name": "actor-sequence-9223372036854775808",
+      "passed": true
+    }
+  ],
+  "verifiedHeldFiles": 42,
+  "sourceManifestSHA256": "a4c4ba426a95b47e39cb94310826d7ceb0cf58c4a856a497890381f06f852817",
+  "unchangedActorLifecycle": true,
+  "unchangedDecoderExceptERole": true
+}
