@@ -1,0 +1,188 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-Qt-enum-bound-raw-pointer-pair",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-role",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-instance",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-mapGeneration",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-surfaceId",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-sourceSurfaceId",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-trackedRecipient",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-trackedRecipient",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-rawEventType",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-qtButton",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-qtButtons",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-qtModifiers",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-localX",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-globalQtY",
+      "passed": true
+    },
+    {
+      "name": "raw-pointer-refuses-extra-untracked-recipient",
+      "passed": true
+    },
+    {
+      "name": "explicit-double-click-not-single-pair",
+      "passed": true
+    },
+    {
+      "name": "QWidget-propagation-is-not-additional-native-dispatch",
+      "passed": true
+    },
+    {
+      "name": "blocked-raw-refuses-any-role",
+      "passed": true
+    },
+    {
+      "name": "raw-key-pair-explicit-domains",
+      "passed": true
+    },
+    {
+      "name": "raw-key-refuses-qtKey",
+      "passed": true
+    },
+    {
+      "name": "raw-key-refuses-nativeScanCode",
+      "passed": true
+    },
+    {
+      "name": "raw-key-refuses-nativeVirtualKey",
+      "passed": true
+    },
+    {
+      "name": "raw-key-refuses-nativeModifiers",
+      "passed": true
+    },
+    {
+      "name": "raw-key-refuses-qtModifiers",
+      "passed": true
+    },
+    {
+      "name": "raw-key-refuses-autoRepeat",
+      "passed": true
+    },
+    {
+      "name": "raw-key-refuses-sourceSurfaceId",
+      "passed": true
+    },
+    {
+      "name": "raw-key-extra-role-not-filtered",
+      "passed": true
+    },
+    {
+      "name": "valid-partial-tail-retained-only-complete",
+      "passed": true
+    },
+    {
+      "name": "journal-duplicate",
+      "passed": true
+    },
+    {
+      "name": "journal-nonfinite",
+      "passed": true
+    },
+    {
+      "name": "journal-foreignPID",
+      "passed": true
+    },
+    {
+      "name": "journal-foreignStart",
+      "passed": true
+    },
+    {
+      "name": "journal-wrongProfile",
+      "passed": true
+    },
+    {
+      "name": "journal-invalidUTF8",
+      "passed": true
+    },
+    {
+      "name": "journal-nested",
+      "passed": true
+    },
+    {
+      "name": "journal-refusal",
+      "passed": true
+    },
+    {
+      "name": "journal-bool-sequence",
+      "passed": true
+    },
+    {
+      "name": "immutable-observed-prefix",
+      "passed": true
+    },
+    {
+      "name": "bounded-journal-bytes",
+      "passed": true
+    }
+  ],
+  "compiledQtEventTypes": {
+    "window-button-press": 2,
+    "window-button-release": 3,
+    "window-button-double-click": 4,
+    "window-key-press": 6,
+    "window-key-release": 7
+  },
+  "sourceSHA256": "7e20f3a38ff59439a6ab4c0d05b14ce2cdf47a7dd6e0536bfe351c22b05b629d",
+  "compilerSHA256": "f04191f6a7b2cd7d9a62e1745872b8a6088791e5af6955488c69c9b2c4668bc9",
+  "enumSourceSHA256": "dcb03864e39539ea4201fa01a7f700a15959cca886dc9e8ccefda6f189a02137",
+  "enumBinarySHA256": "bc8d5baf0e2ee65b7bb859d998a67dc3ba6d44f8374048d0749837e156325711",
+  "compileCommand": [
+    "/usr/bin/c++",
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-journal-consumer-v279/qa/test-1791148298233540443/enums.cpp",
+    "-o",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-journal-consumer-v279/qa/test-1791148298233540443/enums",
+    "-I/usr/include/qt6/QtCore",
+    "-I/usr/include/qt6",
+    "-DQT_CORE_LIB",
+    "-I/usr/lib/qt6/mkspecs/linux-g++",
+    "-lQt6Core"
+  ]
+}

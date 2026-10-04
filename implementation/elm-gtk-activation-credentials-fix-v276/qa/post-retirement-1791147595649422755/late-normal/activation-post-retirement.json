@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "busIdentity": {
+    "pid": 3612388,
+    "start": "11569935",
+    "pgid": 3612388,
+    "ppid": 3612370,
+    "uid": 1000,
+    "realUid": 1000,
+    "effectiveUid": 1000,
+    "savedUid": 1000,
+    "filesystemUid": 1000,
+    "procOwnerUid": 1000,
+    "privilegedCredentials": false
+  },
+  "records": [
+    {
+      "journal": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/post-retirement-1791147595649422755/late-normal/activation-journals/org.elm.LateActivation/3612397-1791147595708225845.jsonl",
+      "sha256": "1e95e7995c76dd0e490e208498abe97059b6b1cbcd2f05adbc76c8770d1b0d86",
+      "wrapper": {
+        "pid": 3612397,
+        "start": "11569938",
+        "pgid": 3612397,
+        "ppid": 3612396,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 111861.896109348,
+        "childExitCode": 0,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3612398,
+              "start": "11569941",
+              "pgid": 3612397,
+              "ppid": 3612397,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "normal",
+      "exitClasses": {
+        "3612398:11569941": "normal"
+      },
+      "normalServiceOperation": true
+    }
+  ]
+}

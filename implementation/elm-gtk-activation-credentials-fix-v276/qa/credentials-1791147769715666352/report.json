@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-setuid-zombie-real-ownership",
+      "passed": true
+    },
+    {
+      "name": "privileged-effective-no-signal",
+      "passed": true
+    },
+    {
+      "name": "actual-pidfd-wrong-start-refused",
+      "passed": true
+    },
+    {
+      "name": "original-privileged-tuple-refused",
+      "passed": true
+    },
+    {
+      "name": "actual-pidfd-owned-term",
+      "passed": true
+    },
+    {
+      "name": "retired-identity-refused",
+      "passed": true
+    },
+    {
+      "name": "foreign-real",
+      "passed": true
+    },
+    {
+      "name": "wrong-pid",
+      "passed": true
+    },
+    {
+      "name": "nonnumeric-uid",
+      "passed": true
+    },
+    {
+      "name": "missing-uid",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/credentials-test.py": "dd90122459be3e7b4d91d43cfca8cd57f9298f6e54f826ae50069ac384607601",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/credentials.py": "2c1fde5e8faa0176553bbd7cc7f07076c149c4f9ee02985fc37ef4f7de29d4c9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-activation-credentials-fix-v276/qa/activation-supervisor.py": "3847677ba2af4aaea4ddc7239f9216017fe238048a2a4b6d2f6c674028825be4",
+    "/usr/bin/fusermount3": "a5d1d1e9eac4012cf1567c34a256d28913afa75d0f1f48c628d2ec162067865a"
+  }
+}

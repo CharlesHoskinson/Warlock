@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "huge-expected-coordinate",
+      "actualFailure": "OverflowError",
+      "typedRefused": false,
+      "error": "int too large to convert to float"
+    },
+    {
+      "name": "unknown-window-input-event-hidden-from-negative-interval",
+      "accepted": true
+    },
+    {
+      "name": "synthetic-mouse-source-not-checked",
+      "accepted": true,
+      "syntheticDTO": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-journal-boundary-review-v280/inputs/journal.py": "7e20f3a38ff59439a6ab4c0d05b14ce2cdf47a7dd6e0536bfe351c22b05b629d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-journal-boundary-review-v280/qa/witness.py": "04de180edb7ab93b0c1817f959da4c6da0c603dc127a50649ae666d93ab45e9c"
+  }
+}

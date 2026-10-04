@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "cases": [
+    {
+      "name": "owned-TERM",
+      "passed": true,
+      "identity": {
+        "pid": 3597052,
+        "start": "11550374"
+      },
+      "exitCode": -15,
+      "retiredSignalRefused": true,
+      "descriptorClosed": true
+    },
+    {
+      "name": "normal-retired-fd",
+      "passed": true,
+      "identity": {
+        "pid": 3597054,
+        "start": "11550374"
+      },
+      "exitCode": 0,
+      "retiredSignalRefused": true,
+      "descriptorClosed": true
+    }
+  ],
+  "sourceSHA256": "4eb3f6ba1e7982079dbe4ccbb399e40815d36e5c76ef98c499b60400a7dd3ec8",
+  "pythonSHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"
+}
