@@ -1,0 +1,421 @@
+{
+  "passed": true,
+  "scope": "CPU process-restart/power-loss abstract rename/fsync model only; actual filesystem/native semantics unproven",
+  "namedCount": 36,
+  "selectedNames": [
+    "normalReleaseTest",
+    "preparedCrashStaysBlockedTest",
+    "unlinkBeforePrepareRefusedTest",
+    "ackBeforeFinalSyncRefusedTest",
+    "unlinkCrashRestoresExactReservationTest",
+    "durableUnlinkCrashStillBlockedTest",
+    "releasedCrashNeverResurrectsTest",
+    "historyUnknownNotCommitTest",
+    "registeredProofRefusedTest",
+    "foreignProofRefusedTest",
+    "staleProofRefusedTest",
+    "futureProofRefusedTest",
+    "oneReadCannotPrepareTest",
+    "crossedRequestsRefusedTest",
+    "staleObservationRefusedTest",
+    "historyFullBlocksNewTest",
+    "releasedStageCannotRegressTest",
+    "futureObservationRefusedTest",
+    "boundedHistoryNoOverwriteTest",
+    "crashAfterWriteProofTest",
+    "crashAfterSyncProofTest",
+    "crashAfterSyncProofDirTest",
+    "crashAfterWritePreparedTest",
+    "crashAfterSyncPreparedTest",
+    "crashAfterSyncPreparedDirTest",
+    "crashAfterUnlinkTest",
+    "crashAfterSyncUnlinkDirTest",
+    "crashAfterWriteReleasedTest",
+    "crashAfterSyncReleasedTest",
+    "oldReadAfterCrashRefusedTest",
+    "epochExhaustionRefusesReadsTest",
+    "visiblePreparedRestartNeedsRootSyncTest",
+    "visibleReleasedRestartNeedsRootSyncTest",
+    "durableReleasedRestartNeedsBarrierTest",
+    "preparedRenameLostOnPowerLossTest",
+    "releasedRenameLostOnPowerLossTest"
+  ],
+  "executedNames": [
+    "normalReleaseTest",
+    "preparedCrashStaysBlockedTest",
+    "unlinkBeforePrepareRefusedTest",
+    "ackBeforeFinalSyncRefusedTest",
+    "unlinkCrashRestoresExactReservationTest",
+    "durableUnlinkCrashStillBlockedTest",
+    "releasedCrashNeverResurrectsTest",
+    "historyUnknownNotCommitTest",
+    "registeredProofRefusedTest",
+    "foreignProofRefusedTest",
+    "staleProofRefusedTest",
+    "futureProofRefusedTest",
+    "oneReadCannotPrepareTest",
+    "crossedRequestsRefusedTest",
+    "staleObservationRefusedTest",
+    "historyFullBlocksNewTest",
+    "releasedStageCannotRegressTest",
+    "futureObservationRefusedTest",
+    "boundedHistoryNoOverwriteTest",
+    "crashAfterWriteProofTest",
+    "crashAfterSyncProofTest",
+    "crashAfterSyncProofDirTest",
+    "crashAfterWritePreparedTest",
+    "crashAfterSyncPreparedTest",
+    "crashAfterSyncPreparedDirTest",
+    "crashAfterUnlinkTest",
+    "crashAfterSyncUnlinkDirTest",
+    "crashAfterWriteReleasedTest",
+    "crashAfterSyncReleasedTest",
+    "oldReadAfterCrashRefusedTest",
+    "epochExhaustionRefusesReadsTest",
+    "visiblePreparedRestartNeedsRootSyncTest",
+    "visibleReleasedRestartNeedsRootSyncTest",
+    "durableReleasedRestartNeedsBarrierTest",
+    "preparedRenameLostOnPowerLossTest",
+    "releasedRenameLostOnPowerLossTest"
+  ],
+  "traces": 2000,
+  "maxTransitions": 80,
+  "typedMutants": 9,
+  "commands": [
+    {
+      "name": "version",
+      "command": [
+        "quint",
+        "--version"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6"
+    },
+    {
+      "name": "typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "named",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/tests.qnt",
+        "--main=tests",
+        "--match=^(normalReleaseTest|preparedCrashStaysBlockedTest|unlinkBeforePrepareRefusedTest|ackBeforeFinalSyncRefusedTest|unlinkCrashRestoresExactReservationTest|durableUnlinkCrashStillBlockedTest|releasedCrashNeverResurrectsTest|historyUnknownNotCommitTest|registeredProofRefusedTest|foreignProofRefusedTest|staleProofRefusedTest|futureProofRefusedTest|oneReadCannotPrepareTest|crossedRequestsRefusedTest|staleObservationRefusedTest|historyFullBlocksNewTest|releasedStageCannotRegressTest|futureObservationRefusedTest|boundedHistoryNoOverwriteTest|crashAfterWriteProofTest|crashAfterSyncProofTest|crashAfterSyncProofDirTest|crashAfterWritePreparedTest|crashAfterSyncPreparedTest|crashAfterSyncPreparedDirTest|crashAfterUnlinkTest|crashAfterSyncUnlinkDirTest|crashAfterWriteReleasedTest|crashAfterSyncReleasedTest|oldReadAfterCrashRefusedTest|epochExhaustionRefusesReadsTest|visiblePreparedRestartNeedsRootSyncTest|visibleReleasedRestartNeedsRootSyncTest|durableReleasedRestartNeedsBarrierTest|preparedRenameLostOnPowerLossTest|releasedRenameLostOnPowerLossTest)$",
+        "--seed=60501",
+        "--max-samples=1",
+        "--backend=typescript",
+        "--out-itf=/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/accepted_{test}_{seq}.itf.json"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "b745f8208f5e6455bd5d675188b1ee38ced91ebdfe8583d97ead26c1c9565968"
+    },
+    {
+      "name": "traces",
+      "command": [
+        "quint",
+        "run",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/release.qnt",
+        "--main=release",
+        "--invariant=allProps",
+        "--seed=60502",
+        "--max-samples=2000",
+        "--max-steps=80",
+        "--backend=typescript"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "1b6969b99b062794857e9c69c3df3f4ddf4786a4f3be4446068f41c2045d7868"
+    },
+    {
+      "name": "skip-restart-prepared-root-barrier-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/skip-restart-prepared-root-barrier/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "skip-restart-prepared-root-barrier-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/skip-restart-prepared-root-barrier/tests.qnt",
+        "--main=tests",
+        "--match=^visiblePreparedRestartNeedsRootSyncTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "8c3a41b58847b21288db5f39ac33fc4df84814e465c328bec42c4f0c774fcdae",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "skip-restart-released-root-barrier-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/skip-restart-released-root-barrier/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "skip-restart-released-root-barrier-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/skip-restart-released-root-barrier/tests.qnt",
+        "--main=tests",
+        "--match=^visibleReleasedRestartNeedsRootSyncTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "2722e02ff539497c0d623e0aac1fbd855a0d8153408e52c099fae2f79263e142",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "durable-release-skips-restart-barrier-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/durable-release-skips-restart-barrier/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "durable-release-skips-restart-barrier-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/durable-release-skips-restart-barrier/tests.qnt",
+        "--main=tests",
+        "--match=^durableReleasedRestartNeedsBarrierTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "ae20b5c9c9d761fe5d9987905606b9b2e8db97c7d18e761188a98a77916ac12c",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "prepare-rename-implies-durability-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/prepare-rename-implies-durability/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "prepare-rename-implies-durability-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/prepare-rename-implies-durability/tests.qnt",
+        "--main=tests",
+        "--match=^visiblePreparedRestartNeedsRootSyncTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "5ecd63df51eb3c746b2402024671763bcdb7ea7eab9535da1b8ec2a105cdf1c6",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "released-rename-implies-durability-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/released-rename-implies-durability/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "released-rename-implies-durability-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/released-rename-implies-durability/tests.qnt",
+        "--main=tests",
+        "--match=^visibleReleasedRestartNeedsRootSyncTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "5210b36ac7e849a3082cadf0905df6d7a85d9a77b8ddcb4b4264c02881d65cc4",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "powerloss-keeps-unsynced-rename-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/powerloss-keeps-unsynced-rename/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "powerloss-keeps-unsynced-rename-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/powerloss-keeps-unsynced-rename/tests.qnt",
+        "--main=tests",
+        "--match=^preparedRenameLostOnPowerLossTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "2c25e097dd6e2e17c604d6a2e74cb6f3b4ca877be3eb098448353efe853a1562",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "registered-proof-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/registered-proof/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "registered-proof-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/registered-proof/tests.qnt",
+        "--main=tests",
+        "--match=^registeredProofRefusedTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "c4fab4edece2510692bbf11d18949a19fc72bd55bf2ee24e074bc92c4776968d",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "old-intent-replay-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/old-intent-replay/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "old-intent-replay-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/old-intent-replay/tests.qnt",
+        "--main=tests",
+        "--match=^historyUnknownNotCommitTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "66e5dd45633324d6c32f0666dd7571900ac477632c76f492ff860736612505d7",
+      "actualAssertionFailure": true
+    },
+    {
+      "name": "stage-regression-typecheck",
+      "command": [
+        "quint",
+        "typecheck",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/stage-regression/tests.qnt"
+      ],
+      "exit": 0,
+      "expected": 0,
+      "ok": true,
+      "outputSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "stage-regression-counterexample",
+      "command": [
+        "quint",
+        "test",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/stage-regression/tests.qnt",
+        "--main=tests",
+        "--match=^releasedStageCannotRegressTest$",
+        "--seed=60503",
+        "--max-samples=1",
+        "--backend=typescript"
+      ],
+      "exit": 1,
+      "expected": 1,
+      "ok": true,
+      "outputSHA256": "4b6f980f2c313dece81bcfb898b96c812c3fb112a90ac27d821c7b187a04ed59",
+      "actualAssertionFailure": true
+    }
+  ],
+  "sourceHashes": {
+    "release.qnt": "898b11eb72eb257513d078917e73a0c627ec59920cfcf01506cb3a53df7f4160",
+    "tests.qnt": "1f71ce6193c87e364e8ac908bb77f05fb78370abd9bfef9cf4609c26a4bef05f",
+    "qa/run.py": "132023ecf7211a243cec4b13d4a2fed902f4ab7950c30b95c0ff2ee0960cb85f"
+  },
+  "nativeActions": false
+}

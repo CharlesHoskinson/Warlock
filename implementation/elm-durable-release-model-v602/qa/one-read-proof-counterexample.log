@@ -1,0 +1,17 @@
+
+  tests
+    1) oneReadCannotPrepareTest failed after 1 test(s)
+
+  1 failed
+
+  1) oneReadCannotPrepareTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/one-read-proof/tests.qnt:15:228
+        15:  run oneReadCannotPrepareTest = init.then(fire(NativeRetire)).then(fire(Proof({kind:1,key:1,epoch:1,barrier:1}))).then(fire(RequestReads)).then(fire(Observe({kind:1,request:11,epoch:1,seq:2}))).then(fire(WriteProof)).then(all {assert(not(s.proofWritten) and allProps),fire(Crash)})
+                                                                                                                                                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=oneReadCannotPrepareTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/one-read-proof/tests.qnt
+error: Tests failed

@@ -1,0 +1,17 @@
+
+  tests
+    1) durableReleasedRestartNeedsBarrierTest failed after 1 test(s)
+
+  1 failed
+
+  1) durableReleasedRestartNeedsBarrierTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/durable-release-skips-restart-barrier/tests.qnt:38:139
+        38:  run durableReleasedRestartNeedsBarrierTest = init.then(establish).then(prepare).then(finish).then(fire(Crash)).then(fire(Ack)).then(all {assert(not(s.ack) and not(s.rootReady) and allProps),fire(RestartRootSync)}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Crash)})
+                                                                                                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xec57 --match=durableReleasedRestartNeedsBarrierTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/durable-release-skips-restart-barrier/tests.qnt
+error: Tests failed

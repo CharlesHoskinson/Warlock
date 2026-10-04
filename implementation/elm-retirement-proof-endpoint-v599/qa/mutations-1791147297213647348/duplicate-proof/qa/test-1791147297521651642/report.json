@@ -1,0 +1,99 @@
+{
+  "passed": false,
+  "scope": "Immutable native596 wire decoder replay plus explicitly synthetic transport/fault controls; no new SO_PEERCRED/native qualification",
+  "checks": [
+    {
+      "name": "producer42-checks-passed",
+      "passed": true
+    },
+    {
+      "name": "immutable-native-proof-fixtures-exist",
+      "passed": true
+    },
+    {
+      "name": "native-wire-20",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-20",
+      "passed": true
+    },
+    {
+      "name": "native-wire-21",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-21",
+      "passed": true
+    },
+    {
+      "name": "native-wire-22",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-22",
+      "passed": true
+    },
+    {
+      "name": "native-wire-24",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-24",
+      "passed": true
+    },
+    {
+      "name": "native-wire-26",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-26",
+      "passed": true
+    },
+    {
+      "name": "native-wire-33",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-33",
+      "passed": true
+    },
+    {
+      "name": "native-wire-34",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-34",
+      "passed": true
+    },
+    {
+      "name": "native-wire-35",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-35",
+      "passed": true
+    },
+    {
+      "name": "native-wire-36",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-36",
+      "passed": true
+    },
+    {
+      "name": "legacy-methods-inherited",
+      "passed": true
+    },
+    {
+      "name": "immutable-proof",
+      "passed": true
+    },
+    {
+      "name": "proof-export-copy",
+      "passed": true
+    }
+  ],
+  "error": "AssertionError('duplicate-sequence accepted')"
+}

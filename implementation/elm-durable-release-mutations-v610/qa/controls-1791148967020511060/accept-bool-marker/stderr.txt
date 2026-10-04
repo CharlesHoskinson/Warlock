@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-mutations-v610/qa/controls-1791148967020511060/accept-bool-marker/qa/test.py", line 269, in <module>
+    denied('unsafe store '+unsafe,lambda:RetirementLedger(str(runtime),'Test','19'))
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-mutations-v610/qa/controls-1791148967020511060/accept-bool-marker/qa/test.py", line 62, in denied
+    else:check(name,False)
+         ~~~~~^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-mutations-v610/qa/controls-1791148967020511060/accept-bool-marker/qa/test.py", line 58, in check
+    if not condition:raise AssertionError(name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: unsafe store marker-bool

@@ -1,0 +1,17 @@
+
+  tests
+    1) preparedCrashStaysBlockedTest failed after 1 test(s)
+
+  1 failed
+
+  1) preparedCrashStaysBlockedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/restart-prepared-unlocks/tests.qnt:4:141
+        4:  run preparedCrashStaysBlockedTest = init.then(establish).then(prepare).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(reserved(s) and not(s.ack) and not(s.effect) and allProps),finish}).then(fire(Ack)).then(all {assert(s.ack and allProps),fire(Explicit(2))})
+                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=preparedCrashStaysBlockedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/restart-prepared-unlocks/tests.qnt
+error: Tests failed

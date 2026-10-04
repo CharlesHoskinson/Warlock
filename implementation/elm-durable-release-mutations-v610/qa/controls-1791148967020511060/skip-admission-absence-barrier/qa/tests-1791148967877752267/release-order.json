@@ -1,0 +1,34 @@
+[
+  {
+    "op": "fsync",
+    "directory": true
+  },
+  {
+    "op": "fsync",
+    "directory": false
+  },
+  {
+    "op": "replace",
+    "directory": null
+  },
+  {
+    "op": "fsync",
+    "directory": true
+  },
+  {
+    "op": "unlink",
+    "directory": null
+  },
+  {
+    "op": "fsync",
+    "directory": false
+  },
+  {
+    "op": "replace",
+    "directory": null
+  },
+  {
+    "op": "fsync",
+    "directory": true
+  }
+]

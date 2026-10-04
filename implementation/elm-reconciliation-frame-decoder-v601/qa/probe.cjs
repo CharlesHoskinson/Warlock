@@ -1,0 +1,1 @@
+const fs=require('fs'),app=require(process.argv[2]).Elm.Probe.init({flags:null});app.ports.outgoing.subscribe(rows=>{fs.writeFileSync(process.argv[4],JSON.stringify(rows));process.exit(0)});app.ports.incoming.send(JSON.parse(fs.readFileSync(process.argv[3],'utf8')));setTimeout(()=>process.exit(2),5000);

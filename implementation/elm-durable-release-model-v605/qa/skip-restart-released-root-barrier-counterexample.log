@@ -1,0 +1,17 @@
+
+  tests
+    1) visibleReleasedRestartNeedsRootSyncTest failed after 1 test(s)
+
+  1 failed
+
+  1) visibleReleasedRestartNeedsRootSyncTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/skip-restart-released-root-barrier/tests.qnt:37:278
+        37:  run visibleReleasedRestartNeedsRootSyncTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(SyncReleasedFile)).then(fire(RenameReleased)).then(fire(Crash)).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.visibleStage==2 and s.stage==1 and not(s.ack) and not(s.effect) and not(s.rootReady) and allProps),fire(RestartRootSync)}).then(fire(Ack)).then(fire(Explicit(2))).then(all {assert(s.stage==2 and s.ack and s.effect and allProps),fire(Crash)})
+                                                                                                                                                                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xec57 --match=visibleReleasedRestartNeedsRootSyncTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/skip-restart-released-root-barrier/tests.qnt
+error: Tests failed

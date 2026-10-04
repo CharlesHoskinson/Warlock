@@ -1,0 +1,17 @@
+
+  tests
+    1) preparedRenameLostOnPowerLossTest failed after 1 test(s)
+
+  1 failed
+
+  1) preparedRenameLostOnPowerLossTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/powerloss-keeps-unsynced-rename/tests.qnt:39:243
+        39:  run preparedRenameLostOnPowerLossTest = init.then(establish).then(fire(WriteProof)).then(fire(SyncProof)).then(fire(SyncProofDir)).then(fire(WritePrepared)).then(fire(SyncPrepared)).then(fire(RenamePrepared)).then(fire(PowerLoss)).then(all {assert(s.stage==0 and s.visibleStage==0 and s.file and allProps),fire(RestartRootSync)})
+                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xec57 --match=preparedRenameLostOnPowerLossTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v605/qa/mutants/powerloss-keeps-unsynced-rename/tests.qnt
+error: Tests failed

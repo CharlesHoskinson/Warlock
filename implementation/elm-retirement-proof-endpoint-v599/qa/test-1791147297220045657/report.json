@@ -1,0 +1,2511 @@
+{
+  "passed": true,
+  "scope": "Immutable native596 wire decoder replay plus explicitly synthetic transport/fault controls; no new SO_PEERCRED/native qualification",
+  "checks": [
+    {
+      "name": "producer42-checks-passed",
+      "passed": true
+    },
+    {
+      "name": "immutable-native-proof-fixtures-exist",
+      "passed": true
+    },
+    {
+      "name": "native-wire-20",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-20",
+      "passed": true
+    },
+    {
+      "name": "native-wire-21",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-21",
+      "passed": true
+    },
+    {
+      "name": "native-wire-22",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-22",
+      "passed": true
+    },
+    {
+      "name": "native-wire-24",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-24",
+      "passed": true
+    },
+    {
+      "name": "native-wire-26",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-26",
+      "passed": true
+    },
+    {
+      "name": "native-wire-33",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-33",
+      "passed": true
+    },
+    {
+      "name": "native-wire-34",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-34",
+      "passed": true
+    },
+    {
+      "name": "native-wire-35",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-35",
+      "passed": true
+    },
+    {
+      "name": "native-wire-36",
+      "passed": true
+    },
+    {
+      "name": "native-release-policy-36",
+      "passed": true
+    },
+    {
+      "name": "legacy-methods-inherited",
+      "passed": true
+    },
+    {
+      "name": "immutable-proof",
+      "passed": true
+    },
+    {
+      "name": "proof-export-copy",
+      "passed": true
+    },
+    {
+      "name": "duplicate-sequence",
+      "passed": true
+    },
+    {
+      "name": "duplicate-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "lower-sequence",
+      "passed": true
+    },
+    {
+      "name": "lower-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "frontend-change-does-not-reset-sequence",
+      "passed": true
+    },
+    {
+      "name": "frontend-change-does-not-reset-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-protocolVersion",
+      "passed": true
+    },
+    {
+      "name": "missing-protocolVersion-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-kind",
+      "passed": true
+    },
+    {
+      "name": "missing-kind-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-retirementProtocol",
+      "passed": true
+    },
+    {
+      "name": "missing-retirementProtocol-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-operation",
+      "passed": true
+    },
+    {
+      "name": "missing-operation-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-binding",
+      "passed": true
+    },
+    {
+      "name": "missing-binding-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-requestId",
+      "passed": true
+    },
+    {
+      "name": "missing-requestId-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-queriedBinding",
+      "passed": true
+    },
+    {
+      "name": "missing-queriedBinding-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-sequence",
+      "passed": true
+    },
+    {
+      "name": "missing-sequence-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "missing-grantState",
+      "passed": true
+    },
+    {
+      "name": "missing-grantState-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "extra-reply-field",
+      "passed": true
+    },
+    {
+      "name": "extra-reply-field-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-0",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-1",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-2",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-3",
+      "passed": true
+    },
+    {
+      "name": "bad-protocolVersion-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-0",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-1",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-2",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-3",
+      "passed": true
+    },
+    {
+      "name": "bad-retirementProtocol-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-0",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-1",
+      "passed": true
+    },
+    {
+      "name": "bad-kind-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-0",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-1",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-2",
+      "passed": true
+    },
+    {
+      "name": "bad-operation-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-0",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-1",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-2",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-3",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-4",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-5",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-6",
+      "passed": true
+    },
+    {
+      "name": "bad-grantState-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-0",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-1",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-2",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-3",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-4",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-5",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-6",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-7",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-8",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-9",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-10",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-11",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-12",
+      "passed": true
+    },
+    {
+      "name": "bad-requestId-counter-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-0",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-1",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-2",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-3",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-4",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-5",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-6",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-7",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-8",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-9",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-10",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-11",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-12",
+      "passed": true
+    },
+    {
+      "name": "bad-sequence-counter-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-0",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-1",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-2",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-3",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-4",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-5",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-6",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-7",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-8",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-9",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-10",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-11",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-12",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-lifetime-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-lifetime",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-lifetime-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-0",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-1",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-2",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-3",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-4",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-5",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-6",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-7",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-8",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-9",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-10",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-11",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-12",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-session-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-session",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-session-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-0",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-1",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-2",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-3",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-4",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-5",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-6",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-7",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-8",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-9",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-10",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-11",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-12",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-frontend-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-frontend",
+      "passed": true
+    },
+    {
+      "name": "mismatched-binding-frontend-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-None",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-None-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-[]",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-[]-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '1', 'session': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '1', 'session': '1'}-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '16466285324869842288', 'session': '2', 'frontend': '1', 'extra': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-binding-shape-{'lifetime': '16466285324869842288', 'session': '2', 'frontend': '1', 'extra': '1'}-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-0",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-1",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-2",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-3",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-4",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-5",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-6",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-7",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-8",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-9",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-10",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-11",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-12",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-lifetime-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-lifetime",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-lifetime-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-0",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-1",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-2",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-3",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-4",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-5",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-6",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-7",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-8",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-9",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-10",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-11",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-12",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-session-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-session",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-session-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-0",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-1",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-2",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-3",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-4",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-5",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-6",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-7",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-8",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-9",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-10",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-11",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-12",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-frontend-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-frontend",
+      "passed": true
+    },
+    {
+      "name": "mismatched-queriedBinding-frontend-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-None",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-None-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-[]",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-[]-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '1', 'session': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '1', 'session': '1'}-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '16466285324869842288', 'session': '1', 'frontend': '2', 'extra': '1'}",
+      "passed": true
+    },
+    {
+      "name": "bad-queriedBinding-shape-{'lifetime': '16466285324869842288', 'session': '1', 'frontend': '2', 'extra': '1'}-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "mismatched-request-id",
+      "passed": true
+    },
+    {
+      "name": "mismatched-request-id-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "observe-Registered",
+      "passed": true
+    },
+    {
+      "name": "observe-Future",
+      "passed": true
+    },
+    {
+      "name": "observe-Retired",
+      "passed": true
+    },
+    {
+      "name": "unattached",
+      "passed": true
+    },
+    {
+      "name": "unattached-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "unattached-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-False",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-False-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-False-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-True",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-True-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-True-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-1-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-1.0",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-1.0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-1.0-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-None",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-None-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-None-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'0'",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'0'-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'0'-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'01'",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'01'-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'01'-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'+1'",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'+1'-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'+1'-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'-1'",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'-1'-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'-1'-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-' 1'",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-' 1'-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-' 1'-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'1 '",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'1 '-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'1 '-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'18446744073709551616'",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'18446744073709551616'-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'18446744073709551616'-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'1\\n'",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'1\\n'-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-request-'1\\n'-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-0",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-0-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-1-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-2",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-2-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-3",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-3-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-4",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-4-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-5",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-5-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-6",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-6-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-7",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-7-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-8",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-8-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-9",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-9-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-10",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-10-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-11",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-11-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-12",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-lifetime-12-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-0",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-0-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-1-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-2",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-2-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-3",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-3-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-4",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-4-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-5",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-5-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-6",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-6-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-7",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-7-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-8",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-8-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-9",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-9-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-10",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-10-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-11",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-11-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-12",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-session-12-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-0",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-0-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-1-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-2",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-2-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-3",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-3-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-4",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-4-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-5",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-5-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-6",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-6-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-7",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-7-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-8",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-8-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-9",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-9-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-10",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-10-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-11",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-11-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-12",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-caller-frontend-12-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-0",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-0-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-1-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-2",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-2-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-3",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-3-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-4",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-4-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-5",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-5-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-6",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-6-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-7",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-7-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-8",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-8-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-9",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-9-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-10",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-10-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-11",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-11-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-12",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-lifetime-12-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-0",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-0-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-1-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-2",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-2-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-3",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-3-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-4",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-4-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-5",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-5-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-6",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-6-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-7",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-7-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-8",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-8-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-9",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-9-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-10",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-10-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-11",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-11-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-12",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-session-12-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-0",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-0-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-0-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-1",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-1-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-1-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-2",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-2-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-2-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-3",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-3-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-3-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-4",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-4-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-4-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-5",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-5-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-5-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-6",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-6-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-6-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-7",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-7-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-7-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-8",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-8-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-8-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-9",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-9-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-9-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-10",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-10-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-10-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-11",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-11-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-11-transport-count",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-12",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-12-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "invalid-input-target-frontend-12-transport-count",
+      "passed": true
+    },
+    {
+      "name": "foreign-input-lifetime",
+      "passed": true
+    },
+    {
+      "name": "foreign-input-lifetime-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "foreign-input-lifetime-transport-count",
+      "passed": true
+    },
+    {
+      "name": "self-retirement-local-refusal",
+      "passed": true
+    },
+    {
+      "name": "self-retirement-local-refusal-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "self-retirement-local-refusal-transport-count",
+      "passed": true
+    },
+    {
+      "name": "inflight-binding-replacement",
+      "passed": true
+    },
+    {
+      "name": "inflight-binding-replacement-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "inflight-binding-in-place-change",
+      "passed": true
+    },
+    {
+      "name": "inflight-binding-in-place-change-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "caller-input-mutation-does-not-rebind-request",
+      "passed": true
+    },
+    {
+      "name": "native-refusal-not-proof",
+      "passed": true
+    },
+    {
+      "name": "native-refusal-not-proof-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "uint64-max-exact",
+      "passed": true
+    },
+    {
+      "name": "max-sequence-no-wrap",
+      "passed": true
+    },
+    {
+      "name": "max-sequence-no-wrap-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "lifetime-history-bound-before-transport",
+      "passed": true
+    },
+    {
+      "name": "lifetime-history-bound-before-transport-watermark-unchanged",
+      "passed": true
+    },
+    {
+      "name": "lifetime-history-bound-before-transport-transport-count",
+      "passed": true
+    }
+  ],
+  "nativeWireFixtureCount": 9,
+  "nativeSourceSHA256": "8af9abfdad0f4c25f74eb2458df4624b1a8d1da6972d33f11884d2c52801caf8",
+  "endpointSHA256": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+  "syntheticTransportQualified": false,
+  "nativeAcceptance": false
+}

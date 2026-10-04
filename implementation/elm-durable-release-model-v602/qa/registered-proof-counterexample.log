@@ -1,0 +1,17 @@
+
+  tests
+    1) registeredProofRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) registeredProofRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/registered-proof/tests.qnt:11:127
+        11:  run registeredProofRefusedTest = init.then(fire(Proof({kind:0,key:1,epoch:1,barrier:1}))).then(fire(RequestReads)).then(all {assert(not(s.proof) and not(s.reads) and allProps),fire(Crash)})
+                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=registeredProofRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/registered-proof/tests.qnt
+error: Tests failed

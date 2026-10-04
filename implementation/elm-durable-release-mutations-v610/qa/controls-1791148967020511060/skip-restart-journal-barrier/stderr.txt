@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-mutations-v610/qa/controls-1791148967020511060/skip-restart-journal-barrier/qa/test.py", line 97, in <module>
+    check('prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root',
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          [e['op'] for e in events]==['fsync','fsync','replace','fsync','unlink','fsync','fsync','replace','fsync'] and
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          [e['directory'] for e in events if e['op']=='fsync']==[True,False,True,True,False,True])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-mutations-v610/qa/controls-1791148967020511060/skip-restart-journal-barrier/qa/test.py", line 58, in check
+    if not condition:raise AssertionError(name)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root

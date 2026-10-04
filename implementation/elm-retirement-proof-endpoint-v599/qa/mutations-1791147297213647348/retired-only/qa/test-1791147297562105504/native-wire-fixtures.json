@@ -1,0 +1,344 @@
+[
+  {
+    "sourceIndex": 20,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement-state-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "1"
+      },
+      "requestId": "17"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "observe",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "17",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "1"
+      },
+      "sequence": "1",
+      "grantState": "Retired"
+    }
+  },
+  {
+    "sourceIndex": 21,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement-state-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "requestId": "18"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "observe",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "18",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "sequence": "2",
+      "grantState": "Registered"
+    }
+  },
+  {
+    "sourceIndex": 22,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement-state-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "3"
+      },
+      "requestId": "19"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "observe",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "19",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "3"
+      },
+      "sequence": "3",
+      "grantState": "Future"
+    }
+  },
+  {
+    "sourceIndex": 24,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement-state-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "3",
+        "frontend": "1"
+      },
+      "requestId": "21"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "observe",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "21",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "3",
+        "frontend": "1"
+      },
+      "sequence": "4",
+      "grantState": "Future"
+    }
+  },
+  {
+    "sourceIndex": 26,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retire-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "requestId": "23"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "retire",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "23",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "sequence": "5",
+      "grantState": "Retired"
+    }
+  },
+  {
+    "sourceIndex": 33,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement-state-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "3",
+        "frontend": "1"
+      },
+      "requestId": "25"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "observe",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "25",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "3",
+        "frontend": "1"
+      },
+      "sequence": "6",
+      "grantState": "Registered"
+    }
+  },
+  {
+    "sourceIndex": 34,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement-state-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "requestId": "26"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "observe",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "26",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "sequence": "7",
+      "grantState": "Retired"
+    }
+  },
+  {
+    "sourceIndex": 35,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement-state-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "1"
+      },
+      "requestId": "27"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "observe",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "27",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "1"
+      },
+      "sequence": "8",
+      "grantState": "Retired"
+    }
+  },
+  {
+    "sourceIndex": 36,
+    "peer": 1,
+    "request": {
+      "protocolVersion": 3,
+      "kind": "binding-retire-request",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "requestId": "28"
+    },
+    "reply": {
+      "protocolVersion": 3,
+      "kind": "binding-retirement",
+      "retirementProtocol": 1,
+      "operation": "retire",
+      "binding": {
+        "lifetime": "16466285324869842288",
+        "session": "2",
+        "frontend": "1"
+      },
+      "requestId": "28",
+      "queriedBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "sequence": "9",
+      "grantState": "Retired"
+    }
+  }
+]

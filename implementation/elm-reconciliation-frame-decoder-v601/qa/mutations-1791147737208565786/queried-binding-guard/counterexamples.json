@@ -1,0 +1,144 @@
+[
+  {
+    "input": {
+      "name": "foreign-or-stale-release-proof-queriedBinding-session",
+      "frame": {
+        "protocolVersion": 3,
+        "kind": "host-reservation-released",
+        "binding": {
+          "lifetime": "16466285324869842288",
+          "session": "2",
+          "frontend": "1"
+        },
+        "record": {
+          "schema": 2,
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "16466285324869842288",
+            "session": "1",
+            "frontend": "2"
+          },
+          "intent": {
+            "context": {
+              "epoch": "2",
+              "lifetime": "16466285324869842288",
+              "output": "1",
+              "revision": "21"
+            },
+            "generation": "12",
+            "incarnation": "2",
+            "operation": "minimize",
+            "request": "12"
+          },
+          "status": "Unknown"
+        },
+        "release": {
+          "id": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+          "proof": {
+            "protocolVersion": 3,
+            "kind": "binding-retirement",
+            "retirementProtocol": 1,
+            "operation": "retire",
+            "binding": {
+              "lifetime": "16466285324869842288",
+              "session": "2",
+              "frontend": "1"
+            },
+            "requestId": "23",
+            "queriedBinding": {
+              "lifetime": "16466285324869842288",
+              "session": "9",
+              "frontend": "2"
+            },
+            "sequence": "5",
+            "grantState": "Retired"
+          },
+          "observation": {
+            "actionRequestId": "91",
+            "geometryRequestId": "93",
+            "actionContext": {
+              "lifetime": "16466285324869842288",
+              "epoch": "1",
+              "output": "7",
+              "revision": "37"
+            },
+            "geometryContext": {
+              "lifetime": "16466285324869842288",
+              "epoch": "1",
+              "output": "7",
+              "revision": "101"
+            }
+          }
+        }
+      },
+      "expected": {
+        "currentBinding": {
+          "lifetime": "16466285324869842288",
+          "session": "2",
+          "frontend": "1"
+        },
+        "record": {
+          "schema": 2,
+          "effectProtocol": 1,
+          "binding": {
+            "lifetime": "16466285324869842288",
+            "session": "1",
+            "frontend": "2"
+          },
+          "intent": {
+            "context": {
+              "epoch": "2",
+              "lifetime": "16466285324869842288",
+              "output": "1",
+              "revision": "21"
+            },
+            "generation": "12",
+            "incarnation": "2",
+            "operation": "minimize",
+            "request": "12"
+          },
+          "status": "Unknown"
+        },
+        "proofRequestId": "23",
+        "actionRequestId": "91",
+        "geometryRequestId": "93",
+        "actionContext": {
+          "lifetime": "16466285324869842288",
+          "epoch": "1",
+          "output": "7",
+          "revision": "37"
+        },
+        "geometryContext": {
+          "lifetime": "16466285324869842288",
+          "epoch": "1",
+          "output": "7",
+          "revision": "101"
+        }
+      },
+      "released": true,
+      "expectedOk": false
+    },
+    "actual": {
+      "ok": true,
+      "historicalStatus": "Unknown",
+      "oldBinding": {
+        "lifetime": "16466285324869842288",
+        "session": "1",
+        "frontend": "2"
+      },
+      "intent": {
+        "request": "12",
+        "generation": "12",
+        "incarnation": "2",
+        "operation": "minimize",
+        "context": {
+          "lifetime": "16466285324869842288",
+          "epoch": "2",
+          "output": "1",
+          "revision": "21"
+        }
+      },
+      "releaseId": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+    }
+  }
+]

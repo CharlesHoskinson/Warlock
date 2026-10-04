@@ -1,0 +1,56 @@
+{
+  "passed": true,
+  "sourceSHA256": "213cbb6ecd5c2218075d2cc98132c1c53680933f3898c757e7ba1848261faec5",
+  "mutations": [
+    {
+      "name": "skip-restart-journal-barrier",
+      "syntaxValid": true,
+      "detected": true,
+      "returncode": 1,
+      "behavioralCounterexample": "prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root",
+      "report": "qa/controls-1791148967020511060/skip-restart-journal-barrier/qa/tests-1791148967154300622/report.json"
+    },
+    {
+      "name": "skip-admission-absence-barrier",
+      "syntaxValid": true,
+      "detected": true,
+      "returncode": 1,
+      "behavioralCounterexample": "prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root",
+      "report": "qa/controls-1791148967020511060/skip-admission-absence-barrier/qa/tests-1791148967877752267/report.json"
+    },
+    {
+      "name": "accept-future-proof",
+      "syntaxValid": true,
+      "detected": true,
+      "returncode": 1,
+      "behavioralCounterexample": "proof rejects grantState=Future",
+      "report": "qa/controls-1791148967020511060/accept-future-proof/qa/tests-1791148968595531329/report.json"
+    },
+    {
+      "name": "accept-bool-marker",
+      "syntaxValid": true,
+      "detected": true,
+      "returncode": 1,
+      "behavioralCounterexample": "unsafe store marker-bool",
+      "report": "qa/controls-1791148967020511060/accept-bool-marker/qa/tests-1791148979585407762/report.json"
+    },
+    {
+      "name": "skip-inherited-fsync-poison",
+      "syntaxValid": true,
+      "detected": true,
+      "returncode": 1,
+      "behavioralCounterexample": "inherited absence barrier error poisons Committed",
+      "report": "qa/controls-1791148967020511060/skip-inherited-fsync-poison/qa/tests-1791148989740672918/report.json"
+    },
+    {
+      "name": "skip-cleanup-poison",
+      "syntaxValid": true,
+      "detected": true,
+      "returncode": 1,
+      "behavioralCounterexample": "cleanup error poisons Prepared",
+      "report": "qa/controls-1791148967020511060/skip-cleanup-poison/qa/tests-1791148990411032904/report.json"
+    }
+  ],
+  "claim": "Actual Python source mutations executed with actual compiled unchanged C admission producer; CPU only",
+  "nativeAcceptance": false
+}

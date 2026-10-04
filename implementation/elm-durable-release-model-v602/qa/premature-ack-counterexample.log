@@ -1,0 +1,17 @@
+
+  tests
+    1) ackBeforeFinalSyncRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) ackBeforeFinalSyncRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/premature-ack/tests.qnt:6:170
+        6:  run ackBeforeFinalSyncRefusedTest = init.then(establish).then(prepare).then(fire(Unlink)).then(fire(SyncUnlinkDir)).then(fire(WriteReleased)).then(fire(Ack)).then(all {assert(not(s.ack) and reserved(s) and allProps),fire(SyncReleased)})
+                                                                                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=ackBeforeFinalSyncRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/premature-ack/tests.qnt
+error: Tests failed

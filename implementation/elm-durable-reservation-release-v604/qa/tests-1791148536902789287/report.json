@@ -1,0 +1,943 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "unchanged actual C admission producer compiles",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "C Pending imported as Unknown",
+      "passed": true
+    },
+    {
+      "name": "Unknown target blocks before proof",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 1",
+      "passed": true
+    },
+    {
+      "name": "prepare file + rename + root barrier before unlink + admission barrier + final file/rename/root",
+      "passed": true
+    },
+    {
+      "name": "release returned only final durable phase",
+      "passed": true
+    },
+    {
+      "name": "historical Unknown exact and latest never Committed",
+      "passed": true
+    },
+    {
+      "name": "exact admission gone",
+      "passed": true
+    },
+    {
+      "name": "live reservation released",
+      "passed": true
+    },
+    {
+      "name": "independent read IDs revisions retained",
+      "passed": true
+    },
+    {
+      "name": "v5 predecessor remains byte-identical",
+      "passed": true
+    },
+    {
+      "name": "release idempotent across restart",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "late exact C key removed without resurrection",
+      "passed": true
+    },
+    {
+      "name": "retired binding cannot submit different new intent",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "only fresh explicit C-admitted next request can begin",
+      "passed": true
+    },
+    {
+      "name": "new request does not rewrite old history",
+      "passed": true
+    },
+    {
+      "name": "new request blocks duplicate target",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "latest Unknown is preserved with released history",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "geometry effect protocol retains Unknown",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Pending",
+      "passed": true
+    },
+    {
+      "name": "populated V5 normalized durably Pending",
+      "passed": true
+    },
+    {
+      "name": "populated predecessor cannot lose reservation Pending",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Unknown",
+      "passed": true
+    },
+    {
+      "name": "populated V5 normalized durably Unknown",
+      "passed": true
+    },
+    {
+      "name": "populated predecessor cannot lose reservation Unknown",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Committed",
+      "passed": true
+    },
+    {
+      "name": "populated definitive history retained Committed",
+      "passed": true
+    },
+    {
+      "name": "definitive history survives admission disappearance Committed",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "populated V5 bytes unchanged Refused",
+      "passed": true
+    },
+    {
+      "name": "populated definitive history retained Refused",
+      "passed": true
+    },
+    {
+      "name": "definitive history survives admission disappearance Refused",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "cleanup error propagates Prepared",
+      "passed": true
+    },
+    {
+      "name": "cleanup error poisons Prepared",
+      "passed": true
+    },
+    {
+      "name": "cleanup poison refuses snapshot Prepared",
+      "passed": true
+    },
+    {
+      "name": "cleanup poison refuses begin Prepared",
+      "passed": true
+    },
+    {
+      "name": "cleanup poison refuses release Prepared",
+      "passed": true
+    },
+    {
+      "name": "cleanup failure reopen completes barriers Prepared",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "cleanup error propagates Released",
+      "passed": true
+    },
+    {
+      "name": "cleanup error poisons Released",
+      "passed": true
+    },
+    {
+      "name": "cleanup poison refuses snapshot Released",
+      "passed": true
+    },
+    {
+      "name": "cleanup poison refuses begin Released",
+      "passed": true
+    },
+    {
+      "name": "cleanup poison refuses release Released",
+      "passed": true
+    },
+    {
+      "name": "cleanup failure reopen completes barriers Released",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "Released Unknown cannot also be Committed",
+      "passed": true
+    },
+    {
+      "name": "Released Unknown cannot also be definitive history",
+      "passed": true
+    },
+    {
+      "name": "save cannot drop released history",
+      "passed": true
+    },
+    {
+      "name": "rejected history rewrite poisons writer",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 1",
+      "passed": true
+    },
+    {
+      "name": "unprepared restart stays blocked crash",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash1",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 1",
+      "passed": true
+    },
+    {
+      "name": "unprepared restart stays blocked failure",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure1",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 1",
+      "passed": true
+    },
+    {
+      "name": "unprepared restart stays blocked before-failure",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure1",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 2",
+      "passed": true
+    },
+    {
+      "name": "unprepared restart stays blocked crash",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash2",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 2",
+      "passed": true
+    },
+    {
+      "name": "unprepared restart stays blocked failure",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure2",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 2",
+      "passed": true
+    },
+    {
+      "name": "unprepared restart stays blocked before-failure",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure2",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 3",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers crash3",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing crash3",
+      "passed": true
+    },
+    {
+      "name": "restart barrier precedes unlink crash3",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash3",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 3",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers failure3",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing failure3",
+      "passed": true
+    },
+    {
+      "name": "restart barrier precedes unlink failure3",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure3",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 3",
+      "passed": true
+    },
+    {
+      "name": "unprepared restart stays blocked before-failure",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure3",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 4",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers crash4",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing crash4",
+      "passed": true
+    },
+    {
+      "name": "restart barrier precedes unlink crash4",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash4",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 4",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers failure4",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing failure4",
+      "passed": true
+    },
+    {
+      "name": "restart barrier precedes unlink failure4",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure4",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 4",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers before-failure4",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing before-failure4",
+      "passed": true
+    },
+    {
+      "name": "restart barrier precedes unlink before-failure4",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure4",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 5",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers crash5",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing crash5",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash5",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 5",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers failure5",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing failure5",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure5",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 5",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers before-failure5",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing before-failure5",
+      "passed": true
+    },
+    {
+      "name": "restart barrier precedes unlink before-failure5",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure5",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 6",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers crash6",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing crash6",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash6",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 6",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers failure6",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing failure6",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure6",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 6",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers before-failure6",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing before-failure6",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure6",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 7",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers crash7",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing crash7",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash7",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 7",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers failure7",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing failure7",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure7",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 7",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers before-failure7",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing before-failure7",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure7",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 8",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers crash8",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing crash8",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash8",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 8",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers failure8",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing failure8",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure8",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 8",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers before-failure8",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing before-failure8",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure8",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "crash interruption at boundary 9",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers crash9",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing crash9",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome crash9",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "failure interruption at boundary 9",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers failure9",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing failure9",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome failure9",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "before-failure interruption at boundary 9",
+      "passed": true
+    },
+    {
+      "name": "prepared/released restart completes both barriers before-failure9",
+      "passed": true
+    },
+    {
+      "name": "restart journal barrier before retiring/exposing before-failure9",
+      "passed": true
+    },
+    {
+      "name": "restart never invents outcome before-failure9",
+      "passed": true
+    },
+    {
+      "name": "proof rejects grantState=Registered",
+      "passed": true
+    },
+    {
+      "name": "proof rejects grantState=Future",
+      "passed": true
+    },
+    {
+      "name": "proof rejects sequence=0",
+      "passed": true
+    },
+    {
+      "name": "proof rejects sequence=True",
+      "passed": true
+    },
+    {
+      "name": "proof rejects requestId=01",
+      "passed": true
+    },
+    {
+      "name": "proof rejects protocolVersion=True",
+      "passed": true
+    },
+    {
+      "name": "proof rejects retirementProtocol=True",
+      "passed": true
+    },
+    {
+      "name": "proof rejects operation=erase",
+      "passed": true
+    },
+    {
+      "name": "foreign queried session",
+      "passed": true
+    },
+    {
+      "name": "foreign proof lifetime",
+      "passed": true
+    },
+    {
+      "name": "Unknown cannot become Committed",
+      "passed": true
+    },
+    {
+      "name": "cross-generation reads",
+      "passed": true
+    },
+    {
+      "name": "foreign observation epoch",
+      "passed": true
+    },
+    {
+      "name": "extra observation field",
+      "passed": true
+    },
+    {
+      "name": "unsolicited read refused",
+      "passed": true
+    },
+    {
+      "name": "wrong accepted read ID refused",
+      "passed": true
+    },
+    {
+      "name": "current binding changed refused",
+      "passed": true
+    },
+    {
+      "name": "action alone cannot release",
+      "passed": true
+    },
+    {
+      "name": "duplicate accepted read refused",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store symlink",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store hardlink",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store public",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store changed-predecessor",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store duplicate-json",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store missing-after-marker",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store marker-bool",
+      "passed": true
+    },
+    {
+      "name": "real C admission exit 0",
+      "passed": true
+    },
+    {
+      "name": "unsafe store marker-float",
+      "passed": true
+    }
+  ],
+  "assertions": 228,
+  "claim": "CPU filesystem ordering/crash-visible restart plus actual compiled C admissions only",
+  "nativeAcceptance": false,
+  "powerLossSimulation": false,
+  "productionWired": false,
+  "sourceSHA256": {
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/geometry_endpoint.py": "83a76bc1e14e18357d7d921f0071f49a9e7e47c984ad3a5db0ae4279dc32d59c",
+    "adapter/daemon.py": "ea925051ddf8c2d9ced4b98c6cd1d14cc5c72f4aa5d3102a4cf53974128fe611",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "adapter/geometry_size_policy.py": "bcca6dd280911a38ed189e2e8ca6d81ea98c775ef261444f9b1e0f4b9a754888",
+    "adapter/grant_endpoint.py": "4b60a6c7e43aade3f2ce59495600f3b418b781865a7289dae53a189388f5c3f0",
+    "adapter/retirement_ledger.py": "148c96c89d29736bfc3801be40ecf54c8d84d1fd2ee677e8bd428a19f5c30d62",
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/surface.h": "d43dfcd9b5f849ba2eb77d091fefc110c9c55e9e89f639a1733b1fcd7b13294b",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c"
+  }
+}

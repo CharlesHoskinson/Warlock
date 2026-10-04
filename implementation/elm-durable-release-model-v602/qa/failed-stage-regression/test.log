@@ -1,0 +1,17 @@
+
+  tests
+    1) releasedStageCannotRegressTest failed after 1 test(s)
+
+  1 failed
+
+  1) releasedStageCannotRegressTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/tests.qnt:19:165
+        19:  run releasedStageCannotRegressTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(2))).then(fire(SyncPreparedDir)).then(all {assert(s.stage==2 and allProps),fire(Crash)})
+                                                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb29 --match=releasedStageCannotRegressTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 implementation/elm-durable-release-model-v602/tests.qnt
+error: Tests failed

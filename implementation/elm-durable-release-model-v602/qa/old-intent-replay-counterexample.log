@@ -1,0 +1,17 @@
+
+  tests
+    1) historyUnknownNotCommitTest failed after 1 test(s)
+
+  1 failed
+
+  1) historyUnknownNotCommitTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/old-intent-replay/tests.qnt:10:134
+        10:  run historyUnknownNotCommitTest = init.then(establish).then(prepare).then(finish).then(fire(Ack)).then(fire(Explicit(1))).then(all {assert(s.history.contains(1) and not(s.committed) and not(s.effect) and allProps),fire(Crash)})
+                                                                                                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=historyUnknownNotCommitTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/old-intent-replay/tests.qnt
+error: Tests failed

@@ -1,0 +1,17 @@
+
+  tests
+    1) boundedHistoryNoOverwriteTest failed after 1 test(s)
+
+  1 failed
+
+  1) boundedHistoryNoOverwriteTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/history-overflow/tests.qnt:21:101
+        21:  run boundedHistoryNoOverwriteTest = init.then(fire(Remember(2))).then(fire(Remember(3))).then(all {assert(s.history==Set(1,2) and allProps),fire(Crash)})
+                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0xeb2c --match=boundedHistoryNoOverwriteTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 /home/hoskinson/omarchy-windows-parity/implementation/elm-durable-release-model-v602/qa/mutants/history-overflow/tests.qnt
+error: Tests failed
