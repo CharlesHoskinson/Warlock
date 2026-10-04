@@ -1,0 +1,7 @@
+# Controlled-client journal prerequisite
+
+Protected qa/test-1791128646280127431/report.json passes19 explicitly synthetic cases. The parser bounds complete JSONL, rejects wrong PID, duplicate keys, nonfinite/recursive JSON, malformed common fields and truncated generations, and checks ordered configure/ACK/commit identities and extents. It validates caller-supplied origin/padding/buffer scale, resource bounds and terminal identity. Ordered serial wrap is accepted; serials are not globally deduplicated.
+
+Initial191's15-case evidence is preserved. Fresh192 adds exact event/commit integer types, recursive JSON refusal and allocatedBytes>=current physical buffer bytes. No old report/source was overwritten. This is a native QA evidence reader, not a credential parser, desktop policy or native capture.
+
+Caller must bound its file read to2MiB+1 before passing bytes, establish actual owned PID/title/start lifetime, and use an actual server barrier before requiring a complete observation; a mid-callback snapshot may legitimately be incomplete. Terminal parsing requires ready and normalexit; native client census must independently be empty before plugin unload. Journals prove queued configure/ACK/buffer requests, not effective geometry, pixels, physical input or native effect success. The actual fixture and complete runner still need exact source/build/lifecycle review. Independent193 review requested; no GUI/model/native acceptance.

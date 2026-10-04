@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "complete synthetic lifecycle",
+      "passed": true
+    },
+    {
+      "name": "foreign PID",
+      "passed": true
+    },
+    {
+      "name": "sequence reuse",
+      "passed": true
+    },
+    {
+      "name": "wrong ACK",
+      "passed": true
+    },
+    {
+      "name": "wrong buffer serial",
+      "passed": true
+    },
+    {
+      "name": "missing scale",
+      "passed": true
+    },
+    {
+      "name": "oversized buffer",
+      "passed": true
+    },
+    {
+      "name": "bool width",
+      "passed": true
+    },
+    {
+      "name": "wrong ready title",
+      "passed": true
+    },
+    {
+      "name": "omitted ACK",
+      "passed": true
+    },
+    {
+      "name": "truncated line",
+      "passed": true
+    },
+    {
+      "name": "duplicate JSON key",
+      "passed": true
+    },
+    {
+      "name": "nonfinite JSON",
+      "passed": true
+    },
+    {
+      "name": "missing normal exit",
+      "passed": true
+    },
+    {
+      "name": "ordered serial wrap",
+      "passed": true
+    }
+  ],
+  "sourceSHA256": "b73517ee003d7d645c3346a860afb966550b5b0ad83d4572c7fe87d8be082b83",
+  "nativeAcceptance": false,
+  "scope": "Synthetic journal validator tests; no native capture"
+}
