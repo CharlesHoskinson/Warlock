@@ -1,0 +1,16 @@
+
+  readiness
+    1) wrongRequestTest failed after 1 test(s)
+
+  1 failed
+
+  1) wrongRequestTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-picker-readiness-model-v230/qa/model-1791142467510385073/wrong-request-admitted.qnt:42:122
+        42:  run wrongRequestTest = init.then(begin(1)).then(reply(1,s.pr,s.binding,true)).then(reply(2,0,s.binding,true)).then(all {assert(s.effects == 0 and s.pending),s'=s})
+                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=wrongRequestTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 wrong-request-admitted.qnt

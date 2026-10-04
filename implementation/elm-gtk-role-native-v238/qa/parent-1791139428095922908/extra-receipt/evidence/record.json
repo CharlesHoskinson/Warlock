@@ -1,0 +1,54 @@
+{
+  "probeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791139428095922908/extra-receipt/fake-client"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "command": "press 272",
+      "startedMonotonic": 103694.260277129,
+      "written": true,
+      "error": "Refused('unsolicited or duplicate parent receipt')"
+    }
+  ],
+  "peerBefore": {
+    "fakePeer": true
+  },
+  "registered": true,
+  "process": {
+    "pid": 3039575,
+    "start": "10753201",
+    "name": "persistent-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791139428095922908/extra-receipt/fake-client"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/parent-1791139428095922908/extra-receipt/evidence/stderr.log"
+  },
+  "stdoutBytes": 174,
+  "stdoutCapturedBytes": 174,
+  "stdoutPrefixSHA256": "05d2387d1b73c31025f5b31ae1c6bd07a33d5332325be897dcfd51f801619337",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "peerBeforeCommand": {
+    "fakePeer": true
+  },
+  "potentialHeldInput": true,
+  "releaseOnlyCleanup": {
+    "scope": "failure release-only attempt, never recipient/probe proof",
+    "held": [
+      [
+        "button",
+        "272"
+      ]
+    ],
+    "attempted": true
+  },
+  "failureCleanupTerminate": true,
+  "exitCode": -15,
+  "destructorReleaseFallback": "May balance parent held input on disconnect; never claimed as successful GTK recipient proof"
+}

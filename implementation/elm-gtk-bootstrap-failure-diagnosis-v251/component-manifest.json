@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "scope": "Read-only diagnosis of preserved actual238 failure",
+  "files": {
+    "DIAGNOSIS.md": {
+      "sha256": "6f196a610caa8b6edb0176f9199c4279fd80410cf3ff750926a5d7f44db339b6",
+      "size": 2524,
+      "mode": 420
+    },
+    "REQUIREMENTS.md": {
+      "sha256": "60056550e091b02d1485139c1221732a6e08a01bb3d9b20b4299565bff286b09",
+      "size": 548,
+      "mode": 420
+    },
+    "qa/diagnose-1791141707203919585/diagnostic-prefix-normalized.log": {
+      "sha256": "ab2c5e11253b2c7c60b746816e0bcddc3b00ac86ba47bc223ea628b1313030a2",
+      "size": 250604,
+      "mode": 420
+    },
+    "qa/diagnose-1791141707203919585/report.json": {
+      "sha256": "6130b883eb189d2dac28e785a9db9ce39f3a22d4a3ea414f3725edab9fc0172a",
+      "size": 3688,
+      "mode": 420
+    },
+    "qa/diagnose.py": {
+      "sha256": "3d5b73aed9c638338fe5f0b66c3f405f679ef85748993dcee8b629db1ed3db94",
+      "size": 2565,
+      "mode": 420
+    },
+    "qa/failed-prefix-replay/diagnose.py": {
+      "sha256": "b408726e73630164fc9010607073dc78df1d3eb148f8110a02faa3c0382de109",
+      "size": 2560,
+      "mode": 420
+    },
+    "qa/failed-prefix-replay/report.json": {
+      "sha256": "3f9c0835d185df94ef177a3e0429fc5b8c732899a0f1a877858a4fb987c54e2a",
+      "size": 298,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "8280c0812b5ceb2e07ef63b61ad79f3e9ccea43af091cb243fed37c09678fec9",
+      "size": 1184,
+      "mode": 420
+    }
+  },
+  "externalEvidence": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native-1791141503469881852/native-evidence/gtk-role-client/wayland.log": {
+      "sha256": "2df28c657cbab464ae4f7e1debe18213a29914846d4100270426b22ca8142f93",
+      "size": 385518
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native-1791141503469881852/native-evidence/privateBus.log": {
+      "sha256": "c6f0d7c6a72a513cb9da260645d9edcfe168fa182349a4330c4511663da5af01",
+      "size": 4607
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native-1791141503469881852/report.json": {
+      "sha256": "9a49cf8e692ea59426da56712ecef70f5d4ed3bcc895b8d1d5a3dae0d3689ece",
+      "size": 2059269
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/protocol.py": {
+      "sha256": "0e165ce128359cfaffdbdad54d85064faf1fec0db061a8fabaa44005ea53d887",
+      "size": 6936
+    }
+  },
+  "diagnosisReport": "qa/diagnose-1791141707203919585/report.json"
+}

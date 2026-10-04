@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "syntheticTranscriptAndGeometryOnly": true,
+  "checks": [
+    {
+      "name": "widget-minus-transform-minus-origin-once",
+      "passed": true
+    },
+    {
+      "name": "unequal-real-geometry-rejected",
+      "passed": true
+    },
+    {
+      "name": "stale-map",
+      "passed": true
+    },
+    {
+      "name": "foreign-resource",
+      "passed": true
+    },
+    {
+      "name": "missing-bounds",
+      "passed": true
+    },
+    {
+      "name": "huge-transform",
+      "passed": true
+    },
+    {
+      "name": "bool-transform",
+      "passed": true
+    },
+    {
+      "name": "nonfinite-transform",
+      "passed": true
+    },
+    {
+      "name": "owning-resource-configure-ACK-commit",
+      "passed": true
+    },
+    {
+      "name": "modern-at-object-format",
+      "passed": true
+    },
+    {
+      "name": "wrong-resource",
+      "passed": true
+    },
+    {
+      "name": "wrong-actor-title",
+      "passed": true
+    },
+    {
+      "name": "missing-ACK",
+      "passed": true
+    },
+    {
+      "name": "wrong-ACK-serial",
+      "passed": true
+    },
+    {
+      "name": "commit-before-ACK",
+      "passed": true
+    },
+    {
+      "name": "surface-retired",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/conversion-test.py": "888459986661210b7d431583a91ce0b0eecef680e7aeb21f0fe246a7532e9168",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/geometry.py": "171693aa8ff28db8212ab46eab613ed52ada9c104432aa1be74fc150da533120",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/protocol.py": "e8b9249bfa386f3e7853d63697fbf0819f68a32e47188309760fa9d524fe9bd2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/journal.py": "43c5001169ec60c832d1c8549ec3716540388012515c99dd2ebe7339bb974fe3"
+  }
+}

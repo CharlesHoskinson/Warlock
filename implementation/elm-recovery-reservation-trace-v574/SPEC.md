@@ -1,0 +1,3 @@
+# Reservation refusal witness
+
+Validate native573 original75 reached passed checks and failed fresh post-reconnect intent observation/normalcleanup. Prove last enabled group surface-action stamp matches accepted full current frame and actual shared_forward allowed it. New binding has same compositor lifetime/different session; matching action and geometry snapshots precede the click. A recovered Unknown intent12 still targets incarnation2. The next actual commit reports reservation reconciliation, has no native request/focus, and no subsequent window effect is sent. This establishes policy blocking, not safe authority revocation or recovery completion.

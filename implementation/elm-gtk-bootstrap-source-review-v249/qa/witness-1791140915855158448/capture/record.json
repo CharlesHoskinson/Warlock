@@ -1,0 +1,37 @@
+{
+  "nativeAccepted": false,
+  "output": "WAYLAND-1",
+  "expectedExtent": [
+    800,
+    600
+  ],
+  "startedMonotonic": 105181.792875869,
+  "grimArgv": [
+    "/usr/bin/grim",
+    "-o",
+    "WAYLAND-1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.png"
+  ],
+  "grimExitCode": 0,
+  "extentArgv": [
+    "/usr/bin/magick",
+    "identify",
+    "-format",
+    "%w %h",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.png"
+  ],
+  "extentExitCode": 0,
+  "decodeArgv": [
+    "/usr/bin/magick",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.png",
+    "-alpha",
+    "off",
+    "-depth",
+    "8",
+    "rgb:/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.rgb"
+  ],
+  "decodeExitCode": 0,
+  "completedMonotonic": 105181.793867054,
+  "pngSHA256": "915a31bacc6109db10eea0686f9be43aaf6cad5e7cf035d6e4f8dfb79c8fb46d",
+  "rgbSHA256": "25b01e82f968958cbd580f315f4afeb839a620a845cccf72ff224aceb5a32ed7"
+}

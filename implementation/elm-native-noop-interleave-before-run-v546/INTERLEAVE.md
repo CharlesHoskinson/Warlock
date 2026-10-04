@@ -1,0 +1,3 @@
+# Reviewed artificial scheduling campaign
+
+Original533 behavioral assertions, checks and six-second deadlines unchanged (AST compared in preflight). Only source/build pins, explicit isolated host environment flag and post-run trace extraction differ. The current runner expects original89 checks. The old runner is expected to fail the first context-open deadline if the intended publication race occurs; preserve its failed report and normal teardown. No historical504 closure claim. Exact owning470/471/AQ155 tuple, observer477, Xwaylandfalse, private protected serial launcher and normal cleanup remain.

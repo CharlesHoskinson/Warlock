@@ -1,0 +1,9 @@
+# Unknown reservation reconciliation architecture spike
+
+ELM-ARC-014 requires native reconciliation before another mutation. The old outcome stays Unknown: releasing a reservation never forges Committed/Refused/Cancelled. A new broker binding alone is insufficient because the authority grants sessions per peer PID/start. Require positive native old-grant retirement, same exact operation/binding/target scope, accepted observation after that native barrier, and durable release acknowledgement. Only a new explicit user intent after release can submit; previous clicks are not queued/replayed. Persist before frontend acknowledgment so restart cannot resurrect a released reservation; keep historical Unknown independently from live target reservations.
+
+This model specifies the required future native/ledger/Elm protocol. It does not claim current authority provides the proof, real fsync/power-loss correctness, counter-range completeness or UI/native recovery acceptance. Eleven named scenarios, bounded randomized interleavings and seven typed mutations exercise ordering/scope/admission. Existing production blocking stays intact until proof-producing authority, storage and end-to-end acceptance exist. No requirement completion or definition change.
+
+V577 preserves the V576 model byte for byte and corrects only the revocation mutation selector: it targets the eligibility predicate uniquely, leaving the observation guard intact. V576 failed after four mutation controls because the old selector matched both guards; its evidence is retained.
+
+V578 additionally corrects the once-only mutation selector to the unique submit guard. V577 completed six controls before this selector collided with named assertions. Both failures are preserved; the model itself remains identical.

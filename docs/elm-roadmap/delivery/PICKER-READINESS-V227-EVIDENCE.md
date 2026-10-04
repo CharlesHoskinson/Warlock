@@ -1,0 +1,11 @@
+# Current picker activation failure retained before repair
+
+225's actual protected native replay on accepted222's Core205/plugin206/AQ155/GUI521 tuple failed the original six-second ordinary-picker activation wait. Five checks passed, normal cleanup passed and all2,605 reviewed inputs stayed unchanged. Renderer SIGKILL was never reached; this is not a current renderer-failure result. No window-effect request was emitted.
+
+The exact captured observation order is projection1, geometry3, projection4, geometry5, projection6, geometry7. Trusted native pointer press/release targeted incarnation2. The post-close choice remained pending until its original timer expired. Desktop.window advances a choice only for a matching action-projection, while Shell.available requires geometryExpected cleared. The projection-first, geometry-last ordering therefore supports a readiness-trigger hypothesis, awaiting exact compiled-controller replay and Quint controls. Do not weaken the activation, keyboard-recipient, geometry or deadline oracle.
+
+Normative226 specifies admitted paired-observation completion with the same binding/output/root/application/choice token and original deadline; stale, invalid, unrelated and superseded observations must not falsely complete. Existing authoritative scope/effect guards remain unchanged. Return-focus ordering needs the same review. Production source has not been modified for this issue.
+
+227 freezes38 files, preserving source-only224, fully preflight-bound225's failed report/source and226's current source/log witness. Manifest SHA-256: `865f774cdbbe7921349d9783b21a4f49fd59ab49eaba959c01ecec29b9805e34`. Native acceptance and full release flags remain false.
+
+CurrentGUI521 keyboardless focus qualification222 was separately committed at original6b772cd6880c1af741a8fbd090e33e279f9cd998 and published at confirmed remote04943ae2504854a9ad1239579aedd0c434551e16; all341,606 source entries and12LFS objects were verified. Its473 bounded menu/focus/geometry/reconnect passes do not close this newly exposed ordinary activation regression. The next iteration should model and repair that regression, pass the original225 prelude, then continue renderer geometry/fresh-binding recovery and the broader release gates.

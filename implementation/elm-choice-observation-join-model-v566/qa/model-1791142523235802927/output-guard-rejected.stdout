@@ -1,0 +1,16 @@
+
+  join
+    1) outputChangeTest failed after 1 test(s)
+
+  1 failed
+
+  1) outputChangeTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-observation-join-model-v566/qa/model-1791142523235802927/output-guard.qnt:21:91
+        21:  run outputChangeTest = init.then(projection).then(outputChange).then(geometry).then(all {assert(s.effects==0),s'=s})
+                                                                                                      ^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x13d95 --match=outputChangeTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 output-guard.qnt

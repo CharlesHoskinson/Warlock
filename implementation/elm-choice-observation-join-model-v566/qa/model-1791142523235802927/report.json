@@ -1,0 +1,257 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Abstract two-observation pending-choice join, scope/deadline/once-only guards; no native/Elm refinement claim",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "join.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "join.qnt",
+        "--backend=typescript",
+        "--match=^(projectionFirstTest|geometryFirstTest|duplicateTest|bindingChangeTest|outputChangeTest|retiredTargetTest|deadlineTest|cancellationTest|disconnectTest|unknownTest)$",
+        "--max-samples=1",
+        "--seed=81201",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "join.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=81202"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "old-projection-only-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "old-projection-only.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "old-projection-only-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "old-projection-only.qnt",
+        "--backend=typescript",
+        "--match=^projectionFirstTest$",
+        "--max-samples=1",
+        "--seed=81301"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "geometry-guard-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "geometry-guard.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "geometry-guard-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "geometry-guard.qnt",
+        "--backend=typescript",
+        "--match=^projectionFirstTest$",
+        "--max-samples=1",
+        "--seed=81301"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "binding-guard-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "binding-guard.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "binding-guard-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "binding-guard.qnt",
+        "--backend=typescript",
+        "--match=^bindingChangeTest$",
+        "--max-samples=1",
+        "--seed=81301"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "output-guard-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "output-guard.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "output-guard-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "output-guard.qnt",
+        "--backend=typescript",
+        "--match=^outputChangeTest$",
+        "--max-samples=1",
+        "--seed=81301"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "target-guard-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "target-guard.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "target-guard-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "target-guard.qnt",
+        "--backend=typescript",
+        "--match=^retiredTargetTest$",
+        "--max-samples=1",
+        "--seed=81301"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "once-only-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "once-only.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "once-only-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "once-only.qnt",
+        "--backend=typescript",
+        "--match=^duplicateTest$",
+        "--max-samples=1",
+        "--seed=81301"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "projectionFirstTest",
+    "geometryFirstTest",
+    "duplicateTest",
+    "bindingChangeTest",
+    "outputChangeTest",
+    "retiredTargetTest",
+    "deadlineTest",
+    "cancellationTest",
+    "disconnectTest",
+    "unknownTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 6,
+  "sourceSHA256": "344786a3be1892ae0d2babda2ea648562f0df35b2db29a092f5b923312b05505",
+  "artifacts": {
+    "join.qnt": "344786a3be1892ae0d2babda2ea648562f0df35b2db29a092f5b923312b05505",
+    "model.py": "66b5f3bc424f51e1670c24e2c342e67e8a11557d6ce91fa287f677687d9a3d13",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-projectionFirstTest-0.itf.json": "06d033b95569cdab75890b9991bea0d06ac54408fbb85b65f3499a5d44c86f9a",
+    "named-geometryFirstTest-1.itf.json": "d1dcf4c660a432af30e2167c9b011115b63cca7555d87001776dc9372e009b0c",
+    "named-duplicateTest-2.itf.json": "7f95a1958320e1286f8a6ee10917130b4a8143ec96fe064ddffb5b9c82a09414",
+    "named-bindingChangeTest-3.itf.json": "4dd64fc9b3ea66263508ca80e1ff5319f6b0a5f11b950d556df8dc8a41f1f4ed",
+    "named-outputChangeTest-4.itf.json": "7a4a6679d0413b43f026f7c7e1b6fb3542065c576fcf112b54207295ea1d14d7",
+    "named-retiredTargetTest-5.itf.json": "b24c5874558d491c13f96b783905d64f956842beb7ef597f55aaa5d06334a3f4",
+    "named-deadlineTest-6.itf.json": "e554d90090ec3f2f6ef6c1818e48458d0d571a4a598f684fb07efcc77f298579",
+    "named-cancellationTest-7.itf.json": "4fa6d96271ad21dfc1e3e44dd1e786cc1ce200a676abf01ebbc4747c6efa831e",
+    "named-disconnectTest-8.itf.json": "6392ef93c303e4feb27b486e0f7c4c73afd7112c3f0d7ff193df917dcef17453",
+    "named-unknownTest-9.itf.json": "18ae87f6588575d835ffa868682955fab86a602ae93a2d5ae1d71c0c5f9cc426",
+    "named.stdout": "b6be066eb0fafa5030aa9ac0750a967d83f2a4f6d2728f670665607cb1278e4b",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "f853a04fd7e8868107db6dfcd3b990c30e1aa10ad924544f8fdef4abbf4fe43f",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "old-projection-only.qnt": "01fa000c20101c5f79512e0e638e8d0c3ba554b59d49e5de73fc4e29cf8c87f0",
+    "old-projection-only-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "old-projection-only-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "old-projection-only-rejected.stdout": "c0c5238fb7029de47e43522fcd493f3f6d61992549c838cdda5198df1a050c18",
+    "old-projection-only-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "geometry-guard.qnt": "e2d604f339b4a2ca7cd63ac5044b3d0db8e9e77ec7361b84101b60d564f874e7",
+    "geometry-guard-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-guard-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geometry-guard-rejected.stdout": "853ef3696a8fbc0a9264edb9dd35058798a77f3fa51f5a24055e82c03fd3eee6",
+    "geometry-guard-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "binding-guard.qnt": "03d441d605c277d8316bd9e3003b58fc6b962927b1b7fc821c1f2464c027cb83",
+    "binding-guard-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "binding-guard-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "binding-guard-rejected.stdout": "9f8cbc8ad77a1ab6f60428fe3a2f05e6ba3eec5893942d92bb284fdc5529573b",
+    "binding-guard-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "output-guard.qnt": "d0b02f353497a17c95e0949096dc1f568c5a27e3502db0c38c3d11aee02f2012",
+    "output-guard-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-guard-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "output-guard-rejected.stdout": "a3de481d245d64ed6dd37f5cb88bd8c16da392060f564350b36169796ffec481",
+    "output-guard-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "target-guard.qnt": "01703992bd69526657abc3de31ee87fc627b040800c37b3f23e6869de53e1668",
+    "target-guard-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target-guard-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "target-guard-rejected.stdout": "fff351bf63a323726c794fecc327f5cb5c3fbc670eeb6c61ab90e48feaea1a5e",
+    "target-guard-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "once-only.qnt": "6404a3f089293d946b5075b6eb4101aa9088c8f7e22b4fe65afa2e5c219e9412",
+    "once-only-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "once-only-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "once-only-rejected.stdout": "16f91ccb6b7d1c7a5025b61b0a29b57f7a23a503a9affa925b7bbdd88706d793",
+    "once-only-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

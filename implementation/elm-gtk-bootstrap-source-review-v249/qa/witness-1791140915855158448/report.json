@@ -1,0 +1,157 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual pre-fix pixels functions with synthetic RGB and subprocess stubs; no GUI or tool launch",
+  "findings": [
+    "nine yellow samples lack target attribution",
+    "marker mismatch provides no sample evidence on exception",
+    "successful capture has no registered helpers or process identity"
+  ],
+  "markerSamples": [
+    {
+      "point": [
+        7,
+        7
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        8,
+        7
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        9,
+        7
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        7,
+        8
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        8,
+        8
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        9,
+        8
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        7,
+        9
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        8,
+        9
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    },
+    {
+      "point": [
+        9,
+        9
+      ],
+      "rgb": [
+        255,
+        255,
+        0
+      ]
+    }
+  ],
+  "failure": {
+    "exceptionType": "Refused",
+    "args": [
+      "actual GTK yellow landmark absent or occluded"
+    ],
+    "dict": {}
+  },
+  "captureRecord": {
+    "nativeAccepted": false,
+    "output": "WAYLAND-1",
+    "expectedExtent": [
+      800,
+      600
+    ],
+    "startedMonotonic": 105181.792875869,
+    "grimArgv": [
+      "/usr/bin/grim",
+      "-o",
+      "WAYLAND-1",
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.png"
+    ],
+    "grimExitCode": 0,
+    "extentArgv": [
+      "/usr/bin/magick",
+      "identify",
+      "-format",
+      "%w %h",
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.png"
+    ],
+    "extentExitCode": 0,
+    "decodeArgv": [
+      "/usr/bin/magick",
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.png",
+      "-alpha",
+      "off",
+      "-depth",
+      "8",
+      "rgb:/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-source-review-v249/qa/witness-1791140915855158448/capture/capture.rgb"
+    ],
+    "decodeExitCode": 0,
+    "completedMonotonic": 105181.793867054,
+    "pngSHA256": "915a31bacc6109db10eea0686f9be43aaf6cad5e7cf035d6e4f8dfb79c8fb46d",
+    "rgbSHA256": "25b01e82f968958cbd580f315f4afeb839a620a845cccf72ff224aceb5a32ed7"
+  },
+  "hostProcesses": [],
+  "sourceSHA256": "35cac396cb6e555a45c44b71bdf4ddc5d0b2902f7f60ee08eaae4cf00d46f121"
+}

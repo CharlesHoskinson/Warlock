@@ -1,0 +1,16 @@
+
+  join
+    1) bindingChangeTest failed after 1 test(s)
+
+  1 failed
+
+  1) bindingChangeTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-observation-join-model-v566/qa/model-1791142523235802927/binding-guard.qnt:20:93
+        20:  run bindingChangeTest = init.then(projection).then(bindingChange).then(geometry).then(all {assert(s.effects==0),s'=s})
+                                                                                                        ^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x13d95 --match=bindingChangeTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 binding-guard.qnt

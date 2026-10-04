@@ -1,0 +1,1 @@
+Prospective candidate231 held238 and actual captured broker240 on unchanged Core205/plugin206/AQ155. All original native check calls and deadlines byte-equivalent at AST level; prior accepted217-221 reports are ancestry only. Fresh native qualification required.

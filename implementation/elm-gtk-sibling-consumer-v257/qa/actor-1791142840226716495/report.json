@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fakeJournalRealSubprocessOnly": true,
+  "checks": [
+    {
+      "name": "normal",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-1791142840226716495/normal/evidence/actor.json"
+    },
+    {
+      "name": "default-profile",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-1791142840226716495/default-profile/evidence/actor.json"
+    },
+    {
+      "name": "partial-terminal",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-1791142840226716495/partial-terminal/evidence/actor.json"
+    },
+    {
+      "name": "after-exit",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-1791142840226716495/after-exit/evidence/actor.json"
+    },
+    {
+      "name": "repeat-exit",
+      "passed": true,
+      "actualExit": 0,
+      "record": "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-1791142840226716495/repeat-exit/evidence/actor.json"
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-test.py": "ba7d1066905073df7948949c205c282f740e61866d3d16bab029a351e59f2357",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor.py": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/journal.py": "0c7a9ab164af2bad8b7980b4eb2b2fb1f07adfd494ddaada643c4ddfa8e46e31"
+  }
+}

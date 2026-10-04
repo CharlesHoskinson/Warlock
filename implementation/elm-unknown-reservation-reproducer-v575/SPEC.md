@@ -1,0 +1,3 @@
+# Exact Unknown reservation reducer witness
+
+Recover the exact native573 Unknown intent12, admit the exact current fresh-binding action projection through public compiled Effects APIs, then request a new explicit minimize for target2. Current Effects has no binding/session/reconciliation release certificate: historical Unknown remains in unresolved and blocks the target, consumes no new counter and emits no mutation. No record/counter/binding rewrite, private model mutation or receipt fabrication. This reproduces blocking, not safe reservation release. ELM-ARC-014 requires native reconciliation before retry; fresh binding alone does not revoke other live broker grants in the per-PID native authority.

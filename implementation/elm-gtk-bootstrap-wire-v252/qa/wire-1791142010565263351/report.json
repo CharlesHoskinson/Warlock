@@ -1,0 +1,158 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual held238 trace matched zero real calls",
+      "passed": true
+    },
+    {
+      "name": "A:whole real transcript resource/configure/ACK/buffer join",
+      "passed": true,
+      "joined": {
+        "toplevelId": 75,
+        "xdgSurfaceId": 74,
+        "wlSurfaceId": 42,
+        "surfaceEpoch": 1,
+        "parentToplevel": null,
+        "windowGeometry": [
+          0,
+          0,
+          373,
+          558
+        ],
+        "configure": {
+          "index": 3217,
+          "serial": 6
+        },
+        "ack": {
+          "index": 3218,
+          "serial": 6
+        },
+        "lastCommitIndex": 3920,
+        "bufferId": 111,
+        "presentationProved": false
+      },
+      "lastGtkState": {
+        "schema": 1,
+        "sequence": 15,
+        "pid": 3188779,
+        "processStarted": 10961372,
+        "monotonicUs": 105776621866,
+        "requestSequence": 1,
+        "event": "draw-queued",
+        "profile": "independent-groups",
+        "role": "A",
+        "instance": 1,
+        "mapGeneration": 1,
+        "surfaceId": 42,
+        "mapped": true,
+        "surfaceClass": "GdkWaylandToplevel",
+        "observedState": 65472,
+        "observedMaximized": false,
+        "observedFullscreen": false,
+        "observedMinimized": false,
+        "allocatedWidth": 373,
+        "allocatedHeight": 558,
+        "surfaceWidth": 373,
+        "surfaceHeight": 558,
+        "surfaceScale": 1,
+        "draftUTF8": "ELM-ROLE-DRAFT",
+        "draftBytes": 14,
+        "landmarkBoundsAvailable": true,
+        "landmarkNativeX": 0.0,
+        "landmarkNativeY": 0.0,
+        "landmarkWidth": 373.0,
+        "landmarkHeight": 60.0,
+        "nativeSurfaceTransformX": 0.0,
+        "nativeSurfaceTransformY": 0.0,
+        "observedWindowGroup": "family",
+        "hasExplicitWindowGroup": true,
+        "requestedModal": false,
+        "transientSurfaceId": 0,
+        "drawWidth": 373,
+        "drawHeight": 60
+      }
+    },
+    {
+      "name": "C:whole real transcript resource/configure/ACK/buffer join",
+      "passed": true,
+      "joined": {
+        "toplevelId": 107,
+        "xdgSurfaceId": 106,
+        "wlSurfaceId": 71,
+        "surfaceEpoch": 1,
+        "parentToplevel": null,
+        "windowGeometry": [
+          0,
+          0,
+          373,
+          558
+        ],
+        "configure": {
+          "index": 3211,
+          "serial": 7
+        },
+        "ack": {
+          "index": 3212,
+          "serial": 7
+        },
+        "lastCommitIndex": 4134,
+        "bufferId": 119,
+        "presentationProved": false
+      },
+      "lastGtkState": {
+        "schema": 1,
+        "sequence": 16,
+        "pid": 3188779,
+        "processStarted": 10961372,
+        "monotonicUs": 105776804816,
+        "requestSequence": 1,
+        "event": "draw-queued",
+        "profile": "independent-groups",
+        "role": "C",
+        "instance": 2,
+        "mapGeneration": 1,
+        "surfaceId": 71,
+        "mapped": true,
+        "surfaceClass": "GdkWaylandToplevel",
+        "observedState": 65408,
+        "observedMaximized": false,
+        "observedFullscreen": false,
+        "observedMinimized": false,
+        "allocatedWidth": 373,
+        "allocatedHeight": 558,
+        "surfaceWidth": 373,
+        "surfaceHeight": 558,
+        "surfaceScale": 1,
+        "draftUTF8": "ELM-ROLE-DRAFT",
+        "draftBytes": 14,
+        "landmarkBoundsAvailable": true,
+        "landmarkNativeX": 0.0,
+        "landmarkNativeY": 0.0,
+        "landmarkWidth": 373.0,
+        "landmarkHeight": 60.0,
+        "nativeSurfaceTransformX": 0.0,
+        "nativeSurfaceTransformY": 0.0,
+        "observedWindowGroup": "independent",
+        "hasExplicitWindowGroup": true,
+        "requestedModal": false,
+        "transientSurfaceId": 0,
+        "drawWidth": 373,
+        "drawHeight": 60
+      }
+    }
+  ],
+  "actualCalls": 4101,
+  "rawBytes": 385518,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/wire-test.py": "193177989c520a1016163a90afbff760f720401025d770310b27732d37349491",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/protocol.py": "94335ba47fd10cf9ae57f13cd58a29d8beb17537cd8e8f1927692b0b40f34af5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-bootstrap-wire-v252/qa/journal.py": "43c5001169ec60c832d1c8549ec3716540388012515c99dd2ebe7339bb974fe3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/protocol.py": "0e165ce128359cfaffdbdad54d85064faf1fec0db061a8fabaa44005ea53d887",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native-1791141503469881852/native-evidence/gtk-role-client/wayland.log": "2df28c657cbab464ae4f7e1debe18213a29914846d4100270426b22ca8142f93",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native-1791141503469881852/native-evidence/gtk-role-client/journal.jsonl": "841f3904b382568d3dcdc5ad32f43896c754a2fa40e8002bd21047cbbcb40d3a",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native-1791141503469881852/native-evidence/gtk-role-client/actor.json": "aaa7389b5cb972b6611d81d28931827b8081e8a80c635316c43f14c0276100eb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/native-1791141503469881852/report.json": "9a49cf8e692ea59426da56712ecef70f5d4ed3bcc895b8d1d5a3dae0d3689ece"
+  }
+}

@@ -1,0 +1,5 @@
+native/shared-host.c: In function ‘shared_receive’:
+native/shared-host.c:221:24: error: ‘qa_stay_open’ undeclared (first use in this function)
+  221 |         if (qa_exit && qa_stay_open && g_strcmp0(g_getenv("ELM_QA_NOOP_INTERLEAVE"),"1")==0 && kind && g_str_equal(kind,"qa-noop-done") && qa_held_context) {
+      |                        ^~~~~~~~~~~~
+native/shared-host.c:221:24: note: each undeclared identifier is reported only once for each function it appears in

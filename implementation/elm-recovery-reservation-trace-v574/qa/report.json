@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Native573 actual current matching enabled click is admitted; Elm rejects retained Unknown reservation despite fresh binding and typed reads. No reconciliation repair acceptance",
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-pending-observation-recovery-trace-v573/qa/native-1791143276230101221/report.json",
+  "nativeReportSHA256": "634cfdece9bf999360a4141352fee37b514fd362811fb013afa845306b824afd",
+  "logSHA256": "9ed49887695e64be5050fa73bc172f12fa3c6f4ac09472aeb5e2288a7c09dbb4",
+  "checksReached": 75,
+  "cleanupPassed": true,
+  "nativeActionAdmitted": true,
+  "action": {
+    "surface": "bar",
+    "surfaceProtocol": 2,
+    "kind": "surface-action",
+    "publication": "123",
+    "lease": "13",
+    "id": "bar:group:application:GTK Application"
+  },
+  "oldBinding": {
+    "lifetime": "13066731177979386763",
+    "session": "11969302442099272000",
+    "frontend": "1"
+  },
+  "newBinding": {
+    "lifetime": "13066731177979386763",
+    "session": "16592658915108124045",
+    "frontend": "1"
+  },
+  "unknownIntent": {
+    "context": {
+      "epoch": "1",
+      "lifetime": "13066731177979386763",
+      "output": "1",
+      "revision": "21"
+    },
+    "generation": "12",
+    "incarnation": "2",
+    "operation": "minimize",
+    "request": "12"
+  },
+  "freshObservationRequestIds": [
+    "91",
+    "93"
+  ],
+  "nativeEffectsAfterAction": 0,
+  "refusalStatus": "A menu operation for this window family awaits reconciliation The last request could not be confirmed.",
+  "historicalOutcome": "Unknown",
+  "fullReleaseAccepted": false,
+  "completedRequirementIds": []
+}

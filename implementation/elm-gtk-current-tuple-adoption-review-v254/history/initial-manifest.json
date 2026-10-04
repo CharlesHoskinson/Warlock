@@ -1,0 +1,120 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "scope": "Current tuple read-only adoption review, not GTK qualification",
+  "files": {
+    "ADOPTION.md": {
+      "sha256": "fb05b13fe365d03493bac005ac0bef54492925b5c3de113cc33418a71414d4bd",
+      "size": 4534
+    },
+    "REQUIREMENTS.md": {
+      "sha256": "578b312914ffc05ee28f20249a2cb226f864d314500b08992f56eee07e36314a",
+      "size": 444
+    },
+    "observed-loop-state.json": {
+      "sha256": "771ac90e3b277243b4b6110ff104c0c34c1d2ba2f4bf3840b683f1565cf6187b",
+      "size": 2059
+    },
+    "qa/audit-1791142162065495829/report.json": {
+      "sha256": "a4c30b1f16621d7a9cc1551fc1683a4538807ede1945062fdb4283ff0b1201f7",
+      "size": 5574
+    },
+    "qa/audit.py": {
+      "sha256": "82889c3cd603504388e5a50c74f841a073443d8fd1c3524a914dd734342b2edd",
+      "size": 4132
+    },
+    "qa/freeze.py": {
+      "sha256": "967afa84e0b4c604aa36d8e6c35da48a8331729399dd590e1b3c3dfde4e20e94",
+      "size": 1065
+    }
+  },
+  "externalFiles": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-acceptance-v222/acceptance-manifest.json": {
+      "sha256": "bbb42789486071600535cf66d4ba869722530c6fe590cc7f1af72a203fc80fe4",
+      "size": 365523
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-capability-v217/qa/native-1791140623933711713/report.json": {
+      "sha256": "fe75464003a362fe3e3d13a201674432aa03d0d373d0dadba3a4ac712ffb4570",
+      "size": 310858
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-focus-v218/qa/native-1791140726221309433/report.json": {
+      "sha256": "1822975798abb7ee86f466d12a1d8e41b306df2d5b141a05ad264a486198804c",
+      "size": 307450
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-geometry-v219/qa/native-1791140784491335404/report.json": {
+      "sha256": "a457a275d48783033afcce36023760591c1d76ff10f19ee387b6f8d02ff69ed2",
+      "size": 543136
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-reconnect-v220/qa/native-1791140874683224642/report.json": {
+      "sha256": "a3da9f6aee8e325345cffef09e69fd788bad2e8677e28e4cf303cc912ed5fae8",
+      "size": 252338
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-full-menu-v221/qa/native-1791140938533629271/report.json": {
+      "sha256": "bc40b2c8a8cc6b93575e9e0e19a1fb9c9a70ccd853319ebecb593fca8fb0e329",
+      "size": 291685
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-focus-owning-pair-v206/native-build-report.json": {
+      "sha256": "d3169a8d87b64ccc3412d53ee9f0f11ac1913c19980615d809674bfe85c41fc6",
+      "size": 1820
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/report.json": {
+      "sha256": "b898a709e06dc0c7e46eb0527e19d25dd4d02fa42506f01ef15bce6debff3f3d",
+      "size": 314348
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-keyboardless-focus-v205/build-1791139089126747676/Hyprland": {
+      "sha256": "bda6ce0094961c285673589afa2b61fe2b97321a1d86b248823b482122fec0f5",
+      "size": 19631240
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-toolkit-owning-observer-v223/component-manifest.json": {
+      "sha256": "3507dcf2f8920fdc969d7ecd69d7f57994f3d99f962d685191a24fa42a5b4931",
+      "size": 355843
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-toolkit-popup-canonical-observer-v246/component-manifest.json": {
+      "sha256": "99c4e0b4b866aa2c849dd17e31e08eb8cb204dc70092f58d99dcf9e06c72ae00",
+      "size": 335294
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-toolkit-owning-observer-v223/qa/build-1791140584264449636/report.json": {
+      "sha256": "709706b24daf8fc21035d89e3036d9cfaea99afc79ce778cd6869c992d0bcf69",
+      "size": 340638
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-toolkit-popup-canonical-observer-v246/qa/build-1791139221615888759/report.json": {
+      "sha256": "77668c237a4452bbd7fa3c444d7d1129ffaf7dd3607fd6c5c2e661fc1caec7d1",
+      "size": 340177
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-toolkit-owning-observer-v223/native/observer.cpp": {
+      "sha256": "9c1927914f47144e942561e5103be00c252a2a5a3d8a0bec74913b1f7610b805",
+      "size": 11213
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-toolkit-popup-canonical-observer-v246/native/observer.cpp": {
+      "sha256": "9c1927914f47144e942561e5103be00c252a2a5a3d8a0bec74913b1f7610b805",
+      "size": 11213
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/component-manifest.json": {
+      "sha256": "099b015693f87ed87d128d6f228c16507da851443f8c12a4d01fe580117922b5",
+      "size": 15754
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/component-manifest.json": {
+      "sha256": "ea7dc366dda3ab5d7a9ec5efb5c3984915a585673a7da10372fafaf76c45a3f5",
+      "size": 94133
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-runtime-v216/parent-probe-build.json": {
+      "sha256": "5c719c99fde9da4357b90e711c50f34d61ed0daca5f6d94cfdedcaf705254221",
+      "size": 243
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/parent-probe-build-report.json": {
+      "sha256": "0949541d3955605fed2f3a41a7bed41ecfc8929d8da18e338e93b29444c1ae86",
+      "size": 978
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboardless-current-runtime-v216/candidate_host.py": {
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/runtime/candidate_host.py": {
+      "sha256": "7c8cb4c0990d21241a7689fcbf4276f81886d2660606c82f8dff7cd7cff4d387",
+      "size": 10070
+    }
+  },
+  "report": "qa/audit-1791142162065495829/report.json"
+}

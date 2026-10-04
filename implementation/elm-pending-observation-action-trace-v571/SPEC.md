@@ -1,0 +1,3 @@
+# Actual surface-action refusal tracing
+
+QA diagnostic derivative of567 after original native569 progresses from repaired picker Enter to75checks, then fails fresh explicit intent after broker reconnect. Add qa_exit-only full raw view-commit/context/surface-action trace, GTK right-button proof metadata, and actual shared_forward admission result/current gate stamps. Admission expression evaluated once with equivalent short-circuit guards; no effect, schema, decoder, native deadline or publication policy changes. Never infer native effects from sent UI actions. Compile and freeze before subsequent protected native diagnostic; preserve failed569 and production candidate567 separately. This is diagnostic source, not deployment/overall acceptance.

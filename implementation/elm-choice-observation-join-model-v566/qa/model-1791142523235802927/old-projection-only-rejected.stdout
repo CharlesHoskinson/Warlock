@@ -1,0 +1,16 @@
+
+  join
+    1) projectionFirstTest failed after 1 test(s)
+
+  1 failed
+
+  1) projectionFirstTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-choice-observation-join-model-v566/qa/model-1791142523235802927/old-projection-only.qnt:17:127
+        17:  run projectionFirstTest = init.then(projection).then(all {assert(s.effects==0 and s.pending),s'=s}).then(geometry).then(all {assert(s.effects==1 and not(s.pending)),s'=s})
+                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x13d95 --match=projectionFirstTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 old-projection-only.qnt

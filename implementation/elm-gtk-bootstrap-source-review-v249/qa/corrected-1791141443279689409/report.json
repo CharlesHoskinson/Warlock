@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual corrected helper functions with independent synthetic coordinates/RGB; no GUI or subprocess launch",
+  "checks": [
+    "independent-disjoint-surface-oracle",
+    "other-CSD-overlap-outside-other-native-rect-refused",
+    "whole-nine-pixel-selected-containment",
+    "failed-first-sample-retains-all-nine-measurements"
+  ],
+  "sources": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/geometry.py": "a8478a4fd05c1ddc56f42841813774d8902e56528cc371251821b1ab89811562",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/pixels.py": "40e8ce54c5296f42e2c2de78a837ccfd2fd3c25646b5687e0114f0dad4b2b9de"
+  },
+  "measurements": {
+    "passed": false,
+    "samples": [
+      {
+        "point": [
+          79,
+          99
+        ],
+        "rgb": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "point": [
+          80,
+          99
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          81,
+          99
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          79,
+          100
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          80,
+          100
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          81,
+          100
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          79,
+          101
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          80,
+          101
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      },
+      {
+        "point": [
+          81,
+          101
+        ],
+        "rgb": [
+          255,
+          255,
+          0
+        ]
+      }
+    ]
+  }
+}

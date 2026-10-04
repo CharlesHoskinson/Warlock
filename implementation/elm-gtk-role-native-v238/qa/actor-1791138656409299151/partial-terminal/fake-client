@@ -1,0 +1,17 @@
+#!/usr/bin/python3
+import json,os,sys,time
+seq=0;request=0
+start=int(open('/proc/self/stat').read().rsplit(')',1)[1].split()[19])
+profile='default-group' if '--run-default-group' in sys.argv else 'independent-groups'
+def emit(event,**fields):
+ global seq
+ seq+=1
+ row=dict(schema=1,pid=os.getpid(),processStarted=start,sequence=seq,monotonicUs=int(time.monotonic()*1000000),requestSequence=request,event=event,profile=profile)
+ row.update(fields);print(json.dumps(row),flush=True)
+emit('ready')
+for text in sys.stdin:
+ words=text.split();request=int(words[0]);emit('request',command=words[1],**({'requestedRole':words[2]} if len(words)>2 else {}))
+ if words[1]=='quit':
+  emit('normalexit')
+  sys.stdout.write('{');sys.stdout.flush()
+  break

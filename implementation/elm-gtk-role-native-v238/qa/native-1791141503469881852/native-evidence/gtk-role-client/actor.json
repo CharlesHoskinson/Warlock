@@ -1,0 +1,41 @@
+{
+  "nativeAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/qa/build-1791139220766213638/gtk-role-client",
+    "--run"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "operation": "create-owners",
+      "role": null,
+      "payload": "1 create-owners\n",
+      "startedMonotonic": 105776.182861123,
+      "written": true,
+      "requestObserved": true
+    }
+  ],
+  "process": {
+    "pid": 3188779,
+    "start": "10961372",
+    "pgid": 3188779,
+    "name": "gtk-role-client",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-canonical-runtime-v244/qa/build-1791139220766213638/gtk-role-client",
+      "--run"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/gtk-role-1791141503470005275/gtk-role-client/wayland.log"
+  },
+  "registered": true,
+  "actualStart": "10961372",
+  "stdoutBytes": 11401,
+  "stdoutCapturedBytes": 11401,
+  "stdoutPrefixSHA256": "841f3904b382568d3dcdc5ad32f43896c754a2fa40e8002bd21047cbbcb40d3a",
+  "stdoutTruncated": false,
+  "stderrBytes": 385518,
+  "stderrCapturedBytes": 385518,
+  "stderrPrefixSHA256": "2df28c657cbab464ae4f7e1debe18213a29914846d4100270426b22ca8142f93",
+  "stderrTruncated": false,
+  "failureCleanupTerminate": true,
+  "exitCode": -15
+}

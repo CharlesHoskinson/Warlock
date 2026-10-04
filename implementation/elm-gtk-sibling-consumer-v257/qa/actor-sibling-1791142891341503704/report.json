@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "fakeJournalRealSubprocessOnly": true,
+  "checks": [
+    {
+      "profile": "independent-groups",
+      "passed": true,
+      "receiptCount": 5,
+      "registered": true,
+      "invalidParentNotWritten": true
+    },
+    {
+      "profile": "default-group",
+      "passed": true,
+      "receiptCount": 5,
+      "registered": true,
+      "invalidParentNotWritten": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-sibling-test.py": "ba1ceba3913fa86c6a2c553805f2cf2735e2f032212d055d407172eee07803fd",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor-test.py": "ba7d1066905073df7948949c205c282f740e61866d3d16bab029a351e59f2357",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/actor.py": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-sibling-consumer-v257/qa/journal.py": "0c7a9ab164af2bad8b7980b4eb2b2fb1f07adfd494ddaada643c4ddfa8e46e31"
+  }
+}

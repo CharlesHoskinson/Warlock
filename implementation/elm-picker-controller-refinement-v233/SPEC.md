@@ -1,0 +1,5 @@
+# Exact controller refinement and counterfactuals
+
+Compile actual candidate231 Desktop/SurfaceController, using225 captured native observations and public confirmed primary/choice or close events. Check both response orders, duplicate delivery, malformed/stale/foreign/out-of-range observations, output-generation mismatch, native incarnation/application retirement, original timer, optional geometry and return-focus/popup scope. Responses must be admitted by existing Shell/GeometryProjection decoders. Source-control counterfactuals must compile and return normal0, then fail the original behavioral property; arbitrary crashes do not qualify. This is CPU refinement, not native input or complete release acceptance.
+
+Fresh233 retains failed23214 completed baseline checks. Counterfactual output changes now advance the independent geometry revision to3: equal-revision snapshots must otherwise remain identical except request/sequence and are correctly rejected by Shell. The original equal-revision counterfactual remains an explicitly rejected/no-consumption case. Output retirement oracle is unchanged; production231 is unchanged.

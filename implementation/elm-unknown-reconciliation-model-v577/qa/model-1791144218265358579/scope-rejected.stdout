@@ -1,0 +1,16 @@
+
+  reconcile
+    1) foreignScopeRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) foreignScopeRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-reconciliation-model-v577/qa/model-1791144218265358579/scope.qnt:22:134
+        22:  run foreignScopeRefusedTest = init.then(attach).then(retire).then(observe).then(persist).then(foreignScope).then(release).then(all {assert(s.reserved),s'=s})
+                                                                                                                                                 ^^^^^^^^^^^^^^^^^^
+    Use --seed=0x14245 --match=foreignScopeRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 scope.qnt

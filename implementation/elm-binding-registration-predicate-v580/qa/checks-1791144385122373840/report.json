@@ -1,0 +1,151 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual integrated C++ registration scan only; no native authentication/loading/retirement or reconciliation acceptance",
+  "commands": [
+    {
+      "name": "actual-compile",
+      "command": [
+        "/usr/bin/g++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/actual",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/actual/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "actual-test",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/actual/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "ignore-frontend-compile",
+      "command": [
+        "/usr/bin/g++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/ignore-frontend",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/ignore-frontend/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "ignore-frontend-rejected",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/ignore-frontend/test"
+      ],
+      "exitCode": -6,
+      "expected": -6
+    },
+    {
+      "name": "ignore-session-compile",
+      "command": [
+        "/usr/bin/g++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/ignore-session",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/ignore-session/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "ignore-session-rejected",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/ignore-session/test"
+      ],
+      "exitCode": -6,
+      "expected": -6
+    },
+    {
+      "name": "first-row-only-compile",
+      "command": [
+        "/usr/bin/g++",
+        "-std=c++23",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/first-row-only",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/test.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/first-row-only/test"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "first-row-only-rejected",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-binding-registration-predicate-v580/qa/checks-1791144385122373840/first-row-only/test"
+      ],
+      "exitCode": -6,
+      "expected": -6
+    }
+  ],
+  "checks": [
+    "emptyTable",
+    "exactTuple",
+    "wrongFrontend",
+    "wrongSession",
+    "otherPeerGrantStillRegistered",
+    "crossTupleRefused",
+    "absentAfterFullScan",
+    "maxUInt64Registered",
+    "maxUInt64WrongFrontend",
+    "removedExactRecordAbsent"
+  ],
+  "mutantsRejected": 3,
+  "headerSHA256": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+  "authoritySHA256": "17a7b3d9cf8981a9ddd78743aec77d2d112c263eaff4c90d57a2e56467f56819",
+  "artifacts": {
+    "test.cpp": "208134e9978d79e7d742bc54f00db3f7a5a9bdab250bff7a338bde3c5c87d14e",
+    "test.py": "e36f707025420387b846f18c2ce8a15617a894bb556119f45b5b465f97f03465",
+    "authority.cpp": "17a7b3d9cf8981a9ddd78743aec77d2d112c263eaff4c90d57a2e56467f56819",
+    "actual-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-test.stdout": "626f766eef45ff31fd60b9203de761688c5d89028739f37e30edd52dbbc88d68",
+    "actual-test.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-frontend-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-frontend-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-frontend-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-frontend-rejected.stderr": "7526c15574cb49f244c64d897cc05d8fd152d887a91ce7d8f47e8a38c9a04fc6",
+    "ignore-session-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-session-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-session-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "ignore-session-rejected.stderr": "7526c15574cb49f244c64d897cc05d8fd152d887a91ce7d8f47e8a38c9a04fc6",
+    "first-row-only-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "first-row-only-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "first-row-only-rejected.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "first-row-only-rejected.stderr": "7526c15574cb49f244c64d897cc05d8fd152d887a91ce7d8f47e8a38c9a04fc6",
+    "actual/binding-registration.hpp": "108be279d8ae3ab5948a78c478acdaa82441a08a93ead1318048c07491872fad",
+    "actual/test": "5aa4e670133e65eb95b36c69131fa2ae4d5d85a06f3081599586d84eec54fb29",
+    "ignore-frontend/binding-registration.hpp": "8a4c27473b19728a165ee40fa49a1ad0a9629ac071cb863a7478a001109c913c",
+    "ignore-frontend/test": "daa0fe191129b928674cadfbb9ea4ca71b8e4300a4ac30d201ec44f6b91335b8",
+    "ignore-session/binding-registration.hpp": "0750a7d74fdd84d0766fe8120a61fef8359e07cb710bd75021f732b77f282cb3",
+    "ignore-session/test": "307a6dab85b229a123bdcf3d1f844a6e5fe478667b34332a6d0834d508d4664a",
+    "first-row-only/binding-registration.hpp": "7742b53d7e949669ec9c5f618f3011a0c9f6e9302a1d872ca1fc73caf3781bd9",
+    "first-row-only/test": "2bf213b6af7459e4a93cffa9678b711343043f16d89bc345d03890753e226745"
+  }
+}

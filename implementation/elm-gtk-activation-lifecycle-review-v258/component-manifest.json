@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "sourceReviewPassed": false,
+  "nativeAcceptance": false,
+  "scope": "Read-only held252 review with controlled actual-method late-activation witness",
+  "ownerManifestSHA256": "085f45e556b8dd9ab645ffa01138aa0d1ff16b1194c7dba3e1f0ee0cdc68e0f4",
+  "files": {
+    "REQUIREMENTS.md": {
+      "sha256": "860b2d11e2af03b200a6da96c3fde076e7eb026a81a709988c03c1376d120d7c",
+      "size": 483
+    },
+    "REVIEW.md": {
+      "sha256": "2d33d5ae327c2609cc3355b9c07b3f7af7b17d725c1cd7cd0efd373f8116b0ab",
+      "size": 2877
+    },
+    "qa/late-1791144691620952957/activation-authenticated.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    "qa/late-1791144691620952957/activation-cleanup.json": {
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "size": 3
+    },
+    "qa/late-1791144691620952957/report.json": {
+      "sha256": "2a4419a5f74473acc4b2541d738e07e4afd42473530c7f8d69bbab496099c2b4",
+      "size": 499
+    },
+    "qa/late.py": {
+      "sha256": "1d4e250610f43069170eb8201b3eeb219a8d372bf1eef5186ee7013e2e317745",
+      "size": 1793
+    },
+    "qa/verify-1791144801972941704/report.json": {
+      "sha256": "5af5d7232c93a17ff7e6c9fd1d8b0a83f5a64e88623da800dc113436e8b41365",
+      "size": 296
+    },
+    "qa/verify.py": {
+      "sha256": "51d071230f375fa94645cd7d6c461e6db44b66b55d649c40867e1e61b921399a",
+      "size": 2204
+    }
+  },
+  "verificationReport": "qa/verify-1791144801972941704/report.json"
+}

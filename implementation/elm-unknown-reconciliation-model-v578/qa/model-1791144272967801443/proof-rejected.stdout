@@ -1,0 +1,16 @@
+
+  reconcile
+    1) readNeedsProofTest failed after 1 test(s)
+
+  1 failed
+
+  1) readNeedsProofTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-unknown-reconciliation-model-v578/qa/model-1791144272967801443/proof.qnt:20:128
+        20:  run readNeedsProofTest = init.then(attach).then(all {s'={...s,oldLive:false,read:true,durable:true}}).then(release).then(all {assert(s.reserved),s'=s})
+                                                                                                                                           ^^^^^^^^^^^^^^^^^^
+    Use --seed=0x14245 --match=readNeedsProofTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 proof.qnt

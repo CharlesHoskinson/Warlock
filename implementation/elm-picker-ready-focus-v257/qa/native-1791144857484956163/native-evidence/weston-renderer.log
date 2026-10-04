@@ -1,0 +1,84 @@
+Date: 2026-10-04 MDT
+[14:14:17.708] weston 15.0.1
+               https://wayland.freedesktop.org
+               Bug reports to: https://gitlab.freedesktop.org/wayland/weston/issues/
+               Build: 15.0.1
+[14:14:17.708] Command line: /home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston --backend=headless --renderer=gl --shell=kiosk-shell.so --fake-seat --no-config --socket=weston-host --width=1600 --height=1000 --scale=1 --idle-time=0 --log=/home/hoskinson/window-integration-qa/elm-gui-effects-1791144857485039891/weston-renderer.log --modules=/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-held-context-fixture-v170/build-1791131379281957759/parent-input.so
+[14:14:17.708] OS: Linux, 7.2.7-1-omarchy, #1 SMP PREEMPT_DYNAMIC Sun, 27 Sep 2026 22:42:08 +0000, x86_64
+[14:14:17.708] Flight recorder: enabled, scopes subscribed: log
+[14:14:17.708] Starting with no config file.
+[14:14:17.708] Output repaint window is 7 ms maximum.
+[14:14:17.708] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/headless-backend.so'
+[14:14:17.713] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/libweston-15/gl-renderer.so'
+[14:14:17.732] Using rendering device: /dev/dri/renderD129
+[14:14:17.735] EGL version: 1.5
+[14:14:17.735] EGL vendor: Mesa Project
+[14:14:17.735] EGL client APIs: OpenGL OpenGL_ES 
+[14:14:17.736] EGL features:
+               EGL Wayland extension: no
+               context priority: yes
+               buffer age: no
+               partial update: yes
+               swap buffers with damage: no
+               configless context: yes
+               surfaceless context: yes
+               dmabuf support: modifiers
+               fence sync: yes (native, wait)
+[14:14:17.737] GL version: OpenGL ES 3.2 Mesa 26.2.2-arch1.1
+[14:14:17.737] GLSL version: OpenGL ES GLSL ES 3.20
+[14:14:17.737] GL vendor: Intel
+[14:14:17.737] GL renderer: Mesa Intel(R) Graphics (ARL)
+[14:14:17.744] GL ES 3.2 - renderer features:
+               read-back format: ARGB8888
+               glReadPixels supports y-flip: yes
+               glReadPixels supports PBO: yes
+               wl_shm 10 bpc formats: yes
+               wl_shm 16 bpc formats: yes
+               wl_shm half-float formats: yes
+               internal R and RG formats: yes
+               OES_EGL_image_external: yes
+               GPU timeline: yes
+               Texture immutability: yes
+               Required precision: yes
+[14:14:17.744] Using GL renderer
+[14:14:17.744] Registered plugin API 'weston_windowed_output_api_headless_v2' of size 16
+[14:14:17.744] Color manager: no-op
+                 protocol support: no
+[14:14:17.745] Output 'headless' attempts EOTF mode SDR and colorimetry mode default.
+[14:14:17.745] Output 'headless' using color profile: stock sRGB color profile
+[14:14:17.746] Output 'headless' enabled with head(s) headless
+[14:14:17.746] Compositor capabilities:
+               arbitrary surface rotation: yes
+               screen capture uses y-flip: yes
+               cursor planes: no
+               arbitrary resolutions: no
+               view mask clipping: yes
+               explicit sync: yes
+               color operations: yes
+               color representation: yes
+               presentation clock: CLOCK_MONOTONIC_RAW, id 4
+               presentation clock resolution: 0.000000001 s
+[14:14:17.746] Loading module '/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib/weston/kiosk-shell.so'
+[14:14:17.746] Loading module '/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-held-context-fixture-v170/build-1791131379281957759/parent-input.so'
+[14:14:23.662] elm-parent-input motion 800,413 actual 800.00,413.00 focus=0x557c4863c320 pid=3410336
+[14:14:23.662] elm-parent-input key=30 state=1 pid=3410336
+[14:14:23.662] elm-parent-input key=30 state=0 pid=3410336
+[14:14:23.695] elm-parent-input motion 800,413 actual 800.00,413.00 focus=0x557c4863c320 pid=3410336
+[14:14:23.703] elm-parent-input key=42 state=1 pid=3410336
+[14:14:23.724] elm-parent-input key=68 state=1 pid=3410336
+[14:14:23.751] elm-parent-input keyboard-focus requested=0 before-parent-key-balance mask=6 pid=3410336
+[14:14:23.795] elm-parent-input motion 458,35 actual 458.00,35.00 focus=0x557c4863c320 pid=3410336
+[14:14:23.796] elm-parent-input button 272 state=1 focus=0x557c4863c320 pid=3410336
+[14:14:23.796] elm-parent-input button 272 state=0 focus=0x557c4863c320 pid=3410336
+[14:14:23.845] elm-parent-input motion 458,35 actual 458.00,35.00 focus=0x557c4863c320 pid=3410336
+[14:14:23.845] elm-parent-input button 272 state=1 focus=0x557c4863c320 pid=3410336
+[14:14:23.845] elm-parent-input button 272 state=0 focus=0x557c4863c320 pid=3410336
+[14:14:23.912] elm-parent-input key=68 state=0 pid=3410336
+[14:14:23.933] elm-parent-input key=42 state=0 pid=3410336
+[14:14:23.934] elm-parent-input keyboard-focus requested=1 before-parent-key-balance mask=0 pid=3410336
+[14:14:24.083] elm-parent-input motion 800,413 actual 800.00,413.00 focus=0x557c4863c320 pid=3410336
+[14:14:24.104] elm-parent-input key=42 state=1 pid=3410336
+[14:14:24.104] elm-parent-input key=68 state=1 pid=3410336
+[14:14:24.104] elm-parent-input key=68 state=0 pid=3410336
+[14:14:24.105] elm-parent-input key=42 state=0 pid=3410336
+[14:14:27.390] caught signal 15

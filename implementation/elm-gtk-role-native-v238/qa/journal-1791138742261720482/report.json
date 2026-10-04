@@ -1,0 +1,220 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "syntheticJournalBoundaryOnly": true,
+  "checks": [
+    {
+      "name": "full-owned-GDK-pointer-pair",
+      "passed": true
+    },
+    {
+      "name": "foreign-pid",
+      "passed": true
+    },
+    {
+      "name": "foreign-start",
+      "passed": true
+    },
+    {
+      "name": "bool-pid",
+      "passed": true
+    },
+    {
+      "name": "bool-schema",
+      "passed": true
+    },
+    {
+      "name": "foreign-resource",
+      "passed": true
+    },
+    {
+      "name": "foreign-role",
+      "passed": true
+    },
+    {
+      "name": "foreign-instance",
+      "passed": true
+    },
+    {
+      "name": "bool-button",
+      "passed": true
+    },
+    {
+      "name": "float-button",
+      "passed": true
+    },
+    {
+      "name": "float-resource",
+      "passed": true
+    },
+    {
+      "name": "gap-sequence",
+      "passed": true
+    },
+    {
+      "name": "wrong-profile",
+      "passed": true
+    },
+    {
+      "name": "raw-event-unavailable",
+      "passed": true
+    },
+    {
+      "name": "wrong-GDK-type",
+      "passed": true
+    },
+    {
+      "name": "bool-rawtime",
+      "passed": true
+    },
+    {
+      "name": "Linux-button-not-GDK",
+      "passed": true
+    },
+    {
+      "name": "wrong-position",
+      "passed": true
+    },
+    {
+      "name": "huge-positive",
+      "passed": true
+    },
+    {
+      "name": "huge-negative",
+      "passed": true
+    },
+    {
+      "name": "nonfinite",
+      "passed": true
+    },
+    {
+      "name": "extra-other-role",
+      "passed": true
+    },
+    {
+      "name": "extra-other-button",
+      "passed": true
+    },
+    {
+      "name": "duplicate-pair",
+      "passed": true
+    },
+    {
+      "name": "empty-blocked-interval",
+      "passed": true
+    },
+    {
+      "name": "blocked-delivery-refused",
+      "passed": true
+    },
+    {
+      "name": "release-before-press",
+      "passed": true
+    },
+    {
+      "name": "changed-prefix",
+      "passed": true
+    },
+    {
+      "name": "duplicate-JSON-key",
+      "passed": true
+    },
+    {
+      "name": "partial-tail-not-an-event",
+      "passed": true
+    },
+    {
+      "name": "full-owned-GDK-key-pair",
+      "passed": true
+    },
+    {
+      "name": "raw-key-mismatch",
+      "passed": true
+    },
+    {
+      "name": "bool-key",
+      "passed": true
+    },
+    {
+      "name": "foreign-key-role",
+      "passed": true
+    },
+    {
+      "name": "missing-raw-key",
+      "passed": true
+    },
+    {
+      "name": "extra-other-role-key",
+      "passed": true
+    },
+    {
+      "name": "actual-postinterval-draft",
+      "passed": true
+    },
+    {
+      "name": "missing-postinterval-draft",
+      "passed": true
+    },
+    {
+      "name": "changed-postinterval-draft",
+      "passed": true
+    },
+    {
+      "name": "closed-command-create-owners",
+      "passed": true
+    },
+    {
+      "name": "closed-command-open-modal",
+      "passed": true
+    },
+    {
+      "name": "closed-command-close-modal",
+      "passed": true
+    },
+    {
+      "name": "closed-command-close-owner",
+      "passed": true
+    },
+    {
+      "name": "closed-command-open-nested",
+      "passed": true
+    },
+    {
+      "name": "closed-command-close-nested",
+      "passed": true
+    },
+    {
+      "name": "closed-command-open-popover",
+      "passed": true
+    },
+    {
+      "name": "closed-command-close-popover",
+      "passed": true
+    },
+    {
+      "name": "closed-command-inspect",
+      "passed": true
+    },
+    {
+      "name": "closed-command-quit",
+      "passed": true
+    },
+    {
+      "name": "targeted-C-command",
+      "passed": true
+    },
+    {
+      "name": "command-injection",
+      "passed": true
+    },
+    {
+      "name": "unknown-role-command",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/journal-test.py": "a6a2b663c85f91707d7402c2bbe08ed16be01044265ee5933e2cd1bb00939175",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/journal.py": "9f3f0e6c7cb4b657f618b0c364b37183300ce60ec7a423e2394e05c651b98732",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-role-native-v238/qa/actor.py": "6c67a2dc4befb3cb38ebd08339f19f570d38e4324518870332e344c75460dcef"
+  }
+}

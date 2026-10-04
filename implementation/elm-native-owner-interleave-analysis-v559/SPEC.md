@@ -1,0 +1,3 @@
+# Controlled native counterfactual trace analysis
+
+Verify exact accepted source/ABI reports, unchanged old failure deadline and four passed cleanup/readiness checks, current89 passed original behavioral identities, both normal cleanups, one hold/resume under original500ms, unchanged original physical proof stamp, full-frame equality across the old redundant commit (requests/focus empty), absence of a current intervening commit, actual pointer-release metadata and real admitted bar callback. Reports remain separate from production521/native307 because QA port/hook derivatives run. No historical504 exact-trigger or full-release claim.

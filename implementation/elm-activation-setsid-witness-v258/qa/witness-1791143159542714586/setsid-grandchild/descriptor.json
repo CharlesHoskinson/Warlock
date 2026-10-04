@@ -1,0 +1,1 @@
+{"argv": ["/usr/bin/python3", "-c", "import os,time;pid=os.fork();os.setsid() if pid==0 else None;time.sleep(.05 if pid==0 else .2)"], "binarySHA256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c"}

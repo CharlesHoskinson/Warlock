@@ -1,0 +1,5 @@
+# Native input/publication scheduling experiment
+
+QA-only derivative. On the first real bar context callback, retain its unchanged message and native physical proof, dispatch an unsupported observation through the actual controller port, and resume the original message after two renderer frames. Old507 republishes on this effectless reducer event; current521 should coalesce. Actual native context admission and actual async DOM verification remain unmodified. No rebase, synthetic physical proof, forced publication, extended deadline, native effects or desktop activation. Enabled only with qa_exit, qa_stay_open and explicit ELM_QA_NOOP_INTERLEAVE=1. This is an artificial but deterministic causal scheduling experiment, not proof that the historical504 event was this unsupported observation. Any other publication/input while held must still cause refusal.
+
+Fresh correction of542/543: use existing qa_stay native flag and release held message/manager during normal shutdown.543 compile failure retained.

@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual held Activations.close method with mocked discovery/connection close; no daemon or GUI",
+  "finding": "No final journal check after observer connection close; bus still permits activation until later inherited teardown",
+  "acceptedCleanup": [],
+  "state": {
+    "snapshots": 2,
+    "lateJournal": true,
+    "busAlive": true
+  },
+  "limits": "This is a controlled interleaving witness, not proof a real GTK service hit the race"
+}
