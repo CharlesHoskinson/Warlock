@@ -1,0 +1,1 @@
+const app=require(process.argv[2]).Elm.Probe.init({flags:null});app.ports.outgoing.subscribe(x=>{console.log(JSON.stringify(x));process.exit(0)});app.ports.incoming.send(null);setTimeout(()=>process.exit(2),3000);

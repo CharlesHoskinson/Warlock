@@ -1,0 +1,16 @@
+
+  stable
+    1) statusRevokesTest failed after 1 test(s)
+
+  1 failed
+
+  1) statusRevokesTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-stable-publication-contract-v519/qa/model-1791138656842315456/ignore-status.qnt:20:60
+        20:  run statusRevokesTest = init.then(statusChange).then(all {assert(s.publication==11 and not(proofCurrent)),s'=s})
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=statusRevokesTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 ignore-status.qnt

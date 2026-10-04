@@ -5241,6 +5241,37 @@
       "nativeChecks": 307,
       "nativeEscapeIntents": 8,
       "unresolvedPointerPublicationRace": "implementation/elm-pointer-publication-race-diagnostic-v515/witness.json"
+    },
+    {
+      "nativeAcceptance": true,
+      "source": "implementation/elm-stable-surface-publication-v521",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "typedCompiledCases": 9,
+      "compiledMutantsRejected": 4,
+      "quintNamedScenarios": 8,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 5,
+      "pointerRaceCausallyResolved": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": [],
+      "manifest": "implementation/elm-stable-publication-qualified-v526/qa/slice-manifest.json",
+      "manifestSHA256": "70421e459a6cce9284a133170cd47f5b80d9feb47435d1601f36ca0eaa6ab40e",
+      "summary": "524 public typedElm507 owner registration/retirement/reregistration yields identical established surface with redundant publication2\u21923;520 initial0\u21921 preserved mandatorystartup control. Failed516parentheses/518flags/523opaqueconstructor and517reservedname grammar retained.519 EARS/OpenSpec Quint8named/1000x40/5mutants.521 only SurfaceController.apply adds fullSurface.packet equality/no lease/no effects/nonzero publication coalescing, preserving new Desktop.Model and prior applications path; native/JS/backend guards unchanged507. OptimizedMainBarPopup/C168helper compile pass;5229 publictypedcases plus100 alternatingowner updates;5274actualcompiled badguards rejected.525 original89 native menu/keyboard/retirement normalcleanup owning470tuple.526814files8reports frozen; causal504 pointer race andfullrelease remainopen.",
+      "nativeChecks": 89,
+      "unresolvedPointerPublicationRace": "implementation/elm-pointer-publication-race-diagnostic-v515/witness.json"
     }
   ]
 }

@@ -1,0 +1,1 @@
+Fresh514 derivative selecting521 stable publication build. Original89 assertions/deadlines/fixtures unchanged; native C/backend/JS byte-exact507. Native pass cannot by itself close504 intermittent race.
