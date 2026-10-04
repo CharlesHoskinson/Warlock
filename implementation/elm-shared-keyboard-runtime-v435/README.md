@@ -1,0 +1,1 @@
+Private host unchanged420; only AQ descriptor now selects reviewed keyboard focus/capability cancellation155. Core89/plugin409 unchanged. Full candidate must pass exact mapped AQ155 shared menu/geometry/recovery before bounded integration acceptance. Independent158 is prior Core89/plugin90 evidence only. No installed or main-desktop changes.

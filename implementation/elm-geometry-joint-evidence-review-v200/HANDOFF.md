@@ -1,0 +1,11 @@
+# Independent bounded joint evidence review
+
+Protected review-1791129873884542527 verifies141 frozen manifest/source/report/pair files and checks actual432's161 successful assertions, exactly GEOMETRY-MENU-01..10, cleanup success and receipt09 completion within six seconds. Source422/runtime420/core89/plugin409/AQ105 is the owning integrated tuple. This is an independent evidence review, not a rerun, exhaustive refinement proof or release acceptance.
+
+Reading actual432 source/report confirms08 broker EOF→Detached→physical reconnect→new binding without effect replay, and09 actual correlated Committed receipt held while native geometry and selected configure-associated serial RGB change; Elm stays Pending before one original delivery and refresh. The old selector ordinals and deadlines remain explicit. Exact runtime tuple/consumer must be requalified after any source change; root183 direct endpoint diagnostics do not automatically inherit integrated422 evidence.
+
+Retirement10 explicitly amends an old address-inequality oracle: PID, native stableId and authority incarnation distinguish lifetimes while unchanged geometry/modes, no replay and no stale menu/effect remain checked. Frozen431 failure preserves actual address reuse. Actual432 had a different replacement address; its CPU controls and431 observations do not constitute a newly forced same-address432 native trial. The bounded qualified claim depends on this documented oracle amendment and cannot imply all ABA interleavings covered.
+
+Original allContractScenariosPassed/fullRoadmapAccepted flags remain false; frozen434 completedRequirementIds is not changed. This review updates the root lane's awareness: original joint08/09/10 are now evidenced on422 with the stated amendment, rather than universally missing. Wider fixed/finite/decorated/scaled/nonzero-origin/reachable-size profiles, native layering/modal/focus/output/held input, GPU/WebGPU/ATIME, physical/human usability, budgets and allS01-S16/release/deploy/rollback remain open.
+
+Root190 finite-hint-choice failure198 is independent and preserved. Fresh197 fixture/196 runner preparation continues with review199 before root's next serialized launch. No installed or live desktop change occurred.

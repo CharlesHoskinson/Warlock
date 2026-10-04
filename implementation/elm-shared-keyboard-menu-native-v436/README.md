@@ -1,0 +1,1 @@
+Fresh actual424 real GTK menu/keyboard/MAX/minimize/restore/retirement runner. Only private runtime pointer420->435 changes; actual source422 and original assertions/inputs/deadlines remain. No acceptance until fresh native report.
