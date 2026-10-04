@@ -1,0 +1,145 @@
+{
+  "ancestor": "/home/hoskinson/omarchy-windows-parity/implementation/elm-renderer-recovery-v168/qa/native-1791093456121618834/report.json",
+  "ancestorSHA256": "4930e6605ac9d3126a5e6e52374a2d168fbe75351d82dce97710783f246e88fb",
+  "checksUnchanged": true,
+  "unchangedOriginalCheckCalls": 22,
+  "currentGUIBuild": "implementation/elm-stable-surface-publication-v521/qa/build-1791138800386580258/report.json",
+  "currentHostSource": "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/native/host.c",
+  "currentHostSHA256": "288bbb556f77d7138acd8109960c62fd59cafedd08c88cbcb042a416dd789115",
+  "priorFacts": {
+    "beforeFailure": {
+      "protocolVersion": 3,
+      "kind": "scene-facts",
+      "binding": {
+        "lifetime": "17933761872744898790",
+        "session": "3589950220199791095",
+        "frontend": "1"
+      },
+      "requestId": "451",
+      "sequence": "9",
+      "revision": "3",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 0,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              406.0,
+              69.0,
+              373.0,
+              510.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "2",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              21.0,
+              69.0,
+              373.0,
+              510.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          }
+        ]
+      }
+    },
+    "afterFailure": {
+      "protocolVersion": 3,
+      "kind": "scene-facts",
+      "binding": {
+        "lifetime": "17933761872744898790",
+        "session": "3589950220199791095",
+        "frontend": "1"
+      },
+      "requestId": "452",
+      "sequence": "10",
+      "revision": "4",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "2",
+        "windows": [
+          {
+            "incarnation": "1",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 0,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              406.0,
+              21.0,
+              373.0,
+              558.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          },
+          {
+            "incarnation": "2",
+            "owner": null,
+            "application": "GTK Application",
+            "stackPosition": 1,
+            "workspace": "1",
+            "monitor": "0",
+            "geometry": [
+              21.0,
+              21.0,
+              373.0,
+              558.0
+            ],
+            "fullscreenMode": 0,
+            "workspaceVisible": true,
+            "hidden": false,
+            "pinned": false,
+            "allowedOverFullscreen": true,
+            "renderOverFullscreen": true,
+            "acceptsInput": true,
+            "shouldRenderAny": true,
+            "shouldRenderOwnMonitor": true,
+            "minimized": false
+          }
+        ]
+      }
+    }
+  },
+  "hypothesis": "48px bar exclusive reservation retirement changes work area; current native replay required",
+  "accepted": false
+}

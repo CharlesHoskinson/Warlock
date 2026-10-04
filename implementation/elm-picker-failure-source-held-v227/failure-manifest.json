@@ -1,0 +1,252 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "passed": true,
+  "nativeAcceptance": false,
+  "rendererFaultReached": false,
+  "pickerActivationAccepted": false,
+  "fullRoadmapAccepted": false,
+  "fullReleaseAccepted": false,
+  "reports": [
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/report.json",
+      "sha256": "69a7ed77a868e73f68aa5a6e98c88580f8bbcb11d1c956867295ef45ae048d55",
+      "passed": false,
+      "checksReached": 5,
+      "cleanupPassed": true
+    }
+  ],
+  "witness": "implementation/elm-picker-joint-observation-v226/witness.json",
+  "witnessSHA256": "cc8cdd2d7828efe0070d8622f0311e407ad5bbda445f7272925cbb861efcb405",
+  "files": [
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/SPEC.md",
+      "mode": 420,
+      "sha256": "ea4692d66481e35ffdabf32d0833f387132f5c1fa7728387c01075b2d3b25a54",
+      "size": 1762
+    },
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/fixture.py",
+      "mode": 420,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/lineage.json",
+      "mode": 420,
+      "sha256": "0ee86c0d93e723043e6e8d48cff844ca02813c383f2e9a119ed38ec65f5c1b78",
+      "size": 4410
+    },
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/qa/inspection.py",
+      "mode": 420,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/qa/native.py",
+      "mode": 420,
+      "sha256": "406811678d0b2e6f891abf91cc6057d6144916518f0620e137c0d16a7c2bdb68",
+      "size": 14216
+    },
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/qa/preflight.json",
+      "mode": 420,
+      "sha256": "54fb62d8630db87259d4272371236734ebfb603ecbee40b9f1639a3bcb0da746",
+      "size": 480135
+    },
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/qa/preflight.py",
+      "mode": 420,
+      "sha256": "dcff86a4c13a2889795bf78c2460bf5bcad4e8b01dabc5aca9f74a9fb2bf598c",
+      "size": 3280
+    },
+    {
+      "path": "implementation/elm-current-renderer-recovery-v224/qa/sampling.py",
+      "mode": 420,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/SPEC.md",
+      "mode": 420,
+      "sha256": "d12d87c343e47434123dfcbb7a6c3e11f07f88892cddb7b96371b9d0e7293830",
+      "size": 1983
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/fixture.py",
+      "mode": 420,
+      "sha256": "c6628d141b75bb20cc2fa526d85ef2a14025a28b832ebae57f1d996c76552f06",
+      "size": 5267
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/lineage.json",
+      "mode": 420,
+      "sha256": "0ee86c0d93e723043e6e8d48cff844ca02813c383f2e9a119ed38ec65f5c1b78",
+      "size": 4410
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/inspection.py",
+      "mode": 420,
+      "sha256": "051d44430a49319389781d12bc0389732d76412ef1cf7f59f352f5e78f67bdd2",
+      "size": 2563
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/authority-config.json",
+      "mode": 384,
+      "sha256": "e6eaf675bec2a869711f2626c637f924d6255cf9d8ab4425b3ba6f944b673b5a",
+      "size": 245
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/dmabuf-probe.stderr",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/dmabuf-probe.stdout",
+      "mode": 384,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44",
+      "size": 174
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/elm-webview.log",
+      "mode": 384,
+      "sha256": "2a0ac62599eb3839a87995e07449e00cd785a6ed03889776918381e773f17f4b",
+      "size": 97448
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/fixture.log",
+      "mode": 384,
+      "sha256": "d455ce1a55b0503a72975626982c5d8c1d49211df4dd264db7b140638b12e15b",
+      "size": 729080
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/host-evidence.json",
+      "mode": 384,
+      "sha256": "95e8888587cfe48969a3f26acb4b432c8b8064c6959d25d7d0ef3a221a1668c4",
+      "size": 214447
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/hyprland.log",
+      "mode": 384,
+      "sha256": "3ee2966b496482f90b522dfb1c622f168dbc1a5a4bef57c8e66abb9d7665ad86",
+      "size": 529076
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/privateBus.log",
+      "mode": 384,
+      "sha256": "1bb1d956db83ba43de1bce9dd6f3935d231409e1ef027494d901e9ae29d4ee97",
+      "size": 5570
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/runtime-archive/.flatpak/webkit-3191469-16/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "08ac8314f866f93fe9cff11d7cc11de5448455f3c580c6b10e0637f5672354db",
+      "size": 161
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/runtime-archive/.flatpak/webkit-3191469-4/bwrapinfo.json",
+      "mode": 384,
+      "sha256": "d70f7e359b15afb2afc2609dd797eeae33785c00437ec09c817ea61c8bf001a8",
+      "size": 194
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791141535_40896843/13845450713375998584/ledger-v5.json",
+      "mode": 384,
+      "sha256": "6f9ea89b3b966793e209dc16e16ffc899a741a0b427de4b1e60dccfc7228b2aa",
+      "size": 213
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791141535_40896843/13845450713375998584/migration-plan.json",
+      "mode": 384,
+      "sha256": "85017a41f53cbfb973a337ea4568faa64e2b28550eef6639eb5577c1204be56e",
+      "size": 246
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/runtime-archive/elm-window-recovery/efb50993780079460b0cbed1363e2166a2de1d9f_1791141535_40896843/13845450713375998584/migration.json",
+      "mode": 384,
+      "sha256": "45f781ed0278b4b5b2a360f9b1157cbe8ce78444e4b2d88ce5dd1b9aa6a20a24",
+      "size": 227
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791141535_40896843/hyprland.log",
+      "mode": 384,
+      "sha256": "811622d4b9f16fb83c27073f3c86dfa363b29cab28ea9151d2e4a61fa202e626",
+      "size": 25621
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/runtime-archive/hyprland.lua",
+      "mode": 384,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5",
+      "size": 241
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/weston-renderer.log",
+      "mode": 384,
+      "sha256": "5a7b8a2aa1d1299061b36dad8b6e7d5d3e3be6b17aa5bd42a0582ab53b5b9210",
+      "size": 3775
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/weston.log",
+      "mode": 384,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size": 0
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/report.json",
+      "mode": 420,
+      "sha256": "69a7ed77a868e73f68aa5a6e98c88580f8bbcb11d1c956867295ef45ae048d55",
+      "size": 706225
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/native.py",
+      "mode": 420,
+      "sha256": "bab6cd2d9121457173a99cbad5d024bd87b0d8c4a970300e7353fc5a2c02a5e8",
+      "size": 14762
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/preflight.json",
+      "mode": 420,
+      "sha256": "3fd54b34338e685e241ede5bb07296b6839870e061c1c5b999274f1b7573a8b7",
+      "size": 480184
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/preflight.py",
+      "mode": 420,
+      "sha256": "dcff86a4c13a2889795bf78c2460bf5bcad4e8b01dabc5aca9f74a9fb2bf598c",
+      "size": 3280
+    },
+    {
+      "path": "implementation/elm-current-renderer-preflight-bound-v225/qa/sampling.py",
+      "mode": 420,
+      "sha256": "d1fd77191300c5ff48e6ba91933c8049a5138cf0de11667a272b6a5066f7652a",
+      "size": 3287
+    },
+    {
+      "path": "implementation/elm-picker-joint-observation-v226/SPEC.md",
+      "mode": 420,
+      "sha256": "6ead0efc3d9327dc059458ccdd7bda7ca0498413466948b6ded11e4fe54036a5",
+      "size": 2809
+    },
+    {
+      "path": "implementation/elm-picker-joint-observation-v226/witness.json",
+      "mode": 420,
+      "sha256": "cc8cdd2d7828efe0070d8622f0311e407ad5bbda445f7272925cbb861efcb405",
+      "size": 1999
+    },
+    {
+      "path": "implementation/elm-picker-failure-source-held-v227/SPEC.md",
+      "mode": 420,
+      "sha256": "d23d7118a6938453d392bf0615ca27c16abec4754657718435213ede7befd6a6",
+      "size": 554
+    },
+    {
+      "path": "implementation/elm-picker-failure-source-held-v227/qa/freeze.py",
+      "mode": 420,
+      "sha256": "840bd98761f3f83fd5e2195aee1ee90611d9d79ba3c70a02c2f57200364f1110",
+      "size": 2624
+    }
+  ],
+  "scope": "Preserved actual current225 picker activation timeout before renderer fault; closure and normal teardown only, exact native/order hypothesis awaiting controller replay and model-qualified repair"
+}

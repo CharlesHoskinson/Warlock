@@ -1,0 +1,56 @@
+{
+  "passed": false,
+  "nativeReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/report.json",
+  "nativeReportSHA256": "69a7ed77a868e73f68aa5a6e98c88580f8bbcb11d1c956867295ef45ae048d55",
+  "nativeLog": "/home/hoskinson/omarchy-windows-parity/implementation/elm-current-renderer-preflight-bound-v225/qa/native-1791141533677873665/native-evidence/elm-webview.log",
+  "nativeLogSHA256": "2a0ac62599eb3839a87995e07449e00cd785a6ed03889776918381e773f17f4b",
+  "failure": "RuntimeError('Unchanged observation deadline')",
+  "checksReached": 5,
+  "cleanupPassed": true,
+  "inputChanges": [],
+  "rendererFaultReached": false,
+  "effectRequests": [],
+  "observationOrder": [
+    {
+      "line": 489,
+      "kind": "action-projection",
+      "requestId": "1",
+      "revision": "1"
+    },
+    {
+      "line": 505,
+      "kind": "geometry-facts",
+      "requestId": "3",
+      "revision": "1"
+    },
+    {
+      "line": 725,
+      "kind": "action-projection",
+      "requestId": "4",
+      "revision": "2"
+    },
+    {
+      "line": 728,
+      "kind": "geometry-facts",
+      "requestId": "5",
+      "revision": "2"
+    },
+    {
+      "line": 739,
+      "kind": "action-projection",
+      "requestId": "6",
+      "revision": "2"
+    },
+    {
+      "line": 740,
+      "kind": "geometry-facts",
+      "requestId": "7",
+      "revision": "2"
+    }
+  ],
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/src/Desktop.elm",
+  "sourceSHA256": "7b05fff000f8e2d6c2c900bfc3cd0ae3be3db14eddadd93f326452cf8148ef5d",
+  "shell": "/home/hoskinson/omarchy-windows-parity/implementation/elm-stable-surface-publication-v521/src/Shell.elm",
+  "shellSHA256": "b915b239ce47a38e36212ac2b85ec27891a247e68a27c13a93b8762599abd13d",
+  "scope": "Captured current native picker activation timeout, not renderer failure; admission/readiness ordering hypothesis pending exact controller replay/model"
+}
