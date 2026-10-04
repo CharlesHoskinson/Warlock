@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "nativeReadiness": false,
+  "error": "ModuleNotFoundError(\"No module named 'journal'\")",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-tuple-plan-v321/qa/prepare.py\", line 41, in main\n    sys.path.insert(0,str(ROOT/'qa/helpers'));import owned_bus_host,private_bus,activation_import,cleanup,credentials,outcomes\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-tuple-plan-v321/qa/helpers/owned_bus_host.py\", line 4, in <module>\n    from private_bus import Activations\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-own-popup-native-tuple-plan-v321/qa/helpers/private_bus.py\", line 9, in <module>\n    from journal import pairs,constant\nModuleNotFoundError: No module named 'journal'\n"
+}

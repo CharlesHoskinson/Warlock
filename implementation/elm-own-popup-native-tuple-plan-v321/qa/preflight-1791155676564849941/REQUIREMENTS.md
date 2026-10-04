@@ -1,0 +1,7 @@
+# Exact own-popup diagnostic tuple
+
+Preserve307 core,319 authority,315 observer sources/builds and317/318/320 reviews. Emit compatible native-build-report façade selecting actual307 core and actual319 plugin report;315 observer is a separate same-core diagnostic artifact. Compare all694 owning header entries/version hashes across three captures, dependency/tool/library/source/artifact hashes and strong-symbol closure.319 inherited scope text mentions205, but actual core field/report/hash is307 and governs this derivative. No installed main-desktop binary or205 native acceptance transfer.
+
+Retain exactAQ155 loader/current mapped path proof, protectedparent247 and nine282 cleanup sources unchanged.282 historical external/native inventory remains ancestry only; freshly qualify current dynamic-library lookup paths/cache/tools for307. Preserve316 cache drift rather than overwrite old reports. All generator/preflight/import work is inert: no display, compositor, pluginload or config changes.
+
+Proposal covers actualGTK owner plus shell layer popup map, same-callback XDG/grab/fullsurface/layerroot observation and actualclose. Foreign/unknown membership, heldbutton/layoutdrag/lock/exclusivelayer and missinghost resource proofs remain eligibility refusals. Observer query authorizes no bypass/effect. Close requires exact fresh legacy+geometry observations; no oldfacts retargeting/receipt fabrication. Original scenario6s/IPC3s. This is not fullGTK02 remedy; fullGTK campaign/fault companions remain required. Rootalone launches separatelyreviewed serialGUI.

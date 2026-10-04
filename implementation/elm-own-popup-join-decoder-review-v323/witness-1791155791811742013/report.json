@@ -1,0 +1,63 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual captured322 decoder/matcher structural parent characterization; no native input or grant",
+  "inputs": {
+    "inputs/join.py": "596b934cf700bb89356e66669cbff129fa2f96153072db26d6c6c7211c882629",
+    "inputs/qa/test.py": "be6f612acf10528831860b08c2b34c0e66899dca120d3d0c74dbfea49f6f59e0"
+  },
+  "cases": [
+    {
+      "name": "valid-layer",
+      "accepted": true,
+      "result": {
+        "scope": "diagnostic correspondence only",
+        "connection": 1,
+        "popup": 12,
+        "root": 11,
+        "authenticated": false,
+        "ownBlockerGrantQualified": false
+      },
+      "structurallyInvalid": false
+    },
+    {
+      "name": "self-parent",
+      "accepted": true,
+      "result": {
+        "scope": "diagnostic correspondence only",
+        "connection": 1,
+        "popup": 12,
+        "root": 11,
+        "authenticated": false,
+        "ownBlockerGrantQualified": false
+      },
+      "structurallyInvalid": true
+    },
+    {
+      "name": "cycle",
+      "accepted": true,
+      "result": {
+        "scope": "diagnostic correspondence only",
+        "connection": 1,
+        "popup": 12,
+        "root": 11,
+        "authenticated": false,
+        "ownBlockerGrantQualified": false
+      },
+      "structurallyInvalid": true
+    },
+    {
+      "name": "valid-nested",
+      "accepted": true,
+      "result": {
+        "scope": "diagnostic correspondence only",
+        "connection": 1,
+        "popup": 12,
+        "root": 11,
+        "authenticated": false,
+        "ownBlockerGrantQualified": false
+      },
+      "structurallyInvalid": false
+    }
+  ]
+}
