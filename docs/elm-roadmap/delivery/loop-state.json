@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T04:52:46.894400+00:00",
+  "observedUTC": "2026-10-04T05:17:51.293901+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-output-controller-v145",
+  "currentSlice": "implementation/elm-output-shared-qa-v151",
   "nextWork": [
-    "Implement one-backend native multi-view host from V145 typed boundary, preserving accepted V132/V140 and reviewed menu lane.",
-    "Qualify immutable callback binding, shared projections, popup owner/focus, hotplug/zero outputs and original native oracles.",
-    "Continue all remaining roadmap/AT/IME/hardware/usability/C00/release gates."
+    "Qualify actual hardware rendering and resource budgets on the shared host; separately inspect WebGPU capability and keep physical/AT/IME gates explicit.",
+    "Integrate reviewed menu-reflow and new native buffer/viewport guard lane with shared immutable view scopes and single allocator; preserve original window/output oracles.",
+    "Continue zero-output recovery, fractional/all-transform/negative-origin/workarea coverage, full scene/fullscreen/lock, missing native window operations, human journeys, C00 and release."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through shared build-loop native lock and unchanged protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: compiled shared Elm boundary37 scoped-view checks; inherited58+12; Quint10 named/1000 samples. Native shared-host acceptance explicitly false; production V140 retained.",
+  "lastWorkClassification": "progress: actual native shared-host135 including original91; one controller/backend observed, scopes1/2/3, per-output bars/popup anchoring, resize scale2 transform1, removal/replug, normal cleanup. Retained exact37+58+12 Elm, native11+4 groups, Quint10/1000; failed lineage preserved. Full release acceptance open.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

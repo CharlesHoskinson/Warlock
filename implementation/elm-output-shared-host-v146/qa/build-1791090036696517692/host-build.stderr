@@ -1,0 +1,29 @@
+native/shared-host.c: In function ‘main’:
+native/shared-host.c:248:5: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+  248 |     if (surface_snapshot) json_node_unref(surface_snapshot);if (pending_focus) json_node_unref(pending_focus);if (issued_focus) json_node_unref(issued_focus);if (bar_event) gdk_event_free(bar_event);
+      |     ^~
+native/shared-host.c:248:61: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+  248 |     if (surface_snapshot) json_node_unref(surface_snapshot);if (pending_focus) json_node_unref(pending_focus);if (issued_focus) json_node_unref(issued_focus);if (bar_event) gdk_event_free(bar_event);
+      |                                                             ^~
+In file included from /usr/include/glib-2.0/glib/glist.h:34,
+                 from /usr/include/glib-2.0/glib/ghash.h:36,
+                 from /usr/include/glib-2.0/glib.h:52,
+                 from /usr/include/gtk-3.0/gdk/gdkconfig.h:8,
+                 from /usr/include/gtk-3.0/gdk/gdk.h:30,
+                 from /usr/include/gtk-3.0/gtk/gtk.h:30,
+                 from native/host.c:2,
+                 from native/shared-host.c:3:
+In function ‘g_autoptr_cleanup_generic_gfree’,
+    inlined from ‘shared_commit’ at native/shared-host.c:108:22,
+    inlined from ‘shared_receive’ at native/shared-host.c:136:9:
+/usr/include/glib-2.0/glib/gmem.h:172:4: error: ‘wire’ may be used uninitialized [-Werror=maybe-uninitialized]
+  172 |   (__builtin_object_size ((mem), 0) != ((size_t) - 1)) ?                       \
+      |    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/usr/include/glib-2.0/glib/glib-autocleanups.h:32:3: note: in expansion of macro ‘g_free’
+   32 |   g_free (*pp);
+      |   ^~~~~~
+native/shared-host.c: In function ‘shared_receive’:
+native/shared-host.c:108:22: note: ‘wire’ declared here
+  108 |     g_autofree char *wire=json_to_string(translated,FALSE);surface_receive(primary_manager,wire,translated);json_node_unref(translated);
+      |                      ^~~~
+cc1: all warnings being treated as errors

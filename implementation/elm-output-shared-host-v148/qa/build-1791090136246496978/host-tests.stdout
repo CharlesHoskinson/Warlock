@@ -1,0 +1,19 @@
+TAP version 14
+# random seed: R02S17e2975d52d17aab99a801ae68196e52
+1..9
+# Start of host tests
+ok 1 /host/assets
+ok 2 /host/request-schema
+ok 3 /host/qa-report-control-bounds
+ok 4 /host/surface-atomic-preflight
+# surface-refused: popup-origin-or-stale
+# surface-refused: commit-preflight
+# surface-refused: popup-origin-or-stale
+ok 5 /host/surface-manager-isolation
+# surface-presentation-applied: publication=11 lease=3
+# surface-focus-applied: publication=11 lease=3
+ok 6 /host/surface-acknowledgements
+ok 7 /host/monitor-index-boundaries
+ok 8 /host/popup-logical-dimensions
+not ok /host/shared-view-capabilities - Json-FATAL-CRITICAL: json_node_take_object: assertion 'JSON_NODE_TYPE (node) == JSON_NODE_OBJECT' failed
+Bail out!

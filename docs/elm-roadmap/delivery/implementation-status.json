@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-output-controller-v145",
-  "status": "Shared Elm controller component passes37+58+12 and Quint10/1000; native shared-host wiring pending. Accepted production V132/V140 native127 is retained, no release completion.",
+  "activeSlice": "implementation/elm-output-shared-qa-v151",
+  "status": "Actual one-controller/one-backend multiple-output host passes135 native checks; bars, popup anchoring/reflow/keyboard, hotplug/replug preserve authority binding. Full desktop/menu/hardware/AT/IME/release incomplete.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -851,12 +851,37 @@
       "nativeAcceptance": false,
       "launchableSharedHost": false,
       "scope": "One pure Elm controller, read-only per-output Bar, monotonic native-issued capabilities, popup/focus owner, removed/replaced scope rejection. Native multi-view host remains pending."
+    },
+    "sharedOutputHostV151": {
+      "evidence": "implementation/elm-output-shared-qa-v151/qa/slice-manifest.json",
+      "nativeChecks": 135,
+      "originalNativeChecks": 91,
+      "sharedControllerChecks": 37,
+      "inheritedControllerChecks": 58,
+      "inheritedPresenterChecks": 12,
+      "nativeHostTestGroups": 11,
+      "nativeSurfaceTestGroups": 4,
+      "quintNamedScenarios": 10,
+      "quintInvariantSamples": 1000,
+      "actualSingleController": true,
+      "observedBackendProcesses": 1,
+      "scopeIDs": [
+        1,
+        2,
+        3
+      ],
+      "hostOwnsBothBars": true,
+      "hotplugPreservesBackendAndAuthorityBinding": true,
+      "replugGetsFreshNativeCapability": true,
+      "cleanupPassed": true,
+      "scope": "Private native shared-output host/window/input/fault component. Complete menu, zero-output recovery, full scene, AT/IME, actual hardware budgets and release remain open.",
+      "failedLineage": "V146 compile/cleanup initialization failures; V148 scope test aborts on JSON-node type. V149/V147 native127 passes. V150 duplicate-field admission and V151 actual one-backend/replug observations pass135."
     }
   },
   "next": [
-    "Implement native one-backend multi-view host: immutable widget/manager scopes, all-output bars, popup anchoring/focus destination, hotplug and zero-output suspension.",
-    "Integrate reviewed menu-reflow lane without replacing output generation, fresh reflow lease, choice/recovery or owner-scope guards.",
-    "Qualify original native/output campaigns and full scene/AT/IME/hardware/performance/usability/C00/release."
+    "Qualify actual hardware rendering and resource budgets on the shared host; separately inspect WebGPU capability and keep physical/AT/IME gates explicit.",
+    "Integrate reviewed menu-reflow and new native buffer/viewport guard lane with shared immutable view scopes and single allocator; preserve original window/output oracles.",
+    "Continue zero-output recovery, fractional/all-transform/negative-origin/workarea coverage, full scene/fullscreen/lock, missing native window operations, human journeys, C00 and release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
@@ -927,6 +952,11 @@
       "id": "OUTPUT-REFLOW-LEASE-001",
       "status": "V125/V132 fresh lease after physical retirement and native keyboard readiness qualify on V140 production tuple; broader output/hardware/fullscene gates remain open.",
       "evidence": "implementation/elm-output-production-qa-v140/qa/slice-manifest.json"
+    },
+    {
+      "id": "SHARED-OUTPUT-CONTROLLER-001",
+      "status": "V150/V151 replace independent per-output fixture controllers with actual one Elm model/backend and native manager-bound presentation views. Private native135; broader output/hardware/release gates remain open.",
+      "evidence": "implementation/elm-output-shared-qa-v151/qa/slice-manifest.json"
     }
   ]
 }
