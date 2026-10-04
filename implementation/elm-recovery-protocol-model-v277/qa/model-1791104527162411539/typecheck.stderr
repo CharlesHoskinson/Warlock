@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-protocol-model-v277/qa/model-1791104527162411539/recovery.qnt:5:21
+  5:  action admit(p:int)=s'={...s,host:s.next,hp:p,next:s.next+1}
+                         ^
+
+
+ Error [QNT000]: extraneous input 'action' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-protocol-model-v277/qa/model-1791104527162411539/recovery.qnt:6:2
+  6:  action submit=s'=if(s.host>0){...s,broker:s.host,bp:s.hp,status:"Pending"} else s
+      ^^^^^^
+
+error: parsing failed

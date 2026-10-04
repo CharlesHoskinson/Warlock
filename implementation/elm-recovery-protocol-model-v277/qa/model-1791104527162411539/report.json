@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Admission lifetime failure retires lifetime resources while preserving explicit instance retry; abstract model, not automatic C/filesystem/Elm refinement.",
+  "sourceSHA256": "5dd1b99f83bba1253a05e0234e69f43a636197535d0659708b704fe7421c4580",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError('\\n Error [QNT000]: mismatched input \\'=\\' expecting \\':\\'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-protocol-model-v277/qa/model-1791104527162411539/recovery.qnt:5:21\\n  5:  action admit(p:int)=s\\'={...s,host:s.next,hp:p,next:s.next+1}\\n                         ^\\n\\n\\n Error [QNT000]: extraneous input \\'action\\' expecting {<EOF>, \\'module\\', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-protocol-model-v277/qa/model-1791104527162411539/recovery.qnt:6:2\\n  6:  action submit=s\\'=if(s.host>0){...s,broker:s.host,bp:s.hp,status:\"Pending\"} else s\\n      ^^^^^^\\n\\nerror: parsing failed\\n')",
+  "artifacts": {
+    "recovery.qnt": "5dd1b99f83bba1253a05e0234e69f43a636197535d0659708b704fe7421c4580",
+    "model.py": "3690a4b42834f2a3275331ff062bce913809f74cbdf69ab38743b3ab3ac99d28",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "fe2476dab90427d295119bcf654b0406f315786035819349104f78120eeaa9c7"
+  }
+}

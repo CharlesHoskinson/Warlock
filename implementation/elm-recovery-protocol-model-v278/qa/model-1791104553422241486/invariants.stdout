@@ -1,0 +1,118 @@
+An example execution:
+
+[State 0] { s: { bp: 1, broker: 0, host: 0, hp: 1, next: 1, status: "Empty" } }
+
+[State 1] { s: { bp: 1, broker: 0, host: 0, hp: 1, next: 1, status: "Empty" } }
+
+[State 2] { s: { bp: 1, broker: 0, host: 0, hp: 1, next: 1, status: "Empty" } }
+
+[State 3] { s: { bp: 1, broker: 0, host: 0, hp: 1, next: 1, status: "Empty" } }
+
+[State 4] { s: { bp: 1, broker: 0, host: 0, hp: 1, next: 1, status: "Empty" } }
+
+[State 5] { s: { bp: 1, broker: 0, host: 1, hp: 1, next: 2, status: "Empty" } }
+
+[State 6] { s: { bp: 1, broker: 0, host: 2, hp: 2, next: 3, status: "Empty" } }
+
+[State 7] { s: { bp: 1, broker: 0, host: 2, hp: 2, next: 3, status: "Empty" } }
+
+[State 8] { s: { bp: 1, broker: 0, host: 2, hp: 2, next: 3, status: "Empty" } }
+
+[State 9] { s: { bp: 1, broker: 0, host: 2, hp: 2, next: 3, status: "Empty" } }
+
+[State 10] { s: { bp: 1, broker: 0, host: 2, hp: 2, next: 3, status: "Empty" } }
+
+[State 11]
+{ s: { bp: 2, broker: 2, host: 2, hp: 2, next: 3, status: "Pending" } }
+
+[State 12]
+{ s: { bp: 2, broker: 2, host: 2, hp: 2, next: 3, status: "Pending" } }
+
+[State 13]
+{ s: { bp: 2, broker: 2, host: 3, hp: 1, next: 4, status: "Pending" } }
+
+[State 14]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Pending" } }
+
+[State 15]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 16]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 17]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 18]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 19]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 20]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 21]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 22]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 23]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 24]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 25]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 26]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 27]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 28]
+{ s: { bp: 2, broker: 2, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 29]
+{ s: { bp: 1, broker: 4, host: 4, hp: 1, next: 5, status: "Pending" } }
+
+[State 30]
+{ s: { bp: 1, broker: 4, host: 4, hp: 1, next: 5, status: "Pending" } }
+
+[State 31]
+{ s: { bp: 1, broker: 4, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 32]
+{ s: { bp: 1, broker: 4, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 33]
+{ s: { bp: 1, broker: 4, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 34]
+{ s: { bp: 1, broker: 4, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 35]
+{ s: { bp: 1, broker: 4, host: 4, hp: 1, next: 5, status: "Committed" } }
+
+[State 36]
+{ s: { bp: 1, broker: 4, host: 5, hp: 2, next: 6, status: "Committed" } }
+
+[State 37]
+{ s: { bp: 1, broker: 4, host: 5, hp: 2, next: 6, status: "Committed" } }
+
+[State 38]
+{ s: { bp: 1, broker: 4, host: 5, hp: 2, next: 6, status: "Committed" } }
+
+[State 39]
+{ s: { bp: 1, broker: 4, host: 5, hp: 2, next: 6, status: "Committed" } }
+
+[State 40]
+{ s: { bp: 1, broker: 4, host: 5, hp: 2, next: 6, status: "Committed" } }
+
+[ok] No violation found (1044ms at 958 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

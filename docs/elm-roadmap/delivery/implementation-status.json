@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-host-bind-acceptance-v274",
+  "activeSlice": "implementation/elm-recovery-protocol-acceptance-v279",
   "status": "Host binding failures preserve verified instance context for explicit retry. Actual C/native22+22 and original137 qualification pass; next integrate durable recovery with reviewed geometry/menu before coherent release acceptance.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -1534,13 +1534,34 @@
       "newerGeometryMenuGPUReleaseAccepted": false,
       "completedRequirementIds": [],
       "evidence": "implementation/elm-host-bind-acceptance-v274/qa/slice-manifest.json"
+    },
+    "recoveryProtocolsV279": {
+      "passed": true,
+      "scope": "Actual durable schema1 compatibility/schema2 legacy+geometry intent correlation and compiled C admission; no integrated broker/Elm/native acceptance",
+      "journalProtocolChecks": 60,
+      "inheritedJournalChecks": 19,
+      "namespaceChecks": 42,
+      "compiledAdmissionChecks": 47,
+      "quintNamedScenarios": 9,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "failedQuintParseRetained": true,
+      "nativeRun": false,
+      "geometryBrokerIntegrated": false,
+      "elmGeometryRecoveryIntegrated": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-recovery-protocol-acceptance-v279/qa/slice-manifest.json",
+      "limitations": [
+        "Geometry broker and strict typed Elm recovery remain to integrate with shared allocator and storage UX",
+        "Preserved original native tuple not superseded; release requires coherent native pixel/input and fault matrix",
+        "Physical/human GPU/AT/IME/performance/storage/provisioning/old-broker revocation/C00 gates remain open"
+      ]
     }
   },
   "next": [
-    "Implement compositor-instance/lifetime journal namespace and migration; qualify storage-error UX and old-live-broker revocation, then original restore timing and coherent integrated updated core/menu/GPU regressions.",
-    "Measure and freeze workload/resource/input-presentation budgets on the shared host; qualify GPU context loss/recovery and keep WebGPU unavailability explicit.",
-    "Integrate reviewed menu/new native buffer/viewport tuple with shared scope/controller host; preserve old accepted source/ABI evidence and rerun original campaigns.",
-    "Continue actual AT/IME, physical output/device and human UX, full scene/window operations, zero-output recovery, C00 and release."
+    "Compose reviewed geometry broker with guarded durable begin/settle for both protocols; strict typed geometry Unknown recovery in one Elm model/allocator, typed storage UX and stale-action guard ordering.",
+    "Run original regression and per-operation fault/pixel/input cases on one coherent frozen source/ABI tuple; preserve newer menu/core workers source paths and pairs.",
+    "Execute remaining comprehensive UI/UX gates: restore38/recovery34/drag52, physical GPU/output/AT/IME/human, numeric budgets/soak, native full/readonly/later-fsync/provisioning/global revocation, C00 and release."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

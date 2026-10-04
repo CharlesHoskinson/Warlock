@@ -1,0 +1,334 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "actualCAdmissionWritesBeforeBrokerExists",
+      "passed": true
+    },
+    {
+      "name": "hostRecordHasExactIntentAndPendingState",
+      "passed": true
+    },
+    {
+      "name": "unreadBrokerRecoversHostUncertainty",
+      "passed": true
+    },
+    {
+      "name": "olderBrokerCommitDoesNotResolveNewAdmission",
+      "passed": true
+    },
+    {
+      "name": "exactDurableCommitResolvesHostAdmission",
+      "passed": true
+    },
+    {
+      "name": "newHostActionCanBeAdmittedWhileBrokerLockHeld",
+      "passed": true
+    },
+    {
+      "name": "priorSettlementCannotResolveLaterHostIntent",
+      "passed": true
+    },
+    {
+      "name": "correlatedDurableRefusalIsKnown",
+      "passed": true
+    },
+    {
+      "name": "geometryCAdmission:maximize",
+      "passed": true
+    },
+    {
+      "name": "geometryCRecordReadByPython:maximize",
+      "passed": true
+    },
+    {
+      "name": "geometryUnreadUnknownIsTyped:maximize",
+      "passed": true
+    },
+    {
+      "name": "geometryMissingReceiptProtocolRefused:maximize",
+      "passed": true
+    },
+    {
+      "name": "geometryCorrelatedSettlementSuppressesUnknown:maximize",
+      "passed": true
+    },
+    {
+      "name": "geometryCAdmission:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "geometryCRecordReadByPython:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "geometryUnreadUnknownIsTyped:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "geometryMissingReceiptProtocolRefused:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "geometryCorrelatedSettlementSuppressesUnknown:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolCAdmissionRefused:maximize",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolRefusalPreservesHostRecord:maximize",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolCAdmissionRefused:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolRefusalPreservesHostRecord:restore-geometry",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolCAdmissionRefused:minimize",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolRefusalPreservesHostRecord:minimize",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolCAdmissionRefused:restore",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolRefusalPreservesHostRecord:restore",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolCAdmissionRefused:activate",
+      "passed": true
+    },
+    {
+      "name": "crossProtocolRefusalPreservesHostRecord:activate",
+      "passed": true
+    },
+    {
+      "name": "malformedCProtocolRefused:2.0",
+      "passed": true
+    },
+    {
+      "name": "malformedCProtocolRefused:'2'",
+      "passed": true
+    },
+    {
+      "name": "malformedCProtocolRefused:0",
+      "passed": true
+    },
+    {
+      "name": "malformedCProtocolRefused:3",
+      "passed": true
+    },
+    {
+      "name": "malformedCProtocolRefused:None",
+      "passed": true
+    },
+    {
+      "name": "missingBackendBindingRefused",
+      "passed": true
+    },
+    {
+      "name": "retiredBackendBindingRefused",
+      "passed": true
+    },
+    {
+      "name": "twoEffectBatchRefusedBeforePersistence",
+      "passed": true
+    },
+    {
+      "name": "refusedBatchesPreserveLastAdmission",
+      "passed": true
+    },
+    {
+      "name": "unsupportedOperationRefused",
+      "passed": true
+    },
+    {
+      "name": "mismatchedNativeEpochRefused",
+      "passed": true
+    },
+    {
+      "name": "zeroRequestRefused",
+      "passed": true
+    },
+    {
+      "name": "protocolBooleanRefused",
+      "passed": true
+    },
+    {
+      "name": "publicAdmissionTargetRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkAdmissionTargetRefused",
+      "passed": true
+    },
+    {
+      "name": "competingHostWriterRefused",
+      "passed": true
+    },
+    {
+      "name": "forgedHostSettlementRefused",
+      "passed": true
+    },
+    {
+      "name": "publicAuthorityConfigRefused",
+      "passed": true
+    },
+    {
+      "name": "symlinkConfigAncestryRefused",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-admission-protocols-v276/qa/admission.py": "2627f63bf4d067536c721a1545dcd7868cb566a5f07fa94a44ca3e1b7788e1c1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-admission-protocols-v276/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-admission-protocols-v276/native/host-journal.h": "8976e08f6797fbbbf31600d0fe3b8636e80f0ddc42d480113656726f33ac0e0f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-admission-protocols-v276/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-admission-protocols-v276/adapter/recovery_journal.py": "34b332a218798406e7b497b7de16a532f6f7e47b021f42c5b7b3016f22483c6b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-admission-protocols-v276/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f"
+  },
+  "binarySHA256": "a66f8249783eabbc844bd8f4b22a1f4a2f33911d1428f4f212093a16044f914c",
+  "runs": [
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":2,\"effectProtocol\":1,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":2,\"effectProtocol\":1,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"42\",\"generation\":\"44\",\"incarnation\":\"7\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"51\",\"generation\":\"53\",\"incarnation\":\"7\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 0,
+      "stdout": "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"9007199254740993\",\"session\":\"8\",\"frontend\":\"1\"},\"intent\":{\"request\":\"51\",\"generation\":\"53\",\"incarnation\":\"7\",\"operation\":\"restore-geometry\",\"context\":{\"lifetime\":\"9007199254740993\",\"epoch\":\"1\",\"output\":\"3\",\"revision\":\"4\"}},\"status\":\"Pending\"}\n",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "exitCode": 2,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

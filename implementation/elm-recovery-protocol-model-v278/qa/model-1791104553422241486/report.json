@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "scope": "Durable legacy/geometry protocol correlation and informational recovery; abstract model, not automatic C/filesystem/Elm refinement.",
+  "sourceSHA256": "3a6fe9290f97c9d8eec936ea90483c7cabd1f5a94ee4a3fef03578f35b4e2023",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(geometryUnreadTest|legacyCommitTest|geometryCommitTest|wrongProtocolTest|wrongRequestTest|newerGeometryAdmissionTest|unknownPersistsTest|reconnectNoReplayTest|duplicateTerminalTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 9,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "3a6fe9290f97c9d8eec936ea90483c7cabd1f5a94ee4a3fef03578f35b4e2023",
+    "model.py": "abe00583fbbf66ffc07411ce35f551a8bde405b40c4f53c300f52c608c7336b6",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-geometryUnreadTest-0.itf.json": "c4aed8acfa8451e346171b2bffa3cbe86fb3bf868f544cfe5ea580a104adc214",
+    "named-legacyCommitTest-1.itf.json": "3c62cbed59f553c450c04e45485606d8c52633ec0e9cf9ebc899b8f9e5a94e19",
+    "named-geometryCommitTest-2.itf.json": "c0e8d62d3813e7245a2622f3155c2d26e0f3a2395f60639d1afffae55827985d",
+    "named-wrongProtocolTest-3.itf.json": "a98670e00055758631425ec743fc0d297580cdc5794ebe151262577ccd7a9e5f",
+    "named-wrongRequestTest-4.itf.json": "fd63e67a0501dc3c2d4d10e816d52c1d53152c11f0d9c65f822d2d95b36b02bd",
+    "named-newerGeometryAdmissionTest-5.itf.json": "b2d92e67f6ac75d4410d1d30f18becc991aaecf7d3f27f91c458f8ece9dd66e6",
+    "named-unknownPersistsTest-6.itf.json": "0533b1f1d3667ab39f6ae4618845d5f103eab4dfb2cc14f7ea57103f3f82ec76",
+    "named-reconnectNoReplayTest-7.itf.json": "092357764a95f2fd017d080694780de74528e1cf5a9a9ef5e903f13d52b12aa3",
+    "named-duplicateTerminalTest-8.itf.json": "a5b10aa29968185e83ec1127fe286ec0ebcf04564acfb27116c5a064ea1c125a",
+    "named.stdout": "00bc517cd27545080ce80a4995841e962459f35b4199fc35bf26dda4d80b846f",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "bf752f17ecbb0c22b8061ce68664fb2b2cb58bc0bbc269750401a45b6dac2bdf",
+    "invariants.stdout": "a1978815bb819f63cb94d08ed190c97c028b501e23c3cfbdeca70ea196b70a54",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
