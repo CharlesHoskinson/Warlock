@@ -1,0 +1,16 @@
+-- SHADOWING ----------------------------------------- src/ProjectionWitness.elm
+
+The name `commands` is first defined here:
+
+21|        (final,commands)=List.foldl apply (pending,0) (List.range 1 100)
+                  ^^^^^^^^
+But then it is defined AGAIN over here:
+
+20|        apply _ (model,count)=let (next,commands)=Shell.update (Shell.Incoming notice) model in (next,count+List.length commands)
+                                           ^^^^^^^^
+Think of a more helpful name for one of them and you should be all set!
+
+Note: Linters advise against shadowing, so Elm makes “best practices” the
+default. Read <https://elm-lang.org/0.19.2/shadowing> for more details on this
+choice.
+

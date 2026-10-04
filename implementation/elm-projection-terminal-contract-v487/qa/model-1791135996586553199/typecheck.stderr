@@ -1,0 +1,15 @@
+
+ Error [QNT000]: mismatched input '=' expecting ':'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v487/qa/model-1791135996586553199/terminal.qnt:4:46
+  4:  action terminal(binding: int, request: int) =
+                                                  ^
+
+
+ Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v487/qa/model-1791135996586553199/terminal.qnt:6:43
+  6:   s' = { ...s, expected: 0, retry: true } else s' = s
+                                               ^^^^
+
+error: parsing failed

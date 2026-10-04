@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Exact integer coordinate architecture: surface geometry origin/projection/output/buffer scale/input inverse/shadow extent; no native/float/protocol refinement",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "terminal.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: extraneous input 's' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:7:66\\n  7:  val canRetry = s.active and s.retry and s.expected == 0 and not s.pending and not s.deferred and not s.refused\\n                                                                      ^\\n\\n\\n Error [QNT000]: no viable alternative at input '(nots'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:18:20\\n  18:  val safety = (not s.retry or s.expected == 0) and s.request >= 59 and s.issued <= s.request - 59 and (s.active or (not s.retry and s.expected == 0))\\n                         ^\\n\\n\\n Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:26:89\\n  26:  run disconnectRevokesTest = init.then(terminal(1,58)).then(disconnect).then(drain).then(all { assert(not s.retry and s.issued == 0), s' = s })\\n                                                                                              ^\\n\\n\\n Error [QNT000]: extraneous input ')' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:26:143\\n  26:  run disconnectRevokesTest = init.then(terminal(1,58)).then(disconnect).then(drain).then(all { assert(not s.retry and s.issued == 0), s' = s })\\n                                                                                                                                                    ^\\n\\nerror: parsing failed\\n[DEBUG] generating undefined expr to fill hole in: valsafety=(nots.retryors.expected==0)ands.request>=59ands.issued<=s.request-59and(s.activeor(nots.retryands.expected==0))\\n\")",
+  "artifacts": {
+    "terminal.qnt": "4f10f08f2d74231ab4beead12bb10e9cb50c9b885b04dbaac11a7faa982a7904",
+    "model.py": "a289d1613c1b76e9909a465560b5305f7dada079bd6c3c7ee9a98b61d0d28159",
+    "typecheck.stdout": "488669bc68f1db6f0b4e1e8592f6fe1455c6b6e02b61561166ec9e514832c1e7",
+    "typecheck.stderr": "6ddac0b29e6520fe3d26ea246df4b477a2ae89d4faf7ad0cf214dbfd19cfec7d"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "Exact integer coordinate architecture: surface geometry origin/projection/output/buffer scale/input inverse/shadow extent; no native/float/protocol refinement",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "terminal.qnt"
+      ],
+      "exitCode": 1,
+      "expected": 0
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT000]: mismatched input '=' expecting ':'\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v487/qa/model-1791135996586553199/terminal.qnt:4:46\\n  4:  action terminal(binding: int, request: int) =\\n                                                  ^\\n\\n\\n Error [QNT000]: extraneous input 'else' expecting {<EOF>, 'module', DOCCOMMENT}\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v487/qa/model-1791135996586553199/terminal.qnt:6:43\\n  6:   s' = { ...s, expected: 0, retry: true } else s' = s\\n                                               ^^^^\\n\\nerror: parsing failed\\n[DEBUG] ignoring listener exception in favor of parse errors. Exception: violated grammar of annotated params return type\\n\")",
+  "artifacts": {
+    "terminal.qnt": "befec3ca156f030bffaf39c330bc2d45f7d4b501787fc233db1fbd22dfc6021c",
+    "model.py": "a289d1613c1b76e9909a465560b5305f7dada079bd6c3c7ee9a98b61d0d28159",
+    "typecheck.stdout": "786ebbd37271efae0665877b6d32bec588a45fba031a54fc4ee1781728c37ae9",
+    "typecheck.stderr": "402a5d00c0cbff4a6c61b2d664236347cd37446e75027ba75426bd0fbbe750c3"
+  }
+}

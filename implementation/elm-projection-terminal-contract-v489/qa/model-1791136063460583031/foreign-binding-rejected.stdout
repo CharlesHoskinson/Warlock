@@ -1,0 +1,16 @@
+
+  terminal
+    1) foreignBindingIgnoredTest failed after 1 test(s)
+
+  1 failed
+
+  1) foreignBindingIgnoredTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v489/qa/model-1791136063460583031/foreign-binding.qnt:20:83
+        20:  run foreignBindingIgnoredTest = init.then(terminal(2,58)).then(drain).then(all { assert(s.expected == 58 and s.issued == 0), s' = s })
+                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=foreignBindingIgnoredTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 foreign-binding.qnt

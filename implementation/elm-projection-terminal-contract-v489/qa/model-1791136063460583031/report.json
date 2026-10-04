@@ -1,0 +1,224 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Correlated read terminal/retry and independent effect/geometry slots; no native callback/typed Elm refinement",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "terminal.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "terminal.qnt",
+        "--backend=typescript",
+        "--match=^(retryProjectionOnlyTest|foreignBindingIgnoredTest|staleRequestIgnoredTest|duplicateTerminalIgnoredTest|pendingEffectDefersTest|dispositionDefersTest|transportDefersTest|disconnectRevokesTest)$",
+        "--max-samples=1",
+        "--seed=79701",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "terminal.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79702"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "foreign-binding-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "foreign-binding.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "foreign-binding-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "foreign-binding.qnt",
+        "--backend=typescript",
+        "--match=^foreignBindingIgnoredTest$",
+        "--max-samples=1",
+        "--seed=79801"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "stale-request-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "stale-request.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "stale-request-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "stale-request.qnt",
+        "--backend=typescript",
+        "--match=^staleRequestIgnoredTest$",
+        "--max-samples=1",
+        "--seed=79801"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "effect-replay-fence-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "effect-replay-fence.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "effect-replay-fence-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "effect-replay-fence.qnt",
+        "--backend=typescript",
+        "--match=^pendingEffectDefersTest$",
+        "--max-samples=1",
+        "--seed=79801"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "drop-geometry-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "drop-geometry.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "drop-geometry-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "drop-geometry.qnt",
+        "--backend=typescript",
+        "--match=^retryProjectionOnlyTest$",
+        "--max-samples=1",
+        "--seed=79801"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "transport-fence-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "transport-fence.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "transport-fence-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "transport-fence.qnt",
+        "--backend=typescript",
+        "--match=^transportDefersTest$",
+        "--max-samples=1",
+        "--seed=79801"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "retryProjectionOnlyTest",
+    "foreignBindingIgnoredTest",
+    "staleRequestIgnoredTest",
+    "duplicateTerminalIgnoredTest",
+    "pendingEffectDefersTest",
+    "dispositionDefersTest",
+    "transportDefersTest",
+    "disconnectRevokesTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 5,
+  "sourceSHA256": "fb893067680e11d0711584d071aa31b785f0842a1e900c3db6391f52a2301424",
+  "artifacts": {
+    "terminal.qnt": "fb893067680e11d0711584d071aa31b785f0842a1e900c3db6391f52a2301424",
+    "model.py": "34d57fd84eb043e325ca33f46e84cf1171782f05af1b81b2a69dc73ad48dfad9",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-retryProjectionOnlyTest-0.itf.json": "1bf78af9ce117ef0177ba4c9bcbbcd3b6e808a5551c57806880da4d71b938550",
+    "named-foreignBindingIgnoredTest-1.itf.json": "80904605139179ac59b605720499fded2d6474db4950904965c0fb5e3023e4ef",
+    "named-staleRequestIgnoredTest-2.itf.json": "80904605139179ac59b605720499fded2d6474db4950904965c0fb5e3023e4ef",
+    "named-duplicateTerminalIgnoredTest-3.itf.json": "749128392a848519148718bd28d75128033b87fc3701da2ffa8dc6550c03aea3",
+    "named-pendingEffectDefersTest-4.itf.json": "e8df8301f99e17cd81b0cc977b06444498a3beb997876292dd9533b9aceeea49",
+    "named-dispositionDefersTest-5.itf.json": "0d201b7e0a99b9b2581233cd323b21be10435eeafad6863646b58a24372592c7",
+    "named-transportDefersTest-6.itf.json": "ff5ff72aadee8f619335519df4b68b0596dbdb8164b48e3d2589cd4bc017b84a",
+    "named-disconnectRevokesTest-7.itf.json": "ffd357b938353794561fed26683dd18e2005b54f36348e8499a79e4fb9adbff3",
+    "named.stdout": "33f691ff58eceb54cdbba1ac8b06ec234f2e9b561b25457dc77799c45516e676",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "0e481933aebccbdef0e631c337fb29f7869b2aca99754f25f0118c9a229569b0",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-binding.qnt": "d082019b6a95cfe8843f35426a964eedd0a0023ac480813c30a2ff5f3e0ae710",
+    "foreign-binding-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-binding-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "foreign-binding-rejected.stdout": "f6c6d5a3f0657c891e51a9529cdf940ceb24a25f0d0c7f5b4becb769e6a8ba58",
+    "foreign-binding-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "stale-request.qnt": "86211750acb00e92755eb0a8ad9c584d1732ad84d4c67970f5042421416fb57a",
+    "stale-request-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stale-request-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stale-request-rejected.stdout": "b6cf248f2e2cbd48b6eb7f91029c4641679c79b32706331e71f4066fcf572f0d",
+    "stale-request-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "effect-replay-fence.qnt": "b0ea857aaad724006e2f1051813cdcff50b42979d413eb4ffa3d398db729c072",
+    "effect-replay-fence-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "effect-replay-fence-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "effect-replay-fence-rejected.stdout": "658d5627a7b0be2527a062c7165db2771e674dddf74d763249d445c948cbb27a",
+    "effect-replay-fence-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "drop-geometry.qnt": "d2701efc364a912c1d264e578c3ed75a6cba560775df2912cc287091d1bbe627",
+    "drop-geometry-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "drop-geometry-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "drop-geometry-rejected.stdout": "535d1b55ea6155480831601d08250e388975063e379cda677c2d2761ca19c606",
+    "drop-geometry-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "transport-fence.qnt": "ff0bc3391ea4cd4ded758c0120183e8a20801925385b612f47fea5dc4fb1a785",
+    "transport-fence-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transport-fence-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "transport-fence-rejected.stdout": "da825b21e89c3efe370ab477157062745ff40a6ba91bcfa019d306e826f899ec",
+    "transport-fence-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}
