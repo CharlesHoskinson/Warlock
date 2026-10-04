@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "sourceReviewPassed": true,
+  "nativeAcceptance": false,
+  "fullCampaignPassed": false,
+  "ownerManifestSHA256": "c47ee63bd142facfb5ceda83cafeafd503d50b573b7cfe2d5d1c1dfbb098ed92",
+  "files": {
+    "REVIEW.md": {
+      "sha256": "200fbb961ed9ca476bbdcf61b0542889beeacfe873c1d85b469ddbf6fcf14dda",
+      "size": 926
+    },
+    "qa/first-failure.txt": {
+      "sha256": "04dd1928c78263a58237a08c84645b3d3e921bf392bc8aac55b3bcfe6b6b32e1",
+      "size": 232
+    },
+    "qa/first-verifier.py": {
+      "sha256": "4e072eddd36f91db6ec16fac897bf60838c4197cb44cf1e7e85d7d7d4a62c271",
+      "size": 3157
+    },
+    "qa/verify-1791150278459220566/report.json": {
+      "sha256": "a6a4a941592d708ddbe2fdf6ff51984328d78ab21d50c35c1a37a39b0daf15f8",
+      "size": 1357
+    },
+    "qa/verify.py": {
+      "sha256": "225090c5ff27258c177d2461d000633eaba1dfd23744a0cb848b9bbe4766d7f4",
+      "size": 3167
+    }
+  },
+  "verificationReport": "qa/verify-1791150278459220566/report.json"
+}

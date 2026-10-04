@@ -1,0 +1,25 @@
+{
+  "argv": [
+    "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+    "800",
+    "600"
+  ],
+  "startedMonotonic": 115576.024902575,
+  "deadline": 115581.612836454,
+  "payload": "move 400 248\nsleep 100\nbutton 273 1\nsleep 50\nbutton 273 0\nsleep 100\n",
+  "owned": {
+    "pid": 3894929,
+    "start": "11941379",
+    "pgid": 3894929,
+    "name": "shell-pointer",
+    "command": [
+      "/home/hoskinson/.local/share/hypr-window-controls/qa/virtual-pointer",
+      "800",
+      "600"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/shell-pointer-1791151310089043849/stderr"
+  },
+  "exit": 0,
+  "stdout": "",
+  "stderr": ""
+}

@@ -1,0 +1,636 @@
+{
+  "passed": true,
+  "busIdentity": {
+    "pid": 3893961,
+    "start": "11940287",
+    "pgid": 3893961,
+    "ppid": 3893943,
+    "uid": 1000,
+    "realUid": 1000,
+    "effectiveUid": 1000,
+    "savedUid": 1000,
+    "filesystemUid": 1000,
+    "procOwnerUid": 1000,
+    "privilegedCredentials": false
+  },
+  "records": [
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.a11y.Bus/3894424-1791151303439924451.jsonl",
+      "sha256": "9c654548709807ca3c10deab979fb87e69fb92000ef70c6bab877be0d2846d53",
+      "wrapper": {
+        "pid": 3894424,
+        "start": "11940708",
+        "pgid": 3894424,
+        "ppid": 3894423,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 12,
+        "kind": "terminal",
+        "monotonic": 115582.420462729,
+        "childExitCode": 0,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894425,
+              "start": "11940714",
+              "pgid": 3894424,
+              "ppid": 3894424,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3894431,
+              "start": "11940715",
+              "pgid": 3894424,
+              "ppid": 3894430,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3894430,
+              "start": "11940715",
+              "pgid": 3894424,
+              "ppid": 3894425,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "normal",
+      "exitClasses": {
+        "3894425:11940714": "normal",
+        "3894431:11940715": "normal",
+        "3894430:11940715": "normal"
+      },
+      "normalServiceOperation": true
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.impl.portal.PermissionStore/3894397-1791151303223398803.jsonl",
+      "sha256": "90a6c151c3a0fa3d3efcdc72747edc9735e7bf98c759cbade4b671dddbf14806",
+      "wrapper": {
+        "pid": 3894397,
+        "start": "11940688",
+        "pgid": 3894397,
+        "ppid": 3894396,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 115582.467221941,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894398,
+              "start": "11940693",
+              "pgid": 3894397,
+              "ppid": 3894397,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "cancelled",
+      "exitClasses": {
+        "3894398:11940693": "SIGTERM-cancellation"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.impl.portal.desktop.gtk/3894415-1791151303346726268.jsonl",
+      "sha256": "5a41cf1d29bda5b9408e6c5f781c44ee9a8f5c36b614a151b79c1e81869983ca",
+      "wrapper": {
+        "pid": 3894415,
+        "start": "11940700",
+        "pgid": 3894415,
+        "ppid": 3894414,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 115582.634230502,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894417,
+              "start": "11940705",
+              "pgid": 3894415,
+              "ppid": 3894415,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "cancelled",
+      "exitClasses": {
+        "3894417:11940705": "SIGTERM-cancellation"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.impl.portal.desktop.hyprland/3894463-1791151303733960317.jsonl",
+      "sha256": "85a4312cc88ad68ff93168e53d21b4b8aee47f893f006b2d956ba7dd05df5c12",
+      "wrapper": {
+        "pid": 3894463,
+        "start": "11940734",
+        "pgid": 3894463,
+        "ppid": 3894462,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 115582.594671238,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894466,
+              "start": "11940744",
+              "pgid": 3894463,
+              "ppid": 3894463,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "cancelled",
+      "exitClasses": {
+        "3894466:11940744": "SIGTERM-cancellation"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.portal.Desktop/3894390-1791151303169649686.jsonl",
+      "sha256": "bda0f823f966cb7e0db6ed00a5f8e8066ddc01d4bdd96c4425b1e7d901a2d41d",
+      "wrapper": {
+        "pid": 3894390,
+        "start": "11940683",
+        "pgid": 3894390,
+        "ppid": 3894389,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 6,
+        "kind": "terminal",
+        "monotonic": 115582.501969584,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894391,
+              "start": "11940687",
+              "pgid": 3894390,
+              "ppid": 3894390,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "cancelled",
+      "exitClasses": {
+        "3894391:11940687": "SIGTERM-cancellation"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.portal.Documents/3894404-1791151303282585764.jsonl",
+      "sha256": "4ee4b839c32ee782d9d6b6eecaccc310330883f1734f9919fd06a5f129347d4f",
+      "wrapper": {
+        "pid": 3894404,
+        "start": "11940694",
+        "pgid": 3894404,
+        "ppid": 3894403,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 9,
+        "kind": "terminal",
+        "monotonic": 115582.52221733,
+        "childExitCode": 0,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894405,
+              "start": "11940699",
+              "pgid": 3894404,
+              "ppid": 3894404,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 0
+          },
+          {
+            "identity": {
+              "pid": 3894411,
+              "start": "11940699",
+              "pgid": 3894411,
+              "ppid": 3894405,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 0,
+              "savedUid": 0,
+              "filesystemUid": 0,
+              "procOwnerUid": 0,
+              "privilegedCredentials": true
+            },
+            "exitCode": 0
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "normal",
+      "exitClasses": {
+        "3894405:11940699": "normal",
+        "3894411:11940699": "normal"
+      },
+      "normalServiceOperation": true
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.systemd1/3894433-1791151303519144475.jsonl",
+      "sha256": "c88fb86d35fba5908f8c0ac8840cc5099f032189db62b0079d844e1373fca8dd",
+      "wrapper": {
+        "pid": 3894433,
+        "start": "11940716",
+        "pgid": 3894433,
+        "ppid": 3894432,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 115569.606532702,
+        "childExitCode": 1,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894437,
+              "start": "11940722",
+              "pgid": 3894433,
+              "ppid": 3894433,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 1
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "expected-unavailable",
+      "exitClasses": {
+        "3894437:11940722": "expected-unavailable"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.systemd1/3894465-1791151303786659523.jsonl",
+      "sha256": "aed109baff56e7e5ada6e15f37d2c33284fc31df3c9acb9999e16746e78f8a84",
+      "wrapper": {
+        "pid": 3894465,
+        "start": "11940739",
+        "pgid": 3894465,
+        "ppid": 3894464,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 115569.977565065,
+        "childExitCode": 1,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894470,
+              "start": "11940749",
+              "pgid": 3894465,
+              "ppid": 3894465,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 1
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "expected-unavailable",
+      "exitClasses": {
+        "3894470:11940749": "expected-unavailable"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.systemd1/3894570-1791151304635224713.jsonl",
+      "sha256": "1ea99c606083c051c5aae15be24c9efde52d2263f85770a834e5620cf9166541",
+      "wrapper": {
+        "pid": 3894570,
+        "start": "11940822",
+        "pgid": 3894570,
+        "ppid": 3894569,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 115570.811266656,
+        "childExitCode": 1,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894580,
+              "start": "11940834",
+              "pgid": 3894570,
+              "ppid": 3894570,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 1
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "expected-unavailable",
+      "exitClasses": {
+        "3894580:11940834": "expected-unavailable"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.freedesktop.systemd1/3894585-1791151305005283884.jsonl",
+      "sha256": "4ae370e3ba3ad3a8c1efb3ef4b92f78502d26043c36c9614b266166e2bac7546",
+      "wrapper": {
+        "pid": 3894585,
+        "start": "11940860",
+        "pgid": 3894585,
+        "ppid": 3894584,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 4,
+        "kind": "terminal",
+        "monotonic": 115571.069656805,
+        "childExitCode": 1,
+        "cancelled": false,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894587,
+              "start": "11940871",
+              "pgid": 3894585,
+              "ppid": 3894585,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 1
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "expected-unavailable",
+      "exitClasses": {
+        "3894587:11940871": "expected-unavailable"
+      },
+      "normalServiceOperation": false
+    },
+    {
+      "journal": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/activation-journals/org.gtk.vfs.Daemon/3894435-1791151303551515162.jsonl",
+      "sha256": "933be150bf1aa1e72be3532a2fb61ede45d687d91c28e85de3a12e6f4f9780c1",
+      "wrapper": {
+        "pid": 3894435,
+        "start": "11940716",
+        "pgid": 3894435,
+        "ppid": 3894434,
+        "uid": 1000,
+        "realUid": 1000,
+        "effectiveUid": 1000,
+        "savedUid": 1000,
+        "filesystemUid": 1000,
+        "procOwnerUid": 1000,
+        "privilegedCredentials": false
+      },
+      "terminal": {
+        "sequence": 9,
+        "kind": "terminal",
+        "monotonic": 115582.56485902,
+        "childExitCode": -15,
+        "cancelled": true,
+        "fallback": false,
+        "allWaitStatuses": [
+          {
+            "identity": {
+              "pid": 3894438,
+              "start": "11940726",
+              "pgid": 3894435,
+              "ppid": 3894435,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": -15
+          },
+          {
+            "identity": {
+              "pid": 3894445,
+              "start": "11940727",
+              "pgid": 3894435,
+              "ppid": 3894435,
+              "uid": 1000,
+              "realUid": 1000,
+              "effectiveUid": 1000,
+              "savedUid": 1000,
+              "filesystemUid": 1000,
+              "procOwnerUid": 1000,
+              "privilegedCredentials": false
+            },
+            "exitCode": 15
+          }
+        ],
+        "liveDescendants": [],
+        "error": null
+      },
+      "serviceOutcome": "cancelled",
+      "exitClasses": {
+        "3894438:11940726": "SIGTERM-cancellation",
+        "3894445:11940727": "SIGTERM-handler-exit15"
+      },
+      "normalServiceOperation": false
+    }
+  ]
+}

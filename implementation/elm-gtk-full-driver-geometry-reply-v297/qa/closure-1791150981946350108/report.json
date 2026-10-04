@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "exact282-owned_bus_host.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-private_bus.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-activation-supervisor.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-activation_import.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-cleanup.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-placement.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-protocol.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-credentials.py",
+      "passed": true
+    },
+    {
+      "name": "exact282-outcomes.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-driver.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-shell.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-popup.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-keyboard.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-native.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-fault-native.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-observer_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "original-full260-with-declared-geometry-delta-client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "fresh-process-complete-import",
+      "passed": true
+    },
+    {
+      "name": "actual-supervisor-reject-before-any-child",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "qa/closure-test.py": "a1e5521f12f183902b8002860fbbcf0e2ce0f938df10dd6fdbd1ec40a8731b3c",
+    "qa/helpers/owned_bus_host.py": "5740c57915a91748e46b2dfaebcc2762c04bea7f8e5abdc8ed785123c14f8158",
+    "qa/helpers/private_bus.py": "9b69d4abeb7ff9b197d64e86d3fab62c1c8529ecda946ca9f41906075d438f93",
+    "qa/helpers/activation_import.py": "29d2d48aab1658b7e567b78f77269e968f137bb28eead7786551d46a014ab405",
+    "qa/helpers/activation-supervisor.py": "bad65ec659e237ce621b57e39538a5121675682c88f8720d6e87bd22446fab85",
+    "qa/helpers/protocol.py": "94335ba47fd10cf9ae57f13cd58a29d8beb17537cd8e8f1927692b0b40f34af5",
+    "qa/helpers/bounded.py": "04f7703fe49865e79979b5441d7cb45e24b8936509d5a67bac3fc802c2ca369c",
+    "qa/helpers/geometry.py": "a8478a4fd05c1ddc56f42841813774d8902e56528cc371251821b1ab89811562",
+    "qa/helpers/scene.py": "2f64e3b12e852399ea704e263162e6f5a72e9aef0c76ab7187833fda3b98b673",
+    "qa/helpers/observer.py": "363b3c26818f00850e7b77b36038b98c5866e6468409d39640febc8b66b8db4e",
+    "qa/helpers/pixels.py": "40e8ce54c5296f42e2c2de78a837ccfd2fd3c25646b5687e0114f0dad4b2b9de",
+    "qa/helpers/parent.py": "f5f4116557a4c5714c27a271c06818aad79b2bf76e8b4deede91c167af73e5a7",
+    "qa/helpers/actor.py": "bc989c7a101db61167753a2fad2b7f826aafaae3235af06d03f5b8ca363d7db5",
+    "qa/helpers/journal.py": "0c7a9ab164af2bad8b7980b4eb2b2fb1f07adfd494ddaada643c4ddfa8e46e31",
+    "qa/helpers/cleanup.py": "cf866ba58d2025c3bff1f019cf06d578da5d6283aa8f9ebc828ee43f97e651c2",
+    "qa/helpers/placement.py": "5be683b0864b2b6388b8344bc3e946a67351ebfd8133bd8732474d4d4d5ed6a6",
+    "qa/helpers/credentials.py": "969432e3c6d74228a167c5788dddbeeef795815e81df0ce5963bead7072bb8d8",
+    "qa/helpers/outcomes.py": "428a639129c9b289ff0732e6ce85124cbcb8da39e5187a6407c2b1e02ff6a619",
+    "qa/driver.py": "34acd94438ea4f857dff63794b1f91e30f49bc5a0a5b2f60485eebf29ca92ae9",
+    "qa/shell.py": "266ae3571b7931900ba4e24fee7e03d2586f90604c92f40ae1a85131320d67f4",
+    "qa/popup.py": "c8b85f0740ac22ec859ad37ebb7c3e40e34a0d6b8f517021bc458bcb41b64edd",
+    "qa/keyboard.py": "9e052d32c453e86f9136fda507f68a51815a9cca2591a7a413abbdec079ccdf4",
+    "qa/native.py": "b2015de1ac217784b43d9f19af310cf365ed41c3d0b86d4b4f1811d5126246e7",
+    "qa/fault-native.py": "96b2000d53e108df45355f91bee150de4f5dea6547104a978be7320f75be6843",
+    "qa/observer_endpoint.py": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+    "qa/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446"
+  }
+}

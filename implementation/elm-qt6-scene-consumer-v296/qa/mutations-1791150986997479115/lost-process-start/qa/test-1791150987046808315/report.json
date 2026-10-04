@@ -1,0 +1,146 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "fullCampaign": false,
+  "checks": [
+    {
+      "name": "window exact process role/native/passive epoch join",
+      "passed": true
+    },
+    {
+      "name": "origin subtracted once no device scale multiplication",
+      "passed": true
+    },
+    {
+      "name": "queued commit never presentation",
+      "passed": true
+    },
+    {
+      "name": "native inputBlocked authoritative retained",
+      "passed": true
+    },
+    {
+      "name": "absent mapped role readiness",
+      "passed": true
+    },
+    {
+      "name": "absent ACK readiness",
+      "passed": true
+    },
+    {
+      "name": "retired wl surface unavailable",
+      "passed": true
+    },
+    {
+      "name": "native extent mismatch not admitted",
+      "passed": true
+    },
+    {
+      "name": "Qt extent mismatch not admitted",
+      "passed": true
+    },
+    {
+      "name": "invisible no scene",
+      "passed": true
+    },
+    {
+      "name": "late old localdestroy preserves newinstance",
+      "passed": true
+    },
+    {
+      "name": "late old non-destroy callback refuses",
+      "passed": true
+    },
+    {
+      "name": "instance canonical True",
+      "passed": true
+    },
+    {
+      "name": "instance canonical 1.0",
+      "passed": true
+    },
+    {
+      "name": "instance canonical 0",
+      "passed": true
+    },
+    {
+      "name": "instance canonical -1",
+      "passed": true
+    },
+    {
+      "name": "instance canonical 10000000000000000000",
+      "passed": true
+    },
+    {
+      "name": "mapGeneration canonical True",
+      "passed": true
+    },
+    {
+      "name": "mapGeneration canonical 1.0",
+      "passed": true
+    },
+    {
+      "name": "mapGeneration premapzero notadmitted",
+      "passed": true
+    },
+    {
+      "name": "mapGeneration canonical -1",
+      "passed": true
+    },
+    {
+      "name": "mapGeneration canonical 10000000000000000000",
+      "passed": true
+    },
+    {
+      "name": "surfaceId canonical True",
+      "passed": true
+    },
+    {
+      "name": "surfaceId canonical 1.0",
+      "passed": true
+    },
+    {
+      "name": "surfaceId premapzero notadmitted",
+      "passed": true
+    },
+    {
+      "name": "surfaceId canonical -1",
+      "passed": true
+    },
+    {
+      "name": "surfaceId canonical 10000000000000000000",
+      "passed": true
+    },
+    {
+      "name": "pid canonical True",
+      "passed": true
+    },
+    {
+      "name": "pid canonical 1.0",
+      "passed": true
+    },
+    {
+      "name": "pid canonical 0",
+      "passed": true
+    },
+    {
+      "name": "pid canonical -1",
+      "passed": true
+    },
+    {
+      "name": "pid canonical 10000000000000000000",
+      "passed": true
+    }
+  ],
+  "sourceInputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/journal.py": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/protocol.py": "8c5fbbf87a8d918fe75bed35dd879519b8874d9602216ba147b887c268e7112f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/geometry.py": "9cf96d314dd80011008cd53ae4279913e58f8fd54fb3099390798e8ab07d164b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/observer.py": "363b3c26818f00850e7b77b36038b98c5866e6468409d39640febc8b66b8db4e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/scene.py": "d8fe823b56ec4008618d7deffca2bbe4c445fbadaf57d3c68e4d141133bbcc3b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/test.py": "7f6f2157cc74b6edb0042efbd499f8dcf918c8931b95a57bd3d11d8ccedd5a04",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/mutations.py": "eee3c32c15fbc7132f625628819238214e2baa2abf1b6754b589b88d0f7c6267"
+  },
+  "error": "AssertionError('processStarted canonical True')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/test.py\", line 42, in <module>\n    for v in [True,1.0,0,-1,10**400]:refuses(f'{key} canonical {repr(v)[:20]}',lambda key=key,v=v:window(qq={**q,key:v})) if key not in ('surfaceId','mapGeneration') or v!=0 else yes(f'{key} premapzero notadmitted',lambda key=key:equal(window(qq={**q,key:0}),None))\n                                     ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/test.py\", line 18, in refuses\n    raise AssertionError(name)\nAssertionError: processStarted canonical True\n"
+}

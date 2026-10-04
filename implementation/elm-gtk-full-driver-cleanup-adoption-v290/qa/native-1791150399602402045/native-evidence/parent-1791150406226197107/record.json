@@ -1,0 +1,570 @@
+{
+  "probeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input-client"
+  ],
+  "commands": [
+    {
+      "sequence": 1,
+      "command": "observe 3825909 11850512",
+      "startedMonotonic": 114674.292019362,
+      "written": true,
+      "receipt": {
+        "sequence": 1,
+        "accepted": true,
+        "scope": "parent-surface-observation",
+        "observation": {
+          "schema": 1,
+          "sequence": 1,
+          "revision": 1,
+          "parent": {
+            "pid": 3825877,
+            "started": "11850435",
+            "uid": 1000
+          },
+          "controller": {
+            "pid": 3826786,
+            "started": "11850993"
+          },
+          "target": {
+            "pid": 3825909,
+            "started": "11850512"
+          },
+          "viewId": 1,
+          "surfaceId": 10,
+          "surfaceExtent": [
+            800,
+            600
+          ],
+          "corners": [
+            [
+              0,
+              0
+            ],
+            [
+              800,
+              0
+            ],
+            [
+              0,
+              600
+            ],
+            [
+              800,
+              600
+            ]
+          ],
+          "viewportDestination": [
+            800,
+            600
+          ],
+          "output": {
+            "id": 0,
+            "name": "headless",
+            "origin": [
+              0,
+              0
+            ],
+            "logicalExtent": [
+              800,
+              600
+            ],
+            "modeExtent": [
+              800,
+              600
+            ],
+            "scale": 1
+          },
+          "pointer": {
+            "global": [
+              100,
+              100
+            ],
+            "focusedPid": 3825909,
+            "focusedStarted": "11850512",
+            "focusedViewId": 1,
+            "focusedSurfaceId": 10
+          }
+        }
+      }
+    },
+    {
+      "sequence": 2,
+      "command": "motion 428 98",
+      "startedMonotonic": 114674.296232635,
+      "written": true,
+      "receipt": {
+        "sequence": 2,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 3,
+      "command": "observe 3825909 11850512",
+      "startedMonotonic": 114674.301433287,
+      "written": true,
+      "receipt": {
+        "sequence": 3,
+        "accepted": true,
+        "scope": "parent-surface-observation",
+        "observation": {
+          "schema": 1,
+          "sequence": 3,
+          "revision": 2,
+          "parent": {
+            "pid": 3825877,
+            "started": "11850435",
+            "uid": 1000
+          },
+          "controller": {
+            "pid": 3826786,
+            "started": "11850993"
+          },
+          "target": {
+            "pid": 3825909,
+            "started": "11850512"
+          },
+          "viewId": 1,
+          "surfaceId": 10,
+          "surfaceExtent": [
+            800,
+            600
+          ],
+          "corners": [
+            [
+              0,
+              0
+            ],
+            [
+              800,
+              0
+            ],
+            [
+              0,
+              600
+            ],
+            [
+              800,
+              600
+            ]
+          ],
+          "viewportDestination": [
+            800,
+            600
+          ],
+          "output": {
+            "id": 0,
+            "name": "headless",
+            "origin": [
+              0,
+              0
+            ],
+            "logicalExtent": [
+              800,
+              600
+            ],
+            "modeExtent": [
+              800,
+              600
+            ],
+            "scale": 1
+          },
+          "pointer": {
+            "global": [
+              428,
+              98
+            ],
+            "focusedPid": 3825909,
+            "focusedStarted": "11850512",
+            "focusedViewId": 1,
+            "focusedSurfaceId": 10
+          }
+        }
+      }
+    },
+    {
+      "sequence": 4,
+      "command": "press 272",
+      "startedMonotonic": 114674.305840554,
+      "written": true,
+      "receipt": {
+        "sequence": 4,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 5,
+      "command": "release 272",
+      "startedMonotonic": 114674.311042661,
+      "written": true,
+      "receipt": {
+        "sequence": 5,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 6,
+      "command": "key-press 42",
+      "startedMonotonic": 114674.455522346,
+      "written": true,
+      "receipt": {
+        "sequence": 6,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 7,
+      "command": "key-release 42",
+      "startedMonotonic": 114674.461453077,
+      "written": true,
+      "receipt": {
+        "sequence": 7,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 8,
+      "command": "observe 3825909 11850512",
+      "startedMonotonic": 114675.669877445,
+      "written": true,
+      "receipt": {
+        "sequence": 8,
+        "accepted": true,
+        "scope": "parent-surface-observation",
+        "observation": {
+          "schema": 1,
+          "sequence": 8,
+          "revision": 3,
+          "parent": {
+            "pid": 3825877,
+            "started": "11850435",
+            "uid": 1000
+          },
+          "controller": {
+            "pid": 3826786,
+            "started": "11850993"
+          },
+          "target": {
+            "pid": 3825909,
+            "started": "11850512"
+          },
+          "viewId": 1,
+          "surfaceId": 10,
+          "surfaceExtent": [
+            800,
+            600
+          ],
+          "corners": [
+            [
+              0,
+              0
+            ],
+            [
+              800,
+              0
+            ],
+            [
+              0,
+              600
+            ],
+            [
+              800,
+              600
+            ]
+          ],
+          "viewportDestination": [
+            800,
+            600
+          ],
+          "output": {
+            "id": 0,
+            "name": "headless",
+            "origin": [
+              0,
+              0
+            ],
+            "logicalExtent": [
+              800,
+              600
+            ],
+            "modeExtent": [
+              800,
+              600
+            ],
+            "scale": 1
+          },
+          "pointer": {
+            "global": [
+              428,
+              98
+            ],
+            "focusedPid": 3825909,
+            "focusedStarted": "11850512",
+            "focusedViewId": 1,
+            "focusedSurfaceId": 10
+          }
+        }
+      }
+    },
+    {
+      "sequence": 9,
+      "command": "motion 68 118",
+      "startedMonotonic": 114675.675595719,
+      "written": true,
+      "receipt": {
+        "sequence": 9,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 10,
+      "command": "observe 3825909 11850512",
+      "startedMonotonic": 114675.680566772,
+      "written": true,
+      "receipt": {
+        "sequence": 10,
+        "accepted": true,
+        "scope": "parent-surface-observation",
+        "observation": {
+          "schema": 1,
+          "sequence": 10,
+          "revision": 4,
+          "parent": {
+            "pid": 3825877,
+            "started": "11850435",
+            "uid": 1000
+          },
+          "controller": {
+            "pid": 3826786,
+            "started": "11850993"
+          },
+          "target": {
+            "pid": 3825909,
+            "started": "11850512"
+          },
+          "viewId": 1,
+          "surfaceId": 10,
+          "surfaceExtent": [
+            800,
+            600
+          ],
+          "corners": [
+            [
+              0,
+              0
+            ],
+            [
+              800,
+              0
+            ],
+            [
+              0,
+              600
+            ],
+            [
+              800,
+              600
+            ]
+          ],
+          "viewportDestination": [
+            800,
+            600
+          ],
+          "output": {
+            "id": 0,
+            "name": "headless",
+            "origin": [
+              0,
+              0
+            ],
+            "logicalExtent": [
+              800,
+              600
+            ],
+            "modeExtent": [
+              800,
+              600
+            ],
+            "scale": 1
+          },
+          "pointer": {
+            "global": [
+              68,
+              118
+            ],
+            "focusedPid": 3825909,
+            "focusedStarted": "11850512",
+            "focusedViewId": 1,
+            "focusedSurfaceId": 10
+          }
+        }
+      }
+    },
+    {
+      "sequence": 11,
+      "command": "press 272",
+      "startedMonotonic": 114675.685735111,
+      "written": true,
+      "receipt": {
+        "sequence": 11,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 12,
+      "command": "release 272",
+      "startedMonotonic": 114675.690418398,
+      "written": true,
+      "receipt": {
+        "sequence": 12,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 13,
+      "command": "key-press 42",
+      "startedMonotonic": 114675.806194143,
+      "written": true,
+      "receipt": {
+        "sequence": 13,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    },
+    {
+      "sequence": 14,
+      "command": "key-release 42",
+      "startedMonotonic": 114675.81115327,
+      "written": true,
+      "receipt": {
+        "sequence": 14,
+        "accepted": true,
+        "scope": "parent-notify-only"
+      }
+    }
+  ],
+  "peerBefore": {
+    "parent": {
+      "pid": 3825877,
+      "start": "11850435",
+      "pgid": 3825877,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=800",
+        "--height=600",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/gtk-full-1791150399602465383/weston-renderer.log",
+        "--modules=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input.so"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/gtk-full-1791150399602465383/weston.log"
+    },
+    "socket": {
+      "path": "/run/user/1000/wqa/a4c0/weston-host",
+      "uid": 1000,
+      "device": 84,
+      "inode": 448208
+    },
+    "moduleSHA256": "766e4eb0cf45dd0555abd869d13e30e892886bf597531e5d611da7b1497981f2"
+  },
+  "registered": true,
+  "process": {
+    "pid": 3826786,
+    "start": "11850993",
+    "pgid": 3826786,
+    "name": "persistent-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input-client"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/gtk-full-1791150399602465383/parent-1791150406226197107/stderr.log"
+  },
+  "stdoutBytes": 3175,
+  "stdoutCapturedBytes": 3175,
+  "stdoutPrefixSHA256": "19fdc556db5fe90ab984797197919dcd644b7407b5414e1ed757880d498d049d",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "peerBeforeCommand": {
+    "parent": {
+      "pid": 3825877,
+      "start": "11850435",
+      "pgid": 3825877,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=800",
+        "--height=600",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/gtk-full-1791150399602465383/weston-renderer.log",
+        "--modules=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input.so"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/gtk-full-1791150399602465383/weston.log"
+    },
+    "socket": {
+      "path": "/run/user/1000/wqa/a4c0/weston-host",
+      "uid": 1000,
+      "device": 84,
+      "inode": 448208
+    },
+    "moduleSHA256": "766e4eb0cf45dd0555abd869d13e30e892886bf597531e5d611da7b1497981f2"
+  },
+  "peerAfterCommand": {
+    "parent": {
+      "pid": 3825877,
+      "start": "11850435",
+      "pgid": 3825877,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=800",
+        "--height=600",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/gtk-full-1791150399602465383/weston-renderer.log",
+        "--modules=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input.so"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/gtk-full-1791150399602465383/weston.log"
+    },
+    "socket": {
+      "path": "/run/user/1000/wqa/a4c0/weston-host",
+      "uid": 1000,
+      "device": 84,
+      "inode": 448208
+    },
+    "moduleSHA256": "766e4eb0cf45dd0555abd869d13e30e892886bf597531e5d611da7b1497981f2"
+  },
+  "potentialHeldInput": true,
+  "normalExit": true,
+  "exitCode": 0
+}

@@ -1,0 +1,30 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "actual extracted lifetime functions with real QtCore QObject/QPointer/deferred-delete; QWidget/QWindow and journal are explicit mocks, no GUI",
+  "sourceSHA256": "90f382699a550691681e115a654cbe1252afcf854925971fc72c47ebbf94811b",
+  "assertions": 27,
+  "controls": [
+    {
+      "name": "missing-lifetime",
+      "behaviorallyRejected": true,
+      "exit": -6
+    },
+    {
+      "name": "premature-local-exit",
+      "behaviorallyRejected": true,
+      "exit": -6
+    },
+    {
+      "name": "wrong-destroy-identity",
+      "behaviorallyRejected": true,
+      "exit": -6
+    }
+  ],
+  "extracted": {
+    "currentRole": "43c28f29e84a1e42edbbf7edbb51459b78299a0862162f95ca93340fd93a4137",
+    "exitIfRetired": "e497a57a09a729b4724d4769426d26ae291d081794e5dfb4826df642a8ae2dbe",
+    "retire": "3cee4aa858d2be13648fefc4a4e32ae3ebe6d854b7cd79a4d9f1ca991adfdef5",
+    "retireFamily": "5172ac0ba8a3eeda8953117629f445a9b3bb77e81b069da731e350abfb8ac45c"
+  }
+}

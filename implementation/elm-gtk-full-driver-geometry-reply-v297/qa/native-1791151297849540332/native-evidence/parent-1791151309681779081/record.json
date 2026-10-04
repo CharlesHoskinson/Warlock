@@ -1,0 +1,61 @@
+{
+  "probeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input-client"
+  ],
+  "commands": [],
+  "peerBefore": {
+    "parent": {
+      "pid": 3893962,
+      "start": "11940290",
+      "pgid": 3893962,
+      "name": "weston",
+      "command": [
+        "/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/bin/weston",
+        "--backend=headless",
+        "--renderer=gl",
+        "--shell=kiosk-shell.so",
+        "--fake-seat",
+        "--no-config",
+        "--socket=weston-host",
+        "--width=800",
+        "--height=600",
+        "--scale=1",
+        "--idle-time=0",
+        "--log=/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/weston-renderer.log",
+        "--modules=/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input.so"
+      ],
+      "log": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/weston.log"
+    },
+    "socket": {
+      "path": "/run/user/1000/wqa/1178/weston-host",
+      "uid": 1000,
+      "device": 84,
+      "inode": 451471
+    },
+    "moduleSHA256": "766e4eb0cf45dd0555abd869d13e30e892886bf597531e5d611da7b1497981f2"
+  },
+  "registered": true,
+  "process": {
+    "pid": 3894911,
+    "start": "11941339",
+    "pgid": 3894911,
+    "name": "persistent-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/parent-input-client"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/gtk-full-1791151297849614039/parent-1791151309681779081/stderr.log"
+  },
+  "stdoutBytes": 44,
+  "stdoutCapturedBytes": 44,
+  "stdoutPrefixSHA256": "50d1e5458869b3c90eb793f7d117abf794c2c3a353e5d1680704fa264a91b308",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "failureCleanupTerminate": true,
+  "exitCode": -15,
+  "destructorReleaseFallback": "May balance parent held input on disconnect; never claimed as successful GTK recipient proof"
+}

@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "sourceInputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/journal.py": "065dd0336462a1647c15d155c047ba4d229c36e1f732e9b4e09642c543b3c03f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/protocol.py": "8c5fbbf87a8d918fe75bed35dd879519b8874d9602216ba147b887c268e7112f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/geometry.py": "9cf96d314dd80011008cd53ae4279913e58f8fd54fb3099390798e8ab07d164b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/observer.py": "363b3c26818f00850e7b77b36038b98c5866e6468409d39640febc8b66b8db4e",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/scene.py": "c66a37c1eb6ea963308781f014476ed0301d526609c5685bd8fc35544364fa7b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/test.py": "7f6f2157cc74b6edb0042efbd499f8dcf918c8931b95a57bd3d11d8ccedd5a04",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations.py": "eee3c32c15fbc7132f625628819238214e2baa2abf1b6754b589b88d0f7c6267"
+  },
+  "mutants": [
+    {
+      "name": "lost-process-start",
+      "mutantSHA256": "d8fe823b56ec4008618d7deffca2bbe4c445fbadaf57d3c68e4d141133bbcc3b",
+      "exitCode": 1,
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-process-start/qa/test-1791150987046808315/report.json",
+      "error": "AssertionError('processStarted canonical True')",
+      "checksBeforeKill": 32
+    },
+    {
+      "name": "lost-native-popup-root",
+      "mutantSHA256": "78da6f30b07be67d5e1606ed3327d5469bd31d9d80f1c78b1d797db41693c95d",
+      "exitCode": 1,
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/lost-native-popup-root/qa/test-1791150987123147801/report.json",
+      "error": "AssertionError('foreign native root')",
+      "checksBeforeKill": 67
+    },
+    {
+      "name": "wrong-scale-multiply",
+      "mutantSHA256": "92fcfe498dee230a3aa0c5887f2137aef69740642fc97e5e67e44a10a58aa762",
+      "exitCode": 1,
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-qt6-scene-consumer-v296/qa/mutations-1791150986997479115/wrong-scale-multiply/qa/test-1791150987197790835/report.json",
+      "error": "AssertionError(([170, 130], [85, 65]))",
+      "checksBeforeKill": 1
+    }
+  ]
+}

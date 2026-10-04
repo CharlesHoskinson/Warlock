@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "mockedNativeState": true,
+  "controls": [
+    {
+      "name": "first-reply-top-level",
+      "refused": true
+    },
+    {
+      "name": "second-reply-top-level",
+      "refused": true
+    },
+    {
+      "name": "wrong-first-incarnation",
+      "refused": true
+    }
+  ],
+  "actualBody": {
+    "checks": [
+      "GTK02:unsupported-effect2-no-native-mutation",
+      "GTK02:actual-standard-GTK-MAX",
+      "GTK02:standard-restores-original-position-size"
+    ],
+    "captures": 2,
+    "openPositiveGatesRetained": 1
+  },
+  "sourceSHA256": "34acd94438ea4f857dff63794b1f91e30f49bc5a0a5b2f60485eebf29ca92ae9"
+}

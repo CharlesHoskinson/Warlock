@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": 11,
+  "scope": "actual production popup paint/admission callbacks; explicit Qt mocks, no pixel/input proof",
+  "sourceSHA256": "90f382699a550691681e115a654cbe1252afcf854925971fc72c47ebbf94811b",
+  "controls": [
+    {
+      "name": "missing-instance",
+      "behaviorallyRejected": true,
+      "exitCode": -6
+    },
+    {
+      "name": "foreign-action",
+      "behaviorallyRejected": true,
+      "exitCode": -6
+    },
+    {
+      "name": "stale-paint",
+      "behaviorallyRejected": true,
+      "exitCode": -6
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "/usr/bin/hyprctl",
+    "-i",
+    "efb50993780079460b0cbed1363e2166a2de1d9f_1791151300_1977881538",
+    "eval",
+    "local r=hl.dispatch(hl.dsp.window.move({x=-199,y=-119,relative=true,window=\"address:0x560932fec260\"}));if type(r)~=\"table\" or r.ok~=true then error(\"GTK fixture placement refused\") end"
+  ],
+  "deadline": 115576.962158148,
+  "startedMonotonic": 115572.261270597,
+  "exitCode": 0
+}

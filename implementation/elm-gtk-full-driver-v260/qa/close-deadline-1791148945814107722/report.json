@@ -1,0 +1,119 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual-preserved-source-accepts-7s-close-under6s",
+      "characterizationPassed": true,
+      "nativeAcceptance": false
+    }
+  ],
+  "unsafeWitness": {
+    "refused": false,
+    "report": {
+      "passed": true,
+      "phases": [
+        {
+          "name": "GTK01",
+          "deadline": 6,
+          "passed": true
+        },
+        {
+          "name": "GTK02",
+          "deadline": 13,
+          "passed": true
+        },
+        {
+          "name": "GTK03",
+          "deadline": 20,
+          "passed": true
+        },
+        {
+          "name": "GTK04",
+          "deadline": 27,
+          "passed": true
+        },
+        {
+          "name": "GTK05",
+          "deadline": 34,
+          "passed": true
+        },
+        {
+          "name": "GTK06",
+          "deadline": 41,
+          "passed": true
+        },
+        {
+          "name": "GTK07",
+          "deadline": 48,
+          "passed": true
+        },
+        {
+          "name": "GTK08",
+          "deadline": 55,
+          "passed": true
+        }
+      ],
+      "openGates": [],
+      "fullCampaignPassed": true,
+      "nativeAcceptance": false,
+      "nativeOraclesCompleted": true
+    },
+    "sourceSHA256": "50548a36ea4411aa35b1b5d451319f41303d7a21c96f610d8bd6d8cdcdc1b7d4"
+  },
+  "current": {
+    "refused": false,
+    "report": {
+      "passed": true,
+      "phases": [
+        {
+          "name": "GTK01",
+          "deadline": 6,
+          "passed": true
+        },
+        {
+          "name": "GTK02",
+          "deadline": 13,
+          "passed": true
+        },
+        {
+          "name": "GTK03",
+          "deadline": 20,
+          "passed": true
+        },
+        {
+          "name": "GTK04",
+          "deadline": 27,
+          "passed": true
+        },
+        {
+          "name": "GTK05",
+          "deadline": 34,
+          "passed": true
+        },
+        {
+          "name": "GTK06",
+          "deadline": 41,
+          "passed": true
+        },
+        {
+          "name": "GTK07",
+          "deadline": 48,
+          "passed": true
+        },
+        {
+          "name": "GTK08",
+          "deadline": 55,
+          "passed": true
+        }
+      ],
+      "openGates": [],
+      "fullCampaignPassed": true,
+      "nativeAcceptance": false,
+      "nativeOraclesCompleted": true
+    },
+    "sourceSHA256": "50548a36ea4411aa35b1b5d451319f41303d7a21c96f610d8bd6d8cdcdc1b7d4"
+  },
+  "scope": "pre-fix unsafe actualrun characterization",
+  "correctionAccepted": false
+}

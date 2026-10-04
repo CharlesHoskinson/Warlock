@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "actual exact521 captured broker command no override",
+      "passed": true
+    },
+    {
+      "name": "reject-arbitrary-profile",
+      "passed": true
+    },
+    {
+      "name": "reject-command-injection",
+      "passed": true
+    },
+    {
+      "name": "reject-wrong-runtime",
+      "passed": true
+    },
+    {
+      "name": "reject-wrong-instance",
+      "passed": true
+    },
+    {
+      "name": "reject-receipt-field-on-broker",
+      "passed": true
+    },
+    {
+      "name": "closed receipt entrypoint not arbitrary command",
+      "passed": true
+    },
+    {
+      "name": "actual full runner import starts no process",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "relay/qa/relay.py": "b6a96f357b62024dcf2ea04534907b4bd390ec0cccc13c176510dd234cf170cc",
+    "receipt/qa/wrapper.py": "f295e86639b06c0d3535e7cf536b94a8c41cc9d7e2095a2a9e437bc188f441e3",
+    "qa/native.py": "3a0ab43a53bf3899b44c2514c472936594043b9b5f83a1d0b550235edc7cda19",
+    "qa/acquisition-test.py": "6e4be4b21a4db0ac88c7f263f519b594315386eac632cfd47d781fecf08a6e77"
+  }
+}

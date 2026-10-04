@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "error": "AssertionError()",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/preflight.py\", line 61, in main\n    _,core,fixture,observer,probe,build,keymap,files=verify();report.update(passed=True,verifiedFiles=len(files),inputs=files,owningCore=core['sha256'],fixture=fixture['artifact'],eventTypes={k:v for k,v in keymap['constants'].items() if k!='shiftMask'},GUIBuild=str(build))\n                                                     ~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-full-driver-v260/qa/preflight.py\", line 50, in verify\n    probe=json.loads((REPO/'implementation'/'elm-parent-keyboard-canonical-observer-v247'/'parent-probe-build-report.json').read_text());assert json.loads((ROOT/'runtime/parent-probe-build.json').read_text())=={k:probe[k] for k in ('buildReport','buildReportSHA256')}\n                                                                                                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}
