@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-taskbar-family-picker-v40",
-  "status": "Grouped taskbar/picker qualified in isolated native pointer/keyboard tests, including minimized restore, modal-family selection and exact-journal recovery. Identity-bound DOM opener/choice focus and composing Escape guard implemented; full UX/AT/IME, production bar/popup, catalog and release remain open.",
+  "activeSlice": "implementation/elm-external-state-gui-v44",
+  "status": "External unfocused native effects now invalidate frontend projections through a versioned native hint; stale picker retirement and explicit restore passed GUI71. Picker label/state spacing fixed. Original native100/131 regressions, compiled78+20 and Quint8/1000 pass; long-label/overflow and complete production UX/release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -413,9 +413,45 @@
       "canonicalSceneCapability": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json"
+    },
+    "taskbarReflowV42": {
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "optimizedHostBuildAndSelfTests": true,
+      "pickerNamesAndStateSeparated": true,
+      "effectInvalidationProtocol": 1,
+      "longLabelOverflowAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-reflow-v42/qa/slice-manifest.json"
+    },
+    "externalStateGUIV44": {
+      "nativeChecks": 71,
+      "externalUnfocusedStateAutomaticallyReconciled": true,
+      "stalePickerRetiredWithoutFrontendEffect": true,
+      "explicitRestoreRemainsUsable": true,
+      "retainedKeyboardModalMinimizedRecoveryCases": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-external-state-gui-v44/qa/slice-manifest.json"
+    },
+    "invalidationRegressionV45": {
+      "ordinaryNativeChecks": 100,
+      "diagnosticNativeChecks": 131,
+      "originalAssertionIdentityOrderPreserved": true,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "cleanupPassed": true,
+      "nativeUnknownInjectionAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-invalidation-native-v45/qa/slice-manifest.json"
     }
   },
-  "next": "Refine picker label/state spacing and reflow from actual capture; qualify long labels/overflow and external native state notifications. Implement production taskbar/popup roles and catalog/icons/pins/launch, then switcher/previews and remaining scene/GPU/WebGPU/AT/IME/hardware/human UX/release gates.",
+  "next": "Qualify long labels/many-entry overflow, keyboard reveal and reachable close at supported viewport/text sizes. Continue production taskbar/popup/input roles, catalog/icons/pins/launch and switcher/previews; complete scene/output/device/GPU/WebGPU/AT/IME/human UX/release gates.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
@@ -428,9 +464,9 @@
   "blockingCandidateDefects": [
     {
       "id": "UX-PICKER-001",
-      "status": "open bounded visual finding",
-      "description": "Picker document label and state text adjoin without spacing; refine separation and long-label reflow before UX acceptance.",
-      "evidence": "implementation/elm-taskbar-family-picker-v40/qa/native-1791072864264661300/native-evidence/elm-family-picker.png"
+      "status": "spacing resolved for ordinary two-document capture; long-label/reflow acceptance open",
+      "description": "Name/state separation is visible in V44 capture. Many entries, long labels, text enlargement and small-output reflow remain unqualified.",
+      "evidence": "implementation/elm-external-state-gui-v44/qa/native-1791073305054985875/native-evidence/elm-family-picker.png"
     }
   ],
   "resolvedBoundedFindings": [
@@ -458,6 +494,12 @@
       "id": "UIQA-SCHEMA-001",
       "status": "Resolved V38 grouped-render QA host contract; V39/V40 normal host/backend exit",
       "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json"
+    },
+    {
+      "id": "NATIVE-UFMIN-001",
+      "status": "External unfocused minimize notification missing in V41; V43 publishes invalidation and V44 automatically reconciles without frontend replay",
+      "failedEvidence": "implementation/elm-external-unfocused-probe-v41/qa/slice-manifest.json",
+      "evidence": "implementation/elm-external-state-gui-v44/qa/slice-manifest.json"
     }
   ]
 }

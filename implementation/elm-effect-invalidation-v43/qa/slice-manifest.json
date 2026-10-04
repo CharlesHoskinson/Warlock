@@ -1,0 +1,53 @@
+{
+  "passed": true,
+  "observedUTC": "2026-10-04T00:26:30.315145+00:00",
+  "wholeFeatureAccepted": false,
+  "canonicalSceneCapability": false,
+  "completedRequirementIds": [],
+  "scope": "Bounded compiled/native invalidation, picker spacing or regression evidence; full UX/release open",
+  "reports": {
+    "qa/build-1791073241782230130/report.json": {
+      "passed": true,
+      "sha256": "9584a843180875cc7ac09a1e5873b0cb8972d1f2e65ecf363cb07716868cf62e",
+      "checks": null,
+      "namedScenarios": null,
+      "invariantSamples": null
+    }
+  },
+  "files": {
+    "README.md": "c3efe6708de68433fe7d4a5c52313549212f456f7977f02f7cbd9b5ea5af1c61",
+    "adapter/daemon.py": "b84e4957e1a3299ce7bd8a732f36c0e784dae3fbd5da6c5bade2d3df6778ac8e",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "candidate/SceneTrace.hpp": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+    "candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+    "candidate_host.py": "b4395f755086159a2c23545ff21679809d2e87a5afd46a203835a3101e8be57e",
+    "native/authority.cpp": "2d71e9a0207c8978ba751dc42fa343eaeb1dd60a8afd7b760d3bf4fec5dc0c4e",
+    "native-build-report.json": "76f964ad2d32fba1e1b8222cf0c7ad8c6bc3e23b6fe891e59833775ad2d9fb51",
+    "qa/build-1791073241782230130/authority.d": "5ccd82faabbbd9a861cc9927ddd6b007b7853e143164c06d604fefa4a4f96aaf",
+    "qa/build-1791073241782230130/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791073241782230130/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791073241782230130/core-symbols.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791073241782230130/core-symbols.stdout": "caa15afb13ae9eaa74707162b9f700e5175c2b1873866230a70a579b21e5838d",
+    "qa/build-1791073241782230130/elm-window-effect-authority.so": "2bf0d000ae500c8cb8084b3d3f59e3ae61d473b305340804cd7e72627a272cc7",
+    "qa/build-1791073241782230130/flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791073241782230130/flags.stdout": "fcbffe6c6ddfa5ece0c35385c505186850a56619c270ca83cf7e3805cdc30616",
+    "qa/build-1791073241782230130/inputs/adapter/endpoint.py": "d0ce3b056078d052d42bb6bf1fddf07afec21b1ad732d1289e43d7eaf0f6c51f",
+    "qa/build-1791073241782230130/inputs/candidate/SceneModal.hpp": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec",
+    "qa/build-1791073241782230130/inputs/candidate/SceneTrace.hpp": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044",
+    "qa/build-1791073241782230130/inputs/candidate/WindowPolicy.hpp": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90",
+    "qa/build-1791073241782230130/inputs/candidate_host.py": "b4395f755086159a2c23545ff21679809d2e87a5afd46a203835a3101e8be57e",
+    "qa/build-1791073241782230130/inputs/native/authority.cpp": "2d71e9a0207c8978ba751dc42fa343eaeb1dd60a8afd7b760d3bf4fec5dc0c4e",
+    "qa/build-1791073241782230130/inputs/native-build-report.json": "76f964ad2d32fba1e1b8222cf0c7ad8c6bc3e23b6fe891e59833775ad2d9fb51",
+    "qa/build-1791073241782230130/inputs/qa/build.py": "310dbc1e25b6f1c9777795eb1b1365bcf706a4126c06b0818a0920a47695fbd2",
+    "qa/build-1791073241782230130/inputs/qa/freeze_pair.py": "0073be15a1f154e29fbfe2b45d32ac0429165fd4c1daffb735256cf96bccc5b2",
+    "qa/build-1791073241782230130/libs.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "qa/build-1791073241782230130/libs.stdout": "a58961e2ce92b9ecd4783f2605e379c3220f4e467b00c1e32da280f42d56b737",
+    "qa/build-1791073241782230130/report.json": "9584a843180875cc7ac09a1e5873b0cb8972d1f2e65ecf363cb07716868cf62e",
+    "qa/build-pair-manifest.json": "d52f443e7b0c295413296630b4ef419ea16fc3b987de7835bdbb322b268263ed",
+    "qa/build.py": "310dbc1e25b6f1c9777795eb1b1365bcf706a4126c06b0818a0920a47695fbd2",
+    "qa/freeze_pair.py": "0073be15a1f154e29fbfe2b45d32ac0429165fd4c1daffb735256cf96bccc5b2"
+  }
+}

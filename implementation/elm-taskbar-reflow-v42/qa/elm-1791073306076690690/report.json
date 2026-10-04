@@ -1,0 +1,123 @@
+{
+  "passed": true,
+  "inputs": {
+    "elm.json": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+    "src/ActionProjection.elm": "cbb6443cbdae4b7e97fa259b364c9c1e075a3370cb45dff3917e3502b1fac996",
+    "src/Binding.elm": "c1985aef94e7230e60edeadda491d40fa7cac4aabf340025b6f02038327595e5",
+    "src/Effects.elm": "bac8ea4b5b65f8f37fb34035a54cfbc49de7f697d401f3f938efcc0954294a91",
+    "src/Main.elm": "d61caf46aa57b07fadf9b113a766e9accb1090eb755c4fa3689813fcf2bc0e65",
+    "src/Replay.elm": "0c0956a3aba4a146cc8d4a6ed2610967b73e1262c5c3fceb5c8c11288445aa8f",
+    "src/Shell.elm": "1889c9000ef05fb27ff41b29c185cef85d257cbb0761e19c9a45029425e721e7",
+    "src/ShellReplay.elm": "eb636519e8fda8047deccd3dcbd15ab06f62d4f2306e1627f1fdbef00cf20e2c",
+    "src/Taskbar.elm": "1d19d13b773c68b486ef06f7576be39c80e82e477d2a9285512cc7cf4e748ceb",
+    "src/TaskbarReplay.elm": "f6a069ed985190c8227d969ebc9f648d1ad8ce07f6977929f5b7989446732351",
+    "src/TaskbarShell.elm": "9d5e8167e9902c25cabdb5a9a5f670373ae1f86ba72a95ca25ca4b81f1e7e335",
+    "src/TaskbarShellReplay.elm": "9df3ec89a3febea9fa52c1c5b7a22e816b219ba1e5b57a6262d0634a80562129",
+    "src/UInt64.elm": "0c32ee015c1882d9d754d9dcda5a454e8a1d71f85d3bbd60d9280dd564531baa",
+    "qa/replay.cjs": "592d95c610e33e5c09b556eceb6fd0914d6e3a58feab0bcb415f3f1e31b08671",
+    "qa/shell.cjs": "e9fcb34f279d228d8ba67498e988bdad6a6e03c7b83951b99bd9d958c7bef4ac",
+    "qa/activation.cjs": "8ae81ec14423b4dd8469ac010fb823a57fe3e09232114bb5fbf5e62262d2a223",
+    "qa/stamped.cjs": "4f8ce869ec963306bdd0d46ed103005283bd99a36c78430e12c9e44748442c71",
+    "qa/elm.py": "d4b9080a5881134d0ad3c017381aad47018cf315caa2d0ceba4f6ec7c20a4415"
+  },
+  "commands": [
+    {
+      "name": "main",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Main.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/main.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "replay",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/Replay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/replay.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "shell",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/ShellReplay.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/shell.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "original-effects",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/inputs/qa/replay.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/original-effects.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "original-shell",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/inputs/qa/shell.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/shell.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/original-shell.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "displayed-scope",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/inputs/qa/stamped.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/shell.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/displayed-scope.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "activation",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/inputs/qa/activation.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/replay.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-taskbar-reflow-v42/qa/elm-1791073306076690690/activation.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "scope": "Compiled Elm controls and pure replay only; native GUI separate",
+  "checks": {
+    "original-effects": 20,
+    "original-shell": 27,
+    "activation": 17,
+    "displayed-scope": 14
+  },
+  "artifacts": {
+    "original-effects.json": "226e94326b309e11fb5d2671c1d674ea02e2fde50a91f02c78e02cc6d2db1ef8",
+    "original-shell.json": "4165643cbee0971cafd4689252ab99ef1929993899e12fda0e388276aadc44ee",
+    "displayed-scope.json": "d453c3b323c3974aa576821b23d126dd109c83987e7da451444d665f9901372e",
+    "activation.json": "249b8ba5cd17ee36b82b6d68c109c9766cdea54de0c30b1e9cdc8265ba5b67f6"
+  }
+}

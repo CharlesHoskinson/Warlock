@@ -1,5 +1,5 @@
 {
-  "observedUTC": "2026-10-04T00:17:27.864411+00:00",
+  "observedUTC": "2026-10-04T00:27:36.786991+00:00",
   "status": "active",
   "execution": "Automatic goal-driven continuation in the current thread; outcome-driven build cycles, no calendar schedule.",
   "branch": "feature/elm",
@@ -30,15 +30,15 @@
     "C05",
     "C06"
   ],
-  "currentSlice": "implementation/elm-taskbar-family-picker-v40",
+  "currentSlice": "implementation/elm-external-state-gui-v44",
   "nextWork": [
-    "Refine observed label/state spacing and long-label/overflow geometry; continue native scope/focus checks for external state changes.",
-    "Implement production bar/popup/native input roles, catalog identity/icons/pins/launch and taskbar keyboard/AT/IME behavior; current420px surface remains a prototype.",
-    "Complete coherent scene/roles, switcher/previews, original deadlines, outputs/devices/hardware/GPU/WebGPU, human UX and release gates."
+    "Qualify long names and many-entry picker overflow, keyboard selection reveal and reachable dismissal at supported viewport/text sizes.",
+    "Implement production taskbar/popup/input roles and qualified catalog/icons/pins/launch; native invalidation remains a hint, not canonical scene admission.",
+    "Complete scene/roles, switcher/previews, original deadlines, outputs/devices/hardware/GPU/WebGPU, accessibility/IME/human UX and release gates."
   ],
   "advanceRule": "Do not complete a cycle or requirement without its required accepted evidence. Preserve failed attempts and source/ABI lineage.",
   "nativeQA": "Serialized through protected qa_run.py; preserve live desktop and drafts.",
   "deployment": "Prepare accepted artifacts and rollback first; honor required session-activation authorization.",
-  "lastWorkClassification": "progress: V38 fixes grouped-render host contract and adds scoped DOM focus/IME Escape guard; compiled78+20 and Quint8/1000 passed. V39 actual native keyboard/pointer48 and V40 family restore/modal61 pass with normal host/backend exit and cleanup; V36/V37 failures preserved; spacing finding remains open.",
+  "lastWorkClassification": "progress: preserved V41 external unfocused-state failure; V43 versioned native invalidation and V42 label/state separation implemented. Actual GUI71 and native100/131 retain original cases; compiled78+20 and Quint8/1000 pass; private cleanup normal. Full long-label/overflow/production UX open.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility."
 }

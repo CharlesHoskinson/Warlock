@@ -1,0 +1,621 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      connected: true,
+      focus: 2,
+      hint: false,
+      mutations: 0,
+      native: 1,
+      readRevision: 0,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 1,
+      native: 2,
+      readRevision: 0,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 2,
+      native: 3,
+      readRevision: 0,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 3,
+      native: 4,
+      readRevision: 0,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 3,
+      native: 4,
+      readRevision: 0,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 4,
+      native: 5,
+      readRevision: 0,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 4,
+      native: 5,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 4,
+      native: 5,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 4,
+      native: 5,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 5,
+      native: 6,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 6,
+      native: 7,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 7,
+      native: 8,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 8,
+      native: 9,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 8,
+      native: 9,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 8,
+      native: 9,
+      readRevision: 5,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 8,
+      native: 9,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 8,
+      native: 9,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 8,
+      native: 9,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 9,
+      native: 10,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 10,
+      native: 11,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 11,
+      native: 12,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 12,
+      native: 13,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 12,
+      native: 13,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 13,
+      native: 14,
+      readRevision: 5,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 13,
+      native: 14,
+      readRevision: 14,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 14,
+      native: 15,
+      readRevision: 14,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 14,
+      native: 15,
+      readRevision: 14,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 14,
+      native: 15,
+      readRevision: 14,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 15,
+      native: 16,
+      readRevision: 14,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 15,
+      native: 16,
+      readRevision: 14,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 15,
+      native: 16,
+      readRevision: 14,
+      reading: false,
+      view: 1
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 15,
+      native: 16,
+      readRevision: 16,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 15,
+      native: 16,
+      readRevision: 16,
+      reading: true,
+      view: 1
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 15,
+      native: 16,
+      readRevision: 16,
+      reading: false,
+      view: 16
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 16,
+      native: 17,
+      readRevision: 16,
+      reading: false,
+      view: 16
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 17,
+      native: 18,
+      readRevision: 16,
+      reading: false,
+      view: 16
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 17,
+      native: 18,
+      readRevision: 16,
+      reading: false,
+      view: 16
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: false,
+      mutations: 17,
+      native: 18,
+      readRevision: 18,
+      reading: true,
+      view: 16
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 18,
+      native: 19,
+      readRevision: 18,
+      reading: true,
+      view: 16
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 18,
+      native: 19,
+      readRevision: 18,
+      reading: false,
+      view: 16
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      connected: true,
+      focus: 1,
+      hint: true,
+      mutations: 18,
+      native: 19,
+      readRevision: 18,
+      reading: false,
+      view: 16
+    }
+}
+
+[ok] No violation found (827ms at 1209 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

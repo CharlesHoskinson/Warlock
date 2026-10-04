@@ -6393,6 +6393,51 @@
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-taskbar-family-picker-v40/qa/slice-manifest.json",
       "acceptance": "Actual minimized picker restore and unique modal root selection only; observed label/state spacing finding, long-label/overflow, production layout, AT/IME/human UX and release remain open."
+    },
+    {
+      "slice": "implementation/elm-taskbar-reflow-v42",
+      "level": "compiled label/state layout and broker invalidation contract",
+      "compiledRetainedAndScopedChecks": 78,
+      "compiledPickerChecks": 20,
+      "optimizedHostBuildAndSelfTests": true,
+      "pickerNamesAndStateSeparated": true,
+      "effectInvalidationProtocol": 1,
+      "longLabelOverflowAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-taskbar-reflow-v42/qa/slice-manifest.json",
+      "acceptance": "Source wrapping and two-document separation only; long labels/many entries/text enlargement/small-output metrics and native production surfaces pending."
+    },
+    {
+      "slice": "implementation/elm-external-state-gui-v44",
+      "level": "actual native pointer/keyboard/family/recovery and cross-client invalidation",
+      "nativeChecks": 71,
+      "externalUnfocusedStateAutomaticallyReconciled": true,
+      "stalePickerRetiredWithoutFrontendEffect": true,
+      "explicitRestoreRemainsUsable": true,
+      "retainedKeyboardModalMinimizedRecoveryCases": true,
+      "normalHostBackendExit": true,
+      "cleanupPassed": true,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-external-state-gui-v44/qa/slice-manifest.json",
+      "acceptance": "External unfocused minimize and original bounded GUI cases only. Complete event universe, long-label/overflow, production popup/taskbar, AT/IME/human UX and release separate."
+    },
+    {
+      "slice": "implementation/elm-invalidation-native-v45",
+      "level": "native full preserved regression and abstract invalidation model",
+      "ordinaryNativeChecks": 100,
+      "diagnosticNativeChecks": 131,
+      "originalAssertionIdentityOrderPreserved": true,
+      "quintNamedRuns": 8,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "cleanupPassed": true,
+      "nativeUnknownInjectionAccepted": false,
+      "canonicalSceneCapability": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-invalidation-native-v45/qa/slice-manifest.json",
+      "acceptance": "Exact original ordinary/diagnostic assertions plus abstract event/coalescing/race/recovery semantics. Model is not IPC queue/Unknown native refinement or complete UX/release proof."
     }
   ]
 }
