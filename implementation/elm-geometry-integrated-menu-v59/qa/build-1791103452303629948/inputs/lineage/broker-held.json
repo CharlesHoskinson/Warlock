@@ -1,0 +1,266 @@
+{
+  "schema": 1,
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-afe467755c0445df84d3d992517bcde6.scope",
+    "coreLimit": 1
+  },
+  "nativeAcceptance": false,
+  "scope": "Actual imported broker routing/framing with real copied validators and synthetic native transport; no socket/process authentication or native/Elm end-to-end acceptance",
+  "routingReport": "qa/routing-1791103266064226897/report.json",
+  "routingReportSHA256": "81d194fa3ef307ef60a9ef4349c7c6a2904cf565e92137f4d17d607304aa0c3a",
+  "routingChecks": 109,
+  "lineageSemantics": "Known daemon row records frozen V8 parent only; rewritten current daemon is separately bound to accepted routing capture. Other copied helper rows match exact ancestors.",
+  "retainedFailureReport": "qa/routing-1791103252549791516/report.json",
+  "retainedFailureReportSHA256": "cfd75c666183306be90f98601863fbb7ebf7a31ff85af46da52c08dcd3bfb9dd",
+  "coalescedLargeFramesQualified": false,
+  "unsupportedGeometryFallbackQualified": false,
+  "files": {
+    "SCOPE.md": {
+      "sha256": "039d1a0488e5a47ca31a188e5994aafe416cc3c899759ddcc24fc1ae389f3a5b",
+      "size": 531,
+      "mode": 420
+    },
+    "adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": 420
+    },
+    "adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": 420
+    },
+    "adapter/daemon.py": {
+      "sha256": "1adb68ed3f015c850178e113a60cbd6962c3496166fa079e4598ef0a06b804fc",
+      "size": 6251,
+      "mode": 420
+    },
+    "adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": 420
+    },
+    "adapter/endpoint.py": {
+      "sha256": "af542ec41ddcb7bc73b15723e7d8d9b340870901e5e9d0a4883b3babb876cc87",
+      "size": 9532,
+      "mode": 420
+    },
+    "adapter/geometry_endpoint.py": {
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106,
+      "mode": 420
+    },
+    "adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": 420
+    },
+    "adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": 420
+    },
+    "qa/freeze-failure-1791103418772962715/freeze.py": {
+      "sha256": "0a7d9be17ea763a629b5599a421d309bb7f762b12a6a5f810d0f414f75549a7c",
+      "size": 2671,
+      "mode": 420
+    },
+    "qa/freeze-failure-1791103418772962715/report.json": {
+      "sha256": "84e055f13f505e409076943601f90ada06a04ad0311ba5619b13e05643ee20e9",
+      "size": 308,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "79d60adba63d8426bbfa98210922adbbcee7c8acac4c0343cbff9095b5cd3567",
+      "size": 3184,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/duplicate JSON key rejects.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/input bound rejects before effect.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/SCOPE.md": {
+      "sha256": "039d1a0488e5a47ca31a188e5994aafe416cc3c899759ddcc24fc1ae389f3a5b",
+      "size": 531,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/daemon.py": {
+      "sha256": "1adb68ed3f015c850178e113a60cbd6962c3496166fa079e4598ef0a06b804fc",
+      "size": 6251,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/endpoint.py": {
+      "sha256": "af542ec41ddcb7bc73b15723e7d8d9b340870901e5e9d0a4883b3babb876cc87",
+      "size": 9532,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/geometry_endpoint.py": {
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/qa/test.py": {
+      "sha256": "03efd104442995d90af8996b5597e17d44a9cf8058184789a5d1682e6e738dd0",
+      "size": 14453,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/inputs/source-lineage.json": {
+      "sha256": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+      "size": 1770,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/partial framing waits newline.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/report.json": {
+      "sha256": "cfd75c666183306be90f98601863fbb7ebf7a31ff85af46da52c08dcd3bfb9dd",
+      "size": 14880,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/trusted event produces refresh hint.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103252549791516/two complete lines routed once.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/duplicate JSON key rejects.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/event EOF retires transport.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/input bound rejects before effect.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/SCOPE.md": {
+      "sha256": "039d1a0488e5a47ca31a188e5994aafe416cc3c899759ddcc24fc1ae389f3a5b",
+      "size": 531,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/catalog_authority.py": {
+      "sha256": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+      "size": 5008,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/catalog_transport.py": {
+      "sha256": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+      "size": 2666,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/daemon.py": {
+      "sha256": "1adb68ed3f015c850178e113a60cbd6962c3496166fa079e4598ef0a06b804fc",
+      "size": 6251,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/effect_endpoint.py": {
+      "sha256": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+      "size": 6985,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/endpoint.py": {
+      "sha256": "af542ec41ddcb7bc73b15723e7d8d9b340870901e5e9d0a4883b3babb876cc87",
+      "size": 9532,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/geometry_endpoint.py": {
+      "sha256": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+      "size": 13106,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/taskbar_catalog.py": {
+      "sha256": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+      "size": 8809,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/adapter/taskbar_projection.py": {
+      "sha256": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+      "size": 1170,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/qa/test.py": {
+      "sha256": "ff372fdfa7d9d358cec9ed3e832b9df836b1f52f9714e0ad0bbf9ec0ad79bcb8",
+      "size": 14574,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/inputs/source-lineage.json": {
+      "sha256": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+      "size": 1770,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/partial framing waits newline.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/report.json": {
+      "sha256": "81d194fa3ef307ef60a9ef4349c7c6a2904cf565e92137f4d17d607304aa0c3a",
+      "size": 14175,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/trusted event produces refresh hint.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/routing-1791103266064226897/two complete lines routed once.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/test.py": {
+      "sha256": "ff372fdfa7d9d358cec9ed3e832b9df836b1f52f9714e0ad0bbf9ec0ad79bcb8",
+      "size": 14574,
+      "mode": 420
+    },
+    "source-lineage.json": {
+      "sha256": "20b0c066ed15db532b3f9a5b1f48a67381f94c3d122ad4299beb1569ddbce98f",
+      "size": 1770,
+      "mode": 420
+    }
+  }
+}
