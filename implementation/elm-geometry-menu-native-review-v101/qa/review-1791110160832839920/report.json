@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "scope": "Independent read-only source/AST and original-deadline boundary review, no GUI/native acceptance",
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "checks": [
+    {
+      "name": "V100 owner published source hold",
+      "passed": true
+    },
+    {
+      "name": "request body exact except bounded deadline initializer",
+      "passed": true
+    },
+    {
+      "name": "original transport budget remains three seconds",
+      "passed": true
+    },
+    {
+      "name": "actual initializer parent smaller",
+      "passed": true
+    },
+    {
+      "name": "actual initializer transport smaller",
+      "passed": true
+    },
+    {
+      "name": "actual initializer bootstrap",
+      "passed": true
+    },
+    {
+      "name": "actual initializer expired parent",
+      "passed": true
+    },
+    {
+      "name": "parent09 deadline supplied and restored without clock monkeypatch",
+      "passed": true
+    },
+    {
+      "name": "cleanup empty native census precedes plugin unload",
+      "passed": true
+    },
+    {
+      "name": "explicit observer distinct session assertion present",
+      "passed": true
+    },
+    {
+      "name": "all ten original scenario identities retained",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-menu-native-review-v101/qa/review.py",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/native.py",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/observer_endpoint.py",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/client_evidence.py",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/candidate_host.py",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/held-source-manifest.json",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/upstream.json",
+      "passed": true
+    },
+    {
+      "name": "stable reviewed source implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/adapter/endpoint.py",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-menu-native-review-v101/qa/review.py": {
+      "sha256": "f4474c20e4260f104a3fd6e42c2081abb84cd54b53a36a8d905b2a8af399087e",
+      "size": 4634
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/native.py": {
+      "sha256": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+      "size": 41959
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/observer_endpoint.py": {
+      "sha256": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+      "size": 2476
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/candidate_host.py": {
+      "sha256": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+      "size": 1366
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/held-source-manifest.json": {
+      "sha256": "7a7c0ed9c3559afea1140ffb51fdc6baafaa25a5b8334d42a3e84a9b7ef479f5",
+      "size": 5513
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/upstream.json": {
+      "sha256": "e1202353c38211dd9543674f820fc438617eae852bc19582c443e1706da141c3",
+      "size": 4088
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-staged-build-v91/qa/build-1791108716010794735/inputs/adapter/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129
+    }
+  },
+  "artifacts": {
+    "inputs/0/review.py": "f4474c20e4260f104a3fd6e42c2081abb84cd54b53a36a8d905b2a8af399087e",
+    "inputs/1/native.py": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+    "inputs/2/observer_endpoint.py": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+    "inputs/3/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "inputs/4/candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "inputs/5/held-source-manifest.json": "7a7c0ed9c3559afea1140ffb51fdc6baafaa25a5b8334d42a3e84a9b7ef479f5",
+    "inputs/6/upstream.json": "e1202353c38211dd9543674f820fc438617eae852bc19582c443e1706da141c3",
+    "inputs/7/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+  }
+}

@@ -1,0 +1,1094 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "releaseAcceptance": false,
+  "completedRequirementIds": [],
+  "scope": "Fixed broker/receipt profile CPU57; native scenario09 and owning broker lifecycle remain unqualified",
+  "parents": {
+    "V92": {
+      "path": "implementation/elm-geometry-broker-eof-deadline-v92/qa/held-source-manifest.json",
+      "sha256": "e99cb1adeebe6603c5d02f90fbb9ed2365947c93a9f821dee65bcb5fcc6adef4"
+    },
+    "V82": {
+      "path": "implementation/elm-geometry-receipt-selector-v82/qa/held-source-manifest.json",
+      "sha256": "c211ad4cf9d1be0a94474869e464332ba0f0394d8892dc747aae20ff56df9b52"
+    }
+  },
+  "reports": [
+    {
+      "path": "qa/test-1791109060303661045/report.json",
+      "sha256": "b25f5c1f293a15338b019188c1e8be161ca21dffa5713c7c602d902fbd15b774",
+      "checks": 19
+    },
+    {
+      "path": "qa/edges-1791109060301660591/report.json",
+      "sha256": "67e8da352b1cb8435ca708b6fa6f0d3e38dff22b3dcf9dbbb273b8870b2aa49c",
+      "checks": 7
+    },
+    {
+      "path": "qa/deadline-1791109060302741537/report.json",
+      "sha256": "73599bbd6d8b65f486be990e1886667fca2c84a2bd00f02dddedec434c63c395",
+      "checks": 7
+    },
+    {
+      "path": "qa/profile-1791109052193226122/report.json",
+      "sha256": "c86e802c97cb75f33b293f94d7f4805a2d0d0242443f37d2d437e2a83dea9039",
+      "checks": 24
+    }
+  ],
+  "failure": {
+    "path": "qa/profile-1791109029811155623/report.json",
+    "sha256": "5b87d9d04640fbe00888c12815b5657fb71066eb829ca08fbf1615846afea537"
+  },
+  "files": {
+    "CONTRACT.md": {
+      "sha256": "3ec69ae2b35595843dc73c13199651eade073a1f8a157c79db0274fa99cb132a",
+      "size": 3352,
+      "mode": 420
+    },
+    "parent.json": {
+      "sha256": "13eddc67f9af9a3c3afb07acbf8d80e8a83f99711f0c5d2f4c9477c44c1ec17f",
+      "size": 386,
+      "mode": 420
+    },
+    "qa/deadline-1791109060302741537/candidate/actor.json": {
+      "sha256": "076d346f4f90ef16c225dafae2ed1d5e9587f0edb914508417936db5b73002a2",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/deadline-1791109060302741537/candidate/gate.json": {
+      "sha256": "45b25849fb73b5cf320d72a33e10c41fe6010c7b073bcb7aebc88293ec8b63b3",
+      "size": 113,
+      "mode": 384
+    },
+    "qa/deadline-1791109060302741537/inputs/qa/deadline.py": {
+      "sha256": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+      "size": 3680,
+      "mode": 420
+    },
+    "qa/deadline-1791109060302741537/inputs/qa/relay.py": {
+      "sha256": "35ca96922f6160fd4d67c0c5740519309775e61a7e8e6b9f18e66780dc4d9168",
+      "size": 10800,
+      "mode": 420
+    },
+    "qa/deadline-1791109060302741537/inputs/qa/unsafe-success-first.py": {
+      "sha256": "52b120fa4f01f29805ebe299247179ec31f18a90e0faf3371d21ed77a61c7ef3",
+      "size": 8951,
+      "mode": 420
+    },
+    "qa/deadline-1791109060302741537/report.json": {
+      "sha256": "73599bbd6d8b65f486be990e1886667fca2c84a2bd00f02dddedec434c63c395",
+      "size": 2682,
+      "mode": 420
+    },
+    "qa/deadline-1791109060302741537/unsafe-ancestor/actor.json": {
+      "sha256": "0ebc2e6fb76c771473e78ee7d37f3d54f86cab3074fb822db1049c446d85447c",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/deadline-1791109060302741537/unsafe-ancestor/exit.json": {
+      "sha256": "8ac09439c692d28a42c8936763e324ae5a718dd32e76ef11fb8a7d7d83950ebb",
+      "size": 131,
+      "mode": 384
+    },
+    "qa/deadline-1791109060302741537/unsafe-ancestor/gate.json": {
+      "sha256": "f019b31a081b9aa18a68b5c191802066bbc9a4c3a662be479acde464f3588a54",
+      "size": 113,
+      "mode": 384
+    },
+    "qa/deadline.py": {
+      "sha256": "109ec6a1d6e6c74af87d941468a6bd3fc8da80fb6d7accbaf44b6c092c4b1d7c",
+      "size": 3680,
+      "mode": 420
+    },
+    "qa/edges-1791109060301660591/backlog/actor.json": {
+      "sha256": "5e84577045568a3e954659ed548e449c7c8cebb566bdf950378854b1ccb6ed64",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/edges-1791109060301660591/backlog/exit.json": {
+      "sha256": "7b84e2486fb29bf146f44c664136e55c697e930d1554064505bf47dd61c54b15",
+      "size": 131,
+      "mode": 384
+    },
+    "qa/edges-1791109060301660591/backlog/gate.json": {
+      "sha256": "5d9d0ca352a8a8817ee79bea5bffdc352289eeecf4684533c14c5468f93d06a7",
+      "size": 113,
+      "mode": 384
+    },
+    "qa/edges-1791109060301660591/blocked/actor.json": {
+      "sha256": "2e6f382b2447789b009dc9f01aacff3b6bf5198a2a2610f6592542934d56b65b",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/edges-1791109060301660591/blocked/gate.json": {
+      "sha256": "6c8b982aca71870c85d4bfa9ce625f9f3b6d2295aa24ded8ae282b8897a17870",
+      "size": 113,
+      "mode": 384
+    },
+    "qa/edges-1791109060301660591/inputs/qa/edges.py": {
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448,
+      "mode": 420
+    },
+    "qa/edges-1791109060301660591/inputs/qa/relay.py": {
+      "sha256": "35ca96922f6160fd4d67c0c5740519309775e61a7e8e6b9f18e66780dc4d9168",
+      "size": 10800,
+      "mode": 420
+    },
+    "qa/edges-1791109060301660591/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    },
+    "qa/edges-1791109060301660591/report.json": {
+      "sha256": "67e8da352b1cb8435ca708b6fa6f0d3e38dff22b3dcf9dbbb273b8870b2aa49c",
+      "size": 1549,
+      "mode": 420
+    },
+    "qa/edges.py": {
+      "sha256": "1be6f92584856f50e101949d748ed38ff365fefa441018cdabce751cd1da5017",
+      "size": 3448,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "5d26c6bcced9bac93851f393ce3134d8cb8a961c17c23a4c341c5a6703d70830",
+      "size": 2835,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/authority.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/inputs/qa/profile-test.py": {
+      "sha256": "5b3bf7b6887ed8c3a0309c48c444b3d3769d3116b2daad430bfe84a44220b4a2",
+      "size": 6483,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/inputs/qa/relay.py": {
+      "sha256": "35ca96922f6160fd4d67c0c5740519309775e61a7e8e6b9f18e66780dc4d9168",
+      "size": 10800,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/public.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/CONTRACT.md": {
+      "sha256": "fe1002efcc24fd3703106c8be8f51afc0df59591d3e6b924b1292bed46b6c09c",
+      "size": 3464,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/parent.json": {
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/freeze.py": {
+      "sha256": "c798ced9a5b44ec108dc4ed9c4995bb91001e1c306a21137cf3096c246958450",
+      "size": 2972,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/held-source-manifest.json": {
+      "sha256": "c211ad4cf9d1be0a94474869e464332ba0f0394d8892dc747aae20ff56df9b52",
+      "size": 15744,
+      "mode": 292
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-1/gate.json": {
+      "sha256": "b822b2d78b434f7afba20708d29d234be7f75641f53fecab074536a83717158b",
+      "size": 299,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-1/held.json": {
+      "sha256": "410dfc3330f7b79a7314e1689ee08ec6df564e78f1fbd651b9aa3062ba0e6106",
+      "size": 644,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/control-3/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/inputs/qa/test.py": {
+      "sha256": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+      "size": 9144,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/inputs/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/hold-1791107748473303162/report.json": {
+      "sha256": "f182066211b2199bf10c4620556fac17c36f7dcf126db5dca1b28dd4430bb5a0",
+      "size": 3550,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/authority.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control1/gate.json": {
+      "sha256": "c7c82bc3987055e1d399e73b654bfd96f5a9a95dadef5f2965b260bb98d83230",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control1/held.json": {
+      "sha256": "b5020a50c5ce4291add6304810785ada3dc53b29020386f7b23b05bf934763cd",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control10/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control11/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control12/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control13/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control14/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control15/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control16/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control17/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control18/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control19/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control20/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control21/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control22/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control23/gate.json": {
+      "sha256": "34768bb0dc4b9d7d6c3eea527b1278cd4f81100dddb05ac022eb748f099f970f",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control23/held.json": {
+      "sha256": "5a99bde93bedf822b73b8f98faca0b8ee1372b64265332999c858155215ae800",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control24/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control3/gate.json": {
+      "sha256": "c5f406a54359388b2734d72985436c4586ef52be3b2490d198e174950df20fb2",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control3/held.json": {
+      "sha256": "1b326de5b1d7fae8538adb702f9d51459ca50153e75c2c7c3188163c52f0b634",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control4/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control5/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control6/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control7/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control8/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/control9/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/parent.json": {
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/selector-test.py": {
+      "sha256": "0b12e347a31808ef49db6ad12e1cf00d1368e885b91720cc32a4899287c70387",
+      "size": 9358,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/staged-test.py": {
+      "sha256": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+      "size": 10912,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/test.py": {
+      "sha256": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+      "size": 9144,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/inputs/upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/report.json": {
+      "sha256": "4762e4c7b38be95edaf21102f03d6157240504f34b00a5e867b4a4b38b86f050",
+      "size": 9881,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-1791107747994689932/wrapper.json": {
+      "sha256": "393f3502c85e4c26594d6cbf429df63ab2e51f9d2e96a12d9cc9d3063d8a8192",
+      "size": 395,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/selector-test.py": {
+      "sha256": "0b12e347a31808ef49db6ad12e1cf00d1368e885b91720cc32a4899287c70387",
+      "size": 9358,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/authority.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control1/gate.json": {
+      "sha256": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control1/held.json": {
+      "sha256": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control10/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control11/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control12/gate.json": {
+      "sha256": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control12/held.json": {
+      "sha256": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control3/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control4/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control5/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control6/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control7/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control8/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/control9/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/qa/staged-test.py": {
+      "sha256": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+      "size": 10912,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/inputs/upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/report.json": {
+      "sha256": "dfbaba1938830f8f28dad885466e7ce2524b23b3f73684cbdc276e019e4d1d66",
+      "size": 10891,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/wrapper-link": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-selector-v82/qa/staged-1791107748248104178/wrapper.json"
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-1791107748248104178/wrapper.json": {
+      "sha256": "611354008f99014b02b8f20a5776656264704c5d2a389291089118b384e095ef",
+      "size": 366,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/staged-test.py": {
+      "sha256": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+      "size": 10912,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/test.py": {
+      "sha256": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+      "size": 9144,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-copy/upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    },
+    "qa/profile-1791109029811155623/receipt-link.json": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-eof-relay-v90/qa/profile-1791109029811155623/receipt.json"
+    },
+    "qa/profile-1791109029811155623/receipt.json": {
+      "sha256": "71cfc342f977014d46925fa4c7ab5e0eb0bfc385e61223e79225dec3f33d17f5",
+      "size": 397,
+      "mode": 384
+    },
+    "qa/profile-1791109029811155623/report.json": {
+      "sha256": "5b87d9d04640fbe00888c12815b5657fb71066eb829ca08fbf1615846afea537",
+      "size": 12762,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/authority.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/inputs/qa/profile-test.py": {
+      "sha256": "b1d120c8a3e2fe35f6bd8a837421ac1938a3d9dccc57aeaa2a8441dab9eb6474",
+      "size": 6498,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/inputs/qa/relay.py": {
+      "sha256": "35ca96922f6160fd4d67c0c5740519309775e61a7e8e6b9f18e66780dc4d9168",
+      "size": 10800,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/public.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/CONTRACT.md": {
+      "sha256": "fe1002efcc24fd3703106c8be8f51afc0df59591d3e6b924b1292bed46b6c09c",
+      "size": 3464,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/parent.json": {
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/freeze.py": {
+      "sha256": "c798ced9a5b44ec108dc4ed9c4995bb91001e1c306a21137cf3096c246958450",
+      "size": 2972,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/held-source-manifest.json": {
+      "sha256": "16b2a89c7b1cbf8c976b80aefd14ff3bdf889eea1553e3a3e734df8ffca5efcf",
+      "size": 15745,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-1/gate.json": {
+      "sha256": "b822b2d78b434f7afba20708d29d234be7f75641f53fecab074536a83717158b",
+      "size": 299,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-1/held.json": {
+      "sha256": "410dfc3330f7b79a7314e1689ee08ec6df564e78f1fbd651b9aa3062ba0e6106",
+      "size": 644,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/control-3/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/inputs/qa/test.py": {
+      "sha256": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+      "size": 9144,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/inputs/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/hold-1791107748473303162/report.json": {
+      "sha256": "f182066211b2199bf10c4620556fac17c36f7dcf126db5dca1b28dd4430bb5a0",
+      "size": 3550,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/authority.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control1/gate.json": {
+      "sha256": "c7c82bc3987055e1d399e73b654bfd96f5a9a95dadef5f2965b260bb98d83230",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control1/held.json": {
+      "sha256": "b5020a50c5ce4291add6304810785ada3dc53b29020386f7b23b05bf934763cd",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control10/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control11/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control12/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control13/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control14/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control15/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control16/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control17/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control18/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control19/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control20/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control21/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control22/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control23/gate.json": {
+      "sha256": "34768bb0dc4b9d7d6c3eea527b1278cd4f81100dddb05ac022eb748f099f970f",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control23/held.json": {
+      "sha256": "5a99bde93bedf822b73b8f98faca0b8ee1372b64265332999c858155215ae800",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control24/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control3/gate.json": {
+      "sha256": "c5f406a54359388b2734d72985436c4586ef52be3b2490d198e174950df20fb2",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control3/held.json": {
+      "sha256": "1b326de5b1d7fae8538adb702f9d51459ca50153e75c2c7c3188163c52f0b634",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control4/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control5/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control6/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control7/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control8/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/control9/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/parent.json": {
+      "sha256": "693fbd6248b1a2fbffdfac3fb56960d7f03f76f20b063ca7f97065f93de08dc1",
+      "size": 631,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/selector-test.py": {
+      "sha256": "0b12e347a31808ef49db6ad12e1cf00d1368e885b91720cc32a4899287c70387",
+      "size": 9358,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/staged-test.py": {
+      "sha256": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+      "size": 10912,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/test.py": {
+      "sha256": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+      "size": 9144,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/inputs/upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/report.json": {
+      "sha256": "4762e4c7b38be95edaf21102f03d6157240504f34b00a5e867b4a4b38b86f050",
+      "size": 9881,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-1791107747994689932/wrapper.json": {
+      "sha256": "393f3502c85e4c26594d6cbf429df63ab2e51f9d2e96a12d9cc9d3063d8a8192",
+      "size": 395,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/selector-test.py": {
+      "sha256": "0b12e347a31808ef49db6ad12e1cf00d1368e885b91720cc32a4899287c70387",
+      "size": 9358,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/authority.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control1/gate.json": {
+      "sha256": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control1/held.json": {
+      "sha256": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control10/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control11/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control12/gate.json": {
+      "sha256": "2d346f562e94cc09d1fa2b0808ad6b717a1dd7e8d63556beb55d5001e6960505",
+      "size": 307,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control12/held.json": {
+      "sha256": "fdbe28ea8fdb2bb54a38f0541698c9d9656903226b37e11f4c4dfbec54f70f76",
+      "size": 667,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control2/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control3/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control4/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control5/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control6/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control7/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control8/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/control9/gate.json": {
+      "sha256": "315831400388ac3beea2683a0f8cf73e56eedfea4d815f74900c8815ccc06584",
+      "size": 17,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/qa/broker-entrypoint.py": {
+      "sha256": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+      "size": 2396,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/qa/staged-test.py": {
+      "sha256": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+      "size": 10912,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/inputs/upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/report.json": {
+      "sha256": "dfbaba1938830f8f28dad885466e7ce2524b23b3f73684cbdc276e019e4d1d66",
+      "size": 10891,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/wrapper-link": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-selector-v82/qa/staged-1791107748248104178/wrapper.json"
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-1791107748248104178/wrapper.json": {
+      "sha256": "611354008f99014b02b8f20a5776656264704c5d2a389291089118b384e095ef",
+      "size": 366,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/staged-test.py": {
+      "sha256": "272e1cf0851ffa9a57f490feddc964f343c7551be5b8bc9b1853bdf52e21d53b",
+      "size": 10912,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/test.py": {
+      "sha256": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605",
+      "size": 9144,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/qa/wrapper.py": {
+      "sha256": "79534e3735e2a3e5e8857e41984c167f8d3896ac42865b418eda8c19c6109ec9",
+      "size": 13213,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-copy/upstream.json": {
+      "sha256": "3801164430944187e06444f778758cc98ba623b39387a7e8da0943f42e674cb1",
+      "size": 1030,
+      "mode": 420
+    },
+    "qa/profile-1791109052193226122/receipt-link.json": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-eof-relay-v90/qa/profile-1791109052193226122/receipt.json"
+    },
+    "qa/profile-1791109052193226122/receipt.json": {
+      "sha256": "e123c13eb56a0654e481cecece8fa62a283873fb180b450c265e7ba8eeffe35e",
+      "size": 397,
+      "mode": 384
+    },
+    "qa/profile-1791109052193226122/report.json": {
+      "sha256": "c86e802c97cb75f33b293f94d7f4805a2d0d0242443f37d2d437e2a83dea9039",
+      "size": 12897,
+      "mode": 420
+    },
+    "qa/profile-test.py": {
+      "sha256": "b1d120c8a3e2fe35f6bd8a837421ac1938a3d9dccc57aeaa2a8441dab9eb6474",
+      "size": 6498,
+      "mode": 420
+    },
+    "qa/relay.py": {
+      "sha256": "35ca96922f6160fd4d67c0c5740519309775e61a7e8e6b9f18e66780dc4d9168",
+      "size": 10800,
+      "mode": 420
+    },
+    "qa/test-1791109060303661045/control-1/actor.json": {
+      "sha256": "19cc918db4cd22fec0f20cb19d7e312525e3ac240b9d418bd118b162ab3edfdd",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-1/exit.json": {
+      "sha256": "0952bde88ae313ffddcb595265f9a9264e3d20b3d6d5f3dbb1e6ff1777298e74",
+      "size": 131,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-1/gate.json": {
+      "sha256": "402847af830b5b8a06c5c658f19ac789df9d6dc8653542a34e1cc921d6402c6e",
+      "size": 113,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-2/actor.json": {
+      "sha256": "726a837a135fbba2a394590ff738628e86d3c4e4c952fa1a5d7840d07aab911f",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-2/exit.json": {
+      "sha256": "bffc505a95c007325b257600395e0a19183b283035276d2fc995b67ec50a816a",
+      "size": 131,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-2/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-3/actor.json": {
+      "sha256": "0f771b9969022fb3ff3175f579a03c4f473971de55c642d0c7c1079c1e1e5ba2",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-3/gate.json": {
+      "sha256": "4750e9b45d4567a2c4d3bedfb9dc153d5c50efd155581a92a8cde6b6dc66de96",
+      "size": 107,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-4/actor.json": {
+      "sha256": "598f66a90a0bc645ca9ece3708e86d0d0f855f6423f29a11cd5d1543a7c7e296",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-4/gate.json": {
+      "sha256": "de188fce6b3a3614979bf4a74d2f927e12af24b3def1655c4231e8e18773699c",
+      "size": 20,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-5/actor.json": {
+      "sha256": "9cf3065af6382a789a2e95a12db2e44907fc702a3f195e99ddd8e6bdec59c29e",
+      "size": 94,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/control-5/gate.json": {
+      "sha256": "2dc3a36b6319fde0e5a923011644725146516471cc339cdb67a7313ab15fdf35",
+      "size": 113,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/dir-link": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-eof-relay-v90/qa/test-1791109060303661045/control-5"
+    },
+    "qa/test-1791109060303661045/hardlink.json": {
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "size": 2,
+      "mode": 384
+    },
+    "qa/test-1791109060303661045/inputs/qa/relay.py": {
+      "sha256": "35ca96922f6160fd4d67c0c5740519309775e61a7e8e6b9f18e66780dc4d9168",
+      "size": 10800,
+      "mode": 420
+    },
+    "qa/test-1791109060303661045/inputs/qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    },
+    "qa/test-1791109060303661045/link.json": {
+      "symlink": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-receipt-eof-relay-v90/qa/test-1791109060303661045/control-5/actor.json"
+    },
+    "qa/test-1791109060303661045/report.json": {
+      "sha256": "b25f5c1f293a15338b019188c1e8be161ca21dffa5713c7c602d902fbd15b774",
+      "size": 3292,
+      "mode": 420
+    },
+    "qa/test.py": {
+      "sha256": "3377f219b81ddd86f77542ddbbf4d0b99614fea3778d8ffc12cbe960f127ec7f",
+      "size": 5768,
+      "mode": 420
+    }
+  },
+  "api": {
+    "entrypoint": "qa/relay.py ABS_PRIVATE_CONFIG",
+    "profiles": [
+      "broker",
+      "receipt"
+    ],
+    "EOFDeadlineSeconds": 3,
+    "queueBytesPerDirection": 8192
+  }
+}

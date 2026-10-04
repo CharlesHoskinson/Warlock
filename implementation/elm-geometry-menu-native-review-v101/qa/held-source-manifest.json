@@ -1,0 +1,129 @@
+{
+  "sourceHeld": true,
+  "evidenceIntegrityPassed": true,
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "releaseAcceptance": false,
+  "scope": "Independent V100 source review; AST/auth/deadline/census only, no GUI",
+  "reviewedSourceManifest": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-family-menu-receipt-cleanup-native-v100/qa/held-source-manifest.json",
+    "sha256": "7a7c0ed9c3559afea1140ffb51fdc6baafaa25a5b8334d42a3e84a9b7ef479f5",
+    "verifiedFiles": 18
+  },
+  "acceptedReport": {
+    "path": "qa/review-1791110160832839920/report.json",
+    "sha256": "b738fe27a2203514d4dea228f282e657331f3a77d3f2589426436ae64aa60cf2",
+    "checks": 19
+  },
+  "failure": {
+    "path": "qa/review-1791110142404788992/report.json",
+    "sha256": "2fac3cc854d23699009f91e989ddd834480cf508512492427690bf19e2c14dbb"
+  },
+  "files": {
+    "REVIEW.md": {
+      "sha256": "31af042cf658cf47042be626b4b55ca9038c34a31bdad850d7a2fa1f5a0c2df7",
+      "size": 3100,
+      "mode": 420
+    },
+    "qa/freeze.py": {
+      "sha256": "097262d011dc4bbca26a7fc24fac2871def9e9fdf2be2c98232dee2e88f486b6",
+      "size": 2405,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/0/review.py": {
+      "sha256": "b2a1385f8d5b826d75ae7bd86c15319b639d6d78932e25e89b4526ebd7d9f89f",
+      "size": 4430,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/1/native.py": {
+      "sha256": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+      "size": 41959,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/2/observer_endpoint.py": {
+      "sha256": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+      "size": 2476,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/3/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/4/candidate_host.py": {
+      "sha256": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+      "size": 1366,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/5/held-source-manifest.json": {
+      "sha256": "7a7c0ed9c3559afea1140ffb51fdc6baafaa25a5b8334d42a3e84a9b7ef479f5",
+      "size": 5513,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/6/upstream.json": {
+      "sha256": "e1202353c38211dd9543674f820fc438617eae852bc19582c443e1706da141c3",
+      "size": 4088,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/inputs/7/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "mode": 420
+    },
+    "qa/review-1791110142404788992/report.json": {
+      "sha256": "2fac3cc854d23699009f91e989ddd834480cf508512492427690bf19e2c14dbb",
+      "size": 2066,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/0/review.py": {
+      "sha256": "f4474c20e4260f104a3fd6e42c2081abb84cd54b53a36a8d905b2a8af399087e",
+      "size": 4634,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/1/native.py": {
+      "sha256": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+      "size": 41959,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/2/observer_endpoint.py": {
+      "sha256": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+      "size": 2476,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/3/client_evidence.py": {
+      "sha256": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+      "size": 7165,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/4/candidate_host.py": {
+      "sha256": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+      "size": 1366,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/5/held-source-manifest.json": {
+      "sha256": "7a7c0ed9c3559afea1140ffb51fdc6baafaa25a5b8334d42a3e84a9b7ef479f5",
+      "size": 5513,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/6/upstream.json": {
+      "sha256": "e1202353c38211dd9543674f820fc438617eae852bc19582c443e1706da141c3",
+      "size": 4088,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/inputs/7/endpoint.py": {
+      "sha256": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+      "size": 10129,
+      "mode": 420
+    },
+    "qa/review-1791110160832839920/report.json": {
+      "sha256": "b738fe27a2203514d4dea228f282e657331f3a77d3f2589426436ae64aa60cf2",
+      "size": 5354,
+      "mode": 420
+    },
+    "qa/review.py": {
+      "sha256": "f4474c20e4260f104a3fd6e42c2081abb84cd54b53a36a8d905b2a8af399087e",
+      "size": 4634,
+      "mode": 420
+    }
+  }
+}

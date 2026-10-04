@@ -1,0 +1,59 @@
+{
+  "passed": false,
+  "scope": "Independent read-only source/AST and original-deadline boundary review, no GUI/native acceptance",
+  "nativeAcceptance": false,
+  "full09Accepted": false,
+  "checks": [
+    {
+      "name": "V100 owner published source hold",
+      "passed": true
+    },
+    {
+      "name": "request body exact except bounded deadline initializer",
+      "passed": true
+    },
+    {
+      "name": "original transport budget remains three seconds",
+      "passed": true
+    },
+    {
+      "name": "actual initializer parent smaller",
+      "passed": true
+    },
+    {
+      "name": "actual initializer transport smaller",
+      "passed": true
+    },
+    {
+      "name": "actual initializer bootstrap",
+      "passed": true
+    },
+    {
+      "name": "actual initializer expired parent",
+      "passed": true
+    },
+    {
+      "name": "parent09 deadline supplied and restored without clock monkeypatch",
+      "passed": true
+    },
+    {
+      "name": "cleanup empty native census precedes plugin unload",
+      "passed": true
+    },
+    {
+      "name": "explicit observer distinct session assertion present",
+      "passed": false
+    }
+  ],
+  "error": "AssertionError('explicit observer distinct session assertion present')",
+  "artifacts": {
+    "inputs/0/review.py": "b2a1385f8d5b826d75ae7bd86c15319b639d6d78932e25e89b4526ebd7d9f89f",
+    "inputs/1/native.py": "faf123cfc9385bde8906ea524494e584554e10680665b2ea0b824442ad14c896",
+    "inputs/2/observer_endpoint.py": "68ab481cc88576ea821cdc638c88c54571988c57819bc88d8624f033220cfbc8",
+    "inputs/3/client_evidence.py": "348e4658ed5fd8462eed2cc0d789628e6affb22d1758610e0a93e7bfb8451446",
+    "inputs/4/candidate_host.py": "9102d8f9a6cdeb49f5b2ffd16b1cca2d4a9c732416c3ade2f2e54852227f5872",
+    "inputs/5/held-source-manifest.json": "7a7c0ed9c3559afea1140ffb51fdc6baafaa25a5b8334d42a3e84a9b7ef479f5",
+    "inputs/6/upstream.json": "e1202353c38211dd9543674f820fc438617eae852bc19582c443e1706da141c3",
+    "inputs/7/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e"
+  }
+}
