@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "scope": "Actual extracted callbacks with independent request/configure/input oracles; no native window acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/candidate/src/desktop/view/Window.cpp": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/candidate/src/managers/fullscreen/FullscreenController.cpp": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/callback-test.py": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+  },
+  "checks": [
+    {
+      "name": "actual",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "checks 54\n",
+      "stderr": ""
+    },
+    {
+      "name": "previous-toggle",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL explicit desired mode/guard\n"
+    },
+    {
+      "name": "previous-no-max-configure",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL distinct MAX/FULL configure flags\n"
+    },
+    {
+      "name": "unsafe-raw-owner-input",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL minimized/hidden/blocked input exclusion preserved\n"
+    }
+  ]
+}

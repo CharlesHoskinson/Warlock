@@ -1,0 +1,20 @@
+PASS positive-full-position-size-logical-and-visual
+PASS unknown-external-maximized-has-no-invented-original
+PASS opaque-native-identity-positive-and-invalid-zero
+PASS native-output-zero-and-negative-workspace-supported
+PASS unknown-scope-generations-and-workspace-refused
+PASS duplicate-preserves-first-original
+PASS duplicate-fresh-scope-does-not-rebind-original
+PASS replacement-incarnation-cannot-read
+PASS authority-lifetime-change-cannot-read
+PASS capture-requires-exact-current-native-identity
+PASS retired-native-absence-refuses-capture-and-read
+PASS workspace-id-compatibility
+PASS workspace-generation-compatibility
+PASS output-id-compatibility
+PASS output-generation-compatibility
+PASS invalid-logical-rect-refused-without-record
+PASS invalid-visual-rect-independently-refused
+PASS capacity-256-refuses-257-no-eviction
+PASS duplicate-at-capacity-preserves-first
+FAIL retirement-exact-id-preserves-unrelated-record: wrong lifetime retired original

@@ -1,0 +1,3050 @@
+{
+  "passed": true,
+  "frozenUTCUnixNs": 1791098533303407112,
+  "nativeScope": "Direct xdg ordinary/maximize/duplicate-set/restore/duplicate-unset with border-aware workarea, exact placement, request-correlated server barrier, client configure/ACK/queued buffer and three presented interior pixels",
+  "nativeChecks": 35,
+  "fullRoadmapAccepted": false,
+  "menuAuthorityIntegrated": false,
+  "pluginABIQualified": false,
+  "deployed": false,
+  "quintModelLogicApproved": false,
+  "acceptedReports": [
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/report.json",
+      "sha256": "f1771cb815282d34582898dae219fa3f36c6b3ea80a395e0a7f241515320658a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/closure-1791098168146518088/report.json",
+      "sha256": "61976f28af6c09663fc9043fc1fc3ab58ff57723da4d7e4b3644656885c3dd96"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/link-closure-1791098175984269698/report.json",
+      "sha256": "ae39eb326814c47ad1ae4e6aaafe17ffbfc458a3c700539cf4cf51d3f04a92a7"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/report.json",
+      "sha256": "931d23e0a528df033f8813fd5ea5ce7a250497109d8354f87e97e2f638b51839"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/report.json",
+      "sha256": "c364b68c337bc59974d9372fb7ac1707b7736c694410be92321d6116b19cbc00"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/report.json",
+      "sha256": "c1f5d8ea835d5ea83d00a1e8e214dfccd7b23e1c7854bded2f42f24c6c2136c5"
+    }
+  ],
+  "files": [
+    {
+      "path": "implementation/elm-window-geometry-v16/candidate/PlacementPolicy.hpp",
+      "size": 4143,
+      "sha256": "d991cd6162413f21bfa82eec9e69746f96a31d16a8d3e7ed565982abb300adac"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/README.md",
+      "size": 3396,
+      "sha256": "3a8b2c1e02f4e13ff3165300ebb79d06643fc845432bc94342ec03dd2b9e9b33"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/aq-tuple.json",
+      "size": 474,
+      "sha256": "5b411e851ceb56cb3420dd843a7e3d9acb91ac745333dc72dcdddc214916298a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/FullscreenController-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/FullscreenController-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/FullscreenController.cpp.d",
+      "size": 22795,
+      "sha256": "4ed8b74494be358e7f74708891e2f4dff29e07ac0786311bdebdd7755e9b7dd7"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/FullscreenController.cpp.o",
+      "size": 358320,
+      "sha256": "5bbe8885dd749485b55a3c5bb679740af7e10d2a424c4a0b698a0ce05c7cc87f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/Window-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/Window-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/Window.cpp.d",
+      "size": 28112,
+      "sha256": "16fdecb2b1ce7327a861617d5cd64b87757a7122426bd88d742bc795669875d1"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/Window.cpp.o",
+      "size": 1052912,
+      "sha256": "c7bab1c183b40b4d853997cc6305815cd391dd79f16471cab72e5cf78f44c11b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/ancestor-archive-payloads.json",
+      "size": 63214,
+      "sha256": "0cd17575cdb4a0baa5d5f03eef81cb9957047fcf686d3cd1d887c8b7612f0971"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/ancestor-controller-object.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/ancestor-controller-object.stdout",
+      "size": 355904,
+      "sha256": "028ad10cd64f025b53cd86ddf56528c41a3680e3a6e056b268c4ad3b459a3af9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/ancestor-window-object.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/ancestor-window-object.stdout",
+      "size": 1052744,
+      "sha256": "8b387be55d8499e5d8da27b5152f7f5a77909157916420240f5aa23096f158b4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/archive.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/archive.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/inputs/build.py",
+      "size": 6782,
+      "sha256": "2c28107d4a1650ea87e0bca8ebb9637145ca5413d3700b4ca5927d1e1e0e0f4e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/inputs/candidate/SceneModal.hpp",
+      "size": 2863,
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/inputs/candidate/SceneTrace.hpp",
+      "size": 1303,
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/inputs/candidate/WindowPolicy.hpp",
+      "size": 311,
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/inputs/candidate/src/desktop/view/Window.cpp",
+      "size": 124420,
+      "sha256": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/inputs/candidate/src/managers/fullscreen/FullscreenController.cpp",
+      "size": 25303,
+      "sha256": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/inputs/qa/callback-test.py",
+      "size": 7777,
+      "sha256": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/libhyprland_lib.a",
+      "size": 91242984,
+      "sha256": "ac0f2a9ed1fb67e5e8192d2d9aec99ce7cde924c24126e53bab265394699d9ef"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/link.stderr",
+      "size": 230,
+      "sha256": "df22a831fa0164ee1710bf4a7f4b8edaad4ccd1dc5c7fe21bd6ba78e928d72a1"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/link.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/new-archive-payloads.json",
+      "size": 63214,
+      "sha256": "bd92a9dde5fd57926cda47c0a189a95b7f78988e5bb966d7019e7dc1362d9685"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096576436035510/report.json",
+      "size": 55754,
+      "sha256": "2d24c4488b7f89c3a2856b1db4e2d723a28bcaef8d23929fa8cd3b5701a39b57"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/FullscreenController-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/FullscreenController-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/FullscreenController.cpp.d",
+      "size": 22795,
+      "sha256": "2880af2732e642c80d45feef3021b0e4c70f1f68996acb69efd7d3307d35a889"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/FullscreenController.cpp.o",
+      "size": 358320,
+      "sha256": "5bbe8885dd749485b55a3c5bb679740af7e10d2a424c4a0b698a0ce05c7cc87f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/Hyprland",
+      "size": 19586024,
+      "sha256": "baa23009d39c3966fc8e5e7150fbcf860c27e58e52d0a172a6fe035effd7b9e2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/Window-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/Window-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/Window.cpp.d",
+      "size": 28112,
+      "sha256": "b2bc62a40670b75c3f1566a67a6d18a9c1f754da3d459ef036f68a1e0dc2b524"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/Window.cpp.o",
+      "size": 1052912,
+      "sha256": "c7bab1c183b40b4d853997cc6305815cd391dd79f16471cab72e5cf78f44c11b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/ancestor-archive-payloads.json",
+      "size": 63214,
+      "sha256": "0cd17575cdb4a0baa5d5f03eef81cb9957047fcf686d3cd1d887c8b7612f0971"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/ancestor-controller-object.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/ancestor-controller-object.stdout",
+      "size": 355904,
+      "sha256": "028ad10cd64f025b53cd86ddf56528c41a3680e3a6e056b268c4ad3b459a3af9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/ancestor-window-object.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/ancestor-window-object.stdout",
+      "size": 1052744,
+      "sha256": "8b387be55d8499e5d8da27b5152f7f5a77909157916420240f5aa23096f158b4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/archive.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/archive.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/inputs/build.py",
+      "size": 6796,
+      "sha256": "c7fdc4a6a69bc61c184d225bea6b15367cac04aef5b84b126ba00e792054e3e8"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/inputs/candidate/SceneModal.hpp",
+      "size": 2863,
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/inputs/candidate/SceneTrace.hpp",
+      "size": 1303,
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/inputs/candidate/WindowPolicy.hpp",
+      "size": 311,
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/inputs/candidate/src/desktop/view/Window.cpp",
+      "size": 124420,
+      "sha256": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/inputs/candidate/src/managers/fullscreen/FullscreenController.cpp",
+      "size": 25303,
+      "sha256": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/inputs/qa/callback-test.py",
+      "size": 7777,
+      "sha256": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/libhyprland_lib.a",
+      "size": 91242984,
+      "sha256": "ac0f2a9ed1fb67e5e8192d2d9aec99ce7cde924c24126e53bab265394699d9ef"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/link.d",
+      "size": 16743,
+      "sha256": "b6f53bd5173c6a8487a8212488d00ada69fd67bc960dc18604e0cbe529b86492"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/link.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/link.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/new-archive-payloads.json",
+      "size": 63214,
+      "sha256": "bd92a9dde5fd57926cda47c0a189a95b7f78988e5bb966d7019e7dc1362d9685"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build-1791096651129914247/report.json",
+      "size": 56237,
+      "sha256": "62592dc119149840c642e55088d9dea935c5da29a900834b05065a2fe9e488c2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/build.py",
+      "size": 6796,
+      "sha256": "c7fdc4a6a69bc61c184d225bea6b15367cac04aef5b84b126ba00e792054e3e8"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/candidate/src/desktop/view/Window.cpp",
+      "size": 124420,
+      "sha256": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/candidate/src/managers/fullscreen/FullscreenController.cpp",
+      "size": 25303,
+      "sha256": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/candidate_host.py",
+      "size": 10929,
+      "sha256": "4f8c7192cea489fa93058b3867a6d16b339338689ae38dd18fabb4bfa10221cd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/client-build-report.json",
+      "size": 529,
+      "sha256": "36273f0c88bf2c3ab851e05dc6734aa081fd9196323edc56d9ad8a711edaad43"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/link-build-report.json",
+      "size": 284,
+      "sha256": "d2e9c599fc0a3f377c8396a5f68d99571745c2ccae11da985cd6b2dc8c956865"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/native-build-report.json",
+      "size": 738,
+      "sha256": "55ddb2e64cd26d32b72d703d8a126c3e33e6ec9375b1c81d9bd54824962efd4f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/actual/actual-barrier-fixture.c",
+      "size": 9245,
+      "sha256": "1de85315dd013191463761ff2c86404080e45ede373d388f179045b13f02bee0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/actual/barrier-fixture",
+      "size": 17192,
+      "sha256": "57b7353744dbf31a8f523d120478e95a897e629957907f0ebbeabd6c08111337"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/actual/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/actual/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/actual/dependencies.d",
+      "size": 2101,
+      "sha256": "27532eed3c2d858807ff7db91bf970d5aea3cab88fc63187e81e1dc85f06087a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/actual/run.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/actual/run.stdout",
+      "size": 4893,
+      "sha256": "091851acf8f69ab4edaa8c213e063c8d93c788d8e815ac389555cac33ed5604d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/inputs/barrier-test.py",
+      "size": 13269,
+      "sha256": "710e59867e379a28e04d210703ce2e852fdd5f49d101a339e6a6523143252558"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/inputs/xdg-max-client.c",
+      "size": 17411,
+      "sha256": "f7616b379718c384fbe5bea76aec6d8567c9cc3652da7f661dcb1078c28da23f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-callback-not-destroyed/actual-barrier-fixture.c",
+      "size": 9230,
+      "sha256": "6168322a15c0237df41eed9b6dcfb94c48227adf25e441bc0b5aaaa200a2f6d2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-callback-not-destroyed/barrier-fixture",
+      "size": 17152,
+      "sha256": "5cbc9975a0bf02b265961d8ca73e362f0d7849b6ffdd7abcb0cac8298cea500f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-callback-not-destroyed/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-callback-not-destroyed/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-callback-not-destroyed/dependencies.d",
+      "size": 2147,
+      "sha256": "ed09a1dd57c0f919d59c29d34dcad357e9ed16f0f4e05b4d05a30adc3b0d15b6"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-callback-not-destroyed/run.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-callback-not-destroyed/run.stdout",
+      "size": 4893,
+      "sha256": "bc9eb0d430e343c3fde04b3998405d37c2123bf210d8a5f1e5909a64fd45be33"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-current-sequence-replaces-original/actual-barrier-fixture.c",
+      "size": 9245,
+      "sha256": "ee64b9f9d4d8ef757c1fff0df36cead9406d01d69c6d38f22e6027ea0cc331c1"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-current-sequence-replaces-original/barrier-fixture",
+      "size": 17192,
+      "sha256": "23e97d25e3fcf8a22c80443122b084de687ebac012b0046f0d6d9d59a32dac4d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-current-sequence-replaces-original/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-current-sequence-replaces-original/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-current-sequence-replaces-original/dependencies.d",
+      "size": 2171,
+      "sha256": "f572675903649fb5358e2dacf2de101bd1929671a68f36dd7e697a3951b7ca8c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-current-sequence-replaces-original/run.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-current-sequence-replaces-original/run.stdout",
+      "size": 4893,
+      "sha256": "fd26a2760af2ecdba98a80e943526fdb0a24f7f5e76e24f25b557be587186552"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-local-receipt/actual-barrier-fixture.c",
+      "size": 9289,
+      "sha256": "a1b24b41e48028c5cafa17250d2b1c3d763ba1451e0ed31d31ddc65b65bb4c99"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-local-receipt/barrier-fixture",
+      "size": 17192,
+      "sha256": "9e4326b7c355cc1889bdad057d8e6d63f61c2c19e065d3fe0e0f14eca4977fd9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-local-receipt/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-local-receipt/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-local-receipt/dependencies.d",
+      "size": 2129,
+      "sha256": "5f179551de12b254897aa78a54b053193cb8ce886382f6de638ac3a7fd97b831"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-local-receipt/run.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-local-receipt/run.stdout",
+      "size": 7260,
+      "sha256": "87e1b2a9f43278d2af4cfba297317d799fbd65ee83d86178109165f89147ffd0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-removed-pre-dispatch-bound/actual-barrier-fixture.c",
+      "size": 9188,
+      "sha256": "1fb32021ad12e0eda8bf4b3b36dbff63ef901bf19eff49449dfdb32f19ec8d4f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-removed-pre-dispatch-bound/barrier-fixture",
+      "size": 17192,
+      "sha256": "3202b22d40292416930887a8ff761412c14dde2145404dbef505c0d7fb4fd608"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-removed-pre-dispatch-bound/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-removed-pre-dispatch-bound/compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-removed-pre-dispatch-bound/dependencies.d",
+      "size": 2155,
+      "sha256": "3fa9614b6d10081282c39d45547b37d9d4e428c50c11887b8ce82d0b0147741a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-removed-pre-dispatch-bound/run.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/mutant-removed-pre-dispatch-bound/run.stdout",
+      "size": 5070,
+      "sha256": "c3a29655d868e4d9dbdb44f550727349cc0936ddc4cd9b26f121b77b9caa6fcb"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test-1791097534756588746/report.json",
+      "size": 6462,
+      "sha256": "e1266d2d655cfa2674f909b54b3f3d04c9a6ad3bc5f29c4212b02285957a2669"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/barrier-test.py",
+      "size": 13269,
+      "sha256": "710e59867e379a28e04d210703ce2e852fdd5f49d101a339e6a6523143252558"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/build-client.py",
+      "size": 4951,
+      "sha256": "c9fb839693dcc298e35254b27f3b983f5b02f8a41874e8c6eec2b0e9385168f2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callback-test.py",
+      "size": 7777,
+      "sha256": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/FullscreenController.cpp",
+      "size": 25303,
+      "sha256": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/Window.cpp",
+      "size": 124420,
+      "sha256": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/actual",
+      "size": 45368,
+      "sha256": "2ffcb1d700812ad9d5b9d04c34be34a43e3c6e1c7af329ffb4ed08d701af022e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/actual-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/actual-run.log",
+      "size": 10,
+      "sha256": "f20779f737557ceb6e4ad3d71c6a3ca555aea7b8754037486730631399e0cd9b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/actual.cpp",
+      "size": 7058,
+      "sha256": "2988e527dfb7d210cadf03f6209a7bfb996e855a05095b194015f61fadc2f9cf"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/callback-test.py",
+      "size": 7777,
+      "sha256": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-no-max-configure",
+      "size": 45384,
+      "sha256": "079ec2d0b61f4b88414f1648710db1c63056dc4afce51a3e4c64e73c92502071"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-no-max-configure-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-no-max-configure-run.log",
+      "size": 39,
+      "sha256": "03bde1cf65008d5db6fed01b9164c9c6e81adc747c72cb4c7e1d46a3a6704925"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-no-max-configure.cpp",
+      "size": 6890,
+      "sha256": "6d6c60ece24f81e4bd6691c4b5f5f31b245a79587226ce5aa46cc0821e4464f9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-toggle",
+      "size": 45376,
+      "sha256": "8b419bc75385f3472f110c3d39ffeebdc702d93bc729aad8705d7b752741d933"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-toggle-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-toggle-run.log",
+      "size": 33,
+      "sha256": "c55f32bd51f29643e19be338792aa811279f3566a81edbe526d7a22c5c3d5a8d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/previous-toggle.cpp",
+      "size": 6946,
+      "sha256": "86d82fd814c88c80bb17ed0751a8493b3eea28556525794ac6dafaed2391aafa"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/report.json",
+      "size": 1429,
+      "sha256": "03db6b0cbd77a959feca311d78442210e108ff5c7bedb996c8f621bbd4156e4e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/unsafe-raw-owner-input",
+      "size": 45328,
+      "sha256": "9c94c204f779725c309d3d7655e12a829ecfb7fc1d6728eca858ba41ec2bf44b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/unsafe-raw-owner-input-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/unsafe-raw-owner-input-run.log",
+      "size": 56,
+      "sha256": "66b780b8f954603886dc20b776b5ca6673e76473c3cfb6019cbd7ac620b4765f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/callbacks-1791096460666628230/unsafe-raw-owner-input.cpp",
+      "size": 7004,
+      "sha256": "f42e991999d31804bbcc3a08a90bf01ed9ddee8f72d2f440049c6cdc12b0d624"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client-build.stderr",
+      "size": 1807,
+      "sha256": "b42672e88bf1abda9c4639cde9559cc7e327fb4b951c0cab9721e3b9700c0275"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client-build.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client-flags.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client-flags.stdout",
+      "size": 21,
+      "sha256": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client-header.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client-header.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client.d",
+      "size": 1586,
+      "sha256": "8b024bc3b9075f4c11285d46f2b923244c73073e2468b410e7120cf045ac6395"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/compiler-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/compiler-version.stdout",
+      "size": 228,
+      "sha256": "bdf8abcd8e56cec825a021925617afad1e7e258c738cc61d6325c7250da733cd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/generated/xdg-shell-client.h",
+      "size": 86409,
+      "sha256": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/generated/xdg-shell-protocol.c",
+      "size": 5999,
+      "sha256": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/build-client.py",
+      "size": 4951,
+      "sha256": "c9fb839693dcc298e35254b27f3b983f5b02f8a41874e8c6eec2b0e9385168f2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-max-client.c",
+      "size": 14407,
+      "sha256": "87d25f464ef4bf183d85bb644006c807bd7e44b38bab50666d253ebd1cb79267"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-shell.xml",
+      "size": 63846,
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/protocol-code.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/protocol-code.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/report.json",
+      "size": 5392,
+      "sha256": "82e742c8d931750400b7f1be0c978702aa9e92cab5461038b7f0a7db183eacc2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/scanner-version.stderr",
+      "size": 23,
+      "sha256": "7781d4bdaabd8c59b362476a40f44a32c136372c265defc11595f5f347797e1d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/scanner-version.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-build.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-build.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-dependencies.d",
+      "size": 4742,
+      "sha256": "c08a570c6b0d9c8ccad6ccf176cc12d176b9474c85d2f4cf4bfd5a7e658dc678"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-dependencies.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-dependencies.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-flags.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-flags.stdout",
+      "size": 21,
+      "sha256": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-header.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client-header.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/client.d",
+      "size": 1586,
+      "sha256": "86bc7705b590610283f9d5a7377c488d9591434a12ebc34174c8dcf08bad1794"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/compiler-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/compiler-version.stdout",
+      "size": 228,
+      "sha256": "bdf8abcd8e56cec825a021925617afad1e7e258c738cc61d6325c7250da733cd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/generated/xdg-shell-client.h",
+      "size": 86409,
+      "sha256": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/generated/xdg-shell-protocol.c",
+      "size": 5999,
+      "sha256": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/inputs/build-client.py",
+      "size": 4951,
+      "sha256": "c9fb839693dcc298e35254b27f3b983f5b02f8a41874e8c6eec2b0e9385168f2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/inputs/xdg-max-client.c",
+      "size": 14413,
+      "sha256": "1692369760d1492696d9a99c4877599a21c3e2785f7e7b1cd9db4f272fa28c81"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/inputs/xdg-shell.xml",
+      "size": 63846,
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/linked-libraries.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/linked-libraries.stdout",
+      "size": 369,
+      "sha256": "d3d65520586968d5643df4b3e9b632572f664326b49c128bd77549b63446762b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/protocol-code.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/protocol-code.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/protocol-dependencies.d",
+      "size": 1438,
+      "sha256": "764c0de93ff7c8fa0576917193360c1e75d3c4c0a6c020e846fc3c8bee5c5540"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/protocol-dependencies.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/protocol-dependencies.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/report.json",
+      "size": 23510,
+      "sha256": "e02b78c02fed3172e8c3f846ea38502a2e8f47d74dc72ed5c633d3b7669a8223"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/scanner-version.stderr",
+      "size": 23,
+      "sha256": "7781d4bdaabd8c59b362476a40f44a32c136372c265defc11595f5f347797e1d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/scanner-version.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096496840857159/xdg-max-client",
+      "size": 36216,
+      "sha256": "fee625abfb6fd1cd97b5d8c7320f19a3fad5b47377c1580aa7a8ddc89687a108"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-build.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-build.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-dependencies.d",
+      "size": 4742,
+      "sha256": "30225741a75ac2c46dd4e5ec295d490a82668d5c5139e4b0b231e851e6e1844f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-dependencies.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-dependencies.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-flags.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-flags.stdout",
+      "size": 21,
+      "sha256": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-header.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client-header.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/client.d",
+      "size": 1586,
+      "sha256": "9903fd2e0079230bfc5303e4e17555e1f5f2bf0f2d5d89345f4627beca8f5617"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/compiler-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/compiler-version.stdout",
+      "size": 228,
+      "sha256": "bdf8abcd8e56cec825a021925617afad1e7e258c738cc61d6325c7250da733cd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/generated/xdg-shell-client.h",
+      "size": 86409,
+      "sha256": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/generated/xdg-shell-protocol.c",
+      "size": 5999,
+      "sha256": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/inputs/build-client.py",
+      "size": 4951,
+      "sha256": "c9fb839693dcc298e35254b27f3b983f5b02f8a41874e8c6eec2b0e9385168f2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/inputs/xdg-max-client.c",
+      "size": 14865,
+      "sha256": "383a4090828edc96c0067f9afa862d8c5795a1e588be67d9be8b30819aa67390"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/inputs/xdg-shell.xml",
+      "size": 63846,
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/linked-libraries.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/linked-libraries.stdout",
+      "size": 369,
+      "sha256": "dfae808835b6430e3fc3d59b2083c6e6e2692f6fa1a48636940643c10c90a974"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/protocol-code.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/protocol-code.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/protocol-dependencies.d",
+      "size": 1438,
+      "sha256": "d6a403325496af2f830259f673a5bac136842dcc404d524bf51982d35e53b7dc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/protocol-dependencies.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/protocol-dependencies.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/report.json",
+      "size": 23510,
+      "sha256": "f5d4fdd66c083ba3bfb44efa8ddf8dc3c1d61a9d73ead94fb05af6786f98f1e0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/scanner-version.stderr",
+      "size": 23,
+      "sha256": "7781d4bdaabd8c59b362476a40f44a32c136372c265defc11595f5f347797e1d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/scanner-version.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791096843123720681/xdg-max-client",
+      "size": 36216,
+      "sha256": "2f85f2c0ffdcd9ca25aec18ead78ccfcc97d88abfc9119e73710c65a58c2d3fc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-build.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-build.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-dependencies.d",
+      "size": 4742,
+      "sha256": "e2081f23d177d1f04c33b123cd3eb05f4b632e67c4ee965c8e76b354b8bd5839"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-dependencies.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-dependencies.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-flags.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-flags.stdout",
+      "size": 21,
+      "sha256": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-header.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client-header.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/client.d",
+      "size": 1586,
+      "sha256": "6bd9ef9de0ceb7f8dc1ad23e7d9358a1924f50da8ece9a2f493e1ec1103e7e02"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/compiler-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/compiler-version.stdout",
+      "size": 228,
+      "sha256": "bdf8abcd8e56cec825a021925617afad1e7e258c738cc61d6325c7250da733cd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/generated/xdg-shell-client.h",
+      "size": 86409,
+      "sha256": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/generated/xdg-shell-protocol.c",
+      "size": 5999,
+      "sha256": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/inputs/build-client.py",
+      "size": 4951,
+      "sha256": "c9fb839693dcc298e35254b27f3b983f5b02f8a41874e8c6eec2b0e9385168f2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/inputs/xdg-max-client.c",
+      "size": 17411,
+      "sha256": "f7616b379718c384fbe5bea76aec6d8567c9cc3652da7f661dcb1078c28da23f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/inputs/xdg-shell.xml",
+      "size": 63846,
+      "sha256": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/linked-libraries.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/linked-libraries.stdout",
+      "size": 369,
+      "sha256": "754c69dff6ff35d9c8203630b6c2cb5b219c7da61f07a143e5c3c325ad3a34f9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/protocol-code.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/protocol-code.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/protocol-dependencies.d",
+      "size": 1438,
+      "sha256": "cc76e0a6c92e2b6deafd906c16dd073b4248b6e39df7db9f0005b3eef2653311"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/protocol-dependencies.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/protocol-dependencies.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/report.json",
+      "size": 23510,
+      "sha256": "4a34904d504a7fd8537f480dd88a3cf697b62ff86555a7201b05db5339e519d2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/scanner-version.stderr",
+      "size": 23,
+      "sha256": "7781d4bdaabd8c59b362476a40f44a32c136372c265defc11595f5f347797e1d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/scanner-version.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/client-build-1791097234964408082/xdg-max-client",
+      "size": 36376,
+      "sha256": "709b42a1c20f702ab08f4d55d45fd72849b99e68b6fe7af45ab549a9d7d735a4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/closure-1791097255127497802/ancestor.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/closure-1791097255127497802/ancestor.symbols",
+      "size": 1161596,
+      "sha256": "a0d19ffb05a7363ce48db08b446e127158e537e4f31f55eabda8175728eb48bf"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/closure-1791097255127497802/candidate.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/closure-1791097255127497802/candidate.symbols",
+      "size": 1161596,
+      "sha256": "ffe54db119c103417aa37a4b06b170044052e756af3113689966061c3335c0d4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/closure-1791097255127497802/report.json",
+      "size": 1533,
+      "sha256": "d4b54312c87403afbac7db4963bc0bbea40b90b217cbec1c95e51df779f58c3c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/closure.py",
+      "size": 2899,
+      "sha256": "362a44977ceee4e499a1660fe8c1df48ae17b35a66a853634ce9c8e21dd0ec0f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/link-closure-1791097509413004314/Hyprland",
+      "size": 19586024,
+      "sha256": "baa23009d39c3966fc8e5e7150fbcf860c27e58e52d0a172a6fe035effd7b9e2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/link-closure-1791097509413004314/link.d",
+      "size": 16753,
+      "sha256": "0428b6821943da9ebc0d05ce2ec13db3710c0bb27ea71801a67c29762e4ebdf6"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/link-closure-1791097509413004314/link.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/link-closure-1791097509413004314/link.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/link-closure-1791097509413004314/report.json",
+      "size": 30006,
+      "sha256": "787f5cd0825001a2da0c1efa0bd9cd76ee104531d7ae716163321308fbb55fb2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/link-closure.py",
+      "size": 2855,
+      "sha256": "0df06369051bdb549a850dace6b59ebe0c8ba469bf618587f0afee4cd031a514"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/dmabuf-probe.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/dmabuf-probe.stdout",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/host-evidence.json",
+      "size": 209291,
+      "sha256": "ff1f85698838b62c1b13f72f07914816b74b9d395bb3c03b083bca6c6720e275"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/hyprland.log",
+      "size": 2615,
+      "sha256": "fbac9f0735a0dd22e246c5bdd0ce6499c178477bd48a6ce5b03f6ff805f42871"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/privateBus.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791097898_187360411/hyprland.log",
+      "size": 24338,
+      "sha256": "97091ba2767f14ca95343c80fb2c9c66e58337be577d649c2e01bfa43bc5c86a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/runtime-archive/hyprland.lua",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/weston-renderer.log",
+      "size": 3466,
+      "sha256": "b0161fc7795f1201f55889235d4b57317733a632eabab15ff60247f1ec3e7a32"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/weston.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native-evidence/xdg-max-client.log",
+      "size": 12179,
+      "sha256": "115dce45f182af42c2241475a6b6ebaff593a74df0064588e5703f884cdc16a6"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/native.py",
+      "size": 16966,
+      "sha256": "f7b9028e258c0f3851bf92596ecbcf1905845905fbf79bd17121f786b4cdfd21"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791097897738455353/report.json",
+      "size": 217394,
+      "sha256": "b4aaad75e993e7e6578655340297f505f4353e094d9b14ac7f38c6634a75a5ca"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/dmabuf-probe.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/dmabuf-probe.stdout",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/host-evidence.json",
+      "size": 209597,
+      "sha256": "a8ef3f817d0d47d7af61632e7caff7eeb7437a0abd0e6139135c5a640e306a99"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/hyprland.log",
+      "size": 2616,
+      "sha256": "d675c338b72489720ae5c87cfe5f28a798a5294da19edc2ced98e21f7064cbdd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/privateBus.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791098017_1854883681/hyprland.log",
+      "size": 24339,
+      "sha256": "8c4c48fba538eac70d5a7d79bf90f6014f56a681778080567800ad348caa6333"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/runtime-archive/hyprland.lua",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/weston-renderer.log",
+      "size": 3466,
+      "sha256": "7b4afa4493be4af47c57e7c83712f68674532387a92fa1483d2c2b0ee15100e4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/weston.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native-evidence/xdg-max-client.log",
+      "size": 16094,
+      "sha256": "7a60504b51faa4158dff9a6f6550bd7c4e7dcd2494fd2a3d2435a7fb5cdbd8b7"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/native.py",
+      "size": 17200,
+      "sha256": "8f5accae7ab68518bf41ca9676f4ae88483c5b5d3f00a4a354f963b70e26cd8a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-1791098015927050897/report.json",
+      "size": 217803,
+      "sha256": "b739016e51ac524c56513ebddc2ea250efc242bc6698fb57a87a241424f1ce69"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-import-failure-1791097887036604383/native.py",
+      "size": 16159,
+      "sha256": "35011fb23ddac6991e4f8ca490322302ea06c2cb0a87b623a9907108629d3815"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-import-failure-1791097887036604383/report.json",
+      "size": 342,
+      "sha256": "7146abe48b9155f22c34c8251a1e827615c8355ffdb892e9f1d33fdcc4236e93"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-lua.py",
+      "size": 17200,
+      "sha256": "8f5accae7ab68518bf41ca9676f4ae88483c5b5d3f00a4a354f963b70e26cd8a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native-pixels.py",
+      "size": 16966,
+      "sha256": "f7b9028e258c0f3851bf92596ecbcf1905845905fbf79bd17121f786b4cdfd21"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/native.py",
+      "size": 16159,
+      "sha256": "35011fb23ddac6991e4f8ca490322302ea06c2cb0a87b623a9907108629d3815"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/rejected-raw-owner-window.cpp",
+      "size": 124338,
+      "sha256": "b1e40a190a2a788ae393d308ae08a98d887bcdf994b25238a840dc9a14093c0a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/rejected-reset-deadline-native.py",
+      "size": 15524,
+      "sha256": "d038ab2bb87d95741df6b7ea98136d4bb5068c84531ca30483eb37c67848e8f8"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/core/qa/xdg-max-client.c",
+      "size": 17411,
+      "sha256": "f7616b379718c384fbe5bea76aec6d8567c9cc3652da7f661dcb1078c28da23f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/compile.stdout",
+      "size": 518,
+      "sha256": "017d8013c21ee102072bcd353963d681ef8576a6726ee07e854dcddbd7343c35"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/GeometryPolicyWorker.elmi",
+      "size": 257,
+      "sha256": "7c391420a6d7501b88ca11d93f0c06d30d0819ffb2667899d28e78b826b47bbe"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/GeometryPolicyWorker.elmo",
+      "size": 8264,
+      "sha256": "6de2af0b6dc4489bb20708d694112630a420576c3948c43dc6e772d1ce63bf8f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/WindowGeometry.elmi",
+      "size": 4011,
+      "sha256": "ba45b2e4ab75c4686cd1efc6f0f0315bd1038f58650bc37b2d0343a52d9cebb0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/WindowGeometry.elmo",
+      "size": 5909,
+      "sha256": "9285548bcc1c31048a20d8931239060c18a67fb7bba1fc4baa9b0e3a8929cd4e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/d.dat",
+      "size": 1458,
+      "sha256": "d15e60729b7d95deee09d79706c56481ed465eece13d719ce24c5e306536db22"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/i.dat",
+      "size": 105328,
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/lock",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm-stuff/0.19.2/o.dat",
+      "size": 441107,
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/elm.json",
+      "size": 306,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/qa/geometry-policy-test.py",
+      "size": 2855,
+      "sha256": "ce251ff1ce79fc3b64115e2e9be6a9ce6d5ddbe7bc5e970ed6d737fdfedb9a3e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/qa/geometry-policy-tests.js",
+      "size": 5494,
+      "sha256": "5580b94249b89e6908d78b6a2bd47dfd1c20d2cbedb867f0f1f464d0ad34d44e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/qa/geometry-policy-worker.elm",
+      "size": 3098,
+      "sha256": "5f880c29e51222fdd1cad167f525239c6b7bff2e6ff1357d18b0cdd28cde0b6b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/src/GeometryPolicyWorker.elm",
+      "size": 3098,
+      "sha256": "5f880c29e51222fdd1cad167f525239c6b7bff2e6ff1357d18b0cdd28cde0b6b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/inputs/src/WindowGeometry.elm",
+      "size": 2846,
+      "sha256": "cae47c57fb6e3fd872332c5e0029cb5305d31fa2eb6ec1235c6fae0ba6b458d2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/report.json",
+      "size": 4752,
+      "sha256": "bc30f56b2613feb63b9452d00d1ba8f77a88e6161062f61d40c3877529363993"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/scenarios.stderr",
+      "size": 123,
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/scenarios.stdout",
+      "size": 2194,
+      "sha256": "9c4893242dd0b3d11b21d8e589b4de6bd7dd085fdbc2d6b5a9192602afc9745c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791095952767532138/worker.js",
+      "size": 74431,
+      "sha256": "0c8f66c1fe6e858841823073d78dc416f7c94052585e71c1846d0f3dec5a1280"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/compile.stdout",
+      "size": 518,
+      "sha256": "9e6b8d375de2df2fd6202163485172369b6c29901b3661bdb4d580193ee59cf5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/GeometryPolicyWorker.elmi",
+      "size": 257,
+      "sha256": "7c391420a6d7501b88ca11d93f0c06d30d0819ffb2667899d28e78b826b47bbe"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/GeometryPolicyWorker.elmo",
+      "size": 8264,
+      "sha256": "6de2af0b6dc4489bb20708d694112630a420576c3948c43dc6e772d1ce63bf8f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/WindowGeometry.elmi",
+      "size": 4011,
+      "sha256": "ba45b2e4ab75c4686cd1efc6f0f0315bd1038f58650bc37b2d0343a52d9cebb0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/WindowGeometry.elmo",
+      "size": 6324,
+      "sha256": "2b6bacc8b124c0c5b4f63b555ca23d48b136534a2a6ecb8641e9b4aaca9817fe"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/d.dat",
+      "size": 1458,
+      "sha256": "229f97cb2c40c0d1173564eeb51500ae01580ebc12c1709383e5d4e2acfeede4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/i.dat",
+      "size": 105328,
+      "sha256": "e75b950b056ab768f666e5285ee2c87e911218c43a695676738667870e947c23"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/lock",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm-stuff/0.19.2/o.dat",
+      "size": 441107,
+      "sha256": "7cd6af96bcda469315a586f85a1b009a471a11eb8348bdc7964ca22f91ab38d5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/elm.json",
+      "size": 306,
+      "sha256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/qa/geometry-policy-test.py",
+      "size": 2855,
+      "sha256": "ce251ff1ce79fc3b64115e2e9be6a9ce6d5ddbe7bc5e970ed6d737fdfedb9a3e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/qa/geometry-policy-tests.js",
+      "size": 7672,
+      "sha256": "7eefeadba87eb0f9b66933a1ba6be733219263ee21e7855884a6cc7de21a7489"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/qa/geometry-policy-worker.elm",
+      "size": 3098,
+      "sha256": "5f880c29e51222fdd1cad167f525239c6b7bff2e6ff1357d18b0cdd28cde0b6b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/src/GeometryPolicyWorker.elm",
+      "size": 3098,
+      "sha256": "5f880c29e51222fdd1cad167f525239c6b7bff2e6ff1357d18b0cdd28cde0b6b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/src/WindowGeometry.elm",
+      "size": 3109,
+      "sha256": "57b999e00b6cd6865e51876fd3a56f456719eeb2fd845542b4c7a2d9df8a24e0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/report.json",
+      "size": 5643,
+      "sha256": "0d7c32cecacae1603e5ede2e759269c3d05dba0daf9393456747ed4de80fa0dd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/scenarios.stderr",
+      "size": 123,
+      "sha256": "4689a2e0df2a7e7040dfd521540be861ba74ed4994d5ab2d3f62878f699ee331"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/scenarios.stdout",
+      "size": 2877,
+      "sha256": "0004f13a6c0a6f572e90861a8ed1b11f68982ea4379139436f4c371058671161"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/worker.js",
+      "size": 74753,
+      "sha256": "69fbcfa1308f53fde9ec88112253c291b1af845d86bc8cf979e74d5b497bb2f0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-test.py",
+      "size": 2855,
+      "sha256": "ce251ff1ce79fc3b64115e2e9be6a9ce6d5ddbe7bc5e970ed6d737fdfedb9a3e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-tests.js",
+      "size": 7672,
+      "sha256": "7eefeadba87eb0f9b66933a1ba6be733219263ee21e7855884a6cc7de21a7489"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/geometry-policy-worker.elm",
+      "size": 3098,
+      "sha256": "5f880c29e51222fdd1cad167f525239c6b7bff2e6ff1357d18b0cdd28cde0b6b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-policy-test.py",
+      "size": 7395,
+      "sha256": "2ae11d6d3dc9541d6237e71a7e51a85cf6ab0d87462acdef7354b7e5d8465720"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/actual-header-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/actual-header-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/actual-policy-tests.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/actual-policy-tests.stdout",
+      "size": 986,
+      "sha256": "6585b3b38ab61537e58e2afc8c171240ecfb57a1b5ffc551f196a28952aa9ee2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/compiler-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/compiler-version.stdout",
+      "size": 228,
+      "sha256": "0b52fa36f98d1a1ff3f77256f64c13ac7e2264cf7f072ea7943756a0ef378028"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/ignore-native-lifetime-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/ignore-native-lifetime-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/ignore-native-lifetime-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/ignore-native-lifetime-unsafe-rejected.stdout",
+      "size": 986,
+      "sha256": "6585b3b38ab61537e58e2afc8c171240ecfb57a1b5ffc551f196a28952aa9ee2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/inputs/PlacementPolicy.hpp",
+      "size": 4143,
+      "sha256": "d991cd6162413f21bfa82eec9e69746f96a31d16a8d3e7ed565982abb300adac"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/inputs/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/inputs/placement-policy-test.py",
+      "size": 6876,
+      "sha256": "aa73a44bc6ebe5d0ebc69211e914b5f01c97626043df2d13a884d68061aa36a8"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/mutant-ignore-native-lifetime/PlacementPolicy.hpp",
+      "size": 4121,
+      "sha256": "f15e7d1cdf9fccaba10db7a72495555e99b163e656649398c285cf0e6ae4c9ce"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/mutant-ignore-native-lifetime/placement-policy-test",
+      "size": 51712,
+      "sha256": "ee903daaf93983a2215e6ffeaeff5f8b41071554e03482e0a7d916fbe6fe0f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/placement-policy-test",
+      "size": 51712,
+      "sha256": "ee903daaf93983a2215e6ffeaeff5f8b41071554e03482e0a7d916fbe6fe0f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/policy.d",
+      "size": 10542,
+      "sha256": "d8dbdd0f085327bbd671f5c34988a5f74112884dcc7d5cf26ea29eb6189b39ac"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791095981181478951/report.json",
+      "size": 36933,
+      "sha256": "2508cd538a8ddea6cbc2acebcbe83da7c54178ffe75912cdcb7ed66de363fb3f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/actual-header-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/actual-header-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/actual-policy-tests.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/actual-policy-tests.stdout",
+      "size": 986,
+      "sha256": "6585b3b38ab61537e58e2afc8c171240ecfb57a1b5ffc551f196a28952aa9ee2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/admit-invalid-original-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/admit-invalid-original-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/admit-invalid-original-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/admit-invalid-original-unsafe-rejected.stdout",
+      "size": 776,
+      "sha256": "fadaf6328177019e342284e53b16c1f498932d2595dbab1820996b1d41599d77"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/compiler-version.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/compiler-version.stdout",
+      "size": 228,
+      "sha256": "0b52fa36f98d1a1ff3f77256f64c13ac7e2264cf7f072ea7943756a0ef378028"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/evict-at-capacity-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/evict-at-capacity-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/evict-at-capacity-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/evict-at-capacity-unsafe-rejected.stdout",
+      "size": 858,
+      "sha256": "a9d212bd0c8797b9f67b089c2af1fa6b67a5a9f737e9426ec05c870fc86a0f93"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-current-native-identity-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-current-native-identity-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-current-native-identity-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-current-native-identity-unsafe-rejected.stdout",
+      "size": 443,
+      "sha256": "2b64e62ec7d8ef0d90a1aad5675693dde9bcbcd80cc2d897de28c81f43b41bf1"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-incarnation-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-incarnation-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-incarnation-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-incarnation-unsafe-rejected.stdout",
+      "size": 438,
+      "sha256": "33a684fd96e74a448b59afd09ed736d8b2c3bf557cecf8342d823a79e8734142"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-native-lifetime-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-native-lifetime-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-native-lifetime-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-native-lifetime-unsafe-rejected.stdout",
+      "size": 482,
+      "sha256": "fb502de0e4e8872a2dc2728d59ef6700d2177774f605e6f06ba11d57f9f97e15"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-generation-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-generation-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-generation-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-generation-unsafe-rejected.stdout",
+      "size": 715,
+      "sha256": "088a5a1cc2cd763a0eaaa67a78d35a24468055c9b02b3cde7784ca06bcca068a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-id-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-id-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-id-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-output-id-unsafe-rejected.stdout",
+      "size": 681,
+      "sha256": "f7f87f299fac7bac5f233feb2aacf5df2c5683a5b116683d9fd160fe83c647d2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-visual-validity-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-visual-validity-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-visual-validity-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-visual-validity-unsafe-rejected.stdout",
+      "size": 822,
+      "sha256": "3ed6cd83a1e365617c08206cb27178837130e54fc631c30d948a748ba2c35c31"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-generation-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-generation-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-generation-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-generation-unsafe-rejected.stdout",
+      "size": 652,
+      "sha256": "5c8748a17c3774eec5ec60cf7f38196922509728619d6ba302ed9b4224421b35"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-id-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-id-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-id-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/ignore-workspace-id-unsafe-rejected.stdout",
+      "size": 389,
+      "sha256": "b651a7b77ed15314ffdc4fad2693e9a36da1b41c93654d34ee31b2a294b37ff7"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/inputs/PlacementPolicy.hpp",
+      "size": 4143,
+      "sha256": "d991cd6162413f21bfa82eec9e69746f96a31d16a8d3e7ed565982abb300adac"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/inputs/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/inputs/placement-policy-test.py",
+      "size": 7395,
+      "sha256": "2ae11d6d3dc9541d6237e71a7e51a85cf6ab0d87462acdef7354b7e5d8465720"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/invent-external-original-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/invent-external-original-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/invent-external-original-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/invent-external-original-unsafe-rejected.stdout",
+      "size": 136,
+      "sha256": "59971ec9446812b017f2f93248f56a61bbda5569b301c5d6e26b1755a270e8f5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-admit-invalid-original/PlacementPolicy.hpp",
+      "size": 4095,
+      "sha256": "3c093db32be76e6ae0ab27746c99007037d40c1bbeb3f602e6676fa835be66f5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-admit-invalid-original/placement-policy-test",
+      "size": 51560,
+      "sha256": "6e422ed624d8a7b0b23d171887d92c1d94a5b68c3b854d7c335f0a03dc0bb37f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-admit-invalid-original/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-admit-invalid-original/policy.d",
+      "size": 10618,
+      "sha256": "cf7f54e0f9501294789b2b67b6bab63022ff356d9a3f1ec5e14f46d8fb065d51"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-evict-at-capacity/PlacementPolicy.hpp",
+      "size": 4196,
+      "sha256": "dbe1b597955ee55eec5ac422efe7f136efe26ecc9209bfb584f8ecffabe896c3"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-evict-at-capacity/placement-policy-test",
+      "size": 51712,
+      "sha256": "c24810bcbc207a499d7e80e4e1f2578b7e561ced9998e8c88570c0bf7e4c8df1"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-evict-at-capacity/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-evict-at-capacity/policy.d",
+      "size": 10603,
+      "sha256": "50e199e97edb45b329f2bda7a19ce68b7f37ee675cfa4320ab43bf68e40d5dc3"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-current-native-identity/PlacementPolicy.hpp",
+      "size": 4065,
+      "sha256": "8f0bf4a3785e42bb5c1793e834a981899a4dc44a4898b8a6027a21900faccad7"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-current-native-identity/placement-policy-test",
+      "size": 55808,
+      "sha256": "8a08f3f2ac91674097665cbe27f940eefcd56994150e613c3579b6b21eea8523"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-current-native-identity/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-current-native-identity/policy.d",
+      "size": 10642,
+      "sha256": "8b58aceca6648ad88ba00ef9efc0543cda0c2775331eb39f5aa4db14dad59519"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-incarnation/PlacementPolicy.hpp",
+      "size": 4115,
+      "sha256": "a9fa4de40f061834ba6edfe19e2e91536ca21f319bf1f7467fc3e41b12c7e8ee"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-incarnation/placement-policy-test",
+      "size": 55808,
+      "sha256": "4dcecc3b07e70022651cd6b3b2a387afc7e4363d0ce8cd28a4a5b6412f3a274c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-incarnation/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-incarnation/policy.d",
+      "size": 10606,
+      "sha256": "c2533a61e24f33b964c687fce3a1eaa13e6090f5df4fe4c3d4124c50e5af0c86"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-native-lifetime/PlacementPolicy.hpp",
+      "size": 4121,
+      "sha256": "f15e7d1cdf9fccaba10db7a72495555e99b163e656649398c285cf0e6ae4c9ce"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-native-lifetime/placement-policy-test",
+      "size": 55808,
+      "sha256": "e3244c79e9d1e6be1758dfdc072b7fbd6edaf3b198abaa99e22087b6d72d9642"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-native-lifetime/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-native-lifetime/policy.d",
+      "size": 10618,
+      "sha256": "92142e48b1f89170b499704064c0231fc9008fd884e9de706e13bbf51ec1edcd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-generation/PlacementPolicy.hpp",
+      "size": 4105,
+      "sha256": "eac4b8aae62323fba7dc00b5922e32bf28a21d3fab2e297770d43ff78e7b346f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-generation/placement-policy-test",
+      "size": 51712,
+      "sha256": "9069588284b1f8db9132cd5cdd642bb0181098e6ac765618917fbb7c0bcce50c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-generation/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-generation/policy.d",
+      "size": 10624,
+      "sha256": "76412112122bfb4846440a2e2189a8b95c14ae896a708232b29cb58320b7a6c2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-id/PlacementPolicy.hpp",
+      "size": 4125,
+      "sha256": "7019fcfb2873be1a9d41ad6bf326a1f38864f07c647242e6eadd3d815a783f00"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-id/placement-policy-test",
+      "size": 51712,
+      "sha256": "e994d1e247184c8e7df2a1b8c2d5db050b9804d7c56de1e5ded10a5c9b63a794"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-id/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-output-id/policy.d",
+      "size": 10600,
+      "sha256": "8db5f2d1d3f75412fef2169f3a833598815d4b5795da02e9351f418c23a77506"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-visual-validity/PlacementPolicy.hpp",
+      "size": 4115,
+      "sha256": "953ddf530ebf0f818e7823487596c715fe9a87a5f289ebd6c7c753fb55636beb"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-visual-validity/placement-policy-test",
+      "size": 51656,
+      "sha256": "632dfb3c18d084d412e7ff2703b3469e78c750cfbf39a5d544cadddb4ca61134"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-visual-validity/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-visual-validity/policy.d",
+      "size": 10618,
+      "sha256": "547493da0c8acc821feb82d517695834268bf0ae2d5eef7a58355bb4fbb7a4d2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-generation/PlacementPolicy.hpp",
+      "size": 4099,
+      "sha256": "e2f67bf8c74b3df2fa7f25bfe11f4834425e1e07dc0d337d8fa4c76a7ccb6290"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-generation/placement-policy-test",
+      "size": 51712,
+      "sha256": "1e861e293473b4f4bf575c9e846263618e40a01cad77eb8e69ea9a769b9d6eda"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-generation/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-generation/policy.d",
+      "size": 10633,
+      "sha256": "c2ff433973c644b181619eec97d7465f75749a4c25157a09007bc7ef017e1c37"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-id/PlacementPolicy.hpp",
+      "size": 4119,
+      "sha256": "5184b864f96937e83cc47602143a883e98f60e9895895547656328199e95a59f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-id/placement-policy-test",
+      "size": 51712,
+      "sha256": "d0be3af93fcf822ed52f5d967c7f92e629d78d924ec54c9a4216b5bf1e903bad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-id/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-ignore-workspace-id/policy.d",
+      "size": 10609,
+      "sha256": "524358eb859c40c6c1e23d310d3d4600bebb30206ff39dc0f71f1c2206c7fe50"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-invent-external-original/PlacementPolicy.hpp",
+      "size": 4126,
+      "sha256": "f2561d81518cd11be62795621271db2b7c6e0bc34cf98901404b9232052fb53d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-invent-external-original/placement-policy-test",
+      "size": 47176,
+      "sha256": "41c0c59ab343aeacc1e01a6c28c08052a852f59b0b36c786132efb379ace6a8a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-invent-external-original/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-invent-external-original/policy.d",
+      "size": 10624,
+      "sha256": "97b9da2ca72be371d9f90b7f489ae40714c6ee3e17552d2ed331411b6cc24056"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-overwrite-first-original/PlacementPolicy.hpp",
+      "size": 4169,
+      "sha256": "376dd7ffd890e4ed477f0830dc1ffff5a46bbae4188863473d838c48adf0e5cd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-overwrite-first-original/placement-policy-test",
+      "size": 51712,
+      "sha256": "7d585ef26813fcb9c7d037d9546dcdbe55544b50a2e72d8b42a3bb7c4122eb27"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-overwrite-first-original/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-overwrite-first-original/policy.d",
+      "size": 10624,
+      "sha256": "3917a1ba439b509d414ae9483bbc73a438b1a920ebb3392cf6ba5cb7fc37db0f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-retire-wrong-identity/PlacementPolicy.hpp",
+      "size": 4151,
+      "sha256": "68db54b7090e7d6b9972ea22887116491f6e127bc9495f7558e83c1a81a8a847"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-retire-wrong-identity/placement-policy-test",
+      "size": 51712,
+      "sha256": "b384d11ea3917ce02a1ad812d37ca76591164170ab1b73b3a25704bbd4714471"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-retire-wrong-identity/placement-policy-test.cpp",
+      "size": 9038,
+      "sha256": "639bf7ff78e780506824fe054df86fbc8520516eb9a5740f568c846d72961de9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/mutant-retire-wrong-identity/policy.d",
+      "size": 10615,
+      "sha256": "ba977ba01ec84ca6a4cd6de83cab0959e705127323eb921172667bb3b696888c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/overwrite-first-original-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/overwrite-first-original-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/overwrite-first-original-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/overwrite-first-original-unsafe-rejected.stdout",
+      "size": 343,
+      "sha256": "5385d439f8238105982a77cff693fa2830e334de9ca0ad065fbaf5538b09f132"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/placement-policy-test",
+      "size": 51712,
+      "sha256": "ee903daaf93983a2215e6ffeaeff5f8b41071554e03482e0a7d916fbe6fe0f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/policy.d",
+      "size": 10542,
+      "sha256": "e3ad152b5168497e9b99a7a0d3fe12f7dcebddce810dd5f0e40278cf7120b1e4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/report.json",
+      "size": 71133,
+      "sha256": "5a08336af963190f85d5b11476cc0b770e6c30f6742c8edb8779421220285896"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/retire-wrong-identity-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/retire-wrong-identity-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/retire-wrong-identity-unsafe-rejected.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/placement-test-1791096043995946691/retire-wrong-identity-unsafe-rejected.stdout",
+      "size": 958,
+      "sha256": "dcc4d11176438e7f919ee83429f5d51c1a148eea795f345219e7493bd04332bc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/sketch-1791095986795497238/geometry-sketch.qnt",
+      "size": 3007,
+      "sha256": "f228ee4d10f2dbdcddd179d4627541a9f0daa184a628c0742bfec87273801a02"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/sketch-1791095986795497238/report.json",
+      "size": 605,
+      "sha256": "7301ca113bc90da69f7fe08c40a2685f96d627580f1cbadd5f8361289ffa9298"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/sketch-1791095986795497238/stderr.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/sketch-1791095986795497238/stdout.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/qa/typecheck-sketch.py",
+      "size": 1005,
+      "sha256": "c8c08663689b1073fedc3ff5e2ab8ceead6464aacd094c71b509806942bc2909"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/spec/README.md",
+      "size": 2451,
+      "sha256": "3d77ba66b4648fd708ce3c39303d2f369fc02291e81399a5f567b86c1de1ddb2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/spec/geometry-sketch.qnt",
+      "size": 3007,
+      "sha256": "f228ee4d10f2dbdcddd179d4627541a9f0daa184a628c0742bfec87273801a02"
+    },
+    {
+      "path": "implementation/elm-window-geometry-v16/src/WindowGeometry.elm",
+      "size": 3109,
+      "sha256": "57b999e00b6cd6865e51876fd3a56f456719eeb2fd845542b4c7a2d9df8a24e0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/aq-tuple.json",
+      "size": 474,
+      "sha256": "5b411e851ceb56cb3420dd843a7e3d9acb91ac745333dc72dcdddc214916298a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/FullscreenController-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/FullscreenController-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/FullscreenController.cpp.d",
+      "size": 22815,
+      "sha256": "5f31c72793ab1ebbdbee625274023cd1139140f0564b5f7d479de33b82d3b803"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/FullscreenController.cpp.o",
+      "size": 358320,
+      "sha256": "5bbe8885dd749485b55a3c5bb679740af7e10d2a424c4a0b698a0ce05c7cc87f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/Hyprland",
+      "size": 19586024,
+      "sha256": "be47f319ca67ec9294d2d6940909fc9b8c31841ff11cdfbd5b235593f27486c2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/Window-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/Window-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/Window.cpp.d",
+      "size": 28142,
+      "sha256": "531e69a3c6166e71d04c0e765b4fc9095ece2c0b5dae179a36f7e5b59133cc5e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/Window.cpp.o",
+      "size": 1052912,
+      "sha256": "c7bab1c183b40b4d853997cc6305815cd391dd79f16471cab72e5cf78f44c11b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/XDGShell-compile.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/XDGShell-compile.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/XDGShell.cpp.d",
+      "size": 16520,
+      "sha256": "8bfdd34a55cd2b7872f9430476c9727ec31d02db1a6dc00e873f299a4cfc96c2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/XDGShell.cpp.o",
+      "size": 558360,
+      "sha256": "c4329dc7e139666da0c46c4a4e18063030eee5cff3698c61a551200fb839e9db"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/ancestor-archive-payloads.json",
+      "size": 63214,
+      "sha256": "0cd17575cdb4a0baa5d5f03eef81cb9957047fcf686d3cd1d887c8b7612f0971"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/ancestor-controller-object.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/ancestor-controller-object.stdout",
+      "size": 355904,
+      "sha256": "028ad10cd64f025b53cd86ddf56528c41a3680e3a6e056b268c4ad3b459a3af9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/ancestor-window-object.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/ancestor-window-object.stdout",
+      "size": 1052744,
+      "sha256": "8b387be55d8499e5d8da27b5152f7f5a77909157916420240f5aa23096f158b4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/ancestor-xdg-object.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/ancestor-xdg-object.stdout",
+      "size": 558536,
+      "sha256": "03acf3bd3057bda98352d310c21686338d2d6acac47e76b47f3d52b9c006479c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/archive.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/archive.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/build.py",
+      "size": 7033,
+      "sha256": "d3f57e1f0defc81cf89a29f76e306a77f2c81a9747e22da4ac47a9d245f7ed87"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/candidate/SceneModal.hpp",
+      "size": 2863,
+      "sha256": "e179d660844d41715b62f822423f48f4187436b9f9cb3d97a3670bd3501d7aec"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/candidate/SceneTrace.hpp",
+      "size": 1303,
+      "sha256": "5895ab04c1b663cac9a79f40ed8b288769edeb09ff6d64675ff28f4394523044"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/candidate/WindowPolicy.hpp",
+      "size": 311,
+      "sha256": "73c5a6d32e4e14c504ecb5806ce7d4c2d99c0a26c80b14e4dae0b7e035588b90"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/candidate/src/desktop/view/Window.cpp",
+      "size": 124420,
+      "sha256": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/candidate/src/managers/fullscreen/FullscreenController.cpp",
+      "size": 25303,
+      "sha256": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/candidate/src/protocols/XDGShell.cpp",
+      "size": 35489,
+      "sha256": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/inputs/qa/callback-test.py",
+      "size": 7777,
+      "sha256": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/libhyprland_lib.a",
+      "size": 91242808,
+      "sha256": "f595691380b6c20887510f19e521e5f66a63ca04a1f8a5bee09a824ee88da2ee"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/link.d",
+      "size": 16793,
+      "sha256": "19826004280185671432bc07d122550f0c86314822d7c64eb3e2dd8216f8e3b4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/link.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/link.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/new-archive-payloads.json",
+      "size": 63214,
+      "sha256": "20d051d1807b228cbb8cdf30a569b0791beae4d12bae7cbcd6c07662ffd3695d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/report.json",
+      "size": 61678,
+      "sha256": "f1771cb815282d34582898dae219fa3f36c6b3ea80a395e0a7f241515320658a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/build.py",
+      "size": 7033,
+      "sha256": "d3f57e1f0defc81cf89a29f76e306a77f2c81a9747e22da4ac47a9d245f7ed87"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/candidate/src/desktop/view/Window.cpp",
+      "size": 124420,
+      "sha256": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/candidate/src/managers/fullscreen/FullscreenController.cpp",
+      "size": 25303,
+      "sha256": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/candidate/src/protocols/XDGShell.cpp",
+      "size": 35489,
+      "sha256": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/candidate_host.py",
+      "size": 10929,
+      "sha256": "4f8c7192cea489fa93058b3867a6d16b339338689ae38dd18fabb4bfa10221cd"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/client-build-report.json",
+      "size": 529,
+      "sha256": "36273f0c88bf2c3ab851e05dc6734aa081fd9196323edc56d9ad8a711edaad43"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/link-build-report.json",
+      "size": 294,
+      "sha256": "c2dc878c229ea5786b11199c3e66bdf3a2d5d3e9fe293f9f232c89ec87142079"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/native-build-report.json",
+      "size": 768,
+      "sha256": "9fb10c0ced81925bab5d44680c9ab6bae9accb6a60a9dc80656d5260da48ab78"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callback-test.py",
+      "size": 7777,
+      "sha256": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/FullscreenController.cpp",
+      "size": 25303,
+      "sha256": "1f6fa2cf4eae65317b3bf44c2935b3853c24dad4a0280f1959cc6994686097ad"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/Window.cpp",
+      "size": 124420,
+      "sha256": "c13120d7195fb3fad6aa6a5c73e4c7eecf0af3094c66c44f3a2583f8b34cdb9f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/actual",
+      "size": 45368,
+      "sha256": "2ffcb1d700812ad9d5b9d04c34be34a43e3c6e1c7af329ffb4ed08d701af022e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/actual-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/actual-run.log",
+      "size": 10,
+      "sha256": "f20779f737557ceb6e4ad3d71c6a3ca555aea7b8754037486730631399e0cd9b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/actual.cpp",
+      "size": 7058,
+      "sha256": "2988e527dfb7d210cadf03f6209a7bfb996e855a05095b194015f61fadc2f9cf"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/callback-test.py",
+      "size": 7777,
+      "sha256": "e8b87c5b951783534494b19efce9feb06468177d1d36fb28bc41821d23ddf241"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-no-max-configure",
+      "size": 45384,
+      "sha256": "079ec2d0b61f4b88414f1648710db1c63056dc4afce51a3e4c64e73c92502071"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-no-max-configure-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-no-max-configure-run.log",
+      "size": 39,
+      "sha256": "03bde1cf65008d5db6fed01b9164c9c6e81adc747c72cb4c7e1d46a3a6704925"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-no-max-configure.cpp",
+      "size": 6890,
+      "sha256": "6d6c60ece24f81e4bd6691c4b5f5f31b245a79587226ce5aa46cc0821e4464f9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-toggle",
+      "size": 45376,
+      "sha256": "8b419bc75385f3472f110c3d39ffeebdc702d93bc729aad8705d7b752741d933"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-toggle-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-toggle-run.log",
+      "size": 33,
+      "sha256": "c55f32bd51f29643e19be338792aa811279f3566a81edbe526d7a22c5c3d5a8d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/previous-toggle.cpp",
+      "size": 6946,
+      "sha256": "86d82fd814c88c80bb17ed0751a8493b3eea28556525794ac6dafaed2391aafa"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/report.json",
+      "size": 1459,
+      "sha256": "931d23e0a528df033f8813fd5ea5ce7a250497109d8354f87e97e2f638b51839"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/unsafe-raw-owner-input",
+      "size": 45328,
+      "sha256": "9c94c204f779725c309d3d7655e12a829ecfb7fc1d6728eca858ba41ec2bf44b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/unsafe-raw-owner-input-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/unsafe-raw-owner-input-run.log",
+      "size": 56,
+      "sha256": "66b780b8f954603886dc20b776b5ca6673e76473c3cfb6019cbd7ac620b4765f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/callbacks-1791098413770820585/unsafe-raw-owner-input.cpp",
+      "size": 7004,
+      "sha256": "f42e991999d31804bbcc3a08a90bf01ed9ddee8f72d2f440049c6cdc12b0d624"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/closure-1791098168146518088/ancestor.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/closure-1791098168146518088/ancestor.symbols",
+      "size": 1161596,
+      "sha256": "a0d19ffb05a7363ce48db08b446e127158e537e4f31f55eabda8175728eb48bf"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/closure-1791098168146518088/candidate.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/closure-1791098168146518088/candidate.symbols",
+      "size": 1161596,
+      "sha256": "fa050b0f74bd5d2f0e542599e5367de1e0a9b09de8674c9bb630adb0c18ac7a8"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/closure-1791098168146518088/report.json",
+      "size": 1573,
+      "sha256": "61976f28af6c09663fc9043fc1fc3ab58ff57723da4d7e4b3644656885c3dd96"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/closure.py",
+      "size": 2916,
+      "sha256": "30870a47181f2076fe6e442d109117a5971c19c11f153f59b297bb60b10293dc"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/link-closure-1791098175984269698/Hyprland",
+      "size": 19586024,
+      "sha256": "be47f319ca67ec9294d2d6940909fc9b8c31841ff11cdfbd5b235593f27486c2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/link-closure-1791098175984269698/link.d",
+      "size": 16803,
+      "sha256": "e0cd3fe6de566c2290235f628dd48ea3a24323b6014c742b8ce6160a6b1ace7d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/link-closure-1791098175984269698/link.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/link-closure-1791098175984269698/link.stdout",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/link-closure-1791098175984269698/report.json",
+      "size": 30086,
+      "sha256": "ae39eb326814c47ad1ae4e6aaafe17ffbfc458a3c700539cf4cf51d3f04a92a7"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/link-closure.py",
+      "size": 2855,
+      "sha256": "0df06369051bdb549a850dace6b59ebe0c8ba469bf618587f0afee4cd031a514"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/XDGShell.cpp",
+      "size": 35489,
+      "sha256": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/actual",
+      "size": 24896,
+      "sha256": "8dcd16e48ad5ea03478af0812f3c952ce5100af42d50c08e1b0757c4c3b655e9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/actual-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/actual-run.log",
+      "size": 11,
+      "sha256": "fc8a23d665f3fe5c03ede00d39f5a16e90f4a134d739546b2c04512ab977c91c"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/actual.cpp",
+      "size": 4740,
+      "sha256": "834b0faec0ba27e935a74a7b2a7e33b6231c34939c90d51c52fdb1b7a7d30b53"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/map-state-test.py",
+      "size": 6833,
+      "sha256": "79c970c34283420e362c75de67e745dcdb61b2244e0ce00e64545295d4c74b3b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/previous-forced-max",
+      "size": 24912,
+      "sha256": "b9347e100533b8e5d4ecfee1cb09e9890279b56d9db7821bf849da7399e2e7f2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/previous-forced-max-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/previous-forced-max-run.log",
+      "size": 59,
+      "sha256": "a9b0b8a21b67b8c7431f8f6023471e49aeafa20501a18425fecd3f87db66d436"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/previous-forced-max.cpp",
+      "size": 4709,
+      "sha256": "a950e30019229a3436a4dc86483670bad2d0e0bcca65f1302885191003dd1579"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/report.json",
+      "size": 2712,
+      "sha256": "c364b68c337bc59974d9372fb7ac1707b7736c694410be92321d6116b19cbc00"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/unsafe-forced-ordinary",
+      "size": 24912,
+      "sha256": "3c6d7f8bd1449cc1703e942fa9276fe8ef63a74c95fe5a31bc0cdcd1f4fbecf7"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/unsafe-forced-ordinary-compile.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/unsafe-forced-ordinary-run.log",
+      "size": 59,
+      "sha256": "a9b0b8a21b67b8c7431f8f6023471e49aeafa20501a18425fecd3f87db66d436"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-1791098278016540852/unsafe-forced-ordinary.cpp",
+      "size": 4801,
+      "sha256": "5e0bc97c383473d3cbada549b67096861b9a1f136fde497f9219550c5617d969"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/map-state-test.py",
+      "size": 6833,
+      "sha256": "79c970c34283420e362c75de67e745dcdb61b2244e0ce00e64545295d4c74b3b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/dmabuf-probe.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/dmabuf-probe.stdout",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/host-evidence.json",
+      "size": 209527,
+      "sha256": "c44af6051cda10d7d927deff11dc363082724048d1b5cf41060a157f8d289b23"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/hyprland.log",
+      "size": 2616,
+      "sha256": "bfdc7102431067567eb75dfe6ca2b43445e6cb9d379321c2f53b06ed0057832f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/privateBus.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791098195_1896298150/hyprland.log",
+      "size": 24339,
+      "sha256": "f86953d3ba031f031214c894c647a22bd484c26323b6fb9e62c854b60f0effb4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/runtime-archive/hyprland.lua",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/weston-renderer.log",
+      "size": 3466,
+      "sha256": "a56e8d594ded2e862a75597845e83131f56e3fb558e0f1237618cc9c3e1c766b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/weston.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native-evidence/xdg-max-client.log",
+      "size": 16105,
+      "sha256": "bd851b216f141724f5e9a3ff1d02a7333eae5339baaf7da11e9ab62e58dce444"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/native.py",
+      "size": 17200,
+      "sha256": "8f5accae7ab68518bf41ca9676f4ae88483c5b5d3f00a4a354f963b70e26cd8a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098194520829253/report.json",
+      "size": 217841,
+      "sha256": "9a8258079321b7c905b82f28b15b5aec66ec3338e34fa3ba2566e571113fc45e"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/dmabuf-probe.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/dmabuf-probe.stdout",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/host-evidence.json",
+      "size": 209759,
+      "sha256": "970d1851b475c5ac9551f93bb21a652ea50296bd4679b0021eb4a3f0181fc488"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/hyprland.log",
+      "size": 2616,
+      "sha256": "43be4ee77d9ddf8173d6fc7345b4a67f20f6c707ba6a5725da0c362f3410edc0"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/ordinary-pixels-0.png",
+      "size": 343339,
+      "sha256": "3fedb47e8874b522f1b3180293f5b52ac78ff02187afcdd2e4ff179f10a45454"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/privateBus.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791098246_1124522128/hyprland.log",
+      "size": 24339,
+      "sha256": "f8a5007da30f45c1c456a83bc8497926d0194ccc327830e19431bedff0f5257b"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/runtime-archive/hyprland.lua",
+      "size": 241,
+      "sha256": "fa7bf5956c1cbd3201ba2eb70bf3fe094e2b6fcb3a7889e2ba794dffc59714d5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/weston-renderer.log",
+      "size": 3466,
+      "sha256": "064fd62d023217a1655e1d1879cfda46e0a1bab5f7d90da2c353cfc5119da9b4"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/weston.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native-evidence/xdg-max-client.log",
+      "size": 18601,
+      "sha256": "8c87fe4c2ee51155f566749e0930db5869cd440e4ef8a1af605eb68fe1cd99c2"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/native.py",
+      "size": 17300,
+      "sha256": "f6b70e0cb72966539c8469e63e34d83787d3b86435f6c114b0b7e42b1e27816d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098245278772729/report.json",
+      "size": 225939,
+      "sha256": "3ff2b306e3f2d12b60d0ced6c71bc2cb064fdbc8834533ea90e4862c2347b571"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/dmabuf-probe.stderr",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/dmabuf-probe.stdout",
+      "size": 174,
+      "sha256": "a2409292ccd0c6c8899798839f2ec1659f0c13b191d1ef675ddfc1e6aa3b1f44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/duplicate-maximize-pixels-0.png",
+      "size": 5433,
+      "sha256": "528344a89ac321a7874c1401e15605d47e4018fd507f0ffd8dbaf811b1a3e5ee"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/duplicate-restore-pixels-0.png",
+      "size": 37175,
+      "sha256": "98fbe621647773896485b68e9defbeaf3b9a2102cd148b8c5577f0857e7720d9"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/host-evidence.json",
+      "size": 209233,
+      "sha256": "ed670125059397fa2f8a29c71761c052d2325c8a392817206f65d3b0973c5e44"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/hyprland.log",
+      "size": 2616,
+      "sha256": "76cacce1dee1af023d8310be659e434cf45b0b77e834568035a22fcb15addf5a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/maximize-pixels-0.png",
+      "size": 5433,
+      "sha256": "6cf529932d7c0a0dee13ff257d5a8a9e1f3a30f0163603159859de37e27b8193"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/ordinary-pixels-0.png",
+      "size": 37175,
+      "sha256": "8cead48b02e6692f208bd951f71d36a8c53474ee910dc1fbdf283384d916f940"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/privateBus.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/restore-pixels-0.png",
+      "size": 37175,
+      "sha256": "f348b50584611c65a74fa1e9d451258da8969d599b80ec4e3f546be211fa3a15"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/runtime-archive/hypr/efb50993780079460b0cbed1363e2166a2de1d9f_1791098385_1700999976/hyprland.log",
+      "size": 24339,
+      "sha256": "99fb0095e4fefa8100aff46cb2ad756b9b403c66af88c7701cd53cf92c025c23"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/runtime-archive/hyprland.lua",
+      "size": 265,
+      "sha256": "77a00bd921f57d483c92b4e3715b8bef762da51c4f93093ba1e7201c959c9d57"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/weston-renderer.log",
+      "size": 3466,
+      "sha256": "8ec96aaac747f00b4152e9034c8d9546fa37554fd2613ba714f763116dcf4629"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/weston.log",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native-evidence/xdg-max-client.log",
+      "size": 22347,
+      "sha256": "58a662081e0e18ab9b297c6f2b1063c144870f8ee51b2103dafeec9e9671da51"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/native.py",
+      "size": 17499,
+      "sha256": "4d1e8055e2205fce3a946698348a50a1fc8d2b6c2f1cf637e68f32faef4c017d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-1791098384319585553/report.json",
+      "size": 240765,
+      "sha256": "c1f5d8ea835d5ea83d00a1e8e214dfccd7b23e1c7854bded2f42f24c6c2136c5"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-border.py",
+      "size": 17499,
+      "sha256": "4d1e8055e2205fce3a946698348a50a1fc8d2b6c2f1cf637e68f32faef4c017d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native-placement.py",
+      "size": 17300,
+      "sha256": "f6b70e0cb72966539c8469e63e34d83787d3b86435f6c114b0b7e42b1e27816d"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/native.py",
+      "size": 17200,
+      "sha256": "8f5accae7ab68518bf41ca9676f4ae88483c5b5d3f00a4a354f963b70e26cd8a"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/core/qa/xdg-max-client.c",
+      "size": 17411,
+      "sha256": "f7616b379718c384fbe5bea76aec6d8567c9cc3652da7f661dcb1078c28da23f"
+    },
+    {
+      "path": "implementation/elm-window-geometry-map-state-v28/freeze.py",
+      "size": 2510,
+      "sha256": "21a6b390c8e85594ca02fc2e498f17afca877770ed17070c9e03d4079b84397c"
+    }
+  ],
+  "excluded": "Python bytecode caches; immutable predecessor/runtime tuples retain their original manifests"
+}

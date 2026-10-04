@@ -1,0 +1,110 @@
+{
+  "passed": false,
+  "scope": "real Wayland/xdg-shell client compile only; no server/GUI/native geometry claim",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-2ab08b0fd4834fbcbc8ee4da4a9b4e18.scope",
+    "coreLimit": 1
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/xdg-max-client.c": "87d25f464ef4bf183d85bb644006c807bd7e44b38bab50666d253ebd1cb79267",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/build-client.py": "c9fb839693dcc298e35254b27f3b983f5b02f8a41874e8c6eec2b0e9385168f2",
+    "/usr/share/wayland-protocols/stable/xdg-shell/xdg-shell.xml": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df"
+  },
+  "commands": [
+    {
+      "name": "scanner-version",
+      "command": [
+        "/usr/bin/wayland-scanner",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "compiler-version",
+      "command": [
+        "/usr/bin/gcc",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "client-header",
+      "command": [
+        "/usr/bin/wayland-scanner",
+        "client-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-shell.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/generated/xdg-shell-client.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "protocol-code",
+      "command": [
+        "/usr/bin/wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-shell.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/generated/xdg-shell-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "client-flags",
+      "command": [
+        "/usr/bin/pkg-config",
+        "--cflags",
+        "--libs",
+        "wayland-client"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "client-build",
+      "command": [
+        "/usr/bin/gcc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wl,-z,defs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/generated",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/client.d",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-max-client.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/generated/xdg-shell-protocol.c",
+        "-lwayland-client",
+        "-lm",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/xdg-max-client"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "tools": {
+    "/usr/bin/wayland-scanner": "ce267015aacab2108ac8a76f273ef5431161603e1b63c7d976847b3f467bef51",
+    "/usr/bin/gcc": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287",
+    "/usr/bin/pkgconf": "6b445a4786f5ac89bfcbf0aeab5ee80b10cafb8aebeb0d5e24237f99545423fe"
+  },
+  "error": "RuntimeError('client-build failed')",
+  "artifacts": {
+    "client-build.stderr": "b42672e88bf1abda9c4639cde9559cc7e327fb4b951c0cab9721e3b9700c0275",
+    "client-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "client-flags.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "client-flags.stdout": "daeb877303c6117ce9622ed510740569c724d685d27e3401d358afb0ab932236",
+    "client-header.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "client-header.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "client.d": "8b024bc3b9075f4c11285d46f2b923244c73073e2468b410e7120cf045ac6395",
+    "compiler-version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compiler-version.stdout": "bdf8abcd8e56cec825a021925617afad1e7e258c738cc61d6325c7250da733cd",
+    "generated/xdg-shell-client.h": "a09726137ea9fe1a23d58c95f1d33ab77a3fc692c63726bc82fbc91ab8e5c6fc",
+    "generated/xdg-shell-protocol.c": "9e12fcd5676d8c6b6cfd233c2eba563163c0ea7e586cb6e27f202a328323c7f0",
+    "inputs/build-client.py": "c9fb839693dcc298e35254b27f3b983f5b02f8a41874e8c6eec2b0e9385168f2",
+    "inputs/xdg-max-client.c": "87d25f464ef4bf183d85bb644006c807bd7e44b38bab50666d253ebd1cb79267",
+    "inputs/xdg-shell.xml": "7ba7f9c8473deee674cb1f154a18abd0bb0cc072604fc055b0c15e459fc4c7df",
+    "protocol-code.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "protocol-code.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-version.stderr": "7781d4bdaabd8c59b362476a40f44a32c136372c265defc11595f5f347797e1d",
+    "scanner-version.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

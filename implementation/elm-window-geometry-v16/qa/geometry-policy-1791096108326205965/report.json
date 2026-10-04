@@ -1,0 +1,212 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "transportIntegrated": false,
+  "scope": "Actual compiled Elm pure policy with independent external scenario oracles",
+  "inputs": {
+    "src/WindowGeometry.elm": "57b999e00b6cd6865e51876fd3a56f456719eeb2fd845542b4c7a2d9df8a24e0",
+    "qa/geometry-policy-worker.elm": "5f880c29e51222fdd1cad167f525239c6b7bff2e6ff1357d18b0cdd28cde0b6b",
+    "qa/geometry-policy-tests.js": "7eefeadba87eb0f9b66933a1ba6be733219263ee21e7855884a6cc7de21a7489",
+    "qa/geometry-policy-test.py": "ce251ff1ce79fc3b64115e2e9be6a9ce6d5ddbe7bc5e970ed6d737fdfedb9a3e"
+  },
+  "package": "/home/hoskinson/omarchy-windows-parity/implementation/elm-menu-native-pair-v8/elm.json",
+  "packageSHA256": "48651a8950f9d4df5502f541d0262f83c579b54fe0dcd623a186992cb72d8208",
+  "commands": [
+    {
+      "name": "compile",
+      "command": [
+        "npm",
+        "exec",
+        "--yes",
+        "--package=elm@0.19.2-0",
+        "--",
+        "elm",
+        "make",
+        "src/GeometryPolicyWorker.elm",
+        "--output=/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/worker.js"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scenarios",
+      "command": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/inputs/qa/geometry-policy-tests.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/qa/geometry-policy-1791096108326205965/worker.js"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "checks": [
+    {
+      "name": "Ordinary standard ordering",
+      "passed": true
+    },
+    {
+      "name": "Maximized restore geometry distinct",
+      "passed": true
+    },
+    {
+      "name": "Fullscreen explicit exit only",
+      "passed": true
+    },
+    {
+      "name": "Minimized ordinary restore minimize",
+      "passed": true
+    },
+    {
+      "name": "Minimized saved maximized restore minimize",
+      "passed": true
+    },
+    {
+      "name": "Minimized saved fullscreen restore minimize",
+      "passed": true
+    },
+    {
+      "name": "Fixed size ordinary visible disabled size and maximize",
+      "passed": true
+    },
+    {
+      "name": "Fixed size maximized can restore geometry",
+      "passed": true
+    },
+    {
+      "name": "Nonroot ordinary geometry visible disabled",
+      "passed": true
+    },
+    {
+      "name": "Nonroot maximized restore geometry disabled",
+      "passed": true
+    },
+    {
+      "name": "Nonroot minimized restore minimize retained",
+      "passed": true
+    },
+    {
+      "name": "Nonroot fullscreen exit visible disabled",
+      "passed": true
+    },
+    {
+      "name": "pending blocks all mutations in ordinary",
+      "passed": true
+    },
+    {
+      "name": "pending blocks all mutations in maximized",
+      "passed": true
+    },
+    {
+      "name": "pending blocks all mutations in fullscreen",
+      "passed": true
+    },
+    {
+      "name": "pending blocks minimized restoration",
+      "passed": true
+    },
+    {
+      "name": "unknown blocks all mutations in ordinary",
+      "passed": true
+    },
+    {
+      "name": "unknown blocks all mutations in maximized",
+      "passed": true
+    },
+    {
+      "name": "unknown blocks all mutations in fullscreen",
+      "passed": true
+    },
+    {
+      "name": "unknown blocks minimized restoration",
+      "passed": true
+    },
+    {
+      "name": "Unsupported move is absent",
+      "passed": true
+    },
+    {
+      "name": "Unsupported size is absent",
+      "passed": true
+    },
+    {
+      "name": "Unsupported minimize is absent",
+      "passed": true
+    },
+    {
+      "name": "Unsupported maximize is absent",
+      "passed": true
+    },
+    {
+      "name": "Unsupported close is absent",
+      "passed": true
+    },
+    {
+      "name": "Unsupported minimized restore keeps supported Restore label disabled",
+      "passed": true
+    },
+    {
+      "name": "Unsupported fullscreen exit absent",
+      "passed": true
+    },
+    {
+      "name": "No implemented capabilities emits no rows",
+      "passed": true
+    },
+    {
+      "name": "Nonroot supported restore geometry retained disabled",
+      "passed": true
+    },
+    {
+      "name": "Legacy MinRestore-only ordinary retains disabled Restore",
+      "passed": true
+    },
+    {
+      "name": "Legacy MinRestore-only maximized retains disabled Restore",
+      "passed": true
+    },
+    {
+      "name": "Legacy MinRestore-only fullscreen retains disabled Restore",
+      "passed": true
+    },
+    {
+      "name": "Legacy MinRestore-only minimized saved fullscreen restores minimize",
+      "passed": true
+    },
+    {
+      "name": "Geometry-only ordinary Restore disabled",
+      "passed": true
+    },
+    {
+      "name": "Geometry-only fullscreen Restore disabled",
+      "passed": true
+    },
+    {
+      "name": "Geometry-only maximized Restore enabled",
+      "passed": true
+    },
+    {
+      "name": "Geometry-only minimized Restore visible but unsupported selected op disabled",
+      "passed": true
+    },
+    {
+      "name": "Neither Restore capability makes Restore absent",
+      "passed": true
+    },
+    {
+      "name": "Invalid native mode rejected",
+      "passed": true
+    },
+    {
+      "name": "Invalid resolution rejected",
+      "passed": true
+    },
+    {
+      "name": "Missing native capabilities rejected",
+      "passed": true
+    },
+    {
+      "name": "Boolean mode rejected",
+      "passed": true
+    }
+  ],
+  "checkCount": 42,
+  "compiledWorkerSHA256": "69fbcfa1308f53fde9ec88112253c291b1af845d86bc8cf979e74d5b497bb2f0"
+}

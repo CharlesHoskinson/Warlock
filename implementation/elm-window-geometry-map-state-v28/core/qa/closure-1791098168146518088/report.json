@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Build source/dependency closure and exported symbol preservation; no plugin execution or native acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/qa/closure.py": "30870a47181f2076fe6e442d109117a5971c19c11f153f59b297bb60b10293dc",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/report.json": "f1771cb815282d34582898dae219fa3f36c6b3ea80a395e0a7f241515320658a"
+  },
+  "missingSymbols": [],
+  "binary": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/Hyprland",
+  "sha256": "be47f319ca67ec9294d2d6940909fc9b8c31841ff11cdfbd5b235593f27486c2",
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/build-1791098117250155855/report.json",
+  "buildReportSHA256": "f1771cb815282d34582898dae219fa3f36c6b3ea80a395e0a7f241515320658a",
+  "dependencyCount": 201,
+  "ancestorExportCount": 13404,
+  "candidateExportCount": 13404,
+  "additionalSymbols": [],
+  "artifacts": {
+    "ancestor.symbols": "a0d19ffb05a7363ce48db08b446e127158e537e4f31f55eabda8175728eb48bf",
+    "ancestor.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "candidate.symbols": "fa050b0f74bd5d2f0e542599e5367de1e0a9b09de8674c9bb630adb0c18ac7a8",
+    "candidate.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

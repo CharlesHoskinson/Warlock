@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Actual extracted XDG surfaceCommit callback: state preservation and map lifetime; no decoration negotiation or native window acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/candidate/src/protocols/XDGShell.cpp": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/protocols/XDGShell.cpp": "d90b534c9097ab573f606c2dad4b5fab6dc31c4ca13240c43ef0bb74da7ed0c0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-map-state-v28/core/qa/map-state-test.py": "79c970c34283420e362c75de67e745dcdb61b2244e0ce00e64545295d4c74b3b"
+  },
+  "checks": [
+    {
+      "name": "actual",
+      "passed": true,
+      "exitCode": 0,
+      "stdout": "checks 453\n",
+      "stderr": ""
+    },
+    {
+      "name": "previous-forced-max",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL mapping preserves exact configured MAX without setter\n"
+    },
+    {
+      "name": "unsafe-forced-ordinary",
+      "passed": true,
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "FAIL mapping preserves exact configured MAX without setter\n"
+    }
+  ],
+  "artifacts": {
+    "actual.cpp": "834b0faec0ba27e935a74a7b2a7e33b6231c34939c90d51c52fdb1b7a7d30b53",
+    "actual": "8dcd16e48ad5ea03478af0812f3c952ce5100af42d50c08e1b0757c4c3b655e9",
+    "actual-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-run.log": "fc8a23d665f3fe5c03ede00d39f5a16e90f4a134d739546b2c04512ab977c91c",
+    "previous-forced-max.cpp": "a950e30019229a3436a4dc86483670bad2d0e0bcca65f1302885191003dd1579",
+    "previous-forced-max": "b9347e100533b8e5d4ecfee1cb09e9890279b56d9db7821bf849da7399e2e7f2",
+    "previous-forced-max-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "previous-forced-max-run.log": "a9b0b8a21b67b8c7431f8f6023471e49aeafa20501a18425fecd3f87db66d436",
+    "unsafe-forced-ordinary.cpp": "5e0bc97c383473d3cbada549b67096861b9a1f136fde497f9219550c5617d969",
+    "unsafe-forced-ordinary": "3c6d7f8bd1449cc1703e942fa9276fe8ef63a74c95fe5a31bc0cdcd1f4fbecf7",
+    "unsafe-forced-ordinary-compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unsafe-forced-ordinary-run.log": "a9b0b8a21b67b8c7431f8f6023471e49aeafa20501a18425fecd3f87db66d436",
+    "XDGShell.cpp": "96bffa07f5f1c9d4e187f3d71f256fc3eb5edc3bccbff53337fba760b9aa176b",
+    "map-state-test.py": "79c970c34283420e362c75de67e745dcdb61b2244e0ce00e64545295d4c74b3b"
+  }
+}

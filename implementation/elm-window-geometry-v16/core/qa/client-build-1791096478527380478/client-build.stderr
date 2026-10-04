@@ -1,0 +1,14 @@
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-max-client.c: In function ‘main’:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-max-client.c:178:67: error: ‘%s’ directive output may be truncated writing up to 255 bytes into a region of size 68 [-Werror=format-truncation=]
+  178 |     char extra[80]; snprintf(extra, sizeof extra, ",\"command\":\"%s\"", command); event(client, "request", extra);
+      |                                                                   ^~
+......
+  186 |         if (bytes[i] == '\n') { client->commands[client->command_size] = 0; execute(client, client->commands); client->command_size = 0; }
+      |                                                                                             ~~~~~~~~~~~~~~~~
+In function ‘execute’,
+    inlined from ‘stdin_ready’ at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-max-client.c:186:77,
+    inlined from ‘main’ at /home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-max-client.c:224:70:
+/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/client-build-1791096478527380478/inputs/xdg-max-client.c:178:21: note: ‘snprintf’ output between 14 and 269 bytes into a destination of size 80
+  178 |     char extra[80]; snprintf(extra, sizeof extra, ",\"command\":\"%s\"", command); event(client, "request", extra);
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors

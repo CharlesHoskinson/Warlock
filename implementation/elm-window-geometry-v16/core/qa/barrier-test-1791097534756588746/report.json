@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "scope": "actual extracted client barrier lifecycle with mocked transport; no Wayland server/GUI or display claim",
+  "qaScope": {
+    "cgroup": "0::/user.slice/user-1000.slice/user@1000.service/qa.slice/qa-harness.slice/qa-harness-d8710d1b72b94f1e9a17bb4b42639a37.scope",
+    "coreLimit": 1
+  },
+  "sources": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/xdg-max-client.c": "f7616b379718c384fbe5bea76aec6d8567c9cc3652da7f661dcb1078c28da23f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-window-geometry-v16/core/qa/barrier-test.py": "710e59867e379a28e04d210703ce2e852fdd5f49d101a339e6a6523143252558"
+  },
+  "checks": [],
+  "mutants": [
+    {
+      "name": "local-receipt",
+      "rejectedByExternalOracle": true,
+      "violatedWitness": "local event falsely claims server callback"
+    },
+    {
+      "name": "removed-pre-dispatch-bound",
+      "rejectedByExternalOracle": true,
+      "violatedWitness": "ninth request mutated before refusal"
+    },
+    {
+      "name": "current-sequence-replaces-original",
+      "rejectedByExternalOracle": true,
+      "violatedWitness": "out-of-order callbacks lost original keys"
+    },
+    {
+      "name": "callback-not-destroyed",
+      "rejectedByExternalOracle": true,
+      "violatedWitness": "callback completion did not retire exactly once"
+    }
+  ],
+  "compiler": {
+    "path": "/usr/bin/gcc",
+    "sha256": "8aac907d6fbf40394b424b5fa4a2ad1aa291dac7d3a0315c5b415c1f5ace1287"
+  },
+  "extraction": {
+    "types": "72f2705ee03f9111d9842f100174de7d8db3107b1f8d6c25df858815e071a681",
+    "events": "5b596a5e9c5e3643428ca92dba31261e64d6bed6e91b1de522380dc7f7113d8d",
+    "logic": "d86ff1b1da6cd916ebbe4381c8ffa104185f4a68ea1fffff10bfc54c12862729",
+    "teardown": "7dd75f21e0a2cd6c288b51cd73e7fb8d9e4c911f7c938dbfda0b17d011cbdc21"
+  },
+  "witnesses": [
+    "exact-multiple-ownership",
+    "out-of-order-original-keys",
+    "sync-nonmutating",
+    "no-local-server-receipt",
+    "capacity-before-ninth-mutation",
+    "completion-destroys-once",
+    "normal-teardown-destroys-once",
+    "inspect-local-only"
+  ],
+  "artifacts": {
+    "actual/actual-barrier-fixture.c": "1de85315dd013191463761ff2c86404080e45ede373d388f179045b13f02bee0",
+    "actual/barrier-fixture": "57b7353744dbf31a8f523d120478e95a897e629957907f0ebbeabd6c08111337",
+    "actual/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual/dependencies.d": "27532eed3c2d858807ff7db91bf970d5aea3cab88fc63187e81e1dc85f06087a",
+    "actual/run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual/run.stdout": "091851acf8f69ab4edaa8c213e063c8d93c788d8e815ac389555cac33ed5604d",
+    "inputs/barrier-test.py": "710e59867e379a28e04d210703ce2e852fdd5f49d101a339e6a6523143252558",
+    "inputs/xdg-max-client.c": "f7616b379718c384fbe5bea76aec6d8567c9cc3652da7f661dcb1078c28da23f",
+    "mutant-callback-not-destroyed/actual-barrier-fixture.c": "6168322a15c0237df41eed9b6dcfb94c48227adf25e441bc0b5aaaa200a2f6d2",
+    "mutant-callback-not-destroyed/barrier-fixture": "5cbc9975a0bf02b265961d8ca73e362f0d7849b6ffdd7abcb0cac8298cea500f",
+    "mutant-callback-not-destroyed/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-callback-not-destroyed/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-callback-not-destroyed/dependencies.d": "ed09a1dd57c0f919d59c29d34dcad357e9ed16f0f4e05b4d05a30adc3b0d15b6",
+    "mutant-callback-not-destroyed/run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-callback-not-destroyed/run.stdout": "bc9eb0d430e343c3fde04b3998405d37c2123bf210d8a5f1e5909a64fd45be33",
+    "mutant-current-sequence-replaces-original/actual-barrier-fixture.c": "ee64b9f9d4d8ef757c1fff0df36cead9406d01d69c6d38f22e6027ea0cc331c1",
+    "mutant-current-sequence-replaces-original/barrier-fixture": "23e97d25e3fcf8a22c80443122b084de687ebac012b0046f0d6d9d59a32dac4d",
+    "mutant-current-sequence-replaces-original/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-current-sequence-replaces-original/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-current-sequence-replaces-original/dependencies.d": "f572675903649fb5358e2dacf2de101bd1929671a68f36dd7e697a3951b7ca8c",
+    "mutant-current-sequence-replaces-original/run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-current-sequence-replaces-original/run.stdout": "fd26a2760af2ecdba98a80e943526fdb0a24f7f5e76e24f25b557be587186552",
+    "mutant-local-receipt/actual-barrier-fixture.c": "a1b24b41e48028c5cafa17250d2b1c3d763ba1451e0ed31d31ddc65b65bb4c99",
+    "mutant-local-receipt/barrier-fixture": "9e4326b7c355cc1889bdad057d8e6d63f61c2c19e065d3fe0e0f14eca4977fd9",
+    "mutant-local-receipt/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-local-receipt/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-local-receipt/dependencies.d": "5f179551de12b254897aa78a54b053193cb8ce886382f6de638ac3a7fd97b831",
+    "mutant-local-receipt/run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-local-receipt/run.stdout": "87e1b2a9f43278d2af4cfba297317d799fbd65ee83d86178109165f89147ffd0",
+    "mutant-removed-pre-dispatch-bound/actual-barrier-fixture.c": "1fb32021ad12e0eda8bf4b3b36dbff63ef901bf19eff49449dfdb32f19ec8d4f",
+    "mutant-removed-pre-dispatch-bound/barrier-fixture": "3202b22d40292416930887a8ff761412c14dde2145404dbef505c0d7fb4fd608",
+    "mutant-removed-pre-dispatch-bound/compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-removed-pre-dispatch-bound/compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-removed-pre-dispatch-bound/dependencies.d": "3fa9614b6d10081282c39d45547b37d9d4e428c50c11887b8ce82d0b0147741a",
+    "mutant-removed-pre-dispatch-bound/run.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "mutant-removed-pre-dispatch-bound/run.stdout": "c3a29655d868e4d9dbdb44f550727349cc0936ddc4cd9b26f121b77b9caa6fcb"
+  }
+}
