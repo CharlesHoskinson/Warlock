@@ -1,0 +1,29 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "actualNativePassed": false,
+  "recordedPassedChecks": 9,
+  "primaryError": "Refused('normal private IPC result required')",
+  "dispatcherExit": 7,
+  "dispatcherStdout": "error: [string \"return hl.dispatch(setfloating address:0x55e1...\"]:1: ')' expected near 'address'\n\n \u2192 Note: dispatch in lua is a shorthand for hl.dispatch(...), your syntax might need to be updated.\n",
+  "unobservedExit": {
+    "sequence": 6,
+    "kind": "unobserved-child-exit",
+    "monotonic": 109707.990074501,
+    "pid": 3455925,
+    "status": 0
+  },
+  "topLevelCleanupInconsistent": true,
+  "privateActivationCleanupPassed": false,
+  "remainingDescendants": [],
+  "runtimeGone": true,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/native-1791145436509122699/report.json": "bf80cabef9d1db8e8e0a6b7c126031849f88b15e8744a8f8f6e6e602fca107c9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/native-1791145436509122699/native-evidence/host-evidence.json": "28b53a56fd911b6c6eee556affc42fb20a4af3833e716120c1b4da2687216564",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441942266662/record.json": "4a928dbfddd85535d09e1e208583ebb70b216a15be302eef78b3223a6fa0cbfb",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/native-1791145436509122699/native-evidence/bounded-ipc/1791145441942266662/stdout": "80eb6b88baf0715cf46504e27a87ef0037504a7ea06f57775e256aa3eacad239",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/native-1791145436509122699/native-evidence/activation-journals/org.freedesktop.portal.Documents/3455918-1791145441011786322.jsonl": "9b8a1931020c5ec6434f6f4522734e9d78ed74f1c38287b7c9554bbd54c97c89",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/native.py": "e736f8f7b64b44a7caca468e82894d39e62bea60eee0afb4397612e289b2f5b1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-gtk-post-bus-retirement-v263/qa/activation-supervisor.py": "c9817f2cd6469fde567dd19decf1356d70ffec34dc60f9feeac1ff022865ed7d"
+  }
+}

@@ -1,0 +1,6 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 107061.346251273, "identity": {"pid": 3276198, "start": "11089906", "pgid": 3276198, "ppid": 3276016, "uid": 1000}, "argv": ["/usr/bin/python3", "-c", "import subprocess,sys,time;subprocess.Popen([sys.executable,\"-c\",\"import time;time.sleep(.2)\"]);time.sleep(.05)"]}
+{"sequence": 2, "kind": "owned-child", "monotonic": 107061.377613355, "identity": {"pid": 3276212, "start": "11089911", "pgid": 3276198, "ppid": 3276198, "uid": 1000}}
+{"sequence": 3, "kind": "owned-child", "monotonic": 107061.407193893, "identity": {"pid": 3276218, "start": "11089914", "pgid": 3276198, "ppid": 3276212, "uid": 1000}}
+{"sequence": 4, "kind": "child-exit", "monotonic": 107061.448153385, "identity": {"pid": 3276212, "start": "11089911", "pgid": 3276198, "ppid": 3276198, "uid": 1000}, "waitStatus": 0, "exitCode": 0}
+{"sequence": 5, "kind": "child-exit", "monotonic": 107061.598141741, "identity": {"pid": 3276218, "start": "11089914", "pgid": 3276198, "ppid": 3276212, "uid": 1000}, "waitStatus": 0, "exitCode": 0}
+{"sequence": 6, "kind": "terminal", "monotonic": 107061.59820324, "childExitCode": 0, "cancelled": false, "fallback": false, "allWaitStatuses": {"3276212": 0, "3276218": 0}, "liveDescendants": []}

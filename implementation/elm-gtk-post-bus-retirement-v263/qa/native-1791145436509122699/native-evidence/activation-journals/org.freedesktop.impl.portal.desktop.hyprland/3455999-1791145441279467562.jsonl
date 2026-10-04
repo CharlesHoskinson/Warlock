@@ -1,0 +1,6 @@
+{"sequence": 1, "kind": "supervisor-start", "monotonic": 109707.215900186, "identity": {"pid": 3455999, "start": "11354494", "pgid": 3455999, "ppid": 3455998, "uid": 1000}, "argv": ["/usr/lib/xdg-desktop-portal-hyprland"], "descriptor": "/run/user/1000/wqa/04d7/activations/org.freedesktop.impl.portal.desktop.hyprland.json", "descriptorSHA256": "da5a24cbdebd4d28538f3bb495d5e9cc0a93b3b01dee780070458cf49e06a81b"}
+{"sequence": 2, "kind": "owned-child", "monotonic": 109707.216318374, "identity": {"pid": 3456001, "start": "11354498", "pgid": 3455999, "ppid": 3455999, "uid": 1000}}
+{"sequence": 3, "kind": "shutdown-request", "monotonic": 109707.931817404}
+{"sequence": 4, "kind": "signal", "monotonic": 109707.931942784, "identity": {"pid": 3456001, "start": "11354498", "pgid": 3455999, "ppid": 3455999, "uid": 1000}, "signal": 15}
+{"sequence": 5, "kind": "child-exit", "monotonic": 109707.964837173, "identity": {"pid": 3456001, "start": "11354498", "pgid": 3455999, "ppid": 3455999, "uid": 1000}, "waitStatus": 15, "exitCode": -15}
+{"sequence": 6, "kind": "terminal", "monotonic": 109707.96488933, "childExitCode": -15, "cancelled": true, "fallback": false, "allWaitStatuses": [{"identity": {"pid": 3456001, "start": "11354498", "pgid": 3455999, "ppid": 3455999, "uid": 1000}, "exitCode": -15}], "liveDescendants": [], "error": null}

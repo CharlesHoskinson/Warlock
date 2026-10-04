@@ -1,0 +1,257 @@
+[
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.a11y.Bus/3455957-1791145441124779207.jsonl",
+    "terminal": {
+      "sequence": 12,
+      "kind": "terminal",
+      "monotonic": 109707.965173856,
+      "childExitCode": 0,
+      "cancelled": true,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3455958,
+            "start": "11354483",
+            "pgid": 3455957,
+            "ppid": 3455957,
+            "uid": 1000
+          },
+          "exitCode": 0
+        },
+        {
+          "identity": {
+            "pid": 3455963,
+            "start": "11354483",
+            "pgid": 3455957,
+            "ppid": 3455958,
+            "uid": 1000
+          },
+          "exitCode": -15
+        },
+        {
+          "identity": {
+            "pid": 3455964,
+            "start": "11354484",
+            "pgid": 3455957,
+            "ppid": 3455963,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.impl.portal.PermissionStore/3455911-1791145440969959888.jsonl",
+    "terminal": {
+      "sequence": 6,
+      "kind": "terminal",
+      "monotonic": 109707.964893173,
+      "childExitCode": -15,
+      "cancelled": true,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3455912,
+            "start": "11354467",
+            "pgid": 3455911,
+            "ppid": 3455911,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.impl.portal.desktop.gtk/3455929-1791145441056278454.jsonl",
+    "terminal": {
+      "sequence": 6,
+      "kind": "terminal",
+      "monotonic": 109707.964895068,
+      "childExitCode": -15,
+      "cancelled": true,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3455950,
+            "start": "11354476",
+            "pgid": 3455929,
+            "ppid": 3455929,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.impl.portal.desktop.hyprland/3455999-1791145441279467562.jsonl",
+    "terminal": {
+      "sequence": 6,
+      "kind": "terminal",
+      "monotonic": 109707.96488933,
+      "childExitCode": -15,
+      "cancelled": true,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3456001,
+            "start": "11354498",
+            "pgid": 3455999,
+            "ppid": 3455999,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.portal.Desktop/3455904-1791145440928898277.jsonl",
+    "terminal": {
+      "sequence": 6,
+      "kind": "terminal",
+      "monotonic": 109707.965050467,
+      "childExitCode": -15,
+      "cancelled": true,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3455905,
+            "start": "11354463",
+            "pgid": 3455904,
+            "ppid": 3455904,
+            "uid": 1000
+          },
+          "exitCode": -15
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.portal.Documents/3455918-1791145441011786322.jsonl",
+    "terminal": {
+      "sequence": 8,
+      "kind": "terminal",
+      "monotonic": 109708.010763438,
+      "childExitCode": 0,
+      "cancelled": true,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3455919,
+            "start": "11354472",
+            "pgid": 3455918,
+            "ppid": 3455918,
+            "uid": 1000
+          },
+          "exitCode": 0
+        }
+      ],
+      "liveDescendants": [],
+      "error": "RuntimeError('missing unique PID/start before reap')"
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.systemd1/3455966-1791145441179006500.jsonl",
+    "terminal": {
+      "sequence": 4,
+      "kind": "terminal",
+      "monotonic": 109707.144238073,
+      "childExitCode": 1,
+      "cancelled": false,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3455972,
+            "start": "11354488",
+            "pgid": 3455966,
+            "ppid": 3455966,
+            "uid": 1000
+          },
+          "exitCode": 1
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.freedesktop.systemd1/3455993-1791145441267804307.jsonl",
+    "terminal": {
+      "sequence": 4,
+      "kind": "terminal",
+      "monotonic": 109707.232402445,
+      "childExitCode": 1,
+      "cancelled": false,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3456000,
+            "start": "11354497",
+            "pgid": 3455993,
+            "ppid": 3455993,
+            "uid": 1000
+          },
+          "exitCode": 1
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  },
+  {
+    "journal": "/home/hoskinson/window-integration-qa/gtk-role-1791145436509219335/activation-journals/org.gtk.vfs.Daemon/3455968-1791145441179629684.jsonl",
+    "terminal": {
+      "sequence": 9,
+      "kind": "terminal",
+      "monotonic": 109707.973261805,
+      "childExitCode": -15,
+      "cancelled": true,
+      "fallback": false,
+      "allWaitStatuses": [
+        {
+          "identity": {
+            "pid": 3455973,
+            "start": "11354488",
+            "pgid": 3455968,
+            "ppid": 3455968,
+            "uid": 1000
+          },
+          "exitCode": -15
+        },
+        {
+          "identity": {
+            "pid": 3455979,
+            "start": "11354490",
+            "pgid": 3455968,
+            "ppid": 3455968,
+            "uid": 1000
+          },
+          "exitCode": 15
+        }
+      ],
+      "liveDescendants": [],
+      "error": null
+    }
+  }
+]
