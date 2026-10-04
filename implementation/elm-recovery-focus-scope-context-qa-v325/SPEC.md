@@ -1,0 +1,3 @@
+CPU-only adapter event controls for310. Uses declared inert DOM/state and exact production context.js in Node vm, not browser/native/AT proof. Explicit expected focus/action tables preserve old Close/selected scope, add optional enabled recovery, reverse wrapping, disabled-only dismissal, command proof routing and recovery Enter/Space default activation. Run same oracles on old301: normal behavior must pass and recovery reachability/activation must fail, retaining differential counterexamples. Real native312 is separate.
+
+325 adds blur containment, ShiftTab physical code, composing/untrusted/otherUnknown rejection controls to same independent focus/action expectations. No native/AT claim.

@@ -1,0 +1,247 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Declared inert DOM adapter controls only",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-focus-scope-gui-v324/assets/context.js": "2bffae0ef9c8afd5e0ceffd5022cf7e3b41ba8a704120fd5cffa35238791e241",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-responsive-confirmation-gui-v301/assets/context.js": "84f9f4eb3291783c66ebd6bbff34e10e0cff3711c251ea68eae8f315be389ad2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-focus-scope-context-qa-v325/SPEC.md": "4abf4790205ff139d86b318a0a2773b715ac421058df2fc55808387d7aad4b33",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-focus-scope-context-qa-v325/qa/probe.cjs": "81d2eb43ee1ce89f7c34abcc171456a7be90c601fb5aac7609361041a514595f",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-focus-scope-context-qa-v325/qa/run.py": "e5ecbfb01f769287ca48398ac04b2f5567123bebb18c95139f96ee65688cc606"
+  },
+  "exitCode": 0,
+  "current": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-focus-scope-gui-v324/assets/context.js",
+    "passed": true,
+    "checks": [
+      {
+        "name": "normalCloseSelectedForwardCycle",
+        "passed": true
+      },
+      {
+        "name": "normalCloseSelectedReverseCycle",
+        "passed": true
+      },
+      {
+        "name": "normalEnterKeepsNativeCommandRoute",
+        "passed": true
+      },
+      {
+        "name": "normalImplicitClickStillSuppressed",
+        "passed": true
+      },
+      {
+        "name": "recoveryForwardCycleIncludesSelected",
+        "passed": true
+      },
+      {
+        "name": "recoveryReverseCycleIncludesSelected",
+        "passed": true
+      },
+      {
+        "name": "allDisabledCommandsStillReachRecovery",
+        "passed": true
+      },
+      {
+        "name": "missingSelectionStillReachRecovery",
+        "passed": true
+      },
+      {
+        "name": "disabledRecoveryExcluded",
+        "passed": true
+      },
+      {
+        "name": "disabledOnlyRetainsDismissal",
+        "passed": true
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\"Enter\"",
+        "passed": true
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\" \"",
+        "passed": true
+      },
+      {
+        "name": "recoveryControlPreservesEscapeDismissal",
+        "passed": true
+      },
+      {
+        "name": "modifiedKeysDoNotChangeRecoveryFocus",
+        "passed": true
+      },
+      {
+        "name": "blurredScopeTabReturnsClose",
+        "passed": true
+      },
+      {
+        "name": "blurredScopeShiftTabReachesRecovery",
+        "passed": true
+      },
+      {
+        "name": "shiftedPhysicalTabWrapsBackToClose",
+        "passed": true
+      },
+      {
+        "name": "unrelatedUnknownPhysicalKeyUnchanged",
+        "passed": true
+      },
+      {
+        "name": "composingTabDoesNotChangeScope",
+        "passed": true
+      },
+      {
+        "name": "untrustedTabDoesNotChangeScope",
+        "passed": true
+      }
+    ]
+  },
+  "before": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-responsive-confirmation-gui-v301/assets/context.js",
+    "passed": false,
+    "checks": [
+      {
+        "name": "normalCloseSelectedForwardCycle",
+        "passed": true
+      },
+      {
+        "name": "normalCloseSelectedReverseCycle",
+        "passed": true
+      },
+      {
+        "name": "normalEnterKeepsNativeCommandRoute",
+        "passed": true
+      },
+      {
+        "name": "normalImplicitClickStillSuppressed",
+        "passed": true
+      },
+      {
+        "name": "recoveryForwardCycleIncludesSelected",
+        "passed": false,
+        "error": "Error: control:recovery-refresh"
+      },
+      {
+        "name": "recoveryReverseCycleIncludesSelected",
+        "passed": false,
+        "error": "Error: control:recovery-refresh"
+      },
+      {
+        "name": "allDisabledCommandsStillReachRecovery",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "missingSelectionStillReachRecovery",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "disabledRecoveryExcluded",
+        "passed": true
+      },
+      {
+        "name": "disabledOnlyRetainsDismissal",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\"Enter\"",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\" \"",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "recoveryControlPreservesEscapeDismissal",
+        "passed": true
+      },
+      {
+        "name": "modifiedKeysDoNotChangeRecoveryFocus",
+        "passed": true
+      },
+      {
+        "name": "blurredScopeTabReturnsClose",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "blurredScopeShiftTabReachesRecovery",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "shiftedPhysicalTabWrapsBackToClose",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "unrelatedUnknownPhysicalKeyUnchanged",
+        "passed": true
+      },
+      {
+        "name": "composingTabDoesNotChangeScope",
+        "passed": true
+      },
+      {
+        "name": "untrustedTabDoesNotChangeScope",
+        "passed": true
+      }
+    ]
+  },
+  "counterexamples": [
+    {
+      "name": "recoveryForwardCycleIncludesSelected",
+      "passed": false,
+      "error": "Error: control:recovery-refresh"
+    },
+    {
+      "name": "recoveryReverseCycleIncludesSelected",
+      "passed": false,
+      "error": "Error: control:recovery-refresh"
+    },
+    {
+      "name": "allDisabledCommandsStillReachRecovery",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "missingSelectionStillReachRecovery",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "disabledOnlyRetainsDismissal",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "enabledRecoveryDefaultActivation:\"Enter\"",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "enabledRecoveryDefaultActivation:\" \"",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "blurredScopeTabReturnsClose",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "blurredScopeShiftTabReachesRecovery",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "shiftedPhysicalTabWrapsBackToClose",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    }
+  ]
+}

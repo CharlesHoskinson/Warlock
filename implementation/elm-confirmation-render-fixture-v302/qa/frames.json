@@ -1,0 +1,114 @@
+{
+  "scope": "DECLARED typed presentation fixture, not native window facts or an Unknown authority certificate",
+  "frames": {
+    "bar": {
+      "surfaceProtocol": 2,
+      "publication": "1",
+      "lease": "0",
+      "mode": "closed",
+      "status": "Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.",
+      "bar": [
+        {
+          "id": "qa-open",
+          "domId": "qa-open",
+          "label": "Actions",
+          "ariaLabel": "Actions",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "qa-blocked",
+          "domId": "qa-blocked",
+          "label": "Long document title with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes ",
+          "ariaLabel": "Long document title with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes ; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "qa-refresh",
+          "domId": "qa-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ],
+      "popup": []
+    },
+    "popup": {
+      "surfaceProtocol": 2,
+      "publication": "1",
+      "lease": "1",
+      "mode": "menu",
+      "status": "Window action awaits native confirmation. Refresh status only reads observations; it does not retry the action.",
+      "bar": [
+        {
+          "id": "qa-open",
+          "domId": "qa-open",
+          "label": "Actions",
+          "ariaLabel": "Actions",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "qa-blocked",
+          "domId": "qa-blocked",
+          "label": "Long document title with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes ",
+          "ariaLabel": "Long document title with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes with a retained draft and unsaved changes ; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "qa-refresh",
+          "domId": "qa-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ],
+      "popup": [
+        {
+          "id": "qa-close",
+          "domId": "qa-close",
+          "label": "Close",
+          "ariaLabel": "Close",
+          "detail": "",
+          "enabled": true
+        },
+        {
+          "id": "qa-restore",
+          "domId": "qa-restore",
+          "label": "Restore",
+          "ariaLabel": "Restore; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "qa-minimize",
+          "domId": "qa-minimize",
+          "label": "Minimize",
+          "ariaLabel": "Minimize; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "qa-maximize",
+          "domId": "qa-maximize",
+          "label": "Maximize",
+          "ariaLabel": "Maximize; awaiting native confirmation",
+          "detail": "Awaiting native confirmation",
+          "enabled": false
+        },
+        {
+          "id": "qa-popup-refresh",
+          "domId": "qa-popup-refresh",
+          "label": "Refresh window status",
+          "ariaLabel": "Refresh window status",
+          "detail": "Observation only",
+          "enabled": true
+        }
+      ]
+    }
+  }
+}

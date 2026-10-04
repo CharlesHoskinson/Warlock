@@ -1,0 +1,1 @@
+Private test-only311 extends308 exact Weston15 protocol8 parent helper by Enter and Space after Tab. Six held-key entries, all balanced at controller destruction; original A/Shift/F10 IDs/bits, pointer/identity/ownership/ABI guards retained. No installed/main desktop changes. Compile only until native312 observes exact private recipient and balanced events.

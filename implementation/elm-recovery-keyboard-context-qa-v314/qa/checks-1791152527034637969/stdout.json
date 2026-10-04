@@ -1,0 +1,171 @@
+{
+  "passed": true,
+  "current": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-recovery-keyboard-gui-v310/assets/context.js",
+    "passed": true,
+    "checks": [
+      {
+        "name": "normalCloseSelectedForwardCycle",
+        "passed": true
+      },
+      {
+        "name": "normalCloseSelectedReverseCycle",
+        "passed": true
+      },
+      {
+        "name": "normalEnterKeepsNativeCommandRoute",
+        "passed": true
+      },
+      {
+        "name": "normalImplicitClickStillSuppressed",
+        "passed": true
+      },
+      {
+        "name": "recoveryForwardCycleIncludesSelected",
+        "passed": true
+      },
+      {
+        "name": "recoveryReverseCycleIncludesSelected",
+        "passed": true
+      },
+      {
+        "name": "allDisabledCommandsStillReachRecovery",
+        "passed": true
+      },
+      {
+        "name": "missingSelectionStillReachRecovery",
+        "passed": true
+      },
+      {
+        "name": "disabledRecoveryExcluded",
+        "passed": true
+      },
+      {
+        "name": "disabledOnlyRetainsDismissal",
+        "passed": true
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\"Enter\"",
+        "passed": true
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\" \"",
+        "passed": true
+      },
+      {
+        "name": "recoveryControlPreservesEscapeDismissal",
+        "passed": true
+      },
+      {
+        "name": "modifiedKeysDoNotChangeRecoveryFocus",
+        "passed": true
+      }
+    ]
+  },
+  "before": {
+    "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-responsive-confirmation-gui-v301/assets/context.js",
+    "passed": false,
+    "checks": [
+      {
+        "name": "normalCloseSelectedForwardCycle",
+        "passed": true
+      },
+      {
+        "name": "normalCloseSelectedReverseCycle",
+        "passed": true
+      },
+      {
+        "name": "normalEnterKeepsNativeCommandRoute",
+        "passed": true
+      },
+      {
+        "name": "normalImplicitClickStillSuppressed",
+        "passed": true
+      },
+      {
+        "name": "recoveryForwardCycleIncludesSelected",
+        "passed": false,
+        "error": "Error: control:recovery-refresh"
+      },
+      {
+        "name": "recoveryReverseCycleIncludesSelected",
+        "passed": false,
+        "error": "Error: control:recovery-refresh"
+      },
+      {
+        "name": "allDisabledCommandsStillReachRecovery",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "missingSelectionStillReachRecovery",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "disabledRecoveryExcluded",
+        "passed": true
+      },
+      {
+        "name": "disabledOnlyRetainsDismissal",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\"Enter\"",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "enabledRecoveryDefaultActivation:\" \"",
+        "passed": false,
+        "error": "Error: Expected contract failed"
+      },
+      {
+        "name": "recoveryControlPreservesEscapeDismissal",
+        "passed": true
+      },
+      {
+        "name": "modifiedKeysDoNotChangeRecoveryFocus",
+        "passed": true
+      }
+    ]
+  },
+  "counterexamples": [
+    {
+      "name": "recoveryForwardCycleIncludesSelected",
+      "passed": false,
+      "error": "Error: control:recovery-refresh"
+    },
+    {
+      "name": "recoveryReverseCycleIncludesSelected",
+      "passed": false,
+      "error": "Error: control:recovery-refresh"
+    },
+    {
+      "name": "allDisabledCommandsStillReachRecovery",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "missingSelectionStillReachRecovery",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "disabledOnlyRetainsDismissal",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "enabledRecoveryDefaultActivation:\"Enter\"",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    },
+    {
+      "name": "enabledRecoveryDefaultActivation:\" \"",
+      "passed": false,
+      "error": "Error: Expected contract failed"
+    }
+  ]
+}

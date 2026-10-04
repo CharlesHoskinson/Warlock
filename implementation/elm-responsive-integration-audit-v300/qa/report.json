@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "scope": "Protected read-only observation of unaccepted live611 integration source; no implementation/native/Quint/release claim",
+  "unacceptedSourceObservation": true,
+  "frozenIntegrationParent": false,
+  "source": "implementation/elm-reconciliation-frontend-v611",
+  "sourceReadStable": true,
+  "inputs": {
+    "src/SurfaceRenderer.elm": "63f4523a449c42092fef32ebcf1f2e3cd73c8dd5d573e81791ad477777d2f771",
+    "src/Surface.elm": "decb0b9f698631562bb0a1a1a5a606d7f8ac46027aa35519aff5490baac4d286",
+    "assets/shell.css": "09299a9a7a0f2123c74e98b40c714349aae3656f53b6a239e9e64bb2c4ece78e"
+  },
+  "acceptedCssSHA256": "cd294a6ec59ca0873ff04e68df86b4df471cb4eeed4013fa908a5f11bb790d30",
+  "findings": [
+    "611 renders same surface-bar/surface-popup roots and still contains stale #app layout selectors; actual278 root corrections are applicable only after frozen source integration",
+    "611 adds per-target Awaiting native confirmation details plus read-only Refresh controls; current278 wholebutton ellipsis may hide detail after long labels, an inference requiring actual DOM/pixel/keyboard proof",
+    "New pending/recovery popup may contain extra Refresh row; retain viewport scrolling and test actual focused/control visibility on400logical outputs rather than inheriting only three-action compact-menu result"
+  ],
+  "next": "Integrate responsive root styles into a fresh derivative of the primary reviewed coherent frontend; preserve readable uncertainty detail separately from truncated title and actual keyboard/pointer reachability. Compile and run current models/replays plus original135/473 and narrow-output native cases on owning205/594/AQ155."
+}
