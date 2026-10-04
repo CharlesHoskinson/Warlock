@@ -1,0 +1,285 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "Terminal-order346 extended with current native Escape intent independent of DOM lag, strict stale callbacks, one actual release and unchanged scope/deadline; no C/GTK/native refinement claim",
+  "commands": [
+    {
+      "name": "typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "named",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(pressNeverClosesTest|releaseOnceTest|secondEscapeTest|forgedReleaseTest|retirementKeepsHeldTest|scopeChangeRefusesTest|deadlineNeverRenewedTest|repeatNeverClosesTest|replayPreservesOriginalTest|earlyReleaseTest|earlyReleaseOnceTest|expiredEarlyReleaseTest|changedEarlyReleaseTest|webWithoutNativePressTest|nativeEscapeBeforeDOMAckTest|staleDOMCallbackStillRefusedTest|nativeEscapeOneReleaseOnceTest|nativeEscapeScopeChangeRefusedTest|nativeEscapeDeadlineNeverRenewedTest|nativeEscapeRepeatRefusedTest|nativeEscapeRetirementRefusedTest|nativeEscapeWithoutPhysicalPressTest|nativeEscapeCannotApproveOldReleaseTest|nativeEscapeExpiredPressRefusedTest)$",
+        "--max-samples=1",
+        "--seed=79001",
+        "--out-itf=named-{test}-{seq}.itf.json"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "invariants",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=79002"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "native-requires-dom-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "native-requires-dom.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "native-requires-dom-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "native-requires-dom.qnt",
+        "--backend=typescript",
+        "--match=^nativeEscapeBeforeDOMAckTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "native-does-not-consume-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "native-does-not-consume.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "native-does-not-consume-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "native-does-not-consume.qnt",
+        "--backend=typescript",
+        "--match=^nativeEscapeBeforeDOMAckTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "native-closes-on-press-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "native-closes-on-press.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "native-closes-on-press-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "native-closes-on-press.qnt",
+        "--backend=typescript",
+        "--match=^nativeEscapeBeforeDOMAckTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "stale-web-admitted-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "stale-web-admitted.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "stale-web-admitted-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "stale-web-admitted.qnt",
+        "--backend=typescript",
+        "--match=^staleDOMCallbackStillRefusedTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "render-ack-renews-deadline-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "render-ack-renews-deadline.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "render-ack-renews-deadline-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "render-ack-renews-deadline.qnt",
+        "--backend=typescript",
+        "--match=^nativeEscapeDeadlineNeverRenewedTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    },
+    {
+      "name": "native-expired-approval-typecheck",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "native-expired-approval.qnt"
+      ],
+      "exitCode": 0,
+      "expected": 0
+    },
+    {
+      "name": "native-expired-approval-rejected",
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "native-expired-approval.qnt",
+        "--backend=typescript",
+        "--match=^nativeEscapeExpiredPressRefusedTest$",
+        "--max-samples=1",
+        "--seed=79101"
+      ],
+      "exitCode": 1,
+      "expected": 1
+    }
+  ],
+  "namedScenarios": [
+    "pressNeverClosesTest",
+    "releaseOnceTest",
+    "secondEscapeTest",
+    "forgedReleaseTest",
+    "retirementKeepsHeldTest",
+    "scopeChangeRefusesTest",
+    "deadlineNeverRenewedTest",
+    "repeatNeverClosesTest",
+    "replayPreservesOriginalTest",
+    "earlyReleaseTest",
+    "earlyReleaseOnceTest",
+    "expiredEarlyReleaseTest",
+    "changedEarlyReleaseTest",
+    "webWithoutNativePressTest",
+    "nativeEscapeBeforeDOMAckTest",
+    "staleDOMCallbackStillRefusedTest",
+    "nativeEscapeOneReleaseOnceTest",
+    "nativeEscapeScopeChangeRefusedTest",
+    "nativeEscapeDeadlineNeverRenewedTest",
+    "nativeEscapeRepeatRefusedTest",
+    "nativeEscapeRetirementRefusedTest",
+    "nativeEscapeWithoutPhysicalPressTest",
+    "nativeEscapeCannotApproveOldReleaseTest",
+    "nativeEscapeExpiredPressRefusedTest"
+  ],
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "mutantsRejected": 6,
+  "sourceSHA256": "9a691c64cf7e16a23ac33ce5a0fc3b00a68f1949ee56318c9fc909574a6f7447",
+  "artifacts": {
+    "recovery.qnt": "9a691c64cf7e16a23ac33ce5a0fc3b00a68f1949ee56318c9fc909574a6f7447",
+    "model.py": "e2a3d97b01702c29b38f6758c5e2e04011a7236a0d95a6458c0455eebf7a1db2",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-pressNeverClosesTest-0.itf.json": "5854a4820bc60905bfd75bc74f96b29beb21c5cecffee053f0caa53ff7b9e844",
+    "named-releaseOnceTest-1.itf.json": "652b800a279730f9749b0b690f926b9a0f4e289d620b327be743e1e0028b81bf",
+    "named-secondEscapeTest-2.itf.json": "a8d6ba13ade2debe8a5823640af6a4fd118c8885488c723c4f7aba79acdc61c2",
+    "named-forgedReleaseTest-3.itf.json": "cdc741e17cd015667ea14a06114f8d02f7b311e265d01890484b71dc3011134c",
+    "named-retirementKeepsHeldTest-4.itf.json": "010f25e3bf8e1549ccbe2c4c8b3b3e78001981a7f0fd51683ce81e658eaa7cda",
+    "named-scopeChangeRefusesTest-5.itf.json": "43b1d12211db67c9e725b32e04d0585614c3279e3eed1f3127b02b0fdad0347f",
+    "named-deadlineNeverRenewedTest-6.itf.json": "5aebb4525c4b6149afd4022e9b5d0c96e153571d8bae4046bea8b0d579f40124",
+    "named-repeatNeverClosesTest-7.itf.json": "09d1aa7418d5fac8e4431e86552d93dda9e81aada350a25a64c399c535c67cb3",
+    "named-replayPreservesOriginalTest-8.itf.json": "38780776caa16f9ad088544301698d6d8bf28abd5f29d7b5f5baf7c16d73ebcc",
+    "named-earlyReleaseTest-9.itf.json": "9c118f015626564b278fbac602b7854c701b2c3c95cbd6fac1cc8db42282ed5a",
+    "named-earlyReleaseOnceTest-10.itf.json": "1622008578f8063d98654c738189ea708127ece5cbcf180cabb4e3938020c712",
+    "named-expiredEarlyReleaseTest-11.itf.json": "34cd24cd90d24b60198fa6612174c1e99f89aa8b8018e700c9c43de21a6d26d1",
+    "named-changedEarlyReleaseTest-12.itf.json": "91e9f59ab4dca60e0aaa457648c71f767f1798e121d505b2e7f3dbf4fd51f5c8",
+    "named-webWithoutNativePressTest-13.itf.json": "871b64c62db08e8e5d85bb2f503f0c7f42f8f08fa76fd80244d4f730fa79e714",
+    "named-nativeEscapeBeforeDOMAckTest-14.itf.json": "ce1065a7f97f7f3523e5cec1515e44a90953ed3fb68c710377d21e2d420173ef",
+    "named-staleDOMCallbackStillRefusedTest-15.itf.json": "66d3775e8693a5f6e29d3dc79fa55f20e05fa13c645261496f5ae757d5400b71",
+    "named-nativeEscapeOneReleaseOnceTest-16.itf.json": "c0e80a0202d3530e71672fc42adcffe1644599608c7c4f4daeedd9b8c32deedf",
+    "named-nativeEscapeScopeChangeRefusedTest-17.itf.json": "000ecabb0676d6809e0f745c650d1bb2fae356e741337b2178e1ee92d6fab67c",
+    "named-nativeEscapeDeadlineNeverRenewedTest-18.itf.json": "19696080703966ae9e71d6dcb9604913c8754bacaff5a4cc6c75bf0c3469571b",
+    "named-nativeEscapeRepeatRefusedTest-19.itf.json": "28e2e3729e7ce69058671be774f8d372da9ea39215e810a5b5065b0bf291f33e",
+    "named-nativeEscapeRetirementRefusedTest-20.itf.json": "c9d1a919031bd7b0daa17534a06ebcb3e55315d2028c491d72f6203370a01054",
+    "named-nativeEscapeWithoutPhysicalPressTest-21.itf.json": "636ef52a8920c1e498d9d2c9eb49a1cf6942e1d879d6cc01f2b3110f87d3c876",
+    "named-nativeEscapeCannotApproveOldReleaseTest-22.itf.json": "d5a8433c2fc252f6f05623e87ba047bf6c413e6ca45e5bd21f5edf18071eed32",
+    "named-nativeEscapeExpiredPressRefusedTest-23.itf.json": "54bc2182c73c9311e8bc71da056cbe8dff6626f42d21aca95a8b83d84688f635",
+    "named.stdout": "8461e7256d472a28becac6a84e2823fbcfa8e266d277bf4e98f9070996783220",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "invariants.stdout": "4f4bc4fb9ef87cef0ec1f3983b6515a16fbaacc45d78a2d2deee00cc88256624",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-requires-dom.qnt": "c54c3306c9e0dd626e1a593208acb478f9bd1ac7de4d83513336aacde76699d5",
+    "native-requires-dom-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-requires-dom-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-requires-dom-rejected.stdout": "6f1e463c68118af1dc923bb1d987f42f9ceb292cf6948c61e30bf482693d3a0a",
+    "native-requires-dom-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "native-does-not-consume.qnt": "bb16d9927a921db5f0e8804a2aec6b7c1855ba3b25f55768b7e079aab92022f7",
+    "native-does-not-consume-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-does-not-consume-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-does-not-consume-rejected.stdout": "0919f8bd17b8acddb58f12468cabcf2dde8bc507ceb805a0fd713c9787625fef",
+    "native-does-not-consume-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "native-closes-on-press.qnt": "56fd1b6bf0e0f278d99e2bd87ae122003d5503bb1dd95411f0fb14f1ca946a3b",
+    "native-closes-on-press-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-closes-on-press-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-closes-on-press-rejected.stdout": "617fc10809cc963b6a1a881bd16ddd7d26b87f511580b1a6df965aa9b9158dd2",
+    "native-closes-on-press-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "stale-web-admitted.qnt": "53c69f9fbb906228aada1d3fad875309958b67ddbada9773585a4642e9c91e59",
+    "stale-web-admitted-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stale-web-admitted-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "stale-web-admitted-rejected.stdout": "d38fa5dcb2133bd0ed66ed4d4e51c69f02e7f2dfe2f7ddbbc72837b9bcc12109",
+    "stale-web-admitted-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "render-ack-renews-deadline.qnt": "0950c9560bed6a62f74cfe58249b3852bdf4050d20967c51152ae9f1f95937f9",
+    "render-ack-renews-deadline-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "render-ack-renews-deadline-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "render-ack-renews-deadline-rejected.stdout": "307381be4491786cc253adf1b99e956d2d67acc49dc6157a2518169a8fc58a7d",
+    "render-ack-renews-deadline-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2",
+    "native-expired-approval.qnt": "1c994a92ccfd9a466b7d24725a11b183d3d20b99ac8f633085f5f11958c7296a",
+    "native-expired-approval-typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-expired-approval-typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-expired-approval-rejected.stdout": "c815946a9cef95af9ecc4c7631adda1acc54ebd1fd4a35bc80b3f84a17c8a46b",
+    "native-expired-approval-rejected.stderr": "7880f94b001f34e172927175c742d4d8f3b7fafcfeb74def8d48056c0e134ba2"
+  }
+}

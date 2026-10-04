@@ -1,0 +1,16 @@
+
+  recovery
+    1) nativeEscapeBeforeDOMAckTest failed after 1 test(s)
+
+  1 failed
+
+  1) nativeEscapeBeforeDOMAckTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-does-not-consume.qnt:34:96
+        34:  run nativeEscapeBeforeDOMAckTest=init.then(press).then(renderLag).then(nativeEscape).then(all{assert(s.popup and s.held and s.pending and not(s.available) and s.closed==0),s'=s}).then(release).then(all{assert(not(s.popup) and s.closed==1),s'=s})
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=nativeEscapeBeforeDOMAckTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 native-does-not-consume.qnt

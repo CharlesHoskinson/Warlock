@@ -1,0 +1,16 @@
+
+  recovery
+    1) staleDOMCallbackStillRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) staleDOMCallbackStillRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/stale-web-admitted.qnt:35:105
+        35:  run staleDOMCallbackStillRefusedTest=init.then(press).then(renderLag).then(web).then(release).then(all{assert(s.popup and s.closed==0),s'=s})
+                                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=staleDOMCallbackStillRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 stale-web-admitted.qnt

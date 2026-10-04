@@ -1,0 +1,16 @@
+
+  recovery
+    1) nativeEscapeExpiredPressRefusedTest failed after 1 test(s)
+
+  1 failed
+
+  1) nativeEscapeExpiredPressRefusedTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-native-escape-order-model-v183/qa/model-1791133885663575914/native-expired-approval.qnt:43:100
+        43:  run nativeEscapeExpiredPressRefusedTest=init.then(press).then(expire).then(nativeEscape).then(all{assert(s.popup and not(s.pending) and s.available and s.closed==0),s'=s})
+                                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x134fd --match=nativeEscapeExpiredPressRefusedTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 native-expired-approval.qnt
