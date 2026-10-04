@@ -1,0 +1,81 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-prototype-v127/qa/local-unsent-1791117219012158141/worker.js": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/old-worker.js",
+      "sha256": "181819f59dac420c7d7e0281dd81e0e7ce52f38ce08f536a9c60075470dd62b9"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/local-unsent-1791117490426147303/worker.js": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/new-worker.js",
+      "sha256": "3510b64a9a13e4565c5df515d9d67ae2430846fd65e3abfcc97a74cd652b793c"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/local-unsent-1791117490426147303/inputs/qa/native-evidence.json": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/evidence.json",
+      "sha256": "ff9f4c85eef03dbc0430af8b2b8fff35ddb65ceb7992e1d187fb98d41dcef508"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/local-unsent-1791117490426147303/probe": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/probe",
+      "sha256": "8ccd1dc406dd50b3073889e06caa6d2e77dc9afff3f56440958e60aeebe3061c"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/local-unsent-1791117490426147303/inputs/qa/deferred-attach.cjs": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/deferred.cjs",
+      "sha256": "15db74f72911ef830c17f2ad7a6c42cfe31e2002501284455481f147bad85ed1"
+    },
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-observation-recovery-v121/qa/disposition-1791112312091107116/inputs/qa/stale.cjs": {
+      "snapshot": "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/stale.cjs",
+      "sha256": "e03aa7501af7cbc4bc903b8ff8557944a99916c7fc0c7c6fc8aad7c2552a92eb"
+    }
+  },
+  "commands": [
+    {
+      "name": "old-deferred",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/deferred.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/old-worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/evidence.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/old-deferred.json"
+      ],
+      "exitCode": 1
+    },
+    {
+      "name": "new-deferred",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/deferred.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/new-worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/evidence.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/new-deferred.json"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "new-stale",
+      "argv": [
+        "node",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/stale.cjs",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/new-worker.js",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/evidence.json",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/inputs/probe",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-combined-disposition-recovery-v128/qa/regression-control-1791117555098109691/new-stale.json",
+        "candidate"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "oldDeferredAttachFailureDemonstrated": true,
+  "deferredChecks": [
+    "exact unsent attach while Pending retires old attach ID without replaying or deleting original operation",
+    "definitive original operation receipt resumes required geometry attach under fresh ID",
+    "remaining legacy read completion drains dirty bit into required fresh attach rather than stale geometry facts"
+  ],
+  "staleChecks": [
+    "obsolete exact observation certificate consumes record without closing current same-lease menu",
+    "obsolete exact certificate cannot cancel newer same-lease prepared selection or consume its read IDs"
+  ],
+  "scope": "Same actual compiled regression oracle fails the prior combined worker and passes new captured combined worker; stale UI guards remain intact. CPU only."
+}

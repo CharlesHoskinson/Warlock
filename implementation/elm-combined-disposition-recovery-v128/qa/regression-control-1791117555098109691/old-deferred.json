@@ -1,0 +1,7 @@
+{
+  "passed": false,
+  "checks": [
+    "exact unsent attach while Pending retires old attach ID without replaying or deleting original operation"
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n    'projection-request',\n+   'geometry-facts-request'\n-   'geometry-attach'\n  ]\n"
+}

@@ -1,0 +1,7 @@
+# Combined recovery candidate
+
+V128 derives from the preserved V127 prototype and incorporates the exact V121 Shell central attach-resume correction captured by its final 60-check run. Dedicated local operation refusal still requires the original full binding/protocol/intent, issued membership and unresolved Pending status. It remains independent of popup/read lifetime; stale read certificates cannot dismiss newer presentation. Unknown/native outcomes are preserved.
+
+Protected combined replay passes operation62 plus deferred-attach3. The exact same attach oracle fails captured old V127 after safely clearing its rejected attach ID, demonstrating its later receipt emits geometry facts instead of attachment; new V128 passes. Stale UI2 pass. Optimized Main/Bar/Popup compile. Actual copied semantic runners pass staged78/53/21 plus post-close59. Original byte-exact old-protocol traces remain recorded failures, not new-protocol passes.
+
+CPU source/evidence acceptance only. Independent source review is requested. This source is not yet integrated with primary source333 native context/terminal proof, schema5 EOF/deadline recovery, or qualified by native original retirement/fault/effect/pixel cases. Current core89/plugin90/AQ105 acceptance does not transfer. Complete S01–S16 UIUX, restore/drag/workspaces/displays, hardware/AT/IME/performance, release and authorized deployment/rollback/user-flow gates remain open. No installed change.
