@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-shared-registration-shutdown-accepted-v387",
-  "status": "Final380 merges production371 input proof with reviewed144 registration/refusal and bounded broker output/ordered native drain. Actual native49 and target-retirement48 pass strict6s/pixels/receipts/client-empty/normal cleanup. Actual registration25, operation/deferred65, broker43, teardown10, shared37/49/23, adapted79/53/21 and C90/key20/carrier34 pass. Quint8/1000x40 and unsafe certificate control pass. Original native08/09/10 receipt/EOF faults and full UIUX/ATIME/GPU/release/requirements/sprints remain open.",
+  "activeSlice": "implementation/elm-shared-receipt-eof-accepted-v394",
+  "status": "Current schema5 receipt/EOF fixture391 verifies captured source380; AST-exact original hold/pump algorithms retained. CPU45/52/19/7/7 plus exact profile9 pass; predecessor path/oracle failures frozen. Actual relay baseline50 and physical EOF/reconnect subset57 pass strict6s/normal EOF/owned fresh actors/same lifetime/fresh binding/native facts/no replay/pixels/clientempty cleanup. Original geometry08 savedMax/09heldreceipt/10full contract and full UIUX/GPU/ATIME/release/requirements/sprints remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1738,11 +1738,20 @@
       "originalNativeFaultAccepted": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    "sharedReceiptEofV394": {
+      "manifest": "implementation/elm-shared-receipt-eof-accepted-v394/qa/slice-manifest.json",
+      "manifestSHA256": "a67206657a60f996fe8d0eebb5844020588a582cf63d9e8a28f61b2c0cfff68b",
+      "summary": "Current schema5 receipt/EOF fixture391 verifies captured source380; AST-exact original hold/pump algorithms retained. CPU45/52/19/7/7 plus exact profile9 pass; predecessor path/oracle failures frozen. Actual relay baseline50 and physical EOF/reconnect subset57 pass strict6s/normal EOF/owned fresh actors/same lifetime/fresh binding/native facts/no replay/pixels/clientempty cleanup. Original geometry08 savedMax/09heldreceipt/10full contract and full UIUX/GPU/ATIME/release/requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "originalGeometry08_09_10Accepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
     }
   },
   "next": [
-    "Port original geometry08/09/10 receipt-EOF relay/selector/whole-transition native fixture to shared source380/runtime336; inspect and preserve original identities/deadlines/oracles before launch.",
-    "Finish per-output retirement/reflow and floating multi-action/Max; coherent combined native fault/effect/pixel recovery still required.",
+    "Add current shared floating geometry/menu fixture; reproduce Max availability/own-popup blocker semantics, then port original GEOMETRY-MENU-08/09/10 onto held391 selector/relay without changing6s receipt/configure/RGB/actor oracles.",
+    "Continue actual per-output retirement/reflow, held input/parent loss and coherent combined native fault recovery on accepted owning tuple; review independent pending AQ/header changes before adoption.",
     "Continue full S01-S16 original restore/recovery/drag/timing, GPU/WebGPU/AT/IME/physical/human/resource budgets/C00 and reversible deployment/rollback gates."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",

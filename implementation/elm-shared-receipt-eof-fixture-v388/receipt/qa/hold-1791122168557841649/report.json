@@ -1,0 +1,15 @@
+{
+  "passed": false,
+  "scope": "Actual QA wrapper with synthetic receipts and CPU subprocess cleanup only; no native execution or rendering acceptance",
+  "inputs": {
+    "qa/wrapper.py": "b68b4e68f22c4b9025ada2087b4b95cde43c623d59e870e59ed1bd2ad5cfce68",
+    "qa/test.py": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605"
+  },
+  "checks": [],
+  "processes": [],
+  "error": "FileNotFoundError(2, 'No such file or directory')",
+  "artifacts": {
+    "inputs/qa/wrapper.py": "b68b4e68f22c4b9025ada2087b4b95cde43c623d59e870e59ed1bd2ad5cfce68",
+    "inputs/qa/test.py": "c1927569f90a80a08a2858055b45712750bd68cb86f1445b8288aabe6b5f8605"
+  }
+}

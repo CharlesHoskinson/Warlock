@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T13:52:58.793515+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T14:09:25.689551+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7640,6 +7640,15 @@
       "manifest": "implementation/elm-shared-registration-shutdown-accepted-v387/qa/slice-manifest.json",
       "manifestSHA256": "f2e4114985f0ba936d40ffa876408ce66da9ba61a30b2b21b10c3b0db3595845",
       "summary": "Final380 merges production371 input proof with reviewed144 registration/refusal and bounded broker output/ordered native drain. Actual native49 and target-retirement48 pass strict6s/pixels/receipts/client-empty/normal cleanup. Actual registration25, operation/deferred65, broker43, teardown10, shared37/49/23, adapted79/53/21 and C90/key20/carrier34 pass. Quint8/1000x40 and unsafe certificate control pass. Original native08/09/10 receipt/EOF faults and full UIUX/ATIME/GPU/release/requirements/sprints remain open.",
+      "boundedNativeAcceptance": true,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    {
+      "slice": "implementation/elm-shared-receipt-eof-accepted-v394",
+      "manifest": "implementation/elm-shared-receipt-eof-accepted-v394/qa/slice-manifest.json",
+      "manifestSHA256": "a67206657a60f996fe8d0eebb5844020588a582cf63d9e8a28f61b2c0cfff68b",
+      "summary": "Current schema5 receipt/EOF fixture391 verifies captured source380; AST-exact original hold/pump algorithms retained. CPU45/52/19/7/7 plus exact profile9 pass; predecessor path/oracle failures frozen. Actual relay baseline50 and physical EOF/reconnect subset57 pass strict6s/normal EOF/owned fresh actors/same lifetime/fresh binding/native facts/no replay/pixels/clientempty cleanup. Original geometry08 savedMax/09heldreceipt/10full contract and full UIUX/GPU/ATIME/release/requirements/sprints remain open.",
       "boundedNativeAcceptance": true,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []

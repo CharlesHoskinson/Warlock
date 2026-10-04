@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "AST comparison; original hold/pump/private control/deadline/supervisor algorithms unchanged, no native acceptance",
+  "checks": [
+    {
+      "module": "receipt",
+      "changedOriginalFunctions": [
+        "load_backend"
+      ],
+      "unchangedAlgorithms": [
+        "HoldFailure",
+        "start",
+        "exact",
+        "counter",
+        "decode",
+        "directory",
+        "gate_fd",
+        "ReceiptHold",
+        "supervise",
+        "write_release",
+        "main"
+      ]
+    },
+    {
+      "module": "relay",
+      "changedOriginalFunctions": [
+        "command_for"
+      ],
+      "unchangedAlgorithms": [
+        "RelayFailure",
+        "sha",
+        "start",
+        "unique",
+        "decode",
+        "exact",
+        "directory",
+        "read_private",
+        "write_all",
+        "actor_status",
+        "exit_status",
+        "close_stdin",
+        "pump",
+        "verify_receipt",
+        "main"
+      ]
+    }
+  ]
+}

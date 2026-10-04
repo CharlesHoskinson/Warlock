@@ -1,0 +1,3 @@
+Fresh receipt selector/EOF relay rebinding to frozen shared380 optimized captured adapter and schema5. Exact original hold/intercept/release/pump algorithms,3s relay EOF and5s receipt-hold caps retained. Receipt protocol2/maximize/restore-geometry selectors unchanged. All source sibling imports verified against owning387 manifest/build. CPU and native qualification remain separate; no installed desktop changes.
+
+391 adds exact runtime/instance fields to the relay configuration because schema5 native admission opens that same file. Both fields must match the backend authority configuration and the runtime must be canonical private0700. Receipt/pump algorithms remain byte-exact; native acceptance pending.

@@ -1,0 +1,48 @@
+{
+  "passed": true,
+  "scope": "Actual profile parser/fixed child argv/current captured schema5 import; no native acceptance",
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-receipt-eof-fixture-v391/relay/qa/relay.py": "d0163d094b9741a6e24ac77e0f5310bf26670e8a332a69e274cf32d4eeddeb7b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-receipt-eof-fixture-v391/receipt/qa/wrapper.py": "b68b4e68f22c4b9025ada2087b4b95cde43c623d59e870e59ed1bd2ad5cfce68",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-receipt-eof-fixture-v391/receipt/qa/broker-entrypoint.py": "33e1701c88a1d9f377b697ee9628b85f2267e095e75eb1dcd27ff47e68ea44e2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-receipt-eof-fixture-v391/receipt/qa/held-source-manifest.json": "a50e9b0786d76d4f430010f394200d6f883aa720692f18b740ced2d993e1af26"
+  },
+  "checks": [
+    {
+      "name": "broker exact fixed interpreter/source/private config",
+      "passed": true
+    },
+    {
+      "name": "receipt exact fixed interpreter/source/private config",
+      "passed": true
+    },
+    {
+      "name": "wrong instance refused",
+      "passed": true
+    },
+    {
+      "name": "nonstring runtime refused",
+      "passed": true
+    },
+    {
+      "name": "missing instance refused",
+      "passed": true
+    },
+    {
+      "name": "extra command field refused",
+      "passed": true
+    },
+    {
+      "name": "closed profile refused",
+      "passed": true
+    },
+    {
+      "name": "wrong authority path refused",
+      "passed": true
+    },
+    {
+      "name": "verified current schema5 daemon imports",
+      "passed": true
+    }
+  ]
+}
