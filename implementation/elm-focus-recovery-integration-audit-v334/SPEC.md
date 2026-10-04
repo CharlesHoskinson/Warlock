@@ -1,0 +1,2 @@
+Independent protected CPU closure and source composition: revalidate frozen331 and scoped648 inventories, current640 production/build pins, review exactly four presentation changes from327, then materialize own333 immutable source. All640 policy/authority/recovery changes are preserved; no transfer of native acceptance. Synthetic/native/public evidence remain scoped, full release open. Source workers are read-only.
+Fresh334 preserves332 parse failure before execution; only newline escaping in emitted333 SPEC corrected. All source/manifest/native oracles unchanged.

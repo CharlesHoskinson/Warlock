@@ -1,0 +1,6 @@
+{
+  "passed": false,
+  "fullReleaseAccepted": false,
+  "error": "KeyError('cleanup')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-focus-recovery-integrated-held-v339/qa/freeze.py\", line 37, in <module>\n    cleanup=m['privateHost']['cleanup'];assert cleanup['runtimeGone'] and not any(cleanup.get(k) for k in ['cleanupErrors','remainingDescendants','unexpectedInnerDescendants'])\n            ~~~~~~~~~~~~~~~~^^^^^^^^^^^\nKeyError: 'cleanup'\n"
+}
