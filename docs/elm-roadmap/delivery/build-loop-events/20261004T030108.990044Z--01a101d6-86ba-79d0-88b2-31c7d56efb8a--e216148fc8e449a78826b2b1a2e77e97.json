@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "e216148fc8e449a78826b2b1a2e77e97",
+  "thread": "01a101d6-86ba-79d0-88b2-31c7d56efb8a",
+  "observedUTC": "2026-10-04T03:01:08.990044+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-surface-recovery-qa-v81",
+  "nextWork": [
+    "Add primary-only stamped inspection crosschecked against actual DOM/native popup geometry, then preserve/run original91 window regression. Continue pending Unknown/GTK-WebKit faults/gesture/outputs/AT/IME/hardware/release."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-surface-recovery-qa-v81/qa/slice-manifest.json",
+      "sha256": "5e5d3d106aa1c873460bd7763e38f7963e411b607f82ec9d214a6005be02b4e1",
+      "size": 4476
+    },
+    {
+      "path": "implementation/elm-surface-recovery-checks-v82/qa/slice-manifest.json",
+      "sha256": "483813e3f310e6c4c181e244a9d88193e42fc74a31107f94c7d95ea8a6058198",
+      "size": 9016
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

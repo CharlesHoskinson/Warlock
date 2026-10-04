@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T02:51:55.812344+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T03:01:08.937445+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -6705,6 +6705,35 @@
       "slice": "implementation/elm-surface-ack-qa-v78",
       "level": "actual current-publication native configure/render/DOM focus synchronization and retained default launch/input",
       "acceptance": "Only unit-scale800x600 private output and protocol input helper. Native GTK/WebKit fault campaigns, keyboard bar invocation/recovery controls, full91 regression, transformed outputs, AT/composing IME/human/hardware/release open."
+    },
+    {
+      "surfaceProtocol": 2,
+      "compiledControllerChecks": 41,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "actualHostCTestGroups": 6,
+      "actualSurfaceCTestGroups": 4,
+      "nativeChecks": 42,
+      "priorNative36IdentitiesRetained": true,
+      "actualIdleBackendFault": true,
+      "actualExplicitReconnect": true,
+      "actualFreshBinding": true,
+      "actualNoWindowActionReplay": true,
+      "actualOperationAccessibleNames": true,
+      "actualOwnedLaunchChildExitCode": 0,
+      "replacementBackendAndHostNormalExit": true,
+      "oldBackendIntentionallyTerminated": true,
+      "cleanupPassed": true,
+      "pendingUnknownRecoveryAccepted": false,
+      "nativeATIMEAccepted": false,
+      "full91RegressionAccepted": false,
+      "newQuintRun": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-recovery-qa-v81/qa/slice-manifest.json",
+      "slice": "implementation/elm-surface-recovery-qa-v81",
+      "level": "actual idle backend recovery and required DOM accessible names with retained popup/default launch",
+      "acceptance": "Idle SIGTERM fault and current names only; actual screen reader, pending Unknown, original91 full window regression, outputs/human/hardware/release remain open."
     }
   ]
 }

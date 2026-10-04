@@ -1,0 +1,14 @@
+Compiled in DEV mode. Follow the advice at https://elm-lang.org/0.19.2/optimize for better performance and smaller assets.
+/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-recovery-v79/qa/checks-1791082528523831075/inputs/qa/surface.cjs:36
+ await check('accessible primary intent '+operation,[attached,windows],(_,last)=>{const c=last.frame.bar.find(c=>c.id.startsWith('bar:group:'));assert.equal(c.ariaLabel,operation+' Owned window');assert.equal(c.label,'Owned window');assert(c.enabled);});
+                                                                                                                                                               ^
+
+TypeError: Cannot read properties of undefined (reading 'ariaLabel')
+    at /home/hoskinson/omarchy-windows-parity/implementation/elm-surface-recovery-v79/qa/checks-1791082528523831075/inputs/qa/surface.cjs:36:160
+    at check (/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-recovery-v79/qa/checks-1791082528523831075/inputs/qa/surface.cjs:8:100)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:644:9)
+    at process.processTimers (node:internal/timers:618:7)
+    at async /home/hoskinson/omarchy-windows-parity/implementation/elm-surface-recovery-v79/qa/checks-1791082528523831075/inputs/qa/surface.cjs:36:2
+
+Node.js v26.10.0

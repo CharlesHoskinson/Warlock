@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-surface-ack-qa-v78",
+  "activeSlice": "implementation/elm-surface-recovery-qa-v81",
   "status": "Native GTK popup-window candidate passes actual layer-parent xdg_popup/grab/default geometry/bar48 and native19 lifecycle/input checks. V64 failed grab bookkeeping preserved; V65 unmap retirement accepted within experiment. Final Elm bar/presentation-only popup, stale epochs, outputs/IME/AT/full scene/hardware/release open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -695,9 +695,35 @@
       "fullWindowRegressionAccepted": false,
       "wholeFeatureAccepted": false,
       "evidence": "implementation/elm-surface-ack-qa-v78/qa/slice-manifest.json"
+    },
+    "explicitSurfaceRecoveryV80V82": {
+      "surfaceProtocol": 2,
+      "compiledControllerChecks": 41,
+      "compiledPresentationChecks": 12,
+      "retainedEffectChecks": 20,
+      "retainedShellChecks": 27,
+      "actualHostCTestGroups": 6,
+      "actualSurfaceCTestGroups": 4,
+      "nativeChecks": 42,
+      "priorNative36IdentitiesRetained": true,
+      "actualIdleBackendFault": true,
+      "actualExplicitReconnect": true,
+      "actualFreshBinding": true,
+      "actualNoWindowActionReplay": true,
+      "actualOperationAccessibleNames": true,
+      "actualOwnedLaunchChildExitCode": 0,
+      "replacementBackendAndHostNormalExit": true,
+      "oldBackendIntentionallyTerminated": true,
+      "cleanupPassed": true,
+      "pendingUnknownRecoveryAccepted": false,
+      "nativeATIMEAccepted": false,
+      "full91RegressionAccepted": false,
+      "newQuintRun": false,
+      "wholeFeatureAccepted": false,
+      "evidence": "implementation/elm-surface-recovery-qa-v81/qa/slice-manifest.json"
     }
   },
-  "next": "Complete reconnect/recovery controls and window-operation accessible names in the surface graph, then run the original91 window regression on this dual-view tuple. Continue actual GTK/WebKit stale/manager/readiness fault injection, gesture provenance, per-output/reflow/keyboard/AT/IME/hardware and release gates.",
+  "next": "Prepare primary-only stamped QA inspection matched to actual DOM and native bar/popup geometry; execute original91 window regression with preserved identities/oracles/deadlines. Continue pending Unknown recovery, real GTK/WebKit faults, gesture provenance, outputs/reflow/keyboard/AT/IME/hardware and release.",
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
     "document": "docs/elm-roadmap/UI-UX-TEST-STRATEGY.md",
