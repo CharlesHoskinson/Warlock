@@ -1,0 +1,194 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "scope": "actual runtime/client guards with owned temporary directory/socket and kernel peer UID; actual module invalid entry with NULL compositor, no Wayland request/display",
+  "checks": [
+    {
+      "name": "actual-canonical-private-runtime",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "runtime-refusal-0",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-1",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-2",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-3",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-4",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-5",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-6",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-7",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-8",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-9",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "symlink-leaf-refused",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "nonprivate-mode-refused",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "actual-owned-socket-peer-uid",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "display-basename-refusal-0",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "display-basename-refusal-1",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "display-basename-refusal-2",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "display-basename-refusal-3",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "display-basename-refusal-4",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "display-basename-refusal-5",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "display-basename-refusal-6",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "display-basename-refusal-7",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "missing-optin-refused",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "socket-symlink-refused",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "regular-file-refused",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "actual-module-pre-seat-refusal-0",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "actual-module-pre-seat-refusal-1",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "actual-module-pre-seat-refusal-2",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    },
+    {
+      "name": "actual-module-pre-seat-refusal-3",
+      "passed": true,
+      "actual": 0,
+      "expected": 0
+    }
+  ],
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/build-1791139839218093688/report.json",
+  "buildReportSHA256": "4f0eb53e92e0b4085cda2f2d740ea722c80039cb06c3fee12e7bc12f35aeecdc",
+  "moduleSHA256": "766e4eb0cf45dd0555abd869d13e30e892886bf597531e5d611da7b1497981f2",
+  "clientSourceSHA256": "f17938da3c0e1ac017035bdd003da6e3ba081a32c73c97821b04a67f8ce95689",
+  "guardSourceSHA256": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2",
+  "inputs": {
+    "surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "parent-input-module.c": "35501eea56d198569b7c24783efec4daeced63e559dda35be3ae9c04fbf4e9eb",
+    "parent-input-client.c": "f17938da3c0e1ac017035bdd003da6e3ba081a32c73c97821b04a67f8ce95689",
+    "parent-input.xml": "751eb35e588da332de568f93f0cec92b3a6d53db6d22c8f3eade90db19618989",
+    "private-runtime.h": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2",
+    "guard.c": "8f3bbd946142ccbfc14dc5d454e91e4f96ee0cd6c3be618cbb357f61418e473e"
+  }
+}

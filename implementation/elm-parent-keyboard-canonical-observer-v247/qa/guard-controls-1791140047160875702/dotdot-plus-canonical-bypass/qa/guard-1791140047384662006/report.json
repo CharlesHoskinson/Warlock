@@ -1,0 +1,38 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "actual runtime/client guards with owned temporary directory/socket and kernel peer UID; actual module invalid entry with NULL compositor, no Wayland request/display",
+  "checks": [
+    {
+      "name": "actual-canonical-private-runtime",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "runtime-refusal-0",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-1",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-2",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-3",
+      "passed": false,
+      "actual": true,
+      "expected": false
+    }
+  ],
+  "error": "AssertionError('runtime-refusal-3')"
+}

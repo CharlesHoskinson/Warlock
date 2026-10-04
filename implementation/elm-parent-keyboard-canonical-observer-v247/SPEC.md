@@ -1,0 +1,5 @@
+# Entry contract
+
+Client requires ELM_PARENT_INPUT_QA=1, XDG_RUNTIME_DIR an exact canonical direct owned0700 child of /run/user/effectiveUID/wqa, and WAYLAND_DISPLAY a nonempty basename excluding dot/dotdot. Runtime is opened with O_NOFOLLOW|O_DIRECTORY, checked with fstat and canonical /proc/self/fd resolution against exact provided path. A canonical relative socket path must lstat as sameUID nonsymlink socket. The temporary nonblocking Unix connection must expose exact-size Linux SO_PEERCRED with same effective UID; close every descriptor. Expected peer PID/start remains an independent native runner condition.
+
+Module wet_module_init rejects runtime/QA mismatch before seat iteration, allocation, globals or listeners. Runtime directory canonical/ownership guard is shared actual code with client. All original request/event interfaces and operation behavior are unchanged. Client's corrected private_socket is intentionally not byte-identical to151/239; all other inherited handler bodies and225 observer source remain exact.

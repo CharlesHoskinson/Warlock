@@ -1,0 +1,44 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "controls": [
+    {
+      "name": "missing-private-mode",
+      "behaviorallyRejected": true,
+      "exit": 1,
+      "oracle": "nonprivate-mode-refused",
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/guard-controls-1791140047160875702/missing-private-mode/qa/guard-1791140047190700997/report.json",
+      "reportSHA256": "ebc0066706dba4e0a6a2a299c0d29dbf6c69ada82ab57e4da506cf2c9f641785"
+    },
+    {
+      "name": "dotdot-plus-canonical-bypass",
+      "behaviorallyRejected": true,
+      "exit": 1,
+      "oracle": "runtime-refusal-3",
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/guard-controls-1791140047160875702/dotdot-plus-canonical-bypass/qa/guard-1791140047384662006/report.json",
+      "reportSHA256": "1b927c4b2610b39601f5135b2355063a8977032715de0b9feab7ed382c77df49"
+    },
+    {
+      "name": "slash-display-bypass",
+      "behaviorallyRejected": true,
+      "exit": 1,
+      "oracle": "display-basename-refusal-6",
+      "report": "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-keyboard-canonical-observer-v247/qa/guard-controls-1791140047160875702/slash-display-bypass/qa/guard-1791140047554410829/report.json",
+      "reportSHA256": "3e3dbacd07b0f65c7265cff47c44b87b5b97ce87f4534c5cf99ef3c92a8bf832"
+    },
+    {
+      "name": "module-entry-bypass",
+      "behaviorallyRejected": true,
+      "exit": -11,
+      "oracle": "actual NULL-compositor early-refusal entry",
+      "sourceSHA256": "2a8f7c342aafae95b4ecb1d1094faeb819e761969dd44f6bc209f6077c60d77b",
+      "artifactSHA256": "6faae060d6448b356c2ee17f6a25078597be5e6e0223177b1b5ad84750ddff19"
+    }
+  ],
+  "sourceInputs": {
+    "native/private-runtime.h": "a3f75020970ce59870a5e3a527e829815e5551e748c03c78903662f72fb4f4d2",
+    "native/parent-input-client.c": "f17938da3c0e1ac017035bdd003da6e3ba081a32c73c97821b04a67f8ce95689",
+    "native/parent-input-module.c": "35501eea56d198569b7c24783efec4daeced63e559dda35be3ae9c04fbf4e9eb",
+    "qa/guard-test.py": "f7a9ee4c13fba8b55ff08850f684bb034a6d3bba630cb9ad31f7a4986e19dbce"
+  }
+}

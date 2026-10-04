@@ -1,0 +1,209 @@
+#ifndef _GNU_SOURCE
+#define _GNU_SOURCE
+#endif
+#ifndef _POSIX_C_SOURCE
+#define _POSIX_C_SOURCE 200809L
+#endif
+#include "parent-input-client.h"
+#include <wayland-client.h>
+#include <stdbool.h>
+#include <errno.h>
+#include <inttypes.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <sys/un.h>
+#include "private-runtime.h"
+
+struct client { struct wl_display *display; struct elm_parent_input_v1 *probe; struct elm_parent_surface_observer_v1 *observer; uint32_t observer_global; uint32_t global, sequence, waiting; bool received, accepted; };
+static void done(void *data, struct elm_parent_input_v1 *probe, uint32_t sequence, uint32_t accepted) {
+    (void)probe;
+    struct client *client = data;
+    if (sequence != client->waiting || accepted > 1) return;
+    client->received = true; client->accepted = accepted;
+    printf("{\"sequence\":%u,\"accepted\":%s,\"scope\":\"parent-notify-only\"}\n", sequence, accepted ? "true" : "false");
+    fflush(stdout);
+}
+static const struct elm_parent_input_v1_listener listener = {done};
+static void observation(void *data, struct elm_parent_surface_observer_v1 *observer, uint32_t sequence, uint32_t accepted, const char *packet) {
+    (void)observer;struct client *client=data;
+    if (sequence!=client->waiting || accepted>1 || !packet || strlen(packet)>=4096) return;
+    client->received=true;client->accepted=accepted;
+    printf("{\"sequence\":%u,\"accepted\":%s,\"scope\":\"parent-surface-observation\",\"observation\":%s}\n",sequence,accepted ? "true" : "false",packet);fflush(stdout);
+}
+static const struct elm_parent_surface_observer_v1_listener observer_listener={observation};
+static void global(void *data, struct wl_registry *registry, uint32_t name, const char *interface, uint32_t version) {
+    struct client *client = data;
+    if (!strcmp(interface,"elm_parent_surface_observer_v1") && version>=1 && !client->observer) {
+        client->observer_global=name;client->observer=wl_registry_bind(registry,name,&elm_parent_surface_observer_v1_interface,1);
+        elm_parent_surface_observer_v1_add_listener(client->observer,&observer_listener,client);
+    }
+    if (!strcmp(interface, "elm_parent_input_v1") && version >= 7 && !client->probe) {
+        client->global = name;
+        client->probe = wl_registry_bind(registry, name, &elm_parent_input_v1_interface, 7);
+        elm_parent_input_v1_add_listener(client->probe, &listener, client);
+    }
+}
+static void removed(void *data, struct wl_registry *registry, uint32_t name) {
+    (void)registry;
+    struct client *client = data;
+    if (name==client->observer_global && client->observer) {elm_parent_surface_observer_v1_destroy(client->observer);client->observer=NULL;}
+    if (name == client->global && client->probe) {
+        elm_parent_input_v1_destroy(client->probe); client->probe = NULL;
+    }
+}
+static const struct wl_registry_listener registry_listener = {global, removed};
+static bool private_socket(void) {
+    const char *gate=getenv("ELM_PARENT_INPUT_QA"), *display=getenv("WAYLAND_DISPLAY"), *runtime=getenv("XDG_RUNTIME_DIR");
+    if (!gate || strcmp(gate,"1") || !canonical_private_runtime(runtime) || !display || !*display || !strcmp(display,".") || !strcmp(display,"..")) return false;
+    struct sockaddr_un address={.sun_family=AF_UNIX};
+    int count=snprintf(address.sun_path,sizeof address.sun_path,"%s/%s",runtime,display);
+    if (count<0 || (size_t)count>=sizeof address.sun_path) return false;
+    struct stat info;
+    if (lstat(address.sun_path,&info) || !S_ISSOCK(info.st_mode) || info.st_uid!=geteuid()) return false;
+    int fd=socket(AF_UNIX,SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK,0);
+    if (fd<0) return false;
+    if (connect(fd,(struct sockaddr *)&address,sizeof address)<0) {close(fd);return false;}
+    struct ucred peer; socklen_t size=sizeof peer;
+    bool valid=getsockopt(fd,SOL_SOCKET,SO_PEERCRED,&peer,&size)==0 && size==sizeof peer && peer.uid==geteuid();
+    close(fd);
+    return valid;
+}
+
+static bool send_request(struct client *client, bool motion, int32_t x, int32_t y, uint32_t button, uint32_t state) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    if (motion) elm_parent_input_v1_motion(client->probe, client->waiting, x, y);
+    else elm_parent_input_v1_button(client->probe, client->waiting, button, state);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_capability(struct client *client, uint32_t enabled) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_pointer_capability(client->probe, client->waiting, enabled);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_keyboard_capability(struct client *client, uint32_t enabled) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_keyboard_capability(client->probe, client->waiting, enabled);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_keyboard_focus(struct client *client, uint32_t enabled) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_keyboard_focus(client->probe, client->waiting, enabled);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_burst(struct client *client, uint32_t cycles, uint32_t enabled) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_pointer_burst(client->probe, client->waiting, cycles, enabled);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_disconnect(struct client *client, int32_t pid, const char *started) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_disconnect_child(client->probe, client->waiting, pid, started);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_held_disconnect(struct client *client, int32_t pid, const char *started, uint32_t held_mask) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_disconnect_held_child(client->probe, client->waiting, pid, started, held_mask);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_key_disconnect(struct client *client, int32_t pid, const char *started, uint32_t held_mask) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_disconnect_held_key_child(client->probe, client->waiting, pid, started, held_mask);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_key(struct client *client, uint32_t key, uint32_t state) {
+    if (!client->probe || client->sequence == UINT32_MAX) return false;
+    client->waiting = ++client->sequence; client->received = false;
+    elm_parent_input_v1_key(client->probe, client->waiting, key, state);
+    while (!client->received) if (wl_display_dispatch(client->display) < 0) return false;
+    return client->accepted;
+}
+static bool send_observe(struct client *client, int32_t pid, const char *started) {
+    if (!client->observer || client->sequence==UINT32_MAX || !started || !*started || strlen(started)>20) return false;
+    for (const char *p=started;*p;p++) if (*p<'0' || *p>'9') return false;
+    client->waiting=++client->sequence;client->received=false;
+    elm_parent_surface_observer_v1_observe(client->observer,client->waiting,pid,started);
+    while (!client->received) if (wl_display_dispatch(client->display)<0) return false;
+    return client->accepted;
+}
+static bool number(const char *text, int64_t minimum, int64_t maximum, int64_t *value) {
+    if (!text || !*text) return false;
+    errno = 0; char *end = NULL;
+    intmax_t parsed = strtoimax(text, &end, 10);
+    if (errno || !end || *end || parsed < minimum || parsed > maximum) return false;
+    *value = parsed; return true;
+}
+int main(void) {
+    if (!private_socket()) { fputs("private owned QA socket required\n", stderr); return 2; }
+    struct client client = {0};
+    client.display = wl_display_connect(NULL);
+    if (!client.display) return 3;
+    struct wl_registry *registry = wl_display_get_registry(client.display);
+    wl_registry_add_listener(registry, &registry_listener, &client);
+    if (wl_display_roundtrip(client.display) < 0 || !client.probe || !client.observer) { wl_display_disconnect(client.display); return 4; }
+    puts("{\"ready\":true,\"scope\":\"parent-notify-only\"}"); fflush(stdout);
+    char line[256];
+    int result = 0;
+    while (fgets(line, sizeof line, stdin)) {
+        bool accepted = false;
+        if (!strchr(line, '\n') && !feof(stdin)) { result = 5; break; }
+        char *save = NULL;
+        char *command = strtok_r(line, " \t\r\n", &save);
+        char *one = strtok_r(NULL, " \t\r\n", &save);
+        char *two = strtok_r(NULL, " \t\r\n", &save);
+        char *extra = strtok_r(NULL, " \t\r\n", &save);
+        int64_t first, second, third;
+        if (command && !strcmp(command, "quit") && !one) break;
+        if (command && !strcmp(command, "motion") && one && two && !extra &&
+            number(one, INT32_MIN, INT32_MAX, &first) && number(two, INT32_MIN, INT32_MAX, &second))
+            accepted = send_request(&client, true, (int32_t)first, (int32_t)second, 0, 0);
+        else if (command && (!strcmp(command, "press") || !strcmp(command, "release")) && one && !two &&
+            number(one, 0, UINT32_MAX, &first))
+            accepted = send_request(&client, false, 0, 0, (uint32_t)first, !strcmp(command, "press"));
+        else if (command && !strcmp(command, "pointer-capability") && one && !two && number(one, 0, 1, &first))
+            accepted = send_capability(&client, (uint32_t)first);
+        else if (command && !strcmp(command, "pointer-burst") && one && two && !extra && number(one, 1, 16, &first) && number(two, 0, 1, &second))
+            accepted = send_burst(&client, (uint32_t)first, (uint32_t)second);
+        else if (command && !strcmp(command, "disconnect-child") && one && two && !extra && number(one, 2, INT32_MAX, &first) && number(two, 1, INT64_MAX, &second))
+            accepted = send_disconnect(&client, (int32_t)first, two);
+        else if (command && !strcmp(command, "disconnect-held-child") && one && two && extra && !strtok_r(NULL, " \t\r\n", &save) && number(one, 2, INT32_MAX, &first) && number(two, 1, INT64_MAX, &second) && number(extra, 1, 7, &third))
+            accepted = send_held_disconnect(&client, (int32_t)first, two, (uint32_t)third);
+        else if (command && (!strcmp(command, "key-press") || !strcmp(command, "key-release")) && one && !two && number(one, 0, UINT32_MAX, &first))
+            accepted = send_key(&client, (uint32_t)first, !strcmp(command, "key-press"));
+        else if (command && !strcmp(command, "disconnect-held-key-child") && one && two && extra && !strtok_r(NULL, " \t\r\n", &save) && number(one, 2, INT32_MAX, &first) && number(two, 1, INT64_MAX, &second) && number(extra, 1, 3, &third))
+            accepted = send_key_disconnect(&client, (int32_t)first, two, (uint32_t)third);
+        else if (command && !strcmp(command, "keyboard-capability") && one && !two && number(one, 0, 1, &first))
+            accepted = send_keyboard_capability(&client, (uint32_t)first);
+        else if (command && !strcmp(command, "keyboard-focus") && one && !two && number(one, 0, 1, &first))
+            accepted = send_keyboard_focus(&client, (uint32_t)first);
+        else if (command && !strcmp(command,"observe") && one && two && !extra && number(one,2,INT32_MAX,&first))
+            accepted=send_observe(&client,(int32_t)first,two);
+        else { fputs("commands: motion X Y; press BUTTON; release BUTTON; pointer-capability 0|1; quit\n", stderr); result = 5; break; }
+        if (!accepted) { result = 6; break; }
+    }
+    if (client.observer) elm_parent_surface_observer_v1_destroy(client.observer);
+    if (client.probe) { elm_parent_input_v1_destroy(client.probe); if (wl_display_roundtrip(client.display) < 0 && !result) result = 7; }
+    wl_registry_destroy(registry);
+    wl_display_disconnect(client.display);
+    return result;
+}

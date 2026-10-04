@@ -1,0 +1,86 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "scope": "actual runtime/client guards with owned temporary directory/socket and kernel peer UID; actual module invalid entry with NULL compositor, no Wayland request/display",
+  "checks": [
+    {
+      "name": "actual-canonical-private-runtime",
+      "passed": true,
+      "actual": true,
+      "expected": true
+    },
+    {
+      "name": "runtime-refusal-0",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-1",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-2",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-3",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-4",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-5",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-6",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-7",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-8",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "runtime-refusal-9",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "symlink-leaf-refused",
+      "passed": true,
+      "actual": false,
+      "expected": false
+    },
+    {
+      "name": "nonprivate-mode-refused",
+      "passed": false,
+      "actual": true,
+      "expected": false
+    }
+  ],
+  "error": "AssertionError('nonprivate-mode-refused')"
+}
