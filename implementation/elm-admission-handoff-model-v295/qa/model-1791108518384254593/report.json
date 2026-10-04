@@ -1,0 +1,31 @@
+{
+  "passed": false,
+  "scope": "Bounded live-host admission, unread import, definitive tombstones, durable retirement, old-producer refusal and missing-initialized-ledger safety. Capacity2 models the bounded principle; actual64/128 budgets and full keys are filesystem tests. No automatic implementation refinement.",
+  "sourceSHA256": "2a840ff7cc0e4384b4b84f896c38c9d7b166d0ed2d8b1b7165a290e9fd24bb31",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 1
+    }
+  ],
+  "error": "AssertionError(\"\\n Error [QNT404]: Name 'max' not found\\n\\n  at /home/hoskinson/omarchy-windows-parity/implementation/elm-admission-handoff-model-v295/qa/model-1791108518384254593/recovery.qnt:6:198\\n  6:  action importUnread=s'=if(not(s.poisoned) and not(s.mutex) and not(s.oldProducer) and (s.ledgerPresent or not(s.initialized))){...s,entries:s.entries.union(s.visible.exclude(s.settled)),watermark:s.watermark.max(s.visible.size()),initialized:true,ledgerPresent:true} else s\\n                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n\\nerror: parsing failed\\n\")",
+  "artifacts": {
+    "recovery.qnt": "2a840ff7cc0e4384b4b84f896c38c9d7b166d0ed2d8b1b7165a290e9fd24bb31",
+    "model.py": "fcf480b9136585fc172723058a75fdef3780aedf025ca05ccef544af9606b087",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "a57c06733bddd483fc6251a8e6fae27b7c739a5ab51eb6982d0bcfdf20a4e095"
+  }
+}

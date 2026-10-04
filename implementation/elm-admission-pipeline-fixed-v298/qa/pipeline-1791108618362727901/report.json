@@ -1,0 +1,151 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "actual C unread A durable",
+      "passed": true
+    },
+    {
+      "name": "cold import emits no native calls",
+      "passed": true
+    },
+    {
+      "name": "C fresh B durable before daemon input",
+      "passed": true
+    },
+    {
+      "name": "native submit sees exact durable broker Pending 42",
+      "passed": true
+    },
+    {
+      "name": "native submit sees exact durable C admission 42",
+      "passed": true
+    },
+    {
+      "name": "actual handler submits B exactly once",
+      "passed": true
+    },
+    {
+      "name": "durable settlement metadata precedes frontend outcome",
+      "passed": true
+    },
+    {
+      "name": "actual handler terminal corresponds to B",
+      "passed": true
+    },
+    {
+      "name": "durable definitive B exists before frontend send",
+      "passed": true
+    },
+    {
+      "name": "duplicate daemon input refuses",
+      "passed": true
+    },
+    {
+      "name": "duplicate never repeats native call",
+      "passed": true
+    },
+    {
+      "name": "C unread C durable before cold boundary",
+      "passed": true
+    },
+    {
+      "name": "cold lost B receipt does not resurrect B",
+      "passed": true
+    },
+    {
+      "name": "cold B remains definitive retirement metadata",
+      "passed": true
+    },
+    {
+      "name": "cold does not submit native operations",
+      "passed": true
+    },
+    {
+      "name": "actual C consumes exact cold B terminal",
+      "passed": true
+    },
+    {
+      "name": "known B GC after durable C retirement",
+      "passed": true
+    },
+    {
+      "name": "unread C daemon input cannot auto replay",
+      "passed": true
+    },
+    {
+      "name": "unproven input cannot reach native authority",
+      "passed": true
+    },
+    {
+      "name": "Unknown A and C remain recoverable",
+      "passed": true
+    },
+    {
+      "name": "final cold recovery preserves all Unknowns",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/host.c": "e325c1ab9375bbd68686ebfd61d5c0cff274994473f112a6e5eac023a00cb954",
+    "native/shared-host.c": "70aadf30cf33ce4ea92fef8c53515af70d5fe334e8353e0ad14db695f824bef8",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "f0f17688159afe6b6091ca81b9db37aa89a5dcbaf3abe853b7658731a908449b",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "qa/pipeline.py": "43186429b04f0573cda3ce54c6149da24932c5a560b0bc362befb3968bed3dfb"
+  },
+  "binarySHA256": "a75c83fc2c133bbac81108e6789b6b3289ecb89063a320dc0df0b02e36f3cd06",
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-handoff-v293/qa/build-1791107424041154044/report.json",
+  "scope": "Actual production daemon handler, live compiled C admission owner and durable Python store; synthetic native authority, no GTK/compositor pixels",
+  "owners": [
+    {
+      "exitCode": 0,
+      "stderr": "",
+      "logs": [
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":1,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"42\",\"generation\":\"44\",\"incarnation\":\"8\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"43\",\"generation\":\"45\",\"incarnation\":\"9\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}"
+      ]
+    }
+  ],
+  "artifacts": {
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "inputs/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "inputs/native/host.c": "e325c1ab9375bbd68686ebfd61d5c0cff274994473f112a6e5eac023a00cb954",
+    "inputs/native/shared-host.c": "70aadf30cf33ce4ea92fef8c53515af70d5fe334e8353e0ad14db695f824bef8",
+    "inputs/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "inputs/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "inputs/adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "inputs/adapter/daemon.py": "f0f17688159afe6b6091ca81b9db37aa89a5dcbaf3abe853b7658731a908449b",
+    "inputs/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "inputs/adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "inputs/adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "inputs/adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "inputs/qa/pipeline.py": "43186429b04f0573cda3ce54c6149da24932c5a560b0bc362befb3968bed3dfb"
+  }
+}

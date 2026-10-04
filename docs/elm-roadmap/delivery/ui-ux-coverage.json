@@ -6159,7 +6159,7 @@
       "evidenceRule": "Original scenario-specific verification governs; pure/model, component, native, hardware/AT and human evidence are distinct. No acceptance inferred from this mapping."
     }
   ],
-  "partialEvidenceObservedUTC": "2026-10-04T09:39:06.974664+00:00",
+  "partialEvidenceObservedUTC": "2026-10-04T10:12:21.529999+00:00",
   "boundedImplementationEvidence": [
     {
       "slice": "implementation/elm-seat-effects-v15",
@@ -7533,6 +7533,27 @@
         "Actual broker uses synthetic native peer for CPU evidence; no new native geometry/pixels/AT/hardware acceptance",
         "Current persistent host-writer lock and mutable singleton admission deliberately refuse new ledger adoption; integrate live shared-host admission/definitive retirement protocol next",
         "128 allocation scopes bounded; native full storage/provisioning/global old-broker revocation, restore timing, GPU/AT/IME/physical/human/budgets/C00/release remain open"
+      ]
+    },
+    {
+      "passed": true,
+      "scope": "Actual compiled shared host/controller and live C admission/Python production handler CPU handoff; synthetic native authority in handler tests",
+      "liveCAndPythonChecks": 110,
+      "productionHandlerChecks": 21,
+      "compiledSharedOutputChecks": 37,
+      "compiledSharedRecoveryChecks": 49,
+      "quintNamedScenarios": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeHostAdmissionSourceIntegrated": true,
+      "nativeGUIHandoffQualified": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-admission-handoff-acceptance-v299/qa/slice-manifest.json",
+      "limitations": [
+        "No GTK/compositor pixel/input or GPU run on this tuple",
+        "Geometry/context menu presentation and newest owning compositor/plugin integration pending",
+        "Native storage/global revocation, original restore timing, AT/IME/physical/human/budgets/C00/release remain open"
       ]
     }
   ]

@@ -1,0 +1,8 @@
+
+ Error [QNT404]: Name 'max' not found
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-admission-handoff-model-v295/qa/model-1791108518384254593/recovery.qnt:6:198
+  6:  action importUnread=s'=if(not(s.poisoned) and not(s.mutex) and not(s.oldProducer) and (s.ledgerPresent or not(s.initialized))){...s,entries:s.entries.union(s.visible.exclude(s.settled)),watermark:s.watermark.max(s.visible.size()),initialized:true,ledgerPresent:true} else s
+                                                                                                                                                                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+error: parsing failed

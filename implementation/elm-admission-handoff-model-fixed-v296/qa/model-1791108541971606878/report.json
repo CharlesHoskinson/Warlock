@@ -1,0 +1,77 @@
+{
+  "passed": true,
+  "scope": "Bounded live-host admission, unread import, definitive tombstones, durable retirement, old-producer refusal and missing-initialized-ledger safety. Capacity2 models the bounded principle; actual64/128 budgets and full keys are filesystem tests. No automatic implementation refinement.",
+  "sourceSHA256": "7e813d04e20c56a107f9ea635cfaeaec2e8a38d0f11551dc2b9147852a962d38",
+  "commands": [
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "--version"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "typecheck",
+        "recovery.qnt"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "test",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--match=^(liveOwnerAllowsImportTest|unreadNeverReplaysTest|lostReceiptDoesNotResurrectTest|earlierUnknownSurvivesLaterCommitTest|exactRetirementTest|unknownCannotRetireTest|failedUnlinkSyncKeepsTombstoneTest|capacityNeverEvictsTest|oldProducerBlocksImportTest|mutexBlocksUntilReleaseTest|missingInitializedLedgerRefusesTest|unprovenIntentNeverSubmitsTest)$",
+        "--out-itf=named-{test}-{seq}.itf.json",
+        "--seed=170024",
+        "--max-samples=1"
+      ],
+      "exitCode": 0
+    },
+    {
+      "command": [
+        "/home/hoskinson/.local/share/mise/installs/npm-informalsystems-quint/latest/node_modules/.bin/quint",
+        "run",
+        "recovery.qnt",
+        "--backend=typescript",
+        "--invariants=safety",
+        "--max-samples=1000",
+        "--max-steps=40",
+        "--seed=170025",
+        "--out-itf=sample-{seq}.itf.json"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "namedScenarios": 12,
+  "invariantSamples": 1000,
+  "maxSteps": 40,
+  "artifacts": {
+    "recovery.qnt": "7e813d04e20c56a107f9ea635cfaeaec2e8a38d0f11551dc2b9147852a962d38",
+    "model.py": "fcf480b9136585fc172723058a75fdef3780aedf025ca05ccef544af9606b087",
+    "version.stdout": "d553a58a6837c95f31bae39ac344e63cc82fa81cc524966a7cd5174db38c8fa6",
+    "version.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "typecheck.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "named-liveOwnerAllowsImportTest-0.itf.json": "b06d07111c64b994085d83b9d6497971bb7ba4b09f07d9ed9bf7590d437b3344",
+    "named-unreadNeverReplaysTest-1.itf.json": "22a05d8ec7176ab7c3f1b3a4781b0546f7adf6c932b88f82325c22629ac9d549",
+    "named-lostReceiptDoesNotResurrectTest-2.itf.json": "850657ef10d443657b1da8dd97ddd53a05076868cfa23ba211f8a5e695dece4a",
+    "named-earlierUnknownSurvivesLaterCommitTest-3.itf.json": "c69b6dd1bd935da4b3f6481da15eff68fefdde364862c68fab9b0f8cb5007189",
+    "named-exactRetirementTest-4.itf.json": "12f438df2d56c6625ebd755bdaa16944e1ea65190e2872365a5f91a3d1543525",
+    "named-unknownCannotRetireTest-5.itf.json": "31c184e6763cb741dbb512a5b55ac205f546f30935f1d0433de648271d28c016",
+    "named-failedUnlinkSyncKeepsTombstoneTest-6.itf.json": "f3b0249553bdeb59ef35473c3fd09b0b2f9cbbe09abf501eabd591c82b582dac",
+    "named-capacityNeverEvictsTest-7.itf.json": "21c274612a266806279f8848fae6e22b0c03be1c6fe4e76c9deeb5d1c89abb3c",
+    "named-oldProducerBlocksImportTest-8.itf.json": "77f5bc83b43ffd82875a4d28e5b7d34aca11301047d326b82d3b3bad5a810cf7",
+    "named-mutexBlocksUntilReleaseTest-9.itf.json": "a1c5e04f6149995b70909f35f8c82356bf1616a2e1646ff73d414172c5d0f86b",
+    "named-missingInitializedLedgerRefusesTest-10.itf.json": "e5e240de7563d2bcacca8ac9ae8659496e56785914831afa6f8625dcc399c214",
+    "named-unprovenIntentNeverSubmitsTest-11.itf.json": "f4c92e6db69048af556948ad70e1c4d3ae291f1289ecb860fa722f45399eb5c1",
+    "named.stdout": "8040fae70e0b9c829b41a43750f1664c74f6ac3e2dff21a6d16f414b7f6f5a2e",
+    "named.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "sample-0.itf.json": "7d027ded70da631918bc147b7a5c52cfee03fdd84b6fa99da4c4d51361d86734",
+    "invariants.stdout": "aaadba6660fa939b93bb6a2921c6f9e349e65437d1314e0e6eb42ae830fe5ac3",
+    "invariants.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

@@ -1,7 +1,7 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-multi-recovery-acceptance-v292",
-  "status": "Host binding failures preserve verified instance context for explicit retry. Actual C/native22+22 and original137 qualification pass; next integrate durable recovery with reviewed geometry/menu before coherent release acceptance.",
+  "activeSlice": "implementation/elm-admission-handoff-acceptance-v299",
+  "status": "Shared host admission and durable definitive settlement handoff implemented and CPU-qualified; actual shared Elm controller compiles and recovery/output replays pass. Coherent native GUI integration and full release remain open.",
   "requirementsInProgress": [
     "ELM-ARC-002",
     "ELM-ARC-003",
@@ -1610,12 +1610,33 @@
         "Current persistent host-writer lock and mutable singleton admission deliberately refuse new ledger adoption; integrate live shared-host admission/definitive retirement protocol next",
         "128 allocation scopes bounded; native full storage/provisioning/global old-broker revocation, restore timing, GPU/AT/IME/physical/human/budgets/C00/release remain open"
       ]
+    },
+    "admissionHandoffV299": {
+      "passed": true,
+      "scope": "Actual compiled shared host/controller and live C admission/Python production handler CPU handoff; synthetic native authority in handler tests",
+      "liveCAndPythonChecks": 110,
+      "productionHandlerChecks": 21,
+      "compiledSharedOutputChecks": 37,
+      "compiledSharedRecoveryChecks": 49,
+      "quintNamedScenarios": 12,
+      "quintInvariantSamples": 1000,
+      "quintMaxSteps": 40,
+      "nativeHostAdmissionSourceIntegrated": true,
+      "nativeGUIHandoffQualified": false,
+      "nativeRun": false,
+      "completedRequirementIds": [],
+      "evidence": "implementation/elm-admission-handoff-acceptance-v299/qa/slice-manifest.json",
+      "limitations": [
+        "No GTK/compositor pixel/input or GPU run on this tuple",
+        "Geometry/context menu presentation and newest owning compositor/plugin integration pending",
+        "Native storage/global revocation, original restore timing, AT/IME/physical/human/budgets/C00/release remain open"
+      ]
     }
   },
   "next": [
-    "Implement live shared-host bounded per-key admission/ledger handoff and durable definitive settlement retirement, preserving unread intents and avoiding resurrection after later actions. Separate whole-host ownership from bounded storage locks, retain explicit old-producer refusal and no automatic replay.",
-    "Integrate reviewed geometry/context/menu behavior into the accepted shared-output recovery host and one Elm model/allocator; use latest owning core hit-test fixes without discarding newer Window behavior, and menu staged-selection refresh/revalidation after popup closure.",
-    "Compile C/Elm and exact cross-language keys/migration/locks/capacity/faults, run selected Quint, freeze one actual source/ABI tuple, then serialized original and recovery pixel/input native campaigns. Continue original restore, storage/provisioning/global revocation, GPU/WebGPU/AT/IME/physical/human/budgets/C00/rollback/full release."
+    "Integrate reviewed geometry/context/staged-menu close/refresh/revalidate behavior into the actual shared-output schema5 recovery host, retaining one Elm model/allocator. Adopt newest independently qualified parent-first-anchor owning core/plugin and guarded AQ pair after source/ABI review.",
+    "Freeze one coherent runtime/source/ABI tuple and run protected serialized original/recovery window, menu, pixel/input/storage campaigns. Do not use protocol1-only old core with geometry negotiation.",
+    "Continue original restore timing, global broker revocation/native storage/provisioning, full UI/UX keyboard/AT/IME/physical/human/GPU/WebGPU/resource budgets, C00 feasibility and reversible deployment/rollback."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {
@@ -1642,9 +1663,10 @@
     },
     {
       "id": "NATIVE-LEDGER-HANDOFF-001",
-      "status": "open",
+      "status": "implemented and CPU-qualified on actual C/Python production source; native GUI qualification open",
       "description": "Existing host retains host-writer lock and mutates singleton admission. New ledger refuses adoption until host bounded full-key admissions, critical-section ownership and definitive retirement preserve unread/lost receipts across cold restart.",
-      "evidence": "implementation/elm-multi-recovery-acceptance-v292/HOST-HANDOFF.md"
+      "evidence": "implementation/elm-multi-recovery-acceptance-v292/HOST-HANDOFF.md",
+      "resolutionEvidence": "implementation/elm-admission-handoff-acceptance-v299/qa/slice-manifest.json"
     }
   ],
   "resolvedBoundedFindings": [
@@ -1704,6 +1726,12 @@
       "id": "SHARED-OUTPUT-CONTROLLER-001",
       "status": "V150/V151 replace independent per-output fixture controllers with actual one Elm model/backend and native manager-bound presentation views. Private native135; broader output/hardware/release gates remain open.",
       "evidence": "implementation/elm-output-shared-qa-v151/qa/slice-manifest.json"
+    },
+    {
+      "id": "HOST-ADMISSION-HANDOFF-V299",
+      "scope": "Actual compiled shared host/controller and live C admission/Python production handler CPU handoff; synthetic native authority in handler tests",
+      "evidence": "implementation/elm-admission-handoff-acceptance-v299/qa/slice-manifest.json",
+      "nativeGUIQualified": false
     }
   ]
 }

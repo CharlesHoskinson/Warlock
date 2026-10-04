@@ -1,0 +1,826 @@
+An example execution:
+
+[State 0]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: false,
+      seen: Set(),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(),
+      watermark: 0
+    }
+}
+
+[State 1]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: false,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 2]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 3]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 4]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 5]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 6]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 7]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 8]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 9]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 10]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: false,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 11]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 12]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: false,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 13]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 14]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 15]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 16]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 17]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 18]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 19]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: true,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 20]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 21]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 22]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 23]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 24]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 25]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 26]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 27]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 28]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 29]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 30]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 31]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 32]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 33]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 34]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 35]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 36]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 37]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 38]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 39]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[State 40]
+{
+  s:
+    {
+      entries: Set(),
+      host: Set(1),
+      initialized: false,
+      ledgerPresent: false,
+      mutex: true,
+      oldProducer: true,
+      owner: true,
+      poisoned: true,
+      seen: Set(1),
+      settled: Set(),
+      submissions: 0,
+      visible: Set(1),
+      watermark: 0
+    }
+}
+
+[ok] No violation found (1204ms at 831 traces/second).
+Trace length statistics: max=41, min=41, average=41.00
+You may increase --max-samples and --max-steps.
+Use --verbosity to produce more (or less) output.

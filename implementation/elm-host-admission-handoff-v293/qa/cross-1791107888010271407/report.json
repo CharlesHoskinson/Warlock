@@ -1,0 +1,592 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "C host alive admits A before broker reads",
+      "passed": true
+    },
+    {
+      "name": "C/Python exact full-key filename agrees",
+      "passed": true
+    },
+    {
+      "name": "actual C private Pending record agrees",
+      "passed": true
+    },
+    {
+      "name": "live C whole-host owner does not block broker storage lock",
+      "passed": true
+    },
+    {
+      "name": "unread A imported Unknown",
+      "passed": true
+    },
+    {
+      "name": "recovered admission cannot authorize duplicate native submit",
+      "passed": true
+    },
+    {
+      "name": "C duplicate rejected before overwrite",
+      "passed": true
+    },
+    {
+      "name": "duplicate preserves every byte",
+      "passed": true
+    },
+    {
+      "name": "C legacy B admitted concurrently with broker lifetime",
+      "passed": true
+    },
+    {
+      "name": "fresh B authorized only after both durable stages",
+      "passed": true
+    },
+    {
+      "name": "B known settlement retained until host retirement",
+      "passed": true
+    },
+    {
+      "name": "C unrelated C admitted",
+      "passed": true
+    },
+    {
+      "name": "fresh C native authorization",
+      "passed": true
+    },
+    {
+      "name": "new latest C does not erase old definitive B",
+      "passed": true
+    },
+    {
+      "name": "cold recovery only A uncertain",
+      "passed": true
+    },
+    {
+      "name": "cold broker preserves B and C definitive retirement",
+      "passed": true
+    },
+    {
+      "name": "Unknown cannot retire C admission",
+      "passed": true
+    },
+    {
+      "name": "Unknown retirement preserves bytes",
+      "passed": true
+    },
+    {
+      "name": "foreign lifetime retirement rejected",
+      "passed": true
+    },
+    {
+      "name": "actual C exact B retirement",
+      "passed": true
+    },
+    {
+      "name": "B only removed",
+      "passed": true
+    },
+    {
+      "name": "B tombstone GC only after durable absence",
+      "passed": true
+    },
+    {
+      "name": "actual C exact C retirement",
+      "passed": true
+    },
+    {
+      "name": "all known tombstones retired safely",
+      "passed": true
+    },
+    {
+      "name": "A Unknown retained after retirements",
+      "passed": true
+    },
+    {
+      "name": "duplicate C retirement is inert",
+      "passed": true
+    },
+    {
+      "name": "second live host owner refused",
+      "passed": true
+    },
+    {
+      "name": "duplicate-key admission rejected by actual C scan",
+      "passed": true
+    },
+    {
+      "name": "duplicate-key admission rejected by broker",
+      "passed": true
+    },
+    {
+      "name": "explicit correction restores original A",
+      "passed": true
+    },
+    {
+      "name": "cold host retirement cannot resurrect B or C",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 1",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 2",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 3",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 4",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 5",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 6",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 7",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 8",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 9",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 10",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 11",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 12",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 13",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 14",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 15",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 16",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 17",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 18",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 19",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 20",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 21",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 22",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 23",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 24",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 25",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 26",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 27",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 28",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 29",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 30",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 31",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 32",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 33",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 34",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 35",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 36",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 37",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 38",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 39",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 40",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 41",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 42",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 43",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 44",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 45",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 46",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 47",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 48",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 49",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 50",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 51",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 52",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 53",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 54",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 55",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 56",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 57",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 58",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 59",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 60",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 61",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 62",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 63",
+      "passed": true
+    },
+    {
+      "name": "C admission capacity slot 64",
+      "passed": true
+    },
+    {
+      "name": "65th C admission refused without eviction",
+      "passed": true
+    },
+    {
+      "name": "all64 C admissions byte-preserved",
+      "passed": true
+    },
+    {
+      "name": "all64 unread admissions recovered",
+      "passed": true
+    },
+    {
+      "name": "unadmitted65 cannot authorize a native call",
+      "passed": true
+    },
+    {
+      "name": "exact32 settlement retires actual C key",
+      "passed": true
+    },
+    {
+      "name": "capacity regained without dropping unknowns",
+      "passed": true
+    },
+    {
+      "name": "fresh65 authorized after explicit exact retirement",
+      "passed": true
+    },
+    {
+      "name": "ledger contains64 independent preserved targets",
+      "passed": true
+    },
+    {
+      "name": "durable initialization marker exists",
+      "passed": true
+    },
+    {
+      "name": "missing initialized ledger refuses cold rebuild",
+      "passed": true
+    },
+    {
+      "name": "unread evidence never removed on missing ledger",
+      "passed": true
+    },
+    {
+      "name": "explicit ledger correction retains A",
+      "passed": true
+    },
+    {
+      "name": "strict schema4 to5 migration retains A",
+      "passed": true
+    },
+    {
+      "name": "prior ledger bytes unchanged",
+      "passed": true
+    },
+    {
+      "name": "old producer mutation refuses later adoption",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "native/host.c": "e325c1ab9375bbd68686ebfd61d5c0cff274994473f112a6e5eac023a00cb954",
+    "native/shared-host.c": "70aadf30cf33ce4ea92fef8c53515af70d5fe334e8353e0ad14db695f824bef8",
+    "native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "adapter/daemon.py": "f0f17688159afe6b6091ca81b9db37aa89a5dcbaf3abe853b7658731a908449b",
+    "adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "qa/cross.py": "644069916fdd4f4004ef53bbc6910c1f2a870b8bbd98bd64ccc227ea9db09f82"
+  },
+  "binarySHA256": "a75c83fc2c133bbac81108e6789b6b3289ecb89063a320dc0df0b02e36f3cd06",
+  "buildReport": "/home/hoskinson/omarchy-windows-parity/implementation/elm-host-admission-handoff-v293/qa/build-1791107424041154044/report.json",
+  "scope": "Actual live compiled C owner and Python ledger/filesystem; no GTK journey, compositor mutation/pixels or native release acceptance",
+  "owners": [
+    {
+      "exitCode": 0,
+      "stderr": "",
+      "logs": [
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":1,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"42\",\"generation\":\"44\",\"incarnation\":\"8\",\"operation\":\"minimize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"43\",\"generation\":\"45\",\"incarnation\":\"9\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}"
+      ]
+    },
+    {
+      "exitCode": 0,
+      "stderr": "",
+      "logs": [
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"1\",\"generation\":\"3\",\"incarnation\":\"1\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"2\",\"generation\":\"4\",\"incarnation\":\"2\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"3\",\"generation\":\"5\",\"incarnation\":\"3\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"4\",\"generation\":\"6\",\"incarnation\":\"4\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"5\",\"generation\":\"7\",\"incarnation\":\"5\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"6\",\"generation\":\"8\",\"incarnation\":\"6\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"7\",\"generation\":\"9\",\"incarnation\":\"7\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"8\",\"generation\":\"10\",\"incarnation\":\"8\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"9\",\"generation\":\"11\",\"incarnation\":\"9\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"10\",\"generation\":\"12\",\"incarnation\":\"10\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"11\",\"generation\":\"13\",\"incarnation\":\"11\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"12\",\"generation\":\"14\",\"incarnation\":\"12\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"13\",\"generation\":\"15\",\"incarnation\":\"13\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"14\",\"generation\":\"16\",\"incarnation\":\"14\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"15\",\"generation\":\"17\",\"incarnation\":\"15\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"16\",\"generation\":\"18\",\"incarnation\":\"16\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"17\",\"generation\":\"19\",\"incarnation\":\"17\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"18\",\"generation\":\"20\",\"incarnation\":\"18\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"19\",\"generation\":\"21\",\"incarnation\":\"19\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"20\",\"generation\":\"22\",\"incarnation\":\"20\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"21\",\"generation\":\"23\",\"incarnation\":\"21\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"22\",\"generation\":\"24\",\"incarnation\":\"22\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"23\",\"generation\":\"25\",\"incarnation\":\"23\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"24\",\"generation\":\"26\",\"incarnation\":\"24\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"25\",\"generation\":\"27\",\"incarnation\":\"25\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"26\",\"generation\":\"28\",\"incarnation\":\"26\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"27\",\"generation\":\"29\",\"incarnation\":\"27\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"28\",\"generation\":\"30\",\"incarnation\":\"28\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"29\",\"generation\":\"31\",\"incarnation\":\"29\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"30\",\"generation\":\"32\",\"incarnation\":\"30\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"31\",\"generation\":\"33\",\"incarnation\":\"31\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"32\",\"generation\":\"34\",\"incarnation\":\"32\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"33\",\"generation\":\"35\",\"incarnation\":\"33\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"34\",\"generation\":\"36\",\"incarnation\":\"34\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"35\",\"generation\":\"37\",\"incarnation\":\"35\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"36\",\"generation\":\"38\",\"incarnation\":\"36\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"37\",\"generation\":\"39\",\"incarnation\":\"37\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"38\",\"generation\":\"40\",\"incarnation\":\"38\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"39\",\"generation\":\"41\",\"incarnation\":\"39\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"40\",\"generation\":\"42\",\"incarnation\":\"40\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"41\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"42\",\"generation\":\"44\",\"incarnation\":\"42\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"43\",\"generation\":\"45\",\"incarnation\":\"43\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"44\",\"generation\":\"46\",\"incarnation\":\"44\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"45\",\"generation\":\"47\",\"incarnation\":\"45\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"46\",\"generation\":\"48\",\"incarnation\":\"46\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"47\",\"generation\":\"49\",\"incarnation\":\"47\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"48\",\"generation\":\"50\",\"incarnation\":\"48\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"49\",\"generation\":\"51\",\"incarnation\":\"49\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"50\",\"generation\":\"52\",\"incarnation\":\"50\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"51\",\"generation\":\"53\",\"incarnation\":\"51\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"52\",\"generation\":\"54\",\"incarnation\":\"52\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"53\",\"generation\":\"55\",\"incarnation\":\"53\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"54\",\"generation\":\"56\",\"incarnation\":\"54\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"55\",\"generation\":\"57\",\"incarnation\":\"55\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"56\",\"generation\":\"58\",\"incarnation\":\"56\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"57\",\"generation\":\"59\",\"incarnation\":\"57\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"58\",\"generation\":\"60\",\"incarnation\":\"58\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"59\",\"generation\":\"61\",\"incarnation\":\"59\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"60\",\"generation\":\"62\",\"incarnation\":\"60\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"61\",\"generation\":\"63\",\"incarnation\":\"61\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"62\",\"generation\":\"64\",\"incarnation\":\"62\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"63\",\"generation\":\"65\",\"incarnation\":\"63\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"64\",\"generation\":\"66\",\"incarnation\":\"64\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}",
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"65\",\"generation\":\"67\",\"incarnation\":\"65\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}"
+      ]
+    },
+    {
+      "exitCode": 0,
+      "stderr": "",
+      "logs": [
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}"
+      ]
+    },
+    {
+      "exitCode": 0,
+      "stderr": "",
+      "logs": [
+        "host-intent-durable: {\"schema\":2,\"effectProtocol\":2,\"binding\":{\"lifetime\":\"71\",\"session\":\"2\",\"frontend\":\"3\"},\"intent\":{\"request\":\"41\",\"generation\":\"43\",\"incarnation\":\"7\",\"operation\":\"maximize\",\"context\":{\"lifetime\":\"71\",\"epoch\":\"3\",\"output\":\"14\",\"revision\":\"13\"}},\"status\":\"Pending\"}"
+      ]
+    }
+  ],
+  "artifacts": {
+    "inputs/native/admission-test.c": "cbf3125951caea385108e4a69436503a3889ae6d80882a8f8960e271e32e3132",
+    "inputs/native/handoff-test.c": "819b5ac3f54f602a48be908bdeaad0d0689ba8a2f95d57aff1593f14e598b96c",
+    "inputs/native/host-fault.h": "6a2873a2d5083ee7a2542115452c343cc2cfbd844df022770d0a138424cc1dfc",
+    "inputs/native/host-journal.h": "246faa349e4c6c934534f5e8c70d2e5b8246f399dda53184e29b7f2933fff94c",
+    "inputs/native/host.c": "e325c1ab9375bbd68686ebfd61d5c0cff274994473f112a6e5eac023a00cb954",
+    "inputs/native/shared-host.c": "70aadf30cf33ce4ea92fef8c53515af70d5fe334e8353e0ad14db695f824bef8",
+    "inputs/native/surface-test.c": "3689cba57d918a24fc0e80a7abe1150bd4f0500b72c32acf7fd46601fbb25a84",
+    "inputs/native/surface.h": "0077f7515265d733238870aaf23bb865f06adf3a2a0678005f2fdb8c3a61c8f0",
+    "inputs/adapter/admission_ledger.py": "6e5b560de5864801d8f6ae143c2f8f9e90b4fe91968b005bea44e965965399d1",
+    "inputs/adapter/catalog_authority.py": "5a8b9af038809d032e3eebf8e04092855597952cf7e14dd34483d997a03bc7ab",
+    "inputs/adapter/catalog_transport.py": "c4e3502e317f8e210ebfed5d5ae070fe90082184b101adf2c1fb13754a5019d9",
+    "inputs/adapter/daemon.py": "f0f17688159afe6b6091ca81b9db37aa89a5dcbaf3abe853b7658731a908449b",
+    "inputs/adapter/durable_ledger.py": "04af7982c620ecc180729b55540695d30336c8a355bebf1d6b47a7ba12a2d6b0",
+    "inputs/adapter/effect_endpoint.py": "45b691bc81168e362b5602af291970f9718ac3caa8498c7db8fc678a7ef3701b",
+    "inputs/adapter/endpoint.py": "76afe20a1eaa8578678bf722791a60dcb9bde6f25f816d5f32c16887ec67165e",
+    "inputs/adapter/geometry_endpoint.py": "0801d02a3fc7c7173f197b43655bc0ea3cd04ef354ff253e14c40ed26795d2a3",
+    "inputs/adapter/recovery_fault.py": "b13823753922070b4395fa1898da611201dece4e3aa697d913736c716abc92e1",
+    "inputs/adapter/recovery_journal.py": "b775e01630b13e5ede557857504329f2b1a903e8e14b49cdcc4b4f0661f2833c",
+    "inputs/adapter/recovery_store.py": "04c698597b80f4873cb8a7c4ed99a3292ba51b7ff6c152a4d3d85bff066cb4cd",
+    "inputs/adapter/taskbar_catalog.py": "18cd41d888806e52e662b1778b9e2f14b163fb24f8f27ddb57dab439cf743b5c",
+    "inputs/adapter/taskbar_projection.py": "19e6a506f4d002a393c66a80b7f5d87f4578886539792d81804fc511128b5715",
+    "inputs/qa/cross.py": "644069916fdd4f4004ef53bbc6910c1f2a870b8bbd98bd64ccc227ea9db09f82"
+  }
+}
