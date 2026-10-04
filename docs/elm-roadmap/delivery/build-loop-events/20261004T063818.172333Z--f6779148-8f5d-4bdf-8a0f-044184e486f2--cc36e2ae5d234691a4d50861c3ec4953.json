@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "cc36e2ae5d234691a4d50861c3ec4953",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:38:18.172333+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-nested-pointer-rebase-v17",
+  "nextWork": [
+    "Build AQ fix that reapplies latest weak-focus parent coordinates after committed mapping changes with stale generation/pixel-size/lifetime guards; retain V16 stationary cursor jump failure and rerun original cursor/input/menu campaigns on exact core/plugin tuple."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-nested-pointer-rebase-v17/candidate/src/backend/Wayland.cpp",
+      "sha256": "bdbdb0d8bfdaeb0b3db5fa16f871acc8d58a40cbd073433636fa5c25446da827",
+      "size": 48042
+    },
+    {
+      "path": "implementation/elm-parent-cursor-v16/qa/native-1791095761908564396/report.json",
+      "sha256": "0dd4bf7b3cd550c8495e4d80fb20a08ddd6d1db6fb09f596bbb1eef0b0cc63ee",
+      "size": 243455
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

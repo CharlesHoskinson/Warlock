@@ -1,0 +1,29 @@
+{
+  "schema": 1,
+  "eventId": "aa3cb7ecd6034261b1d333967d68eba7",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:40:05.819149+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-parent-cursor-v18",
+  "nextWork": [
+    "Native V16 stationary-cursor oracle rerun on newly built/frozen V17 AQ. Exact owning core/plugin retained, headers unchanged, parent exports preserved; then original68 parent-pointer menu regression on same tuple."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-cursor-v18/qa/native.py",
+      "sha256": "4831e556b4ff0fdd4a2a1bbc2200a3b45562b50b3d1cb720cb2f8c8e6010f6bf",
+      "size": 16229
+    },
+    {
+      "path": "implementation/elm-parent-cursor-v18/aq-tuple.json",
+      "sha256": "25f640ec7f169984702c13408dfe91622d77bceb2c5faceccdf87a76fd75b776",
+      "size": 576
+    },
+    {
+      "path": "implementation/elm-nested-pointer-rebase-v17/component-manifest.json",
+      "sha256": "ca33582fd12075ed0d052e7abd6d7c591fba1117ee1a0d3d0438cf1083cd9840",
+      "size": 104340
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

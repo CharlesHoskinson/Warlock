@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "eventId": "00dc03c2866149b78dee9e2568e44428",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:36:01.736200+00:00",
+  "status": "active",
+  "currentSlice": "implementation/elm-parent-cursor-v16",
+  "nextWork": [
+    "V16 existing cursor stationary across resize/scale plus exact recipient movement, actual parent framebuffer hotspot and custom/blank oracles; no application scale callback replaces cursor. Preserve V15 accepted76 and all source hashes."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-cursor-v16/qa/native.py",
+      "sha256": "b934152780b42af635cf14911003b766c6a5119f1b00bd5de12dd0bf34067379",
+      "size": 16231
+    },
+    {
+      "path": "implementation/elm-parent-cursor-v15/qa/slice-manifest.json",
+      "sha256": "2c71cc7d85296529d4e344dda23d95dd3edffe77eba54c122727cfab3616c102",
+      "size": 4267
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}

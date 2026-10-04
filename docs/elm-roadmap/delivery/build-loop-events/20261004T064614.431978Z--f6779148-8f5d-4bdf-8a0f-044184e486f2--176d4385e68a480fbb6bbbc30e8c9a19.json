@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "eventId": "176d4385e68a480fbb6bbbc30e8c9a19",
+  "thread": "f6779148-8f5d-4bdf-8a0f-044184e486f2",
+  "observedUTC": "2026-10-04T06:46:14.431978+00:00",
+  "status": "progress",
+  "currentSlice": "implementation/elm-parent-cursor-scale-v20",
+  "nextWork": [
+    "V17 production rebase qualified: V18 native130/original menu68 and V19 original held105 pass. V20 scale-only extent oracle fails cleanly; visual/component inspection shows cursor body24x20 at303,228 versus expected48x40 and one unrelated cyan wallpaper pixel. Tighten cursor component oracle and review GTK surface scale plus owning-core cached cursor buffer before attributing/fixing scale-only mismatch; preserve exact frozen tuple, V16/V20 failures, concurrent window-geometry/cohort lanes and full release scope."
+  ],
+  "evidence": [
+    {
+      "path": "implementation/elm-parent-cursor-v18/qa/slice-manifest.json",
+      "sha256": "9395c02d86f322829d0cd5fa2d437e1b056b58b83c9b38882798f884da811bc7",
+      "size": 11496
+    },
+    {
+      "path": "implementation/elm-parent-button-rebase-v19/qa/slice-manifest.json",
+      "sha256": "fda7c8cc7efb6f80d624b654077581c2f95f512426bdaaa8004aaf6a1172de63",
+      "size": 7813
+    },
+    {
+      "path": "implementation/elm-parent-cursor-scale-v20/qa/slice-manifest.json",
+      "sha256": "e64588bb789afef620f688b2441cbeca5510e182a50c8d55c8aea92e1d791f9a",
+      "size": 7718
+    },
+    {
+      "path": "docs/elm-roadmap/delivery/POINTER-REBASE-V18-ACCEPTANCE.md",
+      "sha256": "7da6629dc0d0b63897afcde5a9dafe9fc051aa5814d9996c9780cd9b9ed72433",
+      "size": 3526
+    }
+  ],
+  "acceptance": "No requirement or cycle completion is asserted."
+}
