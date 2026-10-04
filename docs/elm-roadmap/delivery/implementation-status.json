@@ -1,6 +1,6 @@
 {
   "requirementsSHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
-  "activeSlice": "implementation/elm-xdg-origin-render-qualified-v474",
+  "activeSlice": "implementation/elm-projection-retry-boundary-qualified-v502",
   "status": "Native445 read-only focus observer444 repeats shared capability failure24/normalcleanup: live popup52/sharedHost -> samefocus zero keyboardresources -> restored focus71/underlying fixture while grab remains. Causal owning setupKeyboard first-device desktop fallback overwrites seat popup. Fresh446 sole expiry guard EARS/OpenSpec;447 actual C++ predicate36/two bad controls and Quint7 named/1000x40/3 mutants pass (446 initial zero named retained); full448 actual InputManager TU compiles against694 exact Core89 headers. Frozen4491865files/6reports. Source correction prepared only; native fix/new core/plugin link unaccepted, candidate439 preserved.",
   "requirementsInProgress": [
     "ELM-ARC-002",
@@ -1968,11 +1968,78 @@
       "sharedRegressionOnNewCoreAccepted": false,
       "fullReleaseAccepted": false,
       "completedRequirementIds": []
+    },
+    "xdgCombinedV484": {
+      "manifest": "implementation/elm-xdg-origin-combined-qualification-v484/qa/slice-manifest.json",
+      "manifestSHA256": "1860680083a19d1db101ed30f066a2b25b8442e63071663953124f368a5fbbc4",
+      "summary": "475 metadata preflight/noGUI failures retained;476 actual pointer285 checks40synthetic parent-seat gestures16before/aftercaptures4origin/bufferprofiles pass.477 observer rebuiltown470;479 joint geometry161/480 physicalreconnect57/4813bounds604 (22profiles) pass normalcleanup,1107 acceptednewchecks.478 fullshared menu fails86 original6s same-title replacement taskbarAwaiting; heldfocus/cap recovery preservepopup resources1->0->1.482log/source diagnosis unansweredprojection58, geometry59received thenrefreshes; source422 sceneNone sendsuncorrelatedhostrefresh whileShell pendingprojectiongatesqueue. Candidatecausalhandler/model replay needed; no fullshared/release acceptance. Failed482/483 freezer metadata-schema/generator assumptions retained;484 verifies initialflag and finalstage-readback separately. Frozen1413files16reports.",
+      "boundedNativeAcceptance": true,
+      "acceptedNativeChecks": 1107,
+      "pointerGestures": 40,
+      "pointerPixelFrames": 16,
+      "syntheticParentPointerAccepted": true,
+      "physicalHardwareAccepted": false,
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "fullSharedMenuRegressionAccepted": false,
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "projectionTerminalV493": {
+      "manifest": "implementation/elm-projection-terminal-qualified-v493/qa/slice-manifest.json",
+      "manifestSHA256": "211838ad44f800a9efbd3a6c052a5e10015ea501f589f4276fed6098cf603e1f",
+      "summary": "486 actual422 handler changing18/19facts givesno correlatedreply; compiledShell58 pending100notices zero commands (485fixturecompilefailure retained).487/488grammarfails retained;489 EARS/OpenSpec Quint8named/1000x40/5typedmutants pass.490 actual backend adds scopedprojection-unavailable terminal and typedShell projectionRetryQueued/onefreshread preservinggeometry/effects/defer/transport fences; MainBarPopup/nativehost compiled.4919 compileddecoder/retry cases pass. Actual492 unchanged89 native menu/keyboard/retirement pass/normalcleanup on470/471/AQ155/observer477; actual58unavailable ->freshmatchingprojection -> replacementgroup byoriginal6s. Frozen493485files7reports. Broader newElm regressions and fullpointercontract remain unaccepted; review222 inherited219 helper canonicalreceipt/helperownership/parentview gaps recorded.",
+      "nativeAcceptance": true,
+      "nativeChecks": 89,
+      "source": "implementation/elm-projection-correlated-terminal-v490",
+      "nativePair": {
+        "core": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-xdg-origin-projection-v470/build-1791134095830955197/Hyprland",
+          "sha256": "5e83105890357cad74428d5816bd320d0dc29a69c5d1de7e3aaa0aa586520e83"
+        },
+        "plugin": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-owning-pair-v471/qa/build-1791134168724700298/elm-window-geometry-authority.so",
+          "sha256": "4d1a911c361b439c14329ec06b1536594fc2f34501cc5be2788318863e6523fa"
+        },
+        "aquamarine": {
+          "path": "/home/hoskinson/omarchy-windows-parity/implementation/elm-keyboard-focus-cancellation-v155/build-1791128575548525187/cmake/libaquamarine.so.0.15.0",
+          "sha256": "bfb0383901822a92f2fe945b4b80048f89cc4ffeeb6e9bb8ab748d57317928cb"
+        }
+      },
+      "actualTerminalRecoveries": 1,
+      "quintNamedScenarios": 8,
+      "quintSamples": 1000,
+      "quintMutantsRejected": 5,
+      "typedCompiledCases": 9,
+      "fullPointerContractAccepted": false,
+      "pointerHelperAudit": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-alignment-review-v222/REVIEW.md",
+      "pointerHelperAuditSHA256": "6b9e59462da648078946b0a1aac9cda9b8bdbf146ef837df8ce55ed623e5518d",
+      "fullReleaseAccepted": false,
+      "completedRequirementIds": []
+    },
+    "projectionRetryBoundary502": {
+      "summary": "496 actual compiledShell490 reproduces single-terminal UInt64-ceiling retry retention (494/495 fixture mistakes preserved).498 clears retry on exhaustion; 497 model cardinality failure preserved. OptimizedMainBarPopup/C build passes;49914typedcases cover ceiling/duplicates/deferred andtransport explicitresume/disconnect plus decoder fences. Quint9named/1000x40/6mutationcontrols.500 original89 native menu/keyboard/retirement pass on unchanged470/471/AQ155/observer477 with orderedcleanup.501 three resumed read-only UX experts prioritize exact baseline IDs and AT/IME/motion/hardware/budgets gaps. Frozen502663files5reports; no requirement or release completion.",
+      "manifest": "implementation/elm-projection-retry-boundary-qualified-v502/qa/slice-manifest.json",
+      "manifestSHA256": "0b0f01cb2d60c228a8f51997279b56852df4ccb93e861ac5c64c18c787a053fc",
+      "nativeAcceptance": true,
+      "fullReleaseAccepted": false
     }
   },
   "next": [
-    "Qualify actual parent physical pointer receipts on new core470/plugin471/AQ155/rootgeometry1/2 using strict independent213 journal review. Rerun original307 sharedGUI/keyboard and604 constrained/scaled bounds on newtuple with owning observer rebuilt. Current acceptance124pixels only.",
-    "Cover popup/subsurface/viewport/transform/damage/blur/opaque/animation/currentfocus boundaries and actual GTK, canonical layering/input/UIUX, hardwareGPU/separateWebGPU/mixed outputs/ATIME/budgets/human and completeS01-S16/C00/reversible release."
+    "Requalify source498 joint161/reconnect57/bounds604 with fresh receipt fixture/source bindings. Integrate independently held pointer231 and Escape190 only after exact owning source review; preserve original identities/deadlines/normal cleanup.",
+    "Complete actual pending effect/disposition/attachment/epoch and prepared-menu read terminal boundaries; current499 exercises synthetic typed states and explicit resume only. Implement real GTK modal/popup/peer and connected keyboard recovery journeys from review501, then dedicated native motion, hardwareGPU and separateWebGPU, physical outputs, native AT/IME, measured budgets and human journeys; fullS01-S16/C00/release/rollback remains open."
   ],
   "scopeAmendment": "User removed Brave/Heroic-specific repair targets; comprehensive replacement UI/UX strategy governs generic behaviors and representative compatibility.",
   "uiUxStrategy": {

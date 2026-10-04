@@ -1,0 +1,85 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "sourceSHA256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+  "controls": [
+    {
+      "name": "baseline",
+      "buildExitCode": 0,
+      "testExitCode": 0,
+      "accepted": true,
+      "binarySHA256": "4c34bcf53a9ebb21d450503b2676191828fa6070677dfe93591aa304c575a496"
+    },
+    {
+      "name": "requires-current-dom",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "277747dff6c74547dcf7f149aecde38352582061f1951a286b99bb41e63917a5"
+    },
+    {
+      "name": "reuses-consumed-press",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "bbc5482987884c2ba7f98db05d47042ce2684be6d35b13a01f7f21961fd442e6"
+    },
+    {
+      "name": "admits-early-release-as-new-press",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "90bf30280db68a89613bf356e82ef85d24709671823d03811e441bc6db04b522"
+    },
+    {
+      "name": "admits-wrong-key",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "b21505e3e3e9a4ba971d377c8d7ab9082b9bcfb62f4f6145fdb8269fc88e758e"
+    },
+    {
+      "name": "admits-application-popup",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "626bcf4ba46f0503ad01f1221f380cc40aecab8017886e9ab1d037a536176b65"
+    },
+    {
+      "name": "stamps-old-dom",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "f2468cd864ad0ab4f8385e091c383dec4f93c0f0d23434c2b3835dfe64a6fc13"
+    },
+    {
+      "name": "does-not-consume",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "e8bc47d8a8604098dfd19eebda28d37d65da9f3ad959933828db877f1c24734d"
+    },
+    {
+      "name": "renews-deadline",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "5256d4231b3cf2503a645a42f9afa1b4acb6096acad1ef4015be5bd24691a819"
+    },
+    {
+      "name": "admits-old-snapshot",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "58894f5a893c1c0301fb83e7c0db9d8601a4bc743b94cd4831cdb636b91b51bd"
+    },
+    {
+      "name": "admits-old-lease",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "26d17c82fa0544deca7203aea891df3e2be0c1d205b1781bfccfcb16ed8dec1e"
+    }
+  ]
+}

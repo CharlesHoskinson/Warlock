@@ -1,0 +1,75 @@
+{
+  "startedMonotonic": 99157.388141189,
+  "commands": [
+    "press 272",
+    "release 272"
+  ],
+  "probeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "peer": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  },
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey.py"
+  ],
+  "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey/attempt-1791134891452391573/stdout.raw",
+  "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey/attempt-1791134891452391573/stderr.raw",
+  "process": {
+    "pid": 2724438,
+    "startTime": "10299516",
+    "name": "owned-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey.py"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey/attempt-1791134891452391573/stdout.raw"
+  },
+  "registered": true,
+  "mayHavePressed": true,
+  "stdoutBytes": 58,
+  "stdoutSHA256": "afdd2b5e40668333fca0e3a64a71918275555c0d32f7b6a859b676087c1737d6",
+  "stderrBytes": 0,
+  "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "exitCode": 0,
+  "error": "Refused('Duplicate receipt JSON key')",
+  "timeout": false,
+  "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+  "releaseAttempt": {
+    "scope": "release-only failure cleanup; never probe acceptance",
+    "originalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey/attempt-1791134891452391573",
+    "probeAccepted": false,
+    "peer": {
+      "cpuFixturePeer": true,
+      "nativeAdmission": false
+    },
+    "commands": [
+      "release 272"
+    ],
+    "argv": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey.py"
+    ],
+    "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey/attempt-1791134891452391573/release-cleanup/stdout.raw",
+    "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey/attempt-1791134891452391573/release-cleanup/stderr.raw",
+    "physicalHardwareAccepted": false,
+    "process": {
+      "pid": 2724439,
+      "startTime": "10299520",
+      "name": "owned-parent-input",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey.py"
+      ],
+      "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791134891101314062/duplicateKey/attempt-1791134891452391573/release-cleanup/stdout.raw"
+    },
+    "registered": true,
+    "mayHavePressed": false,
+    "stdoutBytes": 58,
+    "stdoutSHA256": "afdd2b5e40668333fca0e3a64a71918275555c0d32f7b6a859b676087c1737d6",
+    "stderrBytes": 0,
+    "stderrSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "exitCode": 0,
+    "error": "Refused('Duplicate receipt JSON key')",
+    "timeout": false,
+    "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+    "explicitReleaseAdmission": false
+  }
+}

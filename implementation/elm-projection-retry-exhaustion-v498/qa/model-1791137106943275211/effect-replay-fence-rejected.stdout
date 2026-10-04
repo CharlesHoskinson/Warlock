@@ -1,0 +1,16 @@
+
+  terminal
+    1) pendingEffectDefersTest failed after 1 test(s)
+
+  1 failed
+
+  1) pendingEffectDefersTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-retry-exhaustion-v498/qa/model-1791137106943275211/effect-replay-fence.qnt:24:96
+        24:  run pendingEffectDefersTest = init.then(effectOn).then(terminal(1,58)).then(drain).then(all { assert(s.retry and s.expected == 0 and s.issued == 0), s' = s }).then(effectOff).then(drain).then(all { assert(s.expected == 60 and s.issued == 1), s' = s })
+                                                                                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=pendingEffectDefersTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 effect-replay-fence.qnt

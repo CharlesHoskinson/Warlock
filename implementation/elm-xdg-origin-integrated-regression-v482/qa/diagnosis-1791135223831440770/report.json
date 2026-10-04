@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "scope": "Actual failed478 log/source terminal-read liveness diagnosis; no handler/model or native repair qualification",
+  "unansweredProjection": {
+    "protocolVersion": 3,
+    "kind": "projection-request",
+    "binding": {
+      "lifetime": "15685251101678384595",
+      "session": "14884798574461906471",
+      "frontend": "1"
+    },
+    "requestId": "58"
+  },
+  "latestGeometry": {
+    "protocolVersion": 3,
+    "kind": "geometry-facts",
+    "geometryProtocol": 2,
+    "binding": {
+      "lifetime": "15685251101678384595",
+      "session": "14884798574461906471",
+      "frontend": "1"
+    },
+    "requestId": "59",
+    "sequence": "29",
+    "revision": "19",
+    "outputGeneration": "1",
+    "facts": {
+      "focused": "3",
+      "inputBlocked": false,
+      "windows": [
+        {
+          "incarnation": "3",
+          "owner": null,
+          "workspace": "1",
+          "workspaceGeneration": "1",
+          "monitor": "0",
+          "outputOwnershipGeneration": "1",
+          "workAreaRevision": "1",
+          "workArea": [
+            0,
+            48,
+            800,
+            552
+          ],
+          "logicalGeometry": [
+            20,
+            68,
+            760,
+            512
+          ],
+          "visualGeometry": [
+            21,
+            69,
+            758,
+            510
+          ],
+          "nativeMode": "ordinary",
+          "clientMode": "ordinary",
+          "minimized": false,
+          "floating": false,
+          "grouped": false,
+          "fixedSize": false,
+          "constrainedSize": true,
+          "geometryEligible": false,
+          "ordinaryPlacementKnown": false,
+          "sizePolicy": {
+            "inputs": {
+              "profile": "wayland-zero-origin-v1",
+              "rawMinimum": [
+                108,
+                124
+              ],
+              "rawMaximum": [
+                0,
+                0
+              ],
+              "layoutMinimum": [
+                108,
+                124
+              ],
+              "layoutMaximum": [
+                1.7976931348623157e+308,
+                1.7976931348623157e+308
+              ],
+              "geometryOrigin": [
+                0,
+                0
+              ],
+              "reservedTopLeft": [
+                1,
+                1
+              ],
+              "reservedBottomRight": [
+                1,
+                1
+              ],
+              "monitorScale": 1
+            },
+            "maximize": {
+              "logical": [
+                0,
+                48,
+                800,
+                552
+              ],
+              "visual": null,
+              "real": [
+                1,
+                49,
+                798,
+                550
+              ],
+              "configure": [
+                798,
+                550
+              ]
+            },
+            "restoreGeometry": null
+          },
+          "capabilities": {
+            "maximize": false,
+            "restoreGeometry": false
+          }
+        }
+      ]
+    }
+  },
+  "finalInspection": {
+    "surfaceProtocol": 2,
+    "kind": "surface-inspection",
+    "publication": "113",
+    "lease": "20",
+    "body": {
+      "phase": "Awaiting",
+      "transaction": "Committed",
+      "groups": [],
+      "menu": null,
+      "mode": "closed",
+      "outstanding": 0,
+      "registry": 0,
+      "picker": null,
+      "openerId": "applications:{\"lifetime\":\"15685251101678384595\",\"session\":\"14884798574461906471\",\"frontend\":\"1\"}:3:control:opener",
+      "reconnectId": "reconnect"
+    }
+  },
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-integrated-regression-v482/qa/diagnose.py": "41258b828705370f8252ec1f81efb7ed5f679dd81c84fd3f6fec827f9be2f507",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-menu-regression-v478/qa/native-1791134835598728098/report.json": "b43c62f8fc99f08e789b00ad9fb438387349094f96bddcd6b759bb7cca943fff",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-menu-regression-v478/qa/native-1791134835598728098/native-evidence/elm-webview.log": "c6b5aab42a8c1e80e92b09ea01e9dc39d0e490d5a230a256df27e8049f87bde1",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-geometry-carrier-v422/adapter/daemon.py": "c42f462208bc32997ee8b2ded535691b9d47a8388af8efbcc9f1a8766c75c9c7",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-shared-geometry-carrier-v422/src/Shell.elm": "ad23ad9f3e1694a5d2874d062cd4d8cf7989b1fb155c9869f2a985c750c6fcc3"
+  },
+  "causalNativeFixAccepted": false
+}

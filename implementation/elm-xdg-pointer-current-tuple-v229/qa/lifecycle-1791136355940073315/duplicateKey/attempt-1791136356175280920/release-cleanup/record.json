@@ -1,0 +1,43 @@
+{
+  "scope": "release-only failure cleanup; never probe acceptance",
+  "originalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/lifecycle-1791136355940073315/duplicateKey/attempt-1791136356175280920",
+  "probeAccepted": false,
+  "peer": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  },
+  "commands": [
+    "release 272"
+  ],
+  "byteBound": 4096,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/lifecycle-1791136355940073315/duplicateKey.py"
+  ],
+  "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/lifecycle-1791136355940073315/duplicateKey/attempt-1791136356175280920/release-cleanup/stdout.raw",
+  "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/lifecycle-1791136355940073315/duplicateKey/attempt-1791136356175280920/release-cleanup/stderr.raw",
+  "physicalHardwareAccepted": false,
+  "process": {
+    "pid": 2843676,
+    "startTime": "10445991",
+    "name": "owned-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/lifecycle-1791136355940073315/duplicateKey.py"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/lifecycle-1791136355940073315/duplicateKey/attempt-1791136356175280920/release-cleanup/stdout.raw"
+  },
+  "actualStart": "10445991",
+  "registered": true,
+  "mayHavePressed": false,
+  "stdoutBytes": 123,
+  "stdoutCapturedBytes": 123,
+  "stdoutPrefixSHA256": "bc223304e1ab602a0bfbc373df472b803748a61498dba9163e101c1979f1656e",
+  "stdoutTruncated": false,
+  "stderrBytes": 0,
+  "stderrCapturedBytes": 0,
+  "stderrPrefixSHA256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderrTruncated": false,
+  "exitCode": 0,
+  "error": "Refused('Duplicate receipt JSON key')",
+  "timeout": false,
+  "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery"
+}

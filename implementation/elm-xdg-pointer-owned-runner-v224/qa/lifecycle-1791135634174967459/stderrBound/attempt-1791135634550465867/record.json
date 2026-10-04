@@ -1,0 +1,87 @@
+{
+  "startedMonotonic": 99900.486217007,
+  "commands": [
+    "press 272",
+    "release 272"
+  ],
+  "probeAccepted": false,
+  "physicalHardwareAccepted": false,
+  "peer": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  },
+  "byteBound": 4096,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound.py"
+  ],
+  "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound/attempt-1791135634550465867/stdout.raw",
+  "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound/attempt-1791135634550465867/stderr.raw",
+  "process": {
+    "pid": 2796890,
+    "startTime": "10373825",
+    "name": "owned-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound.py"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound/attempt-1791135634550465867/stdout.raw"
+  },
+  "actualStart": "10373825",
+  "registered": true,
+  "mayHavePressed": true,
+  "stdoutBytes": 177,
+  "stdoutCapturedBytes": 177,
+  "stdoutPrefixSHA256": "145e7a6d6488b7bf9968d2030fb9ac1f8294d038868c5e5cb7a207882878859f",
+  "stdoutTruncated": false,
+  "stderrBytes": 5000,
+  "stderrCapturedBytes": 4096,
+  "stderrPrefixSHA256": "a2e659dacb4691e887ac0139f8893d04764ee197d70fb73d3190d56113d18e3e",
+  "stderrTruncated": true,
+  "exitCode": 0,
+  "error": "Refused('Parent terminal output bound')",
+  "timeout": false,
+  "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+  "releaseAttempt": {
+    "scope": "release-only failure cleanup; never probe acceptance",
+    "originalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound/attempt-1791135634550465867",
+    "probeAccepted": false,
+    "peer": {
+      "cpuFixturePeer": true,
+      "nativeAdmission": false
+    },
+    "commands": [
+      "release 272"
+    ],
+    "byteBound": 4096,
+    "argv": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound.py"
+    ],
+    "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound/attempt-1791135634550465867/release-cleanup/stdout.raw",
+    "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound/attempt-1791135634550465867/release-cleanup/stderr.raw",
+    "physicalHardwareAccepted": false,
+    "process": {
+      "pid": 2796891,
+      "startTime": "10373828",
+      "name": "owned-parent-input",
+      "command": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound.py"
+      ],
+      "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/stderrBound/attempt-1791135634550465867/release-cleanup/stdout.raw"
+    },
+    "actualStart": "10373828",
+    "registered": true,
+    "mayHavePressed": false,
+    "stdoutBytes": 112,
+    "stdoutCapturedBytes": 112,
+    "stdoutPrefixSHA256": "5e7893287fefcba0cf186495d15a55665186a4224ed4e85e08d005145d6fa9df",
+    "stdoutTruncated": false,
+    "stderrBytes": 5000,
+    "stderrCapturedBytes": 4096,
+    "stderrPrefixSHA256": "a2e659dacb4691e887ac0139f8893d04764ee197d70fb73d3190d56113d18e3e",
+    "stderrTruncated": true,
+    "exitCode": 0,
+    "error": "Refused('Parent terminal output bound')",
+    "timeout": false,
+    "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery",
+    "explicitReleaseAdmission": false
+  }
+}

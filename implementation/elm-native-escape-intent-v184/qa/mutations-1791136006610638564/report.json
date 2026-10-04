@@ -1,0 +1,37 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "releaseAcceptance": false,
+  "sourceSHA256": "e86f3ba7a4c76d7839ef8d67d14c7f9ea6b514afa2ac110fc7cebf2da2fd62ce",
+  "controls": [
+    {
+      "name": "baseline",
+      "buildExitCode": 0,
+      "testExitCode": 0,
+      "accepted": true,
+      "binarySHA256": "db42d868402b836c572543989b883bce82bb29c27de6586a873c01deda22785c"
+    },
+    {
+      "name": "requires-current-dom",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "7937f6145b1be96a570685fb8a1463a9dbe84da535316114f1b7c2be8db68d1f"
+    },
+    {
+      "name": "reuses-consumed-press",
+      "buildExitCode": 0,
+      "testExitCode": 1,
+      "accepted": true,
+      "binarySHA256": "b41961d220cc95b9cc5c463e066058146281144e786ee9a0fbaf3d0a057f50eb"
+    },
+    {
+      "name": "admits-released-press",
+      "buildExitCode": 0,
+      "testExitCode": 0,
+      "accepted": false,
+      "binarySHA256": "d08d2006610dfa97bd3c0d10277af15456c177ae519894cf56e032274e22f45b"
+    }
+  ],
+  "error": "AssertionError(('admits-released-press', 'shared-context-checks: 166\\n', ''))"
+}

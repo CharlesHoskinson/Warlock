@@ -1,0 +1,1223 @@
+{
+  "passed": true,
+  "directory": "/home/hoskinson/window-integration-qa/xdg-origin-1791134728138454967/zero-scale1-pixels-12",
+  "owner": {
+    "pid": 2708543,
+    "start": "10283954",
+    "pgid": 2708543,
+    "name": "zero-scale1",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-xdg-hint-choice-fixture-v197/qa/client-build-1791129756017735997/xdg-origin-client",
+      "--origin-x",
+      "0",
+      "--origin-y",
+      "0",
+      "--right-pad",
+      "0",
+      "--bottom-pad",
+      "0",
+      "--scale",
+      "1",
+      "--width",
+      "320",
+      "--height",
+      "180",
+      "--min-width",
+      "108",
+      "--min-height",
+      "42",
+      "--max-width",
+      "0",
+      "--max-height",
+      "0"
+    ],
+    "log": "/home/hoskinson/window-integration-qa/xdg-origin-1791134728138454967/zero-scale1.jsonl"
+  },
+  "incarnation": "1",
+  "address": "0x55986dcd0f20",
+  "bufferSequence": 12,
+  "output": {
+    "id": 0,
+    "name": "WAYLAND-1",
+    "description": "",
+    "make": "",
+    "model": "",
+    "serial": "",
+    "width": 800,
+    "height": 600,
+    "physicalWidth": 0,
+    "physicalHeight": 0,
+    "refreshRate": 60.0,
+    "x": 0,
+    "y": 0,
+    "activeWorkspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "specialWorkspace": {
+      "id": 0,
+      "name": ""
+    },
+    "reserved": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "scale": 1,
+    "transform": 0,
+    "focused": true,
+    "dpmsStatus": true,
+    "vrr": false,
+    "solitary": "0",
+    "solitaryBlockedBy": [
+      "NOTIFICATION",
+      "WINDOWED",
+      "CANDIDATE"
+    ],
+    "activelyTearing": false,
+    "tearingBlockedBy": [
+      "NOT_TORN",
+      "USER",
+      "SUPPORT",
+      "CANDIDATE",
+      "HW_CURSOR"
+    ],
+    "directScanoutTo": "0",
+    "directScanoutBlockedBy": [
+      "USER",
+      "CANDIDATE"
+    ],
+    "disabled": false,
+    "currentFormat": "XRGB8888",
+    "mirrorOf": "none",
+    "availableModes": [],
+    "colorManagementPreset": "srgb",
+    "sdrBrightness": 1,
+    "sdrSaturation": 1,
+    "sdrMinLuminance": 0.2,
+    "sdrMaxLuminance": 80,
+    "hardwareCursorsInUse": true
+  },
+  "native": {
+    "address": "0x55986dcd0f20",
+    "mapped": true,
+    "hidden": false,
+    "visible": true,
+    "acceptsInput": true,
+    "at": [
+      -1,
+      -1
+    ],
+    "size": [
+      800,
+      600
+    ],
+    "workspace": {
+      "id": 1,
+      "name": "1"
+    },
+    "floating": true,
+    "monitor": 0,
+    "class": "elm-xdg-origin-probe",
+    "title": "ELM-XDG-ORIGIN-PROBE-2708543",
+    "initialClass": "elm-xdg-origin-probe",
+    "initialTitle": "ELM-XDG-ORIGIN-PROBE-2708543",
+    "pid": 2708543,
+    "xwayland": false,
+    "pinned": false,
+    "pinFullscreened": false,
+    "fullscreen": 0,
+    "fullscreenClient": 0,
+    "fullscreenHandler": "default",
+    "allowedOverFullscreen": true,
+    "grouped": [],
+    "tags": [],
+    "swallowing": "0x0",
+    "focusHistoryID": 0,
+    "inhibitingIdle": false,
+    "xdgTag": "",
+    "xdgDescription": "",
+    "contentType": "none",
+    "tearingHint": false,
+    "stableId": "18000000"
+  },
+  "buffer": {
+    "pid": 2708543,
+    "event": "buffercommit",
+    "sequence": 12,
+    "monotonicNs": 99002210250210,
+    "serial": 3,
+    "ackedSerial": 3,
+    "width": 800,
+    "height": 600,
+    "maximized": false,
+    "fullscreen": false,
+    "resizing": false,
+    "bufferSerial": 3,
+    "geometry": [
+      0,
+      0,
+      800,
+      600
+    ],
+    "surfaceSize": [
+      800,
+      600
+    ],
+    "bufferSize": [
+      800,
+      600
+    ],
+    "scale": 1,
+    "inflight": 1,
+    "allocatedBytes": 1920000,
+    "argb": "ff2b71c8",
+    "landmarks": [
+      {
+        "point": [
+          4,
+          4
+        ],
+        "argb": "ffff3030"
+      },
+      {
+        "point": [
+          796,
+          4
+        ],
+        "argb": "ff30ff30"
+      },
+      {
+        "point": [
+          4,
+          596
+        ],
+        "argb": "ff3030ff"
+      },
+      {
+        "point": [
+          796,
+          596
+        ],
+        "argb": "ffffff30"
+      },
+      {
+        "point": [
+          400,
+          300
+        ],
+        "argb": "ff2b71c8"
+      }
+    ]
+  },
+  "captureMethod": "one actual grim output capture; no capture retry",
+  "oracleArguments": {
+    "monitor_origin": [
+      0,
+      0
+    ],
+    "monitor_scale": 1,
+    "real": [
+      -1,
+      -1,
+      800,
+      600
+    ],
+    "geometry": [
+      0,
+      0,
+      800,
+      600
+    ],
+    "serial": 3,
+    "observed_serials": [
+      1,
+      2,
+      3
+    ],
+    "diagnostic_nonzero": false
+  },
+  "configureEvent": {
+    "pid": 2708543,
+    "event": "configure",
+    "sequence": 10,
+    "monotonicNs": 99002204127410,
+    "serial": 3,
+    "ackedSerial": 2,
+    "width": 800,
+    "height": 600,
+    "maximized": false,
+    "fullscreen": false,
+    "resizing": false,
+    "configuredWidth": 800,
+    "configuredHeight": 600
+  },
+  "artifacts": {
+    "grim.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture.png": "ed1a26b966ce74a512878c8cf467153bcf4d54ad5990ea746aeaecf90f93ee60",
+    "dimensions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "decode.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "capture.rgb": "166948fb99d03b45ee2f130ed1cf80634da71302c4ed8ca3ed89af9d794043dd"
+  },
+  "dimensions": [
+    800,
+    600
+  ],
+  "samples": [
+    {
+      "surfaceLocal": [
+        4,
+        4
+      ],
+      "screenshotPixel": [
+        3,
+        3
+      ],
+      "expectedRGB": [
+        255,
+        48,
+        48
+      ],
+      "measured": [
+        {
+          "pixel": [
+            2,
+            2
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            2
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            2
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            3
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            3
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            3
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            4
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            4
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            4
+          ],
+          "rgb": [
+            255,
+            48,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        796,
+        4
+      ],
+      "screenshotPixel": [
+        795,
+        3
+      ],
+      "expectedRGB": [
+        48,
+        255,
+        48
+      ],
+      "measured": [
+        {
+          "pixel": [
+            794,
+            2
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            2
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            2
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            3
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            3
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            3
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            4
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            4
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            4
+          ],
+          "rgb": [
+            48,
+            255,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        4,
+        596
+      ],
+      "screenshotPixel": [
+        3,
+        595
+      ],
+      "expectedRGB": [
+        48,
+        48,
+        255
+      ],
+      "measured": [
+        {
+          "pixel": [
+            2,
+            594
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            594
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            594
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            595
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            595
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            595
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            2,
+            596
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            3,
+            596
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        },
+        {
+          "pixel": [
+            4,
+            596
+          ],
+          "rgb": [
+            48,
+            48,
+            255
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        796,
+        596
+      ],
+      "screenshotPixel": [
+        795,
+        595
+      ],
+      "expectedRGB": [
+        255,
+        255,
+        48
+      ],
+      "measured": [
+        {
+          "pixel": [
+            794,
+            594
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            594
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            594
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            595
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            595
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            595
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            794,
+            596
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            795,
+            596
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        },
+        {
+          "pixel": [
+            796,
+            596
+          ],
+          "rgb": [
+            255,
+            255,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "surfaceLocal": [
+        400,
+        300
+      ],
+      "screenshotPixel": [
+        399,
+        299
+      ],
+      "expectedRGB": [
+        43,
+        113,
+        200
+      ],
+      "measured": [
+        {
+          "pixel": [
+            398,
+            298
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            399,
+            298
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            400,
+            298
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            398,
+            299
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            399,
+            299
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            400,
+            299
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            398,
+            300
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            399,
+            300
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        },
+        {
+          "pixel": [
+            400,
+            300
+          ],
+          "rgb": [
+            43,
+            113,
+            200
+          ]
+        }
+      ]
+    }
+  ],
+  "oracleResult": {
+    "samples": [
+      {
+        "surfaceLocal": [
+          4,
+          4
+        ],
+        "screenshotPixel": [
+          3,
+          3
+        ],
+        "rgb": [
+          255,
+          48,
+          48
+        ]
+      },
+      {
+        "surfaceLocal": [
+          796,
+          4
+        ],
+        "screenshotPixel": [
+          795,
+          3
+        ],
+        "rgb": [
+          48,
+          255,
+          48
+        ]
+      },
+      {
+        "surfaceLocal": [
+          4,
+          596
+        ],
+        "screenshotPixel": [
+          3,
+          595
+        ],
+        "rgb": [
+          48,
+          48,
+          255
+        ]
+      },
+      {
+        "surfaceLocal": [
+          796,
+          596
+        ],
+        "screenshotPixel": [
+          795,
+          595
+        ],
+        "rgb": [
+          255,
+          255,
+          48
+        ]
+      },
+      {
+        "surfaceLocal": [
+          400,
+          300
+        ],
+        "screenshotPixel": [
+          399,
+          299
+        ],
+        "rgb": [
+          43,
+          113,
+          200
+        ]
+      }
+    ],
+    "serial": 3,
+    "diagnosticNonzero": false,
+    "nonzeroCapabilityAccepted": false
+  },
+  "postCapture": {
+    "buffer": {
+      "pid": 2708543,
+      "event": "buffercommit",
+      "sequence": 12,
+      "monotonicNs": 99002210250210,
+      "serial": 3,
+      "ackedSerial": 3,
+      "width": 800,
+      "height": 600,
+      "maximized": false,
+      "fullscreen": false,
+      "resizing": false,
+      "bufferSerial": 3,
+      "geometry": [
+        0,
+        0,
+        800,
+        600
+      ],
+      "surfaceSize": [
+        800,
+        600
+      ],
+      "bufferSize": [
+        800,
+        600
+      ],
+      "scale": 1,
+      "inflight": 1,
+      "allocatedBytes": 1920000,
+      "argb": "ff2b71c8",
+      "landmarks": [
+        {
+          "point": [
+            4,
+            4
+          ],
+          "argb": "ffff3030"
+        },
+        {
+          "point": [
+            796,
+            4
+          ],
+          "argb": "ff30ff30"
+        },
+        {
+          "point": [
+            4,
+            596
+          ],
+          "argb": "ff3030ff"
+        },
+        {
+          "point": [
+            796,
+            596
+          ],
+          "argb": "ffffff30"
+        },
+        {
+          "point": [
+            400,
+            300
+          ],
+          "argb": "ff2b71c8"
+        }
+      ]
+    },
+    "facts": {
+      "protocolVersion": 3,
+      "kind": "geometry-facts",
+      "geometryProtocol": 2,
+      "binding": {
+        "lifetime": "665331960005154274",
+        "session": "3613013952527891550",
+        "frontend": "1"
+      },
+      "requestId": "4",
+      "sequence": "2",
+      "revision": "1",
+      "outputGeneration": "1",
+      "facts": {
+        "focused": "1",
+        "inputBlocked": false,
+        "windows": [
+          {
+            "incarnation": "1",
+            "owner": null,
+            "workspace": "1",
+            "workspaceGeneration": "1",
+            "monitor": "0",
+            "outputOwnershipGeneration": "1",
+            "workAreaRevision": "1",
+            "workArea": [
+              0,
+              0,
+              800,
+              600
+            ],
+            "logicalGeometry": [
+              -1,
+              -1,
+              800,
+              600
+            ],
+            "visualGeometry": [
+              -1,
+              -1,
+              800,
+              600
+            ],
+            "nativeMode": "ordinary",
+            "clientMode": "ordinary",
+            "minimized": false,
+            "floating": true,
+            "grouped": false,
+            "fixedSize": false,
+            "constrainedSize": true,
+            "geometryEligible": true,
+            "ordinaryPlacementKnown": false,
+            "sizePolicy": {
+              "inputs": {
+                "profile": "wayland-zero-origin-v1",
+                "rawMinimum": [
+                  108,
+                  42
+                ],
+                "rawMaximum": [
+                  0,
+                  0
+                ],
+                "layoutMinimum": [
+                  108,
+                  42
+                ],
+                "layoutMaximum": [
+                  1.7976931348623157e+308,
+                  1.7976931348623157e+308
+                ],
+                "geometryOrigin": [
+                  0,
+                  0
+                ],
+                "reservedTopLeft": [
+                  1,
+                  1
+                ],
+                "reservedBottomRight": [
+                  1,
+                  1
+                ],
+                "monitorScale": 1
+              },
+              "maximize": {
+                "logical": [
+                  0,
+                  0,
+                  800,
+                  600
+                ],
+                "visual": null,
+                "real": [
+                  1,
+                  1,
+                  798,
+                  598
+                ],
+                "configure": [
+                  798,
+                  598
+                ]
+              },
+              "restoreGeometry": null
+            },
+            "capabilities": {
+              "maximize": true,
+              "restoreGeometry": false
+            }
+          }
+        ]
+      }
+    },
+    "native": {
+      "address": "0x55986dcd0f20",
+      "mapped": true,
+      "hidden": false,
+      "visible": true,
+      "acceptsInput": true,
+      "at": [
+        -1,
+        -1
+      ],
+      "size": [
+        800,
+        600
+      ],
+      "workspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "floating": true,
+      "monitor": 0,
+      "class": "elm-xdg-origin-probe",
+      "title": "ELM-XDG-ORIGIN-PROBE-2708543",
+      "initialClass": "elm-xdg-origin-probe",
+      "initialTitle": "ELM-XDG-ORIGIN-PROBE-2708543",
+      "pid": 2708543,
+      "xwayland": false,
+      "pinned": false,
+      "pinFullscreened": false,
+      "fullscreen": 0,
+      "fullscreenClient": 0,
+      "fullscreenHandler": "default",
+      "allowedOverFullscreen": true,
+      "grouped": [],
+      "tags": [],
+      "swallowing": "0x0",
+      "focusHistoryID": 0,
+      "inhibitingIdle": false,
+      "xdgTag": "",
+      "xdgDescription": "",
+      "contentType": "none",
+      "tearingHint": false,
+      "stableId": "18000000"
+    },
+    "monitor": {
+      "id": 0,
+      "name": "WAYLAND-1",
+      "description": "",
+      "make": "",
+      "model": "",
+      "serial": "",
+      "width": 800,
+      "height": 600,
+      "physicalWidth": 0,
+      "physicalHeight": 0,
+      "refreshRate": 60.0,
+      "x": 0,
+      "y": 0,
+      "activeWorkspace": {
+        "id": 1,
+        "name": "1"
+      },
+      "specialWorkspace": {
+        "id": 0,
+        "name": ""
+      },
+      "reserved": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "scale": 1,
+      "transform": 0,
+      "focused": true,
+      "dpmsStatus": true,
+      "vrr": false,
+      "solitary": "0",
+      "solitaryBlockedBy": [
+        "NOTIFICATION",
+        "WINDOWED",
+        "CANDIDATE"
+      ],
+      "activelyTearing": false,
+      "tearingBlockedBy": [
+        "NOT_TORN",
+        "USER",
+        "SUPPORT",
+        "CANDIDATE",
+        "HW_CURSOR"
+      ],
+      "directScanoutTo": "0",
+      "directScanoutBlockedBy": [
+        "USER",
+        "CANDIDATE"
+      ],
+      "disabled": false,
+      "currentFormat": "XRGB8888",
+      "mirrorOf": "none",
+      "availableModes": [],
+      "colorManagementPreset": "srgb",
+      "sdrBrightness": 1,
+      "sdrSaturation": 1,
+      "sdrMinLuminance": 0.2,
+      "sdrMaxLuminance": 80,
+      "hardwareCursorsInUse": true
+    }
+  },
+  "postCapturePassed": true
+}

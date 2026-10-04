@@ -1,0 +1,16 @@
+
+  terminal
+    1) retryProjectionOnlyTest failed after 1 test(s)
+
+  1 failed
+
+  1) retryProjectionOnlyTest:
+       Error [QNT508]: Assertion failed
+        at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v489/qa/model-1791136063460583031/drop-geometry.qnt:19:81
+        19:  run retryProjectionOnlyTest = init.then(terminal(1,58)).then(drain).then(all { assert(s.expected == 60 and s.geometry == 59 and s.issued == 1), s' = s })
+                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    Use --seed=0x137b9 --match=retryProjectionOnlyTest to repeat.
+
+
+  Use --verbosity=3 to show executions.
+  Further debug with: quint test --verbosity=3 drop-geometry.qnt

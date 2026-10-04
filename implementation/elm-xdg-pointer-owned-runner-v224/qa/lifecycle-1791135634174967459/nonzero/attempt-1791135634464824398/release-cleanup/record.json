@@ -1,0 +1,43 @@
+{
+  "scope": "release-only failure cleanup; never probe acceptance",
+  "originalDirectory": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/nonzero/attempt-1791135634464824398",
+  "probeAccepted": false,
+  "peer": {
+    "cpuFixturePeer": true,
+    "nativeAdmission": false
+  },
+  "commands": [
+    "release 272"
+  ],
+  "byteBound": 4096,
+  "argv": [
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/nonzero.py"
+  ],
+  "stdout": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/nonzero/attempt-1791135634464824398/release-cleanup/stdout.raw",
+  "stderr": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/nonzero/attempt-1791135634464824398/release-cleanup/stderr.raw",
+  "physicalHardwareAccepted": false,
+  "process": {
+    "pid": 2796885,
+    "startTime": "10373819",
+    "name": "owned-parent-input",
+    "command": [
+      "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/nonzero.py"
+    ],
+    "log": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-1791135634174967459/nonzero/attempt-1791135634464824398/release-cleanup/stdout.raw"
+  },
+  "actualStart": "10373819",
+  "registered": true,
+  "mayHavePressed": false,
+  "stdoutBytes": 20,
+  "stdoutCapturedBytes": 20,
+  "stdoutPrefixSHA256": "99f1e6f3ba5f7c86fabe83f5e3b3e579c08077adbf6a14b0dbb8ae13fbae4079",
+  "stdoutTruncated": false,
+  "stderrBytes": 14,
+  "stderrCapturedBytes": 14,
+  "stderrPrefixSHA256": "9d9451d16c0d537f3b77cc0ff97611186c0e5603707e0861ca8ae9a36cc0770c",
+  "stderrTruncated": false,
+  "exitCode": 6,
+  "error": "Refused('Parent helper nonzero exit')",
+  "timeout": false,
+  "destructorReleaseFallback": "resource disconnect may release held buttons; NOT confirmed target delivery"
+}

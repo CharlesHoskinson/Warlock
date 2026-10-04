@@ -1,0 +1,5 @@
+{
+  "passed": false,
+  "kind": "freezer-metadata-assumption",
+  "detail": "Initial freezer expected postCapturePassed on both capture classes. Runner binds initial captures through that flag, final captures through per-stage finalReadback plus exact complete-journal check. Preserve actual evidence; fresh483 verifies both actual schemas explicitly."
+}

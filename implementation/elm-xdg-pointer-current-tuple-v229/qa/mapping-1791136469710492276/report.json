@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "zero-ordinary",
+      "passed": true
+    },
+    {
+      "name": "zero-MAX",
+      "passed": true
+    },
+    {
+      "name": "origin-corner",
+      "passed": true
+    },
+    {
+      "name": "origin-center",
+      "passed": true
+    },
+    {
+      "name": "origin-far-corner",
+      "passed": true
+    },
+    {
+      "name": "non-Q1-refuses",
+      "passed": true
+    },
+    {
+      "name": "mismatched-committed-origin-refuses",
+      "passed": true
+    },
+    {
+      "name": "actual-unsafe-missing-origin-rejected",
+      "passed": true
+    },
+    {
+      "name": "pointer.py-byte-exact-owned224",
+      "passed": true
+    },
+    {
+      "name": "parent_observation.py-byte-exact-owned224",
+      "passed": true
+    },
+    {
+      "name": "pixels.py-byte-exact-owned224",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/native.py": "2ea78dce84f12cc4e877438180edfed904aec8990e5114dfb327879579a39961",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-current-tuple-v229/qa/mapping-test.py": "53da57a2f009d29a1702aa29c28bf89d22f6a236527de4bcb9829e77b1661456"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "commands": [
+    {
+      "name": "scanner-server-header",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "server-header",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated/parent-input-server.h"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "scanner-private-code",
+      "argv": [
+        "/usr/bin/wayland-scanner",
+        "private-code",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/native/parent-input.xml",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated/parent-input-protocol.c"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-observer-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated/parent-input-protocol.c",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/actual-observer"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "actual-observer",
+      "argv": [
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/actual-observer"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "missing-uniqueness-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated/parent-input-protocol.c",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/missing-uniqueness"
+      ],
+      "exitCode": 0
+    },
+    {
+      "name": "missing-revision-bound-compile",
+      "argv": [
+        "/usr/bin/cc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-Wno-unused-function",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/include/libweston-15",
+        "-I/home/hoskinson/window-integration-qa/private-weston-host-v2/primary/weston-15.0.1",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-test.c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/generated/parent-input-protocol.c",
+        "-L/home/hoskinson/window-integration-qa/private-weston-host-v2/prefix/usr/lib",
+        "-lweston-15",
+        "-I/usr/include/pixman-1",
+        "-lwayland-server",
+        "-lm",
+        "-lpixman-1",
+        "-lxkbcommon",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-1791135344239133098/missing-revision-bound"
+      ],
+      "exitCode": 0
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/test.py": "95625d29880fbe2b14114df8ed7b2460767ed47e3bf6432efd9a7a27fb87906d",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/qa/observer-test.c": "abdc638fca93d502f176bc14c83f13974e21704ecf944eb679609c96a1053c37",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/native/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/native/parent-input-module.c": "f0bd1982a702769eb0d61eea41b0660b88d3852cd140cdecf7832ab22954162b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-parent-surface-observer-v225/native/parent-input.xml": "7f28f00de0002b84b27bc021f4b19bbe2fe8444300a94eec01688b8864d5edbe"
+  },
+  "actualChecks": 32,
+  "mockScope": "Actual production private header/struct and actual owning ABI compile; wl_resource credentials/view selection and coordinate API are explicit CPU stubs, no native geometry observations.",
+  "unsafeControls": [
+    {
+      "name": "missing-uniqueness",
+      "rejected": true,
+      "exitCode": -6
+    },
+    {
+      "name": "missing-revision-bound",
+      "rejected": true,
+      "exitCode": -6
+    }
+  ],
+  "artifacts": {
+    "scanner-server-header.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-server-header.stderr": "d67abfb53df391cfe47281527a3c43cad75ad75a4af54709a593d5fa8743b6e1",
+    "scanner-private-code.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "scanner-private-code.stderr": "d67abfb53df391cfe47281527a3c43cad75ad75a4af54709a593d5fa8743b6e1",
+    "actual-observer": "b910614bb9dad9587cc6e31b3883f7dd7205486e9f4b4d71425e6c89b7f8b7f5",
+    "actual-observer-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-observer-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual-observer.stdout": "36eada4a6e7b2256350d0489f3992f3f542683d7edd61db818efd5939c0052eb",
+    "actual-observer.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness": "b4274ac31d8e3f792f34e4a6679a4450a5194c77f2cf3b8f38e3a3a5243fe1a2",
+    "missing-uniqueness-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-uniqueness.stderr": "02bc031653375529168448dd1ddfa4aa51c74ad9a224e5f7a9b38bd8ec9bf047",
+    "missing-revision-bound": "a02a78ea9201041dff4868c91475904e9b1fcdbc300a6c69ec70369b9b8fba79",
+    "missing-revision-bound-compile.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-revision-bound-compile.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-revision-bound.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "missing-revision-bound.stderr": "c6f892eed0b4f008232ef440f1f08152153820ee9472bd931972f1f330dad4c6",
+    "generated/parent-input-server.h": "7426d8f21649dd6faf2a5b48bd9f2b2a4e155ce639b26a75dd3ca7cf98f7fe7c",
+    "generated/parent-input-protocol.c": "3f7e34f7120090fd3236466b6ef64e821b838b4bbee12fcb0b33a5244d36860c",
+    "generated/probe-struct.h": "9b5d6acad73b2e9946e4053b5f25f2ae4316955443451f249cb9cc9a0f162486",
+    "generated/surface-observer.h": "74c8a507e8cd2facabe3e3526c987dc6e33300466280f5cc01335602f043ac69"
+  }
+}

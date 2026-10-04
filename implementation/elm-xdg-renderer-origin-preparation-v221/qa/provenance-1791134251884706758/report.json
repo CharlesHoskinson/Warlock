@@ -1,0 +1,312 @@
+{
+  "passed": true,
+  "nativeAcceptance": false,
+  "checks": [
+    {
+      "name": "exact-owning-archive",
+      "passed": true
+    },
+    {
+      "name": "actual-archive-payload-Renderer.cpp.o",
+      "passed": true
+    },
+    {
+      "name": "actual-archive-payload-ElementRenderer.cpp.o",
+      "passed": true
+    },
+    {
+      "name": "actual-archive-payload-SurfacePassElement.cpp.o",
+      "passed": true
+    },
+    {
+      "name": "Renderer-exact-captured-object",
+      "passed": true
+    },
+    {
+      "name": "Renderer-captured-source-origin",
+      "passed": true
+    },
+    {
+      "name": "ElementRenderer-exact-captured-object",
+      "passed": true
+    },
+    {
+      "name": "ElementRenderer-captured-source",
+      "passed": true
+    },
+    {
+      "name": "SurfacePass-original-object-identity",
+      "passed": true
+    },
+    {
+      "name": "actual-owning-header-src/render/ElementRenderer.hpp",
+      "passed": true
+    },
+    {
+      "name": "actual-owning-header-src/render/Renderer.hpp",
+      "passed": true
+    },
+    {
+      "name": "actual-owning-header-src/render/pass/SurfacePassElement.hpp",
+      "passed": true
+    },
+    {
+      "name": "actual-owning-header-src/desktop/view/WLSurface.hpp",
+      "passed": true
+    },
+    {
+      "name": "actual-owning-header-src/protocols/core/Compositor.hpp",
+      "passed": true
+    },
+    {
+      "name": "actual-owning-header-src/version.h",
+      "passed": true
+    },
+    {
+      "name": "V19-object-not-current-owning",
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/report.json": "78cf190a801980fd159d86acefd9e715f7dcd259608253e539ff2cb9a424656c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/report.json": "673219a31839ff80f232bf61cd2d31b0d24d9f9f43e5fea44ac5f5c59d6dd2c6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/report.json": "8d065a6c25eb05ceda4ee059a91f25e336edad7166a1161bff5509705bbc86e9",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/new-archive-payloads.json": "980c41429d391b98bcea9889a9e3a59d4d83d685479559601bea47d4759674d2",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/libhyprland_lib.a": "7ad9657f8aa997e6bc1de3647dbdc82e1632c7b248a92d0abe22ac15e2ff5ad6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/src/render/Renderer.cpp": "be7f86da4716a53225e3c806f052923869515b4cfad994324c5866bb4bc47695",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/Renderer.cpp.o": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs/src/render/ElementRenderer.cpp": "79c5c80c7ef41d69b18e92cd5797b341d103084ee7de0a2a3f8ef37f429766d0",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/ElementRenderer.cpp.o": "b172f6eb7b7b59ed72d0e557022e53649b27c4e203487d87874ee11f0d50e7a3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/CMakeFiles/hyprland_lib.dir/src/render/pass/SurfacePassElement.cpp.o": "ce0d4cd3746e44856d0c1aa3216aa5d931fa8e1cd7406aeb514dc70148275801",
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render/pass/SurfacePassElement.cpp": "ea559690633f8f2e0da7709cb3c00f12b54bc20fbe631437633744676eff24f8",
+    "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/compile_commands.json": "fb4acf4eb67f9ab088e59e510023612a095f69f3754adf745b5e7cef0fe087f3",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/owning-headers/src/render/ElementRenderer.hpp": "3b1d6db6d1e893423e0966aa12e4723e8800920850b61acc43bdf9f1fdf86979",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/owning-headers/src/render/Renderer.hpp": "b947bec0fee19c19056cbbe07e6db9f14d075c363ff2b4f74124a2b0622a52ea",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/owning-headers/src/render/pass/SurfacePassElement.hpp": "74bd3d56f5d6e75b43fa9d8291141869849341f4b5ec9d10f6c7ed3f5b55c2d5",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/owning-headers/src/desktop/view/WLSurface.hpp": "e0af09d273605e7f731168f77896eb389da806dd20b7b8116a402cb6bc064cfe",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/owning-headers/src/protocols/core/Compositor.hpp": "583f949a5b899f2f220fa13aa5ab1c3adf8e7c13d2f389d18797a06f0d864424",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-core-parent-first-anchor-v89/build-1791107301396755104/owning-headers/src/version.h": "0cb4913dc18c35bc0fb5e33f8786453c0781216bb4ead20b2afd82ba84981946",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-draw-identity-v19/build-1791065098491183126/ElementRenderer.cpp.o": "a874da6aba9f48c360b6b85812c0c1c15148e119dd735aa4f7c7203e2fbcfae6",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-renderer-origin-preparation-v221/REQUIREMENTS.md": "a00aa9bc8df33bdd2ba0622573da7f1f39ea26d2249b0a252568ef02b5562d05",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-renderer-origin-preparation-v221/PROPOSAL.md": "5438eb6c2e8d40c96e161d8873b02d55ae2f6d6a6872e42eb32bc57db4e78b1b",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-renderer-origin-preparation-v221/qa/provenance.py": "e065088a5b46d941fd3fcc8e7794147d744b3be58ee95bcaa40327a1de1ad30c",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-coordinate-design-held-v465/HANDOFF.md": "9085df81909816b2ea0b845cf1cd982b3ba27c887aa299705364d4cbcc3336f5"
+  },
+  "members": {
+    "Renderer.cpp.o": {
+      "name": "Renderer.cpp.o",
+      "size": 1104176,
+      "sha256": "9f29bd592bf6ff37967a12d9f9618a9a35033fa0ffc05ac3122de75c6690c903"
+    },
+    "ElementRenderer.cpp.o": {
+      "name": "ElementRenderer.cpp.o",
+      "size": 377672,
+      "sha256": "b172f6eb7b7b59ed72d0e557022e53649b27c4e203487d87874ee11f0d50e7a3"
+    },
+    "SurfacePassElement.cpp.o": {
+      "name": "SurfacePassElement.cpp.o",
+      "size": 83832,
+      "sha256": "ce0d4cd3746e44856d0c1aa3216aa5d931fa8e1cd7406aeb514dc70148275801"
+    }
+  },
+  "sourceByteUncertainty": [
+    {
+      "member": "SurfacePassElement.cpp.o",
+      "currentSource": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render/pass/SurfacePassElement.cpp",
+      "currentSHA256": "ea559690633f8f2e0da7709cb3c00f12b54bc20fbe631437633744676eff24f8",
+      "historicalSourceBytesProven": false,
+      "policy": "fresh source+owning dependency capture/rebuild required, not historical source identity claim"
+    }
+  ],
+  "commands": {
+    "Renderer": {
+      "name": "Renderer-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/inputs/candidate",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/Renderer.cpp.o.d",
+        "-DDATAROOTDIR=\"/usr/local/share\"",
+        "-DGLSLANG_IS_SHARED_LIBRARY=1",
+        "-DHAS_EXECINFO",
+        "-DHYPRLAND_VERSION=\"0.56.2\"",
+        "-DUSES_SYSTEMD",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/subprojects/udis86",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/.",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/src",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/protocols",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/subprojects/udis86/libudis86",
+        "-isystem",
+        "/usr/include/uuid",
+        "-isystem",
+        "/usr/include/pango-1.0",
+        "-isystem",
+        "/usr/include/cairo",
+        "-isystem",
+        "/usr/include/fribidi",
+        "-isystem",
+        "/usr/include/harfbuzz",
+        "-isystem",
+        "/usr/include/freetype2",
+        "-isystem",
+        "/usr/include/libpng16",
+        "-isystem",
+        "/usr/include/pixman-1",
+        "-isystem",
+        "/usr/include/libdrm",
+        "-isystem",
+        "/usr/include/libei-1.0",
+        "-isystem",
+        "/usr/include/glib-2.0",
+        "-isystem",
+        "/usr/lib/glib-2.0/include",
+        "-isystem",
+        "/usr/include/libmount",
+        "-isystem",
+        "/usr/include/blkid",
+        "-isystem",
+        "/usr/include/sysprof-6",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include",
+        "-O2",
+        "-DNDEBUG",
+        "-std=gnu++26",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wno-keyword-macro",
+        "-Wno-unused-result",
+        "-Wno-unused-parameter",
+        "-Wno-unused-value",
+        "-Wno-missing-field-initializers",
+        "-Wno-gnu-zero-variadic-macro-arguments",
+        "-Wno-narrowing",
+        "-Wno-pointer-arith",
+        "-Wno-clobbered",
+        "-frtti",
+        "-fmacro-prefix-map=/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/=",
+        "-fno-lto",
+        "-Wno-missing-braces",
+        "-pthread",
+        "-DNOMINMAX",
+        "-Winvalid-pch",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/Renderer.cpp.o",
+        "-c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-geometry-monitor-core-v73/core/build-1791106255338249967/owning-headers/src/render/Renderer.cpp"
+      ],
+      "cwd": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build",
+      "exitCode": 0
+    },
+    "ElementRenderer": {
+      "name": "ElementRenderer-compile",
+      "command": [
+        "/usr/bin/c++",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs",
+        "-DDATAROOTDIR=\"/usr/local/share\"",
+        "-DGLSLANG_IS_SHARED_LIBRARY=1",
+        "-DHAS_EXECINFO",
+        "-DHYPRLAND_VERSION=\"0.56.2\"",
+        "-DUSES_SYSTEMD",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/.",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/protocols",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86/libudis86",
+        "-isystem",
+        "/usr/include/uuid",
+        "-isystem",
+        "/usr/include/pango-1.0",
+        "-isystem",
+        "/usr/include/cairo",
+        "-isystem",
+        "/usr/include/fribidi",
+        "-isystem",
+        "/usr/include/harfbuzz",
+        "-isystem",
+        "/usr/include/freetype2",
+        "-isystem",
+        "/usr/include/libpng16",
+        "-isystem",
+        "/usr/include/pixman-1",
+        "-isystem",
+        "/usr/include/libdrm",
+        "-isystem",
+        "/usr/include/libei-1.0",
+        "-isystem",
+        "/usr/include/glib-2.0",
+        "-isystem",
+        "/usr/lib/glib-2.0/include",
+        "-isystem",
+        "/usr/include/libmount",
+        "-isystem",
+        "/usr/include/blkid",
+        "-isystem",
+        "/usr/include/sysprof-6",
+        "-isystem",
+        "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include",
+        "-O2",
+        "-DNDEBUG",
+        "-std=gnu++26",
+        "-O3",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Wno-keyword-macro",
+        "-Wno-unused-result",
+        "-Wno-unused-parameter",
+        "-Wno-unused-value",
+        "-Wno-missing-field-initializers",
+        "-Wno-gnu-zero-variadic-macro-arguments",
+        "-Wno-narrowing",
+        "-Wno-pointer-arith",
+        "-Wno-clobbered",
+        "-frtti",
+        "-fmacro-prefix-map=/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/=",
+        "-fno-lto",
+        "-Wno-missing-braces",
+        "-pthread",
+        "-DNOMINMAX",
+        "-I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render",
+        "-MD",
+        "-MF",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/ElementRenderer.cpp.d",
+        "-c",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/inputs/src/render/ElementRenderer.cpp",
+        "-o",
+        "/home/hoskinson/omarchy-windows-parity/implementation/elm-surface-facts-v20/build-1791065974847738580/ElementRenderer.cpp.o"
+      ],
+      "exitCode": 0
+    }
+  },
+  "historicalDependencyAvailability": {
+    "Renderer": {
+      "recorded": 1095,
+      "unchangedCurrent": 1095,
+      "changedCurrent": [],
+      "missingCurrent": [],
+      "qualification": "historical recorded closure only; changed current paths must not be substituted into a claim of historical source qualification"
+    },
+    "ElementRenderer": {
+      "recorded": 873,
+      "unchangedCurrent": 873,
+      "changedCurrent": [],
+      "missingCurrent": [],
+      "qualification": "historical recorded closure only; changed current paths must not be substituted into a claim of historical source qualification"
+    }
+  },
+  "SurfacePassOriginalCompileEntry": {
+    "directory": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build",
+    "command": "/usr/bin/c++ -DDATAROOTDIR=\\\"/usr/local/share\\\" -DGLSLANG_IS_SHARED_LIBRARY=1 -DHAS_EXECINFO -DHYPRLAND_VERSION=\\\"0.56.2\\\" -DUSES_SYSTEMD -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86 -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/. -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/protocols -I/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/subprojects/udis86/libudis86 -isystem /usr/include/uuid -isystem /usr/include/pango-1.0 -isystem /usr/include/cairo -isystem /usr/include/fribidi -isystem /usr/include/harfbuzz -isystem /usr/include/freetype2 -isystem /usr/include/libpng16 -isystem /usr/include/pixman-1 -isystem /usr/include/libdrm -isystem /usr/include/libei-1.0 -isystem /usr/include/glib-2.0 -isystem /usr/lib/glib-2.0/include -isystem /usr/include/libmount -isystem /usr/include/blkid -isystem /usr/include/sysprof-6 -isystem /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/_deps/glaze-src/include -O2 -DNDEBUG -std=gnu++26 -O3 -Wall -Wextra -Wpedantic -Wno-keyword-macro -Wno-unused-result -Wno-unused-parameter -Wno-unused-value -Wno-missing-field-initializers -Wno-gnu-zero-variadic-macro-arguments -Wno-narrowing -Wno-pointer-arith -Wno-clobbered -frtti -fmacro-prefix-map=/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/= -fno-lto -Wno-missing-braces -pthread -DNOMINMAX -Winvalid-pch -include /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/build/CMakeFiles/hyprland_lib.dir/cmake_pch.hxx -o CMakeFiles/hyprland_lib.dir/src/render/pass/SurfacePassElement.cpp.o -c /home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render/pass/SurfacePassElement.cpp",
+    "file": "/home/hoskinson/omarchy-windows-parity/implementation/maximized-stack-v1/native-core-v2/src/render/pass/SurfacePassElement.cpp",
+    "output": "CMakeFiles/hyprland_lib.dir/src/render/pass/SurfacePassElement.cpp.o"
+  },
+  "compileDatabaseMatchesCurrent89Recorded": true
+}

@@ -1,0 +1,385 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "name": "normal:acceptance",
+      "passed": true
+    },
+    {
+      "name": "normal:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "normal:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "normal:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "normal:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "normal:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:acceptance",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "readyInteger:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:acceptance",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "acceptedInteger:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:acceptance",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "floatSequence:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:acceptance",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "duplicateKey:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:acceptance",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "nonfinite:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "partial:acceptance",
+      "passed": true
+    },
+    {
+      "name": "partial:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "partial:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "partial:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "partial:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "partial:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "partial:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "partial:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "nonzero:acceptance",
+      "passed": true
+    },
+    {
+      "name": "nonzero:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "nonzero:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "nonzero:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "nonzero:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "nonzero:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "nonzero:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "nonzero:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "hang:acceptance",
+      "passed": true
+    },
+    {
+      "name": "hang:persistedRecord",
+      "passed": true
+    },
+    {
+      "name": "hang:registeredOwnedProcess",
+      "passed": true
+    },
+    {
+      "name": "hang:stdoutRetained",
+      "passed": true
+    },
+    {
+      "name": "hang:stderrRetained",
+      "passed": true
+    },
+    {
+      "name": "hang:exitRecorded",
+      "passed": true
+    },
+    {
+      "name": "hang:failureNotAccepted",
+      "passed": true
+    },
+    {
+      "name": "hang:explicitReleaseAttemptRetained",
+      "passed": true
+    },
+    {
+      "name": "hang:boundedWaitAndCleanup",
+      "passed": true
+    },
+    {
+      "name": "hang:timeoutAndFallbackSeparate",
+      "passed": true
+    },
+    {
+      "name": "allOwnedProcessesTerminal",
+      "passed": true
+    },
+    {
+      "name": "boolsequence:strictRejected",
+      "passed": true
+    },
+    {
+      "name": "extra:strictRejected",
+      "passed": true
+    },
+    {
+      "name": "negative:strictRejected",
+      "passed": true
+    }
+  ],
+  "scope": "CPU actual helper subprocess lifecycle only; synthetic receipt bytes; no native admission or input evidence",
+  "nativeAdmission": false,
+  "inputs": {
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/pointer.py": "5b6dd2f9735597ff6195a236fec3fb1b7d8263d20d73f9f2370961e1c11ed852",
+    "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/lifecycle-test.py": "bdc161f2eccbc0100aa064ef83adfe7d147d199d861823dbaf0b987a5e017a94"
+  },
+  "processes": [
+    {
+      "pid": 2717564,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717566,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717567,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717568,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717570,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717571,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717572,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717573,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717574,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717575,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717576,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717577,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717582,
+      "exitCode": 0
+    },
+    {
+      "pid": 2717594,
+      "exitCode": 6
+    },
+    {
+      "pid": 2717603,
+      "exitCode": 6
+    },
+    {
+      "pid": 2717612,
+      "exitCode": -15
+    },
+    {
+      "pid": 2717656,
+      "exitCode": -15
+    }
+  ]
+}

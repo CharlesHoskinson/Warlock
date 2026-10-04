@@ -1,0 +1,29 @@
+
+ Error [QNT000]: extraneous input 's' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:7:66
+  7:  val canRetry = s.active and s.retry and s.expected == 0 and not s.pending and not s.deferred and not s.refused
+                                                                      ^
+
+
+ Error [QNT000]: no viable alternative at input '(nots'
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:18:20
+  18:  val safety = (not s.retry or s.expected == 0) and s.request >= 59 and s.issued <= s.request - 59 and (s.active or (not s.retry and s.expected == 0))
+                         ^
+
+
+ Error [QNT000]: extraneous input '(' expecting {'}', 'const', 'var', 'assume', 'val', 'pure', 'type', 'def', 'action', 'run', 'temporal', 'nondet', 'import', 'export', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:26:89
+  26:  run disconnectRevokesTest = init.then(terminal(1,58)).then(disconnect).then(drain).then(all { assert(not s.retry and s.issued == 0), s' = s })
+                                                                                              ^
+
+
+ Error [QNT000]: extraneous input ')' expecting {<EOF>, 'module', DOCCOMMENT}
+
+  at /home/hoskinson/omarchy-windows-parity/implementation/elm-projection-terminal-contract-v488/qa/model-1791136030395866584/terminal.qnt:26:143
+  26:  run disconnectRevokesTest = init.then(terminal(1,58)).then(disconnect).then(drain).then(all { assert(not s.retry and s.issued == 0), s' = s })
+                                                                                                                                                    ^
+
+error: parsing failed

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "scope": "Actual preserved unsafe point function characterization; two JSON-decoded huge integers, no native query",
+  "cases": [
+    {
+      "sign": 1,
+      "actualException": "OverflowError",
+      "requiredTypedRefusal": "Refused"
+    },
+    {
+      "sign": -1,
+      "actualException": "OverflowError",
+      "requiredTypedRefusal": "Refused"
+    }
+  ],
+  "source": "/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-pointer-owned-runner-v224/qa/rejected/parent-observation-before-hugeint.py",
+  "sourceSHA256": "3ea42291c2177cf0528516e232fe7918510317e859c6a0efce0c8a809a041bd8"
+}

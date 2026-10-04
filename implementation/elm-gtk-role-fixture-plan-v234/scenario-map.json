@@ -1,0 +1,594 @@
+{
+  "scope": "Exact unchanged canonical scenarios; no requirement acceptance or replacement of originals",
+  "registrySHA256": "a0c2093cc7769e05b70cc81aa3c001dbcbffe936cc17d1c494d7ab2fdc8b3b1b",
+  "backlogSHA256": "3279cb5d246b20a779300fd070f3d86466dbbacf6e6b82bb8d87589dec1917a8",
+  "requirements": [
+    {
+      "requirementId": "ELM-ARC-018",
+      "sprint": "S08",
+      "taskId": "P3-ELM-ARC-018",
+      "ears": "The Elm desktop SHALL resolve modal-family focus, input blockers, stacking and hit testing from native authority rather than DOM state.",
+      "verification": "Preserved scenario report with native or bridge trace showing: the native family policy determines focus and hit order; artifact hashes and matching scenario receipts included.",
+      "scenarios": [
+        {
+          "id": "ELM-ARC-018 architecture-018",
+          "name": "architecture-018",
+          "given": "a draft modal overlaps a maximized window",
+          "when": "a user clicks a visible native region",
+          "then": "the native family policy determines focus and hit order",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-ARC-022",
+      "sprint": "S03",
+      "taskId": "P1-ELM-ARC-022",
+      "ears": "The Elm desktop SHALL create native layer and popup roles, input regions and keyboard-interactivity settings before exposing their Elm views.",
+      "verification": "Preserved scenario report with native or bridge trace showing: roles and input masks precede frontend readiness; artifact hashes and matching scenario receipts included.",
+      "scenarios": [
+        {
+          "id": "ELM-ARC-022 architecture-022",
+          "name": "architecture-022",
+          "given": "a taskbar and popup",
+          "when": "their native surfaces are created",
+          "then": "roles and input masks precede frontend readiness",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-GNO-004",
+      "sprint": "S06",
+      "taskId": "P2-ELM-GNO-004",
+      "ears": "The Elm desktop SHALL preserve eligible child-above-owner constraints across native layer changes without promoting unrelated ordinary members of the application group.",
+      "verification": "Frozen scene/model trace plus native paint and input receipts proving: the child remains above its owner without promoting the peer. Retain scenario identity and source/ABI hashes.",
+      "scenarios": [
+        {
+          "id": "ELM-GNO-004 gnome-layering-004",
+          "name": "gnome-layering-004",
+          "given": "an owner, child dialog and unrelated group peer",
+          "when": "the owner becomes pinned",
+          "then": "the child remains above its owner without promoting the peer",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-GNO-006",
+      "sprint": "S08",
+      "taskId": "P3-ELM-GNO-006",
+      "ears": "The Elm desktop SHALL derive ordinary native paint order and pointer hit order from the same committed scene revision, with explicit native input-region and modal-redirection exceptions.",
+      "verification": "Frozen scene/model trace plus native paint and input receipts proving: the visible top eligible surface receives input unless a recorded native exception applies. Retain scenario identity and source/ABI hashes.",
+      "scenarios": [
+        {
+          "id": "ELM-GNO-006 gnome-layering-006",
+          "name": "gnome-layering-006",
+          "given": "overlapping eligible opaque windows",
+          "when": "a visible overlap point is clicked",
+          "then": "the visible top eligible surface receives input unless a recorded native exception applies",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-GNO-006 hit-normal-top",
+          "name": "hit-normal-top",
+          "given": "overlapping opaque eligible windows with no exception declared before the test",
+          "when": "an overlap point is clicked",
+          "then": "the top surface receives input at the matching committed scene revision",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-GNO-006 hit-region-hole",
+          "name": "hit-region-hole",
+          "given": "a top surface with a native input-region hole declared before the test",
+          "when": "the hole is clicked",
+          "then": "native hit testing selects the eligible lower surface and records the pre-existing region exception",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-GNO-006 hit-modal-redirect",
+          "name": "hit-modal-redirect",
+          "given": "a blocked parent and modal redirection policy declared before the test",
+          "when": "the parent is activated",
+          "then": "native focus redirects to the eligible modal without forwarding the parent click coordinates as a modal click",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-KDE-003",
+      "sprint": "S06",
+      "taskId": "P2-ELM-KDE-003",
+      "ears": "WHEN a transient family changes, the native authority SHALL recompute parent-child constraints and preserve documented sibling order before committing the stack.",
+      "verification": "Constraint replay and native modal pixel/hit observations.",
+      "scenarios": [
+        {
+          "id": "ELM-KDE-003 kde-003",
+          "name": "kde-003",
+          "given": "a parent with two transients",
+          "when": "one family relation changes",
+          "then": "constraints update without stale parent or arbitrary sibling inversion",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-KDE-007",
+      "sprint": "S06",
+      "taskId": "P2-ELM-KDE-007",
+      "ears": "WHEN a modal focus request is accepted, the native authority SHALL resolve the current eligible modal family before selecting the committed focus recipient.",
+      "verification": "Native draft/modal tests record focus target and preserve unrelated drafts.",
+      "scenarios": [
+        {
+          "id": "ELM-KDE-007 owner-modal-activation",
+          "name": "owner-modal-activation",
+          "given": "a current eligible modal child belongs to the clicked owner",
+          "when": "the owner is activated",
+          "then": "focus redirects to that child under the frozen modal rule; unrelated application activation is not redirected",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-KDE-007 unrelated-activation",
+          "name": "unrelated-activation",
+          "given": "a blocking draft belongs to a different application family",
+          "when": "an eligible unrelated window is clicked",
+          "then": "that unrelated native target activates and the draft stays open",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-LAY-002",
+      "sprint": "S06",
+      "taskId": "P2-ELM-LAY-002",
+      "ears": "WHEN a scene revision is committed, the native authority SHALL derive painting, hit testing and focus eligibility from the same accepted surface identities and ordered scene revision.",
+      "verification": "Native opaque overlap, input-transparent-region and modal-owner fixtures record one constrained scene revision, independent overlap pixels, input region/hit recipient and documented focus outcome; a Heroic-only run cannot qualify this requirement.",
+      "scenarios": [
+        {
+          "id": "ELM-LAY-002 layer-002",
+          "name": "layer-002",
+          "given": "overlapping application windows with an accepted stack revision",
+          "when": "painting and pointer routing execute",
+          "then": "the top eligible painted application receives the corresponding hit and focus, subject to explicit input regions and modal constraints",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-REN-018",
+      "sprint": "S06",
+      "taskId": "P2-ELM-REN-018",
+      "ears": "WHEN focusing a modal family, the native authority SHALL resolve eligible recipients from current native family and input state before committing focus.",
+      "verification": "Native family tests preserve drafts and distinguish input blockers from allows_input.",
+      "scenarios": [
+        {
+          "id": "ELM-REN-018 ren-018",
+          "name": "ren-018",
+          "given": "a draft modal and overlapping unrelated window exist",
+          "when": "the user clicks the unrelated eligible window",
+          "then": "native policy focuses the intended eligible recipient without closing drafts",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-REV-033",
+      "sprint": "S08",
+      "taskId": "P3-ELM-REV-033",
+      "ears": "The native authority SHALL redirect blocked-parent activation to an eligible modal without synthesizing a modal click, and SHALL retire an inert transition proxy atomically before publishing the restored live surface as interactive.",
+      "verification": "Independent named fixture receipts with native scene/protocol traces, artifact hashes and explicit pass/fail verdicts.",
+      "scenarios": [
+        {
+          "id": "ELM-REV-033 modal-no-click",
+          "name": "modal-no-click",
+          "given": "a blocked parent with an eligible modal",
+          "when": "parent activation is requested",
+          "then": "focus goes to the modal and no modal button receives a synthesized click",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-REV-033 proxy-retirement",
+          "name": "proxy-retirement",
+          "given": "an inert restore proxy and a ready live surface",
+          "when": "restore handoff commits",
+          "then": "proxy retires and the live surface becomes interactive at one publication boundary with no duplicate active surface",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-UX-015",
+      "sprint": "S06",
+      "taskId": "P2-ELM-UX-015",
+      "ears": "WHEN a user activates a modal family, the Elm desktop SHALL request the native eligible modal target while preserving the application\u2019s draft content.",
+      "verification": "Elm replay assertion and isolated native recording: native modal target or terminal activates and draft content remains intact.",
+      "scenarios": [
+        {
+          "id": "ELM-UX-015 ux-015",
+          "name": "ux-015",
+          "given": "Brave draft dialog and unrelated terminal overlap",
+          "when": "user selects either application",
+          "then": "native modal target or terminal activates and draft content remains intact",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UX-015 modal-draft-retained",
+          "name": "modal-draft-retained",
+          "given": "a parent with unsaved text and its eligible modal",
+          "when": "the family is activated then focus switches to an unrelated terminal",
+          "then": "native modal targeting and terminal activation succeed separately and exact parent and modal draft bytes remain intact",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-UX-024",
+      "sprint": "S14",
+      "taskId": "P5-ELM-UX-024",
+      "ears": "WHILE a shell popup owns keyboard focus, the Elm desktop SHALL constrain traversal to its documented focus order and restore the previous eligible focus target on dismissal.",
+      "verification": "Elm replay assertion and isolated native recording: focus follows menu order and returns to original eligible target.",
+      "scenarios": [
+        {
+          "id": "ELM-UX-024 ux-024",
+          "name": "ux-024",
+          "given": "taskbar menu has focus",
+          "when": "Tab traversal then Escape occurs",
+          "then": "focus follows menu order and returns to original eligible target",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-UI-011",
+      "sprint": "S08",
+      "taskId": "P3-ELM-UI-011",
+      "ears": "WHEN a shell focus scope closes, the host SHALL restore its eligible identity-bound opener or the declared eligible fallback, restore surviving parent scopes for nested dismissal, reject replacement incarnations and let lock security supersede ordinary restoration.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "scenarios": [
+        {
+          "id": "ELM-UI-011 focus-scope-nested dismissal",
+          "name": "focus-scope-nested dismissal",
+          "given": "an open shell focus scope",
+          "when": "nested dismissal occurs",
+          "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-011 focus-scope-opener closure",
+          "name": "focus-scope-opener closure",
+          "given": "an open shell focus scope",
+          "when": "opener closure occurs",
+          "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-011 focus-scope-workspace change",
+          "name": "focus-scope-workspace change",
+          "given": "an open shell focus scope",
+          "when": "workspace change occurs",
+          "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-011 focus-scope-opener minimize",
+          "name": "focus-scope-opener minimize",
+          "given": "an open shell focus scope",
+          "when": "opener minimize occurs",
+          "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-011 focus-scope-renderer restart",
+          "name": "focus-scope-renderer restart",
+          "given": "an open shell focus scope",
+          "when": "renderer restart occurs",
+          "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-011 focus-scope-address reuse",
+          "name": "focus-scope-address reuse",
+          "given": "an open shell focus scope",
+          "when": "address reuse occurs",
+          "then": "native and accessibility focus return to the eligible opener, surviving parent or MRU/desktop fallback; no dead or replacement target activates",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-QA-017",
+      "sprint": "S14",
+      "taskId": "P5-ELM-QA-017",
+      "ears": "The application verifier SHALL exercise representative native applications including maximized Brave, modal drafts and Files against visible order, hit order, focus, pin, minimize and restore assertions.",
+      "verification": "Application fixture matrix records versions, actions, native observations and failures; bounded stack proof remains separately scoped.",
+      "scenarios": [
+        {
+          "id": "ELM-QA-017 qa-modal-exception",
+          "name": "qa-modal-exception",
+          "given": "Brave has a current eligible blocking modal and its owner is clicked",
+          "when": "native activation is processed",
+          "then": "painting and hit traversal use one revision and focus follows the predeclared modal recipient while the draft remains open",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-QA-017 qa-unrelated-window",
+          "name": "qa-unrelated-window",
+          "given": "Brave and an unrelated eligible opaque window overlap without input exceptions",
+          "when": "the top unrelated window is clicked",
+          "then": "it receives the hit and focus on the same committed scene",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-ARC-023",
+      "sprint": "S14",
+      "taskId": "P5-ELM-ARC-023",
+      "ears": "The Elm desktop SHALL pass native host tests for IME preedit, keyboard navigation, Orca and braille, clipboard, file drag-and-drop, fractional scale and negative output coordinates.",
+      "verification": "All eight named host compatibility routes pass with native/AT evidence; a separate gate fixture verifies a missing/failed route blocks qualification.",
+      "scenarios": [
+        {
+          "id": "ELM-ARC-023 host-ime",
+          "name": "host-ime",
+          "given": "the selected host and an active preedit string",
+          "when": "the ime compatibility route executes",
+          "then": "composition commits or cancels without duplicate/missing characters and restores the documented focus",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-ARC-023 host-keyboard",
+          "name": "host-keyboard",
+          "given": "the selected host and a keyboard-only user",
+          "when": "the keyboard compatibility route executes",
+          "then": "taskbar, switcher, menus and settings are reachable and escapable with visible focus",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-ARC-023 host-orca",
+          "name": "host-orca",
+          "given": "the selected host and Orca with supported speech output",
+          "when": "the orca compatibility route executes",
+          "then": "current control name/state and focus transitions are announced correctly",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-ARC-023 host-braille",
+          "name": "host-braille",
+          "given": "the selected host and a supported braille device",
+          "when": "the braille compatibility route executes",
+          "then": "selected control name/state and focus changes appear on the braille display",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-ARC-023 host-clipboard",
+          "name": "host-clipboard",
+          "given": "the selected host and two supported native applications and shell input",
+          "when": "the clipboard compatibility route executes",
+          "then": "copied content transfers to the intended selection without stale ownership",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-ARC-023 host-file-dnd",
+          "name": "host-file-dnd",
+          "given": "the selected host and a valid filesystem payload and native destination",
+          "when": "the file-dnd compatibility route executes",
+          "then": "the accepted payload reaches the intended destination once and cancelled drags cause no action",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-ARC-023 host-scale",
+          "name": "host-scale",
+          "given": "the selected host and a supported fractional-scale output",
+          "when": "the scale compatibility route executes",
+          "then": "rendered and hit-tested control bounds correspond in the target scale",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-ARC-023 host-negative-output",
+          "name": "host-negative-output",
+          "given": "the selected host and an output positioned at negative native coordinates",
+          "when": "the negative-output compatibility route executes",
+          "then": "popups and hit coordinates remain inside the correct output bounds",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-UI-009",
+      "sprint": "S14",
+      "taskId": "P5-ELM-UI-009",
+      "ears": "The Elm desktop SHALL expose names, roles, states, values, relationships and supported actions for every interactive control on every migrated surface through the native accessibility bridge, with decorative pixels inert and restore controls separately identified.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "scenarios": [
+        {
+          "id": "ELM-UI-009 at-launcher",
+          "name": "at-launcher",
+          "given": "the launcher surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-taskbar-groups",
+          "name": "at-taskbar-groups",
+          "given": "the taskbar groups surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-switcher",
+          "name": "at-switcher",
+          "given": "the switcher surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-Task-View",
+          "name": "at-Task-View",
+          "given": "the Task View surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-snap-chooser",
+          "name": "at-snap-chooser",
+          "given": "the snap chooser surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-menus",
+          "name": "at-menus",
+          "given": "the menus surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-settings",
+          "name": "at-settings",
+          "given": "the settings surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-notifications",
+          "name": "at-notifications",
+          "given": "the notifications surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-009 at-jump-lists",
+          "name": "at-jump-lists",
+          "given": "the jump lists surface",
+          "when": "native assistive technology enumerates and invokes each control",
+          "then": "speech/braille labels, states, values and action results match the semantic oracle; missing or unnamed controls fail",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-UI-012",
+      "sprint": "S04",
+      "taskId": "P1-ELM-UI-012",
+      "ears": "WHILE IME composition owns a field, the host SHALL respect input-method key consumption, bind callbacks to field identity and composition generation, track candidate geometry with caret/output transforms and reject late commits after focus loss, field retirement or host restart.",
+      "verification": "Named native, keyboard and assistive-technology fixtures where applicable; independent observed results, exact identities, source hashes and frozen product-policy oracle.",
+      "scenarios": [
+        {
+          "id": "ELM-UI-012 ime-Enter Escape arrows",
+          "name": "ime-Enter Escape arrows",
+          "given": "a composing field with active candidates",
+          "when": "Enter Escape arrows occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-012 ime-focus transfer",
+          "name": "ime-focus transfer",
+          "given": "a composing field with active candidates",
+          "when": "focus transfer occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-012 ime-field recreation",
+          "name": "ime-field recreation",
+          "given": "a composing field with active candidates",
+          "when": "field recreation occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-012 ime-output scale transfer",
+          "name": "ime-output scale transfer",
+          "given": "a composing field with active candidates",
+          "when": "output scale transfer occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-012 ime-late callback",
+          "name": "ime-late callback",
+          "given": "a composing field with active candidates",
+          "when": "late callback occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-012 ime-host restart",
+          "name": "ime-host restart",
+          "given": "a composing field with active candidates",
+          "when": "host restart occurs",
+          "then": "no consumed key causes shell submit or dismissal; an explicit valid current-generation commit writes exactly once, cancellation or invalidation writes zero times, and candidate geometry matches the active caret",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-012 ime-explicit-valid-commit",
+          "name": "ime-explicit-valid-commit",
+          "given": "current field identity and composition generation",
+          "when": "native input method explicitly commits valid composition",
+          "then": "exactly one string commits to that field without unintended shell action",
+          "acceptedByThisPlan": false
+        },
+        {
+          "id": "ELM-UI-012 ime-invalidated-zero-commit",
+          "name": "ime-invalidated-zero-commit",
+          "given": "field or host generation invalidated by focus loss recreation or restart",
+          "when": "a late old-generation commit arrives",
+          "then": "zero text writes and zero shell effects occur",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    },
+    {
+      "requirementId": "ELM-REN-001",
+      "sprint": "S01",
+      "taskId": "P0-ELM-REN-001",
+      "ears": "The project SHALL preserve the original 38 restore-baseline, 34 fault/recovery and 52 drag/resize scenario identities and deadlines in a fresh acceptance ledger.",
+      "verification": "Ledger diff retains all IDs and original time origins.",
+      "scenarios": [
+        {
+          "id": "ELM-REN-001 ren-001",
+          "name": "ren-001",
+          "given": "an archived campaign",
+          "when": "a new derivative is inventoried",
+          "then": "all original IDs, hashes and deadlines remain linked",
+          "acceptedByThisPlan": false
+        }
+      ],
+      "qualification": "controlled GTK contribution only; canonical full requirement remains open"
+    }
+  ],
+  "knownMissing": [
+    "actual Brave/terminal/Files",
+    "Qt/Xwayland",
+    "atomic scene/input/presentation receipts",
+    "AT/IME/hardware/multioutput",
+    "original38/34/52",
+    "current full shared08/09/10"
+  ],
+  "nativeAccepted": false
+}

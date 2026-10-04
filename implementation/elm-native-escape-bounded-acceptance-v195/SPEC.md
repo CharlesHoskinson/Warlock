@@ -1,0 +1,3 @@
+# Native Escape bounded acceptance and preserved capability-restoration failure
+
+Freeze the current Escape190 implementation, actual compiled helper168/10 rejected controls, prior model183,83 actual focus-loss and161 joint geometry/native/pixel/receipt checks, and57 current-captured broker reconnect checks if accepted. Preserve all failed CPU controls184/186/189, incomplete192 preflight,193 older-backend command failure and187 capability-restoration failure. Original 6s/500ms scopes, scenario identities, pixel/receipt/EOF and normal ordered cleanup must remain intact. Capability acceptance stays false until original187 restoration focus oracle passes on a causal fresh tuple. Full S01-S16/C00/device/hardware/GPU/ATIME/UX/resource/release remain false.

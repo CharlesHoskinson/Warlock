@@ -1,0 +1,19 @@
+{
+  "passed": false,
+  "nativeAcceptance": false,
+  "mainDesktopActions": false,
+  "checks": [],
+  "scope": "Four-profile root geometry-origin buffer1/2 actual pixels and synthetic parent-seat pointer receipts; no physical hardware, GTK or full-menu acceptance",
+  "physicalHardwareAccepted": false,
+  "nonzeroCapabilityAccepted": false,
+  "gtkCompatibilityAccepted": false,
+  "openGates": [
+    "full22 rendered qualification",
+    "physical pointer admission",
+    "GTK conformance",
+    "GEOMETRY-MENU-08/09/10"
+  ],
+  "error": "KeyError('parent')",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-pointer-native-v475/qa/native.py\", line 106, in run\n    host,meta,fixture,Endpoint,start_time,journal,inputs=preflight()\n                                                         ~~~~~~~~~^^\n  File \"/home/hoskinson/omarchy-windows-parity/implementation/elm-xdg-origin-pointer-native-v475/qa/native.py\", line 36, in preflight\n    ancestor=Path(origin['parent'])\n                  ~~~~~~^^^^^^^^^^\nKeyError: 'parent'\n",
+  "artifacts": {}
+}

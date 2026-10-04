@@ -1,0 +1,9 @@
+# Retry boundary qualification
+
+Source498 differs from accepted source490 only by clearing projectionRetryQueued in refresh counter-exhaustion fallback.496 reproduces the single-terminal UInt64 maximum defect in actual compiled Shell.494/495 fixture mistakes and497 model-runner cardinality failure are retained; these did not establish program acceptance.
+
+499 passes14 compiled typed cases: canonical/correlated terminal decoding, one retry, actual UInt64 maximum and duplicate exhaustion, explicit deferred/transport resume, disconnect and independent geometry/effect preservation. These start from synthetic typed states; pending native effect/recovery and real lifecycle integration remain open.498 Quint passes9 named scenarios,1000x40 invariant traces and6 typechecked mutation controls. Its ceiling60 is a finite abstraction, not UInt64 refinement. Optimized Main/Bar/Popup and complete C host/control builds pass.
+
+500 passes original89 native menu/keyboard/same-title retirement assertions and normal cleanup on core470/plugin471/AQ155/observer477. It changes only GUI/source build selection from492, preserving deadlines and fixture assertions. Native acceptance does not inject a UInt64 maximum. Existing493 evidence of the actual unavailable-read race is retained, not newly relabeled.
+
+501 records three resumed read-only UI/UX reviews and concrete baseline IDs. Next requalify joint161/reconnect57/bounds604 on source498 and integrate reviewed Escape/pointer lanes. Implement actual GTK role/modal/popup and connected keyboard/recovery journeys; dedicated motion, hardwareGPU/WebGPU, physical outputs, AT/IME, budgets and participant gates remain open. Main session and drafts untouched; all242 requirements and417 baseline scenarios retain their status. Full S01-S16/C00/release/rollback acceptance is incomplete.
